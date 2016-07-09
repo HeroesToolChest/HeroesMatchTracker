@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="HeroesParserData.Views.Data.RawMatchChatControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesParserData.Views.Data"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Data"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             HorizontalContentAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto"
+             d:DataContext="{d:DesignInstance ViewModels:RawMatchChatViewModel}">
+    <UserControl.DataContext>
+        <ViewModels:RawMatchChatViewModel/>
+    </UserControl.DataContext>
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom"></local:QueryStatusBarControl>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl Grid.Row="0"></local:QueryControl>
+            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" AlternatingRowBackground="AliceBlue" GridLinesVisibility="Vertical" BorderThickness="1" 
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True"
+                      ItemsSource="{Binding ReplayMatchChat, IsAsync=True}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="MatchChatId" Binding="{Binding MatchChatId}" />
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="PlayerNumber" Binding="{Binding PlayerNumber}" />
+                    <DataGridTextColumn Header="MessageTarget" Binding="{Binding MessageTarget}" />
+                    <DataGridTextColumn Header="Message" Binding="{Binding Message}" />
+                    <DataGridTextColumn Header="TimeStamp" Binding="{Binding TimeStamp}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>

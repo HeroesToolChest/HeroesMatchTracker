@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HeroesParserData">
+
+    <BitmapImage x:Key="BattlefieldOfEternity" UriSource="pack://application:,,,/Resources/Images/BattlefieldOfEternity.png"/>
+    <BitmapImage x:Key="BlackheartsBay" UriSource="pack://application:,,,/Resources/Images/BlackheartsBay.png"/>
+    <BitmapImage x:Key="CursedHallow" UriSource="pack://application:,,,/Resources/Images/CursedHallow.png"/>
+    <BitmapImage x:Key="DragonShire" UriSource="pack://application:,,,/Resources/Images/DragonShire.png"/>
+    <BitmapImage x:Key="GardenOfTerror" UriSource="pack://application:,,,/Resources/Images/GardenOfTerror.png"/>
+    <BitmapImage x:Key="HauntedMines" UriSource="pack://application:,,,/Resources/Images/HauntedMines.png"/>
+    <BitmapImage x:Key="InfernalShrines" UriSource="pack://application:,,,/Resources/Images/InfernalShrines.png"/>
+    <BitmapImage x:Key="SkyTemple" UriSource="pack://application:,,,/Resources/Images/SkyTemple.png"/>
+    <BitmapImage x:Key="TowersOfDoom" UriSource="pack://application:,,,/Resources/Images/TowersOfDoom.png"/>
+</ResourceDictionary>

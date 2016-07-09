@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="HeroesParserData.Views.ReplaysControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesParserData.Views"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
+             mc:Ignorable="d"
+             HorizontalAlignment="Stretch"
+             HorizontalContentAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto"
+             d:DataContext="{d:DesignInstance ViewModels:ReplaysViewModel}">
+    <UserControl.DataContext>
+        <ViewModels:ReplaysViewModel/>
+    </UserControl.DataContext>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Content="{Binding CurrentStatus}" DockPanel.Dock="Left" />
+            <StatusBarItem Content="replays parsed" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalReplays}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="/" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalParsed}" DockPanel.Dock="Right" />
+            <StatusBarItem />
+        </StatusBar>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Column="0"
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True"
+                      ItemsSource="{Binding ReplayFiles, IsAsync=True}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding CreationTime}" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                    <!--<DataGridTextColumn Header="HotsLog Status" Binding="{Binding HotsLogUploadStatus}" />-->
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Start" Command="{Binding Start}" IsEnabled="{Binding AreProcessButtonsEnabled}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,28,-10,0" />
+            <Button Content="Start with watch" Command="{Binding StartWatch}" IsEnabled="{Binding AreProcessButtonsEnabled}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,61,-10,0" />
+            <Button Content="Stop" Command="{Binding Stop}" IsEnabled="{Binding IsProcessSelected}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,28,-135,0" />
+            <Button Content="Stop Process Watch" Command="{Binding StopWatch}" IsEnabled="{Binding IsProcessWatchSelected}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,61,-135,0" />
+        </Grid>
+    </DockPanel>
+</UserControl>

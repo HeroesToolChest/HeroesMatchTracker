@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HeroesParserData
+namespace HeroesParserData.Views.Data
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RawMatchTeamLevelControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RawMatchTeamLevelControl : UserControl
     {
-        public MainWindow()
+        public RawMatchTeamLevelControl()
         {
             InitializeComponent();
         }
