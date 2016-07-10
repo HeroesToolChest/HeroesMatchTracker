@@ -14,13 +14,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.ViewModels
 {
     public class ReplaysViewModel : ViewModelBase
     {
         private string _currentStatus;
-        private bool _isProcessing;
         private bool _isProcessSelected;
         private bool _isProcessWatchSelected;
         private bool _areProcessButtonsEnabled;
@@ -164,7 +164,7 @@ namespace HeroesParserData.ViewModels
             Task.Run(() =>
             {
                 LoadAccountDirectory();
-                ParseAllReplays();
+                ParseReplays();
                 //IsProcessing = false;
             });           
         }
@@ -255,9 +255,10 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        private void ParseAllReplays()
+        private void ParseReplays()
         {
             int i = 0;
+
             // check if continuing parsing while all replays have been parsed
             while (IsProcessSelected || IsProcessWatchSelected) 
             {
@@ -267,33 +268,48 @@ namespace HeroesParserData.ViewModels
                     if (!IsProcessSelected && !IsProcessWatchSelected)
                         break;
 
+                    #region parse replay and save data
+                    var tmpPath = Path.GetTempFileName();
                     var file = ReplayFiles[i];
 
                     CurrentStatus = $"Parsing file {file.FileName}";
-                    var tmpPath = Path.GetTempFileName();
+
                     try
                     {
                         File.Copy(file.FilePath, tmpPath, overwrite: true);
 
-                        var replayParseResult = DataParser.ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
-                        if (replayParseResult.Item1 == DataParser.ReplayParseResult.Success)
+                        var replayParseResult = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
+                        if (replayParseResult.Item1 == ReplayParseResult.Success)
                         {
-                            file.Status = ReplayParseStatus.Parsed;
-                            file.Status = new SaveAllReplayData(replayParseResult.Item2).SaveAllData();
-                            if (file.Status == ReplayParseStatus.Success)
+                            file.Status = ReplayParseResult.Success;
+                            
+                            // save the data on a seperate thread
+                            Task.Run(() =>
                             {
-                                Settings.Default.LastFileParseDate = file.CreationTime;
-                            }
+                                try
+                                {
+                                    file.Status = new SaveAllReplayData(replayParseResult.Item2).SaveAllData();
+                                    if (file.Status == ReplayParseResult.Success)
+                                    {
+                                        Settings.Default.LastFileParseDate = file.CreationTime;
+                                    }
+                                }
+                                catch (SqlException ex)
+                                {
+                                    Logger.Log(LogLevel.Error, "Sql exception", ex);
+                                    file.Status = ReplayParseResult.Exception;
+                                }
+                            });
                         }
                         else
                         {
-                            file.Status = ReplayParseStatus.Failed;
+                            file.Status = replayParseResult.Item1;
                         }
                     }
                     catch (Exception ex)
                     {
                         Logger.Log(LogLevel.Error, ex);
-                        file.Status = ReplayParseStatus.Failed;
+                        file.Status = ReplayParseResult.Exception;
                     }
                     finally
                     {
@@ -303,6 +319,7 @@ namespace HeroesParserData.ViewModels
                         if (File.Exists(tmpPath))
                             File.Delete(tmpPath);
                     }
+                    #endregion
                 } // end for
 
                 i = ReplayFiles.Count();

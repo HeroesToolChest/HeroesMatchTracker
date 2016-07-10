@@ -1,10 +1,10 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models.DbModels;
-using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.DataQueries
 {
@@ -20,7 +20,7 @@ namespace HeroesParserData.DataQueries
             HeroesParserDataContext = new HeroesParserDataContext();
         }
 
-        public ReplayParseStatus SaveAllData()
+        public ReplayParseResult SaveAllData()
         {
             using (HeroesParserDataContext)
             {
@@ -39,10 +39,10 @@ namespace HeroesParserData.DataQueries
                             SaveMatchObjectives();
 
                             dbTransaction.Commit();
-                            return ReplayParseStatus.Success;
+                            return ReplayParseResult.Success;
                         }
                         else
-                            return ReplayParseStatus.Duplicate;
+                            return ReplayParseResult.Duplicate;
                         
                     }
                     catch (Exception)
@@ -340,14 +340,14 @@ namespace HeroesParserData.DataQueries
             var objTeam0 = Replay.TeamObjectives[0];
             var objTeam1 = Replay.TeamObjectives[1];
 
-            if (objTeam0 != null)
+            if (objTeam0.Count > 0 && objTeam0 != null)
             {
                 foreach (var objCount in objTeam0)
                 {
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId),
+                        PlayerId = objCount.Player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
@@ -358,14 +358,14 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            if (objTeam1 != null)
+            if (objTeam1.Count > 0 && objTeam1 != null)
             {
                 foreach (var objCount in objTeam1)
                 {
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId),
+                        PlayerId = objCount.Player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
