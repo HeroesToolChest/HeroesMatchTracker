@@ -132,9 +132,10 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return record.PlayerId;
             }
 
-            public static long ReadPlayerIdFromBattleNetId(HeroesParserDataContext db, int battleNetId)
+            public static long ReadPlayerIdFromBattleNetId(HeroesParserDataContext db, string battleTagName, int battleNetId)
             {
-                return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == battleNetId).PlayerId;
+                // battleNetId is not unique
+                return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
             }
         }
     }

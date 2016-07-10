@@ -39,7 +39,7 @@ namespace HeroesParserData.DataQueries
                             SaveMatchObjectives();
 
                             dbTransaction.Commit();
-                            return ReplayParseResult.Success;
+                            return ReplayParseResult.Saved;
                         }
                         else
                             return ReplayParseResult.Duplicate;
@@ -344,10 +344,12 @@ namespace HeroesParserData.DataQueries
             {
                 foreach (var objCount in objTeam0)
                 {
+                    var player = objCount.Player;
+
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = objCount.Player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId) : (long?)null,
+                        PlayerId = player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
@@ -362,10 +364,12 @@ namespace HeroesParserData.DataQueries
             {
                 foreach (var objCount in objTeam1)
                 {
+                    var player = objCount.Player;
+
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = objCount.Player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId) : (long?)null,
+                        PlayerId = player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,

@@ -130,6 +130,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                         return new DateTime();         
                 }                   
             }
+
+            public static long GetTotalReplayCount()
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.Replays.Count();
+                }
+            }
         }
     }
 }
