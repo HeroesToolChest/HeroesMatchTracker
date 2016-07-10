@@ -224,7 +224,9 @@ namespace HeroesParserData.ViewModels
 
             Application.Current.Dispatcher.Invoke(delegate
             {
-                ReplayFiles.Remove(ReplayFiles.SingleOrDefault(x => x.FilePath == e.FullPath));
+                var file = ReplayFiles.FirstOrDefault(x => x.FilePath == e.FullPath);
+                if (file != null)
+                    ReplayFiles.Remove(file);
             });
 
             TotalReplays = ReplayFiles.Count;
