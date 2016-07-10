@@ -1,11 +1,9 @@
 ﻿using HeroesParserData.Models.DbModels;
 using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using System.Threading;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries.ReplayData
 {

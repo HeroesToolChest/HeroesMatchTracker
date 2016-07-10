@@ -1,5 +1,4 @@
-﻿using Heroes.ReplayParser;
-using HeroesParserData.DataQueries;
+﻿using HeroesParserData.DataQueries;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Properties;

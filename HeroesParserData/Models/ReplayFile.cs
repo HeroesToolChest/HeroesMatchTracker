@@ -1,5 +1,4 @@
-﻿using Heroes.ReplayParser;
-using System;
+﻿using System;
 using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.Models
