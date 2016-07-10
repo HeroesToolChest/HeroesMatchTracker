@@ -322,7 +322,7 @@ namespace HeroesParserData.ViewModels
                                 catch (SqlException ex)
                                 {
                                     Logger.Log(LogLevel.Error, "Sql exception", ex);
-                                    file.Status = ReplayParseResult.Exception;
+                                    file.Status = ReplayParseResult.SqlException;
                                 }
                             });
                         }
