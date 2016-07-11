@@ -10,20 +10,9 @@
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
         Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="576" Width="1024">
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Button Content="Settings"></Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
-    <Controls:MetroWindow.Flyouts>
-        <Controls:FlyoutsControl>
-            <Controls:Flyout Header="Flyout" Position="Left" Width="400" Theme="Accent">
-                <Button Height="28" Width="140">Hello</Button>
-            </Controls:Flyout>
-        </Controls:FlyoutsControl>
-    </Controls:MetroWindow.Flyouts>
+    <!--<Controls:MetroWindow.RightWindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>-->
     <DockPanel>
-
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
                 <Grid>
