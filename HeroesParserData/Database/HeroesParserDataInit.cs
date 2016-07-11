@@ -16,9 +16,7 @@ namespace HeroesParserData.Database
             if (migrator.GetPendingMigrations().Any())
             {
                 migrator.Update();
-            }
-
-            
+            }         
         }
     }
 

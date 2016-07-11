@@ -124,6 +124,9 @@
     <Compile Include="Views\Data\RawMatchChatControl.xaml.cs">
       <DependentUpon>RawMatchChatControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\RawMatchPlayerControl.xaml.cs">
+      <DependentUpon>RawMatchPlayerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\RawMatchPlayerScoreResultControl.xaml.cs">
       <DependentUpon>RawMatchPlayerScoreResultControl.xaml</DependentUpon>
     </Compile>
@@ -204,6 +207,10 @@
     <Page Include="Views\Data\RawMatchChatControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Data\RawMatchPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Data\RawMatchPlayerScoreResultControl.xaml">
       <Generator>MSBuild:Compile</Generator>

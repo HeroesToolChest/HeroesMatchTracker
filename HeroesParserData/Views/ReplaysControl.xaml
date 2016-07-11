@@ -19,13 +19,13 @@
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem Content="{Binding CurrentStatus}" DockPanel.Dock="Left" />
-            <StatusBarItem Content="saved" DockPanel.Dock="Right" />
+            <StatusBarItem Content="in database" DockPanel.Dock="Right" />
             <StatusBarItem Content="{Binding TotalSavedInDatabase}" DockPanel.Dock="Right" />
             <StatusBarItem Content="|" DockPanel.Dock="Right" />
             <StatusBarItem Content="replays parsed" DockPanel.Dock="Right" />
-            <StatusBarItem Content="{Binding TotalReplays}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalReplaysGrid}" DockPanel.Dock="Right" />
             <StatusBarItem Content="/" DockPanel.Dock="Right" />
-            <StatusBarItem Content="{Binding TotalParsed}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalParsedGrid}" DockPanel.Dock="Right" />
             <StatusBarItem />
         </StatusBar>
         <Grid DockPanel.Dock="Bottom">

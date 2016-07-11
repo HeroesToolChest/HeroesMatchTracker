@@ -23,8 +23,8 @@ namespace HeroesParserData.ViewModels
         private bool _isProcessSelected;
         private bool _isProcessWatchSelected;
         private bool _areProcessButtonsEnabled;
-        private int _totalParsed;
-        private int _totalReplays;
+        private int _totalParsedGrid;
+        private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
@@ -71,23 +71,23 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public int TotalParsed
+        public int TotalParsedGrid
         {
-            get { return _totalParsed; }
+            get { return _totalParsedGrid; }
             set
             {
-                _totalParsed = value;
-                RaisePropertyChangedEvent("TotalParsed");
+                _totalParsedGrid = value;
+                RaisePropertyChangedEvent("TotalParsedGrid");
             }
         }
 
-        public int TotalReplays
+        public int TotalReplaysGrid
         {
-            get { return _totalReplays; }
+            get { return _totalReplaysGrid; }
             set
             {
-                _totalReplays = value;
-                RaisePropertyChangedEvent("TotalReplays");
+                _totalReplaysGrid = value;
+                RaisePropertyChangedEvent("TotalReplaysGrid");
             }
         }
 
@@ -215,7 +215,7 @@ namespace HeroesParserData.ViewModels
                 }
             });
 
-            TotalReplays = ReplayFiles.Count;
+            TotalReplaysGrid = ReplayFiles.Count;
         }
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
@@ -229,7 +229,7 @@ namespace HeroesParserData.ViewModels
                     ReplayFiles.Remove(file);
             });
 
-            TotalReplays = ReplayFiles.Count;
+            TotalReplaysGrid = ReplayFiles.Count;
         }
 
         private long GetTotalReplayDbCount()
@@ -249,11 +249,12 @@ namespace HeroesParserData.ViewModels
                     .Where(x => x.CreationTimeUtc > Query.Replay.LatestReplayByDateTimeUTC()) // last parsed replay
                     .ToList();
 
-                TotalReplays = listFiles.Count;
+                TotalReplaysGrid = listFiles.Count;
 
                 Application.Current.Dispatcher.Invoke(delegate
                 {
                     ReplayFiles.Clear();
+                    TotalParsedGrid = 0;
 
                     foreach (var file in listFiles)
                     {
@@ -340,7 +341,7 @@ namespace HeroesParserData.ViewModels
                     }
                     finally
                     {
-                        TotalParsed++;
+                        TotalParsedGrid++;
                         CurrentStatus = $"Parsed {file.FileName}";
 
                         if (File.Exists(tmpPath))
