@@ -52,29 +52,29 @@
                     <TabItem Name="RawAllHotsPlayers" Header="All Players">
                         <ViewsData:RawAllHotsPlayerControl></ViewsData:RawAllHotsPlayerControl>
                     </TabItem>
-                    <TabItem Name="RawMatchChat" Header="Match Chat">
-                        <ViewsData:RawMatchChatControl></ViewsData:RawMatchChatControl>
-                    </TabItem>
-                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match PlayerScoreResults">
-                        <ViewsData:RawMatchPlayerScoreResultControl></ViewsData:RawMatchPlayerScoreResultControl>
-                    </TabItem>
-                    <TabItem Name="RawMatchPlayerTalent" Header="Match PlayerTalents">
-                        <ViewsData:RawMatchPlayerTalentControl></ViewsData:RawMatchPlayerTalentControl>
-                    </TabItem>
                     <TabItem Name="RawMatchPlayer" Header="Match Players">
                         <ViewsData:RawMatchPlayerControl></ViewsData:RawMatchPlayerControl>
                     </TabItem>
                     <TabItem Name="RawMatchTeamBan" Header="Match Team Bans">
                         <ViewsData:RawMatchTeamBanControl></ViewsData:RawMatchTeamBanControl>
                     </TabItem>
-                    <TabItem Name="RawMatchTeamExperience" Header="Match Team Experience">
-                        <ViewsData:RawMatchTeamExperienceControl></ViewsData:RawMatchTeamExperienceControl>
+                    <TabItem Name="RawMatchPlayerTalent" Header="Match PlayerTalents">
+                        <ViewsData:RawMatchPlayerTalentControl></ViewsData:RawMatchPlayerTalentControl>
+                    </TabItem>
+                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match PlayerScoreResults">
+                        <ViewsData:RawMatchPlayerScoreResultControl></ViewsData:RawMatchPlayerScoreResultControl>
                     </TabItem>
                     <TabItem Name="RawMatchTeamLevel" Header="Match Team Levels">
                         <ViewsData:RawMatchTeamLevelControl></ViewsData:RawMatchTeamLevelControl>
                     </TabItem>
+                    <TabItem Name="RawMatchTeamExperience" Header="Match Team Experience">
+                        <ViewsData:RawMatchTeamExperienceControl></ViewsData:RawMatchTeamExperienceControl>
+                    </TabItem>
                     <TabItem Name="RawMatchTeamObjective" Header="Match Team Objective">
                         <ViewsData:RawMatchTeamObjectiveControl></ViewsData:RawMatchTeamObjectiveControl>
+                    </TabItem>
+                    <TabItem Name="RawMatchChat" Header="Match Chat">
+                        <ViewsData:RawMatchChatControl></ViewsData:RawMatchChatControl>
                     </TabItem>
                 </TabControl>
             </TabItem>
