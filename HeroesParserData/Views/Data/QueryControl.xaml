@@ -22,11 +22,10 @@
         <Button Content="Select Last 100" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectLast100}" Grid.Row="0" Width="100" Height="28" HorizontalAlignment="Left" Margin="115,4,0,4" />
 
         <Button Content="Select" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectCustomTop}" Grid.Row="1" Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
-        <Label Content="TOP" Height="28" HorizontalAlignment="Left" Grid.Row="1" Margin="115,4,0,4" />
-        <Controls:NumericUpDown Value="{Binding SelectedNumber}" Grid.Row="1" Width="140" Height="28" Minimum="1" Maximum ="1000" Interval="1" HorizontalAlignment="Left" Margin="151,4,0,4" />
-        <Label Content="ORDER BY" Grid.Row="1" Height="28" HorizontalAlignment="Left"  Margin="296,4,0,4" />
-        <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedTopColumnName}" Grid.Row="1" Width="200" Height="28" HorizontalAlignment="Left" Margin="365,4,0,4" />
-        <ComboBox ItemsSource="{Binding OrderBy}" SelectedValue="{Binding SelectedTopOrderBy}" Grid.Row="1" Width="80" Height="28" HorizontalAlignment="Left" Margin="570,4,0,4" />
+        <Controls:NumericUpDown Value="{Binding SelectedNumber}" Grid.Row="1" Width="140" Height="28" Minimum="1" Maximum ="1000" Interval="1" HorizontalAlignment="Left" Margin="115,4,0,4" />
+        <Label Content="ORDER BY" Grid.Row="1" Height="28" HorizontalAlignment="Left"  Margin="260,4,0,4" />
+        <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedTopColumnName}" Grid.Row="1" Width="200" Height="28" HorizontalAlignment="Left" Margin="329,4,0,4" />
+        <ComboBox ItemsSource="{Binding OrderBy}" SelectedValue="{Binding SelectedTopOrderBy}" Grid.Row="1" Width="80" Height="28" HorizontalAlignment="Left" Margin="534,4,0,4" />
 
         <Button Content="Select Where" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectWhere}" Grid.Row="2" Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
         <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedWhereColumnName}" Grid.Row="2" Width="200" Height="28" HorizontalAlignment="Left" Margin="115,4,0,4" />
