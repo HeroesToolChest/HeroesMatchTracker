@@ -1,12 +1,7 @@
-﻿using HeroesParserData.Properties;
-using MahApps.Metro;
+﻿using HeroesParserData.Database;
+using HeroesParserData.Properties;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace HeroesParserData
@@ -18,6 +13,8 @@ namespace HeroesParserData
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            InitDatabase();
+
             // set default location
             if (string.IsNullOrEmpty(Settings.Default.ReplaysLocation))
                 Settings.Default.ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
@@ -41,6 +38,18 @@ namespace HeroesParserData
             Settings.Default.Save();
 
             base.OnExit(e);
+        }
+
+        private void InitDatabase()
+        {
+            string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
+            string databasePath = Path.Combine(applicationPath, "Database");
+
+            if (!Directory.Exists(databasePath))
+                Directory.CreateDirectory(databasePath);
+                
+            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
+            HeroesParserDataInit.InitiliazeHeroesParserDataStore();
         }
     }
 }

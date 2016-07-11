@@ -93,6 +93,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database\HeroesParserDataInit.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
@@ -298,13 +299,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\HeroesParserData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\HeroesParserData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HeroesParserData.mdf</DependentUpon>
-    </Content>
     <Content Include="DLLs\Heroes.ReplayParser.dll" />
     <Content Include="DLLs\ICSharpCode.SharpZipLib.dll" />
     <Content Include="DLLs\MpqTool.dll" />

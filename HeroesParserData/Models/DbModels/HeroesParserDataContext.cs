@@ -3,13 +3,12 @@ namespace HeroesParserData.Models.DbModels
     using System.Data.Entity;
     using System.Data.Entity.Validation;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public partial class HeroesParserDataContext : DbContext
     {
         public HeroesParserDataContext()
-            : base("name=HeroesParserData")
-        {
-        }
+            : base("name=HeroesParserData") { }
 
         public override int SaveChanges()
         {
@@ -19,21 +18,22 @@ namespace HeroesParserData.Models.DbModels
             }
             catch (DbEntityValidationException ex)
             {
-                // Retrieve the error messages as a list of strings.
-                var errorMessages = ex.EntityValidationErrors
-                        .SelectMany(x => x.ValidationErrors)
-                        .Select(x => x.ErrorMessage);
-
-                // Join the list to a single string.
-                var fullErrorMessage = string.Join("; ", errorMessages);
-
-                // Combine the original exception message with the new one.
-                var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
-
-                // Throw a new DbEntityValidationException with the improved exception message.
-                throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                throw new DbEntityValidationException(CustomErrorMessage(ex), ex.EntityValidationErrors);
             }
         }
+
+        public override Task<int> SaveChangesAsync()
+        {
+            try
+            {
+                return base.SaveChangesAsync();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                throw new DbEntityValidationException(CustomErrorMessage(ex), ex.EntityValidationErrors);
+            }
+        }
+
         public virtual DbSet<Replay> Replays { get; set; }
         public virtual DbSet<ReplayAllHotsPlayer> ReplayAllHotsPlayers { get; set; }
         public virtual DbSet<ReplayMatchChat> ReplayMatchChats { get; set; }
@@ -104,6 +104,20 @@ namespace HeroesParserData.Models.DbModels
             modelBuilder.Entity<ReplayMatchChat>()
                 .Property(e => e.Message)
                 .IsUnicode(false);
+        }
+
+        private string CustomErrorMessage(DbEntityValidationException ex)
+        {
+            // Retrieve the error messages as a list of strings.
+            var errorMessages = ex.EntityValidationErrors
+                    .SelectMany(x => x.ValidationErrors)
+                    .Select(x => x.ErrorMessage);
+
+            // Join the list to a single string.
+            var fullErrorMessage = string.Join("; ", errorMessages);
+
+            // Combine the original exception message with the new one.
+            return string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
         }
     }
 }
