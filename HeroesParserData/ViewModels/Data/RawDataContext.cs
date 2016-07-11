@@ -225,7 +225,7 @@ namespace HeroesParserData.ViewModels.Data
             catch (Exception ex)
             {
                 QueryStatus = "Query failed";
-                Logger.Log(LogLevel.Error, ex);
+                ExceptionLog.Log(LogLevel.Error, ex);
             }
 
             IsQueryActive = false;

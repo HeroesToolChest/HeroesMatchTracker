@@ -6,6 +6,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -273,15 +274,15 @@ namespace HeroesParserData.ViewModels
 
                 CurrentStatus = "Scan completed";
             }
-            catch (SqlException ex)
+            catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
             {
                 CurrentStatus = "Database error";
-                Logger.Log(LogLevel.Error, ex);
+                ExceptionLog.Log(LogLevel.Error, ex);
             }
             catch (Exception ex)
             {
                 CurrentStatus = "Error scanning folder";
-                Logger.Log(LogLevel.Error, ex);
+                ExceptionLog.Log(LogLevel.Error, ex);
             }
         }
 
@@ -322,22 +323,25 @@ namespace HeroesParserData.ViewModels
                                     if (file.Status == ReplayParseResult.Saved)
                                         TotalSavedInDatabase++;
                                 }
-                                catch (SqlException ex)
+                                catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
                                 {
-                                    Logger.Log(LogLevel.Error, "Sql exception", ex);
                                     file.Status = ReplayParseResult.SqlException;
+                                    SqlExceptionReplaysLog.Log(LogLevel.Error, ex);                                    
                                 }
                             });
                         }
                         else
                         {
                             file.Status = replayParseResult.Item1;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
                         }
                     }
                     catch (Exception ex)
                     {
-                        Logger.Log(LogLevel.Error, ex);
                         file.Status = ReplayParseResult.Exception;
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                        FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+
                     }
                     finally
                     {
