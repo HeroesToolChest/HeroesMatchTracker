@@ -13,10 +13,12 @@ namespace HeroesParserData.DataQueries
         private Heroes.ReplayParser.Replay Replay;
         private HeroesParserDataContext HeroesParserDataContext;
         private long ReplayId;
+        private string FileName;
 
-        public SaveAllReplayData(Heroes.ReplayParser.Replay replay)
+        public SaveAllReplayData(Heroes.ReplayParser.Replay replay, string fileName)
         {
             Replay = replay;
+            FileName = fileName;
             HeroesParserDataContext = new HeroesParserDataContext();
         }
 
@@ -72,7 +74,8 @@ namespace HeroesParserData.DataQueries
                 ReplayLength = Replay.ReplayLength,
                 ReplayVersion = Replay.ReplayVersion,
                 TeamSize = Replay.TeamSize,
-                TimeStamp = Replay.Timestamp              
+                TimeStamp = Replay.Timestamp,
+                FileName = FileName             
             };
 
             // check if replay was added to database already

@@ -319,7 +319,7 @@ namespace HeroesParserData.ViewModels
                             {
                                 try
                                 {
-                                    file.Status = new SaveAllReplayData(replayParseResult.Item2).SaveAllData();
+                                    file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData();
                                     if (file.Status == ReplayParseResult.Saved)
                                         TotalSavedInDatabase++;
                                 }
