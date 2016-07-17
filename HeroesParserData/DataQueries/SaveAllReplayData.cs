@@ -226,16 +226,20 @@ namespace HeroesParserData.DataQueries
 
         private void SaveMatchTeamBans()
         {
-            ReplayMatchTeamBan replayTeamBan = new ReplayMatchTeamBan
+            if (Replay.GameMode == GameMode.UnrankedDraft || Replay.GameMode == GameMode.HeroLeague || Replay.GameMode == GameMode.TeamLeague)
             {
-                ReplayId = ReplayId,
-                Team0Ban0 = Replay.TeamHeroBans[0][0],
-                Team0Ban1 = Replay.TeamHeroBans[0][1],
-                Team1Ban0 = Replay.TeamHeroBans[1][0],
-                Team1Ban1 = Replay.TeamHeroBans[1][1]
-            };
+                ReplayMatchTeamBan replayTeamBan = new ReplayMatchTeamBan
+                {
+                    ReplayId = ReplayId,
+                    Team0Ban0 = Replay.TeamHeroBans[0][0],
+                    Team0Ban1 = Replay.TeamHeroBans[0][1],
+                    Team1Ban0 = Replay.TeamHeroBans[1][0],
+                    Team1Ban1 = Replay.TeamHeroBans[1][1]
+                };
 
-            Query.MatchTeamBan.CreateRecord(HeroesParserDataContext, replayTeamBan);
+                if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null)
+                    Query.MatchTeamBan.CreateRecord(HeroesParserDataContext, replayTeamBan);
+            }
         }
 
         private void SaveMatchTeamLevels()
