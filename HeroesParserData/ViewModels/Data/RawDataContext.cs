@@ -190,10 +190,10 @@ namespace HeroesParserData.ViewModels.Data
         private void AddButtonCommandsActions()
         {
             _buttonCommandActions = new Dictionary<ButtonCommands, Func<Task>>();
-            _buttonCommandActions.Add(ButtonCommands.ReadDataTop, () => ReadDataTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataLast, () => ReadDataLast());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataCustomTop, () => ReadDataCustomTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataWhere, () => ReadDataWhere());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataTop, async () => await ReadDataTop());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataLast, async () => await ReadDataLast());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataCustomTop, async () => await ReadDataCustomTop());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataWhere, async () => await ReadDataWhere());
         }
 
         private void AddListConditionalOperators()
