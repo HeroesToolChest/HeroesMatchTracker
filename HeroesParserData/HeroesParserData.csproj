@@ -99,7 +99,7 @@
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
-    <Compile Include="ViewModels\Data\RawMatchChatViewModel.cs" />
+    <Compile Include="ViewModels\Data\RawMatchMessageViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerScoreResultViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerTalentViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerViewModel.cs" />
@@ -121,8 +121,8 @@
     <Compile Include="Views\Data\RawAllHotsPlayerControl.xaml.cs">
       <DependentUpon>RawAllHotsPlayerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\RawMatchChatControl.xaml.cs">
-      <DependentUpon>RawMatchChatControl.xaml</DependentUpon>
+    <Compile Include="Views\Data\RawMatchMessageControl.xaml.cs">
+      <DependentUpon>RawMatchMessageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\RawMatchPlayerControl.xaml.cs">
       <DependentUpon>RawMatchPlayerControl.xaml</DependentUpon>
@@ -162,7 +162,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataQueries\ReplayData\HotsPlayer.cs" />
-    <Compile Include="DataQueries\ReplayData\MatchChat.cs" />
+    <Compile Include="DataQueries\ReplayData\MatchMessage.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayer.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayerScoreResult.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayerTalent.cs" />
@@ -201,7 +201,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Data\RawMatchChatControl.xaml">
+    <Page Include="Views\Data\RawMatchMessageControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -253,7 +253,7 @@
   <ItemGroup>
     <Compile Include="Models\DbModels\Replay.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayer.cs" />
-    <Compile Include="Models\DbModels\ReplayMatchChat.cs" />
+    <Compile Include="Models\DbModels\ReplayMatchMessage.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayer.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayerScoreResult.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayerTalent.cs" />

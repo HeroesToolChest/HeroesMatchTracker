@@ -37,7 +37,7 @@ namespace HeroesParserData.DataQueries
                             SaveMatchTeamBans();
                             SaveMatchTeamLevels();
                             SaveMatchTeamExperience();
-                            SaveMatchChat();
+                            SaveMatchMessage();
                             SaveMatchObjectives();
 
                             dbTransaction.Commit();
@@ -325,20 +325,64 @@ namespace HeroesParserData.DataQueries
             }
         }
 
-        private void SaveMatchChat()
+        private void SaveMatchMessage()
         {
-            foreach (var message in Replay.ChatMessages)
+            foreach (var message in Replay.Messages)
             {
-                ReplayMatchChat chat = new ReplayMatchChat
-                {
-                    ReplayId = ReplayId,
-                    PlayerNumber = message.PlayerId,
-                    MessageTarget = message.MessageTarget.ToString(),
-                    Message = message.Message,
-                    TimeStamp = message.Timestamp.Ticks
-                };
+                var messageEventType = message.MessageEventType;
+                var player = message.MessageSender;
 
-                Query.MatchChat.CreateRecord(HeroesParserDataContext, chat);
+                if (messageEventType == ReplayMessageEvents.MessageEventType.SChatMessage)
+                {
+                    var chatMessage = message.ChatMessage;
+
+                    ReplayMatchMessage chat = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player.Character,
+                        Message = chatMessage.Message,
+                        MessageEventType = messageEventType.ToString(),
+                        MessageTarget = chatMessage.MessageTarget.ToString(),
+                        PlayerName = player.Name,
+                        TimeStamp = message.Timestamp             
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, chat);
+                }
+                else if (messageEventType == ReplayMessageEvents.MessageEventType.SPingMessage)
+                {
+                    var pingMessage = message.PingMessage;
+
+                    ReplayMatchMessage ping = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player.Character,
+                        Message = "used a ping",
+                        MessageEventType = messageEventType.ToString(),
+                        MessageTarget = pingMessage.MessageTarget.ToString(),
+                        PlayerName = player.Name,
+                        TimeStamp = message.Timestamp
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, ping);
+                }
+
+                else if (messageEventType == ReplayMessageEvents.MessageEventType.SPlayerAnnounceMessage)
+                {
+                    var announceMessage = message.PlayerAnnounceMessage;
+
+                    ReplayMatchMessage announce = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player.Character,
+                        Message = $"announce a {announceMessage.AnnouncementType.ToString()}",
+                        MessageEventType = messageEventType.ToString(),
+                        PlayerName = player.Name,
+                        TimeStamp = message.Timestamp
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, announce);
+                }          
             }
         }
 

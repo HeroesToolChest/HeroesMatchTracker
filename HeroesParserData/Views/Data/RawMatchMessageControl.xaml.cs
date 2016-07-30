@@ -18,9 +18,9 @@ namespace HeroesParserData.Views.Data
     /// <summary>
     /// Interaction logic for RawMatchChatControl.xaml
     /// </summary>
-    public partial class RawMatchChatControl : UserControl
+    public partial class RawMatchMessageControl : UserControl
     {
-        public RawMatchChatControl()
+        public RawMatchMessageControl()
         {
             InitializeComponent();
         }

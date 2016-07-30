@@ -62,8 +62,8 @@
                     <TabItem Name="RawMatchTeamObjective" Header="Match Team Objective">
                         <ViewsData:RawMatchTeamObjectiveControl></ViewsData:RawMatchTeamObjectiveControl>
                     </TabItem>
-                    <TabItem Name="RawMatchChat" Header="Match Chat">
-                        <ViewsData:RawMatchChatControl></ViewsData:RawMatchChatControl>
+                    <TabItem Name="RawMatchMessage" Header="Match Messages">
+                        <ViewsData:RawMatchMessageControl></ViewsData:RawMatchMessageControl>
                     </TabItem>
                 </TabControl>
             </TabItem>

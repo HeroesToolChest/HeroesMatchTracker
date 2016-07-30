@@ -4,24 +4,28 @@ namespace HeroesParserData.Models.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayMatchChat
+    public partial class ReplayMatchMessage
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long MatchChatId { get; set; }
+        public long MessageId { get; set; }
 
         public long ReplayId { get; set; }
 
-        public int PlayerNumber { get; set; }
+        public string MessageEventType { get; set; }
 
-        [StringLength(50)]
+        public TimeSpan TimeStamp { get; set; }
+
+        [StringLength(20)]
         public string MessageTarget { get; set; }
+
+        [StringLength(20)]
+        public string PlayerName { get; set; }
+
+        public string CharacterName { get; set; }
 
         [Column(TypeName = "text")]
         public string Message { get; set; }
-
-        // has to be long, due to errors
-        public long TimeStamp { get; set; }
 
         public virtual Replay Replay { get; set; }
     }

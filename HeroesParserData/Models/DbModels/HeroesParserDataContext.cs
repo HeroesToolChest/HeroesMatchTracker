@@ -36,7 +36,7 @@ namespace HeroesParserData.Models.DbModels
 
         public virtual DbSet<Replay> Replays { get; set; }
         public virtual DbSet<ReplayAllHotsPlayer> ReplayAllHotsPlayers { get; set; }
-        public virtual DbSet<ReplayMatchChat> ReplayMatchChats { get; set; }
+        public virtual DbSet<ReplayMatchMessage> ReplayMatchMessages { get; set; }
         public virtual DbSet<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; }
         public virtual DbSet<ReplayMatchPlayer> ReplayMatchPlayers { get; set; }
         public virtual DbSet<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; }
@@ -101,7 +101,7 @@ namespace HeroesParserData.Models.DbModels
                 .WithRequired(e => e.ReplayAllHotsPlayer)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ReplayMatchChat>()
+            modelBuilder.Entity<ReplayMatchMessage>()
                 .Property(e => e.Message)
                 .IsUnicode(false);
         }
