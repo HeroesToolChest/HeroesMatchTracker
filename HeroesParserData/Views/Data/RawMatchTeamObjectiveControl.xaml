@@ -24,8 +24,8 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <local:QueryControl Grid.Row="0"></local:QueryControl>
-            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" AlternatingRowBackground="AliceBlue" GridLinesVisibility="Vertical" BorderThickness="1" 
-                      EnableColumnVirtualization="True" EnableRowVirtualization="True"
+            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" 
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                       ItemsSource="{Binding ReplayMatchTeamObjective, IsAsync=True}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="MatchTeamTeamObjectiveId" Binding="{Binding MatchTeamTeamObjectiveId}" />

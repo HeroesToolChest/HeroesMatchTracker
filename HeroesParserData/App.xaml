@@ -16,6 +16,7 @@
                 <!--Other resources-->
                 <ResourceDictionary Source="/Resources/StringResources.xaml"/>
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
+                <ResourceDictionary Source="/Resources/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
         </ResourceDictionary>
