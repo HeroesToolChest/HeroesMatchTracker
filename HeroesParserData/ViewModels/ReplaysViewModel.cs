@@ -2,6 +2,7 @@
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Properties;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.ViewModels
 {
-    public class ReplaysViewModel : ViewModelBase
+    public class ReplaysViewModel : ViewModelBase, IDisposable
     {
         private string _currentStatus;
         private bool _isProcessSelected;
@@ -106,6 +107,16 @@ namespace HeroesParserData.ViewModels
         {
             get { return _replayFiles; }
         }
+
+        public string ReplaysLocation
+        {
+            get { return Settings.Default.ReplaysLocation; }
+            set
+            {
+                Settings.Default.ReplaysLocation = value;
+                RaisePropertyChangedEvent("ReplaysLocation");
+            }
+        }
         #endregion
 
         #region Button Commands
@@ -128,6 +139,11 @@ namespace HeroesParserData.ViewModels
         {
             get { return new DelegateCommand(StopProcessingAndWatch); }
         }
+
+        public ICommand Browse
+        {
+            get { return new DelegateCommand(BrowseClick); }
+        }
         #endregion
 
         /// <summary>
@@ -142,6 +158,7 @@ namespace HeroesParserData.ViewModels
         {
             IsProcessSelected = true;
             AreProcessButtonsEnabled = false;
+
 
             InitProcessing();
         }
@@ -181,6 +198,19 @@ namespace HeroesParserData.ViewModels
                 LoadAccountDirectory();
                 ParseReplays();
             });           
+        }
+
+        private void BrowseClick()
+        {
+            var dialog = new CommonOpenFileDialog();
+            dialog.IsFolderPicker = true;
+            dialog.InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm");
+            CommonFileDialogResult result = dialog.ShowDialog();
+
+            if (result == CommonFileDialogResult.Ok)
+            {
+                ReplaysLocation = dialog.FileName;
+            }
         }
 
         private void InitReplayWatcher()
@@ -328,6 +358,11 @@ namespace HeroesParserData.ViewModels
                                     file.Status = ReplayParseResult.SqlException;
                                     SqlExceptionReplaysLog.Log(LogLevel.Error, ex);                                    
                                 }
+                                catch (Exception ex)
+                                {
+                                    file.Status = ReplayParseResult.Exception;
+                                    ExceptionLog.Log(LogLevel.Error, ex);
+                                }
                             });
                         }
                         else
@@ -361,5 +396,27 @@ namespace HeroesParserData.ViewModels
             CurrentStatus = "Processing stopped";
             AreProcessButtonsEnabled = true;
         }
-    }      
+
+        #region IDisposable Support
+        private bool disposedValue = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    ((IDisposable)_fileWatcher).Dispose();
+                }
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
+    }
 }

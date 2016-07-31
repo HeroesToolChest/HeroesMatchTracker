@@ -339,11 +339,11 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchMessage chat = new ReplayMatchMessage
                     {
                         ReplayId = ReplayId,
-                        CharacterName = player.Character,
+                        CharacterName = player != null? player.Character : string.Empty,
                         Message = chatMessage.Message,
                         MessageEventType = messageEventType.ToString(),
                         MessageTarget = chatMessage.MessageTarget.ToString(),
-                        PlayerName = player.Name,
+                        PlayerName = player != null ? player.Name : string.Empty,
                         TimeStamp = message.Timestamp             
                     };
 
@@ -356,11 +356,11 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchMessage ping = new ReplayMatchMessage
                     {
                         ReplayId = ReplayId,
-                        CharacterName = player.Character,
+                        CharacterName = player != null ? player.Character : string.Empty,
                         Message = "used a ping",
                         MessageEventType = messageEventType.ToString(),
                         MessageTarget = pingMessage.MessageTarget.ToString(),
-                        PlayerName = player.Name,
+                        PlayerName = player != null ? player.Name : string.Empty,
                         TimeStamp = message.Timestamp
                     };
 
@@ -374,10 +374,10 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchMessage announce = new ReplayMatchMessage
                     {
                         ReplayId = ReplayId,
-                        CharacterName = player.Character,
-                        Message = $"announce a {announceMessage.AnnouncementType.ToString()}",
+                        CharacterName = player != null ? player.Character : string.Empty,
+                        Message = $"announce {announceMessage.AnnouncementType.ToString()}",
                         MessageEventType = messageEventType.ToString(),
-                        PlayerName = player.Name,
+                        PlayerName = player != null ? player.Name : string.Empty,
                         TimeStamp = message.Timestamp
                     };
 

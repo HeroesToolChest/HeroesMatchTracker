@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:Views="clr-namespace:HeroesParserData.Views"
         xmlns:ViewsData="clr-namespace:HeroesParserData.Views.Data"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
@@ -11,7 +12,16 @@
         GlowBrush="{DynamicResource AccentColorBrush}"
         Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="576" Width="1024">
     <!--<Controls:MetroWindow.RightWindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>-->
+        <Controls:WindowCommands>
+            <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout Background="AliceBlue" x:Name="SettingsFlyout" Header="Settings" Position="Left" Width="440" Theme="Adapt" IsOpen="False">
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>-->
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
