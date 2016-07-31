@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             HorizontalAlignment="Stretch"
+             HorizontalAlignment="Left"
              HorizontalContentAlignment="Left"
-             VerticalAlignment="Stretch"
-             VerticalContentAlignment="Top"
+             VerticalAlignment="Top"
+             VerticalContentAlignment="Center"
              Height="auto"
              Width="auto">
     <Grid>
@@ -30,7 +30,7 @@
         <Button Content="Select Where" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectWhere}" Grid.Row="2" Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
         <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedWhereColumnName}" Grid.Row="2" Width="200" Height="28" HorizontalAlignment="Left" Margin="115,4,0,4" />
         <ComboBox ItemsSource="{Binding ConditionalOperands}" SelectedValue="{Binding SelectedOperand}" Grid.Row="2" Width="60" Height="28" HorizontalAlignment="Left" Margin="320,4,0,4" />
-        <TextBox Text="{Binding TextBoxSelectWhere}" Grid.Row="2" Width="180" Height="28" HorizontalAlignment="Left" Margin="385,4,0,4" />
+        <TextBox Text="{Binding TextBoxSelectWhere}" Grid.Row="2" Width="180" Height="28" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="385,4,0,4" />
 
     </Grid>
 </UserControl>
