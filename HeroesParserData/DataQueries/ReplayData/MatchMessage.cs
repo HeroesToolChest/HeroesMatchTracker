@@ -46,19 +46,19 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static async Task<List<ReplayMatchMessage>> ReadTop100RecordsAsync()
+            public static async Task<List<ReplayMatchMessage>> ReadTopRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchMessages.Take(100).ToListAsync();
+                    return await db.ReplayMatchMessages.Take(num).ToListAsync();
                 }
             }
 
-            public static async Task<List<ReplayMatchMessage>> ReadLast100RecordsAsync()
+            public static async Task<List<ReplayMatchMessage>> ReadLastRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchMessages.OrderByDescending(x => x.ReplayId).Take(100).ToListAsync();
+                    return await db.ReplayMatchMessages.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
                 }
             }
 

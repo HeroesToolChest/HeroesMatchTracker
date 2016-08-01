@@ -44,13 +44,13 @@ namespace HeroesParserData.ViewModels.Data
 
         protected override async Task ReadDataTop()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadTop100RecordsAsync());
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadTopRecordsAsync(100));
             RowsReturned = ReplayMatchMessage.Count;
         }
 
         protected override async Task ReadDataLast()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadLast100RecordsAsync());
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadLastRecordsAsync(100));
             RowsReturned = ReplayMatchMessage.Count;
         }
 
