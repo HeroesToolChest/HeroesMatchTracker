@@ -20,6 +20,9 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader">
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
     <!--<Color x:Key="HighlightColor">#4e80ca</Color>
     <Color x:Key="AccentColor">#595959</Color>
 

@@ -6,6 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Views="clr-namespace:HeroesParserData.Views"
         xmlns:ViewsData="clr-namespace:HeroesParserData.Views.Data"
+        xmlns:ViewsMatch="clr-namespace:HeroesParserData.Views.Match"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
@@ -24,8 +25,7 @@
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
-                <Grid>
-                </Grid>
+                <ViewsMatch:LastMatchControl></ViewsMatch:LastMatchControl>
             </TabItem>
             <TabItem Header="QuickMatch">
                 <Grid>

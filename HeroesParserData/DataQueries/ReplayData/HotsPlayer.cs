@@ -137,6 +137,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                 // battleNetId is not unique
                 return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
             }
+
+            public static async Task<ReplayAllHotsPlayer> ReadRecordFromPlayerId(long playerId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefaultAsync();
+                }
+            }
         }
     }
 }

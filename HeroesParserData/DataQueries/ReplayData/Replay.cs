@@ -1,5 +1,6 @@
 ﻿using HeroesParserData.Models.DbModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
@@ -137,6 +138,31 @@ namespace HeroesParserData.DataQueries.ReplayData
                 {
                     return db.Replays.Count();
                 }
+            }
+
+            public static async Task<Models.DbModels.Replay> ReadReplayRecord(long replayId)
+            {
+                Models.DbModels.Replay replay = new Models.DbModels.Replay();
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    replay = await db.Replays.Where(x => x.ReplayId == replayId)
+                        .Include(x => x.ReplayMatchPlayers).Include(x => x.ReplayMatchPlayerTalents)
+                        .FirstOrDefaultAsync();
+
+                    if (replay == null)
+                        return null;
+
+                    //replay.ReplayMatchPlayers = await db.ReplayMatchPlayers.Where(x => x.ReplayId == replayId).ToListAsync();
+                    //replay.ReplayMatchPlayerTalents = await db.ReplayMatchPlayerTalents.Where(x => x.ReplayId == replayId).ToListAsync();
+
+                    //foreach (var player in replay.ReplayMatchPlayers)
+                    //{
+                    //    player.ReplayAllHotsPlayer = await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == player.PlayerId).FirstAsync();
+                    //}
+                }
+
+                return replay;
             }
         }
     }

@@ -89,6 +89,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.ReplayMatchPlayers.SqlQuery($"SELECT * FROM dbo.ReplayMatchPlayers WHERE {columnName} {operand} @Input", new SqlParameter("@Input", input)).ToListAsync();
                 }
             }
+
+            public static async Task<List<ReplayMatchPlayer>> ReadRecordsByReplayId(long replayId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayMatchPlayers.Where(x => x.ReplayId == replayId).ToListAsync();
+                }
+            }
         }
     }
 }
