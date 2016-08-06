@@ -1,7 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Abathur>
-  <AbathurMasteryPressurizedGlands>storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
-  <AbathurCombatStyleSurvivalInstincts>storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleSurvivalInstincts>
-  <AbathurMasteryRegenerativeMicrobes>storm_ui_icon_abathur_carapace.dds</AbathurMasteryRegenerativeMicrobes>
-  <AbathurMasteryEnvenomedNestsToxicNest>storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryEnvenomedNestsToxicNest>
+  <AbathurMasteryPressurizedGlands name="Pressurized Glands">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
+  <AbathurCombatStyleSurvivalInstincts name="Survival Instincts">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleSurvivalInstincts>
+  <AbathurMasteryRegenerativeMicrobes name="Regenerative Microbes">storm_ui_icon_abathur_carapace.dds</AbathurMasteryRegenerativeMicrobes>
+  <AbathurMasteryEnvenomedNestsToxicNest name="Envenomed Nest">storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryEnvenomedNestsToxicNest>
+
+  <AbathurMasteryProlificDispersal name="Prolific Dispersal">storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryProlificDispersal>
+  <AbathurMasteryBallistospores name="Ballistospores">storm_ui_icon_abathur_toxicnest_var1.dds</AbathurMasteryBallistospores>
+  <AbathurSymbioteCarapaceSustainedCarapace name="Sustained Carapace">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapaceSustainedCarapace>
+  <AbathurSymbioteAdrenalOverload name="Adrenal Overload">storm_ui_icon_abathur_symbiote.dds</AbathurSymbioteAdrenalOverload>
+
+  <AbathurMasteryNeedlespine name="Needlespine">storm_ui_icon_abathur_stab.dds</AbathurMasteryNeedlespine>
+  <AbathurMasteryVileNestsToxicNest name="Vile Nest">storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryVileNestsToxicNest>
+  <AbathurSymbioteCarapaceNetworkedCarapace name="Networked Carapace">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapaceNetworkedCarapace>
+  <GenericTalentCalldownMULE name="Calldown: MULE">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+  
+  <AbathurHeroicAbilityUltimateEvolution name="Ultimate Evolution">storm_ui_icon_abathur_ultimateevolution.dds</AbathurHeroicAbilityUltimateEvolution>
+  <AbathurHeroicAbilityEvolveMonstrosity name="Evolve Monstrosity">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurHeroicAbilityEvolveMonstrosity>
+
+  <AbathurCombatStyleAssaultStrain name="Assault Strain">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleAssaultStrain>
+  <AbathurCombatStyleBombardStrain name="Bombard Strain">storm_ui_icon_abathur_spawnlocust_var1.dds</AbathurCombatStyleBombardStrain>
+  <AbathurMasterySpatialEfficiency name="Spatial Efficiency">storm_ui_icon_abathur_stab.dds</AbathurMasterySpatialEfficiency>
+  <AbathurSymbioteSpikeBurstSomaTransference name="Soma Transference">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurstSomaTransference>
+  
+  <AbathurMasteryEnvenomedSpikes name="Envenomed Spikes">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryEnvenomedSpikes>
+  <AbathurMasteryAdrenalineBoost name="Adrenaline Boost">storm_ui_icon_abathur_carapace.dds</AbathurMasteryAdrenalineBoost>
+  <AbathurCombatStyleLocustSwarm name="Locust Brood">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustSwarm>
+  <AbathurVolatileMutation name="Volatile Mutation">storm_ui_icon_abathur_volatilemutation.dds</AbathurVolatileMutation>
+
+  <AbathurUltimateEvolutionEvolutionaryLink name="Evolutionary Link">AbathurHeroicAbilityUltimateEvolution</AbathurUltimateEvolutionEvolutionaryLink>
+  <AbathurMasteryEvolutionComplete name="Evolution Complete">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurMasteryEvolutionComplete>
+  <AbathurSymbioteHivemind name="Hivemind">storm_ui_icon_abathur_symbiote.dds</AbathurSymbioteHivemind>
+  <AbathurMasteryLocustMaster name="Locust Nest">storm_ui_icon_abathur_locustnest.dds</AbathurMasteryLocustMaster>
 </Abathur>

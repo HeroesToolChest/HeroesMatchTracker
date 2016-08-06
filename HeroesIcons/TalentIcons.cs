@@ -8,23 +8,37 @@ namespace HeroesIcons
 {
     public class TalentIcons
     {
-        private Dictionary<string, Uri> Talents = new Dictionary<string, Uri>();
+        private Dictionary<string, Tuple<string, Uri>> Talents = new Dictionary<string, Tuple<string, Uri>>();
 
         public TalentIcons()
         {
             SetTalentNamesIcons();
         }
 
-        public BitmapImage GetTalentIcon(string nameOfTalent)
+        public BitmapImage GetTalentIcon(string nameOfHeroTalent)
         {
-            Uri uri;
-            if (string.IsNullOrEmpty(nameOfTalent))
+            Tuple<string, Uri> talent;
+
+            if (string.IsNullOrEmpty(nameOfHeroTalent))
                 return null;
 
-            if (!Talents.TryGetValue(nameOfTalent, out uri))
-                uri = Talents["IconDefault"];
+            if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
+                talent = Talents["IconDefault"];
 
-            return new BitmapImage(uri);
+            return new BitmapImage(talent.Item2);
+        }
+
+        public string GetTrueTalentName(string nameOfHeroTalent)
+        {
+            Tuple<string, Uri> talent;
+
+            if (string.IsNullOrEmpty(nameOfHeroTalent))
+                return null;
+
+            if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
+                talent = Talents["IconDefault"];
+
+            return talent.Item1;
         }
 
         private Uri SetHeroTalentUri(string hero, string fileName)
@@ -61,7 +75,15 @@ namespace HeroesIcons
                             continue;
 
                         XElement el = (XElement)XNode.ReadFrom(reader);
-                        Talents.Add(el.Name.ToString(), SetHeroTalentUri(hero, el.Value));
+                        string talentName;
+                        var attributeName = el.Attribute("name");
+
+                        if (attributeName == null)
+                            talentName = el.Name.ToString();
+                        else
+                            talentName = attributeName.Value;
+
+                        Talents.Add(el.Name.ToString(), new Tuple<string, Uri>(talentName, SetHeroTalentUri(hero, el.Value)));
                     }
                 }
             }

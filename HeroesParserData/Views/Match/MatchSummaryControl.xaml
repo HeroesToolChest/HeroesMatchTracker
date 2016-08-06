@@ -53,49 +53,77 @@
                         <DataGridTemplateColumn Header="1" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent1}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent1}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName1}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="4" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent4}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent4}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName4}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="7" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent7}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent7}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName7}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="10" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent10}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent10}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName10}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="13" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent13}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent13}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName13}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="16" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent16}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent16}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName16}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="20" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent20}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent20}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName20}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -117,49 +145,77 @@
                         <DataGridTemplateColumn Header="1" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent1}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent1}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName1}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="4" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent4}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent4}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName4}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="7" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent7}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent7}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName7}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="10" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent10}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent10}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName10}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="13" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent13}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent13}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName13}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="16" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent16}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent16}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName16}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="20" Width="60">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Talent20}" Height="40" Width="40" />
+                                    <Image Source="{Binding Talent20}" Height="40" Width="40">
+                                        <Image.ToolTip>
+                                            <ToolTip Content="{Binding TalentName20}"></ToolTip>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

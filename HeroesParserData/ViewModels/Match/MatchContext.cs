@@ -27,8 +27,6 @@ namespace HeroesParserData.ViewModels.Match
         private Models.DbModels.Replay _selectedReplay;
         #endregion properties
 
-        protected TalentIcons TalentIcons = new TalentIcons();
-
         #region public properties
         public ObservableCollection<MatchInfo> MatchInfoTeam1
         {
@@ -121,6 +119,8 @@ namespace HeroesParserData.ViewModels.Match
         }
         #endregion public properties
 
+        protected TalentIcons TalentIcons = new TalentIcons();
+
         public ICommand Refresh
         {
             get { return new DelegateCommand(async () => await RefreshExecute()); }
@@ -128,7 +128,7 @@ namespace HeroesParserData.ViewModels.Match
 
         public ICommand DisplayReplayDetails
         {
-            get { return new DelegateCommand(async () => await LoadReplayDetails(SelectedReplay.ReplayId)); }
+            get { return new DelegateCommand(async () => await LoadReplayDetails(SelectedReplay)); }
         }
         protected MatchContext()
             :base()
@@ -138,12 +138,15 @@ namespace HeroesParserData.ViewModels.Match
 
         protected abstract Task RefreshExecute();
 
-        private async Task LoadReplayDetails(long replayId)
+        private async Task LoadReplayDetails(Models.DbModels.Replay replay)
         {
-            await QueryGameDetails(replayId);
+            if (replay == null)
+                return;
+
+            await QueryGameDetails(replay.ReplayId);
         }
 
-        private async Task QueryGameDetails(long replayId)
+        protected async Task QueryGameDetails(long replayId)
         {
             MatchInfoTeam1.Clear();
             MatchInfoTeam2.Clear();
@@ -170,6 +173,14 @@ namespace HeroesParserData.ViewModels.Match
                 matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName5);
                 matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName6);
                 matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+
+                matchinfo.TalentName1 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
+                matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName2);
+                matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName3);
+                matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
+                matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName5);
+                matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName6);
+                matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
 
                 if (player.Team == 0)
                     MatchInfoTeam1.Add(matchinfo);
