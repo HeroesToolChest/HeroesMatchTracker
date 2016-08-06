@@ -6,18 +6,23 @@
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
              xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match"
              mc:Ignorable="d" 
-             HorizontalAlignment="Left"
-             VerticalAlignment="Top"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             Height="auto"
+             Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:UnrankedDraftViewModel}" d:DesignWidth="1436" d:DesignHeight="528">
     <UserControl.DataContext>
         <ViewModels:UnrankedDraftViewModel />
     </UserControl.DataContext>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="1024"></ColumnDefinition>
-            <ColumnDefinition MinWidth="545"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
-        <local:MatchListControl Grid.Column="1" Margin="5,2,-5,-2"></local:MatchListControl>
-    </Grid>
+    <DockPanel>
+        <local:MatchStatusBarControl DockPanel.Dock="Bottom"></local:MatchStatusBarControl>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="1024"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+            <local:MatchListControl Grid.Column="1"></local:MatchListControl>
+        </Grid>
+    </DockPanel>
 </UserControl>

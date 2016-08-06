@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchTeamBan = value;
-                RaisePropertyChangedEvent("ReplayMatchTeamBan");
+                RaisePropertyChangedEvent(nameof(ReplayMatchTeamBan));
             }
         }
 

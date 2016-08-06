@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchTeamLevel = value;
-                RaisePropertyChangedEvent("ReplayMatchTeamLevel");
+                RaisePropertyChangedEvent(nameof(ReplayMatchTeamLevel));
             }
         }
 

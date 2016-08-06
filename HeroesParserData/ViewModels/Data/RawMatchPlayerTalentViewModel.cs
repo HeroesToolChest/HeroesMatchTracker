@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchPlayerTalent = value;
-                RaisePropertyChangedEvent("ReplayMatchPlayerTalent");
+                RaisePropertyChangedEvent(nameof(ReplayMatchPlayerTalent));
             }
         }
 

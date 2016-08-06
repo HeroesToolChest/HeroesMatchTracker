@@ -175,6 +175,9 @@
     <Compile Include="Views\Match\MatchListControl.xaml.cs">
       <DependentUpon>MatchListControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Match\MatchStatusBarControl.xaml.cs">
+      <DependentUpon>MatchStatusBarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Match\MatchSummaryControl.xaml.cs">
       <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
     </Compile>
@@ -283,6 +286,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Match\MatchListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\MatchStatusBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,16 +25,27 @@ namespace HeroesParserData.ViewModels.Match
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
+        private int _rowsReturned;
         #endregion properties
 
         #region public properties
+        public int RowsReturned
+        {
+            get { return _rowsReturned; }
+            set
+            {
+                _rowsReturned = value;
+                RaisePropertyChangedEvent(nameof(RowsReturned));
+            }
+        }
+
         public ObservableCollection<MatchInfo> MatchInfoTeam1
         {
             get { return _matchInfoTeam1; }
             set
             {
                 _matchInfoTeam1 = value;
-                RaisePropertyChangedEvent("MatchInfoTeam1");
+                RaisePropertyChangedEvent(nameof(MatchInfoTeam1));
             }
         }
 
@@ -44,7 +55,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _matchInfoTeam2 = value;
-                RaisePropertyChangedEvent("MatchInfoTeam2");
+                RaisePropertyChangedEvent(nameof(MatchInfoTeam2));
             }
         }
 
@@ -54,7 +65,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _matchList = value;
-                RaisePropertyChangedEvent("MatchList");
+                RaisePropertyChangedEvent(nameof(MatchList));
             }
         }
 
@@ -64,7 +75,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _replayId = value;
-                RaisePropertyChangedEvent("ReplayId");
+                RaisePropertyChangedEvent(nameof(ReplayId));
             }
         }
 
@@ -74,7 +85,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _gameMode = value;
-                RaisePropertyChangedEvent("GameMode");
+                RaisePropertyChangedEvent(nameof(GameMode));
             }
         }
 
@@ -84,7 +95,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _mapName = value;
-                RaisePropertyChangedEvent("MapName");
+                RaisePropertyChangedEvent(nameof(MapName));
             }
         }
 
@@ -94,7 +105,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _gameDate = value;
-                RaisePropertyChangedEvent("GameDate");
+                RaisePropertyChangedEvent(nameof(GameDate));
             }
         }
 
@@ -104,7 +115,7 @@ namespace HeroesParserData.ViewModels.Match
             set
             {
                 _gameTime = value;
-                RaisePropertyChangedEvent("GameTime");
+                RaisePropertyChangedEvent(nameof(GameTime));
             }
         }
 

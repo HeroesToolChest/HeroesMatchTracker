@@ -35,7 +35,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _isQueryActive = value;
-                RaisePropertyChangedEvent("IsQueryActive");
+                RaisePropertyChangedEvent(nameof(IsQueryActive));
             }
         }
 
@@ -45,7 +45,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedNumber = value;
-                RaisePropertyChangedEvent("SelectedNumber");
+                RaisePropertyChangedEvent(nameof(SelectedNumber));
             }
         }
 
@@ -55,7 +55,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedWhereColumnName = value;
-                RaisePropertyChangedEvent("SelectedWhereColumnName");
+                RaisePropertyChangedEvent(nameof(SelectedWhereColumnName));
             }
         }
 
@@ -65,7 +65,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedTopColumnName = value;
-                RaisePropertyChangedEvent("SelectedTopColumnName");
+                RaisePropertyChangedEvent(nameof(SelectedTopColumnName));
             }
         }
 
@@ -75,7 +75,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedOperand = value;
-                RaisePropertyChangedEvent("SelectedOperand");
+                RaisePropertyChangedEvent(nameof(SelectedOperand));
             }
         }
 
@@ -85,7 +85,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _textBoxSelectWhere = value;
-                RaisePropertyChangedEvent("TextBoxSelectWhere");
+                RaisePropertyChangedEvent(nameof(TextBoxSelectWhere));
             }
         }
 
@@ -95,7 +95,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedTopOrderBy = value;
-                RaisePropertyChangedEvent("SelectedTopOrderBy");
+                RaisePropertyChangedEvent(nameof(SelectedTopOrderBy));
             }
         }
 
@@ -105,7 +105,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _columnNames = value;
-                RaisePropertyChangedEvent("ColumnNames");
+                RaisePropertyChangedEvent(nameof(ColumnNames));
             }
         }
 
@@ -115,7 +115,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _conditionalOperands = value;
-                RaisePropertyChangedEvent("ConditionalOperands");
+                RaisePropertyChangedEvent(nameof(ConditionalOperands));
             }
         }
 
@@ -125,7 +125,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _orderBy = value;
-                RaisePropertyChangedEvent("OrderBy");
+                RaisePropertyChangedEvent(nameof(OrderBy));
             }
         }
 
@@ -135,7 +135,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _rowsReturned = value;
-                RaisePropertyChangedEvent("RowsReturned");
+                RaisePropertyChangedEvent(nameof(RowsReturned));
             }
         }
 
@@ -145,7 +145,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _queryStatus = value;
-                RaisePropertyChangedEvent("QueryStatus");
+                RaisePropertyChangedEvent(nameof(QueryStatus));
             }
         }
         #endregion properties

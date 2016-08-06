@@ -12,8 +12,10 @@
     <UserControl.DataContext>
         <ViewModels:LastGameViewModel />
     </UserControl.DataContext>
-    <Grid>
-        <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Margin="1029,9,-105,0"/>
-        <local:MatchSummaryControl></local:MatchSummaryControl>
-    </Grid>
+    <DockPanel>
+        <Grid>
+            <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,9,-105,0" />
+            <local:MatchSummaryControl DockPanel.Dock="Bottom"></local:MatchSummaryControl>
+        </Grid>
+    </DockPanel>
 </UserControl>

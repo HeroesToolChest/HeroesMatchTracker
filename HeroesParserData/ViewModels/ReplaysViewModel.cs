@@ -39,7 +39,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _currentStatus = value;
-                RaisePropertyChangedEvent("CurrentStatus");
+                RaisePropertyChangedEvent(nameof(CurrentStatus));
             }
         }
 
@@ -49,7 +49,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _isProcessSelected = value;
-                RaisePropertyChangedEvent("IsProcessSelected");
+                RaisePropertyChangedEvent(nameof(IsProcessSelected));
             }
         }
 
@@ -59,7 +59,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _isProcessWatchSelected = value;
-                RaisePropertyChangedEvent("IsProcessWatchSelected");
+                RaisePropertyChangedEvent(nameof(IsProcessWatchSelected));
             }
         }
 
@@ -69,7 +69,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _areProcessButtonsEnabled = value;
-                RaisePropertyChangedEvent("AreProcessButtonsEnabled");
+                RaisePropertyChangedEvent(nameof(AreProcessButtonsEnabled));
             }
         }
 
@@ -79,7 +79,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _totalParsedGrid = value;
-                RaisePropertyChangedEvent("TotalParsedGrid");
+                RaisePropertyChangedEvent(nameof(TotalParsedGrid));
             }
         }
 
@@ -89,7 +89,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _totalReplaysGrid = value;
-                RaisePropertyChangedEvent("TotalReplaysGrid");
+                RaisePropertyChangedEvent(nameof(TotalReplaysGrid));
             }
         }
 
@@ -99,7 +99,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _totalSavedInDatabase = value;
-                RaisePropertyChangedEvent("TotalSavedInDatabase");
+                RaisePropertyChangedEvent(nameof(TotalSavedInDatabase));
             }
         }
 
@@ -114,7 +114,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 Settings.Default.ReplaysLocation = value;
-                RaisePropertyChangedEvent("ReplaysLocation");
+                RaisePropertyChangedEvent(nameof(ReplaysLocation));
             }
         }
         #endregion
