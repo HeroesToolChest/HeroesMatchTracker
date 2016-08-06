@@ -1,4 +1,5 @@
-﻿using HeroesIcons;
+﻿using Heroes.ReplayParser;
+using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Models.DbModels;
@@ -17,13 +18,13 @@ namespace HeroesParserData.ViewModels.Match
         #region properties
         private ObservableCollection<MatchInfo> _matchInfoTeam1 = new ObservableCollection<MatchInfo>();
         private ObservableCollection<MatchInfo> _matchInfoTeam2 = new ObservableCollection<MatchInfo>();
-        private ObservableCollection<Replay> _matchList = new ObservableCollection<Replay>();
+        private ObservableCollection<Models.DbModels.Replay> _matchList = new ObservableCollection<Models.DbModels.Replay>();
         private long _replayId;
-        private string _gameMode;
+        private GameMode _gameMode;
         private string _mapName;
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
-        private Replay _selectedReplay;
+        private Models.DbModels.Replay _selectedReplay;
         #endregion properties
 
         protected TalentIcons TalentIcons = new TalentIcons();
@@ -49,7 +50,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public ObservableCollection<Replay> MatchList
+        public ObservableCollection<Models.DbModels.Replay> MatchList
         {
             get { return _matchList; }
             set
@@ -69,7 +70,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public string GameMode
+        public GameMode GameMode
         {
             get { return _gameMode; }
             set
@@ -109,7 +110,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public Replay SelectedReplay
+        public Models.DbModels.Replay SelectedReplay
         {
             get { return _selectedReplay; }
             set
@@ -147,7 +148,7 @@ namespace HeroesParserData.ViewModels.Match
             MatchInfoTeam1.Clear();
             MatchInfoTeam2.Clear();
 
-            Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
+            Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
             List<ReplayMatchPlayer> players = await Query.MatchPlayer.ReadRecordsByReplayId(replay.ReplayId);
             List<ReplayMatchPlayerTalent> playerTalents = await Query.MatchPlayerTalent.ReadRecordsByReplayId(replay.ReplayId);

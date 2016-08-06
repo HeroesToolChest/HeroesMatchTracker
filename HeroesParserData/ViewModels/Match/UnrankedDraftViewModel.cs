@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class QuickMatchViewModel : MatchContext
+    public class UnrankedDraftViewModel : MatchContext
     {
-        public QuickMatchViewModel()
+        public UnrankedDraftViewModel()
             :base()
         {
 
@@ -20,7 +20,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private async Task QueryMatchList()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.QuickMatch));
+            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.UnrankedDraft));
         }
     }
 }

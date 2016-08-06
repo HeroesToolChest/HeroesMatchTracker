@@ -6,14 +6,14 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
              mc:Ignorable="d" 
-             d:DesignHeight="459.115" d:DesignWidth="601.932">
+             d:DesignHeight="435.115" d:DesignWidth="546.932">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45.5"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Margin="0,7,0,0"/>
-        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1"
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" SelectionMode="Single"
                         EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" SelectedItem="{Binding SelectedReplay}"
                         ItemsSource="{Binding MatchList, IsAsync=True}">
             <DataGrid.Columns>

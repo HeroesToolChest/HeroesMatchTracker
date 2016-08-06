@@ -1,5 +1,6 @@
 namespace HeroesParserData.Models.DbModels
 {
+    using Heroes.ReplayParser;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -35,8 +36,7 @@ namespace HeroesParserData.Models.DbModels
 
         public TimeSpan ReplayLength { get; set; }
 
-        [StringLength(50)]
-        public string GameMode { get; set; }
+        public GameMode GameMode { get; set; }
 
         [StringLength(50)]
         public string GameSpeed { get; set; }

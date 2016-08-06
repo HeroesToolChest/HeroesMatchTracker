@@ -12,12 +12,14 @@
     <UserControl.DataContext>
         <ViewModels:QuickMatchViewModel />
     </UserControl.DataContext>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="1024"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
-        <local:MatchListControl Grid.Column="1" Margin="5,2,-5,-2"></local:MatchListControl>
-    </Grid>
+    <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="1024"></ColumnDefinition>
+                <ColumnDefinition MinWidth="545"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+            <local:MatchListControl Grid.Column="1" Margin="5,2,-5,-2"></local:MatchListControl>
+        </Grid>
+    <!--</ScrollViewer>-->
 </UserControl>

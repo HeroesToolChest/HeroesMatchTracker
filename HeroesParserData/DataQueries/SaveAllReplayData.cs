@@ -65,7 +65,7 @@ namespace HeroesParserData.DataQueries
             Models.DbModels.Replay replayData = new Models.DbModels.Replay
             {
                 Frames = Replay.Frames,
-                GameMode = Replay.GameMode.ToString(),
+                GameMode = Replay.GameMode,
                 GameSpeed = Replay.GameSpeed.ToString(),
                 IsGameEventsParsed = Replay.IsGameEventsParsedSuccessfully,
                 MapName = Replay.Map,

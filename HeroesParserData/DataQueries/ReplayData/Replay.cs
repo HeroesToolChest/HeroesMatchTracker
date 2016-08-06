@@ -1,4 +1,5 @@
-﻿using HeroesParserData.Models.DbModels;
+﻿using Heroes.ReplayParser;
+using HeroesParserData.Models.DbModels;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.Replays.ToListAsync();
                 }
             }
-            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(string gameMode)
+            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(GameMode gameMode)
             {
                 using (var db = new HeroesParserDataContext())
                 {

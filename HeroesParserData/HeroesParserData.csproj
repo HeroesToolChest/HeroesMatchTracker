@@ -119,9 +119,12 @@
     <Compile Include="ViewModels\Data\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\Data\RawReplayViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
     <Compile Include="ViewModels\Match\LastGameViewModel.cs" />
     <Compile Include="ViewModels\Match\MatchContext.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
+    <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -163,6 +166,9 @@
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Match\HeroLeagueControl.xaml.cs">
+      <DependentUpon>HeroLeagueControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Match\LastMatchControl.xaml.cs">
       <DependentUpon>LastMatchControl.xaml</DependentUpon>
     </Compile>
@@ -174,6 +180,12 @@
     </Compile>
     <Compile Include="Views\Match\QuickMatchControl.xaml.cs">
       <DependentUpon>QuickMatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\TeamLeagueControl.xaml.cs">
+      <DependentUpon>TeamLeagueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\UnrankedDraftControl.xaml.cs">
+      <DependentUpon>UnrankedDraftControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReplaysControl.xaml.cs">
       <DependentUpon>ReplaysControl.xaml</DependentUpon>
@@ -262,6 +274,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Match\HeroLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Match\LastMatchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -275,6 +291,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Match\QuickMatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\TeamLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\UnrankedDraftControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

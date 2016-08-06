@@ -10,7 +10,7 @@
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
-        Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="720" Width="1280">
+        Title="Heroes Parser Data" MinHeight="576" MinWidth="1164" Height="720" Width="1600">
     <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
@@ -25,18 +25,29 @@
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
-                <ViewsMatch:LastMatchControl />
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ViewsMatch:LastMatchControl />
+                </ScrollViewer>
             </TabItem>
-            <TabItem Header="QuickMatch">
-                <ViewsMatch:QuickMatchControl />
+            <TabItem Header="Quick Match">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ViewsMatch:QuickMatchControl />
+                </ScrollViewer>
             </TabItem>
-            <TabItem Header="HeroLeague">
-                <Grid>
-                </Grid>
+            <TabItem Header="Unranked Draft">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ViewsMatch:UnrankedDraftControl />
+                </ScrollViewer>
             </TabItem>
-            <TabItem Header="TeamLeague">
-                <Grid>
-                </Grid>
+            <TabItem Header="Hero League">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ViewsMatch:HeroLeagueControl/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Team League">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ViewsMatch:TeamLeagueControl />
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Replays">
                 <Views:ReplaysControl/>

@@ -2,9 +2,7 @@
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Models.DbModels;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -12,99 +10,19 @@ namespace HeroesParserData.ViewModels.Match
 {
     public class LastGameViewModel : MatchContext
     {
-        //private ObservableCollection<MatchInfo> _matchInfoTeam1 = new ObservableCollection<MatchInfo>();
-        //private ObservableCollection<MatchInfo> _matchInfoTeam2 = new ObservableCollection<MatchInfo>();
-        //private long _replayId;
-        //private string _gameMode;
-        //private string _mapName;
-        //private DateTime? _gameDate;
-        //private TimeSpan _gameTime;
-
-        //private TalentIcons TalentIcons = new TalentIcons();
-
-        //public ObservableCollection<MatchInfo> MatchInfoTeam1
-        //{
-        //    get { return _matchInfoTeam1; }
-        //    set
-        //    {
-        //        _matchInfoTeam1 = value;
-        //        RaisePropertyChangedEvent("MatchInfoTeam1");
-        //    }
-        //}
-
-        //public ObservableCollection<MatchInfo> MatchInfoTeam2
-        //{
-        //    get { return _matchInfoTeam2; }
-        //    set
-        //    {
-        //        _matchInfoTeam2 = value;
-        //        RaisePropertyChangedEvent("MatchInfoTeam2");
-        //    }
-        //}
-
-        //public long ReplayId
-        //{
-        //    get { return _replayId; }
-        //    set
-        //    {
-        //        _replayId = value;
-        //        RaisePropertyChangedEvent("ReplayId");
-        //    }
-        //}
-
-        //public string GameMode
-        //{
-        //    get { return _gameMode; }
-        //    set
-        //    {
-        //        _gameMode = value;
-        //        RaisePropertyChangedEvent("GameMode");
-        //    }
-        //}
-
-        //public string MapName
-        //{
-        //    get { return _mapName; }
-        //    set
-        //    {
-        //        _mapName = value;
-        //        RaisePropertyChangedEvent("MapName");
-        //    }
-        //}
-
-        //public DateTime? GameDate
-        //{
-        //    get { return _gameDate; }
-        //    set
-        //    {
-        //        _gameDate = value;
-        //        RaisePropertyChangedEvent("GameDate");
-        //    }
-        //}
-
-        //public TimeSpan GameTime
-        //{
-        //    get { return _gameTime; }
-        //    set
-        //    {
-        //        _gameTime = value;
-        //        RaisePropertyChangedEvent("GameTime");
-        //    }
-        //}
-
-        //public new ICommand Refresh
-        //{
-        //    get { return new DelegateCommand(async () => await QueryGameDetails()); }
-        //}
-
         public LastGameViewModel()
             :base()
         {
         }
 
-        protected override Task RefreshExecute()
+        public new ICommand Refresh
         {
-            throw new NotImplementedException();
+            get { return new DelegateCommand(async () => await RefreshExecute()); }
+        }
+
+        protected override async Task RefreshExecute()
+        {
+            await QueryGameDetails();
         }
 
         private async Task QueryGameDetails()
@@ -112,7 +30,7 @@ namespace HeroesParserData.ViewModels.Match
             MatchInfoTeam1.Clear();
             MatchInfoTeam2.Clear();
 
-            Replay replay = (await Query.Replay.ReadLastRecordsAsync(1))[0];
+            Models.DbModels.Replay replay = (await Query.Replay.ReadLastRecordsAsync(1))[0];
 
             replay = await Query.Replay.ReadReplayIncludeRecord(replay.ReplayId);
 
