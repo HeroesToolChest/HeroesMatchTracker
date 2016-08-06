@@ -10,6 +10,8 @@ namespace HeroesParserData.Models
     public class MatchInfo
     {
         public string PlayerName { get; set; }
+        public int BattleNetTag { get; set; }
+        public int BattleNetId { get; set; }
         public string CharacterName { get; set; }
         public int CharacterLevel { get; set; }
         public BitmapImage Talent1 { get; set; }

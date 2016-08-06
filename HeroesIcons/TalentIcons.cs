@@ -1,7 +1,8 @@
-﻿using HeroesIcons.Heroes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace HeroesIcons
 {
@@ -21,7 +22,7 @@ namespace HeroesIcons
                 return null;
 
             if (!Talents.TryGetValue(nameOfTalent, out uri))
-                uri = Talents[nameof(_Generic.IconDefault)];
+                uri = Talents["IconDefault"];
 
             return new BitmapImage(uri);
         }
@@ -33,8 +34,37 @@ namespace HeroesIcons
 
         private void SetTalentNamesIcons()
         {
-            Talents.Add(nameof(_Generic.IconDefault), SetHeroTalentUri(_Generic.Hero, _Generic.IconDefault));
-            Talents.Add(nameof(Abathur.AbathurCombatStyleSurvivalInstincts), SetHeroTalentUri(Abathur.Hero, Abathur.AbathurCombatStyleSurvivalInstincts));
+            List<string> heroes = new List<string>();
+            using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
+            {
+                reader.ReadStartElement("Heroes");
+
+                while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                {
+                    if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
+                        continue;
+
+                    XElement el = (XElement)XNode.ReadFrom(reader);
+                    heroes.Add(el.Name.ToString());
+                }
+            }
+
+            foreach (var hero in heroes)
+            {
+                using (XmlTextReader reader = new XmlTextReader($@"Heroes/{hero}.xml"))
+                {
+                    reader.ReadStartElement(hero);
+
+                    while(reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                    {
+                        if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
+                            continue;
+
+                        XElement el = (XElement)XNode.ReadFrom(reader);
+                        Talents.Add(el.Name.ToString(), SetHeroTalentUri(hero, el.Value));
+                    }
+                }
+            }
         }
     }
 }

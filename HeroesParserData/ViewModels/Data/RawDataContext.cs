@@ -23,7 +23,7 @@ namespace HeroesParserData.ViewModels.Data
         private int _rowsReturned;
         private string _queryStatus;
         private Dictionary<ButtonCommands, Func<Task>> _buttonCommandActions;
-        #endregion
+        #endregion private properties
 
         #region properties
         public bool IsQueryActive
@@ -170,7 +170,7 @@ namespace HeroesParserData.ViewModels.Data
         {
             get { return new DelegateCommand(async () => await PerformButtonCommand(ButtonCommands.ReadDataWhere)); }
         }
-        #endregion
+        #endregion Button Commands
 
         protected RawDataContext()
             : base()
@@ -185,7 +185,7 @@ namespace HeroesParserData.ViewModels.Data
         protected abstract Task ReadDataLast();
         protected abstract Task ReadDataCustomTop();
         protected abstract Task ReadDataWhere();
-        #endregion
+        #endregion Abstract Query Methods
 
         private void AddButtonCommandsActions()
         {
@@ -219,7 +219,7 @@ namespace HeroesParserData.ViewModels.Data
             QueryStatus = "Executing query...";
             try
             {
-                 await _buttonCommandActions[commands]();
+                await _buttonCommandActions[commands]();
                 QueryStatus = "Query executed successfully";
             }
             catch (Exception ex)

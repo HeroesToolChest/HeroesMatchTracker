@@ -47,6 +47,13 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.Replays.ToListAsync();
                 }
             }
+            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(string gameMode)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.Replays.Where(x => x.GameMode == gameMode).ToListAsync();
+                }
+            }
 
             public static async Task<List<Models.DbModels.Replay>> ReadTopRecordsAsync(int num)
             {
@@ -140,7 +147,12 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static async Task<Models.DbModels.Replay> ReadReplayRecord(long replayId)
+            /// <summary>
+            /// Returns the Replay along with ReplayMatchPlayers and ReplayMatchPlayerTalents
+            /// </summary>
+            /// <param name="replayId">Replay Id</param>
+            /// <returns>Replay</returns>
+            public static async Task<Models.DbModels.Replay> ReadReplayIncludeRecord(long replayId)
             {
                 Models.DbModels.Replay replay = new Models.DbModels.Replay();
 
@@ -152,14 +164,6 @@ namespace HeroesParserData.DataQueries.ReplayData
 
                     if (replay == null)
                         return null;
-
-                    //replay.ReplayMatchPlayers = await db.ReplayMatchPlayers.Where(x => x.ReplayId == replayId).ToListAsync();
-                    //replay.ReplayMatchPlayerTalents = await db.ReplayMatchPlayerTalents.Where(x => x.ReplayId == replayId).ToListAsync();
-
-                    //foreach (var player in replay.ReplayMatchPlayers)
-                    //{
-                    //    player.ReplayAllHotsPlayer = await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == player.PlayerId).FirstAsync();
-                    //}
                 }
 
                 return replay;

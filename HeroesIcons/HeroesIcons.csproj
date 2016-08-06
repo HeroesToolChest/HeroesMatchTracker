@@ -42,12 +42,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Heroes\Abathur.cs" />
-    <Compile Include="Heroes\_Generic.cs" />
     <Compile Include="TalentIcons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_carapace.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_evolvemonstrosity.dds" />
@@ -172,6 +169,17 @@
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_talent_stormshield.dds" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Heroes\Abathur.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Heroes\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Heroes\_Generic.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Icons\Talents\Azmodan\storm_ui_icon_azmodan_allshallburn.dds" />
     <Content Include="Icons\Talents\Azmodan\storm_ui_icon_azmodan_blackpool.dds" />
     <Content Include="Icons\Talents\Azmodan\storm_ui_icon_azmodan_demonicinvasion.dds" />

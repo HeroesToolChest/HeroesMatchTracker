@@ -10,7 +10,7 @@
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
-        Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="576" Width="1024">
+        Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="720" Width="1280">
     <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
@@ -25,11 +25,10 @@
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
-                <ViewsMatch:LastMatchControl></ViewsMatch:LastMatchControl>
+                <ViewsMatch:LastMatchControl />
             </TabItem>
             <TabItem Header="QuickMatch">
-                <Grid>
-                </Grid>
+                <ViewsMatch:QuickMatchControl />
             </TabItem>
             <TabItem Header="HeroLeague">
                 <Grid>
