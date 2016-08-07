@@ -13,8 +13,7 @@
   <AbathurMasteryNeedlespine name="Needlespine">storm_ui_icon_abathur_stab.dds</AbathurMasteryNeedlespine>
   <AbathurMasteryVileNestsToxicNest name="Vile Nest">storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryVileNestsToxicNest>
   <AbathurSymbioteCarapaceNetworkedCarapace name="Networked Carapace">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapaceNetworkedCarapace>
-  <GenericTalentCalldownMULE name="Calldown: MULE">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
-  
+ 
   <AbathurHeroicAbilityUltimateEvolution name="Ultimate Evolution">storm_ui_icon_abathur_ultimateevolution.dds</AbathurHeroicAbilityUltimateEvolution>
   <AbathurHeroicAbilityEvolveMonstrosity name="Evolve Monstrosity">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurHeroicAbilityEvolveMonstrosity>
 
