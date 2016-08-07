@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Murky>
+  <Level1>
+    <MurkyBlockFishtank name="Fishtank">storm_ui_icon_talent_block.dds</MurkyBlockFishtank>
+    <MurkyMasteryBubbleBreeze name="Bubble Breeze">storm_ui_icon_Murky_SafetyBubble.dds</MurkyMasteryBubbleBreeze>
+    <MurkyMasteryAssaultEgg name="Assault Egg">storm_ui_icon_murky_trait_spawnegg.dds</MurkyMasteryAssaultEgg>
+    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
+  </Level1>
+  <Level4>
+    <MurkyMasteryBiggerSlime name="Bigger Slime">storm_ui_icon_Murky_Slime.dds</MurkyMasteryBiggerSlime>
+    <MurkyMasteryTufferfish name="Tufferfish">storm_ui_icon_Murky_Pufferfish.dds</MurkyMasteryTufferfish>
+    <MurkyLivingtheDream name="Living The Dream">storm_ui_icon_Murky_Trait_SpawnEgg_Var1.dds</MurkyLivingtheDream>
+    <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
+  </Level4>
+  <Level7>
+    <MurkyMasterySlimeAdvantage name="Slime Advantage">storm_ui_icon_Murky_Slime.dds</MurkyMasterySlimeAdvantage>
+    <MurkyMasteryHinderingSlow name="Hindering Slime">storm_ui_icon_Murky_Slime_Var1.dds</MurkyMasteryHinderingSlow>
+    <MurkyMasteryCompressedAir name="Compressed Air">storm_ui_icon_Murky_Pufferfish.dds</MurkyMasteryCompressedAir>
+    <GenericTalentClairvoyance name="Clairvoyance">storm_ui_icon_talent_clairvoyance.dds</GenericTalentClairvoyance>
+  </Level7>
+  <Level10>
+    <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs">storm_ui_icon_Murky_MarchOfTheMurlocs.dds</MurkyHeroicAbilityMarchoftheMurlocs>
+    <MurkyHeroicAbilityOctoGrab name="Octo-Grab">storm_ui_icon_Murky_OctoGrab.dds</MurkyHeroicAbilityOctoGrab>
+  </Level10>
+  <Level13>
+    <MurkyMasteryContinuousSlime name="Continuous Slime">storm_ui_icon_Murky_Slime.dds</MurkyMasteryContinuousSlime>
+    <MurkyMasteryWrathOfCod name="Wrath of Cod">storm_ui_icon_Murky_Pufferfish.dds</MurkyMasteryWrathOfCod>
+    <MurkyMasteryBubbleMachine name="Bubble Machine">storm_ui_icon_Murky_SafetyBubble.dds</MurkyMasteryBubbleMachine>
+    <MurkyMasteryHiddenAssault name="Hidden Assault">storm_ui_icon_murky_trait_spawnegg.dds</MurkyMasteryHiddenAssault>
+  </Level13>
+  <Level16>
+    <MurkyMasterySlimyEnd name="Slimy End">storm_ui_icon_Murky_Slime.dds</MurkyMasterySlimyEnd>
+    <MurkyMasterySlimyPufferfish name="Slimy Pufferfish">storm_ui_icon_Murky_Pufferfish.dds</MurkyMasterySlimyPufferfish>
+    <MurkyMasteryRejuvenatingBubble name="Rejuvenating Bubble">storm_ui_icon_Murky_SafetyBubble.dds</MurkyMasteryRejuvenatingBubble>
+    <GenericTalentBloodForBlood name="Blood for Blood">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
+  </Level16>
+  <Level20>
+    <MurkyMasteryNeverEndingMurlocs name="Never-Ending Murlocs">storm_ui_icon_Murky_MarchOfTheMurlocs.dds</MurkyMasteryNeverEndingMurlocs>
+    <MurkyMasteryAndASharkToo name="... And A Shark Too!">storm_ui_icon_Murky_OctoGrab.dds</MurkyMasteryAndASharkToo>
+    <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+</Murky>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Raynor>
+  <Level1>
+    <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryGiveMeMoreAdrenalineRush>
+    <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
+    <RaynorRaidersRecruitment name="Raiders' &quot;Recruitment&quot;">storm_ui_icon_raynor_raidersrecruitment.dds</RaynorRaidersRecruitment>
+    <GenericTalentScoutingDrone name="Scouting Drone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
+  </Level1>
+  <Level4>
+    <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
+    <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
+    <RaynorInspireConfidentAim name="Confident Aim">storm_ui_icon_raynor_penetratinground.dds</RaynorInspireConfidentAim>
+  </Level4>
+  <Level7>
+    <RaynorPenetratingRoundHamstringShot name="Hamstring Shot">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundHamstringShot>
+    <RaynorMasteryInspireRevolutionOverdrive name="Revolution Overdrive">storm_ui_icon_raynor_inspire.dds</RaynorMasteryInspireRevolutionOverdrive>
+    <RaynorMasteryFightorFlightAdrenalineRush name="Fight or Flight">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryFightorFlightAdrenalineRush>
+    <RaynorLeadFromTheFrontPuttinOnAClinic name="Puttin' On a Clinic">storm_ui_icon_raynor_puttinonaclinic.dds</RaynorLeadFromTheFrontPuttinOnAClinic>
+  </Level7>
+  <Level10>
+    <RaynorHeroicAbilityHyperion name="Hyperion">storm_ui_icon_raynor_hyperion.dds</RaynorHeroicAbilityHyperion>
+    <RaynorHeroicAbilityRaynorsRaiders name="Raynor's Raiders">storm_ui_icon_raynor_raynorsraiders.dds</RaynorHeroicAbilityRaynorsRaiders>
+  </Level10>
+  <Level13>
+    <GenericTalentGiantKiller name="Giant Killer">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+    <RaynorPenetratingRoundDoubleBarreled name="Double-Barreled">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundDoubleBarreled>
+    <RaynorInspireSteelResolve name="Steel Resolve">storm_ui_icon_raynor_inspire.dds</RaynorInspireSteelResolve>
+    <RaynorRelentlessLeader name="Relentless Leader">storm_ui_icon_raynor_relentlessleader.dds</RaynorRelentlessLeader>
+  </Level13>
+  <Level16>
+    <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+    <RaynorMasteryClusterRoundPenetratingRound name="Cluster Round">storm_ui_icon_raynor_penetratinground.dds</RaynorMasteryClusterRoundPenetratingRound>
+    <RaynorMasteryBullseyePenetratingRound name="Bullseye">storm_ui_icon_raynor_penetratinground_var1.dds</RaynorMasteryBullseyePenetratingRound>
+  </Level16>
+  <Level20>
+    <RaynorHyperionGroundStrafe name="Scorched Earth">storm_ui_icon_raynor_hyperion.dds</RaynorHyperionGroundStrafe>
+    <RaynorMasteryHelsAngelsRaynorsBanshees name="Dusk Wings">storm_ui_icon_raynor_raynorsraiders.dds</RaynorMasteryHelsAngelsRaynorsBanshees>
+    <RaynorACardToPlay name="A Card to Play">storm_ui_icon_raynor_acardtoplay.dds</RaynorACardToPlay>
+    <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+</Raynor>

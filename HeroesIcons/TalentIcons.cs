@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Xml.Linq;
@@ -19,11 +20,13 @@ namespace HeroesIcons
         {
             Tuple<string, Uri> talent;
 
+            // no pick
             if (string.IsNullOrEmpty(nameOfHeroTalent))
-                return null;
+                return new BitmapImage(new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Relative));
 
+            // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
-                talent = Talents["IconDefault"];
+                return new BitmapImage(new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Relative));                
 
             return new BitmapImage(talent.Item2);
         }
@@ -32,60 +35,88 @@ namespace HeroesIcons
         {
             Tuple<string, Uri> talent;
 
+            // no pick
             if (string.IsNullOrEmpty(nameOfHeroTalent))
-                return null;
+                return "No pick";
 
+            // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
                 return nameOfHeroTalent;
 
             return talent.Item1;
         }
 
-        private Uri SetHeroTalentUri(string hero, string fileName)
+        private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
-            return new Uri($@"/HeroesIcons;component//Icons/Talents/{hero}/{fileName}", UriKind.Relative);
+            if (!isGenericTalent)
+                return new Uri($@"/HeroesIcons;component/Icons/Talents/{hero}/{fileName}", UriKind.Relative);
+            else
+                return new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/{fileName}", UriKind.Relative);
         }
 
         private void SetTalentNamesIcons()
         {
-            List<string> heroes = new List<string>();
-            using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
+            try
             {
-                reader.ReadStartElement("Heroes");
-
-                while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                List<string> heroes = new List<string>();
+                using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
                 {
-                    if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
-                        continue;
+                    reader.ReadStartElement("Heroes");
 
-                    XElement el = (XElement)XNode.ReadFrom(reader);
-                    heroes.Add(el.Name.ToString());
-                }
-            }
-
-            foreach (var hero in heroes)
-            {
-                using (XmlTextReader reader = new XmlTextReader($@"Heroes/{hero}.xml"))
-                {
-                    reader.ReadStartElement(hero);
-
-                    while(reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                    while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
                     {
                         if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
                             continue;
 
                         XElement el = (XElement)XNode.ReadFrom(reader);
-                        string talentName;
-                        var attributeName = el.Attribute("name");
-
-                        if (attributeName == null)
-                            talentName = el.Name.ToString();
-                        else
-                            talentName = attributeName.Value;
-
-                        Talents.Add(el.Name.ToString(), new Tuple<string, Uri>(talentName, SetHeroTalentUri(hero, el.Value)));
+                        heroes.Add(el.Name.ToString());
                     }
                 }
+
+                foreach (var hero in heroes)
+                {
+                    using (XmlReader reader = XmlReader.Create($@"Heroes/{hero}.xml"))
+                    {
+                        reader.ReadStartElement(hero);
+
+                        while (reader.Read())
+                        {
+                            if (reader.IsStartElement())
+                            {
+                                string element = reader.Name;
+                                if (element == "Level1" || element == "Level4" || element == "Level7" ||
+                                    element == "Level10" || element == "Level13" || element == "Level16" ||
+                                    element == "Level20")
+                                {
+                                    while (reader.Read() && reader.Name != element)
+                                    {
+                                        if (reader.NodeType == XmlNodeType.Element)
+                                        {
+                                            string name = reader.Name; // raw name
+                                            string realName = reader["name"]; // real name
+                                            if (realName == null)
+                                                realName = string.Empty;
+
+                                            if (reader.Read())
+                                            {
+                                                bool isGeneric = false;
+                                                if (name.StartsWith("Generic") || name.StartsWith("BattleMomentum"))
+                                                    isGeneric = true;
+
+                                                if (!Talents.ContainsKey(name))
+                                                    Talents.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+
             }
         }
     }

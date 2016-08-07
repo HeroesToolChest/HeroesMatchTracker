@@ -1,8 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Heroes>
-  <_Generic />
   <Abathur />
-  <!--<Anubarak />
+  <Anubarak />
   <Artanis />
-  <Arthas />-->
+  <Arthas />
+  <Azmodan />
+  <Barbarian />
+  <Butcher />
+  <Chen />
+  <Cho />
+  <Chromie />
+  <Crusader />
+  <Dehaka />
+  <DemonHunter />
+  <Diablo />
+  <Dryad />
+  <FaerieDragon />
+  <Falstad />
+  <Gall />
+  <Greymane />
+  <Guldan />
+  <Illidan />
+  <Jaina />
+  <Kaelthas />
+  <Kerrigan />
+  <L90ETC />
+  <Leoric />
+  <LiLi />
+  <LostVikings />
+  <Malfurion />
+  <Medic />
+  <Medivh />
+  <Monk />
+  <Muradin />
+  <Murky />
+  <Necromancer />
+  <Nova />
+  <Raynor />
+  <Rehgar />
+  <Rexxar />
+  <SgtHammer />
+  <Stitches />
+  <Sylvanas />
+  <Tassadar />
+  <Thrall />
+  <Tinker />
+  <Tracer />
+  <Tychus />
+  <Tyrael />
+  <Tyrande />
+  <Uther />
+  <WitchDoctor />
+  <Wizard />
+  <Zagara />
+  <Zeratul />
 </Heroes>

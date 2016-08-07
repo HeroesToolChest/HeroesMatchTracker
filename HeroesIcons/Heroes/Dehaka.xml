@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dehaka>
+  <Level1>
+    <DehakaDarkSwarmTalentEnduringSwarm name="Enduring Swarm">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmTalentEnduringSwarm>
+    <DehakaDarkSwarmTalentPrimalAggression name="Primal Aggression">storm_ui_icon_Dehaka_Trample_A.dds</DehakaDarkSwarmTalentPrimalAggression>
+    <DehakaEssenceCollectionTalentEnhancedAgility name="Enhanced Agility">storm_ui_icon_dehaka_essencecollection.dds</DehakaEssenceCollectionTalentEnhancedAgility>
+    <DehakaEssenceCollectionTalentTissueRegeneration name="Tissue Regeneration">storm_ui_icon_dehaka_essencecollection_var1.dds</DehakaEssenceCollectionTalentTissueRegeneration>
+  </Level1>
+  <Level4>
+    <DehakaBurrowTalentLurkerStrain name="Lurker Strain">storm_ui_icon_dehaka_burrow.dds</DehakaBurrowTalentLurkerStrain>
+    <DehakaBurrowTalentNumbingEruption name="Numbing Eruption">storm_ui_icon_dehaka_burrow_a.dds</DehakaBurrowTalentNumbingEruption>
+    <DehakaEssenceCollectionOneWhoCollectsTalent name="One-Who-Collects">storm_ui_icon_dehaka_essencecollection.dds</DehakaEssenceCollectionOneWhoCollectsTalent>
+    <DehakaEssenceCollectionTalentHeroStalker name="Hero Stalker">storm_ui_icon_dehaka_essencecollection_var1.dds</DehakaEssenceCollectionTalentHeroStalker>
+  </Level4>
+  <Level7>
+    <DehakaDragTalentFeedingFrenzy name="Feeding Frenzy">storm_ui_icon_dehaka_drag.dds</DehakaDragTalentFeedingFrenzy>
+    <DehakaDragTalentConstriction name="Constriction">storm_ui_icon_dehaka_drag_var1.dds</DehakaDragTalentConstriction>
+    <DehakaDarkSwarmTalentSymbiosis name="Symbiosis">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmTalentSymbiosis>
+    <DehakaEssenceCollectionTalentEssenceDevourer name="Essence Devourer">storm_ui_icon_dehaka_essencecollection.dds</DehakaEssenceCollectionTalentEssenceDevourer>
+  </Level7>
+  <Level10>
+    <DehakaHeroicAbilityIsolation name="Isolation">storm_ui_icon_dehaka_isolation.dds</DehakaHeroicAbilityIsolation>
+    <DehakaHeroicAbilityAdaptation name="Adaptation">storm_ui_icon_dehaka_adaptation.dds</DehakaHeroicAbilityAdaptation>
+  </Level10>
+  <Level13>
+    <DehakaEssenceCollectionTalentSwiftPursuit name="Swift Pursuit">storm_ui_icon_dehaka_brushstalker.dds</DehakaEssenceCollectionTalentSwiftPursuit>
+    <DehakaBrushstalkerFerociousStalker name="Ferocious Stalker">storm_ui_icon_dehaka_brushstalker_a.dds</DehakaBrushstalkerFerociousStalker>
+    <DehakaDarkSwarmWhirlingDervish name="Whirling Dervish">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmWhirlingDervish>
+  </Level13>
+  <Level16>
+    <DehakaDragTalentParalyzingEnzymes name="Paralyzing Enzymes">storm_ui_icon_dehaka_drag.dds</DehakaDragTalentParalyzingEnzymes>
+    <DehakaDragTalentElongatedTongue name="Elongated Tongue">storm_ui_icon_dehaka_drag_var1.dds</DehakaDragTalentElongatedTongue>
+    <DehakaBurrowTalentRapidRegeneration name="Rapid Regeneration">storm_ui_icon_dehaka_burrow.dds</DehakaBurrowTalentRapidRegeneration>
+  </Level16>
+  <Level20>
+    <DehakaIsolationTalentContagion name="Contagion">storm_ui_icon_dehaka_isolation.dds</DehakaIsolationTalentContagion>
+    <DehakaAdaptationChangeIsSurvivalTalent name="Change Is Survival">storm_ui_icon_dehaka_adaptation.dds</DehakaAdaptationChangeIsSurvivalTalent>
+    <DehakaBrushstalkerApexPredator name="Apex Predator">storm_ui_icon_dehaka_brushstalker.dds</DehakaBrushstalkerApexPredator>
+    <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+  </Level20>
+</Dehaka>

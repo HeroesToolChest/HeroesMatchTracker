@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wizard>
+  <Level1>
+    <WizardAstralPresence name="Astral Presence">storm_btn_d3_traits_wizard_astralpresence.dds</WizardAstralPresence>
+    <WizardPowerHungry name="Power Hungry">storm_ui_icon_talent_powerhungry.dds</WizardPowerHungry>
+    <WizardForceArmor name="Force Armor">storm_ui_icon_wizard_magicmissiles.dds</WizardForceArmor>
+    <WizardAetherWalker name="Aether Walker">storm_ui_icon_wizard_teleport.dds</WizardAetherWalker>
+  </Level1>
+  <Level4>
+    <WizardMagicMissilesChargedBlast name="Charged Blast">storm_ui_icon_wizard_magicmissiles.dds</WizardMagicMissilesChargedBlast>
+    <WizardArcaneOrbTriumvirate name="Triumvirate">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbTriumvirate>
+    <WizardDominance name="Dominance">storm_ui_icon_wizard_criticalmass.dds</WizardDominance>
+  </Level4>
+  <Level7>
+    <WizardMagicMissilesSeeker name="Seeker">storm_ui_icon_wizard_magicmissiles.dds</WizardMagicMissilesSeeker>
+    <WizardArcaneOrbZeisVengeance name="Zei's Vengeance">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbZeisVengeance>
+    <WizardTeleportCalamity name="Calamity">storm_ui_icon_wizard_teleport.dds</WizardTeleportCalamity>
+  </Level7>
+  <Level10>
+    <WizardHeroicAbilityDisintegrate name="Disintegrate">storm_ui_icon_wizard_disintegrate.dds</WizardHeroicAbilityDisintegrate>
+    <WizardHeroicAbilityWaveOfForce name="Wave Of Force">storm_ui_icon_wizard_waveofforce.dds</WizardHeroicAbilityWaveOfForce>
+  </Level10>
+  <Level13>
+    <WizardCannoneer name="Cannoneer">storm_ui_icon_talent_autoattack_damage.dds</WizardCannoneer>
+    <WizardGlassCannon name="Glass Cannon">storm_btn_d3_traits_wizard_glasscannon.dds</WizardGlassCannon>
+    <WizardTeleportIllusionist name="Illusionist">storm_ui_icon_wizard_teleport.dds</WizardTeleportIllusionist>
+  </Level13>
+  <Level16>
+    <WizardFireflies name="Fireflies">storm_ui_icon_wizard_magicmissiles.dds</WizardFireflies>
+    <WizardMagicMissilesMirrorball name="Mirrorball">storm_ui_icon_wizard_magicmissiles_b.dds</WizardMagicMissilesMirrorball>
+    <WizardArcaneOrbArcaneOrbit name="Arcane Orbit">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbArcaneOrbit>
+    <WizardTeleportDiamondSkin name="Diamond Skin">storm_ui_icon_wizard_teleport.dds</WizardTeleportDiamondSkin>
+  </Level16>
+  <Level20>
+    <WizardDisintegrateTemporalFlux name="Temporal Flux">storm_ui_icon_wizard_disintegrate.dds</WizardDisintegrateTemporalFlux>
+    <WizardWaveOfForceRepulsion name="Repulsion">storm_ui_icon_wizard_waveofforce.dds</WizardWaveOfForceRepulsion>
+    <WizardTalRashasElements name="Tal Rasha's Elements">storm_btn_d3_traits_wizard_elementalexposure.dds</WizardTalRashasElements>
+    <WizardArchonPurePower name="Archon: Pure Power">storm_ui_icon_wizard_archon.dds</WizardArchonPurePower>
+  </Level20>
+</Wizard>

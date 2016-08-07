@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Kaelthas>
+  <Level1>
+    <KaelthasFlamestrikeConvection name="Convection">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeConvection>
+    <KaelthasVerdantSpheresFelInfusion name="Fel Infusion">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasVerdantSpheresFelInfusion>
+    <KaelthasManaAddict name="Mana Addict">storm_ui_icon_kaelthas_manaaddict.dds</KaelthasManaAddict>
+  </Level1>
+  <Level4>
+    <KaelthasGravityLapseNetherWind name="Nether Wind">storm_ui_icon_kaelthas_gravitylapse.dds</KaelthasGravityLapseNetherWind>
+    <KaelthasGravityLapseEnergyRoil name="Energy Roil">storm_ui_icon_kaelthas_gravitylapse_a.dds</KaelthasGravityLapseEnergyRoil>
+    <KaelthasFlamestrikeManaTap name="Mana Tap">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasFlamestrikeManaTap>
+  </Level4>
+  <Level7>
+    <KaelthasFlamestrikeBurnedFlesh name="Burned Flesh">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeBurnedFlesh>
+    <KaelthasGravityCrush name="Gravity Crush">storm_ui_icon_kaelthas_gravitylapse.dds</KaelthasGravityCrush>
+    <KaelthasMasterySunfireEnchantment name="Sunfire Enchantment">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasMasterySunfireEnchantment>
+  </Level7>
+  <Level10>
+    <KaelthasHeroicAbilityPhoenix name="Phoenix">storm_ui_icon_kaelthas_phoenix.dds</KaelthasHeroicAbilityPhoenix>
+    <KaelthasHeroicAbilityPyroblast name="Pyroblast">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasHeroicAbilityPyroblast>
+  </Level10>
+  <Level13>
+    <KaelthasLivingBombPyromaniac name="Pyromaniac">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombPyromaniac>
+    <KaelthasLivingBombBackdraft name="Backdraft">storm_ui_icon_kaelthas_livingbomb_var1.dds</KaelthasLivingBombBackdraft>
+    <KaelthasLivingBombFissionBomb name="Fission Bomb">storm_ui_icon_kaelthas_livingbomb_b.dds</KaelthasLivingBombFissionBomb>
+  </Level13>
+  <Level16>
+    <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeFuryOfTheSunwell>
+    <KaelthasLivingBombSunKingsFury name="Sun King's Fury">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombSunKingsFury>
+    <KaelthasTwinSpheres name="Twin Spheres">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasTwinSpheres>
+  </Level16>
+  <Level20>
+    <KaelthasPhoenixRebirth name="Rebirth">storm_ui_icon_kaelthas_phoenix.dds</KaelthasPhoenixRebirth>
+    <KaelthasPyroblastPresenceOfMind name="Presence Of Mind">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasPyroblastPresenceOfMind>
+    <KaelthasMasterOfFlames name="Master of Flames">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasMasterOfFlames>
+    <GenericArcanePower name="Arcane Power">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
+  </Level20>
+</Kaelthas>

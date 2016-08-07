@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Greymane>
+  <Level1>
+    <GreymaneInnerBeastWolfheart name="Wolfheart">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeastWolfheart>
+    <GreymaneGilneanCocktailPerfectAim name="Perfect Aim">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailPerfectAim>
+    <GreymaneGilneanCocktailScentedTincture name="Scented Tincture">storm_ui_icon_Greymane_QAttack_Var1.dds</GreymaneGilneanCocktailScentedTincture>
+    <GreymaneInnerBeastViciousness name="Viciousness">storm_ui_icon_greymane_beastfocus_var1.dds</GreymaneInnerBeastViciousness>
+  </Level1>
+  <Level4>
+    <GreymaneDarkflightThickSkin name="Thick Skin">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightThickSkin>
+    <GreymaneDisengageEyesInTheDark name="Eyes in the Dark">storm_ui_icon_Greymane_Disengage.dds</GreymaneDisengageEyesInTheDark>
+    <GreymaneInnerBeastInsatiable name="Insatiable">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastInsatiable>
+    <GreymaneGilneanCocktailDraughtOverflow name="Draught Overflow">storm_ui_icon_greymane_qattack.dds</GreymaneGilneanCocktailDraughtOverflow>
+  </Level4>
+  <Level7>
+    <GreymaneWorgenFormQuicksilverBullets name="Quicksilver Bullets">storm_ui_icon_greymane_curseoftheworgen.dds</GreymaneWorgenFormQuicksilverBullets>
+    <GreymaneGilneanCocktailIncendiaryElixir name="Incendiary Elixir">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailIncendiaryElixir>
+    <GreymaneWizenedDuelist name="Wizened Duelist">storm_ui_icon_greymane_curseoftheworgen_var1.dds</GreymaneWizenedDuelist>
+  </Level7>
+  <Level10>
+    <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
+    <GreymaneHeroicAbilityMarkedForTheKill name="Marked for the Kill">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityMarkedForTheKill>
+  </Level10>
+  <Level13>
+    <GreymaneDarkflightDisengageRunningWild name="Running Wild">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightDisengageRunningWild>
+    <GreymaneRazorSwipeVisceralAttacks name="Visceral Attacks">storm_ui_icon_Greymane_Swipe.dds</GreymaneRazorSwipeVisceralAttacks>
+    <GreymaneInnerBeastOnTheProwl name="On the Prowl">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastOnTheProwl>
+    <GreymaneRazorSwipeUnfetteredAssault name="Unfettered Assault">storm_ui_icon_Greymane_Swipe_Var1.dds</GreymaneRazorSwipeUnfetteredAssault>
+  </Level13>
+  <Level16>
+    <GreymaneEagerWolf name="Eager Wolf">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneEagerWolf>
+    <GreymaneWorgenFormRelentlessPredator name="Relentless Predator">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneWorgenFormRelentlessPredator>
+    <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+    <GreymaneWorgenFormAlphaKiller name="Alpha Killer">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneWorgenFormAlphaKiller>
+  </Level16>
+  <Level20>
+    <GreymaneGoForTheThroatUnleashed name="Unleashed">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneGoForTheThroatUnleashed>
+    <GreymaneMarkedForTheKillGilneanRoulette name="Gilnean Roulette">storm_ui_icon_Greymane_Snapshot.dds</GreymaneMarkedForTheKillGilneanRoulette>
+    <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
+    <GreymaneToothAndClaw name="Tooth and Claw">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
+  </Level20>
+</Greymane>

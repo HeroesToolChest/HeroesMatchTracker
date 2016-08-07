@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Monk>
+  <Level1>
+    <MonkTranscendence name="Transcendence">storm_ui_icon_monk_trait_transcendence.dds</MonkTranscendence>
+    <MonkIronFists name="Iron Fists">storm_ui_icon_monk_trait_ironfist.dds</MonkIronFists>
+    <MonkInsight name="Insight">storm_ui_icon_monk_trait_insight.dds</MonkInsight>
+  </Level1>
+  <Level4>
+    <MonkForesightRadiantDash name="Foresight">storm_ui_icon_monk_dash.dds</MonkForesightRadiantDash>
+    <MonkOvertakeDealyReach name="Overtake">storm_ui_icon_monk_deadlyreach.dds</MonkOvertakeDealyReach>
+    <GenericTalentHealingWard name="Healing Ward">storm_ui_icon_talent_healingward.dds</GenericTalentHealingWard>
+    <GenericTalentProtectiveShield name="Protective Shield">storm_ui_icon_talent_protectiveshield.dds</GenericTalentProtectiveShield>
+  </Level4>
+  <Level7>
+    <MonkEchoofHeavenBreathofHeaven name="Echo of Heaven">storm_ui_icon_monk_breath0fheaven.dds</MonkEchoofHeavenBreathofHeaven>
+    <MonkWayoftheHundredFistsRadiantDash name="Way of the Hundred Fists">storm_ui_icon_monk_dash.dds</MonkWayoftheHundredFistsRadiantDash>
+    <GenericTalentClairvoyance name="Clairvoyance">storm_ui_icon_talent_clairvoyance.dds</GenericTalentClairvoyance>
+    <GenericTalentCleanse name="Cleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+  </Level7>
+  <Level10>
+    <MonkHeroicAbilityDivinePalm name="Divine Palm">storm_ui_icon_monk_divinepalm.dds</MonkHeroicAbilityDivinePalm>
+    <MonkHeroicAbilitySevenSidedStrike name="Seven-Sided Strike">storm_ui_icon_monk_sevensidedstrike.dds</MonkHeroicAbilitySevenSidedStrike>
+  </Level10>
+  <Level13>
+    <MonkQuicksilverRadiantDash name="Quicksilver">storm_ui_icon_monk_dash.dds</MonkQuicksilverRadiantDash>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+    <MonkFistsofFuryDeadlyReach name="Fists of Fury">storm_ui_icon_monk_deadlyreach.dds</MonkFistsofFuryDeadlyReach>
+  </Level13>
+  <Level16>
+    <MonkSoothingBreezeBreathofHeaven name="Soothing Breeze">storm_ui_icon_monk_breath0fheaven.dds</MonkSoothingBreezeBreathofHeaven>
+    <MonkBreathOfHeavenCircleOfLife name="Circle of Life">storm_ui_icon_monk_breath0fheaven_var1.dds</MonkBreathOfHeavenCircleOfLife>
+    <MonkBlindingSpeedRadiantDash name="Blinding Speed">storm_ui_icon_monk_dash.dds</MonkBlindingSpeedRadiantDash>
+    <MonkBlazingFistsDeadlyReach name="Blazing Fists">storm_ui_icon_monk_deadlyreach.dds</MonkBlazingFistsDeadlyReach>
+  </Level16>
+  <Level20>
+    <MonkPeacefulReposeDivinePalm name="Peaceful Repose">storm_ui_icon_monk_divinepalm.dds</MonkPeacefulReposeDivinePalm>
+    <MonkElevenSidedStrikeSevenSidedStrike name="Transgression">storm_ui_icon_monk_sevensidedstrike.dds</MonkElevenSidedStrikeSevenSidedStrike>
+    <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <MonkEpiphany name="Epiphany">storm_ui_icon_kharazim_epiphany.dds</MonkEpiphany>
+  </Level20>
+</Monk>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Necromancer>
+  <Level1>
+    <NecromancerTalentBoneArmorBacklash name="Backlash">storm_ui_icon_Necromancer_BoneArmor_B.dds</NecromancerTalentBoneArmorBacklash>
+    <NecromancerTalentBoneArmorShackler name="Shackler">storm_ui_icon_Necromancer_BoneArmor_C.dds</NecromancerTalentBoneArmorShackler>
+    <NecromancerTalentBoneArmorShade name="Shade">storm_ui_icon_Necromancer_BoneArmor.dds</NecromancerTalentBoneArmorShade>
+  </Level1>
+  <Level4>
+    <NecromancerTalentDeathsReach name="Death's Reach">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentDeathsReach>
+    <NecromancerTalentJailors name="Jailors">storm_ui_icon_Necromancer_BonePrison.dds</NecromancerTalentJailors>
+    <NecromancerTalentTragOulsEssence name="Trag'Oul's Essence">storm_ui_icon_Necromancer_RaiseSkeleton.dds</NecromancerTalentTragOulsEssence>
+  </Level4>
+  <Level7>
+    <NecromancerTalentHarvestVitality name="Harvest Vitality">storm_ui_icon_Necromancer_CursedStrikes_Off.dds</NecromancerTalentHarvestVitality>
+    <NecromancerTalentWeaken name="Weaken">storm_ui_icon_Necromancer_CursedStrikes_B.dds</NecromancerTalentWeaken>
+    <NecromancerTalentRathmasBlessing name="Rathma's Blessing">storm_ui_icon_Necromancer_RaiseSkeleton.dds</NecromancerTalentRathmasBlessing>
+  </Level7>
+  <Level10>
+    <NecromancerHeroicAbilityPoisonNova name="Poison Nova">storm_ui_icon_Necromancer_PoisonNova.dds</NecromancerHeroicAbilityPoisonNova>
+    <NecromancerHeroicAbilitySkeletalMages name="Skeletal Mages">storm_ui_icon_Necromancer_SkeletalMages.dds</NecromancerHeroicAbilitySkeletalMages>
+  </Level10>
+  <Level13>
+    <NecromancerTalentDecrepify name="Decrepify">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentDecrepify>
+    <NecromancerTalentGiantsCurse name="Giant's Curse">storm_ui_icon_Necromancer_CursedStrikes_Off.dds</NecromancerTalentGiantsCurse>
+    <NecromancerTalentCorpseExplosion name="Corpse Explosion">storm_ui_icon_Necromancer_RaiseSkeleton.dds</NecromancerTalentCorpseExplosion>
+  </Level13>
+  <Level16>
+    <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+    <NecromancerTalentFlowingWounds name="Flowing Wounds">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentFlowingWounds>
+    <NecromancerTalentAmplifyDamage name="Amplify Damage">storm_ui_icon_Necromancer_BonePrison.dds</NecromancerTalentAmplifyDamage>
+    <NecromancerTalentSkeletonMastery name="Skeleton Mastery">storm_ui_icon_Necromancer_RaiseSkeleton.dds</NecromancerTalentSkeletonMastery>
+  </Level16>
+  <Level20>
+    <NecromancerTalentCallOfTheGrave name="Call of the Grave">storm_ui_icon_Necromancer_PoisonNova.dds</NecromancerTalentCallOfTheGrave>
+    <NecromancerTalentRaisedMage name="Raised Mage">storm_ui_icon_Necromancer_SkeletalMages.dds</NecromancerTalentRaisedMage>
+    <NecromancerTalentMortalWound name="Mortal Wound">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentMortalWound>
+    <NecromancerTalentBoneSpear name="Bone Spear">storm_ui_icon_Necromancer_BoneSpear.dds</NecromancerTalentBoneSpear>
+  </Level20>
+</Necromancer>
