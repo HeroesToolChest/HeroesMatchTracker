@@ -6,8 +6,6 @@ using HeroesParserData.Models.DbModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -141,6 +139,10 @@ namespace HeroesParserData.ViewModels.Match
         {
             get { return new DelegateCommand(async () => await LoadReplayDetails(SelectedReplay)); }
         }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         protected MatchContext()
             :base()
         {

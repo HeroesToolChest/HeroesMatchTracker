@@ -52,7 +52,7 @@ namespace HeroesParserData.DataQueries.ReplayData
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.Where(x => x.GameMode == gameMode).ToListAsync();
+                    return await db.Replays.Where(x => x.GameMode == gameMode).OrderByDescending(x => x.TimeStamp).ToListAsync();
                 }
             }
 
