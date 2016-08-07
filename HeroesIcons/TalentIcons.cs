@@ -36,7 +36,7 @@ namespace HeroesIcons
                 return null;
 
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
-                talent = Talents["IconDefault"];
+                return nameOfHeroTalent;
 
             return talent.Item1;
         }
