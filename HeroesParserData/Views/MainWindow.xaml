@@ -39,6 +39,9 @@
             <TabItem Header="Team League">
                 <ViewsMatch:TeamLeagueControl />
             </TabItem>
+            <TabItem Header="Custom Game">
+                <ViewsMatch:CustomGameControl />
+            </TabItem>
             <TabItem Header="Replays">
                 <Views:ReplaysControl/>
             </TabItem>
