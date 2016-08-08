@@ -10,6 +10,7 @@
     <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
     <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
     <RaynorInspireConfidentAim name="Confident Aim">storm_ui_icon_raynor_penetratinground.dds</RaynorInspireConfidentAim>
+    <GenericTalentVampiricAssault name="Vampiric Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVampiricAssault>
   </Level4>
   <Level7>
     <RaynorPenetratingRoundHamstringShot name="Hamstring Shot">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundHamstringShot>

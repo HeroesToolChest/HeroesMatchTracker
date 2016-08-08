@@ -4,6 +4,7 @@
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryEternalHungerFrostmourneHungers>
     <ArthasMasteryFrostPresenceHowlingBlast name="Frost Presence">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryFrostPresenceHowlingBlast>
+    <ArthasMasteryEternalHungerArthasFrostmourneHungers name="Eternal Hunger">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryEternalHungerArthasFrostmourneHungers>
   </Level1>
   <Level4>
     <ArthasMasteryFrozenWastesFrozenTempest name="Frozen Wastes">storm_ui_icon_Arthas_FrosenTempest.dds</ArthasMasteryFrozenWastesFrozenTempest>
@@ -32,6 +33,7 @@
     <ArthasMasteryRemorselessWinterFrozenTempest name="Remorseless Winter">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryRemorselessWinterFrozenTempest>
     <ArthasMasteryFrostmourneFeedsFrostmourneHungers name="Frostmourne Feeds">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsFrostmourneHungers>
     <ArthasMasteryEmbraceDeathDeathCoil name="Embrace Death">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryEmbraceDeathDeathCoil>
+    <ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers name="Frostmourne Feeds">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers>
   </Level16>
   <Level20>
     <ArthasMasteryLegionOfNorthrendArmyoftheDead name="Legion of Northrend">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasMasteryLegionOfNorthrendArmyoftheDead>

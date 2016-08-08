@@ -11,6 +11,7 @@
     <ZagaraCombatStyleMedusaBlades name="Medusa Blades">storm_ui_icon_talent_autoattack_aoe.dds</ZagaraCombatStyleMedusaBlades>
     <ZagaraMasterySerratedSpines name="Serrated Spines">storm_ui_icon_talent_autoattack_damage.dds</ZagaraMasterySerratedSpines>
     <ZagaraCombatStyleEnvenomedSpines name="Envenomed Spines">storm_ui_icon_talent_autoattack_range.dds</ZagaraCombatStyleEnvenomedSpines>
+    <ZagaraMasteryTumorClutch name="Tumor Clutch">storm_ui_icon_zagara_creep.dds</ZagaraMasteryTumorClutch>
   </Level4>
   <Level7>
     <ZagaraMasteryBanelingMassacre name="Baneling Massacre">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryBanelingMassacre>
@@ -18,6 +19,7 @@
     <ZagaraMasteryBileDrop name="Bile Drop">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryBileDrop>
     <ZagaraMasteryRapidIncubation name="Rapid Incubation">storm_ui_icon_zagara_rapidincubation.dds</ZagaraMasteryRapidIncubation>
     <ZagaraMasteryVentralSacs name="Ventral Sacs">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryVentralSacs>
+    <ZagaraSwarmMomentum name="Swarm Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</ZagaraSwarmMomentum>
   </Level7>
   <Level10>
     <ZagaraHeroicAbilityDevouringMaw name="Devouring Maw">storm_ui_icon_zagara_devouringmaw.dds</ZagaraHeroicAbilityDevouringMaw>
@@ -33,6 +35,7 @@
     <ZagaraMasteryBroodExpansion name="Brood Expansion">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryBroodExpansion>
     <ZagaraMasteryCorrosiveSaliva name="Corrosive Saliva">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryCorrosiveSaliva>
     <ZagaraMasteryMutalisk name="Mutalisk">storm_ui_icon_zagara_hunterkillermuta.dds</ZagaraMasteryMutalisk>
+    <ZagaraMasteryMetabolicBoost name="Metabolic Boost">storm_ui_icon_zagara_creep.dds</ZagaraMasteryMetabolicBoost>
   </Level16>
   <Level20>
     <ZagaraMasteryTyrantMaw name="Tyrant Maw">storm_ui_icon_zagara_devouringmaw.dds</ZagaraMasteryTyrantMaw>

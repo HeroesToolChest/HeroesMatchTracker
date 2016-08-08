@@ -5,6 +5,7 @@
     <UtherCombatStyleHammeroftheLightbringer name="Hammer of the Lightbringer">storm_ui_icon_talent_autoattack_mana.dds</UtherCombatStyleHammeroftheLightbringer>
     <UtherMasteryFistofJustice name="Fist of Justice">storm_ui_icon_uther_hammerofjustice.dds</UtherMasteryFistofJustice>
     <UtherMasteryWaveofLightHolyRadiance name="Wave of Light">storm_ui_icon_uther_holyradiance.dds</UtherMasteryWaveofLightHolyRadiance>
+    <UtherMasteryReachHolyLight name="Reach">storm_ui_icon_uther_holylight.dds</UtherMasteryReachHolyLight>
   </Level1>
   <Level4>
     <UtherMasteryBoundlessConvictionHolyRadiance name="Boundless Conviction">storm_ui_icon_uther_holyradiance.dds</UtherMasteryBoundlessConvictionHolyRadiance>

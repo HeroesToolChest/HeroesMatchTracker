@@ -4,11 +4,14 @@
     <SylvanasTalentOverflowingQuiver name="Overflowing Quiver">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
     <SylvanasTalentBlackArrowsParalysis name="Paralysis">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentBlackArrowsParalysis>
     <SylvanasTalentMercenaryQueen name="Mercenary Queen">storm_ui_icon_sylvanas_bansheequeen.dds</SylvanasTalentMercenaryQueen>
+    <SylvanasTalentCorruption name="Paralysis">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentCorruption>
   </Level1>
   <Level4>
     <SylvanasTalentWitheringBarrage name="Withering Barrage">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringBarrage>
     <SylvanasTalentWithTheWind name="With the Wind">storm_ui_icon_sylvanas_witheringfire_var1.dds</SylvanasTalentWithTheWind>
     <SylvanasTalentLostSoul name="Lost Soul">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLostSoul>
+    <SylvanasTalentRangersAmbush name="Rangers Ambush">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentRangersAmbush>
+    <SylvanasTalentShadeform name="Shadeform">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentShadeform>
   </Level4>
   <Level7>
     <SylvanasTalentWitheringFireBarbedShot name="Barbed Shot">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireBarbedShot>
@@ -24,6 +27,7 @@
     <SylvanasTalentWindrunnerHauntingWave name="Windrunner">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentWindrunnerHauntingWave>
     <SylvanasTalentWillOfTheForsaken name="Will of the Forsaken">storm_ui_icon_sylvanas_willoftheforsaken.dds</SylvanasTalentWillOfTheForsaken>
     <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <SylvanasTalentSplinterShot name="Splinter Shot">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentSplinterShot>
   </Level13>
   <Level16>
     <SylvanasTalentWitheringFireEvasiveFire name="Evasive Fire">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireEvasiveFire>

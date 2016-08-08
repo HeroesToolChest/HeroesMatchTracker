@@ -11,6 +11,7 @@
     <TychusFullyLoaded name="Fully Loaded">storm_ui_icon_tychus_minigun_A.dds</TychusFullyLoaded>
     <TychusTheBiggerTheyAre name="The Bigger They Are...">storm_ui_icon_tychus_minigun_B.dds</TychusTheBiggerTheyAre>
     <TychusMasterAssassin name="Master Assassin">storm_ui_icon_talent_autoattack_speed.dds</TychusMasterAssassin>
+    <TychusVampiricAssault name="Vampiric Assaut">storm_ui_icon_talent_autoattack_heal.dds</TychusVampiricAssault>
   </Level4>
   <Level7>
     <TychusMasteryQuarterback name="Quarterback">storm_ui_icon_tychus_fraggrenade.dds</TychusMasteryQuarterback>

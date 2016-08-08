@@ -23,11 +23,13 @@
     <KaelthasLivingBombPyromaniac name="Pyromaniac">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombPyromaniac>
     <KaelthasLivingBombBackdraft name="Backdraft">storm_ui_icon_kaelthas_livingbomb_var1.dds</KaelthasLivingBombBackdraft>
     <KaelthasLivingBombFissionBomb name="Fission Bomb">storm_ui_icon_kaelthas_livingbomb_b.dds</KaelthasLivingBombFissionBomb>
+    <KaelthasLivingBombChainBomb name="ChainBomb">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombChainBomb>
   </Level13>
   <Level16>
     <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeFuryOfTheSunwell>
     <KaelthasLivingBombSunKingsFury name="Sun King's Fury">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombSunKingsFury>
     <KaelthasTwinSpheres name="Twin Spheres">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasTwinSpheres>
+    <KaelthasArcaneBarrier name="ArcaneBarrier">storm_ui_icon_kaelthas_arcanebarrier.dds</KaelthasArcaneBarrier>
   </Level16>
   <Level20>
     <KaelthasPhoenixRebirth name="Rebirth">storm_ui_icon_kaelthas_phoenix.dds</KaelthasPhoenixRebirth>

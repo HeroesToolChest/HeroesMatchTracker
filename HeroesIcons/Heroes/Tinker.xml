@@ -31,6 +31,7 @@
     <TinkerSuperiorSchematics name="Superior Schematics">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerSuperiorSchematics>
     <TinkerMasteryGoblinFusion name="Goblin Fusion">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryGoblinFusion>
     <TinkerMasteryQuikReleaseCharge name="Kwik Release Charge">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryQuikReleaseCharge>
+    <TinkerMasteryLongRangedTurrents name="Long Ranged Turrents">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryLongRangedTurrents>
   </Level16>
   <Level20>
     <TinkerMasteryMechaLord name="Mecha-Lord">storm_ui_icon_gazlowe_robogoblin.dds</TinkerMasteryMechaLord>
