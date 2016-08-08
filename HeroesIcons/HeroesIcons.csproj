@@ -334,8 +334,8 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Talents\Tyrande\storm_ui_icon_talent_searingarrow.dds" />
     <Resource Include="Icons\Talents\Tyrael\storm_ui_icon_talent_autoattack_cooldown.dds" />
-    <Resource Include="Icons\Talents\Tyrande\storm_ui_icon_talent_autoattack_searing.dds" />
     <Resource Include="Icons\Talents\Cho\storm_ui_icon_gall_twoheaded.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_conjurerspursuit.dds" />
     <Resource Include="Icons\Talents\Muradin\storm_ui_icon_talent_autoattack_stun.dds" />
