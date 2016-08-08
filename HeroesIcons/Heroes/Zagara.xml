@@ -16,7 +16,8 @@
     <ZagaraMasteryBanelingMassacre name="Baneling Massacre">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryBanelingMassacre>
     <ZagaraViscousAcid name="Viscous Acid">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraViscousAcid>
     <ZagaraMasteryBileDrop name="Bile Drop">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryBileDrop>
-    <ZagaraMasteryIncubation name="Rapid Incubation">storm_ui_icon_zagara_rapidincubation.dds</ZagaraMasteryIncubation>
+    <ZagaraMasteryRapidIncubation name="Rapid Incubation">storm_ui_icon_zagara_rapidincubation.dds</ZagaraMasteryRapidIncubation>
+    <ZagaraMasteryVentralSacs name="Ventral Sacs">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryVentralSacs>
   </Level7>
   <Level10>
     <ZagaraHeroicAbilityDevouringMaw name="Devouring Maw">storm_ui_icon_zagara_devouringmaw.dds</ZagaraHeroicAbilityDevouringMaw>

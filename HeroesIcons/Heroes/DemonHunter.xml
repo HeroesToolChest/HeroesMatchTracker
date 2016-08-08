@@ -34,6 +34,7 @@
     <DemonHunterMasteryTumble name="Tumble">storm_ui_icon_valla_vault.dds</DemonHunterMasteryTumble>
     <GenericTalentBloodForBlood name="Blood for Blood">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
     <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+    <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
   </Level16>
   <Level20>
     <DemonHunterMasteryVengeance name="Vengeance">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryVengeance>

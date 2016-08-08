@@ -100,7 +100,7 @@ namespace HeroesIcons
                                             if (reader.Read())
                                             {
                                                 bool isGeneric = false;
-                                                if (name.StartsWith("Generic") || name.StartsWith("BattleMomentum"))
+                                                if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
                                                     isGeneric = true;
 
                                                 if (!Talents.ContainsKey(name))

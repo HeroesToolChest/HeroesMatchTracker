@@ -11,6 +11,7 @@
     <MedicAutomatedBlock name="Automated Block">storm_ui_icon_medic_advancedblock.dds</MedicAutomatedBlock>
     <MedicUpgradedBallistics name="Upgraded Ballistics">storm_ui_icon_medic_displacementgrenade.dds</MedicUpgradedBallistics>
     <MedicInfusedGrenade name="Infused Grenade">storm_ui_icon_medic_displacementgrenade_b.dds</MedicInfusedGrenade>
+    <MedicAdvancedBlock name="Advanced Block">storm_ui_icon_medic_advancedblock.dds</MedicAdvancedBlock>
   </Level4>
   <Level7>
     <MedicClear name="Clear!">storm_ui_icon_medic_displacementgrenade.dds</MedicClear>

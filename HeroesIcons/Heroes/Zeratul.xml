@@ -36,6 +36,7 @@
     <ZeratulMasteryRendingCleave name="Rending Cleave">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryRendingCleave>
     <ZeratulMasteryDoubleBombsSingularitySpike name="Double Bombs">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryDoubleBombsSingularitySpike>
     <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
   </Level16>
   <Level20>
     <ZeratulMasteryNerazimFuryShadowAssault name="Nerazim Fury">storm_ui_icon_zeratul_shadowassault.dds</ZeratulMasteryNerazimFuryShadowAssault>

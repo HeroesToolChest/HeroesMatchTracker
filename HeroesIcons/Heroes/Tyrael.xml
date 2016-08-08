@@ -11,6 +11,7 @@
     <TyraelMasterySwiftRetribution name="Swift Retribution">storm_ui_icon_tyrael_smite.dds</TyraelMasterySwiftRetribution>
     <GenericTalentAmplifiedHealing name="Amplified Healing">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
     <GenericVigorousStrikePassive name="Vigorous Strike">storm_ui_icon_talent_autoattack_heal.dds</GenericVigorousStrikePassive>
+    <BattleMomentumTyrael name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumTyrael>
   </Level4>
   <Level7>
     <TyraelMasteryElDruinsMightAngelsGrace name="Angel's Grace">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightAngelsGrace>

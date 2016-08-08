@@ -31,6 +31,8 @@
     <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
     <RaynorMasteryClusterRoundPenetratingRound name="Cluster Round">storm_ui_icon_raynor_penetratinground.dds</RaynorMasteryClusterRoundPenetratingRound>
     <RaynorMasteryBullseyePenetratingRound name="Bullseye">storm_ui_icon_raynor_penetratinground_var1.dds</RaynorMasteryBullseyePenetratingRound>
+    <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
+    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
   </Level16>
   <Level20>
     <RaynorHyperionGroundStrafe name="Scorched Earth">storm_ui_icon_raynor_hyperion.dds</RaynorHyperionGroundStrafe>

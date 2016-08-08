@@ -9,11 +9,14 @@
     <ArthasMasteryFrozenWastesFrozenTempest name="Frozen Wastes">storm_ui_icon_Arthas_FrosenTempest.dds</ArthasMasteryFrozenWastesFrozenTempest>
     <ArthasDeathlord name="Deathlord">storm_ui_icon_arthas_deathcoil.dds</ArthasDeathlord>
     <ArthasMasteryBitingColdFrozenTempest name="Biting Cold">storm_ui_icon_arthas_frosentempest_a.dds</ArthasMasteryBitingColdFrozenTempest>
+    <ArthasMasteryDestruction name="Destruction">storm_ui_icon_arthas_frostmournehungers_on_a.dds</ArthasMasteryDestruction>
   </Level4>
   <Level7>
     <ArthasRuneTap name="Rune Tap">storm_ui_icon_arthas_runetap.dds</ArthasRuneTap>
     <ArthasMasteryImmortalCoilDeathCoil name="Immortal Coil">storm_ui_icon_Arthas_DeathCoil.dds</ArthasMasteryImmortalCoilDeathCoil>
     <ArthasIceboundFortitude name="Icebound Fortitude">storm_ui_icon_Talent_Icebound_fortitude.dds</ArthasIceboundFortitude>
+    <ArthasCombatStyleRuneTap name="Rune Tap">storm_ui_icon_arthas_runetap.dds</ArthasCombatStyleRuneTap>
+    <ArthasMasteryFrostStrike name="Frost Strike">storm_ui_icon_Arthas_FrostmourneHungers_Off_A.dds</ArthasMasteryFrostStrike>
   </Level7>
   <Level10>
     <ArthasHeroicAbilityArmyoftheDead name="Army of the Dead">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasHeroicAbilityArmyoftheDead>
@@ -23,6 +26,7 @@
     <ArthasMasteryTrailOfFrostHowlingBlast name="Trail of Frost">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryTrailOfFrostHowlingBlast>
     <ArthasMasteryFrostStrikeFrostmourneHungers name="Frost Strike">storm_ui_icon_Arthas_FrostmourneHungers_Off_A.dds</ArthasMasteryFrostStrikeFrostmourneHungers>
     <ArthasMasteryFrigidWindsFrozenTempest name="Frigid Winds">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryFrigidWindsFrozenTempest>
+    <ArthasMasteryPathofFrost name="Trail of Frost">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryPathofFrost>
   </Level13>
   <Level16>
     <ArthasMasteryRemorselessWinterFrozenTempest name="Remorseless Winter">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryRemorselessWinterFrozenTempest>
