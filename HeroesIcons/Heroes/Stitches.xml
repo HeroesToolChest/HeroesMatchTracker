@@ -10,14 +10,12 @@
     <GenericTalentAmplifiedHealing name="Amplified Healing">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
     <StitchesRestorativeFumes name="Restorative Fumes">storm_ui_icon_stitches_acidcloud.dds</StitchesRestorativeFumes>
     <StitchesMasteryPutridGroundSlam name="Putrid Ground">storm_ui_icon_stitches_slam.dds</StitchesMasteryPutridGroundSlam>
-    <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
   </Level4>
   <Level7>
     <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor">storm_ui_icon_stitches_devour.dds</StitchesMasterySavorTheFlavorDevour>
     <StitchesMasteryLastBiteDevour name="Last Bite">storm_ui_icon_stitches_devour_var1.dds</StitchesMasteryLastBiteDevour>
     <StitchesCombatStyleTenderizer name="Tenderizer">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
     <StitchesToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
-    <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
   </Level7>
   <Level10>
     <StitchesHeroicAbilityPutridBile name="Putrid Bile">storm_ui_icon_stitches_putridbile.dds</StitchesHeroicAbilityPutridBile>
@@ -40,4 +38,8 @@
     <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
+  <Old>
+    <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
+    <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
+  </Old>
 </Stitches>

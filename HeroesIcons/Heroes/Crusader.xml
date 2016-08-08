@@ -40,4 +40,5 @@
     <CrusaderHeroicMasteryIndestructable name="Indestructible">storm_ui_icon_johanna_indestructible.dds</CrusaderHeroicMasteryIndestructable>
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
+  <Old></Old>
 </Crusader>

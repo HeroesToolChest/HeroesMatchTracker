@@ -39,4 +39,5 @@
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
     <MonkEpiphany name="Epiphany">storm_ui_icon_kharazim_epiphany.dds</MonkEpiphany>
   </Level20>
+  <Old></Old>
 </Monk>

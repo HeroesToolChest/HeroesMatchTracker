@@ -40,4 +40,5 @@
     <GenericTalentFuryoftheStorm name="Fury of the Storm">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
+  <Old></Old>
 </WitchDoctor>

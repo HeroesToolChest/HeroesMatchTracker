@@ -40,4 +40,5 @@
     <AzmodanBoltoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</AzmodanBoltoftheStorms>
     <AzmodanMasteryForcedRecruitment name="Forced Recruitment">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryForcedRecruitment>
   </Level20>
+  <Old></Old>
 </Azmodan>

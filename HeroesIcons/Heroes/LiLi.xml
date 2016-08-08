@@ -33,7 +33,6 @@
     <LiLiMasteryFastFeetSafetySprint name="Safety Sprint">storm_ui_icon_lili_fastfeet.dds</LiLiMasteryFastFeetSafetySprint>
     <LiLiMasteryHealingBrewTwoForOne name="Two For One">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewTwoForOne>
     <LiLiMasteryCloudSerpentSerpentSidekick name="Serpent Sidekick">storm_ui_icon_Lili_CloudSerpent.dds</LiLiMasteryCloudSerpentSerpentSidekick>
-    <LiLiMasteryHealingBrewHerbalCleanse name="Herbal Cleanse">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewHerbalCleanse>
   </Level16>
   <Level20>
     <LiLiMasteryJugof1000CupsJugof1000000Cups name="Jug of 1,000,000 Cups">storm_ui_icon_lili_jugofathousandcups.dds</LiLiMasteryJugof1000CupsJugof1000000Cups>
@@ -42,4 +41,7 @@
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
+  <Old>
+    <LiLiMasteryHealingBrewHerbalCleanse name="Herbal Cleanse">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewHerbalCleanse>
+  </Old>
 </LiLi>

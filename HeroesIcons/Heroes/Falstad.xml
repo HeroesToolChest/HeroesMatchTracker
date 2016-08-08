@@ -10,13 +10,11 @@
     <FalstadMasteryLightningRodStaticShield name="Static Shield">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodStaticShield>
     <FalstadMasteryUpdraftBarrelRoll name="Updraft">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryUpdraftBarrelRoll>
     <FalstadTalentHammerGains name="Hammer Gains">storm_ui_icon_talent_autoattack_heal.dds</FalstadTalentHammerGains>
-    <FalstadMasteryHammerangPowerThrow name="Power Throw">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangPowerThrow>
   </Level4>
   <Level7>
     <FalstadMasteryHammerangSecretWeapon name="Secret Weapon">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangSecretWeapon>
     <FalstadMasteryBolterang name="BOOMerang">storm_ui_icon_falstad_hammerang_a.dds</FalstadMasteryBolterang>
     <FalstadMasteryLightningRodChargedUp name="Charged Up">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodChargedUp>
-    <FalstadMasteryBarrelRollFreeBarrel name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeBarrel>
   </Level7>
   <Level10>
     <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast">storm_ui_icon_falstad_hinterlandblast.dds</FalstadHeroicAbilityHinterlandBlast>
@@ -31,7 +29,6 @@
     <FalstadMasteryCripplingHammerHammerang name="Crippling Hammer">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryCripplingHammerHammerang>
     <FalstadMasteryAerieGustsTailwind name="Aerie Gusts">storm_ui_icon_falstad_tailwind.dds</FalstadMasteryAerieGustsTailwind>
     <FalstadMasteryAfterburner name="Afterburner">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryAfterburner>
-    <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
   </Level16>
   <Level20>
     <FalstadMasteryCalloftheWildhammerHinterlandBlast name="Call of the Wildhammer">storm_ui_icon_falstad_hinterlandblast.dds</FalstadMasteryCalloftheWildhammerHinterlandBlast>
@@ -39,4 +36,9 @@
     <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
     <FalstadMasteryFlightEpicMount name="Epic Mount">storm_ui_icon_falstad_epicmount.dds</FalstadMasteryFlightEpicMount>
   </Level20>
+  <Old>
+    <FalstadMasteryHammerangPowerThrow name="Power Throw">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangPowerThrow>
+    <FalstadMasteryBarrelRollFreeBarrel name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeBarrel>
+    <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
+  </Old>
 </Falstad>

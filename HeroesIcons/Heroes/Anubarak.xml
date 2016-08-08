@@ -5,7 +5,6 @@
     <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
     <AnubarakMasteryAssaultScarabBeetleSpit name="Assault Scarab">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryAssaultScarabBeetleSpit>
     <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
-    <AnubarakMasterPersistantCarapaceHardenCarapace name="Harden Carapace">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterPersistantCarapaceHardenCarapace>
   </Level1>
   <Level4>
     <AnubarakMasteryUnderkingBurrowCharge name="Underking">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryUnderkingBurrowCharge>
@@ -37,4 +36,7 @@
     <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
     <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
+  <Old>    
+    <AnubarakMasterPersistantCarapaceHardenCarapace name="Harden Carapace">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterPersistantCarapaceHardenCarapace>
+  </Old>
 </Anubarak>

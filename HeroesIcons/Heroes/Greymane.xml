@@ -32,7 +32,6 @@
     <GreymaneWorgenFormRelentlessPredator name="Relentless Predator">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneWorgenFormRelentlessPredator>
     <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
     <GreymaneWorgenFormAlphaKiller name="Alpha Killer">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneWorgenFormAlphaKiller>
-    <GreymaneGilneanCocktailConcentratedBlast name="Concentrated Blast">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailConcentratedBlast>
   </Level16>
   <Level20>
     <GreymaneGoForTheThroatUnleashed name="Unleashed">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneGoForTheThroatUnleashed>
@@ -40,4 +39,7 @@
     <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
     <GreymaneToothAndClaw name="Tooth and Claw">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
   </Level20>
+  <Old>
+    <GreymaneGilneanCocktailConcentratedBlast name="Concentrated Blast">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailConcentratedBlast>
+  </Old>
 </Greymane>

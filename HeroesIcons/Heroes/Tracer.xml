@@ -35,4 +35,5 @@
     <TracerTotalRecallRecall name="Total Recall">storm_ui_icon_tracer_recall.dds</TracerTotalRecallRecall>
     <TracerCompositionBPulseBomb name="Composition B">storm_ui_icon_tracer_pulsebomb.dds</TracerCompositionBPulseBomb>
   </Level20>
+  <Old></Old>
 </Tracer>

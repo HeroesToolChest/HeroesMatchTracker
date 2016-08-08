@@ -10,7 +10,6 @@
     <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
     <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
     <RaynorInspireConfidentAim name="Confident Aim">storm_ui_icon_raynor_penetratinground.dds</RaynorInspireConfidentAim>
-    <GenericTalentVampiricAssault name="Vampiric Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVampiricAssault>
   </Level4>
   <Level7>
     <RaynorPenetratingRoundHamstringShot name="Hamstring Shot">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundHamstringShot>
@@ -32,8 +31,6 @@
     <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
     <RaynorMasteryClusterRoundPenetratingRound name="Cluster Round">storm_ui_icon_raynor_penetratinground.dds</RaynorMasteryClusterRoundPenetratingRound>
     <RaynorMasteryBullseyePenetratingRound name="Bullseye">storm_ui_icon_raynor_penetratinground_var1.dds</RaynorMasteryBullseyePenetratingRound>
-    <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
-    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
   </Level16>
   <Level20>
     <RaynorHyperionGroundStrafe name="Scorched Earth">storm_ui_icon_raynor_hyperion.dds</RaynorHyperionGroundStrafe>
@@ -42,4 +39,9 @@
     <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
+  <Old>
+    <GenericTalentVampiricAssault name="Vampiric Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVampiricAssault>
+    <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
+    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
+  </Old>
 </Raynor>

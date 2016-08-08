@@ -39,4 +39,5 @@
     <ArtanisShieldOverloadForceofWill name="Force of Will">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadForceofWill>
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
   </Level20>
+  <Old></Old>
 </Artanis>

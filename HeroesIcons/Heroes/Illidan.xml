@@ -4,7 +4,6 @@
     <IllidanMasteryImmolationSweepingStrike name="Immolation">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasteryImmolationSweepingStrike>
     <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault">storm_ui_icon_illidan_sweepingstrike_a.dds</IllidanMasteryBatteredAssaultSweepingStrike>
     <IllidanUnendingHatredPassive name="Unending Hatred">storm_ui_icon_talent_seasonedmarksman.dds</IllidanUnendingHatredPassive>
-    <IllidanMasteryShadowShieldEvasion name="Shadow Shield">storm_ui_icon_illidan_evasion.dds</IllidanMasteryShadowShieldEvasion>
   </Level1>
   <Level4>
     <IllidanMasteryRapidChaseDive name="Rapid Chase">storm_ui_icon_illidan_dive.dds</IllidanMasteryRapidChaseDive>
@@ -24,7 +23,6 @@
     <IllidanNimbleDefender name="Nimble Defender">storm_ui_icon_illidan_sweepingstrike.dds</IllidanNimbleDefender>
     <IllidanElusiveStrike name="Elusive Strike">storm_ui_icon_illidan_evasion.dds</IllidanElusiveStrike>
     <IllidanMasterySixthSenseEvasion name="Sixth Sense">storm_ui_icon_illidan_evasion_a.dds</IllidanMasterySixthSenseEvasion>
-    <IllidanMasteryLungeDive name="Lunge Dive">storm_ui_icon_illidan_dive.dds</IllidanMasteryLungeDive>
   </Level13>
   <Level16>
     <IllidanMasteryMarkedforDeathDive name="Marked for Death">storm_ui_icon_illidan_dive.dds</IllidanMasteryMarkedforDeathDive>
@@ -37,4 +35,8 @@
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
+  <Old>
+    <IllidanMasteryShadowShieldEvasion name="Shadow Shield">storm_ui_icon_illidan_evasion.dds</IllidanMasteryShadowShieldEvasion>
+    <IllidanMasteryLungeDive name="Lunge Dive">storm_ui_icon_illidan_dive.dds</IllidanMasteryLungeDive>
+  </Old>
 </Illidan>

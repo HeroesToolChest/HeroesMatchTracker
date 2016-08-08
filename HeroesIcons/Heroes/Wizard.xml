@@ -10,7 +10,6 @@
     <WizardMagicMissilesChargedBlast name="Charged Blast">storm_ui_icon_wizard_magicmissiles.dds</WizardMagicMissilesChargedBlast>
     <WizardArcaneOrbTriumvirate name="Triumvirate">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbTriumvirate>
     <WizardDominance name="Dominance">storm_ui_icon_wizard_criticalmass.dds</WizardDominance>
-    <WizardArcaneOrbEssofJohan name="Ess of Johan">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbEssofJohan>
   </Level4>
   <Level7>
     <WizardMagicMissilesSeeker name="Seeker">storm_ui_icon_wizard_magicmissiles.dds</WizardMagicMissilesSeeker>
@@ -38,4 +37,7 @@
     <WizardTalRashasElements name="Tal Rasha's Elements">storm_btn_d3_traits_wizard_elementalexposure.dds</WizardTalRashasElements>
     <WizardArchonPurePower name="Archon: Pure Power">storm_ui_icon_wizard_archon.dds</WizardArchonPurePower>
   </Level20>
+  <Old>
+    <WizardArcaneOrbEssofJohan name="Ess of Johan">storm_ui_icon_wizard_arcaneorb.dds</WizardArcaneOrbEssofJohan>
+  </Old>
 </Wizard>

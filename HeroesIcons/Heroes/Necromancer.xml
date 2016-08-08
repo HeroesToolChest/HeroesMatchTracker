@@ -36,4 +36,5 @@
     <NecromancerTalentMortalWound name="Mortal Wound">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentMortalWound>
     <NecromancerTalentBoneSpear name="Bone Spear">storm_ui_icon_Necromancer_BoneSpear.dds</NecromancerTalentBoneSpear>
   </Level20>
+  <Old></Old>
 </Necromancer>

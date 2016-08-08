@@ -13,7 +13,6 @@
     <GenericTalentGatheringPower name="Gathering Power">storm_ui_icon_Talent_GatheringPower.dds</GenericTalentGatheringPower>
     <ZeratulMasterySustainedAnomalySingularitySpike name="Sustained Anomaly">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasterySustainedAnomalySingularitySpike>
     <ZeratulCombatStyleVorpalBlade name="Vorpal Blade">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulCombatStyleVorpalBlade>
-    <GenericVampiricStrikePassive name="VampiricStrike">storm_ui_icon_talent_autoattack_heal.dds</GenericVampiricStrikePassive>
   </Level4>
   <Level7>
     <GenericTalentFollowThrough name="Follow Through">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
@@ -37,7 +36,6 @@
     <ZeratulMasteryRendingCleave name="Rending Cleave">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryRendingCleave>
     <ZeratulMasteryDoubleBombsSingularitySpike name="Double Bombs">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryDoubleBombsSingularitySpike>
     <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
-    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
   </Level16>
   <Level20>
     <ZeratulMasteryNerazimFuryShadowAssault name="Nerazim Fury">storm_ui_icon_zeratul_shadowassault.dds</ZeratulMasteryNerazimFuryShadowAssault>
@@ -45,4 +43,8 @@
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
+  <Old>
+    <GenericVampiricStrikePassive name="VampiricStrike">storm_ui_icon_talent_autoattack_heal.dds</GenericVampiricStrikePassive>
+    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
+  </Old>
 </Zeratul>

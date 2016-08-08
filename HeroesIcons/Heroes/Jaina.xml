@@ -29,7 +29,6 @@
     <JainaBlizzardSnowstorm name="Snowstorm">storm_ui_icon_jaina_blizzard.dds</JainaBlizzardSnowstorm>
     <JainaConeOfColdNorthernExposure name="Northern Exposure">storm_ui_icon_jaina_coneofcold.dds</JainaConeOfColdNorthernExposure>
     <JainaConeOfColdNumbingBlast name="Numbing Blast">storm_ui_icon_jaina_coneofcold_var1.dds</JainaConeOfColdNumbingBlast>
-    <JainaBlizzardSnowCrash name="Snow Crash">storm_ui_icon_jaina_blizzard.dds</JainaBlizzardSnowCrash>
   </Level16>
   <Level20>
     <JainaRingOfFrostColdSnap name="Cold Snap">storm_ui_icon_jaina_ringoffrost.dds</JainaRingOfFrostColdSnap>
@@ -37,4 +36,7 @@
     <JainaImprovedIceBlock name="Improved Ice Block">storm_ui_icon_jaina_improvediceblock.dds</JainaImprovedIceBlock>
     <GenericArcanePower name="Arcane Power">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
   </Level20>
+  <Old>
+    <JainaBlizzardSnowCrash name="Snow Crash">storm_ui_icon_jaina_blizzard.dds</JainaBlizzardSnowCrash>
+  </Old>
 </Jaina>

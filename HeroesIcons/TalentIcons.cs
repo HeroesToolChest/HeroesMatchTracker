@@ -87,7 +87,7 @@ namespace HeroesIcons
                             string element = reader.Name;
                             if (element == "Level1" || element == "Level4" || element == "Level7" ||
                                 element == "Level10" || element == "Level13" || element == "Level16" ||
-                                element == "Level20")
+                                element == "Level20" || element == "Old")
                             {
                                 while (reader.Read() && reader.Name != element)
                                 {

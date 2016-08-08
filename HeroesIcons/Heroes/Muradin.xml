@@ -4,7 +4,6 @@
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <MuradinMasteryStormhammerPerfectStorm name="Perfect Storm">storm_ui_icon_Muradin_Stormbolt_A.dds</MuradinMasteryStormhammerPerfectStorm>
     <MuradinMasteryThunderclapReverberation name="Reverberation">storm_ui_icon_Muradin_Thunderclap.dds</MuradinMasteryThunderclapReverberation>
-    <MuradinMasteryStormhammerInfusedHammer name="Infused Hammer">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammerInfusedHammer>
   </Level1>
   <Level4>
     <MuradinCombatStyleThirdWind name="Third Wind">storm_ui_icon_Muradin_SecondWind.dds</MuradinCombatStyleThirdWind>
@@ -41,4 +40,7 @@
     <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
     <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
+  <Old>
+    <MuradinMasteryStormhammerInfusedHammer name="Infused Hammer">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammerInfusedHammer>
+  </Old>
 </Muradin>

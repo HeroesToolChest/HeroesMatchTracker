@@ -39,4 +39,5 @@
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <SonyaTalentIgnorePain name="Ignore Pain">storm_ui_icon_sonya_ignorepain.dds</SonyaTalentIgnorePain>
   </Level20>
+  <Old></Old>
 </Barbarian>
