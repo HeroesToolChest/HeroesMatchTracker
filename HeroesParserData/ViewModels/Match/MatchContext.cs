@@ -3,9 +3,13 @@ using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Models.DbModels;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Validation;
+using System.Data.SqlClient;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -162,59 +166,69 @@ namespace HeroesParserData.ViewModels.Match
 
         protected async Task QueryGameDetails(long replayId)
         {
-            ClearGameDetails();
-
-            MatchInfoTeam1 = new ObservableCollection<MatchInfo>();
-            MatchInfoTeam2 = new ObservableCollection<MatchInfo>();
-
-            Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
-
-            List<ReplayMatchPlayer> players = await Query.MatchPlayer.ReadRecordsByReplayId(replay.ReplayId);
-            List<ReplayMatchPlayerTalent> playerTalents = await Query.MatchPlayerTalent.ReadRecordsByReplayId(replay.ReplayId);
-
-            foreach (var player in players)
+            try
             {
-                MatchInfo matchinfo = new MatchInfo();
+                ClearGameDetails();
 
-                var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
-                matchinfo.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
-                matchinfo.BattleNetTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName);
-                matchinfo.BattleNetId = playerInfo.BattleNetId;
-                matchinfo.CharacterName = player.Character;
-                matchinfo.CharacterLevel = player.CharacterLevel;
-                matchinfo.Talent1 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
-                matchinfo.Talent4 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName2);
-                matchinfo.Talent7 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName3);
-                matchinfo.Talent10 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
-                matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName5);
-                matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName6);
-                matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+                MatchInfoTeam1 = new ObservableCollection<MatchInfo>();
+                MatchInfoTeam2 = new ObservableCollection<MatchInfo>();
 
-                matchinfo.TalentName1 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
-                matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName2);
-                matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName3);
-                matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
-                matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName5);
-                matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName6);
-                matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
+                Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
-                if (player.IsWinner)
-                    matchinfo.TalentsBackColor = Color.FromRgb(233, 252, 233);
+                List<ReplayMatchPlayer> players = await Query.MatchPlayer.ReadRecordsByReplayId(replay.ReplayId);
+                List<ReplayMatchPlayerTalent> playerTalents = await Query.MatchPlayerTalent.ReadRecordsByReplayId(replay.ReplayId);
 
-                if (player.Team == 0)
-                    MatchInfoTeam1.Add(matchinfo);
-                else if (player.Team == 1)
-                    MatchInfoTeam2.Add(matchinfo);
-                //else 
-                // observer
+                foreach (var player in players)
+                {
+                    MatchInfo matchinfo = new MatchInfo();
+
+                    var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
+                    matchinfo.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
+                    matchinfo.BattleNetTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName);
+                    matchinfo.BattleNetId = playerInfo.BattleNetId;
+                    matchinfo.CharacterName = player.Character;
+                    matchinfo.CharacterLevel = player.CharacterLevel;
+                    matchinfo.Talent1 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
+                    matchinfo.Talent4 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName2);
+                    matchinfo.Talent7 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName3);
+                    matchinfo.Talent10 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName5);
+                    matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName6);
+                    matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+
+                    matchinfo.TalentName1 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
+                    matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName2);
+                    matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName3);
+                    matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName5);
+                    matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName6);
+                    matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
+
+                    if (player.IsWinner)
+                        matchinfo.TalentsBackColor = Color.FromRgb(233, 252, 233);
+
+                    if (player.Team == 0)
+                        MatchInfoTeam1.Add(matchinfo);
+                    else if (player.Team == 1)
+                        MatchInfoTeam2.Add(matchinfo);
+                    //else 
+                    // observer
+                }
+
+                ReplayId = replay.ReplayId;
+                GameMode = replay.GameMode;
+                MapName = replay.MapName;
+                GameDate = replay.TimeStamp;
+                GameTime = replay.ReplayLength;
             }
-
-            ReplayId = replay.ReplayId;
-            GameMode = replay.GameMode;
-            MapName = replay.MapName;
-            GameDate = replay.TimeStamp;
-            GameTime = replay.ReplayLength;
-
+            catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
+            {
+                SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
+            }
+            catch (Exception ex) when (ex is FileNotFoundException || ex is IOException)
+            {
+                ExceptionLog.Log(LogLevel.Warn, ex);
+            }
         }
 
         private void ClearGameDetails()

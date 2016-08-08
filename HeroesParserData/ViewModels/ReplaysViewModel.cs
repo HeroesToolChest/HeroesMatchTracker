@@ -307,7 +307,7 @@ namespace HeroesParserData.ViewModels
             catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
             {
                 CurrentStatus = "Database error";
-                ExceptionLog.Log(LogLevel.Error, ex);
+                SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
             }
             catch (Exception ex)
             {
