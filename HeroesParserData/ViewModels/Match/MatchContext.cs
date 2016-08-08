@@ -162,8 +162,10 @@ namespace HeroesParserData.ViewModels.Match
 
         protected async Task QueryGameDetails(long replayId)
         {
-            MatchInfoTeam1.Clear();
-            MatchInfoTeam2.Clear();
+            ClearGameDetails();
+
+            MatchInfoTeam1 = new ObservableCollection<MatchInfo>();
+            MatchInfoTeam2 = new ObservableCollection<MatchInfo>();
 
             Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
@@ -213,6 +215,35 @@ namespace HeroesParserData.ViewModels.Match
             GameDate = replay.TimeStamp;
             GameTime = replay.ReplayLength;
 
+        }
+
+        private void ClearGameDetails()
+        {
+            foreach (var matchInfo in MatchInfoTeam1)
+            {
+                // free up resources
+                matchInfo.Talent1 = null;
+                matchInfo.Talent4 = null;
+                matchInfo.Talent7 = null;
+                matchInfo.Talent10 = null;
+                matchInfo.Talent13 = null;
+                matchInfo.Talent16 = null;
+                matchInfo.Talent20 = null;
+            }
+            MatchInfoTeam1 = null;
+
+            foreach (var matchInfo in MatchInfoTeam2)
+            {
+                // free up resources
+                matchInfo.Talent1 = null;
+                matchInfo.Talent4 = null;
+                matchInfo.Talent7 = null;
+                matchInfo.Talent10 = null;
+                matchInfo.Talent13 = null;
+                matchInfo.Talent16 = null;
+                matchInfo.Talent20 = null;
+            }
+            MatchInfoTeam2 = null;
         }
     }
 }

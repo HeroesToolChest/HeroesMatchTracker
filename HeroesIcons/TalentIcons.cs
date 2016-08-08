@@ -22,11 +22,13 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(nameOfHeroTalent))
-                return new BitmapImage(new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Relative));
+                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Absolute));
+
 
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
-                return new BitmapImage(new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Relative));                
+                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+
 
             return new BitmapImage(talent.Item2);
         }
@@ -49,9 +51,9 @@ namespace HeroesIcons
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (!isGenericTalent)
-                return new Uri($@"/HeroesIcons;component/Icons/Talents/{hero}/{fileName}", UriKind.Relative);
+                return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/{hero}/{fileName}", UriKind.Absolute);
             else
-                return new Uri($@"/HeroesIcons;component/Icons/Talents/_Generic/{fileName}", UriKind.Relative);
+                return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/{fileName}", UriKind.Absolute);
         }
 
         private void SetTalentNamesIcons()

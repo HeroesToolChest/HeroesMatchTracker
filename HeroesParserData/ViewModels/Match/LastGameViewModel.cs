@@ -24,9 +24,6 @@ namespace HeroesParserData.ViewModels.Match
 
         private async Task LastGameQueryGameDetails()
         {
-            MatchInfoTeam1.Clear();
-            MatchInfoTeam2.Clear();
-
             Replay replay = (await Query.Replay.ReadLastRecordsAsync(1))[0];
             await QueryGameDetails(replay.ReplayId);          
         }
