@@ -20,6 +20,33 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridRow" x:Key="TalentsDataGrid">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding TalentsBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding TalentsBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+            <Trigger Property="IsSelected"  Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>

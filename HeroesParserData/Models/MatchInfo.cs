@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.Models
@@ -28,5 +29,6 @@ namespace HeroesParserData.Models
         public string TalentName13 { get; set; }
         public string TalentName16 { get; set; }
         public string TalentName20 { get; set; }
+        public Color TalentsBackColor { get; set; }
     }
 }

@@ -42,7 +42,7 @@
         <Expander Header="Team 1" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="True">
             <Grid>
                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                          EnableColumnVirtualization="True" EnableRowVirtualization="True"
+                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
                           ItemsSource="{Binding MatchInfoTeam1, IsAsync=True}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />
@@ -134,7 +134,7 @@
         <Expander Header="Team 2" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2" IsExpanded="True">
             <Grid>
                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                          EnableColumnVirtualization="True" EnableRowVirtualization="True"
+                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
                           ItemsSource="{Binding MatchInfoTeam2, IsAsync=True}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />

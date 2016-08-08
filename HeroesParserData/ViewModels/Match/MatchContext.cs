@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace HeroesParserData.ViewModels.Match
 {
@@ -195,6 +196,9 @@ namespace HeroesParserData.ViewModels.Match
                 matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName6);
                 matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
 
+                if (player.IsWinner)
+                    matchinfo.TalentsBackColor = Color.FromRgb(233, 252, 233);
+
                 if (player.Team == 0)
                     MatchInfoTeam1.Add(matchinfo);
                 else if (player.Team == 1)
@@ -208,6 +212,7 @@ namespace HeroesParserData.ViewModels.Match
             MapName = replay.MapName;
             GameDate = replay.TimeStamp;
             GameTime = replay.ReplayLength;
+
         }
     }
 }
