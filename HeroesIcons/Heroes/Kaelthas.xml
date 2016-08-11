@@ -23,7 +23,6 @@
     <KaelthasLivingBombPyromaniac name="Pyromaniac">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombPyromaniac>
     <KaelthasLivingBombBackdraft name="Backdraft">storm_ui_icon_kaelthas_livingbomb_var1.dds</KaelthasLivingBombBackdraft>
     <KaelthasLivingBombFissionBomb name="Fission Bomb">storm_ui_icon_kaelthas_livingbomb_b.dds</KaelthasLivingBombFissionBomb>
-
   </Level13>
   <Level16>
     <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeFuryOfTheSunwell>
@@ -34,10 +33,11 @@
     <KaelthasPhoenixRebirth name="Rebirth">storm_ui_icon_kaelthas_phoenix.dds</KaelthasPhoenixRebirth>
     <KaelthasPyroblastPresenceOfMind name="Presence Of Mind">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasPyroblastPresenceOfMind>
     <KaelthasMasterOfFlames name="Master of Flames">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasMasterOfFlames>
-    <GenericArcanePower name="Arcane Power">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
+    <KaelthasMasteryFlamethrower name="Master of Flames">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasMasteryFlamethrower>
   </Level20>
   <Old>
     <KaelthasLivingBombChainBomb name="ChainBomb">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombChainBomb>
     <KaelthasArcaneBarrier name="ArcaneBarrier">storm_ui_icon_kaelthas_arcanebarrier.dds</KaelthasArcaneBarrier>
+    <GenericArcanePower name="Arcane Power">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
   </Old>
 </Kaelthas>

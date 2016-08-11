@@ -182,6 +182,9 @@
     <Content Include="Heroes\Arthas.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Heroes\Auriel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Heroes\Azmodan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

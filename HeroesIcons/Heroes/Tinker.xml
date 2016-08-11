@@ -14,7 +14,7 @@
   </Level4>
   <Level7>
     <TinkerMasteryRockitTurretXL name="Rock-It! Turret XL">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryRockitTurretXL>
-    <TinkerMasterySapperTurrets name="Engine Gunk">storm_ui_icon_Gazlowe_RockItTurret_Var1.dds</TinkerMasterySapperTurrets>
+    <TinkerMasteryEngineGunk name="Engine Gunk">storm_ui_icon_Gazlowe_RockItTurret_Var1.dds</TinkerMasteryEngineGunk>
     <TinkerMasteryHyperfocusCoils name="Hyperfocus Coils">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryHyperfocusCoils>
   </Level7>
   <Level10>
@@ -40,5 +40,6 @@
   </Level20>
   <Old>
     <TinkerMasteryLongRangedTurrents name="Long Ranged Turrents">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryLongRangedTurrents>
+    <TinkerMasterySapperTurrets name="Engine Gunk">storm_ui_icon_Gazlowe_RockItTurret_Var1.dds</TinkerMasterySapperTurrets>
   </Old>
 </Tinker>
