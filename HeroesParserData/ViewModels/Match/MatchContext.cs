@@ -189,20 +189,20 @@ namespace HeroesParserData.ViewModels.Match
                     matchinfo.CharacterName = player.Character;
                     matchinfo.CharacterLevel = player.CharacterLevel;
                     matchinfo.Talent1 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
-                    matchinfo.Talent4 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName2);
-                    matchinfo.Talent7 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName3);
-                    matchinfo.Talent10 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
-                    matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName5);
-                    matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName6);
-                    matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.Talent4 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.Talent7 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.Talent10 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName10);
+                    matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName13);
+                    matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName16);
+                    matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName20);
 
                     matchinfo.TalentName1 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
-                    matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName2);
-                    matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName3);
-                    matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
-                    matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName5);
-                    matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName6);
-                    matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName10);
+                    matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName13);
+                    matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName16);
+                    matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName20);
 
                     if (player.IsWinner)
                         matchinfo.TalentsBackColor = Color.FromRgb(233, 252, 233);
