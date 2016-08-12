@@ -59,10 +59,10 @@
                     <TabItem Name="RawMatchTeamBan" Header="Match Team Bans">
                         <ViewsData:RawMatchTeamBanControl></ViewsData:RawMatchTeamBanControl>
                     </TabItem>
-                    <TabItem Name="RawMatchPlayerTalent" Header="Match PlayerTalents">
+                    <TabItem Name="RawMatchPlayerTalent" Header="Match Player Talents">
                         <ViewsData:RawMatchPlayerTalentControl></ViewsData:RawMatchPlayerTalentControl>
                     </TabItem>
-                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match PlayerScoreResults">
+                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match Player Score Results">
                         <ViewsData:RawMatchPlayerScoreResultControl></ViewsData:RawMatchPlayerScoreResultControl>
                     </TabItem>
                     <TabItem Name="RawMatchTeamLevel" Header="Match Team Levels">
