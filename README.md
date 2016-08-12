@@ -5,3 +5,4 @@
 - .NET Framework 4.6.2 is required and will be downloaded automatically if needed
 
 ### How to use
+![HeroesParserData](https://github.com/koliva8245/HeroesParserData/blob/master/HeroesParserData.PNG)
