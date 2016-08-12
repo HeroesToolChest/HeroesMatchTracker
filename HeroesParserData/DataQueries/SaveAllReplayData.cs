@@ -377,6 +377,7 @@ namespace HeroesParserData.DataQueries
                         CharacterName = player != null ? player.Character : string.Empty,
                         Message = $"announce {announceMessage.AnnouncementType.ToString()}",
                         MessageEventType = messageEventType.ToString(),
+                        MessageTarget = "Allies",
                         PlayerName = player != null ? player.Name : string.Empty,
                         TimeStamp = message.Timestamp
                     };
