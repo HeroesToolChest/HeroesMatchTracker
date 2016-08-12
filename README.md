@@ -10,3 +10,8 @@ This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.
 ### How to use
 Please visit the wiki.
 
+### License
+[MIT license](https://github.com/koliva8245/HeroesParserData/blob/master/LICENSE.txt)
+
+All hero icons are the property of Blizzard Entertainment.
+
