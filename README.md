@@ -1,7 +1,7 @@
 # HeroesParserData
 This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.ReplayParser) to parse Heroes of the Storm replay files and then saves the data into a local database.  You can then view information about your matches, such as talent choices.
 
-![HeroesParserData](https://github.com/koliva8245/HeroesParserData/blob/master/HeroesParserData.PNG)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData.PNG)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
@@ -11,6 +11,6 @@ This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.
 Please visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki).
 
 ## License
-[MIT license](https://github.com/koliva8245/HeroesParserData/blob/master/LICENSE.txt)
+[MIT license](/LICENSE.txt)
 
 All hero icons are the property of Blizzard Entertainment.
