@@ -45,5 +45,17 @@ namespace HeroesParserData.Properties {
                 this["ReplaysLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/koliva8245/HeroesParserData")]
+        public string UpdateUrl {
+            get {
+                return ((string)(this["UpdateUrl"]));
+            }
+            set {
+                this["UpdateUrl"] = value;
+            }
+        }
     }
 }
