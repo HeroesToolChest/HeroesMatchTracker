@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayAllHotsPlayer = value;
-                RaisePropertyChangedEvent("ReplayAllHotsPlayer");
+                RaisePropertyChangedEvent(nameof(ReplayAllHotsPlayer));
             }
         }
 
@@ -44,13 +44,13 @@ namespace HeroesParserData.ViewModels.Data
 
         protected override async Task ReadDataTop()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadTop100RecordsAsync());
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadTopRecordsAsync(100));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
 
         protected override async Task ReadDataLast()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadLast100RecordsAsync());
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadLastRecordsAsync(100));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
 

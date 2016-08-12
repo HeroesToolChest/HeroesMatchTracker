@@ -1,10 +1,8 @@
 ﻿using HeroesParserData.Models.DbModels;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries.ReplayData
@@ -48,19 +46,19 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamObjective>> ReadTop100RecordsAsync()
+            public static async Task<List<ReplayMatchTeamObjective>> ReadTopRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamObjectives.Take(100).ToListAsync();
+                    return await db.ReplayMatchTeamObjectives.Take(num).ToListAsync();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamObjective>> ReadLast100RecordsAsync()
+            public static async Task<List<ReplayMatchTeamObjective>> ReadLastRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamObjectives.OrderByDescending(x => x.ReplayId).Take(100).ToListAsync();
+                    return await db.ReplayMatchTeamObjectives.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
                 }
             }
 

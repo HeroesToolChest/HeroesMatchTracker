@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<L90ETC>
+  <Level1>
+    <ETCMasteryRollingLikeaStone name="Rolling Like a Stone">storm_ui_icon_etc_powerslide.dds</ETCMasteryRollingLikeaStone>
+    <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+    <L90ETCMasteryGuitarSoloPwnShopGuitar name="Pwn Shop Guitar">storm_ui_icon_ETC_GuitarSolo.dds</L90ETCMasteryGuitarSoloPwnShopGuitar>
+    <ETCMasteryProgRock name="Prog Rock">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryProgRock>
+  </Level1>
+  <Level4>
+    <ETCMasteryDoubleNeckedGuitar name="Double-Necked Guitar">storm_ui_icon_etc_powerslide.dds</ETCMasteryDoubleNeckedGuitar>
+    <ETCMasteryHammeron name="Hammer-on">storm_ui_icon_ETC_Rockstar.dds</ETCMasteryHammeron>
+    <ETCMasteryMicCheck name="Mic Check">storm_ui_icon_ETC_FaceMelt.dds</ETCMasteryMicCheck>
+    <L90ETCMasteryFaceMeltPinballWizard name="Pinball Wizard">storm_ui_icon_etc_facemelt_a.dds</L90ETCMasteryFaceMeltPinballWizard>
+  </Level4>
+  <Level7>
+    <L90ETCMasteryFaceMeltLoudSpeakers name="Loud Speakers">storm_ui_icon_ETC_FaceMelt.dds</L90ETCMasteryFaceMeltLoudSpeakers>
+    <ETCMasteryGuitarHero name="Guitar Hero">storm_ui_icon_ETC_GuitarSolo.dds</ETCMasteryGuitarHero>
+    <ETCMasteryJustKeepRocking name="Just Keep Rockin'">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryJustKeepRocking>
+    <GenericTalentFollowThrough name="Follow Through">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
+  </Level7>
+  <Level10>
+    <ETCHeroicAbilityMoshPit name="Mosh Pit">storm_ui_icon_ETC_MoshPit.dds</ETCHeroicAbilityMoshPit>
+    <ETCHeroicAbilityStageDive name="Stage Dive">storm_ui_icon_ETC_StageDive.dds</ETCHeroicAbilityStageDive>
+  </Level10>
+  <Level13>
+    <L90ETCMasteryGuitarSoloGroupies name="Groupies">storm_ui_icon_ETC_GuitarSolo.dds</L90ETCMasteryGuitarSoloGroupies>
+    <ETCMasteryFaceSmelt name="Face Smelt">storm_ui_icon_ETC_FaceMelt.dds</ETCMasteryFaceSmelt>
+    <ETCMasteryShowStopper name="Show Stopper">storm_ui_icon_etc_powerslide.dds</ETCMasteryShowStopper>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+  </Level13>
+  <Level16>
+    <ETCMasterySpeedMetal name="Speed Metal">storm_ui_icon_etc_speedmetal.dds</ETCMasterySpeedMetal>
+    <ETCCombatStyleEchoPedal name="Echo Pedal">storm_ui_icon_etc_echopedal.dds</ETCCombatStyleEchoPedal>
+    <ETCMasteryEncore name="Encore">storm_ui_icon_ETC_FaceMelt.dds</ETCMasteryEncore>
+    <GenericTalentImposingPresence name="Imposing Presence">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+  </Level16>
+  <Level20>
+    <L90ETCMasteryMoshPitTourBus name="Tour Bus">storm_ui_icon_ETC_MoshPit.dds</L90ETCMasteryMoshPitTourBus>
+    <L90ETCMasteryStageDiveCrowdPleaser name="Crowd Pleaser">storm_ui_icon_ETC_StageDive.dds</L90ETCMasteryStageDiveCrowdPleaser>
+    <L90ETCMasteryDeathMetal name="Death Metal">storm_ui_icon_etc_moshpit_a.dds</L90ETCMasteryDeathMetal>
+    <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old></Old>
+</L90ETC>

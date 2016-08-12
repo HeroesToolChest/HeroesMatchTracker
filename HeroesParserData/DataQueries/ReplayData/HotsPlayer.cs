@@ -1,11 +1,9 @@
 ﻿using HeroesParserData.Models.DbModels;
 using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using System.Threading;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries.ReplayData
 {
@@ -48,19 +46,19 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadTop100RecordsAsync()
+            public static async Task<List<ReplayAllHotsPlayer>> ReadTopRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.Take(100).ToListAsync();
+                    return await db.ReplayAllHotsPlayers.Take(num).ToListAsync();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadLast100RecordsAsync()
+            public static async Task<List<ReplayAllHotsPlayer>> ReadLastRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(100).ToListAsync();
+                    return await db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(num).ToListAsync();
                 }
             }
 
@@ -134,9 +132,18 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return record.PlayerId;
             }
 
-            public static long ReadPlayerIdFromBattleNetId(HeroesParserDataContext db, int battleNetId)
+            public static long ReadPlayerIdFromBattleNetId(HeroesParserDataContext db, string battleTagName, int battleNetId)
             {
-                return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == battleNetId).PlayerId;
+                // battleNetId is not unique
+                return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
+            }
+
+            public static async Task<ReplayAllHotsPlayer> ReadRecordFromPlayerId(long playerId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefaultAsync();
+                }
             }
         }
     }

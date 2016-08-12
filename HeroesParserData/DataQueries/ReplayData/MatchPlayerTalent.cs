@@ -46,19 +46,19 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static async Task<List<ReplayMatchPlayerTalent>> ReadTop100RecordsAsync()
+            public static async Task<List<ReplayMatchPlayerTalent>> ReadTopRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchPlayerTalents.Take(100).ToListAsync();
+                    return await db.ReplayMatchPlayerTalents.Take(num).ToListAsync();
                 }
             }
 
-            public static async Task<List<ReplayMatchPlayerTalent>> ReadLast100RecordsAsync()
+            public static async Task<List<ReplayMatchPlayerTalent>> ReadLastRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchPlayerTalents.OrderByDescending(x => x.ReplayId).Take(100).ToListAsync();
+                    return await db.ReplayMatchPlayerTalents.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
                 }
             }
 
@@ -87,6 +87,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                 using (var db = new HeroesParserDataContext())
                 {
                     return await db.ReplayMatchPlayerTalents.SqlQuery($"SELECT * FROM dbo.ReplayMatchPlayerTalents WHERE {columnName} {operand} @Input", new SqlParameter("@Input", input)).ToListAsync();
+                }
+            }
+
+            public static async Task<List<ReplayMatchPlayerTalent>> ReadRecordsByReplayId(long replayId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayMatchPlayerTalents.Where(x => x.ReplayId == replayId).ToListAsync();
                 }
             }
         }

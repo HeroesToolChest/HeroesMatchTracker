@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
-             HorizontalAlignment="Stretch"
+             HorizontalAlignment="Left"
              HorizontalContentAlignment="Left"
-             VerticalAlignment="Stretch"
-             VerticalContentAlignment="Top"
+             VerticalAlignment="Top"
+             VerticalContentAlignment="Center"
              Height="auto"
              Width="auto">
     <Grid>
@@ -22,16 +22,15 @@
         <Button Content="Select Last 100" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectLast100}" Grid.Row="0" Width="100" Height="28" HorizontalAlignment="Left" Margin="115,4,0,4" />
 
         <Button Content="Select" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectCustomTop}" Grid.Row="1" Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
-        <Label Content="TOP" Height="28" HorizontalAlignment="Left" Grid.Row="1" Margin="115,4,0,4" />
-        <Controls:NumericUpDown Value="{Binding SelectedNumber}" Grid.Row="1" Width="140" Height="28" Minimum="1" Maximum ="1000" Interval="1" HorizontalAlignment="Left" Margin="151,4,0,4" />
-        <Label Content="ORDER BY" Grid.Row="1" Height="28" HorizontalAlignment="Left"  Margin="296,4,0,4" />
-        <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedTopColumnName}" Grid.Row="1" Width="200" Height="28" HorizontalAlignment="Left" Margin="365,4,0,4" />
-        <ComboBox ItemsSource="{Binding OrderBy}" SelectedValue="{Binding SelectedTopOrderBy}" Grid.Row="1" Width="80" Height="28" HorizontalAlignment="Left" Margin="570,4,0,4" />
+        <Controls:NumericUpDown Value="{Binding SelectedNumber}" Grid.Row="1" Width="140" Height="28" Minimum="1" Maximum ="1000" Interval="1" HorizontalAlignment="Left" Margin="115,4,0,4" />
+        <Label Content="ORDER BY" Grid.Row="1" Height="28" HorizontalAlignment="Left"  Margin="260,4,0,4" />
+        <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedTopColumnName}" Grid.Row="1" Width="200" Height="28" HorizontalAlignment="Left" Margin="329,4,0,4" />
+        <ComboBox ItemsSource="{Binding OrderBy}" SelectedValue="{Binding SelectedTopOrderBy}" Grid.Row="1" Width="80" Height="28" HorizontalAlignment="Left" Margin="534,4,0,4" />
 
         <Button Content="Select Where" IsEnabled="{Binding IsQueryActive}" Command="{Binding SelectWhere}" Grid.Row="2" Width="100" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0" />
         <ComboBox ItemsSource="{Binding ColumnNames}" SelectedValue="{Binding SelectedWhereColumnName}" Grid.Row="2" Width="200" Height="28" HorizontalAlignment="Left" Margin="115,4,0,4" />
         <ComboBox ItemsSource="{Binding ConditionalOperands}" SelectedValue="{Binding SelectedOperand}" Grid.Row="2" Width="60" Height="28" HorizontalAlignment="Left" Margin="320,4,0,4" />
-        <TextBox Text="{Binding TextBoxSelectWhere}" Grid.Row="2" Width="180" Height="28" HorizontalAlignment="Left" Margin="385,4,0,4" />
+        <TextBox Text="{Binding TextBoxSelectWhere}" Grid.Row="2" Width="180" Height="28" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="385,4,0,4" />
 
     </Grid>
 </UserControl>

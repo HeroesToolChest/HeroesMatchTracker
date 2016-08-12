@@ -23,7 +23,7 @@ namespace HeroesParserData.ViewModels.Data
         private int _rowsReturned;
         private string _queryStatus;
         private Dictionary<ButtonCommands, Func<Task>> _buttonCommandActions;
-        #endregion
+        #endregion private properties
 
         #region properties
         public bool IsQueryActive
@@ -35,7 +35,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _isQueryActive = value;
-                RaisePropertyChangedEvent("IsQueryActive");
+                RaisePropertyChangedEvent(nameof(IsQueryActive));
             }
         }
 
@@ -45,7 +45,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedNumber = value;
-                RaisePropertyChangedEvent("SelectedNumber");
+                RaisePropertyChangedEvent(nameof(SelectedNumber));
             }
         }
 
@@ -55,7 +55,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedWhereColumnName = value;
-                RaisePropertyChangedEvent("SelectedWhereColumnName");
+                RaisePropertyChangedEvent(nameof(SelectedWhereColumnName));
             }
         }
 
@@ -65,7 +65,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedTopColumnName = value;
-                RaisePropertyChangedEvent("SelectedTopColumnName");
+                RaisePropertyChangedEvent(nameof(SelectedTopColumnName));
             }
         }
 
@@ -75,7 +75,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedOperand = value;
-                RaisePropertyChangedEvent("SelectedOperand");
+                RaisePropertyChangedEvent(nameof(SelectedOperand));
             }
         }
 
@@ -85,7 +85,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _textBoxSelectWhere = value;
-                RaisePropertyChangedEvent("TextBoxSelectWhere");
+                RaisePropertyChangedEvent(nameof(TextBoxSelectWhere));
             }
         }
 
@@ -95,7 +95,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _selectedTopOrderBy = value;
-                RaisePropertyChangedEvent("SelectedTopOrderBy");
+                RaisePropertyChangedEvent(nameof(SelectedTopOrderBy));
             }
         }
 
@@ -105,7 +105,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _columnNames = value;
-                RaisePropertyChangedEvent("ColumnNames");
+                RaisePropertyChangedEvent(nameof(ColumnNames));
             }
         }
 
@@ -115,7 +115,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _conditionalOperands = value;
-                RaisePropertyChangedEvent("ConditionalOperands");
+                RaisePropertyChangedEvent(nameof(ConditionalOperands));
             }
         }
 
@@ -125,7 +125,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _orderBy = value;
-                RaisePropertyChangedEvent("OrderBy");
+                RaisePropertyChangedEvent(nameof(OrderBy));
             }
         }
 
@@ -135,7 +135,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _rowsReturned = value;
-                RaisePropertyChangedEvent("RowsReturned");
+                RaisePropertyChangedEvent(nameof(RowsReturned));
             }
         }
 
@@ -145,7 +145,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _queryStatus = value;
-                RaisePropertyChangedEvent("QueryStatus");
+                RaisePropertyChangedEvent(nameof(QueryStatus));
             }
         }
         #endregion properties
@@ -170,7 +170,7 @@ namespace HeroesParserData.ViewModels.Data
         {
             get { return new DelegateCommand(async () => await PerformButtonCommand(ButtonCommands.ReadDataWhere)); }
         }
-        #endregion
+        #endregion Button Commands
 
         protected RawDataContext()
             : base()
@@ -185,15 +185,15 @@ namespace HeroesParserData.ViewModels.Data
         protected abstract Task ReadDataLast();
         protected abstract Task ReadDataCustomTop();
         protected abstract Task ReadDataWhere();
-        #endregion
+        #endregion Abstract Query Methods
 
         private void AddButtonCommandsActions()
         {
             _buttonCommandActions = new Dictionary<ButtonCommands, Func<Task>>();
-            _buttonCommandActions.Add(ButtonCommands.ReadDataTop, () => ReadDataTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataLast, () => ReadDataLast());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataCustomTop, () => ReadDataCustomTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataWhere, () => ReadDataWhere());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataTop, async () => await ReadDataTop());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataLast, async () => await ReadDataLast());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataCustomTop, async () => await ReadDataCustomTop());
+            _buttonCommandActions.Add(ButtonCommands.ReadDataWhere, async () => await ReadDataWhere());
         }
 
         private void AddListConditionalOperators()
@@ -219,13 +219,13 @@ namespace HeroesParserData.ViewModels.Data
             QueryStatus = "Executing query...";
             try
             {
-                 await _buttonCommandActions[commands]();
+                await _buttonCommandActions[commands]();
                 QueryStatus = "Query executed successfully";
             }
             catch (Exception ex)
             {
                 QueryStatus = "Query failed";
-                Logger.Log(LogLevel.Error, ex);
+                ExceptionLog.Log(LogLevel.Error, ex);
             }
 
             IsQueryActive = false;

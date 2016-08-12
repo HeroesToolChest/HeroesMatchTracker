@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Malfurion>
+  <Level1>
+    <MalfurionMasteryHarmony name="Harmony">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryHarmony>
+    <MalfurionCombatStyleShandosClarity name="Shan'do's Clarity">storm_ui_icon_malfurion_innerrvate.dds</MalfurionCombatStyleShandosClarity>
+    <MalfurionMasteryMoonburn name="Moonburn">storm_ui_icon_malfurion_moonfire.dds</MalfurionMasteryMoonburn>
+    <GenericTalentScoutingDrone name="Scouting Drone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
+  </Level1>
+  <Level4>
+    <MalfurionMasteryRampantGrowth name="Rampant Growth">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryRampantGrowth>
+    <MalfurionCombatStyleElunesGrace name="Elune's Grace">storm_ui_icon_malfurion_elunesgrace.dds</MalfurionCombatStyleElunesGrace>
+    <MalfurionCombatStyleVersatile name="Versatile">storm_ui_icon_malfurion_innerrvate.dds</MalfurionCombatStyleVersatile>
+    <MalfurionMasteryVengefulRoots name="Vengeful Roots">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryVengefulRoots>
+  </Level4>
+  <Level7>
+    <MalfurionMasteryEnduringGrowth name="Enduring Growth">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryEnduringGrowth>
+    <MalfurionMasteryStranglingVinesEntanglingRoots name="Strangling Vines">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryStranglingVinesEntanglingRoots>
+    <GenericTalentCalldownMULE name="Calldown: MULE">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+    <GenericTalentCleanse name="Cleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+  </Level7>
+  <Level10>
+    <MalfurionHeroicAbilityTranquility name="Tranquility">storm_ui_icon_malfurion_tranquility.dds</MalfurionHeroicAbilityTranquility>
+    <MalfurionHeroicAbilityTwilightDream name="Twilight Dream">storm_ui_icon_malfurion_twilightdream.dds</MalfurionHeroicAbilityTwilightDream>
+  </Level10>
+  <Level13>
+    <MalfurionMasteryLifeSeed name="Life Seed">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryLifeSeed>
+    <MalfurionMasteryFullMoonfire name="Full Moonfire">storm_ui_icon_malfurion_moonfire.dds</MalfurionMasteryFullMoonfire>
+    <GenericTalentShrinkRay name="Shrink Ray">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>
+    <GenericTalentIceBlock name="Ice Block">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
+  </Level13>
+  <Level16>
+    <MalfurionHardenedFocus name="Hardened Focus">storm_ui_icon_Talent_HardenedFocus.dds</MalfurionHardenedFocus>
+    <MalfurionMasteryTenaciousRootsEntanglingRoots name="Tenacious Roots">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryTenaciousRootsEntanglingRoots>
+    <MalfurionMasteryHinderingMoonfire name="Hindering Moonfire">storm_ui_icon_malfurion_moonfire.dds</MalfurionMasteryHinderingMoonfire>
+    <MalfurionMasteryLunarShower name="Lunar Shower">storm_ui_icon_malfurion_moonfire_a.dds</MalfurionMasteryLunarShower>
+  </Level16>
+  <Level20>
+    <MalfurionMasterySerenity name="Serenity">storm_ui_icon_malfurion_tranquility.dds</MalfurionMasterySerenity>
+    <MalfurionMasteryNightmare name="Nightmare">storm_ui_icon_malfurion_twilightdream.dds</MalfurionMasteryNightmare>
+    <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old></Old>
+</Malfurion>

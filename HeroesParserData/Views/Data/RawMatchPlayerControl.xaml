@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="HeroesParserData.Views.Data.RawMatchPlayerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesParserData.Views.Data"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Data"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             HorizontalContentAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto"
+             d:DataContext="{d:DesignInstance ViewModels:RawMatchPlayerViewModel}">
+    <UserControl.DataContext>
+        <ViewModels:RawMatchPlayerViewModel/>
+    </UserControl.DataContext>
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom"></local:QueryStatusBarControl>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl Grid.Row="0"></local:QueryControl>
+            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" 
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                      ItemsSource="{Binding ReplayMatchPlayer, IsAsync=True}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="MatchPlayerId" Binding="{Binding MatchPlayerId}" />
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="Team" Binding="{Binding Team}" />
+                    <DataGridTextColumn Header="PlayerNumber" Binding="{Binding PlayerNumber}" />
+                    <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />
+                    <DataGridTextColumn Header="Character" Binding="{Binding Character}" />
+                    <DataGridTextColumn Header="CharacterLevel" Binding="{Binding CharacterLevel}" />
+                    <DataGridTextColumn Header="Difficulty" Binding="{Binding Difficulty}" />
+                    <DataGridTextColumn Header="Handicap" Binding="{Binding Handicap}" />
+                    <DataGridTextColumn Header="IsAutoSelet" Binding="{Binding IsAutoSelet}" />
+                    <DataGridTextColumn Header="IsSilenced" Binding="{Binding IsSilenced}" />
+                    <DataGridTextColumn Header="IsWinner" Binding="{Binding IsWinner}" />
+                    <DataGridTextColumn Header="MountAndMountTint" Binding="{Binding MountAndMountTint}" />
+                    <DataGridTextColumn Header="SkinAndSkinTint" Binding="{Binding SkinAndSkinTint}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>

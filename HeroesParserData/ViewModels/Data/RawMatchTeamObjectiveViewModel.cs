@@ -22,7 +22,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchTeamObjective = value;
-                RaisePropertyChangedEvent("ReplayMatchTeamObjective");
+                RaisePropertyChangedEvent(nameof(ReplayMatchTeamObjective));
             }
         }
 
@@ -48,13 +48,13 @@ namespace HeroesParserData.ViewModels.Data
 
         protected override async Task ReadDataTop()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadTop100RecordsAsync());
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadTopRecordsAsync(100));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
 
         protected override async Task ReadDataLast()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadLast100RecordsAsync());
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadLastRecordsAsync(100));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
 

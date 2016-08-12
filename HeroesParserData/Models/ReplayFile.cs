@@ -1,19 +1,20 @@
-﻿using Heroes.ReplayParser;
-using System;
+﻿using System;
+using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.Models
 {
     public class ReplayFile : ObservableObject
     {
-        private ReplayParseStatus? _status;
+        private ReplayParseResult? _status;
 
         public string FileName { get; set; }
         public DateTime CreationTime { get; set; }   
              
         //public string HotsLogUploadStatus { get; set; }
+
         public string FilePath { get; set; }
 
-        public ReplayParseStatus? Status
+        public ReplayParseResult? Status
         {
             get
             {

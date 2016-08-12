@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchTeamBan = value;
-                RaisePropertyChangedEvent("ReplayMatchTeamBan");
+                RaisePropertyChangedEvent(nameof(ReplayMatchTeamBan));
             }
         }
 
@@ -44,13 +44,13 @@ namespace HeroesParserData.ViewModels.Data
 
         protected override async Task ReadDataTop()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadTop100RecordsAsync());
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadTopRecordsAsync(100));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
 
         protected override async Task ReadDataLast()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadLast100RecordsAsync());
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadLastRecordsAsync(100));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
 

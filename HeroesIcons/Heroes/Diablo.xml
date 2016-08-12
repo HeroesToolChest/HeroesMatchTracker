@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Diablo>
+  <Level1>
+    <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+    <DiabloMasterySoulFeastBlackSoulstone name="Soul Feast">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySoulFeastBlackSoulstone>
+    <DiabloMasteryDevilsDueBlackSoulstone name="Devil's Due">storm_ui_icon_diablo_blacksoulstone_var2.dds</DiabloMasteryDevilsDueBlackSoulstone>
+    <DiabloTalentOverwhelmingForceShadowCharge name="Overwhelming Force">storm_ui_icon_diablo_shadowcharge_var1.dds</DiabloTalentOverwhelmingForceShadowCharge>
+  </Level1>
+  <Level4>
+    <DiabloMasteryDemonicStrength name="Demonic Strength">storm_ui_icon_diablo_overpower_var1.dds</DiabloMasteryDemonicStrength>
+    <DiabloTalentSoulCatcherBlackSoulstone name="Soul Catcher">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloTalentSoulCatcherBlackSoulstone>
+    <DiabloMasteryFireDevilFireStomp name="Fire Devil">storm_ui_icon_diablo_firestomp.dds</DiabloMasteryFireDevilFireStomp>
+    <DiabloTalentEssenceOfTheSlain name="Essence of the Slain">storm_ui_icon_diablo_blacksoulstone_var2.dds</DiabloTalentEssenceOfTheSlain>
+  </Level4>
+  <Level7>
+    <BattleMomentumDiablo name="Diabolical Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumDiablo>
+    <DiabloMasterySoulStealBlackSoulstone name="Soul Steal">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySoulStealBlackSoulstone>
+    <DiabloMasteryFromTheShadowsShadowCharge name="From the Shadows">storm_ui_icon_diablo_shadowcharge_var1.dds</DiabloMasteryFromTheShadowsShadowCharge>
+    <DiabloTalentDevastatingChargeShadowCharge name="Devastating Charge">storm_ui_icon_diablo_shadowcharge_var2.dds</DiabloTalentDevastatingChargeShadowCharge>
+  </Level7>
+  <Level10>
+    <DiabloHeroicAbilityApocalypse name="Apocalypse">storm_ui_icon_diablo_apocalypse.dds</DiabloHeroicAbilityApocalypse>
+    <DiabloHeroicAbilityLightningBreath name="Lightning Breath">storm_ui_icon_diablo_lightningbreath.dds</DiabloHeroicAbilityLightningBreath>
+  </Level10>
+  <Level13>
+    <DiabloTalentLifeLeech name="Life Leech">storm_ui_icon_talent_autoattack_heal.dds</DiabloTalentLifeLeech>
+    <DiabloMasteryFirestorm name="Firestorm">storm_ui_icon_diablo_firestomp.dds</DiabloMasteryFirestorm>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <DiabloMasterySiphonTheDeadBlackSoulstone name="Siphon the Dead">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySiphonTheDeadBlackSoulstone>
+  </Level13>
+  <Level16>
+    <DiabloTalentRampageFireStomp name="Rampage">storm_ui_icon_diablo_firestomp.dds</DiabloTalentRampageFireStomp>
+    <DiabloMasteryContinuousOverpower name="Continuous Overpower">storm_ui_icon_diablo_overpower_var1.dds</DiabloMasteryContinuousOverpower>
+    <DiabloTalentDominationOverpower name="Domination">storm_ui_icon_diablo_overpower_var2.dds</DiabloTalentDominationOverpower>
+    <GenericTalentImposingPresence name="Imposing Presence">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+  </Level16>
+  <Level20>
+    <DiabloMasteryDyingBreathApocalypse name="Dying Breath">storm_ui_icon_diablo_apocalypse.dds</DiabloMasteryDyingBreathApocalypse>
+    <DiabloMasteryHellstormLightningBreath name="Hellstorm">storm_ui_icon_diablo_lightningbreath.dds</DiabloMasteryHellstormLightningBreath>
+    <DiabloTalentLordOfTerror name="Lord of Terror">storm_ui_icon_diablo_lordofterror.dds</DiabloTalentLordOfTerror>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old></Old>
+</Diablo>

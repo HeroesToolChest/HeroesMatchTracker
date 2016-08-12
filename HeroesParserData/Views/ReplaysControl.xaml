@@ -19,10 +19,13 @@
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem Content="{Binding CurrentStatus}" DockPanel.Dock="Left" />
+            <StatusBarItem Content="in database" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalSavedInDatabase}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="|" DockPanel.Dock="Right" />
             <StatusBarItem Content="replays parsed" DockPanel.Dock="Right" />
-            <StatusBarItem Content="{Binding TotalReplays}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalReplaysGrid}" DockPanel.Dock="Right" />
             <StatusBarItem Content="/" DockPanel.Dock="Right" />
-            <StatusBarItem Content="{Binding TotalParsed}" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalParsedGrid}" DockPanel.Dock="Right" />
             <StatusBarItem />
         </StatusBar>
         <Grid DockPanel.Dock="Bottom">
@@ -44,6 +47,10 @@
             <Button Content="Start with watch" Command="{Binding StartWatch}" IsEnabled="{Binding AreProcessButtonsEnabled}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,61,-10,0" />
             <Button Content="Stop" Command="{Binding Stop}" IsEnabled="{Binding IsProcessSelected}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,28,-135,0" />
             <Button Content="Stop Process Watch" Command="{Binding StopWatch}" IsEnabled="{Binding IsProcessWatchSelected}" Height="28" Width="120" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,61,-135,0" />
+
+            <Label Content="Replays Location (Includes subdirectories):" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,105,0,0"/>
+            <TextBox Height="23" Margin="10,131,0,0" IsReadOnly="True" TextWrapping="NoWrap" Text="{Binding ReplaysLocation}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="340"/>
+            <Button Command="{Binding Browse}" Content="Browse" Margin="355,131,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="26"/>
         </Grid>
     </DockPanel>
 </UserControl>

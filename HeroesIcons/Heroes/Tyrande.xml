@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tyrande>
+  <Level1>
+    <TyrandeMasteryLightofEluneCelestialAttunement name="Celestial Attunement">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneCelestialAttunement>
+    <TyrandeCombatStyleRangersMark name="Ranger's Mark">storm_ui_icon_tyrande_huntersmark.dds</TyrandeCombatStyleRangersMark>
+    <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
+    <TyrandeMasterySentinelEmpower name="Empower">storm_ui_icon_tyrande_sentinel.dds</TyrandeMasterySentinelEmpower>
+  </Level1>
+  <Level4>
+    <TyrandeMasterySentinelPierce name="Pierce">storm_ui_icon_tyrande_sentinel.dds</TyrandeMasterySentinelPierce>
+    <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
+    <GenericTalentProtectiveShield name="Protective Shield">storm_ui_icon_talent_protectiveshield.dds</GenericTalentProtectiveShield>
+    <GenericTalentHealingWard name="Healing Ward">storm_ui_icon_talent_healingward.dds</GenericTalentHealingWard>
+    <TyrandeSearingArrows name="Searing Arrows">storm_ui_icon_talent_searingarrow.dds</TyrandeSearingArrows>
+  </Level4>
+  <Level7>
+    <TyrandeMasteryLightofEluneQuickeningBlessing name="Quickening Blessing">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneQuickeningBlessing>
+    <TyrandeMasteryLunarBlaze name="Lunar Blaze">storm_ui_icon_tyrande_lunarflare.dds</TyrandeMasteryLunarBlaze>
+    <BattleMomentumTyrande name="Lunar Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumTyrande>
+    <GenericTalentCalldownMULE name="Calldown: MULE">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+  </Level7>
+  <Level10>
+    <TyrandeHeroicAbilityShadowstalk name="Shadowstalk">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeHeroicAbilityShadowstalk>
+    <TyrandeHeroicAbilityStarfall name="Starfall">storm_ui_icon_tyrande_starfall.dds</TyrandeHeroicAbilityStarfall>
+  </Level10>
+  <Level13>
+    <TyrandeMasteryLightofEluneOverflowingLight name="Overflowing Light">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneOverflowingLight>
+    <TyrandeCombatStyleHuntressFury name="Huntress' Fury">storm_ui_icon_tyrande_huntersmark.dds</TyrandeCombatStyleHuntressFury>
+    <GenericTalentSprint name="Sprint">storm_ui_icon_talent_sprint.dds</GenericTalentSprint>
+    <GenericTalentShrinkRay name="Shrink Ray">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>
+  </Level13>
+  <Level16>
+    <TyrandeCombatStyleTrueshotBow name="Trueshot Aura">storm_ui_icon_tyrande_trueshotaura.dds</TyrandeCombatStyleTrueshotBow>
+    <TyrandeCombatStyleMarkOfMending name="Mark of Mending">storm_ui_icon_tyrande_huntersmark.dds</TyrandeCombatStyleMarkOfMending>
+    <TyrandeMasteryRanger name="Ranger">storm_ui_icon_tyrande_sentinel.dds</TyrandeMasteryRanger>
+    <TyrandeMasteryLunarFlareShootingStar name="Shooting Star">storm_ui_icon_tyrande_lunarflare.dds</TyrandeMasteryLunarFlareShootingStar>
+  </Level16>
+  <Level20>
+    <TyrandeMasteryShadowstalkHuntersSwiftness name="Hunter's Swiftness">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeMasteryShadowstalkHuntersSwiftness>
+    <TyrandeMasteryStarfallCelestialWrath name="Celestial Wrath">storm_ui_icon_tyrande_starfall.dds</TyrandeMasteryStarfallCelestialWrath>
+    <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
+    <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+  </Level20>
+  <Old></Old>
+</Tyrande>

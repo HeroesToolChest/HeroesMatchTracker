@@ -1,7 +1,8 @@
-﻿using HeroesParserData.Models.DbModels;
+﻿using Heroes.ReplayParser;
+using HeroesParserData.Models.DbModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
@@ -47,20 +48,30 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.Replays.ToListAsync();
                 }
             }
-
-            public static async Task<List<Models.DbModels.Replay>> ReadTop100RecordsAsync()
+            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(GameMode gameMode)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.Take(100).ToListAsync();
+                    return await db.Replays.Where(x => x.GameMode == gameMode).OrderByDescending(x => x.TimeStamp).ToListAsync();
                 }
             }
 
-            public static async Task<List<Models.DbModels.Replay>> ReadLast100RecordsAsync()
+            public static async Task<List<Models.DbModels.Replay>> ReadTopRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.OrderByDescending(x => x.ReplayId).Take(100).ToListAsync();
+                    return await db.Replays.Take(num).ToListAsync();
+                }
+            }
+
+            public static async Task<List<Models.DbModels.Replay>> ReadLastRecordsAsync(int num)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    if (await db.Replays.CountAsync() > 0)
+                        return await db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    else
+                        return new List<Models.DbModels.Replay>();
                 }
             }
 
@@ -130,6 +141,36 @@ namespace HeroesParserData.DataQueries.ReplayData
                     else
                         return new DateTime();         
                 }                   
+            }
+
+            public static long GetTotalReplayCount()
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.Replays.Count();
+                }
+            }
+
+            /// <summary>
+            /// Returns the Replay along with ReplayMatchPlayers and ReplayMatchPlayerTalents
+            /// </summary>
+            /// <param name="replayId">Replay Id</param>
+            /// <returns>Replay</returns>
+            public static async Task<Models.DbModels.Replay> ReadReplayIncludeRecord(long replayId)
+            {
+                Models.DbModels.Replay replay = new Models.DbModels.Replay();
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    replay = await db.Replays.Where(x => x.ReplayId == replayId)
+                        .Include(x => x.ReplayMatchPlayers).Include(x => x.ReplayMatchPlayerTalents)
+                        .FirstOrDefaultAsync();
+
+                    if (replay == null)
+                        return null;
+                }
+
+                return replay;
             }
         }
     }

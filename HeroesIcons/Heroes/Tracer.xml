@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tracer>
+  <Level1>
+    <TracerPulseStrikeMelee name="Pulse Strike">storm_ui_icon_tracer_melee.dds</TracerPulseStrikeMelee>
+    <TracerSlipstreamRecall name="Slipstream">storm_ui_icon_tracer_recall.dds</TracerSlipstreamRecall>
+    <TracerTracerRounds name="Tracer Rounds">storm_ui_icon_talent_autoattack_reveal.dds</TracerTracerRounds>
+  </Level1>
+  <Level4>
+    <TracerPartingGift name="Parting Gift">storm_ui_icon_tracer_recall.dds</TracerPartingGift>
+    <TracerIsthataHealthPack name="Is That a Health Pack?!">storm_ui_icon_tracer_medpack.dds</TracerIsthataHealthPack>
+    <TracerUntouchable name="Untouchable">storm_ui_icon_talent_autoattack_damage.dds</TracerUntouchable>
+  </Level4>
+  <Level7>
+    <TracerJumper name="Jumper">storm_ui_icon_tracer_blink_b.dds</TracerJumper>
+    <TracerBulletTime name="Bullet Time">storm_ui_icon_tracer_blink_c.dds</TracerBulletTime>
+    <TracerSpatialEcho name="Spatial Echo">storm_ui_icon_tracer_blink_d.dds</TracerSpatialEcho>
+  </Level7>
+  <Level10>
+    <TracerStickyBomb name="Sticky Bomb">storm_ui_icon_tracer_pulsebomb.dds</TracerStickyBomb>
+    <TracerQuantumSpike name="Quantum Spike">storm_ui_icon_tracer_pulsebomb_b.dds</TracerQuantumSpike>
+    <TracerPulseRounds name="Pulse Rounds">storm_ui_icon_tracer_pulsebomb_c.dds</TracerPulseRounds>
+  </Level10>
+  <Level13>
+    <TracerBulletSprayMelee name="Bullet Spray">storm_ui_icon_tracer_melee.dds</TracerBulletSprayMelee>
+    <TracerRicochetHeroWeapon name="Ricochet">storm_ui_icon_talent_autoattack_aoe.dds</TracerRicochetHeroWeapon>
+    <TracerLeechingRounds name="Leeching Rounds">storm_ui_icon_talent_autoattack_heal.dds</TracerLeechingRounds>
+  </Level13>
+  <Level16>
+    <TracerSleightofHand name="Sleight of Hand">storm_ui_icon_tracer_reload.dds</TracerSleightofHand>
+    <TracerFocusFire name="Focus Fire">storm_ui_icon_tracer_reload_b.dds</TracerFocusFire>
+    <TracerLockedandLoaded name="Locked and Loaded">storm_ui_icon_tracer_reload_c.dds</TracerLockedandLoaded>
+  </Level16>
+  <Level20>
+    <TracerGetStuffedMelee name="Get Stuffed!">storm_ui_icon_tracer_melee.dds</TracerGetStuffedMelee>
+    <TracerTotalRecallRecall name="Total Recall">storm_ui_icon_tracer_recall.dds</TracerTotalRecallRecall>
+    <TracerCompositionBPulseBomb name="Composition B">storm_ui_icon_tracer_pulsebomb.dds</TracerCompositionBPulseBomb>
+  </Level20>
+  <Old></Old>
+</Tracer>

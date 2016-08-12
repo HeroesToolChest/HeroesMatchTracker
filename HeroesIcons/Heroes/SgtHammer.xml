@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SgtHammer>
+  <Level1>
+    <SgtHammerMasteryAdvancedArtillery name="Advanced Artillery">storm_ui_icon_sgthammer_artillery.dds</SgtHammerMasteryAdvancedArtillery>
+    <SgtHammerMasteryLethalBlastConcussiveBlast name="Lethal Blast">storm_ui_icon_sgthammer_concussiveblast.dds</SgtHammerMasteryLethalBlastConcussiveBlast>
+    <SgtHammerResistant name="Resistant">storm_ui_icon_sgthammer_siegemode.dds</SgtHammerResistant>
+    <SgtHammerAmbush name="Ambush">storm_ui_icon_sgthammer_siegemode_var1.dds</SgtHammerAmbush>
+    <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+  </Level1>
+  <Level4>
+    <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
+    <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
+    <SgtHammerMasteryMaelstromShells name="Maelstrom Shells">storm_ui_icon_talent_autoattack_range.dds</SgtHammerMasteryMaelstromShells>
+    <SgtHammerMasteryExcessiveForceConcussiveBlast name="Excessive Force">storm_ui_icon_sgthammer_concussiveblast.dds</SgtHammerMasteryExcessiveForceConcussiveBlast>
+  </Level4>
+  <Level7>
+    <SgtHammerMasterySlowingMinesSpiderMines name="Slowing Mines">storm_ui_icon_sgthammer_spidermines.dds</SgtHammerMasterySlowingMinesSpiderMines>
+    <SgtHammerHyperCoolingEngines name="Hyper-Cooling Engines">storm_ui_icon_sgthammer_hypercoolingengines.dds</SgtHammerHyperCoolingEngines>
+    <GenericTalentFirstAid name="First Aid">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
+  </Level7>
+  <Level10>
+    <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerHeroicAbilityBluntForceGun>
+    <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerHeroicAbilityNapalmStrike>
+  </Level10>
+  <Level13>
+    <GenericTalentGiantKiller name="Giant Killer">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+    <SgtHammerFirstStrike name="First Strike">storm_ui_icon_sgthammer_artillery.dds</SgtHammerFirstStrike>
+    <SgtHammerBullheadMines name="Bullhead Mines">storm_ui_icon_sgthammer_spidermines.dds</SgtHammerBullheadMines>
+    <SgtHammerMasteryFlakCannons name="Barricade">storm_ui_icon_sgthammer_concussiveblast.dds</SgtHammerMasteryFlakCannons>
+  </Level13>
+  <Level16>
+    <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+    <SgtHammerMasteryMineField name="Mine Field">storm_ui_icon_sgthammer_spidermines.dds</SgtHammerMasteryMineField>
+    <SgtHammerMasteryHoverSiegeMode name="Hover Siege Mode">storm_ui_icon_sgthammer_siegemode.dds</SgtHammerMasteryHoverSiegeMode>
+    <SgtHammerGraduatingRange name="Graduating Range">storm_ui_icon_sgthammer_siegemode_var1.dds</SgtHammerGraduatingRange>
+    <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+  </Level16>
+  <Level20>
+    <SgtHammerMasteryOrbitalBFGBluntForceGun name="Orbital BFG">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerMasteryOrbitalBFGBluntForceGun>
+    <SgtHammerMasteryAdvancedLavaStrikeNapalmStrike name="Advanced Lava Strike">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerMasteryAdvancedLavaStrikeNapalmStrike>
+    <GenericTalentFuryoftheStorm name="Fury of the Storm">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
+    <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
+  </Level20>
+  <Old></Old>
+</SgtHammer>

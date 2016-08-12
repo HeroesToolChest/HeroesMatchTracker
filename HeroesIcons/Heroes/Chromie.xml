@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Chromie>
+  <Level1>
+    <ChromieSandBlastCompoundingAether name="Compounding Aether">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastCompoundingAether>
+    <ChromieDragonsBreathDeepBreathing name="Deep Breathing">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathDeepBreathing>
+    <ChromieTimewalkersPursuit name="Timewalker's Pursuit">storm_ui_icon_talent_conjurerspursuit.dds</ChromieTimewalkersPursuit>
+    <ChromiePeerIntoTheFuture name="Peer Into The Future">storm_ui_icon_talent_clairvoyance.dds</ChromiePeerIntoTheFuture>
+  </Level1>
+  <Level4>
+    <ChromieSandBlastPiercingSands name="Piercing Sands">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastPiercingSands>
+    <ChromieBronzeTalons name="Bronze Talons">storm_ui_icon_talent_autoattack_damage.dds</ChromieBronzeTalons>
+    <ChromieDragonsBreathEnvelopingAssault name="Enveloping Assault">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathEnvelopingAssault>
+  </Level4>
+  <Level7>
+    <ChromieDragonsBreathMobiusLoop name="Mobius Loop">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathMobiusLoop>
+    <ChromieDragonsBreathDragonsEye name="Dragon’s Eye">storm_ui_icon_chromie_SandStrike_a.dds</ChromieDragonsBreathDragonsEye>
+    <ChromieTimeTrapChronoSickness name="Chrono Sickness">storm_ui_icon_Chromie_TimeTrap.dds</ChromieTimeTrapChronoSickness>
+  </Level7>
+  <Level10>
+    <ChromieHeroicAbilitySlowingSands name="Slowing Sands">storm_ui_icon_Chromie_TimeWarp.dds</ChromieHeroicAbilitySlowingSands>
+    <ChromieHeroicAbilityTemporalLoop name="Temporal Loop">storm_ui_icon_Chromie_Looper.dds</ChromieHeroicAbilityTemporalLoop>
+  </Level10>
+  <Level13>
+    <ChromiePortBackToBaseByeBye name="Bye Bye!">storm_ui_icon_Chromie_Poof.dds</ChromiePortBackToBaseByeBye>
+    <ChromieReachingThroughTime name="Reaching through Time">storm_ui_icon_Chromie_StretchingSpacetime.dds</ChromieReachingThroughTime>
+    <ChromieTimeOut name="Time Out">storm_ui_icon_Chromie_TimeBlock.dds</ChromieTimeOut>
+  </Level13>
+  <Level16>
+    <ChromieSandBlastShiftingSands name="Shifting Sands">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastShiftingSands>
+    <ChromieSandBlastFastForward name="Fast Forward">storm_ui_icon_Chromie_AetherCannon_A.dds</ChromieSandBlastFastForward>
+    <ChromieQuantumOverdrive name="Quantum Overdrive">storm_ui_icon_Chromie_HyperdrivesReach.dds</ChromieQuantumOverdrive>
+  </Level16>
+  <Level20>
+    <ChromieSlowingSandsPocketOfTime name="Pocket of Time">storm_ui_icon_Chromie_TimeWarp.dds</ChromieSlowingSandsPocketOfTime>
+    <ChromieTemporalLoopLoophole name="Loophole">storm_ui_icon_Chromie_Looper.dds</ChromieTemporalLoopLoophole>
+    <ChromieSandBlastPastAndFutureMe name="Past and Future Me">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastPastAndFutureMe>
+    <ChromieTimeTrapAndorhalAnomaly name="Andorhal Anomaly">storm_ui_icon_Chromie_TimeTrap.dds</ChromieTimeTrapAndorhalAnomaly>
+  </Level20>
+  <Old></Old>
+</Chromie>

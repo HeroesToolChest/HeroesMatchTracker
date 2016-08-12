@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Guldan>
+  <Level1>
+    <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame">storm_ui_icon_guldan_felflame.dds</GuldanFelFlamePursuitOfFlame>
+    <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeGlyphOfDrainLife>
+    <GuldanCorruptionEchoedCorruption name="Echoed Corruption">storm_ui_icon_guldan_handofguldan.dds</GuldanCorruptionEchoedCorruption>
+    <GuldanChaoticEnergy name="Chaotic Energy">storm_ui_icon_chaoticenergy.dds</GuldanChaoticEnergy>
+  </Level1>
+  <Level4>
+    <GuldanDrainLifeHealthFunnel name="Health Funnel">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeHealthFunnel>
+    <GuldanLifeTapImprovedLifeTap name="Improved Life Tap">storm_ui_icon_guldan_lifetap.dds</GuldanLifeTapImprovedLifeTap>
+    <GuldanConsumeSoul name="Consume Soul">storm_ui_icon_guldan_darkpact.dds</GuldanConsumeSoul>
+  </Level4>
+  <Level7>
+    <GuldanFelFlameBoundByShadow name="Bound by Shadow">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameBoundByShadow>
+    <GuldanDrainLifeDevourTheFrail name="Devour the Frail">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeDevourTheFrail>
+    <GuldanCorruptionCurseOfExhaustion name="Curse of Exhaustion">storm_ui_icon_guldan_handofguldan.dds</GuldanCorruptionCurseOfExhaustion>
+    <GuldanLifeTapHungerforPower name="Hunger for Power">storm_ui_icon_guldan_hungerforpower.dds</GuldanLifeTapHungerforPower>
+  </Level7>
+  <Level10>
+    <GuldanHorrify name="Horrify">storm_ui_icon_guldan_horrify.dds</GuldanHorrify>
+    <GuldanRainOfDestruction name="Rain of Destruction">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestruction>
+  </Level10>
+  <Level13>
+    <GuldanFelFlameFelArmor name="Fel Armor">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameFelArmor>
+    <GuldanDrainLifeHarvestLife name="Harvest Life">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeHarvestLife>
+    <GuldanDarkBargain name="Dark Bargain">storm_ui_icon_guldan_darkbargain.dds</GuldanDarkBargain>
+    <GuldanHealthstone name="Healthstone">storm_ui_icon_guldan_healthstone.dds</GuldanHealthstone>
+  </Level13>
+  <Level16>
+    <GuldanFelFlameRampantHellfire name="Rampant Hellfire">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameRampantHellfire>
+    <GuldanCorruptionRuinousAffliction name="Ruinous Affliction">storm_ui_icon_guldan_handofguldan.dds</GuldanCorruptionRuinousAffliction>
+    <GuldanLifeTapDarknessWithin name="Darkness Within">storm_ui_icon_guldan_lifetap.dds</GuldanLifeTapDarknessWithin>
+  </Level16>
+  <Level20>
+    <GuldanHorrifyHaunt name="Haunt">storm_ui_icon_guldan_horrify.dds</GuldanHorrifyHaunt>
+    <GuldanRainOfDestructionDeepImpact name="Deep Impact">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestructionDeepImpact>
+    <GuldanDemonicCircle name="Demonic Circle">storm_ui_icon_guldan_demoniccircle.dds</GuldanDemonicCircle>
+  </Level20>
+  <Old></Old>
+</Guldan>

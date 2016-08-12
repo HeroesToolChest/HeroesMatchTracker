@@ -24,8 +24,8 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <local:QueryControl Grid.Row="0"></local:QueryControl>
-            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" AlternatingRowBackground="AliceBlue" GridLinesVisibility="Vertical" BorderThickness="1"
-                      EnableColumnVirtualization="True" EnableRowVirtualization="True"
+            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1"
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                       ItemsSource="{Binding ReplayMatchPlayerTalent, IsAsync=True}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="MatchPlayerTalentId" Binding="{Binding MatchPlayerTalentId}" />
@@ -33,25 +33,26 @@
                     <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />
                     <DataGridTextColumn Header="Character" Binding="{Binding Character}" />
                     <DataGridTextColumn Header="TalentId1" Binding="{Binding TalentId1}" />
+                    <DataGridTextColumn Header="TalentName1" Binding="{Binding TalentName1}" />
                     <DataGridTextColumn Header="TimeSpanSelected1" Binding="{Binding TimeSpanSelected1}" />
-                    <DataGridTextColumn Header="TalentId2" Binding="{Binding TalentId2}" />
-                    <DataGridTextColumn Header="TalentName2" Binding="{Binding TalentName2}" />
-                    <DataGridTextColumn Header="TimeSpanSelected2" Binding="{Binding TimeSpanSelected2}" />
-                    <DataGridTextColumn Header="TalentId3" Binding="{Binding TalentId3}" />
-                    <DataGridTextColumn Header="TalentName3" Binding="{Binding TalentName3}" />
-                    <DataGridTextColumn Header="TimeSpanSelected3" Binding="{Binding TimeSpanSelected3}" />
                     <DataGridTextColumn Header="TalentId4" Binding="{Binding TalentId4}" />
                     <DataGridTextColumn Header="TalentName4" Binding="{Binding TalentName4}" />
                     <DataGridTextColumn Header="TimeSpanSelected4" Binding="{Binding TimeSpanSelected4}" />
-                    <DataGridTextColumn Header="TalentId5" Binding="{Binding TalentId5}" />
-                    <DataGridTextColumn Header="TalentName5" Binding="{Binding TalentName5}" />
-                    <DataGridTextColumn Header="TimeSpanSelected5" Binding="{Binding TimeSpanSelected5}" />
-                    <DataGridTextColumn Header="TalentId6" Binding="{Binding TalentId6}" />
-                    <DataGridTextColumn Header="TalentName6" Binding="{Binding TalentName6}" />
-                    <DataGridTextColumn Header="TimeSpanSelected6" Binding="{Binding TimeSpanSelected6}" />
                     <DataGridTextColumn Header="TalentId7" Binding="{Binding TalentId7}" />
                     <DataGridTextColumn Header="TalentName7" Binding="{Binding TalentName7}" />
                     <DataGridTextColumn Header="TimeSpanSelected7" Binding="{Binding TimeSpanSelected7}" />
+                    <DataGridTextColumn Header="TalentId10" Binding="{Binding TalentId10}" />
+                    <DataGridTextColumn Header="TalentName10" Binding="{Binding TalentName10}" />
+                    <DataGridTextColumn Header="TimeSpanSelected10" Binding="{Binding TimeSpanSelected10}" />
+                    <DataGridTextColumn Header="TalentId13" Binding="{Binding TalentId13}" />
+                    <DataGridTextColumn Header="TalentName13" Binding="{Binding TalentName13}" />
+                    <DataGridTextColumn Header="TimeSpanSelected13" Binding="{Binding TimeSpanSelected13}" />
+                    <DataGridTextColumn Header="TalentId16" Binding="{Binding TalentId16}" />
+                    <DataGridTextColumn Header="TalentName16" Binding="{Binding TalentName16}" />
+                    <DataGridTextColumn Header="TimeSpanSelected16" Binding="{Binding TimeSpanSelected16}" />
+                    <DataGridTextColumn Header="TalentId20" Binding="{Binding TalentId20}" />
+                    <DataGridTextColumn Header="TalentName20" Binding="{Binding TalentName20}" />
+                    <DataGridTextColumn Header="TimeSpanSelected20" Binding="{Binding TimeSpanSelected20}" />
                 </DataGrid.Columns>
             </DataGrid>
             <local:QueryControl Grid.Column="1"></local:QueryControl>

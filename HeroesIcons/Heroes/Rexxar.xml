@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rexxar>
+  <Level1>
+    <RexxarSpiritBondGrizzledBear name="Grizzled Bear">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledBear>
+    <RexxarHunterGatherer name="Hunter-Gatherer">storm_ui_icon_Talent_RegenerationMaster.dds</RexxarHunterGatherer>
+    <RexxarSurvivalistTraining name="Survivalist Training">storm_ui_icon_Talent_ConjurersPursuit.dds</RexxarSurvivalistTraining>
+    <RexxarFlare name="Flare">storm_ui_icon_rexxar_flare.dds</RexxarFlare>
+  </Level1>
+  <Level4>
+    <RexxarHungryBear name="Hungry Bear">storm_ui_icon_rexxar_heremishaactive.dds</RexxarHungryBear>
+    <RexxarSpiritSwoopCripplingTalons name="Crippling Talons">storm_ui_icon_rexxar_spiritswoop.dds</RexxarSpiritSwoopCripplingTalons>
+    <RexxarTakingFlightSpiritSwoop name="Taking Flight">storm_ui_icon_rexxar_spiritswoop_var1.dds</RexxarTakingFlightSpiritSwoop>
+    <RexxarSpiritBondEasyPrey name="Easy Prey">storm_ui_icon_rexxar_heremishaactive_var1.dds</RexxarSpiritBondEasyPrey>
+  </Level4>
+  <Level7>
+    <RexxarMendPetBloodOfTheRhino name="Blood of the Rhino">storm_ui_icon_rexxar_mendpet.dds</RexxarMendPetBloodOfTheRhino>
+    <RexxarAspectoftheBeastCharge name="Aspect of the Beast">storm_ui_icon_rexxar_mishacharge.dds</RexxarAspectoftheBeastCharge>
+    <RexxarSpiritSwoopBirdOfPrey name="Bird of Prey">storm_ui_icon_rexxar_spiritswoop.dds</RexxarSpiritSwoopBirdOfPrey>
+  </Level7>
+  <Level10>
+    <RexxarHeroicAbilityBestialWrath name="Bestial Wrath">storm_ui_icon_rexxar_bestialwrath.dds</RexxarHeroicAbilityBestialWrath>
+    <RexxarHeroicAbilityUnleashTheBoars name="Unleash the Boars">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarHeroicAbilityUnleashTheBoars>
+  </Level10>
+  <Level13>
+    <RexxarSpiritBondWildfireBear name="Wildfire Bear">storm_ui_icon_Talent_BurningRage.dds</RexxarSpiritBondWildfireBear>
+    <RexxarThrilloftheHunt name="Thrill of the Hunt">storm_ui_icon_rexxar_heremishaactive.dds</RexxarThrilloftheHunt>
+    <RexxarBearNecessitiesCharge name="Bear Necessities">storm_ui_icon_rexxar_mishacharge.dds</RexxarBearNecessitiesCharge>
+    <RexxarBarkskin name="Barkskin">storm_ui_icon_rexxar_mishacharge_var1.dds</RexxarBarkskin>
+  </Level13>
+  <Level16>
+    <RexxarCriticalCareMendPet name="Critical Care">storm_ui_icon_rexxar_mendpet.dds</RexxarCriticalCareMendPet>
+    <RexxarAspectOfTheHawkSpiritSwoop name="Aspect of the Hawk">storm_ui_icon_rexxar_spiritswoop.dds</RexxarAspectOfTheHawkSpiritSwoop>
+    <RexxarSpiritBondPrimalIntimidation name="Primal Intimidation">storm_ui_icon_talent_imposingpresence.dds</RexxarSpiritBondPrimalIntimidation>
+    <RexxarFeignDeath name="Feign Death">storm_ui_icon_rexxar_feigndeath.dds</RexxarFeignDeath>
+  </Level16>
+  <Level20>
+    <RexxarSpiritBond name="Spirit Bond">storm_ui_icon_rexxar_bestialwrath.dds</RexxarSpiritBond>
+    <RexxarUnleashTheBoarsKillCommand name="Kill Command">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarUnleashTheBoarsKillCommand>
+    <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor">storm_ui_icon_talent_autoattack_slow.dds</RexxarFrenzyofKalimdor>
+    <RexxarHardenedSkin name="Hardened Skin">storm_ui_icon_Talent_HardenedShield.dds</RexxarHardenedSkin>
+  </Level20>
+  <Old></Old>
+</Rexxar>

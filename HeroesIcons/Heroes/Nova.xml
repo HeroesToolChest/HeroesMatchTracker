@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Nova>
+  <Level1>
+    <NovaCombatStyleTacticalEspionage name="Tactical Espionage">storm_ui_icon_nova_personalcloaking.dds</NovaCombatStyleTacticalEspionage>
+    <NovaCombatStyleAdvancedCloaking name="Advanced Cloaking">storm_ui_icon_nova_personalcloaking_var1.dds</NovaCombatStyleAdvancedCloaking>
+    <NovaMasteryLongshot name="Longshot">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryLongshot>
+    <NovaMasteryCovertOpsPinningShot name="Covert Ops">storm_ui_icon_nova_pinningshot_var1.dds</NovaMasteryCovertOpsPinningShot>
+  </Level1>
+  <Level4>
+    <NovaNewRemoteDelivery name="Remote Delivery">storm_ui_icon_nova_holodecoy.dds</NovaNewRemoteDelivery>
+    <NovaRapidProjection name="Rapid Projection">storm_ui_icon_nova_holodecoy_var1.dds</NovaRapidProjection>
+    <NovaHoloStability name="Holo Stability">storm_ui_icon_nova_holodecoy_var2.dds</NovaHoloStability>
+  </Level4>
+  <Level7>
+    <NovaCombatStyleOneintheChamber name="One in the Chamber">storm_ui_icon_Talent_AutoAttack_Damage.dds</NovaCombatStyleOneintheChamber>
+    <NovaCombatStyleAntiArmorShells name="Anti-Armor Shells">storm_ui_icon_Talent_AntiArmorShells.dds</NovaCombatStyleAntiArmorShells>
+    <NovaSnipeMaster name="Snipe Master">storm_ui_icon_nova_snipe.dds</NovaSnipeMaster>
+  </Level7>
+  <Level10>
+    <NovaHeroicAbilityTripleTap name="Triple Tap">storm_ui_icon_nova_tripletap.dds</NovaHeroicAbilityTripleTap>
+    <NovaHeroicAbilityPrecisionStrike name="Precision Strike">storm_ui_icon_nova_orbitalstrike.dds</NovaHeroicAbilityPrecisionStrike>
+  </Level10>
+  <Level13>
+    <NovaMasteryDoubleTap name="Double Tap">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryDoubleTap>
+    <NovaMasteryPsionicEfficiency name="Psionic Efficiency">storm_ui_icon_nova_snipe.dds</NovaMasteryPsionicEfficiency>
+    <NovaMasteryExplosiveShot name="Explosive Round">storm_ui_icon_nova_snipe_var1.dds</NovaMasteryExplosiveShot>
+  </Level13>
+  <Level16>
+    <NovaMasteryPerfectShotSnipe name="Perfect Shot">storm_ui_icon_nova_snipe.dds</NovaMasteryPerfectShotSnipe>
+    <NovaMasteryCripplingShot name="Crippling Shot">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryCripplingShot>
+    <NovaMasteryLethalDecoy name="Lethal Decoy">storm_ui_icon_nova_holodecoy.dds</NovaMasteryLethalDecoy>
+  </Level16>
+  <Level20>
+    <NovaMasteryFastReload name="Fast Reload">storm_ui_icon_nova_tripletap.dds</NovaMasteryFastReload>
+    <NovaMasteryPrecisionBarrage name="Precision Barrage">storm_ui_icon_nova_orbitalstrike.dds</NovaMasteryPrecisionBarrage>
+    <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <NovaGhostProtocol name="Ghost Protocol">storm_ui_icon_nova_personalcloaking.dds</NovaGhostProtocol>
+  </Level20>
+  <Old></Old>
+</Nova>

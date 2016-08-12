@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Arthas>
+  <Level1>
+    <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+    <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryEternalHungerFrostmourneHungers>
+    <ArthasMasteryFrostPresenceHowlingBlast name="Frost Presence">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryFrostPresenceHowlingBlast>
+  </Level1>
+  <Level4>
+    <ArthasMasteryFrozenWastesFrozenTempest name="Frozen Wastes">storm_ui_icon_Arthas_FrosenTempest.dds</ArthasMasteryFrozenWastesFrozenTempest>
+    <ArthasDeathlord name="Deathlord">storm_ui_icon_arthas_deathcoil.dds</ArthasDeathlord>
+    <ArthasMasteryBitingColdFrozenTempest name="Biting Cold">storm_ui_icon_arthas_frosentempest_a.dds</ArthasMasteryBitingColdFrozenTempest>
+  </Level4>
+  <Level7>
+    <ArthasRuneTap name="Rune Tap">storm_ui_icon_arthas_runetap.dds</ArthasRuneTap>
+    <ArthasMasteryImmortalCoilDeathCoil name="Immortal Coil">storm_ui_icon_Arthas_DeathCoil.dds</ArthasMasteryImmortalCoilDeathCoil>
+    <ArthasIceboundFortitude name="Icebound Fortitude">storm_ui_icon_Talent_Icebound_fortitude.dds</ArthasIceboundFortitude>
+  </Level7>
+  <Level10>
+    <ArthasHeroicAbilityArmyoftheDead name="Army of the Dead">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasHeroicAbilityArmyoftheDead>
+    <ArthasHeroicAbilitySummonSindragosa name="Summon Sindragosa">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasHeroicAbilitySummonSindragosa>
+  </Level10>
+  <Level13>
+    <ArthasMasteryTrailOfFrostHowlingBlast name="Trail of Frost">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryTrailOfFrostHowlingBlast>
+    <ArthasMasteryFrostStrikeFrostmourneHungers name="Frost Strike">storm_ui_icon_Arthas_FrostmourneHungers_Off_A.dds</ArthasMasteryFrostStrikeFrostmourneHungers>
+    <ArthasMasteryFrigidWindsFrozenTempest name="Frigid Winds">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryFrigidWindsFrozenTempest>
+  </Level13>
+  <Level16>
+    <ArthasMasteryRemorselessWinterFrozenTempest name="Remorseless Winter">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryRemorselessWinterFrozenTempest>
+    <ArthasMasteryFrostmourneFeedsFrostmourneHungers name="Frostmourne Feeds">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsFrostmourneHungers>
+    <ArthasMasteryEmbraceDeathDeathCoil name="Embrace Death">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryEmbraceDeathDeathCoil>
+  </Level16>
+  <Level20>
+    <ArthasMasteryLegionOfNorthrendArmyoftheDead name="Legion of Northrend">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasMasteryLegionOfNorthrendArmyoftheDead>
+    <ArthasMasteryAbsoluteZeroSummonSindragosa name="Absolute Zero">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasMasteryAbsoluteZeroSummonSindragosa>
+    <ArthasDeathsAdvance name="Death's Advance">storm_ui_icon_talent_deaths_advance.dds</ArthasDeathsAdvance>
+    <ArthasAntiMagicShell name="Anti-Magic Shell">storm_temp_war3_btnantimagicshell.dds</ArthasAntiMagicShell>
+  </Level20>
+  <Old>
+    <ArthasMasteryEternalHungerArthasFrostmourneHungers name="Eternal Hunger">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryEternalHungerArthasFrostmourneHungers>
+    <ArthasMasteryDestruction name="Destruction">storm_ui_icon_arthas_frostmournehungers_on_a.dds</ArthasMasteryDestruction>
+    <ArthasCombatStyleRuneTap name="Rune Tap">storm_ui_icon_arthas_runetap.dds</ArthasCombatStyleRuneTap>
+    <ArthasMasteryFrostStrike name="Frost Strike">storm_ui_icon_Arthas_FrostmourneHungers_Off_A.dds</ArthasMasteryFrostStrike>
+    <ArthasMasteryPathofFrost name="Trail of Frost">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryPathofFrost>
+    <ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers name="Frostmourne Feeds">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers>
+  </Old>
+</Arthas>

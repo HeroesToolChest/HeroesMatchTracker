@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stitches>
+  <Level1>
+    <StitchesMasteryChewYourFood name="Chew Your Food">storm_ui_icon_stitches_devour.dds</StitchesMasteryChewYourFood>
+    <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
+    <StitchesHungryforMore name="Hungry for More">storm_ui_icon_talent_regenerationmaster.dds</StitchesHungryforMore>
+    <StitchesMasteryHeavySlam name="Heavy Slam">storm_ui_icon_stitches_slam.dds</StitchesMasteryHeavySlam>
+  </Level1>
+  <Level4>
+    <GenericTalentAmplifiedHealing name="Amplified Healing">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
+    <StitchesRestorativeFumes name="Restorative Fumes">storm_ui_icon_stitches_acidcloud.dds</StitchesRestorativeFumes>
+    <StitchesMasteryPutridGroundSlam name="Putrid Ground">storm_ui_icon_stitches_slam.dds</StitchesMasteryPutridGroundSlam>
+  </Level4>
+  <Level7>
+    <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor">storm_ui_icon_stitches_devour.dds</StitchesMasterySavorTheFlavorDevour>
+    <StitchesMasteryLastBiteDevour name="Last Bite">storm_ui_icon_stitches_devour_var1.dds</StitchesMasteryLastBiteDevour>
+    <StitchesCombatStyleTenderizer name="Tenderizer">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
+    <StitchesToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
+  </Level7>
+  <Level10>
+    <StitchesHeroicAbilityPutridBile name="Putrid Bile">storm_ui_icon_stitches_putridbile.dds</StitchesHeroicAbilityPutridBile>
+    <StitchesHeroicAbilityGorge name="Gorge">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
+  </Level10>
+  <Level13>
+    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+    <StitchesMasteryMegaSmashSlam name="Mega Smash">storm_ui_icon_stitches_slam.dds</StitchesMasteryMegaSmashSlam>
+    <StitchesMasteryIndigestionDevour name="Indigestion">storm_ui_icon_stitches_devour.dds</StitchesMasteryIndigestionDevour>
+  </Level13>
+  <Level16>
+    <StitchesMasteryPulverizeSlam name="Pulverize">storm_ui_icon_stitches_slam.dds</StitchesMasteryPulverizeSlam>
+    <StitchesMasteryFishingHook name="Fishing Hook">storm_ui_icon_stitches_hook.dds</StitchesMasteryFishingHook>
+    <StitchesMasteryShishKabobHook name="Shish Kabob">storm_ui_icon_stitches_hook_var1.dds</StitchesMasteryShishKabobHook>
+    <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+  </Level16>
+  <Level20>
+    <StitchesMasteryRegenerativeBilePutridBile name="Regenerative Bile">storm_ui_icon_stitches_putridbile.dds</StitchesMasteryRegenerativeBilePutridBile>
+    <StitchesMasteryHungryHungryStitchesGorge name="Hungry Hungry Stitches">storm_ui_icon_stitches_cannibalize.dds</StitchesMasteryHungryHungryStitchesGorge>
+    <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old>
+    <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
+    <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
+  </Old>
+</Stitches>

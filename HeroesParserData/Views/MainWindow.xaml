@@ -6,40 +6,41 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:Views="clr-namespace:HeroesParserData.Views"
         xmlns:ViewsData="clr-namespace:HeroesParserData.Views.Data"
+        xmlns:ViewsMatch="clr-namespace:HeroesParserData.Views.Match"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
-        Title="Heroes Parser Data" MinHeight="576" MinWidth="1024" Height="576" Width="1024">
-    <Controls:MetroWindow.RightWindowCommands>
+        Title="Heroes Parser Data" MinHeight="576" MinWidth="1164" Height="720" Width="1640">
+    <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button Content="Settings"></Button>
+            <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Controls:Flyout Header="Flyout" Position="Left" Width="400" Theme="Accent">
-                <Button Height="28" Width="140">Hello</Button>
+            <Controls:Flyout Background="AliceBlue" x:Name="SettingsFlyout" Header="Settings" Position="Left" Width="440" Theme="Adapt" IsOpen="False">
             </Controls:Flyout>
         </Controls:FlyoutsControl>
-    </Controls:MetroWindow.Flyouts>
+    </Controls:MetroWindow.Flyouts>-->
     <DockPanel>
-
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="Last Game">
-                <Grid>
-                </Grid>
+                <ViewsMatch:LastMatchControl />
             </TabItem>
-            <TabItem Header="QuickMatch">
-                <Grid>
-                </Grid>
+            <TabItem Header="Quick Match">
+                <ViewsMatch:QuickMatchControl />
             </TabItem>
-            <TabItem Header="HeroLeague">
-                <Grid>
-                </Grid>
+            <TabItem Header="Unranked Draft">
+                <ViewsMatch:UnrankedDraftControl />
             </TabItem>
-            <TabItem Header="TeamLeague">
-                <Grid>
-                </Grid>
+            <TabItem Header="Hero League">
+                <ViewsMatch:HeroLeagueControl/>
+            </TabItem>
+            <TabItem Header="Team League">
+                <ViewsMatch:TeamLeagueControl />
+            </TabItem>
+            <TabItem Header="Custom Game">
+                <ViewsMatch:CustomGameControl />
             </TabItem>
             <TabItem Header="Replays">
                 <Views:ReplaysControl/>
@@ -52,26 +53,29 @@
                     <TabItem Name="RawAllHotsPlayers" Header="All Players">
                         <ViewsData:RawAllHotsPlayerControl></ViewsData:RawAllHotsPlayerControl>
                     </TabItem>
-                    <TabItem Name="RawMatchChat" Header="Match Chat">
-                        <ViewsData:RawMatchChatControl></ViewsData:RawMatchChatControl>
-                    </TabItem>
-                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match PlayerScoreResults">
-                        <ViewsData:RawMatchPlayerScoreResultControl></ViewsData:RawMatchPlayerScoreResultControl>
-                    </TabItem>
-                    <TabItem Name="RawMatchPlayerTalent" Header="Match PlayerTalents">
-                        <ViewsData:RawMatchPlayerTalentControl></ViewsData:RawMatchPlayerTalentControl>
+                    <TabItem Name="RawMatchPlayer" Header="Match Players">
+                        <ViewsData:RawMatchPlayerControl></ViewsData:RawMatchPlayerControl>
                     </TabItem>
                     <TabItem Name="RawMatchTeamBan" Header="Match Team Bans">
                         <ViewsData:RawMatchTeamBanControl></ViewsData:RawMatchTeamBanControl>
                     </TabItem>
-                    <TabItem Name="RawMatchTeamExperience" Header="Match Team Experience">
-                        <ViewsData:RawMatchTeamExperienceControl></ViewsData:RawMatchTeamExperienceControl>
+                    <TabItem Name="RawMatchPlayerTalent" Header="Match PlayerTalents">
+                        <ViewsData:RawMatchPlayerTalentControl></ViewsData:RawMatchPlayerTalentControl>
+                    </TabItem>
+                    <TabItem Name="RawMatchPlayerScoreResult" Header="Match PlayerScoreResults">
+                        <ViewsData:RawMatchPlayerScoreResultControl></ViewsData:RawMatchPlayerScoreResultControl>
                     </TabItem>
                     <TabItem Name="RawMatchTeamLevel" Header="Match Team Levels">
                         <ViewsData:RawMatchTeamLevelControl></ViewsData:RawMatchTeamLevelControl>
                     </TabItem>
+                    <TabItem Name="RawMatchTeamExperience" Header="Match Team Experience">
+                        <ViewsData:RawMatchTeamExperienceControl></ViewsData:RawMatchTeamExperienceControl>
+                    </TabItem>
                     <TabItem Name="RawMatchTeamObjective" Header="Match Team Objective">
                         <ViewsData:RawMatchTeamObjectiveControl></ViewsData:RawMatchTeamObjectiveControl>
+                    </TabItem>
+                    <TabItem Name="RawMatchMessage" Header="Match Messages">
+                        <ViewsData:RawMatchMessageControl></ViewsData:RawMatchMessageControl>
                     </TabItem>
                 </TabControl>
             </TabItem>

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HeroesParserData</RootNamespace>
     <AssemblyName>HeroesParserData</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -29,6 +29,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,7 +43,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -52,6 +53,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -64,17 +77,58 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\Heroes.ReplayParser.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.2.4.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.3.5\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.3.7\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\NuGet.Squirrel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Squirrel, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\Squirrel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -93,12 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Database\HeroesParserDataInit.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
+    <Compile Include="Models\MatchInfo.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
-    <Compile Include="ViewModels\Data\RawMatchChatViewModel.cs" />
+    <Compile Include="ViewModels\Data\RawMatchMessageViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerScoreResultViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerTalentViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerViewModel.cs" />
@@ -107,8 +163,14 @@
     <Compile Include="ViewModels\Data\RawMatchTeamLevelViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\Data\RawReplayViewModel.cs" />
-    <Compile Include="ViewModels\LastGameViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
+    <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\LastGameViewModel.cs" />
+    <Compile Include="ViewModels\Match\MatchContext.cs" />
+    <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
+    <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -120,8 +182,11 @@
     <Compile Include="Views\Data\RawAllHotsPlayerControl.xaml.cs">
       <DependentUpon>RawAllHotsPlayerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\RawMatchChatControl.xaml.cs">
-      <DependentUpon>RawMatchChatControl.xaml</DependentUpon>
+    <Compile Include="Views\Data\RawMatchMessageControl.xaml.cs">
+      <DependentUpon>RawMatchMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RawMatchPlayerControl.xaml.cs">
+      <DependentUpon>RawMatchPlayerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\RawMatchPlayerScoreResultControl.xaml.cs">
       <DependentUpon>RawMatchPlayerScoreResultControl.xaml</DependentUpon>
@@ -144,24 +209,45 @@
     <Compile Include="Views\Data\RawReplaysControl.xaml.cs">
       <DependentUpon>RawReplaysControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LastGameControl.xaml.cs">
-      <DependentUpon>LastGameControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Match\CustomGameControl.xaml.cs">
+      <DependentUpon>CustomGameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\HeroLeagueControl.xaml.cs">
+      <DependentUpon>HeroLeagueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\LastMatchControl.xaml.cs">
+      <DependentUpon>LastMatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\MatchListControl.xaml.cs">
+      <DependentUpon>MatchListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\MatchStatusBarControl.xaml.cs">
+      <DependentUpon>MatchStatusBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\MatchSummaryControl.xaml.cs">
+      <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\QuickMatchControl.xaml.cs">
+      <DependentUpon>QuickMatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\TeamLeagueControl.xaml.cs">
+      <DependentUpon>TeamLeagueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\UnrankedDraftControl.xaml.cs">
+      <DependentUpon>UnrankedDraftControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReplaysControl.xaml.cs">
       <DependentUpon>ReplaysControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SettingsControl.xaml.cs">
-      <DependentUpon>SettingsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataQueries\ReplayData\HotsPlayer.cs" />
-    <Compile Include="DataQueries\ReplayData\MatchChat.cs" />
+    <Compile Include="DataQueries\ReplayData\MatchMessage.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayer.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayerScoreResult.cs" />
     <Compile Include="DataQueries\ReplayData\MatchPlayerTalent.cs" />
@@ -200,9 +286,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Data\RawMatchChatControl.xaml">
+    <Page Include="Views\Data\RawMatchMessageControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Data\RawMatchPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Data\RawMatchPlayerScoreResultControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -232,27 +322,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\LastGameControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Match\CustomGameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\HeroLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\LastMatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\MatchListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\MatchStatusBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\MatchSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\QuickMatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\TeamLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\UnrankedDraftControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ReplaysControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\SettingsControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\DbModels\Replay.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayer.cs" />
-    <Compile Include="Models\DbModels\ReplayMatchChat.cs" />
+    <Compile Include="Models\DbModels\ReplayMatchMessage.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayer.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayerScoreResult.cs" />
     <Compile Include="Models\DbModels\ReplayMatchPlayerTalent.cs" />
@@ -277,8 +395,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="NLog.config" />
-    <None Include="packages.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -291,13 +416,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Databases\HeroesParserData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Databases\HeroesParserData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HeroesParserData.mdf</DependentUpon>
-    </Content>
     <Content Include="DLLs\Heroes.ReplayParser.dll" />
     <Content Include="DLLs\ICSharpCode.SharpZipLib.dll" />
     <Content Include="DLLs\MpqTool.dll" />
@@ -318,12 +436,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HeroesIcons\HeroesIcons.csproj">
+      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
+      <Name>HeroesIcons</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>; Move all assemblies and related files to lib folder
 ; http://www.broculos.net/2014/03/visual-studio-build-dlls-to-separate.html#.VyVbn4-cGUk
-ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib logs data ErrorLogs Databases /E /IS /MOVE
+ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib logs data ErrorLogs Database Databases Heroes /E /IS /MOVE
 if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

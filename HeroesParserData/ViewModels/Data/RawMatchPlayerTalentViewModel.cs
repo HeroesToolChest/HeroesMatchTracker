@@ -18,7 +18,7 @@ namespace HeroesParserData.ViewModels.Data
             set
             {
                 _replayMatchPlayerTalent = value;
-                RaisePropertyChangedEvent("ReplayMatchPlayerTalent");
+                RaisePropertyChangedEvent(nameof(ReplayMatchPlayerTalent));
             }
         }
 
@@ -44,14 +44,14 @@ namespace HeroesParserData.ViewModels.Data
 
         protected override async Task ReadDataTop()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadTop100RecordsAsync());
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadTopRecordsAsync(100));
             RowsReturned = ReplayMatchPlayerTalent.Count;
 
         }
 
         protected override async Task ReadDataLast()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadLast100RecordsAsync());
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadLastRecordsAsync(100));
             RowsReturned = ReplayMatchPlayerTalent.Count;
 
         }

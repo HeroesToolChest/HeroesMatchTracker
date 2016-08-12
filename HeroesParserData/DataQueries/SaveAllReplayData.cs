@@ -1,10 +1,10 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models.DbModels;
-using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.DataQueries
 {
@@ -13,14 +13,16 @@ namespace HeroesParserData.DataQueries
         private Heroes.ReplayParser.Replay Replay;
         private HeroesParserDataContext HeroesParserDataContext;
         private long ReplayId;
+        private string FileName;
 
-        public SaveAllReplayData(Heroes.ReplayParser.Replay replay)
+        public SaveAllReplayData(Heroes.ReplayParser.Replay replay, string fileName)
         {
             Replay = replay;
+            FileName = fileName;
             HeroesParserDataContext = new HeroesParserDataContext();
         }
 
-        public ReplayParseStatus SaveAllData()
+        public ReplayParseResult SaveAllData()
         {
             using (HeroesParserDataContext)
             {
@@ -35,14 +37,14 @@ namespace HeroesParserData.DataQueries
                             SaveMatchTeamBans();
                             SaveMatchTeamLevels();
                             SaveMatchTeamExperience();
-                            SaveMatchChat();
+                            SaveMatchMessage();
                             SaveMatchObjectives();
 
                             dbTransaction.Commit();
-                            return ReplayParseStatus.Success;
+                            return ReplayParseResult.Saved;
                         }
                         else
-                            return ReplayParseStatus.Duplicate;
+                            return ReplayParseResult.Duplicate;
                         
                     }
                     catch (Exception)
@@ -63,7 +65,7 @@ namespace HeroesParserData.DataQueries
             Models.DbModels.Replay replayData = new Models.DbModels.Replay
             {
                 Frames = Replay.Frames,
-                GameMode = Replay.GameMode.ToString(),
+                GameMode = Replay.GameMode,
                 GameSpeed = Replay.GameSpeed.ToString(),
                 IsGameEventsParsed = Replay.IsGameEventsParsedSuccessfully,
                 MapName = Replay.Map,
@@ -72,7 +74,8 @@ namespace HeroesParserData.DataQueries
                 ReplayLength = Replay.ReplayLength,
                 ReplayVersion = Replay.ReplayVersion,
                 TeamSize = Replay.TeamSize,
-                TimeStamp = Replay.Timestamp              
+                TimeStamp = Replay.Timestamp,
+                FileName = FileName             
             };
 
             // check if replay was added to database already
@@ -198,24 +201,24 @@ namespace HeroesParserData.DataQueries
                 TalentId1 = talentArray[0].TalentID,
                 TalentName1 = talentArray[0].TalentName,
                 TimeSpanSelected1 = talentArray[0].TimeSpanSelected,
-                TalentId2 = talentArray[1].TalentID,
-                TalentName2 = talentArray[1].TalentName,
-                TimeSpanSelected2 = talentArray[1].TimeSpanSelected,
-                TalentId3 = talentArray[2].TalentID,
-                TalentName3 = talentArray[2].TalentName,
-                TimeSpanSelected3 = talentArray[2].TimeSpanSelected,
-                TalentId4 = talentArray[3].TalentID,
-                TalentName4 = talentArray[3].TalentName,
-                TimeSpanSelected4 = talentArray[3].TimeSpanSelected,
-                TalentId5 = talentArray[4].TalentID,
-                TalentName5 = talentArray[4].TalentName,
-                TimeSpanSelected5 = talentArray[4].TimeSpanSelected,
-                TalentId6 = talentArray[5].TalentID,
-                TalentName6 = talentArray[5].TalentName,
-                TimeSpanSelected6 = talentArray[5].TimeSpanSelected,
-                TalentId7 = talentArray[6].TalentID,
-                TalentName7 = talentArray[6].TalentName,
-                TimeSpanSelected7 = talentArray[6].TimeSpanSelected,
+                TalentId4 = talentArray[1].TalentID,
+                TalentName4 = talentArray[1].TalentName,
+                TimeSpanSelected4 = talentArray[1].TimeSpanSelected,
+                TalentId7 = talentArray[2].TalentID,
+                TalentName7 = talentArray[2].TalentName,
+                TimeSpanSelected7 = talentArray[2].TimeSpanSelected,
+                TalentId10 = talentArray[3].TalentID,
+                TalentName10 = talentArray[3].TalentName,
+                TimeSpanSelected10 = talentArray[3].TimeSpanSelected,
+                TalentId13 = talentArray[4].TalentID,
+                TalentName13 = talentArray[4].TalentName,
+                TimeSpanSelected13 = talentArray[4].TimeSpanSelected,
+                TalentId16 = talentArray[5].TalentID,
+                TalentName16 = talentArray[5].TalentName,
+                TimeSpanSelected16 = talentArray[5].TimeSpanSelected,
+                TalentId20 = talentArray[6].TalentID,
+                TalentName20 = talentArray[6].TalentName,
+                TimeSpanSelected20 = talentArray[6].TimeSpanSelected,
             };
 
             Query.MatchPlayerTalent.CreateRecord(HeroesParserDataContext, replayTalent);
@@ -223,16 +226,20 @@ namespace HeroesParserData.DataQueries
 
         private void SaveMatchTeamBans()
         {
-            ReplayMatchTeamBan replayTeamBan = new ReplayMatchTeamBan
+            if (Replay.GameMode == GameMode.UnrankedDraft || Replay.GameMode == GameMode.HeroLeague || Replay.GameMode == GameMode.TeamLeague)
             {
-                ReplayId = ReplayId,
-                Team0Ban0 = Replay.TeamHeroBans[0][0],
-                Team0Ban1 = Replay.TeamHeroBans[0][1],
-                Team1Ban0 = Replay.TeamHeroBans[1][0],
-                Team1Ban1 = Replay.TeamHeroBans[1][1]
-            };
+                ReplayMatchTeamBan replayTeamBan = new ReplayMatchTeamBan
+                {
+                    ReplayId = ReplayId,
+                    Team0Ban0 = Replay.TeamHeroBans[0][0],
+                    Team0Ban1 = Replay.TeamHeroBans[0][1],
+                    Team1Ban0 = Replay.TeamHeroBans[1][0],
+                    Team1Ban1 = Replay.TeamHeroBans[1][1]
+                };
 
-            Query.MatchTeamBan.CreateRecord(HeroesParserDataContext, replayTeamBan);
+                if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null)
+                    Query.MatchTeamBan.CreateRecord(HeroesParserDataContext, replayTeamBan);
+            }
         }
 
         private void SaveMatchTeamLevels()
@@ -318,20 +325,64 @@ namespace HeroesParserData.DataQueries
             }
         }
 
-        private void SaveMatchChat()
+        private void SaveMatchMessage()
         {
-            foreach (var message in Replay.ChatMessages)
+            foreach (var message in Replay.Messages)
             {
-                ReplayMatchChat chat = new ReplayMatchChat
-                {
-                    ReplayId = ReplayId,
-                    PlayerNumber = message.PlayerId,
-                    MessageTarget = message.MessageTarget.ToString(),
-                    Message = message.Message,
-                    TimeStamp = message.Timestamp.Ticks
-                };
+                var messageEventType = message.MessageEventType;
+                var player = message.MessageSender;
 
-                Query.MatchChat.CreateRecord(HeroesParserDataContext, chat);
+                if (messageEventType == ReplayMessageEvents.MessageEventType.SChatMessage)
+                {
+                    var chatMessage = message.ChatMessage;
+
+                    ReplayMatchMessage chat = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player != null? player.Character : string.Empty,
+                        Message = chatMessage.Message,
+                        MessageEventType = messageEventType.ToString(),
+                        MessageTarget = chatMessage.MessageTarget.ToString(),
+                        PlayerName = player != null ? player.Name : string.Empty,
+                        TimeStamp = message.Timestamp             
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, chat);
+                }
+                else if (messageEventType == ReplayMessageEvents.MessageEventType.SPingMessage)
+                {
+                    var pingMessage = message.PingMessage;
+
+                    ReplayMatchMessage ping = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player != null ? player.Character : string.Empty,
+                        Message = "used a ping",
+                        MessageEventType = messageEventType.ToString(),
+                        MessageTarget = pingMessage.MessageTarget.ToString(),
+                        PlayerName = player != null ? player.Name : string.Empty,
+                        TimeStamp = message.Timestamp
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, ping);
+                }
+
+                else if (messageEventType == ReplayMessageEvents.MessageEventType.SPlayerAnnounceMessage)
+                {
+                    var announceMessage = message.PlayerAnnounceMessage;
+
+                    ReplayMatchMessage announce = new ReplayMatchMessage
+                    {
+                        ReplayId = ReplayId,
+                        CharacterName = player != null ? player.Character : string.Empty,
+                        Message = $"announce {announceMessage.AnnouncementType.ToString()}",
+                        MessageEventType = messageEventType.ToString(),
+                        PlayerName = player != null ? player.Name : string.Empty,
+                        TimeStamp = message.Timestamp
+                    };
+
+                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, announce);
+                }          
             }
         }
 
@@ -340,14 +391,16 @@ namespace HeroesParserData.DataQueries
             var objTeam0 = Replay.TeamObjectives[0];
             var objTeam1 = Replay.TeamObjectives[1];
 
-            if (objTeam0 != null)
+            if (objTeam0.Count > 0 && objTeam0 != null)
             {
                 foreach (var objCount in objTeam0)
                 {
+                    var player = objCount.Player;
+
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId),
+                        PlayerId = player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
@@ -358,14 +411,16 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            if (objTeam1 != null)
+            if (objTeam1.Count > 0 && objTeam1 != null)
             {
                 foreach (var objCount in objTeam1)
                 {
+                    var player = objCount.Player;
+
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, objCount.Player.BattleNetId),
+                        PlayerId = player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,

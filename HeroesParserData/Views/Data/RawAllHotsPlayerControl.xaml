@@ -24,8 +24,8 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <local:QueryControl Grid.Row="0"></local:QueryControl>
-            <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="AliceBlue" GridLinesVisibility="Vertical" BorderThickness="1" 
-                      EnableColumnVirtualization="True" EnableRowVirtualization="True"
+            <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" 
+                      EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                       ItemsSource="{Binding ReplayAllHotsPlayer, IsAsync=True}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Medic>
+  <Level1>
+    <MedicProlongedSafeguard name="Prolonged Safeguard">storm_ui_icon_medic_deployshield.dds</MedicProlongedSafeguard>
+    <MedicTraumaTrigger name="Trauma Trigger">storm_ui_icon_medic_deployshield_b.dds</MedicTraumaTrigger>
+    <MedicFeedbackLoop name="Feedback Loop">storm_ui_icon_medic_deployshield_c.dds</MedicFeedbackLoop>
+    <GenericTalentScoutingDrone name="Scouting Drone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
+  </Level1>
+  <Level4>
+    <MedicBioshield name="Bioshield">storm_ui_icon_medic_healingbeam.dds</MedicBioshield>
+    <MedicAutomatedBlock name="Automated Block">storm_ui_icon_medic_advancedblock.dds</MedicAutomatedBlock>
+    <MedicUpgradedBallistics name="Upgraded Ballistics">storm_ui_icon_medic_displacementgrenade.dds</MedicUpgradedBallistics>
+    <MedicInfusedGrenade name="Infused Grenade">storm_ui_icon_medic_displacementgrenade_b.dds</MedicInfusedGrenade>
+  </Level4>
+  <Level7>
+    <MedicClear name="Clear!">storm_ui_icon_medic_displacementgrenade.dds</MedicClear>
+    <MedicIrradiate name="Irradiate">storm_ui_icon_medic_healingbeam.dds</MedicIrradiate>
+    <GenericTalentCalldownMULE name="Calldown: MULE">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+    <GenericTalentCleanse name="Cleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+  </Level7>
+  <Level10>
+    <MedicHeroicAbilityStimDrone name="Stim Drone">storm_ui_icon_medic_stim.dds</MedicHeroicAbilityStimDrone>
+    <MedicHeroicAbilityMedivacDropship name="Medivac Dropship">storm_ui_icon_medic_medivacdropship.dds</MedicHeroicAbilityMedivacDropship>
+  </Level10>
+  <Level13>
+    <MedicIntensiveCare name="Intensive Care">storm_ui_icon_medic_healingbeam.dds</MedicIntensiveCare>
+    <MedicCouplesTherapy name="Couples Therapy">storm_ui_icon_medic_healingbeam_b.dds</MedicCouplesTherapy>
+    <MedicPreventativeCare name="Preventative Care">storm_ui_icon_medic_healingbeam_c.dds</MedicPreventativeCare>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+  </Level13>
+  <Level16>
+    <MedicInoculation name="Inoculation">storm_ui_icon_medic_deployshield.dds</MedicInoculation>
+    <MedicShieldSequencer name="Shield Sequencer">storm_ui_icon_medic_deployshield_c.dds</MedicShieldSequencer>
+    <MedicSystemShock name="System Shock">storm_ui_icon_medic_displacementgrenade.dds</MedicSystemShock>
+    <MedicSecondOpinion name="Second Opinion">storm_ui_icon_medic_displacementgrenade_b.dds</MedicSecondOpinion>
+  </Level16>
+  <Level20>
+    <MedicTransfusionStimDrone name="Transfusion">storm_ui_icon_medic_stim.dds</MedicTransfusionStimDrone>
+    <MedicMedbay name="Medbay">storm_ui_icon_medic_medivacdropship.dds</MedicMedbay>
+    <MedicCaduceusReactor2dot0 name="Caduceus Reactor 2.0">storm_ui_icon_medic_caduceusreactor.dds</MedicCaduceusReactor2dot0>
+    <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+  </Level20>
+  <Old>
+    <MedicAdvancedBlock name="Advanced Block">storm_ui_icon_medic_advancedblock.dds</MedicAdvancedBlock>   
+  </Old>
+</Medic>

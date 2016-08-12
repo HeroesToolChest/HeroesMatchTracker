@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="HeroesParserData.Views.Match.UnrankedDraftControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesParserData.Views.Match"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             Height="auto"
+             Width="auto"
+             d:DataContext="{d:DesignInstance ViewModels:UnrankedDraftViewModel}" d:DesignWidth="1436" d:DesignHeight="528">
+    <UserControl.DataContext>
+        <ViewModels:UnrankedDraftViewModel />
+    </UserControl.DataContext>
+    <DockPanel>
+        <local:MatchStatusBarControl DockPanel.Dock="Bottom"></local:MatchStatusBarControl>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="1024"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+            <local:MatchListControl Grid.Column="1"></local:MatchListControl>
+        </Grid>
+    </DockPanel>
+</UserControl>

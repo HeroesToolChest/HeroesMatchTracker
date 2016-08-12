@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DemonHunter>
+  <Level1>
+    <DemonHunterMasteryCostEffectiveMaterialsHungeringArrow name="Cost-Effective Materials">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasteryCostEffectiveMaterialsHungeringArrow>
+    <DemonHunterMasterySiphoningArrow name="Siphoning Arrow">storm_ui_icon_valla_hungeringarrow_var1.dds</DemonHunterMasterySiphoningArrow>
+    <DemonHunterMasteryCompositeArrowsMultishot name="Composite Arrows">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryCompositeArrowsMultishot>
+    <DemonHunterCombatStyleRancor name="Rancor">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleRancor>
+    <DemonHunterCombatStylePunishment name="Punishment">storm_ui_icon_valla_hatred_var1.dds</DemonHunterCombatStylePunishment>
+  </Level1>
+  <Level4>
+    <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
+    <DemonHunterCombatStyleManticore name="Manticore">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterCombatStyleManticore>
+    <DemonHunterMasteryPuncturingArrow name="Puncturing Arrow">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasteryPuncturingArrow>
+    <DemonHunterMasteryArsenal name="Arsenal">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryArsenal>
+  </Level4>
+  <Level7>
+    <DemonHunterMasteryCaltrops name="Caltrops">storm_ui_icon_valla_vault.dds</DemonHunterMasteryCaltrops>
+    <DemonHunterCombatStyleHotPursuit name="Hot Pursuit">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleHotPursuit>
+    <DemonHunterMasteryRepeatingArrowVault name="Repeating Arrow">storm_ui_icon_valla_vault_var1.dds</DemonHunterMasteryRepeatingArrowVault>
+    <GenericTalentSearingAttacks name="Searing Attacks">storm_ui_icon_talent_autoattack_searing.dds</GenericTalentSearingAttacks>
+  </Level7>
+  <Level10>
+    <DemonHunterHeroicAbilityStrafe name="Strafe">storm_ui_icon_valla_strafe.dds</DemonHunterHeroicAbilityStrafe>
+    <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterHeroicAbilityRainofVengeance>
+  </Level10>
+  <Level13>
+    <GenericTalentGiantKiller name="Giant Killer">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+    <DemonHunterMasteryFrostShot name="Frost Shot">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryFrostShot>
+    <DemonHunterCombatStyleTemperedByDiscipline name="Tempered by Discipline">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleTemperedByDiscipline>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+  </Level13>
+  <Level16>
+    <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+    <DemonHunterMasteryTumble name="Tumble">storm_ui_icon_valla_vault.dds</DemonHunterMasteryTumble>
+    <GenericTalentBloodForBlood name="Blood for Blood">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
+    <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+  </Level16>
+  <Level20>
+    <DemonHunterMasteryVengeance name="Vengeance">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryVengeance>
+    <DemonHunterMasteryStormofVengeance name="Storm of Vengeance">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterMasteryStormofVengeance>
+    <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old>
+    <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
+  </Old>
+</DemonHunter>
