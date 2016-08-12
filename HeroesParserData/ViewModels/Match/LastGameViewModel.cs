@@ -24,8 +24,12 @@ namespace HeroesParserData.ViewModels.Match
 
         private async Task LastGameQueryGameDetails()
         {
-            Replay replay = (await Query.Replay.ReadLastRecordsAsync(1))[0];
-            await QueryGameDetails(replay.ReplayId);          
+            var replays = await Query.Replay.ReadLastRecordsAsync(1);
+
+            if (replays.Count > 0)
+            {
+                await QueryGameDetails(replays[0].ReplayId);
+            }                        
         }
     }
 }

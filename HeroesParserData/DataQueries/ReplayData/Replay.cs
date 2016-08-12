@@ -68,7 +68,10 @@ namespace HeroesParserData.DataQueries.ReplayData
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    if (await db.Replays.CountAsync() > 0)
+                        return await db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    else
+                        return new List<Models.DbModels.Replay>();
                 }
             }
 
