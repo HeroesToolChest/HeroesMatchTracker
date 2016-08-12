@@ -8,7 +8,7 @@ This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.
 - .NET Framework 4.6.2 is required and will be downloaded automatically if needed
 
 ### How to use
-Please visit the wiki.
+Please visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki).
 
 ### License
 [MIT license](https://github.com/koliva8245/HeroesParserData/blob/master/LICENSE.txt)
