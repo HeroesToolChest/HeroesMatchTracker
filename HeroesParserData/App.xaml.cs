@@ -46,6 +46,7 @@ namespace HeroesParserData
             if (UpdateInProgress && !string.IsNullOrEmpty(NewLastestDirectory))
             {
                 SqlConnection.ClearAllPools();
+                CopyDatabaseToLatestRelease();
             }
 
             base.OnExit(e);

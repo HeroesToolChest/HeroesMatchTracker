@@ -66,8 +66,11 @@ namespace HeroesParserData.Views
 
                                     writer.WriteLine(LogWriteLine($"New directory path: {directoryPath}"));
 
-                                    await this.ShowMessageAsync($"Application updated to {latest}",
-                                        "When you're ready to complete the update, please close the application and reopen.", MessageDialogStyle.Affirmative);
+                                    await Application.Current.Dispatcher.InvokeAsync(async delegate
+                                    {
+                                        await this.ShowMessageAsync($"Application updated to {latest}",
+                                            "When you're ready to complete the update, please close the application and reopen.", MessageDialogStyle.Affirmative);
+                                    });
                                 }
                                 else
                                 {
