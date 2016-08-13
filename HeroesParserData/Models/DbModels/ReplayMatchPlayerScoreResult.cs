@@ -52,7 +52,14 @@ namespace HeroesParserData.Models.DbModels
 
         public long? TimeCCdEnemyHeroes { get; set; }
 
-        public TimeSpan? TimeSpentDead { get; set; }
+        public long? TimeSpentDeadTicks { get; set; }
+
+        [NotMapped]
+        public TimeSpan? TimeSpentDead
+        {
+            get { return TimeSpentDeadTicks.HasValue? TimeSpan.FromTicks(TimeSpentDeadTicks.Value) : (TimeSpan?)null; }
+            set { TimeSpentDeadTicks = value.HasValue? value.Value.Ticks : (long?)null; }
+        }
 
         public virtual Replay Replay { get; set; }
 

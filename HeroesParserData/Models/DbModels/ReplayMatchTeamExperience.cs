@@ -12,7 +12,14 @@ namespace HeroesParserData.Models.DbModels
 
         public long ReplayId { get; set; }
 
-        public TimeSpan? Time { get; set; }
+        public long? TimeTicks { get; set; }
+
+        [NotMapped]
+        public TimeSpan? Time
+        {
+            get { return TimeTicks.HasValue ? TimeSpan.FromTicks(TimeTicks.Value) : (TimeSpan?)null; }
+            set { TimeTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
+        }
 
         public int? Team0CreepXP { get; set; }
 
