@@ -1,5 +1,6 @@
 namespace HeroesParserData.Models.DbModels
 {
+    using SQLite.CodeFirst;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
     using System.Linq;
@@ -104,6 +105,8 @@ namespace HeroesParserData.Models.DbModels
             modelBuilder.Entity<ReplayMatchMessage>()
                 .Property(e => e.Message)
                 .IsUnicode(false);
+
+             Database.SetInitializer(new SqliteCreateDatabaseIfNotExists<HeroesParserDataContext>(modelBuilder))
         }
 
         private string CustomErrorMessage(DbEntityValidationException ex)
