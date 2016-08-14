@@ -1,7 +1,7 @@
 ﻿using HeroesParserData.Models.DbModels;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -72,7 +72,7 @@ namespace HeroesParserData.DataQueries.ReplayData
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT TOP {count} * FROM dbo.ReplayAllHotsPlayers ORDER BY {columnName} {orderBy}").ToListAsync();
+                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
                 }
             }
 
@@ -86,7 +86,7 @@ namespace HeroesParserData.DataQueries.ReplayData
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM dbo.ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SqlParameter("@Input", input)).ToListAsync();
+                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
                 }
             }
 
