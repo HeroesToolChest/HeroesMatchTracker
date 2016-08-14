@@ -106,7 +106,7 @@ namespace HeroesParserData.Models.DbModels
                 .Property(e => e.Message)
                 .IsUnicode(false);
 
-             Database.SetInitializer(new SqliteCreateDatabaseIfNotExists<HeroesParserDataContext>(modelBuilder))
+            Database.SetInitializer(new SqliteCreateDatabaseIfNotExists<HeroesParserDataContext>(modelBuilder));
         }
 
         private string CustomErrorMessage(DbEntityValidationException ex)
