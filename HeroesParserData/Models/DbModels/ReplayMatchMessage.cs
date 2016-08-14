@@ -14,7 +14,14 @@ namespace HeroesParserData.Models.DbModels
 
         public string MessageEventType { get; set; }
 
-        public TimeSpan TimeStamp { get; set; }
+        public long TimeStampTicks { get; set; }
+
+        [NotMapped]
+        public TimeSpan TimeStamp
+        {
+            get { return TimeSpan.FromTicks(TimeStampTicks); }
+            set { TimeStampTicks = value.Ticks; }
+        }
 
         [StringLength(20)]
         public string MessageTarget { get; set; }
@@ -24,7 +31,6 @@ namespace HeroesParserData.Models.DbModels
 
         public string CharacterName { get; set; }
 
-        [Column(TypeName = "text")]
         public string Message { get; set; }
 
         public virtual Replay Replay { get; set; }

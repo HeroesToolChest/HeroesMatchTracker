@@ -34,7 +34,14 @@ namespace HeroesParserData.Models.DbModels
         [StringLength(20)]
         public string ReplayVersion { get; set; }
 
-        public TimeSpan ReplayLength { get; set; }
+        public long ReplayLengthTicks { get; set; }
+
+        [NotMapped]
+        public TimeSpan ReplayLength
+        {
+            get { return TimeSpan.FromTicks(ReplayLengthTicks); }
+            set { ReplayLengthTicks = value.Ticks; }
+        }
 
         public GameMode GameMode { get; set; }
 

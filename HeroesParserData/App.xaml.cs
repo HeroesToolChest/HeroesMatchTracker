@@ -1,5 +1,4 @@
-﻿using HeroesParserData.Database;
-using HeroesParserData.Properties;
+﻿using HeroesParserData.Properties;
 using System;
 using System.Data.SqlClient;
 using System.IO;
@@ -61,24 +60,21 @@ namespace HeroesParserData
                 Directory.CreateDirectory(databasePath);
                 
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
-            HeroesParserDataInit.InitiliazeHeroesParserDataStore();
         }
 
         private void CopyDatabaseToLatestRelease()
         {
-            string ldfFile = "HeroesParserData_log.ldf";
-            string mdfFile = "HeroesParserData.mdf";
-            string ldfFilePath = @"Database\HeroesParserData_log.ldf";
-            string mdfFilePath = @"Database\HeroesParserData.mdf";
+            string dbFile = "HeroesParserData.db";
+            string dbFilePath = @"Database\HeroesParserData.db";
             string newAppDirectory = Path.Combine(NewLastestDirectory, "Database");
 
             using (StreamWriter writer = new StreamWriter("_DatabaseCopyLog.txt", true))
             {
                 try
                 {
-                    if (!File.Exists(ldfFilePath) && !File.Exists(mdfFilePath))
+                    if (!File.Exists(dbFilePath))
                     {
-                        writer.WriteLine($"Database file not found: {ldfFilePath}, {mdfFilePath}");
+                        writer.WriteLine($"Database file not found: {dbFilePath}");
                         writer.WriteLine("Nothing to copy, update completed");
 
                         return;
@@ -87,11 +83,9 @@ namespace HeroesParserData
                     Directory.CreateDirectory(newAppDirectory);
                     writer.WriteLine($"Directory created: {newAppDirectory}");
 
-                    File.Copy(ldfFilePath, Path.Combine(newAppDirectory, ldfFile));
-                    File.Copy(mdfFilePath, Path.Combine(newAppDirectory, mdfFile));
+                    File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
 
-                    writer.WriteLine($"Database file copied to: {Path.Combine(newAppDirectory, ldfFile)}");
-                    writer.WriteLine($"Database file copied to: {Path.Combine(newAppDirectory, mdfFile)}");
+                    writer.WriteLine($"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
                     writer.WriteLine("Update completed");
                 }
                 catch (Exception ex)

@@ -19,7 +19,14 @@
         [StringLength(255)]
         public string TeamObjectiveType { get; set; }
 
-        public TimeSpan? TimeStamp { get; set; }
+        public long? TimeStampTicks { get; set; }
+
+        [NotMapped]
+        public TimeSpan? TimeStamp
+        {
+            get { return TimeStampTicks.HasValue ? TimeSpan.FromTicks(TimeStampTicks.Value) : (TimeSpan?)null; }
+            set { TimeStampTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
+        }
 
         public int? Value { get; set; }
 

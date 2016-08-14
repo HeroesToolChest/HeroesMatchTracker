@@ -8,24 +8,24 @@ namespace HeroesParserData.Database
     {
         public static void InitiliazeHeroesParserDataStore()
         {
-            System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<HeroesParserDataContext, HeroesParserDataMigrationConfiguration>());
+            //System.Data.Entity.Database.SetInitializer(new System.Data.Entity.MigrateDatabaseToLatestVersion<HeroesParserDataContext, HeroesParserDataMigrationConfiguration>());
 
-            var configuration = new HeroesParserDataMigrationConfiguration();
-            var migrator = new DbMigrator(configuration);
+            //var configuration = new HeroesParserDataMigrationConfiguration();
+            //var migrator = new DbMigrator(configuration);
 
-            if (migrator.GetPendingMigrations().Any())
-            {
-                migrator.Update();
-            }         
+            //if (migrator.GetPendingMigrations().Any())
+            //{
+            //    migrator.Update();
+            //}
         }
     }
 
-    public sealed class HeroesParserDataMigrationConfiguration : DbMigrationsConfiguration<HeroesParserDataContext>
-    {
-        public HeroesParserDataMigrationConfiguration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
-    }
+    //public sealed class HeroesParserDataMigrationConfiguration : DbMigrationsConfiguration<HeroesParserDataContext>
+    //{
+    //    public HeroesParserDataMigrationConfiguration()
+    //    {
+    //        AutomaticMigrationsEnabled = true;
+    //    }
+    //}
 }
 
