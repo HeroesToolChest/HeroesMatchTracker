@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WitchDoctor>
+<WitchDoctor name="Nazeebo" attributeid="Witc" portrait="storm_ui_glues_draft_portrait_witchdoctor.dds">
   <Level1>
     <WitchDoctorCombatStyleBloodRitual name="Blood Ritual">storm_ui_icon_Nazeebo_VoodooRitual.dds</WitchDoctorCombatStyleBloodRitual>
     <WitchDoctorCombatStyleDeathRitual name="Death Ritual">storm_ui_icon_nazeebo_voodooritual_a.dds</WitchDoctorCombatStyleDeathRitual>

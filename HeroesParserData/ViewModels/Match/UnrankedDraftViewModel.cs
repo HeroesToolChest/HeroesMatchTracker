@@ -10,7 +10,7 @@ namespace HeroesParserData.ViewModels.Match
         public UnrankedDraftViewModel()
             :base()
         {
-
+            HasBans = true;
         }
 
         protected override async Task RefreshExecute()

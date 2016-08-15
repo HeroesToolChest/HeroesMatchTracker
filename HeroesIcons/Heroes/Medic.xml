@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Medic>
+<Medic name="Lt. Morales" attributeid="Medi" portrait="storm_ui_glues_draft_portrait_medic.dds">
   <Level1>
     <MedicProlongedSafeguard name="Prolonged Safeguard">storm_ui_icon_medic_deployshield.dds</MedicProlongedSafeguard>
     <MedicTraumaTrigger name="Trauma Trigger">storm_ui_icon_medic_deployshield_b.dds</MedicTraumaTrigger>

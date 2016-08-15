@@ -162,7 +162,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                 using (var db = new HeroesParserDataContext())
                 {
                     replay = await db.Replays.Where(x => x.ReplayId == replayId)
-                        .Include(x => x.ReplayMatchPlayers).Include(x => x.ReplayMatchPlayerTalents)
+                        .Include(x => x.ReplayMatchPlayers)
+                        .Include(x => x.ReplayMatchPlayerTalents)
+                        .Include(x => x.ReplayMatchTeamBan)
                         .FirstOrDefaultAsync();
 
                     if (replay == null)

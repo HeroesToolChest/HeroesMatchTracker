@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Rexxar>
+<Rexxar attributeid="Rexx" portrait="storm_ui_glues_draft_portrait_rexxar.dds">
   <Level1>
     <RexxarSpiritBondGrizzledBear name="Grizzled Bear">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledBear>
     <RexxarHunterGatherer name="Hunter-Gatherer">storm_ui_icon_Talent_RegenerationMaster.dds</RexxarHunterGatherer>

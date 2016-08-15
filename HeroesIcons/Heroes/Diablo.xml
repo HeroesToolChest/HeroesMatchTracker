@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Diablo>
+<Diablo attributeid="Diab" portrait="storm_ui_glues_draft_portrait_diablo.dds">
   <Level1>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <DiabloMasterySoulFeastBlackSoulstone name="Soul Feast">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySoulFeastBlackSoulstone>

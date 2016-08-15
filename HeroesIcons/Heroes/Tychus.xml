@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tychus>
+<Tychus attributeid="Tych" portrait="storm_ui_glues_draft_portrait_tychus.dds">
   <Level1>
     <TychusRunAndGunShrugItOff name="Shrug It Off">storm_ui_icon_tychus_runandgun.dds</TychusRunAndGunShrugItOff>
     <TychusPressTheAdvantage name="Press the Advantage">storm_ui_icon_tychus_runandgun_A.dds</TychusPressTheAdvantage>

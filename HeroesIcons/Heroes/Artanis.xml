@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Artanis>
+<Artanis attributeid="Arts" portrait="storm_ui_glues_draft_portrait_artanis.dds">
   <Level1>
     <ArtanisTwinBladesReactiveParry name="Reactive Parry">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBladesReactiveParry>
     <ArtanisTwinBladesAmateurOpponent name="Amateur Opponent">storm_ui_icon_artanis_doubleslash_var1.dds</ArtanisTwinBladesAmateurOpponent>

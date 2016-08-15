@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Medivh>
+<Medivh attributeid="Mdvh" portrait="storm_ui_glues_draft_portrait_medivh.dds">
   <Level1>
     <MedivhPortalStablePortal name="Stable Portal">storm_ui_icon_medivh_portal.dds</MedivhPortalStablePortal>
     <MedivhPortalPortalMastery name="Portal Mastery">storm_ui_icon_medivh_portal_a.dds</MedivhPortalPortalMastery>

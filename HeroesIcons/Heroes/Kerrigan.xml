@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kerrigan>
+<Kerrigan attributeid="Kerr" portrait="storm_ui_glues_draft_portrait_kerrigan.dds">
   <Level1>
     <KerriganMasteryRavageSiphoningImpact name="Siphoning Impact">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageSiphoningImpact>
     <KerriganMasteryImpalingBladesSharpenedBlades name="Sharpened Blades">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesSharpenedBlades>

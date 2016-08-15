@@ -169,6 +169,7 @@
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
+    <Compile Include="Models\MatchHeroBans.cs" />
     <Compile Include="Models\MatchInfo.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />

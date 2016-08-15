@@ -10,6 +10,7 @@ namespace HeroesParserData.ViewModels.Match
         public LastGameViewModel()
             :base()
         {
+
         }
 
         public new ICommand Refresh
@@ -28,7 +29,7 @@ namespace HeroesParserData.ViewModels.Match
 
             if (replays.Count > 0)
             {
-                await QueryGameDetails(replays[0].ReplayId);
+                await QuerySummaryDetails(replays[0].ReplayId);
             }                        
         }
     }

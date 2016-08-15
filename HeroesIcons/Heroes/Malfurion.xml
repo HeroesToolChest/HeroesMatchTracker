@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Malfurion>
+<Malfurion attributeid="Malf" portrait="storm_ui_glues_draft_portrait_malfurion.dds">
   <Level1>
     <MalfurionMasteryHarmony name="Harmony">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryHarmony>
     <MalfurionCombatStyleShandosClarity name="Shan'do's Clarity">storm_ui_icon_malfurion_innerrvate.dds</MalfurionCombatStyleShandosClarity>

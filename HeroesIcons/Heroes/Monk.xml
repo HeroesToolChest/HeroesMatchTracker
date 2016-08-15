@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Monk>
+<Monk name="Kharazim" attributeid="Monk" portrait="storm_ui_glues_draft_portrait_monk.dds">
   <Level1>
     <MonkTranscendence name="Transcendence">storm_ui_icon_monk_trait_transcendence.dds</MonkTranscendence>
     <MonkIronFists name="Iron Fists">storm_ui_icon_monk_trait_ironfist.dds</MonkIronFists>

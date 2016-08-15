@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chromie>
+<Chromie attributeid="Chro" portrait="storm_ui_glues_draft_portrait_chromie.dds">
   <Level1>
     <ChromieSandBlastCompoundingAether name="Compounding Aether">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastCompoundingAether>
     <ChromieDragonsBreathDeepBreathing name="Deep Breathing">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathDeepBreathing>

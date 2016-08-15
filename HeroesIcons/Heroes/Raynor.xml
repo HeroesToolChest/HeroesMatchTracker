@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Raynor>
+<Raynor attributeid="Rayn" portrait="storm_ui_glues_draft_portrait_raynor.dds">
   <Level1>
     <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryGiveMeMoreAdrenalineRush>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>

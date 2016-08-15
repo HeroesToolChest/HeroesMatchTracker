@@ -19,9 +19,9 @@ namespace HeroesParserData.ViewModels.Match
     public abstract class MatchContext : ViewModelBase
     {
         #region properties
+        private ObservableCollection<Models.DbModels.Replay> _matchList = new ObservableCollection<Models.DbModels.Replay>();
         private ObservableCollection<MatchInfo> _matchInfoTeam1 = new ObservableCollection<MatchInfo>();
         private ObservableCollection<MatchInfo> _matchInfoTeam2 = new ObservableCollection<MatchInfo>();
-        private ObservableCollection<Models.DbModels.Replay> _matchList = new ObservableCollection<Models.DbModels.Replay>();
         private long _replayId;
         private GameMode _gameMode;
         private string _mapName;
@@ -29,9 +29,12 @@ namespace HeroesParserData.ViewModels.Match
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
         private int _rowsReturned;
+        private bool _hasBans;
         #endregion properties
 
         #region public properties
+        public MatchHeroBans MatchHeroBans { get; set; } = new MatchHeroBans();
+
         public int RowsReturned
         {
             get { return _rowsReturned; }
@@ -131,9 +134,20 @@ namespace HeroesParserData.ViewModels.Match
                 RaisePropertyChangedEvent(nameof(SelectedReplay));
             }
         }
+
+        // shows the expander that shows the bans
+        public bool HasBans
+        {
+            get { return _hasBans; }
+            set
+            {
+                _hasBans = value;
+                RaisePropertyChangedEvent(nameof(HasBans));
+            }
+        }
         #endregion public properties
 
-        protected TalentIcons TalentIcons = new TalentIcons();
+        protected HeroesInfo HeroesInfo = new HeroesInfo();
 
         public ICommand Refresh
         {
@@ -161,14 +175,14 @@ namespace HeroesParserData.ViewModels.Match
             if (replay == null)
                 return;
 
-            await QueryGameDetails(replay.ReplayId);
+            await QuerySummaryDetails(replay.ReplayId);
         }
 
-        protected async Task QueryGameDetails(long replayId)
+        protected async Task QuerySummaryDetails(long replayId)
         {
             try
             {
-                ClearGameDetails();
+                ClearSummaryDetails();
 
                 MatchInfoTeam1 = new ObservableCollection<MatchInfo>();
                 MatchInfoTeam2 = new ObservableCollection<MatchInfo>();
@@ -188,21 +202,21 @@ namespace HeroesParserData.ViewModels.Match
                     matchinfo.BattleNetId = playerInfo.BattleNetId;
                     matchinfo.CharacterName = player.Character;
                     matchinfo.CharacterLevel = player.CharacterLevel;
-                    matchinfo.Talent1 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
-                    matchinfo.Talent4 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
-                    matchinfo.Talent7 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
-                    matchinfo.Talent10 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName10);
-                    matchinfo.Talent13 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName13);
-                    matchinfo.Talent16 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName16);
-                    matchinfo.Talent20 = TalentIcons.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName20);
+                    matchinfo.Talent1 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
+                    matchinfo.Talent4 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.Talent7 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.Talent10 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName10);
+                    matchinfo.Talent13 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName13);
+                    matchinfo.Talent16 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName16);
+                    matchinfo.Talent20 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName20);
 
-                    matchinfo.TalentName1 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
-                    matchinfo.TalentName4 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
-                    matchinfo.TalentName7 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
-                    matchinfo.TalentName10 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName10);
-                    matchinfo.TalentName13 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName13);
-                    matchinfo.TalentName16 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName16);
-                    matchinfo.TalentName20 = TalentIcons.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName20);
+                    matchinfo.TalentName1 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
+                    matchinfo.TalentName4 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
+                    matchinfo.TalentName7 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
+                    matchinfo.TalentName10 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName10);
+                    matchinfo.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName13);
+                    matchinfo.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName16);
+                    matchinfo.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName20);
 
                     if (player.IsWinner)
                         matchinfo.TalentsBackColor = Color.FromRgb(233, 252, 233);
@@ -220,6 +234,20 @@ namespace HeroesParserData.ViewModels.Match
                 MapName = replay.MapName;
                 GameDate = replay.TimeStamp;
                 GameTime = replay.ReplayLength;
+
+                // hero bans
+                if (replay.ReplayMatchTeamBan != null)
+                {
+                    HasBans = true;
+                    MatchHeroBans.Team0Ban0 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team0Ban0);
+                    MatchHeroBans.Team0Ban1 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team0Ban1);
+                    MatchHeroBans.Team1Ban0 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team1Ban0);
+                    MatchHeroBans.Team1Ban1 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team1Ban1);
+                    MatchHeroBans.Team0Ban0HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team0Ban0);
+                    MatchHeroBans.Team0Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team0Ban1);
+                    MatchHeroBans.Team1Ban0HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban0);
+                    MatchHeroBans.Team1Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban1);
+                }
             }
             catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
             {
@@ -231,7 +259,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        private void ClearGameDetails()
+        private void ClearSummaryDetails()
         {
             foreach (var matchInfo in MatchInfoTeam1)
             {
@@ -258,6 +286,16 @@ namespace HeroesParserData.ViewModels.Match
                 matchInfo.Talent20 = null;
             }
             MatchInfoTeam2 = null;
+
+            MatchHeroBans.Team0Ban0 = null;
+            MatchHeroBans.Team0Ban1 = null;
+            MatchHeroBans.Team1Ban0 = null;
+            MatchHeroBans.Team1Ban1 = null;
+            MatchHeroBans.Team0Ban0HeroName = null;
+            MatchHeroBans.Team0Ban1HeroName = null;
+            MatchHeroBans.Team1Ban0HeroName = null;
+            MatchHeroBans.Team1Ban1HeroName = null;
+            HasBans = false;
         }
     }
 }

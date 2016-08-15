@@ -43,7 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TalentIcons.cs" />
+    <Compile Include="HeroesInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +338,64 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_notfound.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_nopick.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_abathur.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_anubarak.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_artanis.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_arthas.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_auriel.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_azmodan.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_barbarian.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_butcher.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_chen.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_cho.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_chromie.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_dehaka.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_demonhunter.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_diablo.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_faeriedragon.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_falstad.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_gall.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_gazlowe.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_genngreymane.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_guldan.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_illidan.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_jaina.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_johanna.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_kaelthas.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_kerrigan.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_l90etc.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_leoric.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_lili.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_lostvikings.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_lunara.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_malfurion.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_medic.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_medivh.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_monk.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_muradin.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_murky.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_necromancer.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_nova.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_raynor.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_rehgar.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_rexxar.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_sgthammer.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_stitches.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_sylvanas.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tassadar.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_thrall.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tinker.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tracer.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tychus.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tyrael.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_tyrande.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_uther.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_witchdoctor.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_wizard.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zagara.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zeratul.dds" />
     <Resource Include="Icons\Talents\Tychus\storm_ui_icon_talent_autoattack_heal.dds" />
     <Resource Include="Icons\Talents\Zagara\storm_ui_icon_talent_autoattack_cooldown.dds" />
     <Resource Include="Icons\Talents\Tyrande\storm_ui_icon_talent_searingarrow.dds" />

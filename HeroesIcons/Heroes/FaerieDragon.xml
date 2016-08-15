@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FaerieDragon>
+<FaerieDragon name="Brightwing" attributeid="Faer" portrait="storm_ui_glues_draft_portrait_faeriedragon.dds">
   <Level1>
     <BrightwingDreamShotArcaneFlare name="Dream Shot">storm_ui_icon_brightwing_arcaneflare.dds</BrightwingDreamShotArcaneFlare>
     <BrightwingUnfurlingSpraySoothingMist name="Unfurling Spray">storm_ui_icon_brightwing_soothingmist.dds</BrightwingUnfurlingSpraySoothingMist>

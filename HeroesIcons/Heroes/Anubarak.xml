@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Anubarak>
+<Anubarak name="Anub'arak" attributeid="Anub" portrait="storm_ui_glues_draft_portrait_anubarak.dds">
   <Level1>
     <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryExtendedSpikesImpale>
     <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>

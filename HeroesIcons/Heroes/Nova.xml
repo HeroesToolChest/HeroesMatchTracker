@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Nova>
+<Nova attributeid="Nova" portrait="storm_ui_glues_draft_portrait_nova.dds">
   <Level1>
     <NovaCombatStyleTacticalEspionage name="Tactical Espionage">storm_ui_icon_nova_personalcloaking.dds</NovaCombatStyleTacticalEspionage>
     <NovaCombatStyleAdvancedCloaking name="Advanced Cloaking">storm_ui_icon_nova_personalcloaking_var1.dds</NovaCombatStyleAdvancedCloaking>

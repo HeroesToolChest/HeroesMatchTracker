@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<L90ETC>
+<L90ETC name="E.T.C" attributeid="L90E" portrait="storm_ui_glues_draft_portrait_l90etc.dds">
   <Level1>
     <ETCMasteryRollingLikeaStone name="Rolling Like a Stone">storm_ui_icon_etc_powerslide.dds</ETCMasteryRollingLikeaStone>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>

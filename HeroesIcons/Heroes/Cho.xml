@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Cho>
+<Cho attributeid="CCho" portrait="storm_ui_glues_draft_portrait_cho.dds">
   <Level1>
     <ChoSurgingDash name="Surging Dash">storm_ui_icon_Cho_MoltenSurge_A.dds</ChoSurgingDash>
     <ChoBlazingBulwark name="Blazing Bulwark">storm_ui_icon_cho_consumingflame.dds</ChoBlazingBulwark>

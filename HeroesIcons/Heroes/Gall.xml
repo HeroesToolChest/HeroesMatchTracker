@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Gall>
+<Gall attributeid="Gall" portrait="storm_ui_glues_draft_portrait_gall.dds">
   <Level1>
     <GallSpurredOnward name="Spurred Onward">storm_ui_icon_gall_spurredonward.dds</GallSpurredOnward>
     <GallShove name="Shove">storm_ui_icon_gall_shove.dds</GallShove>

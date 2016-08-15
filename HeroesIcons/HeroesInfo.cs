@@ -7,15 +7,32 @@ using System.Xml.Linq;
 
 namespace HeroesIcons
 {
-    public class TalentIcons
+    public class HeroesInfo
     {
+        /// <summary>
+        /// key is reference name of talent
+        /// Tuple: key is real name of talent
+        /// </summary>
         private Dictionary<string, Tuple<string, Uri>> Talents = new Dictionary<string, Tuple<string, Uri>>();
+        /// <summary>
+        /// key is attributeid
+        /// </summary>
+        private Dictionary<string, Uri> HeroPortraits = new Dictionary<string, Uri>();
+        /// <summary>
+        /// key is attributeid, value is hero name
+        /// </summary>
+        private Dictionary<string, string> HeroNamesFromAttId = new Dictionary<string, string>();
 
-        public TalentIcons()
+        public HeroesInfo()
         {
-            SetTalentNamesIcons();
+            ParseXmlHeroFiles();
         }
 
+        /// <summary>
+        /// Returns a BitmapImage of the talent
+        /// </summary>
+        /// <param name="nameOfHeroTalent">Reference talent name</param>
+        /// <returns>BitmapImage of the talent</returns>
         public BitmapImage GetTalentIcon(string nameOfHeroTalent)
         {
             Tuple<string, Uri> talent;
@@ -33,6 +50,31 @@ namespace HeroesIcons
             return new BitmapImage(talent.Item2);
         }
 
+        /// <summary>
+        /// Returns a BitmapImage of the hero
+        /// </summary>
+        /// <param name="attributeId">attributeid</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroPortrait(string heroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(heroName))
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
+
+            // not found
+            if (!HeroPortraits.TryGetValue(heroName, out uri))
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+
+            return new BitmapImage(uri);
+        }
+
+        /// <summary>
+        /// Returns the talent name from the talent reference name
+        /// </summary>
+        /// <param name="nameOfHeroTalent">Reference talent name</param>
+        /// <returns>Talent name</returns>
         public string GetTrueTalentName(string nameOfHeroTalent)
         {
             Tuple<string, Uri> talent;
@@ -48,6 +90,26 @@ namespace HeroesIcons
             return talent.Item1;
         }
 
+        /// <summary>
+        /// Returns the real hero name from the hero's attribute id
+        /// </summary>
+        /// <param name="attributeId">Four character hero id</param>
+        /// <returns>Full hero name</returns>
+        public string GeRealHeroNameFromAttId(string attributeId)
+        {
+            string heroName;
+
+            // no pick
+            if (string.IsNullOrEmpty(attributeId))
+                return null;
+
+            // not found
+            if (!HeroNamesFromAttId.TryGetValue(attributeId, out heroName))
+                return "Hero not found";
+
+            return heroName;
+        }
+
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (!isGenericTalent)
@@ -56,7 +118,12 @@ namespace HeroesIcons
                 return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/{fileName}", UriKind.Absolute);
         }
 
-        private void SetTalentNamesIcons()
+        private Uri SetHeroPortraitUri(string fileName)
+        {
+            return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/{fileName}", UriKind.Absolute);
+        }
+
+        private void ParseXmlHeroFiles()
         {
             List<string> heroes = new List<string>();
 
@@ -78,8 +145,31 @@ namespace HeroesIcons
             {
                 using (XmlReader reader = XmlReader.Create($@"Heroes/{hero}.xml"))
                 {
-                    reader.ReadStartElement(hero);
+                    reader.MoveToContent();
 
+                    if (reader.Name != hero)
+                        continue;
+
+                    // get real name
+                    string realHeroName = reader["name"];
+
+                    // add attributeid from hero name
+                    string attributeId = reader["attributeid"];
+                    if (!string.IsNullOrEmpty(attributeId))
+                    {
+                        if (!string.IsNullOrEmpty(realHeroName))
+                            HeroNamesFromAttId.Add(attributeId, realHeroName);
+                        else
+                            HeroNamesFromAttId.Add(attributeId, hero);
+
+
+                        // add portrait
+                        string portraitName = reader["portrait"];
+                        if (!string.IsNullOrEmpty(portraitName))
+                            HeroPortraits.Add(attributeId, SetHeroPortraitUri(portraitName));
+                    }
+
+                    // add talents
                     while (reader.Read())
                     {
                         if (reader.IsStartElement())

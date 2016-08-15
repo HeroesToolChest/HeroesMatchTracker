@@ -10,7 +10,7 @@ namespace HeroesParserData.ViewModels.Match
         public QuickMatchViewModel()
             :base()
         {
-
+            HasBans = false;
         }
 
         protected override async Task RefreshExecute()
