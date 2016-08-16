@@ -225,7 +225,11 @@ namespace HeroesParserData.ViewModels.Match
                     matchinfo.BattleNetTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName);
                     matchinfo.BattleNetId = playerInfo.BattleNetId;
                     matchinfo.CharacterName = player.Character;
-                    matchinfo.CharacterLevel = player.CharacterLevel;
+
+                    if (!player.IsAutoSelect)
+                        matchinfo.CharacterLevel = player.CharacterLevel.ToString();
+                    else
+                        matchinfo.CharacterLevel = "Auto Select";
 
                     if (player.Character != "None")
                     {

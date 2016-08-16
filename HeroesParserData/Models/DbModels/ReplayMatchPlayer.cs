@@ -28,7 +28,7 @@ namespace HeroesParserData.Models.DbModels
 
         public int? Handicap { get; set; }
 
-        public bool IsAutoSelet { get; set; }
+        public bool IsAutoSelect { get; set; }
 
         public bool IsSilenced { get; set; }
 

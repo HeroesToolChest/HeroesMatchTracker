@@ -146,7 +146,7 @@ namespace HeroesParserData.DataQueries
                 CharacterLevel = player.CharacterLevel,
                 Difficulty = player.Difficulty.ToString(),
                 Handicap = player.Handicap,
-                IsAutoSelet = player.IsAutoSelect,
+                IsAutoSelect = player.IsAutoSelect,
                 IsSilenced = player.IsSilenced,
                 IsWinner = player.IsWinner,
                 MountAndMountTint = player.MountAndMountTint,

@@ -9,7 +9,7 @@ namespace HeroesParserData.Models
         public int BattleNetTag { get; set; }
         public int BattleNetId { get; set; }
         public string CharacterName { get; set; }
-        public int CharacterLevel { get; set; }
+        public string CharacterLevel { get; set; }
         public BitmapImage Talent1 { get; set; }        
         public BitmapImage Talent4 { get; set; }       
         public BitmapImage Talent7 { get; set; }        
