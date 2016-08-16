@@ -10,6 +10,7 @@ namespace HeroesParserData.ViewModels.Match
         public QuickMatchViewModel()
             :base()
         {
+            HasObservers = false;
             HasBans = false;
         }
 

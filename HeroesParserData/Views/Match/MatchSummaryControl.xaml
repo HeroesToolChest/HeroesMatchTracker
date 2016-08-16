@@ -16,9 +16,10 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="38"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -224,7 +225,29 @@
                 </DataGrid>
             </Grid>
         </Expander>
-        <Expander Header="Team Bans" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" IsExpanded="False" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
+        <Expander Header="Observers" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" IsExpanded="False" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
+            <Grid>
+                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
+                          ItemsSource="{Binding MatchObservers, IsAsync=True}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />
+                        <DataGridTextColumn Header="BattleNet Tag" Binding="{Binding BattleNetTag}" />
+                        <DataGridTextColumn Header="BattleNet Id" Binding="{Binding BattleNetId}" />
+                        <DataGridTextColumn Header="Character Name" Binding="{Binding CharacterName}" />
+                        <DataGridTextColumn Header="Character Level" Binding="{Binding CharacterLevel}" />
+                        <DataGridTemplateColumn Header="1" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="4" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="7" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="10" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="13" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="16" Width="60"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="20" Width="60"></DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Expander>
+        <Expander Header="Team Bans" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4" IsExpanded="False" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>

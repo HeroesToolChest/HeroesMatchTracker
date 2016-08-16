@@ -103,27 +103,19 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName);
             }
 
-            public static void UpdateSeen(ReplayAllHotsPlayer replayAllHotsPlayer)
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName);
-
-                    if (record != null)
-                    {
-                        record.Seen += 1;
-
-                        db.SaveChanges();
-                    }
-                }
-            }
-
-            public static long UpdateSeen(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
+            public static long UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
                 var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName);
 
                 if (record != null)
                 {
+                    if (record.BattleNetId < 1)
+                    {
+                        record.BattleNetId = replayAllHotsPlayer.BattleNetId;
+                        record.BattleNetRegionId = replayAllHotsPlayer.BattleNetRegionId;
+                        record.BattleNetSubId = replayAllHotsPlayer.BattleNetSubId;
+                    }
+
                     record.Seen += 1;
 
                     db.SaveChanges();

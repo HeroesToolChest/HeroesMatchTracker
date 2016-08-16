@@ -10,6 +10,7 @@ namespace HeroesParserData.ViewModels.Match
         public TeamLeagueViewModel()
             :base()
         {
+            HasObservers = false;
             HasBans = true;
         }
 

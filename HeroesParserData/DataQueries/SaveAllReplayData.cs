@@ -90,8 +90,19 @@ namespace HeroesParserData.DataQueries
         private void SavePlayerRelatedData()
         {
             int i = 0;
-            foreach (var player in Replay.Players)
+
+            Player[] players;
+
+            if (Replay.ReplayBuild > 39445)
+                players = Replay.ClientListByUserID;
+            else
+                players = Replay.Players;
+
+            foreach (var player in players)
             {
+                if (player == null)
+                    break;
+
                 ReplayAllHotsPlayer hotsPlayer = new ReplayAllHotsPlayer
                 {
                     BattleTagName = Utilities.GetBattleTagName(player.Name, player.BattleTag),
@@ -104,15 +115,24 @@ namespace HeroesParserData.DataQueries
                 long playerId;
 
                 if (Query.HotsPlayer.IsExistingHotsPlayer(HeroesParserDataContext, hotsPlayer))
-                    playerId = Query.HotsPlayer.UpdateSeen(HeroesParserDataContext, hotsPlayer);
+                    playerId = Query.HotsPlayer.UpdateRecord(HeroesParserDataContext, hotsPlayer);
                 else
                     playerId = Query.HotsPlayer.CreateRecord(HeroesParserDataContext, hotsPlayer);
 
-                SaveMatchPlayers(playerId, i, player);
-                SaveMatchPlayerScoreResults(playerId, player);
-                SaveMatchPlayerTalents(playerId, player);
+                if (player.Character == null && Replay.GameMode == GameMode.Custom)
+                {
+                    player.Team = 4;
+                    player.Character = "None";
+                    SaveMatchPlayers(playerId, -1, player);
+                }
+                else
+                {
+                    SaveMatchPlayers(playerId, i, player);
+                    SaveMatchPlayerScoreResults(playerId, player);
+                    SaveMatchPlayerTalents(playerId, player);
 
-                i++;
+                    i++;
+                }
             }
         }
 
