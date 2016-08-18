@@ -48,7 +48,13 @@ namespace HeroesIcons
 
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
-                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+            {
+                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
+                {
+                    writer.WriteLine($"Talent icon: {nameOfHeroTalent}");
+                    return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+                }
+            }
 
 
             return new BitmapImage(talent.Item2);
@@ -69,7 +75,13 @@ namespace HeroesIcons
 
             // not found
             if (!HeroPortraits.TryGetValue(attributeId, out uri))
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+            {
+                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
+                {
+                    writer.WriteLine($"Hero portrait: {attributeId}");
+                    return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                }
+            }
 
             return new BitmapImage(uri);
         }
@@ -89,7 +101,13 @@ namespace HeroesIcons
 
             // not found
             if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+            {
+                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
+                {
+                    writer.WriteLine($"Leader hero portrait: {realHeroName}");
+                    return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+                }
+            }
 
             return new BitmapImage(uri);
         }
@@ -109,7 +127,13 @@ namespace HeroesIcons
 
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
-                return nameOfHeroTalent;
+            {
+                using (StreamWriter writer = new StreamWriter("_ReferenceNameLog.txt", true))
+                {
+                    writer.WriteLine($"No name for reference: {nameOfHeroTalent}");
+                    return nameOfHeroTalent;
+                }
+            }
 
             return talent.Item1;
         }
@@ -129,7 +153,13 @@ namespace HeroesIcons
 
             // not found
             if (!HeroNamesFromAttId.TryGetValue(attributeId, out heroName))
-                return "Hero not found";
+            {
+                using (StreamWriter writer = new StreamWriter("_ReferenceNameLog.txt", true))
+                {
+                    writer.WriteLine($"No hero name for reference: {attributeId}");
+                    return "Hero not found";
+                }
+            }
 
             return heroName;
         }
