@@ -23,7 +23,7 @@ namespace HeroesParserData.Views
         #if !DEBUG
             Task.Run(async () =>
             {
-                await Task.Delay(3000);
+                await Task.Delay(2000);
                 await AutoUpdateCheck();
             });
         #endif
@@ -31,8 +31,12 @@ namespace HeroesParserData.Views
 
         private async Task AutoUpdateCheck()
         {
+            var directoryLog = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs");
             for (;;)
             {
+                if (!Directory.Exists(directoryLog))
+                    Directory.CreateDirectory(directoryLog);
+
                 using (StreamWriter writer = new StreamWriter("logs/_UpdateLog.txt", true))
                 {
                     try
