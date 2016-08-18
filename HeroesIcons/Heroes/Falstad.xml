@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Falstad attributeid="Fals" portrait="storm_ui_glues_draft_portrait_falstad.dds">
+<Falstad attributeid="Fals" portrait="storm_ui_glues_draft_portrait_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
   <Level1>
     <FalstadGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadGatheringStorm>
     <FalstadHammerangGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadHammerangGatheringStorm>

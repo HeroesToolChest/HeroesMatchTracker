@@ -22,6 +22,10 @@ namespace HeroesIcons
         /// key is attributeid, value is hero name
         /// </summary>
         private Dictionary<string, string> HeroNamesFromAttId = new Dictionary<string, string>();
+        /// <summary>
+        /// key is attributeid
+        /// </summary>
+        private Dictionary<string, Uri> LeaderboardPortraits = new Dictionary<string, Uri>();
 
         public HeroesInfo()
         {
@@ -55,17 +59,37 @@ namespace HeroesIcons
         /// </summary>
         /// <param name="attributeId">attributeid</param>
         /// <returns>BitmpImage of the hero</returns>
-        public BitmapImage GetHeroPortrait(string heroName)
+        public BitmapImage GetHeroPortrait(string attributeId)
         {
             Uri uri;
 
             // no pick
-            if (string.IsNullOrEmpty(heroName))
+            if (string.IsNullOrEmpty(attributeId))
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
 
             // not found
-            if (!HeroPortraits.TryGetValue(heroName, out uri))
+            if (!HeroPortraits.TryGetValue(attributeId, out uri))
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+
+            return new BitmapImage(uri);
+        }
+
+        /// <summary>
+        /// Returns a leaderboard portrait BitmapImage of the hero
+        /// </summary>
+        /// <param name="realHeroName">Real hero name</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroLeaderboardPortrait(string realHeroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(realHeroName))
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
+
+            // not found
+            if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
 
             return new BitmapImage(uri);
         }
@@ -123,6 +147,11 @@ namespace HeroesIcons
             return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/{fileName}", UriKind.Absolute);
         }
 
+        private Uri SetLeaderboardPortrait(string fileName)
+        {
+            return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
+        }
+
         private void ParseXmlHeroFiles()
         {
             List<string> heroes = new List<string>();
@@ -152,22 +181,28 @@ namespace HeroesIcons
 
                     // get real name
                     string realHeroName = reader["name"];
+                    if (string.IsNullOrEmpty(realHeroName))
+                        realHeroName = hero; // default to hero name
 
-                    // add attributeid from hero name
+                    // get attributeid from hero name
                     string attributeId = reader["attributeid"];
+
+                    // get portrait
+                    string portraitName = reader["portrait"];
+
+                    // get leaderboard portrait
+                    string lbPortrait = reader["leader"];
+
                     if (!string.IsNullOrEmpty(attributeId))
                     {
-                        if (!string.IsNullOrEmpty(realHeroName))
-                            HeroNamesFromAttId.Add(attributeId, realHeroName);
-                        else
-                            HeroNamesFromAttId.Add(attributeId, hero);
+                        HeroNamesFromAttId.Add(attributeId, realHeroName);
 
-
-                        // add portrait
-                        string portraitName = reader["portrait"];
                         if (!string.IsNullOrEmpty(portraitName))
                             HeroPortraits.Add(attributeId, SetHeroPortraitUri(portraitName));
                     }
+
+                    if (!string.IsNullOrEmpty(lbPortrait))
+                        LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
 
                     // add talents
                     while (reader.Read())

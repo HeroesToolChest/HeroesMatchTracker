@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Arthas attributeid="Arth" portrait="storm_ui_glues_draft_portrait_arthas.dds">
+<Arthas attributeid="Arth" portrait="storm_ui_glues_draft_portrait_arthas.dds" leader="storm_ui_ingame_hero_leaderboard_arthas.dds">
   <Level1>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryEternalHungerFrostmourneHungers>

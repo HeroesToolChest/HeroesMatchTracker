@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Necromancer name="Xul" attributeid="Necr" portrait="storm_ui_glues_draft_portrait_necromancer.dds">
+<Necromancer name="Xul" attributeid="Necr" portrait="storm_ui_glues_draft_portrait_necromancer.dds" leader="storm_ui_ingame_hero_leaderboard_necromancer.dds">
   <Level1>
     <NecromancerTalentBoneArmorBacklash name="Backlash">storm_ui_icon_Necromancer_BoneArmor_B.dds</NecromancerTalentBoneArmorBacklash>
     <NecromancerTalentBoneArmorShackler name="Shackler">storm_ui_icon_Necromancer_BoneArmor_C.dds</NecromancerTalentBoneArmorShackler>

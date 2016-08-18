@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kaelthas name="Kael'thas" attributeid="Kael" portrait="storm_ui_glues_draft_portrait_kaelthas.dds">
+<Kaelthas name="Kael'thas" attributeid="Kael" portrait="storm_ui_glues_draft_portrait_kaelthas.dds" leader="storm_ui_ingame_hero_leaderboard_kaelthas.dds">
   <Level1>
     <KaelthasFlamestrikeConvection name="Convection">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeConvection>
     <KaelthasVerdantSpheresFelInfusion name="Fel Infusion">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasVerdantSpheresFelInfusion>

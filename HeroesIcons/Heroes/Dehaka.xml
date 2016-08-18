@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Dehaka attributeid="Deha" portrait="storm_ui_glues_draft_portrait_dehaka.dds">
+<Dehaka attributeid="Deha" portrait="storm_ui_glues_draft_portrait_dehaka.dds" leader="storm_ui_ingame_hero_leaderboard_dehaka.dds">
   <Level1>
     <DehakaDarkSwarmTalentEnduringSwarm name="Enduring Swarm">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmTalentEnduringSwarm>
     <DehakaDarkSwarmTalentPrimalAggression name="Primal Aggression">storm_ui_icon_Dehaka_Trample_A.dds</DehakaDarkSwarmTalentPrimalAggression>

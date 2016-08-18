@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Jaina attributeid="Jain" portrait="storm_ui_glues_draft_portrait_jaina.dds">
+<Jaina attributeid="Jain" portrait="storm_ui_glues_draft_portrait_jaina.dds" leader="storm_ui_ingame_hero_leaderboard_jaina.dds">
   <Level1>
     <JainaFrostboltWintersReach name="Winter's Reach">storm_ui_icon_jaina_frostbolt.dds</JainaFrostboltWintersReach>
     <JainaFrostbiteLingeringChill name="Lingering Chill">storm_ui_icon_jaina_frostbite.dds</JainaFrostbiteLingeringChill>

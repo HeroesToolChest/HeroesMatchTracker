@@ -3,11 +3,11 @@ using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.Models
 {
-    public class MatchInfo
+    public class MatchTalents
     {
+        public BitmapImage LeaderboardPortrait { get; set; }
         public string PlayerName { get; set; }
-        public int BattleNetTag { get; set; }
-        public int BattleNetId { get; set; }
+        public string PlayerTag { get; set; }
         public string CharacterName { get; set; }
         public string CharacterLevel { get; set; }
         public BitmapImage Talent1 { get; set; }        
@@ -25,5 +25,6 @@ namespace HeroesParserData.Models
         public string TalentName16 { get; set; }
         public string TalentName20 { get; set; }
         public Color TalentsBackColor { get; set; }
+        public Color TalentsPortraitBackColor { get; set; }
     }
 }

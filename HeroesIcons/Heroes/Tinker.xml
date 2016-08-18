@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tinker name="Gazlowe" attributeid="Tink" portrait="storm_ui_glues_draft_portrait_tinker.dds">
+<Tinker name="Gazlowe" attributeid="Tink" portrait="storm_ui_glues_draft_portrait_tinker.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
   <Level1>
     <TinkerMasteryExtraTNT name="Extra TNT">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryExtraTNT>
     <TinkerCombatStyleScrapoMaticSmelter name="Scrap-o-Matic Smelter">storm_ui_icon_gazlowe_salvager.dds</TinkerCombatStyleScrapoMaticSmelter>

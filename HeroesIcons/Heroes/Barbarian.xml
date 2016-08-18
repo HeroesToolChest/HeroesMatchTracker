@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Barbarian name="Sonya" attributeid="Barb" portrait="storm_ui_glues_draft_portrait_barbarian.dds">
+<Barbarian name="Sonya" attributeid="Barb" portrait="storm_ui_glues_draft_portrait_barbarian.dds" leader="storm_ui_ingame_hero_leaderboard_femalebarbarian.dds">
   <Level1>
     <BarbarianMasteryWarPaint name="War Paint">storm_ui_icon_talent_autoattack_heal.dds</BarbarianMasteryWarPaint>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>

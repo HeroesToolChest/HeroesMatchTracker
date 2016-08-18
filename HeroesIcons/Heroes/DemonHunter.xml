@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DemonHunter name="Valla" attributeid="Demo" portrait="storm_ui_glues_draft_portrait_demonhunter.dds">
+<DemonHunter name="Valla" attributeid="Demo" portrait="storm_ui_glues_draft_portrait_demonhunter.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
   <Level1>
     <DemonHunterMasteryCostEffectiveMaterialsHungeringArrow name="Cost-Effective Materials">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasteryCostEffectiveMaterialsHungeringArrow>
     <DemonHunterMasterySiphoningArrow name="Siphoning Arrow">storm_ui_icon_valla_hungeringarrow_var1.dds</DemonHunterMasterySiphoningArrow>

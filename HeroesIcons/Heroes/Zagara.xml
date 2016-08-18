@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Zagara attributeid="Zaga" portrait="storm_ui_glues_draft_portrait_zagara.dds">
+<Zagara attributeid="Zaga" portrait="storm_ui_glues_draft_portrait_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
   <Level1>
     <ZagaraMasteryVolatileAcid name="Volatile Acid">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryVolatileAcid>
     <ZagaraMasteryCorpseFeeders name="Corpse Feeders">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryCorpseFeeders>

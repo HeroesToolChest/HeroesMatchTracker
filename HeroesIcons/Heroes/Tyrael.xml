@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tyrael attributeid="Tyrl" portrait="storm_ui_glues_draft_portrait_tyrael.dds">
+<Tyrael attributeid="Tyrl" portrait="storm_ui_glues_draft_portrait_tyrael.dds" leader="storm_ui_ingame_hero_leaderboard_tyrael.dds">
   <Level1>
     <TyraelMasteryPurgeEvil name="Purge Evil">storm_ui_icon_tyrael_smite.dds</TyraelMasteryPurgeEvil>
     <TyraelMasteryPassiveProtectioninDeath name="Protection in Death">storm_ui_icon_tyrael_archangelswrath.dds</TyraelMasteryPassiveProtectioninDeath>

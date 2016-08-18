@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Guldan attributeid="Guld" portrait="storm_ui_glues_draft_portrait_guldan.dds">
+<Guldan attributeid="Guld" portrait="storm_ui_glues_draft_portrait_guldan.dds" leader="storm_ui_ingame_hero_leaderboard_guldan.dds">
   <Level1>
     <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame">storm_ui_icon_guldan_felflame.dds</GuldanFelFlamePursuitOfFlame>
     <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeGlyphOfDrainLife>

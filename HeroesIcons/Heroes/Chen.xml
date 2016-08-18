@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chen attributeid="Chen" portrait="storm_ui_glues_draft_portrait_chen.dds">
+<Chen attributeid="Chen" portrait="storm_ui_glues_draft_portrait_chen.dds" leader="storm_ui_ingame_hero_leaderboard_chen.dds">
   <Level1>
     <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
     <ChenMasteryKegSmashKegToss name="Keg Toss">storm_ui_icon_chen_kegsmash.dds</ChenMasteryKegSmashKegToss>

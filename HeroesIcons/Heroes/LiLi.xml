@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LiLi attributeid="LiLi" portrait="storm_ui_glues_draft_portrait_lili.dds">
+<LiLi name="Li Li" attributeid="LiLi" portrait="storm_ui_glues_draft_portrait_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
   <Level1>
     <GenericTalentConjurersPursuit name="Conjurer's Pursuit">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
     <LiLiMasteryHealingBrewProToss name="Pro Toss">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewProToss>

@@ -10,274 +10,334 @@
              Height="auto"
              Width="auto"
              d:DesignHeight="318" d:DesignWidth="1071">
-    <Grid MinWidth="1024">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="38"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid MinWidth="1024">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Content="Replay Id:" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0"/>
-            <Label Content="{Binding ReplayId}" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Grid.Column="0"/>
-            <Label Content="Game Mode:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-            <Label Content="{Binding GameMode}" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Grid.Column="1" />
-            <Label Content="Map:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-            <Label Content="{Binding MapName}" HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Grid.Column="2" />
-            <Label Content="Date and Time (UTC):" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
-            <Label Content="{Binding GameDate}" HorizontalAlignment="Left" Margin="132,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
-            <Label Content="Game Time:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-            <Label Content="{Binding GameTime}" HorizontalAlignment="Left" Margin="83,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-        </Grid>
-        <Expander Header="Team 1" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="True">
-            <Grid>
-                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
-                          ItemsSource="{Binding MatchInfoTeam1, IsAsync=True}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />
-                        <DataGridTextColumn Header="BattleNet Tag" Binding="{Binding BattleNetTag}" />
-                        <DataGridTextColumn Header="BattleNet Id" Binding="{Binding BattleNetId}" />
-                        <DataGridTextColumn Header="Character Name" Binding="{Binding CharacterName}" />
-                        <DataGridTextColumn Header="Character Level" Binding="{Binding CharacterLevel}" />
-                        <DataGridTemplateColumn Header="1" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent1}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName1}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="4" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent4}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName4}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="7" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent7}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName7}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="10" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent10}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName10}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="13" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent13}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName13}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="16" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent16}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName16}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="20" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent20}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName20}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </Expander>
-        <Expander Header="Team 2" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2" IsExpanded="True">
-            <Grid>
-                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
-                          ItemsSource="{Binding MatchInfoTeam2, IsAsync=True}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />
-                        <DataGridTextColumn Header="BattleNet Tag" Binding="{Binding BattleNetTag}" />
-                        <DataGridTextColumn Header="BattleNet Id" Binding="{Binding BattleNetId}" />
-                        <DataGridTextColumn Header="Character Name" Binding="{Binding CharacterName}" />
-                        <DataGridTextColumn Header="Character Level" Binding="{Binding CharacterLevel}" />
-                        <DataGridTemplateColumn Header="1" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent1}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName1}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="4" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent4}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName4}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="7" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent7}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName7}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="10" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent10}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName10}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="13" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent13}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName13}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="16" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent16}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName16}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="20" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Talent20}" Height="40" Width="40">
-                                        <Image.ToolTip>
-                                            <ToolTip Content="{Binding TalentName20}"></ToolTip>
-                                        </Image.ToolTip>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </Expander>
-        <Expander Header="Observers" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" IsExpanded="False" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
-            <Grid>
-                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
-                          ItemsSource="{Binding MatchObservers, IsAsync=True}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Player Name" Binding="{Binding PlayerName}" />
-                        <DataGridTextColumn Header="BattleNet Tag" Binding="{Binding BattleNetTag}" />
-                        <DataGridTextColumn Header="BattleNet Id" Binding="{Binding BattleNetId}" />
-                        <DataGridTextColumn Header="Character Name" Binding="{Binding CharacterName}" />
-                        <DataGridTextColumn Header="Character Level" Binding="{Binding CharacterLevel}" />
-                        <DataGridTemplateColumn Header="1" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="4" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="7" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="10" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="13" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="16" Width="60"></DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="20" Width="60"></DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </Expander>
-        <Expander Header="Team Bans" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4" IsExpanded="False" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
-            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="38"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="0"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Content=" Team 1 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
-                <Label Content="{Binding MatchHeroBans.Team0Ban0HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0"/>
-                <Label Content="{Binding MatchHeroBans.Team0Ban1HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0"/>
-                <Label Content=" Team 2 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0"/>
-                <Label Content="{Binding MatchHeroBans.Team1Ban0HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="0"/>
-                <Label Content="{Binding MatchHeroBans.Team1Ban1HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="0"/>
-                <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="0" Grid.Row="1">
-                    <Image Source="{Binding MatchHeroBans.Team0Ban0}" Height="120" Width="102"/>
-                </Border>
-                <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="1" Grid.Row="1">
-                    <Image Source="{Binding MatchHeroBans.Team0Ban1}" Height="120" Width="102"/>
-                </Border>
-                <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="2" Grid.Row="1">
-                    <Image Source="{Binding MatchHeroBans.Team1Ban0}" Height="120" Width="102"/>
-                </Border>
-                <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="3" Grid.Row="1">
-                    <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102"/>
-                </Border>
+                <Label Content="Replay Id:" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0"/>
+                <Label Content="{Binding ReplayId}" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Grid.Column="0"/>
+                <Label Content="Game Mode:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                <Label Content="{Binding GameMode}" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Map:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                <Label Content="{Binding MapName}" HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Grid.Column="2" />
+                <Label Content="Date and Time (UTC):" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                <Label Content="{Binding GameDate}" HorizontalAlignment="Left" Margin="132,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                <Label Content="Game Time:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
+                <Label Content="{Binding GameTime}" HorizontalAlignment="Left" Margin="83,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
             </Grid>
-        </Expander>
-    </Grid>
+            <Expander Header="Talents" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Expander Header="Team 1" Grid.Row="0" IsExpanded="True" Background="#b3b3ff">
+                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}" CanUserSortColumns="False"
+                              ItemsSource="{Binding MatchTalentsTeam1, IsAsync=True}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellStyle>
+                                        <Style TargetType="DataGridCell">
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <SolidColorBrush Color="{Binding TalentsPortraitBackColor}" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DataGridTemplateColumn.CellStyle>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                                <DataGridTemplateColumn Header="1" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent1}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName1}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="4" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent4}" Height="40" Width="40" >
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName4}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="7" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent7}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName7}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="10" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent10}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName10}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="13" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent13}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName13}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="16" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent16}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName16}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="20" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent20}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName20}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Expander>
+                    <Expander Header="Team 2" Grid.Row="1" IsExpanded="True" Background="#ffb3b3">
+                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}" CanUserSortColumns="False"
+                              ItemsSource="{Binding MatchTalentsTeam2, IsAsync=True}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellStyle>
+                                        <Style TargetType="DataGridCell">
+                                            <Setter Property="Background">
+                                                <Setter.Value>
+                                                    <SolidColorBrush Color="{Binding TalentsPortraitBackColor}" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </DataGridTemplateColumn.CellStyle>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                                <DataGridTemplateColumn Header="1" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent1}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName1}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="4" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent4}" Height="40" Width="40" >
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName4}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="7" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent7}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName7}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="10" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent10}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName10}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="13" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent13}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName13}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="16" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent16}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName16}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="20" MinWidth="80">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Talent20}" Height="40" Width="40">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding TalentName20}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Expander>
+                </Grid>
+            </Expander>
+            <Expander Header="Observers" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" IsExpanded="False" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
+                              ItemsSource="{Binding MatchObservers, IsAsync=True}">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="Hero" MinWidth="85">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                            <Image.ToolTip>
+                                                <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                            </Image.ToolTip>
+                                        </Image>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                                <DataGridTemplateColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <SolidColorBrush Color="{Binding TalentsPortraitBackColor}" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGridTemplateColumn.CellStyle>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
+                            <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="120"/>
+                            <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                            <DataGridTemplateColumn Header="1" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="4" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="7" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="10" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="13" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="16" MinWidth="80"></DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="20" MinWidth="80"></DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Expander>
+            <Expander Header="Team Bans" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4" IsExpanded="False" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content=" Team 1 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
+                    <Label Content="{Binding MatchHeroBans.Team0Ban0HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0"/>
+                    <Label Content="{Binding MatchHeroBans.Team0Ban1HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0"/>
+                    <Label Content=" Team 2 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0"/>
+                    <Label Content="{Binding MatchHeroBans.Team1Ban0HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="0"/>
+                    <Label Content="{Binding MatchHeroBans.Team1Ban1HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="0"/>
+                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="0" Grid.Row="1">
+                        <Image Source="{Binding MatchHeroBans.Team0Ban0}" Height="120" Width="102"/>
+                    </Border>
+                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="1" Grid.Row="1">
+                        <Image Source="{Binding MatchHeroBans.Team0Ban1}" Height="120" Width="102"/>
+                    </Border>
+                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="2" Grid.Row="1">
+                        <Image Source="{Binding MatchHeroBans.Team1Ban0}" Height="120" Width="102"/>
+                    </Border>
+                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="3" Grid.Row="1">
+                        <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102"/>
+                    </Border>
+                </Grid>
+            </Expander>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
