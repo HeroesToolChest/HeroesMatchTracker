@@ -38,7 +38,8 @@
   </Level20>
   <Old>
     <FalstadMasteryHammerangPowerThrow name="Power Throw">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangPowerThrow>
-    <FalstadMasteryBarrelRollFreeBarrel name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeBarrel>
+    <FalstadMasteryBarrelRollFreeRoll name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeRoll>
     <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
+    <BattleMomentumFalstad name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumFalstad>
   </Old>
 </Falstad>

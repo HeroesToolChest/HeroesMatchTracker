@@ -54,9 +54,15 @@ namespace HeroesIcons
 
                 return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
-
-
-            return new BitmapImage(talent.Item2);
+                
+            try
+            {
+                return new BitmapImage(talent.Item2);
+            }
+            catch (Exception ex)
+            {
+                throw new IconException($"Uri: {talent.Item2} NameOfHeroTalent: {nameOfHeroTalent}", ex);
+            }
         }
 
         /// <summary>
@@ -79,8 +85,15 @@ namespace HeroesIcons
 
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
-
-            return new BitmapImage(uri);
+         
+            try
+            {
+                return new BitmapImage(uri);
+            }
+            catch (Exception ex)
+            {
+                throw new IconException($"Uri: {uri} AttributeId: {attributeId}", ex);
+            }
         }
 
         /// <summary>
@@ -103,8 +116,15 @@ namespace HeroesIcons
 
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
-
-            return new BitmapImage(uri);
+           
+            try
+            {
+                return new BitmapImage(uri);
+            }
+            catch (Exception ex)
+            {
+                throw new IconException($"Uri: {uri} RealHeroName: {realHeroName}", ex);
+            }
         }
 
         /// <summary>

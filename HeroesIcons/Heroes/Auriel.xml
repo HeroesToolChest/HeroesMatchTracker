@@ -1,24 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Auriel portrait="storm_ui_glues_draft_portrait_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
+<Auriel attributeid="Auri" portrait="storm_ui_glues_draft_portrait_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
   <Level1>
-
+    <AurielSwiftSweepSacredSweepTalent name="Swift Sweep">storm_ui_icon_auriel_angelicsweep.dds</AurielSwiftSweepSacredSweepTalent>
+    <AurielIncreasingClaritySacredSweepTalent name="Increasing Clarity">storm_ui_icon_auriel_angelicsweep_a.dds</AurielIncreasingClaritySacredSweepTalent>
+    <AurielRighteousAssaultSacredSweepTalent name="Righteous Assault">storm_ui_icon_auriel_angelicsweep_b.dds</AurielRighteousAssaultSacredSweepTalent>
+    <AurielSearingLightRayOfHeavenTalent name="Searing Light">storm_ui_icon_auriel_rayofheaven.dds</AurielSearingLightRayOfHeavenTalent>
   </Level1>
   <Level4>
-
+    <AurielMajesticSpanSacredSweepTalent name="Majestic Span">storm_ui_icon_auriel_angelicsweep.dds</AurielMajesticSpanSacredSweepTalent>
+    <AurielHeavyBurdenDetainmentStrikeTalent name="Heavy Burden">storm_ui_icon_auriel_restrainingblow.dds</AurielHeavyBurdenDetainmentStrikeTalent>
+    <AurielRepeatedOffenseDetainmentStrikeTalent name="Repeated Offense">storm_ui_icon_auriel_restrainingblow_a.dds</AurielRepeatedOffenseDetainmentStrikeTalent>
   </Level4>
   <Level7>
-
+    <AurielBurstingLightRayOfHeavenTalent name="Bursting Light">storm_ui_icon_auriel_rayofheaven.dds</AurielBurstingLightRayOfHeavenTalent>
+    <AurielGlimmerofHopeRayOfHeavenTalent name="Glimmer of Hope">storm_ui_icon_auriel_rayofheaven_a.dds</AurielGlimmerofHopeRayOfHeavenTalent>
+    <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord">storm_ui_icon_auriel_rayofheaven_b.dds</AurielEnergizedCordRayOfHeavenTalent>
+    <AurielEmpathicLinkBestowHopeTalent name="Empathic Link">storm_ui_icon_auriel_bestowhope.dds</AurielEmpathicLinkBestowHopeTalent>
   </Level7>
   <Level10>
-
+    <AurielHeroicResurrect name="Resurrect">storm_ui_icon_auriel_resurrect.dds</AurielHeroicResurrect>
+    <AurielHeroicCrystalAegis name="Crystal Aegis">storm_ui_icon_auriel_ribboncocoon.dds</AurielHeroicCrystalAegis>
   </Level10>
   <Level13>
-    
+    <AurielBlindingFlashSacredSweepTalent name="Blinding Flash">storm_ui_icon_auriel_angelicsweep.dds</AurielBlindingFlashSacredSweepTalent>
+    <AurielConvergingForceSacredSweepTalent name="Converging Force">storm_ui_icon_auriel_angelicsweep_a.dds</AurielConvergingForceSacredSweepTalent>
+    <AurielPiercingLashDetainmentStrikeTalent name="Piercing Lash">storm_ui_icon_auriel_restrainingblow.dds</AurielPiercingLashDetainmentStrikeTalent>
+    <AurielRepellingStrikeDetainmentStrikeTalent name="Repelling Strike">storm_ui_icon_auriel_restrainingblow_a.dds</AurielRepellingStrikeDetainmentStrikeTalent>
   </Level13>
   <Level16>
-
+    <AurielReservoirofHopeRayOfHeavenTalent name="Reservoir of Hope">storm_ui_icon_auriel_rayofheaven.dds</AurielReservoirofHopeRayOfHeavenTalent>
+    <AurielWillofHeavenBestowHopeTalent name="Will of Heaven">storm_ui_icon_auriel_bestowhope.dds</AurielWillofHeavenBestowHopeTalent>
+    <AurielWrathofHeavenBestowHopeTalent name="Wrath of Heaven">storm_ui_icon_auriel_bestowhope_a.dds</AurielWrathofHeavenBestowHopeTalent>
   </Level16>
   <Level20>
-
+    <AurielLightSpeedResurrectTalent name="Light Speed">storm_ui_icon_auriel_resurrect.dds</AurielLightSpeedResurrectTalent>
+    <AurielDiamondResolveCrystalAegisTalent name="Diamond Resolve">storm_ui_icon_auriel_ribboncocoon.dds</AurielDiamondResolveCrystalAegisTalent>
+    <AurielAngelicFlightTalent name="Angelic Flight">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
+    <AurielShieldOfHopeTalent name="Shield of Hope">storm_ui_temp_icon_powerwordshield.dds</AurielShieldOfHopeTalent>
   </Level20>
 </Auriel>

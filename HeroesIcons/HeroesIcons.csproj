@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HeroesInfo.cs" />
+    <Compile Include="IconException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +339,10 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Talents\Auriel\storm_ui_temp_icon_powerwordshield.dds" />
+    <Resource Include="Icons\Talents\Kaelthas\storm_ui_icon_talent_arcanepower.dds" />
+    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_autoattack_range.dds" />
+    <Resource Include="Icons\Talents\Necromancer\storm_ui_icon_talent_autoattack_damage.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_abathur.dds" />

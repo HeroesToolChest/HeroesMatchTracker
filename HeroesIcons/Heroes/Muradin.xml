@@ -42,5 +42,6 @@
   </Level20>
   <Old>
     <MuradinMasteryStormhammerInfusedHammer name="Infused Hammer">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammerInfusedHammer>
+    <MuradinTalentExecutioner75 name="Give 'em the Axe!">storm_ui_icon_talent_autoattack_damage.dds</MuradinTalentExecutioner75>
   </Old>
 </Muradin>

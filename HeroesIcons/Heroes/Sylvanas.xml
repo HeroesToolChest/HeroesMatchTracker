@@ -42,5 +42,6 @@
     <SylvanasTalentRangersAmbush name="Rangers Ambush">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentRangersAmbush>
     <SylvanasTalentShadeform name="Shadeform">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentShadeform>
     <SylvanasTalentSplinterShot name="Splinter Shot">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentSplinterShot>
+    <SylvanasTalentDarkLadysCall name="Dark Lady's Call">storm_ui_icon_sylvanas_possession.dds</SylvanasTalentDarkLadysCall>
   </Old>
 </Sylvanas>

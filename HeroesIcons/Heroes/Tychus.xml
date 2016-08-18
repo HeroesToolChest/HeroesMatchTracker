@@ -39,5 +39,11 @@
   </Level20>
   <Old>
     <TychusVampiricAssault name="Vampiric Assaut">storm_ui_icon_talent_autoattack_heal.dds</TychusVampiricAssault>
+    <TychusCombatStyleRapidFire name="Rapid Fire">storm_ui_icon_tychus_minigun.dds</TychusCombatStyleRapidFire>
+    <GiantKillerTychus name="Problem Solver">storm_ui_icon_talent_autoattack_damage.dds</GiantKillerTychus>
+    <TychusMasteryRunandGunStimPack name="Stim Pack">storm_ui_icon_tychus_runandgun.dds</TychusMasteryRunandGunStimPack>
+    <TychusCombatStyleLockandLoad name="Lock and Load">storm_ui_icon_tychus_minigun.dds</TychusCombatStyleLockandLoad>
+    <TychusMasteryShredderGrenade name="Shredder Grenade">storm_ui_icon_tychus_fraggrenade.dds</TychusMasteryShredderGrenade>
+    <TychusMasteryFragGrenadeMeltingPoint name="Melting Point">storm_ui_icon_tychus_fraggrenade.dds</TychusMasteryFragGrenadeMeltingPoint>
   </Old>
 </Tychus>

@@ -36,7 +36,9 @@
     <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
     <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
-  <Old>    
-    <AnubarakMasterPersistantCarapaceHardenCarapace name="Harden Carapace">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterPersistantCarapaceHardenCarapace>
+  <Old>
+    <AnubarakMasteryPersistentCarapaceHardenCarapace name="Persistant Carapace">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryPersistentCarapaceHardenCarapace>
+    <AnubarakMasterySymbioticArmorHardenCarapace name="Symbiotic Armor">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterySymbioticArmorHardenCarapace>
+    <AnubarakCryptweaveCocoon name="Cryptweave">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCryptweaveCocoon>
   </Old>
 </Anubarak>

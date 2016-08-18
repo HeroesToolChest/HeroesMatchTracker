@@ -42,5 +42,9 @@
     <ArthasMasteryFrostStrike name="Frost Strike">storm_ui_icon_Arthas_FrostmourneHungers_Off_A.dds</ArthasMasteryFrostStrike>
     <ArthasMasteryPathofFrost name="Trail of Frost">storm_ui_icon_Arthas_HowlingBlast.dds</ArthasMasteryPathofFrost>
     <ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers name="Frostmourne Feeds">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsArthasFrostmourneHungers>
+    <ArthasMasteryImmortalCoil name="Immortal Coil">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryImmortalCoil>
+    <ArthasMasteryDeathTouch name="Death Touch">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryDeathTouch>
+    <ArthasMasteryEmbraceDeath name="Embrace Death">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryEmbraceDeath>
+    <ArthasMasteryObliterate name="Obliterate">storm_ui_icon_arthas_frostmournehungers_on_a.dds</ArthasMasteryObliterate>
   </Old>
 </Arthas>

@@ -38,5 +38,8 @@
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old></Old>
+  <Old>
+    <KerriganCombatStyleLingeringEssence name="LingeringEssence">storm_ui_icon_kerrigan_assimilation.dds</KerriganCombatStyleLingeringEssence>
+    <KerriganMasteryCrushingSwarm name="Crushing Swarm">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryCrushingSwarm>
+  </Old>
 </Kerrigan>

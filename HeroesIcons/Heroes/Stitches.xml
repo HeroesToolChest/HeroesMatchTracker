@@ -41,5 +41,6 @@
   <Old>
     <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
     <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
+    <StitchesMasteryHelpingHandHook name="Helping Hand">storm_ui_icon_stitches_hook.dds</StitchesMasteryHelpingHandHook>
   </Old>
 </Stitches>

@@ -42,5 +42,6 @@
   </Level20>
   <Old>
     <BattleMomentumTyrael name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumTyrael>
+    <TyraelMasteryRetribution name="Retribution">storm_ui_icon_tyrael_smite.dds</TyraelMasteryRetribution>
   </Old>
 </Tyrael>
