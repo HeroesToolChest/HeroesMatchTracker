@@ -224,7 +224,7 @@ namespace HeroesParserData.ViewModels.Match
                     MatchTalents matchTalents = new MatchTalents();
 
                     var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
-                    matchTalents.LeaderboardPortrait = HeroesInfo.GetHeroLeaderboardPortrait(player.Character);
+                    matchTalents.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.GetHeroLeaderboardPortrait(player.Character) : null;
                     matchTalents.CharacterName = player.Character;
                     matchTalents.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
                     matchTalents.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();

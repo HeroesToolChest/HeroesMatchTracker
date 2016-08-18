@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Abathur attributeid="Abat" leader="storm_ui_glues_draft_portrait_abathur.dds" lbportrait="storm_ui_ingame_hero_leaderboard_abathur.dds">
+<Abathur attributeid="Abat" portrait="storm_ui_glues_draft_portrait_abathur.dds" leader="storm_ui_ingame_hero_leaderboard_abathur.dds">
   <Level1>
     <AbathurMasteryPressurizedGlands name="Pressurized Glands">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
     <AbathurCombatStyleSurvivalInstincts name="Survival Instincts">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleSurvivalInstincts>
