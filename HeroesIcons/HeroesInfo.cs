@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Xml.Linq;
@@ -49,11 +50,9 @@ namespace HeroesIcons
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
             {
-                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
-                {
-                    writer.WriteLine($"Talent icon: {nameOfHeroTalent}");
-                    return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
-                }
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Talent icon: {nameOfHeroTalent}"));
+
+                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
 
 
@@ -76,11 +75,9 @@ namespace HeroesIcons
             // not found
             if (!HeroPortraits.TryGetValue(attributeId, out uri))
             {
-                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
-                {
-                    writer.WriteLine($"Hero portrait: {attributeId}");
-                    return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
-                }
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {attributeId}"));
+
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
 
             return new BitmapImage(uri);
@@ -102,11 +99,9 @@ namespace HeroesIcons
             // not found
             if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
             {
-                using (StreamWriter writer = new StreamWriter("_ImageMissingLog.txt", true))
-                {
-                    writer.WriteLine($"Leader hero portrait: {realHeroName}");
-                    return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
-                }
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Leader hero portrait: {realHeroName}"));
+
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
 
             return new BitmapImage(uri);
@@ -128,11 +123,9 @@ namespace HeroesIcons
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
             {
-                using (StreamWriter writer = new StreamWriter("_ReferenceNameLog.txt", true))
-                {
-                    writer.WriteLine($"No name for reference: {nameOfHeroTalent}");
-                    return nameOfHeroTalent;
-                }
+                Task.Run(() => Log("_ReferenceNameLog.txt", $"No name for reference: {nameOfHeroTalent}"));
+
+                return nameOfHeroTalent;
             }
 
             return talent.Item1;
@@ -154,11 +147,9 @@ namespace HeroesIcons
             // not found
             if (!HeroNamesFromAttId.TryGetValue(attributeId, out heroName))
             {
-                using (StreamWriter writer = new StreamWriter("_ReferenceNameLog.txt", true))
-                {
-                    writer.WriteLine($"No hero name for reference: {attributeId}");
-                    return "Hero not found";
-                }
+                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero name for reference: {attributeId}"));
+
+                return "Hero not found";
             }
 
             return heroName;
@@ -268,6 +259,14 @@ namespace HeroesIcons
                         }
                     }
                 }
+            }
+        }
+
+        private void Log(string fileName, string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"logs/{fileName}", true))
+            {
+                writer.WriteLine(message);
             }
         }
     }

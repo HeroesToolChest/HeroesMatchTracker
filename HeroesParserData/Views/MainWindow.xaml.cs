@@ -33,7 +33,7 @@ namespace HeroesParserData.Views
         {
             for (;;)
             {
-                using (StreamWriter writer = new StreamWriter("_UpdateLog.txt", true))
+                using (StreamWriter writer = new StreamWriter("logs/_UpdateLog.txt", true))
                 {
                     try
                     {

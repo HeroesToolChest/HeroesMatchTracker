@@ -68,7 +68,7 @@ namespace HeroesParserData
             string dbFilePath = @"Database\HeroesParserData.db";
             string newAppDirectory = Path.Combine(NewLastestDirectory, "Database");
 
-            using (StreamWriter writer = new StreamWriter("_DatabaseCopyLog.txt", true))
+            using (StreamWriter writer = new StreamWriter("logs/_DatabaseCopyLog.txt", true))
             {
                 try
                 {
