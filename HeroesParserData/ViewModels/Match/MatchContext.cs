@@ -293,8 +293,11 @@ namespace HeroesParserData.ViewModels.Match
                         matchScores.Deaths = playerScores[player.PlayerNumber].Deaths;
                         matchScores.SiegeDamage = playerScores[player.PlayerNumber].SiegeDamage;
                         matchScores.HeroDamage = playerScores[player.PlayerNumber].HeroDamage;
-                        matchScores.Role = playerScores[player.PlayerNumber].DamageTaken != null ? playerScores[player.PlayerNumber].DamageTaken : playerScores[player.PlayerNumber].Healing;
                         matchScores.ExperienceContribution = playerScores[player.PlayerNumber].ExperienceContribution;
+                        if (playerScores[player.PlayerNumber].DamageTaken != null)
+                            matchScores.Role = playerScores[player.PlayerNumber].DamageTaken;
+                        else if (NonHealingCharacter(player.Character))
+                            matchScores.Role = playerScores[player.PlayerNumber].Healing;
                     }
 
                     if (player.IsWinner)
@@ -425,6 +428,14 @@ namespace HeroesParserData.ViewModels.Match
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
             HasBans = false;
+        }
+
+        private bool NonHealingCharacter(string character)
+        {
+            if (character == "Thrall" || character == "Li-Ming" || character == "Sylvanas" || character == "Abathur")
+                return false;
+            else
+                return true;
         }
 
         private void HighestSiegeDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestTeam1Index, ref int highestTeam1Count)
