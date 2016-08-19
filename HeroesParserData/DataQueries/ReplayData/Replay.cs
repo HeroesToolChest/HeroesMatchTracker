@@ -106,7 +106,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
                 else if (columnName == "GameMode")
                 {
-                    input = ((int)((GameMode)Enum.Parse(typeof(GameMode), input, true))).ToString();
+                    GameMode gameMode;
+                    if (Enum.TryParse(input, true, out gameMode))
+                        input = ((int)gameMode).ToString();
                 }
 
                 if (input == null)
