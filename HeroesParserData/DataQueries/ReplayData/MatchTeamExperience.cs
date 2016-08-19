@@ -68,6 +68,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayMatchTeamExperience>();
 
+                if (columnName.Contains("Time"))
+                    columnName = string.Concat(columnName, "Ticks");
+
                 if (count == 0)
                     count = 1;
 

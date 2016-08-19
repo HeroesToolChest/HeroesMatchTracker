@@ -79,8 +79,11 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if ( string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<Models.DbModels.Replay>();
 
+                if (columnName.Contains("ReplayLength"))
+                    columnName = string.Concat(columnName, "Ticks");
+
                 if (count == 0)
-                    count = 1;
+                count = 1;
 
                 using (var db = new HeroesParserDataContext())
                 {

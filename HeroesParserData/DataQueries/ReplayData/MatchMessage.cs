@@ -68,6 +68,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayMatchMessage>();
 
+                if (columnName.Contains("TimeStamp"))
+                    columnName = string.Concat(columnName, "Ticks");
+
                 if (count == 0)
                     count = 1;
 
