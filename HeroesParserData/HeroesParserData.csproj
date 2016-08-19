@@ -165,11 +165,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\IntToStringThousandSeperator.cs" />
     <Compile Include="Database\HeroesParserDataInit.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\MatchHeroBans.cs" />
+    <Compile Include="Models\MatchPlayerInfoBase.cs" />
+    <Compile Include="Models\MatchScores.cs" />
     <Compile Include="Models\MatchTalents.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />

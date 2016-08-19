@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
     <Style TargetType="DataGridRow" x:Key="DataGrid">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
@@ -20,19 +20,19 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="DataGridRow" x:Key="TalentsDataGrid">
+    <Style TargetType="DataGridRow" x:Key="PlayerDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background">
                     <Setter.Value>
-                        <SolidColorBrush Color="{Binding TalentsBackColor}" />
+                        <SolidColorBrush Color="{Binding RowBackColor}" />
                     </Setter.Value>
                 </Setter>
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background">
                     <Setter.Value>
-                        <SolidColorBrush Color="{Binding TalentsBackColor}" />
+                        <SolidColorBrush Color="{Binding RowBackColor}" />
                     </Setter.Value>
                 </Setter>
             </Trigger>
@@ -47,13 +47,40 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader">
+    <Style TargetType="DataGridCell" x:Key="PortraitBackColor">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding PortraitBackColor}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="DataGridCell" x:Key="HighestSiegeFont" BasedOn="{StaticResource MetroDataGridCell}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="{Binding HighestSiegeFont}"/>
+    </Style>
+    <Style TargetType="DataGridCell" x:Key="HighestHeroDamageFont" BasedOn="{StaticResource MetroDataGridCell}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="{Binding HighestHeroDamageFont}"/>
+    </Style>
+    <Style TargetType="DataGridCell" x:Key="HighestExpFont" BasedOn="{StaticResource MetroDataGridCell}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="{Binding HighestExpFont}"/>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
     <!--<Color x:Key="HighlightColor">#4e80ca</Color>
     <Color x:Key="AccentColor">#595959</Color>
 
-    --><!-- re-set brushes too --><!--
+    -->
+    <!-- re-set brushes too -->
+    <!--
     <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
     <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource AccentColor}"/>
     <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{StaticResource AccentColor}" />

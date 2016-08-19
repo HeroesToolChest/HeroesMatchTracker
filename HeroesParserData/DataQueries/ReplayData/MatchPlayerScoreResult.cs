@@ -89,6 +89,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.ReplayMatchPlayerScoreResults.SqlQuery($"SELECT * FROM ReplayMatchPlayerScoreResults WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
                 }
             }
+
+            public static async Task<List<ReplayMatchPlayerScoreResult>> ReadRecordsByReplayId(long replayId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayMatchPlayerScoreResults.Where(x => x.ReplayId == replayId).ToListAsync();
+                }
+            }
         }
     }
 }

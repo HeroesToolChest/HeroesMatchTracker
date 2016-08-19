@@ -50,10 +50,10 @@
                     </Grid.RowDefinitions>
                     <Expander Header="Team 1" Grid.Row="0" IsExpanded="True" Background="#b3b3ff">
                         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}" CanUserSortColumns="False"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchTalentsTeam1, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
@@ -63,20 +63,11 @@
                                             </Image>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
-                                    <DataGridTemplateColumn.CellStyle>
-                                        <Style TargetType="DataGridCell">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <SolidColorBrush Color="{Binding TalentsPortraitBackColor}" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </DataGridTemplateColumn.CellStyle>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
-                                <DataGridTemplateColumn Header="1" MinWidth="80">
+                                <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent1}" Height="40" Width="40">
@@ -87,7 +78,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="4" MinWidth="80">
+                                <DataGridTemplateColumn Header="4" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent4}" Height="40" Width="40" >
@@ -98,7 +89,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="7" MinWidth="80">
+                                <DataGridTemplateColumn Header="7" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent7}" Height="40" Width="40">
@@ -109,7 +100,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="10" MinWidth="80">
+                                <DataGridTemplateColumn Header="10" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent10}" Height="40" Width="40">
@@ -120,7 +111,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="13" MinWidth="80">
+                                <DataGridTemplateColumn Header="13" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent13}" Height="40" Width="40">
@@ -131,7 +122,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="16" MinWidth="80">
+                                <DataGridTemplateColumn Header="16" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent16}" Height="40" Width="40">
@@ -142,7 +133,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="20" MinWidth="80">
+                                <DataGridTemplateColumn Header="20" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent20}" Height="40" Width="40">
@@ -158,10 +149,10 @@
                     </Expander>
                     <Expander Header="Team 2" Grid.Row="1" IsExpanded="True" Background="#ffb3b3">
                         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}" CanUserSortColumns="False"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchTalentsTeam2, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
@@ -171,20 +162,11 @@
                                             </Image>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
-                                    <DataGridTemplateColumn.CellStyle>
-                                        <Style TargetType="DataGridCell">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <SolidColorBrush Color="{Binding TalentsPortraitBackColor}" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </DataGridTemplateColumn.CellStyle>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
-                                <DataGridTemplateColumn Header="1" MinWidth="80">
+                                <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent1}" Height="40" Width="40">
@@ -195,7 +177,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="4" MinWidth="80">
+                                <DataGridTemplateColumn Header="4" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent4}" Height="40" Width="40" >
@@ -206,7 +188,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="7" MinWidth="80">
+                                <DataGridTemplateColumn Header="7" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent7}" Height="40" Width="40">
@@ -217,7 +199,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="10" MinWidth="80">
+                                <DataGridTemplateColumn Header="10" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent10}" Height="40" Width="40">
@@ -228,7 +210,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="13" MinWidth="80">
+                                <DataGridTemplateColumn Header="13" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent13}" Height="40" Width="40">
@@ -239,7 +221,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="16" MinWidth="80">
+                                <DataGridTemplateColumn Header="16" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent16}" Height="40" Width="40">
@@ -250,7 +232,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="20" MinWidth="80">
+                                <DataGridTemplateColumn Header="20" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Image Source="{Binding Talent20}" Height="40" Width="40">
@@ -266,10 +248,76 @@
                     </Expander>
                 </Grid>
             </Expander>
+            <Expander Header="Score Summary" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="2" IsExpanded="False">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Expander Header="Team 1" Grid.Row="0" IsExpanded="True" Background="#b3b3ff">
+                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
+                              ItemsSource="{Binding MatchScoreTeam1, IsAsync=True}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                                <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}" />
+                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
+                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Expander>
+                    <Expander Header="Team 2" Grid.Row="1" IsExpanded="True" Background="#ffb3b3">
+                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
+                              ItemsSource="{Binding MatchScoreTeam2, IsAsync=True}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                                <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}"/>
+                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
+                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Expander>
+                </Grid>
+            </Expander>
             <Expander Header="Observers" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="3" IsExpanded="False" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
                 <Grid>
                     <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource TalentsDataGrid}"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}"
                               ItemsSource="{Binding MatchObservers, IsAsync=True}">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="Hero" MinWidth="85">

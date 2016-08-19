@@ -9,8 +9,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
-using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -23,6 +24,8 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchTalents> _matchTalentsTeam1 = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchTalentsTeam2 = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchObservers = new ObservableCollection<MatchTalents>();
+        private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private long _replayId;
         private GameMode _gameMode;
         private string _mapName;
@@ -74,6 +77,26 @@ namespace HeroesParserData.ViewModels.Match
             {
                 _matchObservers = value;
                 RaisePropertyChangedEvent(nameof(MatchObservers));
+            }
+        }
+
+        public ObservableCollection<MatchScores> MatchScoreTeam1
+        {
+            get { return _matchScoreTeam1; }
+            set
+            {
+                _matchScoreTeam1 = value;
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam1));
+            }
+        }
+
+        public ObservableCollection<MatchScores> MatchScoreTeam2
+        {
+            get { return _matchScoreTeam2; }
+            set
+            {
+                _matchScoreTeam2 = value;
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam2));
             }
         }
 
@@ -209,30 +232,43 @@ namespace HeroesParserData.ViewModels.Match
 
                 MatchTalentsTeam1 = new ObservableCollection<MatchTalents>();
                 MatchTalentsTeam2 = new ObservableCollection<MatchTalents>();
+                MatchScoreTeam1 = new ObservableCollection<MatchScores>();
+                MatchScoreTeam2 = new ObservableCollection<MatchScores>();
                 MatchObservers = new ObservableCollection<MatchTalents>();
 
                 // get replay
                 Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
-                // get player info
-                List<ReplayMatchPlayer> players = await Query.MatchPlayer.ReadRecordsByReplayId(replay.ReplayId);
+                // get players info
+                var players = replay.ReplayMatchPlayers.ToList();
                 // get player talents
-                List<ReplayMatchPlayerTalent> playerTalents = await Query.MatchPlayerTalent.ReadRecordsByReplayId(replay.ReplayId);
+                var playerTalents = replay.ReplayMatchPlayerTalents.ToList();
+                //get player scores
+                var playerScores = replay.ReplayMatchPlayerScoreResults.ToList();
+
+                int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
+                int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
+                int highestExpTeam1Index = 0, highestExpTeam1Count = 0, highestExpTeam2Index = 0, highestExpTeam2Count = 0;
+
 
                 foreach (var player in players)
                 {
-                    MatchTalents matchTalents = new MatchTalents();
+                    MatchPlayerInfoBase matchPlayerInfoBase = new MatchPlayerInfoBase();
 
                     var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
-                    matchTalents.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.GetHeroLeaderboardPortrait(player.Character) : null;
-                    matchTalents.CharacterName = player.Character;
-                    matchTalents.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
-                    matchTalents.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
+                    matchPlayerInfoBase.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.GetHeroLeaderboardPortrait(player.Character) : null;
+                    matchPlayerInfoBase.CharacterName = player.Character;
+                    matchPlayerInfoBase.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
+                    matchPlayerInfoBase.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
+                    matchPlayerInfoBase.PlayerNumber = player.PlayerNumber;
 
                     if (!player.IsAutoSelect)
-                        matchTalents.CharacterLevel = player.CharacterLevel.ToString();
+                        matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();
                     else
-                        matchTalents.CharacterLevel = "Auto Select";
+                        matchPlayerInfoBase.CharacterLevel = "Auto Select";
+
+                    MatchTalents matchTalents = new MatchTalents(matchPlayerInfoBase);
+                    MatchScores matchScores = new MatchScores(matchPlayerInfoBase);
 
                     if (player.Character != "None")
                     {
@@ -251,22 +287,47 @@ namespace HeroesParserData.ViewModels.Match
                         matchTalents.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName13);
                         matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName16);
                         matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName20);
+
+                        matchScores.SoloKills = playerScores[player.PlayerNumber].SoloKills;
+                        matchScores.Assists = playerScores[player.PlayerNumber].Assists;
+                        matchScores.Deaths = playerScores[player.PlayerNumber].Deaths;
+                        matchScores.SiegeDamage = playerScores[player.PlayerNumber].SiegeDamage;
+                        matchScores.HeroDamage = playerScores[player.PlayerNumber].HeroDamage;
+                        matchScores.Role = playerScores[player.PlayerNumber].DamageTaken != null ? playerScores[player.PlayerNumber].DamageTaken : playerScores[player.PlayerNumber].Healing;
+                        matchScores.ExperienceContribution = playerScores[player.PlayerNumber].ExperienceContribution;
                     }
 
                     if (player.IsWinner)
-                        matchTalents.TalentsBackColor = Color.FromRgb(233, 252, 233);
-
+                    {
+                        matchTalents.RowBackColor = Color.FromRgb(233, 252, 233);
+                        matchScores.RowBackColor = Color.FromRgb(233, 252, 233);
+                    }
+                    
                     if (player.Team == 0 || player.Team == 1)
                     {
                         if (player.Team == 0)
                         {
-                            matchTalents.TalentsPortraitBackColor = Color.FromRgb(179, 179, 255);
+                            matchTalents.PortraitBackColor = Color.FromRgb(179, 179, 255);
+                            matchScores.PortraitBackColor = Color.FromRgb(179, 179, 255);
                             MatchTalentsTeam1.Add(matchTalents);
+
+                            HighestSiegeDamage(MatchScoreTeam1, matchScores, ref highestSiegeTeam1Index, ref highestSiegeTeam1Count);
+                            HighestHeroDamage(MatchScoreTeam1, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
+                            HighestExpContribution(MatchScoreTeam1, matchScores, ref highestExpTeam1Index, ref highestExpTeam1Count);
+
+                            MatchScoreTeam1.Add(matchScores);
                         }
                         else
                         {
-                            matchTalents.TalentsPortraitBackColor = Color.FromRgb(255, 179, 179);
+                            matchTalents.PortraitBackColor = Color.FromRgb(255, 179, 179);
+                            matchScores.PortraitBackColor = Color.FromRgb(255, 179, 179);
                             MatchTalentsTeam2.Add(matchTalents);
+
+                            HighestSiegeDamage(MatchScoreTeam2, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
+                            HighestHeroDamage(MatchScoreTeam2, matchScores, ref highestHeroDamageTeam2Index, ref highestHeroDamageTeam2Count);
+                            HighestExpContribution(MatchScoreTeam2, matchScores, ref highestExpTeam2Index, ref highestExpTeam2Count);
+
+                            MatchScoreTeam2.Add(matchScores);
                         }
                         
                     }
@@ -275,7 +336,7 @@ namespace HeroesParserData.ViewModels.Match
                         HasObservers = true;
                         MatchObservers.Add(matchTalents);
                     }             
-                }
+                } // end foreach players
 
                 ReplayId = replay.ReplayId;
                 GameMode = replay.GameMode;
@@ -307,12 +368,12 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
+        // clear everything and free up resources
         private void ClearSummaryDetails()
         {
             // talents
             foreach (var matchTalent in MatchTalentsTeam1)
             {
-                // free up resources
                 matchTalent.LeaderboardPortrait = null;
                 matchTalent.Talent1 = null;
                 matchTalent.Talent4 = null;
@@ -326,7 +387,6 @@ namespace HeroesParserData.ViewModels.Match
 
             foreach (var matchTalent in MatchTalentsTeam2)
             {
-                // free up resources
                 matchTalent.LeaderboardPortrait = null;
                 matchTalent.Talent1 = null;
                 matchTalent.Talent4 = null;
@@ -337,6 +397,19 @@ namespace HeroesParserData.ViewModels.Match
                 matchTalent.Talent20 = null;
             }
             MatchTalentsTeam2 = null;
+
+            // score summary
+            foreach (var matchScore in MatchScoreTeam1)
+            {
+                matchScore.LeaderboardPortrait = null;
+            }
+            MatchScoreTeam1 = null;
+
+            foreach (var matchScore in MatchScoreTeam2)
+            {
+                matchScore.LeaderboardPortrait = null;
+            }
+            MatchScoreTeam2 = null;
 
             // observers
             HasObservers = false;
@@ -352,6 +425,54 @@ namespace HeroesParserData.ViewModels.Match
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
             HasBans = false;
+        }
+
+        private void HighestSiegeDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestTeam1Index, ref int highestTeam1Count)
+        {
+            if (MatchScoreTeamList.Count == 0)
+            {
+                highestTeam1Index = 0;
+                matchScores.HighestSiegeFont = FontWeights.ExtraBold;
+            }
+            else if (matchScores.SiegeDamage > MatchScoreTeamList[highestTeam1Index].SiegeDamage)
+            {
+                MatchScoreTeamList[highestTeam1Index].HighestSiegeFont = FontWeights.Normal; // clear previous
+                matchScores.HighestSiegeFont = FontWeights.ExtraBold; // set current
+                highestTeam1Index = highestTeam1Count;
+            }
+            highestTeam1Count++;
+        }
+
+        private void HighestHeroDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestIndex, ref int highestCount)
+        {
+            if (MatchScoreTeamList.Count == 0)
+            {
+                highestIndex = 0;
+                matchScores.HighestHeroDamageFont = FontWeights.ExtraBold;
+            }
+            else if (matchScores.HeroDamage > MatchScoreTeamList[highestIndex].HeroDamage)
+            {
+                MatchScoreTeamList[highestIndex].HighestHeroDamageFont = FontWeights.Normal; // clear previous
+                matchScores.HighestHeroDamageFont = FontWeights.ExtraBold; // set current
+                highestIndex = highestCount;
+            }
+            highestCount++;
+        }
+
+        private void HighestExpContribution(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestIndex, ref int highestCount)
+        {
+            if (MatchScoreTeamList.Count == 0)
+            {
+                highestIndex = 0;
+                matchScores.HighestExpFont = FontWeights.ExtraBold;
+            }
+            else if (matchScores.ExperienceContribution > MatchScoreTeamList[highestIndex].ExperienceContribution)
+            {
+                MatchScoreTeamList[highestIndex].HighestExpFont = FontWeights.Normal; // clear previous
+                matchScores.HighestExpFont = FontWeights.ExtraBold; // set current
+                highestIndex = highestCount;
+            }
+            highestCount++;
         }
     }
 }

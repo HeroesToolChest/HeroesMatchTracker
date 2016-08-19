@@ -7,19 +7,21 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />-->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="/Resources/Theme.xaml"/>
                 <!--Other resources-->
                 <ResourceDictionary Source="/Resources/StringResources.xaml"/>
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
-                <ResourceDictionary Source="/Resources/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+            <local:IntToStringThousandSeperator x:Key="IntToStringThousandSeperator"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

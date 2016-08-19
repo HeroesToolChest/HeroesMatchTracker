@@ -151,7 +151,7 @@ namespace HeroesParserData.DataQueries.ReplayData
             }
 
             /// <summary>
-            /// Returns the Replay along with ReplayMatchPlayers and ReplayMatchPlayerTalents
+            /// Returns the Replay along with ReplayMatchPlayers, ReplayMatchPlayerTalents, ReplayMatchTeamBan, ReplayMatchPlayerScoreResults
             /// </summary>
             /// <param name="replayId">Replay Id</param>
             /// <returns>Replay</returns>
@@ -165,6 +165,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                         .Include(x => x.ReplayMatchPlayers)
                         .Include(x => x.ReplayMatchPlayerTalents)
                         .Include(x => x.ReplayMatchTeamBan)
+                        .Include(x => x.ReplayMatchPlayerScoreResults)
                         .FirstOrDefaultAsync();
 
                     if (replay == null)

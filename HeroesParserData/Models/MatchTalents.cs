@@ -3,13 +3,8 @@ using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.Models
 {
-    public class MatchTalents
+    public class MatchTalents : MatchPlayerInfoBase
     {
-        public BitmapImage LeaderboardPortrait { get; set; }
-        public string PlayerName { get; set; }
-        public string PlayerTag { get; set; }
-        public string CharacterName { get; set; }
-        public string CharacterLevel { get; set; }
         public BitmapImage Talent1 { get; set; }        
         public BitmapImage Talent4 { get; set; }       
         public BitmapImage Talent7 { get; set; }        
@@ -24,7 +19,14 @@ namespace HeroesParserData.Models
         public string TalentName13 { get; set; }
         public string TalentName16 { get; set; }
         public string TalentName20 { get; set; }
-        public Color TalentsBackColor { get; set; }
-        public Color TalentsPortraitBackColor { get; set; }
+
+        public MatchTalents(MatchPlayerInfoBase matchPlayerInfoBase)
+        {
+            LeaderboardPortrait = matchPlayerInfoBase.LeaderboardPortrait;
+            PlayerName = matchPlayerInfoBase.PlayerName;
+            PlayerTag = matchPlayerInfoBase.PlayerTag;
+            CharacterName = matchPlayerInfoBase.CharacterName;
+            CharacterLevel = matchPlayerInfoBase.CharacterLevel;
+        }
     }
 }
