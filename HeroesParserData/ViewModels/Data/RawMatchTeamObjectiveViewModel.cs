@@ -42,7 +42,11 @@ namespace HeroesParserData.ViewModels.Data
             foreach (var prop in r.GetType().GetMethods())
             {
                 if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                    ColumnNames.Add(prop.Name.Split('_')[1]);
+                {
+                    string columnName = prop.Name.Split('_')[1];
+                    if (!columnName.Contains("Ticks"))
+                        ColumnNames.Add(columnName);
+                }
             }
         }
 

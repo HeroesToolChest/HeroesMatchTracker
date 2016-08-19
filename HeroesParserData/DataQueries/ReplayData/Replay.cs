@@ -93,6 +93,22 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<Models.DbModels.Replay>();
 
+                if (columnName.Contains("ReplayLength"))
+                {
+                    TimeSpan timeSpan;
+                    if (TimeSpan.TryParse(input, out timeSpan))
+                    {
+                        input = timeSpan.Ticks.ToString();
+                        columnName = string.Concat(columnName, "Ticks");
+                    }
+                    else
+                        return new List<Models.DbModels.Replay>();
+                }
+                else if (columnName == "GameMode")
+                {
+                    input = ((int)((GameMode)Enum.Parse(typeof(GameMode), input, true))).ToString();
+                }
+
                 if (input == null)
                     input = string.Empty;
 

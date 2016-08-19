@@ -1,4 +1,5 @@
 ﻿using HeroesParserData.Models.DbModels;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
@@ -80,6 +81,18 @@ namespace HeroesParserData.DataQueries.ReplayData
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchTeamLevel>();
+
+                if (columnName.Contains("TeamTime"))
+                {
+                    TimeSpan timeSpan;
+                    if (TimeSpan.TryParse(input, out timeSpan))
+                    {
+                        input = timeSpan.Ticks.ToString();
+                        columnName = string.Concat(columnName, "Ticks");
+                    }
+                    else
+                        return new List<ReplayMatchTeamLevel>();
+                }
 
                 if (input == null)
                     input = string.Empty;

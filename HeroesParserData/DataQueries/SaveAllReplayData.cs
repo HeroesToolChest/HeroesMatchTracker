@@ -293,10 +293,10 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchTeamLevel replayTeamLevel = new ReplayMatchTeamLevel
                     {
                         ReplayId = ReplayId,
-                        Team0Time = team0[level],
+                        TeamTime0 = team0[level],
                         Team0Level = team0[level].HasValue ? level : (int?)null,
 
-                        Team1Time = team1[level],
+                        TeamTime1 = team1[level],
                         Team1Level = team1[level].HasValue ? level : (int?)null,
 
                     };

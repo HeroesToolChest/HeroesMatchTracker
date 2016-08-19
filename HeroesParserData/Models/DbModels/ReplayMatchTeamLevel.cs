@@ -14,24 +14,24 @@ namespace HeroesParserData.Models.DbModels
 
         public int? Team0Level { get; set; }
 
-        public long? Team0TimeTicks { get; set; }
+        public long? TeamTime0Ticks { get; set; }
 
         [NotMapped]
-        public TimeSpan? Team0Time
+        public TimeSpan? TeamTime0
         {
-            get { return Team0TimeTicks.HasValue ? TimeSpan.FromTicks(Team0TimeTicks.Value) : (TimeSpan?)null; }
-            set { Team0TimeTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
+            get { return TeamTime0Ticks.HasValue ? TimeSpan.FromTicks(TeamTime0Ticks.Value) : (TimeSpan?)null; }
+            set { TeamTime0Ticks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
         public int? Team1Level { get; set; }
 
-        public long? Team1TimeTicks { get; set; }
+        public long? TeamTime1Ticks { get; set; }
 
         [NotMapped]
-        public TimeSpan? Team1Time
+        public TimeSpan? TeamTime1
         {
-            get { return Team1TimeTicks.HasValue ? TimeSpan.FromTicks(Team1TimeTicks.Value) : (TimeSpan?)null; }
-            set { Team1TimeTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
+            get { return TeamTime1Ticks.HasValue ? TimeSpan.FromTicks(TeamTime1Ticks.Value) : (TimeSpan?)null; }
+            set { TeamTime1Ticks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
         public virtual Replay Replay { get; set; }

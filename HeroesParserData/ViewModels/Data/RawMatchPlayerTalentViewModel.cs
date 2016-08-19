@@ -34,11 +34,14 @@ namespace HeroesParserData.ViewModels.Data
         private void AddListColumnNames()
         {
             ReplayMatchPlayerTalent r = new ReplayMatchPlayerTalent();
-
             foreach (var prop in r.GetType().GetMethods())
             {
                 if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                    ColumnNames.Add(prop.Name.Split('_')[1]);
+                {
+                    string columnName = prop.Name.Split('_')[1];
+                    if (!columnName.Contains("Ticks"))
+                        ColumnNames.Add(columnName);
+                }
             }
         }
 

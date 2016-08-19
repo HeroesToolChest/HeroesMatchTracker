@@ -31,9 +31,9 @@
                     <DataGridTextColumn Header="MatchTeamLevelId" Binding="{Binding MatchTeamLevelId}" />
                     <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
                     <DataGridTextColumn Header="Team0Level" Binding="{Binding Team0Level}" />
-                    <DataGridTextColumn Header="Team0Time" Binding="{Binding Team0Time}" />
+                    <DataGridTextColumn Header="Team0Time" Binding="{Binding TeamTime0}" />
                     <DataGridTextColumn Header="Team1Level" Binding="{Binding Team1Level}" />
-                    <DataGridTextColumn Header="Team1Time" Binding="{Binding Team1Time}" />
+                    <DataGridTextColumn Header="Team1Time" Binding="{Binding TeamTime1}" />
                 </DataGrid.Columns>
             </DataGrid>
             <local:QueryControl Grid.Column="1"></local:QueryControl>
