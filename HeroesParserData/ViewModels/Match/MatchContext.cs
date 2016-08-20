@@ -2,10 +2,8 @@
 using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
-using HeroesParserData.Models.DbModels;
 using NLog;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;

@@ -147,7 +147,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return db.Replays.Any(x => x.RandomValue == replay.RandomValue);
             }
 
-            public static DateTime LatestReplayByDateTimeUTC()
+            public static DateTime LatestReplayByDateTime()
             {
                 using (var db = new HeroesParserDataContext())
                 {

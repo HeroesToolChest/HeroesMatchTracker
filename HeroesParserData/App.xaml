@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:HeroesParserData"
+             xmlns:converters="clr-namespace:HeroesParserData.Converters"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -21,7 +22,7 @@
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
-            <local:IntToStringThousandSeperator x:Key="IntToStringThousandSeperator"/>
+            <converters:IntToStringThousandSeperator x:Key="IntToStringThousandSeperator"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

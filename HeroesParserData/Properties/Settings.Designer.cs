@@ -57,5 +57,41 @@ namespace HeroesParserData.Properties {
                 this["UpdateUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReplayWatchCheckBox {
+            get {
+                return ((bool)(this["ReplayWatchCheckBox"]));
+            }
+            set {
+                this["ReplayWatchCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReplayAutoScanCheckBox {
+            get {
+                return ((bool)(this["ReplayAutoScanCheckBox"]));
+            }
+            set {
+                this["ReplayAutoScanCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int MinProcessors {
+            get {
+                return ((int)(this["MinProcessors"]));
+            }
+            set {
+                this["MinProcessors"] = value;
+            }
+        }
     }
 }

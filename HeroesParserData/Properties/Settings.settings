@@ -11,5 +11,14 @@
     <Setting Name="UpdateUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://github.com/koliva8245/HeroesParserData</Value>
     </Setting>
+    <Setting Name="ReplayWatchCheckBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ReplayAutoScanCheckBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MinProcessors" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

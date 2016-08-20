@@ -2,6 +2,7 @@
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models;
 using HeroesParserData.Properties;
+using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using NLog;
 using System;
@@ -23,11 +24,13 @@ namespace HeroesParserData.ViewModels
     {
         private string _currentStatus;
         private bool _isProcessSelected;
-        private bool _isProcessWatchSelected;
         private bool _areProcessButtonsEnabled;
+        private bool _fastParseButtonEnabled;
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
+        private DateTime? _replaysLastestParsed;
+        private int _selectedProcessCount;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
         private FileSystemWatcher _fileWatcher;
@@ -53,13 +56,23 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public bool IsProcessWatchSelected
+        public bool IsProcessWatchChecked
         {
-            get { return _isProcessWatchSelected; }
+            get { return Settings.Default.ReplayWatchCheckBox; }
             set
             {
-                _isProcessWatchSelected = value;
-                RaisePropertyChangedEvent(nameof(IsProcessWatchSelected));
+                Settings.Default.ReplayWatchCheckBox = value;
+                RaisePropertyChangedEvent(nameof(IsProcessWatchChecked));
+            }
+        }
+
+        public bool IsAutoScanChecked
+        {
+            get { return Settings.Default.ReplayAutoScanCheckBox; }
+            set
+            {
+                Settings.Default.ReplayAutoScanCheckBox = value;
+                RaisePropertyChangedEvent(nameof(IsAutoScanChecked));
             }
         }
 
@@ -69,7 +82,21 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _areProcessButtonsEnabled = value;
+                FastParseButtonEnabled = value;
                 RaisePropertyChangedEvent(nameof(AreProcessButtonsEnabled));
+            }
+        }
+
+        public bool FastParseButtonEnabled
+        {
+            get { return _fastParseButtonEnabled; }
+            set
+            {
+                _fastParseButtonEnabled = value;
+                if (MaxProcessorCount < (Settings.Default.MinProcessors + 1))
+                    _fastParseButtonEnabled = false;
+
+                RaisePropertyChangedEvent(nameof(FastParseButtonEnabled));
             }
         }
 
@@ -103,6 +130,16 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        public DateTime? ReplaysLastestParsed
+        {
+            get { return _replaysLastestParsed != null? _replaysLastestParsed :  Query.Replay.LatestReplayByDateTime(); }
+            set
+            {
+                _replaysLastestParsed = value;
+                RaisePropertyChangedEvent(nameof(ReplaysLastestParsed));
+            }
+        }
+
         public ObservableCollection<ReplayFile> ReplayFiles
         {
             get { return _replayFiles; }
@@ -117,32 +154,79 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(ReplaysLocation));
             }
         }
+
+        public int MaxProcessorCount
+        {
+            get { return Environment.ProcessorCount; }
+        }
+
+        public int SelectedProcessCount
+        {
+            get
+            {
+                if (_selectedProcessCount < 3)
+                    return 3;
+                else
+                    return _selectedProcessCount;
+            }
+            set
+            {
+                if (value >= MaxProcessorCount)
+                    _selectedProcessCount = MaxProcessorCount - 1;
+                else if (value < Settings.Default.MinProcessors)
+                    _selectedProcessCount = MaxProcessorCount;
+                else
+                    _selectedProcessCount = value;
+
+                RaisePropertyChangedEvent(nameof(SelectedProcessCount));
+            }
+        }
         #endregion
 
         #region Button Commands
-        public ICommand Start
+        public ICommand Scan
         {
-            get { return new DelegateCommand(StartProcessingOnly); }
+            get { return new DelegateCommand(StartScan); }
         }
 
-        public ICommand StartWatch
+        public ICommand Start
         {
-            get { return new DelegateCommand(StartProcessingAndWatch); }
+            get { return new DelegateCommand(StartProcessing); }
         }
 
         public ICommand Stop
         {
-            get { return new DelegateCommand(StopProcessingOnly); }
-        }
-
-        public ICommand StopWatch
-        {
-            get { return new DelegateCommand(StopProcessingAndWatch); }
+            get { return new DelegateCommand(StopProcessing); }
         }
 
         public ICommand Browse
         {
             get { return new DelegateCommand(BrowseClick); }
+        }
+
+        public ICommand DateTimeSet
+        {
+            get { return new DelegateCommand(ReplaysDateTimeSet); }
+        }
+
+        public ICommand DateTimeDefault
+        {
+            get { return new DelegateCommand(ReplaysDateTimeDefault); }
+        }
+
+        public ICommand DateTimeClear
+        {
+            get { return new DelegateCommand(ReplaysDateTimeClear); }
+        }
+
+        public ICommand ManualSelectFiles
+        {
+            get { return new DelegateCommand(RetrieveUserSelectFiles); }
+        }
+
+        public ICommand FastParseStart
+        {
+            get { return new DelegateCommand(MultiThreaderParser); }
         }
         #endregion
 
@@ -154,52 +238,71 @@ namespace HeroesParserData.ViewModels
             AreProcessButtonsEnabled = true;
         }
 
-        private void StartProcessingOnly()
+        private void StartScan()
+        {
+            AreProcessButtonsEnabled = false;
+            Task.Run(() => 
+            {
+                LoadAccountDirectory();
+                AreProcessButtonsEnabled = true;
+            });           
+        }
+
+        private void StartProcessing()
         {
             IsProcessSelected = true;
             AreProcessButtonsEnabled = false;
 
+            if (IsProcessWatchChecked)
+                InitReplayWatcher();
 
-            InitProcessing();
+            InitProcessing(IsAutoScanChecked);
         }
 
-        private void StartProcessingAndWatch()
-        {
-            IsProcessWatchSelected = true;
-            AreProcessButtonsEnabled = false;
-
-            InitReplayWatcher();
-            InitProcessing();
-        }
-
-        private void StopProcessingOnly()
+        private void StopProcessing()
         {
             IsProcessSelected = false;
+            if (_fileWatcher != null && IsProcessWatchChecked)
+            {
+                _fileWatcher.EnableRaisingEvents = false;
+                _fileWatcher = null;
+            }
 
             if (!string.IsNullOrEmpty(CurrentStatus))
                 CurrentStatus += " (Stopping, awaiting completion of current task)";
         }
 
-        private void StopProcessingAndWatch()
+        private void MultiThreaderParser()
         {
-            _fileWatcher.EnableRaisingEvents = false;
-            _fileWatcher = null;
-
-            IsProcessWatchSelected = false;
-
-            if (!string.IsNullOrEmpty(CurrentStatus))
-                CurrentStatus += " (Stopping, awaiting completion of current task)";
+            IsProcessSelected = true;
+            AreProcessButtonsEnabled = false;
+            Task.Run(() =>
+            {
+                ParseReplaysMultiThreading();
+                AreProcessButtonsEnabled = true;
+                IsProcessSelected = false;
+            });
+           
         }
 
-        private void InitProcessing()
+        /// <summary>
+        /// Start the parsing. Runs on a separate thread.
+        /// </summary>
+        private void InitProcessing(bool isAutoScan)
         {
             Task.Run(() =>
             {
-                LoadAccountDirectory();
+                if (isAutoScan)
+                    LoadAccountDirectory();
+
                 ParseReplays();
             });           
         }
 
+        /// <summary>
+        /// Opens up a dialog to change the location of the replays location folder.
+        /// Checks all subdirectories
+        /// </summary>
         private void BrowseClick()
         {
             var dialog = new CommonOpenFileDialog();
@@ -213,6 +316,64 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        private void ReplaysDateTimeSet()
+        {
+            ReplaysLastestParsed = ReplaysLastestParsed;
+        }
+
+        private void ReplaysDateTimeDefault()
+        {
+            ReplaysLastestParsed = Query.Replay.LatestReplayByDateTime();
+        }
+
+        private void ReplaysDateTimeClear()
+        {
+            ReplaysLastestParsed = new DateTime();
+        }
+
+        /// <summary>
+        /// Manual retrieval of the replay files, does not parse
+        /// </summary>
+        private void RetrieveUserSelectFiles()
+        {
+            var dialog = new OpenFileDialog();
+            dialog.InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm");
+            dialog.DefaultExt = ".StormReplay";
+            dialog.Filter = $"Heroes Replay Files (*.{Resources.HeroesReplayFileType})|*.{Resources.HeroesReplayFileType}|All Files (*.*)|*.*";
+            dialog.Multiselect = true;
+
+            bool? result = dialog.ShowDialog();
+            if (result == true)
+            {
+                ReplayFiles.Clear();
+                IsAutoScanChecked = false;
+
+                CurrentStatus = "Retrieving selected replay file(s)...";
+                var files = dialog.FileNames;
+
+                foreach (var file in files)
+                {
+                    var replayFile = new FileInfo(file);
+                    if (replayFile.Extension == $".{Resources.HeroesReplayFileType}")
+                    {
+                        ReplayFiles.Add(new ReplayFile
+                        {
+                            FileName = replayFile.Name,
+                            CreationTime = replayFile.LastWriteTime,
+                            FilePath = replayFile.FullName,
+                            Status = null
+                        });
+                    }
+                }
+
+                TotalSavedInDatabase = GetTotalReplayDbCount();
+                TotalReplaysGrid = ReplayFiles.Count;
+                TotalParsedGrid = 0;
+                CurrentStatus = $"{ReplayFiles.Count} replay file(s) retrieved";
+            }
+        }
+
+        #region File Watcher
         private void InitReplayWatcher()
         {
             _fileWatcher = new FileSystemWatcher();
@@ -239,7 +400,7 @@ namespace HeroesParserData.ViewModels
                     ReplayFiles.Add(new ReplayFile
                     {
                         FileName = Path.GetFileName(e.FullPath),
-                        CreationTime = File.GetCreationTime(filePath),
+                        CreationTime = File.GetLastWriteTime(filePath),
                         FilePath = e.FullPath,
                         Status = null
                     });
@@ -262,22 +423,26 @@ namespace HeroesParserData.ViewModels
 
             TotalReplaysGrid = ReplayFiles.Count;
         }
+        #endregion File Watcher
 
         private long GetTotalReplayDbCount()
         {
             return Query.Replay.GetTotalReplayCount();
         }
 
+        /// <summary>
+        /// Scan the default replays location and get all the replay files
+        /// </summary>
         private void LoadAccountDirectory()
         {
             CurrentStatus = "Scanning replay folder(s)...";
 
             try
-            {             
+            {
                 List<FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", SearchOption.AllDirectories)
-                    .OrderBy(x => x.CreationTimeUtc)
-                    .Where(x => x.CreationTimeUtc > Query.Replay.LatestReplayByDateTimeUTC()) // last parsed replay
+                    .OrderBy(x => x.LastWriteTime)
+                    .Where(x => x.LastWriteTime > ReplaysLastestParsed) // last parsed replay
                     .ToList();
 
                 TotalReplaysGrid = listFiles.Count;
@@ -292,11 +457,10 @@ namespace HeroesParserData.ViewModels
                         ReplayFiles.Add(new ReplayFile
                         {
                             FileName = file.Name,
-                            CreationTime = file.CreationTime,
+                            CreationTime = file.LastWriteTime,
                             FilePath = file.FullName,
                             Status = null
                         });
-
                     }
 
                     TotalSavedInDatabase = GetTotalReplayDbCount();
@@ -316,17 +480,20 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        /// <summary>
+        /// Parse all the replay files in the ReplayFiles list
+        /// </summary> 
         private void ParseReplays()
         {
             int i = 0;
 
             // check if continuing parsing while all replays have been parsed
-            while (IsProcessSelected || IsProcessWatchSelected) 
+            while (IsProcessSelected)
             {
                 for (; i < ReplayFiles.Count(); i++)
                 {
                     // check if continuing parsing while still having non-parsed replays
-                    if (!IsProcessSelected && !IsProcessWatchSelected)
+                    if (!IsProcessSelected)
                         break;
 
                     #region parse replay and save data
@@ -349,14 +516,18 @@ namespace HeroesParserData.ViewModels
                             {
                                 try
                                 {
-                                    file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData();
+                                    DateTime parsedDateTime;
+                                    file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
                                     if (file.Status == ReplayParseResult.Saved)
+                                    {
                                         TotalSavedInDatabase++;
+                                        ReplaysLastestParsed = parsedDateTime.ToLocalTime();
+                                    }
                                 }
                                 catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
                                 {
                                     file.Status = ReplayParseResult.SqlException;
-                                    SqlExceptionReplaysLog.Log(LogLevel.Error, ex);                                    
+                                    SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
                                 }
                                 catch (Exception ex)
                                 {
@@ -386,15 +557,103 @@ namespace HeroesParserData.ViewModels
                         if (File.Exists(tmpPath))
                             File.Delete(tmpPath);
                     }
-                    #endregion
+                    #endregion parse replay and save data
                 } // end for
 
                 i = ReplayFiles.Count();
-                Thread.Sleep(2000);
+
+                // if no watch is selected and if all replays got parsed then automatically end
+                if (!IsProcessWatchChecked && i == 0)
+                {
+                    CurrentStatus = "Processing completed";
+                    IsProcessSelected = false;
+                    AreProcessButtonsEnabled = true;
+                    return;
+                }
+                else if (IsProcessWatchChecked && i == 0)
+                {
+                    CurrentStatus = "Watching for new replays...";
+                    Thread.Sleep(2000);
+                }
             } // end while
 
             CurrentStatus = "Processing stopped";
             AreProcessButtonsEnabled = true;
+        }
+
+        /// <summary>
+        /// Parses all relays using multithreading
+        /// </summary>
+        private void ParseReplaysMultiThreading()
+        {
+            try
+            {
+                CurrentStatus = "Parsing all replays...";
+                Parallel.ForEach(ReplayFiles, new ParallelOptions { MaxDegreeOfParallelism = SelectedProcessCount }, file =>
+                {
+                    if (!IsProcessSelected)
+                    {
+                        return;
+                    }
+
+                    var tmpPath = Path.GetTempFileName();
+
+                    try
+                    {
+                        File.Copy(file.FilePath, tmpPath, overwrite: true);
+
+                        var replayParseResult = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
+                        if (replayParseResult.Item1 == ReplayParseResult.Success)
+                        {
+                            file.Status = ReplayParseResult.Success;
+
+                            try
+                            {
+                                DateTime parsedDateTime;
+                                file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
+                                if (file.Status == ReplayParseResult.Saved)
+                                {
+                                    TotalSavedInDatabase++;
+                                }
+                            }
+                            catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
+                            {
+                                file.Status = ReplayParseResult.SqlException;
+                                SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
+                            }
+                            catch (Exception ex)
+                            {
+                                file.Status = ReplayParseResult.Exception;
+                                ExceptionLog.Log(LogLevel.Error, ex);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        file.Status = ReplayParseResult.Exception;
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                        FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+
+                    }
+                    finally
+                    {
+                        TotalParsedGrid++;
+
+                        if (File.Exists(tmpPath))
+                            File.Delete(tmpPath);
+                    }
+                });
+
+                if (IsProcessSelected)
+                    CurrentStatus = "Parsing completed";
+                else
+                    CurrentStatus = "Fast parse stopped";
+            }
+            catch (Exception ex)
+            {
+                ExceptionLog.Log(LogLevel.Error, ex);
+                CurrentStatus = "Fast parse error";
+            }
         }
 
         #region IDisposable Support

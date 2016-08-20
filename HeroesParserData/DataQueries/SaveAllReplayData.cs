@@ -14,6 +14,7 @@ namespace HeroesParserData.DataQueries
         private HeroesParserDataContext HeroesParserDataContext;
         private long ReplayId;
         private string FileName;
+        private DateTime ParsedDateTime;
 
         public SaveAllReplayData(Heroes.ReplayParser.Replay replay, string fileName)
         {
@@ -22,7 +23,7 @@ namespace HeroesParserData.DataQueries
             HeroesParserDataContext = new HeroesParserDataContext();
         }
 
-        public ReplayParseResult SaveAllData()
+        public ReplayParseResult SaveAllData(out DateTime parsedDateTime)
         {
             using (HeroesParserDataContext)
             {
@@ -41,10 +42,16 @@ namespace HeroesParserData.DataQueries
                             SaveMatchObjectives();
 
                             dbTransaction.Commit();
+
+                            parsedDateTime = ParsedDateTime;
+
                             return ReplayParseResult.Saved;
                         }
                         else
+                        {
+                            parsedDateTime = new DateTime();
                             return ReplayParseResult.Duplicate;
+                        }
                         
                     }
                     catch (Exception)
@@ -77,6 +84,8 @@ namespace HeroesParserData.DataQueries
                 TimeStamp = Replay.Timestamp,
                 FileName = FileName             
             };
+
+            ParsedDateTime = Replay.Timestamp;
 
             // check if replay was added to database already
             if (Query.Replay.IsExistingReplay(replayData, HeroesParserDataContext))

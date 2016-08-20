@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace HeroesParserData
+namespace HeroesParserData.Converters
 {
     public class IntToStringThousandSeperator : IValueConverter
     {
