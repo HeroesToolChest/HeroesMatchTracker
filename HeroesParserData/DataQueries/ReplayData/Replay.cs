@@ -160,17 +160,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return db.Replays.Any(x => x.RandomValue == replay.RandomValue);
             }
 
-            public static DateTime LatestReplayByDateTime()
+            public static DateTime? LatestReplayByDateTime()
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    var query = from x in db.Replays
-                                orderby x.TimeStamp descending
-                                select x.TimeStamp;
+                    var record = db.Replays.OrderByDescending(x => x.TimeStamp).FirstOrDefault();
 
-                    var record = query.FirstOrDefault();
                     if (record != null)
-                        return record.Value;
+                        return record.TimeStamp;
                     else
                         return new DateTime();         
                 }                   

@@ -29,7 +29,7 @@ namespace HeroesParserData.ViewModels
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
-        private DateTime? _replaysLastestParsed;
+        private DateTime? _replaysLatestParsed;
         private int _selectedProcessCount;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
@@ -130,13 +130,13 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public DateTime? ReplaysLastestParsed
+        public DateTime? ReplaysLatestParsed
         {
-            get { return _replaysLastestParsed != null? _replaysLastestParsed :  Query.Replay.LatestReplayByDateTime(); }
+            get { return _replaysLatestParsed != null? _replaysLatestParsed :  Query.Replay.LatestReplayByDateTime(); }
             set
             {
-                _replaysLastestParsed = value;
-                RaisePropertyChangedEvent(nameof(ReplaysLastestParsed));
+                _replaysLatestParsed = value;
+                RaisePropertyChangedEvent(nameof(ReplaysLatestParsed));
             }
         }
 
@@ -318,17 +318,17 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeSet()
         {
-            ReplaysLastestParsed = ReplaysLastestParsed;
+            ReplaysLatestParsed = ReplaysLatestParsed;
         }
 
         private void ReplaysDateTimeDefault()
         {
-            ReplaysLastestParsed = Query.Replay.LatestReplayByDateTime();
+            ReplaysLatestParsed = Query.Replay.LatestReplayByDateTime();
         }
 
         private void ReplaysDateTimeClear()
         {
-            ReplaysLastestParsed = new DateTime();
+            ReplaysLatestParsed = new DateTime();
         }
 
         /// <summary>
@@ -442,7 +442,7 @@ namespace HeroesParserData.ViewModels
                 List<FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", SearchOption.AllDirectories)
                     .OrderBy(x => x.LastWriteTime)
-                    .Where(x => x.LastWriteTime > ReplaysLastestParsed) // last parsed replay
+                    .Where(x => x.LastWriteTime > ReplaysLatestParsed) // last parsed replay
                     .ToList();
 
                 TotalReplaysGrid = listFiles.Count;
@@ -521,7 +521,7 @@ namespace HeroesParserData.ViewModels
                                     if (file.Status == ReplayParseResult.Saved)
                                     {
                                         TotalSavedInDatabase++;
-                                        ReplaysLastestParsed = parsedDateTime.ToLocalTime();
+                                        ReplaysLatestParsed = parsedDateTime.ToLocalTime();
                                     }
                                 }
                                 catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
@@ -560,21 +560,21 @@ namespace HeroesParserData.ViewModels
                     #endregion parse replay and save data
                 } // end for
 
-                i = ReplayFiles.Count();
-
                 // if no watch is selected and if all replays got parsed then automatically end
-                if (!IsProcessWatchChecked && i == 0)
+                if (!IsProcessWatchChecked && i == ReplayFiles.Count)
                 {
                     CurrentStatus = "Processing completed";
                     IsProcessSelected = false;
                     AreProcessButtonsEnabled = true;
                     return;
                 }
-                else if (IsProcessWatchChecked && i == 0)
+                else if (IsProcessWatchChecked && i == ReplayFiles.Count)
                 {
                     CurrentStatus = "Watching for new replays...";
                     Thread.Sleep(2000);
                 }
+
+                i = ReplayFiles.Count();
             } // end while
 
             CurrentStatus = "Processing stopped";

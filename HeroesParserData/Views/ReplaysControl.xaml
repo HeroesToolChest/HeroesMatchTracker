@@ -58,8 +58,8 @@
             <TextBox Height="23" Margin="10,176,0,0" IsReadOnly="True" TextWrapping="NoWrap" Text="{Binding ReplaysLocation}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368"/>
             <Button Content="Browse" Margin="383,176,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Browse}"/>
 
-            <Label Content="Lastest Parsed Replay Date/Time" Grid.Column="1" HorizontalAlignment="Left" Margin="5,207,0,0" VerticalAlignment="Top"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastParsed}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
+            <Label Content="Latest Parsed Replay Date/Time" Grid.Column="1" HorizontalAlignment="Left" Margin="5,207,0,0" VerticalAlignment="Top"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestParsed}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
             <Button Content="Set" Grid.Column="1" HorizontalAlignment="Left" Margin="223,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
             <Button Content="Default" Grid.Column="1" HorizontalAlignment="Left" Margin="303,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
             <Button Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="383,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
