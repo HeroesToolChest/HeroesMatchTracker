@@ -517,7 +517,7 @@ namespace HeroesParserData.ViewModels
                                 try
                                 {
                                     DateTime parsedDateTime;
-                                    file.Status = SaveAllReplayData.Save(replayParseResult.Item2, file.FileName, out parsedDateTime);
+                                    file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
                                     if (file.Status == ReplayParseResult.Saved)
                                     {
                                         TotalSavedInDatabase++;
@@ -610,7 +610,7 @@ namespace HeroesParserData.ViewModels
                             try
                             {
                                 DateTime parsedDateTime;
-                                file.Status = SaveAllReplayData.Save(replayParseResult.Item2, file.FileName, out parsedDateTime);
+                                file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
                                 if (file.Status == ReplayParseResult.Saved)
                                 {
                                     TotalSavedInDatabase++;
