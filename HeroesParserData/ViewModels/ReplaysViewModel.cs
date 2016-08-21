@@ -627,6 +627,11 @@ namespace HeroesParserData.ViewModels
                                 ExceptionLog.Log(LogLevel.Error, ex);
                             }
                         }
+                        else
+                        {
+                            file.Status = replayParseResult.Item1;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                        }
                     }
                     catch (Exception ex)
                     {
