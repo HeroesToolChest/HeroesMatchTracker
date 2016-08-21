@@ -63,12 +63,25 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
+            // last parsed replays
             public static async Task<List<Models.DbModels.Replay>> ReadLastRecordsAsync(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
                     if (await db.Replays.CountAsync() > 0)
                         return await db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    else
+                        return new List<Models.DbModels.Replay>();
+                }
+            }
+
+            // latest replays by time stamp
+            public static async Task<List<Models.DbModels.Replay>> ReadLatestRecordsAsync(int num)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    if (await db.Replays.CountAsync() > 0)
+                        return await db.Replays.OrderByDescending(x => x.TimeStamp).Take(num).ToListAsync();
                     else
                         return new List<Models.DbModels.Replay>();
                 }

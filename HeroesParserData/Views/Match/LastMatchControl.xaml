@@ -6,16 +6,25 @@
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
              xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match"
              mc:Ignorable="d" 
-             HorizontalAlignment="Left"
-             VerticalAlignment="Top"
+             HorizontalAlignment="Stretch"
+             HorizontalContentAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:LastGameViewModel}">
     <UserControl.DataContext>
         <ViewModels:LastGameViewModel />
     </UserControl.DataContext>
     <DockPanel>
-        <Grid>
-            <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,9,-105,0" />
-            <local:MatchSummaryControl DockPanel.Dock="Bottom"></local:MatchSummaryControl>
+        <local:MatchStatusBarControl DockPanel.Dock="Bottom"></local:MatchStatusBarControl>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="1024"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+            <local:MatchListLastMatchControl Grid.Column="1"></local:MatchListLastMatchControl>
         </Grid>
     </DockPanel>
 </UserControl>

@@ -24,7 +24,7 @@
     </Controls:MetroWindow.Flyouts>-->
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
-            <TabItem Header="Last Game">
+            <TabItem Header="Last 30 Matches">
                 <ViewsMatch:LastMatchControl />
             </TabItem>
             <TabItem Header="Quick Match">
