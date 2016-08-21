@@ -30,20 +30,24 @@
             <TabItem Header="Latest 30 Matches">
                 <ViewsMatch:LastMatchControl />
             </TabItem>
-            <TabItem Header="Quick Match">
-                <ViewsMatch:QuickMatchControl />
-            </TabItem>
-            <TabItem Header="Unranked Draft">
-                <ViewsMatch:UnrankedDraftControl />
-            </TabItem>
-            <TabItem Header="Hero League">
-                <ViewsMatch:HeroLeagueControl/>
-            </TabItem>
-            <TabItem Header="Team League">
-                <ViewsMatch:TeamLeagueControl />
-            </TabItem>
-            <TabItem Header="Custom Game">
-                <ViewsMatch:CustomGameControl />
+            <TabItem Header="Game Modes">
+                <TabControl>
+                    <TabItem Header="Quick Match">
+                        <ViewsMatch:QuickMatchControl />
+                    </TabItem>
+                    <TabItem Header="Unranked Draft">
+                        <ViewsMatch:UnrankedDraftControl />
+                    </TabItem>
+                    <TabItem Header="Hero League">
+                        <ViewsMatch:HeroLeagueControl/>
+                    </TabItem>
+                    <TabItem Header="Team League">
+                        <ViewsMatch:TeamLeagueControl />
+                    </TabItem>
+                    <TabItem Header="Custom Game">
+                        <ViewsMatch:CustomGameControl />
+                    </TabItem>
+                </TabControl>
             </TabItem>
             <TabItem Header="Replays">
                 <Views:ReplaysControl/>
