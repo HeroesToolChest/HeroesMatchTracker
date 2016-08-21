@@ -13,7 +13,7 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:ReplaysViewModel}" d:DesignWidth="1016" d:DesignHeight="666">
+             d:DataContext="{d:DesignInstance ViewModels:ReplaysViewModel}" d:DesignWidth="1149" d:DesignHeight="751">
     <UserControl.DataContext>
         <ViewModels:ReplaysViewModel/>
     </UserControl.DataContext>
@@ -63,21 +63,28 @@
             <Button Content="Set" Grid.Column="1" HorizontalAlignment="Left" Margin="223,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
             <Button Content="Default" Grid.Column="1" HorizontalAlignment="Left" Margin="303,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
             <Button Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="383,233,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
-            <Expander Grid.Column="1" Header="Fast Parse" HorizontalAlignment="Left" Margin="10,277,-14,0" VerticalAlignment="Top" Height="176" Width="512">
-                <Grid>
-                    <Label Content="Total Threads:" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="{Binding MaxProcessorCount}" HorizontalAlignment="Left" Margin="102,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Thread to Use:" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
-                    <Controls:NumericUpDown Height="28" Minimum="3" Maximum ="{Binding MaxProcessorCount}" VerticalAlignment="Top" HorizontalAlignment="Left" Interval="1" Margin="102,36,0,0" IsEnabled="{Binding AreProcessButtonsEnabled}" Value="{Binding SelectedProcessCount}" Width="79"/>
-                    <Button Content="Start" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Width="167" IsEnabled="{Binding FastParseButtonEnabled}" Command="{Binding FastParseStart}"/>
 
-                    <Label Content="* Does not work with 'Watch'" HorizontalAlignment="Left" Margin="212,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="* Does not work with 'Auto Scan'" HorizontalAlignment="Left" Margin="212,36,0,0" VerticalAlignment="Top"/>
-                    <Label Content="* You will have to adjust the 'Last Parsed Date/Time'" HorizontalAlignment="Left" Margin="212,62,0,0" VerticalAlignment="Top"/>
-                    <Label Content="   if the process is interrupted or stopped early" HorizontalAlignment="Left" Margin="212,83,0,0" VerticalAlignment="Top"/>
-                    <Label Content="* Disabled for computers with less than 4 threads" HorizontalAlignment="Left" Margin="212,109,0,0" VerticalAlignment="Top"/>
-                </Grid>
-            </Expander>
+            <Grid Grid.Column="1" Margin="0,278,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Expander Grid.Row="0" Header="Fast Parse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="512" IsExpanded="False">
+                    <Grid>
+                        <Label Content="Total Threads:" HorizontalAlignment="Left" Margin="14,5,0,0" VerticalAlignment="Top"/>
+                        <Label Content="{Binding MaxProcessorCount}" HorizontalAlignment="Left" Margin="102,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,-0.308"/>
+                        <Label Content="Thread to Use:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top"/>
+                        <Controls:NumericUpDown Height="28" Minimum="3" Maximum ="{Binding MaxProcessorCount}" VerticalAlignment="Top" HorizontalAlignment="Left" Interval="1" Margin="102,30,0,0" IsEnabled="{Binding AreProcessButtonsEnabled}" Value="{Binding SelectedProcessCount}" Width="79"/>
+                        <Button Content="Start" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Width="167" IsEnabled="{Binding FastParseButtonEnabled}" Command="{Binding FastParseStart}"/>
+
+                        <Label Content="* Does not work with 'Watch'" HorizontalAlignment="Left" Margin="212,5,0,0" VerticalAlignment="Top"/>
+                        <Label Content="* Does not work with 'Auto Scan'" HorizontalAlignment="Left" Margin="212,32,0,0" VerticalAlignment="Top"/>
+                        <Label Content="* You will have to adjust the 'Last Parsed Date/Time'" HorizontalAlignment="Left" Margin="212,58,0,0" VerticalAlignment="Top"/>
+                        <Label Content="   if the process is interrupted or stopped early" HorizontalAlignment="Left" Margin="212,78,0,0" VerticalAlignment="Top"/>
+                        <Label Content="* Disabled for computers with less than 4 threads" HorizontalAlignment="Left" Margin="212,104,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </Expander>
+            </Grid>
         </Grid>
     </DockPanel>
 </UserControl>
