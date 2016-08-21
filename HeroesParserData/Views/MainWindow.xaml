@@ -10,7 +10,10 @@
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
-        Title="Heroes Parser Data" MinHeight="576" MinWidth="1164" Height="720" Width="1640">
+        Title="{Binding AppVersion, StringFormat=Heroes Parser Data - {0}}"  MinHeight="576" MinWidth="1164" Height="720" Width="1640">
+    <Control.DataContext>
+        <ViewModels:MainWindowViewModel />
+    </Control.DataContext>
     <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
@@ -24,7 +27,7 @@
     </Controls:MetroWindow.Flyouts>-->
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
-            <TabItem Header="Last 30 Matches">
+            <TabItem Header="Latest 30 Matches">
                 <ViewsMatch:LastMatchControl />
             </TabItem>
             <TabItem Header="Quick Match">

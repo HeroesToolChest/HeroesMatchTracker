@@ -1,4 +1,5 @@
 ﻿using HeroesParserData.Properties;
+using NLog;
 using System;
 using System.Data.SqlClient;
 using System.IO;
@@ -11,6 +12,8 @@ namespace HeroesParserData
     /// </summary>
     public partial class App : Application
     {
+        private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
+
         public static bool UpdateInProgress { get; set; }
         public static string NewLastestDirectory { get; set; }
 
@@ -68,30 +71,27 @@ namespace HeroesParserData
             string dbFilePath = @"Database\HeroesParserData.db";
             string newAppDirectory = Path.Combine(NewLastestDirectory, "Database");
 
-            using (StreamWriter writer = new StreamWriter("logs/_DatabaseCopyLog.txt", true))
+            try
             {
-                try
+                if (!File.Exists(dbFilePath))
                 {
-                    if (!File.Exists(dbFilePath))
-                    {
-                        writer.WriteLine($"Database file not found: {dbFilePath}");
-                        writer.WriteLine("Nothing to copy, update completed");
+                    DatabaseCopyLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
+                    DatabaseCopyLog.Log(LogLevel.Info, "Nothing to copy, update completed");
 
-                        return;
-                    }
-
-                    Directory.CreateDirectory(newAppDirectory);
-                    writer.WriteLine($"Directory created: {newAppDirectory}");
-
-                    File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
-
-                    writer.WriteLine($"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
-                    writer.WriteLine("Update completed");
+                    return;
                 }
-                catch (Exception ex)
-                {
-                    writer.WriteLine(ex);
-                }
+
+                Directory.CreateDirectory(newAppDirectory);
+                DatabaseCopyLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
+
+                File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
+
+                DatabaseCopyLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
+                DatabaseCopyLog.Log(LogLevel.Info, "Update completed");
+            }
+            catch (Exception ex)
+            {
+                DatabaseCopyLog.Log(LogLevel.Info, ex);
             }
         }
     }
