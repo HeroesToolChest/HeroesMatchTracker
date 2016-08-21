@@ -8,51 +8,55 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.DataQueries
 {
-    public class SaveAllReplayData : IDisposable
+    public static class SaveAllReplayData
     {
-        private Heroes.ReplayParser.Replay Replay;
-        private HeroesParserDataContext HeroesParserDataContext;
-        private long ReplayId;
-        private string FileName;
-        private DateTime ParsedDateTime;
-
-        public SaveAllReplayData(Heroes.ReplayParser.Replay replay, string fileName)
+        public static ReplayParseResult Save(Heroes.ReplayParser.Replay replay, string fileName, out DateTime parsedDateTime)
         {
-            Replay = replay;
-            FileName = fileName;
-            HeroesParserDataContext = new HeroesParserDataContext();
-        }
-
-        public ReplayParseResult SaveAllData(out DateTime parsedDateTime)
-        {
-            using (HeroesParserDataContext)
+            using (var db = new HeroesParserDataContext())
             {
-                using (var dbTransaction = HeroesParserDataContext.Database.BeginTransaction())
+                using (var dbTransaction = db.Database.BeginTransaction())
                 {
                     try
                     {
-                        ReplayId = SaveBasicData();
-                        if (ReplayId > 0)
+                        #region Save basic data
+                        Models.DbModels.Replay replayData = new Models.DbModels.Replay
                         {
-                            SavePlayerRelatedData();
-                            SaveMatchTeamBans();
-                            SaveMatchTeamLevels();
-                            SaveMatchTeamExperience();
-                            SaveMatchMessage();
-                            SaveMatchObjectives();
+                            Frames = replay.Frames,
+                            GameMode = replay.GameMode,
+                            GameSpeed = replay.GameSpeed.ToString(),
+                            IsGameEventsParsed = replay.IsGameEventsParsedSuccessfully,
+                            MapName = replay.Map,
+                            RandomValue = replay.RandomValue,
+                            ReplayBuild = replay.ReplayBuild,
+                            ReplayLength = replay.ReplayLength,
+                            ReplayVersion = replay.ReplayVersion,
+                            TeamSize = replay.TeamSize,
+                            TimeStamp = replay.Timestamp,
+                            FileName = fileName
+                        };
 
-                            dbTransaction.Commit();
+                        parsedDateTime = replay.Timestamp;
 
-                            parsedDateTime = ParsedDateTime;
-
-                            return ReplayParseResult.Saved;
-                        }
-                        else
+                        // check if replay was added to database already
+                        if (Query.Replay.IsExistingReplay(replayData, db))
                         {
                             parsedDateTime = new DateTime();
                             return ReplayParseResult.Duplicate;
                         }
-                        
+
+                        long replayId = Query.Replay.CreateRecord(db, replayData);
+                        #endregion Save basic data
+
+                        SavePlayerRelatedData(db, replay, replayId);
+                        SaveMatchTeamBans(db, replay, replayId);
+                        SaveMatchTeamLevels(db, replay, replayId);
+                        SaveMatchTeamExperience(db, replay, replayId);
+                        SaveMatchMessage(db, replay, replayId);
+                        SaveMatchObjectives(db, replay, replayId);
+
+                        dbTransaction.Commit();
+
+                        return ReplayParseResult.Saved;
                     }
                     catch (Exception)
                     {
@@ -63,49 +67,16 @@ namespace HeroesParserData.DataQueries
             }
         }
 
-        /// <summary>
-        /// Adds replay data to database, returns the id of replay.  Will return 0 if replay already added
-        /// </summary>
-        /// <returns>Id of replay, 0 if already added</returns>
-        private long SaveBasicData()
-        {
-            Models.DbModels.Replay replayData = new Models.DbModels.Replay
-            {
-                Frames = Replay.Frames,
-                GameMode = Replay.GameMode,
-                GameSpeed = Replay.GameSpeed.ToString(),
-                IsGameEventsParsed = Replay.IsGameEventsParsedSuccessfully,
-                MapName = Replay.Map,
-                RandomValue = Replay.RandomValue,
-                ReplayBuild = Replay.ReplayBuild,
-                ReplayLength = Replay.ReplayLength,
-                ReplayVersion = Replay.ReplayVersion,
-                TeamSize = Replay.TeamSize,
-                TimeStamp = Replay.Timestamp,
-                FileName = FileName             
-            };
-
-            ParsedDateTime = Replay.Timestamp;
-
-            // check if replay was added to database already
-            if (Query.Replay.IsExistingReplay(replayData, HeroesParserDataContext))
-            {
-                return 0;
-            }
-
-            return Query.Replay.CreateRecord(HeroesParserDataContext, replayData);
-        }
-
-        private void SavePlayerRelatedData()
+        private static void SavePlayerRelatedData(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
             int i = 0;
 
             Player[] players;
 
-            if (Replay.ReplayBuild > 39445)
-                players = Replay.ClientListByUserID;
+            if (replay.ReplayBuild > 39445)
+                players = replay.ClientListByUserID;
             else
-                players = Replay.Players;
+                players = replay.Players;
 
             foreach (var player in players)
             {
@@ -123,33 +94,33 @@ namespace HeroesParserData.DataQueries
 
                 long playerId;
 
-                if (Query.HotsPlayer.IsExistingHotsPlayer(HeroesParserDataContext, hotsPlayer))
-                    playerId = Query.HotsPlayer.UpdateRecord(HeroesParserDataContext, hotsPlayer);
+                if (Query.HotsPlayer.IsExistingHotsPlayer(db, hotsPlayer))
+                    playerId = Query.HotsPlayer.UpdateRecord(db, hotsPlayer);
                 else
-                    playerId = Query.HotsPlayer.CreateRecord(HeroesParserDataContext, hotsPlayer);
+                    playerId = Query.HotsPlayer.CreateRecord(db, hotsPlayer);
 
-                if (player.Character == null && Replay.GameMode == GameMode.Custom)
+                if (player.Character == null && replay.GameMode == GameMode.Custom)
                 {
                     player.Team = 4;
                     player.Character = "None";
-                    SaveMatchPlayers(playerId, -1, player);
+                    SaveMatchPlayers(db, replayId, playerId, -1, player);
                 }
                 else
                 {
-                    SaveMatchPlayers(playerId, i, player);
-                    SaveMatchPlayerScoreResults(playerId, player);
-                    SaveMatchPlayerTalents(playerId, player);
+                    SaveMatchPlayers(db, playerId, replayId, i, player);
+                    SaveMatchPlayerScoreResults(db, replayId, playerId, player);
+                    SaveMatchPlayerTalents(db, replayId, playerId, player);
 
                     i++;
                 }
             }
         }
 
-        private void SaveMatchPlayers(long playerId, int playerNumber, Player player)
+        private static void SaveMatchPlayers(HeroesParserDataContext db, long replayId, long playerId, int playerNumber, Player player)
         {
             ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
             {
-                ReplayId = ReplayId,
+                ReplayId = replayId,
                 PlayerId = playerId,
                 Character = player.Character,
                 CharacterLevel = player.CharacterLevel,
@@ -164,16 +135,16 @@ namespace HeroesParserData.DataQueries
                 Team = player.Team
             };
 
-            Query.MatchPlayer.CreateRecord(HeroesParserDataContext, replayPlayer);
+            Query.MatchPlayer.CreateRecord(db, replayPlayer);
         }
 
-        private void SaveMatchPlayerScoreResults(long playerId, Player player)
+        private static void SaveMatchPlayerScoreResults(HeroesParserDataContext db, long replayId, long playerId, Player player)
         {
             ScoreResult sr = player.ScoreResult;
 
             ReplayMatchPlayerScoreResult playerScore = new ReplayMatchPlayerScoreResult
             {
-                ReplayId = ReplayId,
+                ReplayId = replayId,
                 Assists = sr.Assists,
                 PlayerId = playerId,
                 CreepDamage = sr.CreepDamage,
@@ -197,10 +168,10 @@ namespace HeroesParserData.DataQueries
                 WatchTowerCaptures = sr.WatchTowerCaptures
             };
 
-            Query.MatchPlayerScoreResult.CreateRecord(HeroesParserDataContext, playerScore);
+            Query.MatchPlayerScoreResult.CreateRecord(db, playerScore);
         }
 
-        private void SaveMatchPlayerTalents(long playerId, Player player)
+        private static void SaveMatchPlayerTalents(HeroesParserDataContext db, long replayId, long playerId, Player player)
         {
             Talent[] talents = player.Talents;
             Talent[] talentArray = new Talent[7]; // hold all 7 talents
@@ -224,7 +195,7 @@ namespace HeroesParserData.DataQueries
 
             ReplayMatchPlayerTalent replayTalent = new ReplayMatchPlayerTalent
             {
-                ReplayId = ReplayId,
+                ReplayId = replayId,
                 PlayerId = playerId,
                 Character = player.Character,
                 TalentId1 = talentArray[0].TalentID,
@@ -250,34 +221,34 @@ namespace HeroesParserData.DataQueries
                 TimeSpanSelected20 = talentArray[6].TimeSpanSelected,
             };
 
-            Query.MatchPlayerTalent.CreateRecord(HeroesParserDataContext, replayTalent);
+            Query.MatchPlayerTalent.CreateRecord(db, replayTalent);
         }
 
-        private void SaveMatchTeamBans()
+        private static void SaveMatchTeamBans(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
-            if (Replay.GameMode == GameMode.UnrankedDraft || Replay.GameMode == GameMode.HeroLeague || Replay.GameMode == GameMode.TeamLeague || Replay.GameMode == GameMode.Custom)
+            if (replay.GameMode == GameMode.UnrankedDraft || replay.GameMode == GameMode.HeroLeague || replay.GameMode == GameMode.TeamLeague || replay.GameMode == GameMode.Custom)
             {
-                if (Replay.TeamHeroBans != null)
+                if (replay.TeamHeroBans != null)
                 {
                     ReplayMatchTeamBan replayTeamBan = new ReplayMatchTeamBan
                     {
-                        ReplayId = ReplayId,
-                        Team0Ban0 = Replay.TeamHeroBans[0][0],
-                        Team0Ban1 = Replay.TeamHeroBans[0][1],
-                        Team1Ban0 = Replay.TeamHeroBans[1][0],
-                        Team1Ban1 = Replay.TeamHeroBans[1][1]
+                        ReplayId = replayId,
+                        Team0Ban0 = replay.TeamHeroBans[0][0],
+                        Team0Ban1 = replay.TeamHeroBans[0][1],
+                        Team1Ban0 = replay.TeamHeroBans[1][0],
+                        Team1Ban1 = replay.TeamHeroBans[1][1]
                     };
 
                     if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null)
-                        Query.MatchTeamBan.CreateRecord(HeroesParserDataContext, replayTeamBan);
+                        Query.MatchTeamBan.CreateRecord(db, replayTeamBan);
                 }
             }
         }
 
-        private void SaveMatchTeamLevels()
+        private static void SaveMatchTeamLevels(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
-            Dictionary<int, TimeSpan?> team0 = Replay.TeamLevels[0];
-            Dictionary<int, TimeSpan?> team1 = Replay.TeamLevels[1];
+            Dictionary<int, TimeSpan?> team0 = replay.TeamLevels[0];
+            Dictionary<int, TimeSpan?> team1 = replay.TeamLevels[1];
 
             if (team0 != null || team1 != null)
             {
@@ -301,7 +272,7 @@ namespace HeroesParserData.DataQueries
                 {
                     ReplayMatchTeamLevel replayTeamLevel = new ReplayMatchTeamLevel
                     {
-                        ReplayId = ReplayId,
+                        ReplayId = replayId,
                         TeamTime0 = team0[level],
                         Team0Level = team0[level].HasValue ? level : (int?)null,
 
@@ -310,15 +281,15 @@ namespace HeroesParserData.DataQueries
 
                     };
 
-                    Query.MatchTeamLevel.CreateRecord(HeroesParserDataContext, replayTeamLevel);
+                    Query.MatchTeamLevel.CreateRecord(db, replayTeamLevel);
                 }
             }
         }
 
-        private void SaveMatchTeamExperience()
+        private static void SaveMatchTeamExperience(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
-            var xpTeam0 = Replay.TeamPeriodicXPBreakdown[0];
-            var xpTeam1 = Replay.TeamPeriodicXPBreakdown[1];
+            var xpTeam0 = replay.TeamPeriodicXPBreakdown[0];
+            var xpTeam1 = replay.TeamPeriodicXPBreakdown[1];
 
             if (xpTeam0 == null && xpTeam1 == null)
                 return;
@@ -335,7 +306,7 @@ namespace HeroesParserData.DataQueries
 
                 ReplayMatchTeamExperience xp = new ReplayMatchTeamExperience
                 {
-                    ReplayId = ReplayId,
+                    ReplayId = replayId,
                     Time = x.TimeSpan,
 
                     Team0TeamLevel = x.TeamLevel,
@@ -353,13 +324,13 @@ namespace HeroesParserData.DataQueries
                     Team1TrickleXP = y.TrickleXP,
                 };
 
-                Query.MatchTeamExperience.CreateRecord(HeroesParserDataContext, xp);
+                Query.MatchTeamExperience.CreateRecord(db, xp);
             }
         }
 
-        private void SaveMatchMessage()
+        private static void SaveMatchMessage(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
-            foreach (var message in Replay.Messages)
+            foreach (var message in replay.Messages)
             {
                 var messageEventType = message.MessageEventType;
                 var player = message.MessageSender;
@@ -370,7 +341,7 @@ namespace HeroesParserData.DataQueries
 
                     ReplayMatchMessage chat = new ReplayMatchMessage
                     {
-                        ReplayId = ReplayId,
+                        ReplayId = replayId,
                         CharacterName = player != null? player.Character : string.Empty,
                         Message = chatMessage.Message,
                         MessageEventType = messageEventType.ToString(),
@@ -379,7 +350,7 @@ namespace HeroesParserData.DataQueries
                         TimeStamp = message.Timestamp             
                     };
 
-                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, chat);
+                    Query.MatchMessage.CreateRecord(db, chat);
                 }
                 else if (messageEventType == ReplayMessageEvents.MessageEventType.SPingMessage)
                 {
@@ -387,7 +358,7 @@ namespace HeroesParserData.DataQueries
 
                     ReplayMatchMessage ping = new ReplayMatchMessage
                     {
-                        ReplayId = ReplayId,
+                        ReplayId = replayId,
                         CharacterName = player != null ? player.Character : string.Empty,
                         Message = "used a ping",
                         MessageEventType = messageEventType.ToString(),
@@ -396,7 +367,7 @@ namespace HeroesParserData.DataQueries
                         TimeStamp = message.Timestamp
                     };
 
-                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, ping);
+                    Query.MatchMessage.CreateRecord(db, ping);
                 }
 
                 else if (messageEventType == ReplayMessageEvents.MessageEventType.SPlayerAnnounceMessage)
@@ -405,7 +376,7 @@ namespace HeroesParserData.DataQueries
 
                     ReplayMatchMessage announce = new ReplayMatchMessage
                     {
-                        ReplayId = ReplayId,
+                        ReplayId = replayId,
                         CharacterName = player != null ? player.Character : string.Empty,
                         Message = $"announce {announceMessage.AnnouncementType.ToString()}",
                         MessageEventType = messageEventType.ToString(),
@@ -414,15 +385,15 @@ namespace HeroesParserData.DataQueries
                         TimeStamp = message.Timestamp
                     };
 
-                    Query.MatchMessage.CreateRecord(HeroesParserDataContext, announce);
+                    Query.MatchMessage.CreateRecord(db, announce);
                 }          
             }
         }
 
-        private void SaveMatchObjectives()
+        private static void SaveMatchObjectives(HeroesParserDataContext db, Heroes.ReplayParser.Replay replay, long replayId)
         {
-            var objTeam0 = Replay.TeamObjectives[0];
-            var objTeam1 = Replay.TeamObjectives[1];
+            var objTeam0 = replay.TeamObjectives[0];
+            var objTeam1 = replay.TeamObjectives[1];
 
             if (objTeam0.Count > 0 && objTeam0 != null)
             {
@@ -433,14 +404,14 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
-                        ReplayId = ReplayId,
+                        PlayerId = player != null? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(db, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        ReplayId = replayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
                         Value = objCount.Value
                     };
 
-                    Query.MatchTeamObjective.CreateRecord(HeroesParserDataContext, obj);
+                    Query.MatchTeamObjective.CreateRecord(db, obj);
                 }
             }
 
@@ -453,38 +424,16 @@ namespace HeroesParserData.DataQueries
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(HeroesParserDataContext, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
-                        ReplayId = ReplayId,
+                        PlayerId = player != null ? Query.HotsPlayer.ReadPlayerIdFromBattleNetId(db, Utilities.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        ReplayId = replayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
                         Value = objCount.Value
                     };
 
-                    Query.MatchTeamObjective.CreateRecord(HeroesParserDataContext, obj);
+                    Query.MatchTeamObjective.CreateRecord(db, obj);
                 }
             }
         }
-
-        #region IDisposable Support
-        private bool disposedValue = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    ((IDisposable)HeroesParserDataContext).Dispose();
-                }
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        #endregion
     }
 }

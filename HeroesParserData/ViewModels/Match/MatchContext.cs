@@ -430,7 +430,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private bool NonHealingCharacter(string character)
         {
-            if (character == "Thrall" || character == "Li-Ming" || character == "Sylvanas" || character == "Abathur")
+            if (character == "Thrall" || character == "Li-Ming" || character == "Sylvanas" || character == "Abathur" || character == "Azmodan")
                 return false;
             else
                 return true;

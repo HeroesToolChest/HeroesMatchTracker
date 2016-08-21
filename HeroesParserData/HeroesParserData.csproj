@@ -284,7 +284,6 @@
     <Compile Include="Generic\DelegateCommand.cs" />
     <Compile Include="Generic\ObservableObject.cs" />
     <Compile Include="Generic\ReplayHotsLogStatus.cs" />
-    <Compile Include="Generic\ReplayParseStatus.cs" />
     <Compile Include="Generic\SaveDataException.cs" />
     <Compile Include="Generic\Utilities.cs" />
     <Page Include="Resources\ImageResources.xaml">
