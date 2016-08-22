@@ -596,11 +596,13 @@ namespace HeroesParserData.ViewModels
                                 {
                                     file.Status = ReplayParseResult.SqlException;
                                     SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
+                                    FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
                                 }
                                 catch (Exception ex)
                                 {
                                     file.Status = ReplayParseResult.Exception;
                                     ExceptionLog.Log(LogLevel.Error, ex);
+                                    FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
                                 }
                             });
                         }
@@ -660,12 +662,9 @@ namespace HeroesParserData.ViewModels
                 Parallel.ForEach(ReplayFiles, new ParallelOptions { MaxDegreeOfParallelism = SelectedProcessCount }, file =>
                 {
                     if (!IsProcessSelected)
-                    {
                         return;
-                    }
 
                     var tmpPath = Path.GetTempFileName();
-
                     try
                     {
                         File.Copy(file.FilePath, tmpPath, overwrite: true);
@@ -675,24 +674,11 @@ namespace HeroesParserData.ViewModels
                         {
                             file.Status = ReplayParseResult.Success;
 
-                            try
+                            DateTime parsedDateTime;
+                            file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
+                            if (file.Status == ReplayParseResult.Saved)
                             {
-                                DateTime parsedDateTime;
-                                file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
-                                if (file.Status == ReplayParseResult.Saved)
-                                {
-                                    TotalSavedInDatabase++;
-                                }
-                            }
-                            catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
-                            {
-                                file.Status = ReplayParseResult.SqlException;
-                                SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
-                            }
-                            catch (Exception ex)
-                            {
-                                file.Status = ReplayParseResult.Exception;
-                                ExceptionLog.Log(LogLevel.Error, ex);
+                                TotalSavedInDatabase++;
                             }
                         }
                         else
@@ -701,12 +687,17 @@ namespace HeroesParserData.ViewModels
                             FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
                         }
                     }
+                    catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
+                    {
+                        file.Status = ReplayParseResult.SqlException;
+                        SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
+                        FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                    }
                     catch (Exception ex)
                     {
                         file.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
-
                     }
                     finally
                     {
