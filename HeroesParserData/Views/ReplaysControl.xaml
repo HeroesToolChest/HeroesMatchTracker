@@ -39,7 +39,7 @@
                       ItemsSource="{Binding ReplayFiles, IsAsync=True}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" />
-                    <DataGridTextColumn Header="Date" Binding="{Binding CreationTime}" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" SortDirection="Descending" />
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
                     <!--<DataGridTextColumn Header="HotsLog Status" Binding="{Binding HotsLogUploadStatus}" />-->
                 </DataGrid.Columns>
@@ -75,7 +75,7 @@
                 <Button Content="Default" Grid.Row="0" HorizontalAlignment="Left" Margin="303,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeDefault}"/>
                 <Button Content="Clear" Grid.Row="0" HorizontalAlignment="Left" Margin="383,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeClear}"/>
 
-                <Expander Grid.Row="1" Header="Fast Parse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="519" IsExpanded="False" Margin="10,10,0,-7">
+                <Expander Grid.Row="1" Header="Fast Parse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="544" IsExpanded="False" Margin="10,10,0,-6">
                     <Grid>
                         <Label Content="Total Threads:" HorizontalAlignment="Left" Margin="14,5,0,0" VerticalAlignment="Top"/>
                         <Label Content="{Binding MaxProcessorCount}" HorizontalAlignment="Left" Margin="102,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,-0.308"/>
@@ -85,7 +85,7 @@
 
                         <Label Content="* Does not work with 'Watch'" HorizontalAlignment="Left" Margin="212,5,0,0" VerticalAlignment="Top"/>
                         <Label Content="* Does not work with 'Auto Scan'" HorizontalAlignment="Left" Margin="212,32,0,0" VerticalAlignment="Top"/>
-                        <Label Content="* You will have to adjust the 'Latest Parsed Date/Time'" HorizontalAlignment="Left" Margin="212,58,0,0" VerticalAlignment="Top"/>
+                        <Label Content="* You will have to adjust the 'Latest/Last Parsed Date/Time'" HorizontalAlignment="Left" Margin="212,58,0,0" VerticalAlignment="Top"/>
                         <Label Content="   if the process is interrupted or stopped early" HorizontalAlignment="Left" Margin="212,78,0,0" VerticalAlignment="Top"/>
                         <Label Content="* Disabled for computers with less than 4 threads" HorizontalAlignment="Left" Margin="212,104,0,0" VerticalAlignment="Top"/>
                     </Grid>

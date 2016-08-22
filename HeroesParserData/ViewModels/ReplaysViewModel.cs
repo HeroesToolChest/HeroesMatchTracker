@@ -425,7 +425,7 @@ namespace HeroesParserData.ViewModels
                         ReplayFiles.Add(new ReplayFile
                         {
                             FileName = replayFile.Name,
-                            CreationTime = replayFile.LastWriteTime,
+                            LastWriteTime = replayFile.LastWriteTime,
                             FilePath = replayFile.FullName,
                             Status = null
                         });
@@ -466,7 +466,7 @@ namespace HeroesParserData.ViewModels
                     ReplayFiles.Add(new ReplayFile
                     {
                         FileName = Path.GetFileName(e.FullPath),
-                        CreationTime = File.GetLastWriteTime(filePath),
+                        LastWriteTime = File.GetLastWriteTime(filePath),
                         FilePath = e.FullPath,
                         Status = null
                     });
@@ -524,7 +524,7 @@ namespace HeroesParserData.ViewModels
                         ReplayFiles.Add(new ReplayFile
                         {
                             FileName = file.Name,
-                            CreationTime = file.LastWriteTime,
+                            LastWriteTime = file.LastWriteTime,
                             FilePath = file.FullName,
                             Status = null
                         });
@@ -715,7 +715,9 @@ namespace HeroesParserData.ViewModels
                     CurrentStatus = "Parsing completed";
                 }
                 else
+                {
                     CurrentStatus = "Fast parse stopped";
+                }
             }
             catch (Exception ex)
             {

@@ -8,7 +8,7 @@ namespace HeroesParserData.Models
         private ReplayParseResult? _status;
 
         public string FileName { get; set; }
-        public DateTime CreationTime { get; set; }   
+        public DateTime LastWriteTime { get; set; }   
              
         //public string HotsLogUploadStatus { get; set; }
 
