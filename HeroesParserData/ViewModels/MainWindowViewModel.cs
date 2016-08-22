@@ -10,12 +10,10 @@ namespace HeroesParserData.ViewModels
             get
             {
                 Version version = Assembly.GetEntryAssembly().GetName().Version;
-            #if DEBUG
-                return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
-            #endif
-            #if !DEBUG
-                return $"{version.Major}.{version.Minor}.{version.Build}";
-            #endif
+                if (version.Revision == 0)
+                    return $"{version.Major}.{version.Minor}.{version.Build}";
+                else
+                    return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
             }
         }
 

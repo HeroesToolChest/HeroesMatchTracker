@@ -50,7 +50,7 @@ namespace HeroesParserData.Views
                             string latest = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.ToString() : string.Empty;
 
                             UpdaterLog.Log(LogLevel.Info, $"Current Version: {current}");
-                            UpdaterLog.Log(LogLevel.Info, $"Lastest Version: {latest}");
+                            UpdaterLog.Log(LogLevel.Info, $"Latest Version: {latest}");
 
                             if (!string.IsNullOrEmpty(current) && current != latest)
                             {
@@ -62,7 +62,7 @@ namespace HeroesParserData.Views
                                 string directoryPath = await updateManager.ApplyReleases(update);
 
                                 App.UpdateInProgress = true;
-                                App.NewLastestDirectory = directoryPath;
+                                App.NewLatestDirectory = directoryPath;
 
                                 UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
 
