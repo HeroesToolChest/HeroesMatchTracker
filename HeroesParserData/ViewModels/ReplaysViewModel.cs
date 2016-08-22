@@ -30,7 +30,9 @@ namespace HeroesParserData.ViewModels
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
         private DateTime? _replaysLatestParsed;
+        private DateTime? _replaysLastParsed;
         private int _selectedProcessCount;
+        private bool _parsedDateTimeChecked;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
         private FileSystemWatcher _fileWatcher;
@@ -132,11 +134,21 @@ namespace HeroesParserData.ViewModels
 
         public DateTime? ReplaysLatestParsed
         {
-            get { return _replaysLatestParsed != null? _replaysLatestParsed :  Query.Replay.LatestReplayByDateTime(); }
+            get { return _replaysLatestParsed != null? _replaysLatestParsed :  Query.Replay.ReadLatestReplayByDateTime(); }
             set
             {
                 _replaysLatestParsed = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLatestParsed));
+            }
+        }
+
+        public DateTime? ReplaysLastParsed
+        {
+            get { return _replaysLastParsed != null ? _replaysLastParsed : Query.Replay.ReadLastReplayByDateTime(); }
+            set
+            {
+                _replaysLastParsed = value;
+                RaisePropertyChangedEvent(nameof(ReplaysLastParsed));
             }
         }
 
@@ -181,6 +193,28 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(SelectedProcessCount));
             }
         }
+
+        public bool LatestParsedChecked
+        {
+            get { return _parsedDateTimeChecked; }
+            set
+            {
+                _parsedDateTimeChecked = value;
+                RaisePropertyChangedEvent(nameof(LatestParsedChecked));
+                RaisePropertyChangedEvent(nameof(LastParsedChecked));
+            }
+        }
+
+        public bool LastParsedChecked
+        {
+            get { return !_parsedDateTimeChecked; }
+            set
+            {
+                _parsedDateTimeChecked = !value;
+                RaisePropertyChangedEvent(nameof(LastParsedChecked));
+                RaisePropertyChangedEvent(nameof(LatestParsedChecked));
+            }
+        }
         #endregion
 
         #region Button Commands
@@ -219,6 +253,21 @@ namespace HeroesParserData.ViewModels
             get { return new DelegateCommand(ReplaysDateTimeClear); }
         }
 
+        public ICommand LastDateTimeSet
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeSet); }
+        }
+
+        public ICommand LastDateTimeDefault
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeDefault); }
+        }
+
+        public ICommand LastDateTimeClear
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeClear); }
+        }
+
         public ICommand ManualSelectFiles
         {
             get { return new DelegateCommand(RetrieveUserSelectFiles); }
@@ -236,6 +285,7 @@ namespace HeroesParserData.ViewModels
         public ReplaysViewModel()
         {
             AreProcessButtonsEnabled = true;
+            LatestParsedChecked = true;
         }
 
         private void StartScan()
@@ -316,6 +366,7 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        #region date/time command methods
         private void ReplaysDateTimeSet()
         {
             ReplaysLatestParsed = ReplaysLatestParsed;
@@ -323,13 +374,29 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeDefault()
         {
-            ReplaysLatestParsed = Query.Replay.LatestReplayByDateTime();
+            ReplaysLatestParsed = Query.Replay.ReadLatestReplayByDateTime();
         }
 
         private void ReplaysDateTimeClear()
         {
             ReplaysLatestParsed = new DateTime();
         }
+
+        private void LastReplaysDateTimeSet()
+        {
+            ReplaysLastParsed = ReplaysLastParsed;
+        }
+
+        private void LastReplaysDateTimeDefault()
+        {
+            ReplaysLastParsed = Query.Replay.ReadLastReplayByDateTime();
+        }
+
+        private void LastReplaysDateTimeClear()
+        {
+            ReplaysLastParsed = new DateTime();
+        }
+        #endregion date/time buttons
 
         /// <summary>
         /// Manual retrieval of the replay files, does not parse
@@ -439,10 +506,11 @@ namespace HeroesParserData.ViewModels
 
             try
             {
-                List<FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
+                var dateTime = LatestParsedChecked == true ? ReplaysLatestParsed : ReplaysLastParsed;
+                List <FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", SearchOption.AllDirectories)
                     .OrderBy(x => x.LastWriteTime)
-                    .Where(x => x.LastWriteTime > ReplaysLatestParsed) // last parsed replay
+                    .Where(x => x.LastWriteTime > dateTime)
                     .ToList();
 
                 TotalReplaysGrid = listFiles.Count;
@@ -521,7 +589,8 @@ namespace HeroesParserData.ViewModels
                                     if (file.Status == ReplayParseResult.Saved)
                                     {
                                         TotalSavedInDatabase++;
-                                        ReplaysLatestParsed = parsedDateTime.ToLocalTime();
+                                        ReplaysLatestParsed = Query.Replay.ReadLatestReplayByDateTime();
+                                        ReplaysLastParsed = parsedDateTime.ToLocalTime();
                                     }
                                 }
                                 catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
@@ -650,7 +719,11 @@ namespace HeroesParserData.ViewModels
                 });
 
                 if (IsProcessSelected)
+                {
+                    ReplaysLatestParsed = Query.Replay.ReadLatestReplayByDateTime();
+                    ReplaysLastParsed = Query.Replay.ReadLastReplayByDateTime();
                     CurrentStatus = "Parsing completed";
+                }
                 else
                     CurrentStatus = "Fast parse stopped";
             }

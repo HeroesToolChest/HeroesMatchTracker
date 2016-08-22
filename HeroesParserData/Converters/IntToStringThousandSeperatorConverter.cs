@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace HeroesParserData.Converters
 {
-    public class IntToStringThousandSeperator : IValueConverter
+    public class IntToStringThousandSeperatorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

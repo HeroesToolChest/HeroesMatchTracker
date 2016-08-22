@@ -276,10 +276,10 @@
                                 <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}" />
-                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
-                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}" />
+                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
+                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Expander>
@@ -305,10 +305,10 @@
                                 <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}"/>
-                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
-                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperator}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                                <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}"/>
+                                <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
+                                <DataGridTextColumn Header="Role" MinWidth="80" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+                                <DataGridTextColumn Header="Experience" MinWidth="80" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Expander>

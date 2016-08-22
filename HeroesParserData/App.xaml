@@ -8,7 +8,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
@@ -22,7 +21,7 @@
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
-            <converters:IntToStringThousandSeperator x:Key="IntToStringThousandSeperator"/>
+            <converters:IntToStringThousandSeperatorConverter x:Key="IntToStringThousandSeperatorConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
