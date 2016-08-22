@@ -1,5 +1,8 @@
 # HeroesParserData
-This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.ReplayParser) to parse Heroes of the Storm replay files and then saves the data into a local database.  You can then view information about your matches, such as talent choices.
+This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.ReplayParser) to parse Blizzard's Heroes of the Storm replay files and then saves the data into a local database.  
+- Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, and Custom Games
+- View information such as Talent choices, Score Summary, Hero Bans, Observers
+- For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1.png)
 
