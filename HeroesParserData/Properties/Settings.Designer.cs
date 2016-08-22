@@ -25,17 +25,6 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime LastFileParseDate {
-            get {
-                return ((global::System.DateTime)(this["LastFileParseDate"]));
-            }
-            set {
-                this["LastFileParseDate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ReplaysLocation {
             get {
@@ -91,6 +80,40 @@ namespace HeroesParserData.Properties {
             }
             set {
                 this["MinProcessors"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ParsedDateTimeCheckBox {
+            get {
+                return ((bool)(this["ParsedDateTimeCheckBox"]));
+            }
+            set {
+                this["ParsedDateTimeCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime ReplaysLatestParsed {
+            get {
+                return ((global::System.DateTime)(this["ReplaysLatestParsed"]));
+            }
+            set {
+                this["ReplaysLatestParsed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime ReplaysLastParsed {
+            get {
+                return ((global::System.DateTime)(this["ReplaysLastParsed"]));
+            }
+            set {
+                this["ReplaysLastParsed"] = value;
             }
         }
     }

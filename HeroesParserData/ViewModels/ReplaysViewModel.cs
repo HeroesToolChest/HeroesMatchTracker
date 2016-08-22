@@ -29,10 +29,7 @@ namespace HeroesParserData.ViewModels
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
-        private DateTime? _replaysLatestParsed;
-        private DateTime? _replaysLastParsed;
         private int _selectedProcessCount;
-        private bool _parsedDateTimeChecked;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
         private FileSystemWatcher _fileWatcher;
@@ -132,22 +129,22 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public DateTime? ReplaysLatestParsed
+        public DateTime ReplaysLatestParsed
         {
-            get { return _replaysLatestParsed != null? _replaysLatestParsed :  Query.Replay.ReadLatestReplayByDateTime(); }
+            get { return Settings.Default.ReplaysLatestParsed != DateTime.MinValue? Settings.Default.ReplaysLatestParsed :  Query.Replay.ReadLatestReplayByDateTime(); }
             set
             {
-                _replaysLatestParsed = value;
+                Settings.Default.ReplaysLatestParsed = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLatestParsed));
             }
         }
 
-        public DateTime? ReplaysLastParsed
+        public DateTime ReplaysLastParsed
         {
-            get { return _replaysLastParsed != null ? _replaysLastParsed : Query.Replay.ReadLastReplayByDateTime(); }
+            get { return Settings.Default.ReplaysLastParsed != DateTime.MinValue ? Settings.Default.ReplaysLastParsed : Query.Replay.ReadLastReplayByDateTime(); }
             set
             {
-                _replaysLastParsed = value;
+                Settings.Default.ReplaysLastParsed = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLastParsed));
             }
         }
@@ -196,10 +193,10 @@ namespace HeroesParserData.ViewModels
 
         public bool LatestParsedChecked
         {
-            get { return _parsedDateTimeChecked; }
+            get { return Settings.Default.ParsedDateTimeCheckBox; }
             set
             {
-                _parsedDateTimeChecked = value;
+                Settings.Default.ParsedDateTimeCheckBox = value;
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
                 RaisePropertyChangedEvent(nameof(LastParsedChecked));
             }
@@ -207,10 +204,10 @@ namespace HeroesParserData.ViewModels
 
         public bool LastParsedChecked
         {
-            get { return !_parsedDateTimeChecked; }
+            get { return !Settings.Default.ParsedDateTimeCheckBox; }
             set
             {
-                _parsedDateTimeChecked = !value;
+                Settings.Default.ParsedDateTimeCheckBox = !value;
                 RaisePropertyChangedEvent(nameof(LastParsedChecked));
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
             }
@@ -288,6 +285,7 @@ namespace HeroesParserData.ViewModels
             LatestParsedChecked = true;
         }
 
+        #region start processing/init
         private void StartScan()
         {
             AreProcessButtonsEnabled = false;
@@ -348,6 +346,7 @@ namespace HeroesParserData.ViewModels
                 ParseReplays();
             });           
         }
+        #endregion start processing/init
 
         /// <summary>
         /// Opens up a dialog to change the location of the replays location folder.
@@ -379,7 +378,7 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeClear()
         {
-            ReplaysLatestParsed = new DateTime();
+            ReplaysLatestParsed = new DateTime(1);
         }
 
         private void LastReplaysDateTimeSet()
@@ -394,7 +393,7 @@ namespace HeroesParserData.ViewModels
 
         private void LastReplaysDateTimeClear()
         {
-            ReplaysLastParsed = new DateTime();
+            ReplaysLastParsed = new DateTime(1);
         }
         #endregion date/time buttons
 

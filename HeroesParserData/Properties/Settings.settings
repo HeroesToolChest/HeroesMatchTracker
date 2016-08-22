@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HeroesParserData.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="LastFileParseDate" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="ReplaysLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -19,6 +16,15 @@
     </Setting>
     <Setting Name="MinProcessors" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ParsedDateTimeCheckBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReplaysLatestParsed" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReplaysLastParsed" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
