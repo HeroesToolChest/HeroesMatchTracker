@@ -15,7 +15,7 @@ namespace HeroesParserData
         private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
 
         public static bool UpdateInProgress { get; set; }
-        public static string NewLastestDirectory { get; set; }
+        public static string NewLatestDirectory { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -45,7 +45,7 @@ namespace HeroesParserData
         {
             Settings.Default.Save();
 
-            if (UpdateInProgress && !string.IsNullOrEmpty(NewLastestDirectory))
+            if (UpdateInProgress && !string.IsNullOrEmpty(NewLatestDirectory))
             {
                 SqlConnection.ClearAllPools();
                 CopyDatabaseToLatestRelease();
@@ -69,7 +69,7 @@ namespace HeroesParserData
         {
             string dbFile = "HeroesParserData.db";
             string dbFilePath = @"Database\HeroesParserData.db";
-            string newAppDirectory = Path.Combine(NewLastestDirectory, "Database");
+            string newAppDirectory = Path.Combine(NewLatestDirectory, "Database");
 
             try
             {
