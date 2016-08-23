@@ -552,12 +552,12 @@ namespace HeroesParserData.ViewModels
         /// </summary> 
         private void ParseReplays()
         {
-            int i = 0;
+            int currentCount = 0;
 
             // check if continuing parsing while all replays have been parsed
             while (IsProcessSelected)
             {
-                for (; i < ReplayFiles.Count(); i++)
+                for (; currentCount < ReplayFiles.Count(); currentCount++)
                 {
                     // check if continuing parsing while still having non-parsed replays
                     if (!IsProcessSelected)
@@ -565,12 +565,21 @@ namespace HeroesParserData.ViewModels
 
                     #region parse replay and save data
                     var tmpPath = Path.GetTempFileName();
-                    var file = ReplayFiles[i];
+                    var file = ReplayFiles[currentCount];
 
                     CurrentStatus = $"Parsing file {file.FileName}";
 
                     try
                     {
+                        if (!File.Exists(file.FilePath))
+                        {
+                            file.Status = ReplayParseResult.FileNotFound;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            TotalParsedGrid++;
+                            CurrentStatus = $"Failed to find file {file.FileName}";
+                            continue;
+                        }
+
                         File.Copy(file.FilePath, tmpPath, overwrite: true);
 
                         var replayParseResult = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
@@ -631,20 +640,20 @@ namespace HeroesParserData.ViewModels
                 } // end for
 
                 // if no watch is selected and if all replays got parsed then automatically end
-                if (!IsProcessWatchChecked && i == ReplayFiles.Count)
+                if (!IsProcessWatchChecked && currentCount == ReplayFiles.Count)
                 {
                     CurrentStatus = "Processing completed";
                     IsProcessSelected = false;
                     AreProcessButtonsEnabled = true;
                     return;
                 }
-                else if (IsProcessWatchChecked && i == ReplayFiles.Count)
+                else if (IsProcessWatchChecked && currentCount == ReplayFiles.Count)
                 {
                     CurrentStatus = "Watching for new replays...";
                     Thread.Sleep(2000);
                 }
 
-                i = ReplayFiles.Count();
+                currentCount = ReplayFiles.Count();
             } // end while
 
             CurrentStatus = "Processing stopped";
@@ -667,24 +676,32 @@ namespace HeroesParserData.ViewModels
                     var tmpPath = Path.GetTempFileName();
                     try
                     {
-                        File.Copy(file.FilePath, tmpPath, overwrite: true);
-
-                        var replayParseResult = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
-                        if (replayParseResult.Item1 == ReplayParseResult.Success)
+                        if (!File.Exists(file.FilePath))
                         {
-                            file.Status = ReplayParseResult.Success;
-
-                            DateTime parsedDateTime;
-                            file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
-                            if (file.Status == ReplayParseResult.Saved)
-                            {
-                                TotalSavedInDatabase++;
-                            }
+                            file.Status = ReplayParseResult.FileNotFound;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
                         }
                         else
                         {
-                            file.Status = replayParseResult.Item1;
-                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            File.Copy(file.FilePath, tmpPath, overwrite: true);
+
+                            var replayParseResult = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
+                            if (replayParseResult.Item1 == ReplayParseResult.Success)
+                            {
+                                file.Status = ReplayParseResult.Success;
+
+                                DateTime parsedDateTime;
+                                file.Status = new SaveAllReplayData(replayParseResult.Item2, file.FileName).SaveAllData(out parsedDateTime);
+                                if (file.Status == ReplayParseResult.Saved)
+                                {
+                                    TotalSavedInDatabase++;
+                                }
+                            }
+                            else
+                            {
+                                file.Status = replayParseResult.Item1;
+                                FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            }
                         }
                     }
                     catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
