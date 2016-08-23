@@ -652,8 +652,6 @@ namespace HeroesParserData.ViewModels
                     CurrentStatus = "Watching for new replays...";
                     Thread.Sleep(2000);
                 }
-
-                currentCount = ReplayFiles.Count();
             } // end while
 
             CurrentStatus = "Processing stopped";
