@@ -1,7 +1,6 @@
-﻿using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows.Media.Imaging;
 
-namespace HeroesParserData.Models
+namespace HeroesParserData.Models.MatchModels
 {
     public class MatchTalents : MatchPlayerInfoBase
     {

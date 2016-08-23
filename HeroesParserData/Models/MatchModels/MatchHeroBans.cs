@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media.Imaging;
 
-namespace HeroesParserData.Models
+namespace HeroesParserData.Models.MatchModels
 {
     public class MatchHeroBans : ObservableObject
     {

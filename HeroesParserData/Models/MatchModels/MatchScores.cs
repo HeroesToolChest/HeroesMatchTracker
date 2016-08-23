@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace HeroesParserData.Models
+namespace HeroesParserData.Models.MatchModels
 {
     public class MatchScores : MatchPlayerInfoBase
     {

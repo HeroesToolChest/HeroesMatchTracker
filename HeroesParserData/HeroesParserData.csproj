@@ -170,10 +170,11 @@
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
-    <Compile Include="Models\MatchHeroBans.cs" />
-    <Compile Include="Models\MatchPlayerInfoBase.cs" />
-    <Compile Include="Models\MatchScores.cs" />
-    <Compile Include="Models\MatchTalents.cs" />
+    <Compile Include="Models\MatchModels\MatchChat.cs" />
+    <Compile Include="Models\MatchModels\MatchHeroBans.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
+    <Compile Include="Models\MatchModels\MatchScores.cs" />
+    <Compile Include="Models\MatchModels\MatchTalents.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
     <Compile Include="ViewModels\Data\RawMatchMessageViewModel.cs" />

@@ -1,7 +1,7 @@
 ﻿using Heroes.ReplayParser;
 using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
-using HeroesParserData.Models;
+using HeroesParserData.Models.MatchModels;
 using NLog;
 using System;
 using System.Collections.ObjectModel;
@@ -24,6 +24,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchTalents> _matchObservers = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         private long _replayId;
         private GameMode _gameMode;
         private string _mapName;
@@ -105,6 +106,16 @@ namespace HeroesParserData.ViewModels.Match
             {
                 _matchList = value;
                 RaisePropertyChangedEvent(nameof(MatchList));
+            }
+        }
+
+        public ObservableCollection<MatchChat> MatchChatMessages
+        {
+            get { return _matchChatMessages; }
+            set
+            {
+                _matchChatMessages = value;
+                RaisePropertyChangedEvent(nameof(MatchChatMessages));
             }
         }
 
@@ -233,23 +244,23 @@ namespace HeroesParserData.ViewModels.Match
                 MatchScoreTeam1 = new ObservableCollection<MatchScores>();
                 MatchScoreTeam2 = new ObservableCollection<MatchScores>();
                 MatchObservers = new ObservableCollection<MatchTalents>();
+                MatchChatMessages = new ObservableCollection<MatchChat>();
 
                 // get replay
                 Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
-                // get players info
-                var players = replay.ReplayMatchPlayers.ToList();
-                // get player talents
-                var playerTalents = replay.ReplayMatchPlayerTalents.ToList();
-                //get player scores
-                var playerScores = replay.ReplayMatchPlayerScoreResults.ToList();
+                // get players info 
+                var playersList = replay.ReplayMatchPlayers.ToList();       
+                var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();                
+                var playerScoresList = replay.ReplayMatchPlayerScoreResults.ToList();
+                var matchMessagesList = replay.ReplayMatchMessage.ToList();
 
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
                 int highestExpTeam1Index = 0, highestExpTeam1Count = 0, highestExpTeam2Index = 0, highestExpTeam2Count = 0;
 
 
-                foreach (var player in players)
+                foreach (var player in playersList)
                 {
                     MatchPlayerInfoBase matchPlayerInfoBase = new MatchPlayerInfoBase();
 
@@ -270,32 +281,32 @@ namespace HeroesParserData.ViewModels.Match
 
                     if (player.Character != "None")
                     {
-                        matchTalents.Talent1 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName1);
-                        matchTalents.Talent4 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName4);
-                        matchTalents.Talent7 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName7);
-                        matchTalents.Talent10 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName10);
-                        matchTalents.Talent13 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName13);
-                        matchTalents.Talent16 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName16);
-                        matchTalents.Talent20 = HeroesInfo.GetTalentIcon(playerTalents[player.PlayerNumber].TalentName20);
+                        matchTalents.Talent1 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName1);
+                        matchTalents.Talent4 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName4);
+                        matchTalents.Talent7 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName7);
+                        matchTalents.Talent10 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName10);
+                        matchTalents.Talent13 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName13);
+                        matchTalents.Talent16 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName16);
+                        matchTalents.Talent20 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName20);
 
-                        matchTalents.TalentName1 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName1);
-                        matchTalents.TalentName4 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName4);
-                        matchTalents.TalentName7 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName7);
-                        matchTalents.TalentName10 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName10);
-                        matchTalents.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName13);
-                        matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName16);
-                        matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalents[player.PlayerNumber].TalentName20);
+                        matchTalents.TalentName1 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName1);
+                        matchTalents.TalentName4 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName4);
+                        matchTalents.TalentName7 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName7);
+                        matchTalents.TalentName10 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName10);
+                        matchTalents.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName13);
+                        matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName16);
+                        matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName20);
 
-                        matchScores.SoloKills = playerScores[player.PlayerNumber].SoloKills;
-                        matchScores.Assists = playerScores[player.PlayerNumber].Assists;
-                        matchScores.Deaths = playerScores[player.PlayerNumber].Deaths;
-                        matchScores.SiegeDamage = playerScores[player.PlayerNumber].SiegeDamage;
-                        matchScores.HeroDamage = playerScores[player.PlayerNumber].HeroDamage;
-                        matchScores.ExperienceContribution = playerScores[player.PlayerNumber].ExperienceContribution;
-                        if (playerScores[player.PlayerNumber].DamageTaken != null)
-                            matchScores.Role = playerScores[player.PlayerNumber].DamageTaken;
+                        matchScores.SoloKills = playerScoresList[player.PlayerNumber].SoloKills;
+                        matchScores.Assists = playerScoresList[player.PlayerNumber].Assists;
+                        matchScores.Deaths = playerScoresList[player.PlayerNumber].Deaths;
+                        matchScores.SiegeDamage = playerScoresList[player.PlayerNumber].SiegeDamage;
+                        matchScores.HeroDamage = playerScoresList[player.PlayerNumber].HeroDamage;
+                        matchScores.ExperienceContribution = playerScoresList[player.PlayerNumber].ExperienceContribution;
+                        if (playerScoresList[player.PlayerNumber].DamageTaken != null)
+                            matchScores.Role = playerScoresList[player.PlayerNumber].DamageTaken;
                         else if (NonHealingCharacter(player.Character))
-                            matchScores.Role = playerScores[player.PlayerNumber].Healing;
+                            matchScores.Role = playerScoresList[player.PlayerNumber].Healing;
                     }
 
                     if (player.IsWinner)
@@ -357,6 +368,30 @@ namespace HeroesParserData.ViewModels.Match
                     MatchHeroBans.Team0Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team0Ban1);
                     MatchHeroBans.Team1Ban0HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban0);
                     MatchHeroBans.Team1Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban1);
+                }
+
+                // match chat
+                if (matchMessagesList != null)
+                {
+                    foreach (var message in matchMessagesList)
+                    {
+                        if (message.MessageEventType == "SChatMessage")
+                        {
+                            MatchChat matchChat = new MatchChat();
+
+                            matchChat.TimeStamp = message.TimeStamp;
+                            matchChat.Target = message.MessageTarget;
+
+                            if (string.IsNullOrEmpty(message.PlayerName))
+                                matchChat.ChatMessage = $"((Unknown)): {message.Message}";
+                            else if (!string.IsNullOrEmpty(message.CharacterName))
+                                matchChat.ChatMessage = $"{message.PlayerName} ({message.CharacterName}): {message.Message}";
+                            else
+                                matchChat.ChatMessage = $"{message.PlayerName}: {message.Message}";
+
+                            MatchChatMessages.Add(matchChat);
+                        }
+                    }                            
                 }
             }
             catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
@@ -426,6 +461,9 @@ namespace HeroesParserData.ViewModels.Match
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
             HasBans = false;
+
+            // chat
+            MatchChatMessages = null;
         }
 
         private bool NonHealingCharacter(string character)

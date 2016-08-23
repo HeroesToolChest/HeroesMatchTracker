@@ -210,6 +210,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                         .Include(x => x.ReplayMatchPlayerTalents)
                         .Include(x => x.ReplayMatchTeamBan)
                         .Include(x => x.ReplayMatchPlayerScoreResults)
+                        .Include(x => x.ReplayMatchMessage)
                         .FirstOrDefaultAsync();
 
                     if (replay == null)

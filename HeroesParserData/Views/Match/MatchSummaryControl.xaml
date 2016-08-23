@@ -9,7 +9,7 @@
              VerticalAlignment="Top"
              Height="auto"
              Width="auto"
-             d:DesignHeight="318" d:DesignWidth="1071">
+             d:DesignHeight="411" d:DesignWidth="1147">
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
         <Grid MinWidth="1024">
             <Grid.ColumnDefinitions>
@@ -17,6 +17,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="38"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -385,6 +386,17 @@
                         <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102"/>
                     </Border>
                 </Grid>
+            </Expander>
+            <Expander Header="Team Chat" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5" IsExpanded="False">
+                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" CanUserSortColumns="False"
+                              ItemsSource="{Binding MatchChatMessages, IsAsync=True}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" HeaderStyle="{StaticResource DataGridCenterHeader}" MinWidth="80" CellStyle="{StaticResource DataGridCenterCell}" />
+                        <DataGridTextColumn Header="Target" Binding="{Binding Target}" />
+                        <DataGridTextColumn Header="Message" Width="800" Binding="{Binding ChatMessage}" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </Expander>
         </Grid>
     </ScrollViewer>

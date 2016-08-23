@@ -17,7 +17,7 @@ namespace HeroesParserData.Models.DbModels
             ReplayMatchPlayerTalents = new HashSet<ReplayMatchPlayerTalent>();
             ReplayMatchTeamLevels = new HashSet<ReplayMatchTeamLevel>();
             ReplayMatchTeamObjectives = new HashSet<ReplayMatchTeamObjective>();
-            ReplayChats = new HashSet<ReplayMatchMessage>();
+            ReplayMatchMessage = new HashSet<ReplayMatchMessage>();
         }
 
         [Key]
@@ -81,6 +81,6 @@ namespace HeroesParserData.Models.DbModels
         public virtual ICollection<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReplayMatchMessage> ReplayChats { get; set; }
+        public virtual ICollection<ReplayMatchMessage> ReplayMatchMessage { get; set; }
     }
 }

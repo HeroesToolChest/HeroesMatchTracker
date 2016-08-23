@@ -83,7 +83,7 @@ namespace HeroesParserData.Models.DbModels
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Replay>()
-                .HasMany(e => e.ReplayChats)
+                .HasMany(e => e.ReplayMatchMessage)
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
 
