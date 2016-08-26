@@ -394,7 +394,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" HeaderStyle="{StaticResource DataGridCenterHeader}" MinWidth="80" CellStyle="{StaticResource DataGridCenterCell}" />
                         <DataGridTextColumn Header="Target" Binding="{Binding Target}" />
-                        <DataGridTextColumn Header="Message" Width="800" Binding="{Binding ChatMessage}" />
+                        <DataGridTextColumn Header="Message" MinWidth="800" Binding="{Binding ChatMessage}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Expander>
