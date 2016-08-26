@@ -34,6 +34,7 @@ namespace HeroesParserData.ViewModels.Match
         private int _rowsReturned;
         private bool _hasBans;
         private bool _hasObservers;
+        private bool _hasChat;
         #endregion properties
 
         #region public properties
@@ -200,6 +201,17 @@ namespace HeroesParserData.ViewModels.Match
                 RaisePropertyChangedEvent(nameof(HasObservers));
             }
         }
+
+        // shows the expander that shows teh observers
+        public bool HasChat
+        {
+            get { return _hasChat; }
+            set
+            {
+                _hasChat = value;
+                RaisePropertyChangedEvent(nameof(HasChat));
+            }
+        }
         #endregion public properties
 
         protected HeroesInfo HeroesInfo = new HeroesInfo();
@@ -220,7 +232,7 @@ namespace HeroesParserData.ViewModels.Match
         protected MatchContext()
             :base()
         {
-
+            HasChat = true;
         }
 
         protected abstract Task RefreshExecute();
@@ -393,6 +405,8 @@ namespace HeroesParserData.ViewModels.Match
                         }
                     }                            
                 }
+
+                HasChat = MatchChatMessages.Count < 1 ? false : true;
             }
             catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
             {
@@ -464,6 +478,7 @@ namespace HeroesParserData.ViewModels.Match
 
             // chat
             MatchChatMessages = null;
+            HasChat = true;
         }
 
         private bool NonHealingCharacter(string character)

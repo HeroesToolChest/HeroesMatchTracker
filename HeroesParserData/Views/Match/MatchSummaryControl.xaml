@@ -387,7 +387,7 @@
                     </Border>
                 </Grid>
             </Expander>
-            <Expander Header="Team Chat" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5" IsExpanded="False">
+            <Expander Header="Team Chat" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="5" IsExpanded="False" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}">
                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchChatMessages, IsAsync=True}">
