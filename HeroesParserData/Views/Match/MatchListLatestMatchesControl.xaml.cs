@@ -18,9 +18,9 @@ namespace HeroesParserData.Views.Match
     /// <summary>
     /// Interaction logic for MatchListLastMatchControl.xaml
     /// </summary>
-    public partial class MatchListLastMatchControl : UserControl
+    public partial class MatchListLatestMatchesControl : UserControl
     {
-        public MatchListLastMatchControl()
+        public MatchListLatestMatchesControl()
         {
             InitializeComponent();
         }

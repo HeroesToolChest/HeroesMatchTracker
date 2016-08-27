@@ -26,7 +26,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
-                <local:MatchListLastMatchControl Grid.Column="1"></local:MatchListLastMatchControl>
+                <local:MatchListLatestMatchesControl Grid.Column="1"></local:MatchListLatestMatchesControl>
             </Grid>
         </DockPanel>
     </Grid>
