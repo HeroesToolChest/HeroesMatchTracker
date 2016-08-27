@@ -9,40 +9,25 @@
              VerticalAlignment="Top"
              Height="auto"
              Width="auto"
-             d:DesignHeight="411" d:DesignWidth="1147">
+             d:DesignHeight="452" d:DesignWidth="1177">
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
-        <Grid MinWidth="1024">
+        <Grid Width="1010">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="38"></RowDefinition>
+                <RowDefinition Height="42"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
-                    <ColumnDefinition Width="250"></ColumnDefinition>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
-                    <ColumnDefinition Width="0"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label Content="Replay Id:" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0"/>
-                <Label Content="{Binding ReplayId}" HorizontalAlignment="Left" Margin="71,10,0,0" VerticalAlignment="Top" Grid.Column="0"/>
-                <Label Content="Game Mode:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                <Label Content="{Binding GameMode}" HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Grid.Column="1" />
-                <Label Content="Map:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                <Label Content="{Binding MapName}" HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Grid.Column="2" />
-                <Label Content="Date and Time (UTC):" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
-                <Label Content="{Binding GameDate}" HorizontalAlignment="Left" Margin="132,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
-                <Label Content="Game Time:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-                <Label Content="{Binding GameTime}" HorizontalAlignment="Left" Margin="83,10,0,0" VerticalAlignment="Top" Grid.Column="4"/>
-            </Grid>
+            <Label Content="{Binding MapTile}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke" Margin="10,0,0,0" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding MapNameGlowColor}" />
+                </Label.Effect>
+            </Label>
             <Expander Header="Talents" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="True">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -356,7 +341,7 @@
                 </Grid>
             </Expander>
             <Expander Header="Team Bans" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="4" IsExpanded="False" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
-                <Grid>
+                <Grid Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>

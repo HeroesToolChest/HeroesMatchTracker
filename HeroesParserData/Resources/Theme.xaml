@@ -1,4 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
     <Style TargetType="DataGridRow" x:Key="DataGrid">
@@ -75,20 +76,20 @@
     <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
+
+    
     <!--<Color x:Key="HighlightColor">#4e80ca</Color>
-    <Color x:Key="AccentColor">#595959</Color>
-
-    -->
+    <Color x:Key="AccentColor">#595959</Color>-->
+    
     <!-- re-set brushes too -->
-    <!--
-    <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
-    <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource AccentColor}"/>
-    <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{StaticResource AccentColor}" />
+    <!--<SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
+    <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource AccentColor}"/>-->
+    <!--<SolidColorBrush x:Key="WindowTitleColorBrush" Color="{StaticResource AccentColor}" />-->
 
-    <SolidColorBrush x:Key="CheckmarkFill" Color="{StaticResource AccentColor}" />
-    <SolidColorBrush x:Key="RightArrowFill" Color="{StaticResource AccentColor}" />
+    <!--<SolidColorBrush x:Key="CheckmarkFill" Color="{StaticResource AccentColor}" />-->
+    <!--<SolidColorBrush x:Key="RightArrowFill" Color="{StaticResource AccentColor}" />-->
 
-    <Color x:Key="IdealForegroundColor">White</Color>
+    <!--<Color x:Key="IdealForegroundColor">White</Color>
     <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{StaticResource IdealForegroundColor}"/>-->
 </ResourceDictionary>
 

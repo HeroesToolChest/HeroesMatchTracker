@@ -149,6 +149,8 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.102.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -294,6 +296,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\MahAppsScrollBars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\StringResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -423,6 +429,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.dds" />
+    <Resource Include="Resources\Images\storm_ui_homescreenbackground_lostcavern.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_blackheartsbay.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_cursedhollow.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_dragonshire.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_hauntedmines.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_shrines.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_skytemple.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_towersofdoom.dds" />
+    <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_gardenofterror.dds" />
     <Resource Include="Resources\Images\HeroesParserData_1.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

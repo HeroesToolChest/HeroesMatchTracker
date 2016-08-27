@@ -18,6 +18,7 @@
                 <!--Other resources-->
                 <ResourceDictionary Source="/Resources/StringResources.xaml"/>
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
+                <ResourceDictionary Source="/Resources/MahAppsScrollBars.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />

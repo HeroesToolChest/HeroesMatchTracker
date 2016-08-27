@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.ViewModels.Match
 {
@@ -27,7 +28,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         private long _replayId;
         private GameMode _gameMode;
-        private string _mapName;
+        private string _mapTitle;
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
@@ -35,6 +36,8 @@ namespace HeroesParserData.ViewModels.Match
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
+        private BitmapImage _backgroundMapImage;
+        private Color _mapNameGlowColor;
         #endregion properties
 
         #region public properties
@@ -140,13 +143,13 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public string MapName
+        public string MapTile
         {
-            get { return _mapName; }
+            get { return _mapTitle; }
             set
             {
-                _mapName = value;
-                RaisePropertyChangedEvent(nameof(MapName));
+                _mapTitle = value;
+                RaisePropertyChangedEvent(nameof(MapTile));
             }
         }
 
@@ -180,6 +183,25 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
+        public BitmapImage BackgroundMapImage
+        {
+            get { return _backgroundMapImage; }
+            set
+            {
+                _backgroundMapImage = value;
+                RaisePropertyChangedEvent(nameof(BackgroundMapImage));
+            }
+        }
+
+        public Color MapNameGlowColor
+        {
+            get { return _mapNameGlowColor; }
+            set
+            {
+                _mapNameGlowColor = value;
+                RaisePropertyChangedEvent(nameof(MapNameGlowColor));
+            }
+        }
         // shows the expander that shows the bans
         public bool HasBans
         {
@@ -362,11 +384,11 @@ namespace HeroesParserData.ViewModels.Match
                     }             
                 } // end foreach players
 
-                ReplayId = replay.ReplayId;
-                GameMode = replay.GameMode;
-                MapName = replay.MapName;
-                GameDate = replay.TimeStamp;
-                GameTime = replay.ReplayLength;
+                MapTile = replay.MapName;
+
+                Color mapNameGlowColor;
+                BackgroundMapImage = SetMapImage(replay.MapName, out mapNameGlowColor);
+                MapNameGlowColor = mapNameGlowColor;
 
                 // hero bans
                 if (replay.ReplayMatchTeamBan != null)
@@ -479,6 +501,8 @@ namespace HeroesParserData.ViewModels.Match
             // chat
             MatchChatMessages = null;
             HasChat = true;
+
+            BackgroundMapImage = null;
         }
 
         private bool NonHealingCharacter(string character)
@@ -536,6 +560,50 @@ namespace HeroesParserData.ViewModels.Match
                 highestIndex = highestCount;
             }
             highestCount++;
+        }
+
+        private BitmapImage SetMapImage(string mapName, out Color glowColor)
+        {
+            string uri = "pack://application:,,,/HeroesParserData;component/Resources/Images/";
+            switch (mapName)
+            {
+                case "Battlefield of Eternity":
+                    glowColor = Colors.Red;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds"), UriKind.Absolute));
+                case "Blackheart's Bay":
+                    glowColor = Colors.Green;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_blackheartsbay.dds"), UriKind.Absolute));
+                case "Cursed Hollow":
+                    glowColor = Colors.Purple;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_cursedhollow.dds"), UriKind.Absolute));
+                case "Dragon Shire":
+                    glowColor = Colors.Red;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_dragonshire.dds"), UriKind.Absolute));
+                case "Garden of Terror":
+                    glowColor = Colors.LightBlue;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_gardenofterror.dds"), UriKind.Absolute));
+                case "Haunted Mines":
+                    glowColor = Colors.Red;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_hauntedmines.dds"), UriKind.Absolute));
+                case "Infernal Shrines":
+                    glowColor = Colors.Red;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_shrines.dds"), UriKind.Absolute));
+                case "Lost Cavern":
+                    glowColor = Colors.LightBlue;
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lostcavern.dds"), UriKind.Absolute));
+                case "Sky Temple":
+                    glowColor = Colors.Gold;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_skytemple.dds"), UriKind.Absolute));
+                case "Tomb of the Spider Queen":
+                    glowColor = Colors.LightBlue;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.dds"), UriKind.Absolute));
+                case "Towers of Doom":
+                    glowColor = Colors.Orange;
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_towersofdoom.dds"), UriKind.Absolute));
+                default:
+                    glowColor = Colors.White;
+                    return null;
+            }
         }
     }
 }
