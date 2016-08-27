@@ -28,7 +28,7 @@
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
             <TabItem Header="30 Latest Matches">
-                <ViewsMatch:LastMatchControl />
+                <ViewsMatch:LatestMatchesControl />
             </TabItem>
             <TabItem Header="Game Modes">
                 <TabControl>

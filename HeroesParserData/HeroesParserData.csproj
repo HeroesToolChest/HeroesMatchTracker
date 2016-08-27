@@ -194,7 +194,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
     <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Match\LastGameViewModel.cs" />
+    <Compile Include="ViewModels\Match\LatestMatchesViewModel.cs" />
     <Compile Include="ViewModels\Match\MatchContext.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
@@ -246,8 +246,8 @@
     <Compile Include="Views\Match\HeroLeagueControl.xaml.cs">
       <DependentUpon>HeroLeagueControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Match\LastMatchControl.xaml.cs">
-      <DependentUpon>LastMatchControl.xaml</DependentUpon>
+    <Compile Include="Views\Match\LatestMatchesControl.xaml.cs">
+      <DependentUpon>LatestMatchesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\MatchListControl.xaml.cs">
       <DependentUpon>MatchListControl.xaml</DependentUpon>
@@ -368,7 +368,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Match\LastMatchControl.xaml">
+    <Page Include="Views\Match\LatestMatchesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

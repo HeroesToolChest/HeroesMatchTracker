@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class LastGameViewModel : MatchContext
+    public class LatestMatchesViewModel : MatchContext
     {
-        public LastGameViewModel()
+        public LatestMatchesViewModel()
             :base()
         {
 
