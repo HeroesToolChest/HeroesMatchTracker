@@ -28,7 +28,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         private long _replayId;
         private GameMode _gameMode;
-        private string _mapTitle;
+        private string _matchTitle;
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
@@ -143,13 +143,13 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public string MapTile
+        public string MatchTitle
         {
-            get { return _mapTitle; }
+            get { return _matchTitle; }
             set
             {
-                _mapTitle = value;
-                RaisePropertyChangedEvent(nameof(MapTile));
+                _matchTitle = value;
+                RaisePropertyChangedEvent(nameof(MatchTitle));
             }
         }
 
@@ -384,7 +384,7 @@ namespace HeroesParserData.ViewModels.Match
                     }             
                 } // end foreach players
 
-                MapTile = replay.MapName;
+                MatchTitle = $"{replay.MapName}  ---  {replay.GameMode} [{replay.ReplayLength}]";
 
                 Color mapNameGlowColor;
                 BackgroundMapImage = SetMapImage(replay.MapName, out mapNameGlowColor);

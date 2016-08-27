@@ -23,7 +23,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Content="{Binding MapTile}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke" Margin="10,0,0,0" FontWeight="Bold">
+            <Label Content="{Binding MatchTitle}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke" Margin="10,0,0,0" FontWeight="Bold">
                 <Label.Effect>
                     <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding MapNameGlowColor}" />
                 </Label.Effect>
