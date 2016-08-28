@@ -43,5 +43,8 @@ namespace HeroesParserData.Models.DbModels
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
     }
 }

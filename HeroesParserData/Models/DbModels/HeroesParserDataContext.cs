@@ -45,6 +45,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayMatchTeamBan> ReplayMatchTeamBans { get; set; }
         public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; }
         public virtual DbSet<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
+        public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -87,6 +88,11 @@ namespace HeroesParserData.Models.DbModels
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Replay>()
+                .HasMany(e => e.ReplayAllHotsPlayerHeroes)
+                .WithRequired(e => e.Replay)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<ReplayAllHotsPlayer>()
                 .HasMany(e => e.ReplayMatchPlayers)
                 .WithRequired(e => e.ReplayAllHotsPlayer)
@@ -99,6 +105,11 @@ namespace HeroesParserData.Models.DbModels
 
             modelBuilder.Entity<ReplayAllHotsPlayer>()
                 .HasMany(e => e.ReplayMatchPlayerTalents)
+                .WithRequired(e => e.ReplayAllHotsPlayer)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ReplayAllHotsPlayer>()
+                .HasMany(e => e.ReplayAllHotsPlayerHeroes)
                 .WithRequired(e => e.ReplayAllHotsPlayer)
                 .WillCascadeOnDelete(false);
 
