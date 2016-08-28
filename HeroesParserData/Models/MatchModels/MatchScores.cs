@@ -21,6 +21,7 @@ namespace HeroesParserData.Models.MatchModels
             PlayerTag = matchPlayerInfoBase.PlayerTag;
             CharacterName = matchPlayerInfoBase.CharacterName;
             CharacterLevel = matchPlayerInfoBase.CharacterLevel;
+            PlayerSilenced = matchPlayerInfoBase.PlayerSilenced;
         }
     }
 }

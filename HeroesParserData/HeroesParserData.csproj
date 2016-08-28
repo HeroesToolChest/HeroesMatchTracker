@@ -437,6 +437,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\storm_ui_silencepenalty.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.dds" />
     <Resource Include="Resources\Images\storm_ui_homescreenbackground_lostcavern.dds" />

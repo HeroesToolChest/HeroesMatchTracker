@@ -13,5 +13,6 @@ namespace HeroesParserData.Models.MatchModels
         public Color RowBackColor { get; set; }
         public Color PortraitBackColor { get; set; }
         public int PlayerNumber { get; set; }
+        public bool PlayerSilenced { get; set; }
     }
 }

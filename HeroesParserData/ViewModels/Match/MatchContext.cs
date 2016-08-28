@@ -304,6 +304,7 @@ namespace HeroesParserData.ViewModels.Match
                     matchPlayerInfoBase.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
                     matchPlayerInfoBase.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
                     matchPlayerInfoBase.PlayerNumber = player.PlayerNumber;
+                    matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
 
                     if (!player.IsAutoSelect)
                         matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();

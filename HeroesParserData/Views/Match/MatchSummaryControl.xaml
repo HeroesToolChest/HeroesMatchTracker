@@ -39,14 +39,17 @@
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchTalentsTeam1, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" MaxWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
-                                                <Image.ToolTip>
-                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                            </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -138,14 +141,17 @@
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchTalentsTeam2, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" MaxWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
-                                                <Image.ToolTip>
-                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                            </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -245,14 +251,17 @@
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchScoreTeam1, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" MaxWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
-                                                <Image.ToolTip>
-                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                            </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -274,14 +283,17 @@
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
                               ItemsSource="{Binding MatchScoreTeam2, IsAsync=True}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Hero" MinWidth="85" CellStyle="{StaticResource PortraitBackColor}">
+                                <DataGridTemplateColumn Header="Hero" MinWidth="85" MaxWidth="85" CellStyle="{StaticResource PortraitBackColor}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
-                                                <Image.ToolTip>
-                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                            </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -309,11 +321,14 @@
                             <DataGridTemplateColumn Header="Hero" MinWidth="85">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
-                                            <Image.ToolTip>
-                                                <ToolTip Content="{Binding CharacterName}"></ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
+                                        <Grid>
+                                            <Image Source="{Binding LeaderboardPortrait}" Height="40" Width="71">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding CharacterName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                            <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                        </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                                 <DataGridTemplateColumn.CellStyle>

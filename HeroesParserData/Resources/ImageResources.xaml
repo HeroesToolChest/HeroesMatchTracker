@@ -11,4 +11,5 @@
     <BitmapImage x:Key="InfernalShrines" UriSource="pack://application:,,,/Resources/Images/InfernalShrines.png"/>
     <BitmapImage x:Key="SkyTemple" UriSource="pack://application:,,,/Resources/Images/SkyTemple.png"/>
     <BitmapImage x:Key="TowersOfDoom" UriSource="pack://application:,,,/Resources/Images/TowersOfDoom.png"/>
+    <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Resources/Images/storm_ui_silencepenalty.dds"/>
 </ResourceDictionary>
