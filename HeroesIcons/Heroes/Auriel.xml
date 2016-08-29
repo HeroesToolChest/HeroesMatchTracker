@@ -14,8 +14,8 @@
   <Level7>
     <AurielBurstingLightRayOfHeavenTalent name="Bursting Light">storm_ui_icon_auriel_rayofheaven.dds</AurielBurstingLightRayOfHeavenTalent>
     <AurielGlimmerofHopeRayOfHeavenTalent name="Glimmer of Hope">storm_ui_icon_auriel_rayofheaven_a.dds</AurielGlimmerofHopeRayOfHeavenTalent>
-    <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord">storm_ui_icon_auriel_rayofheaven_b.dds</AurielEnergizedCordRayOfHeavenTalent>
     <AurielEmpathicLinkBestowHopeTalent name="Empathic Link">storm_ui_icon_auriel_bestowhope.dds</AurielEmpathicLinkBestowHopeTalent>
+    <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord">storm_ui_icon_auriel_bestowhope_a.dds</AurielEnergizedCordRayOfHeavenTalent>
   </Level7>
   <Level10>
     <AurielHeroicResurrect name="Resurrect">storm_ui_icon_auriel_resurrect.dds</AurielHeroicResurrect>
