@@ -1,4 +1,5 @@
-﻿using HeroesParserData.Properties;
+﻿using HeroesParserData.Models.DbModels;
+using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Data.SqlClient;
@@ -13,9 +14,11 @@ namespace HeroesParserData
     public partial class App : Application
     {
         private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
+        private static Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
 
         public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
+        public static bool MigrateFailed { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -63,6 +66,17 @@ namespace HeroesParserData
                 Directory.CreateDirectory(databasePath);
                 
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
+
+            try
+            {
+                (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+                MigrateFailed = false;
+            }
+            catch (Exception ex)
+            {
+                DatabaseMigrateLog.Log(LogLevel.Error, $"Database migration error: {ex}");
+                MigrateFailed = true;
+            }
         }
 
         private void CopyDatabaseToLatestRelease()

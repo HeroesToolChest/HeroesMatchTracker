@@ -22,10 +22,13 @@ namespace HeroesParserData.Views
 
             InitializeComponent();
 
+            if (App.MigrateFailed)
+                ErrorMessage();
+
         #if !DEBUG
             Task.Run(async () =>
             {
-                await Task.Delay(2000);
+                await Task.Delay(4000);
                 await AutoUpdateCheck();
             });
         #endif
@@ -89,6 +92,14 @@ namespace HeroesParserData.Views
 
                 await Task.Delay(360000000); // 1 hour
             }
+        }
+
+        private async void ErrorMessage()
+        {
+            await Task.Delay(2000);
+            await this.ShowMessageAsync($"Update Error", string.Concat("There was an error with the database migration. Please check logs/DatabaseMigrateLog.txt for more information.\n\n",
+                "If this application was underwent an update, then you may encounter errors throughout its use, otherwise you may continue using the application normally and ignore this error."), 
+                MessageDialogStyle.Affirmative);
         }
     }
 }
