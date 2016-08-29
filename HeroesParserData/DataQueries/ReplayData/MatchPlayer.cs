@@ -81,6 +81,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchPlayer>();
 
+                if (columnName.Contains("Is"))
+                {
+                    if (input.ToUpperInvariant() == "TRUE")
+                        input = "1";
+                    else if (input.ToUpperInvariant() == "FALSE")
+                        input = "0";
+                }
+
                 if (input == null)
                     input = string.Empty;
 
