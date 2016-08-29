@@ -25,8 +25,15 @@ namespace HeroesParserData.DataQueries.ReplayData
 
             public static long CreateRecord(HeroesParserDataContext db, ReplayMatchMessage replayMatchMessage)
             {
-                db.ReplayMatchMessages.Add(replayMatchMessage);
-                db.SaveChanges();
+                db.Database.ExecuteSqlCommand(@"INSERT INTO ReplayMatchMessages(ReplayId, MessageEventType, TimeStampTicks, MessageTarget, PlayerName, CharacterName, Message) VALUES 
+                                                (@ReplayId, @MessageEventType, @TimeStampTicks, @MessageTarget, @PlayerName, @CharacterName, @Message)",
+                                                new SQLiteParameter("@ReplayId", replayMatchMessage.ReplayId),
+                                                new SQLiteParameter("@MessageEventType", replayMatchMessage.MessageEventType),
+                                                new SQLiteParameter("@TimeStampTicks", replayMatchMessage.TimeStampTicks),
+                                                new SQLiteParameter("@MessageTarget", replayMatchMessage.MessageTarget),
+                                                new SQLiteParameter("@PlayerName", replayMatchMessage.PlayerName),
+                                                new SQLiteParameter("@CharacterName", replayMatchMessage.CharacterName), 
+                                                new SQLiteParameter("@Message", replayMatchMessage.Message));
 
                 return replayMatchMessage.ReplayId;
             }
