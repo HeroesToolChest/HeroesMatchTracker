@@ -32,7 +32,7 @@
                     <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
                     <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />
                     <DataGridTextColumn Header="HeroName" Binding="{Binding HeroName}" />
-                    <DataGridTextColumn Header="Usable" Binding="{Binding Usable}" />
+                    <DataGridTextColumn Header="IsUsable" Binding="{Binding IsUsable}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

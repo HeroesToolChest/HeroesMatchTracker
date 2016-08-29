@@ -16,7 +16,7 @@
         [StringLength(50)]
         public string HeroName { get; set; }
         
-        public bool Usable { get; set; }
+        public bool IsUsable { get; set; }
 
         public virtual Replay Replay { get; set; }
 

@@ -26,7 +26,7 @@ namespace HeroesParserData.Database
                         ReplayId INTEGER,
                         PlayerId INTEGER,
                         HeroName NVARCHAR (50),
-                        Usable BOOLEAN,
+                        IsUsable BOOLEAN,
                         FOREIGN KEY (ReplayId) REFERENCES Replays(ReplayId),
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 

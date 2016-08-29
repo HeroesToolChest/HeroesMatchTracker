@@ -11,6 +11,10 @@ namespace HeroesIcons
     public class HeroesInfo
     {
         /// <summary>
+        /// key is hero name, value alt name
+        /// </summary>
+        private Dictionary<string, string> Heroes = new Dictionary<string, string>();
+        /// <summary>
         /// key is reference name of talent
         /// Tuple: key is real name of talent
         /// </summary>
@@ -31,6 +35,11 @@ namespace HeroesIcons
         public HeroesInfo()
         {
             ParseXmlHeroFiles();
+        }
+
+        public static HeroesInfo Initialize()
+        {
+            return new HeroesInfo();
         }
 
         /// <summary>
@@ -175,6 +184,11 @@ namespace HeroesIcons
             return heroName;
         }
 
+        public bool HeroExists(string heroName)
+        {
+            return Heroes.ContainsKey(heroName);
+        }
+
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (!isGenericTalent)
@@ -244,6 +258,8 @@ namespace HeroesIcons
 
                     if (!string.IsNullOrEmpty(lbPortrait))
                         LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
+
+                    Heroes.Add(realHeroName, hero);
 
                     // add talents
                     while (reader.Read())

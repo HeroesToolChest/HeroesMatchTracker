@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls.Dialogs;
+﻿using HeroesIcons;
+using MahApps.Metro.Controls.Dialogs;
 using NLog;
 using Squirrel;
 using System;

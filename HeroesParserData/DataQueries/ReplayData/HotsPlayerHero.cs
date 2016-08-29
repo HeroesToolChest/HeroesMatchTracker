@@ -1,10 +1,8 @@
 ﻿using HeroesParserData.Models.DbModels;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries.ReplayData
@@ -13,12 +11,13 @@ namespace HeroesParserData.DataQueries.ReplayData
     {
         internal static class HotsPlayerHero
         {
-            public static long CreateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayerHero)
+            public static void CreateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayerHero)
             {
-                db.ReplayAllHotsPlayerHeroes.Add(replayAllHotsPlayerHero);
-                db.SaveChanges();
-
-                return replayAllHotsPlayerHero.PlayerId;
+                db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(ReplayId, PlayerId, HeroName, IsUsable) VALUES (@ReplayId, @PlayerId, @HeroName, @IsUsable)", 
+                                                new SQLiteParameter("@ReplayId", replayAllHotsPlayerHero.ReplayId),
+                                                new SQLiteParameter("@PlayerId", replayAllHotsPlayerHero.PlayerId),
+                                                new SQLiteParameter("@HeroName", replayAllHotsPlayerHero.HeroName),
+                                                new SQLiteParameter("@IsUsable", replayAllHotsPlayerHero.IsUsable));
             }
 
             public static async Task<List<ReplayAllHotsPlayerHero>> ReadTopRecordsAsync(int num)
@@ -56,12 +55,45 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayAllHotsPlayerHero>();
 
+                if (columnName.Contains("Is"))
+                {
+                    if (input.ToUpperInvariant() == "TRUE")
+                        input = "1";
+                    else if (input.ToUpperInvariant() == "FALSE")
+                        input = "0";
+                }
+
                 if (input == null)
                     input = string.Empty;
 
                 using (var db = new HeroesParserDataContext())
                 {
                     return await db.ReplayAllHotsPlayerHeroes.SqlQuery($"SELECT * FROM ReplayAllHotsPlayerHeroes WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                }
+            }
+
+            public static List<ReplayAllHotsPlayerHero> ReadListOfHeroRecordsForPlayerId(HeroesParserDataContext db, long playerId)
+            {
+                return db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).ToList();
+            }
+
+            public static void UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayersHero)
+            {
+                var record = db.Database.SqlQuery<ReplayAllHotsPlayerHero>("SELECT * FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1",
+                                                                new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
+                                                                new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName)).ToList();
+
+                if (record != null && record.Count > 0)
+                {
+                    db.Database.ExecuteSqlCommand("UPDATE ReplayAllHotsPlayerHeroes SET IsUsable = @IsUsable WHERE PlayerId=@PlayerId AND HeroName=@HeroName",
+                                                    new SQLiteParameter("@IsUsable", replayAllHotsPlayersHero.IsUsable),
+                                                    new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
+                                                    new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName));
+                }
+                else
+                {
+                    db.ReplayAllHotsPlayerHeroes.Add(replayAllHotsPlayersHero);
+                    db.SaveChanges();
                 }
             }
         }

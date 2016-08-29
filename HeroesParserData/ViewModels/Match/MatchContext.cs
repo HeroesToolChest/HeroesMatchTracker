@@ -26,6 +26,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
+        private HeroesInfo HeroesInfo;
         private string _matchTitle;
         private string _queryStatus;
         private int _rowsReturned;
@@ -248,8 +249,6 @@ namespace HeroesParserData.ViewModels.Match
         }
         #endregion public properties
 
-        protected HeroesInfo HeroesInfo = new HeroesInfo();
-
         public ICommand Refresh
         {
             get
@@ -297,6 +296,7 @@ namespace HeroesParserData.ViewModels.Match
             :base()
         {
             HasChat = true;
+            HeroesInfo = App.HeroesInfo;
         }
 
         protected abstract Task RefreshExecute();

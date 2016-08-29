@@ -1,4 +1,5 @@
-﻿using HeroesParserData.Models.DbModels;
+﻿using HeroesIcons;
+using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
@@ -16,6 +17,7 @@ namespace HeroesParserData
         private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
         private static Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
 
+        public static HeroesInfo HeroesInfo { get; set; }
         public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
         public static bool MigrateFailed { get; set; }
@@ -42,6 +44,8 @@ namespace HeroesParserData
             //                        theme.Item1);
 
             base.OnStartup(e);
+
+            HeroesInfo = HeroesInfo.Initialize();
         }
 
         protected override void OnExit(ExitEventArgs e)

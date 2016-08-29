@@ -133,12 +133,14 @@ namespace HeroesParserData.DataQueries
                     player.Team = 4;
                     player.Character = "None";
                     SaveMatchPlayers(playerId, -1, player);
+                    SavePlayersHeroes(playerId, player);
                 }
                 else
                 {
                     SaveMatchPlayers(playerId, i, player);
                     SaveMatchPlayerScoreResults(playerId, player);
                     SaveMatchPlayerTalents(playerId, player);
+                    SavePlayersHeroes(playerId, player);
 
                     i++;
                 }
@@ -251,6 +253,51 @@ namespace HeroesParserData.DataQueries
             };
 
             Query.MatchPlayerTalent.CreateRecord(HeroesParserDataContext, replayTalent);
+        }
+
+        private void SavePlayersHeroes(long playerId, Player player)
+        {
+            var playersHeroes = player.SkinsDictionary;
+            var heroesInfo = App.HeroesInfo;
+
+            var listOfHeroes = Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerId(HeroesParserDataContext, playerId);
+
+            if (listOfHeroes.Count < 1)
+            {
+                foreach (var hero in playersHeroes)
+                {
+                    if (heroesInfo.HeroExists(hero.Key))
+                    {
+                        ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
+                        {
+                            PlayerId = playerId,
+                            ReplayId = ReplayId,
+                            HeroName = hero.Key,
+                            IsUsable = hero.Value
+                        };
+
+                        Query.HotsPlayerHero.CreateRecord(HeroesParserDataContext, playersHero);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var hero in playersHeroes)
+                {
+                    if (heroesInfo.HeroExists(hero.Key))
+                    {
+                        ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
+                        {
+                            PlayerId = playerId,
+                            ReplayId = ReplayId,
+                            HeroName = hero.Key,
+                            IsUsable = hero.Value
+                        };
+
+                        Query.HotsPlayerHero.UpdateRecord(HeroesParserDataContext, playersHero);
+                    }
+                }
+            }
         }
 
         private void SaveMatchTeamBans()
