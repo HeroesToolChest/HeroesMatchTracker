@@ -1,6 +1,9 @@
 namespace HeroesParserData.Models.DbModels
 {
+    using Database;
+    using NLog;
     using SQLite.CodeFirst;
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
     using System.Linq;
@@ -8,8 +11,58 @@ namespace HeroesParserData.Models.DbModels
 
     public partial class HeroesParserDataContext : DbContext
     {
+        public static int RequiredDatabaseVersion = 1;
+
         public HeroesParserDataContext()
             : base("name=HeroesParserData") { }
+
+        public void Initialize(Logger logger)
+        {
+            try
+            {
+                using (HeroesParserDataContext db = new HeroesParserDataContext())
+                {
+                    int currentVersion = 0;
+                    if (db.SchemaInfo.Count() > 0)
+                    {
+                        currentVersion = db.SchemaInfo.Max(x => x.Version);
+                        logger.Log(LogLevel.Info, $"Current Version: {currentVersion}");
+                        logger.Log(LogLevel.Info, $"Required Version: {RequiredDatabaseVersion}");
+                    }
+
+                    if (currentVersion >= RequiredDatabaseVersion)
+                    {
+                        logger.Log(LogLevel.Info, "No migration required");
+                        return;
+                    }
+
+                    HeroesParserDataContextHelper contextHelper = new HeroesParserDataContextHelper();
+
+                    while (currentVersion < RequiredDatabaseVersion)
+                    {
+                        currentVersion++;
+
+                        logger.Log(LogLevel.Info, $"Migrating to version {currentVersion}");
+
+                        foreach (string migration in contextHelper.Migrations[currentVersion])
+                        {
+                            db.Database.ExecuteSqlCommand(migration);
+                        }
+
+                        db.SchemaInfo.Add(new SchemaInfo() { Version = currentVersion });
+                        db.SaveChanges();
+
+                        logger.Log(LogLevel.Info, $"Migration version {currentVersion} completed");
+                    }
+
+                    logger.Log(LogLevel.Info, $"Migration completed");
+                }          
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public override int SaveChanges()
         {
@@ -35,6 +88,7 @@ namespace HeroesParserData.Models.DbModels
             }
         }
 
+        public virtual DbSet<SchemaInfo> SchemaInfo { get; set; }
         public virtual DbSet<Replay> Replays { get; set; }
         public virtual DbSet<ReplayAllHotsPlayer> ReplayAllHotsPlayers { get; set; }
         public virtual DbSet<ReplayMatchMessage> ReplayMatchMessages { get; set; }

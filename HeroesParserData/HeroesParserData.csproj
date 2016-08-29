@@ -171,7 +171,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
-    <Compile Include="Database\HeroesParserDataInit.cs" />
+    <Compile Include="Database\HeroesParserDataContextHelper.cs" />
+    <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
