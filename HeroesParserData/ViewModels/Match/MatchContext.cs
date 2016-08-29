@@ -26,18 +26,19 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
+        private string _matchTitle;
+        private string _queryStatus;
+        private int _rowsReturned;
         private long _replayId;
         private GameMode _gameMode;
-        private string _matchTitle;
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
-        private int _rowsReturned;
+        private BitmapImage _backgroundMapImage;
+        private Color _mapNameGlowColor;
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
-        private BitmapImage _backgroundMapImage;
-        private Color _mapNameGlowColor;
         #endregion properties
 
         #region public properties
@@ -202,6 +203,17 @@ namespace HeroesParserData.ViewModels.Match
                 RaisePropertyChangedEvent(nameof(MapNameGlowColor));
             }
         }
+
+        public string QueryStatus
+        {
+            get { return _queryStatus; }
+            set
+            {
+                _queryStatus = value;
+                RaisePropertyChangedEvent(nameof(QueryStatus));
+            }
+        }
+
         // shows the expander that shows the bans
         public bool HasBans
         {
@@ -240,12 +252,42 @@ namespace HeroesParserData.ViewModels.Match
 
         public ICommand Refresh
         {
-            get { return new DelegateCommand(async () => await RefreshExecute()); }
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    try
+                    {
+                        QueryStatus = "Waiting for query...";
+                        await RefreshExecute();
+                        QueryStatus = "Match list queried successfully";
+                    }
+                    catch(Exception)
+                    {
+                        QueryStatus = "Match list queried failed";
+                    }
+                });
+            }
         }
 
         public ICommand DisplayReplayDetails
         {
-            get { return new DelegateCommand(async () => await LoadReplayDetails(SelectedReplay)); }
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    try
+                    {
+                        QueryStatus = "Waiting for query...";
+                        await LoadReplayDetails(SelectedReplay);
+                        QueryStatus = "Match details queried successfully";
+                    }
+                    catch(Exception)
+                    {
+                        QueryStatus = "Match details queried failed";
+                    }
+                });
+            }
         }
 
         /// <summary>

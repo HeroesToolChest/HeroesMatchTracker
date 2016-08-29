@@ -12,6 +12,7 @@
              Height="auto"
              Width="auto">
     <StatusBar DockPanel.Dock="Bottom">
+        <StatusBarItem Content="{Binding QueryStatus}"/>
         <StatusBarItem Content="replays" Grid.Column="2" DockPanel.Dock="Right" />
         <StatusBarItem Content="{Binding RowsReturned}" DockPanel.Dock="Right" />
         <StatusBarItem />
