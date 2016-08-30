@@ -2,11 +2,11 @@
 
 namespace HeroesParserData.Database
 {
-    public class HeroesParserDataContextHelper
+    public class HeroesParserDataContextMigrator
     {
         public Dictionary<int, List<string>> Migrations { get; set; } = new Dictionary<int, List<string>>();
 
-        public HeroesParserDataContextHelper()
+        public HeroesParserDataContextMigrator()
         {
             Migrations = new Dictionary<int, List<string>>();
 

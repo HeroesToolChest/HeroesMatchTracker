@@ -36,7 +36,7 @@ namespace HeroesParserData.Models.DbModels
                         return;
                     }
 
-                    HeroesParserDataContextHelper contextHelper = new HeroesParserDataContextHelper();
+                    HeroesParserDataContextMigrator contextMigrator = new HeroesParserDataContextMigrator();
 
                     while (currentVersion < RequiredDatabaseVersion)
                     {
@@ -44,7 +44,7 @@ namespace HeroesParserData.Models.DbModels
 
                         logger.Log(LogLevel.Info, $"Migrating to version {currentVersion}");
 
-                        foreach (string migration in contextHelper.Migrations[currentVersion])
+                        foreach (string migration in contextMigrator.Migrations[currentVersion])
                         {
                             db.Database.ExecuteSqlCommand(migration);
                         }
