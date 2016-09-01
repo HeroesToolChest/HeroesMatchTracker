@@ -1,5 +1,6 @@
 namespace HeroesParserData.Models.DbModels
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -32,6 +33,8 @@ namespace HeroesParserData.Models.DbModels
         public int BattleNetRegionId { get; set; }
 
         public int BattleNetSubId { get; set; }
+
+        public DateTime LastSeen { get; set; }
 
         public int Seen { get; set; }
 

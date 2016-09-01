@@ -171,13 +171,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
-    <Compile Include="Database\HeroesParserDataContextHelper.cs" />
+    <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
+    <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchHeroBans.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="ViewModels\Data\RawMatchTeamLevelViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\Data\RawReplayViewModel.cs" />
+    <Compile Include="ViewModels\Heroes\HeroesUsableViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
     <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
@@ -244,6 +246,9 @@
     </Compile>
     <Compile Include="Views\Data\RawReplaysControl.xaml.cs">
       <DependentUpon>RawReplaysControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Heroes\HeroesUsable.xaml.cs">
+      <DependentUpon>HeroesUsable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -371,6 +376,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Heroes\HeroesUsable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -448,6 +457,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Images\XOut.png" />
     <Resource Include="Resources\Images\storm_ui_silencepenalty.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.dds" />

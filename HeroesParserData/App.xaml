@@ -21,6 +21,8 @@
                 <ResourceDictionary Source="/Resources/MahAppsScrollBars.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">16</system:Double>
+            <system:Double x:Key="PlayersHeroesImageHeight">120</system:Double>
+            <system:Double x:Key="PlayersHeroesImageWidth">102</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
             <converters:IntToStringThousandSeperatorConverter x:Key="IntToStringThousandSeperatorConverter"/>
         </ResourceDictionary>

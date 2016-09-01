@@ -118,6 +118,7 @@ namespace HeroesParserData.DataQueries
                     BattleNetId = player.BattleNetId,
                     BattleNetRegionId = player.BattleNetRegionId,
                     BattleNetSubId = player.BattleNetSubId,
+                    LastSeen = Replay.Timestamp,
                     Seen = 1
                 };
 
@@ -266,14 +267,15 @@ namespace HeroesParserData.DataQueries
             {
                 foreach (var hero in playersHeroes)
                 {
-                    if (heroesInfo.HeroExists(hero.Key))
+                    if (heroesInfo.HeroExists(hero.Key, false))
                     {
                         ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
                         {
                             PlayerId = playerId,
                             ReplayId = ReplayId,
                             HeroName = hero.Key,
-                            IsUsable = hero.Value
+                            IsUsable = hero.Value,
+                            LastUpdated = Replay.Timestamp
                         };
 
                         Query.HotsPlayerHero.CreateRecord(HeroesParserDataContext, playersHero);
@@ -284,14 +286,15 @@ namespace HeroesParserData.DataQueries
             {
                 foreach (var hero in playersHeroes)
                 {
-                    if (heroesInfo.HeroExists(hero.Key))
+                    if (heroesInfo.HeroExists(hero.Key, false))
                     {
                         ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
                         {
                             PlayerId = playerId,
                             ReplayId = ReplayId,
                             HeroName = hero.Key,
-                            IsUsable = hero.Value
+                            IsUsable = hero.Value,
+                            LastUpdated = Replay.Timestamp
                         };
 
                         Query.HotsPlayerHero.UpdateRecord(HeroesParserDataContext, playersHero);

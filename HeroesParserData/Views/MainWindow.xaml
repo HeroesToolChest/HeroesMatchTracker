@@ -7,6 +7,7 @@
         xmlns:Views="clr-namespace:HeroesParserData.Views"
         xmlns:ViewsData="clr-namespace:HeroesParserData.Views.Data"
         xmlns:ViewsMatch="clr-namespace:HeroesParserData.Views.Match"
+        xmlns:ViewsHeroes="clr-namespace:HeroesParserData.Views.Heroes"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         GlowBrush="{DynamicResource AccentColorBrush}"
@@ -49,6 +50,13 @@
                     </TabItem>
                     <TabItem Header="Custom Game">
                         <ViewsMatch:CustomGameControl />
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Player Heroes">
+                <TabControl>
+                    <TabItem Header="Heroes Usable">
+                        <ViewsHeroes:HeroesUsable />
                     </TabItem>
                 </TabControl>
             </TabItem>

@@ -437,14 +437,14 @@ namespace HeroesParserData.ViewModels.Match
                 if (replay.ReplayMatchTeamBan != null)
                 {
                     HasBans = true;
-                    MatchHeroBans.Team0Ban0 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team0Ban0);
-                    MatchHeroBans.Team0Ban1 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team0Ban1);
-                    MatchHeroBans.Team1Ban0 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team1Ban0);
-                    MatchHeroBans.Team1Ban1 = HeroesInfo.GetHeroPortrait(replay.ReplayMatchTeamBan.Team1Ban1);
                     MatchHeroBans.Team0Ban0HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team0Ban0);
                     MatchHeroBans.Team0Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team0Ban1);
                     MatchHeroBans.Team1Ban0HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban0);
                     MatchHeroBans.Team1Ban1HeroName = HeroesInfo.GeRealHeroNameFromAttId(replay.ReplayMatchTeamBan.Team1Ban1);
+                    MatchHeroBans.Team0Ban0 = HeroesInfo.GetHeroPortrait(MatchHeroBans.Team0Ban0HeroName);
+                    MatchHeroBans.Team0Ban1 = HeroesInfo.GetHeroPortrait(MatchHeroBans.Team0Ban1HeroName);
+                    MatchHeroBans.Team1Ban0 = HeroesInfo.GetHeroPortrait(MatchHeroBans.Team1Ban0HeroName);
+                    MatchHeroBans.Team1Ban1 = HeroesInfo.GetHeroPortrait(MatchHeroBans.Team1Ban1HeroName);
                 }
 
                 // match chat

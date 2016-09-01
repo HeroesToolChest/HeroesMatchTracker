@@ -13,11 +13,12 @@ namespace HeroesParserData.DataQueries.ReplayData
         {
             public static void CreateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayerHero)
             {
-                db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(ReplayId, PlayerId, HeroName, IsUsable) VALUES (@ReplayId, @PlayerId, @HeroName, @IsUsable)", 
+                db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(ReplayId, PlayerId, HeroName, IsUsable, LastUpdated) VALUES (@ReplayId, @PlayerId, @HeroName, @IsUsable, @LastUpdated)", 
                                                 new SQLiteParameter("@ReplayId", replayAllHotsPlayerHero.ReplayId),
                                                 new SQLiteParameter("@PlayerId", replayAllHotsPlayerHero.PlayerId),
                                                 new SQLiteParameter("@HeroName", replayAllHotsPlayerHero.HeroName),
-                                                new SQLiteParameter("@IsUsable", replayAllHotsPlayerHero.IsUsable));
+                                                new SQLiteParameter("@IsUsable", replayAllHotsPlayerHero.IsUsable),
+                                                new SQLiteParameter("@LastUpdated", replayAllHotsPlayerHero.LastUpdated));
             }
 
             public static async Task<List<ReplayAllHotsPlayerHero>> ReadTopRecordsAsync(int num)
@@ -77,18 +78,30 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).ToList();
             }
 
+            public static async Task<List<ReplayAllHotsPlayerHero>> ReadListOfHeroRecordsForPlayerIdAsync(long playerId)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return await db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).OrderBy(x => x.HeroName).ToListAsync();
+                }                
+            }
+
             public static void UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayersHero)
             {
                 var record = db.Database.SqlQuery<ReplayAllHotsPlayerHero>("SELECT * FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1",
                                                                 new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
-                                                                new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName)).ToList();
+                                                                new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName)).FirstOrDefault();
 
-                if (record != null && record.Count > 0)
+                if (record != null)
                 {
-                    db.Database.ExecuteSqlCommand("UPDATE ReplayAllHotsPlayerHeroes SET IsUsable = @IsUsable WHERE PlayerId=@PlayerId AND HeroName=@HeroName",
-                                                    new SQLiteParameter("@IsUsable", replayAllHotsPlayersHero.IsUsable),
-                                                    new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
-                                                    new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName));
+                    if (replayAllHotsPlayersHero.LastUpdated > record.LastUpdated)
+                    {
+                        db.Database.ExecuteSqlCommand("UPDATE ReplayAllHotsPlayerHeroes SET IsUsable = @IsUsable, LastUpdated = @LastUpdated WHERE PlayerId=@PlayerId AND HeroName=@HeroName",
+                                                        new SQLiteParameter("@IsUsable", replayAllHotsPlayersHero.IsUsable),
+                                                        new SQLiteParameter("@LastUpdated", replayAllHotsPlayersHero.LastUpdated),
+                                                        new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
+                                                        new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName));
+                    }
                 }
                 else
                 {

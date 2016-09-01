@@ -114,6 +114,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                         record.BattleNetId = replayAllHotsPlayer.BattleNetId;
                         record.BattleNetRegionId = replayAllHotsPlayer.BattleNetRegionId;
                         record.BattleNetSubId = replayAllHotsPlayer.BattleNetSubId;
+                        record.LastSeen = replayAllHotsPlayer.LastSeen;
                     }
 
                     record.Seen += 1;

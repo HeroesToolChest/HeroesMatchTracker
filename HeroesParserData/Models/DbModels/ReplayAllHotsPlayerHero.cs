@@ -1,5 +1,6 @@
 ﻿namespace HeroesParserData.Models.DbModels
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,6 +18,7 @@
         public string HeroName { get; set; }
         
         public bool IsUsable { get; set; }
+        public DateTime LastUpdated { get; set; }
 
         public virtual Replay Replay { get; set; }
 

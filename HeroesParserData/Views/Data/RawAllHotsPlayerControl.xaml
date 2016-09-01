@@ -33,6 +33,7 @@
                     <DataGridTextColumn Header="BattleNetId" Binding="{Binding BattleNetId}" />
                     <DataGridTextColumn Header="BattleNetRegionId" Binding="{Binding BattleNetRegionId}" />
                     <DataGridTextColumn Header="BattleNetSubId" Binding="{Binding BattleNetSubId}" />
+                    <DataGridTextColumn Header="LastSeen" Binding="{Binding LastSeen}" />
                     <DataGridTextColumn Header="Seen" Binding="{Binding Seen}" />
                 </DataGrid.Columns>
             </DataGrid>
