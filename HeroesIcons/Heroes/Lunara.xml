@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Dryad name="Lunara" attributeid="Drya" portrait="storm_ui_glues_draft_portrait_lunara.dds" leader="storm_ui_ingame_hero_leaderboard_lunara.dds">
+<Lunara attributeid="Drya" portrait="storm_ui_glues_draft_portrait_lunara.dds" leader="storm_ui_ingame_hero_leaderboard_lunara.dds">
   <Level1>
     <DryadBlossomSwell name="Blossom Swell">storm_ui_icon_Lunara_PollenCloud.dds</DryadBlossomSwell>
     <DryadPhotosynthesis name="Photosynthesis">storm_ui_icon_lunara_fullbloom.dds</DryadPhotosynthesis>
@@ -41,4 +41,4 @@
     <DryadAbolishMagic name="Abolish Magic">storm_ui_icon_lunara_abolishmagic.dds</DryadAbolishMagic>
   </Level20>
   <Old></Old>
-</Dryad>
+</Lunara>

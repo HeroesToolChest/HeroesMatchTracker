@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<L90ETC name="E.T.C." attributeid="L90E" portrait="storm_ui_glues_draft_portrait_l90etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
+<ETC name="E.T.C." attributeid="L90E" portrait="storm_ui_glues_draft_portrait_l90etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
   <Level1>
     <ETCMasteryRollingLikeaStone name="Rolling Like a Stone">storm_ui_icon_etc_powerslide.dds</ETCMasteryRollingLikeaStone>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
@@ -42,4 +42,4 @@
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
   <Old></Old>
-</L90ETC>
+</ETC>

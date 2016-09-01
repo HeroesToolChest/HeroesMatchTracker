@@ -11,16 +11,22 @@ namespace HeroesIcons
     public class HeroesInfo
     {
         /// <summary>
-        /// key is hero name, value alt name
+        /// key is real hero name, value alt name (if any)
+        /// example: Anub'arak, Anubarak
         /// </summary>
-        private Dictionary<string, string> Heroes = new Dictionary<string, string>();
+        private Dictionary<string, string> HeroesRealName = new Dictionary<string, string>();
+        /// <summary>
+        /// key is alt hero name, value real name
+        /// example: Anubarak, Anub'arak
+        /// </summary>
+        private Dictionary<string, string> HeroesAltName = new Dictionary<string, string>();
         /// <summary>
         /// key is reference name of talent
         /// Tuple: key is real name of talent
         /// </summary>
         private Dictionary<string, Tuple<string, Uri>> Talents = new Dictionary<string, Tuple<string, Uri>>();
         /// <summary>
-        /// key is attributeid
+        /// key is real hero name
         /// </summary>
         private Dictionary<string, Uri> HeroPortraits = new Dictionary<string, Uri>();
         /// <summary>
@@ -28,7 +34,7 @@ namespace HeroesIcons
         /// </summary>
         private Dictionary<string, string> HeroNamesFromAttId = new Dictionary<string, string>();
         /// <summary>
-        /// key is attributeid
+        /// key is real hero name
         /// </summary>
         private Dictionary<string, Uri> LeaderboardPortraits = new Dictionary<string, Uri>();
 
@@ -77,20 +83,20 @@ namespace HeroesIcons
         /// <summary>
         /// Returns a BitmapImage of the hero
         /// </summary>
-        /// <param name="attributeId">attributeid</param>
+        /// <param name="realHeroName">Real hero name</param>
         /// <returns>BitmpImage of the hero</returns>
-        public BitmapImage GetHeroPortrait(string attributeId)
+        public BitmapImage GetHeroPortrait(string realHeroName)
         {
             Uri uri;
 
             // no pick
-            if (string.IsNullOrEmpty(attributeId))
+            if (string.IsNullOrEmpty(realHeroName))
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
 
             // not found
-            if (!HeroPortraits.TryGetValue(attributeId, out uri))
+            if (!HeroPortraits.TryGetValue(realHeroName, out uri))
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {attributeId}"));
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {realHeroName}"));
 
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
@@ -101,7 +107,7 @@ namespace HeroesIcons
             }
             catch (Exception ex)
             {
-                throw new IconException($"Uri: {uri} AttributeId: {attributeId}", ex);
+                throw new IconException($"Uri: {uri} AttributeId: {realHeroName}", ex);
             }
         }
 
@@ -184,9 +190,29 @@ namespace HeroesIcons
             return heroName;
         }
 
-        public bool HeroExists(string heroName)
+        /// <summary>
+        /// Checks to see if the hero name exists
+        /// </summary>
+        /// <param name="heroName">Hero name</param>
+        /// <param name="realName">Is the name a real name or alt name</param>
+        /// <returns>True if found</returns>
+        public bool HeroExists(string heroName, bool realName = true)
         {
-            return Heroes.ContainsKey(heroName);
+            if (realName)
+                return HeroesRealName.ContainsKey(heroName);
+            else
+                return HeroesAltName.ContainsKey(heroName);
+        }
+
+        public List<string> GetListOfHeroes()
+        {
+            List<string> heroes = new List<string>();
+            foreach (var hero in HeroesRealName)
+            {
+                heroes.Add(hero.Key);
+            }
+            heroes.Sort();
+            return heroes;
         }
 
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
@@ -235,11 +261,13 @@ namespace HeroesIcons
                         continue;
 
                     // get real name
+                    // example: Anubarak -> (real)Anub'arak
                     string realHeroName = reader["name"];
                     if (string.IsNullOrEmpty(realHeroName))
                         realHeroName = hero; // default to hero name
 
                     // get attributeid from hero name
+                    // example: Anub
                     string attributeId = reader["attributeid"];
 
                     // get portrait
@@ -251,15 +279,16 @@ namespace HeroesIcons
                     if (!string.IsNullOrEmpty(attributeId))
                     {
                         HeroNamesFromAttId.Add(attributeId, realHeroName);
-
-                        if (!string.IsNullOrEmpty(portraitName))
-                            HeroPortraits.Add(attributeId, SetHeroPortraitUri(portraitName));
                     }
+
+                    if (!string.IsNullOrEmpty(portraitName))
+                        HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
 
                     if (!string.IsNullOrEmpty(lbPortrait))
                         LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
 
-                    Heroes.Add(realHeroName, hero);
+                    HeroesRealName.Add(realHeroName, hero);
+                    HeroesAltName.Add(hero, realHeroName);
 
                     // add talents
                     while (reader.Read())
