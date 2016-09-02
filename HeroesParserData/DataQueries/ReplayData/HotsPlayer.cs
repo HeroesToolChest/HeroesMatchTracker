@@ -102,12 +102,17 @@ namespace HeroesParserData.DataQueries.ReplayData
 
             public static bool IsExistingHotsPlayer(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName);
+                // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
+                return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName && 
+                                                        x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                                                        x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
             }
 
             public static long UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
-                var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName);
+                var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName &&
+                                                                     x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                                                                     x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
 
                 if (record != null)
                 {
@@ -119,6 +124,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                         record.LastSeen = replayAllHotsPlayer.LastSeen;
                     }
 
+                    if (replayAllHotsPlayer.LastSeen > record.LastSeen)
+                        record.LastSeen = replayAllHotsPlayer.LastSeen;
+
                     record.Seen += 1;
 
                     db.SaveChanges();
@@ -129,7 +137,7 @@ namespace HeroesParserData.DataQueries.ReplayData
 
             public static long ReadPlayerIdFromBattleNetId(HeroesParserDataContext db, string battleTagName, int battleNetId)
             {
-                // battleNetId is not unique
+                // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
                 return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
             }
 
