@@ -23,12 +23,10 @@ namespace HeroesParserData.Database
 
             steps.Add(@"CREATE TABLE ReplayAllHotsPlayerHero(
                         PlayerHeroesId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                        ReplayId INTEGER,
                         PlayerId INTEGER,
                         HeroName NVARCHAR (50),
                         IsUsable BOOLEAN,
                         LastUpdated DATETIME,
-                        FOREIGN KEY (ReplayId) REFERENCES Replays(ReplayId),
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 
             Migrations.Add(1, steps);

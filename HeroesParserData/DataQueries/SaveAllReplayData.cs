@@ -261,44 +261,22 @@ namespace HeroesParserData.DataQueries
             var playersHeroes = player.SkinsDictionary;
             var heroesInfo = App.HeroesInfo;
 
-            var listOfHeroes = Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerId(HeroesParserDataContext, playerId);
-
-            if (listOfHeroes.Count < 1)
+            foreach (var hero in playersHeroes)
             {
-                foreach (var hero in playersHeroes)
+                if (heroesInfo.HeroExists(hero.Key, false))
                 {
-                    if (heroesInfo.HeroExists(hero.Key, false))
+                    ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
                     {
-                        ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
-                        {
-                            PlayerId = playerId,
-                            ReplayId = ReplayId,
-                            HeroName = hero.Key,
-                            IsUsable = hero.Value,
-                            LastUpdated = Replay.Timestamp
-                        };
+                        PlayerId = playerId,
+                        HeroName = hero.Key,
+                        IsUsable = hero.Value,
+                        LastUpdated = Replay.Timestamp
+                    };
 
-                        Query.HotsPlayerHero.CreateRecord(HeroesParserDataContext, playersHero);
-                    }
-                }
-            }
-            else
-            {
-                foreach (var hero in playersHeroes)
-                {
-                    if (heroesInfo.HeroExists(hero.Key, false))
-                    {
-                        ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
-                        {
-                            PlayerId = playerId,
-                            ReplayId = ReplayId,
-                            HeroName = hero.Key,
-                            IsUsable = hero.Value,
-                            LastUpdated = Replay.Timestamp
-                        };
-
+                    if (Query.HotsPlayerHero.HeroRecordExists(HeroesParserDataContext, playersHero))
                         Query.HotsPlayerHero.UpdateRecord(HeroesParserDataContext, playersHero);
-                    }
+                    else
+                        Query.HotsPlayerHero.CreateRecord(HeroesParserDataContext, playersHero);
                 }
             }
         }

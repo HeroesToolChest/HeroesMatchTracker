@@ -13,8 +13,7 @@ namespace HeroesParserData.DataQueries.ReplayData
         {
             public static void CreateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayerHero)
             {
-                db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(ReplayId, PlayerId, HeroName, IsUsable, LastUpdated) VALUES (@ReplayId, @PlayerId, @HeroName, @IsUsable, @LastUpdated)", 
-                                                new SQLiteParameter("@ReplayId", replayAllHotsPlayerHero.ReplayId),
+                db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(PlayerId, HeroName, IsUsable, LastUpdated) VALUES (@PlayerId, @HeroName, @IsUsable, @LastUpdated)", 
                                                 new SQLiteParameter("@PlayerId", replayAllHotsPlayerHero.PlayerId),
                                                 new SQLiteParameter("@HeroName", replayAllHotsPlayerHero.HeroName),
                                                 new SQLiteParameter("@IsUsable", replayAllHotsPlayerHero.IsUsable),
@@ -84,6 +83,13 @@ namespace HeroesParserData.DataQueries.ReplayData
                 {
                     return await db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).OrderBy(x => x.HeroName).ToListAsync();
                 }                
+            }
+
+            public static bool HeroRecordExists(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayersHero)
+            {
+                 return db.Database.SqlQuery<bool>("SELECT EXISTS(SELECT 1 FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1)",
+                                                                new SQLiteParameter("@PlayerId", replayAllHotsPlayersHero.PlayerId),
+                                                                new SQLiteParameter("@HeroName", replayAllHotsPlayersHero.HeroName)).FirstOrDefault();
             }
 
             public static void UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayerHero replayAllHotsPlayersHero)

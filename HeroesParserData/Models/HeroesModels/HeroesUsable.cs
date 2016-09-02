@@ -181,7 +181,7 @@ namespace HeroesParserData.Models.HeroesModels
             get { return _isXOut15; }
             set
             {
-                _isXOut11 = value;
+                _isXOut15 = value;
                 RaisePropertyChangedEvent(nameof(IsXOut15));
             }
         }

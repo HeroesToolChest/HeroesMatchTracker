@@ -142,11 +142,6 @@ namespace HeroesParserData.Models.DbModels
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Replay>()
-                .HasMany(e => e.ReplayAllHotsPlayerHeroes)
-                .WithRequired(e => e.Replay)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<ReplayAllHotsPlayer>()
                 .HasMany(e => e.ReplayMatchPlayers)
                 .WithRequired(e => e.ReplayAllHotsPlayer)
