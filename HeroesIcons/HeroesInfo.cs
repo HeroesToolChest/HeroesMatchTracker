@@ -171,7 +171,7 @@ namespace HeroesIcons
         /// </summary>
         /// <param name="attributeId">Four character hero id</param>
         /// <returns>Full hero name</returns>
-        public string GeRealHeroNameFromAttId(string attributeId)
+        public string GetRealHeroNameFromAttId(string attributeId)
         {
             string heroName;
 
