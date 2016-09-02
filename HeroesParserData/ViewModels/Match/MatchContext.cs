@@ -423,6 +423,7 @@ namespace HeroesParserData.ViewModels.Match
                     else if (player.Team == 4) // observers
                     {
                         HasObservers = true;
+                        matchTalents.CharacterLevel = "Observer";
                         MatchObservers.Add(matchTalents);
                     }             
                 } // end foreach players
