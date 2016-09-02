@@ -127,7 +127,9 @@ namespace HeroesParserData.DataQueries.ReplayData
                         input = ((int)gameMode).ToString();
                 }
 
-                if (input == null)
+                if (input.Length == 1 || (input.Length >= 2 && input[0] != '%' && input[input.Length - 1] != '%'))
+                    input = $"%{input}%";
+                else if (input == null)
                     input = string.Empty;
 
                 using (var db = new HeroesParserDataContext())
