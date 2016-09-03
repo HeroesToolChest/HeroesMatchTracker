@@ -63,7 +63,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                         input = "0";
                 }
 
-                if (input.Length == 1 || (input.Length >= 2 && input[0] != '%' && input[input.Length - 1] != '%'))
+                if (Utilities.LikeOperatorInputCheck(operand, input))
                     input = $"%{input}%";
                 else if (input == null)
                     input = string.Empty;

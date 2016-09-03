@@ -77,7 +77,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchTeamBan>();
 
-                if (input.Length == 1 || (input.Length >= 2 && input[0] != '%' && input[input.Length - 1] != '%'))
+                if (Utilities.LikeOperatorInputCheck(operand, input))
                     input = $"%{input}%";
                 else if (input == null)
                     input = string.Empty;
