@@ -73,7 +73,7 @@ namespace HeroesParserData
 
             try
             {
-                (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+                //(new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
                 MigrateFailed = false;
             }
             catch (Exception ex)
