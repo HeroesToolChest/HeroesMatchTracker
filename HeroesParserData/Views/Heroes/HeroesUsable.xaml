@@ -16,6 +16,7 @@
             <RowDefinition Height="180"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+               
         <Label Content="PLAYER ID:" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" />
         <Controls:NumericUpDown Value="{Binding TextBoxPlayerId}" Width="160" Height="16" Minimum="1" Interval="1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Margin="122,10,0,0" />
         <Button Content="Select" Command="{Binding SelectPlayerId}" HorizontalAlignment="Left" Margin="287,11,0,0" VerticalAlignment="Top" Width="75" Grid.Row="0"/>
@@ -25,7 +26,7 @@
         <Button Content="Find" Command="{Binding SelectBattleTagName}" HorizontalAlignment="Left" Margin="287,41,0,0" VerticalAlignment="Top" Width="75" Grid.Row="0"/>
         <Label  Content="{Binding BattleTagNameResult}" HorizontalAlignment="Left" Margin="122,67,0,0" VerticalAlignment="Top" Width="798" FontSize="14"/>
 
-        <Label Content="{Binding PlayerInfo}" HorizontalAlignment="Left" Margin="70,108,0,0" VerticalAlignment="Top" Width="882" FontSize="36"/>
+        <Label Content="{Binding PlayerInfo}" HorizontalAlignment="Left" Margin="70,108,0,0" VerticalAlignment="Top" Width="1757" FontSize="36"/>
 
         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" HeadersVisibility="None" Grid.Row="1" ItemsSource="{Binding Heroes}" 
                   BorderThickness="1" HorizontalAlignment="Center" RowHeight="136" ColumnWidth="118">

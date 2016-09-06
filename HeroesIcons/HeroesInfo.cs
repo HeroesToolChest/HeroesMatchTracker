@@ -215,6 +215,11 @@ namespace HeroesIcons
             return heroes;
         }
 
+        public int TotalAmountOfHeroes()
+        {
+            return HeroesRealName.Count;
+        }
+
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (!isGenericTalent)
