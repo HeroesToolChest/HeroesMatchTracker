@@ -457,6 +457,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Resources\Images\HeroesParserData_1.png" />
     <Resource Include="Resources\Images\XOut.png" />
     <Resource Include="Resources\Images\storm_ui_silencepenalty.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds" />
@@ -470,7 +471,6 @@
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_skytemple.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_towersofdoom.dds" />
     <Resource Include="Resources\Images\ui_ingame_mapmechanic_loadscreen_gardenofterror.dds" />
-    <Resource Include="Resources\Images\HeroesParserData_1.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -500,14 +500,6 @@
     <Content Include="DLLs\Heroes.ReplayParser.dll" />
     <Content Include="DLLs\ICSharpCode.SharpZipLib.dll" />
     <Content Include="DLLs\MpqTool.dll" />
-    <Resource Include="Resources\Images\BattlefieldOfEternity.png" />
-    <Resource Include="Resources\Images\BlackheartsBay.png" />
-    <Resource Include="Resources\Images\CursedHallow.png" />
-    <Resource Include="Resources\Images\DragonShire.png" />
-    <Resource Include="Resources\Images\GardenOfTerror.png" />
-    <Resource Include="Resources\Images\HauntedMines.png" />
-    <Resource Include="Resources\Images\InfernalShrines.png" />
-    <Resource Include="Resources\Images\SkyTemple.png" />
     <Resource Include="Resources\Images\TowersOfDoom.png" />
   </ItemGroup>
   <ItemGroup>
