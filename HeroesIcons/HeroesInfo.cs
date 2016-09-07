@@ -190,6 +190,44 @@ namespace HeroesIcons
             return heroName;
         }
 
+        public string GetAltNameFromRealHeroName(string realName)
+        {
+            string altName;
+
+            // no pick
+            if (string.IsNullOrEmpty(realName))
+                return null;
+
+            // not found
+            if (!HeroesAltName.TryGetValue(realName, out altName))
+            {
+                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero alt name for reference: {realName}"));
+
+                return "Hero alt name not found";
+            }
+
+            return altName;
+        }
+
+        public string GetRealHeroNameFromAltName(string altName)
+        {
+            string realName;
+
+            // no pick
+            if (string.IsNullOrEmpty(altName))
+                return null;
+
+            // not found
+            if (!HeroesAltName.TryGetValue(altName, out realName))
+            {
+                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero real name for reference: {altName}"));
+
+                return "Hero real name not found";
+            }
+
+            return realName;
+        }
+
         /// <summary>
         /// Checks to see if the hero name exists
         /// </summary>

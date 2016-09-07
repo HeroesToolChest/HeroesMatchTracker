@@ -35,13 +35,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait1}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[0]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName1}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[0]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut1, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[0], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -50,13 +50,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait2}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[1]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName2}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[1]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut2, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[1], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -65,13 +65,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait3}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[2]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName3}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[2]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut3, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[2], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -80,13 +80,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait4}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[3]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName4}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[3]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut4, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[3], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -95,13 +95,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait5}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[4]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName5}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[4]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut5, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[4], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -110,13 +110,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait6}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[5]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName6}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[5]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut6, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[5], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -125,13 +125,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait7}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[6]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName7}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[6]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut7, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[6], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -140,13 +140,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait8}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[7]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName8}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[7]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut8, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[7], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -155,13 +155,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait9}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[8]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName9}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[8]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut9, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[8], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -170,13 +170,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait10}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[9]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName10}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[9]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut10, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[9], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -185,13 +185,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait11}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[10]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName11}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[10]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut11, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[10], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -200,13 +200,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait12}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[11]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName12}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[11]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut12, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[11], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -215,13 +215,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait13}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[12]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName13}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[12]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut13, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[13], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -230,13 +230,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait14}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[13]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName14}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[13]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut14, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[13], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -245,13 +245,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding HeroPortrait15}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
+                                <Image Source="{Binding HeroPortrait[14]}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{StaticResource PlayersHeroesImageHeight}" Width="{StaticResource PlayersHeroesImageWidth}">
                                     <Image.ToolTip>
-                                        <ToolTip Content="{Binding HeroName15}"></ToolTip>
+                                        <ToolTip Content="{Binding HeroName[14]}"></ToolTip>
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut15, Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[14], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

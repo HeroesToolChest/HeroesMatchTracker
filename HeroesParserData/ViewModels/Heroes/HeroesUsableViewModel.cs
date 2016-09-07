@@ -1,6 +1,9 @@
 ﻿using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models.HeroesModels;
+using NLog;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -10,6 +13,7 @@ namespace HeroesParserData.ViewModels.Heroes
     public class HeroesUsableViewModel : ViewModelBase
     {
         private HeroesInfo HeroesInfo;
+        private Dictionary<string, Tuple<int, int>> HeroesGridLocation = new Dictionary<string, Tuple<int, int>>();
         private ObservableCollection<HeroesUsable> _heroes = new ObservableCollection<HeroesUsable>();
 
         private long _textBoxPlayerId;
@@ -88,87 +92,30 @@ namespace HeroesParserData.ViewModels.Heroes
         private void LoadHeroPortraits()
         {
             var listOfHeroes = HeroesInfo.GetListOfHeroes();
+            int heroCount = 0;
+            int row = 0;
 
-            int i = 0;
-            while (i < listOfHeroes.Count)
+            while (heroCount < listOfHeroes.Count)
             {
                 HeroesUsable heroesUsable = new HeroesUsable();
 
-                heroesUsable.HeroName1 = listOfHeroes[i];
-                heroesUsable.HeroPortrait1 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName1);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
+                for (int column = 0; column < 15; column++)
+                {
+                    if (heroCount < listOfHeroes.Count)
+                    {
+                        heroesUsable.HeroName[column] = listOfHeroes[heroCount];
+                        heroesUsable.HeroPortrait[column] = HeroesInfo.GetHeroPortrait(listOfHeroes[heroCount]);
+                        heroesUsable.IsXOut.Add(true);
+                        HeroesGridLocation.Add(listOfHeroes[heroCount], new Tuple<int, int>(row, column));
+                    }
+                    else
+                        heroesUsable.IsXOut.Add(false);
 
-                heroesUsable.HeroName2 = listOfHeroes[i];
-                heroesUsable.HeroPortrait2 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName2);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
+                    heroCount++;
+                }
 
-                heroesUsable.HeroName3 = listOfHeroes[i];
-                heroesUsable.HeroPortrait3 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName3);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName4 = listOfHeroes[i];
-                heroesUsable.HeroPortrait4 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName4);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName5 = listOfHeroes[i];
-                heroesUsable.HeroPortrait5 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName5);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName6 = listOfHeroes[i];
-                heroesUsable.HeroPortrait6 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName6);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName7 = listOfHeroes[i];
-                heroesUsable.HeroPortrait7 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName7);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName8 = listOfHeroes[i];
-                heroesUsable.HeroPortrait8 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName8);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName9 = listOfHeroes[i];
-                heroesUsable.HeroPortrait9 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName9);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName10 = listOfHeroes[i];
-                heroesUsable.HeroPortrait10 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName10);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName11 = listOfHeroes[i];
-                heroesUsable.HeroPortrait11 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName11);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName12 = listOfHeroes[i];
-                heroesUsable.HeroPortrait12 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName12);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName13 = listOfHeroes[i];
-                heroesUsable.HeroPortrait13 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName13);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName14 = listOfHeroes[i];
-                heroesUsable.HeroPortrait14 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName14);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
-
-                heroesUsable.HeroName15 = listOfHeroes[i];
-                heroesUsable.HeroPortrait15 = HeroesInfo.GetHeroPortrait(heroesUsable.HeroName15);
-                i++;
-                if (i >= listOfHeroes.Count) { Heroes.Add(heroesUsable); break; }
                 Heroes.Add(heroesUsable);
+                row++;
             }
         }
 
@@ -187,121 +134,52 @@ namespace HeroesParserData.ViewModels.Heroes
 
             var heroRecords = await Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerIdAsync(playerId);
 
+            int heroesUsable = 0;
+
             if (heroRecords.Count == 0)
             {
                 int count = 0;
-                int totalHeroes = HeroesInfo.TotalAmountOfHeroes();
-                for (int i = 0; i < Heroes.Count; i++)
+                foreach (var row in Heroes)
                 {
-                    Heroes[i].IsXOut1 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut2 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut3 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut4 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut5 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut6 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut7 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut8 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut9 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut10 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut11 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut12 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut13 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut14 = true; count++; if (count >= totalHeroes) break;
-                    Heroes[i].IsXOut15 = true; count++; if (count >= totalHeroes) break;
+                    for (int i = 0; i < row.IsXOut.Count; i++)
+                    {
+                        if (count >= Heroes.Count)
+                            break;
+
+                        row.IsXOut[i] = true;
+                        count++;
+                        
+                    }
                 }
 
                 PlayerInfo = $"{player.BattleTagName}  Last Seen: {player.LastSeen}  -- NO HERO INFO FOUND --";
             }
             else
             {
-                foreach (var heroRecord in heroRecords)
-                {
-                    for (int i = 0; i < Heroes.Count; i++)
+                foreach (var hero in heroRecords)
+                { 
+                    string realHeroName = HeroesInfo.GetRealHeroNameFromAltName(hero.HeroName);
+
+                    if (HeroesGridLocation.ContainsKey(realHeroName))
                     {
-                        if (Heroes[i].HeroName1 == heroRecord.HeroName)
+                        int row = HeroesGridLocation[realHeroName].Item1;
+                        int column = HeroesGridLocation[realHeroName].Item2;
+
+                        if (Heroes[row].HeroName[column] == realHeroName)
                         {
-                            Heroes[i].IsXOut1 = !heroRecord.IsUsable;
-                            break;
+                            Heroes[row].IsXOut[column] = !hero.IsUsable;
+                            if (hero.IsUsable)
+                                heroesUsable++;
                         }
-                        else if (Heroes[i].HeroName2 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut2 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName3 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut3 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName4 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut4 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName5 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut5 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName6 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut6 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName7 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut7 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName8 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut8 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName9 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut9 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName10 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut10 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName10 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut10 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName11 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut11 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName12 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut12 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName13 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut13 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName14 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut14 = !heroRecord.IsUsable;
-                            break;
-                        }
-                        else if (Heroes[i].HeroName15 == heroRecord.HeroName)
-                        {
-                            Heroes[i].IsXOut15 = !heroRecord.IsUsable;
-                            break;
-                        }
+                        else
+                            ExceptionLog.Log(LogLevel.Info, $"{Heroes[row].HeroName[column]} != {realHeroName}");
                     }
+                    else
+                        ExceptionLog.Log(LogLevel.Info, $"HeroesGridLocation does not contain {realHeroName}");
                 }
 
-                PlayerInfo = $"{player.BattleTagName}  Last Seen: {player.LastSeen}";
+
+                PlayerInfo = $"{player.BattleTagName}  Last Seen: {player.LastSeen} [{heroesUsable} out of {HeroesInfo.TotalAmountOfHeroes()}]";
             }
         }
 
