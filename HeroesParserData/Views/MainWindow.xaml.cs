@@ -102,5 +102,10 @@ namespace HeroesParserData.Views
                 "If this application was underwent an update, then you may encounter errors throughout its use, otherwise you may continue using the application normally and ignore this error."), 
                 MessageDialogStyle.Affirmative);
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            //SettingsFlyout.IsOpen = true;
+        }
     }
 }

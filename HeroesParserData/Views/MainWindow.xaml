@@ -10,6 +10,7 @@
         xmlns:ViewsHeroes="clr-namespace:HeroesParserData.Views.Heroes"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
+        WindowButtonCommandsOverlayBehavior="Always"
         GlowBrush="{DynamicResource AccentColorBrush}"
         Title="{Binding AppVersion, StringFormat=Heroes Parser Data - {0}}"  MinHeight="576" MinWidth="1164" Height="720" Width="1640">
     <Control.DataContext>
@@ -22,12 +23,15 @@
     </Controls:MetroWindow.RightWindowCommands>
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Controls:Flyout Background="AliceBlue" x:Name="SettingsFlyout" Header="Settings" Position="Left" Width="440" Theme="Adapt" IsOpen="False">
+            <Controls:Flyout x:Name="SettingsFlyout" Header="Settings" Position="Right" Width="440" Theme="Accent" IsOpen="False">
             </Controls:Flyout>
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>-->
     <DockPanel>
-        <TabControl DockPanel.Dock="Top" TabStripPlacement="Top">
+        <TabControl DockPanel.Dock="Top" TabStripPlacement="Top" SelectedIndex="{Binding SelectedTab}">
+            <TabItem Header="Home">
+                <Views:HomeWindow />
+            </TabItem>
             <TabItem Header="Last Match">
                 <ViewsMatch:LastMatch />
             </TabItem>

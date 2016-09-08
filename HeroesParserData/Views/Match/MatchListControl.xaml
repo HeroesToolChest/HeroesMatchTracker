@@ -9,10 +9,10 @@
              d:DesignHeight="435.115" d:DesignWidth="546.932">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="52"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Margin="0,8,0,0"/>
+        <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0"/>
         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
                         EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" SelectedItem="{Binding SelectedReplay}"
                         ItemsSource="{Binding MatchList, IsAsync=True}">

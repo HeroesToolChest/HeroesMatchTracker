@@ -28,7 +28,7 @@
                     <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding MapNameGlowColor}" />
                 </Label.Effect>
             </Label>
-            <Expander Header="Talents" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="True">
+            <Expander Header="Talents" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="1" IsExpanded="False">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>

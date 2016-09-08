@@ -51,6 +51,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _isProcessSelected = value;
+                App.IsProcessingReplays = value;
                 RaisePropertyChangedEvent(nameof(IsProcessSelected));
             }
         }
@@ -131,7 +132,7 @@ namespace HeroesParserData.ViewModels
 
         public DateTime ReplaysLatestParsed
         {
-            get { return Settings.Default.ReplaysLatestParsed != DateTime.MinValue? Settings.Default.ReplaysLatestParsed :  Query.Replay.ReadLatestReplayByDateTime(); }
+            get { return Settings.Default.ReplaysLatestParsed != DateTime.MinValue? Settings.Default.ReplaysLatestParsed : Query.Replay.ReadLatestReplayByDateTime(); }
             set
             {
                 Settings.Default.ReplaysLatestParsed = value;

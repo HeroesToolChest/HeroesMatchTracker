@@ -20,6 +20,7 @@ namespace HeroesParserData
         public static HeroesInfo HeroesInfo { get; set; }
         public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
+        public static bool IsProcessingReplays { get; set; }
         public static bool MigrateFailed { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
