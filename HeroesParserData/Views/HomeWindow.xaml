@@ -35,7 +35,7 @@
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
             </Label.Effect>
         </Label>
-        <Label Content="LATEST UPLOADED REPLAY:" HorizontalAlignment="Left" Margin="253,197,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+        <Label Content="LATEST SAVED REPLAY:" HorizontalAlignment="Left" Margin="301,197,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
             </Label.Effect>
@@ -45,7 +45,7 @@
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
             </Label.Effect>
         </Label>
-        <Label Content="LAST UPLOADED REPLAY:" HorizontalAlignment="Left" Margin="276,244,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+        <Label Content="LAST SAVED REPLAY:" HorizontalAlignment="Left" Margin="324,244,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
             </Label.Effect>

@@ -20,10 +20,10 @@
     <Setting Name="ParsedDateTimeCheckBox" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ReplaysLatestParsed" Type="System.DateTime" Scope="User">
+    <Setting Name="ReplaysLatestSaved" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ReplaysLastParsed" Type="System.DateTime" Scope="User">
+    <Setting Name="ReplaysLastSaved" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

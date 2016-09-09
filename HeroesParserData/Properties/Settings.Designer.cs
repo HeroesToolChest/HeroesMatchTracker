@@ -97,23 +97,23 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime ReplaysLatestParsed {
+        public global::System.DateTime ReplaysLatestSaved {
             get {
-                return ((global::System.DateTime)(this["ReplaysLatestParsed"]));
+                return ((global::System.DateTime)(this["ReplaysLatestSaved"]));
             }
             set {
-                this["ReplaysLatestParsed"] = value;
+                this["ReplaysLatestSaved"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime ReplaysLastParsed {
+        public global::System.DateTime ReplaysLastSaved {
             get {
-                return ((global::System.DateTime)(this["ReplaysLastParsed"]));
+                return ((global::System.DateTime)(this["ReplaysLastSaved"]));
             }
             set {
-                this["ReplaysLastParsed"] = value;
+                this["ReplaysLastSaved"] = value;
             }
         }
     }
