@@ -261,17 +261,15 @@ namespace HeroesParserData.DataQueries
             var playersHeroes = player.SkinsDictionary;
             var heroesInfo = App.HeroesInfo;
 
+            ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
             foreach (var hero in playersHeroes)
             {
                 if (heroesInfo.HeroExists(hero.Key, false))
                 {
-                    ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero
-                    {
-                        PlayerId = playerId,
-                        HeroName = hero.Key,
-                        IsUsable = hero.Value,
-                        LastUpdated = Replay.Timestamp
-                    };
+                    playersHero.PlayerId = playerId;
+                    playersHero.HeroName = hero.Key;
+                    playersHero.IsUsable = hero.Value;
+                    playersHero.LastUpdated = Replay.Timestamp;
 
                     if (Query.HotsPlayerHero.HeroRecordExists(HeroesParserDataContext, playersHero))
                         Query.HotsPlayerHero.UpdateRecord(HeroesParserDataContext, playersHero);
