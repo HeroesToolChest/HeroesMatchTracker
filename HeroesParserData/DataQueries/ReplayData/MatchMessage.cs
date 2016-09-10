@@ -103,8 +103,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                     else
                         return new List<ReplayMatchMessage>();
                 }
-
-                if (Utilities.LikeOperatorInputCheck(operand, input))
+                else if (Utilities.LikeOperatorInputCheck(operand, input))
                     input = $"%{input}%";
                 else if (input == null)
                     input = string.Empty;

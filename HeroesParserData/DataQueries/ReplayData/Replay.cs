@@ -126,8 +126,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                     if (Enum.TryParse(input, true, out gameMode))
                         input = ((int)gameMode).ToString();
                 }
-
-                if (input.Length == 1 || (input.Length >= 2 && input[0] != '%' && input[input.Length - 1] != '%'))
+                else if (Utilities.LikeOperatorInputCheck(operand, input))
                     input = $"%{input}%";
                 else if (input == null)
                     input = string.Empty;

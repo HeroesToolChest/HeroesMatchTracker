@@ -88,8 +88,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                     else if (input.ToUpperInvariant() == "FALSE")
                         input = "0";
                 }
-
-                if (Utilities.LikeOperatorInputCheck(operand, input))
+                else if (Utilities.LikeOperatorInputCheck(operand, input))
                     input = $"%{input}%";
                 else if (input == null)
                     input = string.Empty;
