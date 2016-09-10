@@ -221,7 +221,7 @@
                                     </Image.ToolTip>
                                 </Image>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Width="{StaticResource PlayersHeroesImageWidth}" Height="{StaticResource PlayersHeroesImageHeight}"
-                                        Visibility="{Binding IsXOut[13], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
+                                        Visibility="{Binding IsXOut[12], Converter={StaticResource BooleanToVisibility}}" Source="{StaticResource XOut}" Opacity="0.5"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
