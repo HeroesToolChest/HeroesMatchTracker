@@ -4,6 +4,7 @@ using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models.MatchModels;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
@@ -26,6 +27,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
+        private Dictionary<string, string> NonHealingCharactersDictionary = new Dictionary<string, string>();
         private HeroesInfo HeroesInfo;
         private string _matchTitle;
         private string _queryStatus;
@@ -261,7 +263,7 @@ namespace HeroesParserData.ViewModels.Match
                         await RefreshExecute();
                         QueryStatus = "Match list queried successfully";
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         QueryStatus = "Match list queried failed";
                     }
@@ -281,7 +283,7 @@ namespace HeroesParserData.ViewModels.Match
                         await LoadReplayDetails(SelectedReplay);
                         QueryStatus = "Match details queried successfully";
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         QueryStatus = "Match details queried failed";
                     }
@@ -293,10 +295,11 @@ namespace HeroesParserData.ViewModels.Match
         /// Constructor
         /// </summary>
         protected MatchContext()
-            :base()
+            : base()
         {
             HasChat = true;
             HeroesInfo = App.HeroesInfo;
+            SetNonHealingCharacters();
         }
 
         protected abstract Task RefreshExecute();
@@ -326,8 +329,8 @@ namespace HeroesParserData.ViewModels.Match
                 Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
 
                 // get players info 
-                var playersList = replay.ReplayMatchPlayers.ToList();       
-                var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();                
+                var playersList = replay.ReplayMatchPlayers.ToList();
+                var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();
                 var playerScoresList = replay.ReplayMatchPlayerScoreResults.ToList();
                 var matchMessagesList = replay.ReplayMatchMessage.ToList();
 
@@ -382,7 +385,7 @@ namespace HeroesParserData.ViewModels.Match
                         matchScores.ExperienceContribution = playerScoresList[player.PlayerNumber].ExperienceContribution;
                         if (playerScoresList[player.PlayerNumber].DamageTaken != null)
                             matchScores.Role = playerScoresList[player.PlayerNumber].DamageTaken;
-                        else if (NonHealingCharacter(player.Character))
+                        else if (!NonHealingCharactersDictionary.ContainsKey(player.Character))
                             matchScores.Role = playerScoresList[player.PlayerNumber].Healing;
                     }
 
@@ -391,7 +394,7 @@ namespace HeroesParserData.ViewModels.Match
                         matchTalents.RowBackColor = Color.FromRgb(233, 252, 233);
                         matchScores.RowBackColor = Color.FromRgb(233, 252, 233);
                     }
-                    
+
                     if (player.Team == 0 || player.Team == 1)
                     {
                         if (player.Team == 0)
@@ -418,14 +421,14 @@ namespace HeroesParserData.ViewModels.Match
 
                             MatchScoreTeam2.Add(matchScores);
                         }
-                        
+
                     }
                     else if (player.Team == 4) // observers
                     {
                         HasObservers = true;
                         matchTalents.CharacterLevel = "Observer";
                         MatchObservers.Add(matchTalents);
-                    }             
+                    }
                 } // end foreach players
 
                 MatchTitle = $"{replay.MapName}  ---  {replay.GameMode} [{replay.ReplayLength}]";
@@ -469,7 +472,7 @@ namespace HeroesParserData.ViewModels.Match
 
                             MatchChatMessages.Add(matchChat);
                         }
-                    }                            
+                    }
                 }
 
                 HasChat = MatchChatMessages.Count < 1 ? false : true;
@@ -549,13 +552,23 @@ namespace HeroesParserData.ViewModels.Match
             BackgroundMapImage = null;
         }
 
-        private bool NonHealingCharacter(string character)
+        private void SetNonHealingCharacters()
         {
-            if (character == "Thrall" || character == "Li-Ming" || character == "Sylvanas" || character == "Abathur" || character == "Azmodan" || character == "The Lost Vikings" ||
-                character == "Gall" || character == "Kerrigan" || character == "Zagara")
-                return false;
-            else
-                return true;
+            NonHealingCharactersDictionary.Add("Abathur", "Specialist");
+            NonHealingCharactersDictionary.Add("Azmodan", "Specialist");
+            NonHealingCharactersDictionary.Add("Chromie", "Assasin");
+            NonHealingCharactersDictionary.Add("Gall", "Assasin");
+            NonHealingCharactersDictionary.Add("Gazlowe", "Specialist");
+            NonHealingCharactersDictionary.Add("Guldan", "Assasin");
+            NonHealingCharactersDictionary.Add("Kerrigan", "Assasin");
+            NonHealingCharactersDictionary.Add("Jaina", "Assasin");
+            NonHealingCharactersDictionary.Add("Li-Ming", "Assasin");
+            NonHealingCharactersDictionary.Add("Nova", "Assasin");
+            NonHealingCharactersDictionary.Add("Sylvanas", "Specialist");
+            NonHealingCharactersDictionary.Add("The Lost Vikings", "Specialist");
+            NonHealingCharactersDictionary.Add("Thrall", "Assasin");
+            NonHealingCharactersDictionary.Add("Xul", "Specialist");
+            NonHealingCharactersDictionary.Add("Zagara", "Specialist");
         }
 
         private void HighestSiegeDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestTeam1Index, ref int highestTeam1Count)
