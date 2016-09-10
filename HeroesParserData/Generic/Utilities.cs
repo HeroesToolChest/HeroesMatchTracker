@@ -2,7 +2,7 @@
 
 namespace HeroesParserData
 {
-    public class Utilities
+    public static class Utilities
     {
         public static string GetBattleTagName(string playerName, int playerTagNumber)
         {
@@ -25,6 +25,21 @@ namespace HeroesParserData
                 return true;
             else
                 return false;                  
+        }
+
+        public static Tuple<int?, int?> GetSeasonReplayBuild(string season)
+        {
+            // item 1: beginning
+            // item 2: end
+
+            if (season == "Season 2")
+                return new Tuple<int?, int?>(45949, 99999);
+            else if (season == "Season 1")
+                return new Tuple<int?, int?>(43571, 45949);
+            else if (season == "Preseason")
+                return new Tuple<int?, int?>(0, 43571);
+            else
+                return null;
         }
     }
 }

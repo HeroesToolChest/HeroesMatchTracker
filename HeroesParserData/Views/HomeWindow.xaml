@@ -12,7 +12,7 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:HomeWindowViewModel}" d:DesignWidth="1436" d:DesignHeight="528">
+             d:DataContext="{d:DesignInstance ViewModels:HomeWindowViewModel}" d:DesignWidth="1458" d:DesignHeight="818">
     <UserControl.DataContext>
         <ViewModels:HomeWindowViewModel />
     </UserControl.DataContext>
@@ -24,7 +24,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        
+
         <Label Content="REPLAYS IN DATABASE:" HorizontalAlignment="Left" Margin="300,150,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
@@ -51,6 +51,134 @@
             </Label.Effect>
         </Label>
         <Label Content="{Binding LastUploadedReplay}" HorizontalAlignment="Left" Margin="555,244,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+
+        <Label Content="TOTAL GAMES" HorizontalAlignment="Left" Margin="394,322,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="______________________________" HorizontalAlignment="Left" Margin="394,322,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="QUICK MATCH:" HorizontalAlignment="Left" Margin="383,369,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding TotalQuickMatchGames}" HorizontalAlignment="Left" Margin="553,369,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="UNRANKED DRAFT:" HorizontalAlignment="Left" Margin="335,416,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding TotalUnrankedDraftGames}" HorizontalAlignment="Left" Margin="553,416,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="HERO LEAGUE:" HorizontalAlignment="Left" Margin="386,463,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding TotalHeroLeagueGames}" HorizontalAlignment="Left" Margin="553,463,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="TEAM LEAGUE:" HorizontalAlignment="Left" Margin="386,510,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding TotalTeamLeagueGames}" HorizontalAlignment="Left" Margin="553,510,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="CUSTOM:" HorizontalAlignment="Left" Margin="443,557,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding TotalCustomGames}" HorizontalAlignment="Left" Margin="553,557,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+
+        <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" HorizontalAlignment="Left" Margin="1102,322,0,0" VerticalAlignment="Top" Width="205" Height="41" 
+                  FontSize="24" Background="Transparent" Foreground="White">
+            <ComboBox.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>
+            </ComboBox.Effect>
+        </ComboBox>
+        <Label Content="SEASON GAMES" HorizontalAlignment="Left" Margin="894,322,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="___________________________________" HorizontalAlignment="Left" Margin="894,321,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="QUICK MATCH:" HorizontalAlignment="Left" Margin="908,369,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding SeasonQuickMatchGames}" HorizontalAlignment="Left" Margin="1078,369,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="UNRANKED DRAFT:" HorizontalAlignment="Left" Margin="860,416,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding SeasonUnrankedDraftGames}" HorizontalAlignment="Left" Margin="1078,416,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="HERO LEAGUE:" HorizontalAlignment="Left" Margin="911,463,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding SeasonHeroLeagueGames}" HorizontalAlignment="Left" Margin="1078,463,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="TEAM LEAGUE:" HorizontalAlignment="Left" Margin="911,510,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding SeasonTeamLeagueGames}" HorizontalAlignment="Left" Margin="1078,510,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="CUSTOM:" HorizontalAlignment="Left" Margin="968,557,0,0" VerticalAlignment="Top" Grid.Row="0" FontSize="24" Foreground="WhiteSmoke">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
+            </Label.Effect>
+        </Label>
+        <Label Content="{Binding SeasonCustomGames}" HorizontalAlignment="Left" Margin="1078,557,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" RenderTransformOrigin="0.435,0.5">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />
             </Label.Effect>

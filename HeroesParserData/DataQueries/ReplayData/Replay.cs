@@ -221,6 +221,26 @@ namespace HeroesParserData.DataQueries.ReplayData
 
                 return replay;
             }
+
+            public static int ReadTotalGames(GameMode gameMode)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.Replays.Where(x => x.GameMode == gameMode).Count();
+                }
+            }
+
+            public static int ReadTotalGamesForSeason(GameMode gameMode, string season)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    var replayBuild = Utilities.GetSeasonReplayBuild(season);
+                    if (replayBuild != null)
+                        return db.Replays.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2).Count();
+                    else
+                        return -1;
+                }
+            }
         }
     }
 }

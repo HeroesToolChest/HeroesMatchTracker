@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using Heroes.ReplayParser;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Messages;
+using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,19 @@ namespace HeroesParserData.ViewModels
         private long _replaysInDatabase;
         private DateTime _latestUploadedReplay;
         private DateTime _lastUploadedReplay;
+        private int _totalQuickMatchGames;
+        private int _totalUnrankedDraftGames;
+        private int _totalHeroLeagueGames;
+        private int _totalTeamLeagueGames;
+        private int _totalCustomGames;
+        private int _seasonQuickMatchGames;
+        private int _seasonUnrankedDraftGames;
+        private int _seasonHeroLeagueGames;
+        private int _seasonTeamLeagueGames;
+        private int _seasonCustomGames;
+        private string _selectedSeason;
         private bool IsRefreshDataOn;
+        private List<string> _seasonList = new List<string>();
         private List<Tuple<BitmapImage, Color>> ListOfBackgroundImages;
 
         #region public properties
@@ -72,6 +86,127 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        public int TotalQuickMatchGames
+        {
+            get { return _totalQuickMatchGames; }
+            set
+            {
+                _totalQuickMatchGames = value;
+                RaisePropertyChangedEvent(nameof(TotalQuickMatchGames));
+            }
+        }
+
+        public int TotalUnrankedDraftGames
+        {
+            get { return _totalUnrankedDraftGames; }
+            set
+            {
+                _totalUnrankedDraftGames = value;
+                RaisePropertyChangedEvent(nameof(TotalUnrankedDraftGames));
+            }
+        }
+
+        public int TotalHeroLeagueGames
+        {
+            get { return _totalHeroLeagueGames; }
+            set
+            {
+                _totalHeroLeagueGames = value;
+                RaisePropertyChangedEvent(nameof(TotalHeroLeagueGames));
+            }
+        }
+
+        public int TotalTeamLeagueGames
+        {
+            get { return _totalTeamLeagueGames; }
+            set
+            {
+                _totalTeamLeagueGames = value;
+                RaisePropertyChangedEvent(nameof(TotalTeamLeagueGames));
+            }
+        }
+
+        public int TotalCustomGames
+        {
+            get { return _totalCustomGames; }
+            set
+            {
+                _totalCustomGames = value;
+                RaisePropertyChangedEvent(nameof(TotalCustomGames));
+            }
+        }
+
+        public int SeasonQuickMatchGames
+        {
+            get { return _seasonQuickMatchGames; }
+            set
+            {
+                _seasonQuickMatchGames = value;
+                RaisePropertyChangedEvent(nameof(SeasonQuickMatchGames));
+            }
+        }
+
+        public int SeasonUnrankedDraftGames
+        {
+            get { return _seasonUnrankedDraftGames; }
+            set
+            {
+                _seasonUnrankedDraftGames = value;
+                RaisePropertyChangedEvent(nameof(SeasonUnrankedDraftGames));
+            }
+        }
+
+        public int SeasonHeroLeagueGames
+        {
+            get { return _seasonHeroLeagueGames; }
+            set
+            {
+                _seasonHeroLeagueGames = value;
+                RaisePropertyChangedEvent(nameof(SeasonHeroLeagueGames));
+            }
+        }
+
+        public int SeasonTeamLeagueGames
+        {
+            get { return _seasonTeamLeagueGames; }
+            set
+            {
+                _seasonTeamLeagueGames = value;
+                RaisePropertyChangedEvent(nameof(SeasonTeamLeagueGames));
+            }
+        }
+
+        public int SeasonCustomGames
+        {
+            get { return _seasonCustomGames; }
+            set
+            {
+                _seasonCustomGames = value;
+                RaisePropertyChangedEvent(nameof(SeasonCustomGames));
+            }
+        }
+
+        public string SelectedSeason
+        {
+            get { return _selectedSeason; }
+            set
+            {
+                _selectedSeason = value;
+                SetSeasonStats();
+                RaisePropertyChangedEvent(nameof(SelectedSeason));
+            }
+        }
+
+        public List<string> SeasonList
+        {
+            get { return _seasonList;}
+            set
+            {
+                _seasonList = value;
+                RaisePropertyChangedEvent(nameof(SeasonList));
+            }
+        }
+
         #endregion public properties
 
         public HomeWindowViewModel()
@@ -80,7 +215,8 @@ namespace HeroesParserData.ViewModels
             Messenger.Default.Register<HomeWindowMessage>(this, (action) => ReceiveMessage(action));
             SetBackgroundImages();
             SetRandomBackgroundImage();
-            RefreshData();
+            SetSeasonList();
+            SetData();
         }
 
         private void SetBackgroundImages()
@@ -118,11 +254,35 @@ namespace HeroesParserData.ViewModels
             LabelGlowColor = ListOfBackgroundImages[num].Item2;
         }
 
-        private void RefreshData()
+        private void SetSeasonList()
+        {
+            SelectedSeason = Settings.Default.SelectedSeason;
+            SeasonList.Add("Preseason");
+            SeasonList.Add("Season 1");
+            SeasonList.Add("Season 2");
+        }
+
+        private void SetData()
         {
             ReplaysInDatabase = Query.Replay.GetTotalReplayCount();
             LatestUploadedReplay = Query.Replay.ReadLatestReplayByDateTime();
             LastUploadedReplay = Query.Replay.ReadLastReplayByDateTime();
+            TotalQuickMatchGames = Query.Replay.ReadTotalGames(GameMode.QuickMatch);
+            TotalUnrankedDraftGames = Query.Replay.ReadTotalGames(GameMode.UnrankedDraft);
+            TotalHeroLeagueGames = Query.Replay.ReadTotalGames(GameMode.HeroLeague);
+            TotalTeamLeagueGames = Query.Replay.ReadTotalGames(GameMode.TeamLeague);
+            TotalCustomGames = Query.Replay.ReadTotalGames(GameMode.Custom);
+
+            SetSeasonStats();
+        }
+
+        private void SetSeasonStats()
+        {
+            SeasonQuickMatchGames = Query.Replay.ReadTotalGamesForSeason(GameMode.QuickMatch, SelectedSeason);
+            SeasonUnrankedDraftGames = Query.Replay.ReadTotalGamesForSeason(GameMode.UnrankedDraft, SelectedSeason);
+            SeasonHeroLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.HeroLeague, SelectedSeason);
+            SeasonTeamLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.TeamLeague, SelectedSeason);
+            SeasonCustomGames = Query.Replay.ReadTotalGamesForSeason(GameMode.Custom, SelectedSeason);
         }
 
         private void ReceiveMessage(HomeWindowMessage action)
@@ -135,11 +295,11 @@ namespace HeroesParserData.ViewModels
 
                     Task.Run(async () =>
                     {
-                        RefreshData();
+                        SetData();
                         while (App.IsProcessingReplays)
                         {
                             await Task.Delay(3000);
-                            RefreshData();
+                            SetData();
                         }
                         IsRefreshDataOn = false;
                     });

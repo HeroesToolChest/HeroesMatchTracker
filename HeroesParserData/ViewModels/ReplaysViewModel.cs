@@ -158,33 +158,6 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public int MaxProcessorCount
-        {
-            get { return Environment.ProcessorCount; }
-        }
-
-        public int SelectedProcessCount
-        {
-            get
-            {
-                if (_selectedProcessCount < 3)
-                    return 3;
-                else
-                    return _selectedProcessCount;
-            }
-            set
-            {
-                if (value >= MaxProcessorCount)
-                    _selectedProcessCount = MaxProcessorCount - 1;
-                else if (value < Settings.Default.MinProcessors)
-                    _selectedProcessCount = MaxProcessorCount;
-                else
-                    _selectedProcessCount = value;
-
-                RaisePropertyChangedEvent(nameof(SelectedProcessCount));
-            }
-        }
-
         public bool LatestParsedChecked
         {
             get { return Settings.Default.ParsedDateTimeCheckBox; }

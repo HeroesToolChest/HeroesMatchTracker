@@ -73,18 +73,6 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public int MinProcessors {
-            get {
-                return ((int)(this["MinProcessors"]));
-            }
-            set {
-                this["MinProcessors"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool ParsedDateTimeCheckBox {
             get {
@@ -114,6 +102,18 @@ namespace HeroesParserData.Properties {
             }
             set {
                 this["ReplaysLastSaved"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Season 1")]
+        public string SelectedSeason {
+            get {
+                return ((string)(this["SelectedSeason"]));
+            }
+            set {
+                this["SelectedSeason"] = value;
             }
         }
     }
