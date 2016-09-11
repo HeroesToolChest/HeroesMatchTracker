@@ -9,7 +9,6 @@
   <Level4>
     <MedicBioshield name="Bioshield">storm_ui_icon_medic_healingbeam.dds</MedicBioshield>
     <MedicAutomatedBlock name="Automated Block">storm_ui_icon_medic_advancedblock.dds</MedicAutomatedBlock>
-    <MedicUpgradedBallistics name="Upgraded Ballistics">storm_ui_icon_medic_displacementgrenade.dds</MedicUpgradedBallistics>
     <MedicInfusedGrenade name="Infused Grenade">storm_ui_icon_medic_displacementgrenade_b.dds</MedicInfusedGrenade>
   </Level4>
   <Level7>
@@ -41,6 +40,7 @@
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
   <Old>
-    <MedicAdvancedBlock name="Advanced Block">storm_ui_icon_medic_advancedblock.dds</MedicAdvancedBlock>   
+    <MedicAdvancedBlock name="Advanced Block">storm_ui_icon_medic_advancedblock.dds</MedicAdvancedBlock>
+    <MedicUpgradedBallistics name="Upgraded Ballistics">storm_ui_icon_medic_displacementgrenade.dds</MedicUpgradedBallistics>
   </Old>
 </LtMorales>

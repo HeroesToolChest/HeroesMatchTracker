@@ -3,13 +3,13 @@
   <Level1>
     <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryGiveMeMoreAdrenalineRush>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
-    <RaynorRaidersRecruitment name="Raiders' &quot;Recruitment&quot;">storm_ui_icon_raynor_raidersrecruitment.dds</RaynorRaidersRecruitment>
     <GenericTalentScoutingDrone name="Scouting Drone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
   </Level1>
   <Level4>
     <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
     <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
     <RaynorInspireConfidentAim name="Confident Aim">storm_ui_icon_raynor_penetratinground.dds</RaynorInspireConfidentAim>
+    <RaynorRelentlessLeader name="Relentless Leader">storm_ui_icon_raynor_relentlessleader.dds</RaynorRelentlessLeader>
   </Level4>
   <Level7>
     <RaynorPenetratingRoundHamstringShot name="Hamstring Shot">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundHamstringShot>
@@ -25,7 +25,6 @@
     <GenericTalentGiantKiller name="Giant Killer">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
     <RaynorPenetratingRoundDoubleBarreled name="Double-Barreled">storm_ui_icon_raynor_penetratinground.dds</RaynorPenetratingRoundDoubleBarreled>
     <RaynorInspireSteelResolve name="Steel Resolve">storm_ui_icon_raynor_inspire.dds</RaynorInspireSteelResolve>
-    <RaynorRelentlessLeader name="Relentless Leader">storm_ui_icon_raynor_relentlessleader.dds</RaynorRelentlessLeader>
   </Level13>
   <Level16>
     <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
@@ -43,5 +42,6 @@
     <GenericTalentVampiricAssault name="Vampiric Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVampiricAssault>
     <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
     <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
+    <RaynorRaidersRecruitment name="Raynor's Recruitment">storm_ui_icon_raynor_raidersrecruitment.dds</RaynorRaidersRecruitment>
   </Old>
 </Raynor>

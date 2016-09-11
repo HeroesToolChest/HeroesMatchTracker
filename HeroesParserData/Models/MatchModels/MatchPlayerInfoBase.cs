@@ -6,10 +6,12 @@ namespace HeroesParserData.Models.MatchModels
     public class MatchPlayerInfoBase
     {
         public BitmapImage LeaderboardPortrait { get; set; }
+        public BitmapImage MvpAward { get; set; }
         public string PlayerName { get; set; }
         public string PlayerTag { get; set; }
         public string CharacterName { get; set; }
         public string CharacterLevel { get; set; }
+        public string MvpAwardName { get; set; }
         public Color RowBackColor { get; set; }
         public Color PortraitBackColor { get; set; }
         public int PlayerNumber { get; set; }

@@ -102,6 +102,9 @@
                     <TabItem Name="RawMatchMessage" Header="Match Messages">
                         <ViewsData:RawMatchMessageControl></ViewsData:RawMatchMessageControl>
                     </TabItem>
+                    <TabItem Name="RawMatchAward" Header="Match Awards">
+                        <ViewsData:RawMatchAwardControl></ViewsData:RawMatchAwardControl>
+                    </TabItem>
                 </TabControl>
             </TabItem>
         </TabControl>

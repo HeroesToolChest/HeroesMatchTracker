@@ -193,11 +193,13 @@
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
+    <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="Messages\HomeWindowMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
+    <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
@@ -208,6 +210,7 @@
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
+    <Compile Include="ViewModels\Data\RawMatchAwardViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchMessageViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerScoreResultViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchPlayerTalentViewModel.cs" />
@@ -241,6 +244,9 @@
     </Compile>
     <Compile Include="Views\Data\RawAllHotsPlayerHeroControl.xaml.cs">
       <DependentUpon>RawAllHotsPlayerHeroControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RawMatchAwardControl.xaml.cs">
+      <DependentUpon>RawMatchAwardControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\RawMatchMessageControl.xaml.cs">
       <DependentUpon>RawMatchMessageControl.xaml</DependentUpon>
@@ -362,6 +368,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Data\RawAllHotsPlayerHeroControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Data\RawMatchAwardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

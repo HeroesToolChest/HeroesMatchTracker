@@ -4,7 +4,6 @@
     <WitchDoctorCombatStyleBloodRitual name="Blood Ritual">storm_ui_icon_Nazeebo_VoodooRitual.dds</WitchDoctorCombatStyleBloodRitual>
     <WitchDoctorCombatStyleDeathRitual name="Death Ritual">storm_ui_icon_nazeebo_voodooritual_a.dds</WitchDoctorCombatStyleDeathRitual>
     <GenericTalentDemolitionist name="Demolitionist">storm_ui_icon_talent_autoattack_building.dds</GenericTalentDemolitionist>
-    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
   </Level1>
   <Level4>
     <WitchDoctorMasterySpiderCluster name="Spider Cluster">storm_ui_icon_Nazeebo_CorpseSpider.dds</WitchDoctorMasterySpiderCluster>
@@ -40,5 +39,7 @@
     <GenericTalentFuryoftheStorm name="Fury of the Storm">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old></Old>
+  <Old>
+    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
+  </Old>
 </Nazeebo>

@@ -4,7 +4,7 @@
     <AzmodanMasteryTasteForBlood name="Taste for Blood">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryTasteForBlood>
     <AzmodanMasterySiegingWrath name="Sieging Wrath">storm_ui_icon_azmodan_globeofannihilation_a.dds</AzmodanMasterySiegingWrath>
     <AzmodanMasteryMasterOfDestruction name="Master of Destruction">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryMasterOfDestruction>
-    <AzmodanBribe name="Bribe">storm_ui_icon_talent_bribe.dds</AzmodanBribe>
+
   </Level1>
   <Level4>
     <AzmodanMasteryGluttony name="Gluttony">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryGluttony>
@@ -26,7 +26,6 @@
     <AzmodanMasteryHellforgedArmor name="Hellforged Armor">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanMasteryHellforgedArmor>
     <AzmodanMasteryHedonism name="Hedonism">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryHedonism>
     <AzmodanMasteryInfusedPower name="Infused Power">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryInfusedPower>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
   </Level13>
   <Level16>
     <AzmodanMasteryBattleborn name="Battleborn">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryBattleborn>
@@ -42,5 +41,7 @@
   </Level20>
   <Old>
     <AzmodanBloodForBlood name="Blood for Blood">storm_ui_icon_talent_bloodforblood.dds</AzmodanBloodForBlood>
+    <AzmodanBribe name="Bribe">storm_ui_icon_talent_bribe.dds</AzmodanBribe>
+    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
   </Old>
 </Azmodan>

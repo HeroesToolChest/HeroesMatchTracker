@@ -15,7 +15,6 @@
   <Level7>
     <L90ETCMasteryFaceMeltLoudSpeakers name="Loud Speakers">storm_ui_icon_ETC_FaceMelt.dds</L90ETCMasteryFaceMeltLoudSpeakers>
     <ETCMasteryGuitarHero name="Guitar Hero">storm_ui_icon_ETC_GuitarSolo.dds</ETCMasteryGuitarHero>
-    <ETCMasteryJustKeepRocking name="Just Keep Rockin'">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryJustKeepRocking>
     <GenericTalentFollowThrough name="Follow Through">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
   </Level7>
   <Level10>
@@ -41,5 +40,7 @@
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old></Old>
+  <Old>
+    <ETCMasteryJustKeepRocking name="Just Keep Rockin'">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryJustKeepRocking>
+  </Old>
 </ETC>

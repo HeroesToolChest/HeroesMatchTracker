@@ -24,7 +24,7 @@
   <Level13>
     <MonkQuicksilverRadiantDash name="Quicksilver">storm_ui_icon_monk_dash.dds</MonkQuicksilverRadiantDash>
     <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+    <MonkSixthSense name="Sixth Sense">storm_ui_icon_Talent_Relentless.dds</MonkSixthSense>
     <MonkFistsofFuryDeadlyReach name="Fists of Fury">storm_ui_icon_monk_deadlyreach.dds</MonkFistsofFuryDeadlyReach>
   </Level13>
   <Level16>
@@ -39,5 +39,7 @@
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
     <MonkEpiphany name="Epiphany">storm_ui_icon_kharazim_epiphany.dds</MonkEpiphany>
   </Level20>
-  <Old></Old>
+  <Old>
+    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+  </Old>
 </Kharazim>

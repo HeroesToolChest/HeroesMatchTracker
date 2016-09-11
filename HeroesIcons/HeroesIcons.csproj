@@ -174,6 +174,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Heroes\Alarak.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Heroes\Anubarak.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -333,12 +336,91 @@
     <Content Include="Heroes\Zagara.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Heroes\Zarya.xml" />
     <Content Include="Heroes\Zeratul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_bulwark_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_bulwark_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_cannoneer_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_cannoneer_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_dabomb_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_dabomb_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_experienced_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_experienced_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_gardenterror_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_gardenterror_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_guardianslayer_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_guardianslayer_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_headhunter_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_headhunter_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_immortalslayer_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_immortalslayer_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_jeweler_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_jeweler_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_mainhealer_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_mainhealer_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_masterofthecurse_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_masterofthecurse_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_moneybags_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_moneybags_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_mvp_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_mvp_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_painbringer_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_painbringer_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_shriner_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_shriner_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_siegemaster_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_siegemaster_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skull_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skull_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_stunner_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_stunner_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_red.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_zergcrusher_blue.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_zergcrusher_red.dds" />
+    <Resource Include="Icons\Talents\Stitches\storm_ui_icon_talent_relentless.dds" />
+    <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_talent_bribe.dds" />
+    <Resource Include="Icons\Talents\Valla\storm_ui_icon_talent_autoattack_range.dds" />
+    <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_a.dds" />
+    <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_b.dds" />
+    <Resource Include="Icons\Talents\Butcher\storm_ui_icon_talent_autoattack_speed.dds" />
+    <Resource Include="Icons\Talents\Butcher\storm_ui_icon_talent_autoattack_aoe.dds" />
+    <Resource Include="Icons\Talents\Falstad\storm_ui_icon_talent_bribe.dds" />
+    <Resource Include="Icons\Talents\Nova\storm_ui_icon_talent_bribe.dds" />
+    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_zagara_banelingbarrage_a.dds" />
+    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_zagara_hunterkiller_a.dds" />
+    <Resource Include="Icons\Talents\Muradin\storm_ui_icon_muradin_thunderclap_b.dds" />
+    <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_alarak.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_alarak.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_energy.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_expulsionzone.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_gravitonsurge.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_painistemporary.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_particlegrenade.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_particlegrenade_a.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_personalbarrier.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_personalbarrier_a.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_personalbarrier_b.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_pumped.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_shieldally.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_shieldally_a.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_counterstrike.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_discordstrike.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_discordstrike_a.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_discordstrike_b.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_hastybargain.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_lasttrick.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_lightningsurge.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_lightningsurge_a.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_recklesscharge.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_sadism.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis.dds" />
+    <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis_a.dds" />
     <Resource Include="Icons\Talents\Auriel\storm_ui_temp_icon_powerwordshield.dds" />
     <Resource Include="Icons\Talents\Kaelthas\storm_ui_icon_talent_arcanepower.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_autoattack_range.dds" />

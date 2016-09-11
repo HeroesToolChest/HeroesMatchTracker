@@ -4,7 +4,7 @@
     <FalstadGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadGatheringStorm>
     <FalstadHammerangGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadHammerangGatheringStorm>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
-    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
+    <FalstadWingman name="Wingman">storm_ui_icon_talent_bribe.dds</FalstadWingman>
   </Level1>
   <Level4>
     <FalstadMasteryLightningRodStaticShield name="Static Shield">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodStaticShield>
@@ -41,5 +41,6 @@
     <FalstadMasteryBarrelRollFreeRoll name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeRoll>
     <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
     <BattleMomentumFalstad name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumFalstad>
+    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
   </Old>
 </Falstad>

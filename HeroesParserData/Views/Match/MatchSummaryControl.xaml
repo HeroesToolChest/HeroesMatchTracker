@@ -56,6 +56,17 @@
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="120"/>
                                 <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
+                                <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridCenterHeader}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding MvpAward}">
+                                                <Image.ToolTip>
+                                                    <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>

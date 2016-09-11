@@ -3,13 +3,13 @@
   <Level1>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <MuradinMasteryStormhammerPerfectStorm name="Perfect Storm">storm_ui_icon_Muradin_Stormbolt_A.dds</MuradinMasteryStormhammerPerfectStorm>
-    <MuradinMasteryThunderclapReverberation name="Reverberation">storm_ui_icon_Muradin_Thunderclap.dds</MuradinMasteryThunderclapReverberation>
+    <MuradinCombatStyleThirdWind name="Third Wind">storm_ui_icon_Muradin_SecondWind.dds</MuradinCombatStyleThirdWind>
   </Level1>
   <Level4>
-    <MuradinCombatStyleThirdWind name="Third Wind">storm_ui_icon_Muradin_SecondWind.dds</MuradinCombatStyleThirdWind>
     <MuradinMasteryStormhammerSledgehammer name="Sledgehammer">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammerSledgehammer>
-    <MuradinMasteryThunderclapCrowdControl name="Crowd Control">storm_ui_icon_Muradin_Thunderclap.dds</MuradinMasteryThunderclapCrowdControl>
-    <MuradinMasteryThunderburn name="Thunder Burn">storm_ui_icon_Muradin_Thunderclap_A.dds</MuradinMasteryThunderburn>
+    <MuradinMasteryThunderclapReverberation name="Reverberation">storm_ui_icon_Muradin_Thunderclap.dds</MuradinMasteryThunderclapReverberation>
+    <MuradinMasteryThunderclapCrowdControl name="Crowd Control">storm_ui_icon_muradin_thunderclap_a.dds</MuradinMasteryThunderclapCrowdControl>
+    <MuradinMasteryThunderburn name="Thunder Burn">storm_ui_icon_muradin_thunderclap_b.dds</MuradinMasteryThunderburn>
   </Level4>
   <Level7>
     <MuradinMasteryStormhammer name="Piercing Bolt">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammer>

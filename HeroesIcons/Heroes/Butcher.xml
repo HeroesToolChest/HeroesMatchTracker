@@ -4,29 +4,26 @@
     <ButcherMasteryHamstringInvigoration name="Invigoration">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringInvigoration>
     <GenericTalentBlock name="Block">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <ButcherMasteryHamstringChopMeat name="Chop Meat">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringChopMeat>
-    <ButcherMasteryFreshMeatVictuals name="Victuals">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatVictuals>
+    <ButcherMasteryFreshMeatAbattoir name="Abattoir">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatAbattoir>
   </Level1>
   <Level4>
     <ButcherMasteryHamstringFlailAxe name="Flail Axe">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringFlailAxe>
     <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
     <ButcherMasteryHamstringCheapShot name="Cheap Shot">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringCheapShot>
-    <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
   </Level4>
   <Level7>
-    <ButcherMasteryHamstringBrutalStrike name="Brutal Strike">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringBrutalStrike>
     <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandInsatiableBlade>
-    <ButcherMasteryFreshMeatAbattoir name="Abattoir">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatAbattoir>
-    <ButcherMasteryRuthlessOnslaughtFinalAssault name="Final Assault">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtFinalAssault>
+    <ButcherMasteryFreshMeatVictuals name="Victuals">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatVictuals>
+    <ButcherMeatShield name="Meat Shield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
   </Level7>
   <Level10>
     <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
     <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
   </Level10>
   <Level13>
-    <GenericTalentBurningRage name="Burning Rage">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+    <ButcherCleaver name="Cleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>
     <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtSavageCharge>
-    <ButcherMasteryButchersBrandCraveFlesh name="Crave Flesh">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandCraveFlesh>
-    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <ButcherMasteryHamstringBrutalStrike name="Brutal Strike">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringBrutalStrike>
   </Level13>
   <Level16>
     <ButcherMasteryHamstringCripplingSlam name="Crippling Slam">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringCripplingSlam>
@@ -39,5 +36,11 @@
     <GenericTalentNexusBlades name="Nexus Blades">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old></Old>
+  <Old>
+    <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
+    <GenericTalentBurningRage name="Burning Rage">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+    <ButcherMasteryRuthlessOnslaughtFinalAssault name="Final Assault">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtFinalAssault>
+    <ButcherMasteryButchersBrandCraveFlesh name="Crave Flesh">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandCraveFlesh>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+  </Old>
 </Butcher>

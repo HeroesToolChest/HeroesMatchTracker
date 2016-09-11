@@ -29,7 +29,6 @@
   </Level13>
   <Level16>
     <GreymaneEagerWolf name="Eager Wolf">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneEagerWolf>
-    <GreymaneWorgenFormRelentlessPredator name="Relentless Predator">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneWorgenFormRelentlessPredator>
     <HeroGenericExecutionerPassive name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
     <GreymaneWorgenFormAlphaKiller name="Alpha Killer">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneWorgenFormAlphaKiller>
   </Level16>
@@ -41,5 +40,6 @@
   </Level20>
   <Old>
     <GreymaneGilneanCocktailConcentratedBlast name="Concentrated Blast">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailConcentratedBlast>
+    <GreymaneWorgenFormRelentlessPredator name="Relentless Predator">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneWorgenFormRelentlessPredator>
   </Old>
 </Greymane>

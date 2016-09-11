@@ -10,5 +10,11 @@ namespace HeroesIcons
         {
 
         }
+
+        public IconException(string message)
+            : base(message)
+        {
+
+        }
     }
 }

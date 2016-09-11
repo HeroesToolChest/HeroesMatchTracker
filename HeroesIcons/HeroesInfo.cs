@@ -76,7 +76,8 @@ namespace HeroesIcons
             }
             catch (Exception ex)
             {
-                throw new IconException($"Uri: {talent.Item2} NameOfHeroTalent: {nameOfHeroTalent}", ex);
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Talent icon: {nameOfHeroTalent}"));
+                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
         }
 
@@ -107,7 +108,8 @@ namespace HeroesIcons
             }
             catch (Exception ex)
             {
-                throw new IconException($"Uri: {uri} AttributeId: {realHeroName}", ex);
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {realHeroName}"));
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
         }
 
@@ -136,9 +138,10 @@ namespace HeroesIcons
             {
                 return new BitmapImage(uri);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new IconException($"Uri: {uri} RealHeroName: {realHeroName}", ex);
+                Task.Run(() => Log("_ImageMissingLog.txt", $"Leader hero portrait: {realHeroName}"));
+                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
         }
 
@@ -260,6 +263,9 @@ namespace HeroesIcons
 
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
+            if (Path.GetExtension(fileName) != ".dds")
+                throw new IconException($"Image file does not have .dds extension [{fileName}]");
+
             if (!isGenericTalent)
                 return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/{hero}/{fileName}", UriKind.Absolute);
             else

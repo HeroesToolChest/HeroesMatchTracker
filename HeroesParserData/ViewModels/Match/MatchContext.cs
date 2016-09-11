@@ -333,6 +333,7 @@ namespace HeroesParserData.ViewModels.Match
                 var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();
                 var playerScoresList = replay.ReplayMatchPlayerScoreResults.ToList();
                 var matchMessagesList = replay.ReplayMatchMessage.ToList();
+                var matchAwardList = replay.ReplayMatchAward.ToList();
 
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
@@ -341,6 +342,7 @@ namespace HeroesParserData.ViewModels.Match
 
                 foreach (var player in playersList)
                 {
+                    // fill in common infomation for player
                     MatchPlayerInfoBase matchPlayerInfoBase = new MatchPlayerInfoBase();
 
                     var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
@@ -350,6 +352,8 @@ namespace HeroesParserData.ViewModels.Match
                     matchPlayerInfoBase.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
                     matchPlayerInfoBase.PlayerNumber = player.PlayerNumber;
                     matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
+                    matchPlayerInfoBase.MvpAward = null;
+                    matchPlayerInfoBase.MvpAwardName = null;
 
                     if (!player.IsAutoSelect)
                         matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();
@@ -407,7 +411,7 @@ namespace HeroesParserData.ViewModels.Match
                             HighestHeroDamage(MatchScoreTeam1, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
                             HighestExpContribution(MatchScoreTeam1, matchScores, ref highestExpTeam1Index, ref highestExpTeam1Count);
 
-                            MatchScoreTeam1.Add(matchScores);
+                            MatchScoreTeam1.Add(matchScores);                          
                         }
                         else
                         {
@@ -421,7 +425,6 @@ namespace HeroesParserData.ViewModels.Match
 
                             MatchScoreTeam2.Add(matchScores);
                         }
-
                     }
                     else if (player.Team == 4) // observers
                     {
@@ -657,8 +660,24 @@ namespace HeroesParserData.ViewModels.Match
                 case "Towers of Doom":
                     glowColor = Colors.Orange;
                     return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_towersofdoom.dds"), UriKind.Absolute));
+                case "Braxis Holdout":
+                    glowColor = Colors.Blue;
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_braxisholdout.dds"), UriKind.Absolute));
+                case "Warhead Junction":
+                    glowColor = Colors.Yellow;
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_warhead.dds"), UriKind.Absolute));
                 default:
                     glowColor = Colors.White;
+                    return null;
+            }
+        }
+
+        private BitmapImage SetPlayerMVPAward(string award)
+        {
+            string uri = "pack://application:,,,/HeroesParserData;component/Resources/Images/";
+            switch (award)
+            {
+                default:
                     return null;
             }
         }

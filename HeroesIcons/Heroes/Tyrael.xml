@@ -3,7 +3,7 @@
   <Level1>
     <TyraelMasteryPurgeEvil name="Purge Evil">storm_ui_icon_tyrael_smite.dds</TyraelMasteryPurgeEvil>
     <TyraelMasteryPassiveProtectioninDeath name="Protection in Death">storm_ui_icon_tyrael_archangelswrath.dds</TyraelMasteryPassiveProtectioninDeath>
-    <TyraelMasteryEvenInDeath name="Even In Death">storm_ui_icon_tyrael_archangelswrath.dds</TyraelMasteryEvenInDeath>
+    <TyraelMasteryEvenInDeath name="Even In Death">storm_ui_icon_tyrael_archangelswrath_var1.dds</TyraelMasteryEvenInDeath>
     <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
   </Level1>
   <Level4>

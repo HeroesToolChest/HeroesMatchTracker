@@ -4,7 +4,6 @@
     <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
     <CrusaderMasteryIronSkinReinforce name="Reinforce">storm_ui_icon_talent_block.dds</CrusaderMasteryIronSkinReinforce>
     <CrusaderMasteryPunishRighteousSmash name="Righteous Smash">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishRighteousSmash>
-    <CrusaderMasteryCondemnKnightTakesPawn name="Knight Takes Pawn">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnKnightTakesPawn>
   </Level1>
   <Level4>
     <GenericTalentAmplifiedHealing name="Amplified Healing">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
@@ -40,5 +39,7 @@
     <CrusaderHeroicMasteryIndestructable name="Indestructible">storm_ui_icon_johanna_indestructible.dds</CrusaderHeroicMasteryIndestructable>
     <GenericTalentStormShield name="Storm Shield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
-  <Old></Old>
+  <Old>
+    <CrusaderMasteryCondemnKnightTakesPawn name="Knight Takes Pawn">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnKnightTakesPawn>
+  </Old>
 </Johanna>

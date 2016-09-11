@@ -22,7 +22,7 @@
     <StitchesHeroicAbilityGorge name="Gorge">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
   </Level10>
   <Level13>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+    <StitchesFleaBag name="Flea Bag">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>
     <StitchesMasteryMegaSmashSlam name="Mega Smash">storm_ui_icon_stitches_slam.dds</StitchesMasteryMegaSmashSlam>
     <StitchesMasteryIndigestionDevour name="Indigestion">storm_ui_icon_stitches_devour.dds</StitchesMasteryIndigestionDevour>
   </Level13>
@@ -42,5 +42,6 @@
     <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
     <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
     <StitchesMasteryHelpingHandHook name="Helping Hand">storm_ui_icon_stitches_hook.dds</StitchesMasteryHelpingHandHook>
+    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
   </Old>
 </Stitches>
