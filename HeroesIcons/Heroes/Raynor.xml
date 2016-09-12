@@ -42,6 +42,6 @@
     <GenericTalentVampiricAssault name="Vampiric Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVampiricAssault>
     <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
     <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
-    <RaynorRaidersRecruitment name="Raynor's Recruitment">storm_ui_icon_raynor_raidersrecruitment.dds</RaynorRaidersRecruitment>
+    <RaynorRaidersRecruitment name="Raiders' &quot;Recruitment&quot;">storm_ui_icon_raynor_raidersrecruitment.dds</RaynorRaidersRecruitment>
   </Old>
 </Raynor>
