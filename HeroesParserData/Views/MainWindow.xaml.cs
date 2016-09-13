@@ -1,6 +1,4 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using HeroesParserData.Messages;
-using HeroesParserData.Properties;
+﻿using HeroesParserData.Properties;
 using MahApps.Metro.Controls.Dialogs;
 using NLog;
 using Squirrel;
@@ -16,8 +14,10 @@ namespace HeroesParserData.Views
     /// </summary>
     public partial class MainWindow
     {
-        private UpdateManager updateManager;
+        private UpdateManager UpdateManager;
         private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
+        private string CurrentVersion;
+        private string LatestVersion;
 
         public MainWindow()
         {
@@ -44,61 +44,68 @@ namespace HeroesParserData.Views
             {
                 try
                 {
-                    if (Settings.Default.IsAutoUpdates)
+                    UpdateInfo update = await CheckUpdates();
+
+                    if (update != null)
                     {
-                        updateManager = await UpdateManager.GitHubUpdateManager(Properties.Settings.Default.UpdateUrl);
-                        UpdaterLog.Log(LogLevel.Info, "Update Check");
-
-                        if (updateManager != null)
+                        if (Settings.Default.IsAutoUpdates)
                         {
-                            UpdateInfo update = await updateManager.CheckForUpdate();
-
-                            if (update != null)
-                            {
-                                string current = update.CurrentlyInstalledVersion != null ? update.CurrentlyInstalledVersion.Version.ToString() : string.Empty;
-                                string latest = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.ToString() : string.Empty;
-
-                                UpdaterLog.Log(LogLevel.Info, $"Current Version: {current}");
-                                UpdaterLog.Log(LogLevel.Info, $"Latest Version: {latest}");
-
-                                if (!string.IsNullOrEmpty(current) && current != latest)
-                                {
-                                    UpdaterLog.Log(LogLevel.Info, "Downloading...");
-                                    await updateManager.DownloadReleases(update.ReleasesToApply);
-                                    UpdaterLog.Log(LogLevel.Info, "Downloading...Completed");
-
-                                    UpdaterLog.Log(LogLevel.Info, "Applying releases");
-                                    string directoryPath = await updateManager.ApplyReleases(update);
-
-                                    App.UpdateInProgress = true;
-                                    App.NewLatestDirectory = directoryPath;
-
-                                    UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
-
-                                    await Application.Current.Dispatcher.InvokeAsync(async delegate
-                                    {
-                                        await this.ShowMessageAsync($"Application updated to {latest}",
-                                            "When you're ready to complete the update, please close the application and reopen.", MessageDialogStyle.Affirmative);
-                                    });
-                                }
-                                else
-                                    UpdaterLog.Log(LogLevel.Info, "Have latest already. No update needed. ");
-                            }
-                            else
-                                UpdaterLog.Log(LogLevel.Info, "No update needed");
+                            await PerformUpdates(update, LatestVersion, CurrentVersion);
                         }
-                        else
-                            UpdaterLog.Log(LogLevel.Info, $"No updates found at {Properties.Settings.Default.UpdateUrl}");
                     }
+                    else
+                        UpdaterLog.Log(LogLevel.Info, "Have latest already. No update needed. ");
                 }
                 catch (Exception ex)
                 {
                     UpdaterLog.Log(LogLevel.Info, ex.Message);
                     UpdaterLog.Log(LogLevel.Info, ex.StackTrace);
                 }
-
-                await Task.Delay(360000000); // 1 hour
+                finally
+                {
+                    await Task.Delay(360000000); // 1 hour
+                }
             }
+        }
+
+        private async Task<UpdateInfo> CheckUpdates()
+        {
+            UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl);
+            UpdaterLog.Log(LogLevel.Info, "Update Check");
+
+            UpdateInfo update = await UpdateManager.CheckForUpdate();
+
+            CurrentVersion = update.CurrentlyInstalledVersion != null ? update.CurrentlyInstalledVersion.Version.ToString() : string.Empty;
+            LatestVersion = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.ToString() : string.Empty;
+
+            UpdaterLog.Log(LogLevel.Info, $"Current Version: {CurrentVersion}");
+            UpdaterLog.Log(LogLevel.Info, $"Latest Version: {LatestVersion}");
+
+            if (!string.IsNullOrEmpty(CurrentVersion) && CurrentVersion != LatestVersion)
+                return update;
+            else
+                return null;
+        }
+
+        private async Task PerformUpdates(UpdateInfo update, string latest, string current)
+        {
+            UpdaterLog.Log(LogLevel.Info, "Downloading...");
+            await UpdateManager.DownloadReleases(update.ReleasesToApply);
+            UpdaterLog.Log(LogLevel.Info, "Downloading...Completed");
+
+            UpdaterLog.Log(LogLevel.Info, "Applying releases");
+            string directoryPath = await UpdateManager.ApplyReleases(update);
+
+            App.UpdateInProgress = true;
+            App.NewLatestDirectory = directoryPath;
+
+            UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
+
+            await Application.Current.Dispatcher.InvokeAsync(async delegate
+            {
+                await this.ShowMessageAsync($"Application updated to {latest} from {current}",
+                    "When you're ready to complete the update, please close the application and reopen.", MessageDialogStyle.Affirmative);
+            });
         }
 
         private async void ErrorMessage()
@@ -111,11 +118,16 @@ namespace HeroesParserData.Views
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            SettingsFlyout.IsOpen = true;
+            if (SettingsFlyout.IsOpen)
+                SettingsFlyout.IsOpen = false;
+            else
+                SettingsFlyout.IsOpen = true;
         }
 
         private void SetTrayIcon()
         {
+            Version version = Assembly.GetEntryAssembly().GetName().Version;
+
             // menu items
             var menuItem1 = new System.Windows.Forms.MenuItem();
             var menuItem2 = new System.Windows.Forms.MenuItem();
@@ -140,13 +152,12 @@ namespace HeroesParserData.Views
                 Application.Current.Shutdown();
             };
 
-
-
             App.NotifyIcon = new System.Windows.Forms.NotifyIcon
             {
                 Icon = System.Drawing.Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Visible = false,
-                ContextMenu = contextMenu
+                ContextMenu = contextMenu,
+                Text = $"Heroes Parser Data {version.Major}.{version.Minor}.{version.Build}"
             };
             App.NotifyIcon.DoubleClick += (sender, e) =>
             {
