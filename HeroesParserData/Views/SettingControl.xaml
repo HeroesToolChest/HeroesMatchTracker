@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="HeroesParserData.Views.SettingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesParserData.Views"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance ViewModels:SettingsViewModel}" d:DesignHeight="385" d:DesignWidth="551">
+    <Control.DataContext>
+        <ViewModels:SettingsViewModel />
+    </Control.DataContext>
+    <Grid>
+        <CheckBox Content="Auto Updates" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource HomeCheckBoxTheme}"/>
+        <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}" Margin="10,34,0,0" Style="{StaticResource HomeCheckBoxTheme}"/>
+    </Grid>
+</UserControl>

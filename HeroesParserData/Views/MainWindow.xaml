@@ -16,7 +16,7 @@
     <Control.DataContext>
         <ViewModels:MainWindowViewModel />
     </Control.DataContext>
-    <!--<Controls:MetroWindow.RightWindowCommands>
+    <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"></Button>
         </Controls:WindowCommands>
@@ -24,9 +24,10 @@
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
             <Controls:Flyout x:Name="SettingsFlyout" Header="Settings" Position="Right" Width="440" Theme="Accent" IsOpen="False">
+                <Views:SettingControl></Views:SettingControl>
             </Controls:Flyout>
         </Controls:FlyoutsControl>
-    </Controls:MetroWindow.Flyouts>-->
+    </Controls:MetroWindow.Flyouts>
     <DockPanel>
         <TabControl DockPanel.Dock="Top" TabStripPlacement="Top" SelectedIndex="{Binding SelectedTab}">
             <TabItem Header="Home">

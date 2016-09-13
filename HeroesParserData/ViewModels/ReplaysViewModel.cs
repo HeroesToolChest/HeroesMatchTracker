@@ -29,7 +29,6 @@ namespace HeroesParserData.ViewModels
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
-        private int _selectedProcessCount;
         private FileSystemWatcher _fileWatcher;
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 

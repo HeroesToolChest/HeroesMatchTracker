@@ -26,5 +26,11 @@
     <Setting Name="SelectedSeason" Type="System.String" Scope="User">
       <Value Profile="(Default)">Season 1</Value>
     </Setting>
+    <Setting Name="IsAutoUpdates" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IsMinimizeToTray" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

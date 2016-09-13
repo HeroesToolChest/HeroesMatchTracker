@@ -77,7 +77,25 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
 
-    
+    <Style TargetType="Label" x:Key="HomeLabelTheme" BasedOn="{StaticResource MetroLabel}">
+        <Style.Resources>
+            <DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>
+        </Style.Resources>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="24"></Setter>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Effect" Value="{StaticResource HomeFontTheme}"></Setter>
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="HomeCheckBoxTheme" BasedOn="{StaticResource MetroCheckBox}">
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+    </Style>
+
+    <!--<DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />-->
     <!--<Color x:Key="HighlightColor">#4e80ca</Color>
     <Color x:Key="AccentColor">#595959</Color>-->
     

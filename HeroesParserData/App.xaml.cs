@@ -1,5 +1,4 @@
 ﻿using HeroesIcons;
-using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
@@ -22,6 +21,7 @@ namespace HeroesParserData
         public static string NewLatestDirectory { get; set; }
         public static bool IsProcessingReplays { get; set; }
         public static bool MigrateFailed { get; set; }
+        public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -52,6 +52,11 @@ namespace HeroesParserData
         protected override void OnExit(ExitEventArgs e)
         {
             Settings.Default.Save();
+
+            if (NotifyIcon != null)
+            {
+                NotifyIcon.Visible = false;
+            }
 
             if (UpdateInProgress && !string.IsNullOrEmpty(NewLatestDirectory))
             {

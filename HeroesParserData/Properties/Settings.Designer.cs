@@ -116,5 +116,29 @@ namespace HeroesParserData.Properties {
                 this["SelectedSeason"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsAutoUpdates {
+            get {
+                return ((bool)(this["IsAutoUpdates"]));
+            }
+            set {
+                this["IsAutoUpdates"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsMinimizeToTray {
+            get {
+                return ((bool)(this["IsMinimizeToTray"]));
+            }
+            set {
+                this["IsMinimizeToTray"] = value;
+            }
+        }
     }
 }

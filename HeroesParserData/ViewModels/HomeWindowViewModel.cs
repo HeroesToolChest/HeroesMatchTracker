@@ -32,6 +32,7 @@ namespace HeroesParserData.ViewModels
         private int _seasonCustomGames;
         private string _selectedSeason;
         private bool IsRefreshDataOn;
+
         private List<string> _seasonList = new List<string>();
         private List<Tuple<BitmapImage, Color>> ListOfBackgroundImages;
 
@@ -206,7 +207,6 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(SeasonList));
             }
         }
-
         #endregion public properties
 
         public HomeWindowViewModel()

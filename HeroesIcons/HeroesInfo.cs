@@ -106,7 +106,7 @@ namespace HeroesIcons
             {
                 return new BitmapImage(uri);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {realHeroName}"));
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));

@@ -3,6 +3,7 @@
     public enum Trigger
     {
         Update,
-        Stop
+        Stop,
+        Send
     }
 }
