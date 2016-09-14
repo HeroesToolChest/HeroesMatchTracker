@@ -224,26 +224,26 @@ namespace HeroesParserData.ViewModels
             string uri = "pack://application:,,,/HeroesIcons;component/Icons/Homescreens/";
 
             ListOfBackgroundImages = new List<Tuple<BitmapImage, Color>>();
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_alarak.dds"), UriKind.Absolute)), Colors.Purple));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_chromie.dds"), UriKind.Absolute)), Colors.Gold));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_diablo.dds"), UriKind.Absolute)), Colors.Red));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_diablotristram.dds"), UriKind.Absolute)), Colors.Gray));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_eternalconflict.dds"), UriKind.Absolute)), Colors.DarkRed));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_eternalconflict_dark.dds"), UriKind.Absolute)), Colors.DarkRed));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_greymane.dds"), UriKind.Absolute)), Colors.LightBlue));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_guldan.dds"), UriKind.Absolute)), Colors.Green));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lunara.dds"), UriKind.Absolute)), Colors.Purple));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lunarnewyear.dds"), UriKind.Absolute)), Colors.Purple));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_medivh.dds"), UriKind.Absolute)), Colors.Gray));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_nexus.dds"), UriKind.Absolute)), Colors.Purple));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_overwatchhangar.dds"), UriKind.Absolute)), Colors.Gray));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_shrines.dds"), UriKind.Absolute)), Colors.Red));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_shrines_dusk.dds"), UriKind.Absolute)), Colors.Red));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft.dds"), UriKind.Absolute)), Colors.DarkBlue));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft_protoss.dds"), UriKind.Absolute)), Colors.Cyan));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft_zerg.dds"), UriKind.Absolute)), Colors.DarkRed));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_varian.dds"), UriKind.Absolute)), Colors.Red));
-            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_zarya.dds"), UriKind.Absolute)), Colors.Purple));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_alarak.jpg"), UriKind.Absolute)), Colors.Purple));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_chromie.jpg"), UriKind.Absolute)), Colors.Gold));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_diablo.jpg"), UriKind.Absolute)), Colors.Red));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_diablotristram.jpg"), UriKind.Absolute)), Colors.Gray));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_eternalconflict.jpg"), UriKind.Absolute)), Colors.DarkRed));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_eternalconflict_dark.jpg"), UriKind.Absolute)), Colors.DarkRed));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_greymane.jpg"), UriKind.Absolute)), Colors.LightBlue));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_guldan.jpg"), UriKind.Absolute)), Colors.Green));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lunara.jpg"), UriKind.Absolute)), Colors.Purple));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lunarnewyear.jpg"), UriKind.Absolute)), Colors.Purple));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_medivh.jpg"), UriKind.Absolute)), Colors.Gray));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_nexus.jpg"), UriKind.Absolute)), Colors.Purple));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_overwatchhangar.jpg"), UriKind.Absolute)), Colors.Gray));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_shrines.jpg"), UriKind.Absolute)), Colors.Red));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_shrines_dusk.jpg"), UriKind.Absolute)), Colors.Red));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft.jpg"), UriKind.Absolute)), Colors.DarkBlue));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft_protoss.jpg"), UriKind.Absolute)), Colors.Cyan));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_starcraft_zerg.jpg"), UriKind.Absolute)), Colors.DarkRed));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_varian.jpg"), UriKind.Absolute)), Colors.Red));
+            ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_zarya.jpg"), UriKind.Absolute)), Colors.Purple));
         }
 
         private void SetRandomBackgroundImage()

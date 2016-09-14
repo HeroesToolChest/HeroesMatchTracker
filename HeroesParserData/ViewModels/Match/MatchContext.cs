@@ -631,43 +631,43 @@ namespace HeroesParserData.ViewModels.Match
             {
                 case "Battlefield of Eternity":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg"), UriKind.Absolute));
                 case "Blackheart's Bay":
                     glowColor = Colors.Green;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_blackheartsbay.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_blackheartsbay.jpg"), UriKind.Absolute));
                 case "Cursed Hollow":
                     glowColor = Colors.Purple;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_cursedhollow.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_cursedhollow.jpg"), UriKind.Absolute));
                 case "Dragon Shire":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_dragonshire.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_dragonshire.jpg"), UriKind.Absolute));
                 case "Garden of Terror":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_gardenofterror.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg"), UriKind.Absolute));
                 case "Haunted Mines":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_hauntedmines.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg"), UriKind.Absolute));
                 case "Infernal Shrines":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_shrines.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_shrines.jpg"), UriKind.Absolute));
                 case "Lost Cavern":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lostcavern.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lostcavern.jpg"), UriKind.Absolute));
                 case "Sky Temple":
                     glowColor = Colors.Gold;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_skytemple.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_skytemple.jpg"), UriKind.Absolute));
                 case "Tomb of the Spider Queen":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg"), UriKind.Absolute));
                 case "Towers of Doom":
                     glowColor = Colors.Orange;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_towersofdoom.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg"), UriKind.Absolute));
                 case "Braxis Holdout":
                     glowColor = Colors.Blue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_braxisholdout.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_braxisholdout.jpg"), UriKind.Absolute));
                 case "Warhead Junction":
                     glowColor = Colors.Yellow;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_warhead.dds"), UriKind.Absolute));
+                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_warhead.jpg"), UriKind.Absolute));
                 default:
                     glowColor = Colors.White;
                     return null;
