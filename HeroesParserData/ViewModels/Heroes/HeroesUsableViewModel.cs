@@ -185,6 +185,9 @@ namespace HeroesParserData.ViewModels.Heroes
 
         private async Task FindPlayerFromBattleTagName()
         {
+            if (string.IsNullOrEmpty(TextBoxBattleTagName))
+                return;
+
             var records = await Query.HotsPlayer.ReadRecordsWhereAsync("BattleTagName", "LIKE", $"%{TextBoxBattleTagName.Trim()}%");
 
             if (records.Count == 1)
