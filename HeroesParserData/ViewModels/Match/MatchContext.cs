@@ -333,7 +333,7 @@ namespace HeroesParserData.ViewModels.Match
                 var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();
                 var playerScoresList = replay.ReplayMatchPlayerScoreResults.ToList();
                 var matchMessagesList = replay.ReplayMatchMessage.ToList();
-                var matchAwardList = replay.ReplayMatchAward.ToList();
+                var matchAwardDictionary = replay.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
 
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
@@ -343,6 +343,8 @@ namespace HeroesParserData.ViewModels.Match
                 foreach (var player in playersList)
                 {
                     // fill in common infomation for player
+                    string mvpAwardName = null;
+
                     MatchPlayerInfoBase matchPlayerInfoBase = new MatchPlayerInfoBase();
 
                     var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
@@ -352,8 +354,8 @@ namespace HeroesParserData.ViewModels.Match
                     matchPlayerInfoBase.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
                     matchPlayerInfoBase.PlayerNumber = player.PlayerNumber;
                     matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
-                    matchPlayerInfoBase.MvpAward = null;
-                    matchPlayerInfoBase.MvpAwardName = null;
+                    matchPlayerInfoBase.MvpAward = matchAwardDictionary.ContainsKey(player.PlayerId) == true? SetPlayerMVPAward(player.Team, matchAwardDictionary[player.PlayerId], out mvpAwardName) : null;
+                    matchPlayerInfoBase.MvpAwardName = mvpAwardName;
 
                     if (!player.IsAutoSelect)
                         matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();
@@ -403,7 +405,7 @@ namespace HeroesParserData.ViewModels.Match
                     {
                         if (player.Team == 0)
                         {
-                            matchTalents.PortraitBackColor = Color.FromRgb(179, 179, 255);
+                            matchTalents.PortraitBackColor = Color.FromRgb(155, 155, 235);
                             matchScores.PortraitBackColor = Color.FromRgb(179, 179, 255);
                             MatchTalentsTeam1.Add(matchTalents);
 
@@ -415,8 +417,8 @@ namespace HeroesParserData.ViewModels.Match
                         }
                         else
                         {
-                            matchTalents.PortraitBackColor = Color.FromRgb(255, 179, 179);
-                            matchScores.PortraitBackColor = Color.FromRgb(255, 179, 179);
+                            matchTalents.PortraitBackColor = Color.FromRgb(235, 155, 155);
+                            matchScores.PortraitBackColor = Color.FromRgb(235, 159, 159);
                             MatchTalentsTeam2.Add(matchTalents);
 
                             HighestSiegeDamage(MatchScoreTeam2, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
@@ -624,7 +626,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private BitmapImage SetMapImage(string mapName, out Color glowColor)
         {
-            string uri = "pack://application:,,,/HeroesParserData;component/Resources/Images/";
+            string uri = "pack://application:,,,/HeroesIcons;component/Icons/MapBackgrounds/";
             switch (mapName)
             {
                 case "Battlefield of Eternity":
@@ -672,12 +674,83 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        private BitmapImage SetPlayerMVPAward(string award)
+        private BitmapImage SetPlayerMVPAward(int? team, string award, out string awardName)
         {
-            string uri = "pack://application:,,,/HeroesParserData;component/Resources/Images/";
+            string uri = "pack://application:,,,/HeroesIcons;component/Icons/Awards/";
+            string teamColor;
+            if (team == 0)
+                teamColor = "blue";
+            else if (team == 1)
+                teamColor = "red";
+            else
+            {
+                awardName = null;
+                return null;
+            }
+
             switch (award)
             {
+                case "MVP":
+                    awardName = "MVP";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_mvp_{teamColor}.png", UriKind.Absolute));
+                case "HighestKillStreak":
+                    awardName = "Dominator";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_skull_{teamColor}.png", UriKind.Absolute));
+                case "MostXPContribution":
+                    awardName = "";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_experienced_{teamColor}.png", UriKind.Absolute));
+                case "MostHeroDamageDone":
+                    awardName = "Pain Bringer";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_painbringer_{teamColor}.png", UriKind.Absolute));
+                case "MostSiegeDamageDone":
+                    awardName = "Siege Master";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_siegemaster_{teamColor}.png", UriKind.Absolute));
+                case "MostDamageTaken":
+                    awardName = "Bulwark";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_bulwark_{teamColor}.png", UriKind.Absolute));
+                case "MostHealing":
+                    awardName = "";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_mainhealer_{teamColor}.png", UriKind.Absolute));
+                case "MostStuns":
+                    awardName = "Stunner";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_stunner_{teamColor}.png", UriKind.Absolute));
+                case "MostMercCampsCaptured":
+                    awardName = "Head Hunter";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_headhunter_{teamColor}.png", UriKind.Absolute));
+                case "MostImmortalDamage":
+                    awardName = "Immortal Slayer";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_immortalslayer_{teamColor}.png", UriKind.Absolute));
+                case "MostCoinsPaid":
+                    awardName = "Money Bags";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_moneybags_{teamColor}.png", UriKind.Absolute));
+                case "MostCurseDamageDone":
+                    awardName = "Master of the Curse";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_masterofthecurse_{teamColor}.png", UriKind.Absolute));
+                case "MostDragonShrinesCaptured":
+                    awardName = "Shriner";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_shriner_{teamColor}.png", UriKind.Absolute));
+                case "MostDamageToPlants":
+                    awardName = "Garden Terror";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_gardenterror_{teamColor}.png", UriKind.Absolute));
+                case "MostDamageToMinions":
+                    awardName = "Guardian Slayer";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_guardianslayer_{teamColor}.png", UriKind.Absolute));
+                case "MostTimeInTemple":
+                    awardName = "Temple Master";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_templemaster_{teamColor}.png", UriKind.Absolute));
+                case "MostGemsTurnedIn":
+                    awardName = "Jeweler";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_jeweler_{teamColor}.png", UriKind.Absolute));
+                case "MostAltarDamage":
+                    awardName = "Cannoneer";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_cannoneer_{teamColor}.png", UriKind.Absolute));
+                case "MostDamageDoneToZerg":
+                    awardName = "Zerg Crusher";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_zergcrusher_{teamColor}.png", UriKind.Absolute));
+
                 default:
+                    ExceptionLog.Log(LogLevel.Info, $"Could not find {award} award");
+                    awardName = null;
                     return null;
             }
         }

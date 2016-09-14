@@ -107,7 +107,7 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Season 1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Season 2")]
         public string SelectedSeason {
             get {
                 return ((string)(this["SelectedSeason"]));

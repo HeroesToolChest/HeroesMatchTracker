@@ -27,6 +27,8 @@ namespace HeroesParserData.Models.MatchModels
             CharacterName = matchPlayerInfoBase.CharacterName;
             CharacterLevel = matchPlayerInfoBase.CharacterLevel;
             PlayerSilenced = matchPlayerInfoBase.PlayerSilenced;
+            MvpAward = matchPlayerInfoBase.MvpAward;
+            MvpAwardName = matchPlayerInfoBase.MvpAwardName;
         }
     }
 }

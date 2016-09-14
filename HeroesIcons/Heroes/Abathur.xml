@@ -31,7 +31,7 @@
   <Level16>
     <AbathurMasteryEnvenomedSpikes name="Envenomed Spikes">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryEnvenomedSpikes>
     <AbathurMasteryAdrenalineBoost name="Adrenaline Boost">storm_ui_icon_abathur_carapace.dds</AbathurMasteryAdrenalineBoost>
-    <AbathurCombatStyleLocustSwarm name="Locust Brood">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustSwarm>
+    <AbathurCombatStyleLocustBrood name="Locust Brood">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustBrood>
     <AbathurVolatileMutation name="Volatile Mutation">storm_ui_icon_abathur_volatilemutation.dds</AbathurVolatileMutation>
   </Level16>
   <Level20>
@@ -40,5 +40,7 @@
     <AbathurSymbioteHivemind name="Hivemind">storm_ui_icon_abathur_symbiote.dds</AbathurSymbioteHivemind>
     <AbathurMasteryLocustMaster name="Locust Nest">storm_ui_icon_abathur_locustnest.dds</AbathurMasteryLocustMaster>
   </Level20>
-  <Old></Old>
+  <Old>
+    <AbathurCombatStyleLocustSwarm name="Locust Brood">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustSwarm>
+  </Old>
 </Abathur>

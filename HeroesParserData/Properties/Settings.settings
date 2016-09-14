@@ -24,7 +24,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SelectedSeason" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Season 1</Value>
+      <Value Profile="(Default)">Season 2</Value>
     </Setting>
     <Setting Name="IsAutoUpdates" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

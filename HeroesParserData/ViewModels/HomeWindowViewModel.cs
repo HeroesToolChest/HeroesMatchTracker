@@ -221,7 +221,7 @@ namespace HeroesParserData.ViewModels
 
         private void SetBackgroundImages()
         {
-            string uri = "pack://application:,,,/HeroesParserData;component/Resources/Images/Homescreens/";
+            string uri = "pack://application:,,,/HeroesIcons;component/Icons/Homescreens/";
 
             ListOfBackgroundImages = new List<Tuple<BitmapImage, Color>>();
             ListOfBackgroundImages.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_alarak.dds"), UriKind.Absolute)), Colors.Purple));
