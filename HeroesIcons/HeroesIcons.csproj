@@ -343,6 +343,7 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Talents\Kharazim\storm_ui_icon_talent_relentless.dds" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_alarak.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_chromie.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_diablo.jpg" />
