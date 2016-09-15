@@ -69,5 +69,7 @@
         <Label Content="{Binding SeasonTeamLeagueGames}" Margin="299,387,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
         <Label Content="CUSTOM:" Margin="184,434,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
         <Label Content="{Binding SeasonCustomGames}" Margin="299,434,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
+        <Label Content="TOTAL:" Margin="213,4,0,0" Grid.Row="2" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
+        <Label Content="{Binding SeasonTotal}" Margin="299,4,0,0" Grid.Row="2" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
     </Grid>
 </UserControl>

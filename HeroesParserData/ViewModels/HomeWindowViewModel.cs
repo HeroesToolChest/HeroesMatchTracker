@@ -30,6 +30,7 @@ namespace HeroesParserData.ViewModels
         private int _seasonHeroLeagueGames;
         private int _seasonTeamLeagueGames;
         private int _seasonCustomGames;
+        private int _seasonTotal;
         private string _selectedSeason;
         private bool IsRefreshDataOn;
 
@@ -207,6 +208,16 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(SeasonList));
             }
         }
+
+        public int SeasonTotal
+        {
+            get { return _seasonTotal; }
+            set
+            {
+                _seasonTotal = value;
+                RaisePropertyChangedEvent(nameof(SeasonTotal));
+            }
+        }
         #endregion public properties
 
         public HomeWindowViewModel()
@@ -283,6 +294,7 @@ namespace HeroesParserData.ViewModels
             SeasonHeroLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.HeroLeague, SelectedSeason);
             SeasonTeamLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.TeamLeague, SelectedSeason);
             SeasonCustomGames = Query.Replay.ReadTotalGamesForSeason(GameMode.Custom, SelectedSeason);
+            SeasonTotal = SeasonQuickMatchGames + SeasonUnrankedDraftGames + SeasonHeroLeagueGames + SeasonTeamLeagueGames + SeasonCustomGames;
         }
 
         private void ReceiveMessage(HomeWindowMessage action)
