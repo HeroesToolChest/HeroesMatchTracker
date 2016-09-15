@@ -48,7 +48,7 @@
                                                         <ToolTip Content="{Binding CharacterName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
-                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,-4,0,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
                                                 <Image Source="{Binding MvpAward}" Height="40" Width="40" HorizontalAlignment="Right">
                                                     <Image.ToolTip>
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
@@ -270,7 +270,7 @@
                                                         <ToolTip Content="{Binding CharacterName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
-                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,-4,0,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
                                                 <Image Source="{Binding MvpAward}" Height="40" Width="40" HorizontalAlignment="Right">
                                                     <Image.ToolTip>
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
@@ -307,7 +307,7 @@
                                                         <ToolTip Content="{Binding CharacterName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
-                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-4,-4,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                                <Image Source="{StaticResource Silence}" Height="25" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,-4,0,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
                                                 <Image Source="{Binding MvpAward}" Height="40" Width="40" HorizontalAlignment="Right">
                                                     <Image.ToolTip>
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
