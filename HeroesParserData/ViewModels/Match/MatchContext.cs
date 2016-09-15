@@ -485,10 +485,12 @@ namespace HeroesParserData.ViewModels.Match
             catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
             {
                 SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
+                throw;
             }
             catch (Exception ex)
             {
                 ExceptionLog.Log(LogLevel.Warn, ex);
+                throw;
             }
         }
 
@@ -506,6 +508,7 @@ namespace HeroesParserData.ViewModels.Match
                 matchTalent.Talent13 = null;
                 matchTalent.Talent16 = null;
                 matchTalent.Talent20 = null;
+                matchTalent.MvpAward = null;
             }
             MatchTalentsTeam1 = null;
 
@@ -519,6 +522,7 @@ namespace HeroesParserData.ViewModels.Match
                 matchTalent.Talent13 = null;
                 matchTalent.Talent16 = null;
                 matchTalent.Talent20 = null;
+                matchTalent.MvpAward = null;
             }
             MatchTalentsTeam2 = null;
 
@@ -526,12 +530,14 @@ namespace HeroesParserData.ViewModels.Match
             foreach (var matchScore in MatchScoreTeam1)
             {
                 matchScore.LeaderboardPortrait = null;
+                matchScore.MvpAward = null;
             }
             MatchScoreTeam1 = null;
 
             foreach (var matchScore in MatchScoreTeam2)
             {
                 matchScore.LeaderboardPortrait = null;
+                matchScore.MvpAward = null;
             }
             MatchScoreTeam2 = null;
 
