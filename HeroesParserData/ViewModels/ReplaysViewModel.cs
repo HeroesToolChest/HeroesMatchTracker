@@ -361,6 +361,7 @@ namespace HeroesParserData.ViewModels
             if (result == true)
             {
                 ReplayFiles.Clear();
+                ReplayFileLocations.Clear();
                 IsAutoScanChecked = false;
 
                 CurrentStatus = "Retrieving selected replay file(s)...";
@@ -378,6 +379,7 @@ namespace HeroesParserData.ViewModels
                             FilePath = replayFile.FullName,
                             Status = null
                         });
+                        ReplayFileLocations.Add(replayFile.FullName, ReplayFiles.Count - 1);
                     }
                 }
 

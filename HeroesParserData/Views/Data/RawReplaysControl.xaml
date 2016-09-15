@@ -29,7 +29,6 @@
                       ItemsSource="{Binding Replays, IsAsync=True}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
-                    <DataGridTextColumn Header="RandomValue" Binding="{Binding RandomValue}" />
                     <DataGridTextColumn Header="MapName" Binding="{Binding MapName}" />
                     <DataGridTextColumn Header="ReplayBuild" Binding="{Binding ReplayBuild}" />
                     <DataGridTextColumn Header="ReplayVersion" Binding="{Binding ReplayVersion}" />
