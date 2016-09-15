@@ -703,10 +703,10 @@ namespace HeroesParserData.ViewModels.Match
                     awardName = "Dominator";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_skull_{teamColor}.png", UriKind.Absolute));
                 case "MostXPContribution":
-                    awardName = "";
+                    awardName = "Experienced";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_experienced_{teamColor}.png", UriKind.Absolute));
                 case "MostHeroDamageDone":
-                    awardName = "Pain Bringer";
+                    awardName = "Painbringer";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_painbringer_{teamColor}.png", UriKind.Absolute));
                 case "MostSiegeDamageDone":
                     awardName = "Siege Master";
@@ -715,19 +715,19 @@ namespace HeroesParserData.ViewModels.Match
                     awardName = "Bulwark";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_bulwark_{teamColor}.png", UriKind.Absolute));
                 case "MostHealing":
-                    awardName = "";
+                    awardName = "Main Healer";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_mainhealer_{teamColor}.png", UriKind.Absolute));
                 case "MostStuns":
                     awardName = "Stunner";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_stunner_{teamColor}.png", UriKind.Absolute));
                 case "MostMercCampsCaptured":
-                    awardName = "Head Hunter";
+                    awardName = "Headhunter";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_headhunter_{teamColor}.png", UriKind.Absolute));
                 case "MostImmortalDamage":
                     awardName = "Immortal Slayer";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_immortalslayer_{teamColor}.png", UriKind.Absolute));
                 case "MostCoinsPaid":
-                    awardName = "Money Bags";
+                    awardName = "Moneybags";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_moneybags_{teamColor}.png", UriKind.Absolute));
                 case "MostCurseDamageDone":
                     awardName = "Master of the Curse";
