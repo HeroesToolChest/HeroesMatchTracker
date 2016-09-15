@@ -28,10 +28,10 @@
     <AlarakPureMalice name="Pure Malice">storm_ui_icon_alarak_sadism.dds</AlarakPureMalice>
   </Level13>
   <Level16>
-    <AlarakQuickMind name="QuickMind">storm_ui_icon_alarak_telekinesis.dds</AlarakQuickMind>
-    <AlarakProjectedForce name="ProjectedForce">storm_ui_icon_alarak_telekinesis_a.dds</AlarakProjectedForce>
-    <AlarakSustainingPower name="SustainingPower">storm_ui_icon_alarak_lightningsurge.dds</AlarakSustainingPower>
-    <AlarakNegativelyCharged name="NegativelyCharged">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakNegativelyCharged>
+    <AlarakQuickMind name="Quick Mind">storm_ui_icon_alarak_telekinesis.dds</AlarakQuickMind>
+    <AlarakProjectedForce name="Projected Force">storm_ui_icon_alarak_telekinesis_a.dds</AlarakProjectedForce>
+    <AlarakSustainingPower name="Sustaining Power">storm_ui_icon_alarak_lightningsurge.dds</AlarakSustainingPower>
+    <AlarakNegativelyCharged name="Negatively Charged">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakNegativelyCharged>
   </Level16>
   <Level20>
     <AlarakCounterStrikeItem name="Counter-Strike">storm_ui_icon_alarak_counterstrike.dds</AlarakCounterStrikeItem>
