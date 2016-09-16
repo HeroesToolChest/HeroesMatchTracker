@@ -504,8 +504,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="README.md" />
-    <Resource Include="Resources\Images\HeroesParserData_0_13_0.jpg" />
+    <Resource Include="Resources\Images\HeroesParserData_1_0_0.jpg" />
+    <Resource Include="Resources\Images\HeroesParserData_LastMatch_1_0_0.jpg" />
     <Resource Include="Resources\Images\XOut.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
