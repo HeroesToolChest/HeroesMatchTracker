@@ -504,6 +504,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="README.md" />
     <Resource Include="Resources\Images\HeroesParserData_0_13_0.jpg" />
     <Resource Include="Resources\Images\XOut.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -511,6 +512,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="HPD.ico" />
+    <Resource Include="LICENSE.txt" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
