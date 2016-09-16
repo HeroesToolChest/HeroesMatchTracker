@@ -567,7 +567,7 @@ namespace HeroesParserData.ViewModels
                             file.Status = ReplayParseResult.Success;
 
                             if (ReplayDataQueue.Count > 5) // give it a chance to dequeue some replays
-                                Thread.Sleep(1000);
+                                Thread.Sleep(1500);
 
                             ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
                         }
