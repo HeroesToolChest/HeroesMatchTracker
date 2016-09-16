@@ -152,5 +152,17 @@ namespace HeroesParserData.Properties {
                 this["IsBattleTagHidden"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsIncludeSubDirectories {
+            get {
+                return ((bool)(this["IsIncludeSubDirectories"]));
+            }
+            set {
+                this["IsIncludeSubDirectories"] = value;
+            }
+        }
     }
 }

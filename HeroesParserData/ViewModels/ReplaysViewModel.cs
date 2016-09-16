@@ -29,11 +29,12 @@ namespace HeroesParserData.ViewModels
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
-        private FileSystemWatcher _fileWatcher;
+
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
+        private FileSystemWatcher FileWatcher;
 
         #region public properties
         public string CurrentStatus
@@ -178,6 +179,16 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
             }
         }
+
+        public bool IsIncludeSubDirectories
+        {
+            get { return Settings.Default.IsIncludeSubDirectories; }
+            set
+            {
+                Settings.Default.IsIncludeSubDirectories = value;
+                RaisePropertyChangedEvent(nameof(IsIncludeSubDirectories));
+            }
+        }
         #endregion
 
         #region Button Commands
@@ -272,10 +283,10 @@ namespace HeroesParserData.ViewModels
         private void StopProcessing()
         {
             IsProcessSelected = false;
-            if (_fileWatcher != null && IsProcessWatchChecked)
+            if (FileWatcher != null && IsProcessWatchChecked)
             {
-                _fileWatcher.EnableRaisingEvents = false;
-                _fileWatcher = null;
+                FileWatcher.EnableRaisingEvents = false;
+                FileWatcher = null;
             }
 
             if (!string.IsNullOrEmpty(CurrentStatus))
@@ -393,17 +404,17 @@ namespace HeroesParserData.ViewModels
         #region File Watcher
         private void InitReplayWatcher()
         {
-            _fileWatcher = new FileSystemWatcher();
+            FileWatcher = new FileSystemWatcher();
 
-            _fileWatcher.Path = Settings.Default.ReplaysLocation;
-            _fileWatcher.IncludeSubdirectories = true;
-            _fileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes;
-            _fileWatcher.Filter = $"*.{Resources.HeroesReplayFileType}";
+            FileWatcher.Path = Settings.Default.ReplaysLocation;
+            FileWatcher.IncludeSubdirectories = true;
+            FileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes;
+            FileWatcher.Filter = $"*.{Resources.HeroesReplayFileType}";
 
-            _fileWatcher.Changed += new FileSystemEventHandler(OnChanged);
-            _fileWatcher.Deleted += new FileSystemEventHandler(OnDeleted);
+            FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
+            FileWatcher.Deleted += new FileSystemEventHandler(OnDeleted);
 
-            _fileWatcher.EnableRaisingEvents = true;
+            FileWatcher.EnableRaisingEvents = true;
         }
 
         private void OnChanged(object sender, FileSystemEventArgs e)
@@ -458,11 +469,17 @@ namespace HeroesParserData.ViewModels
         {
             CurrentStatus = "Scanning replay folder(s)...";
 
+            SearchOption searchOption;
+            if (IsIncludeSubDirectories)
+                searchOption = SearchOption.AllDirectories;
+            else
+                searchOption = SearchOption.TopDirectoryOnly;
+
             try
             {
                 var dateTime = LatestParsedChecked == true ? ReplaysLatestSaved : ReplaysLastSaved;
                 List <FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
-                    .GetFiles($"*.{Resources.HeroesReplayFileType}", SearchOption.AllDirectories)
+                    .GetFiles($"*.{Resources.HeroesReplayFileType}", searchOption)
                     .OrderBy(x => x.LastWriteTime)
                     .Where(x => x.LastWriteTime > dateTime)
                     .ToList();
@@ -660,7 +677,7 @@ namespace HeroesParserData.ViewModels
             {
                 if (disposing)
                 {
-                    ((IDisposable)_fileWatcher).Dispose();
+                    ((IDisposable)FileWatcher).Dispose();
                 }
                 disposedValue = true;
             }
