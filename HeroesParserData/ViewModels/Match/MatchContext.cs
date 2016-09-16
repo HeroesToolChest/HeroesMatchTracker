@@ -2,6 +2,7 @@
 using HeroesIcons;
 using HeroesParserData.DataQueries.ReplayData;
 using HeroesParserData.Models.MatchModels;
+using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -217,6 +218,15 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
+        public bool ShowPlayerTagColumn
+        {
+            get { return !Settings.Default.IsBattleTagHidden; }
+            set
+            {
+                Settings.Default.IsBattleTagHidden = !value;
+                RaisePropertyChangedEvent(nameof(ShowPlayerTagColumn));
+            }
+        }
         // shows the expander that shows the bans
         public bool HasBans
         {
@@ -239,7 +249,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        // shows the expander that shows teh observers
+        // shows the expander that shows the observers
         public bool HasChat
         {
             get { return _hasChat; }

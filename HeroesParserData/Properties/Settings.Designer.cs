@@ -140,5 +140,17 @@ namespace HeroesParserData.Properties {
                 this["IsMinimizeToTray"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsBattleTagHidden {
+            get {
+                return ((bool)(this["IsBattleTagHidden"]));
+            }
+            set {
+                this["IsBattleTagHidden"] = value;
+            }
+        }
     }
 }

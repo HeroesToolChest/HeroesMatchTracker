@@ -34,6 +34,10 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
+                    </Grid.Resources>
+                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" Grid.Row="0" IsExpanded="True" Background="#b3b3ff">
                         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
@@ -59,7 +63,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
                                 <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -166,7 +170,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
                                 <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -256,6 +260,10 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
+                    </Grid.Resources>
+                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" Grid.Row="0" IsExpanded="True" Background="#b3b3ff">
                         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource PlayerDataGrid}" CanUserSortColumns="False"
@@ -281,7 +289,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
                                 <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
@@ -318,7 +326,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80"/>
+                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}"/>
                                 <DataGridTextColumn Header="Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                 <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>

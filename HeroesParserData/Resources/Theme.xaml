@@ -88,7 +88,7 @@
         <Setter Property="Effect" Value="{StaticResource HomeFontTheme}"></Setter>
     </Style>
 
-    <Style TargetType="CheckBox" x:Key="HomeCheckBoxTheme" BasedOn="{StaticResource MetroCheckBox}">
+    <Style TargetType="CheckBox" x:Key="SettingsCheckBoxTheme" BasedOn="{StaticResource MetroCheckBox}">
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
         <Setter Property="VerticalAlignment" Value="Top"></Setter>

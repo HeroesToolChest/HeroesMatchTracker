@@ -11,7 +11,8 @@
         <ViewModels:SettingsViewModel />
     </Control.DataContext>
     <Grid>
-        <CheckBox Content="Auto Updates" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource HomeCheckBoxTheme}"/>
-        <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}" Margin="10,34,0,0" Style="{StaticResource HomeCheckBoxTheme}"/>
+        <CheckBox Content="Auto Updates" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
+        <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}" Margin="10,34,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
+        <CheckBox Content="Hide BattleTags in Talents and Score (requires restart)" IsChecked="{Binding IsBattleTagsHidden}" Margin="10,58,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
     </Grid>
 </UserControl>

@@ -24,6 +24,15 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        public bool IsBattleTagsHidden
+        {
+            get { return Settings.Default.IsBattleTagHidden; }
+            set
+            {
+                Settings.Default.IsBattleTagHidden = value;
+                RaisePropertyChangedEvent(nameof(IsBattleTagsHidden));
+            }
+        }
         public SettingsViewModel()
             :base()
         {
