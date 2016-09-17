@@ -5,6 +5,7 @@ This application uses [Heroes.ReplayPaser](https://github.com/koliva8245/Heroes.
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_0_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_LastMatch_1_0_0.jpg)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
