@@ -576,6 +576,7 @@ namespace HeroesParserData.ViewModels.Match
         private void SetNonHealingCharacters()
         {
             NonHealingCharactersDictionary.Add("Abathur", "Specialist");
+            NonHealingCharactersDictionary.Add("Alarak", "Assasin");
             NonHealingCharactersDictionary.Add("Azmodan", "Specialist");
             NonHealingCharactersDictionary.Add("Chromie", "Assasin");
             NonHealingCharactersDictionary.Add("Gall", "Assasin");
@@ -585,7 +586,10 @@ namespace HeroesParserData.ViewModels.Match
             NonHealingCharactersDictionary.Add("Jaina", "Assasin");
             NonHealingCharactersDictionary.Add("Li-Ming", "Assasin");
             NonHealingCharactersDictionary.Add("Nova", "Assasin");
+            NonHealingCharactersDictionary.Add("Raynor", "Assasin");
+            NonHealingCharactersDictionary.Add("Sgt. Hammer", "Specialist");
             NonHealingCharactersDictionary.Add("Sylvanas", "Specialist");
+            NonHealingCharactersDictionary.Add("The Butcher", "Assasin");
             NonHealingCharactersDictionary.Add("The Lost Vikings", "Specialist");
             NonHealingCharactersDictionary.Add("Thrall", "Assasin");
             NonHealingCharactersDictionary.Add("Xul", "Specialist");
