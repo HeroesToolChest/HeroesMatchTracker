@@ -35,7 +35,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected override async Task RefreshExecute()
         {
-            var replay = await Query.Replay.ReadLatestRecordsAsync(1);
+            var replay = await Query.Replay.ReadLastRecordsAsync(1);
             if (replay.Count > 0)
                 await QuerySummaryDetails(replay[0].ReplayId);
         }
