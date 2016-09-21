@@ -767,7 +767,9 @@ namespace HeroesParserData.ViewModels.Match
                 case "MostDamageDoneToZerg":
                     awardName = "Zerg Crusher";
                     return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_zergcrusher_{teamColor}.png", UriKind.Absolute));
-
+                case "MostNukeDamageDone":
+                    awardName = "Da Bomb";
+                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_dabomb_{teamColor}.png", UriKind.Absolute));                   
                 default:
                     ExceptionLog.Log(LogLevel.Info, $"Could not find {award} award");
                     awardName = null;
