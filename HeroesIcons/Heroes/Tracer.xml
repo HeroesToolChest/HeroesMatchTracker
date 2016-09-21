@@ -3,12 +3,12 @@
   <Level1>
     <TracerPulseStrikeMelee name="Pulse Strike">storm_ui_icon_tracer_melee.dds</TracerPulseStrikeMelee>
     <TracerSlipstreamRecall name="Slipstream">storm_ui_icon_tracer_recall.dds</TracerSlipstreamRecall>
-    <TracerTracerRounds name="Tracer Rounds">storm_ui_icon_talent_autoattack_reveal.dds</TracerTracerRounds>
+    <TracerTracerRounds name="Tracer Rounds" generic="true">storm_ui_icon_talent_autoattack_reveal.dds</TracerTracerRounds>
   </Level1>
   <Level4>
     <TracerPartingGift name="Parting Gift">storm_ui_icon_tracer_recall.dds</TracerPartingGift>
     <TracerIsthataHealthPack name="Is That a Health Pack?!">storm_ui_icon_tracer_medpack.dds</TracerIsthataHealthPack>
-    <TracerUntouchable name="Untouchable">storm_ui_icon_talent_autoattack_damage.dds</TracerUntouchable>
+    <TracerUntouchable name="Untouchable" generic="true">storm_ui_icon_talent_autoattack_damage.dds</TracerUntouchable>
   </Level4>
   <Level7>
     <TracerJumper name="Jumper">storm_ui_icon_tracer_blink_b.dds</TracerJumper>
@@ -22,8 +22,8 @@
   </Level10>
   <Level13>
     <TracerBulletSprayMelee name="Bullet Spray">storm_ui_icon_tracer_melee.dds</TracerBulletSprayMelee>
-    <TracerRicochetHeroWeapon name="Ricochet">storm_ui_icon_talent_autoattack_aoe.dds</TracerRicochetHeroWeapon>
-    <TracerLeechingRounds name="Leeching Rounds">storm_ui_icon_talent_autoattack_heal.dds</TracerLeechingRounds>
+    <TracerRicochetHeroWeapon name="Ricochet" generic="true">storm_ui_icon_talent_autoattack_aoe.dds</TracerRicochetHeroWeapon>
+    <TracerLeechingRounds name="Leeching Rounds" generic="true">storm_ui_icon_talent_autoattack_heal.dds</TracerLeechingRounds>
   </Level13>
   <Level16>
     <TracerSleightofHand name="Sleight of Hand">storm_ui_icon_tracer_reload.dds</TracerSleightofHand>

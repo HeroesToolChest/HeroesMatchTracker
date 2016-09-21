@@ -9,7 +9,7 @@
   <Level4>
     <KerriganMasteryRavageCleanKill name="Clean Kill">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageCleanKill>
     <KerriganMasteryPrimalGraspPsionicPulse name="Psionic Pulse">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganMasteryPrimalGraspPsionicPulse>
-    <KerriganCombatStyleFuryoftheSwarm name="Fury of the Swarm">storm_ui_icon_talent_autoattack_aoe.dds</KerriganCombatStyleFuryoftheSwarm>
+    <KerriganCombatStyleFuryoftheSwarm name="Fury of the Swarm" generic="true">storm_ui_icon_talent_autoattack_aoe.dds</KerriganCombatStyleFuryoftheSwarm>
     <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
   </Level4>
   <Level7>

@@ -14,7 +14,7 @@
   <Level7>
     <ChenBrewmastersBalance name="Brewmaster's Balance">storm_ui_icon_chen_fortifyingbrew.dds</ChenBrewmastersBalance>
     <ChenBolderFlavor name="Bolder Flavor">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenBolderFlavor>
-    <ChenRefreshingElixir name="Refreshing Elixir">storm_ui_icon_talent_amplifiedhealing.dds</ChenRefreshingElixir>
+    <ChenRefreshingElixir name="Refreshing Elixir" generic="true">storm_ui_icon_talent_amplifiedhealing.dds</ChenRefreshingElixir>
   </Level7>
   <Level10>
     <ChenHeroicAbilityWanderingKeg name="Wandering Keg">storm_ui_icon_chen_wanderingkeg.dds</ChenHeroicAbilityWanderingKeg>

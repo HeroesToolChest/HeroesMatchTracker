@@ -3,12 +3,12 @@
   <Level1>
     <ChromieSandBlastCompoundingAether name="Compounding Aether">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastCompoundingAether>
     <ChromieDragonsBreathDeepBreathing name="Deep Breathing">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathDeepBreathing>
-    <ChromieTimewalkersPursuit name="Timewalker's Pursuit">storm_ui_icon_talent_conjurerspursuit.dds</ChromieTimewalkersPursuit>
-    <ChromiePeerIntoTheFuture name="Peer Into The Future">storm_ui_icon_talent_clairvoyance.dds</ChromiePeerIntoTheFuture>
+    <ChromieTimewalkersPursuit name="Timewalker's Pursuit" generic="true">storm_ui_icon_talent_conjurerspursuit.dds</ChromieTimewalkersPursuit>
+    <ChromiePeerIntoTheFuture name="Peer Into The Future" generic="true">storm_ui_icon_talent_clairvoyance.dds</ChromiePeerIntoTheFuture>
   </Level1>
   <Level4>
     <ChromieSandBlastPiercingSands name="Piercing Sands">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastPiercingSands>
-    <ChromieBronzeTalons name="Bronze Talons">storm_ui_icon_talent_autoattack_damage.dds</ChromieBronzeTalons>
+    <ChromieBronzeTalons name="Bronze Talons" generic="true">storm_ui_icon_talent_autoattack_damage.dds</ChromieBronzeTalons>
     <ChromieDragonsBreathEnvelopingAssault name="Enveloping Assault">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathEnvelopingAssault>
   </Level4>
   <Level7>

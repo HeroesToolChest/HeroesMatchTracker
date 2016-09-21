@@ -24,7 +24,7 @@
   <Level13>
     <MonkQuicksilverRadiantDash name="Quicksilver">storm_ui_icon_monk_dash.dds</MonkQuicksilverRadiantDash>
     <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
-    <MonkSixthSense name="Sixth Sense">storm_ui_icon_Talent_Relentless.dds</MonkSixthSense>
+    <MonkSixthSense name="Sixth Sense" generic="true">storm_ui_icon_Talent_Relentless.dds</MonkSixthSense>
     <MonkFistsofFuryDeadlyReach name="Fists of Fury">storm_ui_icon_monk_deadlyreach.dds</MonkFistsofFuryDeadlyReach>
   </Level13>
   <Level16>

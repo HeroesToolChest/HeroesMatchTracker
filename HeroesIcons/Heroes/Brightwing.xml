@@ -4,7 +4,7 @@
     <BrightwingDreamShotArcaneFlare name="Dream Shot">storm_ui_icon_brightwing_arcaneflare.dds</BrightwingDreamShotArcaneFlare>
     <BrightwingUnfurlingSpraySoothingMist name="Unfurling Spray">storm_ui_icon_brightwing_soothingmist.dds</BrightwingUnfurlingSpraySoothingMist>
     <BrightwingHyperShiftPhaseShift name="Hyper Shift">storm_ui_icon_brightwing_hypershift.dds</BrightwingHyperShiftPhaseShift>
-    <BrightwingPixieCharm name="Pixie Charm">storm_ui_icon_talent_bribe.dds</BrightwingPixieCharm>
+    <BrightwingPixieCharm name="Pixie Charm" generic="true">storm_ui_icon_talent_bribe.dds</BrightwingPixieCharm>
   </Level1>
   <Level4>
     <BrightwingArcaneBarrageArcaneFlare name="Arcane Barrage">storm_ui_icon_brightwing_arcaneflare.dds</BrightwingArcaneBarrageArcaneFlare>
@@ -31,7 +31,7 @@
     <BrightwingGreaterPolymorphPolymorph name="Greater Polymorph">storm_ui_icon_brightwing_polymorph.dds</BrightwingGreaterPolymorphPolymorph>
     <FaerieDragonMasteryCritterize name="Critterize">storm_ui_icon_brightwing_polymorph_var1.dds</FaerieDragonMasteryCritterize>
     <BrightwingBouncyDustPixieDust name="Bouncy Dust">storm_ui_icon_brightwing_pixiedust.dds</BrightwingBouncyDustPixieDust>
-    <FaerieDragonHardenedFocus name="Hardened Focus">storm_ui_icon_Talent_HardenedFocus.dds</FaerieDragonHardenedFocus>
+    <FaerieDragonHardenedFocus name="Hardened Focus" generic="true">storm_ui_icon_Talent_HardenedFocus.dds</FaerieDragonHardenedFocus>
   </Level16>
   <Level20>
     <BrightwingDoubleWyrmholeBlinkHeal name="Double Wyrmhole">storm_ui_icon_brightwing_blinkheal.dds</BrightwingDoubleWyrmholeBlinkHeal>

@@ -29,7 +29,7 @@
     <GenericTalentIceBlock name="Ice Block">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
   </Level13>
   <Level16>
-    <MalfurionHardenedFocus name="Hardened Focus">storm_ui_icon_Talent_HardenedFocus.dds</MalfurionHardenedFocus>
+    <MalfurionHardenedFocus name="Hardened Focus" generic="true">storm_ui_icon_Talent_HardenedFocus.dds</MalfurionHardenedFocus>
     <MalfurionMasteryTenaciousRootsEntanglingRoots name="Tenacious Roots">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryTenaciousRootsEntanglingRoots>
     <MalfurionMasteryHinderingMoonfire name="Hindering Moonfire">storm_ui_icon_malfurion_moonfire.dds</MalfurionMasteryHinderingMoonfire>
     <MalfurionMasteryLunarShower name="Lunar Shower">storm_ui_icon_malfurion_moonfire_a.dds</MalfurionMasteryLunarShower>

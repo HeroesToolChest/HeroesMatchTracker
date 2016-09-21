@@ -8,7 +8,7 @@
   </Level1>
   <Level4>
     <AnubarakMasteryUnderkingBurrowCharge name="Underking">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryUnderkingBurrowCharge>
-    <AnubarakCombatStyleLocustNeedles name="Locust Needles">storm_ui_icon_talent_autoattack_aoe.dds</AnubarakCombatStyleLocustNeedles>
+    <AnubarakCombatStyleLocustNeedles name="Locust Needles" generic="true">storm_ui_icon_talent_autoattack_aoe.dds</AnubarakCombatStyleLocustNeedles>
     <AnubarakCombatStyleLegionOfBeetles name="Legion of Beetles">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakCombatStyleLegionOfBeetles>
   </Level4>
   <Level7>

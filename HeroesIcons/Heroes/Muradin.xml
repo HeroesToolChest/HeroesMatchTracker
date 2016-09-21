@@ -14,7 +14,7 @@
   <Level7>
     <MuradinMasteryStormhammer name="Piercing Bolt">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammer>
     <MuradinMasteryDwarfTossLandingMomentum name="Landing Momentum">storm_ui_icon_Muradin_Dwarftoss.dds</MuradinMasteryDwarfTossLandingMomentum>
-    <MuradinCombatStyleSkullcracker name="Skullcracker">storm_ui_icon_talent_autoattack_stun.dds</MuradinCombatStyleSkullcracker>
+    <MuradinCombatStyleSkullcracker name="Skullcracker" generic="true">storm_ui_icon_talent_autoattack_stun.dds</MuradinCombatStyleSkullcracker>
     <BattleMomentumMuradin name="Iron-forged Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumMuradin>
   </Level7>
   <Level10>
@@ -30,7 +30,7 @@
   <Level16>
     <MuradinMasteryDwarfLaunch name="Dwarf Launch">storm_ui_icon_Muradin_Dwarftoss.dds</MuradinMasteryDwarfLaunch>
     <MuradinMasteryDwarfTossHeavyImpact name="Heavy Impact">storm_ui_icon_Muradin_Dwarftoss_A.dds</MuradinMasteryDwarfTossHeavyImpact>
-    <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!">storm_ui_icon_talent_autoattack_damage.dds</MuradinGiveEmTheAxeExecutioner60DamageBonus>
+    <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!" generic="true">storm_ui_icon_talent_autoattack_damage.dds</MuradinGiveEmTheAxeExecutioner60DamageBonus>
     <GenericTalentImposingPresence name="Imposing Presence">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
     <MuradinMasteryPassiveStoneform name="Stoneform">storm_ui_icon_Muradin_SecondWind.dds</MuradinMasteryPassiveStoneform>
   </Level16>
@@ -42,6 +42,6 @@
   </Level20>
   <Old>
     <MuradinMasteryStormhammerInfusedHammer name="Infused Hammer">storm_ui_icon_Muradin_Stormbolt.dds</MuradinMasteryStormhammerInfusedHammer>
-    <MuradinTalentExecutioner75 name="Give 'em the Axe!">storm_ui_icon_talent_autoattack_damage.dds</MuradinTalentExecutioner75>
+    <MuradinTalentExecutioner75 name="Give 'em the Axe!" generic="true">storm_ui_icon_talent_autoattack_damage.dds</MuradinTalentExecutioner75>
   </Old>
 </Muradin>

@@ -4,12 +4,12 @@
     <FalstadGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadGatheringStorm>
     <FalstadHammerangGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadHammerangGatheringStorm>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
-    <FalstadWingman name="Wingman">storm_ui_icon_talent_bribe.dds</FalstadWingman>
+    <FalstadWingman name="Wingman" generic="true">storm_ui_icon_talent_bribe.dds</FalstadWingman>
   </Level1>
   <Level4>
     <FalstadMasteryLightningRodStaticShield name="Static Shield">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodStaticShield>
     <FalstadMasteryUpdraftBarrelRoll name="Updraft">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryUpdraftBarrelRoll>
-    <FalstadTalentHammerGains name="Hammer Gains">storm_ui_icon_talent_autoattack_heal.dds</FalstadTalentHammerGains>
+    <FalstadTalentHammerGains name="Hammer Gains" generic="true">storm_ui_icon_talent_autoattack_heal.dds</FalstadTalentHammerGains>
   </Level4>
   <Level7>
     <FalstadMasteryHammerangSecretWeapon name="Secret Weapon">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangSecretWeapon>

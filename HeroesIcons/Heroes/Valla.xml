@@ -27,13 +27,13 @@
   <Level16>
     <DemonHunterMasteryFrostShot name="Frost Shot">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryFrostShot>
     <DemonHunterSeethingHatred name="Seething Hatred">storm_ui_icon_valla_hatred.dds</DemonHunterSeethingHatred>
-    <DemonHunterManticore name="Manticore">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterManticore>
+    <DemonHunterManticore name="Manticore" generic="true">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterManticore>
   </Level16>
   <Level20>
     <DemonHunterMasteryVengeance name="Vengeance">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryVengeance>
     <DemonHunterMasteryStormofVengeance name="Storm of Vengeance">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterMasteryStormofVengeance>
     <DemonHunterCombatStyleRancor name="Rancor">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleRancor>
-    <DemonHunterFarflightQuiver name="Farflight Quiver">storm_ui_icon_talent_autoattack_range.dds</DemonHunterFarflightQuiver>
+    <DemonHunterFarflightQuiver name="Farflight Quiver" generic="true">storm_ui_icon_talent_autoattack_range.dds</DemonHunterFarflightQuiver>
   </Level20>
   <Old>
     <GenericTalentExecutioner name="Executioner">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentExecutioner>
@@ -41,7 +41,7 @@
     <DemonHunterMasteryCompositeArrowsMultishot name="Composite Arrows">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryCompositeArrowsMultishot>
     <DemonHunterCombatStylePunishment name="Punishment">storm_ui_icon_valla_hatred_var1.dds</DemonHunterCombatStylePunishment>
     <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
-    <DemonHunterCombatStyleManticore name="Manticore">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterCombatStyleManticore>
+    <DemonHunterCombatStyleManticore name="Manticore" generic="true">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterCombatStyleManticore>
     <GenericTalentSearingAttacks name="Searing Attacks">storm_ui_icon_talent_autoattack_searing.dds</GenericTalentSearingAttacks>
     <GenericTalentGiantKiller name="Giant Killer">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
     <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>

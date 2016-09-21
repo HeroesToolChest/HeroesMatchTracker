@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Rexxar attributeid="Rexx" portrait="storm_ui_glues_draft_portrait_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
   <Level1>
-    <RexxarSpiritBondGrizzledBear name="Grizzled Bear">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledBear>
-    <RexxarHunterGatherer name="Hunter-Gatherer">storm_ui_icon_Talent_RegenerationMaster.dds</RexxarHunterGatherer>
-    <RexxarSurvivalistTraining name="Survivalist Training">storm_ui_icon_Talent_ConjurersPursuit.dds</RexxarSurvivalistTraining>
+    <RexxarSpiritBondGrizzledBear name="Grizzled Bear" generic="true">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledBear>
+    <RexxarHunterGatherer name="Hunter-Gatherer" generic="true">storm_ui_icon_Talent_RegenerationMaster.dds</RexxarHunterGatherer>
+    <RexxarSurvivalistTraining name="Survivalist Training" generic="true">storm_ui_icon_Talent_ConjurersPursuit.dds</RexxarSurvivalistTraining>
     <RexxarFlare name="Flare">storm_ui_icon_rexxar_flare.dds</RexxarFlare>
   </Level1>
   <Level4>
@@ -22,7 +22,7 @@
     <RexxarHeroicAbilityUnleashTheBoars name="Unleash the Boars">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarHeroicAbilityUnleashTheBoars>
   </Level10>
   <Level13>
-    <RexxarSpiritBondWildfireBear name="Wildfire Bear">storm_ui_icon_Talent_BurningRage.dds</RexxarSpiritBondWildfireBear>
+    <RexxarSpiritBondWildfireBear name="Wildfire Bear" generic="true">storm_ui_icon_Talent_BurningRage.dds</RexxarSpiritBondWildfireBear>
     <RexxarThrilloftheHunt name="Thrill of the Hunt">storm_ui_icon_rexxar_heremishaactive.dds</RexxarThrilloftheHunt>
     <RexxarBearNecessitiesCharge name="Bear Necessities">storm_ui_icon_rexxar_mishacharge.dds</RexxarBearNecessitiesCharge>
     <RexxarBarkskin name="Barkskin">storm_ui_icon_rexxar_mishacharge_var1.dds</RexxarBarkskin>
@@ -30,16 +30,16 @@
   <Level16>
     <RexxarCriticalCareMendPet name="Critical Care">storm_ui_icon_rexxar_mendpet.dds</RexxarCriticalCareMendPet>
     <RexxarAspectOfTheHawkSpiritSwoop name="Aspect of the Hawk">storm_ui_icon_rexxar_spiritswoop.dds</RexxarAspectOfTheHawkSpiritSwoop>
-    <RexxarSpiritBondPrimalIntimidation name="Primal Intimidation">storm_ui_icon_talent_imposingpresence.dds</RexxarSpiritBondPrimalIntimidation>
+    <RexxarSpiritBondPrimalIntimidation name="Primal Intimidation" generic="true">storm_ui_icon_talent_imposingpresence.dds</RexxarSpiritBondPrimalIntimidation>
     <RexxarFeignDeath name="Feign Death">storm_ui_icon_rexxar_feigndeath.dds</RexxarFeignDeath>
   </Level16>
   <Level20>
     <RexxarSpiritBond name="Spirit Bond">storm_ui_icon_rexxar_bestialwrath.dds</RexxarSpiritBond>
     <RexxarUnleashTheBoarsKillCommand name="Kill Command">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarUnleashTheBoarsKillCommand>
-    <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor">storm_ui_icon_talent_autoattack_slow.dds</RexxarFrenzyofKalimdor>
-    <RexxarHardenedSkin name="Hardened Skin">storm_ui_icon_Talent_HardenedShield.dds</RexxarHardenedSkin>
+    <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor" generic="true">storm_ui_icon_talent_autoattack_slow.dds</RexxarFrenzyofKalimdor>
+    <RexxarHardenedSkin name="Hardened Skin" generic="true">storm_ui_icon_Talent_HardenedShield.dds</RexxarHardenedSkin>
   </Level20>
   <Old>
-    <RexxarThrowingAxes name="Throwing Axes">storm_ui_icon_talent_autoattack_range.dds</RexxarThrowingAxes>
+    <RexxarThrowingAxes name="Throwing Axes" generic="true">storm_ui_icon_talent_autoattack_range.dds</RexxarThrowingAxes>
   </Old>
 </Rexxar>

@@ -26,7 +26,7 @@
   </Level13>
   <Level16>
     <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasFlamestrikeFuryOfTheSunwell>
-    <KaelthasArcaneDynamo name="Arcane Dynamo">storm_ui_icon_talent_arcanepower.dds</KaelthasArcaneDynamo>
+    <KaelthasArcaneDynamo name="Arcane Dynamo" generic="true">storm_ui_icon_talent_arcanepower.dds</KaelthasArcaneDynamo>
     <KaelthasTwinSpheres name="Twin Spheres">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasTwinSpheres>
   </Level16>
   <Level20>

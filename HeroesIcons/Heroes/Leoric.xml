@@ -16,7 +16,7 @@
     <LeoricMasteryGhastlyReachSkeletalSwing name="Ghastly Reach">storm_ui_icon_leoric_SkeletalSwing.dds</LeoricMasteryGhastlyReachSkeletalSwing>
     <LeoricMasteryLingeringApparitionWraithWalk name="Lingering Apparition">storm_ui_icon_leoric_WraithWalk.dds</LeoricMasteryLingeringApparitionWraithWalk>
     <LeoricMasteryParalyzingRageSkeletalSwing name="Paralyzing Rage">storm_ui_icon_leoric_skeletalswing_var1.dds</LeoricMasteryParalyzingRageSkeletalSwing>
-    <LeoricMasteryOsseinRenewal name="Ossein Renewal">storm_ui_icon_talent_amplifiedhealing.dds</LeoricMasteryOsseinRenewal>
+    <LeoricMasteryOsseinRenewal name="Ossein Renewal" generic="true">storm_ui_icon_talent_amplifiedhealing.dds</LeoricMasteryOsseinRenewal>
   </Level7>
   <Level10>
     <LeoricHeroicAbilityEntomb name="Entomb">storm_ui_icon_leoric_Entomb.dds</LeoricHeroicAbilityEntomb>
@@ -37,7 +37,7 @@
   <Level20>
     <LeoricMasteryBuriedAliveEntomb name="Buried Alive">storm_ui_icon_leoric_Entomb.dds</LeoricMasteryBuriedAliveEntomb>
     <LeoricMasteryDeathMarchMarchoftheBlackKing name="Death March">storm_ui_icon_leoric_R2.dds</LeoricMasteryDeathMarchMarchoftheBlackKing>
-    <LeoricMasterySpectralLeech name="Spectral Leech">storm_ui_icon_talent_autoattack_heal.dds</LeoricMasterySpectralLeech>
+    <LeoricMasterySpectralLeech name="Spectral Leech" generic="true">storm_ui_icon_talent_autoattack_heal.dds</LeoricMasterySpectralLeech>
     <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
   </Level20>
   <Old></Old>

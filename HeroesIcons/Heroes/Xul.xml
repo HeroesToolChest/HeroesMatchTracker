@@ -37,6 +37,6 @@
     <NecromancerTalentBoneSpear name="Bone Spear">storm_ui_icon_Necromancer_BoneSpear.dds</NecromancerTalentBoneSpear>
   </Level20>
   <Old>
-    <NecromancerTalentExecutioner name="Excecutioner">storm_ui_icon_talent_autoattack_damage.dds</NecromancerTalentExecutioner>
+    <NecromancerTalentExecutioner name="Excecutioner" generic="true">storm_ui_icon_talent_autoattack_damage.dds</NecromancerTalentExecutioner>
   </Old>
 </Xul>

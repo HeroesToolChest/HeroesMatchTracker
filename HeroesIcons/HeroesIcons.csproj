@@ -51,7 +51,6 @@
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_carapace.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_evolvemonstrosity.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_locustnest.dds" />
-    <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_mount.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_spawnlocust.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_spawnlocust_var1.dds" />
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_spikeburst.dds" />
@@ -192,6 +191,9 @@
     <Content Include="Heroes\Azmodan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Heroes\Muradin.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Heroes\Sonya.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -211,6 +213,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\Dehaka.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Heroes\Stitches.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\Valla.xml">
@@ -273,9 +278,6 @@
     <Content Include="Heroes\Kharazim.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Muradin.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Heroes\Murky.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -295,9 +297,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\SgtHammer.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Heroes\Stitches.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\Sylvanas.xml">
@@ -346,9 +345,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zarya.dds" />
-    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_talent_autoattack_base.dds" />
-    <Resource Include="Icons\Talents\ETC\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Chen\storm_ui_icon_talent_amplifiedhealing.dds" />
     <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_unyieldingdefender.dds" />
     <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_soulharvest.dds" />
     <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_suprerstition.dds" />
@@ -357,7 +353,6 @@
     <Resource Include="Icons\Talents\Chen\storm_ui_icon_chen_elusivebrew.dds" />
     <Resource Include="Icons\Talents\Chen\storm_ui_icon_chen_stormstoutsecretrecipe.dds" />
     <Resource Include="Icons\Talents\Auriel\storm_ui_icon_auriel_shieldofhope.dds" />
-    <Resource Include="Icons\Talents\Kharazim\storm_ui_icon_talent_relentless.dds" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_alarak.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_chromie.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_diablo.jpg" />
@@ -432,15 +427,10 @@
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_red.png" />
     <Resource Include="Icons\storm_ui_silencepenalty.dds" />
-    <Resource Include="Icons\Talents\Stitches\storm_ui_icon_talent_relentless.dds" />
-    <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_talent_bribe.dds" />
-    <Resource Include="Icons\Talents\Valla\storm_ui_icon_talent_autoattack_range.dds" />
     <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_a.dds" />
     <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_b.dds" />
     <Resource Include="Icons\Talents\Butcher\storm_ui_icon_talent_autoattack_speed.dds" />
     <Resource Include="Icons\Talents\Butcher\storm_ui_icon_talent_autoattack_aoe.dds" />
-    <Resource Include="Icons\Talents\Falstad\storm_ui_icon_talent_bribe.dds" />
-    <Resource Include="Icons\Talents\Nova\storm_ui_icon_talent_bribe.dds" />
     <Resource Include="Icons\Talents\Zagara\storm_ui_icon_zagara_banelingbarrage_a.dds" />
     <Resource Include="Icons\Talents\Zagara\storm_ui_icon_zagara_hunterkiller_a.dds" />
     <Resource Include="Icons\Talents\Muradin\storm_ui_icon_muradin_thunderclap_b.dds" />
@@ -470,9 +460,6 @@
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_sadism.dds" />
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis.dds" />
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis_a.dds" />
-    <Resource Include="Icons\Talents\Kaelthas\storm_ui_icon_talent_arcanepower.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_autoattack_range.dds" />
-    <Resource Include="Icons\Talents\Xul\storm_ui_icon_talent_autoattack_damage.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_abathur.dds" />
@@ -587,78 +574,20 @@
     <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_wizard.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zagara.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zeratul.dds" />
-    <Resource Include="Icons\Talents\Tychus\storm_ui_icon_talent_autoattack_heal.dds" />
-    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_talent_autoattack_cooldown.dds" />
-    <Resource Include="Icons\Talents\Tyrande\storm_ui_icon_talent_searingarrow.dds" />
-    <Resource Include="Icons\Talents\Tyrael\storm_ui_icon_talent_autoattack_cooldown.dds" />
     <Resource Include="Icons\Talents\Cho\storm_ui_icon_gall_twoheaded.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_conjurerspursuit.dds" />
-    <Resource Include="Icons\Talents\Muradin\storm_ui_icon_talent_autoattack_stun.dds" />
-    <Resource Include="Icons\Talents\Azmodan\storm_ui_icon_talent_bribe.dds" />
-    <Resource Include="Icons\Talents\Chromie\storm_ui_icon_talent_conjurerspursuit.dds" />
-    <Resource Include="Icons\Talents\Diablo\storm_ui_icon_talent_autoattack_heal.dds" />
-    <Resource Include="Icons\Talents\Tracer\storm_ui_icon_talent_autoattack_aoe.dds" />
-    <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_talent_elunesgrace.dds" />
-    <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_talent_hardenedfocus.dds" />
-    <Resource Include="Icons\Talents\Chromie\storm_ui_icon_talent_clairvoyance.dds" />
     <Resource Include="Icons\Talents\Guldan\storm_ui_icon_chaoticenergy.dds" />
-    <Resource Include="Icons\Talents\Azmodan\storm_ui_icon_talent_bloodforblood.dds" />
-    <Resource Include="Icons\Talents\Chromie\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Leoric\storm_ui_icon_talent_amplifiedhealing.dds" />
-    <Resource Include="Icons\Talents\Azmodan\storm_ui_icon_talent_boltofthestorm.dds" />
-    <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_talent_hardenedfocus.dds" />
-    <Resource Include="Icons\Talents\Illidan\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Tassadar\storm_ui_icon_talent_autoattack_slow.dds" />
     <Resource Include="Icons\Talents\Artanis\storm_ui_icon_artanis_purifierbeam.dds" />
     <Resource Include="Icons\Talents\Gall\storm_ui_icon_cho_twoheaded.dds" />
     <Resource Include="Icons\Talents\Arthas\storm_ui_icon_talent_deaths_advance.dds" />
     <Resource Include="Icons\Talents\_Generic\storm_temp_btn-ability-terran-heal-color.dds" />
-    <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_talent_autoattack_range.dds" />
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_no_pick.dds" />
     <Resource Include="Icons\Talents\Tychus\storm_temp_btn-upgrade-terran-neosteelframe.dds" />
-    <Resource Include="Icons\Talents\Tychus\storm_ui_icon_talent_autoattack_speed.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_autoattack_slow.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_hardenedshield.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_imposingpresence.dds" />
-    <Resource Include="Icons\Talents\Tychus\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Tychus\storm_ui_icon_talent_relentless.dds" />
     <Resource Include="Icons\Talents\Arthas\storm_temp_war3_btnantimagicshell.dds" />
-    <Resource Include="Icons\Talents\Tracer\storm_ui_icon_talent_autoattack_reveal.dds" />
-    <Resource Include="Icons\Talents\Tracer\storm_ui_icon_talent_autoattack_heal.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_regenerationmaster.dds" />
-    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_talent_autoattack_range.dds" />
-    <Resource Include="Icons\Talents\Stitches\storm_ui_icon_talent_autoattack_slow.dds" />
-    <Resource Include="Icons\Talents\Stitches\storm_ui_icon_talent_regenerationmaster.dds" />
-    <Resource Include="Icons\Talents\Malfurion\storm_ui_icon_talent_hardenedfocus.dds" />
-    <Resource Include="Icons\Talents\Uther\storm_ui_icon_talent_hardenedfocus.dds" />
-    <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_talent_bribe.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_block.dds" />
-    <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_burningrage.dds" />
-    <Resource Include="Icons\Talents\Anubarak\storm_ui_icon_talent_autoattack_aoe.dds" />
-    <Resource Include="Icons\Talents\Sylvanas\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Kerrigan\storm_ui_icon_talent_autoattack_aoe.dds" />
-    <Resource Include="Icons\Talents\Nova\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Johanna\storm_ui_icon_talent_block.dds" />
     <Resource Include="Icons\Talents\Leoric\storm_temp_war3_btnanimatedead.dds" />
-    <Resource Include="Icons\Talents\Leoric\storm_ui_icon_talent_autoattack_heal.dds" />
-    <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_talent_healingward.dds" />
-    <Resource Include="Icons\Talents\Valla\storm_ui_icon_talent_autoattack_damage.dds" />
     <Resource Include="Icons\Talents\Medivh\storm_temp_war3_btnmagicalsentry.dds" />
-    <Resource Include="Icons\Talents\Illidan\storm_ui_icon_talent_seasonedmarksman.dds" />
-    <Resource Include="Icons\Talents\Tracer\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Muradin\storm_ui_icon_talent_autoattack_damage.dds" />
     <Resource Include="Icons\Talents\Arthas\storm_ui_icon_talent_icebound_fortitude.dds" />
-    <Resource Include="Icons\Talents\LiMing\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_talent_autoattack_cooldown.dds" />
     <Resource Include="Icons\Talents\Uther\storm_ui_icon_holylight.dds" />
     <Resource Include="Icons\Talents\Uther\storm_ui_icon_holylight_2.dds" />
-    <Resource Include="Icons\Talents\Uther\storm_ui_icon_talent_autoattack_mana.dds" />
-    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_talent_autoattack_aoe.dds" />
-    <Resource Include="Icons\Talents\Zagara\storm_ui_icon_talent_autoattack_damage.dds" />
-    <Resource Include="Icons\Talents\Falstad\storm_ui_icon_talent_autoattack_heal.dds" />
-    <Resource Include="Icons\Talents\Murky\storm_ui_icon_talent_block.dds" />
-    <Resource Include="Icons\Talents\Sonya\storm_ui_icon_talent_autoattack_heal.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_astralpresence.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_elementalexposure.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_glasscannon.dds" />
@@ -684,7 +613,6 @@
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_blinkheal.dds" />
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_emeraldwind.dds" />
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_hypershift.dds" />
-    <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_mount.dds" />
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_pixiedust.dds" />
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_pixiedust_a.dds" />
     <Resource Include="Icons\Talents\Brightwing\storm_ui_icon_brightwing_pixiedust_var1.dds" />
@@ -739,7 +667,6 @@
     <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_essencecollection_var1.dds" />
     <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_essencecollection_var2.dds" />
     <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_isolation.dds" />
-    <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_mount.dds" />
     <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_trample.dds" />
     <Resource Include="Icons\Talents\Dehaka\storm_ui_icon_dehaka_trample_a.dds" />
     <Resource Include="Icons\Talents\Diablo\storm_ui_icon_diablo_apocalypse.dds" />
@@ -772,7 +699,6 @@
     <Resource Include="Icons\Talents\Falstad\storm_ui_icon_falstad_lightningrod.dds" />
     <Resource Include="Icons\Talents\Falstad\storm_ui_icon_falstad_lightningrod_a.dds" />
     <Resource Include="Icons\Talents\Falstad\storm_ui_icon_falstad_mightygust.dds" />
-    <Resource Include="Icons\Talents\Falstad\storm_ui_icon_falstad_mount.dds" />
     <Resource Include="Icons\Talents\Falstad\storm_ui_icon_falstad_tailwind.dds" />
     <Resource Include="Icons\Talents\Gall\storm_ui_icon_gall_chaoscollision.dds" />
     <Resource Include="Icons\Talents\Gall\storm_ui_icon_gall_chaoscollision_var1.dds" />
@@ -947,7 +873,6 @@
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_fullbloom_b.dds" />
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_fullbloom_c.dds" />
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_greaterspellshield.dds" />
-    <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_mount.dds" />
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_pollencloud.dds" />
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_stiflingblossom.dds" />
     <Resource Include="Icons\Talents\Lunara\storm_ui_icon_lunara_stiflingblossom_var1.dds" />
@@ -1010,8 +935,6 @@
     <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_voodooritual.dds" />
     <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_voodooritual_a.dds" />
     <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_zombiewall.dds" />
-    <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_talent_gidbin.dds" />
-    <Resource Include="Icons\Talents\Nova\storm_ui_icon_artanis_purifierbeam.dds" />
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_holodecoy.dds" />
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_holodecoy_var1.dds" />
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_holodecoy_var2.dds" />
@@ -1023,7 +946,6 @@
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_snipe.dds" />
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_snipe_var1.dds" />
     <Resource Include="Icons\Talents\Nova\storm_ui_icon_nova_tripletap.dds" />
-    <Resource Include="Icons\Talents\Nova\storm_ui_icon_talent_antiarmorshells.dds" />
     <Resource Include="Icons\Talents\Raynor\storm_ui_icon_raynor_acardtoplay.dds" />
     <Resource Include="Icons\Talents\Raynor\storm_ui_icon_raynor_adrenalinrush.dds" />
     <Resource Include="Icons\Talents\Raynor\storm_ui_icon_raynor_advancedoptics.dds" />
@@ -1038,7 +960,6 @@
     <Resource Include="Icons\Talents\Raynor\storm_ui_icon_raynor_relentlessleader.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_ancestralhealing.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_bloodlust.dds" />
-    <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_cancel_mount.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_chainheal.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_chainheal_a.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_earthbindtotem.dds" />
@@ -1047,7 +968,6 @@
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_ghostwolf.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_lightningshield.dds" />
     <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_lightningshield_a.dds" />
-    <Resource Include="Icons\Talents\Rehgar\storm_ui_icon_rehgar_mount.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_rexxar_bestialwrath.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_rexxar_feigndeath.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_rexxar_flare.dds" />
@@ -1065,7 +985,6 @@
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_bluntforcegun.dds" />
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_concussiveblast.dds" />
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_hypercoolingengines.dds" />
-    <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_mount.dds" />
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_napalmstrike.dds" />
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_siegemode.dds" />
     <Resource Include="Icons\Talents\SgtHammer\storm_ui_icon_sgthammer_siegemode_var1.dds" />
@@ -1123,7 +1042,6 @@
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_jump.dds" />
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_longboatraid.dds" />
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_mortar.dds" />
-    <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_mount.dds" />
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_norseforce.dds" />
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_playagain.dds" />
     <Resource Include="Icons\Talents\LostVikings\storm_ui_icon_lostvikings_selectall.dds" />
@@ -1140,7 +1058,6 @@
     <Resource Include="Icons\Talents\Thrall\storm_ui_icon_thrall_sundering.dds" />
     <Resource Include="Icons\Talents\Thrall\storm_ui_icon_thrall_windfury.dds" />
     <Resource Include="Icons\Talents\Thrall\storm_ui_icon_thrall_windfury_var1.dds" />
-    <Resource Include="Icons\Talents\Tracer\storm_ui_icon_talent_autoattack_stun.dds" />
     <Resource Include="Icons\Talents\Tracer\storm_ui_icon_tracer_blink.dds" />
     <Resource Include="Icons\Talents\Tracer\storm_ui_icon_tracer_blink_b.dds" />
     <Resource Include="Icons\Talents\Tracer\storm_ui_icon_tracer_blink_b_empty.dds" />

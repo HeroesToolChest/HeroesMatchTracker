@@ -3,7 +3,7 @@
   <Level1>
     <IllidanMasteryImmolationSweepingStrike name="Immolation">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasteryImmolationSweepingStrike>
     <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault">storm_ui_icon_illidan_sweepingstrike_a.dds</IllidanMasteryBatteredAssaultSweepingStrike>
-    <IllidanUnendingHatredPassive name="Unending Hatred">storm_ui_icon_talent_seasonedmarksman.dds</IllidanUnendingHatredPassive>
+    <IllidanUnendingHatredPassive name="Unending Hatred" generic="true">storm_ui_icon_talent_seasonedmarksman.dds</IllidanUnendingHatredPassive>
   </Level1>
   <Level4>
     <IllidanMasteryRapidChaseDive name="Rapid Chase">storm_ui_icon_illidan_dive.dds</IllidanMasteryRapidChaseDive>
@@ -26,7 +26,7 @@
   </Level13>
   <Level16>
     <IllidanMasteryMarkedforDeathDive name="Marked for Death">storm_ui_icon_illidan_dive.dds</IllidanMasteryMarkedforDeathDive>
-    <IllidanFieryBrand name="Fiery Brand">storm_ui_icon_talent_autoattack_damage.dds</IllidanFieryBrand>
+    <IllidanFieryBrand name="Fiery Brand" generic="true">storm_ui_icon_talent_autoattack_damage.dds</IllidanFieryBrand>
     <IllidanBladesOfAzzinoth name="Blades of Azzinoth">storm_ui_icon_illidan_sweepingstrike_c.dds</IllidanBladesOfAzzinoth>
   </Level16>
   <Level20>

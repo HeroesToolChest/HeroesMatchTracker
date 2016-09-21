@@ -29,7 +29,7 @@
     <SylvanasTalentWitheringFireEvasiveFire name="Evasive Fire">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireEvasiveFire>
     <SylvanasTalentColdEmbrace name="Cold Embrace">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentColdEmbrace>
     <SylvanasTalentOverwhelmingAffliction name="Overwhelming Affliction">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentOverwhelmingAffliction>
-    <SylvanasTalentRemorseless name="Remorseless">storm_ui_icon_talent_autoattack_damage.dds</SylvanasTalentRemorseless>
+    <SylvanasTalentRemorseless name="Remorseless" generic="true">storm_ui_icon_talent_autoattack_damage.dds</SylvanasTalentRemorseless>
   </Level16>
   <Level20>
     <SylvanasWailingArrowDeafeningBlast name="Deafening Blast">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasWailingArrowDeafeningBlast>

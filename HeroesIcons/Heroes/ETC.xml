@@ -13,7 +13,7 @@
   <Level7>
     <L90ETCMasteryFaceMeltPinballWizard name="Pinball Wizard">storm_ui_icon_etc_facemelt.dds</L90ETCMasteryFaceMeltPinballWizard>
     <ETCCombatStyleEchoPedal name="Echo Pedal">storm_ui_icon_etc_echopedal.dds</ETCCombatStyleEchoPedal>
-    <ETCMasteryHammeron name="Hammer-on">storm_ui_icon_talent_autoattack_damage.dds</ETCMasteryHammeron>
+    <ETCMasteryHammeron name="Hammer-on" generic="true">storm_ui_icon_talent_autoattack_damage.dds</ETCMasteryHammeron>
   </Level7>
   <Level10>
     <ETCHeroicAbilityMoshPit name="Mosh Pit">storm_ui_icon_ETC_MoshPit.dds</ETCHeroicAbilityMoshPit>

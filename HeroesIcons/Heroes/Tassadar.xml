@@ -23,7 +23,7 @@
     <TassadarHeroicAbilityForceWall name="Force Wall">storm_ui_icon_tassadar_forcewall.dds</TassadarHeroicAbilityForceWall>
   </Level10>
   <Level13>
-    <TassadarCombatStyleDistortionBeam name="Distortion Beam">storm_ui_icon_talent_autoattack_slow.dds</TassadarCombatStyleDistortionBeam>
+    <TassadarCombatStyleDistortionBeam name="Distortion Beam" generic="true">storm_ui_icon_talent_autoattack_slow.dds</TassadarCombatStyleDistortionBeam>
     <TassadarMasteryPrescience name="Prescience">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarMasteryPrescience>
     <TassadarCombatStyleScryer name="Scryer">storm_ui_icon_tassadar_oracle.dds</TassadarCombatStyleScryer>
     <GenericTalentShrinkRay name="Shrink Ray">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>

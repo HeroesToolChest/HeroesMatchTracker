@@ -15,7 +15,7 @@
   <Level7>
     <ZaryaParticleGrenadePinpointAccuracy name="Pinpoint Accuracy">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadePinpointAccuracy>
     <ZaryaPersonalBarrierExplosiveBarrier name="Explosive Barrier">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierExplosiveBarrier>
-    <ZaryaWeaponToTheLimit name="To the Limit">storm_ui_icon_talent_autoattack_base.dds</ZaryaWeaponToTheLimit>
+    <ZaryaWeaponToTheLimit name="To the Limit" generic="true">storm_ui_icon_talent_autoattack_base.dds</ZaryaWeaponToTheLimit>
     <ZaryaEnergyHitMe name="Hit Me">storm_ui_icon_zarya_energy.dds</ZaryaEnergyHitMe>
   </Level7>
   <Level10>

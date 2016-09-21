@@ -74,7 +74,7 @@ namespace HeroesIcons
             {
                 return new BitmapImage(talent.Item2);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Task.Run(() => Log("_ImageMissingLog.txt", $"Talent icon: {nameOfHeroTalent}"));
                 return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
@@ -353,14 +353,16 @@ namespace HeroesIcons
                                 {
                                     if (reader.NodeType == XmlNodeType.Element)
                                     {
-                                        string name = reader.Name; // raw name
-                                        string realName = reader["name"]; // real name
-                                        if (realName == null)
-                                            realName = string.Empty;
+                                        string name = reader.Name; // raw name of talent
+                                        string realName = reader["name"] == null? string.Empty : reader["name"];  // real ingame name of talent
+                                        string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
+
+                                        bool isGeneric;
+                                        if (!bool.TryParse(generic, out isGeneric))
+                                            isGeneric = false;
 
                                         if (reader.Read())
                                         {
-                                            bool isGeneric = false;
                                             if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
                                                 isGeneric = true;
 

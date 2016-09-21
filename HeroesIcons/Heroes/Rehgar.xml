@@ -10,7 +10,7 @@
     <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace">storm_ui_icon_rehgar_chainheal.dds</RehgarMasterySpiritwalkersGrace>
     <RehgarMasteryFeralHeart name="Feral Heart">storm_ui_icon_rehgar_ghostwolf.dds</RehgarMasteryFeralHeart>
     <RehgarMasteryStormcaller name="Stormcaller">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryStormcaller>
-    <RehgarMasteryShamanHealingWard name="Healing Totem">storm_ui_icon_talent_healingward.dds</RehgarMasteryShamanHealingWard>
+    <RehgarMasteryShamanHealingWard name="Healing Totem" generic="true">storm_ui_icon_talent_healingward.dds</RehgarMasteryShamanHealingWard>
   </Level4>
   <Level7>
     <RehgarGhostWolfBloodAndThunder name="Blood and Thunder">storm_ui_icon_rehgar_ghostwolf.dds</RehgarGhostWolfBloodAndThunder>

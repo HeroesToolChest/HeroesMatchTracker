@@ -6,9 +6,9 @@
     <ZagaraMasteryInfest name="Infest">storm_ui_icon_zagara_infest.dds</ZagaraMasteryInfest>
   </Level1>
   <Level4>
-    <ZagaraMasteryEnvenomedSpines name="Envenomed Spines">storm_ui_icon_talent_autoattack_range.dds</ZagaraMasteryEnvenomedSpines>
-    <ZagaraCombatStyleMedusaBlades name="Medusa Blades">storm_ui_icon_talent_autoattack_aoe.dds</ZagaraCombatStyleMedusaBlades>
-    <ZagaraMasterySerratedSpines name="Serrated Spines">storm_ui_icon_talent_autoattack_damage.dds</ZagaraMasterySerratedSpines>
+    <ZagaraMasteryEnvenomedSpines name="Envenomed Spines" generic="true">storm_ui_icon_talent_autoattack_range.dds</ZagaraMasteryEnvenomedSpines>
+    <ZagaraCombatStyleMedusaBlades name="Medusa Blades" generic="true">storm_ui_icon_talent_autoattack_aoe.dds</ZagaraCombatStyleMedusaBlades>
+    <ZagaraMasterySerratedSpines name="Serrated Spines" generic="true">storm_ui_icon_talent_autoattack_damage.dds</ZagaraMasterySerratedSpines>
   </Level4>
   <Level7>
     <ZagaraMasteryBanelingMassacre name="Baneling Massacre">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryBanelingMassacre>
@@ -36,11 +36,11 @@
   </Level20>
   <Old>
     <ZagaraMasteryReconstitution name="Reconstitution">storm_ui_icon_zagara_creep.dds</ZagaraMasteryReconstitution>
-    <ZagaraCombatStyleEnvenomedSpines name="Envenomed Spines">storm_ui_icon_talent_autoattack_range.dds</ZagaraCombatStyleEnvenomedSpines>
+    <ZagaraCombatStyleEnvenomedSpines name="Envenomed Spines" generic="true">storm_ui_icon_talent_autoattack_range.dds</ZagaraCombatStyleEnvenomedSpines>
     <ZagaraMasteryTumorClutch name="Tumor Clutch">storm_ui_icon_zagara_creep.dds</ZagaraMasteryTumorClutch>
     <ZagaraMasteryRapidIncubation name="Rapid Incubation">storm_ui_icon_zagara_rapidincubation.dds</ZagaraMasteryRapidIncubation>
     <ZagaraMasteryVentralSacs name="Ventral Sacs">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryVentralSacs>
-    <ZagaraSwarmMomentum name="Swarm Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</ZagaraSwarmMomentum>
+    <ZagaraSwarmMomentum name="Swarm Momentum" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</ZagaraSwarmMomentum>
     <ZagaraMasteryGroovedSpines name="Grooved Spines">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryGroovedSpines>
     <ZagaraMasteryMetabolicBoost name="Metabolic Boost">storm_ui_icon_zagara_creep.dds</ZagaraMasteryMetabolicBoost>
     <ZagaraMasteryCentrifugalHooks name="CentrifugalHooks">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryCentrifugalHooks>

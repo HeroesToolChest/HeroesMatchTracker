@@ -10,7 +10,7 @@
   <Level4>
     <GenericTalentVigorousAssault name="Vigorous Assault">storm_ui_icon_talent_autoattack_heal.dds</GenericTalentVigorousAssault>
     <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
-    <SgtHammerMasteryMaelstromShells name="Maelstrom Shells">storm_ui_icon_talent_autoattack_range.dds</SgtHammerMasteryMaelstromShells>
+    <SgtHammerMasteryMaelstromShells name="Maelstrom Shells" generic="true">storm_ui_icon_talent_autoattack_range.dds</SgtHammerMasteryMaelstromShells>
     <SgtHammerMasteryExcessiveForceConcussiveBlast name="Excessive Force">storm_ui_icon_sgthammer_concussiveblast.dds</SgtHammerMasteryExcessiveForceConcussiveBlast>
   </Level4>
   <Level7>

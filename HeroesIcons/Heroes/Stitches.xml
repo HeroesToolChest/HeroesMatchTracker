@@ -3,7 +3,7 @@
   <Level1>
     <StitchesMasteryChewYourFood name="Chew Your Food">storm_ui_icon_stitches_devour.dds</StitchesMasteryChewYourFood>
     <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
-    <StitchesHungryforMore name="Hungry for More">storm_ui_icon_talent_regenerationmaster.dds</StitchesHungryforMore>
+    <StitchesHungryforMore name="Hungry for More" generic="true">storm_ui_icon_talent_regenerationmaster.dds</StitchesHungryforMore>
     <StitchesMasteryHeavySlam name="Heavy Slam">storm_ui_icon_stitches_slam.dds</StitchesMasteryHeavySlam>
   </Level1>
   <Level4>
@@ -14,7 +14,7 @@
   <Level7>
     <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor">storm_ui_icon_stitches_devour.dds</StitchesMasterySavorTheFlavorDevour>
     <StitchesMasteryLastBiteDevour name="Last Bite">storm_ui_icon_stitches_devour_var1.dds</StitchesMasteryLastBiteDevour>
-    <StitchesCombatStyleTenderizer name="Tenderizer">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
+    <StitchesCombatStyleTenderizer name="Tenderizer" generic="true">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
     <StitchesToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
   </Level7>
   <Level10>
@@ -22,7 +22,7 @@
     <StitchesHeroicAbilityGorge name="Gorge">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
   </Level10>
   <Level13>
-    <StitchesFleaBag name="Flea Bag">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>
+    <StitchesFleaBag name="Flea Bag" generic="true">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>
     <StitchesMasteryMegaSmashSlam name="Mega Smash">storm_ui_icon_stitches_slam.dds</StitchesMasteryMegaSmashSlam>
     <StitchesMasteryIndigestionDevour name="Indigestion">storm_ui_icon_stitches_devour.dds</StitchesMasteryIndigestionDevour>
   </Level13>

@@ -21,7 +21,7 @@
     <WizardHeroicAbilityWaveOfForce name="Wave Of Force">storm_ui_icon_wizard_waveofforce.dds</WizardHeroicAbilityWaveOfForce>
   </Level10>
   <Level13>
-    <WizardCannoneer name="Cannoneer">storm_ui_icon_talent_autoattack_damage.dds</WizardCannoneer>
+    <WizardCannoneer name="Cannoneer" generic="true">storm_ui_icon_talent_autoattack_damage.dds</WizardCannoneer>
     <WizardGlassCannon name="Glass Cannon">storm_btn_d3_traits_wizard_glasscannon.dds</WizardGlassCannon>
     <WizardTeleportIllusionist name="Illusionist">storm_ui_icon_wizard_teleport.dds</WizardTeleportIllusionist>
   </Level13>

@@ -2,7 +2,7 @@
 <Uther attributeid="Uthe" portrait="storm_ui_glues_draft_portrait_uther.dds" leader="storm_ui_ingame_hero_leaderboard_uther.dds">
   <Level1>
     <GenericTalentConjurersPursuit name="Conjurer's Pursuit">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
-    <UtherCombatStyleHammeroftheLightbringer name="Hammer of the Lightbringer">storm_ui_icon_talent_autoattack_mana.dds</UtherCombatStyleHammeroftheLightbringer>
+    <UtherCombatStyleHammeroftheLightbringer name="Hammer of the Lightbringer" generic="true">storm_ui_icon_talent_autoattack_mana.dds</UtherCombatStyleHammeroftheLightbringer>
     <UtherMasteryFistofJustice name="Fist of Justice">storm_ui_icon_uther_hammerofjustice.dds</UtherMasteryFistofJustice>
     <UtherMasteryWaveofLightHolyRadiance name="Wave of Light">storm_ui_icon_uther_holyradiance.dds</UtherMasteryWaveofLightHolyRadiance>
   </Level1>
@@ -28,7 +28,7 @@
   </Level13>
   <Level16>
     <UtherMasteryGatheringRadiance name="Gathering Radiance">storm_ui_icon_uther_holyradiance.dds</UtherMasteryGatheringRadiance>
-    <UtherHardenedFocus name="Hardened Focus">storm_ui_icon_Talent_HardenedFocus.dds</UtherHardenedFocus>
+    <UtherHardenedFocus name="Hardened Focus" generic="true">storm_ui_icon_Talent_HardenedFocus.dds</UtherHardenedFocus>
     <UtherRighteousDefense name="Righteous Defense">storm_ui_icon_uther_holylight.dds</UtherRighteousDefense>
     <UtherMasteryBenediction name="Benediction">storm_ui_icon_uther_benediction.dds</UtherMasteryBenediction>
   </Level16>

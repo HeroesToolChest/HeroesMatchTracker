@@ -11,7 +11,7 @@
     <GenericTalentFocusedAttack name="Focused Attack">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
     <GenericTalentProtectiveShield name="Protective Shield">storm_ui_icon_talent_protectiveshield.dds</GenericTalentProtectiveShield>
     <GenericTalentHealingWard name="Healing Ward">storm_ui_icon_talent_healingward.dds</GenericTalentHealingWard>
-    <TyrandeSearingArrows name="Searing Arrows">storm_ui_icon_talent_searingarrow.dds</TyrandeSearingArrows>
+    <TyrandeSearingArrows name="Searing Arrows" generic="true">storm_ui_icon_talent_searingarrow.dds</TyrandeSearingArrows>
   </Level4>
   <Level7>
     <TyrandeMasteryLightofEluneQuickeningBlessing name="Quickening Blessing">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneQuickeningBlessing>

@@ -23,7 +23,7 @@
     <DiabloHeroicAbilityLightningBreath name="Lightning Breath">storm_ui_icon_diablo_lightningbreath.dds</DiabloHeroicAbilityLightningBreath>
   </Level10>
   <Level13>
-    <DiabloTalentLifeLeech name="Life Leech">storm_ui_icon_talent_autoattack_heal.dds</DiabloTalentLifeLeech>
+    <DiabloTalentLifeLeech name="Life Leech" generic="true">storm_ui_icon_talent_autoattack_heal.dds</DiabloTalentLifeLeech>
     <DiabloMasteryFirestorm name="Firestorm">storm_ui_icon_diablo_firestomp.dds</DiabloMasteryFirestorm>
     <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
     <DiabloMasterySiphonTheDeadBlackSoulstone name="Siphon the Dead">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySiphonTheDeadBlackSoulstone>
