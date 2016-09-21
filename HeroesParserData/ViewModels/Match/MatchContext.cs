@@ -28,7 +28,7 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
-        private Dictionary<string, string> NonHealingCharactersDictionary = new Dictionary<string, string>();
+        private Dictionary<string, string> HealingCharactersDictionary = new Dictionary<string, string>();
         private HeroesInfo HeroesInfo;
         private string _matchTitle;
         private string _queryStatus;
@@ -309,7 +309,7 @@ namespace HeroesParserData.ViewModels.Match
         {
             HasChat = true;
             HeroesInfo = App.HeroesInfo;
-            SetNonHealingCharacters();
+            SetHealingCharacters();
         }
 
         protected abstract Task RefreshExecute();
@@ -401,7 +401,7 @@ namespace HeroesParserData.ViewModels.Match
                         matchScores.ExperienceContribution = playerScoresList[player.PlayerNumber].ExperienceContribution;
                         if (playerScoresList[player.PlayerNumber].DamageTaken != null)
                             matchScores.Role = playerScoresList[player.PlayerNumber].DamageTaken;
-                        else if (!NonHealingCharactersDictionary.ContainsKey(player.Character))
+                        else if (HealingCharactersDictionary.ContainsKey(player.Character))
                             matchScores.Role = playerScoresList[player.PlayerNumber].Healing;
                     }
 
@@ -573,27 +573,19 @@ namespace HeroesParserData.ViewModels.Match
             BackgroundMapImage = null;
         }
 
-        private void SetNonHealingCharacters()
+        private void SetHealingCharacters()
         {
-            NonHealingCharactersDictionary.Add("Abathur", "Specialist");
-            NonHealingCharactersDictionary.Add("Alarak", "Assasin");
-            NonHealingCharactersDictionary.Add("Azmodan", "Specialist");
-            NonHealingCharactersDictionary.Add("Chromie", "Assasin");
-            NonHealingCharactersDictionary.Add("Gall", "Assasin");
-            NonHealingCharactersDictionary.Add("Gazlowe", "Specialist");
-            NonHealingCharactersDictionary.Add("Guldan", "Assasin");
-            NonHealingCharactersDictionary.Add("Kerrigan", "Assasin");
-            NonHealingCharactersDictionary.Add("Jaina", "Assasin");
-            NonHealingCharactersDictionary.Add("Li-Ming", "Assasin");
-            NonHealingCharactersDictionary.Add("Nova", "Assasin");
-            NonHealingCharactersDictionary.Add("Raynor", "Assasin");
-            NonHealingCharactersDictionary.Add("Sgt. Hammer", "Specialist");
-            NonHealingCharactersDictionary.Add("Sylvanas", "Specialist");
-            NonHealingCharactersDictionary.Add("The Butcher", "Assasin");
-            NonHealingCharactersDictionary.Add("The Lost Vikings", "Specialist");
-            NonHealingCharactersDictionary.Add("Thrall", "Assasin");
-            NonHealingCharactersDictionary.Add("Xul", "Specialist");
-            NonHealingCharactersDictionary.Add("Zagara", "Specialist");
+            HealingCharactersDictionary.Add("Auriel", "Support");
+            HealingCharactersDictionary.Add("Brightwing", "Support");
+            HealingCharactersDictionary.Add("Kharazim", "Support");
+            HealingCharactersDictionary.Add("Li Li", "Support");
+            HealingCharactersDictionary.Add("Lt. Morales", "Support");
+            HealingCharactersDictionary.Add("Malfurion", "Support");
+            HealingCharactersDictionary.Add("Medivh", "Specialist");
+            HealingCharactersDictionary.Add("Rehgar", "Support");
+            HealingCharactersDictionary.Add("Tassadar", "Support");
+            HealingCharactersDictionary.Add("Tyrande", "Support");
+            HealingCharactersDictionary.Add("Uther", "Support");
         }
 
         private void HighestSiegeDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestTeam1Index, ref int highestTeam1Count)
