@@ -336,13 +336,27 @@
     <Content Include="Heroes\Zagara.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Zarya.xml" />
+    <Content Include="Heroes\Zarya.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Heroes\Zeratul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zarya.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_talent_autoattack_base.dds" />
+    <Resource Include="Icons\Talents\ETC\storm_ui_icon_talent_autoattack_damage.dds" />
+    <Resource Include="Icons\Talents\Chen\storm_ui_icon_talent_amplifiedhealing.dds" />
+    <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_unyieldingdefender.dds" />
+    <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_soulharvest.dds" />
+    <Resource Include="Icons\Talents\Nazeebo\storm_ui_icon_nazeebo_suprerstition.dds" />
+    <Resource Include="Icons\Talents\Medivh\storm_ui_icon_jaina_arcaneintellect.dds" />
+    <Resource Include="Icons\Talents\ETC\storm_ui_icon_etc_facemelt_b.dds" />
+    <Resource Include="Icons\Talents\Chen\storm_ui_icon_chen_elusivebrew.dds" />
+    <Resource Include="Icons\Talents\Chen\storm_ui_icon_chen_stormstoutsecretrecipe.dds" />
+    <Resource Include="Icons\Talents\Auriel\storm_ui_icon_auriel_shieldofhope.dds" />
     <Resource Include="Icons\Talents\Kharazim\storm_ui_icon_talent_relentless.dds" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_alarak.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_chromie.jpg" />
@@ -456,7 +470,6 @@
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_sadism.dds" />
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis.dds" />
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis_a.dds" />
-    <Resource Include="Icons\Talents\Auriel\storm_ui_temp_icon_powerwordshield.dds" />
     <Resource Include="Icons\Talents\Kaelthas\storm_ui_icon_talent_arcanepower.dds" />
     <Resource Include="Icons\Talents\Rexxar\storm_ui_icon_talent_autoattack_range.dds" />
     <Resource Include="Icons\Talents\Xul\storm_ui_icon_talent_autoattack_damage.dds" />

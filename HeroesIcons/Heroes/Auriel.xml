@@ -36,6 +36,6 @@
     <AurielLightSpeedResurrectTalent name="Light Speed">storm_ui_icon_auriel_resurrect.dds</AurielLightSpeedResurrectTalent>
     <AurielDiamondResolveCrystalAegisTalent name="Diamond Resolve">storm_ui_icon_auriel_ribboncocoon.dds</AurielDiamondResolveCrystalAegisTalent>
     <AurielAngelicFlightTalent name="Angelic Flight">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
-    <AurielShieldOfHopeTalent name="Shield of Hope">storm_ui_temp_icon_powerwordshield.dds</AurielShieldOfHopeTalent>
+    <AurielShieldOfHopeTalent name="Shield of Hope">storm_ui_icon_auriel_shieldofhope.dds</AurielShieldOfHopeTalent>
   </Level20>
 </Auriel>

@@ -1,18 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Zarya attributeid="" portrait="" leader="">
+<Zarya attributeid="Zary" portrait="" leader="">
   <Level1>
+    <ZaryaParticleGrenadeDemolitionsExpertQuest name="Demolitions Expert">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeDemolitionsExpertQuest>
+    <ZaryaShieldAllyTogetherWeAreStrong name="Together We Are Strong">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyTogetherWeAreStrong>
+    <ZaryaWeaponFeelTheHeat name="Feel The Heat">storm_ui_icon_zagara_banelingbarrage.dds</ZaryaWeaponFeelTheHeat>
+    <ZaryaEnergyMaximumChargeQuest name="Maximum Charge">storm_ui_icon_zarya_energy.dds</ZaryaEnergyMaximumChargeQuest>
   </Level1>
   <Level4>
+    <ZaryaPersonalBarrierIAmTheStrongest name="I Am The Strongest">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierIAmTheStrongest>
+    <ZaryaShieldAllyGiveMeTwentyQuest name="Give Me Twenty">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyGiveMeTwentyQuest>
+    <ZaryaShieldAllySpeedBarrier name="Speed Barrier">storm_ui_icon_zarya_shieldally_a.dds</ZaryaShieldAllySpeedBarrier>
+    <ZaryaDefensiveShielding name="Defensive Shielding">storm_ui_icon_zarya_pumped.dds</ZaryaDefensiveShielding>
   </Level4>
   <Level7>
+    <ZaryaParticleGrenadePinpointAccuracy name="Pinpoint Accuracy">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadePinpointAccuracy>
+    <ZaryaPersonalBarrierExplosiveBarrier name="Explosive Barrier">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierExplosiveBarrier>
+    <ZaryaWeaponToTheLimit name="To the Limit">storm_ui_icon_talent_autoattack_base.dds</ZaryaWeaponToTheLimit>
+    <ZaryaEnergyHitMe name="Hit Me">storm_ui_icon_zarya_energy.dds</ZaryaEnergyHitMe>
   </Level7>
   <Level10>
+    <ZaryaHeroicAbilityGravitonSurge name="Graviton Surge">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaHeroicAbilityGravitonSurge>
+    <ZaryaHeroicAbilityExpulsionZone name="Expulsion Zone">storm_ui_icon_zarya_expulsionzone.dds</ZaryaHeroicAbilityExpulsionZone>
   </Level10>
   <Level13>
+    <ZaryaPersonalBarrierUnstoppableCompetitor name="Unstoppable Competitor">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierUnstoppableCompetitor>
+    <ZaryaPersonalBarrierSpellBarrier name="Spell Barrier">storm_ui_icon_zarya_personalbarrier_a.dds</ZaryaPersonalBarrierSpellBarrier>
+    <ZaryaEnergyEnduranceTraining name="Endurance Training">storm_ui_icon_zarya_energy.dds</ZaryaEnergyEnduranceTraining>
+    <ZaryaPainIsTemporary name="Pain is Temporary">storm_ui_icon_zarya_painistemporary.dds</ZaryaPainIsTemporary>
   </Level13>
   <Level16>
+    <ZaryaParticleGrenadePlasmaShock name="Plasma Shock">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadePlasmaShock>
+    <ZaryaShieldAllyCleansingShield name="Cleansing Shield">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyCleansingShield>
+    <ZaryaShieldAllyGainTrain name="Gain Train">storm_ui_icon_zarya_shieldally_a.dds</ZaryaShieldAllyGainTrain>
+    <ZaryaEnergyBornInBattle name="Born in Battle">storm_ui_icon_zarya_energy.dds</ZaryaEnergyBornInBattle>
   </Level16>
   <Level20>
+    <ZaryaGravitonSurgeGravityKills name="GravityKills">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaGravitonSurgeGravityKills>
+    <ZaryaExpulsionZoneClearOut name="Clear Out">storm_ui_icon_zarya_expulsionzone.dds</ZaryaExpulsionZoneClearOut>
+    <ZaryaParticleGrenadeGrenadier name="Grenadier">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeGrenadier>
+    <ZaryaUnyieldingDefender name="Unyielding Defender">storm_ui_icon_zarya_unyieldingdefender.dds</ZaryaUnyieldingDefender>
   </Level20>
   <Old></Old>
 </Zarya>
