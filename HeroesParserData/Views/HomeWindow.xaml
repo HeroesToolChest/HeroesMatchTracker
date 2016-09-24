@@ -51,12 +51,8 @@
         <Label Content="CUSTOM:" Margin="212,435,0,0" Grid.Row="1" Grid.Column="1" Style="{StaticResource HomeLabelTheme}"/>
         <Label Content="{Binding TotalCustomGames}" Margin="327,435,0,0" Grid.Row="1" Grid.Column="1" Style="{StaticResource HomeLabelTheme}"/>
 
-        <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" HorizontalAlignment="Left" Margin="304,199,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="3" Width="205" Height="41" 
-                  FontSize="24" Background="Transparent" Foreground="White">
-            <ComboBox.Effect>
-                <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>
-            </ComboBox.Effect>
-        </ComboBox>
+        <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" Margin="304,199,0,0" Grid.Row="1" Grid.Column="3" Width="205" Height="41" Style="{StaticResource HomeComboBoxTheme}"/>
+
         <Label Content="SEASON GAMES" Margin="110,199,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
         <Label Content="___________________________________" Margin="110,199,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>
         <Label Content="QUICK MATCH:" Margin="124,246,0,0" Grid.Row="1" Grid.Column="3" Style="{StaticResource HomeLabelTheme}"/>

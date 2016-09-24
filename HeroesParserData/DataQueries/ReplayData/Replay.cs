@@ -230,7 +230,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                 }
             }
 
-            public static int ReadTotalGamesForSeason(GameMode gameMode, string season)
+            public static int ReadTotalGamesForSeason(GameMode gameMode, Season season)
             {
                 using (var db = new HeroesParserDataContext())
                 {

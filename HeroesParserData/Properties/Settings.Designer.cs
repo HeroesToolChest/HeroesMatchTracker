@@ -164,5 +164,29 @@ namespace HeroesParserData.Properties {
                 this["IsIncludeSubDirectories"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserBattleTagName {
+            get {
+                return ((string)(this["UserBattleTagName"]));
+            }
+            set {
+                this["UserBattleTagName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserPlayerId {
+            get {
+                return ((string)(this["UserPlayerId"]));
+            }
+            set {
+                this["UserPlayerId"] = value;
+            }
+        }
     }
 }

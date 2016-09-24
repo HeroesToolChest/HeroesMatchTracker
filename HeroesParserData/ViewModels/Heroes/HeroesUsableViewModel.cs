@@ -12,7 +12,6 @@ namespace HeroesParserData.ViewModels.Heroes
 {
     public class HeroesUsableViewModel : ViewModelBase
     {
-        private HeroesInfo HeroesInfo;
         private Dictionary<string, Tuple<int, int>> HeroesGridLocation = new Dictionary<string, Tuple<int, int>>();
         private ObservableCollection<HeroesUsable> _heroes = new ObservableCollection<HeroesUsable>();
 
@@ -84,7 +83,6 @@ namespace HeroesParserData.ViewModels.Heroes
         public HeroesUsableViewModel()
             :base()
         {
-            HeroesInfo = App.HeroesInfo;
             LoadHeroPortraits();
         }
 

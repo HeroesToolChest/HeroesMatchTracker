@@ -267,10 +267,8 @@ namespace HeroesParserData.ViewModels
 
         private void SetSeasonList()
         {
+            SeasonList = Utilities.GetSeasonList();
             SelectedSeason = Settings.Default.SelectedSeason;
-            SeasonList.Add("Preseason");
-            SeasonList.Add("Season 1");
-            SeasonList.Add("Season 2");
         }
 
         private void SetData()
@@ -289,11 +287,12 @@ namespace HeroesParserData.ViewModels
 
         private void SetSeasonStats()
         {
-            SeasonQuickMatchGames = Query.Replay.ReadTotalGamesForSeason(GameMode.QuickMatch, SelectedSeason);
-            SeasonUnrankedDraftGames = Query.Replay.ReadTotalGamesForSeason(GameMode.UnrankedDraft, SelectedSeason);
-            SeasonHeroLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.HeroLeague, SelectedSeason);
-            SeasonTeamLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.TeamLeague, SelectedSeason);
-            SeasonCustomGames = Query.Replay.ReadTotalGamesForSeason(GameMode.Custom, SelectedSeason);
+            Season season = Utilities.GetSeasonFromString(SelectedSeason);
+            SeasonQuickMatchGames = Query.Replay.ReadTotalGamesForSeason(GameMode.QuickMatch, season);
+            SeasonUnrankedDraftGames = Query.Replay.ReadTotalGamesForSeason(GameMode.UnrankedDraft, season);
+            SeasonHeroLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.HeroLeague, season);
+            SeasonTeamLeagueGames = Query.Replay.ReadTotalGamesForSeason(GameMode.TeamLeague, season);
+            SeasonCustomGames = Query.Replay.ReadTotalGamesForSeason(GameMode.Custom, season);
             SeasonTotal = SeasonQuickMatchGames + SeasonUnrankedDraftGames + SeasonHeroLeagueGames + SeasonTeamLeagueGames + SeasonCustomGames;
         }
 

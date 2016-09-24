@@ -148,6 +148,22 @@ namespace HeroesParserData.DataQueries.ReplayData
                     return await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefaultAsync();
                 }
             }
+
+            public static bool IsValidBattleNetTagName(string battleTagName)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == battleTagName);
+                }
+            }
+
+            public static long ReadPlayerIdFromBattleNetTag(string battleTagName)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.ReplayAllHotsPlayers.FirstOrDefault(x => x.BattleTagName == battleTagName).PlayerId;
+                }
+            }
         }
     }
 }

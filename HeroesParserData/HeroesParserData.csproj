@@ -195,6 +195,10 @@
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
+    <Compile Include="DataQueries\ReplayData\PlayerStatistics.cs" />
+    <Compile Include="Generic\Maps.cs" />
+    <Compile Include="Generic\Season.cs" />
+    <Compile Include="Generic\StatType.cs" />
     <Compile Include="Messages\HomeWindowMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
@@ -207,6 +211,8 @@
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
     <Compile Include="Models\MatchModels\MatchScores.cs" />
     <Compile Include="Models\MatchModels\MatchTalents.cs" />
+    <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
+    <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
@@ -233,6 +239,7 @@
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
       <DependentUpon>QueryControl.xaml</DependentUpon>
@@ -342,6 +349,9 @@
     <Compile Include="Generic\Utilities.cs" />
     <Compile Include="Views\SettingControl.xaml.cs">
       <DependentUpon>SettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stats\OverviewStatsControl.xaml.cs">
+      <DependentUpon>OverviewStatsControl.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\ImageResources.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -476,6 +486,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stats\OverviewStatsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

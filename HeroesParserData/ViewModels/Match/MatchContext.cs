@@ -29,7 +29,6 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         private Dictionary<string, string> HealingCharactersDictionary = new Dictionary<string, string>();
-        private HeroesInfo HeroesInfo;
         private string _matchTitle;
         private string _queryStatus;
         private int _rowsReturned;
@@ -308,7 +307,6 @@ namespace HeroesParserData.ViewModels.Match
             : base()
         {
             HasChat = true;
-            HeroesInfo = App.HeroesInfo;
             SetHealingCharacters();
         }
 
