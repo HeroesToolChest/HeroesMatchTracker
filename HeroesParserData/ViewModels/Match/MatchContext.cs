@@ -5,7 +5,6 @@ using HeroesParserData.Models.MatchModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
@@ -28,7 +27,6 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
-        private Dictionary<string, string> HealingCharactersDictionary = new Dictionary<string, string>();
         private string _matchTitle;
         private string _queryStatus;
         private int _rowsReturned;
@@ -307,7 +305,6 @@ namespace HeroesParserData.ViewModels.Match
             : base()
         {
             HasChat = true;
-            SetHealingCharacters();
         }
 
         protected abstract Task RefreshExecute();
@@ -399,7 +396,7 @@ namespace HeroesParserData.ViewModels.Match
                         matchScores.ExperienceContribution = playerScoresList[player.PlayerNumber].ExperienceContribution;
                         if (playerScoresList[player.PlayerNumber].DamageTaken != null)
                             matchScores.Role = playerScoresList[player.PlayerNumber].DamageTaken;
-                        else if (HealingCharactersDictionary.ContainsKey(player.Character))
+                        else if (IsHealingStatCharacter(player.Character))
                             matchScores.Role = playerScoresList[player.PlayerNumber].Healing;
                     }
 
@@ -571,19 +568,12 @@ namespace HeroesParserData.ViewModels.Match
             BackgroundMapImage = null;
         }
 
-        private void SetHealingCharacters()
+        private bool IsHealingStatCharacter(string realHeroName)
         {
-            HealingCharactersDictionary.Add("Auriel", "Support");
-            HealingCharactersDictionary.Add("Brightwing", "Support");
-            HealingCharactersDictionary.Add("Kharazim", "Support");
-            HealingCharactersDictionary.Add("Li Li", "Support");
-            HealingCharactersDictionary.Add("Lt. Morales", "Support");
-            HealingCharactersDictionary.Add("Malfurion", "Support");
-            HealingCharactersDictionary.Add("Medivh", "Specialist");
-            HealingCharactersDictionary.Add("Rehgar", "Support");
-            HealingCharactersDictionary.Add("Tassadar", "Support");
-            HealingCharactersDictionary.Add("Tyrande", "Support");
-            HealingCharactersDictionary.Add("Uther", "Support");
+            if (HeroesInfo.GetHeroRole(realHeroName) == HeroRole.Support || realHeroName == "Medivh")
+                return true;
+            else
+                return false;
         }
 
         private void HighestSiegeDamage(ObservableCollection<MatchScores> MatchScoreTeamList, MatchScores matchScores, ref int highestTeam1Index, ref int highestTeam1Count)
