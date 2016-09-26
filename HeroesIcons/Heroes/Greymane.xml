@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Greymane attributeid="Genn" portrait="storm_ui_glues_draft_portrait_genngreymane.dds" leader="storm_ui_ingame_hero_leaderboard_genngreymane.dds">
+<Greymane attributeid="Genn" role="Assassin" portrait="storm_ui_glues_draft_portrait_genngreymane.dds" leader="storm_ui_ingame_hero_leaderboard_genngreymane.dds">
   <Level1>
     <GreymaneInnerBeastWolfheart name="Wolfheart">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeastWolfheart>
     <GreymaneGilneanCocktailPerfectAim name="Perfect Aim">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailPerfectAim>

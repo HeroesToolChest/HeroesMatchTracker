@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Zagara attributeid="Zaga" portrait="storm_ui_glues_draft_portrait_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
+<Zagara attributeid="Zaga" role="Specialist" portrait="storm_ui_glues_draft_portrait_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
   <Level1>
     <ZagaraMasteryVolatileAcid name="Volatile Acid">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryVolatileAcid>
     <ZagaraMasteryCorpseFeeders name="Corpse Feeders">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryCorpseFeeders>
@@ -43,7 +43,7 @@
     <ZagaraSwarmMomentum name="Swarm Momentum" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</ZagaraSwarmMomentum>
     <ZagaraMasteryGroovedSpines name="Grooved Spines">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryGroovedSpines>
     <ZagaraMasteryMetabolicBoost name="Metabolic Boost">storm_ui_icon_zagara_creep.dds</ZagaraMasteryMetabolicBoost>
-    <ZagaraMasteryCentrifugalHooks name="CentrifugalHooks">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryCentrifugalHooks>
+    <ZagaraMasteryCentrifugalHooks name="Centrifugal Hooks">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryCentrifugalHooks>
     <BattleMomentumZagara name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumZagara>
     <ZagaraMasteryBroodlingNest name="Broodling Nest">storm_ui_icon_zagara_nydusworm.dds</ZagaraMasteryBroodlingNest>
   </Old>

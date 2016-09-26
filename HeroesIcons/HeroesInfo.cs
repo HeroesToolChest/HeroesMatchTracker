@@ -37,6 +37,11 @@ namespace HeroesIcons
         /// key is real hero name
         /// </summary>
         private Dictionary<string, Uri> LeaderboardPortraits = new Dictionary<string, Uri>();
+        /// <summary>
+        /// key is real hero name
+        /// value is HeroRole
+        /// </summary>
+        private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
 
         public HeroesInfo()
         {
@@ -245,6 +250,22 @@ namespace HeroesIcons
                 return HeroesAltName.ContainsKey(heroName);
         }
 
+        /// <summary>
+        /// Returns the hero's role: Warrior, Assassin, Support, or Specialist. Will return Unknown if hero not found
+        /// </summary>
+        /// <param name="realName">Heroes real name</param>
+        /// <returns>HeroRole</returns>
+        public HeroRole GetHeroRole(string realName)
+        {
+            HeroRole role;
+
+            if (HeroesRole.TryGetValue(realName, out role))
+                return role;
+            else
+                return HeroRole.Unknown;
+
+        }
+
         public List<string> GetListOfHeroes()
         {
             List<string> heroes = new List<string>();
@@ -319,6 +340,9 @@ namespace HeroesIcons
                     // example: Anub
                     string attributeId = reader["attributeid"];
 
+                    // get the role: warrior, assassin, support, specialist
+                    string role = reader["role"];
+
                     // get portrait
                     string portraitName = reader["portrait"];
 
@@ -338,6 +362,22 @@ namespace HeroesIcons
 
                     HeroesRealName.Add(realHeroName, hero);
                     HeroesAltName.Add(hero, realHeroName);
+
+                    switch (role)
+                    {
+                        case "Warrior":
+                            HeroesRole.Add(realHeroName, HeroRole.Warrior);
+                            break;
+                        case "Assassin":
+                            HeroesRole.Add(realHeroName, HeroRole.Assassin);
+                            break;
+                        case "Support":
+                            HeroesRole.Add(realHeroName, HeroRole.Support);
+                            break;
+                        case "Specialist":
+                            HeroesRole.Add(realHeroName, HeroRole.Specialist);
+                            break;
+                    }
 
                     // add talents
                     while (reader.Read())

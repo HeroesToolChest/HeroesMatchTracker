@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Sylvanas attributeid="Sylv" portrait="storm_ui_glues_draft_portrait_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
+<Sylvanas attributeid="Sylv" role="Specialist" portrait="storm_ui_glues_draft_portrait_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
   <Level1>
     <SylvanasTalentOverflowingQuiver name="Overflowing Quiver">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
     <SylvanasTalentBlackArrowsParalysis name="Paralysis">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentBlackArrowsParalysis>

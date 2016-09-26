@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Rexxar attributeid="Rexx" portrait="storm_ui_glues_draft_portrait_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
+<Rexxar attributeid="Rexx" role="Warrior" portrait="storm_ui_glues_draft_portrait_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
   <Level1>
     <RexxarSpiritBondGrizzledBear name="Grizzled Bear" generic="true">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledBear>
     <RexxarHunterGatherer name="Hunter-Gatherer" generic="true">storm_ui_icon_Talent_RegenerationMaster.dds</RexxarHunterGatherer>

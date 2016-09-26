@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tyrande attributeid="Tyrd" portrait="storm_ui_glues_draft_portrait_tyrande.dds" leader="storm_ui_ingame_hero_leaderboard_tyrande.dds">
+<Tyrande attributeid="Tyrd" role="Support" portrait="storm_ui_glues_draft_portrait_tyrande.dds" leader="storm_ui_ingame_hero_leaderboard_tyrande.dds">
   <Level1>
     <TyrandeMasteryLightofEluneCelestialAttunement name="Celestial Attunement">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneCelestialAttunement>
     <TyrandeCombatStyleRangersMark name="Ranger's Mark">storm_ui_icon_tyrande_huntersmark.dds</TyrandeCombatStyleRangersMark>

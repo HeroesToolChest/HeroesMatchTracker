@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Leoric attributeid="Leor" portrait="storm_ui_glues_draft_portrait_leoric.dds" leader="storm_ui_ingame_hero_leaderboard_leoric.dds">
+<Leoric attributeid="Leor" role="Warrior" portrait="storm_ui_glues_draft_portrait_leoric.dds" leader="storm_ui_ingame_hero_leaderboard_leoric.dds">
   <Level1>
     <LeoricMasteryManaThirstSkeletalSwing name="Mana Thirst">storm_ui_icon_leoric_SkeletalSwing.dds</LeoricMasteryManaThirstSkeletalSwing>
     <LeoricMasteryHopelessnessDrainHope name="Hopelessness">storm_ui_icon_leoric_DrainHope.dds</LeoricMasteryHopelessnessDrainHope>

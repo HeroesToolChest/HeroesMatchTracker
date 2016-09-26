@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Anubarak name="Anub'arak" attributeid="Anub" portrait="storm_ui_glues_draft_portrait_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
+<Anubarak name="Anub'arak" attributeid="Anub" role="Warrior" portrait="storm_ui_glues_draft_portrait_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
   <Level1>
     <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryExtendedSpikesImpale>
     <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
