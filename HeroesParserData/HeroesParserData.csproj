@@ -211,6 +211,7 @@
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
     <Compile Include="Models\MatchModels\MatchScores.cs" />
     <Compile Include="Models\MatchModels\MatchTalents.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroes.cs" />
     <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Stats\HeroStatsViewModel.cs" />
     <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -350,8 +352,14 @@
     <Compile Include="Views\SettingControl.xaml.cs">
       <DependentUpon>SettingControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Stats\HeroStatsControl.xaml.cs">
+      <DependentUpon>HeroStatsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Stats\OverviewStatsControl.xaml.cs">
       <DependentUpon>OverviewStatsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stats\QueryStatusBarControl.xaml.cs">
+      <DependentUpon>QueryStatusBarControl.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\ImageResources.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -489,7 +497,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Stats\HeroStatsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Stats\OverviewStatsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stats\QueryStatusBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

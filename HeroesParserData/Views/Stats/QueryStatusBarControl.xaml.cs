@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace HeroesParserData.Views.Stats
 {
     /// <summary>
-    /// Interaction logic for OverviewStatsControl.xaml
+    /// Interaction logic for QueryStatusBarControl.xaml
     /// </summary>
-    public partial class OverviewStatsControl : UserControl
+    public partial class QueryStatusBarControl : UserControl
     {
-        public OverviewStatsControl()
+        public QueryStatusBarControl()
         {
             InitializeComponent();
-
-            MostStatsDg.UnselectAll();
-            MapStatsDg.UnselectAll();
         }
     }
 }

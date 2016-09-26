@@ -50,7 +50,10 @@ namespace HeroesParserData
 
             GameMode gameModeEnum;
             gameMode = Regex.Replace(gameMode, @"\s+", "");
-            if (Enum.TryParse(gameMode, true, out gameModeEnum))
+
+            if (gameMode == "AllTypes")
+                return GameMode.Cooperative;
+            else if (Enum.TryParse(gameMode, true, out gameModeEnum))
                 return gameModeEnum;
             else
                 throw new Exception("GetSeasonFromString failed to convert to Season Enum");
@@ -69,7 +72,6 @@ namespace HeroesParserData
         public static List<string> GetGameModes()
         {
             List<string> list = new List<string>();
-            //list.Add("All Types");
             list.Add("Quick Match");
             list.Add("Unranked Draft");
             list.Add("Hero League");
@@ -89,6 +91,8 @@ namespace HeroesParserData
                 return new Tuple<int?, int?>(43571, 45949);
             else if (season == Season.Preseason)
                 return new Tuple<int?, int?>(0, 43571);
+            else if (season == Season.Lifetime)
+                return new Tuple<int?, int?>(0, 99999);
             else
                 return null;
         }

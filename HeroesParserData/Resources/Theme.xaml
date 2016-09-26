@@ -41,7 +41,7 @@
                 <Setter Property="Background" Value="LightSkyBlue" />
                 <Setter Property="Foreground" Value="Black" />
             </Trigger>
-            <Trigger Property="IsSelected"  Value="True">
+            <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="LightSkyBlue" />
                 <Setter Property="Foreground" Value="Black" />
             </Trigger>
