@@ -12,59 +12,61 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:OverviewStatsViewModel}" d:DesignWidth="2002.75" d:DesignHeight="823">
+             d:DataContext="{d:DesignInstance ViewModels:OverviewStatsViewModel}" d:DesignWidth="2002.75" d:DesignHeight="1023">
     <UserControl.DataContext>
         <ViewModels:OverviewStatsViewModel />
     </UserControl.DataContext>
     <DockPanel>
         <local:QueryStatusBarControl DockPanel.Dock="Bottom"></local:QueryStatusBarControl>
-        <Grid DockPanel.Dock="Bottom">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <ScrollViewer>
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-            <Label Content="{Binding SeasonLabel}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="376" FontSize="26"/>
-            <Label Content="{Binding TotalGamesWonLabel}" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="991" FontSize="22"/>
-            
-            <ComboBox ItemsSource="{Binding MostStatsList}" SelectedValue="{Binding SelectedMostStatsOption}" SelectedIndex="0" Width="120" Margin="255,91,0,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" SelectedIndex="0" Margin="756,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <ComboBox ItemsSource="{Binding GameModeList}" SelectedValue="{Binding SelectedGameModeOption}" SelectedIndex="0" Margin="881,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{Binding SeasonLabel}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="376" FontSize="26"/>
+                <Label Content="{Binding TotalGamesWonLabel}" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="991" FontSize="22"/>
 
-            <DataGrid x:Name="MostStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
-                              ItemsSource="{Binding MostStatsViewSource.View}" Margin="15,127,0,0" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" MinWidth="120" SortDirection="Descending" />
-                </DataGrid.Columns>
-            </DataGrid>
+                <ComboBox ItemsSource="{Binding MostStatsList}" SelectedValue="{Binding SelectedMostStatsOption}" SelectedIndex="0" Width="120" Margin="255,91,0,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" SelectedIndex="0" Margin="756,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox ItemsSource="{Binding GameModeList}" SelectedValue="{Binding SelectedGameModeOption}" SelectedIndex="0" Margin="881,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-            <DataGrid x:Name="MapStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
-                              ItemsSource="{Binding MapStatsViewSource.View}" Margin="469,127,0,0" Width="532" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
-                    <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" />
-                    <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="120" />
-                    <DataGridTextColumn Header="Win Percentage" Binding="{Binding WinPercentage}" MinWidth="120" SortDirection="Descending" />
-                </DataGrid.Columns>
-            </DataGrid>
+                <DataGrid x:Name="MostStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                  ItemsSource="{Binding MostStatsViewSource.View}" Margin="15,127,0,0" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top" MaxHeight="780">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" MinWidth="120" SortDirection="Descending" />
+                    </DataGrid.Columns>
+                </DataGrid>
 
-            <Label Content="Quick Match" HorizontalAlignment="Left" Margin="469,443,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
-            <Label Content="{Binding TotalGameModeGames[0]}" HorizontalAlignment="Left" Margin="497,477,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="{Binding WinGameModePercentages[0]}" HorizontalAlignment="Left" Margin="497,508,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="Unranked Draft" HorizontalAlignment="Left" Margin="469,544,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
-            <Label Content="{Binding TotalGameModeGames[1]}" HorizontalAlignment="Left" Margin="497,578,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="{Binding WinGameModePercentages[1]}" HorizontalAlignment="Left" Margin="497,609,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="Hero League" HorizontalAlignment="Left" Margin="469,645,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
-            <Label Content="{Binding TotalGameModeGames[2]}" HorizontalAlignment="Left" Margin="497,679,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="{Binding WinGameModePercentages[2]}" HorizontalAlignment="Left" Margin="497,710,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="Team League" HorizontalAlignment="Left" Margin="469,746,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
-            <Label Content="{Binding TotalGameModeGames[3]}" HorizontalAlignment="Left" Margin="497,780,0,-10" VerticalAlignment="Top" FontSize="16" Width="504"/>
-            <Label Content="{Binding WinGameModePercentages[3]}" HorizontalAlignment="Left" Margin="497,811,0,-41" VerticalAlignment="Top" FontSize="16" Width="504"/>
-        </Grid>
+                <DataGrid x:Name="MapStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
+                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                  ItemsSource="{Binding MapStatsViewSource.View}" Margin="469,127,0,0" Width="532" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
+                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" />
+                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="120" />
+                        <DataGridTextColumn Header="Win Percentage" Binding="{Binding WinPercentage}" MinWidth="120" SortDirection="Descending" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Label Content="Quick Match" HorizontalAlignment="Left" Margin="469,469,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
+                <Label Content="{Binding TotalGameModeGames[0]}" HorizontalAlignment="Left" Margin="497,503,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="{Binding WinGameModePercentages[0]}" HorizontalAlignment="Left" Margin="497,534,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="Unranked Draft" HorizontalAlignment="Left" Margin="469,570,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
+                <Label Content="{Binding TotalGameModeGames[1]}" HorizontalAlignment="Left" Margin="497,604,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="{Binding WinGameModePercentages[1]}" HorizontalAlignment="Left" Margin="497,635,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="Hero League" HorizontalAlignment="Left" Margin="469,671,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
+                <Label Content="{Binding TotalGameModeGames[2]}" HorizontalAlignment="Left" Margin="497,705,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="{Binding WinGameModePercentages[2]}" HorizontalAlignment="Left" Margin="497,736,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="Team League" HorizontalAlignment="Left" Margin="469,772,0,0" VerticalAlignment="Top" FontSize="18" Width="532"/>
+                <Label Content="{Binding TotalGameModeGames[3]}" HorizontalAlignment="Left" Margin="497,806,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+                <Label Content="{Binding WinGameModePercentages[3]}" HorizontalAlignment="Left" Margin="497,837,0,0" VerticalAlignment="Top" FontSize="16" Width="504"/>
+            </Grid>
+        </ScrollViewer>
     </DockPanel>
 </UserControl>
