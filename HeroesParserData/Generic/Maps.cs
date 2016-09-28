@@ -18,6 +18,7 @@ namespace HeroesParserData
             maps.Add("Sky Temple");
             maps.Add("Tomb of the Spider Queen");
             maps.Add("Towers of Doom");
+            maps.Add("Warhead Junction");
 
             // Lost Cavern is not a map on rotation
 

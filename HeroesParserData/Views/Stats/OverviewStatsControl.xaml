@@ -45,7 +45,7 @@
 
                 <DataGrid x:Name="MapStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
                                   EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
-                                  ItemsSource="{Binding MapStatsViewSource.View}" Margin="469,127,0,0" Width="532" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                  ItemsSource="{Binding MapStatsViewSource.View}" Margin="469,127,0,0" Width="533" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" />
