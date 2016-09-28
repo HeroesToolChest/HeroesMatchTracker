@@ -101,6 +101,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
         public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
+        public virtual DbSet<ReplaySamePlayer> ReplaySamePlayers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,4 +1,5 @@
 ﻿using HeroesIcons;
+using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
@@ -79,7 +80,7 @@ namespace HeroesParserData
 
             try
             {
-                //(new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+                (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
                 MigrateFailed = false;
             }
             catch (Exception ex)

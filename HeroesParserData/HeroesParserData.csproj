@@ -196,6 +196,7 @@
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="DataQueries\ReplayData\PlayerStatistics.cs" />
+    <Compile Include="DataQueries\ReplayData\SamePlayer.cs" />
     <Compile Include="Generic\Maps.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\StatType.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
     <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
+    <Compile Include="Models\DbModels\ReplaySamePlayer.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchHeroBans.cs" />

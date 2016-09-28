@@ -11,7 +11,7 @@ namespace HeroesParserData.Database
             Migrations = new Dictionary<int, List<string>>();
 
             // add call to MigrationVersionX() here
-            //MigrationVersion1();
+            MigrationVersion1();
         }
 
         // Add new migration versions here
@@ -21,12 +21,12 @@ namespace HeroesParserData.Database
         {
             List<string> steps = new List<string>();
 
-            steps.Add(@"CREATE TABLE IF NOT EXISTS ReplayAllHotsPlayerHeroes(
-                        PlayerHeroesId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            steps.Add(@"CREATE TABLE IF NOT EXISTS ReplaySamePlayers(
+                        SamePlayerId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         PlayerId INTEGER,
-                        HeroName NVARCHAR (50),
-                        IsUsable BOOLEAN,
-                        LastUpdated DATETIME,
+                        BattleTagName NVARCHAR (50),
+                        BattleNetId INTEGER,
+                        DateAdded DATETIME,
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 
             Migrations.Add(1, steps);

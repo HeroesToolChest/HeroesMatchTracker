@@ -103,19 +103,20 @@ namespace HeroesParserData.DataQueries.ReplayData
             public static bool IsExistingHotsPlayer(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
                 // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName && 
-                                                        x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                return db.ReplayAllHotsPlayers.Any(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                                                        x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId &&
                                                         x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
             }
 
             public static long UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
-                var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName &&
-                                                                     x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
-                                                                     x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
+                var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                                                                          x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId &&
+                                                                          x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
 
                 if (record != null)
                 {
+                    // existing observer record, update the info
                     if (record.BattleNetId < 1)
                     {
                         record.BattleNetId = replayAllHotsPlayer.BattleNetId;
@@ -125,7 +126,22 @@ namespace HeroesParserData.DataQueries.ReplayData
                     }
 
                     if (replayAllHotsPlayer.LastSeen > record.LastSeen)
+                    {
+                        if (replayAllHotsPlayer.BattleTagName != record.BattleTagName)
+                        {
+                            ReplaySamePlayer samePlayer = new ReplaySamePlayer
+                            {
+                                PlayerId = record.PlayerId,
+                                BattleNetId = record.BattleNetId,
+                                BattleTagName = record.BattleTagName,
+                                DateAdded = replayAllHotsPlayer.LastSeen
+                            };
+
+                            SamePlayer.CreateRecord(db, samePlayer);
+                        }
+                        record.BattleTagName = replayAllHotsPlayer.BattleTagName; // update the players battletag, it may have changed
                         record.LastSeen = replayAllHotsPlayer.LastSeen;
+                    }
 
                     record.Seen += 1;
 
@@ -141,6 +157,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
             }
 
+            public static long ReadPlayerIdFromBattleNetTag(string battleTagName)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.ReplayAllHotsPlayers.FirstOrDefault(x => x.BattleTagName == battleTagName).PlayerId;
+                }
+            }
+
             public static async Task<ReplayAllHotsPlayer> ReadRecordFromPlayerId(long playerId)
             {
                 using (var db = new HeroesParserDataContext())
@@ -154,14 +178,6 @@ namespace HeroesParserData.DataQueries.ReplayData
                 using (var db = new HeroesParserDataContext())
                 {
                     return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == battleTagName);
-                }
-            }
-
-            public static long ReadPlayerIdFromBattleNetTag(string battleTagName)
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    return db.ReplayAllHotsPlayers.FirstOrDefault(x => x.BattleTagName == battleTagName).PlayerId;
                 }
             }
         }
