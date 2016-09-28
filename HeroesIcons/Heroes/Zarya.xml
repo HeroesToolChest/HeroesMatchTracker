@@ -3,7 +3,7 @@
   <Level1>
     <ZaryaParticleGrenadeDemolitionsExpertQuest name="Demolitions Expert">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeDemolitionsExpertQuest>
     <ZaryaShieldAllyTogetherWeAreStrong name="Together We Are Strong">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyTogetherWeAreStrong>
-    <ZaryaWeaponFeelTheHeat name="Feel The Heat">storm_ui_icon_zagara_banelingbarrage.dds</ZaryaWeaponFeelTheHeat>
+    <ZaryaWeaponFeelTheHeat name="Feel The Heat" generic="true">storm_ui_icon_talent_autoattack_base.dds</ZaryaWeaponFeelTheHeat>
     <ZaryaEnergyMaximumChargeQuest name="Maximum Charge">storm_ui_icon_zarya_energy.dds</ZaryaEnergyMaximumChargeQuest>
   </Level1>
   <Level4>

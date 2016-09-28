@@ -4,7 +4,6 @@
     <AlarakWithoutEffort name="Without Effort">storm_ui_icon_alarak_telekinesis.dds</AlarakWithoutEffort>
     <AlarakAppliedForce name="Applied Force">storm_ui_icon_alarak_telekinesis_a.dds</AlarakAppliedForce>
     <AlarakPowerConduit name="Power Conduit">storm_ui_icon_alarak_lightningsurge.dds</AlarakPowerConduit>
-    <AlarakWideLightning name="Wide Lightning">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakWideLightning>
   </Level1>
   <Level4>
     <AlarakDoubleCross name="Double Cross">storm_ui_icon_alarak_discordstrike.dds</AlarakDoubleCross>
@@ -39,5 +38,7 @@
     <AlarakLastLaugh name="Last Laugh">storm_ui_icon_alarak_lasttrick.dds</AlarakLastLaugh>
     <AlarakHastyBargain name="Hasty Bargain">storm_ui_icon_alarak_hastybargain.dds</AlarakHastyBargain>
   </Level20>
-  <Old></Old>
+  <Old>
+    <AlarakWideLightning name="Wide Lightning">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakWideLightning>
+  </Old>
 </Alarak>

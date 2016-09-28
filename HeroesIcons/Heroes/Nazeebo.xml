@@ -21,7 +21,7 @@
   </Level10>
   <Level13>
     <WitchDoctorGuardianToads name="Guardian Toads">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorGuardianToads>
-    <WitchDoctorSuperstition name="Superstition">sstorm_ui_icon_nazeebo_suprerstition.dds</WitchDoctorSuperstition>
+    <WitchDoctorSuperstition name="Superstition">storm_ui_icon_nazeebo_suprerstition.dds</WitchDoctorSuperstition>
     <GenericTalentIceBlock name="Ice Block">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
   </Level13>
   <Level16>
