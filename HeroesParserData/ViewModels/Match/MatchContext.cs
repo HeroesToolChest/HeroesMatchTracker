@@ -441,7 +441,7 @@ namespace HeroesParserData.ViewModels.Match
                     }
                 } // end foreach players
 
-                MatchTitle = $"{replay.MapName}  ---  {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}]";
+                MatchTitle = $"{replay.MapName} - {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}]";
 
                 Color mapNameGlowColor;
                 BackgroundMapImage = SetMapImage(replay.MapName, out mapNameGlowColor);
