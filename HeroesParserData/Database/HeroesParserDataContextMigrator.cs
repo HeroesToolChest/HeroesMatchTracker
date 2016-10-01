@@ -26,6 +26,8 @@ namespace HeroesParserData.Database
                         PlayerId INTEGER,
                         BattleTagName NVARCHAR (50),
                         BattleNetId INTEGER,
+                        BattleNetRegionId INTEGER,
+                        BattleNetSubId INTEGER,
                         DateAdded DATETIME,
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 

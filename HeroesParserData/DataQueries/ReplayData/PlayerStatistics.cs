@@ -3,7 +3,6 @@ using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries.ReplayData
 {

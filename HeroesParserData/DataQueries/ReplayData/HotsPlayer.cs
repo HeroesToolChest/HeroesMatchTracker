@@ -30,6 +30,16 @@ namespace HeroesParserData.DataQueries.ReplayData
                 return replayAllHotsPlayer.PlayerId;
             }
 
+            public static void DeleteRecord(HeroesParserDataContext db, long playerId)
+            {
+                db.ReplayAllHotsPlayers.Remove(new ReplayAllHotsPlayer
+                {
+                    PlayerId = playerId
+                });
+
+                db.SaveChanges();
+            }
+
             public static List<ReplayAllHotsPlayer> ReadAllRecords()
             {
                 using (var db = new HeroesParserDataContext())
@@ -134,12 +144,14 @@ namespace HeroesParserData.DataQueries.ReplayData
                                 PlayerId = record.PlayerId,
                                 BattleNetId = record.BattleNetId,
                                 BattleTagName = record.BattleTagName,
+                                BattleNetRegionId = record.BattleNetRegionId,
+                                BattleNetSubId = record.BattleNetSubId,
                                 DateAdded = replayAllHotsPlayer.LastSeen
                             };
 
                             SamePlayer.CreateRecord(db, samePlayer);
                         }
-                        record.BattleTagName = replayAllHotsPlayer.BattleTagName; // update the players battletag, it may have changed
+                        record.BattleTagName = replayAllHotsPlayer.BattleTagName; // update the player's battletag, it may have changed
                         record.LastSeen = replayAllHotsPlayer.LastSeen;
                     }
 
