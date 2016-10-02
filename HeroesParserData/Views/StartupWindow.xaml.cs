@@ -13,6 +13,7 @@ namespace HeroesParserData.Views
     /// </summary>
     public partial class StartupWindow
     {
+        private Logger StartupLogFile = LogManager.GetLogger("StartupLogFile");
         private Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
 
         public StartupWindow()
@@ -35,15 +36,18 @@ namespace HeroesParserData.Views
 
                 // order is important
                 CurrentStatusLabel.Content = "Initializing Hero Icons";
+                StartupLogFile.Log(LogLevel.Info, "Initializing Hero Icons");
                 await Task.Delay(100);
                 App.HeroesInfo = HeroesInfo.Initialize();
 
                 CurrentStatusLabel.Content = "Performing database migration";
+                StartupLogFile.Log(LogLevel.Info, "Performing database migration");
                 await Task.Delay(100);
                 InitializeDatabase();
 
                 // must be last
                 CurrentStatusLabel.Content = "Initializing Heroes Parser Data";
+                StartupLogFile.Log(LogLevel.Info, "Initializing Heroes Parser Data");
                 await Task.Delay(100);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.WindowState = WindowState.Maximized;
@@ -52,14 +56,17 @@ namespace HeroesParserData.Views
                 // ---------------------------------------------------------
                 StatusLabel.Content = "Done";
                 CurrentStatusLabel.Content = "Starting Heroes Parser Data";
+                StartupLogFile.Log(LogLevel.Info, "Starting Heroes Parser Data");
                 await Task.Delay(500);
 
                 Close();
                 mainWindow.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 StatusLabel.Content = "An error was encountered. Check the error logs for details";
+                await Task.Delay(100);
+                StartupLogFile.Log(LogLevel.Error, ex);
             }
         }
 
@@ -72,16 +79,7 @@ namespace HeroesParserData.Views
                 Directory.CreateDirectory(databasePath);
 
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
-
-            try
-            {
-                (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
-            }
-            catch (Exception ex)
-            {
-                DatabaseMigrateLog.Log(LogLevel.Error, $"Database migration error: {ex}");
-                throw;
-            }
+            (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
         }
     }
 }
