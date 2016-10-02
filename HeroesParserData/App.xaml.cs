@@ -20,7 +20,6 @@ namespace HeroesParserData
         public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
         public static bool IsProcessingReplays { get; set; }
-        public static bool MigrateFailed { get; set; }
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)

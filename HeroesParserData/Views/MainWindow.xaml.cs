@@ -25,9 +25,6 @@ namespace HeroesParserData.Views
 
             InitializeComponent();
 
-            //if (App.MigrateFailed)
-            //    ErrorMessage();
-
         #if !DEBUG
             Task.Run(async () =>
             {
@@ -116,14 +113,6 @@ namespace HeroesParserData.Views
                 await this.ShowMessageAsync($"Application updated to {latest} from {current}",
                     "When you're ready to complete the update, please close the application and reopen.", MessageDialogStyle.Affirmative);
             });
-        }
-
-        private async void ErrorMessage()
-        {
-            await Task.Delay(2000);
-            await this.ShowMessageAsync($"Update Error", string.Concat("There was an error with the database migration. Please check logs/DatabaseMigrateLog.txt for more information.\n\n",
-                "If this application underwent an update, then you may encounter errors throughout its use, otherwise you may continue using the application normally and ignore this error."), 
-                MessageDialogStyle.Affirmative);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
