@@ -21,13 +21,12 @@ namespace HeroesParserData.Views
 
         public MainWindow()
         {
-            Application.Current.MainWindow.WindowState = WindowState.Maximized;
             SetTrayIcon();
 
             InitializeComponent();
 
-            if (App.MigrateFailed)
-                ErrorMessage();
+            //if (App.MigrateFailed)
+            //    ErrorMessage();
 
         #if !DEBUG
             Task.Run(async () =>
@@ -36,6 +35,17 @@ namespace HeroesParserData.Views
                 await AutoUpdateCheck();
             });
         #endif
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (Settings.Default.IsMinimizeToTray && WindowState == WindowState.Minimized)
+            {
+                Hide();
+                App.NotifyIcon.Visible = true;
+            }
+
+            base.OnStateChanged(e);
         }
 
         private async Task AutoUpdateCheck()
@@ -164,17 +174,6 @@ namespace HeroesParserData.Views
                 Show();
                 WindowState = WindowState.Maximized;
             };
-        }
-
-        protected override void OnStateChanged(EventArgs e)
-        {
-            if (Settings.Default.IsMinimizeToTray && WindowState == WindowState.Minimized)
-            { 
-                Hide();
-                App.NotifyIcon.Visible = true;
-            }
-
-            base.OnStateChanged(e);
         }
     }
 }

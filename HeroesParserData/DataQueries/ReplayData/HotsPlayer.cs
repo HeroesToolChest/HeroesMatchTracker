@@ -139,7 +139,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                     {
                         if (replayAllHotsPlayer.BattleTagName != record.BattleTagName)
                         {
-                            ReplaySamePlayer samePlayer = new ReplaySamePlayer
+                            ReplayRenamedPlayer samePlayer = new ReplayRenamedPlayer
                             {
                                 PlayerId = record.PlayerId,
                                 BattleNetId = record.BattleNetId,
@@ -149,7 +149,7 @@ namespace HeroesParserData.DataQueries.ReplayData
                                 DateAdded = replayAllHotsPlayer.LastSeen
                             };
 
-                            SamePlayer.CreateRecord(db, samePlayer);
+                            RenamedPlayer.CreateRecord(db, samePlayer);
                         }
                         record.BattleTagName = replayAllHotsPlayer.BattleTagName; // update the player's battletag, it may have changed
                         record.LastSeen = replayAllHotsPlayer.LastSeen;

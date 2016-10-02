@@ -4,7 +4,7 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:HeroesParserData"
              xmlns:converters="clr-namespace:HeroesParserData.Converters"
-             StartupUri="Views/MainWindow.xaml">
+             StartupUri="Views/StartupWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

@@ -12,9 +12,9 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:HomeWindowViewModel}" d:DesignWidth="2002.75" d:DesignHeight="823">
+             d:DataContext="{d:DesignInstance ViewModels:HomeViewModel}" d:DesignWidth="2002.75" d:DesignHeight="823">
     <UserControl.DataContext>
-        <ViewModels:HomeWindowViewModel />
+        <ViewModels:HomeViewModel />
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>

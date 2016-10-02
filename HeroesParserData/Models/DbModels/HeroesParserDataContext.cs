@@ -48,6 +48,10 @@ namespace HeroesParserData.Models.DbModels
                         {
                             db.Database.ExecuteSqlCommand(migration);
                         }
+                        foreach (IMigrationAddon migration in contextMigrator.MigrationAddons[currentVersion])
+                        {
+                            migration.Execute();
+                        }
 
                         db.SchemaInfo.Add(new SchemaInfo() { Version = currentVersion });
                         db.SaveChanges();
@@ -101,7 +105,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
         public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
-        public virtual DbSet<ReplaySamePlayer> ReplaySamePlayers { get; set; }
+        public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

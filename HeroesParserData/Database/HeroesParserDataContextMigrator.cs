@@ -5,11 +5,10 @@ namespace HeroesParserData.Database
     public class HeroesParserDataContextMigrator
     {
         public Dictionary<int, List<string>> Migrations { get; set; } = new Dictionary<int, List<string>>();
+        public Dictionary<int, List<IMigrationAddon>> MigrationAddons { get; set; } = new Dictionary<int, List<IMigrationAddon>>();
 
         public HeroesParserDataContextMigrator()
         {
-            Migrations = new Dictionary<int, List<string>>();
-
             // add call to MigrationVersionX() here
             MigrationVersion1();
         }
@@ -20,9 +19,8 @@ namespace HeroesParserData.Database
         private void MigrationVersion1()
         {
             List<string> steps = new List<string>();
-
-            steps.Add(@"CREATE TABLE IF NOT EXISTS ReplaySamePlayers(
-                        SamePlayerId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            steps.Add(@"CREATE TABLE IF NOT EXISTS ReplayRenamedPlayers(
+                        RenamedPlayerId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                         PlayerId INTEGER,
                         BattleTagName NVARCHAR (50),
                         BattleNetId INTEGER,
@@ -32,6 +30,11 @@ namespace HeroesParserData.Database
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 
             Migrations.Add(1, steps);
+
+            List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
+            addonSteps.Add(new MigrationAddon1_1_0_1());
+
+            MigrationAddons.Add(1, addonSteps);
         }
     }
 }

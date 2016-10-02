@@ -191,12 +191,14 @@
     </ApplicationDefinition>
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
+    <Compile Include="Database\IMigrationAddon.cs" />
+    <Compile Include="Database\MigrationAddon1_1_0_1.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
     <Compile Include="DataQueries\ReplayData\PlayerStatistics.cs" />
-    <Compile Include="DataQueries\ReplayData\SamePlayer.cs" />
+    <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="Generic\Maps.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\StatType.cs" />
@@ -206,7 +208,7 @@
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
     <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
-    <Compile Include="Models\DbModels\ReplaySamePlayer.cs" />
+    <Compile Include="Models\DbModels\ReplayRenamedPlayer.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchHeroBans.cs" />
@@ -229,8 +231,9 @@
     <Compile Include="ViewModels\Data\RawMatchTeamLevelViewModel.cs" />
     <Compile Include="ViewModels\Data\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\Data\RawReplayViewModel.cs" />
+    <Compile Include="ViewModels\Data\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Heroes\HeroesUsableViewModel.cs" />
-    <Compile Include="ViewModels\HomeWindowViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
     <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
@@ -287,11 +290,14 @@
     <Compile Include="Views\Data\RawReplaysControl.xaml.cs">
       <DependentUpon>RawReplaysControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\RawRenamedPlayerControl.xaml.cs">
+      <DependentUpon>RawRenamedPlayerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Heroes\HeroesUsable.xaml.cs">
       <DependentUpon>HeroesUsable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomeWindow.xaml.cs">
-      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    <Compile Include="Views\HomeControl.xaml.cs">
+      <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -353,6 +359,9 @@
     <Compile Include="Generic\Utilities.cs" />
     <Compile Include="Views\SettingControl.xaml.cs">
       <DependentUpon>SettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartupWindow.xaml.cs">
+      <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Stats\HeroStatsControl.xaml.cs">
       <DependentUpon>HeroStatsControl.xaml</DependentUpon>
@@ -435,11 +444,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Data\RawRenamedPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Heroes\HeroesUsable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\HomeWindow.xaml">
+    <Page Include="Views\HomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -496,6 +509,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\SettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

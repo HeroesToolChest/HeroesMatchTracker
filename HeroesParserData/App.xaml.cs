@@ -15,7 +15,6 @@ namespace HeroesParserData
     public partial class App : Application
     {
         private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
-        private static Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
 
         public static HeroesInfo HeroesInfo { get; set; }
         public static bool UpdateInProgress { get; set; }
@@ -26,10 +25,6 @@ namespace HeroesParserData
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            UpdateInProgress = false;
-
-            InitDatabase();
-
             // set default location
             if (string.IsNullOrEmpty(Settings.Default.ReplaysLocation))
                 Settings.Default.ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
@@ -46,8 +41,6 @@ namespace HeroesParserData
             //                        theme.Item1);
 
             base.OnStartup(e);
-
-            HeroesInfo = HeroesInfo.Initialize();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -66,28 +59,6 @@ namespace HeroesParserData
             }
 
             base.OnExit(e);
-        }
-
-        private void InitDatabase()
-        {
-            string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = Path.Combine(applicationPath, "Database");
-
-            if (!Directory.Exists(databasePath))
-                Directory.CreateDirectory(databasePath);
-                
-            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
-
-            try
-            {
-                (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
-                MigrateFailed = false;
-            }
-            catch (Exception ex)
-            {
-                DatabaseMigrateLog.Log(LogLevel.Error, $"Database migration error: {ex}");
-                MigrateFailed = true;
-            }
         }
 
         private void CopyDatabaseToLatestRelease()

@@ -3,17 +3,17 @@ using System.Linq;
 
 namespace HeroesParserData.Database
 {
-    public class MigrationFix
+    public class MigrationAddon1_1_0_1 : IMigrationAddon
     {
-        public static void MigrationSamePlayer()
+        public void Execute()
         {
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
                 var records = db.Database.SqlQuery<ReplayAllHotsPlayer>(@"SELECT *
-                                                                FROM ReplayAllHotsPlayers
-                                                                WHERE BattleNetId != 0
-                                                                GROUP BY BattleNetId
-                                                                HAVING COUNT(*) > 1").ToList();
+                                                                          FROM ReplayAllHotsPlayers
+                                                                          WHERE BattleNetId != 0
+                                                                          GROUP BY BattleNetId
+                                                                          HAVING COUNT(*) > 1").ToList();
 
                 foreach (var record in records)
                 {
@@ -27,7 +27,7 @@ namespace HeroesParserData.Database
                     for (int i = 1; i < listSamePlayerRecords.Count; i++)
                     {
                         var player = listSamePlayerRecords[i];
-                        ReplaySamePlayer replaySamePlayer = new ReplaySamePlayer
+                        ReplayRenamedPlayer replayRenamedPlayer = new ReplayRenamedPlayer
                         {
                             PlayerId = originalPlayerId,
                             BattleTagName = player.BattleTagName,
@@ -37,7 +37,7 @@ namespace HeroesParserData.Database
                             DateAdded = player.LastSeen
                         };
 
-                        db.ReplaySamePlayers.Add(replaySamePlayer);
+                        db.ReplayRenamedPlayers.Add(replayRenamedPlayer);
 
                         long oldPlayerId = listSamePlayerRecords[i].PlayerId;
 

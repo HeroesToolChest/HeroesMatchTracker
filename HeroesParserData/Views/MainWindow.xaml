@@ -84,6 +84,9 @@
                     <TabItem Name="RawAllHotsPlayers" Header="All Players">
                         <ViewsData:RawAllHotsPlayerControl></ViewsData:RawAllHotsPlayerControl>
                     </TabItem>
+                    <TabItem Name="RawRenamedPlayer" Header="Renamed Players">
+                        <ViewsData:RawRenamedPlayerControl></ViewsData:RawRenamedPlayerControl>
+                    </TabItem>
                     <TabItem Name="RawAllHotsPlayersHero" Header="Players Heroes">
                         <ViewsData:RawAllHotsPlayerHeroControl></ViewsData:RawAllHotsPlayerHeroControl>
                     </TabItem>

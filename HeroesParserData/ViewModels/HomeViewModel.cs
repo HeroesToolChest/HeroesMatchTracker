@@ -5,15 +5,13 @@ using HeroesParserData.Messages;
 using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.ViewModels
 {
-    public class HomeWindowViewModel : ViewModelBase
+    public class HomeViewModel : ViewModelBase
     {
         private BitmapImage _backgroundMapImage;
         private Color _labelGlowColor;
@@ -220,7 +218,7 @@ namespace HeroesParserData.ViewModels
         }
         #endregion public properties
 
-        public HomeWindowViewModel()
+        public HomeViewModel()
             :base()
         {
             Messenger.Default.Register<HomeWindowMessage>(this, (action) => ReceiveMessage(action));
