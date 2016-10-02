@@ -10,6 +10,9 @@ namespace HeroesIcons
 {
     public class HeroesInfo
     {
+        private static readonly string ImageMissingLogName = "_ImageMissingLog.txt";
+        private static readonly string ReferenceLogName = "_ReferenceNameLog.txt";
+
         /// <summary>
         /// key is real hero name, value alt name (if any)
         /// example: Anub'arak, Anubarak
@@ -70,7 +73,7 @@ namespace HeroesIcons
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Talent icon: {nameOfHeroTalent}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
 
                 return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
@@ -81,7 +84,7 @@ namespace HeroesIcons
             }
             catch (Exception)
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Talent icon: {nameOfHeroTalent}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
                 return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
         }
@@ -102,7 +105,7 @@ namespace HeroesIcons
             // not found
             if (!HeroPortraits.TryGetValue(realHeroName, out uri))
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {realHeroName}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
 
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
@@ -113,7 +116,7 @@ namespace HeroesIcons
             }
             catch (Exception)
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Hero portrait: {realHeroName}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
         }
@@ -134,7 +137,7 @@ namespace HeroesIcons
             // not found
             if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Leader hero portrait: {realHeroName}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
 
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
@@ -145,7 +148,7 @@ namespace HeroesIcons
             }
             catch (Exception)
             {
-                Task.Run(() => Log("_ImageMissingLog.txt", $"Leader hero portrait: {realHeroName}"));
+                Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
                 return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
         }
@@ -166,7 +169,7 @@ namespace HeroesIcons
             // not found
             if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
             {
-                Task.Run(() => Log("_ReferenceNameLog.txt", $"No name for reference: {nameOfHeroTalent}"));
+                Task.Run(() => Log(ReferenceLogName, $"No name for reference: {nameOfHeroTalent}"));
 
                 return nameOfHeroTalent;
             }
@@ -190,7 +193,7 @@ namespace HeroesIcons
             // not found
             if (!HeroNamesFromAttId.TryGetValue(attributeId, out heroName))
             {
-                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero name for reference: {attributeId}"));
+                Task.Run(() => Log(ReferenceLogName, $"No hero name for reference: {attributeId}"));
 
                 return "Hero not found";
             }
@@ -209,7 +212,7 @@ namespace HeroesIcons
             // not found
             if (!HeroesAltName.TryGetValue(realName, out altName))
             {
-                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero alt name for reference: {realName}"));
+                Task.Run(() => Log(ReferenceLogName, $"No hero alt name for reference: {realName}"));
 
                 return "Hero alt name not found";
             }
@@ -228,7 +231,7 @@ namespace HeroesIcons
             // not found
             if (!HeroesAltName.TryGetValue(altName, out realName))
             {
-                Task.Run(() => Log("_ReferenceNameLog.txt", $"No hero real name for reference: {altName}"));
+                Task.Run(() => Log(ReferenceLogName, $"No hero real name for reference: {altName}"));
 
                 return "Hero real name not found";
             }
@@ -307,107 +310,110 @@ namespace HeroesIcons
         {
             List<string> heroes = new List<string>();
 
-            using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
+            try
             {
-                reader.ReadStartElement("Heroes");
-
-                while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
                 {
-                    if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
-                        continue;
+                    reader.ReadStartElement("Heroes");
 
-                    XElement el = (XElement)XNode.ReadFrom(reader);
-                    heroes.Add(el.Name.ToString());
+                    while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                    {
+                        if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
+                            continue;
+
+                        XElement el = (XElement)XNode.ReadFrom(reader);
+                        heroes.Add(el.Name.ToString());
+                    }
                 }
-            }
 
-            foreach (var hero in heroes)
-            {
-                using (XmlReader reader = XmlReader.Create($@"Heroes/{hero}.xml"))
+                foreach (var hero in heroes)
                 {
-                    reader.MoveToContent();
-
-                    if (reader.Name != hero)
-                        continue;
-
-                    // get real name
-                    // example: Anubarak -> (real)Anub'arak
-                    string realHeroName = reader["name"];
-                    if (string.IsNullOrEmpty(realHeroName))
-                        realHeroName = hero; // default to hero name
-
-                    // get attributeid from hero name
-                    // example: Anub
-                    string attributeId = reader["attributeid"];
-
-                    // get the role: warrior, assassin, support, specialist
-                    string role = reader["role"];
-
-                    // get portrait
-                    string portraitName = reader["portrait"];
-
-                    // get leaderboard portrait
-                    string lbPortrait = reader["leader"];
-
-                    if (!string.IsNullOrEmpty(attributeId))
+                    using (XmlReader reader = XmlReader.Create($@"Heroes/{hero}.xml"))
                     {
-                        HeroNamesFromAttId.Add(attributeId, realHeroName);
-                    }
+                        reader.MoveToContent();
 
-                    if (!string.IsNullOrEmpty(portraitName))
-                        HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
+                        if (reader.Name != hero)
+                            continue;
 
-                    if (!string.IsNullOrEmpty(lbPortrait))
-                        LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
+                        // get real name
+                        // example: Anubarak -> (real)Anub'arak
+                        string realHeroName = reader["name"];
+                        if (string.IsNullOrEmpty(realHeroName))
+                            realHeroName = hero; // default to hero name
 
-                    HeroesRealName.Add(realHeroName, hero);
-                    HeroesAltName.Add(hero, realHeroName);
+                        // get attributeid from hero name
+                        // example: Anub
+                        string attributeId = reader["attributeid"];
 
-                    switch (role)
-                    {
-                        case "Warrior":
-                            HeroesRole.Add(realHeroName, HeroRole.Warrior);
-                            break;
-                        case "Assassin":
-                            HeroesRole.Add(realHeroName, HeroRole.Assassin);
-                            break;
-                        case "Support":
-                            HeroesRole.Add(realHeroName, HeroRole.Support);
-                            break;
-                        case "Specialist":
-                            HeroesRole.Add(realHeroName, HeroRole.Specialist);
-                            break;
-                    }
+                        // get the role: warrior, assassin, support, specialist
+                        string role = reader["role"];
 
-                    // add talents
-                    while (reader.Read())
-                    {
-                        if (reader.IsStartElement())
+                        // get portrait
+                        string portraitName = reader["portrait"];
+
+                        // get leaderboard portrait
+                        string lbPortrait = reader["leader"];
+
+                        if (!string.IsNullOrEmpty(attributeId))
                         {
-                            string element = reader.Name;
-                            if (element == "Level1" || element == "Level4" || element == "Level7" ||
-                                element == "Level10" || element == "Level13" || element == "Level16" ||
-                                element == "Level20" || element == "Old")
+                            HeroNamesFromAttId.Add(attributeId, realHeroName);
+                        }
+
+                        if (!string.IsNullOrEmpty(portraitName))
+                            HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
+
+                        if (!string.IsNullOrEmpty(lbPortrait))
+                            LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
+
+                        HeroesRealName.Add(realHeroName, hero);
+                        HeroesAltName.Add(hero, realHeroName);
+
+                        switch (role)
+                        {
+                            case "Warrior":
+                                HeroesRole.Add(realHeroName, HeroRole.Warrior);
+                                break;
+                            case "Assassin":
+                                HeroesRole.Add(realHeroName, HeroRole.Assassin);
+                                break;
+                            case "Support":
+                                HeroesRole.Add(realHeroName, HeroRole.Support);
+                                break;
+                            case "Specialist":
+                                HeroesRole.Add(realHeroName, HeroRole.Specialist);
+                                break;
+                        }
+
+                        // add talents
+                        while (reader.Read())
+                        {
+                            if (reader.IsStartElement())
                             {
-                                while (reader.Read() && reader.Name != element)
+                                string element = reader.Name;
+                                if (element == "Level1" || element == "Level4" || element == "Level7" ||
+                                    element == "Level10" || element == "Level13" || element == "Level16" ||
+                                    element == "Level20" || element == "Old")
                                 {
-                                    if (reader.NodeType == XmlNodeType.Element)
+                                    while (reader.Read() && reader.Name != element)
                                     {
-                                        string name = reader.Name; // raw name of talent
-                                        string realName = reader["name"] == null? string.Empty : reader["name"];  // real ingame name of talent
-                                        string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
-
-                                        bool isGeneric;
-                                        if (!bool.TryParse(generic, out isGeneric))
-                                            isGeneric = false;
-
-                                        if (reader.Read())
+                                        if (reader.NodeType == XmlNodeType.Element)
                                         {
-                                            if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
-                                                isGeneric = true;
+                                            string name = reader.Name; // raw name of talent
+                                            string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
+                                            string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
 
-                                            if (!Talents.ContainsKey(name))
-                                                Talents.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            bool isGeneric;
+                                            if (!bool.TryParse(generic, out isGeneric))
+                                                isGeneric = false;
+
+                                            if (reader.Read())
+                                            {
+                                                if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
+                                                    isGeneric = true;
+
+                                                if (!Talents.ContainsKey(name))
+                                                    Talents.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            }
                                         }
                                     }
                                 }
@@ -415,6 +421,10 @@ namespace HeroesIcons
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new ParseXmlException("Error on parsing of xml files", ex);
             }
         }
 

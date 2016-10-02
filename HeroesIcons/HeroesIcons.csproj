@@ -46,6 +46,7 @@
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="IconException.cs" />
+    <Compile Include="ParseXmlException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
