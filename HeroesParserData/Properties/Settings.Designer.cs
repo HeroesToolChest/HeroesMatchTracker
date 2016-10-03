@@ -188,5 +188,17 @@ namespace HeroesParserData.Properties {
                 this["UserPlayerId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HeroesParserData.db")]
+        public string DatabaseFile {
+            get {
+                return ((string)(this["DatabaseFile"]));
+            }
+            set {
+                this["DatabaseFile"] = value;
+            }
+        }
     }
 }

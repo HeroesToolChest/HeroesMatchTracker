@@ -1,19 +1,20 @@
 ﻿using HeroesParserData.Models.DbModels;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace HeroesParserData.Database
 {
     public class MigrationAddon1_1_0_1 : IMigrationAddon
     {
-        public void Execute()
+        public async Task Execute()
         {
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
-                var records = db.Database.SqlQuery<ReplayAllHotsPlayer>(@"SELECT *
+                var records = await db.Database.SqlQuery<ReplayAllHotsPlayer>(@"SELECT *
                                                                           FROM ReplayAllHotsPlayers
                                                                           WHERE BattleNetId != 0
                                                                           GROUP BY BattleNetId
-                                                                          HAVING COUNT(*) > 1").ToList();
+                                                                          HAVING COUNT(*) > 1").ToListAsync();
 
                 foreach (var record in records)
                 {
@@ -74,7 +75,7 @@ namespace HeroesParserData.Database
                         var allHotsPlayer = db.ReplayAllHotsPlayers.Where(x => x.PlayerId == oldPlayerId);
                         db.ReplayAllHotsPlayers.RemoveRange(allHotsPlayer);
 
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
                     }
                 }
             }

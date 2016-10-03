@@ -44,5 +44,8 @@
     <Setting Name="UserPlayerId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="DatabaseFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HeroesParserData.db</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

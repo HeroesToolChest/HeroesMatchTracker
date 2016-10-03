@@ -14,8 +14,6 @@ namespace HeroesParserData
     /// </summary>
     public partial class App : Application
     {
-        private static Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
-
         public static HeroesInfo HeroesInfo { get; set; }
         public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
@@ -51,43 +49,43 @@ namespace HeroesParserData
                 NotifyIcon.Visible = false;
             }
 
-            if (UpdateInProgress && !string.IsNullOrEmpty(NewLatestDirectory))
-            {
-                SqlConnection.ClearAllPools();
-                CopyDatabaseToLatestRelease();
-            }
+            //if (UpdateInProgress && !string.IsNullOrEmpty(NewLatestDirectory))
+            //{
+            //    SqlConnection.ClearAllPools();
+            //    CopyDatabaseToLatestRelease();
+            //}
 
             base.OnExit(e);
         }
 
-        private void CopyDatabaseToLatestRelease()
-        {
-            string dbFile = "HeroesParserData.db";
-            string dbFilePath = @"Database\HeroesParserData.db";
-            string newAppDirectory = Path.Combine(NewLatestDirectory, "Database");
+        //private void CopyDatabaseToLatestRelease()
+        //{
+        //    string dbFile = "HeroesParserData.db";
+        //    string dbFilePath = @"Database\HeroesParserData.db";
+        //    string newAppDirectory = Path.Combine(NewLatestDirectory, "Database");
 
-            try
-            {
-                if (!File.Exists(dbFilePath))
-                {
-                    DatabaseCopyLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
-                    DatabaseCopyLog.Log(LogLevel.Info, "Nothing to copy, update completed");
+        //    try
+        //    {
+        //        if (!File.Exists(dbFilePath))
+        //        {
+        //            DatabaseCopyLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
+        //            DatabaseCopyLog.Log(LogLevel.Info, "Nothing to copy, update completed");
 
-                    return;
-                }
+        //            return;
+        //        }
 
-                Directory.CreateDirectory(newAppDirectory);
-                DatabaseCopyLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
+        //        Directory.CreateDirectory(newAppDirectory);
+        //        DatabaseCopyLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
 
-                File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
+        //        File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
 
-                DatabaseCopyLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
-                DatabaseCopyLog.Log(LogLevel.Info, "Update completed");
-            }
-            catch (Exception ex)
-            {
-                DatabaseCopyLog.Log(LogLevel.Info, ex);
-            }
-        }
+        //        DatabaseCopyLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
+        //        DatabaseCopyLog.Log(LogLevel.Info, "Update completed");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        DatabaseCopyLog.Log(LogLevel.Info, ex);
+        //    }
+        //}
     }
 }

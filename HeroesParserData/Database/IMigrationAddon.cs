@@ -1,7 +1,9 @@
-﻿namespace HeroesParserData.Database
+﻿using System.Threading.Tasks;
+
+namespace HeroesParserData.Database
 {
     public interface IMigrationAddon
     {
-        void Execute();
+        Task Execute();
     }
 }

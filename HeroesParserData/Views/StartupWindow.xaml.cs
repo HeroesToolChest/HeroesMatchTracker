@@ -1,5 +1,6 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Models.DbModels;
+using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.IO;
@@ -15,10 +16,12 @@ namespace HeroesParserData.Views
     {
         private Logger StartupLogFile = LogManager.GetLogger("StartupLogFile");
         private Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
+        private Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
 
         public StartupWindow()
         {
             InitializeComponent();
+            AppVersion.Content = HPDVersion.GetVersion();
         }
 
         protected override async void OnContentRendered(EventArgs e)
@@ -35,42 +38,35 @@ namespace HeroesParserData.Views
                 await Task.Delay(100);
 
                 // order is important
-                CurrentStatusLabel.Content = "Initializing Hero Icons";
-                StartupLogFile.Log(LogLevel.Info, "Initializing Hero Icons");
-                await Task.Delay(100);
+                await ApplicationUpdater();
+
+                await Message("Initializing Hero Icons");
                 App.HeroesInfo = HeroesInfo.Initialize();
 
-                CurrentStatusLabel.Content = "Performing database migration";
-                StartupLogFile.Log(LogLevel.Info, "Performing database migration");
-                await Task.Delay(100);
-                InitializeDatabase();
+                await Message("Performing database migration");
+                await InitializeDatabase();
 
                 // must be last
-                CurrentStatusLabel.Content = "Initializing Heroes Parser Data";
-                StartupLogFile.Log(LogLevel.Info, "Initializing Heroes Parser Data");
-                await Task.Delay(100);
+                await Message("Initializing Heroes Parser Data");
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.WindowState = WindowState.Maximized;
 
                 // finished
                 // ---------------------------------------------------------
                 StatusLabel.Content = "Done";
-                CurrentStatusLabel.Content = "Starting Heroes Parser Data";
-                StartupLogFile.Log(LogLevel.Info, "Starting Heroes Parser Data");
-                await Task.Delay(500);
+                await Message("Starting Heroes Parser Data");
 
                 Close();
                 mainWindow.Show();
             }
             catch (Exception ex)
             {
-                StatusLabel.Content = "An error was encountered. Check the error logs for details";
-                await Task.Delay(100);
+                await Message("An error was encountered. Check the error logs for details");
                 StartupLogFile.Log(LogLevel.Error, ex);
             }
         }
 
-        private void InitializeDatabase()
+        private async Task InitializeDatabase()
         {
             string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
             string databasePath = Path.Combine(applicationPath, "Database");
@@ -79,7 +75,91 @@ namespace HeroesParserData.Views
                 Directory.CreateDirectory(databasePath);
 
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
-            (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+            await (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+        }
+
+        private async Task ApplicationUpdater()
+        {
+            try
+            {
+            #if !DEBUG
+                AutoUpdater autoUpdater = new AutoUpdater();
+
+                await Message("Checking for updates...");
+
+                if (!await autoUpdater.CheckForUpdates())
+                {
+                    await Message("Already latest version");
+                    return;
+                }
+
+                if (!Settings.Default.IsAutoUpdates)
+                {
+                    await Message("Update available, auto-update is disabled");
+                    return;
+                }
+
+                await Message("Downloading and applying releases...");
+                if (!await autoUpdater.ApplyReleases())
+                {
+                    await Message("Already latest version");
+                    return;
+                }
+
+                await Message("Copying database to new folder...");
+                CopyDatabaseToLatestRelease();
+
+                await Message("Restarting application...");
+                await Task.Delay(1000);
+
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            #endif
+            }
+            catch (AutoUpdaterException ex)
+            {
+                await Message("Could not check for updates or apply releases, check logs");
+                StartupLogFile.Log(LogLevel.Error, ex);
+                await Task.Delay(1000);
+            }
+        }
+
+        private void CopyDatabaseToLatestRelease()
+        {
+            string dbFile = Settings.Default.DatabaseFile;
+            string dbFilePath = $@"Database\{dbFile}";
+            string newAppDirectory = Path.Combine(App.NewLatestDirectory, "Database");
+
+            try
+            {
+                if (!File.Exists(dbFilePath))
+                {
+                    DatabaseCopyLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
+                    DatabaseCopyLog.Log(LogLevel.Info, "Nothing to copy, update completed");
+
+                    return;
+                }
+
+                Directory.CreateDirectory(newAppDirectory);
+                DatabaseCopyLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
+
+                File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
+
+                DatabaseCopyLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
+                DatabaseCopyLog.Log(LogLevel.Info, "Update completed");
+            }
+            catch (Exception ex)
+            {
+                DatabaseCopyLog.Log(LogLevel.Info, ex);
+                throw;
+            }
+        }
+
+        private async Task Message(string message)
+        {
+            CurrentStatusLabel.Content = message;
+            StartupLogFile.Log(LogLevel.Info, message);
+            await Task.Delay(100);
         }
     }
 }

@@ -4,6 +4,7 @@
 
     <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/HeroesIcons;component/Icons/storm_ui_silencepenalty.dds"/>
     <BitmapImage x:Key="XOut" UriSource="pack://application:,,,/Resources/Images/XOut.png"/>
+    <BitmapImage x:Key="HPDStartup" UriSource="pack://application:,,,/Resources/Images/HPDStartup.png"/>
 
     <BitmapImage x:Key="Abathur" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_abathur.dds"/>
     <BitmapImage x:Key="Anubarak" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_anubarak.dds"/>

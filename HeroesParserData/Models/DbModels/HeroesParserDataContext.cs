@@ -16,7 +16,7 @@ namespace HeroesParserData.Models.DbModels
         public HeroesParserDataContext()
             : base("name=HeroesParserData") { }
 
-        public void Initialize(Logger logger)
+        public async Task Initialize(Logger logger)
         {
             try
             {
@@ -46,15 +46,15 @@ namespace HeroesParserData.Models.DbModels
 
                         foreach (string migration in contextMigrator.Migrations[currentVersion])
                         {
-                            db.Database.ExecuteSqlCommand(migration);
+                            await db.Database.ExecuteSqlCommandAsync(migration);
                         }
                         foreach (IMigrationAddon migration in contextMigrator.MigrationAddons[currentVersion])
                         {
-                            migration.Execute();
+                            await migration.Execute();
                         }
 
                         db.SchemaInfo.Add(new SchemaInfo() { Version = currentVersion });
-                        db.SaveChanges();
+                        await db.SaveChangesAsync();
 
                         logger.Log(LogLevel.Info, $"Migration version {currentVersion} completed");
                     }
