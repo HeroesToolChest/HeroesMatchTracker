@@ -11,10 +11,10 @@ namespace HeroesParserData.Database
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
                 var records = await db.Database.SqlQuery<ReplayAllHotsPlayer>(@"SELECT *
-                                                                          FROM ReplayAllHotsPlayers
-                                                                          WHERE BattleNetId != 0
-                                                                          GROUP BY BattleNetId
-                                                                          HAVING COUNT(*) > 1").ToListAsync();
+                                                                                FROM ReplayAllHotsPlayers
+                                                                                WHERE BattleNetId != 0
+                                                                                GROUP BY BattleNetId
+                                                                                HAVING COUNT(*) > 1").ToListAsync();
 
                 foreach (var record in records)
                 {
@@ -24,7 +24,7 @@ namespace HeroesParserData.Database
                     long originalPlayerId = listSamePlayerRecords[0].PlayerId;
                     listSamePlayerRecords[0].Seen = samePlayerRecords.Sum(x => x.Seen);
 
-                    // copy the records over to the SamePlayer table
+                    // copy the records over to the RenamedPlayer table
                     for (int i = 1; i < listSamePlayerRecords.Count; i++)
                     {
                         var player = listSamePlayerRecords[i];
@@ -48,28 +48,28 @@ namespace HeroesParserData.Database
 
                         // update ReplayMatchPlayers
                         db.ReplayMatchPlayers.Where(x => x.PlayerId == oldPlayerId)
-                                                .ToList()
-                                                .ForEach(x => x.PlayerId = originalPlayerId);
+                                             .ToList()
+                                             .ForEach(x => x.PlayerId = originalPlayerId);
 
                         // update ReplayMatchPlayerTalents
                         db.ReplayMatchPlayerTalents.Where(x => x.PlayerId == oldPlayerId)
-                                                .ToList()
-                                                .ForEach(x => x.PlayerId = originalPlayerId);
+                                                   .ToList()
+                                                   .ForEach(x => x.PlayerId = originalPlayerId);
 
                         // update ReplayMatchPlayerScoreResults
                         db.ReplayMatchPlayerScoreResults.Where(x => x.PlayerId == oldPlayerId)
-                                                .ToList()
-                                                .ForEach(x => x.PlayerId = originalPlayerId);
+                                                        .ToList()
+                                                        .ForEach(x => x.PlayerId = originalPlayerId);
 
                         // update ReplayMatchTeamObjectives
                         db.ReplayMatchTeamObjectives.Where(x => x.PlayerId == oldPlayerId)
-                                                .ToList()
-                                                .ForEach(x => x.PlayerId = originalPlayerId);
+                                                    .ToList()
+                                                    .ForEach(x => x.PlayerId = originalPlayerId);
 
                         // update ReplayMatchAwards
                         db.ReplayMatchAwards.Where(x => x.PlayerId == oldPlayerId)
-                                                .ToList()
-                                                .ForEach(x => x.PlayerId = originalPlayerId);
+                                            .ToList()
+                                            .ForEach(x => x.PlayerId = originalPlayerId);
 
                         // remove from ReplayAllHotsPlayer
                         var allHotsPlayer = db.ReplayAllHotsPlayers.Where(x => x.PlayerId == oldPlayerId);
