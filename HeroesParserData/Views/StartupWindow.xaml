@@ -1,25 +1,22 @@
-﻿<Controls:MetroWindow x:Class="HeroesParserData.Views.StartupWindow"
+﻿<Window x:Class="HeroesParserData.Views.StartupWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:HeroesParserData.Views"
         mc:Ignorable="d"
-        GlowBrush="{DynamicResource AccentColorBrush}"
-        Height="225" Width="400" MaxHeight="225" MaxWidth="400"
+        Height="270" Width="480" MaxHeight="270" MaxWidth="480"
         WindowStartupLocation="CenterScreen"
-        WindowTransitionsEnabled="False"
-        BorderThickness="0"
+        BorderThickness="0" WindowStyle="None"
         Title="Heroes Parser Data Startup" ResizeMode="NoResize">
     <Grid>
         <Image Source="{StaticResource HPDStartup}" Stretch="UniformToFill" />
-        <Label x:Name="StatusLabel" Content="Starting up..." HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
+        <Label x:Name="StatusLabel" Content="Starting up..." HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="CurrentStatusLabel" Content="" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
+        <Label x:Name="CurrentStatusLabel" Content="" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
@@ -29,11 +26,11 @@
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="AppVersion" Content="0.0.0" HorizontalAlignment="Left" Margin="344,160,0,0" VerticalAlignment="Top" Foreground="White">
+        <Label x:Name="AppVersion" Content="0.0.0" HorizontalAlignment="Left" Margin="435,234,0,0" VerticalAlignment="Top" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
         </Label>
 
     </Grid>
-</Controls:MetroWindow>
+</Window>

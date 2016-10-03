@@ -12,7 +12,7 @@ namespace HeroesParserData.Views
     /// <summary>
     /// Interaction logic for StartupWindow.xaml
     /// </summary>
-    public partial class StartupWindow
+    public partial class StartupWindow : Window
     {
         private Logger StartupLogFile = LogManager.GetLogger("StartupLogFile");
         private Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
@@ -35,7 +35,6 @@ namespace HeroesParserData.Views
             try
             {
                 StatusLabel.Content = "Starting up...";
-                await Task.Delay(100);
 
                 // order is important
                 await ApplicationUpdater();
