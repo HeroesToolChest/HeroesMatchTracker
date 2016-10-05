@@ -1,5 +1,5 @@
 ﻿using Heroes.ReplayParser;
-using HeroesParserData.DataQueries.ReplayData;
+using HeroesParserData.DataQueries;
 using HeroesParserData.Models.StatsModels;
 using HeroesParserData.Properties;
 using NLog;

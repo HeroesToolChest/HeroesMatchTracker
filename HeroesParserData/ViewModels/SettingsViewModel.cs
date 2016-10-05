@@ -1,4 +1,4 @@
-﻿using HeroesParserData.DataQueries.ReplayData;
+﻿using HeroesParserData.DataQueries;
 using HeroesParserData.Properties;
 using System.Windows.Input;
 
@@ -78,7 +78,7 @@ namespace HeroesParserData.ViewModels
                 return;
             else if (ValidateBattleTagName(UserBattleTag))
             {
-                Settings.Default.UserPlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetTag(UserBattleTag).ToString();
+                Settings.Default.UserPlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetTag(UserBattleTag);
                 InputBattleTagError = string.Empty;
             }
             else

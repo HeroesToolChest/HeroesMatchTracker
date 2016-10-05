@@ -198,7 +198,8 @@
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
-    <Compile Include="DataQueries\ReplayData\PlayerStatistics.cs" />
+    <Compile Include="DataQueries\Statistics\HeroStatsGameMode.cs" />
+    <Compile Include="DataQueries\Statistics\PlayerStatistics.cs" />
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="Generic\AppVersion.cs" />
     <Compile Include="Generic\Maps.cs" />
@@ -217,7 +218,9 @@
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
     <Compile Include="Models\MatchModels\MatchScores.cs" />
     <Compile Include="Models\MatchModels\MatchTalents.cs" />
-    <Compile Include="Models\StatsModels\StatsHeroes.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroesBase.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroesGameModes.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroesMaps.cs" />
     <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
@@ -247,7 +250,9 @@
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\Stats\HeroStatsViewModel.cs" />
+    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsContext.cs" />
+    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsGameModesViewModel.cs" />
+    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsMapsViewModel.cs" />
     <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -365,8 +370,14 @@
     <Compile Include="Views\StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Stats\HeroStatsControl.xaml.cs">
-      <DependentUpon>HeroStatsControl.xaml</DependentUpon>
+    <Compile Include="Views\Stats\HeroStats\HeroStatsGameModesControl.xaml.cs">
+      <DependentUpon>HeroStatsGameModesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml.cs">
+      <DependentUpon>HeroStatsGenericControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stats\HeroStats\HeroStatsMapsControl.xaml.cs">
+      <DependentUpon>HeroStatsMapsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Stats\OverviewStatsControl.xaml.cs">
       <DependentUpon>OverviewStatsControl.xaml</DependentUpon>
@@ -518,7 +529,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Stats\HeroStatsControl.xaml">
+    <Page Include="Views\Stats\HeroStats\HeroStatsGameModesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stats\HeroStats\HeroStatsMapsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

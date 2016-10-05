@@ -22,7 +22,7 @@ namespace HeroesParserData.ViewModels.Data
 
         private int _rowsReturned;
         private string _queryStatus;
-        private Dictionary<ButtonCommands, Func<Task>> _buttonCommandActions;
+        private Dictionary<ButtonCommands, Func<Task>> ButtonCommandActions;
         #endregion private properties
 
         #region properties
@@ -189,11 +189,11 @@ namespace HeroesParserData.ViewModels.Data
 
         private void AddButtonCommandsActions()
         {
-            _buttonCommandActions = new Dictionary<ButtonCommands, Func<Task>>();
-            _buttonCommandActions.Add(ButtonCommands.ReadDataTop, async () => await ReadDataTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataLast, async () => await ReadDataLast());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataCustomTop, async () => await ReadDataCustomTop());
-            _buttonCommandActions.Add(ButtonCommands.ReadDataWhere, async () => await ReadDataWhere());
+            ButtonCommandActions = new Dictionary<ButtonCommands, Func<Task>>();
+            ButtonCommandActions.Add(ButtonCommands.ReadDataTop, async () => await ReadDataTop());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataLast, async () => await ReadDataLast());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataCustomTop, async () => await ReadDataCustomTop());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataWhere, async () => await ReadDataWhere());
         }
 
         private void AddListConditionalOperators()
@@ -219,7 +219,7 @@ namespace HeroesParserData.ViewModels.Data
             QueryStatus = "Executing query...";
             try
             {
-                await _buttonCommandActions[commands]();
+                await ButtonCommandActions[commands]();
                 QueryStatus = "Query executed successfully";
             }
             catch (Exception ex)

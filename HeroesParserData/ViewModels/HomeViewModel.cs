@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Heroes.ReplayParser;
-using HeroesParserData.DataQueries.ReplayData;
+using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
 using HeroesParserData.Properties;
 using System;

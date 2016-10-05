@@ -1,5 +1,5 @@
 ﻿using HeroesIcons;
-using HeroesParserData.DataQueries.ReplayData;
+using HeroesParserData.DataQueries;
 using HeroesParserData.Models.HeroesModels;
 using NLog;
 using System;

@@ -1,6 +1,6 @@
 ﻿using Heroes.ReplayParser;
 using HeroesIcons;
-using HeroesParserData.DataQueries.ReplayData;
+using HeroesParserData.DataQueries;
 using HeroesParserData.Models.MatchModels;
 using HeroesParserData.Properties;
 using NLog;

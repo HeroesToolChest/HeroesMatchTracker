@@ -1,5 +1,5 @@
 ﻿using Heroes.ReplayParser;
-using HeroesParserData.DataQueries.ReplayData;
+using HeroesParserData.DataQueries;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 

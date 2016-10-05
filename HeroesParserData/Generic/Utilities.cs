@@ -59,6 +59,11 @@ namespace HeroesParserData
                 throw new Exception("GetSeasonFromString failed to convert to Season Enum");
         }
 
+        public static int CalculateWinPercentage(int wins, double total)
+        {
+            return total != 0 ? (int)(Math.Round(wins / total, 2) * 100) : 0;
+        }
+
         public static List<string> GetSeasonList()
         {
             List<string> list = new List<string>();

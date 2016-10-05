@@ -1,4 +1,4 @@
-﻿using HeroesParserData.DataQueries.ReplayData;
+﻿using HeroesParserData.DataQueries;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;

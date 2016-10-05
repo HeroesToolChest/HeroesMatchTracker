@@ -7,7 +7,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HeroesParserData.DataQueries.ReplayData
+namespace HeroesParserData.DataQueries
 {
     public static partial class Query
     {
