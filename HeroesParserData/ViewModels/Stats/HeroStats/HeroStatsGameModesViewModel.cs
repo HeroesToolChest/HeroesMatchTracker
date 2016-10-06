@@ -1,15 +1,9 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Models.StatsModels;
-using HeroesParserData.Properties;
-using NLog;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 
 namespace HeroesParserData.ViewModels.Stats.HeroStats
 {
@@ -33,7 +27,7 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
 
         }
 
-        protected override void RefreshStats()
+        protected override async Task RefreshStats()
         {
             StatsHeroesGameModes = new ObservableCollection<StatsHeroesGameModes>();
             var heroesList = HeroesInfo.GetListOfHeroes();
@@ -66,9 +60,12 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
                 int totalLosses = quickMatchLosses + unrankedDraftLosses + heroLeagueLosses + teamLeagueLosses;
                 int totalTotal = totalWins + totalLosses;
                 int totalWinPercentage = Utilities.CalculateWinPercentage(totalWins, totalTotal);
+
+                var heroImage = HeroesInfo.GetHeroLeaderboardPortrait(heroName);
+                heroImage.Freeze();
+
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
                 {
-                    LeaderboardPortrait = HeroesInfo.GetHeroLeaderboardPortrait(heroName),
                     CharacterName = heroName,
                     CharacterLevel = level,
                     QuickMatchWins = quickMatchWins,
@@ -90,10 +87,14 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
                     TotalWins = totalWins,
                     TotalLosses = totalLosses,
                     TotalGames = totalTotal,
-                    TotalWinPercentage = totalWinPercentage,
+                    TotalWinPercentage = totalTotal != 0 ? totalWinPercentage : (int?)null,
                 };
 
-                StatsHeroesGameModes.Add(statsHeroesGameModes);
+                await Application.Current.Dispatcher.InvokeAsync(delegate
+                {
+                    statsHeroesGameModes.LeaderboardPortrait = heroImage;
+                    StatsHeroesGameModes.Add(statsHeroesGameModes);
+                });
             }
         }
     }

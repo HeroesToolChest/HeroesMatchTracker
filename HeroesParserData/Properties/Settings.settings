@@ -41,7 +41,7 @@
     <Setting Name="UserBattleTagName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="UserPlayerId" Type="System.String" Scope="User">
+    <Setting Name="UserPlayerId" Type="System.Int64" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DatabaseFile" Type="System.String" Scope="User">

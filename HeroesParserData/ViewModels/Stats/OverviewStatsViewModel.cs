@@ -2,14 +2,11 @@
 using HeroesParserData.DataQueries;
 using HeroesParserData.Models.StatsModels;
 using HeroesParserData.Properties;
-using NLog;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
+using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels.Stats
 {
@@ -25,14 +22,13 @@ namespace HeroesParserData.ViewModels.Stats
         private List<string> _mostStatsList = new List<string>();
         private List<string> _seasonList = new List<string>();
         private List<string> _gameModeList = new List<string>();
-        private ObservableCollection<StatsMostAmounts> _statsMostAmounts = new ObservableCollection<StatsMostAmounts>();
-        private ObservableCollection<StatsMapPercentages> _statsMapPercentages = new ObservableCollection<StatsMapPercentages>();
-        private ObservableCollection<string> _totalGameModeGames = new ObservableCollection<string>();
-        private ObservableCollection<string> _winGameModePercentages = new ObservableCollection<string>();
+        private ObservableCollection<StatsMostAmounts> _statsMostAmountsCollection = new ObservableCollection<StatsMostAmounts>();
+        private ObservableCollection<StatsMapPercentages> _statsMapPercentagesCollection = new ObservableCollection<StatsMapPercentages>();
+        private ObservableCollection<string> _totalGameModeGamesCollection = new ObservableCollection<string>();
+        private ObservableCollection<string> _winGameModePercentagesCollection = new ObservableCollection<string>();
 
+        private bool Lock;
         #region public properties
-        public CollectionViewSource MostStatsViewSource { get; set; } = new CollectionViewSource();
-        public CollectionViewSource MapStatsViewSource { get; set; } = new CollectionViewSource();
 
         public List<string> MostStatsList
         {
@@ -44,13 +40,44 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
-        public ObservableCollection<StatsMostAmounts> StatsMostAmounts
+        public ObservableCollection<StatsMostAmounts> StatsMostAmountsCollection
         {
-            get { return _statsMostAmounts; }
+            get { return _statsMostAmountsCollection; }
             set
             {
-                _statsMostAmounts = value;
-                RaisePropertyChangedEvent(nameof(StatsMostAmounts));
+                _statsMostAmountsCollection = value;
+                RaisePropertyChangedEvent(nameof(StatsMostAmountsCollection));
+            }
+        }
+
+        public ObservableCollection<string> TotalGameModeGamesCollection
+        {
+            get { return _totalGameModeGamesCollection; }
+
+            set
+            {
+                _totalGameModeGamesCollection = value;
+                RaisePropertyChangedEvent(nameof(TotalGameModeGamesCollection));
+            }
+        }
+
+        public ObservableCollection<string> WinGameModePercentagesCollection
+        {
+            get { return _winGameModePercentagesCollection; }
+            set
+            {
+                _winGameModePercentagesCollection = value;
+                RaisePropertyChangedEvent(nameof(WinGameModePercentagesCollection));
+            }
+        }
+
+        public ObservableCollection<StatsMapPercentages> StatsMapPercentagesCollection
+        {
+            get { return _statsMapPercentagesCollection; }
+            set
+            {
+                _statsMapPercentagesCollection = value;
+                RaisePropertyChangedEvent(nameof(StatsMapPercentagesCollection));
             }
         }
 
@@ -60,7 +87,6 @@ namespace HeroesParserData.ViewModels.Stats
             set
             {
                 _selectedMostStatsOption = value;
-                RefreshStats();
                 RaisePropertyChangedEvent(nameof(SelectedMostStatsOption));
             }
         }
@@ -92,7 +118,6 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 _selectedSeasonOption = value;
                 SeasonLabel = value;
-                RefreshStats();
                 RaisePropertyChangedEvent(nameof(SelectedSeasonOption));
             }
         }
@@ -103,18 +128,7 @@ namespace HeroesParserData.ViewModels.Stats
             set
             {
                 _selectedGameModeOption = value;
-                RefreshStats();
                 RaisePropertyChangedEvent(nameof(SelectedGameModeOption));
-            }
-        }
-
-        public ObservableCollection<StatsMapPercentages> StatsMapPercentages
-        {
-            get { return _statsMapPercentages; }
-            set
-            {
-                _statsMapPercentages = value;
-                RaisePropertyChangedEvent(nameof(StatsMapPercentages));
             }
         }
 
@@ -148,41 +162,29 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
-        public ObservableCollection<string> TotalGameModeGames
+        public ICommand ChangeMostStatCommand
         {
-            get { return _totalGameModeGames; }
-
-            set
-            {
-                _totalGameModeGames = value;
-                RaisePropertyChangedEvent(nameof(TotalGameModeGames));
-            }
+            get { return new DelegateCommand(() => PerformMostStatCommand()); }
         }
 
-        public ObservableCollection<string> WinGameModePercentages
+        public ICommand ChangeSeasonCommand
         {
-            get { return _winGameModePercentages; }
-            set
-            {
-                _winGameModePercentages = value;
-                RaisePropertyChangedEvent(nameof(WinGameModePercentages));
-            }
+            get { return new DelegateCommand(() => PerformMapOtherStatCommand()); }
+        }
+
+        public ICommand ChangeGameModeCommand
+        {
+            get { return new DelegateCommand(() => PerformMapOtherStatCommand()); }
         }
         #endregion public properties
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
+            /// <summary>
+            /// Constructor
+            /// </summary>
         public OverviewStatsViewModel()
             : base()
         {
             InitializeLists();
-
-            MostStatsViewSource.Source = StatsMostAmounts;
-            MostStatsViewSource.SortDescriptions.Add(new SortDescription("Amount", ListSortDirection.Descending));
-
-            MapStatsViewSource.Source = StatsMapPercentages;
-            MapStatsViewSource.SortDescriptions.Add(new SortDescription("WinPercentage", ListSortDirection.Descending));
         }
 
         private void InitializeLists()
@@ -197,6 +199,43 @@ namespace HeroesParserData.ViewModels.Stats
 
             GameModeList.Add("All Types");
             GameModeList.AddRange(Utilities.GetGameModes());
+        }
+
+        private void PerformMostStatCommand()
+        {
+            Task.Run(async () =>
+            {
+                if (SelectedMostStatsOption == "Most Wins As")
+                    await SetMostStats(StatType.wins);
+                else if (SelectedMostStatsOption == "Most Kills As")
+                    await SetMostStats(StatType.kills);
+                else if (SelectedMostStatsOption == "Most Assists As")
+                    await SetMostStats(StatType.assists);
+                else if (SelectedMostStatsOption == "Most Deaths As")
+                    await SetMostStats(StatType.deaths);
+            });
+        }
+        
+        private void PerformMapOtherStatCommand()
+        {
+            PerformMostStatCommand();
+
+            Task.Run(async () =>
+            {
+                await SetMapStats();
+                await SetGameModesTotalGames();
+            });
+        }
+
+        private async Task SetMostStats(StatType statType)
+        {
+            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
+                return;
+
+            StatsMostAmountsCollection = new ObservableCollection<StatsMostAmounts>();
+
+            Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
+            GameMode gameMode = Utilities.GetGameModeFromString(SelectedGameModeOption);
 
             var heroesList = HeroesInfo.GetListOfHeroes();
 
@@ -205,113 +244,62 @@ namespace HeroesParserData.ViewModels.Stats
                 StatsMostAmounts statsMostAmounts = new StatsMostAmounts
                 {
                     HeroName = heroName,
-                    Amount = 0
+                    Amount = Query.PlayerStatistics.ReadTotalStatTypeForCharacter(statType, season, gameMode, heroName),
                 };
 
-                StatsMostAmounts.Add(statsMostAmounts);
+                await Application.Current.Dispatcher.InvokeAsync(delegate
+                {
+                    StatsMostAmountsCollection.Add(statsMostAmounts);
+                });
             }
+        }
+
+        private async Task SetMapStats()
+        {
+            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
+                return;
+
+            if (Lock == true)
+                return;
+
+            Lock = true;
+            StatsMapPercentagesCollection = new ObservableCollection<StatsMapPercentages>();
+
+            Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
+            GameMode gameMode = Utilities.GetGameModeFromString(SelectedGameModeOption);
 
             var maps = Maps.GetMaps();
 
             foreach (var map in maps)
             {
+                int wins = Query.PlayerStatistics.ReadMapWins(season, gameMode, map);
+                int losses = Query.PlayerStatistics.ReadMapLosses(season, gameMode, map);
+                double total = wins + losses;
+                int winPercentage = Utilities.CalculateWinPercentage(wins, total);
+
                 StatsMapPercentages statsMapPercentages = new StatsMapPercentages
                 {
                     MapName = map,
-                    Wins = 0,
-                    Losses = 0,
-                    WinPercentage = "0%"
+                    Wins = wins,
+                    Losses = losses,
+                    WinPercentage = winPercentage,
                 };
 
-                StatsMapPercentages.Add(statsMapPercentages);
-            }
-        }
-
-        private void RefreshStats()
-        {
-            Task.Run(() =>
-            {
-                try
+                await Application.Current.Dispatcher.InvokeAsync(delegate
                 {
-                    QueryStatus = $"Retreiving stats for {SelectedSeasonOption} {SelectedGameModeOption}...";
-
-                    if (SelectedMostStatsOption == "Most Wins As")
-                        SetMostStats(StatType.wins);
-                    else if (SelectedMostStatsOption == "Most Kills As")
-                        SetMostStats(StatType.kills);
-                    else if (SelectedMostStatsOption == "Most Assists As")
-                        SetMostStats(StatType.assists);
-                    else if (SelectedMostStatsOption == "Most Deaths As")
-                        SetMostStats(StatType.deaths);
-
-                    SetMapStats();
-                    SetGameModesTotalGames();
-
-                    QueryStatus = $"Query completed";
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(LogLevel.Error, ex);
-                    QueryStatus = $"Query failed (Error)";
-                }
-            });
-        }
-
-        private void SetMostStats(StatType statType)
-        {
-            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
-                return;
-
-            Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
-            GameMode gameMode = Utilities.GetGameModeFromString(SelectedGameModeOption);
-
-            foreach (var hero in StatsMostAmounts)
-            {
-                hero.Amount = Query.PlayerStatistics.ReadTotalStatTypeForCharacter(statType, season, gameMode, hero.HeroName);
+                    StatsMapPercentagesCollection.Add(statsMapPercentages);
+                });        
             }
-
-            Application.Current.Dispatcher.Invoke(delegate
-            {
-                MostStatsViewSource.View.Refresh();
-            });
-        }
-
-        private void SetMapStats()
-        {
-            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
-                return;
-
-            Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
-            GameMode gameMode = Utilities.GetGameModeFromString(SelectedGameModeOption);
-
-            foreach (var map in StatsMapPercentages)
-            {
-                int wins = Query.PlayerStatistics.ReadMapWins(season, gameMode, map.MapName);
-                int losses = Query.PlayerStatistics.ReadMapLosses(season, gameMode, map.MapName);
-                double total = wins + losses;
-                int winPercentage = total != 0 ? (int)(Math.Round(wins / total, 2) * 100) : 0;
-
-                map.Wins = wins;
-                map.Losses = losses;
-                if (wins == 0 && losses == 0)
-                    map.WinPercentage = "---";
-                else
-                    map.WinPercentage = $"{winPercentage}%";
-            }
-
-            Application.Current.Dispatcher.Invoke(delegate
-            {
-                MapStatsViewSource.View.Refresh();
-            });
 
             SetTotalWonGames();
+            Lock = false;
         }
 
         private void SetTotalWonGames()
         {
             int wins = 0;
 
-            foreach (var map in StatsMapPercentages)
+            foreach (var map in StatsMapPercentagesCollection)
             {
                 wins += map.Wins;
             }
@@ -319,36 +307,39 @@ namespace HeroesParserData.ViewModels.Stats
             TotalGamesWonLabel = $"{wins.ToString()} Games Won";
         }
 
-        private void SetGameModesTotalGames()
+        private async Task SetGameModesTotalGames()
         {
             Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
 
             double quickMatchTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.QuickMatch);
             double unrankedTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.UnrankedDraft);
             double heroTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.HeroLeague);
-            double TeamTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.TeamLeague);
+            double teamTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.TeamLeague);
 
             int quickMatchWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.QuickMatch);
             int unrankedWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.UnrankedDraft);
             int heroWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.HeroLeague);
-            int TeamWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.TeamLeague);
+            int teamWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.TeamLeague);
 
-            int quickMatchWinPercent = quickMatchTotal != 0 ? (int)(Math.Round(quickMatchWins / quickMatchTotal, 2) * 100) : 0;
-            int unrankedWinPercent = unrankedTotal != 0 ? (int)(Math.Round(unrankedWins / unrankedTotal, 2) * 100) : 0;
-            int heroWinPercent = heroTotal != 0 ? (int)(Math.Round(heroWins / heroTotal, 2) * 100) : 0;
-            int teamWinPercent = TeamTotal != 0 ? (int)(Math.Round(TeamWins / TeamTotal, 2) * 100) : 0;
+            int quickMatchWinPercent = Utilities.CalculateWinPercentage(quickMatchWins, quickMatchTotal);
+            int unrankedWinPercent = Utilities.CalculateWinPercentage(unrankedWins, unrankedTotal);
+            int heroWinPercent = Utilities.CalculateWinPercentage(heroWins, heroTotal);
+            int teamWinPercent = Utilities.CalculateWinPercentage(teamWins, teamTotal);
 
-            TotalGameModeGames.Clear();
-            TotalGameModeGames.Add($"{quickMatchTotal.ToString()} total games");
-            TotalGameModeGames.Add($"{unrankedTotal.ToString()} total games");
-            TotalGameModeGames.Add($"{heroTotal.ToString()} total games");
-            TotalGameModeGames.Add($"{TeamTotal.ToString()} total games");
+            await Application.Current.Dispatcher.InvokeAsync(delegate
+            {
+                TotalGameModeGamesCollection.Clear();
+                TotalGameModeGamesCollection.Add($"{quickMatchTotal} total games");
+                TotalGameModeGamesCollection.Add($"{unrankedTotal} total games");
+                TotalGameModeGamesCollection.Add($"{heroTotal} total games");
+                TotalGameModeGamesCollection.Add($"{teamTotal} total games");
 
-            WinGameModePercentages.Clear();
-            WinGameModePercentages.Add($"{quickMatchWinPercent}% winrate");
-            WinGameModePercentages.Add($"{unrankedWinPercent}% winrate");
-            WinGameModePercentages.Add($"{heroWinPercent}% winrate");
-            WinGameModePercentages.Add($"{teamWinPercent}% winrate");
+                WinGameModePercentagesCollection.Clear();
+                WinGameModePercentagesCollection.Add($"{quickMatchWinPercent}% winrate");
+                WinGameModePercentagesCollection.Add($"{unrankedWinPercent}% winrate");
+                WinGameModePercentagesCollection.Add($"{heroWinPercent}% winrate");
+                WinGameModePercentagesCollection.Add($"{teamWinPercent}% winrate");
+            });
         }
     }
 }

@@ -204,6 +204,7 @@
     <Compile Include="Generic\AppVersion.cs" />
     <Compile Include="Generic\Maps.cs" />
     <Compile Include="Generic\Season.cs" />
+    <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Messages\HomeWindowMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />

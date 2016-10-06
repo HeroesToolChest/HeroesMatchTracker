@@ -21,6 +21,6 @@
         public int TotalWins { get; set; }
         public int TotalLosses { get; set; }
         public int TotalGames { get; set; }
-        public int TotalWinPercentage { get; set; }
+        public int? TotalWinPercentage { get; set; }
     }
 }

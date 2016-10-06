@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:base="clr-namespace:HeroesParserData"
              mc:Ignorable="d" 
              HorizontalAlignment="Left"
              HorizontalContentAlignment="Left"
@@ -13,7 +14,6 @@
              Width="auto"
              d:DesignWidth="600" d:DesignHeight="50">
     <Grid>
-        <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Command="{Binding RefreshStatsCommand}" Content="Refresh" HorizontalAlignment="Left" Margin="135,10,-80,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshStatsCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </UserControl>

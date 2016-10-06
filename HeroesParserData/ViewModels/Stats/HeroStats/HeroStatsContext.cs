@@ -1,6 +1,6 @@
 ﻿using HeroesParserData.DataQueries;
-using HeroesParserData.Models.StatsModels;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels.Stats.HeroStats
@@ -33,25 +33,37 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
             {
                 _selectedSeasonOption = value;
                 RaisePropertyChangedEvent(nameof(SelectedSeasonOption));
+
             }
         }
 
         public ICommand RefreshStatsCommand
         {
-            get { return new DelegateCommand(() => RefreshStats()); }
+            get { return new DelegateCommand(() => PerformCommand()); }
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public HeroStatsContext()
             :base()
         {
             InitializeLists();
         }
 
-        protected abstract void RefreshStats();
+        protected abstract Task RefreshStats();
 
         protected int QueryHeroLevels(string heroName)
         {
             return Query.HeroStatsGameMode.GetHighestLevelOfHero(heroName);
+        }
+
+        private void PerformCommand()
+        {
+            Task.Run(async () =>
+            {
+                await RefreshStats();
+            });
         }
 
         private void InitializeLists()
