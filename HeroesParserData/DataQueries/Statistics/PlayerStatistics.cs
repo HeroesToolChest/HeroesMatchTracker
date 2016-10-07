@@ -1,6 +1,8 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
 
@@ -148,6 +150,32 @@ namespace HeroesParserData.DataQueries
                                                               new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                               new SQLiteParameter("@GameMode", gameMode)).FirstOrDefault();
                     return wins.HasValue ? wins.Value : 0;
+                }
+            }
+
+            public static List<ReplayMatchPlayer> ReadListOfMatchPlayerHeroes(Season season, GameMode gameMode)
+            {
+                var replayBuild = Utilities.GetSeasonReplayBuild(season);
+
+                string gameModeString;
+                if (gameMode != GameMode.Cooperative)
+                    gameModeString = GameModeQueryString(false);
+                else
+                    gameModeString = GameModeQueryString(true);
+                using (var db = new HeroesParserDataContext())
+                {
+                    if (gameMode != GameMode.Cooperative)
+                    {
+                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == Settings.Default.UserPlayerId && x.Replay.GameMode == gameMode && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
+                                                    .Include(x => x.Replay)
+                                                    .ToList();
+                    }
+                    else
+                    {
+                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == Settings.Default.UserPlayerId && x.Replay.GameMode >= GameMode.Cooperative && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
+                                                    .Include(x => x.Replay)
+                                                    .ToList();
+                    }
                 }
             }
 
