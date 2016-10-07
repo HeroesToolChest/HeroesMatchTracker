@@ -22,7 +22,7 @@
                               EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                               ItemsSource="{Binding StatsHeroesGameModes}" Margin="10,45.5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Hero" MinWidth="100" MaxWidth="100" CellStyle="{StaticResource PortraitBackColor}">
+                <DataGridTemplateColumn Header="Hero" MinWidth="95" MaxWidth="95" CellStyle="{StaticResource PortraitBackColor}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
@@ -56,31 +56,6 @@
                 <DataGridTextColumn Header="Total Losses" Binding="{Binding TotalLosses}" />
                 <DataGridTextColumn Header="Total Games" Binding="{Binding TotalGames}" />
                 <DataGridTextColumn Header="Win %" Binding="{Binding TotalWinPercentage, StringFormat={}{0}%}" CellStyle="{StaticResource DataGridCenterCell}" />
-
-                <!--<DataGridTextColumn Header="BOE Games" Binding="{Binding BattlefieldOfEternityGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding BattlefieldOfEternityWinPercentage}" />
-                <DataGridTextColumn Header="BHB Games" Binding="{Binding BlackHeartsBayGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding BlackHeartsBayWinPercentage}" />
-                <DataGridTextColumn Header="BH Games" Binding="{Binding BraxisHoldoutGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding BraxisHoldoutWinPercentage}" />
-                <DataGridTextColumn Header="CH Games" Binding="{Binding CursedHollowGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding CursedHollowWinPercentage}" />
-                <DataGridTextColumn Header="DS Games" Binding="{Binding DragonShireGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding DragonShireWinPercentage}" />
-                <DataGridTextColumn Header="GoT Games" Binding="{Binding GardenOfTerrorGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding GardenOfTerrorWinPercentage}" />
-                <DataGridTextColumn Header="HM Games" Binding="{Binding HauntedMinesGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding HauntedMinesWinPercentage}" />
-                <DataGridTextColumn Header="IS Games" Binding="{Binding InfernalShrinesGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding InfernalShrinesWinPercentage}" />
-                <DataGridTextColumn Header="ST Games" Binding="{Binding SkyTempleGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding SkyTempleWinPercentage}" />
-                <DataGridTextColumn Header="TotSQ Games" Binding="{Binding TombOfTheSpiderQueenGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding TombOfTheSpiderQueenWinPercentage}" />
-                <DataGridTextColumn Header="ToD Games" Binding="{Binding TowersOfDoomGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding TowersOfDoomWinPercentage}" />
-                <DataGridTextColumn Header="WJ Games" Binding="{Binding WarheadJunctionGames}" />
-                <DataGridTextColumn Header="Win %" Binding="{Binding WarheadJunctionWinPercentage}" />-->
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -253,7 +253,6 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Stats\HeroStats\HeroStatsContext.cs" />
     <Compile Include="ViewModels\Stats\HeroStats\HeroStatsGameModesViewModel.cs" />
-    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsMapsViewModel.cs" />
     <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -376,9 +375,6 @@
     </Compile>
     <Compile Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml.cs">
       <DependentUpon>HeroStatsGenericControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Stats\HeroStats\HeroStatsMapsControl.xaml.cs">
-      <DependentUpon>HeroStatsMapsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Stats\OverviewStatsControl.xaml.cs">
       <DependentUpon>OverviewStatsControl.xaml</DependentUpon>
@@ -535,10 +531,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Stats\HeroStats\HeroStatsMapsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

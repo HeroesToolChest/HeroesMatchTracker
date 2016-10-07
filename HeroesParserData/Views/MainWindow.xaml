@@ -77,9 +77,6 @@
                             <TabItem Header="Game Modes">
                                 <ViewsHeroStats:HeroStatsGameModesControl></ViewsHeroStats:HeroStatsGameModesControl>
                             </TabItem>
-                            <TabItem Header="Maps">
-                                <ViewsHeroStats:HeroStatsMapsControl></ViewsHeroStats:HeroStatsMapsControl>
-                            </TabItem>
                         </TabControl>
                     </TabItem>
                 </TabControl>
