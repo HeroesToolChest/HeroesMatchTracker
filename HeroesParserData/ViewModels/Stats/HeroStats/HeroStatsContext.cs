@@ -1,4 +1,6 @@
 ﻿using HeroesParserData.DataQueries;
+using NLog;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -62,7 +64,14 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
         {
             Task.Run(async () =>
             {
-                await RefreshStats();
+                try
+                {
+                    await RefreshStats();
+                }
+                catch (Exception ex)
+                {
+                    ExceptionLog.Log(LogLevel.Error, ex);
+                }
             });
         }
 
