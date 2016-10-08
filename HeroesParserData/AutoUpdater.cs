@@ -11,8 +11,8 @@ namespace HeroesParserData
         private UpdateManager UpdateManager;
         private UpdateInfo UpdateInfo;
         private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
-        private string CurrentVersion;
-        private string LatestVersion;
+        public Version CurrentVersion { get; private set; }
+        public Version LatestVersion { get; private set; }
 
         /// <summary>
         /// Checks for updates and applies the update if IsAutoUpdates in settings is true. 
@@ -58,26 +58,28 @@ namespace HeroesParserData
         {
             try
             {
-                UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl);
-                UpdaterLog.Log(LogLevel.Info, "Update Check");
-
-                UpdateInfo update = await UpdateManager.CheckForUpdate();
-
-                CurrentVersion = update.CurrentlyInstalledVersion != null ? update.CurrentlyInstalledVersion.Version.ToString() : string.Empty;
-                LatestVersion = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.ToString() : string.Empty;
-
-                UpdaterLog.Log(LogLevel.Info, $"Current Version: {CurrentVersion}");
-                UpdaterLog.Log(LogLevel.Info, $"Latest Version: {LatestVersion}");
-
-                if (!string.IsNullOrEmpty(CurrentVersion) && CurrentVersion != LatestVersion)
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl))
                 {
-                    UpdateInfo = update;
-                    return true;
-                }
-                else
-                {
-                    UpdateInfo = null;
-                    return false;
+                    UpdaterLog.Log(LogLevel.Info, "Update Check");
+
+                    UpdateInfo update = await UpdateManager.CheckForUpdate();
+
+                    CurrentVersion = update.CurrentlyInstalledVersion != null ? update.CurrentlyInstalledVersion.Version.Version : null;
+                    LatestVersion = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.Version : null;
+
+                    UpdaterLog.Log(LogLevel.Info, $"Current Version: {CurrentVersion}");
+                    UpdaterLog.Log(LogLevel.Info, $"Latest Version: {LatestVersion}");
+
+                    if (CurrentVersion != null && CurrentVersion < LatestVersion)
+                    {
+                        UpdateInfo = update;
+                        return true;
+                    }
+                    else
+                    {
+                        UpdateInfo = null;
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -98,19 +100,22 @@ namespace HeroesParserData
                 if (UpdateInfo == null)
                     return false;
 
-                UpdaterLog.Log(LogLevel.Info, "Downloading...");
-                await UpdateManager.DownloadReleases(UpdateInfo.ReleasesToApply);
-                UpdaterLog.Log(LogLevel.Info, "Downloading...Completed");
+                using (UpdateManager)
+                {
+                    UpdaterLog.Log(LogLevel.Info, "Downloading...");
+                    await UpdateManager.DownloadReleases(UpdateInfo.ReleasesToApply);
+                    UpdaterLog.Log(LogLevel.Info, "Downloading...Completed");
 
-                UpdaterLog.Log(LogLevel.Info, "Applying releases");
-                string directoryPath = await UpdateManager.ApplyReleases(UpdateInfo);
+                    UpdaterLog.Log(LogLevel.Info, "Applying releases");
+                    string directoryPath = await UpdateManager.ApplyReleases(UpdateInfo);
 
-                App.UpdateInProgress = true;
-                App.NewLatestDirectory = directoryPath;
+                    App.UpdateInProgress = true;
+                    App.NewLatestDirectory = directoryPath;
 
-                UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
+                    UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
 
-                return true;
+                    return true;
+                }
             }
             catch (Exception ex)
             {

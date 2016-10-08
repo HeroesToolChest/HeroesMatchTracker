@@ -1,5 +1,8 @@
 ﻿using HeroesParserData.DataQueries;
 using HeroesParserData.Properties;
+using NLog;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels
@@ -7,6 +10,10 @@ namespace HeroesParserData.ViewModels
     public class SettingsViewModel : ViewModelBase
     {
         private string _inputBattleTagError;
+        private string _checkForUpdatesResponse;
+        private bool _isApplyUpdateEnabled;
+
+        private AutoUpdater AutoUpdater;
 
         public bool IsMinimizeToTray
         {
@@ -58,11 +65,40 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public ICommand SetUserBattleTag
+        public string CheckForUpdatesResponse
+        {
+            get { return _checkForUpdatesResponse; }
+            set
+            {
+                _checkForUpdatesResponse = value;
+                RaisePropertyChangedEvent(nameof(CheckForUpdatesResponse));
+            }
+        }
+
+        public bool IsApplyUpdateEnabled
+        {
+            get { return _isApplyUpdateEnabled; }
+            set
+            {
+                _isApplyUpdateEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsApplyUpdateEnabled));
+            }
+        }
+
+        public ICommand SetUserBattleTagCommand
         {
             get { return new DelegateCommand(() => SetBattleTagName()); }
         }
 
+        public ICommand CheckForUpdatesCommand
+        {
+            get { return new DelegateCommand(() => CheckForUpdates()); }
+        }
+
+        public ICommand ApplyUpdateCommand
+        {
+            get { return new DelegateCommand(() => ApplyUpdates()); }
+        }
         /// <summary>
         /// Contructor
         /// </summary>
@@ -91,6 +127,41 @@ namespace HeroesParserData.ViewModels
         private bool ValidateBattleTagName(string battleTagName)
         {
             return Query.HotsPlayer.IsValidBattleNetTagName(battleTagName);
+        }
+
+        private void CheckForUpdates()
+        {
+            Task.Run(async () =>
+            {
+                try
+                {
+                    IsApplyUpdateEnabled = false;
+                    CheckForUpdatesResponse = "Checking for updates...";
+                    AutoUpdater = new AutoUpdater();
+                    if (await AutoUpdater.CheckForUpdates())
+                    {
+                        CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersion})";
+                        IsApplyUpdateEnabled = true;
+                    }
+                    else
+                        CheckForUpdatesResponse = "Heroes Parser Data is up to date";
+                }
+                catch (Exception ex)
+                {
+                    CheckForUpdatesResponse = "Failed to check for updates";
+                    ExceptionLog.Log(LogLevel.Error, ex);
+                }
+            });
+        }
+
+        private void ApplyUpdates()
+        {
+            Task.Run(async () =>
+            {
+                CheckForUpdatesResponse = "Downloading and applying updates...";
+                await AutoUpdater.ApplyReleases();
+                CheckForUpdatesResponse = "Done";
+            });
         }
     }
 }

@@ -12,13 +12,16 @@
         <ViewModels:SettingsViewModel />
     </Control.DataContext>
     <Grid>
-        <CheckBox Content="Auto Updates" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
+        <CheckBox Content="Update on Startup" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
         <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}" Margin="10,34,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
         <CheckBox Content="Hide BattleTags in Talents and Score (requires restart)" IsChecked="{Binding IsBattleTagsHidden}" Margin="10,58,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
 
         <Label Content="Enter BattleTag for the Statistics Tab" Margin="0,84,0,0" Width="274" Style="{StaticResource SettingsLabelTheme}"/>
         <TextBox Controls:TextBoxHelper.Watermark="BattleTag#0000" Text="{Binding UserBattleTag}" HorizontalAlignment="Left" Height="23" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <Label Content="{Binding InputBattleTagError}" Margin="10,141,0,0" Width="293" Style="{StaticResource SettingsLabelTheme}" Foreground="Red"/>
-        <Button Content="Set" Command="{Binding SetUserBattleTag}" HorizontalAlignment="Left" Margin="215,118,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <Button Content="Set" Command="{Binding SetUserBattleTagCommand}" HorizontalAlignment="Left" Margin="215,118,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label Content="{Binding CheckForUpdatesResponse}" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="531" Foreground="White"/>
+        <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateEnabled}" HorizontalAlignment="Left" Margin="137,194,0,0" VerticalAlignment="Top" Width="97"/>
     </Grid>
 </UserControl>
