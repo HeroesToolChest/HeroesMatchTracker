@@ -158,9 +158,17 @@ namespace HeroesParserData.ViewModels
         {
             Task.Run(async () =>
             {
-                CheckForUpdatesResponse = "Downloading and applying updates...";
-                await AutoUpdater.ApplyReleases();
-                CheckForUpdatesResponse = "Done";
+                try
+                {
+                    CheckForUpdatesResponse = "Downloading and applying updates...";
+                    await AutoUpdater.ApplyReleases();
+                    CheckForUpdatesResponse = "Done";
+                }
+                catch (Exception ex)
+                {
+                    CheckForUpdatesResponse = "Failed to apply updates";
+                    ExceptionLog.Log(LogLevel.Error, ex);
+                }
             });
         }
     }
