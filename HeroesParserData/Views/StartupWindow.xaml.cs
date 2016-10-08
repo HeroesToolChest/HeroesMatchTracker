@@ -62,6 +62,8 @@ namespace HeroesParserData.Views
             {
                 await Message("An error was encountered. Check the error logs for details");
                 StartupLogFile.Log(LogLevel.Error, ex);
+                await Task.Delay(8000);
+                Application.Current.Shutdown();
             }
         }
 
@@ -105,13 +107,14 @@ namespace HeroesParserData.Views
                     return;
                 }
 
+                await Message("Releases applied");
                 await Message("Copying database to new folder...");
                 CopyDatabaseToLatestRelease();
 
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
-                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                System.Diagnostics.Process.Start(Path.Combine(App.NewLatestDirectory, "HeroesParserData.exe"));
                 Application.Current.Shutdown();
             #endif
             }

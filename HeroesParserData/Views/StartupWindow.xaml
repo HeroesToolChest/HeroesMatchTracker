@@ -11,12 +11,12 @@
         Title="Heroes Parser Data Startup" ResizeMode="NoResize">
     <Grid>
         <Image Source="{StaticResource HPDStartup}" Stretch="UniformToFill" />
-        <Label x:Name="StatusLabel" Content="Starting up..." HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
+        <Label x:Name="StatusLabel" Content="Starting up..." HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="460" FontSize="16" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="CurrentStatusLabel" Content="" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Width="372" FontSize="16" Foreground="White">
+        <Label x:Name="CurrentStatusLabel" Content="" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="460" FontSize="16" Foreground="White">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Cyan"/>
             </Label.Effect>
