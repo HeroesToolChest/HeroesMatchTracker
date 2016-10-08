@@ -15,13 +15,15 @@ namespace HeroesParserData
     public partial class App : Application
     {
         public static HeroesInfo HeroesInfo { get; set; }
-        public static bool UpdateInProgress { get; set; }
         public static string NewLatestDirectory { get; set; }
         public static bool IsProcessingReplays { get; set; }
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
+        public static bool NewReleaseApplied { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            NewReleaseApplied = false;
+
             // set default location
             if (string.IsNullOrEmpty(Settings.Default.ReplaysLocation))
                 Settings.Default.ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
@@ -48,6 +50,9 @@ namespace HeroesParserData
             {
                 NotifyIcon.Visible = false;
             }
+
+            if (NewReleaseApplied)
+                AutoUpdater.CopyDatabaseToLatestRelease();
 
             base.OnExit(e);
         }

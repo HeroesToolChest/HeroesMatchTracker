@@ -16,7 +16,6 @@ namespace HeroesParserData.Views
     {
         private Logger StartupLogFile = LogManager.GetLogger("StartupLogFile");
         private Logger DatabaseMigrateLog = LogManager.GetLogger("DatabaseMigrateLogFile");
-        private Logger DatabaseCopyLog = LogManager.GetLogger("DatabaseCopyLogFile");
 
         public StartupWindow()
         {
@@ -109,7 +108,7 @@ namespace HeroesParserData.Views
 
                 await Message("Releases applied");
                 await Message("Copying database to new folder...");
-                CopyDatabaseToLatestRelease();
+                AutoUpdater.CopyDatabaseToLatestRelease();
 
                 await Message("Restarting application...");
                 await Task.Delay(1000);
@@ -123,37 +122,6 @@ namespace HeroesParserData.Views
                 await Message("Could not check for updates or apply releases, check logs");
                 StartupLogFile.Log(LogLevel.Error, ex);
                 await Task.Delay(1000);
-            }
-        }
-
-        private void CopyDatabaseToLatestRelease()
-        {
-            string dbFile = Settings.Default.DatabaseFile;
-            string dbFilePath = $@"Database\{dbFile}";
-            string newAppDirectory = Path.Combine(App.NewLatestDirectory, "Database");
-
-            try
-            {
-                if (!File.Exists(dbFilePath))
-                {
-                    DatabaseCopyLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
-                    DatabaseCopyLog.Log(LogLevel.Info, "Nothing to copy, update completed");
-
-                    return;
-                }
-
-                Directory.CreateDirectory(newAppDirectory);
-                DatabaseCopyLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
-
-                File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
-
-                DatabaseCopyLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
-                DatabaseCopyLog.Log(LogLevel.Info, "Update completed");
-            }
-            catch (Exception ex)
-            {
-                DatabaseCopyLog.Log(LogLevel.Info, ex);
-                throw;
             }
         }
 

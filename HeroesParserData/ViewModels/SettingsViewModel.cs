@@ -12,6 +12,7 @@ namespace HeroesParserData.ViewModels
         private string _inputBattleTagError;
         private string _checkForUpdatesResponse;
         private bool _isApplyUpdateEnabled;
+        private bool _isCheckForUpdatesEnabled;
 
         private AutoUpdater AutoUpdater;
 
@@ -84,6 +85,15 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(IsApplyUpdateEnabled));
             }
         }
+        public bool IsCheckForUpdatesEnabled
+        {
+            get { return _isCheckForUpdatesEnabled; }
+            set
+            {
+                _isCheckForUpdatesEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsCheckForUpdatesEnabled));
+            }
+        }
 
         public ICommand SetUserBattleTagCommand
         {
@@ -99,13 +109,14 @@ namespace HeroesParserData.ViewModels
         {
             get { return new DelegateCommand(() => ApplyUpdates()); }
         }
+
         /// <summary>
         /// Contructor
         /// </summary>
         public SettingsViewModel()
             :base()
         {
-
+            IsCheckForUpdatesEnabled = true;
         }
 
         private void SetBattleTagName()
@@ -140,7 +151,7 @@ namespace HeroesParserData.ViewModels
                     AutoUpdater = new AutoUpdater();
                     if (await AutoUpdater.CheckForUpdates())
                     {
-                        CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersion})";
+                        CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                         IsApplyUpdateEnabled = true;
                     }
                     else
@@ -162,7 +173,10 @@ namespace HeroesParserData.ViewModels
                 {
                     CheckForUpdatesResponse = "Downloading and applying updates...";
                     await AutoUpdater.ApplyReleases();
-                    CheckForUpdatesResponse = "Done";
+                    CheckForUpdatesResponse = $"Finished applying update ({AutoUpdater.LatestVersion.Major}.{AutoUpdater.LatestVersion.Minor}.{AutoUpdater.LatestVersion.Revision}). A restart is required for changes to apply.";
+                    App.NewReleaseApplied = true;
+                    IsCheckForUpdatesEnabled = false;
+                    IsApplyUpdateEnabled = false;
                 }
                 catch (Exception ex)
                 {

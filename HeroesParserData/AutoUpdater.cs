@@ -2,6 +2,7 @@
 using NLog;
 using Squirrel;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace HeroesParserData
@@ -12,7 +13,9 @@ namespace HeroesParserData
         private UpdateInfo UpdateInfo;
         private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
         public Version CurrentVersion { get; private set; }
+        public string CurrentVersionString => CurrentVersion != null? $"{CurrentVersion.Major}.{CurrentVersion.Minor}.{CurrentVersion.Revision}" : string.Empty; 
         public Version LatestVersion { get; private set; }
+        public string LatestVersionString => LatestVersion != null? $"{LatestVersion.Major}.{LatestVersion.Minor}.{LatestVersion.Revision}" : string.Empty;
 
         /// <summary>
         /// Checks for updates and applies the update if IsAutoUpdates in settings is true. 
@@ -67,8 +70,8 @@ namespace HeroesParserData
                     CurrentVersion = update.CurrentlyInstalledVersion != null ? update.CurrentlyInstalledVersion.Version.Version : null;
                     LatestVersion = update.FutureReleaseEntry != null ? update.FutureReleaseEntry.Version.Version : null;
 
-                    UpdaterLog.Log(LogLevel.Info, $"Current Version: {CurrentVersion}");
-                    UpdaterLog.Log(LogLevel.Info, $"Latest Version: {LatestVersion}");
+                    UpdaterLog.Log(LogLevel.Info, $"Current Version: {CurrentVersionString}");
+                    UpdaterLog.Log(LogLevel.Info, $"Latest Version: {LatestVersionString}");
 
                     if (CurrentVersion != null && CurrentVersion < LatestVersion)
                     {
@@ -109,7 +112,6 @@ namespace HeroesParserData
                     UpdaterLog.Log(LogLevel.Info, "Applying releases");
                     string directoryPath = await UpdateManager.ApplyReleases(UpdateInfo);
 
-                    App.UpdateInProgress = true;
                     App.NewLatestDirectory = directoryPath;
 
                     UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
@@ -122,8 +124,46 @@ namespace HeroesParserData
                 throw new AutoUpdaterException("Error applying releases", ex);
             }
         }
+
+        public static void CopyDatabaseToLatestRelease()
+        {
+            string dbFile = Settings.Default.DatabaseFile;
+            string dbFilePath = $@"Database\{dbFile}";
+            string newAppDirectory = Path.Combine(App.NewLatestDirectory, "Database");
+            string rootDirectory = Directory.GetParent(App.NewLatestDirectory).FullName;
+            string backupDirectory = Path.Combine(rootDirectory, "BackupDatabases");
+            try
+            {
+                if (!File.Exists(dbFilePath))
+                {
+                    UpdaterLog.Log(LogLevel.Info, $"Database file not found: {dbFilePath}");
+                    UpdaterLog.Log(LogLevel.Info, "Nothing to copy");
+
+                    return;
+                }
+
+                Directory.CreateDirectory(newAppDirectory);
+                UpdaterLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");
+
+                File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
+
+                UpdaterLog.Log(LogLevel.Info, $"Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
+
+                if (!Directory.Exists(backupDirectory))
+                    Directory.CreateDirectory(backupDirectory);
+
+                File.Copy(dbFilePath, Path.Combine(backupDirectory, dbFile), true);
+                UpdaterLog.Log(LogLevel.Info, $"Database file backup copied to: {Path.Combine(backupDirectory, dbFile)}");
+            }
+            catch (Exception ex)
+            {
+                UpdaterLog.Log(LogLevel.Info, ex);
+                throw;
+            }
+        }
     }
 
+    
     [Serializable]
     public class AutoUpdaterException : Exception
     {
