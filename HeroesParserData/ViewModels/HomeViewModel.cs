@@ -221,7 +221,7 @@ namespace HeroesParserData.ViewModels
         public HomeViewModel()
             :base()
         {
-            Messenger.Default.Register<HomeWindowMessage>(this, (action) => ReceiveMessage(action));
+            Messenger.Default.Register<HomeTabMessage>(this, (action) => ReceiveMessage(action));
             SetBackgroundImages();
             SetRandomBackgroundImage();
             SetSeasonList();
@@ -294,7 +294,7 @@ namespace HeroesParserData.ViewModels
             SeasonTotal = SeasonQuickMatchGames + SeasonUnrankedDraftGames + SeasonHeroLeagueGames + SeasonTeamLeagueGames + SeasonCustomGames;
         }
 
-        private void ReceiveMessage(HomeWindowMessage action)
+        private void ReceiveMessage(HomeTabMessage action)
         {
             if (action.Trigger == Trigger.Update)
             {

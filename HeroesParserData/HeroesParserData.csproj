@@ -206,7 +206,11 @@
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
-    <Compile Include="Messages\HomeWindowMessage.cs" />
+    <Compile Include="Messages\HomeTabMessage.cs" />
+    <Compile Include="Messages\MainTab.cs" />
+    <Compile Include="Messages\MainTabMessage.cs" />
+    <Compile Include="Messages\StatisticsTab.cs" />
+    <Compile Include="Messages\StatisticsTabMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />

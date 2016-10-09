@@ -1,6 +1,6 @@
 ﻿namespace HeroesParserData.Messages
 {
-    public class HomeWindowMessage
+    public class HomeTabMessage
     {
         public Trigger Trigger { get; set; }
     }

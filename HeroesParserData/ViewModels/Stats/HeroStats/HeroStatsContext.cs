@@ -1,4 +1,6 @@
-﻿using HeroesParserData.DataQueries;
+﻿using GalaSoft.MvvmLight.Messaging;
+using HeroesParserData.DataQueries;
+using HeroesParserData.Messages;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -50,17 +52,19 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
         public HeroStatsContext()
             :base()
         {
+            Messenger.Default.Register<StatisticsTabMessage>(this, (action) => ReceiveMessage(action));
             InitializeLists();
         }
 
         protected abstract Task RefreshStats();
+        protected abstract void ReceiveMessage(StatisticsTabMessage action);
 
         protected int QueryHeroLevels(string heroName)
         {
             return Query.HeroStatsGameMode.GetHighestLevelOfHero(heroName);
         }
 
-        private void PerformCommand()
+        protected void PerformCommand()
         {
             Task.Run(async () =>
             {

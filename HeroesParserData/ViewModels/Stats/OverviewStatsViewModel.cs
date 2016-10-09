@@ -1,5 +1,7 @@
-﻿using Heroes.ReplayParser;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
+using HeroesParserData.Messages;
 using HeroesParserData.Models.StatsModels;
 using HeroesParserData.Properties;
 using NLog;
@@ -188,17 +190,17 @@ namespace HeroesParserData.ViewModels.Stats
 
         public ICommand ChangeMostStatCommand
         {
-            get { return new DelegateCommand(() => PerformMostStatCommand()); }
+            get { return new DelegateCommand(() => GetMostStats()); }
         }
 
         public ICommand ChangeSeasonCommand
         {
-            get { return new DelegateCommand(() => PerformOtherStatsCommand()); }
+            get { return new DelegateCommand(() => GetAllStats()); }
         }
 
         public ICommand ChangeGameModeCommand
         {
-            get { return new DelegateCommand(() => PerformOtherStatsCommand()); }
+            get { return new DelegateCommand(() => GetAllStats()); }
         }
         #endregion public properties
 
@@ -208,6 +210,7 @@ namespace HeroesParserData.ViewModels.Stats
         public OverviewStatsViewModel()
             : base()
         {
+            Messenger.Default.Register<StatisticsTabMessage>(this, (action) => ReceiveMessage(action));
             InitializeLists();
         }
 
@@ -225,7 +228,15 @@ namespace HeroesParserData.ViewModels.Stats
             GameModeList.AddRange(Utilities.GetGameModes());
         }
 
-        private void PerformMostStatCommand()
+        private void ReceiveMessage(StatisticsTabMessage action)
+        {
+            if (action.StatisticsTab == StatisticsTab.Overview)
+            {
+                GetAllStats();
+            }
+        }
+
+        private void GetMostStats()
         {
             Task.Run(async () =>
             {
@@ -247,9 +258,9 @@ namespace HeroesParserData.ViewModels.Stats
             });
         }
         
-        private void PerformOtherStatsCommand()
+        private void GetAllStats()
         {
-            PerformMostStatCommand();
+            GetMostStats();
 
             Task.Run(async () =>
             { 

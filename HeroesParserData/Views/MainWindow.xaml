@@ -31,7 +31,7 @@
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
     <DockPanel>
-        <TabControl DockPanel.Dock="Top" TabStripPlacement="Top" SelectedIndex="{Binding SelectedTab}">
+        <TabControl DockPanel.Dock="Top" TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}">
             <TabItem Header="Home">
                 <Views:HomeWindow />
             </TabItem>
@@ -68,7 +68,7 @@
                 </TabControl>
             </TabItem>
             <TabItem Header="Statistics">
-                <TabControl>
+                <TabControl SelectedIndex="{Binding SelectedStatisticsTab }">
                     <TabItem Header="Overview">
                         <ViewsStats:OverviewStatsControl />
                     </TabItem>

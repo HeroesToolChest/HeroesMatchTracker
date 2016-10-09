@@ -4,6 +4,8 @@ using HeroesParserData.Models.StatsModels;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
+using HeroesParserData.Messages;
+using System;
 
 namespace HeroesParserData.ViewModels.Stats.HeroStats
 {
@@ -95,6 +97,14 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
                     statsHeroesGameModes.LeaderboardPortrait = heroImage;
                     StatsHeroesGameModes.Add(statsHeroesGameModes);
                 });
+            }
+        }
+
+        protected override void ReceiveMessage(StatisticsTabMessage action)
+        {
+            if (action.StatisticsTab == StatisticsTab.HeroStatistics)
+            {
+                PerformCommand();
             }
         }
     }
