@@ -42,7 +42,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UserPlayerId" Type="System.Int64" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="DatabaseFile" Type="System.String" Scope="User">
       <Value Profile="(Default)">HeroesParserData.db</Value>

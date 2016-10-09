@@ -47,11 +47,14 @@ namespace HeroesParserData.DataQueries
                     return await db.Replays.ToListAsync();
                 }
             }
-            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(GameMode gameMode)
+            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(GameMode gameMode, Season season)
             {
+                var replayBuild = Utilities.GetSeasonReplayBuild(season);
+
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.Where(x => x.GameMode == gameMode).OrderByDescending(x => x.TimeStamp).ToListAsync();
+                    return await db.Replays.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2)
+                        .OrderByDescending(x => x.TimeStamp).ToListAsync();
                 }
             }
 

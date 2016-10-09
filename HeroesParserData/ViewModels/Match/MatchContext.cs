@@ -5,6 +5,7 @@ using HeroesParserData.Models.MatchModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
@@ -20,15 +21,9 @@ namespace HeroesParserData.ViewModels.Match
     public abstract class MatchContext : ViewModelBase
     {
         #region properties
-        private ObservableCollection<Models.DbModels.Replay> _matchList = new ObservableCollection<Models.DbModels.Replay>();
-        private ObservableCollection<MatchTalents> _matchTalentsTeam1 = new ObservableCollection<MatchTalents>();
-        private ObservableCollection<MatchTalents> _matchTalentsTeam2 = new ObservableCollection<MatchTalents>();
-        private ObservableCollection<MatchTalents> _matchObservers = new ObservableCollection<MatchTalents>();
-        private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
-        private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
-        private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         private string _matchTitle;
         private string _queryStatus;
+        private string _selectedSeasonOption;
         private int _rowsReturned;
         private long _replayId;
         private GameMode _gameMode;
@@ -40,6 +35,16 @@ namespace HeroesParserData.ViewModels.Match
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
+
+        private List<string> _seasonList = new List<string>();
+
+        private ObservableCollection<Models.DbModels.Replay> _matchList = new ObservableCollection<Models.DbModels.Replay>();
+        private ObservableCollection<MatchTalents> _matchTalentsTeam1 = new ObservableCollection<MatchTalents>();
+        private ObservableCollection<MatchTalents> _matchTalentsTeam2 = new ObservableCollection<MatchTalents>();
+        private ObservableCollection<MatchTalents> _matchObservers = new ObservableCollection<MatchTalents>();
+        private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
         #endregion properties
 
         #region public properties
@@ -224,6 +229,27 @@ namespace HeroesParserData.ViewModels.Match
                 RaisePropertyChangedEvent(nameof(ShowPlayerTagColumn));
             }
         }
+
+        public string SelectedSeasonOption
+        {
+            get { return _selectedSeasonOption; }
+            set
+            {
+                _selectedSeasonOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedSeasonOption));
+            }
+        }
+
+        public List<string> SeasonList
+        {
+            get { return _seasonList; }
+            set
+            {
+                _seasonList = value;
+                RaisePropertyChangedEvent(nameof(SeasonList));
+            }
+        }
+
         // shows the expander that shows the bans
         public bool HasBans
         {
@@ -255,6 +281,11 @@ namespace HeroesParserData.ViewModels.Match
                 _hasChat = value;
                 RaisePropertyChangedEvent(nameof(HasChat));
             }
+        }
+
+        public Season GetSelectedSeason
+        {
+            get { return Utilities.GetSeasonFromString(SelectedSeasonOption); }
         }
         #endregion public properties
 
@@ -305,6 +336,10 @@ namespace HeroesParserData.ViewModels.Match
             : base()
         {
             HasChat = true;
+
+            SeasonList.Add("Lifetime");
+            SeasonList.AddRange(Utilities.GetSeasonList());
+            SelectedSeasonOption = SeasonList[0];
         }
 
         protected abstract Task RefreshExecute();

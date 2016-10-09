@@ -21,7 +21,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private async Task QueryMatchList()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.QuickMatch));
+            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.QuickMatch, GetSelectedSeason));
             RowsReturned = MatchList.Count;
         }
     }

@@ -179,6 +179,7 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public long UserPlayerId {
             get {
                 return ((long)(this["UserPlayerId"]));

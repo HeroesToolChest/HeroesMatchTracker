@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
+             xmlns:base="clr-namespace:HeroesParserData"
              mc:Ignorable="d" 
              d:DesignHeight="435.115" d:DesignWidth="546.932">
     <Grid>
@@ -13,6 +14,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0"/>
+        <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="105,12,0,12" VerticalAlignment="Center" Width="124" Height="28" Grid.Row="0"/>
         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
                         EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" SelectedItem="{Binding SelectedReplay}"
                         ItemsSource="{Binding MatchList, IsAsync=True}">
@@ -29,5 +31,6 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
+
     </Grid>
 </UserControl>
