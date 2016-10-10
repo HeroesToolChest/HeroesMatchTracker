@@ -26,6 +26,11 @@ namespace HeroesParserData.ViewModels
                     Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Update });
                 else
                     Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Stop });
+
+                if (value == 5) // stats tab
+                {
+                    SelectedStatisticsTab = SelectedStatisticsTab;
+                }
                 RaisePropertyChangedEvent(nameof(SelectedMainTab));
             }
         }
