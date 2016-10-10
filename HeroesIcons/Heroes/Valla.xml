@@ -30,7 +30,7 @@
     <DemonHunterManticore name="Manticore" generic="true">storm_ui_icon_talent_autoattack_damage.dds</DemonHunterManticore>
   </Level16>
   <Level20>
-    <DemonHunterMasteryVengeance name="Vengeance">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryVengeance>
+    <DemonHunterMasteryDeathSiphon name="Death Siphon">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryDeathSiphon>
     <DemonHunterMasteryStormofVengeance name="Storm of Vengeance">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterMasteryStormofVengeance>
     <DemonHunterCombatStyleRancor name="Rancor">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleRancor>
     <DemonHunterFarflightQuiver name="Farflight Quiver" generic="true">storm_ui_icon_talent_autoattack_range.dds</DemonHunterFarflightQuiver>
@@ -51,5 +51,6 @@
     <GenericTalentStoneskin name="Stoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
     <GenericTalentNexusFrenzy name="Nexus Frenzy">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+    <DemonHunterMasteryVengeance name="Vengeance">storm_ui_icon_valla_strafe.dds</DemonHunterMasteryVengeance>
   </Old>
 </Valla>
