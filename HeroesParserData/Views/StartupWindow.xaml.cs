@@ -43,7 +43,6 @@ namespace HeroesParserData.Views
 
                 await Message("Performing database migration");
                 await InitializeDatabase();
-
                 // must be last
                 await Message("Initializing Heroes Parser Data");
                 MainWindow mainWindow = new MainWindow();
@@ -59,9 +58,13 @@ namespace HeroesParserData.Views
             }
             catch (Exception ex)
             {
-                await Message("An error was encountered. Check the error logs for details");
+                StatusLabel.Content = "An error was encountered. Check the error logs for details";
                 StartupLogFile.Log(LogLevel.Error, ex);
-                await Task.Delay(8000);
+                for (int i = 6; i >= 0; i--)
+                {
+                    CurrentStatusLabel.Content = $"Shutting down in ({i})...";
+                    await Task.Delay(1000);
+                }
                 Application.Current.Shutdown();
             }
         }
