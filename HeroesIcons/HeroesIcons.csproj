@@ -196,6 +196,9 @@
     <Content Include="Heroes\Muradin.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Heroes\Samuro.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Heroes\Sonya.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -346,6 +349,36 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_samuro.jpg" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_samuro.dds" />
+    <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_samuro.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_bladestorm.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_criticalstrike.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_criticalstrike_a.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_criticalstrike_b.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_flowingstrikes.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_illusiondancer.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_mirrorai_off.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_mirrorai_on.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_mirrorimage.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_selectall.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_selectmirror1.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_selectmirror2.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_selectprime.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_windwalk.dds" />
+    <Resource Include="Icons\Talents\Samuro\storm_ui_icon_samuro_windwalk_a.dds" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_clutchhealer_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_clutchhealer_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_finisher_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_finisher_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_hattrick_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_hattrick_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_protector_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_protector_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_solesurvivor_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_solesurvivor_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_trapper_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_trapper_red.png" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_zarya.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_glues_draft_portrait_zarya.dds" />
     <Resource Include="Icons\Talents\Zarya\storm_ui_icon_zarya_unyieldingdefender.dds" />

@@ -44,6 +44,7 @@
     <BitmapImage x:Key="Raynor" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_raynor.dds"/>
     <BitmapImage x:Key="Rehgar" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_rehgar.dds"/>
     <BitmapImage x:Key="Rexxar" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_rexxar.dds"/>
+    <BitmapImage x:Key="Samuro" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_samuro.dds"/>
     <BitmapImage x:Key="SgtHammer" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_sgthammer.dds"/>
     <BitmapImage x:Key="Sonya" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_barbarian.dds"/>
     <BitmapImage x:Key="Stitches" UriSource="pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_stitches.dds"/>

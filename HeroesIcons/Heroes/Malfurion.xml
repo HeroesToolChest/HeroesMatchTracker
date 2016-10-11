@@ -6,7 +6,6 @@
     <GenericTalentScoutingDrone name="Scouting Drone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
   </Level1>
   <Level4>
-    <MalfurionMasteryRampantGrowth name="Rampant Growth">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryRampantGrowth>
     <MalfurionCombatStyleElunesGrace name="Elune's Grace">storm_ui_icon_malfurion_elunesgrace.dds</MalfurionCombatStyleElunesGrace>
     <MalfurionCombatStyleVersatile name="Versatile">storm_ui_icon_malfurion_innerrvate.dds</MalfurionCombatStyleVersatile>
     <MalfurionMasteryVengefulRoots name="Vengeful Roots">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryVengefulRoots>
@@ -42,5 +41,6 @@
   <Old>
     <MalfurionMasteryHarmony name="Harmony">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryHarmony>
     <MalfurionMasteryEnduringGrowth name="Enduring Growth">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryEnduringGrowth>
+    <MalfurionMasteryRampantGrowth name="Rampant Growth">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryRampantGrowth>
   </Old>
 </Malfurion>
