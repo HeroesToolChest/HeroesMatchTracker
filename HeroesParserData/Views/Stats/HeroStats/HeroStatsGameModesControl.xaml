@@ -35,6 +35,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding CharacterName}"/>
                 <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}"/>
                 <DataGridTextColumn Header="QM Wins" Binding="{Binding QuickMatchWins}" />
                 <DataGridTextColumn Header="QM Losses" Binding="{Binding QuickMatchLosses}"  />
