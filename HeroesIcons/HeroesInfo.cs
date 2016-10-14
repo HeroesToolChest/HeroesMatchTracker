@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Xml.Linq;
@@ -10,8 +11,9 @@ namespace HeroesIcons
 {
     public class HeroesInfo
     {
-        private static readonly string ImageMissingLogName = "_ImageMissingLog.txt";
-        private static readonly string ReferenceLogName = "_ReferenceNameLog.txt";
+        private readonly string ImageMissingLogName = "_ImageMissingLog.txt";
+        private readonly string ReferenceLogName = "_ReferenceNameLog.txt";
+        private readonly string ApplicationPath = "pack://application:,,,/HeroesIcons;component/Icons/";
 
         /// <summary>
         /// key is real hero name, value alt name (if any)
@@ -46,9 +48,18 @@ namespace HeroesIcons
         /// </summary>
         private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
 
-        public HeroesInfo()
+        private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
+        private Dictionary<MVPAward, Uri> MVPScreenAwards = new Dictionary<MVPAward, Uri>();
+        private Dictionary<MVPAward, Uri> MVPScoreScreenAwards = new Dictionary<MVPAward, Uri>();
+
+        public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
+
+        private HeroesInfo()
         {
             ParseXmlHeroFiles();
+            SetMapBackgrounds();
+            SetMVPAwards();
+            SetHomeScreenBackgrounds();
         }
 
         public static HeroesInfo Initialize()
@@ -67,7 +78,7 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(nameOfHeroTalent))
-                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Absolute));
 
 
             // not found
@@ -75,7 +86,7 @@ namespace HeroesIcons
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
 
-                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
                 
             try
@@ -85,7 +96,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
-                return new BitmapImage(new Uri("pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
             }
         }
 
@@ -100,14 +111,14 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
 
             // not found
             if (!HeroPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
 
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
          
             try
@@ -117,7 +128,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
         }
 
@@ -132,14 +143,14 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
 
             // not found
             if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
 
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
            
             try
@@ -149,7 +160,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
-                return new BitmapImage(new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
         }
 
@@ -285,25 +296,177 @@ namespace HeroesIcons
             return HeroesRealName.Count;
         }
 
+        public BitmapImage GetMapBackground(MapName mapName)
+        {
+            try
+            {
+                return new BitmapImage(MapBackgrounds[mapName]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Map background: {mapName}"));
+                return new BitmapImage(null);
+            }
+        }
+
+        public BitmapImage GetMVPScreenAward(MVPAward mvpAward, MVPScreenColor mvpColor)
+        {
+            try
+            {
+                return new BitmapImage(new Uri(MVPScreenAwards[mvpAward].AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString()), UriKind.Absolute));
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAward}"));
+                return new BitmapImage(null);
+            }
+        }
+
+        public BitmapImage GetMVPScoreScreenAward(MVPAward mvpAward, MVPScoreScreenColor mvpColor)
+        {
+            try
+            {
+                return new BitmapImage(new Uri(MVPScoreScreenAwards[mvpAward].AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString()), UriKind.Absolute));
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP scrore screen award: {mvpAward}"));
+                return new BitmapImage(null);
+            }
+        }
+
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (Path.GetExtension(fileName) != ".dds")
                 throw new IconException($"Image file does not have .dds extension [{fileName}]");
 
             if (!isGenericTalent)
-                return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/{hero}/{fileName}", UriKind.Absolute);
+                return new Uri($"{ApplicationPath}Talents/{hero}/{fileName}", UriKind.Absolute);
             else
-                return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/Talents/_Generic/{fileName}", UriKind.Absolute);
+                return new Uri($"{ApplicationPath}Talents/_Generic/{fileName}", UriKind.Absolute);
         }
 
         private Uri SetHeroPortraitUri(string fileName)
         {
-            return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroPortraits/{fileName}", UriKind.Absolute);
+            return new Uri($"{ApplicationPath}HeroPortraits/{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLeaderboardPortrait(string fileName)
         {
-            return new Uri($"pack://application:,,,/HeroesIcons;component/Icons/HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
+            return new Uri($"{ApplicationPath}HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
+        }
+
+        private void SetMapBackgrounds()
+        {
+            try
+            {
+                MapBackgrounds.Add(MapName.BattlefieldofEternity, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.BlackheartsBay, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_blackheartsbay.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.BraxisHoldout, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_braxisholdout.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.CursedHollow, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_cursedhollow.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.DragonShire, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_dragonshire.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.GardenofTerror, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.HauntedMines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.InfernalShrines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_shrines.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.LostCavern, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_lostcavern.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.SkyTemple, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_skytemple.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.TomboftheSpiderQueen, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.TowersofDoom, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg", UriKind.Absolute));
+                MapBackgrounds.Add(MapName.WarheadJunction, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_warhead.jpg", UriKind.Absolute));
+            }
+            catch (Exception ex)
+            {
+                throw new IconException("Failed to set all map backgrounds", ex);
+            }
+        }
+
+        private void SetMVPAwards()
+        {
+            try
+            {
+                MVPScreenAwards.Add(MVPAward.Bulwark, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Cannoneer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.ClutchHealer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.DaBomb, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Dominator, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_skull_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Experienced, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Finisher, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.GardenTerror, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.GuardianSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.HatTrick, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Headhunter, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.ImmortalSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Jeweler, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.MainHealer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.MasteroftheCurse, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Moneybags, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.MVP, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Painbringer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Protector, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_protector_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Shriner, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.SiegeMaster, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.SoleSurvior, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Stunner, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.TempleMaster, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.Trapper, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAward.ZergCrusher, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute));
+
+                MVPScoreScreenAwards.Add(MVPAward.Bulwark, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Cannoneer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.ClutchHealer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.DaBomb, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Dominator, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_skull_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Experienced, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Finisher, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.GardenTerror, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.GuardianSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.HatTrick, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Headhunter, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.ImmortalSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Jeweler, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.MainHealer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.MasteroftheCurse, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Moneybags, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.MVP, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Painbringer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Protector, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_protector_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Shriner, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.SiegeMaster, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.SoleSurvior, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Stunner, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.TempleMaster, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.Trapper, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAward.ZergCrusher, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute));
+            }
+            catch (Exception ex)
+            {
+                throw new IconException("Failed to set all mvp awards", ex);
+            }
+        }
+
+        private void SetHomeScreenBackgrounds()
+        {
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_alarak.jpg", UriKind.Absolute)), Colors.Purple));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_chromie.jpg", UriKind.Absolute)), Colors.Gold));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_diablo.jpg", UriKind.Absolute)), Colors.Red));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_diablotristram.jpg", UriKind.Absolute)), Colors.Gray));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_eternalconflict.jpg", UriKind.Absolute)), Colors.DarkRed));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_eternalconflict_dark.jpg", UriKind.Absolute)), Colors.DarkRed)); ;
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_greymane.jpg", UriKind.Absolute)), Colors.LightBlue));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_guldan.jpg", UriKind.Absolute)), Colors.Green));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_lunara.jpg", UriKind.Absolute)), Colors.Purple));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_lunarnewyear.jpg", UriKind.Absolute)), Colors.Purple));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_medivh.jpg", UriKind.Absolute)), Colors.Gray));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_nexus.jpg", UriKind.Absolute)), Colors.Purple));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_overwatchhangar.jpg", UriKind.Absolute)), Colors.Gray));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_samuro.jpg", UriKind.Absolute)), Colors.Orange));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_shrines.jpg", UriKind.Absolute)), Colors.Red));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_shrines_dusk.jpg", UriKind.Absolute)), Colors.Red));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft.jpg", UriKind.Absolute)), Colors.DarkBlue));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft_protoss.jpg", UriKind.Absolute)), Colors.Cyan));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft_zerg.jpg", UriKind.Absolute)), Colors.DarkRed));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_varian.jpg", UriKind.Absolute)), Colors.Red));
+            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_zarya.jpg", UriKind.Absolute)), Colors.Purple));
         }
 
         private void ParseXmlHeroFiles()

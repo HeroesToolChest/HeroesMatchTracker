@@ -43,9 +43,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVPAward.cs" />
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="IconException.cs" />
+    <Compile Include="MapName.cs" />
     <Compile Include="ParseXmlException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

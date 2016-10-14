@@ -661,48 +661,47 @@ namespace HeroesParserData.ViewModels.Match
 
         private BitmapImage SetMapImage(string mapName, out Color glowColor)
         {
-            string uri = "pack://application:,,,/HeroesIcons;component/Icons/MapBackgrounds/";
             switch (mapName)
             {
                 case "Battlefield of Eternity":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.BattlefieldofEternity);
                 case "Blackheart's Bay":
                     glowColor = Colors.Green;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_blackheartsbay.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.BlackheartsBay);
                 case "Cursed Hollow":
                     glowColor = Colors.Purple;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_cursedhollow.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.CursedHollow);
                 case "Dragon Shire":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_dragonshire.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.DragonShire);
                 case "Garden of Terror":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.GardenofTerror);
                 case "Haunted Mines":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.HauntedMines);
                 case "Infernal Shrines":
                     glowColor = Colors.Red;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_shrines.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.InfernalShrines);
                 case "Lost Cavern":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_lostcavern.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.LostCavern);
                 case "Sky Temple":
                     glowColor = Colors.Gold;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_skytemple.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.SkyTemple);
                 case "Tomb of the Spider Queen":
                     glowColor = Colors.LightBlue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.TomboftheSpiderQueen);
                 case "Towers of Doom":
                     glowColor = Colors.Orange;
-                    return new BitmapImage(new Uri(string.Concat(uri, "ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.TowersofDoom);
                 case "Braxis Holdout":
                     glowColor = Colors.Blue;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_braxisholdout.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.BraxisHoldout);
                 case "Warhead Junction":
                     glowColor = Colors.Yellow;
-                    return new BitmapImage(new Uri(string.Concat(uri, "storm_ui_homescreenbackground_warhead.jpg"), UriKind.Absolute));
+                    return HeroesInfo.GetMapBackground(MapName.WarheadJunction);
                 default:
                     glowColor = Colors.White;
                     return null;
@@ -711,12 +710,11 @@ namespace HeroesParserData.ViewModels.Match
 
         private BitmapImage SetPlayerMVPAward(int? team, string award, out string awardName)
         {
-            string uri = "pack://application:,,,/HeroesIcons;component/Icons/Awards/";
-            string teamColor;
+            MVPScoreScreenColor teamColor;
             if (team == 0)
-                teamColor = "blue";
+                teamColor = MVPScoreScreenColor.Blue;
             else if (team == 1)
-                teamColor = "red";
+                teamColor = MVPScoreScreenColor.Red;
             else
             {
                 awardName = null;
@@ -725,66 +723,85 @@ namespace HeroesParserData.ViewModels.Match
 
             switch (award)
             {
-                case "MVP":
-                    awardName = "MVP";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_mvp_{teamColor}.png", UriKind.Absolute));
-                case "HighestKillStreak":
-                    awardName = "Dominator";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_skull_{teamColor}.png", UriKind.Absolute));
-                case "MostXPContribution":
-                    awardName = "Experienced";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_experienced_{teamColor}.png", UriKind.Absolute));
-                case "MostHeroDamageDone":
-                    awardName = "Painbringer";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_painbringer_{teamColor}.png", UriKind.Absolute));
-                case "MostSiegeDamageDone":
-                    awardName = "Siege Master";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_siegemaster_{teamColor}.png", UriKind.Absolute));
                 case "MostDamageTaken":
                     awardName = "Bulwark";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_bulwark_{teamColor}.png", UriKind.Absolute));
-                case "MostHealing":
-                    awardName = "Main Healer";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_mainhealer_{teamColor}.png", UriKind.Absolute));
-                case "MostStuns":
-                    awardName = "Stunner";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_stunner_{teamColor}.png", UriKind.Absolute));
-                case "MostMercCampsCaptured":
-                    awardName = "Headhunter";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_headhunter_{teamColor}.png", UriKind.Absolute));
-                case "MostImmortalDamage":
-                    awardName = "Immortal Slayer";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_immortalslayer_{teamColor}.png", UriKind.Absolute));
-                case "MostCoinsPaid":
-                    awardName = "Moneybags";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_moneybags_{teamColor}.png", UriKind.Absolute));
-                case "MostCurseDamageDone":
-                    awardName = "Master of the Curse";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_masterofthecurse_{teamColor}.png", UriKind.Absolute));
-                case "MostDragonShrinesCaptured":
-                    awardName = "Shriner";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_shriner_{teamColor}.png", UriKind.Absolute));
-                case "MostDamageToPlants":
-                    awardName = "Garden Terror";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_gardenterror_{teamColor}.png", UriKind.Absolute));
-                case "MostDamageToMinions":
-                    awardName = "Guardian Slayer";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_guardianslayer_{teamColor}.png", UriKind.Absolute));
-                case "MostTimeInTemple":
-                    awardName = "Temple Master";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_templemaster_{teamColor}.png", UriKind.Absolute));
-                case "MostGemsTurnedIn":
-                    awardName = "Jeweler";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_jeweler_{teamColor}.png", UriKind.Absolute));
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Bulwark, teamColor);
                 case "MostAltarDamage":
                     awardName = "Cannoneer";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_cannoneer_{teamColor}.png", UriKind.Absolute));
-                case "MostDamageDoneToZerg":
-                    awardName = "Zerg Crusher";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_zergcrusher_{teamColor}.png", UriKind.Absolute));
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Cannoneer, teamColor);
+                case "ClutchHealer":
+                    awardName = "Clutch Healer";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ClutchHealer, teamColor);
                 case "MostNukeDamageDone":
                     awardName = "Da Bomb";
-                    return new BitmapImage(new Uri($"{uri}storm_ui_scorescreen_mvp_dabomb_{teamColor}.png", UriKind.Absolute));                   
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.DaBomb, teamColor);
+                case "HighestKillStreak":
+                    awardName = "Dominator";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Dominator, teamColor);
+                case "MostXPContribution":
+                    awardName = "Experienced";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Experienced, teamColor);
+                case "MostKills":
+                    awardName = "Finisher";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Finisher, teamColor);
+                case "MostDamageToPlants":
+                    awardName = "Garden Terror";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.GardenTerror, teamColor);
+                case "MostDamageToMinions":
+                    awardName = "Guardian Slayer";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.GuardianSlayer, teamColor);
+                case "HatTrick":
+                    awardName = "Hat Trick";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.HatTrick, teamColor);
+                case "MostMercCampsCaptured":
+                    awardName = "Headhunter";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Headhunter, teamColor);
+                case "MostImmortalDamage":
+                    awardName = "Immortal Slayer";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ImmortalSlayer, teamColor);
+                case "MostGemsTurnedIn":
+                    awardName = "Jeweler";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Jeweler, teamColor);
+                case "MostHealing":
+                    awardName = "Main Healer";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MainHealer, teamColor);
+                case "MostCurseDamageDone":
+                    awardName = "Master of the Curse";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MasteroftheCurse, teamColor);
+                case "MostCoinsPaid":
+                    awardName = "Moneybags";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Moneybags, teamColor);
+                case "MVP":
+                    awardName = "MVP";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MVP, teamColor);
+                case "MostHeroDamageDone":
+                    awardName = "Painbringer";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Painbringer, teamColor);
+                case "MostProtection":
+                    awardName = "Protector";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Protector, teamColor);
+                case "MostDragonShrinesCaptured":
+                    awardName = "Shriner";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Shriner, teamColor);
+                case "MostSiegeDamageDone":
+                    awardName = "Siege Master";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.SiegeMaster, teamColor);
+                case "ZeroDeaths":
+                    awardName = "Sole Survior";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.SoleSurvior, teamColor);
+                case "MostStuns":
+                    awardName = "Stunner";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Stunner, teamColor);
+                case "MostTimeInTemple":
+                    awardName = "Temple Master";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.TempleMaster, teamColor);
+                case "MostRoots":
+                    awardName = "Trapper";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Trapper, teamColor);
+                case "MostDamageDoneToZerg":
+                    awardName = "Zerg Crusher";
+                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ZergCrusher, teamColor);
+
                 default:
                     ExceptionLog.Log(LogLevel.Info, $"Could not find {award} award");
                     awardName = null;
