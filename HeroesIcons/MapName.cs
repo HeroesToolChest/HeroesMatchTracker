@@ -2,6 +2,7 @@
 {
     public enum MapName
     {
+        Unknown = -1,
         BattlefieldofEternity,
         BlackheartsBay,
         CursedHollow,

@@ -7,7 +7,7 @@ using System.Windows;
 using HeroesParserData.Messages;
 using System;
 
-namespace HeroesParserData.ViewModels.Stats.HeroStats
+namespace HeroesParserData.ViewModels.Stats
 {
     public class HeroStatsGameModesViewModel : HeroStatsContext
     {
@@ -27,7 +27,7 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
         public HeroStatsGameModesViewModel()
             :base()
         {
-
+            GameModeListVisibility = false;
         }
 
         protected override async Task RefreshStats()
@@ -41,7 +41,7 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
 
             foreach (var heroName in heroesList)
             {               
-                int level = QueryHeroLevels(heroName);
+                int level = QueryHeroLevel(heroName);
 
                 int quickMatchWins = Query.HeroStatsGameMode.GetWinsOrLossesForHero(heroName, GetSeasonSelected, GameMode.QuickMatch, true);
                 int quickMatchLosses = Query.HeroStatsGameMode.GetWinsOrLossesForHero(heroName, GetSeasonSelected, GameMode.QuickMatch, false);
@@ -106,11 +106,11 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
             Lock = false;
         }
 
-        protected override void ReceiveMessage(StatisticsTabMessage action)
+        protected override async Task ReceiveMessage(StatisticsTabMessage action)
         {
             if (action.StatisticsTab == StatisticsTab.HeroStatistics)
             {
-                PerformCommand();
+                await PerformCommand();
             }
         }
     }

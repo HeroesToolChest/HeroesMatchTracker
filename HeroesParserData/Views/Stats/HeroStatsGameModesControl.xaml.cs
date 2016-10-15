@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HeroesParserData.Views.Stats.HeroStats
+namespace HeroesParserData.Views.Stats
 {
     /// <summary>
-    /// Interaction logic for HeroStatsGenericControl.xaml
+    /// Interaction logic for HeroStatsGameModesControl.xaml
     /// </summary>
-    public partial class HeroStatsGenericControl : UserControl
+    public partial class HeroStatsGameModesControl : UserControl
     {
-        public HeroStatsGenericControl()
+        public HeroStatsGameModesControl()
         {
             InitializeComponent();
         }

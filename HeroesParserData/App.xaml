@@ -25,6 +25,7 @@
             <system:Double x:Key="PlayersHeroesImageWidth">102</system:Double>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
             <converters:IntToStringThousandSeperatorConverter x:Key="IntToStringThousandSeperatorConverter"/>
+            <converters:DoubleToStringThousandSeperatorConverter x:Key="DoubleToStringThousandSeperatorConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

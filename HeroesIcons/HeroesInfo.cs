@@ -49,6 +49,7 @@ namespace HeroesIcons
         private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
 
         private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
+        private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
         private Dictionary<MVPAward, Uri> MVPScreenAwards = new Dictionary<MVPAward, Uri>();
         private Dictionary<MVPAward, Uri> MVPScoreScreenAwards = new Dictionary<MVPAward, Uri>();
 
@@ -296,11 +297,14 @@ namespace HeroesIcons
             return HeroesRealName.Count;
         }
 
-        public BitmapImage GetMapBackground(MapName mapName)
+        public BitmapImage GetMapBackground(MapName mapName, bool useSmallImage = false)
         {
             try
             {
-                return new BitmapImage(MapBackgrounds[mapName]);
+                if (useSmallImage == false)
+                    return new BitmapImage(MapBackgrounds[mapName]);
+                else
+                    return new BitmapImage(MapBackgroundsSmall[mapName]);
             }
             catch (Exception)
             {
@@ -373,6 +377,20 @@ namespace HeroesIcons
                 MapBackgrounds.Add(MapName.TomboftheSpiderQueen, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg", UriKind.Absolute));
                 MapBackgrounds.Add(MapName.TowersofDoom, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg", UriKind.Absolute));
                 MapBackgrounds.Add(MapName.WarheadJunction, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_warhead.jpg", UriKind.Absolute));
+
+                MapBackgroundsSmall.Add(MapName.BattlefieldofEternity, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.BlackheartsBay, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_blackheartsbay_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.BraxisHoldout, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_braxisholdout_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.CursedHollow, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_cursedhollow_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.DragonShire, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_dragonshire_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.GardenofTerror, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_gardenofterror_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.HauntedMines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_hauntedmines_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.InfernalShrines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_shrines_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.LostCavern, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_lostcavern_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.SkyTemple, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_skytemple_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.TomboftheSpiderQueen, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.TowersofDoom, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_towersofdoom_small.jpg", UriKind.Absolute));
+                MapBackgroundsSmall.Add(MapName.WarheadJunction, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_warhead_small.jpg", UriKind.Absolute));
             }
             catch (Exception ex)
             {

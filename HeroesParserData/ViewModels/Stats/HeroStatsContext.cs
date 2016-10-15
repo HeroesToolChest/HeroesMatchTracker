@@ -7,11 +7,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace HeroesParserData.ViewModels.Stats.HeroStats
+namespace HeroesParserData.ViewModels.Stats
 {
     public abstract class HeroStatsContext : ViewModelBase
     {
         private string _selectedSeasonOption;
+        private bool _gameModeListVisibility;
+        private bool _isComboBoxEnabled;
 
         private List<string> _seasonList = new List<string>();
 
@@ -41,9 +43,29 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
             }
         }
 
+        public bool GameModeListVisibility
+        {
+            get { return _gameModeListVisibility; }
+            set
+            {
+                _gameModeListVisibility = value;
+                RaisePropertyChangedEvent(nameof(GameModeListVisibility));
+            }
+        }
+
+        public bool IsComboBoxEnabled
+        {
+            get { return _isComboBoxEnabled; }
+            set
+            {
+                _isComboBoxEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsComboBoxEnabled));
+            }
+        }
+
         public ICommand RefreshStatsCommand
         {
-            get { return new DelegateCommand(() => PerformCommand()); }
+            get { return new DelegateCommand(async () => await PerformCommand()); }
         }
 
         /// <summary>
@@ -52,21 +74,23 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
         public HeroStatsContext()
             :base()
         {
-            Messenger.Default.Register<StatisticsTabMessage>(this, (action) => ReceiveMessage(action));
+            Messenger.Default.Register<StatisticsTabMessage>(this, async (action) => await ReceiveMessage(action));
             InitializeLists();
+            IsComboBoxEnabled = true;
         }
 
         protected abstract Task RefreshStats();
-        protected abstract void ReceiveMessage(StatisticsTabMessage action);
+        protected abstract Task ReceiveMessage(StatisticsTabMessage action);
 
-        protected int QueryHeroLevels(string heroName)
+        protected int QueryHeroLevel(string heroName)
         {
             return Query.HeroStatsGameMode.GetHighestLevelOfHero(heroName);
         }
 
-        protected void PerformCommand()
+        protected async Task PerformCommand()
         {
-            Task.Run(async () =>
+            IsComboBoxEnabled = false;
+            await Task.Run(async () =>
             {
                 try
                 {
@@ -77,6 +101,7 @@ namespace HeroesParserData.ViewModels.Stats.HeroStats
                     ExceptionLog.Log(LogLevel.Error, ex);
                 }
             });
+            IsComboBoxEnabled = true;
         }
 
         private void InitializeLists()

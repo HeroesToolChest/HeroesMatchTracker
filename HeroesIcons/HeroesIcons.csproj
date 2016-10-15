@@ -351,6 +351,19 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_lostcavern_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_warhead_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_blackheartsbay_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_cursedhollow_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_dragonshire_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_gardenofterror_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_hauntedmines_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_shrines_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_skytemple_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_towersofdoom_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_braxisholdout_small.jpg" />
     <Resource Include="Icons\Awards\storm_ui_mvp_bulwark_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_mvp_bulwark_gold.png" />
     <Resource Include="Icons\Awards\storm_ui_mvp_bulwark_red.png" />

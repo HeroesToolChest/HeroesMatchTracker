@@ -190,6 +190,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AutoUpdater.cs" />
+    <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\IMigrationAddon.cs" />
@@ -203,8 +204,10 @@
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="Generic\AppVersion.cs" />
     <Compile Include="Generic\Maps.cs" />
+    <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
+    <Compile Include="Generic\SortTotalBottomStringComparer.cs" />
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Messages\HomeTabMessage.cs" />
     <Compile Include="Messages\MainTab.cs" />
@@ -225,6 +228,7 @@
     <Compile Include="Models\MatchModels\MatchTalents.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesBase.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesGameModes.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroesMapMatch.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesMaps.cs" />
     <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
@@ -255,8 +259,9 @@
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsContext.cs" />
-    <Compile Include="ViewModels\Stats\HeroStats\HeroStatsGameModesViewModel.cs" />
+    <Compile Include="ViewModels\Stats\HeroStatsContext.cs" />
+    <Compile Include="ViewModels\Stats\HeroStatsGameModesViewModel.cs" />
+    <Compile Include="ViewModels\Stats\HeroStatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Data\QueryControl.xaml.cs">
@@ -374,11 +379,14 @@
     <Compile Include="Views\StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Stats\HeroStats\HeroStatsGameModesControl.xaml.cs">
+    <Compile Include="Views\Stats\HeroStatsGameModesControl.xaml.cs">
       <DependentUpon>HeroStatsGameModesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml.cs">
+    <Compile Include="Views\Stats\HeroStatsGenericControl.xaml.cs">
       <DependentUpon>HeroStatsGenericControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stats\HeroStatsHeroesControl.xaml.cs">
+      <DependentUpon>HeroStatsHeroesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Stats\OverviewStatsControl.xaml.cs">
       <DependentUpon>OverviewStatsControl.xaml</DependentUpon>
@@ -530,11 +538,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Stats\HeroStats\HeroStatsGameModesControl.xaml">
+    <Page Include="Views\Stats\HeroStatsGameModesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Stats\HeroStats\HeroStatsGenericControl.xaml">
+    <Page Include="Views\Stats\HeroStatsGenericControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stats\HeroStatsHeroesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

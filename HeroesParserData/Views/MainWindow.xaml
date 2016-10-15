@@ -9,7 +9,6 @@
         xmlns:ViewsMatch="clr-namespace:HeroesParserData.Views.Match"
         xmlns:ViewsHeroes="clr-namespace:HeroesParserData.Views.Heroes"
         xmlns:ViewsStats="clr-namespace:HeroesParserData.Views.Stats"
-        xmlns:ViewsHeroStats="clr-namespace:HeroesParserData.Views.Stats.HeroStats"
         xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
         mc:Ignorable="d"
         WindowButtonCommandsOverlayBehavior="Always"
@@ -72,12 +71,11 @@
                     <TabItem Header="Overview">
                         <ViewsStats:OverviewStatsControl />
                     </TabItem>
-                    <TabItem Header="Hero Statistics">
-                        <TabControl>
-                            <TabItem Header="Game Modes">
-                                <ViewsHeroStats:HeroStatsGameModesControl></ViewsHeroStats:HeroStatsGameModesControl>
-                            </TabItem>
-                        </TabControl>
+                    <TabItem Header="Heroes">
+                        <ViewsStats:HeroStatsHeroesControl></ViewsStats:HeroStatsHeroesControl>
+                    </TabItem>
+                    <TabItem Header="Game Modes">
+                        <ViewsStats:HeroStatsGameModesControl></ViewsStats:HeroStatsGameModesControl>
                     </TabItem>
                 </TabControl>
             </TabItem>

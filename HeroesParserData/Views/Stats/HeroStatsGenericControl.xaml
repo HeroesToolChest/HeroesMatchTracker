@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="HeroesParserData.Views.Stats.HeroStatsGenericControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:base="clr-namespace:HeroesParserData"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Left"
+             HorizontalContentAlignment="Left"
+             VerticalAlignment="Top"
+             VerticalContentAlignment="Center"
+             Height="auto"
+             Width="auto"
+             d:DesignWidth="797" d:DesignHeight="63">
+    <Grid>
+        <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshStatsCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" 
+                  IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshStatsCommand}" ItemsSource="{Binding GameModeList}" SelectedValue="{Binding SelectedGameModeOption}" 
+                  IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="135,10,-125,0" VerticalAlignment="Top" Width="120" Visibility="{Binding GameModeListVisibility, Converter={StaticResource BooleanToVisibility}}"/>
+    </Grid>
+</UserControl>

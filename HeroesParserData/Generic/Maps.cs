@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HeroesIcons;
+using System.Collections.Generic;
 
 namespace HeroesParserData
 {
@@ -23,6 +24,41 @@ namespace HeroesParserData
             // Lost Cavern is not a map on rotation
 
             return maps;
+        }
+
+        public static MapName GetEnumMapName(string mapName)
+        {
+            switch (mapName)
+            {
+                case "Battlefield of Eternity":
+                    return MapName.BattlefieldofEternity;
+                case "Blackheart's Bay":
+                    return MapName.BlackheartsBay;
+                case "Braxis Holdout":
+                    return MapName.BraxisHoldout;
+                case "Cursed Hollow":
+                    return MapName.CursedHollow;
+                case "Dragon Shire":
+                    return MapName.DragonShire;
+                case "Garden of Terror":
+                    return MapName.GardenofTerror;
+                case "Haunted Mines":
+                    return MapName.HauntedMines;
+                case "Infernal Shrines":
+                    return MapName.InfernalShrines;
+                case "Lost Cavern":
+                    return MapName.LostCavern;
+                case "Sky Temple":
+                    return MapName.SkyTemple;
+                case "Tomb of the Spider Queen":
+                    return MapName.TomboftheSpiderQueen;
+                case "Towers of Doom":
+                    return MapName.TowersofDoom;
+                case "Warhead Junction":
+                    return MapName.WarheadJunction;
+                default:
+                    return MapName.Unknown;
+            }
         }
     }
 }

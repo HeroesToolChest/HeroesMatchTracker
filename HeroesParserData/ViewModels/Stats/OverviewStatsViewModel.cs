@@ -22,6 +22,7 @@ namespace HeroesParserData.ViewModels.Stats
         private string _seasonLabel;
         private string _totalGamesWonLabel;
         private string _queryStatus;
+        private bool _isComboBoxEnabled;
 
         private List<string> _mostStatsList = new List<string>();
         private List<string> _seasonList = new List<string>();
@@ -188,19 +189,53 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
+        public bool IsComboBoxEnabled
+        {
+            get { return _isComboBoxEnabled; }
+            set
+            {
+                _isComboBoxEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsComboBoxEnabled));
+            }
+        }
+
         public ICommand ChangeMostStatCommand
         {
-            get { return new DelegateCommand(() => GetMostStats()); }
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    IsComboBoxEnabled = false;
+                    await GetMostStats();
+                    IsComboBoxEnabled = true;
+                });
+            }
         }
 
         public ICommand ChangeSeasonCommand
         {
-            get { return new DelegateCommand(() => GetAllStats()); }
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    IsComboBoxEnabled = false;
+                    await GetAllStats();
+                    IsComboBoxEnabled = true;
+                });
+            }
         }
 
         public ICommand ChangeGameModeCommand
         {
-            get { return new DelegateCommand(() => GetAllStats()); }
+            get
+            {
+                return new DelegateCommand(async () =>
+                {
+                    IsComboBoxEnabled = false;
+                    await GetAllStats();
+                    IsComboBoxEnabled = true;
+                });
+            }
         }
         #endregion public properties
 
@@ -210,8 +245,9 @@ namespace HeroesParserData.ViewModels.Stats
         public OverviewStatsViewModel()
             : base()
         {
-            Messenger.Default.Register<StatisticsTabMessage>(this, (action) => ReceiveMessage(action));
+            Messenger.Default.Register<StatisticsTabMessage>(this, async (action) => await ReceiveMessage(action));
             InitializeLists();
+            IsComboBoxEnabled = true;
         }
 
         private void InitializeLists()
@@ -228,17 +264,17 @@ namespace HeroesParserData.ViewModels.Stats
             GameModeList.AddRange(Utilities.GetGameModes());
         }
 
-        private void ReceiveMessage(StatisticsTabMessage action)
+        private async Task ReceiveMessage(StatisticsTabMessage action)
         {
             if (action.StatisticsTab == StatisticsTab.Overview)
             {
-                GetAllStats();
+                await GetAllStats();
             }
         }
 
-        private void GetMostStats()
+        private async Task GetMostStats()
         {
-            Task.Run(async () =>
+            await Task.Run(async () =>
             {
                 try
                 {
@@ -258,11 +294,11 @@ namespace HeroesParserData.ViewModels.Stats
             });
         }
         
-        private void GetAllStats()
+        private async Task GetAllStats()
         {
-            GetMostStats();
+            await GetMostStats();
 
-            Task.Run(async () =>
+            await Task.Run(async () =>
             { 
                 try
                 {
