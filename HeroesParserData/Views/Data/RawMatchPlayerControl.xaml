@@ -35,6 +35,7 @@
                     <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />
                     <DataGridTextColumn Header="Character" Binding="{Binding Character}" />
                     <DataGridTextColumn Header="CharacterLevel" Binding="{Binding CharacterLevel}" />
+                    <DataGridTextColumn Header="PartyValue" Binding="{Binding PartyValue}" />
                     <DataGridTextColumn Header="Difficulty" Binding="{Binding Difficulty}" />
                     <DataGridTextColumn Header="Handicap" Binding="{Binding Handicap}" />
                     <DataGridTextColumn Header="IsAutoSelect" Binding="{Binding IsAutoSelect}" />

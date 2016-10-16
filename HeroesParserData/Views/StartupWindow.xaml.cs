@@ -60,7 +60,7 @@ namespace HeroesParserData.Views
             {
                 StatusLabel.Content = "An error was encountered. Check the error logs for details";
                 StartupLogFile.Log(LogLevel.Error, ex);
-                for (int i = 6; i >= 0; i--)
+                for (int i = 4; i >= 0; i--)
                 {
                     CurrentStatusLabel.Content = $"Shutting down in ({i})...";
                     await Task.Delay(1000);

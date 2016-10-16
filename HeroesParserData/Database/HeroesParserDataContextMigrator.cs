@@ -29,10 +29,13 @@ namespace HeroesParserData.Database
                         DateAdded DATETIME,
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
 
+            //steps.Add(@"ALTER TABLE ReplayMatchPlayers ADD COLUMN PartyValue INTEGER DEFAULT 0");
+
             Migrations.Add(1, steps);
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
             addonSteps.Add(new MigrationAddon1_1_0_1());
+            addonSteps.Add(new MigrationAddon1_1_0_2());
 
             MigrationAddons.Add(1, addonSteps);
         }

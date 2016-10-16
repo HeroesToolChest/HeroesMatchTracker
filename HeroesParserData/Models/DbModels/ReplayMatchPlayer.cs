@@ -23,6 +23,8 @@ namespace HeroesParserData.Models.DbModels
 
         public int CharacterLevel { get; set; }
 
+        public long PartyValue { get; set; }
+
         [StringLength(25)]
         public string Difficulty { get; set; }
 

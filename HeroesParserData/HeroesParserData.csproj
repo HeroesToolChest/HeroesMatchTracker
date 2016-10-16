@@ -152,6 +152,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.103\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -194,6 +195,7 @@
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\IMigrationAddon.cs" />
+    <Compile Include="Database\MigrationAddon1_1_0_2.cs" />
     <Compile Include="Database\MigrationAddon1_1_0_1.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
@@ -207,7 +209,6 @@
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
-    <Compile Include="Generic\SortTotalBottomStringComparer.cs" />
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Messages\HomeTabMessage.cs" />
     <Compile Include="Messages\MainTab.cs" />

@@ -1,4 +1,7 @@
 ﻿using HeroesParserData.Models.DbModels;
+using System.Configuration;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,75 +11,30 @@ namespace HeroesParserData.Database
     {
         public async Task Execute()
         {
-            using (HeroesParserDataContext db = new HeroesParserDataContext())
+            bool columnExists = false;
+            using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings["HeroesParserData"].ConnectionString))
             {
-                var records = await db.Database.SqlQuery<ReplayAllHotsPlayer>(@"SELECT *
-                                                                                FROM ReplayAllHotsPlayers
-                                                                                WHERE BattleNetId != 0
-                                                                                GROUP BY BattleNetId
-                                                                                HAVING COUNT(*) > 1").ToListAsync();
-
-                foreach (var record in records)
+                using (var cmd = new SQLiteCommand("PRAGMA table_info(ReplayMatchPlayers);"))
                 {
-                    var samePlayerRecords = db.ReplayAllHotsPlayers.Where(x => x.BattleNetId == record.BattleNetId).OrderBy(x => x.LastSeen);
-                    var listSamePlayerRecords = samePlayerRecords.ToList();
+                    var table = new DataTable();
 
-                    long originalPlayerId = listSamePlayerRecords[0].PlayerId;
-                    listSamePlayerRecords[0].Seen = samePlayerRecords.Sum(x => x.Seen);
+                    cmd.Connection = conn;
+                    await cmd.Connection.OpenAsync();
 
-                    // copy the records over to the RenamedPlayer table
-                    for (int i = 1; i < listSamePlayerRecords.Count; i++)
-                    {
-                        var player = listSamePlayerRecords[i];
-                        ReplayRenamedPlayer replayRenamedPlayer = new ReplayRenamedPlayer
-                        {
-                            PlayerId = originalPlayerId,
-                            BattleTagName = player.BattleTagName,
-                            BattleNetId = player.BattleNetId,
-                            BattleNetRegionId = player.BattleNetRegionId,
-                            BattleNetSubId = player.BattleNetSubId,
-                            DateAdded = player.LastSeen
-                        };
+                    SQLiteDataAdapter adp = null;
+                    adp = new SQLiteDataAdapter(cmd);
+                    adp.Fill(table);
 
-                        db.ReplayRenamedPlayers.Add(replayRenamedPlayer);
+                    var columnNames = table.AsEnumerable().Select(x => x["name"].ToString()).ToList();
+                    columnExists = columnNames.Contains("PartyValue");
+                }
+            }
 
-                        long oldPlayerId = listSamePlayerRecords[i].PlayerId;
-
-                        // remove from ReplayAllHotsPlayerHero
-                        var allHotsPlayerHero = db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == oldPlayerId);
-                        db.ReplayAllHotsPlayerHeroes.RemoveRange(allHotsPlayerHero);
-
-                        // update ReplayMatchPlayers
-                        db.ReplayMatchPlayers.Where(x => x.PlayerId == oldPlayerId)
-                                             .ToList()
-                                             .ForEach(x => x.PlayerId = originalPlayerId);
-
-                        // update ReplayMatchPlayerTalents
-                        db.ReplayMatchPlayerTalents.Where(x => x.PlayerId == oldPlayerId)
-                                                   .ToList()
-                                                   .ForEach(x => x.PlayerId = originalPlayerId);
-
-                        // update ReplayMatchPlayerScoreResults
-                        db.ReplayMatchPlayerScoreResults.Where(x => x.PlayerId == oldPlayerId)
-                                                        .ToList()
-                                                        .ForEach(x => x.PlayerId = originalPlayerId);
-
-                        // update ReplayMatchTeamObjectives
-                        db.ReplayMatchTeamObjectives.Where(x => x.PlayerId == oldPlayerId)
-                                                    .ToList()
-                                                    .ForEach(x => x.PlayerId = originalPlayerId);
-
-                        // update ReplayMatchAwards
-                        db.ReplayMatchAwards.Where(x => x.PlayerId == oldPlayerId)
-                                            .ToList()
-                                            .ForEach(x => x.PlayerId = originalPlayerId);
-
-                        // remove from ReplayAllHotsPlayer
-                        var allHotsPlayer = db.ReplayAllHotsPlayers.Where(x => x.PlayerId == oldPlayerId);
-                        db.ReplayAllHotsPlayers.RemoveRange(allHotsPlayer);
-
-                        await db.SaveChangesAsync();
-                    }
+            if (!columnExists)
+            {
+                using (HeroesParserDataContext db = new HeroesParserDataContext())
+                {
+                    await db.Database.ExecuteSqlCommandAsync("ALTER TABLE ReplayMatchPlayers ADD COLUMN PartyValue INTEGER DEFAULT 0");
                 }
             }
         }

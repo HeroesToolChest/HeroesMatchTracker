@@ -1,5 +1,4 @@
 ﻿using Heroes.ReplayParser;
-using HeroesParserData.DataQueries;
 using HeroesParserData.Models.DbModels;
 using System;
 using System.Collections.Generic;
@@ -95,6 +94,7 @@ namespace HeroesParserData.DataQueries
                                     IsSilenced = player.IsSilenced,
                                     IsWinner = player.IsWinner,
                                     MountAndMountTint = player.MountAndMountTint,
+                                    PartyValue = player.PartyValue,
                                     PlayerNumber = -1,
                                     SkinAndSkinTint = player.SkinAndSkinTint,
                                     Team = player.Team
@@ -140,6 +140,7 @@ namespace HeroesParserData.DataQueries
                                     IsSilenced = player.IsSilenced,
                                     IsWinner = player.IsWinner,
                                     MountAndMountTint = player.MountAndMountTint,
+                                    PartyValue = player.PartyValue,
                                     PlayerNumber = playerNum,
                                     SkinAndSkinTint = player.SkinAndSkinTint,
                                     Team = player.Team
