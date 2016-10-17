@@ -717,96 +717,21 @@ namespace HeroesParserData.ViewModels.Match
                 teamColor = MVPScoreScreenColor.Red;
             else
             {
+                ExceptionLog.Log(LogLevel.Info, $"[MatchContext.cs]({nameof(SetPlayerMVPAward)}) Team is not a 0 or 1");
                 awardName = null;
                 return null;
             }
 
-            switch (award)
-            {
-                case "MostDamageTaken":
-                    awardName = "Bulwark";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Bulwark, teamColor);
-                case "MostAltarDamage":
-                    awardName = "Cannoneer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Cannoneer, teamColor);
-                case "ClutchHealer":
-                    awardName = "Clutch Healer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ClutchHealer, teamColor);
-                case "MostNukeDamageDone":
-                    awardName = "Da Bomb";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.DaBomb, teamColor);
-                case "HighestKillStreak":
-                    awardName = "Dominator";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Dominator, teamColor);
-                case "MostXPContribution":
-                    awardName = "Experienced";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Experienced, teamColor);
-                case "MostKills":
-                    awardName = "Finisher";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Finisher, teamColor);
-                case "MostDamageToPlants":
-                    awardName = "Garden Terror";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.GardenTerror, teamColor);
-                case "MostDamageToMinions":
-                    awardName = "Guardian Slayer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.GuardianSlayer, teamColor);
-                case "HatTrick":
-                    awardName = "Hat Trick";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.HatTrick, teamColor);
-                case "MostMercCampsCaptured":
-                    awardName = "Headhunter";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Headhunter, teamColor);
-                case "MostImmortalDamage":
-                    awardName = "Immortal Slayer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ImmortalSlayer, teamColor);
-                case "MostGemsTurnedIn":
-                    awardName = "Jeweler";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Jeweler, teamColor);
-                case "MostHealing":
-                    awardName = "Main Healer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MainHealer, teamColor);
-                case "MostCurseDamageDone":
-                    awardName = "Master of the Curse";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MasteroftheCurse, teamColor);
-                case "MostCoinsPaid":
-                    awardName = "Moneybags";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Moneybags, teamColor);
-                case "MVP":
-                    awardName = "MVP";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.MVP, teamColor);
-                case "MostHeroDamageDone":
-                    awardName = "Painbringer";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Painbringer, teamColor);
-                case "MostProtection":
-                    awardName = "Protector";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Protector, teamColor);
-                case "MostDragonShrinesCaptured":
-                    awardName = "Shriner";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Shriner, teamColor);
-                case "MostSiegeDamageDone":
-                    awardName = "Siege Master";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.SiegeMaster, teamColor);
-                case "ZeroDeaths":
-                    awardName = "Sole Survior";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.SoleSurvior, teamColor);
-                case "MostStuns":
-                    awardName = "Stunner";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Stunner, teamColor);
-                case "MostTimeInTemple":
-                    awardName = "Temple Master";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.TempleMaster, teamColor);
-                case "MostRoots":
-                    awardName = "Trapper";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.Trapper, teamColor);
-                case "MostDamageDoneToZerg":
-                    awardName = "Zerg Crusher";
-                    return HeroesInfo.GetMVPScoreScreenAward(MVPAward.ZergCrusher, teamColor);
+            MVPAwardType mvpAwardType = HeroesInfo.GetMVPAwardTypeFromString(award);
 
-                default:
-                    ExceptionLog.Log(LogLevel.Info, $"Could not find {award} award");
-                    awardName = null;
-                    return null;
+            if (mvpAwardType == MVPAwardType.Unknown)
+            {
+                ExceptionLog.Log(LogLevel.Info, $"[MatchContext.cs]({nameof(SetPlayerMVPAward)}) Could not find {award} award");
+                awardName = null;
+                return null;
             }
+
+            return HeroesInfo.GetMVPScoreScreenAward(mvpAwardType, teamColor, out awardName);
         }
     }
 }

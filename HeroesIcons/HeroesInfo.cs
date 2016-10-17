@@ -50,8 +50,8 @@ namespace HeroesIcons
 
         private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
         private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
-        private Dictionary<MVPAward, Uri> MVPScreenAwards = new Dictionary<MVPAward, Uri>();
-        private Dictionary<MVPAward, Uri> MVPScoreScreenAwards = new Dictionary<MVPAward, Uri>();
+        private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
+        private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScoreScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
 
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
 
@@ -309,35 +309,71 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Map background: {mapName}"));
+                return null;
+            }
+        }
+
+        public BitmapImage GetMVPScreenAward(MVPAwardType mvpAwardType, MVPScreenColor mvpColor, out string awardName)
+        {
+            if (mvpAwardType == MVPAwardType.Unknown)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAwardType}"));
+                awardName = string.Empty;
+                return null;
+            }
+
+            try
+            {
+                var uriString = MVPScreenAwards[mvpAwardType].Item1.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+
+                awardName = MVPScreenAwards[mvpAwardType].Item2;
+                return new BitmapImage(new Uri(uriString, UriKind.Absolute));
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAwardType}"));
+                awardName = "Unknown";
+                return null;
+            }
+        }
+
+        public BitmapImage GetMVPScoreScreenAward(MVPAwardType mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
+        {
+            if (mvpAwardType == MVPAwardType.Unknown)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP score screen award: {mvpAwardType}"));
+                awardName = string.Empty;
+                return null;
+            }
+            try
+            {
+                var uriString = MVPScoreScreenAwards[mvpAwardType].Item1.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+
+                awardName = MVPScoreScreenAwards[mvpAwardType].Item2;
+                return new BitmapImage(new Uri(uriString, UriKind.Absolute));
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"MVP score screen award: {mvpAwardType}"));
+                awardName = "Unknown";
                 return new BitmapImage(null);
             }
         }
 
-        public BitmapImage GetMVPScreenAward(MVPAward mvpAward, MVPScreenColor mvpColor)
+        /// <summary>
+        /// Gets the MVPAwardType enum from a given string, returns Unknown if no enum equivalent is found
+        /// </summary>
+        /// <param name="awardNameType">string name of enum</param>
+        /// <returns></returns>
+        public MVPAwardType GetMVPAwardTypeFromString(string awardNameType)
         {
-            try
-            {
-                return new BitmapImage(new Uri(MVPScreenAwards[mvpAward].AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString()), UriKind.Absolute));
-            }
-            catch (Exception)
-            {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAward}"));
-                return new BitmapImage(null);
-            }
+            MVPAwardType mvpAwardType;
+            if (Enum.TryParse(awardNameType, true, out mvpAwardType))
+                return mvpAwardType;
+            else
+                return MVPAwardType.Unknown;
         }
 
-        public BitmapImage GetMVPScoreScreenAward(MVPAward mvpAward, MVPScoreScreenColor mvpColor)
-        {
-            try
-            {
-                return new BitmapImage(new Uri(MVPScoreScreenAwards[mvpAward].AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString()), UriKind.Absolute));
-            }
-            catch (Exception)
-            {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP scrore screen award: {mvpAward}"));
-                return new BitmapImage(null);
-            }
-        }
 
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
@@ -402,59 +438,59 @@ namespace HeroesIcons
         {
             try
             {
-                MVPScreenAwards.Add(MVPAward.Bulwark, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Cannoneer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.ClutchHealer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.DaBomb, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Dominator, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_skull_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Experienced, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Finisher, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.GardenTerror, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.GuardianSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.HatTrick, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Headhunter, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.ImmortalSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Jeweler, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.MainHealer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.MasteroftheCurse, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Moneybags, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.MVP, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Painbringer, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Protector, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_protector_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Shriner, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.SiegeMaster, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.SoleSurvior, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Stunner, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.TempleMaster, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.Trapper, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScreenAwards.Add(MVPAward.ZergCrusher, new Uri($"{ApplicationPath}Awards/storm_ui_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScreenAwards.Add(MVPAwardType.MostDamageTaken, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute), "Bulwark"));
+                MVPScreenAwards.Add(MVPAwardType.MostAltarDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute), "Cannoneer"));
+                MVPScreenAwards.Add(MVPAwardType.ClutchHealer, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute), "Clutch Healer"));
+                MVPScreenAwards.Add(MVPAwardType.MostNukeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute), "DaBomb"));
+                MVPScreenAwards.Add(MVPAwardType.HighestKillStreak, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_skull_{{mvpColor}}.png", UriKind.Absolute), "Dominator"));
+                MVPScreenAwards.Add(MVPAwardType.MostXPContribution, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute), "Experienced"));
+                MVPScreenAwards.Add(MVPAwardType.MostKills, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute), "Finisher"));
+                MVPScreenAwards.Add(MVPAwardType.MostDamageToPlants, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute), "Garden Terror"));
+                MVPScreenAwards.Add(MVPAwardType.MostDamageToMinions, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute), "Guardian Slayer"));
+                MVPScreenAwards.Add(MVPAwardType.HatTrick, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute), "Hat Trick"));
+                MVPScreenAwards.Add(MVPAwardType.MostMercCampsCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute), "Headhunter"));
+                MVPScreenAwards.Add(MVPAwardType.MostImmortalDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute), "Immortal Slayer"));
+                MVPScreenAwards.Add(MVPAwardType.MostGemsTurnedIn, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute), "Jeweler"));
+                MVPScreenAwards.Add(MVPAwardType.MostHealing, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute), "Main Healer"));
+                MVPScreenAwards.Add(MVPAwardType.MostCurseDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute), "Master of the Curse"));
+                MVPScreenAwards.Add(MVPAwardType.MostCoinsPaid, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute), "Moneybags"));
+                MVPScreenAwards.Add(MVPAwardType.MVP, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute), "MVP"));
+                MVPScreenAwards.Add(MVPAwardType.MostHeroDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute), "Painbringer"));
+                MVPScreenAwards.Add(MVPAwardType.MostProtection, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_protector_{{mvpColor}}.png", UriKind.Absolute), "Protector"));
+                MVPScreenAwards.Add(MVPAwardType.MostDragonShrinesCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute), "Shriner"));
+                MVPScreenAwards.Add(MVPAwardType.MostSiegeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute), "Siege Master"));
+                MVPScreenAwards.Add(MVPAwardType.ZeroDeaths, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute), "Sole Survior"));
+                MVPScreenAwards.Add(MVPAwardType.MostStuns, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute), "Stunner"));
+                MVPScreenAwards.Add(MVPAwardType.MostTimeInTemple, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute), "Temple Master"));
+                MVPScreenAwards.Add(MVPAwardType.MostRoots, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute), "Trapper"));
+                MVPScreenAwards.Add(MVPAwardType.MostDamageDoneToZerg, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute), "Zerg Crusher"));
 
-                MVPScoreScreenAwards.Add(MVPAward.Bulwark, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Cannoneer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.ClutchHealer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.DaBomb, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Dominator, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_skull_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Experienced, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Finisher, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.GardenTerror, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.GuardianSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.HatTrick, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Headhunter, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.ImmortalSlayer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Jeweler, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.MainHealer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.MasteroftheCurse, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Moneybags, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.MVP, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Painbringer, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Protector, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_protector_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Shriner, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.SiegeMaster, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.SoleSurvior, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Stunner, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.TempleMaster, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.Trapper, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute));
-                MVPScoreScreenAwards.Add(MVPAward.ZergCrusher, new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageTaken, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute), "Bulwark"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostAltarDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute), "Cannoneer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.ClutchHealer, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute), "Clutch Healer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostNukeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute), "DaBomb"));
+                MVPScoreScreenAwards.Add(MVPAwardType.HighestKillStreak, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_skull_{{mvpColor}}.png", UriKind.Absolute), "Dominator"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostXPContribution, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute), "Experienced"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostKills, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute), "Finisher"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageToPlants, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute), "Garden Terror"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageToMinions, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute), "Guardian Slayer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.HatTrick, new Tuple<Uri, string>( new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute), "Hat Trick"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostMercCampsCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute), "Headhunter"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostImmortalDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute), "Immortal Slayer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostGemsTurnedIn, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute), "Jeweler"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostHealing, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute), "Main Healer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostCurseDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute), "Master of the Curse"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostCoinsPaid, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute), "Moneybags"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MVP, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute), "MVP"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostHeroDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute), "Painbringer"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostProtection, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_protector_{{mvpColor}}.png", UriKind.Absolute), "Protector"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostDragonShrinesCaptured, new Tuple<Uri, string>( new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute), "Shriner"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostSiegeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute), "Siege Master"));
+                MVPScoreScreenAwards.Add(MVPAwardType.ZeroDeaths, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute), "Sole Survior"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostStuns, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute), "Stunner"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostTimeInTemple, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute), "Temple Master"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostRoots, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute), "Trapper"));
+                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageDoneToZerg, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute), "Zerg Crusher"));
             }
             catch (Exception ex)
             {

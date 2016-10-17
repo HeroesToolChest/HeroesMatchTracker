@@ -1,4 +1,5 @@
 ﻿using Heroes.ReplayParser;
+using HeroesIcons;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
 using System.Collections.Generic;
@@ -268,9 +269,37 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            public static int ReadTotalMatchAwards(MVPAwardType mvpAwardType, Season season, GameMode gameMode, string character)
+            {
+                var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
+                string gameModeString;
+                if (gameMode != GameMode.Cooperative)
+                    gameModeString = GameModeQueryString(false);
+                else
+                    gameModeString = GameModeQueryString(true);
 
-
+                using (var db = new HeroesParserDataContext())
+                {
+                    int? amount = db.Database.SqlQuery<int?>($@"SELECT Count(ma.Award) FROM ReplayMatchPlayers mp
+                                                                JOIN Replays r
+                                                                JOIN ReplayAllHotsPlayers hp
+                                                                JOIN ReplayMatchAwards ma 
+                                                                ON mp.ReplayId = ma.ReplayId AND 
+                                                                mp.ReplayId = r.ReplayId AND 
+                                                                mp.PlayerId = ma.PlayerId AND
+                                                                mp.PlayerId = hp.PlayerId AND
+                                                                mp.PlayerId = ma.PlayerId
+                                                                WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND Award = @AwardType",
+                                                                new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                new SQLiteParameter("@Character", character),
+                                                                new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
+                                                                new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
+                                                                new SQLiteParameter("@GameMode", gameMode),
+                                                                new SQLiteParameter("@AwardType", mvpAwardType.ToString())).FirstOrDefault();
+                    return amount.HasValue ? amount.Value : 0;
+                }
+            }
 
             private static string GameModeQueryString(bool allOrSingle)
             {

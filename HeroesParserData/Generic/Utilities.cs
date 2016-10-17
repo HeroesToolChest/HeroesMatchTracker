@@ -1,4 +1,5 @@
 ﻿using Heroes.ReplayParser;
+using HeroesIcons;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -90,16 +91,19 @@ namespace HeroesParserData
             // item 1: beginning
             // item 2: end
 
-            if (season == Season.Season2)
-                return new Tuple<int?, int?>(45949, 99999);
-            else if (season == Season.Season1)
-                return new Tuple<int?, int?>(43571, 45949);
-            else if (season == Season.Preseason)
-                return new Tuple<int?, int?>(0, 43571);
-            else if (season == Season.Lifetime)
-                return new Tuple<int?, int?>(0, 99999);
-            else
-                return null;
+            switch (season)
+            {
+                case Season.Season2:
+                    return new Tuple<int?, int?>(45949, 99999);
+                case Season.Season1:
+                    return new Tuple<int?, int?>(43571, 45949);
+                case Season.Preseason:
+                    return new Tuple<int?, int?>(0, 43571);
+                case Season.Lifetime:
+                    return new Tuple<int?, int?>(0, 99999);
+                default:
+                    return null;
+            }
         }
     }
 }

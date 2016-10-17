@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:base="clr-namespace:HeroesParserData"
              xmlns:local="clr-namespace:HeroesParserData.Views.Stats"
              xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Stats"
@@ -25,29 +26,54 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:HeroStatsGenericControl Grid.Row="0"/>
         <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshStatsCommand}" ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}"
                   IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0"/>
-        <Image Source="{Binding CharacterDraftPortrait}" HorizontalAlignment="Left" Height="160" Margin="10,30,0,0" VerticalAlignment="Top" Width="136" Grid.Row="1"/>
-        <Label Content="{Binding CharacterName}" HorizontalAlignment="Left" Margin="151,30,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="40"/>
-        <Label Content="{Binding CharacterRole}" HorizontalAlignment="Left" Margin="171,93,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="Level" HorizontalAlignment="Left" Margin="171,130,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
-        <Label Content="{Binding CharacterLevel}" HorizontalAlignment="Left" Margin="226,130,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="4.286,0.486"/>
+        <Image Source="{Binding CharacterDraftPortrait}" HorizontalAlignment="Left" Height="120" Margin="10,10,0,0" VerticalAlignment="Top" Width="102" Grid.Row="1"/>
+        <Label Content="{Binding CharacterName}" HorizontalAlignment="Left" Margin="117,10,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="{Binding CharacterRole}" HorizontalAlignment="Left" Margin="125,47,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Level" HorizontalAlignment="Left" Margin="125,81,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="{Binding CharacterLevel}" HorizontalAlignment="Left" Margin="175,81,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18"/>
+
+        <Label Content="Wins:" HorizontalAlignment="Left" Margin="366,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Losses:" HorizontalAlignment="Left" Margin="355,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Games:" HorizontalAlignment="Left" Margin="352,88,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Winrate:" HorizontalAlignment="Left" Margin="544,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Kills:" HorizontalAlignment="Left" Margin="572,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Deaths:" HorizontalAlignment="Left" Margin="551,88,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Awards:" HorizontalAlignment="Left" Margin="775,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="MVP:" HorizontalAlignment="Left" Margin="793,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        
+        <Label Content="{Binding TotalWins}" HorizontalAlignment="Left" Margin="414,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalLosses}" HorizontalAlignment="Left" Margin="414,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalGames}" HorizontalAlignment="Left" Margin="414,88,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalWinrate}" HorizontalAlignment="Left" Margin="613,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalKills}" HorizontalAlignment="Left" Margin="613,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalDeaths}" HorizontalAlignment="Left" Margin="613,88,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalAwards}" HorizontalAlignment="Left" Margin="840,16,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="{Binding TotalMVPs}" HorizontalAlignment="Left" Margin="840,52,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        
+        <Controls:ProgressRing IsActive="{Binding IsTotalWinsProcessing}" HorizontalAlignment="Left" Margin="419,22,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalLossesProcessing}" HorizontalAlignment="Left" Margin="419,58,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalGamesProcessing}" HorizontalAlignment="Left" Margin="419,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalWinrateProcessing}" HorizontalAlignment="Left" Margin="618,22,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalKillsProcessing}" HorizontalAlignment="Left" Margin="618,58,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalDeathsProcessing}" HorizontalAlignment="Left" Margin="618,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalAwardsProcessing}" HorizontalAlignment="Left" Margin="845,22,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
+        <Controls:ProgressRing IsActive="{Binding IsTotalMVPsProcessing}" HorizontalAlignment="Left" Margin="845,58,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
 
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Expander Header="Quick Match" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="0" VerticalAlignment="Top" Height="auto" Width="1600">
+                    <Expander Header="Quick Match" HorizontalAlignment="Left" Margin="10,10,-289,0" Grid.Row="0" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -119,7 +145,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Unranked Draft" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="1600">
+                    <Expander Header="Unranked Draft" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -191,7 +217,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Hero League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="1600">
+                    <Expander Header="Hero League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -263,7 +289,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Team League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="auto" Width="1600">
+                    <Expander Header="Team League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -331,6 +357,62 @@
                                     <DataGridTextColumn Header="Role" Binding="{Binding Role, Converter={StaticResource DoubleToStringThousandSeperatorConverter}}" MinWidth="130" MaxWidth="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" />
                                     <DataGridTextColumn Header="Experience" Binding="{Binding Experience, Converter={StaticResource DoubleToStringThousandSeperatorConverter}}" MinWidth="130" MaxWidth="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                     <DataGridTextColumn Header="Mercs Captured" Binding="{Binding MercsCaptured}" MinWidth="136" MaxWidth="136" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Expander>
+                    <Expander Header="Match Awards" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="auto" Width="1880">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding MatchAwardDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Image Source="{Binding AwardImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                        <Image.ToolTip>
+                                                            <ToolTip Content="{Binding AwardName}"></ToolTip>
+                                                        </Image.ToolTip>
+                                                    </Image>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Award" Binding="{Binding AwardName}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Quick Match" Binding="{Binding QuickMatch}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Unranked Draft" Binding="{Binding UnrankedDraft}" MinWidth="140" MaxWidth="140"/>
+                                    <DataGridTextColumn Header="Hero League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Team League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding MatchAwardDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Image Source="{Binding AwardImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                        <Image.ToolTip>
+                                                            <ToolTip Content="{Binding AwardName}"></ToolTip>
+                                                        </Image.ToolTip>
+                                                    </Image>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="Award" Binding="{Binding AwardName}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Quick Match" Binding="{Binding QuickMatch}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Unranked Draft" Binding="{Binding UnrankedDraft}" MinWidth="140" MaxWidth="140"/>
+                                    <DataGridTextColumn Header="Hero League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Team League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
