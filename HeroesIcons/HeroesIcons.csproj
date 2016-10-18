@@ -49,6 +49,7 @@
     <Compile Include="IconException.cs" />
     <Compile Include="MapName.cs" />
     <Compile Include="ParseXmlException.cs" />
+    <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +352,11 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink.dds" />
+    <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_brown.png" />
+    <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_purple.png" />
+    <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_teal.png" />
+    <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_yellow.png" />
     <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_lostcavern_small.jpg" />
     <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_warhead_small.jpg" />
     <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg" />

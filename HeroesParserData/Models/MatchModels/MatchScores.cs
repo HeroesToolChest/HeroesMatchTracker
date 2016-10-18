@@ -17,6 +17,7 @@ namespace HeroesParserData.Models.MatchModels
         public MatchScores(MatchPlayerInfoBase matchPlayerInfoBase)
         {
             LeaderboardPortrait = matchPlayerInfoBase.LeaderboardPortrait;
+            PartyIcon = matchPlayerInfoBase.PartyIcon;
             PlayerName = matchPlayerInfoBase.PlayerName;
             PlayerTag = matchPlayerInfoBase.PlayerTag;
             CharacterName = matchPlayerInfoBase.CharacterName;

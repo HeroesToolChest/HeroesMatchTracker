@@ -1,14 +1,13 @@
 ﻿using Heroes.ReplayParser;
 using HeroesIcons;
 using HeroesParserData.DataQueries;
+using HeroesParserData.Models.DbModels;
 using HeroesParserData.Models.MatchModels;
 using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity.Validation;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,6 +44,8 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
+
+        private Dictionary<int, PartyIconColor> PlayerPartyIcons = new Dictionary<int, PartyIconColor>();
         #endregion properties
 
         #region public properties
@@ -379,6 +380,7 @@ namespace HeroesParserData.ViewModels.Match
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
                 int highestExpTeam1Index = 0, highestExpTeam1Count = 0, highestExpTeam2Index = 0, highestExpTeam2Count = 0;
 
+                FindPlayerParties(playersList);
 
                 foreach (var player in playersList)
                 {
@@ -396,11 +398,16 @@ namespace HeroesParserData.ViewModels.Match
                     matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
                     matchPlayerInfoBase.MvpAward = matchAwardDictionary.ContainsKey(player.PlayerId) == true? SetPlayerMVPAward(player.Team, matchAwardDictionary[player.PlayerId], out mvpAwardName) : null;
                     matchPlayerInfoBase.MvpAwardName = mvpAwardName;
-
+                    
                     if (!player.IsAutoSelect)
                         matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();
                     else
                         matchPlayerInfoBase.CharacterLevel = "Auto Select";
+
+                    if (PlayerPartyIcons.ContainsKey(player.PlayerNumber))
+                    {
+                        matchPlayerInfoBase.PartyIcon = HeroesInfo.GetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
+                    }
 
                     MatchTalents matchTalents = new MatchTalents(matchPlayerInfoBase);
                     MatchScores matchScores = new MatchScores(matchPlayerInfoBase);
@@ -447,24 +454,26 @@ namespace HeroesParserData.ViewModels.Match
                         {
                             matchTalents.PortraitBackColor = Color.FromRgb(155, 155, 235);
                             matchScores.PortraitBackColor = Color.FromRgb(179, 179, 255);
-                            MatchTalentsTeam1.Add(matchTalents);
 
                             HighestSiegeDamage(MatchScoreTeam1, matchScores, ref highestSiegeTeam1Index, ref highestSiegeTeam1Count);
                             HighestHeroDamage(MatchScoreTeam1, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
                             HighestExpContribution(MatchScoreTeam1, matchScores, ref highestExpTeam1Index, ref highestExpTeam1Count);
 
+                            // add to collection
+                            MatchTalentsTeam1.Add(matchTalents);
                             MatchScoreTeam1.Add(matchScores);                          
                         }
                         else
                         {
                             matchTalents.PortraitBackColor = Color.FromRgb(235, 155, 155);
                             matchScores.PortraitBackColor = Color.FromRgb(235, 159, 159);
-                            MatchTalentsTeam2.Add(matchTalents);
 
                             HighestSiegeDamage(MatchScoreTeam2, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
                             HighestHeroDamage(MatchScoreTeam2, matchScores, ref highestHeroDamageTeam2Index, ref highestHeroDamageTeam2Count);
                             HighestExpContribution(MatchScoreTeam2, matchScores, ref highestExpTeam2Index, ref highestExpTeam2Count);
 
+                            // add to collection
+                            MatchTalentsTeam2.Add(matchTalents);
                             MatchScoreTeam2.Add(matchScores);
                         }
                     }
@@ -521,11 +530,6 @@ namespace HeroesParserData.ViewModels.Match
                 }
 
                 HasChat = MatchChatMessages.Count < 1 ? false : true;
-            }
-            catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
-            {
-                SqlExceptionReplaysLog.Log(LogLevel.Error, ex);
-                throw;
             }
             catch (Exception ex)
             {
@@ -732,6 +736,42 @@ namespace HeroesParserData.ViewModels.Match
             }
 
             return HeroesInfo.GetMVPScoreScreenAward(mvpAwardType, teamColor, out awardName);
+        }
+
+        private void FindPlayerParties(List<ReplayMatchPlayer> playersList)
+        {
+            Dictionary<long, List<int>> parties = new Dictionary<long, List<int>>();
+
+            foreach (var player in playersList)
+            {
+                if (player.PartyValue > 0)
+                {
+                    if (!parties.ContainsKey(player.PartyValue))
+                    {
+                        var listOfMembers = new List<int>();
+                        listOfMembers.Add(player.PlayerNumber);
+                        parties.Add(player.PartyValue, listOfMembers);
+                    }
+                    else
+                    {
+                        var listOfMembers = parties[player.PartyValue];
+                        listOfMembers.Add(player.PlayerNumber);
+                        parties[player.PartyValue] = listOfMembers;
+                    }
+                }
+            }
+
+            PlayerPartyIcons = new Dictionary<int, PartyIconColor>();
+            PartyIconColor color = 0;
+
+            foreach (var party in parties)
+            {
+                foreach (int playerNum in party.Value)
+                {
+                    PlayerPartyIcons.Add(playerNum, color);
+                }
+                color++;
+            }
         }
     }
 }

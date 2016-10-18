@@ -58,6 +58,7 @@
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
+                                                <Image Source="{Binding PartyIcon}" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
                                             </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -165,6 +166,7 @@
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
+                                                <Image Source="{Binding PartyIcon}" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
                                             </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -284,6 +286,7 @@
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
+                                                <Image Source="{Binding PartyIcon}" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
                                             </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -321,6 +324,7 @@
                                                         <ToolTip Content="{Binding MvpAwardName}"></ToolTip>
                                                     </Image.ToolTip>
                                                 </Image>
+                                                <Image Source="{Binding PartyIcon}" Height="30" Width="30" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
                                             </Grid>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>

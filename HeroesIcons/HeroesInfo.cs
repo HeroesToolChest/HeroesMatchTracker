@@ -53,6 +53,8 @@ namespace HeroesIcons
         private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
         private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScoreScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
 
+        private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
+
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
 
         private HeroesInfo()
@@ -61,6 +63,7 @@ namespace HeroesIcons
             SetMapBackgrounds();
             SetMVPAwards();
             SetHomeScreenBackgrounds();
+            SetPartyIcons();
         }
 
         public static HeroesInfo Initialize()
@@ -374,6 +377,18 @@ namespace HeroesIcons
                 return MVPAwardType.Unknown;
         }
 
+        public BitmapImage GetPartyIcon(PartyIconColor partyIconColor)
+        {
+            try
+            {
+                return new BitmapImage(PartyIcons[partyIconColor]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Party Icons: {partyIconColor}"));
+                return null;
+            }
+        }
 
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
@@ -521,6 +536,14 @@ namespace HeroesIcons
             HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft_zerg.jpg", UriKind.Absolute)), Colors.DarkRed));
             HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_varian.jpg", UriKind.Absolute)), Colors.Red));
             HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_zarya.jpg", UriKind.Absolute)), Colors.Purple));
+        }
+
+        private void SetPartyIcons()
+        {
+            PartyIcons.Add(PartyIconColor.Purple, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_purple.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
         }
 
         private void ParseXmlHeroFiles()
