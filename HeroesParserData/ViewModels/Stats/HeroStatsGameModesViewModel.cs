@@ -108,7 +108,7 @@ namespace HeroesParserData.ViewModels.Stats
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)
         {
-            if (action.StatisticsTab == StatisticsTab.HeroStatistics)
+            if (action.StatisticsTab == StatisticsTab.GameModes)
             {
                 await PerformCommand();
             }

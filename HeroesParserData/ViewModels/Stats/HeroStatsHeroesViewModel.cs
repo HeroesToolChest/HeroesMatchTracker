@@ -385,7 +385,10 @@ namespace HeroesParserData.ViewModels.Stats
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)
         {
-
+            if (action.StatisticsTab == StatisticsTab.Heroes && !string.IsNullOrEmpty(SelectedHero))
+            {
+                await PerformCommand();
+            }
         }
 
         protected override async Task RefreshStats()

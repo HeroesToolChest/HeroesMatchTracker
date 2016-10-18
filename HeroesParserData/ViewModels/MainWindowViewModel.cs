@@ -44,7 +44,9 @@ namespace HeroesParserData.ViewModels
                 if (value == 0)
                     Messenger.Default.Send(new StatisticsTabMessage { StatisticsTab = StatisticsTab.Overview });
                 else if (value == 1)
-                    Messenger.Default.Send(new StatisticsTabMessage { StatisticsTab = StatisticsTab.HeroStatistics });
+                    Messenger.Default.Send(new StatisticsTabMessage { StatisticsTab = StatisticsTab.Heroes });
+                else if (value == 2)
+                    Messenger.Default.Send(new StatisticsTabMessage { StatisticsTab = StatisticsTab.GameModes });
                 RaisePropertyChangedEvent(nameof(SelectedStatisticsTab));
             }
         }

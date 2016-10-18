@@ -3,6 +3,7 @@
     public enum StatisticsTab
     {
         Overview,
-        HeroStatistics,
+        Heroes,
+        GameModes,
     }
 }
