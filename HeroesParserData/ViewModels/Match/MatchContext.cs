@@ -609,7 +609,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private bool IsHealingStatCharacter(string realHeroName)
         {
-            if (HeroesInfo.GetHeroRole(realHeroName) == HeroRole.Support || realHeroName == "Medivh")
+            if (HeroesInfo.GetHeroRole(realHeroName) == HeroRole.Support || HeroesInfo.IsNonSupportHeroWithHealingStat(realHeroName))
                 return true;
             else
                 return false;

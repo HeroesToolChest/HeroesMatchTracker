@@ -463,9 +463,9 @@ namespace HeroesParserData.ViewModels.Stats
                 int mercsCaptured = (int)Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.MercCampCaptures, GetSeasonSelected, gameMode, map, SelectedHero);
 
                 double role = 0;
-                if (HeroesInfo.GetHeroRole(SelectedHero) == HeroesIcons.HeroRole.Warrior)
+                if (HeroesInfo.GetHeroRole(SelectedHero) == HeroRole.Warrior)
                     role = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.DamageTaken, GetSeasonSelected, gameMode, map, SelectedHero);
-                else if (HeroesInfo.GetHeroRole(SelectedHero) == HeroesIcons.HeroRole.Support || SelectedHero == "Medivh")
+                else if (HeroesInfo.GetHeroRole(SelectedHero) == HeroRole.Support || HeroesInfo.IsNonSupportHeroWithHealingStat(SelectedHero))
                     role = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.Healing, GetSeasonSelected, gameMode, map, SelectedHero);
 
                 var mapImage = HeroesInfo.GetMapBackground(Maps.GetEnumMapName(map), true);

@@ -47,6 +47,11 @@ namespace HeroesIcons
         /// value is HeroRole
         /// </summary>
         private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
+        /// <summary>
+        /// key is real hero name
+        /// value is HeroRole
+        /// </summary>
+        private Dictionary<string, HeroRole> HeroesNonSupportHHealingStat = new Dictionary<string, HeroRole>();
 
         private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
         private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
@@ -60,6 +65,7 @@ namespace HeroesIcons
         private HeroesInfo()
         {
             ParseXmlHeroFiles();
+            SetNonSupportHeroesWithSupportStat();
             SetMapBackgrounds();
             SetMVPAwards();
             SetHomeScreenBackgrounds();
@@ -390,6 +396,11 @@ namespace HeroesIcons
             }
         }
 
+        public bool IsNonSupportHeroWithHealingStat(string realHeroName)
+        {
+            return HeroesNonSupportHHealingStat.ContainsKey(realHeroName);
+        }
+
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (Path.GetExtension(fileName) != ".dds")
@@ -409,6 +420,11 @@ namespace HeroesIcons
         private Uri SetLeaderboardPortrait(string fileName)
         {
             return new Uri($"{ApplicationPath}HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
+        }
+
+        private void SetNonSupportHeroesWithSupportStat()
+        {
+            HeroesNonSupportHHealingStat.Add("Medivh", HeroRole.Support);
         }
 
         private void SetMapBackgrounds()
