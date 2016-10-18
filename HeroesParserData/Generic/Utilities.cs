@@ -75,7 +75,7 @@ namespace HeroesParserData
             return list;
         }
 
-        public static List<string> GetGameModes()
+        public static List<string> GetGameModeList()
         {
             List<string> list = new List<string>();
             list.Add("Quick Match");

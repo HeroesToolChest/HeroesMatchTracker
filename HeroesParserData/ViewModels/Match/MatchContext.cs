@@ -339,7 +339,7 @@ namespace HeroesParserData.ViewModels.Match
             HasChat = true;
 
             SeasonList.Add("Lifetime");
-            SeasonList.AddRange(Utilities.GetSeasonList());
+            SeasonList.AddRange(AllSeasonsList);
             SelectedSeasonOption = SeasonList[0];
         }
 

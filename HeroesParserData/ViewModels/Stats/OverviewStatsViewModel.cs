@@ -258,10 +258,10 @@ namespace HeroesParserData.ViewModels.Stats
             MostStatsList.Add("Most Deaths As");
 
             SeasonList.Add("Lifetime");
-            SeasonList.AddRange(Utilities.GetSeasonList());
+            SeasonList.AddRange(AllSeasonsList);
 
             GameModeList.Add("All Types");
-            GameModeList.AddRange(Utilities.GetGameModes());
+            GameModeList.AddRange(AllGameModesList);
         }
 
         private async Task ReceiveMessage(StatisticsTabMessage action)

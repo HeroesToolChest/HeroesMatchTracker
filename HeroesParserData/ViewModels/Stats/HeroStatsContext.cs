@@ -107,7 +107,7 @@ namespace HeroesParserData.ViewModels.Stats
         private void InitializeLists()
         {
             SeasonList.Add("Lifetime");
-            SeasonList.AddRange(Utilities.GetSeasonList());
+            SeasonList.AddRange(AllSeasonsList);
 
             SelectedSeasonOption = SeasonList[SeasonList.Count - 1];
         }
