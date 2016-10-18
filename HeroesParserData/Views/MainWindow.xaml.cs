@@ -1,6 +1,10 @@
-﻿using HeroesParserData.Properties;
+﻿using GalaSoft.MvvmLight.Messaging;
+using HeroesParserData.Messages;
+using HeroesParserData.Properties;
+using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace HeroesParserData.Views
@@ -13,6 +17,7 @@ namespace HeroesParserData.Views
         public MainWindow()
         {
             SetTrayIcon();
+            Messenger.Default.Register<StatisticsTabMessage>(this, async (action) => await ReceiveMessage(action));
 
             InitializeComponent();
         }
@@ -76,6 +81,14 @@ namespace HeroesParserData.Views
                 Show();
                 WindowState = WindowState.Maximized;
             };
+        }
+
+        private async Task ReceiveMessage(StatisticsTabMessage action)
+        {
+            if (action.StatisticsTab == StatisticsTab.Overview && Settings.Default.UserPlayerId < 1)
+            {
+                await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Settings menu.");
+            }
         }
     }
 }
