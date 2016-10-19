@@ -24,9 +24,6 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
         <local:HeroStatsGenericControl Grid.Row="0"/>
         <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshStatsCommand}" ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}"
                   IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0"/>
@@ -63,7 +60,7 @@
         <Controls:ProgressRing IsActive="{Binding IsTotalAwardsProcessing}" HorizontalAlignment="Left" Margin="845,22,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
         <Controls:ProgressRing IsActive="{Binding IsTotalMVPsProcessing}" HorizontalAlignment="Left" Margin="845,58,0,0" Grid.Row="1" VerticalAlignment="Top" Height="16" Width="16" />
 
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0">
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <Grid>
                     <Grid.RowDefinitions>
