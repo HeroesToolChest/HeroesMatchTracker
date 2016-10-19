@@ -4,8 +4,9 @@ This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_0_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_LastMatch_1_0_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_2_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_2_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Stats_1_2_0.jpg)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
