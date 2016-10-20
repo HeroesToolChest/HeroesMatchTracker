@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -39,31 +38,23 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamExperience>> ReadAllRecordsAsync()
+            public static List<ReplayMatchTeamExperience> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamExperiences.ToListAsync();
+                    return db.ReplayMatchTeamExperiences.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamExperience>> ReadTopRecordsAsync(int num)
+            public static List<ReplayMatchTeamExperience> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamExperiences.Take(num).ToListAsync();
+                    return db.ReplayMatchTeamExperiences.OrderByDescending(x => x.ReplayId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamExperience>> ReadLastRecordsAsync(int num)
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    return await db.ReplayMatchTeamExperiences.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
-                }
-            }
-
-            public static async Task<List<ReplayMatchTeamExperience>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayMatchTeamExperience> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayMatchTeamExperience>();
@@ -76,11 +67,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamExperience>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayMatchTeamExperience> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchTeamExperience>();
@@ -103,7 +94,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
         }

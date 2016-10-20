@@ -72,12 +72,12 @@ namespace HeroesParserData.ViewModels.Heroes
 
         public ICommand SelectPlayerId
         {
-            get { return new DelegateCommand(async () => await LoadPlayerHeroes()); }
+            get { return new DelegateCommand(() => LoadPlayerHeroes()); }
         }
 
         public ICommand SelectBattleTagName
         {
-            get { return new DelegateCommand(async () => await FindPlayerFromBattleTagName()); }
+            get { return new DelegateCommand(() => FindPlayerFromBattleTagName()); }
         }
 
         public HeroesUsableViewModel()
@@ -117,20 +117,20 @@ namespace HeroesParserData.ViewModels.Heroes
             }
         }
 
-        private async Task LoadPlayerHeroes()
+        private void LoadPlayerHeroes()
         {
-            await LoadPlayerHeroesUsable(TextBoxPlayerId);
+            LoadPlayerHeroesUsable(TextBoxPlayerId);
         }
 
-        private async Task LoadPlayerHeroesUsable(long playerId)
+        private void LoadPlayerHeroesUsable(long playerId)
         {
             // may not get all heroes depending on last seen
-            var player = await Query.HotsPlayer.ReadRecordFromPlayerId(playerId);
+            var player = Query.HotsPlayer.ReadRecordFromPlayerId(playerId);
 
             if (player == null)
                 return;
 
-            var heroRecords = await Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerIdAsync(playerId);
+            var heroRecords = Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerIdAsync(playerId);
 
             int heroesUsable = 0;
 
@@ -181,16 +181,16 @@ namespace HeroesParserData.ViewModels.Heroes
             }
         }
 
-        private async Task FindPlayerFromBattleTagName()
+        private void FindPlayerFromBattleTagName()
         {
             if (string.IsNullOrEmpty(TextBoxBattleTagName))
                 return;
 
-            var records = await Query.HotsPlayer.ReadRecordsWhereAsync("BattleTagName", "LIKE", $"%{TextBoxBattleTagName.Trim()}%");
+            var records = Query.HotsPlayer.ReadRecordsWhere("BattleTagName", "LIKE", $"%{TextBoxBattleTagName.Trim()}%");
 
             if (records.Count == 1)
             {
-                await LoadPlayerHeroesUsable(records[0].PlayerId);
+                LoadPlayerHeroesUsable(records[0].PlayerId);
                 BattleTagNameResult = $"Player found: {records[0].BattleTagName}";
             }
             else if (records.Count <= 0)

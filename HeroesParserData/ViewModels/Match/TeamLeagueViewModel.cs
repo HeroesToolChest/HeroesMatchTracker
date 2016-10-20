@@ -1,7 +1,6 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Match
 {
@@ -14,14 +13,14 @@ namespace HeroesParserData.ViewModels.Match
             HasBans = true;
         }
 
-        protected override async Task RefreshExecute()
+        protected override void RefreshExecute()
         {
-            await QueryMatchList();
+            QueryMatchList();
         }
 
-        private async Task QueryMatchList()
+        private void QueryMatchList()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.TeamLeague, GetSelectedSeason));
+            MatchList = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.TeamLeague, GetSelectedSeason));
             RowsReturned = MatchList.Count;
         }
     }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -20,23 +19,23 @@ namespace HeroesParserData.DataQueries
                                                 new SQLiteParameter("@LastUpdated", replayAllHotsPlayerHero.LastUpdated));
             }
 
-            public static async Task<List<ReplayAllHotsPlayerHero>> ReadTopRecordsAsync(int num)
+            public static List<ReplayAllHotsPlayerHero> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayerHeroes.Take(num).ToListAsync();
+                    return db.ReplayAllHotsPlayerHeroes.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayerHero>> ReadLastRecordsAsync(int num)
+            public static List<ReplayAllHotsPlayerHero> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayerHeroes.OrderByDescending(x => x.PlayerId).Take(num).ToListAsync();
+                    return db.ReplayAllHotsPlayerHeroes.OrderByDescending(x => x.PlayerId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayerHero>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayAllHotsPlayerHero> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayAllHotsPlayerHero>();
@@ -46,11 +45,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayerHeroes.SqlQuery($"SELECT * FROM ReplayAllHotsPlayerHeroes ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayAllHotsPlayerHeroes.SqlQuery($"SELECT * FROM ReplayAllHotsPlayerHeroes ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayerHero>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayAllHotsPlayerHero> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayAllHotsPlayerHero>();
@@ -69,7 +68,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayerHeroes.SqlQuery($"SELECT * FROM ReplayAllHotsPlayerHeroes WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayAllHotsPlayerHeroes.SqlQuery($"SELECT * FROM ReplayAllHotsPlayerHeroes WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
 
@@ -78,11 +77,11 @@ namespace HeroesParserData.DataQueries
                 return db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).ToList();
             }
 
-            public static async Task<List<ReplayAllHotsPlayerHero>> ReadListOfHeroRecordsForPlayerIdAsync(long playerId)
+            public static List<ReplayAllHotsPlayerHero> ReadListOfHeroRecordsForPlayerIdAsync(long playerId)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).OrderBy(x => x.HeroName).ToListAsync();
+                    return db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).OrderBy(x => x.HeroName).ToList();
                 }                
             }
 

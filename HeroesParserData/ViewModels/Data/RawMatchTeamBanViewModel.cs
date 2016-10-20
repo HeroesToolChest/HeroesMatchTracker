@@ -42,27 +42,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadTopRecordsAsync(100));
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(Query.MatchTeamBan.ReadTopRecords(100));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadLastRecordsAsync(100));
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(Query.MatchTeamBan.ReadLastRecords(100));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(Query.MatchTeamBan.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(await Query.MatchTeamBan.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchTeamBan = new ObservableCollection<ReplayMatchTeamBan>(Query.MatchTeamBan.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchTeamBan.Count;
         }
     }

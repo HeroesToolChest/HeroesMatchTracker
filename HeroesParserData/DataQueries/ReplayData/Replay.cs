@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -40,57 +39,50 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static async Task<List<Models.DbModels.Replay>> ReadAllRecordsAsync()
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    return await db.Replays.ToListAsync();
-                }
-            }
-            public static async Task<List<Models.DbModels.Replay>> ReadGameModeRecordsAsync(GameMode gameMode, Season season)
+            public static List<Models.DbModels.Replay> ReadGameModeRecords(GameMode gameMode, Season season)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2)
-                        .OrderByDescending(x => x.TimeStamp).ToListAsync();
+                    return db.Replays.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2)
+                        .OrderByDescending(x => x.TimeStamp).ToList();
                 }
             }
 
-            public static async Task<List<Models.DbModels.Replay>> ReadTopRecordsAsync(int num)
+            public static List<Models.DbModels.Replay> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.Take(num).ToListAsync();
+                    return db.Replays.Take(num).ToList();
                 }
             }
 
             // last parsed replays
-            public static async Task<List<Models.DbModels.Replay>> ReadLastRecordsAsync(int num)
+            public static List<Models.DbModels.Replay> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    if (await db.Replays.CountAsync() > 0)
-                        return await db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    if (db.Replays.Count() > 0)
+                        return db.Replays.OrderByDescending(x => x.ReplayId).Take(num).ToList();
                     else
                         return new List<Models.DbModels.Replay>();
                 }
             }
 
             // latest replays by time stamp
-            public static async Task<List<Models.DbModels.Replay>> ReadLatestRecordsAsync(int num)
+            public static List<Models.DbModels.Replay> ReadLatestRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    if (await db.Replays.CountAsync() > 0)
-                        return await db.Replays.OrderByDescending(x => x.TimeStamp).Take(num).ToListAsync();
+                    if (db.Replays.Count() > 0)
+                        return db.Replays.OrderByDescending(x => x.TimeStamp).Take(num).ToList();
                     else
                         return new List<Models.DbModels.Replay>();
                 }
             }
 
-            public static async Task<List<Models.DbModels.Replay>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<Models.DbModels.Replay> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if ( string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<Models.DbModels.Replay>();
@@ -103,11 +95,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.SqlQuery($"SELECT * FROM Replays ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.Replays.SqlQuery($"SELECT * FROM Replays ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<Models.DbModels.Replay>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<Models.DbModels.Replay> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<Models.DbModels.Replay>();
@@ -136,7 +128,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.Replays.SqlQuery($"SELECT * FROM Replays WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.Replays.SqlQuery($"SELECT * FROM Replays WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
 
@@ -203,20 +195,20 @@ namespace HeroesParserData.DataQueries
             /// </summary>
             /// <param name="replayId">Replay Id</param>
             /// <returns>Replay</returns>
-            public static async Task<Models.DbModels.Replay> ReadReplayIncludeRecord(long replayId)
+            public static Models.DbModels.Replay ReadReplayIncludeRecord(long replayId)
             {
                 Models.DbModels.Replay replay = new Models.DbModels.Replay();
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    replay = await db.Replays.Where(x => x.ReplayId == replayId)
+                    replay = db.Replays.Where(x => x.ReplayId == replayId)
                         .Include(x => x.ReplayMatchPlayers)
                         .Include(x => x.ReplayMatchPlayerTalents)
                         .Include(x => x.ReplayMatchTeamBan)
                         .Include(x => x.ReplayMatchPlayerScoreResults)
                         .Include(x => x.ReplayMatchMessage)
                         .Include(x => x.ReplayMatchAward)
-                        .FirstOrDefaultAsync();
+                        .FirstOrDefault();
 
                     if (replay == null)
                         return null;

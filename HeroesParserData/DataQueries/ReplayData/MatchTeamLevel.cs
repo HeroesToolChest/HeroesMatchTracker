@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -39,31 +38,23 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamLevel>> ReadAllRecordsAsync()
+            public static List<ReplayMatchTeamLevel> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamLevels.ToListAsync();
+                    return db.ReplayMatchTeamLevels.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamLevel>> ReadTopRecordsAsync(int num)
+            public static List<ReplayMatchTeamLevel> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamLevels.Take(num).ToListAsync();
+                    return db.ReplayMatchTeamLevels.OrderByDescending(x => x.ReplayId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamLevel>> ReadLastRecordsAsync(int num)
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    return await db.ReplayMatchTeamLevels.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
-                }
-            }
-
-            public static async Task<List<ReplayMatchTeamLevel>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayMatchTeamLevel> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayMatchTeamLevel>();
@@ -76,11 +67,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamLevels.SqlQuery($"SELECT * FROM ReplayMatchTeamLevels ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayMatchTeamLevels.SqlQuery($"SELECT * FROM ReplayMatchTeamLevels ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchTeamLevel>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayMatchTeamLevel> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchTeamLevel>();
@@ -103,7 +94,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchTeamLevels.SqlQuery($"SELECT * FROM ReplayMatchTeamLevels WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayMatchTeamLevels.SqlQuery($"SELECT * FROM ReplayMatchTeamLevels WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
         }

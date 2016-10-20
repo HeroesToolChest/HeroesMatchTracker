@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -20,23 +19,23 @@ namespace HeroesParserData.DataQueries
                 return replaySamePlayer.RenamedPlayerId;
             }
 
-            public static async Task<List<ReplayRenamedPlayer>> ReadTopRecordsAsync(int num)
+            public static List<ReplayRenamedPlayer> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayRenamedPlayers.Take(num).ToListAsync();
+                    return db.ReplayRenamedPlayers.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayRenamedPlayer>> ReadLastRecordsAsync(int num)
+            public static List<ReplayRenamedPlayer> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayRenamedPlayers.OrderByDescending(x => x.RenamedPlayerId).Take(num).ToListAsync();
+                    return db.ReplayRenamedPlayers.OrderByDescending(x => x.RenamedPlayerId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayRenamedPlayer>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayRenamedPlayer> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayRenamedPlayer>();
@@ -49,11 +48,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayRenamedPlayers.SqlQuery($"SELECT * FROM ReplayRenamedPlayers ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayRenamedPlayers.SqlQuery($"SELECT * FROM ReplayRenamedPlayers ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayRenamedPlayer>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayRenamedPlayer> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayRenamedPlayer>();
@@ -76,7 +75,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayRenamedPlayers.SqlQuery($"SELECT * FROM ReplayRenamedPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayRenamedPlayers.SqlQuery($"SELECT * FROM ReplayRenamedPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
         }

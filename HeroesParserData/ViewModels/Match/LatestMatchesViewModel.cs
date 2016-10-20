@@ -1,6 +1,5 @@
 ﻿using HeroesParserData.DataQueries;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Match
 {
@@ -12,14 +11,14 @@ namespace HeroesParserData.ViewModels.Match
 
         }
 
-        protected override async Task RefreshExecute()
+        protected override void RefreshExecute()
         {
-            await QueryMatchList();
+            QueryMatchList();
         }
 
-        private async Task QueryMatchList()
+        private void QueryMatchList()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadLatestRecordsAsync(30));
+            MatchList = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadLatestRecords(30));
             RowsReturned = MatchList.Count;
         }
     }

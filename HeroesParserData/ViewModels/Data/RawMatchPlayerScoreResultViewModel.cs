@@ -46,27 +46,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(await Query.MatchPlayerScoreResult.ReadTopRecordsAsync(100));
+            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(Query.MatchPlayerScoreResult.ReadTopRecords(100));
             RowsReturned = ReplayMatchPlayerScoreResult.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(await Query.MatchPlayerScoreResult.ReadLastRecordsAsync(100));
+            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(Query.MatchPlayerScoreResult.ReadLastRecords(100));
             RowsReturned = ReplayMatchPlayerScoreResult.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(await Query.MatchPlayerScoreResult.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(Query.MatchPlayerScoreResult.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchPlayerScoreResult.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(await Query.MatchPlayerScoreResult.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchPlayerScoreResult = new ObservableCollection<ReplayMatchPlayerScoreResult>(Query.MatchPlayerScoreResult.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchPlayerScoreResult.Count;
 
         }

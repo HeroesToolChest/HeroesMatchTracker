@@ -13,14 +13,14 @@ namespace HeroesParserData.ViewModels.Match
 
         }
 
-        protected override async Task RefreshExecute()
+        protected override void RefreshExecute()
         {
-            await QueryMatchList();
+            QueryMatchList();
         }
 
-        private async Task QueryMatchList()
+        private void QueryMatchList()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(await Query.Replay.ReadGameModeRecordsAsync(GameMode.Custom, GetSelectedSeason));
+            MatchList = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.Custom, GetSelectedSeason));
             RowsReturned = MatchList.Count;
         }
     }

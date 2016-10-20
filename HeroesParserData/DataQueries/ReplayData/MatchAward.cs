@@ -1,10 +1,8 @@
 ﻿using HeroesParserData.Models.DbModels;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -20,23 +18,23 @@ namespace HeroesParserData.DataQueries
                 return replayMatchAward.PlayerId;
             }
 
-            public static async Task<List<ReplayMatchAward>> ReadTopRecordsAsync(int num)
+            public static List<ReplayMatchAward> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchAwards.Take(num).ToListAsync();
+                    return db.ReplayMatchAwards.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchAward>> ReadLastRecordsAsync(int num)
+            public static List<ReplayMatchAward> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchAwards.OrderByDescending(x => x.ReplayId).Take(num).ToListAsync();
+                    return db.ReplayMatchAwards.OrderByDescending(x => x.ReplayId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchAward>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayMatchAward> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayMatchAward>();
@@ -46,11 +44,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayMatchAward>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayMatchAward> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayMatchAward>();
@@ -62,7 +60,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
         }

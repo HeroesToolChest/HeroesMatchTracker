@@ -1,6 +1,5 @@
 ﻿using HeroesParserData.DataQueries;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels.Match
@@ -17,12 +16,12 @@ namespace HeroesParserData.ViewModels.Match
         {
             get
             {
-                return new DelegateCommand(async () =>
+                return new DelegateCommand(() =>
                 {
                     try
                     {
                         QueryStatus = "Waiting for query...";
-                        await RefreshExecute();
+                        RefreshExecute();
                         QueryStatus = "Match details queried successfully";
                     }
                     catch (Exception)
@@ -33,11 +32,11 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        protected override async Task RefreshExecute()
+        protected override void RefreshExecute()
         {
-            var replay = await Query.Replay.ReadLastRecordsAsync(1);
+            var replay = Query.Replay.ReadLastRecords(1);
             if (replay.Count > 0)
-                await QuerySummaryDetails(replay[0].ReplayId);
+                QuerySummaryDetails(replay[0].ReplayId);
         }
     }
 }

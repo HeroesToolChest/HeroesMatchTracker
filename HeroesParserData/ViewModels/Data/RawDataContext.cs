@@ -22,7 +22,7 @@ namespace HeroesParserData.ViewModels.Data
 
         private int _rowsReturned;
         private string _queryStatus;
-        private Dictionary<ButtonCommands, Func<Task>> ButtonCommandActions;
+        private Dictionary<ButtonCommands, Action> ButtonCommandActions;
         #endregion private properties
 
         #region properties
@@ -153,22 +153,22 @@ namespace HeroesParserData.ViewModels.Data
         #region Button Commands
         public ICommand SelectTop100
         {
-            get { return new DelegateCommand(async() => await PerformButtonCommand(ButtonCommands.ReadDataTop)); }
+            get { return new DelegateCommand(() => PerformButtonCommand(ButtonCommands.ReadDataTop)); }
         }
 
         public ICommand SelectLast100
         {
-            get { return new DelegateCommand(async () => await PerformButtonCommand(ButtonCommands.ReadDataLast)); }
+            get { return new DelegateCommand(() => PerformButtonCommand(ButtonCommands.ReadDataLast)); }
         }
 
         public ICommand SelectCustomTop
         {
-            get { return new DelegateCommand(async () => await PerformButtonCommand(ButtonCommands.ReadDataCustomTop)); }
+            get { return new DelegateCommand(() => PerformButtonCommand(ButtonCommands.ReadDataCustomTop)); }
         }
 
         public ICommand SelectWhere
         {
-            get { return new DelegateCommand(async () => await PerformButtonCommand(ButtonCommands.ReadDataWhere)); }
+            get { return new DelegateCommand(() => PerformButtonCommand(ButtonCommands.ReadDataWhere)); }
         }
         #endregion Button Commands
 
@@ -181,19 +181,19 @@ namespace HeroesParserData.ViewModels.Data
         }
 
         #region Abstract Query Methods
-        protected abstract Task ReadDataTop();
-        protected abstract Task ReadDataLast();
-        protected abstract Task ReadDataCustomTop();
-        protected abstract Task ReadDataWhere();
+        protected abstract void ReadDataTop();
+        protected abstract void ReadDataLast();
+        protected abstract void ReadDataCustomTop();
+        protected abstract void ReadDataWhere();
         #endregion Abstract Query Methods
 
         private void AddButtonCommandsActions()
         {
-            ButtonCommandActions = new Dictionary<ButtonCommands, Func<Task>>();
-            ButtonCommandActions.Add(ButtonCommands.ReadDataTop, async () => await ReadDataTop());
-            ButtonCommandActions.Add(ButtonCommands.ReadDataLast, async () => await ReadDataLast());
-            ButtonCommandActions.Add(ButtonCommands.ReadDataCustomTop, async () => await ReadDataCustomTop());
-            ButtonCommandActions.Add(ButtonCommands.ReadDataWhere, async () => await ReadDataWhere());
+            ButtonCommandActions = new Dictionary<ButtonCommands, Action>();
+            ButtonCommandActions.Add(ButtonCommands.ReadDataTop, () => ReadDataTop());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataLast, () => ReadDataLast());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataCustomTop, () => ReadDataCustomTop());
+            ButtonCommandActions.Add(ButtonCommands.ReadDataWhere, () => ReadDataWhere());
         }
 
         private void AddListConditionalOperators()
@@ -213,13 +213,13 @@ namespace HeroesParserData.ViewModels.Data
             OrderBy.Add("desc");
         }
 
-        private async Task PerformButtonCommand(ButtonCommands commands)
+        private void PerformButtonCommand(ButtonCommands commands)
         {
             IsQueryActive = true;
             QueryStatus = "Executing query...";
             try
             {
-                await ButtonCommandActions[commands]();
+                ButtonCommandActions[commands]();
                 QueryStatus = "Query executed successfully";
             }
             catch (Exception ex)

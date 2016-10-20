@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.DataQueries
 {
@@ -48,31 +47,23 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadAllRecordsAsync()
+            public static List<ReplayAllHotsPlayer> ReadTopRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.ToListAsync();
+                    return db.ReplayAllHotsPlayers.Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadTopRecordsAsync(int num)
+            public static List<ReplayAllHotsPlayer> ReadLastRecords(int num)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.Take(num).ToListAsync();
+                    return db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(num).ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadLastRecordsAsync(int num)
-            {
-                using (var db = new HeroesParserDataContext())
-                {
-                    return await db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(num).ToListAsync();
-                }
-            }
-
-            public static async Task<List<ReplayAllHotsPlayer>> ReadRecordsCustomTopAsync(int count, string columnName, string orderBy)
+            public static List<ReplayAllHotsPlayer> ReadRecordsCustomTop(int count, string columnName, string orderBy)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                     return new List<ReplayAllHotsPlayer>();
@@ -82,11 +73,11 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers ORDER BY {columnName} {orderBy} LIMIT {count}").ToListAsync();
+                    return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers ORDER BY {columnName} {orderBy} LIMIT {count}").ToList();
                 }
             }
 
-            public static async Task<List<ReplayAllHotsPlayer>> ReadRecordsWhereAsync(string columnName, string operand, string input)
+            public static List<ReplayAllHotsPlayer> ReadRecordsWhere(string columnName, string operand, string input)
             {
                 if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                     return new List<ReplayAllHotsPlayer>();
@@ -98,7 +89,7 @@ namespace HeroesParserData.DataQueries
 
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToListAsync();
+                    return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
                 }
             }
 
@@ -177,11 +168,11 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static async Task<ReplayAllHotsPlayer> ReadRecordFromPlayerId(long playerId)
+            public static ReplayAllHotsPlayer ReadRecordFromPlayerId(long playerId)
             {
                 using (var db = new HeroesParserDataContext())
                 {
-                    return await db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefaultAsync();
+                    return db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefault();
                 }
             }
 

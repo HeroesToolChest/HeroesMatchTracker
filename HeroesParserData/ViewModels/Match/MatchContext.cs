@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -294,12 +293,12 @@ namespace HeroesParserData.ViewModels.Match
         {
             get
             {
-                return new DelegateCommand(async () =>
+                return new DelegateCommand(() =>
                 {
                     try
                     {
                         QueryStatus = "Waiting for query...";
-                        await RefreshExecute();
+                        RefreshExecute();
                         QueryStatus = "Match list queried successfully";
                     }
                     catch (Exception)
@@ -314,12 +313,12 @@ namespace HeroesParserData.ViewModels.Match
         {
             get
             {
-                return new DelegateCommand(async () =>
+                return new DelegateCommand(() =>
                 {
                     try
                     {
                         QueryStatus = "Waiting for query...";
-                        await LoadReplayDetails(SelectedReplay);
+                        LoadReplayDetails(SelectedReplay);
                         QueryStatus = "Match details queried successfully";
                     }
                     catch (Exception)
@@ -343,17 +342,17 @@ namespace HeroesParserData.ViewModels.Match
             SelectedSeasonOption = SeasonList[0];
         }
 
-        protected abstract Task RefreshExecute();
+        protected abstract void RefreshExecute();
 
-        private async Task LoadReplayDetails(Models.DbModels.Replay replay)
+        private void LoadReplayDetails(Models.DbModels.Replay replay)
         {
             if (replay == null)
                 return;
 
-            await QuerySummaryDetails(replay.ReplayId);
+            QuerySummaryDetails(replay.ReplayId);
         }
 
-        protected async Task QuerySummaryDetails(long replayId)
+        protected void QuerySummaryDetails(long replayId)
         {
             try
             {
@@ -367,7 +366,7 @@ namespace HeroesParserData.ViewModels.Match
                 MatchChatMessages = new ObservableCollection<MatchChat>();
 
                 // get replay
-                Models.DbModels.Replay replay = await Query.Replay.ReadReplayIncludeRecord(replayId);
+                Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
 
                 // get players info 
                 var playersList = replay.ReplayMatchPlayers.ToList();
@@ -389,7 +388,7 @@ namespace HeroesParserData.ViewModels.Match
 
                     MatchPlayerInfoBase matchPlayerInfoBase = new MatchPlayerInfoBase();
 
-                    var playerInfo = await Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
+                    var playerInfo = Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
                     matchPlayerInfoBase.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.GetHeroLeaderboardPortrait(player.Character) : null;
                     matchPlayerInfoBase.CharacterName = player.Character;
                     matchPlayerInfoBase.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);

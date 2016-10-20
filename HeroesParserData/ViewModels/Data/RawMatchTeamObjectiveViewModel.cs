@@ -46,27 +46,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadTopRecordsAsync(100));
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(Query.MatchTeamObjective.ReadTopRecords(100));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadLastRecordsAsync(100));
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(Query.MatchTeamObjective.ReadLastRecords(100));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(Query.MatchTeamObjective.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(await Query.MatchTeamObjective.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchTeamObjective = new ObservableCollection<ReplayMatchTeamObjective>(Query.MatchTeamObjective.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchTeamObjective.Count;
         }
     }

@@ -42,28 +42,28 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(await Query.MatchPlayer.ReadTopRecordsAsync(100));
+            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(Query.MatchPlayer.ReadTopRecords(100));
             RowsReturned = ReplayMatchPlayer.Count;
 
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(await Query.MatchPlayer.ReadLastRecordsAsync(100));
+            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(Query.MatchPlayer.ReadLastRecords(100));
             RowsReturned = ReplayMatchPlayer.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(await Query.MatchPlayer.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(Query.MatchPlayer.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchPlayer.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(await Query.MatchPlayer.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchPlayer = new ObservableCollection<ReplayMatchPlayer>(Query.MatchPlayer.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchPlayer.Count;
         }
     }

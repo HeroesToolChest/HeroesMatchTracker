@@ -45,27 +45,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(await Query.RenamedPlayer.ReadTopRecordsAsync(100));
+            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(Query.RenamedPlayer.ReadTopRecords(100));
             RowsReturned = ReplayRenamedPlayer.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(await Query.RenamedPlayer.ReadLastRecordsAsync(100));
+            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(Query.RenamedPlayer.ReadLastRecords(100));
             RowsReturned = ReplayRenamedPlayer.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(await Query.RenamedPlayer.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(Query.RenamedPlayer.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayRenamedPlayer.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(await Query.RenamedPlayer.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayRenamedPlayer = new ObservableCollection<ReplayRenamedPlayer>(Query.RenamedPlayer.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayRenamedPlayer.Count;
         }
     }

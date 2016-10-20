@@ -45,30 +45,30 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadTopRecordsAsync(100));
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(Query.MatchPlayerTalent.ReadTopRecords(100));
             RowsReturned = ReplayMatchPlayerTalent.Count;
 
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadLastRecordsAsync(100));
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(Query.MatchPlayerTalent.ReadLastRecords(100));
             RowsReturned = ReplayMatchPlayerTalent.Count;
 
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(Query.MatchPlayerTalent.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchPlayerTalent.Count;
 
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(await Query.MatchPlayerTalent.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchPlayerTalent = new ObservableCollection<ReplayMatchPlayerTalent>(Query.MatchPlayerTalent.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchPlayerTalent.Count;
         }
     }

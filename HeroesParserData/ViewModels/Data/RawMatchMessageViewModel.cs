@@ -46,27 +46,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadTopRecordsAsync(100));
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(Query.MatchMessage.ReadTopRecords(100));
             RowsReturned = ReplayMatchMessage.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadLastRecordsAsync(100));
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(Query.MatchMessage.ReadLastRecords(100));
             RowsReturned = ReplayMatchMessage.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(Query.MatchMessage.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayMatchMessage.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(await Query.MatchMessage.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayMatchMessage = new ObservableCollection<ReplayMatchMessage>(Query.MatchMessage.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayMatchMessage.Count;
         }
     }

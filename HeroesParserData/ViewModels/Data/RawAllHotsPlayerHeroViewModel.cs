@@ -39,27 +39,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(await Query.HotsPlayerHero.ReadTopRecordsAsync(100));
+            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(Query.HotsPlayerHero.ReadTopRecords(100));
             RowsReturned = ReplayAllHotsPlayerHero.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(await Query.HotsPlayerHero.ReadLastRecordsAsync(100));
+            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(Query.HotsPlayerHero.ReadLastRecords(100));
             RowsReturned = ReplayAllHotsPlayerHero.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(await Query.HotsPlayerHero.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(Query.HotsPlayerHero.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayAllHotsPlayerHero.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(await Query.HotsPlayerHero.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayAllHotsPlayerHero = new ObservableCollection<ReplayAllHotsPlayerHero>(Query.HotsPlayerHero.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayAllHotsPlayerHero.Count;
         }
     }

@@ -42,27 +42,27 @@ namespace HeroesParserData.ViewModels.Data
             }
         }
 
-        protected override async Task ReadDataTop()
+        protected override void ReadDataTop()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadTopRecordsAsync(100));
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(Query.HotsPlayer.ReadTopRecords(100));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
 
-        protected override async Task ReadDataLast()
+        protected override void ReadDataLast()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadLastRecordsAsync(100));
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(Query.HotsPlayer.ReadLastRecords(100));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
 
-        protected override async Task ReadDataCustomTop()
+        protected override void ReadDataCustomTop()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadRecordsCustomTopAsync(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(Query.HotsPlayer.ReadRecordsCustomTop(SelectedNumber, SelectedTopColumnName, SelectedTopOrderBy));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
 
-        protected override async Task ReadDataWhere()
+        protected override void ReadDataWhere()
         {
-            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(await Query.HotsPlayer.ReadRecordsWhereAsync(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
+            ReplayAllHotsPlayer = new ObservableCollection<ReplayAllHotsPlayer>(Query.HotsPlayer.ReadRecordsWhere(SelectedWhereColumnName, SelectedOperand, TextBoxSelectWhere));
             RowsReturned = ReplayAllHotsPlayer.Count;
         }
     }
