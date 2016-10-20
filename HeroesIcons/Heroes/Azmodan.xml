@@ -13,7 +13,7 @@
   </Level4>
   <Level7>
     <AzmodanMasteryInfernalGlobe name="Infernal Globe">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryInfernalGlobe>
-    <AzmodanMasteryHellCaptain name="Bound Minion">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryHellCaptain>
+    <AzmodanMasteryBoundMinion name="Bound Minion">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryBoundMinion>
     <AzmodanGluttonousWard name="Gluttonous Ward">storm_ui_icon_azmodan_gluttonousward.dds</AzmodanGluttonousWard>
     <AzmodanMasteryMarchOfSin name="March of Sin">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryMarchOfSin>
   </Level7>
@@ -42,5 +42,6 @@
     <AzmodanBloodForBlood name="Blood for Blood" generic="true">storm_ui_icon_talent_bloodforblood.dds</AzmodanBloodForBlood>
     <AzmodanBribe name="Bribe" generic="true">storm_ui_icon_talent_bribe.dds</AzmodanBribe>
     <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
+    <AzmodanMasteryHellCaptain name="Bound Minion">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryHellCaptain>
   </Old>
 </Azmodan>
