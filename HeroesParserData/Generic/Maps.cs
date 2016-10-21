@@ -21,7 +21,13 @@ namespace HeroesParserData
             maps.Add("Towers of Doom");
             maps.Add("Warhead Junction");
 
-            // Lost Cavern is not a map on rotation
+            return maps;
+        }
+
+        public static List<string> GetCustomOnlyMaps()
+        {
+            var maps = new List<string>();
+            maps.Add("Lost Cavern");
 
             return maps;
         }

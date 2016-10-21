@@ -401,28 +401,33 @@ namespace HeroesParserData.ViewModels.Stats
             double unrankedTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.UnrankedDraft);
             double heroTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.HeroLeague);
             double teamTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.TeamLeague);
+            double customTotal = Query.PlayerStatistics.ReadGameModeTotalGames(season, GameMode.Custom);
 
             int quickMatchWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.QuickMatch);
             int unrankedWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.UnrankedDraft);
             int heroWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.HeroLeague);
             int teamWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.TeamLeague);
+            int customWins = Query.PlayerStatistics.ReadGameModeTotalWins(season, GameMode.Custom);
 
             int quickMatchWinPercent = Utilities.CalculateWinPercentage(quickMatchWins, quickMatchTotal);
             int unrankedWinPercent = Utilities.CalculateWinPercentage(unrankedWins, unrankedTotal);
             int heroWinPercent = Utilities.CalculateWinPercentage(heroWins, heroTotal);
             int teamWinPercent = Utilities.CalculateWinPercentage(teamWins, teamTotal);
+            int customWinPercent = Utilities.CalculateWinPercentage(customWins, customTotal);
 
             TotalGameModeGamesCollection.Clear();
             TotalGameModeGamesCollection.Add($"{quickMatchTotal} total games");
             TotalGameModeGamesCollection.Add($"{unrankedTotal} total games");
             TotalGameModeGamesCollection.Add($"{heroTotal} total games");
             TotalGameModeGamesCollection.Add($"{teamTotal} total games");
+            TotalGameModeGamesCollection.Add($"{customTotal} total games");
 
             WinGameModePercentagesCollection.Clear();
             WinGameModePercentagesCollection.Add($"{quickMatchWinPercent}% winrate");
             WinGameModePercentagesCollection.Add($"{unrankedWinPercent}% winrate");
             WinGameModePercentagesCollection.Add($"{heroWinPercent}% winrate");
             WinGameModePercentagesCollection.Add($"{teamWinPercent}% winrate");
+            WinGameModePercentagesCollection.Add($"{customWinPercent}% winrate");
         }
 
         private void SetRoleStats()

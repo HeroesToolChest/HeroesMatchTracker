@@ -45,11 +45,13 @@ namespace HeroesParserData.ViewModels.Stats
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesUnrankedDraftDataCollection = new ObservableCollection<StatsHeroesMapMatch>();
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesHeroLeagueDataCollection = new ObservableCollection<StatsHeroesMapMatch>();
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesTeamLeagueDataCollection = new ObservableCollection<StatsHeroesMapMatch>();
+        private ObservableCollection<StatsHeroesMapMatch> _statsHeroesCustomGameDataCollection = new ObservableCollection<StatsHeroesMapMatch>();
 
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesQuickMatchDataTotalCollection = new ObservableCollection<StatsHeroesMapMatch>();
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesUnrankedDraftDataTotalCollection = new ObservableCollection<StatsHeroesMapMatch>();
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesHeroLeagueDataTotalCollection = new ObservableCollection<StatsHeroesMapMatch>();
         private ObservableCollection<StatsHeroesMapMatch> _statsHeroesTeamLeagueDataTotalCollection = new ObservableCollection<StatsHeroesMapMatch>();
+        private ObservableCollection<StatsHeroesMapMatch> _statsHeroesCustomGameDataTotalCollection = new ObservableCollection<StatsHeroesMapMatch>();
 
         private ObservableCollection<StatsHeroesMatchAwards> _matchAwardDataCollection = new ObservableCollection<StatsHeroesMatchAwards>();
         private ObservableCollection<StatsHeroesMatchAwards> _matchAwardDataTotalCollection = new ObservableCollection<StatsHeroesMatchAwards>();
@@ -156,6 +158,16 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
+        public ObservableCollection<StatsHeroesMapMatch> StatsHeroesCustomGameDataCollection
+        {
+            get { return _statsHeroesCustomGameDataCollection; }
+            set
+            {
+                _statsHeroesCustomGameDataCollection = value;
+                RaisePropertyChangedEvent(nameof(StatsHeroesCustomGameDataCollection));
+            }
+        }
+
         public ObservableCollection<StatsHeroesMapMatch> StatsHeroesQuickMatchDataTotalCollection
         {
             get { return _statsHeroesQuickMatchDataTotalCollection; }
@@ -193,6 +205,16 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 _statsHeroesTeamLeagueDataTotalCollection = value;
                 RaisePropertyChangedEvent(nameof(StatsHeroesTeamLeagueDataTotalCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesMapMatch> StatsHeroesCustomGameDataTotalCollection
+        {
+            get { return _statsHeroesCustomGameDataTotalCollection; }
+            set
+            {
+                _statsHeroesCustomGameDataTotalCollection = value;
+                RaisePropertyChangedEvent(nameof(StatsHeroesCustomGameDataTotalCollection));
             }
         }
 
@@ -409,12 +431,16 @@ namespace HeroesParserData.ViewModels.Stats
                 });
 
                 var maps = Maps.GetMaps();
-
+                var customGameModeMaps = Maps.GetCustomOnlyMaps();
+                customGameModeMaps.AddRange(maps);
+                customGameModeMaps.Sort();
+                
                 List<Task> list = new List<Task>();
                 list.Add(SetMapMatchStats(maps, GameMode.QuickMatch, StatsHeroesQuickMatchDataCollection, StatsHeroesQuickMatchDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.UnrankedDraft, StatsHeroesUnrankedDraftDataCollection, StatsHeroesUnrankedDraftDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.HeroLeague, StatsHeroesHeroLeagueDataCollection, StatsHeroesHeroLeagueDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.TeamLeague, StatsHeroesTeamLeagueDataCollection, StatsHeroesTeamLeagueDataTotalCollection));
+                list.Add(SetMapMatchStats(customGameModeMaps, GameMode.Custom, StatsHeroesCustomGameDataCollection, StatsHeroesCustomGameDataTotalCollection));
                 list.Add(SetMapMatchAwards());
 
                 await Task.WhenAll(list.ToArray());
@@ -612,6 +638,8 @@ namespace HeroesParserData.ViewModels.Stats
                 map.MapImage = null;
             foreach (var map in StatsHeroesTeamLeagueDataCollection)
                 map.MapImage = null;
+            foreach (var map in StatsHeroesCustomGameDataCollection)
+                map.MapImage = null;
             foreach (var award in MatchAwardDataCollection)
                 award.AwardImage = null;
 
@@ -619,11 +647,13 @@ namespace HeroesParserData.ViewModels.Stats
             StatsHeroesUnrankedDraftDataCollection.Clear();
             StatsHeroesHeroLeagueDataCollection.Clear();
             StatsHeroesTeamLeagueDataCollection.Clear();
+            StatsHeroesCustomGameDataCollection.Clear();
 
             StatsHeroesQuickMatchDataTotalCollection.Clear();
             StatsHeroesUnrankedDraftDataTotalCollection.Clear();
             StatsHeroesHeroLeagueDataTotalCollection.Clear();
             StatsHeroesTeamLeagueDataTotalCollection.Clear();
+            StatsHeroesCustomGameDataTotalCollection.Clear();
 
             MatchAwardDataCollection.Clear();
             MatchAwardDataTotalCollection.Clear();
