@@ -71,7 +71,7 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Expander Header="Quick Match" HorizontalAlignment="Left" Margin="10,10,-289,0" Grid.Row="0" VerticalAlignment="Top" Height="auto" Width="1880">
+                    <Expander Header="{Binding QuickMatchTitle}" HorizontalAlignment="Left" Margin="10,10,-289,0" Grid.Row="0" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -143,7 +143,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Unranked Draft" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="1880">
+                    <Expander Header="{Binding UnrankedDraftTitle}" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -215,7 +215,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Hero League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="1880">
+                    <Expander Header="{Binding HeroLeagueTitle}" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -287,7 +287,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Team League" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="auto" Width="1880">
+                    <Expander Header="{Binding TeamLeagueTitle}" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
@@ -359,7 +359,7 @@
                             </DataGrid>
                         </Grid>
                     </Expander>
-                    <Expander Header="Custom Game" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="auto" Width="1880">
+                    <Expander Header="{Binding CustomGameTitle}" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>

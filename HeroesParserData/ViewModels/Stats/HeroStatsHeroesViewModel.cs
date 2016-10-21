@@ -24,6 +24,11 @@ namespace HeroesParserData.ViewModels.Stats
         private string _characterName;
         private string _characterRole;
         private string _totalWinrate;
+        private string _quickMatchTitle;
+        private string _unrankedDraftTitle;
+        private string _heroLeagueTitle;
+        private string _teamLeagueTitle;
+        private string _customGameTitle;
         private int? _characterLevel;
         private int? _totalWins;
         private int? _totalLosses;
@@ -115,6 +120,55 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 _characterLevel = value;
                 RaisePropertyChangedEvent(nameof(CharacterLevel));
+            }
+        }
+        public string QuickMatchTitle
+        {
+            get { return _quickMatchTitle; }
+            set
+            {
+                _quickMatchTitle = value;
+                RaisePropertyChangedEvent(nameof(QuickMatchTitle));
+            }
+        }
+
+        public string UnrankedDraftTitle
+        {
+            get { return _unrankedDraftTitle; }
+            set
+            {
+                _unrankedDraftTitle = value;
+                RaisePropertyChangedEvent(nameof(UnrankedDraftTitle));
+            }
+        }
+
+        public string HeroLeagueTitle
+        {
+            get { return _heroLeagueTitle; }
+            set
+            {
+                _heroLeagueTitle = value;
+                RaisePropertyChangedEvent(nameof(HeroLeagueTitle));
+            }
+        }
+
+        public string TeamLeagueTitle
+        {
+            get { return _teamLeagueTitle; }
+            set
+            {
+                _teamLeagueTitle = value;
+                RaisePropertyChangedEvent(nameof(TeamLeagueTitle));
+            }
+        }
+
+        public string CustomGameTitle
+        {
+            get { return _customGameTitle; }
+            set
+            {
+                _customGameTitle = value;
+                RaisePropertyChangedEvent(nameof(CustomGameTitle));
             }
         }
 
@@ -403,6 +457,11 @@ namespace HeroesParserData.ViewModels.Stats
             :base()
         {
             HeroesList = HeroesInfo.GetListOfHeroes();
+            QuickMatchTitle = "Quick Match";
+            UnrankedDraftTitle = "Unranked Draft";
+            HeroLeagueTitle = "Hero League";
+            TeamLeagueTitle = "Team League";
+            CustomGameTitle = "Custom Game";
         }
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)
@@ -558,6 +617,26 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 totalCollection.Add(totalMatch);
             });
+
+            string gameModeStats = $"     {totalWins} W / {totalLosses} L / {totalTotal} T / {totalWinPercentage}%";
+            switch (gameMode)
+            {
+                case GameMode.QuickMatch:
+                    QuickMatchTitle = $"Quick Match {gameModeStats}";
+                    break;
+                case GameMode.UnrankedDraft:
+                    UnrankedDraftTitle = $"Unranked Draft {gameModeStats}";
+                    break;
+                case GameMode.HeroLeague:
+                    HeroLeagueTitle = $"Hero League {gameModeStats}";
+                    break;
+                case GameMode.TeamLeague:
+                    TeamLeagueTitle = $"Team League {gameModeStats}";
+                    break;
+                case GameMode.Custom:
+                    CustomGameTitle = $"Custom Game {gameModeStats}";
+                    break;
+            }
         }
 
         private async Task SetMapMatchAwards()
@@ -628,6 +707,13 @@ namespace HeroesParserData.ViewModels.Stats
             TotalWinrate = string.Empty;
             TotalAwards = null;
             TotalMVPs = null;
+
+            QuickMatchTitle = "Quick Match";
+            UnrankedDraftTitle = "Unranked Draft";
+            HeroLeagueTitle = "Hero League";
+            TeamLeagueTitle = "Team League";
+            CustomGameTitle = "Custom Game";
+
             ProgressRingsActive(true);
 
             foreach (var map in StatsHeroesQuickMatchDataCollection)
