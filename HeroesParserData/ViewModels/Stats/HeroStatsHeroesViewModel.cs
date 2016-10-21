@@ -60,6 +60,14 @@ namespace HeroesParserData.ViewModels.Stats
 
         private ObservableCollection<StatsHeroesMatchAwards> _matchAwardDataCollection = new ObservableCollection<StatsHeroesMatchAwards>();
         private ObservableCollection<StatsHeroesMatchAwards> _matchAwardDataTotalCollection = new ObservableCollection<StatsHeroesMatchAwards>();
+
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel1DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel4DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel7DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel10DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel13DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel16DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
+        private ObservableCollection<StatsHeroesTalentPicks> _talentsPickLevel20DataCollection = new ObservableCollection<StatsHeroesTalentPicks>();
         #endregion private properties
 
         #region public properties
@@ -451,6 +459,76 @@ namespace HeroesParserData.ViewModels.Stats
                 RaisePropertyChangedEvent(nameof(IsTotalMVPsProcessing));
             }
         }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel1DataCollection
+        {
+            get { return _talentsPickLevel1DataCollection; }
+            set
+            {
+                _talentsPickLevel1DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel1DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel4DataCollection
+        {
+            get { return _talentsPickLevel4DataCollection; }
+            set
+            {
+                _talentsPickLevel4DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel4DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel7DataCollection
+        {
+            get { return _talentsPickLevel7DataCollection; }
+            set
+            {
+                _talentsPickLevel7DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel7DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel10DataCollection
+        {
+            get { return _talentsPickLevel10DataCollection; }
+            set
+            {
+                _talentsPickLevel10DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel10DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel13DataCollection
+        {
+            get { return _talentsPickLevel13DataCollection; }
+            set
+            {
+                _talentsPickLevel13DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel13DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel16DataCollection
+        {
+            get { return _talentsPickLevel16DataCollection; }
+            set
+            {
+                _talentsPickLevel16DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel16DataCollection));
+            }
+        }
+
+        public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel20DataCollection
+        {
+            get { return _talentsPickLevel20DataCollection; }
+            set
+            {
+                _talentsPickLevel20DataCollection = value;
+                RaisePropertyChangedEvent(nameof(TalentsPickLevel20DataCollection));
+            }
+        }
         #endregion public properties
 
         public HeroStatsHeroesViewModel()
@@ -493,14 +571,23 @@ namespace HeroesParserData.ViewModels.Stats
                 var customGameModeMaps = Maps.GetCustomOnlyMaps();
                 customGameModeMaps.AddRange(maps);
                 customGameModeMaps.Sort();
-                
+
+                var allTalentTierForHero = HeroesInfo.GetTalentsForHero(SelectedHero);
+
                 List<Task> list = new List<Task>();
                 list.Add(SetMapMatchStats(maps, GameMode.QuickMatch, StatsHeroesQuickMatchDataCollection, StatsHeroesQuickMatchDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.UnrankedDraft, StatsHeroesUnrankedDraftDataCollection, StatsHeroesUnrankedDraftDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.HeroLeague, StatsHeroesHeroLeagueDataCollection, StatsHeroesHeroLeagueDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.TeamLeague, StatsHeroesTeamLeagueDataCollection, StatsHeroesTeamLeagueDataTotalCollection));
                 list.Add(SetMapMatchStats(customGameModeMaps, GameMode.Custom, StatsHeroesCustomGameDataCollection, StatsHeroesCustomGameDataTotalCollection));
-                list.Add(SetMapMatchAwards());
+                list.Add(SetMatchAwards());
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level1, GameMode.Cooperative, TalentsPickLevel1DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level4, GameMode.Cooperative, TalentsPickLevel4DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level7, GameMode.Cooperative, TalentsPickLevel7DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level10, GameMode.Cooperative, TalentsPickLevel10DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level13, GameMode.Cooperative, TalentsPickLevel13DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level16, GameMode.Cooperative, TalentsPickLevel16DataCollection));
+                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level20, GameMode.Cooperative, TalentsPickLevel20DataCollection));
 
                 await Task.WhenAll(list.ToArray());
 
@@ -639,7 +726,7 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
-        private async Task SetMapMatchAwards()
+        private async Task SetMatchAwards()
         {
             foreach (MVPAwardType award in Enum.GetValues(typeof(MVPAwardType)))
             {
@@ -695,6 +782,37 @@ namespace HeroesParserData.ViewModels.Stats
             });
         }
 
+        private async Task SetTalentPicks(Dictionary<TalentTier, List<string>> allTalentTiers, TalentTier tier, GameMode gameMode, ObservableCollection<StatsHeroesTalentPicks> collection)
+        {
+            var tierTalents = allTalentTiers[tier];
+
+            foreach (var talent in tierTalents)
+            {
+                var talentImage = HeroesInfo.GetTalentIcon(talent);
+                talentImage.Freeze();
+
+                int talentWin = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, true);
+                int talentLoss = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, false);
+                int talentTotal = talentWin + talentLoss;
+                int talentWinPercentage = Utilities.CalculateWinPercentage(talentWin, talentTotal);
+
+                StatsHeroesTalentPicks talentPicks = new StatsHeroesTalentPicks
+                {
+                    TalentName = HeroesInfo.GetTrueTalentName(talent),
+                    Wins = talentWin,
+                    Losses = talentLoss,
+                    Total = talentTotal,
+                    Winrate = talentWinPercentage,
+                };
+
+                await Application.Current.Dispatcher.InvokeAsync(delegate
+                {
+                    talentPicks.TalentImage = talentImage;
+                    collection.Add(talentPicks);
+                });
+            }
+        }
+
         private void ClearStats()
         {
             TotalMVPCount = null;
@@ -728,6 +846,20 @@ namespace HeroesParserData.ViewModels.Stats
                 map.MapImage = null;
             foreach (var award in MatchAwardDataCollection)
                 award.AwardImage = null;
+            foreach (var talent in TalentsPickLevel1DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel4DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel7DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel10DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel13DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel16DataCollection)
+                talent.TalentImage = null;
+            foreach (var talent in TalentsPickLevel20DataCollection)
+                talent.TalentImage = null;
 
             StatsHeroesQuickMatchDataCollection.Clear();
             StatsHeroesUnrankedDraftDataCollection.Clear();
@@ -743,6 +875,14 @@ namespace HeroesParserData.ViewModels.Stats
 
             MatchAwardDataCollection.Clear();
             MatchAwardDataTotalCollection.Clear();
+
+            TalentsPickLevel1DataCollection.Clear();
+            TalentsPickLevel4DataCollection.Clear();
+            TalentsPickLevel7DataCollection.Clear();
+            TalentsPickLevel10DataCollection.Clear();
+            TalentsPickLevel13DataCollection.Clear();
+            TalentsPickLevel16DataCollection.Clear();
+            TalentsPickLevel20DataCollection.Clear();
         }
 
         private void ProgressRingsActive(bool isActive)

@@ -301,12 +301,69 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            public static int ReadCharacterTalentsIsWinner(string talentReferenceName, TalentTier tier, Season season, GameMode gameMode, string character, bool isWinner)
+            {
+                var replayBuild = Utilities.GetSeasonReplayBuild(season);
+
+                string gameModeString;
+                if (gameMode != GameMode.Cooperative)
+                    gameModeString = GameModeQueryString(false);
+                else
+                    gameModeString = GameModeQueryString(true);
+
+                string talentNameColumn = GetTableColumnTalentName(tier);
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    int? amount = db.Database.SqlQuery<int?>($@"SELECT Count(IsWinner) FROM ReplayMatchPlayerTalents mpt
+                                                                JOIN Replays r
+                                                                JOIN ReplayAllHotsPlayers hp
+                                                                JOIN ReplayMatchPlayers mp
+                                                                ON mpt.ReplayId = r.ReplayId AND 
+                                                                mpt.PlayerId = hp.PlayerId AND
+                                                                mp.ReplayId = r.ReplayId AND 
+                                                                mp.PlayerId = hp.PlayerId
+                                                                WHERE mpt.PlayerId = @PlayerId AND IsWinner = @IsWinner AND mpt.Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND {talentNameColumn} = @Talent",
+                                                                new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                new SQLiteParameter("@Character", character),
+                                                                new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
+                                                                new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
+                                                                new SQLiteParameter("@GameMode", gameMode),
+                                                                new SQLiteParameter("@Talent", talentReferenceName),
+                                                                new SQLiteParameter("@IsWinner", isWinner)).FirstOrDefault();
+                    return amount.HasValue ? amount.Value : 0;
+                }
+            }
+
             private static string GameModeQueryString(bool allOrSingle)
             {
                 if (allOrSingle)
                     return "GameMode >= 3";
                 else
                     return "GameMode = @GameMode";
+            }
+
+            private static string GetTableColumnTalentName(TalentTier tier)
+            {
+                switch (tier)
+                {
+                    case TalentTier.Level1:
+                        return "TalentName1";
+                    case TalentTier.Level4:
+                        return "TalentName4";
+                    case TalentTier.Level7:
+                        return "TalentName7";
+                    case TalentTier.Level10:
+                        return "TalentName10";
+                    case TalentTier.Level13:
+                        return "TalentName13";
+                    case TalentTier.Level16:
+                        return "TalentName16";
+                    case TalentTier.Level20:
+                        return "TalentName20";
+                    default:
+                        return null;
+                }
             }
         }
     }

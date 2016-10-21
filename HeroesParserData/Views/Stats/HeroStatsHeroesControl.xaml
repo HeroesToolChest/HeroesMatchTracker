@@ -70,6 +70,7 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Expander Header="{Binding QuickMatchTitle}" HorizontalAlignment="Left" Margin="10,10,-289,0" Grid.Row="0" VerticalAlignment="Top" Height="auto" Width="1880">
                         <Grid>
@@ -485,6 +486,201 @@
                                     <DataGridTextColumn Header="Team League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
                                 </DataGrid.Columns>
                             </DataGrid>
+                        </Grid>
+                    </Expander>
+                    <Expander Header="Talents" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Height="auto" Width="1880">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Expander Header="Level 1" IsExpanded="true" Grid.Row="0">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel1DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 4" IsExpanded="true" Grid.Row="1">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel4DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 7" IsExpanded="true" Grid.Row="2">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel7DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 10" IsExpanded="true" Grid.Row="3">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel10DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 13" IsExpanded="true" Grid.Row="4">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel13DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 16" IsExpanded="true" Grid.Row="5">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel16DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
+                            <Expander Header="Level 20" IsExpanded="true" Grid.Row="6">
+                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          ItemsSource="{Binding TalentsPickLevel20DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
+                                                            <Image.ToolTip>
+                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
+                                                            </Image.ToolTip>
+                                                        </Image>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
+                                        <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
+                                        <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" MinWidth="120" MaxWidth="120"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Expander>
                         </Grid>
                     </Expander>
                 </Grid>

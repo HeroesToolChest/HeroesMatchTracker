@@ -232,6 +232,7 @@
     <Compile Include="Models\StatsModels\StatsHeroesMapMatch.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesMaps.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesMatchAwards.cs" />
+    <Compile Include="Models\StatsModels\StatsHeroesTalentPicks.cs" />
     <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />

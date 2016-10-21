@@ -29,7 +29,12 @@ namespace HeroesIcons
         /// key is reference name of talent
         /// Tuple: key is real name of talent
         /// </summary>
-        private Dictionary<string, Tuple<string, Uri>> Talents = new Dictionary<string, Tuple<string, Uri>>();
+        private Dictionary<string, Tuple<string, Uri>> TalentsIcons = new Dictionary<string, Tuple<string, Uri>>();
+        /// <summary>
+        /// key is TalentTier enum
+        /// value is a string of all talent reference names for that tier
+        /// </summary>
+        private Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
         /// <summary>
         /// key is real hero name
         /// </summary>
@@ -51,7 +56,7 @@ namespace HeroesIcons
         /// key is real hero name
         /// value is HeroRole
         /// </summary>
-        private Dictionary<string, HeroRole> HeroesNonSupportHHealingStat = new Dictionary<string, HeroRole>();
+        private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
 
         private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
         private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
@@ -77,6 +82,7 @@ namespace HeroesIcons
             return new HeroesInfo();
         }
 
+        #region public methods
         /// <summary>
         /// Returns a BitmapImage of the talent
         /// </summary>
@@ -92,7 +98,7 @@ namespace HeroesIcons
 
 
             // not found
-            if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
+            if (!TalentsIcons.TryGetValue(nameOfHeroTalent, out talent))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
 
@@ -188,7 +194,7 @@ namespace HeroesIcons
                 return "No pick";
 
             // not found
-            if (!Talents.TryGetValue(nameOfHeroTalent, out talent))
+            if (!TalentsIcons.TryGetValue(nameOfHeroTalent, out talent))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No name for reference: {nameOfHeroTalent}"));
 
@@ -398,9 +404,27 @@ namespace HeroesIcons
 
         public bool IsNonSupportHeroWithHealingStat(string realHeroName)
         {
-            return HeroesNonSupportHHealingStat.ContainsKey(realHeroName);
+            return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
         }
 
+        /// <summary>
+        /// Returns a dictionary of all the talents of a hero
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <returns></returns>
+        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
+        {
+            Dictionary<TalentTier, List<string>> talents;
+            if (!HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            {
+                Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
+            }
+
+            return talents;
+        }
+        #endregion public methods
+
+        #region private methods
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
         {
             if (Path.GetExtension(fileName) != ".dds")
@@ -424,7 +448,7 @@ namespace HeroesIcons
 
         private void SetNonSupportHeroesWithSupportStat()
         {
-            HeroesNonSupportHHealingStat.Add("Medivh", HeroRole.Support);
+            HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Support);
         }
 
         private void SetMapBackgrounds()
@@ -640,21 +664,25 @@ namespace HeroesIcons
                                 break;
                         }
 
-                        // add talents
+                        var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
+
+                        // add talents, read each tier
                         while (reader.Read())
                         {
                             if (reader.IsStartElement())
                             {
-                                string element = reader.Name;
-                                if (element == "Level1" || element == "Level4" || element == "Level7" ||
-                                    element == "Level10" || element == "Level13" || element == "Level16" ||
-                                    element == "Level20" || element == "Old")
+                                var talentTierList = new List<string>();
+                                TalentTier tier;
+
+                                // is tier Level1, Level4, etc...
+                                if (Enum.TryParse(reader.Name, out tier))
                                 {
-                                    while (reader.Read() && reader.Name != element)
-                                    {
+                                    // read each talent in tier
+                                    while (reader.Read() && reader.Name != tier.ToString())
+                                    { 
                                         if (reader.NodeType == XmlNodeType.Element)
                                         {
-                                            string name = reader.Name; // raw name of talent
+                                            string name = reader.Name; // rerference name of talent
                                             string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
                                             string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
 
@@ -667,14 +695,20 @@ namespace HeroesIcons
                                                 if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
                                                     isGeneric = true;
 
-                                                if (!Talents.ContainsKey(name))
-                                                    Talents.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                                if (!TalentsIcons.ContainsKey(name))
+                                                    TalentsIcons.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+
+                                                talentTierList.Add(name);
                                             }
                                         }
                                     }
+
+                                    talentTiersForHero.Add(tier, talentTierList);
                                 }
                             }
-                        }
+                        } // end while
+
+                        HeroesListOfTalents.Add(realHeroName, talentTiersForHero);
                     }
                 }
             }
@@ -691,5 +725,6 @@ namespace HeroesIcons
                 writer.WriteLine(message);
             }
         }
+        #endregion private methods
     }
 }

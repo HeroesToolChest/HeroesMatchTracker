@@ -51,6 +51,7 @@
     <Compile Include="ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TalentTier.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_carapace.dds" />
