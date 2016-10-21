@@ -384,8 +384,8 @@
                                     <DataGridTextColumn Header="Award" Binding="{Binding AwardName}" MinWidth="120" MaxWidth="120"/>
                                     <DataGridTextColumn Header="Quick Match" Binding="{Binding QuickMatch}" MinWidth="120" MaxWidth="120"/>
                                     <DataGridTextColumn Header="Unranked Draft" Binding="{Binding UnrankedDraft}" MinWidth="140" MaxWidth="140"/>
-                                    <DataGridTextColumn Header="Hero League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
-                                    <DataGridTextColumn Header="Team League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Hero League" Binding="{Binding HeroLeague}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Team League" Binding="{Binding TeamLeague}" MinWidth="120" MaxWidth="120"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
@@ -408,8 +408,8 @@
                                     <DataGridTextColumn Header="Award" Binding="{Binding AwardName}" MinWidth="120" MaxWidth="120"/>
                                     <DataGridTextColumn Header="Quick Match" Binding="{Binding QuickMatch}" MinWidth="120" MaxWidth="120"/>
                                     <DataGridTextColumn Header="Unranked Draft" Binding="{Binding UnrankedDraft}" MinWidth="140" MaxWidth="140"/>
-                                    <DataGridTextColumn Header="Hero League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
-                                    <DataGridTextColumn Header="Team League" Binding="{Binding UnrankedDraft}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Hero League" Binding="{Binding HeroLeague}" MinWidth="120" MaxWidth="120"/>
+                                    <DataGridTextColumn Header="Team League" Binding="{Binding TeamLeague}" MinWidth="120" MaxWidth="120"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
