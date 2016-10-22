@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Murky attributeid="Murk" role="Specialist" portrait="storm_ui_glues_draft_portrait_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
+<Murky attributeid="Murk" role="Specialist" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
   <Level1>
     <MurkyFishtank name="Fishtank" generic="true">storm_ui_icon_talent_block.dds</MurkyFishtank>
     <MurkyMasteryBubbleBreeze name="Bubble Breeze">storm_ui_icon_Murky_SafetyBubble.dds</MurkyMasteryBubbleBreeze>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Auriel attributeid="Auri" role="Support" portrait="storm_ui_glues_draft_portrait_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
+<Auriel attributeid="Auri" role="Support" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
   <Level1>
     <AurielSwiftSweepSacredSweepTalent name="Swift Sweep">storm_ui_icon_auriel_angelicsweep.dds</AurielSwiftSweepSacredSweepTalent>
     <AurielIncreasingClaritySacredSweepTalent name="Increasing Clarity">storm_ui_icon_auriel_angelicsweep_a.dds</AurielIncreasingClaritySacredSweepTalent>

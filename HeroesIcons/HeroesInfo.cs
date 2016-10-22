@@ -54,6 +54,11 @@ namespace HeroesIcons
         private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
         /// <summary>
         /// key is real hero name
+        /// value is HeroFrancise
+        /// </summary>
+        private Dictionary<string, HeroFranchise> HeroesFranchise = new Dictionary<string, HeroFranchise>();
+        /// <summary>
+        /// key is real hero name
         /// value is HeroRole
         /// </summary>
         private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
@@ -294,6 +299,21 @@ namespace HeroesIcons
             else
                 return HeroRole.Unknown;
 
+        }
+
+        /// <summary>
+        /// Returns the hero's franchise. Will return Unknown if hero not found
+        /// </summary>
+        /// <param name="realName">Heroes real name</param>
+        /// <returns>HeroRole</returns>
+        public HeroFranchise GetHeroFranchise(string realName)
+        {
+            HeroFranchise franchise;
+
+            if (HeroesFranchise.TryGetValue(realName, out franchise))
+                return franchise;
+            else
+                return HeroFranchise.Unknown;
         }
 
         public List<string> GetListOfHeroes()
@@ -628,6 +648,9 @@ namespace HeroesIcons
                         // get the role: warrior, assassin, support, specialist
                         string role = reader["role"];
 
+                        // get the franchise: classic, diablo, overwatch, starcraft, warcraft
+                        string franchise = reader["franchise"];
+
                         // get portrait
                         string portraitName = reader["portrait"];
 
@@ -661,6 +684,31 @@ namespace HeroesIcons
                                 break;
                             case "Specialist":
                                 HeroesRole.Add(realHeroName, HeroRole.Specialist);
+                                break;
+                            default:
+                                HeroesRole.Add(realHeroName, HeroRole.Unknown);
+                                break;
+                        }
+
+                        switch (franchise)
+                        {
+                            case "Classic":
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Classic);
+                                break;
+                            case "Diablo":
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Diablo);
+                                break;
+                            case "Overwatch":
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Overwatch);
+                                break;
+                            case "Starcraft":
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Starcraft);
+                                break;
+                            case "Warcraft":
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Warcraft);
+                                break;
+                            default:
+                                HeroesFranchise.Add(realHeroName, HeroFranchise.Unknown);
                                 break;
                         }
 

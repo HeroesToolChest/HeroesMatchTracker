@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Nazeebo attributeid="Witc" role="Specialist" portrait="storm_ui_glues_draft_portrait_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
+<Nazeebo attributeid="Witc" role="Specialist" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
   <Level1>
     <WitchDoctorWidowmakers name="Widowmakers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorWidowmakers>
     <WitchDoctorPandemic name="Pandemic">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPandemic>

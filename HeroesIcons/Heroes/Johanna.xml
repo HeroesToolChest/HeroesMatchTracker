@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Johanna attributeid="Crus" role="Warrior" portrait="storm_ui_glues_draft_portrait_johanna.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
+<Johanna attributeid="Crus" role="Warrior" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_johanna.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
   <Level1>
     <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
     <CrusaderMasteryIronSkinReinforce name="Reinforce" generic="true">storm_ui_icon_talent_block.dds</CrusaderMasteryIronSkinReinforce>

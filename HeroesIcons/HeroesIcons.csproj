@@ -43,6 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeroFranchise.cs" />
     <Compile Include="MVPAward.cs" />
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
@@ -353,6 +354,15 @@
     <Content Include="Heroes\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Icons\Franchises\hero_franchise_classic.png" />
+    <Resource Include="Icons\Franchises\hero_franchise_diablo.png" />
+    <Resource Include="Icons\Franchises\hero_franchise_overwatch.png" />
+    <Resource Include="Icons\Franchises\hero_franchise_starcraft.png" />
+    <Resource Include="Icons\Franchises\hero_franchise_warcraft.png" />
+    <Resource Include="Icons\Roles\hero_role_assassin.png" />
+    <Resource Include="Icons\Roles\hero_role_specialist.png" />
+    <Resource Include="Icons\Roles\hero_role_support.png" />
+    <Resource Include="Icons\Roles\hero_role_warrior.png" />
     <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink.dds" />
     <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_brown.png" />
     <Resource Include="Icons\PartyIcons\ui_ingame_loadscreen_partylink_purple.png" />
@@ -1297,6 +1307,7 @@
     <Resource Include="Icons\Talents\Zeratul\storm_ui_icon_zeratul_voidprison.dds" />
     <Resource Include="Icons\Talents\Zeratul\storm_ui_icon_zeratul_vorpalblade.dds" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

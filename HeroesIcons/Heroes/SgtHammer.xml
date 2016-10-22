@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SgtHammer name="Sgt. Hammer" attributeid="Sgth" role="Specialist" portrait="storm_ui_glues_draft_portrait_sgthammer.dds" leader="storm_ui_ingame_hero_leaderboard_sgthammer.dds">
+<SgtHammer name="Sgt. Hammer" attributeid="Sgth" role="Specialist" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_sgthammer.dds" leader="storm_ui_ingame_hero_leaderboard_sgthammer.dds">
   <Level1>
     <SgtHammerMasteryAdvancedArtillery name="Advanced Artillery">storm_ui_icon_sgthammer_artillery.dds</SgtHammerMasteryAdvancedArtillery>
     <SgtHammerMasteryLethalBlastConcussiveBlast name="Lethal Blast">storm_ui_icon_sgthammer_concussiveblast.dds</SgtHammerMasteryLethalBlastConcussiveBlast>
