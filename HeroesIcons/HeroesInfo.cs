@@ -21,6 +21,8 @@ namespace HeroesIcons
         /// </summary>
         private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
+        private Dictionary<HeroRole, Uri> RoleIcons = new Dictionary<HeroRole, Uri>();
+        private Dictionary<HeroFranchise, Uri> FranchiseIcons = new Dictionary<HeroFranchise, Uri>();
 
         private HeroesInfo()
         {
@@ -454,6 +456,32 @@ namespace HeroesIcons
             }
         }
 
+        public BitmapImage GetRoleIcon(HeroRole heroRole)
+        {
+            try
+            {
+                return new BitmapImage(RoleIcons[heroRole]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Hero role icon: {heroRole}"));
+                return null;
+            }
+        }
+
+        public BitmapImage GetFranchiseIcon(HeroFranchise heroFranchise)
+        {
+            try
+            {
+                return new BitmapImage(FranchiseIcons[heroFranchise]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Franchise icons: {heroFranchise}"));
+                return null;
+            }
+        }
+
         public bool IsNonSupportHeroWithHealingStat(string realHeroName)
         {
             return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
@@ -472,6 +500,23 @@ namespace HeroesIcons
             PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
             PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
             PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
+        }
+
+        private void SetRoleIcons()
+        {
+            RoleIcons.Add(HeroRole.Warrior, new Uri($"{ApplicationPath}Roles/hero_role_warrior.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Assassin, new Uri($"{ApplicationPath}Roles/hero_role_assassin.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Support, new Uri($"{ApplicationPath}Roles/hero_role_support.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Specialist, new Uri($"{ApplicationPath}Roles/hero_role_specialist.png", UriKind.Absolute));
+        }
+
+        private void SetFranchiseIcons()
+        {
+            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationPath}Roles/hero_franchise_classic.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationPath}Roles/hero_franchise_diablo.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationPath}Roles/hero_franchise_overwatch.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationPath}Roles/hero_franchise_starcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationPath}Roles/hero_franchise_warcraft.png", UriKind.Absolute));
         }
 
         private void Log(string fileName, string message)
