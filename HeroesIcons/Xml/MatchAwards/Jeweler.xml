@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Jeweler>
+  <MostGemsTurnedIn>
+    <MVPScreen>storm_ui_mvp_jeweler_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_jeweler_{mvpColor}.png</ScoreScreen>
+  </MostGemsTurnedIn>
+</Jeweler>

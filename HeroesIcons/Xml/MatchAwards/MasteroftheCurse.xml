@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasteroftheCurse name="Master of the Curse">
+  <MostCurseDamageDone>
+    <MVPScreen>storm_ui_mvp_masterofthecurse_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_masterofthecurse_{mvpColor}.png</ScoreScreen>
+  </MostCurseDamageDone>
+</MasteroftheCurse>

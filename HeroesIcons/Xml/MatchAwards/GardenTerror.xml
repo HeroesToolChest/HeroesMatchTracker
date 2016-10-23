@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GardenTerror name="Garden Terror">
+  <MostDamageToPlants>
+    <MVPScreen>storm_ui_mvp_gardenterror_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_gardenterror_{mvpColor}.png</ScoreScreen>
+  </MostDamageToPlants>
+</GardenTerror>

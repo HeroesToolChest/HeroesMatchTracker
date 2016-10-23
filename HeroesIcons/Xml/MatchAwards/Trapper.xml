@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Trapper>
+  <MostRoots>
+    <MVPScreen>storm_ui_mvp_trapper_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_trapper_{mvpColor}.png</ScoreScreen>
+  </MostRoots>
+</Trapper>

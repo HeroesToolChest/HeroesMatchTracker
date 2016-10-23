@@ -1,62 +1,18 @@
-﻿using System;
+﻿using HeroesIcons.Xml;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace HeroesIcons
 {
-    public class HeroesInfo
+    public class HeroesInfo : HeroesIconsBase
     {
-        private readonly string ImageMissingLogName = "_ImageMissingLog.txt";
-        private readonly string ReferenceLogName = "_ReferenceNameLog.txt";
-        private readonly string ApplicationPath = "pack://application:,,,/HeroesIcons;component/Icons/";
+        private HeroesXml HeroesXml;
+        private MatchAwardsXml MatchAwardsXml;
 
-        /// <summary>
-        /// key is real hero name, value alt name (if any)
-        /// example: Anub'arak, Anubarak
-        /// </summary>
-        private Dictionary<string, string> HeroesRealName = new Dictionary<string, string>();
-        /// <summary>
-        /// key is alt hero name, value real name
-        /// example: Anubarak, Anub'arak
-        /// </summary>
-        private Dictionary<string, string> HeroesAltName = new Dictionary<string, string>();
-        /// <summary>
-        /// key is reference name of talent
-        /// Tuple: key is real name of talent
-        /// </summary>
-        private Dictionary<string, Tuple<string, Uri>> TalentsIcons = new Dictionary<string, Tuple<string, Uri>>();
-        /// <summary>
-        /// key is TalentTier enum
-        /// value is a string of all talent reference names for that tier
-        /// </summary>
-        private Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
-        /// <summary>
-        /// key is real hero name
-        /// </summary>
-        private Dictionary<string, Uri> HeroPortraits = new Dictionary<string, Uri>();
-        /// <summary>
-        /// key is attributeid, value is hero name
-        /// </summary>
-        private Dictionary<string, string> HeroNamesFromAttId = new Dictionary<string, string>();
-        /// <summary>
-        /// key is real hero name
-        /// </summary>
-        private Dictionary<string, Uri> LeaderboardPortraits = new Dictionary<string, Uri>();
-        /// <summary>
-        /// key is real hero name
-        /// value is HeroRole
-        /// </summary>
-        private Dictionary<string, HeroRole> HeroesRole = new Dictionary<string, HeroRole>();
-        /// <summary>
-        /// key is real hero name
-        /// value is HeroFrancise
-        /// </summary>
-        private Dictionary<string, HeroFranchise> HeroesFranchise = new Dictionary<string, HeroFranchise>();
         /// <summary>
         /// key is real hero name
         /// value is HeroRole
@@ -65,8 +21,6 @@ namespace HeroesIcons
 
         private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
         private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
-        private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
-        private Dictionary<MVPAwardType, Tuple<Uri, string>> MVPScoreScreenAwards = new Dictionary<MVPAwardType, Tuple<Uri, string>>();
 
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
 
@@ -74,10 +28,11 @@ namespace HeroesIcons
 
         private HeroesInfo()
         {
-            ParseXmlHeroFiles();
+            HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
+            MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
+
             SetNonSupportHeroesWithSupportStat();
             SetMapBackgrounds();
-            SetMVPAwards();
             SetHomeScreenBackgrounds();
             SetPartyIcons();
         }
@@ -103,7 +58,7 @@ namespace HeroesIcons
 
 
             // not found
-            if (!TalentsIcons.TryGetValue(nameOfHeroTalent, out talent))
+            if (!HeroesXml.TalentIcons.TryGetValue(nameOfHeroTalent, out talent))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
 
@@ -135,7 +90,7 @@ namespace HeroesIcons
                 return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
 
             // not found
-            if (!HeroPortraits.TryGetValue(realHeroName, out uri))
+            if (!HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
 
@@ -167,7 +122,7 @@ namespace HeroesIcons
                 return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
 
             // not found
-            if (!LeaderboardPortraits.TryGetValue(realHeroName, out uri))
+            if (!HeroesXml.LeaderboardPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
 
@@ -199,7 +154,7 @@ namespace HeroesIcons
                 return "No pick";
 
             // not found
-            if (!TalentsIcons.TryGetValue(nameOfHeroTalent, out talent))
+            if (!HeroesXml.TalentIcons.TryGetValue(nameOfHeroTalent, out talent))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No name for reference: {nameOfHeroTalent}"));
 
@@ -223,7 +178,7 @@ namespace HeroesIcons
                 return null;
 
             // not found
-            if (!HeroNamesFromAttId.TryGetValue(attributeId, out heroName))
+            if (!HeroesXml.HeroNamesFromAttributeId.TryGetValue(attributeId, out heroName))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No hero name for reference: {attributeId}"));
 
@@ -242,7 +197,7 @@ namespace HeroesIcons
                 return null;
 
             // not found
-            if (!HeroesAltName.TryGetValue(realName, out altName))
+            if (!HeroesXml.HeroesAlternativeName.TryGetValue(realName, out altName))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No hero alt name for reference: {realName}"));
 
@@ -261,7 +216,7 @@ namespace HeroesIcons
                 return null;
 
             // not found
-            if (!HeroesAltName.TryGetValue(altName, out realName))
+            if (!HeroesXml.HeroesAlternativeName.TryGetValue(altName, out realName))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No hero real name for reference: {altName}"));
 
@@ -280,9 +235,9 @@ namespace HeroesIcons
         public bool HeroExists(string heroName, bool realName = true)
         {
             if (realName)
-                return HeroesRealName.ContainsKey(heroName);
+                return HeroesXml.HeroesRealName.ContainsKey(heroName);
             else
-                return HeroesAltName.ContainsKey(heroName);
+                return HeroesXml.HeroesAlternativeName.ContainsKey(heroName);
         }
 
         /// <summary>
@@ -294,7 +249,7 @@ namespace HeroesIcons
         {
             HeroRole role;
 
-            if (HeroesRole.TryGetValue(realName, out role))
+            if (HeroesXml.HeroesRole.TryGetValue(realName, out role))
                 return role;
             else
                 return HeroRole.Unknown;
@@ -310,7 +265,7 @@ namespace HeroesIcons
         {
             HeroFranchise franchise;
 
-            if (HeroesFranchise.TryGetValue(realName, out franchise))
+            if (HeroesXml.HeroesFranchise.TryGetValue(realName, out franchise))
                 return franchise;
             else
                 return HeroFranchise.Unknown;
@@ -319,7 +274,7 @@ namespace HeroesIcons
         public List<string> GetListOfHeroes()
         {
             List<string> heroes = new List<string>();
-            foreach (var hero in HeroesRealName)
+            foreach (var hero in HeroesXml.HeroesRealName)
             {
                 heroes.Add(hero.Key);
             }
@@ -329,7 +284,7 @@ namespace HeroesIcons
 
         public int TotalAmountOfHeroes()
         {
-            return HeroesRealName.Count;
+            return HeroesXml.HeroesRealName.Count;
         }
 
         public BitmapImage GetMapBackground(MapName mapName, bool useSmallImage = false)
@@ -348,48 +303,53 @@ namespace HeroesIcons
             }
         }
 
-        public BitmapImage GetMVPScreenAward(MVPAwardType mvpAwardType, MVPScreenColor mvpColor, out string awardName)
+        /// <summary>
+        /// Returns the MVPScreen award BitmapImage of the given mvpAwardType annd color
+        /// </summary>
+        /// <param name="mvpAwardType">Reference name of award</param>
+        /// <param name="mvpColor">Color of icon</param>
+        /// <param name="awardName"></param>
+        /// <returns></returns>
+        public BitmapImage GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
         {
-            if (mvpAwardType == MVPAwardType.Unknown)
-            {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAwardType}"));
-                awardName = string.Empty;
-                return null;
-            }
-
             try
             {
-                var uriString = MVPScreenAwards[mvpAwardType].Item1.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+                var award = MatchAwardsXml.MVPScreenAwards[mvpAwardType];
+                var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
-                awardName = MVPScreenAwards[mvpAwardType].Item2;
+                awardName = award.Item1;
+
                 return new BitmapImage(new Uri(uriString, UriKind.Absolute));
             }
             catch (Exception)
             {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award: {mvpAwardType}"));
+                Task.Run(() => Log(ImageMissingLogName, $"MVP screen award type: {mvpAwardType}"));
                 awardName = "Unknown";
                 return null;
             }
         }
 
-        public BitmapImage GetMVPScoreScreenAward(MVPAwardType mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
+        /// <summary>
+        /// Returns the ScoreScreen award BitmapImage of the given mvpAwardType annd color
+        /// </summary>
+        /// <param name="mvpAwardType">Reference name of award</param>
+        /// <param name="mvpColor">Color of icon</param>
+        /// <param name="awardName"></param>
+        /// <returns></returns>
+        public BitmapImage GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
         {
-            if (mvpAwardType == MVPAwardType.Unknown)
-            {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP score screen award: {mvpAwardType}"));
-                awardName = string.Empty;
-                return null;
-            }
             try
             {
-                var uriString = MVPScoreScreenAwards[mvpAwardType].Item1.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+                var award = MatchAwardsXml.MVPScoreScreenAwards[mvpAwardType];
+                var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
-                awardName = MVPScoreScreenAwards[mvpAwardType].Item2;
+                awardName = award.Item1;
+
                 return new BitmapImage(new Uri(uriString, UriKind.Absolute));
             }
             catch (Exception)
             {
-                Task.Run(() => Log(ImageMissingLogName, $"MVP score screen award: {mvpAwardType}"));
+                Task.Run(() => Log(ImageMissingLogName, $"MVP score screen award type: {mvpAwardType}"));
                 awardName = "Unknown";
                 return new BitmapImage(null);
             }
@@ -435,7 +395,7 @@ namespace HeroesIcons
         public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
         {
             Dictionary<TalentTier, List<string>> talents;
-            if (!HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            if (!HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
             {
                 Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
             }
@@ -445,27 +405,6 @@ namespace HeroesIcons
         #endregion public methods
 
         #region private methods
-        private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
-        {
-            if (Path.GetExtension(fileName) != ".dds")
-                throw new IconException($"Image file does not have .dds extension [{fileName}]");
-
-            if (!isGenericTalent)
-                return new Uri($"{ApplicationPath}Talents/{hero}/{fileName}", UriKind.Absolute);
-            else
-                return new Uri($"{ApplicationPath}Talents/_Generic/{fileName}", UriKind.Absolute);
-        }
-
-        private Uri SetHeroPortraitUri(string fileName)
-        {
-            return new Uri($"{ApplicationPath}HeroPortraits/{fileName}", UriKind.Absolute);
-        }
-
-        private Uri SetLeaderboardPortrait(string fileName)
-        {
-            return new Uri($"{ApplicationPath}HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
-        }
-
         private void SetNonSupportHeroesWithSupportStat()
         {
             HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Support);
@@ -509,70 +448,6 @@ namespace HeroesIcons
             }
         }
 
-        private void SetMVPAwards()
-        {
-            try
-            {
-                MVPScreenAwards.Add(MVPAwardType.MostDamageTaken, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute), "Bulwark"));
-                MVPScreenAwards.Add(MVPAwardType.MostAltarDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute), "Cannoneer"));
-                MVPScreenAwards.Add(MVPAwardType.ClutchHealer, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute), "Clutch Healer"));
-                MVPScreenAwards.Add(MVPAwardType.MostNukeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute), "DaBomb"));
-                MVPScreenAwards.Add(MVPAwardType.HighestKillStreak, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_skull_{{mvpColor}}.png", UriKind.Absolute), "Dominator"));
-                MVPScreenAwards.Add(MVPAwardType.MostXPContribution, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute), "Experienced"));
-                MVPScreenAwards.Add(MVPAwardType.MostKills, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute), "Finisher"));
-                MVPScreenAwards.Add(MVPAwardType.MostDamageToPlants, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute), "Garden Terror"));
-                MVPScreenAwards.Add(MVPAwardType.MostDamageToMinions, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute), "Guardian Slayer"));
-                MVPScreenAwards.Add(MVPAwardType.HatTrick, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute), "Hat Trick"));
-                MVPScreenAwards.Add(MVPAwardType.MostMercCampsCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute), "Headhunter"));
-                MVPScreenAwards.Add(MVPAwardType.MostImmortalDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute), "Immortal Slayer"));
-                MVPScreenAwards.Add(MVPAwardType.MostGemsTurnedIn, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute), "Jeweler"));
-                MVPScreenAwards.Add(MVPAwardType.MostHealing, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute), "Main Healer"));
-                MVPScreenAwards.Add(MVPAwardType.MostCurseDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute), "Master of the Curse"));
-                MVPScreenAwards.Add(MVPAwardType.MostCoinsPaid, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute), "Moneybags"));
-                MVPScreenAwards.Add(MVPAwardType.MVP, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute), "MVP"));
-                MVPScreenAwards.Add(MVPAwardType.MostHeroDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute), "Painbringer"));
-                MVPScreenAwards.Add(MVPAwardType.MostProtection, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_protector_{{mvpColor}}.png", UriKind.Absolute), "Protector"));
-                MVPScreenAwards.Add(MVPAwardType.MostDragonShrinesCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute), "Shriner"));
-                MVPScreenAwards.Add(MVPAwardType.MostSiegeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute), "Siege Master"));
-                MVPScreenAwards.Add(MVPAwardType.ZeroDeaths, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute), "Sole Survior"));
-                MVPScreenAwards.Add(MVPAwardType.MostStuns, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute), "Stunner"));
-                MVPScreenAwards.Add(MVPAwardType.MostTimeInTemple, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute), "Temple Master"));
-                MVPScreenAwards.Add(MVPAwardType.MostRoots, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute), "Trapper"));
-                MVPScreenAwards.Add(MVPAwardType.MostDamageDoneToZerg, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute), "Zerg Crusher"));
-
-                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageTaken, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_bulwark_{{mvpColor}}.png", UriKind.Absolute), "Bulwark"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostAltarDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_cannoneer_{{mvpColor}}.png", UriKind.Absolute), "Cannoneer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.ClutchHealer, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_clutchhealer_{{mvpColor}}.png", UriKind.Absolute), "Clutch Healer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostNukeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_dabomb_{{mvpColor}}.png", UriKind.Absolute), "DaBomb"));
-                MVPScoreScreenAwards.Add(MVPAwardType.HighestKillStreak, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_skull_{{mvpColor}}.png", UriKind.Absolute), "Dominator"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostXPContribution, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_experienced_{{mvpColor}}.png", UriKind.Absolute), "Experienced"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostKills, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_finisher_{{mvpColor}}.png", UriKind.Absolute), "Finisher"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageToPlants, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_gardenterror_{{mvpColor}}.png", UriKind.Absolute), "Garden Terror"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageToMinions, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_guardianslayer_{{mvpColor}}.png", UriKind.Absolute), "Guardian Slayer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.HatTrick, new Tuple<Uri, string>( new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_hattrick_{{mvpColor}}.png", UriKind.Absolute), "Hat Trick"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostMercCampsCaptured, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_headhunter_{{mvpColor}}.png", UriKind.Absolute), "Headhunter"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostImmortalDamage, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_immortalslayer_{{mvpColor}}.png", UriKind.Absolute), "Immortal Slayer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostGemsTurnedIn, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_jeweler_{{mvpColor}}.png", UriKind.Absolute), "Jeweler"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostHealing, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mainhealer_{{mvpColor}}.png", UriKind.Absolute), "Main Healer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostCurseDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_masterofthecurse_{{mvpColor}}.png", UriKind.Absolute), "Master of the Curse"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostCoinsPaid, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_moneybags_{{mvpColor}}.png", UriKind.Absolute), "Moneybags"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MVP, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_mvp_{{mvpColor}}.png", UriKind.Absolute), "MVP"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostHeroDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_painbringer_{{mvpColor}}.png", UriKind.Absolute), "Painbringer"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostProtection, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_protector_{{mvpColor}}.png", UriKind.Absolute), "Protector"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostDragonShrinesCaptured, new Tuple<Uri, string>( new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_shriner_{{mvpColor}}.png", UriKind.Absolute), "Shriner"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostSiegeDamageDone, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_siegemaster_{{mvpColor}}.png", UriKind.Absolute), "Siege Master"));
-                MVPScoreScreenAwards.Add(MVPAwardType.ZeroDeaths, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_solesurvivor_{{mvpColor}}.png", UriKind.Absolute), "Sole Survior"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostStuns, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_stunner_{{mvpColor}}.png", UriKind.Absolute), "Stunner"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostTimeInTemple, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_templemaster_{{mvpColor}}.png", UriKind.Absolute), "Temple Master"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostRoots, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_trapper_{{mvpColor}}.png", UriKind.Absolute), "Trapper"));
-                MVPScoreScreenAwards.Add(MVPAwardType.MostDamageDoneToZerg, new Tuple<Uri, string>(new Uri($"{ApplicationPath}Awards/storm_ui_scorescreen_mvp_zergcrusher_{{mvpColor}}.png", UriKind.Absolute), "Zerg Crusher"));
-            }
-            catch (Exception ex)
-            {
-                throw new IconException("Failed to set all mvp awards", ex);
-            }
-        }
-
         private void SetHomeScreenBackgrounds()
         {
             HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_alarak.jpg", UriKind.Absolute)), Colors.Purple));
@@ -604,166 +479,6 @@ namespace HeroesIcons
             PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
             PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
             PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationPath}PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
-        }
-
-        private void ParseXmlHeroFiles()
-        {
-            List<string> heroes = new List<string>();
-
-            try
-            {
-                using (XmlTextReader reader = new XmlTextReader(@"Heroes/_AllHeroes.xml"))
-                {
-                    reader.ReadStartElement("Heroes");
-
-                    while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
-                    {
-                        if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
-                            continue;
-
-                        XElement el = (XElement)XNode.ReadFrom(reader);
-                        heroes.Add(el.Name.ToString());
-                    }
-                }
-
-                foreach (var hero in heroes)
-                {
-                    using (XmlReader reader = XmlReader.Create($@"Heroes/{hero}.xml"))
-                    {
-                        reader.MoveToContent();
-
-                        if (reader.Name != hero)
-                            continue;
-
-                        // get real name
-                        // example: Anubarak -> (real)Anub'arak
-                        string realHeroName = reader["name"];
-                        if (string.IsNullOrEmpty(realHeroName))
-                            realHeroName = hero; // default to hero name
-
-                        // get attributeid from hero name
-                        // example: Anub
-                        string attributeId = reader["attributeid"];
-
-                        // get the role: warrior, assassin, support, specialist
-                        string role = reader["role"];
-
-                        // get the franchise: classic, diablo, overwatch, starcraft, warcraft
-                        string franchise = reader["franchise"];
-
-                        // get portrait
-                        string portraitName = reader["portrait"];
-
-                        // get leaderboard portrait
-                        string lbPortrait = reader["leader"];
-
-                        if (!string.IsNullOrEmpty(attributeId))
-                        {
-                            HeroNamesFromAttId.Add(attributeId, realHeroName);
-                        }
-
-                        if (!string.IsNullOrEmpty(portraitName))
-                            HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
-
-                        if (!string.IsNullOrEmpty(lbPortrait))
-                            LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortrait(lbPortrait));
-
-                        HeroesRealName.Add(realHeroName, hero);
-                        HeroesAltName.Add(hero, realHeroName);
-
-                        switch (role)
-                        {
-                            case "Warrior":
-                                HeroesRole.Add(realHeroName, HeroRole.Warrior);
-                                break;
-                            case "Assassin":
-                                HeroesRole.Add(realHeroName, HeroRole.Assassin);
-                                break;
-                            case "Support":
-                                HeroesRole.Add(realHeroName, HeroRole.Support);
-                                break;
-                            case "Specialist":
-                                HeroesRole.Add(realHeroName, HeroRole.Specialist);
-                                break;
-                            default:
-                                HeroesRole.Add(realHeroName, HeroRole.Unknown);
-                                break;
-                        }
-
-                        switch (franchise)
-                        {
-                            case "Classic":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Classic);
-                                break;
-                            case "Diablo":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Diablo);
-                                break;
-                            case "Overwatch":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Overwatch);
-                                break;
-                            case "Starcraft":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Starcraft);
-                                break;
-                            case "Warcraft":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Warcraft);
-                                break;
-                            default:
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Unknown);
-                                break;
-                        }
-
-                        var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
-
-                        // add talents, read each tier
-                        while (reader.Read())
-                        {
-                            if (reader.IsStartElement())
-                            {
-                                var talentTierList = new List<string>();
-                                TalentTier tier;
-
-                                // is tier Level1, Level4, etc...
-                                if (Enum.TryParse(reader.Name, out tier))
-                                {
-                                    // read each talent in tier
-                                    while (reader.Read() && reader.Name != tier.ToString())
-                                    { 
-                                        if (reader.NodeType == XmlNodeType.Element)
-                                        {
-                                            string name = reader.Name; // rerference name of talent
-                                            string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
-                                            string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
-
-                                            bool isGeneric;
-                                            if (!bool.TryParse(generic, out isGeneric))
-                                                isGeneric = false;
-
-                                            if (reader.Read())
-                                            {
-                                                if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
-                                                    isGeneric = true;
-
-                                                if (!TalentsIcons.ContainsKey(name))
-                                                    TalentsIcons.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
-
-                                                talentTierList.Add(name);
-                                            }
-                                        }
-                                    }
-
-                                    talentTiersForHero.Add(tier, talentTierList);
-                                }
-                            }
-                        } // end while
-
-                        HeroesListOfTalents.Add(realHeroName, talentTiersForHero);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ParseXmlException("Error on parsing of xml files", ex);
-            }
         }
 
         private void Log(string fileName, string message)

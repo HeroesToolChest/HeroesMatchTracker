@@ -269,7 +269,7 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static int ReadTotalMatchAwards(MVPAwardType mvpAwardType, Season season, GameMode gameMode, string character)
+            public static int ReadTotalMatchAwards(string mvpAwardType, Season season, GameMode gameMode, string character)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
@@ -296,7 +296,7 @@ namespace HeroesParserData.DataQueries
                                                                 new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                 new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                                 new SQLiteParameter("@GameMode", gameMode),
-                                                                new SQLiteParameter("@AwardType", mvpAwardType.ToString())).FirstOrDefault();
+                                                                new SQLiteParameter("@AwardType", mvpAwardType)).FirstOrDefault();
                     return amount.HasValue ? amount.Value : 0;
                 }
             }

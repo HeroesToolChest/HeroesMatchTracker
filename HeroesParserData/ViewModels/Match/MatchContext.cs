@@ -711,7 +711,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        private BitmapImage SetPlayerMVPAward(int? team, string award, out string awardName)
+        private BitmapImage SetPlayerMVPAward(int? team, string awardType, out string awardName)
         {
             MVPScoreScreenColor teamColor;
             if (team == 0)
@@ -725,16 +725,7 @@ namespace HeroesParserData.ViewModels.Match
                 return null;
             }
 
-            MVPAwardType mvpAwardType = HeroesInfo.GetMVPAwardTypeFromString(award);
-
-            if (mvpAwardType == MVPAwardType.Unknown)
-            {
-                ExceptionLog.Log(LogLevel.Info, $"[MatchContext.cs]({nameof(SetPlayerMVPAward)}) Could not find {award} award");
-                awardName = null;
-                return null;
-            }
-
-            return HeroesInfo.GetMVPScoreScreenAward(mvpAwardType, teamColor, out awardName);
+            return HeroesInfo.GetMVPScoreScreenAward(awardType, teamColor, out awardName);
         }
 
         private void FindPlayerParties(List<ReplayMatchPlayer> playersList)

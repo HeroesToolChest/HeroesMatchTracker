@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TempleMaster name="Temple Master">
+  <MostTimeInTemple>
+    <MVPScreen>storm_ui_mvp_templemaster_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_templemaster_{mvpColor}.png</ScoreScreen>
+  </MostTimeInTemple>
+</TempleMaster>

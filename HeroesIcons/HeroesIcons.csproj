@@ -43,6 +43,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeroesIconsBase.cs" />
     <Compile Include="HeroFranchise.cs" />
     <Compile Include="MVPAward.cs" />
     <Compile Include="HeroesInfo.cs" />
@@ -53,6 +54,9 @@
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TalentTier.cs" />
+    <Compile Include="Xml\HeroesXml.cs" />
+    <Compile Include="Xml\MatchAwardsXml.cs" />
+    <Compile Include="Xml\XmlBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Talents\Abathur\storm_ui_icon_abathur_carapace.dds" />
@@ -176,182 +180,264 @@
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_talent_stormshield.dds" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Heroes\Abathur.xml">
+    <Content Include="Xml\Heroes\Abathur.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Heroes\Alarak.xml">
+    <Content Include="Xml\Heroes\Alarak.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Anubarak.xml">
+    <Content Include="Xml\Heroes\Anubarak.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Artanis.xml">
+    <Content Include="Xml\Heroes\Artanis.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Arthas.xml">
+    <Content Include="Xml\Heroes\Arthas.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Auriel.xml">
+    <Content Include="Xml\Heroes\Auriel.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Azmodan.xml">
+    <Content Include="Xml\Heroes\Azmodan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Muradin.xml">
+    <Content Include="Xml\Heroes\Muradin.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Samuro.xml">
+    <Content Include="Xml\Heroes\Samuro.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Sonya.xml">
+    <Content Include="Xml\Heroes\Sonya.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Butcher.xml">
+    <Content Include="Xml\Heroes\Butcher.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Chen.xml">
+    <Content Include="Xml\Heroes\Chen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Cho.xml">
+    <Content Include="Xml\Heroes\Cho.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Chromie.xml">
+    <Content Include="Xml\Heroes\Chromie.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Johanna.xml">
+    <Content Include="Xml\Heroes\Johanna.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Dehaka.xml">
+    <Content Include="Xml\Heroes\Dehaka.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Stitches.xml">
+    <Content Include="Xml\Heroes\Stitches.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Valla.xml">
+    <Content Include="Xml\Heroes\Valla.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Diablo.xml">
+    <Content Include="Xml\Heroes\Diablo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Lunara.xml">
+    <Content Include="Xml\Heroes\Lunara.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Brightwing.xml">
+    <Content Include="Xml\Heroes\Brightwing.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Falstad.xml">
+    <Content Include="Xml\Heroes\Falstad.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Gall.xml">
+    <Content Include="Xml\Heroes\Gall.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Greymane.xml">
+    <Content Include="Xml\Heroes\Greymane.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Guldan.xml">
+    <Content Include="Xml\Heroes\Guldan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Illidan.xml">
+    <Content Include="Xml\Heroes\Illidan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Jaina.xml">
+    <Content Include="Xml\Heroes\Jaina.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Kaelthas.xml">
+    <Content Include="Xml\Heroes\Kaelthas.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Kerrigan.xml">
+    <Content Include="Xml\Heroes\Kerrigan.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\ETC.xml">
+    <Content Include="Xml\Heroes\ETC.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Leoric.xml">
+    <Content Include="Xml\Heroes\Leoric.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\LiLi.xml">
+    <Content Include="Xml\Heroes\LiLi.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\LostVikings.xml">
+    <Content Include="Xml\Heroes\LostVikings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Malfurion.xml">
+    <Content Include="Xml\Heroes\Malfurion.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\LtMorales.xml">
+    <Content Include="Xml\Heroes\LtMorales.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Medivh.xml">
+    <Content Include="Xml\Heroes\Medivh.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Kharazim.xml">
+    <Content Include="Xml\Heroes\Kharazim.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Murky.xml">
+    <Content Include="Xml\Heroes\Murky.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Xul.xml">
+    <Content Include="Xml\Heroes\Xul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Nova.xml">
+    <Content Include="Xml\Heroes\Nova.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Raynor.xml">
+    <Content Include="Xml\Heroes\Raynor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Rehgar.xml">
+    <Content Include="Xml\Heroes\Rehgar.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Rexxar.xml">
+    <Content Include="Xml\Heroes\Rexxar.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\SgtHammer.xml">
+    <Content Include="Xml\Heroes\SgtHammer.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Sylvanas.xml">
+    <Content Include="Xml\Heroes\Sylvanas.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Tassadar.xml">
+    <Content Include="Xml\Heroes\Tassadar.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Thrall.xml">
+    <Content Include="Xml\Heroes\Thrall.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Gazlowe.xml">
+    <Content Include="Xml\Heroes\Gazlowe.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Tracer.xml">
+    <Content Include="Xml\Heroes\Tracer.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Tychus.xml">
+    <Content Include="Xml\Heroes\Tychus.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Tyrael.xml">
+    <Content Include="Xml\Heroes\Tyrael.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Tyrande.xml">
+    <Content Include="Xml\Heroes\Tyrande.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Uther.xml">
+    <Content Include="Xml\Heroes\Uther.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Nazeebo.xml">
+    <Content Include="Xml\Heroes\Nazeebo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\LiMing.xml">
+    <Content Include="Xml\Heroes\LiMing.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Zagara.xml">
+    <Content Include="Xml\Heroes\Zagara.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Zarya.xml">
+    <Content Include="Xml\Heroes\Zarya.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\Zeratul.xml">
+    <Content Include="Xml\Heroes\Zeratul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Heroes\_AllHeroes.xml">
+    <Content Include="Xml\Heroes\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Bulwark.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Cannoneer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\ClutchHealer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\DaBomb.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Dominator.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Experienced.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Finisher.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\GardenTerror.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\GuardianSlayer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\HatTrick.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Headhunter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\ImmortalSlayer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Jeweler.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\MainHealer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\MasteroftheCurse.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Moneybags.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\MVP.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Painbringer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Protector.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Xml\MatchAwards\Shriner.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\SiegeMaster.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\SoleSurvivor.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Stunner.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\TempleMaster.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Trapper.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\ZergCrusher.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\_AllMatchAwards.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Icons\Franchises\hero_franchise_classic.png" />

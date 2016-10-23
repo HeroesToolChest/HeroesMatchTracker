@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Headhunter>
+  <MostMercCampsCaptured>
+    <MVPScreen>storm_ui_mvp_headhunter_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_headhunter_{mvpColor}.png</ScoreScreen>
+  </MostMercCampsCaptured>
+</Headhunter>

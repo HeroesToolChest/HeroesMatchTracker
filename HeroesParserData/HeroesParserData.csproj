@@ -638,7 +638,7 @@
   <PropertyGroup>
     <PostBuildEvent>; Move all assemblies and related files to lib folder
 ; http://www.broculos.net/2014/03/visual-studio-build-dlls-to-separate.html#.VyVbn4-cGUk
-ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib logs data ErrorLogs Database Databases Heroes /E /IS /MOVE
+ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib logs data ErrorLogs Database Databases Heroes Xml /E /IS /MOVE
 if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net46\System.Data.SQLite.Core.targets')" />

@@ -742,7 +742,7 @@ namespace HeroesParserData.ViewModels.Stats
                     TotalMVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 string awardName;
-                var awardImage = HeroesInfo.GetMVPScoreScreenAward(award, MVPScoreScreenColor.Blue, out awardName);
+                var awardImage = HeroesInfo.GetMVPScoreScreenAward(award.ToString(), MVPScoreScreenColor.Blue, out awardName);
                 awardImage.Freeze();
 
                 StatsHeroesMatchAwards matchAwards = new StatsHeroesMatchAwards

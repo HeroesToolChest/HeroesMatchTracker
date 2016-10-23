@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DaBomb>
+  <MostNukeDamageDone>
+    <MVPScreen>storm_ui_mvp_dabomb_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_dabomb_{mvpColor}.png</ScoreScreen>
+  </MostNukeDamageDone>
+</DaBomb>
