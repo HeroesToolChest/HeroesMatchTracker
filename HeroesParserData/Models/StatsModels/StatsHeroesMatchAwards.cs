@@ -10,5 +10,6 @@ namespace HeroesParserData.Models.StatsModels
         public int UnrankedDraft { get; set; }
         public int HeroLeague { get; set; }
         public int TeamLeague { get; set; }
+        public int Total { get; set; }
     }
 }

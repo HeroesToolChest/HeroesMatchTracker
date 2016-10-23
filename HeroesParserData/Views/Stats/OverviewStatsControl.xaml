@@ -31,10 +31,10 @@
             <ComboBox ItemsSource="{Binding MostStatsList}" SelectedValue="{Binding SelectedMostStatsOption}" base:SelectionChangedBehaviour.Command="{Binding ChangeMostStatCommand}" 
                           SelectedIndex="0" IsEnabled="{Binding IsComboBoxEnabled}" Width="120" Margin="255,91,0,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" base:SelectionChangedBehaviour.Command="{Binding ChangeSeasonCommand}" 
-                          SelectedIndex="0" IsEnabled="{Binding IsComboBoxEnabled}" Margin="295,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          SelectedIndex="0" IsEnabled="{Binding IsComboBoxEnabled}" Margin="297,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="1"/>
             <ComboBox ItemsSource="{Binding GameModeList}" SelectedValue="{Binding SelectedGameModeOption}" base:SelectionChangedBehaviour.Command="{Binding ChangeGameModeCommand}" 
-                          SelectedIndex="0" IsEnabled="{Binding IsComboBoxEnabled}" Margin="418,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          SelectedIndex="0" IsEnabled="{Binding IsComboBoxEnabled}" Margin="420,91,0,0" Width="120" Height="26" HorizontalAlignment="Left" VerticalAlignment="Top"
                           Grid.Column="1"/>
 
             <DataGrid x:Name="MostStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" 

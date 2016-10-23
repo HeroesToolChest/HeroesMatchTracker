@@ -732,6 +732,7 @@ namespace HeroesParserData.ViewModels.Stats
                 int unrankedDraftAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero);
                 int heroLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero);
                 int teamLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero);
+                int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 if (award == "MVP")
                     TotalMVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
@@ -746,7 +747,8 @@ namespace HeroesParserData.ViewModels.Stats
                     QuickMatch = quickmatchAwards,
                     UnrankedDraft = unrankedDraftAwards,
                     HeroLeague = heroLeagueAwards,
-                    TeamLeague = teamLeagueAwards
+                    TeamLeague = teamLeagueAwards,
+                    Total = rowTotal,
                 };
 
                 await Application.Current.Dispatcher.InvokeAsync(delegate
@@ -761,6 +763,7 @@ namespace HeroesParserData.ViewModels.Stats
             int totalUnrankedDraft = MatchAwardDataCollection.Sum(x => x.UnrankedDraft);
             int totalHeroLeague = MatchAwardDataCollection.Sum(x => x.HeroLeague);
             int totalTeamLeague = MatchAwardDataCollection.Sum(x => x.TeamLeague);
+            int totalTotal = MatchAwardDataCollection.Sum(x => x.Total);
 
             StatsHeroesMatchAwards totalAwards = new StatsHeroesMatchAwards
             {
@@ -768,7 +771,8 @@ namespace HeroesParserData.ViewModels.Stats
                 QuickMatch = totalQuickMatch,
                 UnrankedDraft = totalUnrankedDraft,
                 HeroLeague = totalHeroLeague,
-                TeamLeague = totalTeamLeague
+                TeamLeague = totalTeamLeague, 
+                Total = totalTotal,
             };
 
             await Application.Current.Dispatcher.InvokeAsync(delegate
