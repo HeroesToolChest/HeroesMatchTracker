@@ -25,15 +25,8 @@ namespace HeroesIcons.Xml
         {
             try
             {
-                var fileExtension = Path.GetExtension(XmlParentFile);
-                if (fileExtension != ".xml")
-                    throw new ParseXmlException($"{XmlParentFile} is not an Xml file");
-
-                if (string.IsNullOrEmpty(XmlFolder))
-                    throw new ParseXmlException($"Parameter xmlFolder is required");
-
-                if (string.IsNullOrEmpty(fileExtension))
-                    XmlParentFile += ".xml";
+                if (!ValidateRequiredFiles())
+                    return;
 
                 using (XmlTextReader reader = new XmlTextReader($@"Xml/{XmlFolder}/{XmlParentFile}"))
                 {
@@ -53,6 +46,30 @@ namespace HeroesIcons.Xml
             {
                 throw new ParseXmlException("Error on parsing of xml files", ex);
             }
+        }
+
+        protected bool ValidateRequiredFiles()
+        {
+            bool valid = true;
+
+            var fileExtension = Path.GetExtension(XmlParentFile);
+            if (fileExtension != ".xml")
+            {
+                valid = false;
+                throw new ParseXmlException($"{XmlParentFile} is not an Xml file");
+            }
+
+
+            if (string.IsNullOrEmpty(XmlFolder))
+            {
+                valid = false;
+                throw new ParseXmlException($"Parameter xmlFolder is required");
+            }
+
+            if (string.IsNullOrEmpty(fileExtension))
+                XmlParentFile += ".xml";
+
+            return valid;
         }
     }
 }

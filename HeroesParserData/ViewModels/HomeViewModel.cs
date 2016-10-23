@@ -230,7 +230,7 @@ namespace HeroesParserData.ViewModels
 
         private void SetBackgroundImages()
         {
-            ListOfBackgroundImages = HeroesInfo.HomeScreenBackgrounds;
+            ListOfBackgroundImages = HeroesInfo.GetListOfHomeScreens();
         }
 
         private void SetRandomBackgroundImage()

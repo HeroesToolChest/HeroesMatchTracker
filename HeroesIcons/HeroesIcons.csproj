@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TalentTier.cs" />
     <Compile Include="Xml\HeroesXml.cs" />
+    <Compile Include="Xml\HomeScreensXml.cs" />
     <Compile Include="Xml\MapBackgroundsXml.cs" />
     <Compile Include="Xml\MatchAwardsXml.cs" />
     <Compile Include="Xml\XmlBase.cs" />
@@ -356,6 +357,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\Heroes\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HomeScreens\HomeScreens.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\BattlefieldofEternity.xml">

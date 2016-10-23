@@ -7,10 +7,10 @@ namespace HeroesIcons.Xml
 {
     internal class MapBackgroundsXml : XmlBase
     {
-        public Dictionary<string, Uri> MapBackgrounds { get; set; } = new Dictionary<string, Uri>();
-        public Dictionary<string, Color> MapBackgroundFontGlowColor { get; set; } = new Dictionary<string, Color>();
-        public Dictionary<string, Uri> MapBackgroundsSmall { get; set; } = new Dictionary<string, Uri>();
-        public List<string> CustomOnlyMaps { get; set; } = new List<string>();
+        public Dictionary<string, Uri> MapBackgrounds { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Color> MapBackgroundFontGlowColor { get; private set; } = new Dictionary<string, Color>();
+        public Dictionary<string, Uri> MapBackgroundsSmall { get; private set; } = new Dictionary<string, Uri>();
+        public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
 
         private MapBackgroundsXml(string parentFile, string xmlFolder)
         {

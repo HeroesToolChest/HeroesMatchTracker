@@ -13,6 +13,7 @@ namespace HeroesIcons
         private HeroesXml HeroesXml;
         private MatchAwardsXml MatchAwardsXml;
         private MapBackgroundsXml MapBackgroundsXml;
+        private HomeScreensXml HomeScreensXml;
 
         /// <summary>
         /// key is real hero name
@@ -21,16 +22,14 @@ namespace HeroesIcons
         private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
 
-        public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
-
         private HeroesInfo()
         {
             HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
             MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds");
+            HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens");
 
             SetNonSupportHeroesWithSupportStat();
-            SetHomeScreenBackgrounds();
             SetPartyIcons();
         }
 
@@ -435,6 +434,13 @@ namespace HeroesIcons
         }
         #endregion MapBackgroundsXml
 
+        #region HomeScreensXml
+        public List<Tuple<BitmapImage, Color>> GetListOfHomeScreens()
+        {
+            return HomeScreensXml.HomeScreenBackgrounds;
+        }
+        #endregion HomeScreensXml
+
         public BitmapImage GetPartyIcon(PartyIconColor partyIconColor)
         {
             try
@@ -458,31 +464,6 @@ namespace HeroesIcons
         private void SetNonSupportHeroesWithSupportStat()
         {
             HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Support);
-        }
-
-        private void SetHomeScreenBackgrounds()
-        {
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_alarak.jpg", UriKind.Absolute)), Colors.Purple));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_chromie.jpg", UriKind.Absolute)), Colors.Gold));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_diablo.jpg", UriKind.Absolute)), Colors.Red));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_diablotristram.jpg", UriKind.Absolute)), Colors.Gray));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_eternalconflict.jpg", UriKind.Absolute)), Colors.DarkRed));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_eternalconflict_dark.jpg", UriKind.Absolute)), Colors.DarkRed)); ;
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_greymane.jpg", UriKind.Absolute)), Colors.LightBlue));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_guldan.jpg", UriKind.Absolute)), Colors.Green));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_lunara.jpg", UriKind.Absolute)), Colors.Purple));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_lunarnewyear.jpg", UriKind.Absolute)), Colors.Purple));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_medivh.jpg", UriKind.Absolute)), Colors.Gray));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_nexus.jpg", UriKind.Absolute)), Colors.Purple));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_overwatchhangar.jpg", UriKind.Absolute)), Colors.Gray));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_samuro.jpg", UriKind.Absolute)), Colors.Orange));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_shrines.jpg", UriKind.Absolute)), Colors.Red));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_shrines_dusk.jpg", UriKind.Absolute)), Colors.Red));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft.jpg", UriKind.Absolute)), Colors.DarkBlue));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft_protoss.jpg", UriKind.Absolute)), Colors.Cyan));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_starcraft_zerg.jpg", UriKind.Absolute)), Colors.DarkRed));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_varian.jpg", UriKind.Absolute)), Colors.Red));
-            HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(new BitmapImage(new Uri($"{ApplicationPath}Homescreens/storm_ui_homescreenbackground_zarya.jpg", UriKind.Absolute)), Colors.Purple));
         }
 
         private void SetPartyIcons()

@@ -10,53 +10,53 @@ namespace HeroesIcons.Xml
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
-        public Dictionary<string, string> HeroNamesFromAttributeId { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> HeroNamesFromAttributeId { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name, value alt name (if any)
         /// example: Anub'arak, Anubarak
         /// </summary>
-        public Dictionary<string, string> HeroesRealName { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> HeroesRealName { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is alt hero name, value real name
         /// example: Anubarak, Anub'arak
         /// </summary>
-        public Dictionary<string, string> HeroesAlternativeName { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> HeroesAlternativeName { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name
         /// value is HeroRole
         /// </summary>
-        public Dictionary<string, HeroRole> HeroesRole { get; set; } = new Dictionary<string, HeroRole>();
+        public Dictionary<string, HeroRole> HeroesRole { get; private set; } = new Dictionary<string, HeroRole>();
 
         /// <summary>
         /// key is real hero name
         /// value is HeroFrancise
         /// </summary>
-        public Dictionary<string, HeroFranchise> HeroesFranchise { get; set; } = new Dictionary<string, HeroFranchise>();
+        public Dictionary<string, HeroFranchise> HeroesFranchise { get; private set; } = new Dictionary<string, HeroFranchise>();
 
         /// <summary>
         /// key is reference name of talent
         /// Tuple: key is real name of talent
         /// </summary>
-        public Dictionary<string, Tuple<string, Uri>> TalentIcons { get; set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, Tuple<string, Uri>> TalentIcons { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
 
         /// <summary>
         /// key is TalentTier enum
         /// value is a string of all talent reference names for that tier
         /// </summary>
-        public Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents { get; set; } = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
+        public Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents { get; private set; } = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> HeroPortraits { get; set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> HeroPortraits { get; private set; } = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> LeaderboardPortraits { get; set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
 
         private HeroesXml(string parentFile, string xmlFolder)
         {
