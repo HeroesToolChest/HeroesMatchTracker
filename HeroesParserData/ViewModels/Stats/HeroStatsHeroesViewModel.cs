@@ -567,10 +567,8 @@ namespace HeroesParserData.ViewModels.Stats
                     ClearStats();
                 });
 
-                var maps = Maps.GetMaps();
-                var customGameModeMaps = Maps.GetCustomOnlyMaps();
-                customGameModeMaps.AddRange(maps);
-                customGameModeMaps.Sort();
+                var maps = HeroesInfo.GetMapsListExceptCustomOnly();
+                var customGameModeMaps = HeroesInfo.GetMapsList();
 
                 var allTalentTierForHero = HeroesInfo.GetTalentsForHero(SelectedHero);
 
@@ -640,7 +638,7 @@ namespace HeroesParserData.ViewModels.Stats
                 else if (HeroesInfo.GetHeroRole(SelectedHero) == HeroRole.Support || HeroesInfo.IsNonSupportHeroWithHealingStat(SelectedHero))
                     role = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.Healing, GetSeasonSelected, gameMode, map, SelectedHero);
 
-                var mapImage = HeroesInfo.GetMapBackground(Maps.GetEnumMapName(map), true);
+                var mapImage = HeroesInfo.GetMapBackground(map, true);
                 mapImage.Freeze();
 
                 StatsHeroesMapMatch mapMatch = new StatsHeroesMapMatch
@@ -728,17 +726,14 @@ namespace HeroesParserData.ViewModels.Stats
 
         private async Task SetMatchAwards()
         {
-            foreach (MVPAwardType award in Enum.GetValues(typeof(MVPAwardType)))
+            foreach (var award in HeroesInfo.GetMatchAwardsList())
             {
-                if (award == MVPAwardType.Unknown)
-                    continue;
-
                 int quickmatchAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.QuickMatch, SelectedHero);
                 int unrankedDraftAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero);
                 int heroLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero);
                 int teamLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero);
 
-                if (award == MVPAwardType.MVP)
+                if (award == "MVP")
                     TotalMVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 string awardName;

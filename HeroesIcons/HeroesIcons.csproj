@@ -45,16 +45,16 @@
   <ItemGroup>
     <Compile Include="HeroesIconsBase.cs" />
     <Compile Include="HeroFranchise.cs" />
-    <Compile Include="MVPAward.cs" />
+    <Compile Include="MVPAwardColor.cs" />
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="IconException.cs" />
-    <Compile Include="MapName.cs" />
     <Compile Include="ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TalentTier.cs" />
     <Compile Include="Xml\HeroesXml.cs" />
+    <Compile Include="Xml\MapBackgroundsXml.cs" />
     <Compile Include="Xml\MatchAwardsXml.cs" />
     <Compile Include="Xml\XmlBase.cs" />
   </ItemGroup>
@@ -356,6 +356,48 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\Heroes\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\BattlefieldofEternity.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\BlackheartsBay.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\BraxisHoldout.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\CursedHollow.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\DragonShire.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\GardenofTerror.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\HauntedMines.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\InfernalShrines.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\LostCavern.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\SkyTemple.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\TomboftheSpiderQueen.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\TowersofDoom.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\WarheadJunction.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\_AllMapBackgrounds.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\Bulwark.xml">

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SkyTemple name="Sky Temple">
+  <Normal fontglow="#FFFFD700">ui_ingame_mapmechanic_loadscreen_skytemple.jpg</Normal>
+  <Small>ui_ingame_mapmechanic_loadscreen_skytemple_small.jpg</Small>
+</SkyTemple>

@@ -205,7 +205,6 @@
     <Compile Include="DataQueries\Statistics\PlayerStatistics.cs" />
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="Generic\AppVersion.cs" />
-    <Compile Include="Generic\Maps.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />

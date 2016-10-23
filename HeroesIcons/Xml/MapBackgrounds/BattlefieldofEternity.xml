@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BattlefieldofEternity name="Battlefield of Eternity">
+  <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg</Normal>
+  <Small>ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg</Small>
+</BattlefieldofEternity>

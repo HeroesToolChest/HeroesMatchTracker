@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WarheadJunction name="Warhead Junction">
+  <Normal fontglow="#FFFFFF00">storm_ui_homescreenbackground_warhead.jpg</Normal>
+  <Small>storm_ui_homescreenbackground_warhead_small.jpg</Small>
+</WarheadJunction>

@@ -354,7 +354,7 @@ namespace HeroesParserData.ViewModels.Stats
             Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
             GameMode gameMode = Utilities.GetGameModeFromString(SelectedGameModeOption);
 
-            var maps = Maps.GetMaps();
+            var maps = HeroesInfo.GetMapsListExceptCustomOnly();
 
             foreach (var map in maps)
             {

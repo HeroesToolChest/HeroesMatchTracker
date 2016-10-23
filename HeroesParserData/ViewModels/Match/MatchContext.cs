@@ -664,51 +664,8 @@ namespace HeroesParserData.ViewModels.Match
 
         private BitmapImage SetMapImage(string mapName, out Color glowColor)
         {
-            switch (mapName)
-            {
-                case "Battlefield of Eternity":
-                    glowColor = Colors.Red;
-                    return HeroesInfo.GetMapBackground(MapName.BattlefieldofEternity);
-                case "Blackheart's Bay":
-                    glowColor = Colors.Green;
-                    return HeroesInfo.GetMapBackground(MapName.BlackheartsBay);
-                case "Cursed Hollow":
-                    glowColor = Colors.Purple;
-                    return HeroesInfo.GetMapBackground(MapName.CursedHollow);
-                case "Dragon Shire":
-                    glowColor = Colors.Red;
-                    return HeroesInfo.GetMapBackground(MapName.DragonShire);
-                case "Garden of Terror":
-                    glowColor = Colors.LightBlue;
-                    return HeroesInfo.GetMapBackground(MapName.GardenofTerror);
-                case "Haunted Mines":
-                    glowColor = Colors.Red;
-                    return HeroesInfo.GetMapBackground(MapName.HauntedMines);
-                case "Infernal Shrines":
-                    glowColor = Colors.Red;
-                    return HeroesInfo.GetMapBackground(MapName.InfernalShrines);
-                case "Lost Cavern":
-                    glowColor = Colors.LightBlue;
-                    return HeroesInfo.GetMapBackground(MapName.LostCavern);
-                case "Sky Temple":
-                    glowColor = Colors.Gold;
-                    return HeroesInfo.GetMapBackground(MapName.SkyTemple);
-                case "Tomb of the Spider Queen":
-                    glowColor = Colors.LightBlue;
-                    return HeroesInfo.GetMapBackground(MapName.TomboftheSpiderQueen);
-                case "Towers of Doom":
-                    glowColor = Colors.Orange;
-                    return HeroesInfo.GetMapBackground(MapName.TowersofDoom);
-                case "Braxis Holdout":
-                    glowColor = Colors.Blue;
-                    return HeroesInfo.GetMapBackground(MapName.BraxisHoldout);
-                case "Warhead Junction":
-                    glowColor = Colors.Yellow;
-                    return HeroesInfo.GetMapBackground(MapName.WarheadJunction);
-                default:
-                    glowColor = Colors.White;
-                    return null;
-            }
+            glowColor = HeroesInfo.GetMapBackgroundFontGlowColor(mapName);
+            return HeroesInfo.GetMapBackground(mapName);
         }
 
         private BitmapImage SetPlayerMVPAward(int? team, string awardType, out string awardName)

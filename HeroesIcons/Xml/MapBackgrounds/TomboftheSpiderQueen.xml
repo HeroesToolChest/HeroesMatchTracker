@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TomboftheSpiderQueen name="Tomb of the Spider Queen">
+  <Normal fontglow="#FFADD8E6">ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg</Normal>
+  <Small>ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen_small.jpg</Small>
+</TomboftheSpiderQueen>

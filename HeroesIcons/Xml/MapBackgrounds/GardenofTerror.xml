@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GardenofTerror name="Garden of Terror">
+  <Normal fontglow="#FFADD8E6">ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg</Normal>
+  <Small>ui_ingame_mapmechanic_loadscreen_gardenofterror_small.jpg</Small>
+</GardenofTerror>

@@ -12,16 +12,13 @@ namespace HeroesIcons
     {
         private HeroesXml HeroesXml;
         private MatchAwardsXml MatchAwardsXml;
+        private MapBackgroundsXml MapBackgroundsXml;
 
         /// <summary>
         /// key is real hero name
         /// value is HeroRole
         /// </summary>
         private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
-
-        private Dictionary<MapName, Uri> MapBackgrounds = new Dictionary<MapName, Uri>();
-        private Dictionary<MapName, Uri> MapBackgroundsSmall = new Dictionary<MapName, Uri>();
-
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
 
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
@@ -30,9 +27,9 @@ namespace HeroesIcons
         {
             HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
+            MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds");
 
             SetNonSupportHeroesWithSupportStat();
-            SetMapBackgrounds();
             SetHomeScreenBackgrounds();
             SetPartyIcons();
         }
@@ -43,6 +40,8 @@ namespace HeroesIcons
         }
 
         #region public methods
+
+        #region HeroesXml
         /// <summary>
         /// Returns a BitmapImage of the talent
         /// </summary>
@@ -162,6 +161,22 @@ namespace HeroesIcons
             }
 
             return talent.Item1;
+        }
+
+        /// <summary>
+        /// Returns a dictionary of all the talents of a hero
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <returns></returns>
+        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
+        {
+            Dictionary<TalentTier, List<string>> talents;
+            if (!HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            {
+                Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
+            }
+
+            return talents;
         }
 
         /// <summary>
@@ -286,23 +301,9 @@ namespace HeroesIcons
         {
             return HeroesXml.HeroesRealName.Count;
         }
+        #endregion Heroes Xml
 
-        public BitmapImage GetMapBackground(MapName mapName, bool useSmallImage = false)
-        {
-            try
-            {
-                if (useSmallImage == false)
-                    return new BitmapImage(MapBackgrounds[mapName]);
-                else
-                    return new BitmapImage(MapBackgroundsSmall[mapName]);
-            }
-            catch (Exception)
-            {
-                Task.Run(() => Log(ImageMissingLogName, $"Map background: {mapName}"));
-                return null;
-            }
-        }
-
+        #region MatchAwardsXml
         /// <summary>
         /// Returns the MVPScreen award BitmapImage of the given mvpAwardType annd color
         /// </summary>
@@ -356,18 +357,83 @@ namespace HeroesIcons
         }
 
         /// <summary>
-        /// Gets the MVPAwardType enum from a given string, returns Unknown if no enum equivalent is found
+        /// Returns a list of all the match awards (reference names)
         /// </summary>
-        /// <param name="awardNameType">string name of enum</param>
         /// <returns></returns>
-        public MVPAwardType GetMVPAwardTypeFromString(string awardNameType)
+        public List<string> GetMatchAwardsList()
         {
-            MVPAwardType mvpAwardType;
-            if (Enum.TryParse(awardNameType, true, out mvpAwardType))
-                return mvpAwardType;
-            else
-                return MVPAwardType.Unknown;
+            return new List<string>(MatchAwardsXml.MVPScoreScreenAwards.Keys);
         }
+        #endregion MatchAwardsXml
+
+        #region MapBackgroundsXml
+        public BitmapImage GetMapBackground(string mapRealName, bool useSmallImage = false)
+        {
+            try
+            {
+                if (useSmallImage == false)
+                    return new BitmapImage(MapBackgroundsXml.MapBackgrounds[mapRealName]);
+                else
+                    return new BitmapImage(MapBackgroundsXml.MapBackgroundsSmall[mapRealName]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Map background: {mapRealName}"));
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns the color associated with the map, returns black if map not found
+        /// </summary>
+        /// <param name="mapRealName">Real map name</param>
+        /// <returns></returns>
+        public Color GetMapBackgroundFontGlowColor(string mapRealName)
+        {
+            Color color;
+            if (!MapBackgroundsXml.MapBackgroundFontGlowColor.TryGetValue(mapRealName, out color))
+            {
+                return Colors.Black;
+            }
+
+            return color;
+        }
+
+        /// <summary>
+        /// Returns a list of all maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetMapsList()
+        {
+            return new List<string>(MapBackgroundsXml.MapBackgrounds.Keys);
+        }
+
+        /// <summary>
+        /// Returns a list of all maps, except custom only maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetMapsListExceptCustomOnly()
+        {
+            var allMaps = new Dictionary<string, Uri>(MapBackgroundsXml.MapBackgrounds);
+            foreach (var customMap in GetCustomOnlyMapsList())
+            {
+                if (allMaps.ContainsKey(customMap))
+                {
+                    allMaps.Remove(customMap);
+                }
+            }
+            return new List<string>(allMaps.Keys);
+        }
+
+        /// <summary>
+        /// Returns a list of custom only maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetCustomOnlyMapsList()
+        {
+            return MapBackgroundsXml.CustomOnlyMaps;
+        }
+        #endregion MapBackgroundsXml
 
         public BitmapImage GetPartyIcon(PartyIconColor partyIconColor)
         {
@@ -386,66 +452,12 @@ namespace HeroesIcons
         {
             return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
         }
-
-        /// <summary>
-        /// Returns a dictionary of all the talents of a hero
-        /// </summary>
-        /// <param name="realHeroName">real hero name</param>
-        /// <returns></returns>
-        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
-        {
-            Dictionary<TalentTier, List<string>> talents;
-            if (!HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
-            {
-                Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
-            }
-
-            return talents;
-        }
         #endregion public methods
 
         #region private methods
         private void SetNonSupportHeroesWithSupportStat()
         {
             HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Support);
-        }
-
-        private void SetMapBackgrounds()
-        {
-            try
-            {
-                MapBackgrounds.Add(MapName.BattlefieldofEternity, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.BlackheartsBay, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_blackheartsbay.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.BraxisHoldout, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_braxisholdout.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.CursedHollow, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_cursedhollow.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.DragonShire, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_dragonshire.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.GardenofTerror, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.HauntedMines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.InfernalShrines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_shrines.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.LostCavern, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_lostcavern.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.SkyTemple, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_skytemple.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.TomboftheSpiderQueen, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.TowersofDoom, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg", UriKind.Absolute));
-                MapBackgrounds.Add(MapName.WarheadJunction, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_warhead.jpg", UriKind.Absolute));
-
-                MapBackgroundsSmall.Add(MapName.BattlefieldofEternity, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.BlackheartsBay, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_blackheartsbay_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.BraxisHoldout, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_braxisholdout_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.CursedHollow, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_cursedhollow_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.DragonShire, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_dragonshire_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.GardenofTerror, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_gardenofterror_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.HauntedMines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_hauntedmines_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.InfernalShrines, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_shrines_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.LostCavern, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_lostcavern_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.SkyTemple, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_skytemple_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.TomboftheSpiderQueen, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_tombofthespiderqueen_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.TowersofDoom, new Uri($"{ApplicationPath}MapBackgrounds/ui_ingame_mapmechanic_loadscreen_towersofdoom_small.jpg", UriKind.Absolute));
-                MapBackgroundsSmall.Add(MapName.WarheadJunction, new Uri($"{ApplicationPath}MapBackgrounds/storm_ui_homescreenbackground_warhead_small.jpg", UriKind.Absolute));
-            }
-            catch (Exception ex)
-            {
-                throw new IconException("Failed to set all map backgrounds", ex);
-            }
         }
 
         private void SetHomeScreenBackgrounds()
