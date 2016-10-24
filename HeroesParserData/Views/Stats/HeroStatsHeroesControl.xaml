@@ -503,8 +503,13 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                                 <RowDefinition Height="auto"></RowDefinition>
                                 <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Expander Header="Level 1" IsExpanded="true" Grid.Row="0">
+                            <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshTalentsCommand}" ItemsSource="{Binding MapList}" SelectedValue="{Binding SelectedTalentMap}"
+                                IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0"/>
+                            <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshTalentsCommand}" ItemsSource="{Binding GameModeList}" SelectedValue="{Binding SelectedTalentGameMode}"
+                                IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0"/>
+                            <Expander Header="Level 1" IsExpanded="true" Grid.Row="1" Margin="0,10,0,0">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel1DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -522,7 +527,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -530,7 +535,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 4" IsExpanded="true" Grid.Row="1">
+                            <Expander Header="Level 4" IsExpanded="true" Grid.Row="2">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel4DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -548,7 +553,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -556,7 +561,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 7" IsExpanded="true" Grid.Row="2">
+                            <Expander Header="Level 7" IsExpanded="true" Grid.Row="3">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel7DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -574,7 +579,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -582,7 +587,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 10" IsExpanded="true" Grid.Row="3">
+                            <Expander Header="Level 10" IsExpanded="true" Grid.Row="4">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel10DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -600,7 +605,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -608,7 +613,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 13" IsExpanded="true" Grid.Row="4">
+                            <Expander Header="Level 13" IsExpanded="true" Grid.Row="5">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel13DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -626,7 +631,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -634,7 +639,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 16" IsExpanded="true" Grid.Row="5">
+                            <Expander Header="Level 16" IsExpanded="true" Grid.Row="6">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel16DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -652,7 +657,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -660,7 +665,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </Expander>
-                            <Expander Header="Level 20" IsExpanded="true" Grid.Row="6">
+                            <Expander Header="Level 20" IsExpanded="true" Grid.Row="7">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel20DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -678,7 +683,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="120" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>

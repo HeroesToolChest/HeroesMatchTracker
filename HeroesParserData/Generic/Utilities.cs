@@ -52,7 +52,7 @@ namespace HeroesParserData
             GameMode gameModeEnum;
             gameMode = Regex.Replace(gameMode, @"\s+", "");
 
-            if (gameMode == "AllTypes")
+            if (gameMode == "AllTypes" || gameMode == "AllGameModes")
                 return GameMode.Cooperative;
             else if (Enum.TryParse(gameMode, true, out gameModeEnum))
                 return gameModeEnum;

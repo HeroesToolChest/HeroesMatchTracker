@@ -17,6 +17,7 @@ namespace HeroesParserData.ViewModels.Stats
 
         private List<string> _seasonList = new List<string>();
         private List<string> _mapList = new List<string>();
+        private List<string> _gameModeList = new List<string>();
 
         protected Season GetSeasonSelected
         {
@@ -40,6 +41,16 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 _mapList = value;
                 RaisePropertyChangedEvent(nameof(MapList));
+            }
+        }
+
+        public List<string> GameModeList
+        {
+            get { return _gameModeList; }
+            set
+            {
+                _gameModeList = value;
+                RaisePropertyChangedEvent(nameof(GameModeList));
             }
         }
 
@@ -124,6 +135,9 @@ namespace HeroesParserData.ViewModels.Stats
 
             MapList.Add("All Maps");
             MapList.AddRange(HeroesInfo.GetMapsListExceptCustomOnly());
+
+            GameModeList.Add("All Game Modes");
+            GameModeList.AddRange(AllGameModesList);
         }
     }
 }

@@ -309,7 +309,7 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static int ReadCharacterTalentsIsWinner(string talentReferenceName, TalentTier tier, Season season, GameMode gameMode, string character, bool isWinner)
+            public static int ReadCharacterTalentsIsWinner(string talentReferenceName, TalentTier tier, Season season, GameMode gameMode, string character, string mapName, bool isWinner)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
@@ -318,6 +318,12 @@ namespace HeroesParserData.DataQueries
                     gameModeString = GameModeQueryString(false);
                 else
                     gameModeString = GameModeQueryString(true);
+
+                string mapNameString;
+                if (App.HeroesInfo.IsValidMapName(mapName))
+                    mapNameString = MapNameQueryString(false);
+                else
+                    mapNameString = MapNameQueryString(true);
 
                 string talentNameColumn = GetTableColumnTalentName(tier);
 
@@ -331,14 +337,16 @@ namespace HeroesParserData.DataQueries
                                                                 mpt.PlayerId = hp.PlayerId AND
                                                                 mp.ReplayId = r.ReplayId AND 
                                                                 mp.PlayerId = hp.PlayerId
-                                                                WHERE mpt.PlayerId = @PlayerId AND IsWinner = @IsWinner AND mpt.Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND {talentNameColumn} = @Talent",
+                                                                WHERE mpt.PlayerId = @PlayerId AND IsWinner = @IsWinner AND mpt.Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
+                                                                AND {talentNameColumn} = @Talent AND {mapNameString}",
                                                                 new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
                                                                 new SQLiteParameter("@Character", character),
                                                                 new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                 new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                                 new SQLiteParameter("@GameMode", gameMode),
                                                                 new SQLiteParameter("@Talent", talentReferenceName),
-                                                                new SQLiteParameter("@IsWinner", isWinner)).FirstOrDefault();
+                                                                new SQLiteParameter("@IsWinner", isWinner),
+                                                                new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
                     return amount.HasValue ? amount.Value : 0;
                 }
             }

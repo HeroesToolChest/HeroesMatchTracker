@@ -31,6 +31,8 @@ namespace HeroesParserData.ViewModels.Stats
         private string _teamLeagueTitle;
         private string _customGameTitle;
         private string _selectedAwardMap;
+        private string _selectedTalentMap;
+        private string _selectedTalentGameMode;
         private int? _characterLevel;
         private int? _totalWins;
         private int? _totalLosses;
@@ -472,6 +474,26 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
+        public string SelectedTalentMap
+        {
+            get { return _selectedTalentMap; }
+            set
+            {
+                _selectedTalentMap = value;
+                RaisePropertyChangedEvent(nameof(SelectedTalentMap));
+            }
+        }
+
+        public string SelectedTalentGameMode
+        {
+            get { return _selectedTalentGameMode; }
+            set
+            {
+                _selectedTalentGameMode = value;
+                RaisePropertyChangedEvent(nameof(SelectedTalentGameMode));
+            }
+        }
+
         public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel1DataCollection
         {
             get { return _talentsPickLevel1DataCollection; }
@@ -546,6 +568,11 @@ namespace HeroesParserData.ViewModels.Stats
         {
             get { return new DelegateCommand(async () => await PerformRefreshAwardsOnlyCommand()); }
         }
+
+        public ICommand RefreshTalentsCommand
+        {
+            get { return new DelegateCommand(async () => await PerformRefreshTalentsOnlyCommand()); }
+        }
         #endregion public properties
 
         /// <summary>
@@ -562,6 +589,8 @@ namespace HeroesParserData.ViewModels.Stats
             CustomGameTitle = "Custom Game";
 
             SelectedAwardMap = MapList[0];
+            SelectedTalentMap = MapList[0];
+            SelectedTalentGameMode = GameModeList[0];
         }
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)
@@ -592,8 +621,6 @@ namespace HeroesParserData.ViewModels.Stats
                 var maps = HeroesInfo.GetMapsListExceptCustomOnly();
                 var customGameModeMaps = HeroesInfo.GetMapsList();
 
-                var allTalentTierForHero = HeroesInfo.GetTalentsForHero(SelectedHero);
-
                 List<Task> list = new List<Task>();
                 list.Add(SetMapMatchStats(maps, GameMode.QuickMatch, StatsHeroesQuickMatchDataCollection, StatsHeroesQuickMatchDataTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.UnrankedDraft, StatsHeroesUnrankedDraftDataCollection, StatsHeroesUnrankedDraftDataTotalCollection));
@@ -601,13 +628,7 @@ namespace HeroesParserData.ViewModels.Stats
                 list.Add(SetMapMatchStats(maps, GameMode.TeamLeague, StatsHeroesTeamLeagueDataCollection, StatsHeroesTeamLeagueDataTotalCollection));
                 list.Add(SetMapMatchStats(customGameModeMaps, GameMode.Custom, StatsHeroesCustomGameDataCollection, StatsHeroesCustomGameDataTotalCollection));
                 list.Add(SetMatchAwards());
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level1, GameMode.Cooperative, TalentsPickLevel1DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level4, GameMode.Cooperative, TalentsPickLevel4DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level7, GameMode.Cooperative, TalentsPickLevel7DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level10, GameMode.Cooperative, TalentsPickLevel10DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level13, GameMode.Cooperative, TalentsPickLevel13DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level16, GameMode.Cooperative, TalentsPickLevel16DataCollection));
-                list.Add(SetTalentPicks(allTalentTierForHero, TalentTier.Level20, GameMode.Cooperative, TalentsPickLevel20DataCollection));
+                list.Add(SetAllTalentPicks());
 
                 await Task.WhenAll(list.ToArray());
 
@@ -803,6 +824,23 @@ namespace HeroesParserData.ViewModels.Stats
             });
         }
 
+        private async Task SetAllTalentPicks()
+        {
+            if (string.IsNullOrEmpty(SelectedHero))
+                return;
+
+            var allTalentTierForHero = HeroesInfo.GetTalentsForHero(SelectedHero);
+
+            GameMode gameMode = Utilities.GetGameModeFromString(SelectedTalentGameMode);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level1, gameMode, TalentsPickLevel1DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level4, gameMode, TalentsPickLevel4DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level7, gameMode, TalentsPickLevel7DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level10, gameMode, TalentsPickLevel10DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level13, gameMode, TalentsPickLevel13DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level16, gameMode, TalentsPickLevel16DataCollection);
+            await SetTalentPicks(allTalentTierForHero, TalentTier.Level20, gameMode, TalentsPickLevel20DataCollection);
+        }
+
         private async Task SetTalentPicks(Dictionary<TalentTier, List<string>> allTalentTiers, TalentTier tier, GameMode gameMode, ObservableCollection<StatsHeroesTalentPicks> collection)
         {
             var tierTalents = allTalentTiers[tier];
@@ -812,8 +850,8 @@ namespace HeroesParserData.ViewModels.Stats
                 var talentImage = HeroesInfo.GetTalentIcon(talent);
                 talentImage.Freeze();
 
-                int talentWin = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, true);
-                int talentLoss = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, false);
+                int talentWin = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, SelectedTalentMap, true);
+                int talentLoss = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, SelectedTalentMap, false);
                 int talentTotal = talentWin + talentLoss;
                 int talentWinPercentage = Utilities.CalculateWinPercentage(talentWin, talentTotal);
 
@@ -849,6 +887,42 @@ namespace HeroesParserData.ViewModels.Stats
                 });
 
                 await SetMatchAwards();
+            });
+            IsComboBoxEnabled = true;
+        }
+
+        private async Task PerformRefreshTalentsOnlyCommand()
+        {
+            IsComboBoxEnabled = false;
+            await Task.Run(async () =>
+            {
+                foreach (var talent in TalentsPickLevel1DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel4DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel7DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel10DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel13DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel16DataCollection)
+                    talent.TalentImage = null;
+                foreach (var talent in TalentsPickLevel20DataCollection)
+                    talent.TalentImage = null;
+
+                await Application.Current.Dispatcher.InvokeAsync(delegate
+                {
+                    TalentsPickLevel1DataCollection.Clear();
+                    TalentsPickLevel4DataCollection.Clear();
+                    TalentsPickLevel7DataCollection.Clear();
+                    TalentsPickLevel10DataCollection.Clear();
+                    TalentsPickLevel13DataCollection.Clear();
+                    TalentsPickLevel16DataCollection.Clear();
+                    TalentsPickLevel20DataCollection.Clear();
+                });
+
+                await SetAllTalentPicks();
             });
             IsComboBoxEnabled = true;
         }
