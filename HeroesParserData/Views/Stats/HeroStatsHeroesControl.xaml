@@ -437,8 +437,11 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"></RowDefinition>
                                 <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
+                            <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshAwardsCommand}" ItemsSource="{Binding MapList}" SelectedValue="{Binding SelectedAwardMap}"
+                                IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0"/>
+                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding MatchAwardDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
@@ -463,7 +466,7 @@
                                     <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
+                            <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="2"
                                           EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
                                           ItemsSource="{Binding MatchAwardDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>

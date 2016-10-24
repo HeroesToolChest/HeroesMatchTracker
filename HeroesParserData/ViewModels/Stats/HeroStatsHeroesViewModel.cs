@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.ViewModels.Stats
@@ -29,6 +30,7 @@ namespace HeroesParserData.ViewModels.Stats
         private string _heroLeagueTitle;
         private string _teamLeagueTitle;
         private string _customGameTitle;
+        private string _selectedAwardMap;
         private int? _characterLevel;
         private int? _totalWins;
         private int? _totalLosses;
@@ -460,6 +462,16 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
+        public string SelectedAwardMap
+        {
+            get { return _selectedAwardMap; }
+            set
+            {
+                _selectedAwardMap = value;
+                RaisePropertyChangedEvent(nameof(SelectedAwardMap));
+            }
+        }
+
         public ObservableCollection<StatsHeroesTalentPicks> TalentsPickLevel1DataCollection
         {
             get { return _talentsPickLevel1DataCollection; }
@@ -529,8 +541,16 @@ namespace HeroesParserData.ViewModels.Stats
                 RaisePropertyChangedEvent(nameof(TalentsPickLevel20DataCollection));
             }
         }
+
+        public ICommand RefreshAwardsCommand
+        {
+            get { return new DelegateCommand(async () => await PerformRefreshAwardsOnlyCommand()); }
+        }
         #endregion public properties
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public HeroStatsHeroesViewModel()
             :base()
         {
@@ -540,6 +560,8 @@ namespace HeroesParserData.ViewModels.Stats
             HeroLeagueTitle = "Hero League";
             TeamLeagueTitle = "Team League";
             CustomGameTitle = "Custom Game";
+
+            SelectedAwardMap = MapList[0];
         }
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)
@@ -728,10 +750,10 @@ namespace HeroesParserData.ViewModels.Stats
         {
             foreach (var award in HeroesInfo.GetMatchAwardsList())
             {
-                int quickmatchAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.QuickMatch, SelectedHero);
-                int unrankedDraftAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero);
-                int heroLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero);
-                int teamLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero);
+                int quickmatchAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.QuickMatch, SelectedHero, SelectedAwardMap);
+                int unrankedDraftAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero, SelectedAwardMap);
+                int heroLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero, SelectedAwardMap);
+                int teamLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero, SelectedAwardMap);
                 int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 if (award == "MVP")
@@ -810,6 +832,25 @@ namespace HeroesParserData.ViewModels.Stats
                     collection.Add(talentPicks);
                 });
             }
+        }
+
+        private async Task PerformRefreshAwardsOnlyCommand()
+        {
+            IsComboBoxEnabled = false;
+            await Task.Run(async () =>
+            {
+                foreach (var award in MatchAwardDataCollection)
+                    award.AwardImage = null;
+
+                await Application.Current.Dispatcher.InvokeAsync(delegate
+                {
+                    MatchAwardDataCollection.Clear();
+                    MatchAwardDataTotalCollection.Clear();
+                });
+
+                await SetMatchAwards();
+            });
+            IsComboBoxEnabled = true;
         }
 
         private void ClearStats()

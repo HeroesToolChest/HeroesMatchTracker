@@ -16,6 +16,7 @@ namespace HeroesParserData.ViewModels.Stats
         private bool _isComboBoxEnabled;
 
         private List<string> _seasonList = new List<string>();
+        private List<string> _mapList = new List<string>();
 
         protected Season GetSeasonSelected
         {
@@ -29,6 +30,16 @@ namespace HeroesParserData.ViewModels.Stats
             {
                 _seasonList = value;
                 RaisePropertyChangedEvent(nameof(SeasonList));
+            }
+        }
+
+        public List<string> MapList
+        {
+            get { return _mapList; }
+            set
+            {
+                _mapList = value;
+                RaisePropertyChangedEvent(nameof(MapList));
             }
         }
 
@@ -110,6 +121,9 @@ namespace HeroesParserData.ViewModels.Stats
             SeasonList.AddRange(AllSeasonsList);
 
             SelectedSeasonOption = SeasonList[SeasonList.Count - 1];
+
+            MapList.Add("All Maps");
+            MapList.AddRange(HeroesInfo.GetMapsListExceptCustomOnly());
         }
     }
 }

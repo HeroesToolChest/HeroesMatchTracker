@@ -434,6 +434,16 @@ namespace HeroesIcons
         {
             return MapBackgroundsXml.CustomOnlyMaps;
         }
+
+        /// <summary>
+        /// Returns true if mapName is a valid name
+        /// </summary>
+        /// <param name="mapName">The map name that needs to be checked</param>
+        /// <returns></returns>
+        public bool IsValidMapName(string mapName)
+        {
+            return MapBackgroundsXml.MapBackgrounds.ContainsKey(mapName);
+        }
         #endregion MapBackgroundsXml
 
         #region HomeScreensXml

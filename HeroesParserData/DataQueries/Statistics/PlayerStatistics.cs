@@ -269,7 +269,7 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static int ReadTotalMatchAwards(string mvpAwardType, Season season, GameMode gameMode, string character)
+            public static int ReadTotalMatchAwards(string mvpAwardType, Season season, GameMode gameMode, string character, string mapName)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
@@ -278,6 +278,12 @@ namespace HeroesParserData.DataQueries
                     gameModeString = GameModeQueryString(false);
                 else
                     gameModeString = GameModeQueryString(true);
+
+                string mapNameString;
+                if (App.HeroesInfo.IsValidMapName(mapName))
+                    mapNameString = MapNameQueryString(false);
+                else
+                    mapNameString = MapNameQueryString(true);
 
                 using (var db = new HeroesParserDataContext())
                 {
@@ -290,13 +296,15 @@ namespace HeroesParserData.DataQueries
                                                                 mp.PlayerId = ma.PlayerId AND
                                                                 mp.PlayerId = hp.PlayerId AND
                                                                 mp.PlayerId = ma.PlayerId
-                                                                WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND Award = @AwardType",
+                                                                WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
+                                                                AND Award = @AwardType AND {mapNameString}",
                                                                 new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
                                                                 new SQLiteParameter("@Character", character),
                                                                 new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                 new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                                 new SQLiteParameter("@GameMode", gameMode),
-                                                                new SQLiteParameter("@AwardType", mvpAwardType)).FirstOrDefault();
+                                                                new SQLiteParameter("@AwardType", mvpAwardType),
+                                                                new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
                     return amount.HasValue ? amount.Value : 0;
                 }
             }
@@ -335,12 +343,20 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            private static string GameModeQueryString(bool allOrSingle)
+            private static string GameModeQueryString(bool all)
             {
-                if (allOrSingle)
+                if (all)
                     return "GameMode >= 3";
                 else
                     return "GameMode = @GameMode";
+            }
+
+            private static string MapNameQueryString(bool all)
+            {
+                if (all)
+                    return "MapName > 0";
+                else
+                    return "MapName = @MapName";
             }
 
             private static string GetTableColumnTalentName(TalentTier tier)
