@@ -1,10 +1,8 @@
 ﻿using HeroesIcons;
-using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
-using NLog;
 using System;
-using System.Data.SqlClient;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace HeroesParserData
@@ -39,6 +37,11 @@ namespace HeroesParserData
             //                        ThemeManager.GetAccent("Theme"),
             //                        theme.Item1);
 
+            Task.Run(async () =>
+            {
+                await PeriodicallySaveSettings();
+            });
+
             base.OnStartup(e);
         }
 
@@ -51,10 +54,20 @@ namespace HeroesParserData
                 NotifyIcon.Visible = false;
             }
 
+            // this should only trigger if the update is applied through the settings menu
             if (NewReleaseApplied)
                 AutoUpdater.CopyDatabaseToLatestRelease();
 
             base.OnExit(e);
+        }
+
+        private async Task PeriodicallySaveSettings()
+        {
+            while (true)
+            {
+                await Task.Delay(300000); // 5 minutes
+                Settings.Default.Save();
+            }
         }
     }
 }
