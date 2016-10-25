@@ -1,12 +1,12 @@
 namespace HeroesParserData.Models.DbModels
 {
     using Database;
+    using Database.Migrations;
     using NLog;
     using SQLite.CodeFirst;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
-    using System.Data.SQLite;
     using System.Linq;
     using System.Threading.Tasks;
 

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace HeroesParserData.Database
+namespace HeroesParserData.Database.Migrations
 {
     public interface IMigrationAddon
     {

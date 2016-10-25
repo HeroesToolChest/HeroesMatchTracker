@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HeroesParserData.Database.Migrations;
+using System.Collections.Generic;
 
 namespace HeroesParserData.Database
 {
@@ -28,8 +29,6 @@ namespace HeroesParserData.Database
                         BattleNetSubId INTEGER,
                         DateAdded DATETIME,
                         FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))");
-
-            //steps.Add(@"ALTER TABLE ReplayMatchPlayers ADD COLUMN PartyValue INTEGER DEFAULT 0");
 
             Migrations.Add(1, steps);
 

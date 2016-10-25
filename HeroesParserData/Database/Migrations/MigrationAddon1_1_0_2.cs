@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HeroesParserData.Database
+namespace HeroesParserData.Database.Migrations
 {
     public class MigrationAddon1_1_0_2 : IMigrationAddon
     {
