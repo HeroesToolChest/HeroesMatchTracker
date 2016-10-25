@@ -33,6 +33,8 @@ namespace HeroesIcons
 
             SetNonSupportHeroesWithSupportStat();
             SetPartyIcons();
+            SetRoleIcons();
+            SetFranchiseIcons();
         }
 
         public static HeroesInfo Initialize()
