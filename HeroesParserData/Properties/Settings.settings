@@ -2,47 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HeroesParserData.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ReplaysLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="UpdateUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://github.com/koliva8245/HeroesParserData</Value>
-    </Setting>
-    <Setting Name="ReplayWatchCheckBox" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ReplayAutoScanCheckBox" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ParsedDateTimeCheckBox" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="ReplaysLatestSaved" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ReplaysLastSaved" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="SelectedSeason" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Season 2</Value>
-    </Setting>
-    <Setting Name="IsAutoUpdates" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="IsMinimizeToTray" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="IsBattleTagHidden" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="IsIncludeSubDirectories" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="UserBattleTagName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="UserPlayerId" Type="System.Int64" Scope="User">
-      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="DatabaseFile" Type="System.String" Scope="User">
       <Value Profile="(Default)">HeroesParserData.db</Value>

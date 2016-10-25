@@ -195,8 +195,9 @@
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\Migrations\IMigrationAddon.cs" />
-    <Compile Include="Database\Migrations\MigrationAddon1_1_0_2.cs" />
-    <Compile Include="Database\Migrations\MigrationAddon1_1_0_1.cs" />
+    <Compile Include="Database\Migrations\Migration1_1_0\MigrationAddon1_1_0_2.cs" />
+    <Compile Include="Database\Migrations\Migration1_1_0\MigrationAddon1_1_0_1.cs" />
+    <Compile Include="Database\Migrations\Migration1_2_0\MigrationAddon1_2_0_1.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="DataQueries\Statistics\HeroStatsGameMode.cs" />
     <Compile Include="DataQueries\Statistics\PlayerStatistics.cs" />
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
+    <Compile Include="DataQueries\UserSettings.cs" />
     <Compile Include="Generic\AppVersion.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
@@ -220,6 +222,7 @@
     <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\ReplayRenamedPlayer.cs" />
+    <Compile Include="Models\DbModels\UserSetting.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchHeroBans.cs" />

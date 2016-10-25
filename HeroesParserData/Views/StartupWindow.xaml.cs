@@ -79,6 +79,9 @@ namespace HeroesParserData.Views
 
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
             await (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
+
+            if (App.NewDatabaseCreated)
+                UserSettings.Default.SetDefaultSettings();
         }
 
         private async Task ApplicationUpdater()

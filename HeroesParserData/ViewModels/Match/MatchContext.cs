@@ -222,10 +222,10 @@ namespace HeroesParserData.ViewModels.Match
 
         public bool ShowPlayerTagColumn
         {
-            get { return !Settings.Default.IsBattleTagHidden; }
+            get { return !UserSettings.Default.IsBattleTagHidden; }
             set
             {
-                Settings.Default.IsBattleTagHidden = !value;
+                UserSettings.Default.IsBattleTagHidden = !value;
                 RaisePropertyChangedEvent(nameof(ShowPlayerTagColumn));
             }
         }

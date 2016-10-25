@@ -59,20 +59,20 @@ namespace HeroesParserData.ViewModels
 
         public bool IsProcessWatchChecked
         {
-            get { return Settings.Default.ReplayWatchCheckBox; }
+            get { return UserSettings.Default.ReplayWatchCheckBox; }
             set
             {
-                Settings.Default.ReplayWatchCheckBox = value;
+                UserSettings.Default.ReplayWatchCheckBox = value;
                 RaisePropertyChangedEvent(nameof(IsProcessWatchChecked));
             }
         }
 
         public bool IsAutoScanChecked
         {
-            get { return Settings.Default.ReplayAutoScanCheckBox; }
+            get { return UserSettings.Default.ReplayAutoScanCheckBox; }
             set
             {
-                Settings.Default.ReplayAutoScanCheckBox = value;
+                UserSettings.Default.ReplayAutoScanCheckBox = value;
                 RaisePropertyChangedEvent(nameof(IsAutoScanChecked));
             }
         }
@@ -119,20 +119,20 @@ namespace HeroesParserData.ViewModels
 
         public DateTime ReplaysLatestSaved
         {
-            get { return Settings.Default.ReplaysLatestSaved != DateTime.MinValue? Settings.Default.ReplaysLatestSaved : Query.Replay.ReadLatestReplayByDateTime(); }
+            get { return UserSettings.Default.ReplaysLatestSaved != DateTime.MinValue? UserSettings.Default.ReplaysLatestSaved : Query.Replay.ReadLatestReplayByDateTime(); }
             set
             {
-                Settings.Default.ReplaysLatestSaved = value;
+                UserSettings.Default.ReplaysLatestSaved = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLatestSaved));
             }
         }
 
         public DateTime ReplaysLastSaved
         {
-            get { return Settings.Default.ReplaysLastSaved != DateTime.MinValue ? Settings.Default.ReplaysLastSaved : Query.Replay.ReadLastReplayByDateTime(); }
+            get { return UserSettings.Default.ReplaysLastSaved != DateTime.MinValue ? UserSettings.Default.ReplaysLastSaved : Query.Replay.ReadLastReplayByDateTime(); }
             set
             {
-                Settings.Default.ReplaysLastSaved = value;
+                UserSettings.Default.ReplaysLastSaved = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLastSaved));
             }
         }
@@ -149,20 +149,20 @@ namespace HeroesParserData.ViewModels
 
         public string ReplaysLocation
         {
-            get { return Settings.Default.ReplaysLocation; }
+            get { return UserSettings.Default.ReplaysLocation; }
             set
             {
-                Settings.Default.ReplaysLocation = value;
+                UserSettings.Default.ReplaysLocation = value;
                 RaisePropertyChangedEvent(nameof(ReplaysLocation));
             }
         }
 
         public bool LatestParsedChecked
         {
-            get { return Settings.Default.ParsedDateTimeCheckBox; }
+            get { return UserSettings.Default.ParsedDateTimeCheckBox; }
             set
             {
-                Settings.Default.ParsedDateTimeCheckBox = value;
+                UserSettings.Default.ParsedDateTimeCheckBox = value;
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
                 RaisePropertyChangedEvent(nameof(LastParsedChecked));
             }
@@ -170,10 +170,10 @@ namespace HeroesParserData.ViewModels
 
         public bool LastParsedChecked
         {
-            get { return !Settings.Default.ParsedDateTimeCheckBox; }
+            get { return !UserSettings.Default.ParsedDateTimeCheckBox; }
             set
             {
-                Settings.Default.ParsedDateTimeCheckBox = !value;
+                UserSettings.Default.ParsedDateTimeCheckBox = !value;
                 RaisePropertyChangedEvent(nameof(LastParsedChecked));
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
             }
@@ -181,10 +181,10 @@ namespace HeroesParserData.ViewModels
 
         public bool IsIncludeSubDirectories
         {
-            get { return Settings.Default.IsIncludeSubDirectories; }
+            get { return UserSettings.Default.IsIncludeSubDirectories; }
             set
             {
-                Settings.Default.IsIncludeSubDirectories = value;
+                UserSettings.Default.IsIncludeSubDirectories = value;
                 RaisePropertyChangedEvent(nameof(IsIncludeSubDirectories));
             }
         }
@@ -405,7 +405,7 @@ namespace HeroesParserData.ViewModels
         {
             FileWatcher = new FileSystemWatcher();
 
-            FileWatcher.Path = Settings.Default.ReplaysLocation;
+            FileWatcher.Path = UserSettings.Default.ReplaysLocation;
             FileWatcher.IncludeSubdirectories = true;
             FileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes;
             FileWatcher.Filter = $"*.{Resources.HeroesReplayFileType}";
@@ -477,7 +477,7 @@ namespace HeroesParserData.ViewModels
             try
             {
                 var dateTime = LatestParsedChecked == true ? ReplaysLatestSaved : ReplaysLastSaved;
-                List <FileInfo> listFiles = new DirectoryInfo(Settings.Default.ReplaysLocation)
+                List <FileInfo> listFiles = new DirectoryInfo(UserSettings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", searchOption)
                     .OrderBy(x => x.LastWriteTime)
                     .Where(x => x.LastWriteTime > dateTime)
@@ -567,6 +567,8 @@ namespace HeroesParserData.ViewModels
 
                             if (ReplayDataQueue.Count > 5) // give it a chance to dequeue some replays
                                 Thread.Sleep(1500);
+                            else if (ReplayDataQueue.Count > 7)
+                                Thread.Sleep(2000);
 
                             ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
                         }

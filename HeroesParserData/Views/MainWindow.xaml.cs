@@ -24,7 +24,7 @@ namespace HeroesParserData.Views
 
         protected override void OnStateChanged(EventArgs e)
         {
-            if (Settings.Default.IsMinimizeToTray && WindowState == WindowState.Minimized)
+            if (UserSettings.Default.IsMinimizeToTray && WindowState == WindowState.Minimized)
             {
                 Hide();
                 App.NotifyIcon.Visible = true;
@@ -85,7 +85,7 @@ namespace HeroesParserData.Views
 
         private async Task ReceiveMessage(StatisticsTabMessage action)
         {
-            if (action.StatisticsTab == StatisticsTab.Overview && Settings.Default.UserPlayerId < 1)
+            if (action.StatisticsTab == StatisticsTab.Overview && UserSettings.Default.UserPlayerId < 1)
             {
                 await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Settings menu.");
             }

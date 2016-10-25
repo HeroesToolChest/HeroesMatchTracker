@@ -18,40 +18,40 @@ namespace HeroesParserData.ViewModels
 
         public bool IsMinimizeToTray
         {
-            get { return Settings.Default.IsMinimizeToTray; }
+            get { return UserSettings.Default.IsMinimizeToTray; }
             set
             {
-                Settings.Default.IsMinimizeToTray = value;
+                UserSettings.Default.IsMinimizeToTray = value;
                 RaisePropertyChangedEvent(nameof(IsMinimizeToTray));
             }
         }
 
         public bool IsAutoUpdates
         {
-            get { return Settings.Default.IsAutoUpdates; }
+            get { return UserSettings.Default.IsAutoUpdates; }
             set
             {
-                Settings.Default.IsAutoUpdates = value;
+                UserSettings.Default.IsAutoUpdates = value;
                 RaisePropertyChangedEvent(nameof(IsAutoUpdates));
             }
         }
 
         public bool IsBattleTagsHidden
         {
-            get { return Settings.Default.IsBattleTagHidden; }
+            get { return UserSettings.Default.IsBattleTagHidden; }
             set
             {
-                Settings.Default.IsBattleTagHidden = value;
+                UserSettings.Default.IsBattleTagHidden = value;
                 RaisePropertyChangedEvent(nameof(IsBattleTagsHidden));
             }
         }
 
         public string UserBattleTag
         {
-            get { return Settings.Default.UserBattleTagName; }
+            get { return UserSettings.Default.UserBattleTagName; }
             set
             {
-                Settings.Default.UserBattleTagName = value;
+                UserSettings.Default.UserBattleTagName = value;
                 RaisePropertyChangedEvent(nameof(UserBattleTag));
             }
         }
@@ -125,12 +125,12 @@ namespace HeroesParserData.ViewModels
                 return;
             else if (ValidateBattleTagName(UserBattleTag))
             {
-                Settings.Default.UserPlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetTag(UserBattleTag);
+                UserSettings.Default.UserPlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetTag(UserBattleTag);
                 InputBattleTagError = string.Empty;
             }
             else
             {
-                Settings.Default.UserBattleTagName = string.Empty;
+                UserSettings.Default.UserBattleTagName = string.Empty;
                 InputBattleTagError = "BattleTag not found";
             }
         }

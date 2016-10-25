@@ -18,7 +18,7 @@ namespace HeroesParserData.DataQueries
                     int level = db.Database.SqlQuery<int>($@"SELECT CharacterLevel FROM ReplayMatchPlayers
                                                                    WHERE Character = @Character AND PlayerId = @PlayerId 
                                                                    ORDER BY CharacterLevel desc",
-                                                                   new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                   new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                    new SQLiteParameter("@Character", heroName)).FirstOrDefault();
                     return level;
                 }
@@ -34,7 +34,7 @@ namespace HeroesParserData.DataQueries
                                                                     JOIN Replays r
                                                                     ON mp.ReplayId = r.ReplayId
                                                                     WHERE PlayerId = @PlayerId AND Character = @Character AND IsWinner = @Flag AND GameMode = @GameMode AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                                    new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                     new SQLiteParameter("@Character", heroName),
                                                                     new SQLiteParameter("@Flag", winOrLoss),
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
@@ -54,7 +54,7 @@ namespace HeroesParserData.DataQueries
                                                                     JOIN Replays r
                                                                     ON mp.ReplayId = r.ReplayId
                                                                     WHERE PlayerId = @PlayerId AND Character = @Character AND IsWinner = @Flag AND GameMode = @GameMode AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                    new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                     new SQLiteParameter("@Character", heroName),
                                                                     new SQLiteParameter("@Flag", winOrLoss),
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),

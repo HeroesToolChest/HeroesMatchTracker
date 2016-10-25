@@ -315,7 +315,7 @@ namespace HeroesParserData.ViewModels.Stats
 
         private async Task SetMostStats(StatType statType)
         {
-            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
+            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(UserSettings.Default.UserBattleTagName))
                 return;
 
             StatsMostAmountsCollection = new ObservableCollection<StatsMostAmounts>();
@@ -342,7 +342,7 @@ namespace HeroesParserData.ViewModels.Stats
 
         private async Task SetMapStats()
         {
-            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(Settings.Default.UserBattleTagName))
+            if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(UserSettings.Default.UserBattleTagName))
                 return;
 
             if (Lock == true)

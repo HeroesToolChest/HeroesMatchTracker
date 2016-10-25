@@ -12,7 +12,7 @@ namespace HeroesParserData.Models.DbModels
 
     public partial class HeroesParserDataContext : DbContext
     {
-        public static int RequiredDatabaseVersion = 1;
+        public static int RequiredDatabaseVersion = 2;
 
         public HeroesParserDataContext()
             : base("name=HeroesParserData") { }
@@ -107,6 +107,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
+        public virtual DbSet<UserSetting> UserSettings { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

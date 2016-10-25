@@ -30,7 +30,7 @@ namespace HeroesParserData
 
                 if (UpdateInfo != null)
                 {
-                    if (Settings.Default.IsAutoUpdates)
+                    if (UserSettings.Default.IsAutoUpdates)
                     {
                         await ApplyReleases();
                         return true;

@@ -12,6 +12,7 @@ namespace HeroesParserData.Database
         {
             // add call to MigrationVersionX() here
             MigrationVersion1();
+            MigrationVersion2();
         }
 
         // Add new migration versions here
@@ -37,6 +38,22 @@ namespace HeroesParserData.Database
             addonSteps.Add(new MigrationAddon1_1_0_2());
 
             MigrationAddons.Add(1, addonSteps);
+        }
+
+        private void MigrationVersion2()
+        {
+            List<string> steps = new List<string>();
+            steps.Add(@"CREATE TABLE IF NOT EXISTS UserSettings(
+                        SettingId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        Name NVARCHAR,
+                        Value NVARCHAR)");
+
+            Migrations.Add(2, steps);
+
+            List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
+            addonSteps.Add(new MigrationAddon1_2_0_1());
+
+            MigrationAddons.Add(2, addonSteps);
         }
     }
 }

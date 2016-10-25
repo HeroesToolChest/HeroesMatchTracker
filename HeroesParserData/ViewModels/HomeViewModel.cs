@@ -244,7 +244,7 @@ namespace HeroesParserData.ViewModels
         private void SetSeasonList()
         {
             SeasonList = AllSeasonsList;
-            SelectedSeason = Settings.Default.SelectedSeason;
+            SelectedSeason = UserSettings.Default.SelectedSeason;
         }
 
         private void SetData()

@@ -39,7 +39,7 @@ namespace HeroesParserData.DataQueries
                                                                   JOIN Replays r
                                                                   ON mp.ReplayId = r.ReplayId
                                                                   WHERE PlayerId = @PlayerId AND IsWinner = 1 AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                                  new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                  new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                   new SQLiteParameter("@Character", character),
                                                                   new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                   new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -58,7 +58,7 @@ namespace HeroesParserData.DataQueries
                                                                     mp.PlayerId = hp.PlayerId AND
                                                                     mp.PlayerId = mpsr.PlayerId
                                                                     WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                                    new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                     new SQLiteParameter("@Character", character),
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                     new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -94,7 +94,7 @@ namespace HeroesParserData.DataQueries
                                                                   JOIN Replays r
                                                                   ON mp.ReplayId = r.ReplayId
                                                                   WHERE PlayerId = @PlayerId AND IsWinner = 1 AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                  new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                  new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                   new SQLiteParameter("@Character", character),
                                                                   new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                   new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -114,7 +114,7 @@ namespace HeroesParserData.DataQueries
                                                                     mp.PlayerId = hp.PlayerId AND
                                                                     mp.PlayerId = mpsr.PlayerId
                                                                     WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                    new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                     new SQLiteParameter("@Character", character),
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                     new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -141,7 +141,7 @@ namespace HeroesParserData.DataQueries
                                                               JOIN Replays r
                                                               ON mp.ReplayId = r.ReplayId
                                                               WHERE PlayerId = @PlayerId AND MapName = @Map AND IsWinner = 1 AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                              new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                              new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                               new SQLiteParameter("@Map", map),
                                                               new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                               new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -166,7 +166,7 @@ namespace HeroesParserData.DataQueries
                                                               JOIN Replays r
                                                               ON mp.ReplayId = r.ReplayId
                                                               WHERE PlayerId = @PlayerId AND MapName = @Map AND IsWinner = 0 AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                              new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                              new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                               new SQLiteParameter("@Map", map),
                                                               new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                               new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -185,7 +185,7 @@ namespace HeroesParserData.DataQueries
                                                               JOIN Replays r
                                                               ON mp.ReplayId = r.ReplayId
                                                               WHERE PlayerId = @PlayerId AND GameMode = @GameMode AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                              new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                              new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                               new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                               new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                               new SQLiteParameter("@GameMode", gameMode)).FirstOrDefault();
@@ -203,7 +203,7 @@ namespace HeroesParserData.DataQueries
                                                               JOIN Replays r
                                                               ON mp.ReplayId = r.ReplayId
                                                               WHERE PlayerId = @PlayerId AND IsWinner = 1 AND GameMode = @GameMode AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
-                                                              new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                              new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                               new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                               new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                               new SQLiteParameter("@GameMode", gameMode)).FirstOrDefault();
@@ -224,13 +224,13 @@ namespace HeroesParserData.DataQueries
                 {
                     if (gameMode != GameMode.Cooperative)
                     {
-                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == Settings.Default.UserPlayerId && x.Replay.GameMode == gameMode && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
+                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == UserSettings.Default.UserPlayerId && x.Replay.GameMode == gameMode && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
                                                     .Include(x => x.Replay)
                                                     .ToList();
                     }
                     else
                     {
-                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == Settings.Default.UserPlayerId && x.Replay.GameMode >= GameMode.Cooperative && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
+                        return db.ReplayMatchPlayers.Where(x => x.PlayerId == UserSettings.Default.UserPlayerId && x.Replay.GameMode >= GameMode.Cooperative && x.Replay.ReplayBuild >= replayBuild.Item1 && x.Replay.ReplayBuild < replayBuild.Item2)
                                                     .Include(x => x.Replay)
                                                     .ToList();
                     }
@@ -259,7 +259,7 @@ namespace HeroesParserData.DataQueries
                                                                     mp.PlayerId = hp.PlayerId AND
                                                                     mp.PlayerId = mpsr.PlayerId
                                                                     WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                    new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                     new SQLiteParameter("@Character", character),
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                     new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -298,7 +298,7 @@ namespace HeroesParserData.DataQueries
                                                                 mp.PlayerId = ma.PlayerId
                                                                 WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
                                                                 AND Award = @AwardType AND {mapNameString}",
-                                                                new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                 new SQLiteParameter("@Character", character),
                                                                 new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                 new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
@@ -339,7 +339,7 @@ namespace HeroesParserData.DataQueries
                                                                 mp.PlayerId = hp.PlayerId
                                                                 WHERE mpt.PlayerId = @PlayerId AND IsWinner = @IsWinner AND mpt.Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
                                                                 AND {talentNameColumn} = @Talent AND {mapNameString}",
-                                                                new SQLiteParameter("@PlayerId", Settings.Default.UserPlayerId),
+                                                                new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
                                                                 new SQLiteParameter("@Character", character),
                                                                 new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                 new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),

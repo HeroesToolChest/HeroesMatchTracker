@@ -17,14 +17,12 @@ namespace HeroesParserData
         public static bool IsProcessingReplays { get; set; }
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
         public static bool NewReleaseApplied { get; set; }
+        public static bool NewDatabaseCreated { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             NewReleaseApplied = false;
-
-            // set default location
-            if (string.IsNullOrEmpty(Settings.Default.ReplaysLocation))
-                Settings.Default.ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
+            DatabaseFileExists();
 
             // add custom accent and theme resource dictionaries
             //ThemeManager.AddAccent("Theme", new Uri("pack://application:,,,/Resources/Theme.xaml"));
@@ -37,17 +35,12 @@ namespace HeroesParserData
             //                        ThemeManager.GetAccent("Theme"),
             //                        theme.Item1);
 
-            Task.Run(async () =>
-            {
-                await PeriodicallySaveSettings();
-            });
-
             base.OnStartup(e);
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
-            Settings.Default.Save();
+            //Settings.Default.Save();
 
             if (NotifyIcon != null)
             {
@@ -61,13 +54,12 @@ namespace HeroesParserData
             base.OnExit(e);
         }
 
-        private async Task PeriodicallySaveSettings()
+        private void DatabaseFileExists()
         {
-            while (true)
-            {
-                await Task.Delay(300000); // 5 minutes
-                Settings.Default.Save();
-            }
+            if (!File.Exists($@"Database/{Settings.Default.DatabaseFile}"))
+                NewDatabaseCreated = true;
+            else
+                NewDatabaseCreated = false;
         }
     }
 }
