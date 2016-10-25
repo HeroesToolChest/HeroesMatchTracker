@@ -5,8 +5,8 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Markup;
 
 namespace HeroesParserData.ViewModels.Heroes
 {
@@ -93,27 +93,34 @@ namespace HeroesParserData.ViewModels.Heroes
             int heroCount = 0;
             int row = 0;
 
-            while (heroCount < listOfHeroes.Count)
+            try
             {
-                HeroesUsable heroesUsable = new HeroesUsable();
-
-                for (int column = 0; column < 15; column++)
+                while (heroCount < listOfHeroes.Count)
                 {
-                    if (heroCount < listOfHeroes.Count)
+                    HeroesUsable heroesUsable = new HeroesUsable();
+
+                    for (int column = 0; column < 15; column++)
                     {
-                        heroesUsable.HeroName[column] = listOfHeroes[heroCount];
-                        heroesUsable.HeroPortrait[column] = HeroesInfo.GetHeroPortrait(listOfHeroes[heroCount]);
-                        heroesUsable.IsXOut.Add(true);
-                        HeroesGridLocation.Add(listOfHeroes[heroCount], new Tuple<int, int>(row, column));
+                        if (heroCount < listOfHeroes.Count)
+                        {
+                            heroesUsable.HeroName[column] = listOfHeroes[heroCount];
+                            heroesUsable.HeroPortrait[column] = HeroesInfo.GetHeroPortrait(listOfHeroes[heroCount]);
+                            heroesUsable.IsXOut.Add(true);
+                            HeroesGridLocation.Add(listOfHeroes[heroCount], new Tuple<int, int>(row, column));
+                        }
+                        else
+                            heroesUsable.IsXOut.Add(false);
+
+                        heroCount++;
                     }
-                    else
-                        heroesUsable.IsXOut.Add(false);
 
-                    heroCount++;
+                    Heroes.Add(heroesUsable);
+                    row++;
                 }
-
-                Heroes.Add(heroesUsable);
-                row++;
+            }
+            catch (Exception ex) when (ex is XamlParseException || ex is NotSupportedException)
+            {
+                ExceptionLog.Log(LogLevel.Error, ex, $"{nameof(LoadHeroPortraits)}: Failed to load");
             }
         }
 
