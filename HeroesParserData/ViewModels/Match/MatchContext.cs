@@ -27,7 +27,6 @@ namespace HeroesParserData.ViewModels.Match
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
-        private BitmapImage _backgroundMapImage;
         private Color _mapNameGlowColor;
         private bool _hasBans;
         private bool _hasObservers;
@@ -208,16 +207,6 @@ namespace HeroesParserData.ViewModels.Match
             {
                 _selectedReplay = value;
                 RaisePropertyChangedEvent(nameof(SelectedReplay));
-            }
-        }
-
-        public BitmapImage BackgroundMapImage
-        {
-            get { return _backgroundMapImage; }
-            set
-            {
-                _backgroundMapImage = value;
-                RaisePropertyChangedEvent(nameof(BackgroundMapImage));
             }
         }
 

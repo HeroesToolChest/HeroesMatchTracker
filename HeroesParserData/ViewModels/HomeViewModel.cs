@@ -2,19 +2,14 @@
 using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
-using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.ViewModels
 {
     public class HomeViewModel : ViewModelBase
     {
-        private BitmapImage _backgroundMapImage;
-        private Color _labelGlowColor;
         private long _replaysInDatabase;
         private DateTime _latestUploadedReplay;
         private DateTime _lastUploadedReplay;
@@ -33,29 +28,8 @@ namespace HeroesParserData.ViewModels
         private bool IsRefreshDataOn;
 
         private List<string> _seasonList = new List<string>();
-        private List<Tuple<BitmapImage, Color>> ListOfBackgroundImages;
 
         #region public properties
-        public BitmapImage BackgroundMapImage
-        {
-            get { return _backgroundMapImage; }
-            set
-            {
-                _backgroundMapImage = value;
-                RaisePropertyChangedEvent(nameof(BackgroundMapImage));
-            }
-        }
-
-        public Color LabelGlowColor
-        {
-            get { return _labelGlowColor; }
-            set
-            {
-                _labelGlowColor = value;
-                RaisePropertyChangedEvent(nameof(LabelGlowColor));
-            }
-        }
-
         public long ReplaysInDatabase
         {
             get { return _replaysInDatabase; }
@@ -222,23 +196,8 @@ namespace HeroesParserData.ViewModels
             :base()
         {
             Messenger.Default.Register<HomeTabMessage>(this, (action) => ReceiveMessage(action));
-            SetBackgroundImages();
-            SetRandomBackgroundImage();
             SetSeasonList();
             SetData();
-        }
-
-        private void SetBackgroundImages()
-        {
-            ListOfBackgroundImages = HeroesInfo.GetListOfHomeScreens();
-        }
-
-        private void SetRandomBackgroundImage()
-        {
-            Random random = new Random();
-            int num = random.Next(0, ListOfBackgroundImages.Count);
-            BackgroundMapImage = ListOfBackgroundImages[num].Item1;
-            LabelGlowColor = ListOfBackgroundImages[num].Item2;
         }
 
         private void SetSeasonList()

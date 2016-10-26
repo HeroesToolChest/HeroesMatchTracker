@@ -87,7 +87,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         <Setter Property="Effect" Value="{StaticResource HomeFontTheme}"></Setter>
     </Style>
-
+    
     <Style TargetType="CheckBox" x:Key="SettingsCheckBoxTheme" BasedOn="{StaticResource MetroCheckBox}">
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
