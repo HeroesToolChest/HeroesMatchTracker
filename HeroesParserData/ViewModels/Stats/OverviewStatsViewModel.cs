@@ -3,7 +3,6 @@ using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
 using HeroesParserData.Models.StatsModels;
-using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Collections.Generic;
