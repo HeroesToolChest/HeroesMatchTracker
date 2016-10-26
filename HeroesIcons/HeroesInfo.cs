@@ -174,12 +174,16 @@ namespace HeroesIcons
         public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
         {
             Dictionary<TalentTier, List<string>> talents;
-            if (!HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            if (HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            {
+                return talents;
+            }
+            else
             {
                 Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
+                return null;
             }
 
-            return talents;
         }
 
         /// <summary>
@@ -394,12 +398,10 @@ namespace HeroesIcons
         public Color GetMapBackgroundFontGlowColor(string mapRealName)
         {
             Color color;
-            if (!MapBackgroundsXml.MapBackgroundFontGlowColor.TryGetValue(mapRealName, out color))
-            {
+            if (MapBackgroundsXml.MapBackgroundFontGlowColor.TryGetValue(mapRealName, out color))
+                return color;
+            else
                 return Colors.Black;
-            }
-
-            return color;
         }
 
         /// <summary>
