@@ -111,19 +111,24 @@ namespace HeroesParserData.ViewModels.Stats
 
         protected async Task PerformCommand()
         {
-            IsComboBoxEnabled = false;
-            await Task.Run(async () =>
+            if (IsComboBoxEnabled)
             {
-                try
+                IsComboBoxEnabled = false;
+
+                await Task.Run(async () =>
                 {
-                    await RefreshStats();
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(LogLevel.Error, ex);
-                }
-            });
-            IsComboBoxEnabled = true;
+                    try
+                    {
+                        await RefreshStats();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                    }
+                });
+
+                IsComboBoxEnabled = true;
+            }
         }
 
         private void InitializeLists()

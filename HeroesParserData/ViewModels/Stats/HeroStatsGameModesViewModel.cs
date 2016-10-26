@@ -13,7 +13,6 @@ namespace HeroesParserData.ViewModels.Stats
     {
         private ObservableCollection<StatsHeroesGameModes> _statsHeroesGameModes = new ObservableCollection<StatsHeroesGameModes>();
 
-        private bool Lock;
         public ObservableCollection<StatsHeroesGameModes> StatsHeroesGameModes
         {
             get { return _statsHeroesGameModes; }
@@ -32,10 +31,6 @@ namespace HeroesParserData.ViewModels.Stats
 
         protected override async Task RefreshStats()
         {
-            if (Lock == true)
-                return;
-
-            Lock = true;
             StatsHeroesGameModes = new ObservableCollection<StatsHeroesGameModes>();
             var heroesList = HeroesInfo.GetListOfHeroes();
 
@@ -103,7 +98,6 @@ namespace HeroesParserData.ViewModels.Stats
                     StatsHeroesGameModes.Add(statsHeroesGameModes);
                 });
             }
-            Lock = false;
         }
 
         protected override async Task ReceiveMessage(StatisticsTabMessage action)

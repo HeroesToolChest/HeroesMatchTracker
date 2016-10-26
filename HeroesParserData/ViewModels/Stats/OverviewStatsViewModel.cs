@@ -34,7 +34,6 @@ namespace HeroesParserData.ViewModels.Stats
         private ObservableCollection<string> _totalRolesCollection = new ObservableCollection<string>();
         private ObservableCollection<string> _winRolesPercentagesCollection = new ObservableCollection<string>();
 
-        private bool Lock;
         #region public properties
 
         public List<string> MostStatsList
@@ -203,12 +202,7 @@ namespace HeroesParserData.ViewModels.Stats
         {
             get
             {
-                return new DelegateCommand(async () =>
-                {
-                    IsComboBoxEnabled = false;
-                    await GetMostStats();
-                    IsComboBoxEnabled = true;
-                });
+                return new DelegateCommand(async () => await GetMostTypeStats());
             }
         }
 
@@ -216,12 +210,7 @@ namespace HeroesParserData.ViewModels.Stats
         {
             get
             {
-                return new DelegateCommand(async () =>
-                {
-                    IsComboBoxEnabled = false;
-                    await GetAllStats();
-                    IsComboBoxEnabled = true;
-                });
+                return new DelegateCommand(async () => await GetAllStats());
             }
         }
 
@@ -229,12 +218,8 @@ namespace HeroesParserData.ViewModels.Stats
         {
             get
             {
-                return new DelegateCommand(async () =>
-                {
-                    IsComboBoxEnabled = false;
-                    await GetAllStats();
-                    IsComboBoxEnabled = true;
-                });
+                return new DelegateCommand(async () => await GetAllStats());
+
             }
         }
         #endregion public properties
@@ -272,45 +257,58 @@ namespace HeroesParserData.ViewModels.Stats
             }
         }
 
-        private async Task GetMostStats()
+        private async Task GetMostTypeStats()
         {
-            await Task.Run(async () =>
+            if (IsComboBoxEnabled)
             {
-                try
+                IsComboBoxEnabled = false;
+                await Task.Run(async () =>
                 {
-                    if (SelectedMostStatsOption == "Most Wins As")
-                        await SetMostStats(StatType.wins);
-                    else if (SelectedMostStatsOption == "Most Kills As")
-                        await SetMostStats(StatType.kills);
-                    else if (SelectedMostStatsOption == "Most Assists As")
-                        await SetMostStats(StatType.assists);
-                    else if (SelectedMostStatsOption == "Most Deaths As")
-                        await SetMostStats(StatType.deaths);
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(LogLevel.Error, ex);
-                }
-            });
+                    try
+                    {
+                        if (SelectedMostStatsOption == "Most Wins As")
+                            await SetMostStats(StatType.wins);
+                        else if (SelectedMostStatsOption == "Most Kills As")
+                            await SetMostStats(StatType.kills);
+                        else if (SelectedMostStatsOption == "Most Assists As")
+                            await SetMostStats(StatType.assists);
+                        else if (SelectedMostStatsOption == "Most Deaths As")
+                            await SetMostStats(StatType.deaths);
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                    }
+                });
+
+                IsComboBoxEnabled = true;
+            }
         }
         
         private async Task GetAllStats()
         {
-            await GetMostStats();
+            if (IsComboBoxEnabled)
+            {
+                await GetMostTypeStats();
 
-            await Task.Run(async () =>
-            { 
-                try
+                IsComboBoxEnabled = false;
+
+                await Task.Run(async () =>
                 {
-                    await SetMapStats();
-                    SetGameModesTotalGames();
-                    SetRoleStats();
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(LogLevel.Error, ex);
-                }
-            });
+                    try
+                    {
+                        await SetMapStats();
+                        SetGameModesTotalGames();
+                        SetRoleStats();
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                    }
+                });
+
+                IsComboBoxEnabled = true;
+            }
         }
 
         private async Task SetMostStats(StatType statType)
@@ -345,10 +343,6 @@ namespace HeroesParserData.ViewModels.Stats
             if (SelectedSeasonOption == null || SelectedGameModeOption == null || string.IsNullOrEmpty(UserSettings.Default.UserBattleTagName))
                 return;
 
-            if (Lock == true)
-                return;
-
-            Lock = true;
             StatsMapPercentagesCollection = new ObservableCollection<StatsMapPercentages>();
 
             Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
@@ -378,7 +372,6 @@ namespace HeroesParserData.ViewModels.Stats
             }
 
             SetTotalWonGames();
-            Lock = false;
         }
 
         private void SetTotalWonGames()
