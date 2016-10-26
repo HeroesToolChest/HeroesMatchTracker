@@ -14,6 +14,9 @@ namespace HeroesParserData.Models.MatchModels
         public int? Role { get; set; }
         public int? ExperienceContribution { get; set; }
         public FontWeight HighestExpFont { get; set; }
+
+        public MatchScores() { }
+
         public MatchScores(MatchPlayerInfoBase matchPlayerInfoBase)
         {
             LeaderboardPortrait = matchPlayerInfoBase.LeaderboardPortrait;

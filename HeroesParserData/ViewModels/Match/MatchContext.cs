@@ -3,7 +3,6 @@ using HeroesIcons;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Models.MatchModels;
-using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -42,6 +41,8 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchTalents> _matchObservers = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchScores> _matchScoreTeam1 = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2 = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchScores> _matchScoreTeam1Total = new ObservableCollection<MatchScores>();
+        private ObservableCollection<MatchScores> _matchScoreTeam2Total = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessages = new ObservableCollection<MatchChat>();
 
         private Dictionary<int, PartyIconColor> PlayerPartyIcons = new Dictionary<int, PartyIconColor>();
@@ -107,6 +108,26 @@ namespace HeroesParserData.ViewModels.Match
             {
                 _matchScoreTeam2 = value;
                 RaisePropertyChangedEvent(nameof(MatchScoreTeam2));
+            }
+        }
+
+        public ObservableCollection<MatchScores> MatchScoreTeam1Total
+        {
+            get { return _matchScoreTeam1Total; }
+            set
+            {
+                _matchScoreTeam1Total = value;
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam1Total));
+            }
+        }
+
+        public ObservableCollection<MatchScores> MatchScoreTeam2Total
+        {
+            get { return _matchScoreTeam2Total; }
+            set
+            {
+                _matchScoreTeam2Total = value;
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam2Total));
             }
         }
 
@@ -358,13 +379,6 @@ namespace HeroesParserData.ViewModels.Match
             {
                 ClearSummaryDetails();
 
-                MatchTalentsTeam1 = new ObservableCollection<MatchTalents>();
-                MatchTalentsTeam2 = new ObservableCollection<MatchTalents>();
-                MatchScoreTeam1 = new ObservableCollection<MatchScores>();
-                MatchScoreTeam2 = new ObservableCollection<MatchScores>();
-                MatchObservers = new ObservableCollection<MatchTalents>();
-                MatchChatMessages = new ObservableCollection<MatchChat>();
-
                 // get replay
                 Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
 
@@ -374,6 +388,7 @@ namespace HeroesParserData.ViewModels.Match
                 var playerScoresList = replay.ReplayMatchPlayerScoreResults.ToList();
                 var matchMessagesList = replay.ReplayMatchMessage.ToList();
                 var matchAwardDictionary = replay.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
+                var matchTeamLevelsList = replay.ReplayMatchTeamLevels.ToList();
 
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
@@ -484,6 +499,10 @@ namespace HeroesParserData.ViewModels.Match
                     }
                 } // end foreach players
 
+                // Total for score summaries
+                SetScoreSummaryTotals(MatchScoreTeam1, MatchScoreTeam1Total, matchTeamLevelsList.Max(x => x.Team0Level));
+                SetScoreSummaryTotals(MatchScoreTeam2, MatchScoreTeam2Total, matchTeamLevelsList.Max(x => x.Team1Level));
+
                 MatchTitle = $"{replay.MapName} - {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}]";
 
                 Color mapNameGlowColor;
@@ -583,6 +602,8 @@ namespace HeroesParserData.ViewModels.Match
                 matchScore.MvpAward = null;
             }
             MatchScoreTeam2 = null;
+            MatchScoreTeam1Total = null;
+            MatchScoreTeam2Total = null;
 
             // observers
             HasObservers = false;
@@ -604,6 +625,16 @@ namespace HeroesParserData.ViewModels.Match
             HasChat = true;
 
             BackgroundMapImage = null;
+
+            MatchTalentsTeam1 = new ObservableCollection<MatchTalents>();
+            MatchTalentsTeam2 = new ObservableCollection<MatchTalents>();
+            MatchScoreTeam1 = new ObservableCollection<MatchScores>();
+            MatchScoreTeam2 = new ObservableCollection<MatchScores>();
+            MatchScoreTeam1Total = new ObservableCollection<MatchScores>();
+            MatchScoreTeam2Total = new ObservableCollection<MatchScores>();
+            MatchObservers = new ObservableCollection<MatchTalents>();
+            MatchChatMessages = new ObservableCollection<MatchChat>();
+
         }
 
         private bool IsHealingStatCharacter(string realHeroName)
@@ -719,6 +750,32 @@ namespace HeroesParserData.ViewModels.Match
                 }
                 color++;
             }
+        }
+
+        private void SetScoreSummaryTotals(ObservableCollection<MatchScores> matchScoreTeam, ObservableCollection<MatchScores> collection, int? highestLevel)
+        {
+            int? killsTotal = matchScoreTeam.Sum(x => x.SoloKills);
+            int? assistsTotal = matchScoreTeam.Sum(x => x.Assists);
+            int? deathsTotal = matchScoreTeam.Sum(x => x.Deaths);
+            int? siegeDamageTotal = matchScoreTeam.Sum(x => x.SiegeDamage);
+            int? heroDamageTotal = matchScoreTeam.Sum(x => x.HeroDamage);
+            int? experienceTotal = matchScoreTeam.Sum(x => x.ExperienceContribution);
+
+            MatchScores matchScoresTotal = new MatchScores
+            {
+                PlayerName = "Total",
+                PlayerTag = "Level",
+                CharacterLevel = highestLevel.ToString(),
+                SoloKills = killsTotal,
+                Assists = assistsTotal,
+                Deaths = deathsTotal,
+                SiegeDamage = siegeDamageTotal,
+                HeroDamage = heroDamageTotal,
+                ExperienceContribution = experienceTotal,
+                RowBackColor = matchScoreTeam[0].RowBackColor
+            };
+
+            collection.Add(matchScoresTotal);
         }
     }
 }
