@@ -99,7 +99,7 @@ namespace HeroesParserData.Views
                     return;
                 }
 
-                if (!Settings.Default.IsAutoUpdates)
+                if (!UserSettings.Default.IsAutoUpdates)
                 {
                     await Message("Update available, auto-update is disabled");
                     return;
