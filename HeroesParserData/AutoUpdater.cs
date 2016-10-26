@@ -13,9 +13,9 @@ namespace HeroesParserData
         private UpdateInfo UpdateInfo;
         private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
         public Version CurrentVersion { get; private set; }
-        public string CurrentVersionString => CurrentVersion != null? $"{CurrentVersion.Major}.{CurrentVersion.Minor}.{CurrentVersion.Revision}" : string.Empty; 
+        public string CurrentVersionString => CurrentVersion != null? $"{CurrentVersion.Major}.{CurrentVersion.Minor}.{CurrentVersion.Build}" : string.Empty; 
         public Version LatestVersion { get; private set; }
-        public string LatestVersionString => LatestVersion != null? $"{LatestVersion.Major}.{LatestVersion.Minor}.{LatestVersion.Revision}" : string.Empty;
+        public string LatestVersionString => LatestVersion != null? $"{LatestVersion.Major}.{LatestVersion.Minor}.{LatestVersion.Build}" : string.Empty;
 
         /// <summary>
         /// Checks for updates and applies the update if IsAutoUpdates in settings is true. 
