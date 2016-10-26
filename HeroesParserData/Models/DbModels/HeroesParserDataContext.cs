@@ -24,6 +24,13 @@ namespace HeroesParserData.Models.DbModels
                 using (HeroesParserDataContext db = new HeroesParserDataContext())
                 {
                     int currentVersion = 0;
+                    if (App.NewDatabaseCreated)
+                    {
+                        currentVersion = RequiredDatabaseVersion;
+                        db.SchemaInfo.Add(new SchemaInfo() { Version = currentVersion });
+                        await db.SaveChangesAsync();
+                    }
+
                     if (db.SchemaInfo.Count() > 0)
                     {
                         currentVersion = db.SchemaInfo.Max(x => x.Version);
