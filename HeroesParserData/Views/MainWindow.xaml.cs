@@ -1,11 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using HeroesParserData.Messages;
-using HeroesParserData.Properties;
 using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Interop;
 
 namespace HeroesParserData.Views
 {
@@ -31,6 +31,13 @@ namespace HeroesParserData.Views
             }
 
             base.OnStateChanged(e);
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
+            source.AddHook(WndProc);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -89,6 +96,17 @@ namespace HeroesParserData.Views
             {
                 await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Settings menu.");
             }
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            if (msg == NativeMethods.WM_SHOWME)
+            {
+                Show();
+                WindowState = WindowState.Maximized;
+            }
+
+            return IntPtr.Zero;
         }
     }
 }
