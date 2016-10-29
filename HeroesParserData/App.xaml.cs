@@ -25,12 +25,12 @@ namespace HeroesParserData
         protected override void OnStartup(StartupEventArgs e)
         {
             // check if another instance is already running
-            if (!Mutex.WaitOne(TimeSpan.Zero, true))
-            {
-                // send message to maximize existing window
-                NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
-                Current.Shutdown();
-            }
+            //if (!Mutex.WaitOne(TimeSpan.Zero, true))
+            //{
+            //    // send message to maximize existing window
+            //    NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
+            //    Current.Shutdown();
+            //}
 
             NewReleaseApplied = false;
             DatabaseFileExists();
@@ -47,7 +47,7 @@ namespace HeroesParserData
             //                        theme.Item1);
 
             base.OnStartup(e);
-            Mutex.ReleaseMutex();
+            //Mutex.ReleaseMutex();
         }
 
         protected override void OnExit(ExitEventArgs e)

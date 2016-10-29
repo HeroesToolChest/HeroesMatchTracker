@@ -49,6 +49,7 @@
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="IconException.cs" />
+    <Compile Include="OtherIcon.cs" />
     <Compile Include="ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -182,6 +183,7 @@
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_talent_stormshield.dds" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Icons\storm_ui_ingame_talentpanel_upgrade_quest_icon.dds" />
     <Content Include="Xml\Heroes\Abathur.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

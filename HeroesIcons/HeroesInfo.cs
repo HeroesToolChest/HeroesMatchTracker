@@ -23,6 +23,7 @@ namespace HeroesIcons
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
         private Dictionary<HeroRole, Uri> RoleIcons = new Dictionary<HeroRole, Uri>();
         private Dictionary<HeroFranchise, Uri> FranchiseIcons = new Dictionary<HeroFranchise, Uri>();
+        private Dictionary<OtherIcon, Uri> OtherIcons = new Dictionary<HeroesIcons.OtherIcon, Uri>();
 
         private HeroesInfo()
         {
@@ -35,6 +36,7 @@ namespace HeroesIcons
             SetPartyIcons();
             SetRoleIcons();
             SetFranchiseIcons();
+            SetOtherIcons();
         }
 
         public static HeroesInfo Initialize()
@@ -487,6 +489,19 @@ namespace HeroesIcons
             }
         }
 
+        public BitmapImage GetOtherIcon(OtherIcon otherIcon)
+        {
+            try
+            {
+                return new BitmapImage(OtherIcons[otherIcon]);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Other Icons: {otherIcon}"));
+                return null;
+            }
+        }
+
         public BitmapImage GetRoleIcon(HeroRole heroRole)
         {
             try
@@ -548,6 +563,12 @@ namespace HeroesIcons
             FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationPath}Roles/hero_franchise_overwatch.png", UriKind.Absolute));
             FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationPath}Roles/hero_franchise_starcraft.png", UriKind.Absolute));
             FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationPath}Roles/hero_franchise_warcraft.png", UriKind.Absolute));
+        }
+
+        private void SetOtherIcons()
+        {
+            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationPath}storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationPath}storm_ui_silencepenalty.dds", UriKind.Absolute));
         }
 
         private void Log(string fileName, string message)
