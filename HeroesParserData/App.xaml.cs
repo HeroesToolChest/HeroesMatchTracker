@@ -1,5 +1,6 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Properties;
+using HeroesParserData.Views;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -22,16 +23,39 @@ namespace HeroesParserData
         public static bool NewReleaseApplied { get; set; }
         public static bool NewDatabaseCreated { get; private set; }
 
-        protected override void OnStartup(StartupEventArgs e)
+        App()
         {
+            InitializeComponent();
+        }
+
+        [STAThread]
+        static void Main()
+        {
+        #if !DEBUG
             // check if another instance is already running
-            if (!Mutex.WaitOne(TimeSpan.Zero, true))
+            if (Mutex.WaitOne(TimeSpan.Zero, true))
+            {
+                App app = new App();
+                StartupWindow startupWindow = new StartupWindow();
+                app.Run(startupWindow);
+
+                Mutex.ReleaseMutex();
+            }
+            else
             {
                 // send message to maximize existing window
                 NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
-                Current.Shutdown();
             }
+        #endif
+        #if DEBUG
+            App app = new App();
+            StartupWindow startupWindow = new StartupWindow();
+            app.Run(startupWindow);
+        #endif
+        }
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
             NewReleaseApplied = false;
             DatabaseFileExists();
 
@@ -47,7 +71,6 @@ namespace HeroesParserData
             //                        theme.Item1);
 
             base.OnStartup(e);
-            Mutex.ReleaseMutex();
         }
 
         protected override void OnExit(ExitEventArgs e)

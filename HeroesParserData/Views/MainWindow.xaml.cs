@@ -103,6 +103,7 @@ namespace HeroesParserData.Views
             if (msg == NativeMethods.WM_SHOWME)
             {
                 Show();
+                Activate();
                 WindowState = WindowState.Maximized;
             }
 
