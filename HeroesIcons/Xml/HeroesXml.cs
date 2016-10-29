@@ -7,6 +7,9 @@ namespace HeroesIcons.Xml
 {
     internal class HeroesXml : XmlBase
     {
+        private Dictionary<string, string> TalentShortDesc = new Dictionary<string, string>();
+        private Dictionary<string, string> TalentLongDesc = new Dictionary<string, string>();
+
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
@@ -49,6 +52,11 @@ namespace HeroesIcons.Xml
         public Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents { get; private set; } = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
 
         /// <summary>
+        /// key is the talent reference name
+        /// </summary>
+        public Dictionary<string, TalentDescription> TalentDesciptions { get; private set; } = new Dictionary<string, TalentDescription>();
+
+        /// <summary>
         /// key is real hero name
         /// </summary>
         public Dictionary<string, Uri> HeroPortraits { get; private set; } = new Dictionary<string, Uri>();
@@ -69,6 +77,12 @@ namespace HeroesIcons.Xml
             HeroesXml xml = new HeroesXml(parentFile, xmlFolder);
             xml.Parse();
             return xml;
+        }
+
+        protected override void Parse()
+        {
+            LoadTalentDescriptionString();
+            base.Parse();
         }
 
         protected override void ParseChildFiles()
@@ -182,6 +196,9 @@ namespace HeroesIcons.Xml
                                             string name = reader.Name; // reference name of talent
                                             string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
                                             string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
+                                            string desc = reader["desc"] == null ? string.Empty : reader["desc"]; // reference name for talent desciptions
+
+                                            SetTalentDescriptions(name, desc);
 
                                             bool isGeneric;
                                             if (!bool.TryParse(generic, out isGeneric))
@@ -234,6 +251,51 @@ namespace HeroesIcons.Xml
                 return new Uri($"{ApplicationPath}Talents/{hero}/{fileName}", UriKind.Absolute);
             else
                 return new Uri($"{ApplicationPath}Talents/_Generic/{fileName}", UriKind.Absolute);
+        }
+
+        private void SetTalentDescriptions(string talentReferenceName, string desc)
+        {
+            // checking keys because of generic talents
+            if (!TalentDesciptions.ContainsKey(talentReferenceName))
+            {
+                string shortDesc;
+                string longDesc;
+                if (!TalentShortDesc.TryGetValue(desc, out shortDesc))
+                    shortDesc = string.Empty;
+
+                if (!TalentLongDesc.TryGetValue(desc, out longDesc))
+                    longDesc = string.Empty;
+
+
+                TalentDesciptions.Add(talentReferenceName, new TalentDescription(shortDesc, longDesc));
+            }
+        }
+
+        private void LoadTalentDescriptionString()
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(@"Xml\Strings\ShortTalentDescriptions.txt"))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string[] talent = reader.ReadLine().Split(new char[] { '=' }, 2);
+                        TalentShortDesc.Add(talent[0], talent[1]);
+                    }
+                }
+                using (StreamReader reader = new StreamReader(@"Xml\Strings\FullTalentDescriptions.txt"))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string[] talent = reader.ReadLine().Split(new char[] { '=' }, 2);
+                        TalentLongDesc.Add(talent[0], talent[1]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ParseXmlException("Error on loading talent descriptions", ex);
+            }
         }
     }
 }

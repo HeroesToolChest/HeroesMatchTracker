@@ -308,6 +308,23 @@ namespace HeroesIcons
         {
             return HeroesXml.HeroesRealName.Count;
         }
+
+        /// <summary>
+        /// Returns a TalentDescription object which contains the short and full descriptions of the talent
+        /// </summary>
+        /// <param name="talentReferenceName">Talent reference name</param>
+        /// <returns></returns>
+        public TalentDescription GetTalentDescriptions(string talentReferenceName)
+        {
+            TalentDescription talentDesc = new TalentDescription(string.Empty, string.Empty);
+
+            if (string.IsNullOrEmpty(talentReferenceName))
+                return talentDesc;
+
+            HeroesXml.TalentDesciptions.TryGetValue(talentReferenceName, out talentDesc);
+
+            return talentDesc;
+        }
         #endregion Heroes Xml
 
         #region MatchAwardsXml

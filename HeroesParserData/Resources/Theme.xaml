@@ -120,6 +120,29 @@
         <Setter Property="Background" Value="White"></Setter>
     </Style>
 
+    <Style TargetType="Border" x:Key="TalentDescPopupBorder">
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="BorderBrush" Value="#1386B9"></Setter>
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="TalentDescPopupStackPanel">
+        <Setter Property="Height" Value="Auto"></Setter>
+        <Setter Property="Width" Value="320"></Setter>
+        <Setter Property="Background" Value="White"></Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="TalentDescPopupLabelTitle">
+        <Setter Property="Padding" Value="9,9,9,0"></Setter>
+        <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        <Setter Property="FontSize" Value="18"></Setter>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TalentDescPopupLabelDescription">
+        <Setter Property="Padding" Value="4,0,4,4"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+    </Style>
+    
     <!--<DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />-->
     <!--<Color x:Key="HighlightColor">#4e80ca</Color>
     <Color x:Key="AccentColor">#595959</Color>-->
