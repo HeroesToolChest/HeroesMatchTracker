@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Anubarak name="Anub'arak" attributeid="Anub" role="Warrior" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
   <Level1>
-    <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryExtendedSpikesImpale>
-    <GenericDampenMagic name="Dampen Magic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
-    <AnubarakMasteryAssaultScarabBeetleSpit name="Assault Scarab">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryAssaultScarabBeetleSpit>
-    <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+    <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes" desc="AnubarakImpaleExtendedSpikesTalent">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryExtendedSpikesImpale>
+    <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
+    <AnubarakMasteryAssaultScarabBeetleSpit name="Assault Scarab" desc="AnubarakScarabHostAssaultScarabTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryAssaultScarabBeetleSpit>
+    <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
   </Level1>
   <Level4>
-    <AnubarakMasteryUnderkingBurrowCharge name="Underking">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryUnderkingBurrowCharge>
-    <AnubarakCombatStyleLocustNeedles name="Locust Needles" generic="true">storm_ui_icon_talent_autoattack_aoe.dds</AnubarakCombatStyleLocustNeedles>
-    <AnubarakCombatStyleLegionOfBeetles name="Legion of Beetles">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakCombatStyleLegionOfBeetles>
+    <AnubarakMasteryUnderkingBurrowCharge name="Underking" desc="AnubarakBurrowChargeUnderkingTalent">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryUnderkingBurrowCharge>
+    <AnubarakCombatStyleLocustNeedles name="Locust Needles" generic="true" desc="AnubarakRegeneratingCarapaceLocustNeedlesTalent">storm_ui_icon_talent_autoattack_aoe.dds</AnubarakCombatStyleLocustNeedles>
+    <AnubarakCombatStyleLegionOfBeetles name="Legion of Beetles" desc="AnubarakLegionOfBeetlesTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakCombatStyleLegionOfBeetles>
   </Level4>
   <Level7>
-    <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryShedExoskeletonHardenCarapace>
-    <AnubarakCombatStyleChitinousPlating name="Chitinous Plating">storm_ui_icon_anubarak_hardencarapace_var2.dds</AnubarakCombatStyleChitinousPlating>
-    <AnubarakMasteryLeechingScarabs name="Leeching Scarabs">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryLeechingScarabs>
+    <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton" desc="AnubarakRegeneratingCarapaceShedExoskeletonTalent">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryShedExoskeletonHardenCarapace>
+    <AnubarakCombatStyleChitinousPlating name="Chitinous Plating" desc="AnubarakRegeneratingCarapaceChitinousPlatingTalent">storm_ui_icon_anubarak_hardencarapace_var2.dds</AnubarakCombatStyleChitinousPlating>
+    <AnubarakMasteryLeechingScarabs name="Leeching Scarabs" desc="AnubarakLeechingMandiblesTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryLeechingScarabs>
   </Level7>
   <Level10>
-    <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakHeroicAbilityCarrionSwarm>
-    <AnubarakHeroicAbilityCocoon name="Cocoon">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakHeroicAbilityCocoon>
+    <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakHeroicAbilityCarrionSwarm>
+    <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakHeroicAbilityCocoon>
   </Level10>
   <Level13>
-    <GenericTalentBurningRage name="Burning Rage">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
-    <AnubarakMasteryUrticatingSpines name="Urticating Spines">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryUrticatingSpines>
-    <AnubarakMasteryBedOfBarbs name="Bed of Barbs">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryBedOfBarbs>
+    <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+    <AnubarakMasteryUrticatingSpines name="Urticating Spines" desc="AnubarakHardenCarapaceUrtricatingSpinesTalent">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryUrticatingSpines>
+    <AnubarakMasteryBedOfBarbs name="Bed of Barbs" desc="AnubarakImpaleBedOfBarbsTalent">storm_ui_icon_Anubarak_Impale.dds</AnubarakMasteryBedOfBarbs>
   </Level13>
   <Level16>
-    <AnubarakMasteryEpicenterBurrowCharge name="Epicenter">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryEpicenterBurrowCharge>
-    <AnubarakScarabHostBeetleJuiced name="Beetle, Juiced">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakScarabHostBeetleJuiced>
-    <GenericTalentBloodForBlood name="Blood for Blood">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
+    <AnubarakMasteryEpicenterBurrowCharge name="Epicenter" desc="AnubarakBurrowChargeEpicenterTalent">storm_ui_icon_Anubarak_BurrowCharge.dds</AnubarakMasteryEpicenterBurrowCharge>
+    <AnubarakScarabHostBeetleJuiced name="Beetle, Juiced" desc="AnubarakBeetleSpitBeetleJuiceTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakScarabHostBeetleJuiced>
+    <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
   </Level16>
   <Level20>
-    <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakMasteryHiveMasterCarrionSwarm>
-    <AnubarakCocoonCryptweave name="Cryptweave">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCocoonCryptweave>
-    <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
-    <GenericTalentRewind name="Rewind">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master" desc="AnubarakCarrionSwarmHiveMasterTalent">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakMasteryHiveMasterCarrionSwarm>
+    <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCocoonCryptweave>
+    <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
   <Old>
-    <AnubarakMasteryPersistentCarapaceHardenCarapace name="Persistant Carapace">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryPersistentCarapaceHardenCarapace>
-    <AnubarakMasterySymbioticArmorHardenCarapace name="Symbiotic Armor">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterySymbioticArmorHardenCarapace>
-    <AnubarakCryptweaveCocoon name="Cryptweave">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCryptweaveCocoon>
+    <AnubarakMasteryPersistentCarapaceHardenCarapace name="Persistant Carapace" desc="">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasteryPersistentCarapaceHardenCarapace>
+    <AnubarakMasterySymbioticArmorHardenCarapace name="Symbiotic Armor" desc="">storm_ui_icon_Anubarak_HardenCarapace_Var1.dds</AnubarakMasterySymbioticArmorHardenCarapace>
+    <AnubarakCryptweaveCocoon name="Cryptweave" desc="">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCryptweaveCocoon>
   </Old>
 </Anubarak>

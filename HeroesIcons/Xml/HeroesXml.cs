@@ -81,7 +81,7 @@ namespace HeroesIcons.Xml
 
         protected override void Parse()
         {
-            LoadTalentDescriptionString();
+            LoadTalentDescriptionStrings();
             base.Parse();
         }
 
@@ -271,7 +271,7 @@ namespace HeroesIcons.Xml
             }
         }
 
-        private void LoadTalentDescriptionString()
+        private void LoadTalentDescriptionStrings()
         {
             try
             {
@@ -280,6 +280,7 @@ namespace HeroesIcons.Xml
                     while (!reader.EndOfStream)
                     {
                         string[] talent = reader.ReadLine().Split(new char[] { '=' }, 2);
+                        FormatShortDescriptions(ref talent[1]);
                         TalentShortDesc.Add(talent[0], talent[1]);
                     }
                 }
@@ -296,6 +297,14 @@ namespace HeroesIcons.Xml
             {
                 throw new ParseXmlException("Error on loading talent descriptions", ex);
             }
+        }
+
+        private void FormatShortDescriptions(ref string desc)
+        {
+            if (desc.StartsWith("<c val=\"#TooltipQuest\">Quest:</c>"))
+                desc = desc.Replace("<c val=\"#TooltipQuest\">Quest:</c>", "[Quest]");
+            else if (desc.StartsWith("<c val=\"#TooltipQuest\">Quest: </c>"))
+                desc = desc.Replace("<c val=\"#TooltipQuest\">Quest: </c>", "[Quest] ");
         }
     }
 }

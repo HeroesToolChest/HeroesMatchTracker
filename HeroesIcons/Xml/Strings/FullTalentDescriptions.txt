@@ -65,22 +65,22 @@ AnubarakBeetleSpitBeetleJuiceTalent=Every <c val="#TooltipNumbers">3rd</c> Basic
 AnubarakBurrowCharge=Burrows to location, dealing <c val="#TooltipNumbers"><VALUE></c> damage and briefly stunning enemies in a small area upon surfacing. Can reactivate the Ability to surface early.
 AnubarakBurrowChargeEpicenterTalent=Increases Burrow Charge impact area by <c val="#TooltipNumbers">85%</c> and lowers the cooldown by <c val="#TooltipNumbers">4</c> seconds for each Hero hit.
 AnubarakBurrowChargeUnderkingTalent=Increases Burrow Charge range by <c val="#TooltipNumbers">20%</c> and damage by <c val="#TooltipNumbers">100%</c>.
-AnubarakCarrionSwarm=Deal <c val="#TooltipNumbers"><VALUE></c> damage per second in an area around yourself. Each enemy damaged heals you for <c val="#TooltipNumbers"><VALUE></c> Health. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-AnubarakCarrionSwarmHiveMasterTalent=Gain a permanent Vampire Locust that attacks a nearby enemy every <c val="#TooltipNumbers">3</c> seconds. The Vampire Locust deals <c val="#TooltipNumbers"><VALUE></c> damage and returns to heal you for <c val="#TooltipNumbers"><VALUE></c> health.
-AnubarakCocoon=Wraps target enemy Hero in a cocoon, rendering them unable to act or be targeted for <c val="#TooltipNumbers"><VALUE></c> seconds. Allies of the Hero can attack the cocoon to break it and free them early.
+AnubarakCarrionSwarm=Deal <c val="#TooltipNumbers">66</c> damage per second in an area around yourself. Each enemy damaged heals you for <c val="#TooltipNumbers">18</c> Health. Lasts <c val="#TooltipNumbers">8</c> seconds.
+AnubarakCarrionSwarmHiveMasterTalent=Gain a permanent Vampire Locust that attacks a nearby enemy every <c val="#TooltipNumbers">3</c> seconds. The Vampire Locust deals <c val="#TooltipNumbers">153</c> damage and returns to heal you for <c val="#TooltipNumbers">37</c> health.
+AnubarakCocoon=Wraps target enemy Hero in a cocoon, rendering them unable to act or be targeted for <c val="#TooltipNumbers">8</c> seconds. Allies of the Hero can attack the cocoon to break it and free them early.
 AnubarakCryptweaveCocoonTalent=Staying near the Cocoon allows Anub'arak to extend the duration by up to <c val="#TooltipNumbers">4</c> seconds per Cocoon.
 AnubarakHardenCarapace=Gain a Shield that absorbs <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds.
 AnubarakHardenCarapacePersistentCarapaceTalent=Increases Harden Carapace's Shield duration by <c val="#TooltipNumbers"><VALUE></c> seconds.
 AnubarakHardenCarapaceSymbioticArmorTalent=Your Beetles are also granted a Shield equal to <c val="#TooltipNumbers"><VALUE></c>.
-AnubarakHardenCarapaceUrtricatingSpinesTalent=Casting Harden Carapace will also deal <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies. Deals double damage against Heroes.
+AnubarakHardenCarapaceUrtricatingSpinesTalent=Casting Harden Carapace will also deal <c val="#TooltipNumbers">80</c> damage to nearby enemies. Deals double damage against Heroes.
 AnubarakImpale=Deals <c val="#TooltipNumbers"><VALUE></c> damage. Stuns for <c val="#TooltipNumbers"><VALUE></c> second.
-AnubarakImpaleBedOfBarbsTalent=Create a bed of spikes along Impale's path that slows enemies by <c val="#TooltipNumbers"><VALUE>%</c> and deals <c val="#TooltipNumbers"><VALUE></c> damage per second.  Spikes persist for <c val="#TooltipNumbers"><VALUE></c> seconds.
+AnubarakImpaleBedOfBarbsTalent=Create a bed of spikes along Impale's path that slows enemies by <c val="#TooltipNumbers">30%</c> and deals <c val="#TooltipNumbers">46</c> damage per second.  Spikes persist for <c val="#TooltipNumbers">3.5</c> seconds.
 AnubarakImpaleExtendedSpikesTalent=Increases Impale's range and damage by <c val="#TooltipNumbers">25%</c>.
 AnubarakLeechingMandiblesTalent=Beetles heal you for <c val="#TooltipNumbers">50%</c> of their damage with each attack if you are nearby.
-AnubarakLegionOfBeetlesTalent=Automatically spawn a Beetle every <c val="#TooltipNumbers"><VALUE></c> seconds.  Can be toggled on and off.
-AnubarakRegeneratingCarapaceChitinousPlatingTalent=While Harden Carapace is active, taking damage from enemy Abilities reduces its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds, up to <c val="#TooltipNumbers">3</c> seconds.
+AnubarakLegionOfBeetlesTalent=Automatically spawn a Beetle every <c val="#TooltipNumbers">8</c> seconds.  Can be toggled on and off.
+AnubarakRegeneratingCarapaceChitinousPlatingTalent=While Harden Carapace is active, taking damage from enemy Abilities reduces its cooldown by <c val="#TooltipNumbers">0.75</c> seconds, up to <c val="#TooltipNumbers">3</c> seconds.
 AnubarakRegeneratingCarapaceLocustNeedlesTalent=Basic Attacks deal <c val="#TooltipNumbers">60%</c> of your Basic Attack Damage in an area around the target.
-AnubarakRegeneratingCarapaceShedExoskeletonTalent=<s val="StandardTooltipHeader">Shed Exoskeleton</s><s val="StandardTooltip"><n/><n/>Gain <s val="StandardTooltipDetails"><VALUE>%</s> increased Move Speed for <s val="StandardTooltipDetails"><VALUE></s> seconds.
+AnubarakRegeneratingCarapaceShedExoskeletonTalent=Using Harden Carapace increases your Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds.
 AnubarakScarabHostAssaultScarabTalent=Increases the attack damage of spawned Beetles by <c val="#TooltipNumbers">30%</c>.
 AnubarakScarabHostTrait=Spawn a Beetle at your location whenever you use an Ability. Beetles last for <c val="#TooltipNumbers"><VALUE></c> seconds, attacking nearby enemies for <c val="#TooltipNumbers"><VALUE></c> damage.
 ArtanisBladeDash=Dash forward and deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies, then return and deal <c val="#TooltipNumbers"><VALUE></c> damage.
@@ -438,11 +438,11 @@ GenericArcanePowerHotbar=Activate to instantly restore <c val="#TooltipNumbers">
 GenericBattleMomentumTalent=Basic Attacks reduce Ability cooldowns by <c val="#TooltipNumbers">0.5</c> seconds.
 GenericBerserkHotbar=Activate to increase your Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c> and Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericBlockTalent=Every <c val="#TooltipNumbers"><VALUE></c> seconds, reduce the damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.  Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
-GenericBloodForBloodHotbar=Activate to deal <c val="#TooltipNumbers"><VALUE>%</c> of target enemy Hero's Max Health and heal for twice that amount.
+GenericBloodForBloodHotbar=Activate to deal <c val="#TooltipNumbers">10%</c> of target enemy Hero's Max Health and heal for twice that amount.
 GenericBoltoftheStormTalent=Activate to teleport to a nearby location.
 GenericBribe=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Current number of Bribe stacks: <c val="#TooltipNumbers"><VALUE></c></c>
 GenericBribeTalent=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.
-GenericBurningRageTalent=Deal <c val="#TooltipNumbers"><VALUE></c> damage per second to nearby enemies.
+GenericBurningRageTalent=Deal <c val="#TooltipNumbers">23</c> damage per second to nearby enemies.
 GenericCalldownMule=Activate to calldown a Mule that repairs Structures, one at a time, near target point for <c val="#TooltipNumbers">40</c> seconds, healing for <c val="#TooltipNumbers">100</c> Health every <c val="#TooltipNumbers">1</c> second.  Grants <c val="#TooltipNumbers">1</c> ammo every  <c val="#TooltipNumbers">3</c> seconds.
 GenericClairvoyance=Activate to reveal an area for <c val="#TooltipNumbers">10</c> seconds.  Enemies in the area are revealed for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericCleanse=Activate to make target ally Unstoppable for <c val="#TooltipNumbers">1</c> second. Cannot be cast on yourself.
@@ -466,7 +466,7 @@ GenericMercenaryLordTalent=Friendly non-Boss Mercenaries near you deal <c val="#
 GenericOverdriveTalent=Activate to increase Ability Power by <c val="#TooltipNumbers"><VALUE>%</c> and Mana costs by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericPromote=Activate to cause an allied lane Minion to take <c val="#TooltipNumbers"><VALUE>%</c> reduced damage from non-Heroic targets and deal <c val="#TooltipNumbers"><VALUE>%</c> bonus damage to non-Heroic targets for <c val="#TooltipNumbers"><VALUE></c> seconds. Has <c val="#TooltipNumbers">2</c> charges.
 GenericProtectiveShield=Activate to shield an allied Hero for <c val="#TooltipNumbers"><VALUE>%</c> of their max Health for <c val="#TooltipNumbers"><VALUE></c> seconds.
-GenericRegenerationMasterTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your Health Regeneration by <c val="#TooltipNumbers"><VALUE></c> per second, up to <c val="#TooltipNumbers"><VALUE></c>. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers"><VALUE></c> Regeneration Globes, you also gain <c val="#TooltipNumbers"><VALUE></c> Health.
+GenericRegenerationMasterTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your Health Regeneration by <c val="#TooltipNumbers">1</c> per second, up to <c val="#TooltipNumbers">30</c>. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">30</c> Regeneration Globes, you also gain <c val="#TooltipNumbers">500</c> Health.
 GenericRelentlessTalent=Reduces the duration of stuns, slows, and roots against your Hero by <c val="#TooltipNumbers">50%</c>.
 GenericRewindHotbar=Activate to reset the cooldowns of your Basic Abilities.
 GenericScoutingDrone=Places a Scouting Drone at target location, granting vision of a large area around it for <c val="#TooltipNumbers"><VALUE></c> seconds. This drone cannot be hidden and is killed by enemies with <c val="#TooltipNumbers"><VALUE></c> Basic Attacks.  Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
@@ -516,7 +516,7 @@ GreymaneToothAndClawTalent=<c val="#ColorViolet">Worgen</c> Basic Attacks cleave
 GreymaneUnleashed=If the free cast of Go for the Throat kills its target, another free cast is provided that deals <c val="#TooltipNumbers"><VALUE>%</c> more damage, up to <c val="#TooltipNumbers"><VALUE>%</c>.
 GreymaneWizenedDuelistTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero takedowns increase Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c>, up to <c val="#TooltipNumbers"><VALUE>%</c>. This bonus is lost on death.
 GreymaneWorgenForm=Use certain Abilities to shapeshift between a <c val="#ColorCreamYellow">Human</c> and a <c val="#ColorViolet">Worgen</c>.<n/><n/>While <c val="#ColorCreamYellow">Human</c>, your Basic Attack is ranged.<n/>While <c val="#ColorViolet">Worgen</c>, your Basic Attack is melee but deals <c val="#TooltipNumbers"><VALUE>%</c> more damage.
-HardenedShieldTalent=Activate to reduce damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+HardenedShieldTalent=Activate to reduce damage taken by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">4</c> seconds.
 HeroGenericBribeToken=<c val="#TooltipQuest">Bribe Stacks: </c><VALUE>/<VALUE>
 IllidanBetrayersThirst=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of damage dealt and reduce your Ability cooldowns by <c val="#TooltipNumbers">1</c> second.
 IllidanBetrayersThirstHuntersOnslaughtTalent=Basic Abilities heal for <c val="#TooltipNumbers"><VALUE>%</c> of the damage they deal. Double this bonus versus Heroes.
@@ -1067,7 +1067,7 @@ SylvanasWitheringFireSplinterShotTalent=Withering Fire hits a second target for 
 SylvanasWitheringFireWithTheWindTalent=Increases Withering Fire's range by <c val="#TooltipNumbers">25%</c>.
 SylvanasWitheringFireWitheringBarrage=Increase Withering Fire charges by <c val="#TooltipNumbers"><VALUE></c>. Charges can be fired <c val="#TooltipNumbers">33%</c> faster.
 TalentBribeToken=<c val="#TooltipQuest">Nearby Minions Killed:</c> <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
-TalentDampenMagic=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.
+TalentDampenMagic=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">1.5</c> seconds.  Can only trigger once every <c val="#TooltipNumbers">8</c> seconds.
 TassadarArchon=Transform into an Archon, gaining a <c val="#TooltipNumbers"><VALUE></c> point Shield, causing Basic Attacks to deal <c val="#TooltipNumbers"><VALUE></c> damage and splash for <c val="#TooltipNumbers"><VALUE></c> additional damage. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
 TassadarArchonTwilightArchonTalent=Increases Archon's initial Shield and Attack Damage by <c val="#TooltipNumbers">50%</c>, and increases Basic Attack range in Archon form by <c val="#TooltipNumbers">35%</c>.
 TassadarDimensionalShift=Become invulnerable and fully invisible for <c val="#TooltipNumbers"><VALUE></c> seconds.
