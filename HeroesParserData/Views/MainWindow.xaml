@@ -54,6 +54,9 @@
                     <TabItem Header="Team League">
                         <ViewsMatch:TeamLeagueControl />
                     </TabItem>
+                    <TabItem Header="Brawl">
+                        <ViewsMatch:BrawlControl />
+                    </TabItem>
                     <TabItem Header="Custom Game">
                         <ViewsMatch:CustomGameControl />
                     </TabItem>

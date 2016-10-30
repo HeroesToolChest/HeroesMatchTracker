@@ -259,6 +259,7 @@
     <Compile Include="ViewModels\Match\LastMatchViewModel.cs" />
     <Compile Include="ViewModels\Match\LatestMatchesViewModel.cs" />
     <Compile Include="ViewModels\Match\MatchContext.cs" />
+    <Compile Include="ViewModels\Match\BrawlViewModel.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
@@ -346,6 +347,9 @@
     </Compile>
     <Compile Include="Views\Match\MatchSummaryControl.xaml.cs">
       <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\BrawlControl.xaml.cs">
+      <DependentUpon>BrawlControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\QuickMatchControl.xaml.cs">
       <DependentUpon>QuickMatchControl.xaml</DependentUpon>
@@ -518,6 +522,10 @@
     <Page Include="Views\Match\MatchSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\BrawlControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Match\QuickMatchControl.xaml">
       <SubType>Designer</SubType>
