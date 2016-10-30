@@ -8,5 +8,8 @@
     <Setting Name="DatabaseFile" Type="System.String" Scope="User">
       <Value Profile="(Default)">HeroesParserData.db</Value>
     </Setting>
+    <Setting Name="SupportedReplayBuild" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">47479</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

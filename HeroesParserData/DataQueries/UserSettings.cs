@@ -218,5 +218,30 @@ namespace HeroesParserData
                 }
             }
         }
+
+        private int GetIntValue(string name)
+        {
+            using (var db = new HeroesParserDataContext())
+            {
+                return int.Parse(db.UserSettings.Where(x => x.Name == name).FirstOrDefault().Value);
+            }
+        }
+
+        private void SetIntValue(string name, int value)
+        {
+            using (var db = new HeroesParserDataContext())
+            {
+                var record = db.UserSettings.Where(x => x.Name == name).FirstOrDefault();
+                if (record != null)
+                {
+                    record.Value = value.ToString();
+                    db.SaveChanges();
+                }
+                else
+                {
+                    CreateNewSetting(new UserSetting { Name = name, Value = value.ToString() });
+                }
+            }
+        }
     }
 }

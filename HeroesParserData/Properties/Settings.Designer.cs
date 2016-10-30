@@ -46,5 +46,17 @@ namespace HeroesParserData.Properties {
                 this["DatabaseFile"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("47479")]
+        public int SupportedReplayBuild {
+            get {
+                return ((int)(this["SupportedReplayBuild"]));
+            }
+            set {
+                this["SupportedReplayBuild"] = value;
+            }
+        }
     }
 }

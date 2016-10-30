@@ -40,8 +40,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" />
                     <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
-                    <!--<DataGridTextColumn Header="HotsLog Status" Binding="{Binding HotsLogUploadStatus}" />-->
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Grid.Column="1">

@@ -561,6 +561,8 @@ namespace HeroesParserData.ViewModels
                         File.Copy(file.FilePath, tmpPath, overwrite: true);
 
                         var replayParsed = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
+                        file.Build = replayParsed.Item2.ReplayBuild;
+
                         if (replayParsed.Item1 == ReplayParseResult.Success)
                         {
                             file.Status = ReplayParseResult.Success;
@@ -572,6 +574,13 @@ namespace HeroesParserData.ViewModels
 
                             ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
                         }
+                        else if (replayParsed.Item1 == ReplayParseResult.ParserException)
+                        {
+                            if (replayParsed.Item2.ReplayBuild > Settings.Default.SupportedReplayBuild)
+                                file.Status = ReplayParseResult.NotYetSupported;
+                            else
+                                file.Status = ReplayParseResult.ParserException;
+                        }
                         else
                         {
                             file.Status = replayParsed.Item1;
@@ -580,7 +589,7 @@ namespace HeroesParserData.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        file.Status = ReplayParseResult.Exception;
+                        file.Status = ReplayParseResult.ParserException;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
 
@@ -661,7 +670,7 @@ namespace HeroesParserData.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        currentReplayFile.Status = ReplayParseResult.Exception;
+                        currentReplayFile.Status = ReplayParseResult.ParserException;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
                     }
