@@ -122,7 +122,10 @@ namespace HeroesParserData.ViewModels
         private void SetBattleTagName()
         {
             if (string.IsNullOrEmpty(UserBattleTag))
-                return;
+            {
+                UserSettings.Default.UserPlayerId = 0;
+                InputBattleTagError = string.Empty;
+            }
             else if (ValidateBattleTagName(UserBattleTag))
             {
                 UserSettings.Default.UserPlayerId = Query.HotsPlayer.ReadPlayerIdFromBattleNetTag(UserBattleTag);
@@ -130,7 +133,7 @@ namespace HeroesParserData.ViewModels
             }
             else
             {
-                UserSettings.Default.UserBattleTagName = string.Empty;
+                UserSettings.Default.UserPlayerId = 0;
                 InputBattleTagError = "BattleTag not found";
             }
         }
