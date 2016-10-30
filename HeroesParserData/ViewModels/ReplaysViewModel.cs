@@ -589,7 +589,7 @@ namespace HeroesParserData.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        file.Status = ReplayParseResult.ParserException;
+                        file.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
 
@@ -670,7 +670,7 @@ namespace HeroesParserData.ViewModels
                     }
                     catch (Exception ex)
                     {
-                        currentReplayFile.Status = ReplayParseResult.ParserException;
+                        currentReplayFile.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
                     }
