@@ -753,8 +753,7 @@ namespace HeroesParserData.ViewModels.Match
             MatchScores matchScoresTotal = new MatchScores
             {
                 PlayerName = "Total",
-                PlayerTag = "Level",
-                CharacterLevel = highestLevel.ToString(),
+                CharacterLevel = $"Team Level: {highestLevel.ToString()}",
                 SoloKills = killsTotal,
                 Assists = assistsTotal,
                 Deaths = deathsTotal,
