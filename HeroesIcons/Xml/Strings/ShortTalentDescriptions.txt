@@ -1,4 +1,4 @@
-AbathurDeepTunnel=Tunnel to a location.
+﻿AbathurDeepTunnel=Tunnel to a location.
 AbathurEvolveMonstrosityHotbar=Minion or Locust becomes a powerful Monstrosity
 AbathurLocustMasterHotbar=Create Locust Nests
 AbathurLocustStrain=Spawn locusts that attack down the nearest lane
@@ -331,6 +331,34 @@ ChoTwilightVeilTalent=Consuming Blaze reduces incoming Ability Damage
 ChoTwoHeaded=You have a second head named Gall
 ChoUpheaval=Reach out and pull your enemies in
 ChoWillOfGallTalent=Gall can make you Unstoppable
+ChromieBronzeTalons=Increases Basic Attack range and damage
+ChromieDragon'sClaw=Increased Attack range, Empower Basic Attacks
+ChromieDragonsBreath=Deal damage in an area
+ChromieDragonsBreathDeepBreathing=<c val="#TooltipQuest">Quest:</c> Hitting Heroes empowers Dragon's Breath
+ChromieDragonsBreathDragonsEye=Dragon’s Breath damages more in the center
+ChromieDragonsBreathEnvelopingAssault=Increases the radius of Dragon’s Breath
+ChromieDragonsBreathMobiusLoop=Reduces Dragon’s Breath Mana, cooldown, damage
+ChromiePeerIntoTheFuture=Activate to reveal target area
+ChromiePortBackToBaseByeBye=Reduces Hearthstone cast time
+ChromieQuantumOverdrive=Activate to gain Ability Power
+ChromieReachingThroughTime=Increases Sand Blast and Dragon’s Breath range
+ChromieSandBlast=Fire a long range blast that damages an enemy
+ChromieSandBlastCompoundingAether=<c val="#TooltipQuest">Quest:</c> Hitting Heroes empowers Sand Blast
+ChromieSandBlastFastForward=Long range Sand Blasts reduce its cooldown
+ChromieSandBlastPastAndFutureMe=Sand Blast is remembered and re-cast
+ChromieSandBlastPiercingSands=Sand Blast hits two targets
+ChromieSandBlastShiftingSands=Sand Blast increases Ability Power
+ChromieSlowingSands=Create slowing area
+ChromieSlowingSandsPocketOfTime=Removes Slowing Sands Mana cost and increases slow
+ChromieTemporalLoop=Return an enemy Hero to a previous position
+ChromieTemporalLoopLoophole=Temporal Loop now hits multiple Heroes
+ChromieTimeOutCancel=Cancel Time Out.
+ChromieTimeOutHotbar=Activate to become Invulnerable
+ChromieTimeTrap=Place a trap that puts enemies in Stasis
+ChromieTimeTrapAndorhalAnomaly=Increases Time Trap charges
+ChromieTimeTrapChronoSickness=Reduces Time Trap cooldown and Mana cost and adds slow
+ChromieTimewalkerTrait=Gain Talents earlier than everyone else
+ChromieTimewalkersPursuit=<c val="#TooltipQuest">Quest:</c> Regen Globes increase Mana Regen
 CrusaderBlessedShield=Bouncing shield that stuns
 CrusaderBlessedShieldRadiatingFaithTalent=Increases Blessed Shield stun duration and targets hit
 CrusaderCondemn=Pulls and damages nearby enemies
@@ -354,6 +382,39 @@ CrusaderShieldGlare=Damages and blinds enemies in a cone
 CrusaderShieldGlareHolyRenewalTalent=Shield Glare heals for each Hero hit
 CrusaderShieldGlareSinsExposedTalent=Shield Glare makes enemies take bonus damage
 CrusaderSubdueTalent=Increases Punish slow and duration
+DehakaAdaptation=Heal for a portion of damage taken
+DehakaAdaptationChangeIsSurvivalTalent=Increases Adaptation healing and lowers cooldown
+DehakaBrushstalker=Burrow to a bush on the Battleground.
+DehakaBrushstalkerApexPredatorTalent=Reduces the cooldown and cast time of Brushstalker
+DehakaBrushstalkerFerociousStalkerTalent=Brushstalker increases Move Speed
+DehakaBurrow=Protect yourself by burrowing into the ground
+DehakaBurrowImprovedBurrowTalent=While Burrowed you can move
+DehakaBurrowTalentLurkerStrain=Burrow grants Stealth
+DehakaBurrowTalentNumbingEruption=Burrow knocks enemies back and slows Move Speed
+DehakaBurrowTalentRapidRegeneration=Burrow heals you
+DehakaDarkSwarm=Damage nearby enemies
+DehakaDarkSwarmTalentEnduringSwarm=Dark Swarm reduces damage from Abilities
+DehakaDarkSwarmTalentPrimalAggression=Increases duration of Dark Swarm and does bonus damage to Minions and Mercs
+DehakaDarkSwarmTalentSymbiosis=Reduces Dark Swarm cooldown when you hit Heroes
+DehakaDarkSwarmWhirlingDervish=Halves duration of disables during Dark Swarm
+DehakaDrag=Deal light damage and drag an enemy
+DehakaDragAggressivePreservationTalent=Drag reduces the cooldown of Burrow
+DehakaDragParasiticWoundTalent=Drag increases the damage enemies take
+DehakaDragTalentConstriction=Increases Drag duration
+DehakaDragTalentElongatedTongue=Increases Drag range
+DehakaDragTalentFeedingFrenzy=Basic Attacks reduce Drag cooldown
+DehakaDragTalentParalyzingEnzymes=Drag slows
+DehakaDragWatchMeWhipTalent=If Drag misses reduce cooldown and refund mana
+DehakaEssenceCollection=Collect and consume enemy Essence to heal
+DehakaEssenceCollectionOneWhoCollectsTalent=Increases Essence from Minions
+DehakaEssenceCollectionStore=Killing enemy Heroes or Minions stores Essence that will heal over time when activated
+DehakaEssenceCollectionTalentEnhancedAgility=<c val="#TooltipQuest">Quest:</c> Collecting Essence increases Move Speed
+DehakaEssenceCollectionTalentEssenceDevourer=<c val="#TooltipQuest">Quest:</c> Gather Regen Globes to increase max Essence
+DehakaEssenceCollectionTalentHeroStalker=Increases Essence from Takedowns
+DehakaEssenceCollectionTalentSwiftPursuit=Increases Move Speed in bushes
+DehakaEssenceCollectionTalentTissueRegeneration=<c val="#TooltipQuest">Quest:</c> Collecting Essence increases Health Regen
+DehakaIsolation=Silence, slow, and reduce vision of an enemy
+DehakaIsolationTalentContagion=Isolation splashes to nearby Heroes
 DemonHunterCreedoftheHunter=Increases Attack Speed<n/><c val="#TooltipQuest">Quest:</c> Attacking Heroes empowers Hatred
 DemonHunterDeathDealer=Increases Vault Basic Attack damage bonus
 DemonHunterFarflightQuiver=Increases Basic Attack range

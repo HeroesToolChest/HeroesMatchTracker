@@ -44,7 +44,7 @@ namespace HeroesParserData.Converters
 
                         continue;
                     }
-                    else if (startTag.StartsWith("<c val="))
+                    else if (startTag.StartsWith("<c val=") || startTag.StartsWith("<C val="))
                     {
                         string colorValue = startTag.Substring(8, startTag.Length - 10);
 

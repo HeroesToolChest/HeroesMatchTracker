@@ -1,4 +1,4 @@
-AbathurDeepTunnel=Quickly tunnel to a visible location
+﻿AbathurDeepTunnel=Quickly tunnel to a visible location
 AbathurEvolveMonstrosityHotbar=Turn an allied Minion or Locust into a Monstrosity. When enemy Minions near the Monstrosity die, it gains <c val="#TooltipNumbers">5%</c> Health and <c val="#TooltipNumbers">5%</c> Basic Attack damage, stacking up to <c val="#TooltipNumbers">40</c> times.  The Monstrosity takes <c val="#TooltipNumbers">50%</c> less damage from non-Heroic enemies.<n/><n/>Using Symbiote on the Monstrosity allows you to control it, in addition to Symbiote's normal benefits.  This Ability can be reactivated to automatically cast Symbiote on your Monstrosity.
 AbathurLocustMasterHotbar=Activate to create a nest that periodically spawns Locusts. Only one Locust Nest can be active at a time.
 AbathurLocustStrain=Spawns a Locust to attack down the nearest lane every <c val="#TooltipNumbers"><VALUE></c> seconds. Locusts last for <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -330,6 +330,34 @@ ChoTalentMoltenBlock=Activate to place yourself in Stasis and gain Invulnerabili
 ChoTwilightVeilTalent=Consuming Blaze reduces damage taken from Abilities by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">2</c> seconds per enemy Hero hit.
 ChoUpheaval=After <c val="#TooltipNumbers">1</c> second pull enemies towards your direction, slowing them by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">3</c> seconds and dealing <c val="#TooltipNumbers">100</c> damage.
 ChoWillOfGallTalent=Gall can activate Will of Gall to make you Unstoppable for <c val="#TooltipNumbers">2</c> seconds.  <c val="#TooltipNumbers">60</c> second cooldown.
+ChromieBronzeTalons=Increases your Basic Attack range by <c val="#TooltipNumbers">35%</c>. Using Sand Blast increases the damage of your next Basic Attack by <c val="#TooltipNumbers">250%</c>.
+ChromieDragon'sClaw=Your Basic Attack range is increased by 25%. Using Sand Blast or Dragon’s Breath empowers your next Basic Attack by 100%.
+ChromieDragonsBreath=Fire a blast into the air that lands after <c val="#TooltipNumbers"><VALUE></c> seconds, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies in an area.  Enemies cannot see where the blast will land.
+ChromieDragonsBreathDeepBreathing=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time Dragon’s Breath hits a Hero increase its damage by <c val="#TooltipNumbers">2</c>, up to <c val="#TooltipNumbers">50</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">25</c> Heroes, increase its damage by an additional <c val="#TooltipNumbers">150</c> and also increase your sight radius by <c val="#TooltipNumbers">100%</c>.
+ChromieDragonsBreathDragonsEye=Dragon’s Breath does <c val="#TooltipNumbers">25%</c> more damage to enemies in the center.
+ChromieDragonsBreathEnvelopingAssault=Increases Dragon's Breath's radius by <c val="#TooltipNumbers">25%</c>.
+ChromieDragonsBreathMobiusLoop=Reduces Dragon’s Breath's Mana cost and cooldown by <c val="#TooltipNumbers">50%</c>, but also reduces its damage by <c val="#TooltipNumbers">25%</c>.
+ChromiePeerIntoTheFuture=Activate to reveal the targeted area for <c val="#TooltipNumbers">2</c> seconds. Enemies seen are revealed for <c val="#TooltipNumbers">4</c> seconds.
+ChromiePortBackToBaseByeBye=Reduces the cast time of your Hearthstone by <c val="#TooltipNumbers">75%</c>, and it is not interrupted by taking damage.
+ChromieQuantumOverdrive=Activate to increase Ability Power by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">10</c> seconds.
+ChromieReachingThroughTime=Increases Sand Blast and Dragon’s Breath's range by <c val="#TooltipNumbers">15%</c>.
+ChromieSandBlast=After <c val="#TooltipNumbers"><VALUE></c> second, fire a missile that deals <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy Hero hit.
+ChromieSandBlastCompoundingAether=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">25</c> Heroes with Sand Blast increase its damage by <c val="#TooltipNumbers">100</c>.
+ChromieSandBlastFastForward=If Sand Blast travels at least <c val="#TooltipNumbers">75%</c> of its base distance and hits a Hero, its cooldown is reduced to <c val="#TooltipNumbers">0.75</c> seconds.
+ChromieSandBlastPastAndFutureMe=After casting Sand Blast, leave an echo of yourself behind. The next time you cast Sand Blast, the echo also casts an untalented Sand Blast that does <c val="#TooltipNumbers">40%</c> damage.
+ChromieSandBlastPiercingSands=Sand Blast will now hit the first two Heroes in its path.
+ChromieSandBlastShiftingSands=Hitting an enemy Hero with Sand Blast increases your Ability Power by <c val="#TooltipNumbers">8%</c> for the next <c val="#TooltipNumbers">10</c> seconds. This bonus can be stacked up to <c val="#TooltipNumbers">40%</c>, and the duration is refreshed whenever you damage enemy Heroes with Sand Blast.
+ChromieSlowingSands=Place a sand vortex that greatly slows enemies inside it. The longer it is active the more it slows, up to <c val="#TooltipNumbers">60%</c> after <c val="#TooltipNumbers">3</c> seconds.
+ChromieSlowingSandsPocketOfTime=Removes Slowing Sands Mana cost and increases the slow from <c val="#TooltipNumbers">60%</c> to <c val="#TooltipNumbers">80%</c>.
+ChromieTemporalLoop=Choose an enemy Hero. After <c val="#TooltipNumbers">3</c> seconds, they will teleport back to the location where you cast Temporal Loop on them.
+ChromieTemporalLoopLoophole=Temporal Loop hits all enemy Heroes near your initial target.
+ChromieTimeOutCancel=Cancel Time Out.
+ChromieTimeOutHotbar=Activate to place yourself in Stasis and gain Invulnerability for up to <c val="#TooltipNumbers">7</c> seconds. Can be reactivated to end the effect early.
+ChromieTimeTrap=Place a Time Trap that arms and Stealths after <c val="#TooltipNumbers"><VALUE></c> seconds. The first enemy Hero to touch it will be put into Stasis for <c val="#TooltipNumbers"><VALUE></c> seconds. Only <c val="#TooltipNumbers">1</c> trap can exist at once.
+ChromieTimeTrapAndorhalAnomaly=You gain <c val="#TooltipNumbers">3</c> charges of Time Trap, and can have <c val="#TooltipNumbers">3</c> active at once.  When your cooldown finishes, you gain <c val="#TooltipNumbers">3</c> charges at once.
+ChromieTimeTrapChronoSickness=Reduces Time Trap's cooldown and Mana cost by <c val="#TooltipNumbers">50%</c>. After the Stasis ends, the enemy is also slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">4</c> seconds.
+ChromieTimewalkerTrait=You've traveled to the future, and as such, will learn your Talents <c val="#TooltipNumbers">1</c> level earlier than your teammates!
+ChromieTimewalkersPursuit=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your Mana Regeneration by <c val="#TooltipNumbers">0.1</c>, up to <c val="#TooltipNumbers">1.5</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">15</c> Globes you also gain <c val="#TooltipNumbers">5%</c> Ability Power.
 CrusaderBlessedShield=Deal <c val="#TooltipNumbers"><VALUE></c> damage and stun the first enemy hit for <c val="#TooltipNumbers"><VALUE></c> seconds. Blessed Shield then bounces to <c val="#TooltipNumbers">2</c> nearby enemies, dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 CrusaderBlessedShieldRadiatingFaithTalent=Increases Blessed Shield's stun duration by <c val="#TooltipNumbers">33%</c> and maximum enemies hit by <c val="#TooltipNumbers">2</c>.
 CrusaderCondemn=After <c val="#TooltipNumbers">1</c> second, you pull nearby enemies toward you, stunning them for <c val="#TooltipNumbers"><VALUE></c> seconds and dealing <c val="#TooltipNumbers"><VALUE></c> damage. Deals <c val="#TooltipNumbers"><VALUE>%</c> increased damage to Minions and Mercenaries.
@@ -353,6 +381,39 @@ CrusaderShieldGlare=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies 
 CrusaderShieldGlareHolyRenewalTalent=Every enemy Hero affected by Shield Glare heals you for <c val="#TooltipNumbers"><VALUE></c>.
 CrusaderShieldGlareSinsExposedTalent=Shield Glare marks enemies for <c val="#TooltipNumbers"><VALUE></c> seconds. The next time any ally damages them, they take <c val="#TooltipNumbers"><VALUE></c> extra damage and the mark is removed.
 CrusaderSubdueTalent=Increases Punish's slow to <c val="#TooltipNumbers"><VALUE>%</c> decaying over <c val="#TooltipNumbers">3</c> seconds.
+DehakaAdaptation=After <c val="#TooltipNumbers">4</c> seconds, heal for <c val="#TooltipNumbers">60%</c> of the damage you took over this period.
+DehakaAdaptationChangeIsSurvivalTalent=Increases Adaptation healing to <c val="#TooltipNumbers">125%</c> of the damage received and reduces the cooldown by <c val="#TooltipNumbers">30</c> seconds.
+DehakaBrushstalker=Burrow to a bush on the Battleground.
+DehakaBrushstalkerApexPredatorTalent=Reduces Brushstalker's cooldown by <c val="#TooltipNumbers">25</c> seconds and the cast time by <c val="#TooltipNumbers">0.5</c> seconds.
+DehakaBrushstalkerFerociousStalkerTalent=Brushstalker increases your Movement Speed by <c val="#TooltipNumbers">60%</c> decaying over <c val="#TooltipNumbers">3</c> seconds.
+DehakaBurrow=Burrow into the ground, entering Stasis and becoming Invulnerable for <C val="#TooltipNumbers"><VALUE></c> seconds.
+DehakaBurrowImprovedBurrowTalent=While Burrowed you can move at <c val="#TooltipNumbers"><VALUE>%</c> movement speed. 
+DehakaBurrowTalentLurkerStrain=Burrow grants Stealth for <c val="#TooltipNumbers">5</c> seconds.
+DehakaBurrowTalentNumbingEruption=Emerging from Burrow knocks nearby enemies back and slows them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2</c> seconds.
+DehakaBurrowTalentRapidRegeneration=Burrow heals you for <c val="#TooltipNumbers">360</c> Health over <c val="#TooltipNumbers">2</c> seconds.
+DehakaDarkSwarm=Deal <c val="#TooltipNumbers"><VALUE></c> damage a second to nearby enemies for <c val="#TooltipNumbers"><VALUE></c> seconds, and become able to move through units.  Deals double damage to Heroes.  Can be cast during Drag and Burrow.
+DehakaDarkSwarmTalentEnduringSwarm=Dark Swarm reduces the damage of the next two Abilities made against you by <c val="#TooltipNumbers">50%</c>.
+DehakaDarkSwarmTalentPrimalAggression=Dark Swarm duration increased by <c val="#TooltipNumbers">.5</c> seconds and it deals <c val="#TooltipNumbers">100%</c> bonus damage to Minions and Mercenaries. 
+DehakaDarkSwarmTalentSymbiosis=Every time Dark Swarm damages an enemy Hero, reduce its cooldown by <c val="#TooltipNumbers">0.5</c> seconds.
+DehakaDarkSwarmWhirlingDervish=Reduces the duration of stuns, slows, and roots against your Hero while Dark Swarm is active by <c val="#TooltipNumbers">50%</c>.
+DehakaDrag=Lash out with your tongue, dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit, stunning and dragging them with you for <C val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>If you are stunned or silenced while using Drag, the effect ends.
+DehakaDragAggressivePreservationTalent=Hitting an enemy hero with Drag reduces the cooldown of Burrow by <c val="#TooltipNumbers"><VALUE></c> seconds.
+DehakaDragParasiticWoundTalent=Dragging an enemy increases the damage they take by <c val="#TooltipNumbers"><VALUE>%</c> for the duration.
+DehakaDragTalentConstriction=Increases Drag duration by <c val="#TooltipNumbers">0.5</c> seconds.
+DehakaDragTalentElongatedTongue=Increase Drag range by <c val="#TooltipNumbers">20%</c>.
+DehakaDragTalentFeedingFrenzy=Basic Attacks reduce Drag's cooldown by <c val="#TooltipNumbers">1.5</c> seconds.
+DehakaDragTalentParalyzingEnzymes=Drag slows enemies by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">2</c> seconds after it ends.
+DehakaDragWatchMeWhipTalent=If Drag misses or hits a non-heroic enemy the cooldown is reduced to <c val="#TooltipNumbers"><VALUE></c> seconds and <c val="#TooltipNumbers">50%</c> of the mana is refunded.
+DehakaEssenceCollection=Gain <c val="#TooltipNumbers"><VALUE></c> Essence from Takedowns and <c val="#TooltipNumbers"><VALUE></c> Essence from nearby Minions dying.  Activate to consume all Essence and heal yourself for <c val="#TooltipNumbers"><VALUE></c> Health over <c val="#TooltipNumbers"><VALUE></c> seconds for each Essence stored.  Maximum of <c val="#TooltipNumbers">50</c> Essence.  Can be cast during Drag and Burrow.
+DehakaEssenceCollectionOneWhoCollectsTalent=Increases Essence collected from Minions by <c val="#TooltipNumbers">50%</c>.
+DehakaEssenceCollectionStore=Killing an enemy Hero will grant <C val="#TooltipNumbers"><VALUE></c> Essence and Minion kills grant <C val="#TooltipNumbers"><VALUE></c> Essence. Each Essence consumed heals <C val="#TooltipNumbers"><VALUE></c> health over <C val="#TooltipNumbers"><VALUE></c> seconds. A maximum of <C val="#TooltipNumbers">50</c> Essence can be stored. Can be cast while channeling.
+DehakaEssenceCollectionTalentEnhancedAgility=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Each time you collect <c val="#TooltipNumbers">50</c> Essence, permanently increase your Movement Speed by <c val="#TooltipNumbers">1.5%</c>, up to <c val="#TooltipNumbers">15%</c>.
+DehakaEssenceCollectionTalentEssenceDevourer=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering Regeneration Globes grant <c val="#TooltipNumbers">10</c> Essence and increase your maximum Essence by <c val="#TooltipNumbers">1</C>, to a maximum of <c val="#TooltipNumbers">10</C> increased Essence.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">10</C> Regeneration Globes, the amount of Essence you gain from Regeneration Globes is increased to <c val="#TooltipNumbers">15</c>.
+DehakaEssenceCollectionTalentHeroStalker=Increases Essence gained from Takedowns by <c val="#TooltipNumbers">150%</c>.
+DehakaEssenceCollectionTalentSwiftPursuit=Increases your Movement Speed by <c val="#TooltipNumbers">20%</c> while in a bush and <c val="#TooltipNumbers">2</c> seconds after leaving.
+DehakaEssenceCollectionTalentTissueRegeneration=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Each time you collect <c val="#TooltipNumbers">50</c> Essence, permanently increase your Health Regeneration by <c val="#TooltipNumbers">5</c>, up to <c val="#TooltipNumbers">50</c>.
+DehakaIsolation=Launch biomass that hits the first enemy Hero dealing <c val="#TooltipNumbers">200</c> damage, silencing and slowing them <C val="#TooltipNumbers">30%</c> for <C val="#TooltipNumbers">3</c> seconds. Only allows them to see a very short distance for <C val="#TooltipNumbers">6</c> seconds.
+DehakaIsolationTalentContagion=Isolation hits all Heroes near the first target.
 DemonHunterCreedoftheHunter=Increases Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Use <c val="#TooltipNumbers">100</c> Basic Attacks against Heroes.<n/><n/><img  path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Your Hatred grants an additional <c val="#TooltipNumbers">2%</c> Basic Attack Damage</c> per stack.
 DemonHunterDeathDealer=Increases Vault Basic Attack damage bonus from <c val="#TooltipNumbers">6%</c> to <c val="#TooltipNumbers">14%</c> per stack of Hatred. If this attack kills its victim, the Mana cost and cooldown of Vault are refunded.
 DemonHunterFarflightQuiver=Increases your Basic Attack range by <c val="#TooltipNumbers">40%</c>.
@@ -381,31 +442,31 @@ DemonHunterVault=Dash to the target area. Your next Basic Attack within <c val="
 DemonHunterVaultCaltropsTalent=Drop <c val="#TooltipNumbers">3</c> Caltrops while Vaulting. Caltrops do <c val="#TooltipNumbers"><VALUE></c> damage and slow enemies by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> second.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Spend <c val="#TooltipNumbers"><VALUE></c> seconds at <c val="#TooltipNumbers">10</c> stacks of Hatred.<n/><n/><img  path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Vault cooldown is reduced by <c val="#TooltipNumbers">5</c> seconds.
 DemonHunterVaultRepeatingArrowTalent=The cooldown for Hungering Arrow is reset when Vault is used.
 DemonHunterVaultTumbleTalent=Vault gains an additional charge, allowing it to be cast twice in quick succession.
-DiabloApocalypse=Create a demonic rune under each enemy Hero on the battleground. After <c val="#TooltipNumbers"><VALUE></c> seconds the rune explodes dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning for <c val="#TooltipNumbers"><VALUE></c> seconds.
+DiabloApocalypse=Create a demonic rune under each enemy Hero on the battleground. After <c val="#TooltipNumbers">1.75</c> seconds the rune explodes dealing <c val="#TooltipNumbers">137</c> damage and stunning for <c val="#TooltipNumbers">1.75</c> seconds.
 DiabloApocalypseDyingBreathTalent=Apocalypse's cooldown is reduced by <c val="#TooltipNumbers">20</c> seconds and is cast for free when you die.
 DiabloBlackSoulstone=Gain <c val="#TooltipNumbers">10</c> Souls per Hero killed and <c val="#TooltipNumbers">1</c> Soul per Minion . For each Soul, gain <c val="#TooltipNumbers"><w>0.2%</w></c> maximum Health. If you have <c val="#TooltipNumbers">100</c> Souls upon dying, you resurrect in <c val="#TooltipNumbers">5</c> seconds and lose <c val="#TooltipNumbers">100</c> Souls.  Maximum <c val="#TooltipNumbers">100</c> Souls.
-DiabloBlackSoulstoneActivateable=Activate to heal <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
+DiabloBlackSoulstoneActivateable=Activate to heal <c val="#TooltipNumbers">16%</c> of your maximum Health over <c val="#TooltipNumbers">3</c> seconds.
 DiabloBlackSoulstoneDevilsDueTalent=Reduces Black Soulstone's resurrection cost to <c val="#TooltipNumbers">60</c> Souls.
-DiabloBlackSoulstoneSoulCatcherTalent=Black Soulstone passively generates a Soul every <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloBlackSoulstoneSoulFeastTalent=Black Soulstone increases your Health Regeneration by <c val="#TooltipNumbers"><VALUE>%</c> per Soul.
+DiabloBlackSoulstoneSoulCatcherTalent=Black Soulstone passively generates a Soul every <c val="#TooltipNumbers">4</c> seconds.
+DiabloBlackSoulstoneSoulFeastTalent=Black Soulstone increases your Health Regeneration by <c val="#TooltipNumbers">3%</c> per Soul.
 DiabloBlackSoulstoneSoulStealTalent=Increases the amount of Health gained from Black Soulstone by <c val="#TooltipNumbers">50%</c>.
-DiabloDiabolicalMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloEssenceOfTheSlainTalent=When enemy Minions and Heroes die near you, gain <c val="#TooltipNumbers"><VALUE></c> Health and <c val="#TooltipNumbers"><VALUE></c> Mana.
+DiabloDiabolicalMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers">0.75</c> seconds.
+DiabloEssenceOfTheSlainTalent=When enemy Minions and Heroes die near you, gain <c val="#TooltipNumbers">26</c> Health and <c val="#TooltipNumbers">10</c> Mana.
 DiabloFireStomp=Unleashes fire waves in all directions that deal <c val="#TooltipNumbers"><VALUE></c> damage each.
 DiabloFireStompFirestormTalent=Fire Stomp waves return to you, dealing <c val="#TooltipNumbers">125%</c> damage.
-DiabloFireStompRampageTalent=Fire Stomp increases Diablo's Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> and Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloFirestompFireDevilTalent=Fire Stomp also surrounds you in flames that deal <c val="#TooltipNumbers"><VALUE></c> damage every second for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloLifeLeechTalent=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of the Hero's maximum Health and heal you for the same amount.
-DiabloLightningBreath=Become Unstoppable while channeling lightning that deals <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers">4</c> seconds.  The direction of the Lightning changes with your mouse cursor position.
+DiabloFireStompRampageTalent=Fire Stomp increases Diablo's Movement Speed by <c val="#TooltipNumbers">20%</c> and Basic Attack damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">2</c> seconds.
+DiabloFirestompFireDevilTalent=Fire Stomp also surrounds you in flames that deal <c val="#TooltipNumbers">17</c> damage every second for <c val="#TooltipNumbers">6</c> seconds.
+DiabloLifeLeechTalent=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers">1%</c> of the Hero's maximum Health and heal you for the same amount.
+DiabloLightningBreath=Become Unstoppable while channeling lightning that deals <c val="#TooltipNumbers">800</c> damage over <c val="#TooltipNumbers">4</c> seconds.  The direction of the Lightning changes with your mouse cursor position.
 DiabloLightningBreathHellstormTalent=Lightning Breath lasts and reaches <c val="#TooltipNumbers">50%</c> longer.
-DiabloLordOfTerror=Activate to steal <c val="#TooltipNumbers"><VALUE>%</c> of the maximum Health of nearby enemy Heroes.
+DiabloLordOfTerror=Activate to steal <c val="#TooltipNumbers">10%</c> of the maximum Health of nearby enemy Heroes.
 DiabloOverpower=Grabs the target and slams it behind Diablo, dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning for <c val="#TooltipNumbers"><VALUE></c> seconds.
 DiabloOverpowerContinuousOverpowerTalent=Overpower can store <c val="#TooltipNumbers">2</c> charges.
-DiabloOverpowerDemonicStrengthTalent=Once Overpower's stun expires, the target is slowed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloOverpowerDominationTalent=Overpower reduces the cooldown of Shadow Charge by <c val="#TooltipNumbers"><VALUE></c> seconds.
+DiabloOverpowerDemonicStrengthTalent=Once Overpower's stun expires, the target is slowed by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
+DiabloOverpowerDominationTalent=Overpower reduces the cooldown of Shadow Charge by <c val="#TooltipNumbers">10</c> seconds.
 DiabloShadowCharge=Charge an enemy, knocking them back, dealing <c val="#TooltipNumbers"><VALUE></c> damage. If the enemy collides with terrain, they are stunned for <c val="#TooltipNumbers"><VALUE></c> second instead.
-DiabloShadowChargeDevastatingChargeTalent=Shadow Charge grants Resistant, reducing the damage you take by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DiabloShadowChargeFromTheShadowsTalent=Enemies knocked against unpathable locations are stunned for an additional <c val="#TooltipNumbers"><VALUE></c> seconds.
+DiabloShadowChargeDevastatingChargeTalent=Shadow Charge grants Resistant, reducing the damage you take by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">4</c> seconds.
+DiabloShadowChargeFromTheShadowsTalent=Enemies knocked against unpathable locations are stunned for an additional <c val="#TooltipNumbers">0.5</c> seconds.
 DiabloShadowChargeOverwhelmingForceTalent=Increases the range and knockback of Shadow Charge by <c val="#TooltipNumbers">25%</c>.
 DragonKnightBullRush=After a short delay, charge an enemy Hero to knock them back and deal <c val="#TooltipNumbers"><VALUE></c> damage.
 DragonKnightFireBreath=Breathes fire towards the target area, burning enemies for <c val="#TooltipNumbers"><VALUE></c> damage and leaves a patch of fire on the ground that deals <c val="#TooltipNumbers"><VALUE></c> over <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -419,7 +480,7 @@ DryadDividingWispTalent=The first time you relocate a Wisp it leaves a copy of i
 DryadDryadsSwiftness=You move <c val="#TooltipNumbers">20%</c> faster by leaping short distances.
 DryadForestsWrathTalent=Increases Thornwood Vine's range by <c val="#TooltipNumbers">30%</c>, its speed by <c val="#TooltipNumbers">20%</c>, and your vision radius by <c val="#TooltipNumbers">35%</c>.
 DryadGallopingGaitTalent=Activate to increase the Movement Speed bonus of Dryad's Swiftness to <c val="#TooltipNumbers">80%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DryadGreaterSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.
+DryadGreaterSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.  Can only trigger once every <c val="#TooltipNumbers">30</c> seconds.
 DryadGreaterSpellShieldTalentHotbar=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds<n/><n/>Toggle to allow this talent to trigger.
 DryadGreaterSpellShieldTalentToggleOff=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds<n/><n/>Toggle to prevent this talent from triggering until reactivated.
 DryadInvigoratingSporesTalent=Using Crippling Spores increases your Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -441,21 +502,21 @@ DryadTimelostWispTalent=Wisp costs no Mana and its cooldown recharges <c val="#T
 DryadUnfairAdvantageTalent=Nature's Toxin deals <c val="#TooltipNumbers">50%</c> more damage to Heroes that are slowed.
 DryadWildVigorTalent=Using Crippling Spores increases the damage of your next <c val="#TooltipNumbers"><VALUE></c> Basic Attacks by <c val="#TooltipNumbers"><VALUE>%</c>.
 DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-ETCBlockParty=Rockstar also grants allies a stack of Block, reducing the damage they take from the next Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c> for<c val="#TooltipNumbers"> <VALUE></c> seconds. Stacks up to <c val="#TooltipNumbers"><VALUE></c> times.
+ETCBlockParty=Rockstar also grants allies a stack of Block, reducing the damage they take from the next Basic Attack by <c val="#TooltipNumbers">50%</c> for<c val="#TooltipNumbers"> 8</c> seconds. Stacks up to <c val="#TooltipNumbers">2</c> times.
 ETCBlockPartyToken=Reducing the damage you take from the next Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.
 ETCCrowdSurfer=Allows Powerslide to travel over walls and terrain.
 ETCDoubleNeckedGuitarTalent=Increases Powerslide's width by <c val="#TooltipNumbers">100%</c> and you slide <c val="#TooltipNumbers">30% </c>faster.
-ETCEncoreTalent=Face Melt leaves an Amp behind, which will knock enemies away again <c val="#TooltipNumbers"><VALUE></c> seconds later.
+ETCEncoreTalent=Face Melt leaves an Amp behind, which will knock enemies away again <c val="#TooltipNumbers">2</c> seconds later.
 ETCGuitarSoloAggressiveShreddingTalent=Your Basic Attacks reduce the cooldown of Guitar Solo by <c val="#TooltipNumbers">1 </c>second.
-ETCHammeronTalent=After using an Ability, your next <c val="#TooltipNumbers"><VALUE></c> Basic Attacks deal <c val="#TooltipNumbers"><VALUE>%</c> more damage.
+ETCHammeronTalent=After using an Ability, your next <c val="#TooltipNumbers">2</c> Basic Attacks deal <c val="#TooltipNumbers">30%</c> more damage.
 ETCJustKeepRockinTalent=While Guitar Solo is active, the duration of stuns, slows, roots, and polymorphs are reduced by <c val="#TooltipNumbers">50%</c>.
-ETCMicCheckTalent=Hitting at least <c val="#TooltipNumbers"><VALUE></c> targets with Face Melt reduces its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds.
+ETCMicCheckTalent=Hitting at least <c val="#TooltipNumbers">2</c> targets with Face Melt reduces its cooldown by <c val="#TooltipNumbers">6</c> seconds.
 ETCPinballWizardTalent=Face Melt does <c val="#TooltipNumbers">200%</c> more damage to enemies recently affected by Powerslide.
-ETCProgRockTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe permanently increases the healing per second of Guitar Solo by <c val="#TooltipNumbers"><VALUE></c>, to a maximum of <c val="#TooltipNumbers"><VALUE></c><n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After reaching <c val="#TooltipNumbers"><VALUE></c> increased healing, Guitar Solo also heals nearby allied Heroes for <c val="#TooltipNumbers"><VALUE></c> Health every second while it is active.
+ETCProgRockTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe permanently increases the healing per second of Guitar Solo by <c val="#TooltipNumbers">5</c>, to a maximum of <c val="#TooltipNumbers">100</c><n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After reaching <c val="#TooltipNumbers">100</c> increased healing, Guitar Solo also heals nearby allied Heroes for <c val="#TooltipNumbers">53</c> Health every second while it is active.
 ETCRollingLikeaStoneTalent=Increases the range of Powerslide by <c val="#TooltipNumbers">25%</c>.
-ETCShowStopperTalent=Reduces all damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds after using Powerslide.
-ETCSpeedMetalTalent=Rockstar also gives <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
-ETCStageDiveCrowdPleaserTalent=Stage Dive's impact area is <c val="#TooltipNumbers">50%</c> bigger, and its cooldown is reduced by <c val="#TooltipNumbers"><VALUE></c> seconds for every enemy Hero hit.
+ETCShowStopperTalent=Reduces all damage taken by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">4</c> seconds after using Powerslide.
+ETCSpeedMetalTalent=Rockstar also gives <c val="#TooltipNumbers">10%</c> Movement Speed for <c val="#TooltipNumbers">2</c> seconds.
+ETCStageDiveCrowdPleaserTalent=Stage Dive's impact area is <c val="#TooltipNumbers">50%</c> bigger, and its cooldown is reduced by <c val="#TooltipNumbers">10</c> seconds for every enemy Hero hit.
 FaerieDragonPixieCharm=Each time you heal an Allied Hero with Soothing Mist, you gain a stack of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them. Does not work on Bosses. Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks.<n/><n/><c val="ffff8a">Current number of Bribe stacks: <c val="#TooltipNumbers"><VALUE></c></c>
 FaerieDragonPixieCharmTalent=Each time you heal an Allied Hero with Soothing Mist, you gain a stack of Bribe. Use <c val="#TooltipNumbers">20</c> stacks to bribe a Mercenary, instantly defeating them. Does not work on Bosses. Maximum of <c val="#TooltipNumbers">80</c> stacks.
 FaerieDragonPixieCharmTalentToken=<c val="#TooltipQuest">Allies healed: </c><VALUE>/<VALUE>
@@ -493,30 +554,30 @@ FalstadWingmanTalentToken=<c val="#TooltipQuest">Current number of Bribe stacks:
 FalstadWingmanToken=<c val="#TooltipQuest">Nearby Minions Killed: <c val="#TooltipNumbers"><VALUE>/<VALUE></c><n/>Lightning Rod Damage Bonus: <c val="#TooltipNumbers"><VALUE>%
 FuryoftheStormTalent=Every <c val="#TooltipNumbers"><VALUE></c> seconds, your next Basic Attack will deal an additional <c val="#TooltipNumbers"><VALUE></c> damage to the target, and <c val="#TooltipNumbers"><VALUE></c> damage to all nearby Minions, Mercenaries, and Monsters.
 GallBombsAwayTalent=Increases Cho's Rune Bomb range by <c val="#TooltipNumbers">20%</c>.
-GallDarkDescentTalent=Increases Runic Blast's damage by <c val="#TooltipNumbers"><VALUE>%</c> every time you get a Hero Takedown, up to <c val="#TooltipNumbers"><VALUE>%</c>. These bonuses are lost upon dying.
+GallDarkDescentTalent=Increases Runic Blast's damage by <c val="#TooltipNumbers">5%</c> every time you get a Hero Takedown, up to <c val="#TooltipNumbers">20%</c>. These bonuses are lost upon dying.
 GallDoubleBackTalent=Dread Orb's third bounce instead bounces backwards.
-GallDoubleTroubleTalent=If Shadowflame hits an enemy Hero afflicted with Cho's Consuming Blaze, its cooldown is reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
+GallDoubleTroubleTalent=If Shadowflame hits an enemy Hero afflicted with Cho's Consuming Blaze, its cooldown is reduced by <c val="#TooltipNumbers">1.25</c> seconds.
 GallDreadOrb=Throw a bomb that will bounce three times, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies.
-GallDreadShieldTalent=When Dread Orb hits an enemy Hero, gain a Shield absorbing <c val="#TooltipNumbers"><VALUE></c> damage for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GallDreadShieldTalent=When Dread Orb hits an enemy Hero, gain a Shield absorbing <c val="#TooltipNumbers">256</c> damage for <c val="#TooltipNumbers">5</c> seconds.
 GallEdgeOfMadnessTalent=Increases Shadowflame damage by <c val="#TooltipNumbers">20%</c> to nearby targets, and <c val="#TooltipNumbers">10%</c> to mid-range targets. Distant targets take normal damage. 
-GallEyeofKilroggHotbar=Place an eye, granting vision of a large area around it for <c val="#TooltipNumbers"><VALUE></c> seconds. The eye can be killed by enemies with <c val="#TooltipNumbers"><VALUE></c> Basic Attacks.
+GallEyeofKilroggHotbar=Place an eye, granting vision of a large area around it for <c val="#TooltipNumbers">45</c> seconds. The eye can be killed by enemies with <c val="#TooltipNumbers">2</c> Basic Attacks.
 GallGiantScorcherTalent=Shadowflame also does <c val="#TooltipNumbers">3.5%</c> of a Hero's maximum Health.
 GallHurryUpOaf=Increases your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c>. This effect decays over <c val="#TooltipNumbers"><VALUE></c> seconds.
-GallPsychoticBreakTalent=Increases your Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c>. Upon dying, the cooldown on your Heroic Ability is reset and you can continue to use Abilities for <c val="#TooltipNumbers"><VALUE></c> seconds. 
+GallPsychoticBreakTalent=Increases your Ability Damage by <c val="#TooltipNumbers">5%</c>. Upon dying, the cooldown on your Heroic Ability is reset and you can continue to use Abilities for <c val="#TooltipNumbers">10</c> seconds. 
 GallRisingDreadTalent=Dread Orb does <c val="#TooltipNumbers">25%</c> more damage on the second bounce and <c val="#TooltipNumbers">75%</c> more damage the third bounce.
 GallRunicBlast=Detonate Cho's Rune Bomb, dealing <c val="#TooltipNumbers"><VALUE></c> damage around it.
 GallRunicPersistenceTalent=Using Runic Blast no longer destroys Rune Bomb.
-GallShadowboltVolley=After <c val="#TooltipNumbers"><VALUE></c> second, unleash <c val="#TooltipNumbers"><VALUE></c> Shadow Bolts over <c val="#TooltipNumbers"><VALUE></c> seconds, each dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first target hit. The bolts fire towards your mouse.
+GallShadowboltVolley=After <c val="#TooltipNumbers">1</c> second, unleash <c val="#TooltipNumbers">20</c> Shadow Bolts over <c val="#TooltipNumbers">4</c> seconds, each dealing <c val="#TooltipNumbers">103</c> damage to the first target hit. The bolts fire towards your mouse.
 GallShadowboltVolleyShadowfuryTalent=Shadow Bolt Volley hits all enemies in its path.
 GallShadowflame=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies in the area.
-GallShadowflareTalent=Increases Shadowflame's width by <c val="#TooltipNumbers">50%</c>. Enemies hit are slowed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> second. 
+GallShadowflareTalent=Increases Shadowflame's width by <c val="#TooltipNumbers">50%</c>. Enemies hit are slowed by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">1</c> second. 
 GallShoveHotbar=Nudge Cho a small distance in the direction you choose.
-GallSpeedOfTwilightTalent=When Dread Orb hits an enemy Hero, gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
-GallSpurredOnwardTalent=Increase the initial speed boost of Hurry Up, Oaf! to <c val="#TooltipNumbers">70%</c>. Hurry Up, Oaf! cooldown reduced by <c val="#TooltipNumbers"><VALUE></c> seconds when hitting an enemy Hero with an Ability. 
+GallSpeedOfTwilightTalent=When Dread Orb hits an enemy Hero, gain <c val="#TooltipNumbers">30%</c> Movement Speed for <c val="#TooltipNumbers">5</c> seconds.
+GallSpurredOnwardTalent=Increase the initial speed boost of Hurry Up, Oaf! to <c val="#TooltipNumbers">70%</c>. Hurry Up, Oaf! cooldown reduced by <c val="#TooltipNumbers">2</c> seconds when hitting an enemy Hero with an Ability. 
 GallTheNetherCallsTalent=Increases Twisting Nether's slow by <c val="#TooltipNumbers">10%</c> and damage by <c val="#TooltipNumbers">10%</c> for every second channeled, to a maximum of <c val="#TooltipNumbers">40%</c> increase.
 GallTheWillofGallHotbar=Activate to make Cho Unstoppable for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GallTwilightNovaTalent=After the first bounce, <c val="#TooltipNumbers">2</c> extra bombs bounce to the sides once.
-GallTwistingNether=After <c val="#TooltipNumbers">1</c> second, nearby enemies are slowed by <c val="#TooltipNumbers"><VALUE>%</c> while you channel, up to <c val="#TooltipNumbers"><VALUE></c> seconds. Activate to deal <c val="#TooltipNumbers"><VALUE></c> damage.
+GallTwistingNether=After <c val="#TooltipNumbers">1</c> second, nearby enemies are slowed by <c val="#TooltipNumbers">50%</c> while you channel, up to <c val="#TooltipNumbers">5</c> seconds. Activate to deal <c val="#TooltipNumbers">415</c> damage.
 GenericAmplifiedHealingTalent=Increases regeneration effects and all healing received by <c val="#TooltipNumbers"><VALUE>%</c>.
 GenericArcanePowerHotbar=Activate to instantly restore <c val="#TooltipNumbers"><VALUE></c> Mana and increase Ability Power by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericBattleMomentumTalent=Basic Attacks reduce Ability cooldowns by <c val="#TooltipNumbers">0.5</c> seconds.
@@ -557,7 +618,7 @@ GenericScoutingDrone=Places a Scouting Drone at target location, granting vision
 GenericSearingAttacks=Activate to increase Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Each attack costs <c val="#TooltipNumbers"><VALUE></c> Mana.
 GenericSeasonedMarksmanTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every Minion killed near you grants <c val="#TooltipNumbers">0.2</c> Attack Damage, and Takedowns grant <c val="#TooltipNumbers">0.5</c> Attack Damage, to a max of <c val="#TooltipNumbers">40</c> damage.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Upon gaining <c val="#TooltipNumbers">40</c> bonus Attack Damage, you can also activate Seasoned Marksman to increase your Attack Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds. <c val="#TooltipNumbers">60</c> second cooldown.
 GenericShrinkRayTalent=Activate to reduce an enemy Hero's damage by <c val="#TooltipNumbers"><VALUE>%</c> and Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-GenericSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. This can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Can be toggled to allow or prevent this talent from triggering.
+GenericSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds. This can only trigger once every <c val="#TooltipNumbers">30</c> seconds.<n/><n/>Can be toggled to allow or prevent this talent from triggering.
 GenericSpellShieldTalentHotbar=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. This can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Toggle to allow this talent to trigger.
 GenericSpellShieldTalentToggleOff=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. This can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Toggle to prevent this talent from triggering until reactivated.
 GenericSprint=Activate to gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -713,17 +774,17 @@ KerriganSummonUltraliskTorrasqueTalent=The Ultralisk morphs into an egg when it 
 KnightMagicVolley=Channels to repeatedly deal Ability damage.
 L90ETCDeathMetalTalent=Upon dying, a ghost uses Mosh Pit at your location.
 L90ETCFaceMelt=Deals <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies, knocking them back.
-L90ETCFaceMeltFaceSmeltTalent=Face Melt slows enemies by <c val="#TooltipNumbers"><VALUE>%</c> fading over <c val="#TooltipNumbers"><VALUE></c> seconds.
-L90ETCFaceMeltLoudSpeakersTalent=Increases Face Melt range and knockback by <c val="#TooltipNumbers"><VALUE>%</c>.
+L90ETCFaceMeltFaceSmeltTalent=Face Melt slows enemies by <c val="#TooltipNumbers">60%</c> fading over <c val="#TooltipNumbers">2</c> seconds.
+L90ETCFaceMeltLoudSpeakersTalent=Increases Face Melt range and knockback by <c val="#TooltipNumbers">50%</c>.
 L90ETCGuitarSolo=Regenerate <c val="#TooltipNumbers"><VALUE></c> Health per second for <c val="#TooltipNumbers"><VALUE></c> seconds.
 L90ETCGuitarSoloGroupiesTalent=Guitar Solo also heals nearby allied Heroes for <c val="#TooltipNumbers"><VALUE></c> Health every second while it is active.
-L90ETCGuitarSoloGuitarHeroTalent=While Guitar Solo is active, you heal for <c val="#TooltipNumbers"><VALUE>%</c> of the damage dealt by Basic Attacks.  Also increases the Attack Speed bonus of Rockstar by<c val="#TooltipNumbers"> <VALUE>%</c>.
-L90ETCMoshPit=After <c val="#TooltipNumbers"><VALUE></c> seconds, channel to stun nearby enemies for <c val="#TooltipNumbers"><VALUE></c> seconds.
+L90ETCGuitarSoloGuitarHeroTalent=While Guitar Solo is active, you heal for <c val="#TooltipNumbers">35%</c> of the damage dealt by Basic Attacks.  Also increases the Attack Speed bonus of Rockstar by<c val="#TooltipNumbers"> 5%</c>.
+L90ETCMoshPit=After <c val="#TooltipNumbers">0.75</c> seconds, channel to stun nearby enemies for <c val="#TooltipNumbers">4</c> seconds.
 L90ETCMoshPitTourBusTalent=Mosh Pit refreshes the cooldown of Powerslide. You can Powerslide during Mosh Pit, which also increases its duration by <c val="#TooltipNumbers">2</c> seconds.
 L90ETCPowerslide=Slide to a location dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning enemies hit for <c val="#TooltipNumbers"><VALUE></c> second.
 L90ETCRockstar=When you use a Basic or Heroic ability, give <c val="#TooltipNumbers"><VALUE>%</c> Attack Speed for <c val="#TooltipNumbers"><VALUE></c> seconds to all nearby allied Heroes.
-L90ETCRockstarEchoPedalTalent=Using a Basic or Heroic Ability releases two pulses of <c val="#TooltipNumbers"><VALUE></c> damage.  This deals <c val="#TooltipNumbers"><VALUE>% </c> bonus damage to Minions and Mercenaries. The first occurs instantly, the second occurs <c val="#TooltipNumbers"><VALUE></c> seconds later.
-L90ETCStageDive=Leap to target location, landing after <c val="#TooltipNumbers">2.75</c> seconds, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies in the area, and slowing them by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+L90ETCRockstarEchoPedalTalent=Using a Basic or Heroic Ability releases two pulses of <c val="#TooltipNumbers">29</c> damage.  This deals <c val="#TooltipNumbers">100% </c> bonus damage to Minions and Mercenaries. The first occurs instantly, the second occurs <c val="#TooltipNumbers">2</c> seconds later.
+L90ETCStageDive=Leap to target location, landing after <c val="#TooltipNumbers">2.75</c> seconds, dealing <c val="#TooltipNumbers">330</c> damage to enemies in the area, and slowing them by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
 LeoricBuriedAliveTalent=Enemies inside Entomb take <c val="#TooltipNumbers"><VALUE></c> damage per second.
 LeoricConsumeVitalityTalent=Skeletal Swing heals you for <c val="#TooltipNumbers">2%</c> of your maximum Health per target hit, up to <c val="#TooltipNumbers">10%</c>. Half as effective while Undying.
 LeoricCrushingHopeTalent=If Drain Hope lasts its full duration, it deals bonus damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of the victim's Maximum Health. This damage does not heal you.

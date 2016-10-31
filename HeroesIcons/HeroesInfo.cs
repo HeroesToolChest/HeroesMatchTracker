@@ -320,7 +320,7 @@ namespace HeroesIcons
         {
             TalentDescription talentDesc = new TalentDescription(string.Empty, string.Empty);
 
-            if (string.IsNullOrEmpty(talentReferenceName))
+            if (string.IsNullOrEmpty(talentReferenceName) || !HeroesXml.TalentDesciptions.ContainsKey(talentReferenceName))
                 return talentDesc;
 
             HeroesXml.TalentDesciptions.TryGetValue(talentReferenceName, out talentDesc);

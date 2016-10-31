@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Xml;
 
 namespace HeroesIcons.Xml
@@ -256,7 +257,7 @@ namespace HeroesIcons.Xml
         private void SetTalentDescriptions(string talentReferenceName, string desc)
         {
             // checking keys because of generic talents
-            if (!TalentDesciptions.ContainsKey(talentReferenceName))
+            if (!TalentDesciptions.ContainsKey(talentReferenceName) && !string.IsNullOrEmpty(desc))
             {
                 string shortDesc;
                 string longDesc;
