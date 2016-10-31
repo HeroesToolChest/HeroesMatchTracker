@@ -664,6 +664,40 @@ GreymaneToothAndClawTalent=<c val="#ColorViolet">Worgen</c> form Basic Attacks c
 GreymaneUnleashed=Go for the Throat gets more powerful free casts
 GreymaneWizenedDuelistTalent=<c val="#TooltipQuest">Quest:</c> Takedowns increase Basic Attack damage
 GreymaneWorgenForm=Able to shapeshift between a Human and a Worgen
+GuldanCataclysm=Channel at the target area pulling enemies toward the center and dealing damage upon expiration.
+GuldanChaoticEnergy=<c val="#TooltipQuest">Quest:</c> Gather Regen Globes to reduce Mana costs
+GuldanConsumeSoul=Instantly kill an enemy Minion to heal
+GuldanCorruption=Deals damage over time to enemies in the area
+GuldanCorruptionCurseOfExhaustion=Corruption slows enemy Movement Speed
+GuldanCorruptionDemonicSight=Corruption reveals enemies
+GuldanCorruptionEchoedCorruption=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,GuldanCorruptionEchoedCorruptionQuestToken,Max"/></c> Heroes with Corruption to increase strikes
+GuldanCorruptionRuinousAffliction=Corruption deals bonus damage
+GuldanDarkBargain=Increases Death Respawn timer and Health
+GuldanDemonicCircle=Summon a Demonic Circle that you can teleport to
+GuldanDemonicCircleSummon=Summon Demonic Circle
+GuldanDemonicCircleTeleport=Teleport to Demonic Circle
+GuldanDrainLife=Drain Health from an enemy, dealing damage and healing Gul'dan
+GuldanDrainLifeDevourTheFrail=Drain Life deals more damage to weakened enemies
+GuldanDrainLifeHarvestLife=Increases healing from Drain Life
+GuldanDrainLifeHealthFunnel=Killing enemies with Drain Life refreshes its cooldown
+GuldanDrainLifeTalentGlyphofDrainLife=Increases the cast range of Drain Life
+GuldanFear=Fear the first enemy hero hit
+GuldanFelFlame=Release a wave of flame that damages enemies
+GuldanFelFlameBoundByShadow=Fel Flame hits reduce the cooldown of Corruption
+GuldanFelFlameFelArmor=Fel Flame grants Spell Shield
+GuldanFelFlameRampantHellfire=Increases Fel Flame's damage
+GuldanFelFlameTalentPursuitOfFlame=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">40</c> Heroes to increase area
+GuldanHealthstone=Activate to heal
+GuldanHorrify=Deals damage and fears Heroes
+GuldanHorrifyHaunt=Increases duration and makes enemies Vulnerable
+GuldanLifeTap=Restore Mana at the cost of Health
+GuldanLifeTapDarknessWithin=Gain Ability Power after using Life Tap
+GuldanLifeTapHungerforPower=Gain Ability Power but reduce healing received
+GuldanLifeTapImprovedLifeTap=Life Tap restores more Mana
+GuldanRainOfDestruction=Summon a rain of meteors in an area
+GuldanRainOfDestructionDeepImpact=Rain of Destruction slows enemy Movement Speed
+GuldanSeedOfCorruption=Deals damage over time to the enemy hero. If they survive, you become afflicted by Seed of Corruption
+GuldanSeedOfCorruptionHeroSelect=Deals damage over time to the enemy hero. If they survive, you become afflicted by Seed of Corruption
 HardenedShieldTalent=Activate to gain a Shield
 HeroGenericBribeToken=Heal Allies with Soothing Mist to bribe a Mercenary
 HeroGenericRegenGlobe=Heals nearby Heroes when picked up

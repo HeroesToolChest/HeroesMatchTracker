@@ -131,6 +131,12 @@ namespace HeroesParserData.Converters
                 case "#TooltipQuest": // yellow-gold
                     color = (Color)ColorConverter.ConvertFromString("#AE9C54");
                     break;
+                case "#ColorViolet":
+                    color = (Color)ColorConverter.ConvertFromString("#A85EC6");
+                    break;
+                case "#ColorCreamYellow":
+                    color = (Color)ColorConverter.ConvertFromString("#CED077");
+                    break;
                 case "ffff8a": // light-yellow
                     color = (Color)ColorConverter.ConvertFromString("#ffff8a");
                     break;
