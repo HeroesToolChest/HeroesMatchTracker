@@ -73,7 +73,7 @@ namespace HeroesParserData.Converters
                             text = string.Empty;
                         }
                     }
-                    else if (startTag.StartsWith("<img path=\"@UI/StormTalentInTextQuestIcon\""))
+                    else if (startTag.StartsWith("<img path=\"@UI/StormTalentInTextQuestIcon\"") || startTag.StartsWith("<img  path=\"@UI/StormTalentInTextQuestIcon\""))
                     {
                         int closingTag = text.IndexOf("/>");
 
@@ -128,11 +128,20 @@ namespace HeroesParserData.Converters
                 case "#TooltipNumbers":
                     color = Colors.GhostWhite;
                     break;
-                case "#TooltipQuest":
+                case "#TooltipQuest": // yellow-gold
                     color = (Color)ColorConverter.ConvertFromString("#AE9C54");
                     break;
-                case "ffff8a":
+                case "ffff8a": // light-yellow
                     color = (Color)ColorConverter.ConvertFromString("#ffff8a");
+                    break;
+                case "00ffff": // teal
+                    color = (Color)ColorConverter.ConvertFromString("#00ffff");
+                    break;
+                case "00ff00": // green
+                    color = (Color)ColorConverter.ConvertFromString("#00ff00");
+                    break;
+                case "ff6600": // orange
+                    color = (Color)ColorConverter.ConvertFromString("#ff6600");
                     break;
                 default:
                     WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");
