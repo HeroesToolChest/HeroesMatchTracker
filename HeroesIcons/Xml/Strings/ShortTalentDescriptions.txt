@@ -670,7 +670,7 @@ GuldanConsumeSoul=Instantly kill an enemy Minion to heal
 GuldanCorruption=Deals damage over time to enemies in the area
 GuldanCorruptionCurseOfExhaustion=Corruption slows enemy Movement Speed
 GuldanCorruptionDemonicSight=Corruption reveals enemies
-GuldanCorruptionEchoedCorruption=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,GuldanCorruptionEchoedCorruptionQuestToken,Max"/></c> Heroes with Corruption to increase strikes
+GuldanCorruptionEchoedCorruption=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">40</c> Heroes with Corruption to increase strikes
 GuldanCorruptionRuinousAffliction=Corruption deals bonus damage
 GuldanDarkBargain=Increases Death Respawn timer and Health
 GuldanDemonicCircle=Summon a Demonic Circle that you can teleport to

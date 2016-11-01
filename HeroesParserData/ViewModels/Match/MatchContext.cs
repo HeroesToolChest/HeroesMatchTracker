@@ -441,13 +441,13 @@ namespace HeroesParserData.ViewModels.Match
                         TalentDescription talent16 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName16);
                         TalentDescription talent20 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName20);
 
-                        matchTalents.TalentShortDescription1 = talent1.Short;
-                        matchTalents.TalentShortDescription4 = talent4.Short;
-                        matchTalents.TalentShortDescription7 = talent7.Short;
-                        matchTalents.TalentShortDescription10 = talent10.Short;
-                        matchTalents.TalentShortDescription13 = talent13.Short;
-                        matchTalents.TalentShortDescription16 = talent16.Short;
-                        matchTalents.TalentShortDescription20 = talent20.Short;
+                        matchTalents.TalentShortDescription1 = $"{matchTalents.TalentName1}: {talent1.Short}";
+                        matchTalents.TalentShortDescription4 = $"{matchTalents.TalentName4}: {talent4.Short}";
+                        matchTalents.TalentShortDescription7 = $"{matchTalents.TalentName7}: {talent7.Short}";
+                        matchTalents.TalentShortDescription10 = $"{matchTalents.TalentName10}: {talent10.Short}";
+                        matchTalents.TalentShortDescription13 = $"{matchTalents.TalentName13}: {talent13.Short}";
+                        matchTalents.TalentShortDescription16 = $"{matchTalents.TalentName16}: {talent16.Short}";
+                        matchTalents.TalentShortDescription20 = $"{matchTalents.TalentName20}: {talent20.Short}";
 
                         matchTalents.TalentFullDescription1 = talent1.Full;
                         matchTalents.TalentFullDescription4 = talent4.Full;

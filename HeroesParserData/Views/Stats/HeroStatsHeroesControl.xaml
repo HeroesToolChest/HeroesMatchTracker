@@ -516,22 +516,19 @@
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
+                                                <DataTemplate  >
                                                     <StackPanel>
                                                         <ToggleButton Name="TalentImage1" IsHitTestVisible="{Binding ElementName=PopupDesc1, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -571,16 +568,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -620,16 +614,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -669,16 +660,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -718,16 +706,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -767,16 +752,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
@@ -816,16 +798,13 @@
                                                             <ToggleButton.Template>
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
-                                                                        <ToolTipService.ToolTip>
-                                                                            <TextBlock>
-                                                                                <TextBlock.Text>
-                                                                                    <MultiBinding StringFormat="{}{0}: {1}">
-                                                                                        <Binding Path="TalentName" />
-                                                                                        <Binding Path="TalentShortDescription" />
-                                                                                    </MultiBinding>
-                                                                                </TextBlock.Text>
-                                                                            </TextBlock>
-                                                                        </ToolTipService.ToolTip>
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
                                                                     </Image>
                                                                 </ControlTemplate>
                                                             </ToggleButton.Template>
