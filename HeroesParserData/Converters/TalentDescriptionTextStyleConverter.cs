@@ -44,12 +44,12 @@ namespace HeroesParserData.Converters
 
                         continue;
                     }
-                    else if (startTag.StartsWith("<c val=") || startTag.StartsWith("<C val="))
+                    else if (startTag.ToLower().StartsWith("<c val="))
                     {
                         string colorValue = startTag.Substring(8, startTag.Length - 10);
 
                         int offset = 4;
-                        int closingCTagIndex = text.IndexOf("</c>", endIndex);
+                        int closingCTagIndex = text.ToLower().IndexOf("</c>", endIndex);
 
                         // check if an ending tag exists
                         if (closingCTagIndex > 0)

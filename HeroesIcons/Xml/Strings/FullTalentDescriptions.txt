@@ -358,29 +358,29 @@ ChromieTimeTrapAndorhalAnomaly=You gain <c val="#TooltipNumbers">3</c> charges o
 ChromieTimeTrapChronoSickness=Reduces Time Trap's cooldown and Mana cost by <c val="#TooltipNumbers">50%</c>. After the Stasis ends, the enemy is also slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">4</c> seconds.
 ChromieTimewalkerTrait=You've traveled to the future, and as such, will learn your Talents <c val="#TooltipNumbers">1</c> level earlier than your teammates!
 ChromieTimewalkersPursuit=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your Mana Regeneration by <c val="#TooltipNumbers">0.1</c>, up to <c val="#TooltipNumbers">1.5</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">15</c> Globes you also gain <c val="#TooltipNumbers">5%</c> Ability Power.
-CrusaderBlessedShield=Deal <c val="#TooltipNumbers"><VALUE></c> damage and stun the first enemy hit for <c val="#TooltipNumbers"><VALUE></c> seconds. Blessed Shield then bounces to <c val="#TooltipNumbers">2</c> nearby enemies, dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning them for <c val="#TooltipNumbers"><VALUE></c> seconds.
+CrusaderBlessedShield=Deal <c val="#TooltipNumbers">114</c> damage and stun the first enemy hit for <c val="#TooltipNumbers">1.5</c> seconds. Blessed Shield then bounces to <c val="#TooltipNumbers">2</c> nearby enemies, dealing <c val="#TooltipNumbers">57</c> damage and stunning them for <c val="#TooltipNumbers">0.75</c> seconds.
 CrusaderBlessedShieldRadiatingFaithTalent=Increases Blessed Shield's stun duration by <c val="#TooltipNumbers">33%</c> and maximum enemies hit by <c val="#TooltipNumbers">2</c>.
 CrusaderCondemn=After <c val="#TooltipNumbers">1</c> second, you pull nearby enemies toward you, stunning them for <c val="#TooltipNumbers"><VALUE></c> seconds and dealing <c val="#TooltipNumbers"><VALUE></c> damage. Deals <c val="#TooltipNumbers"><VALUE>%</c> increased damage to Minions and Mercenaries.
-CrusaderCondemnBlessedHammerTalent=Condemn also creates a hammer that spirals around you, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies it hits.
-CrusaderCondemnConvictionTalent=Movement Speed is increased by <c val="#TooltipNumbers"><VALUE>%</c> while Condemn is charging up.
+CrusaderCondemnBlessedHammerTalent=Condemn also creates a hammer that spirals around you, dealing <c val="#TooltipNumbers">41</c> damage to enemies it hits.
+CrusaderCondemnConvictionTalent=Movement Speed is increased by <c val="#TooltipNumbers">25%</c> while Condemn is charging up.
 CrusaderCondemnKnightTakesPawnTalent=Condemn deals <c val="#TooltipNumbers"><VALUE></c> additional damage to Minions and Mercenaries and stuns them for <c val="#TooltipNumbers"><VALUE></c> seconds.
-CrusaderEternalRetaliationTalent=Condemn's cooldown is lowered by <c val="#TooltipNumbers"><VALUE></c> seconds for each enemy affected. Maximum of <c val="#TooltipNumbers"><VALUE></c> targets.
-CrusaderFallingSword=You leap towards an area.  While in the air, you can steer the landing location by moving. <n/><n/>After <c val="#TooltipNumbers"><VALUE></c> seconds you land, dealing <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies and knocking them into the air.
-CrusaderFallingSwordHeavensFuryTalent=While in the air, holy bolts rain down on enemies dealing <c val="#TooltipNumbers"><VALUE></c> damage and reducing the cooldown of Falling Sword by <c val="#TooltipNumbers"><VALUE></c> seconds for each enemy hit.
-CrusaderIndestructableTalent=Upon taking fatal damage, gain a Shield equal to your maximum Health for <c val="#TooltipNumbers"><VALUE></c> seconds. This effect has a <c val="#TooltipNumbers"><VALUE></c> second cooldown.
+CrusaderEternalRetaliationTalent=Condemn's cooldown is lowered by <c val="#TooltipNumbers">0.75</c> seconds for each enemy affected. Maximum of <c val="#TooltipNumbers">10</c> targets.
+CrusaderFallingSword=You leap towards an area.  While in the air, you can steer the landing location by moving. <n/><n/>After <c val="#TooltipNumbers">2</c> seconds you land, dealing <c val="#TooltipNumbers">365</c> damage to nearby enemies and knocking them into the air.
+CrusaderFallingSwordHeavensFuryTalent=While in the air, holy bolts rain down on enemies dealing <c val="#TooltipNumbers">75</c> damage and reducing the cooldown of Falling Sword by <c val="#TooltipNumbers">2</c> seconds for each enemy hit.
+CrusaderIndestructableTalent=Upon taking fatal damage, gain a Shield equal to your maximum Health for <c val="#TooltipNumbers">5</c> seconds. This effect has a <c val="#TooltipNumbers">120</c> second cooldown.
 CrusaderIronSkin=Gain a Shield that absorbs <c val="#TooltipNumbers"><VALUE></c> damage for <c val="#TooltipNumbers"><VALUE></c> seconds. While this Shield is active, you are Unstoppable.
-CrusaderIronSkinFanaticismTalent=While Iron Skin is active, gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed each time you take damage.  Stacks up to <c val="#TooltipNumbers"><VALUE>%</c>.
-CrusaderIronSkinHoldYourGroundTalent=Increases Iron Skin's Shield by <c val="#TooltipNumbers">20%</c>, and if the Shield is destroyed by damage the cooldown is reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
-CrusaderIronSkinReinforceTalent=Using a Basic Ability reduces damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.  Stores up to <c val="#TooltipNumbers">2</c> charges.
-CrusaderIronSkinTheCrusadeMarchesOnTalent=Basic and Heroic Abilities lower the cooldown of Iron Skin by <c val="#TooltipNumbers"><VALUE></c> seconds.
-CrusaderLawsOfHope=Regenerating <c val="#TooltipNumbers"><VALUE></c> Health per second.<n/><n/>Activate to heal <c val="#TooltipNumbers">20%</c> of your max Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
+CrusaderIronSkinFanaticismTalent=While Iron Skin is active, gain <c val="#TooltipNumbers">8%</c> Movement Speed each time you take damage.  Stacks up to <c val="#TooltipNumbers">40%</c>.
+CrusaderIronSkinHoldYourGroundTalent=Increases Iron Skin's Shield by <c val="#TooltipNumbers">20%</c>, and if the Shield is destroyed by damage the cooldown is reduced by <c val="#TooltipNumbers">4</c> seconds.
+CrusaderIronSkinReinforceTalent=Using a Basic Ability reduces damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers">75%</c>.  Stores up to <c val="#TooltipNumbers">2</c> charges.
+CrusaderIronSkinTheCrusadeMarchesOnTalent=Basic and Heroic Abilities lower the cooldown of Iron Skin by <c val="#TooltipNumbers">1.5</c> seconds.
+CrusaderLawsOfHope=Regenerating <c val="#TooltipNumbers">10</c> Health per second.<n/><n/>Activate to heal <c val="#TooltipNumbers">20%</c> of your max Health over <c val="#TooltipNumbers">4</c> seconds.
 CrusaderPunish=Step forward dealing <c val="#TooltipNumbers"><VALUE></c> damage and slowing enemies by <c val="#TooltipNumbers"><VALUE>%</c> decaying over <c val="#TooltipNumbers"><VALUE></c> seconds.
-CrusaderPunishRighteousSmashTalent=Punish restores <c val="#TooltipNumbers"><VALUE></c> Mana per enemy hit.
+CrusaderPunishRighteousSmashTalent=Punish restores <c val="#TooltipNumbers">10</c> Mana per enemy hit.
 CrusaderRoarTalent=Increases Punish damage by <c val="#TooltipNumbers">50%</c>.
 CrusaderShieldGlare=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies and cause them to miss Basic Attacks for <c val="#TooltipNumbers"><VALUE></c> seconds.
-CrusaderShieldGlareHolyRenewalTalent=Every enemy Hero affected by Shield Glare heals you for <c val="#TooltipNumbers"><VALUE></c>.
-CrusaderShieldGlareSinsExposedTalent=Shield Glare marks enemies for <c val="#TooltipNumbers"><VALUE></c> seconds. The next time any ally damages them, they take <c val="#TooltipNumbers"><VALUE></c> extra damage and the mark is removed.
-CrusaderSubdueTalent=Increases Punish's slow to <c val="#TooltipNumbers"><VALUE>%</c> decaying over <c val="#TooltipNumbers">3</c> seconds.
+CrusaderShieldGlareHolyRenewalTalent=Every enemy Hero affected by Shield Glare heals you for <c val="#TooltipNumbers">114</c>.
+CrusaderShieldGlareSinsExposedTalent=Shield Glare marks enemies for <c val="#TooltipNumbers">4</c> seconds. The next time any ally damages them, they take <c val="#TooltipNumbers">68</c> extra damage and the mark is removed.
+CrusaderSubdueTalent=Increases Punish's slow to <c val="#TooltipNumbers">80%</c> decaying over <c val="#TooltipNumbers">3</c> seconds.
 DehakaAdaptation=After <c val="#TooltipNumbers">4</c> seconds, heal for <c val="#TooltipNumbers">60%</c> of the damage you took over this period.
 DehakaAdaptationChangeIsSurvivalTalent=Increases Adaptation healing to <c val="#TooltipNumbers">125%</c> of the damage received and reduces the cooldown by <c val="#TooltipNumbers">30</c> seconds.
 DehakaBrushstalker=Burrow to a bush on the Battleground.
@@ -470,21 +470,21 @@ DiabloShadowChargeFromTheShadowsTalent=Enemies knocked against unpathable locati
 DiabloShadowChargeOverwhelmingForceTalent=Increases the range and knockback of Shadow Charge by <c val="#TooltipNumbers">25%</c>.
 DragonKnightBullRush=After a short delay, charge an enemy Hero to knock them back and deal <c val="#TooltipNumbers"><VALUE></c> damage.
 DragonKnightFireBreath=Breathes fire towards the target area, burning enemies for <c val="#TooltipNumbers"><VALUE></c> damage and leaves a patch of fire on the ground that deals <c val="#TooltipNumbers"><VALUE></c> over <c val="#TooltipNumbers"><VALUE></c> seconds.
-DryadAbolishMagicHotbar=Activate to remove all stuns, roots, silences, slows, fears, and damage over time effects from yourself and an ally. For <c val="#TooltipNumbers"><VALUE></c> seconds after, the duration of stuns, roots, silences, slows, and fears are reduced by <c val="#TooltipNumbers">50%</c>.
+DryadAbolishMagicHotbar=Activate to remove all stuns, roots, silences, slows, fears, and damage over time effects from yourself and an ally. For <c val="#TooltipNumbers">2</c> seconds after, the duration of stuns, roots, silences, slows, and fears are reduced by <c val="#TooltipNumbers">50%</c>.
 DryadBlossomSwellTalent=Increases Noxious Blossom's radius by <c val="#TooltipNumbers">20%.</c>
-DryadBoundlessStrideTalent=All Leaping Strike charges are returned every <c val="#TooltipNumbers"><VALUE></c> seconds. You can also use Leaping Strike on allies.
+DryadBoundlessStrideTalent=All Leaping Strike charges are returned every <c val="#TooltipNumbers">20</c> seconds. You can also use Leaping Strike on allies.
 DryadChokingPollenTalent=Increases Noxious Blossom damage by <c val="#TooltipNumbers">125%</c> against enemies afflicted with Nature's Toxin.
 DryadCripplingSpores=Enemies currently afflicted by Nature's Toxin have its duration increased by <c val="#TooltipNumbers">3 </c>seconds and are slowed by <c val="#TooltipNumbers"><VALUE>%</c> decaying over <c val="#TooltipNumbers"><VALUE></c> seconds. 
-DryadCruelSporesTalent=When Crippling Spores hits only Minions or Mercenaries, its cooldown is reduced by <c val="#TooltipNumbers"><VALUE>%</c> and <c val="#TooltipNumbers">20</c> Mana is restored.
+DryadCruelSporesTalent=When Crippling Spores hits only Minions or Mercenaries, its cooldown is reduced by <c val="#TooltipNumbers">80%</c> and <c val="#TooltipNumbers">20</c> Mana is restored.
 DryadDividingWispTalent=The first time you relocate a Wisp it leaves a copy of itself in the previous location. Only one Dividing Wisp can be active at a time. 
 DryadDryadsSwiftness=You move <c val="#TooltipNumbers">20%</c> faster by leaping short distances.
 DryadForestsWrathTalent=Increases Thornwood Vine's range by <c val="#TooltipNumbers">30%</c>, its speed by <c val="#TooltipNumbers">20%</c>, and your vision radius by <c val="#TooltipNumbers">35%</c>.
-DryadGallopingGaitTalent=Activate to increase the Movement Speed bonus of Dryad's Swiftness to <c val="#TooltipNumbers">80%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DryadGreaterSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.  Can only trigger once every <c val="#TooltipNumbers">30</c> seconds.
+DryadGallopingGaitTalent=Activate to increase the Movement Speed bonus of Dryad's Swiftness to <c val="#TooltipNumbers">80%</c> for <c val="#TooltipNumbers">6</c> seconds.
+DryadGreaterSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">3</c> seconds.  Can only trigger once every <c val="#TooltipNumbers">30</c> seconds.
 DryadGreaterSpellShieldTalentHotbar=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds<n/><n/>Toggle to allow this talent to trigger.
 DryadGreaterSpellShieldTalentToggleOff=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds<n/><n/>Toggle to prevent this talent from triggering until reactivated.
-DryadInvigoratingSporesTalent=Using Crippling Spores increases your Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DryadLeapingStrike=Leap over an enemy, slowing them by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE> </c>seconds and attacking for <c val="#TooltipNumbers"><VALUE></c> damage. Has <c val="#TooltipNumbers"><VALUE></c> charges.
+DryadInvigoratingSporesTalent=Using Crippling Spores increases your Attack Speed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">6</c> seconds.
+DryadLeapingStrike=Leap over an enemy, slowing them by <c val="#TooltipNumbers">80%</c> for <c val="#TooltipNumbers">0.35 </c>seconds and attacking for <c val="#TooltipNumbers">271</c> damage. Has <c val="#TooltipNumbers">2</c> charges.
 DryadLetThemWitherTalent=Increases Crippling Spores' slow to <c val="#TooltipNumbers">50%</c> and causes it to no longer decay.
 DryadNaturalPerspectiveTalent=Nature's Toxin reveals enemies for its duration.
 DryadNaturesCullingTalent=Increases Nature's Toxin's damage by <c val="#TooltipNumbers">150%</c> to non-Heroes.
@@ -492,15 +492,15 @@ DryadNaturesToxin=Your Basic Attacks and damaging Abilities poison their target,
 DryadNimbleWispTalent=Increases Wisp Movement Speed by <c val="#TooltipNumbers">100%</c> and vision radius by <c val="#TooltipNumbers">50%</c>.
 DryadNoxiousBlossom=After <c val="#TooltipNumbers"><VALUE></c> seconds, cause an area to explode with pollen dealing <c val="#TooltipNumbers"><VALUE></c> damage.
 DryadPesteringBlossomTalent=Increases Noxious Blossom's range by <c val="#TooltipNumbers">50%</c>.
-DryadPhotosynthesisTalent=Crippling Spores returns <c val="#TooltipNumbers"><VALUE></c> Mana per enemy hit, up to <c val="#TooltipNumbers"><VALUE></c> Mana.
-DryadSiphoningToxinTalent=As long as you have Nature's Toxin active on an enemy you heal for <c val="#TooltipNumbers"><VALUE></c> Health a second.
-DryadSkyboundWispTalent=Wisp can see over obstacles and reveals the area for <c val="#TooltipNumbers"><VALUE></c> seconds after dying.
+DryadPhotosynthesisTalent=Crippling Spores returns <c val="#TooltipNumbers">10</c> Mana per enemy hit, up to <c val="#TooltipNumbers">40</c> Mana.
+DryadSiphoningToxinTalent=As long as you have Nature's Toxin active on an enemy you heal for <c val="#TooltipNumbers">18</c> Health a second.
+DryadSkyboundWispTalent=Wisp can see over obstacles and reveals the area for <c val="#TooltipNumbers">4</c> seconds after dying.
 DryadSplinteredSpearTalent=Using Noxious Blossom causes your next Basic Attack to hit up to <c val="#TooltipNumbers">4</c> enemies. These extra attacks can apply Nature's Toxin.
-DryadStarWoodSpearTalent=Using Crippling Spores increases your Basic Attack range by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-DryadThornwoodVine=Send forth vines that deal <c val="#TooltipNumbers"><VALUE></c> damage to all enemies in a line. Can hold <c val="#TooltipNumbers"><VALUE></c> charges.
+DryadStarWoodSpearTalent=Using Crippling Spores increases your Basic Attack range by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">6</c> seconds.
+DryadThornwoodVine=Send forth vines that deal <c val="#TooltipNumbers">164</c> damage to all enemies in a line. Can hold <c val="#TooltipNumbers">3</c> charges.
 DryadTimelostWispTalent=Wisp costs no Mana and its cooldown recharges <c val="#TooltipNumbers">125%</c> faster while no Wisp is active.
 DryadUnfairAdvantageTalent=Nature's Toxin deals <c val="#TooltipNumbers">50%</c> more damage to Heroes that are slowed.
-DryadWildVigorTalent=Using Crippling Spores increases the damage of your next <c val="#TooltipNumbers"><VALUE></c> Basic Attacks by <c val="#TooltipNumbers"><VALUE>%</c>.
+DryadWildVigorTalent=Using Crippling Spores increases the damage of your next <c val="#TooltipNumbers">4</c> Basic Attacks by <c val="#TooltipNumbers">50%</c>.
 DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
 ETCBlockParty=Rockstar also grants allies a stack of Block, reducing the damage they take from the next Basic Attack by <c val="#TooltipNumbers">50%</c> for<c val="#TooltipNumbers"> 8</c> seconds. Stacks up to <c val="#TooltipNumbers">2</c> times.
 ETCBlockPartyToken=Reducing the damage you take from the next Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.
@@ -552,7 +552,7 @@ FalstadWingmanHotbar=Enemy Minions killed near you grant a stack of Bribe. Use <
 FalstadWingmanHotbarTalent=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers">20</c> stacks to bribe a Mercenary, instantly defeating them and permanently increasing the damage of Lightning Rod by <c val="#TooltipNumbers">5%</c>. Does not work on Bosses. Maximum of <c val="#TooltipNumbers">80</c> stacks.
 FalstadWingmanTalentToken=<c val="#TooltipQuest">Current number of Bribe stacks: <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c><n/><c val="#TooltipQuest">Lightning Rod Damage Bonus: <c val="#TooltipNumbers"><VALUE>%
 FalstadWingmanToken=<c val="#TooltipQuest">Nearby Minions Killed: <c val="#TooltipNumbers"><VALUE>/<VALUE></c><n/>Lightning Rod Damage Bonus: <c val="#TooltipNumbers"><VALUE>%
-FuryoftheStormTalent=Every <c val="#TooltipNumbers"><VALUE></c> seconds, your next Basic Attack will deal an additional <c val="#TooltipNumbers"><VALUE></c> damage to the target, and <c val="#TooltipNumbers"><VALUE></c> damage to all nearby Minions, Mercenaries, and Monsters.
+FuryoftheStormTalent=Every <c val="#TooltipNumbers">5</c> seconds, your next Basic Attack will deal an additional <c val="#TooltipNumbers">91</c> damage to the target, and <c val="#TooltipNumbers">228</c> damage to all nearby Minions, Mercenaries, and Monsters.
 GallBombsAwayTalent=Increases Cho's Rune Bomb range by <c val="#TooltipNumbers">20%</c>.
 GallDarkDescentTalent=Increases Runic Blast's damage by <c val="#TooltipNumbers">5%</c> every time you get a Hero Takedown, up to <c val="#TooltipNumbers">20%</c>. These bonuses are lost upon dying.
 GallDoubleBackTalent=Dread Orb's third bounce instead bounces backwards.
@@ -578,53 +578,53 @@ GallTheNetherCallsTalent=Increases Twisting Nether's slow by <c val="#TooltipNum
 GallTheWillofGallHotbar=Activate to make Cho Unstoppable for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GallTwilightNovaTalent=After the first bounce, <c val="#TooltipNumbers">2</c> extra bombs bounce to the sides once.
 GallTwistingNether=After <c val="#TooltipNumbers">1</c> second, nearby enemies are slowed by <c val="#TooltipNumbers">50%</c> while you channel, up to <c val="#TooltipNumbers">5</c> seconds. Activate to deal <c val="#TooltipNumbers">415</c> damage.
-GenericAmplifiedHealingTalent=Increases regeneration effects and all healing received by <c val="#TooltipNumbers"><VALUE>%</c>.
-GenericArcanePowerHotbar=Activate to instantly restore <c val="#TooltipNumbers"><VALUE></c> Mana and increase Ability Power by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericAmplifiedHealingTalent=Increases regeneration effects and all healing received by <c val="#TooltipNumbers">30%</c>.
+GenericArcanePowerHotbar=Activate to instantly restore <c val="#TooltipNumbers">400</c> Mana and increase Ability Power by <c val="#TooltipNumbers">15%</c> for <c val="#TooltipNumbers">10</c> seconds.
 GenericBattleMomentumTalent=Basic Attacks reduce Ability cooldowns by <c val="#TooltipNumbers">0.5</c> seconds.
 GenericBerserkHotbar=Activate to increase your Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c> and Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericBlockTalent=Every <c val="#TooltipNumbers">5</c> seconds, reduce the damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers">75%</c>.  Stores up to <c val="#TooltipNumbers">2</c> charges.
 GenericBloodForBloodHotbar=Activate to deal <c val="#TooltipNumbers">10%</c> of target enemy Hero's Max Health and heal for twice that amount.
 GenericBoltoftheStormTalent=Activate to teleport to a nearby location.
 GenericBribe=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Current number of Bribe stacks: <c val="#TooltipNumbers"><VALUE></c></c>
-GenericBribeTalent=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.
+GenericBribeTalent=Enemy Minions killed near you grant a stack of Bribe. Use <c val="#TooltipNumbers">20</c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers">100</c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.
 GenericBurningRageTalent=Deal <c val="#TooltipNumbers">23</c> damage per second to nearby enemies.
 GenericCalldownMule=Activate to calldown a Mule that repairs Structures, one at a time, near target point for <c val="#TooltipNumbers">40</c> seconds, healing for <c val="#TooltipNumbers">100</c> Health every <c val="#TooltipNumbers">1</c> second.  Grants <c val="#TooltipNumbers">1</c> ammo every  <c val="#TooltipNumbers">3</c> seconds.
-GenericClairvoyance=Activate to reveal an area for <c val="#TooltipNumbers">10</c> seconds.  Enemies in the area are revealed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericClairvoyance=Activate to reveal an area for <c val="#TooltipNumbers">10</c> seconds.  Enemies in the area are revealed for <c val="#TooltipNumbers">4</c> seconds.
 GenericCleanse=Activate to make target ally Unstoppable for <c val="#TooltipNumbers">1</c> second. Cannot be cast on yourself.
-GenericConjurersPursuitTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering Regeneration Globes increases your Mana Regeneration by <c val="#TooltipNumbers"><VALUE></c> per second, up to <c val="#TooltipNumbers"><VALUE></c> per second. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers"><VALUE></c> Globes, also increase your maximum Mana by <c val="#TooltipNumbers"><VALUE></c>.
+GenericConjurersPursuitTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering Regeneration Globes increases your Mana Regeneration by <c val="#TooltipNumbers">0.1</c> per second, up to <c val="#TooltipNumbers">2.5</c> per second. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">25</c> Globes, also increase your maximum Mana by <c val="#TooltipNumbers">100</c>.
 GenericDemolitionistTalent=Basic Attacks against Structures destroy <c val="#TooltipNumbers"><VALUE></c> ammo and deal an additional <c val="#TooltipNumbers">10%</c> damage.
-GenericEnvenomTalent=Activate to poison an enemy Hero, dealing <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericEnvenomTalent=Activate to poison an enemy Hero, dealing <c val="#TooltipNumbers">352</c> damage over <c val="#TooltipNumbers">10</c> seconds.
 GenericExecutionerTalent=Attacking a Hero that is slowed, rooted, or stunned increases your Basic Attack damage by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds.
 GenericFirstAid=Activate to heal <c val="#TooltipNumbers"><VALUE>%</c> of your max Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericFirstAid2=Activate to healal <c val="#TooltipNumbers"><VALUE>%</c> of your max Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
-GenericFocusedAttackTalent=Every <c val="#TooltipNumbers"><VALUE></c> seconds, your next Basic Attack against a Hero deals <c val="#TooltipNumbers"><VALUE>%</c> additional damage. Basic Attacks reduce this cooldown by <c val="#TooltipNumbers">1</c> second.
+GenericFocusedAttackTalent=Every <c val="#TooltipNumbers">10</c> seconds, your next Basic Attack against a Hero deals <c val="#TooltipNumbers">60%</c> additional damage. Basic Attacks reduce this cooldown by <c val="#TooltipNumbers">1</c> second.
 GenericFollowThroughTalent=After using an Ability, your next Basic Attack within <c val="#TooltipNumbers">6</c> seconds deals <c val="#TooltipNumbers">40%</c> additional damage.
 GenericForwardMomentumTalent=Ghost Wolf attacks reduce Basic Ability cooldowns by <c val="#TooltipNumbers">2</c> seconds.
 GenericFuryoftheStormTalent=<s val="StandardTooltipHeader">Fury of the Storm</s><s val="StandardTooltip"><n/><n/>Basic Attacks bounce twice to nearby enemies for <s val="StandardTooltipDetails">50%</s> damage.
 GenericGatheringPowerTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers"><VALUE>%</c>, up to <c val="#TooltipNumbers"><VALUE>%</c>. This bonus Ability Power is lost on death.
 GenericGiantKiller=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers">1.5%</c> of the Hero's maximum Health.
 GenericHardenedFocusTalent=While above <c val="#TooltipNumbers">80%</c> life, your Basic Ability cooldowns regenerate <c val="#TooltipNumbers">50%</c> faster.
-GenericHealingWardTalent=Activate to place a ward on the ground that heals allies in an area for <c val="#TooltipNumbers"><VALUE>%</c> of their maximum Health every second for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericHealingWardTalent=Activate to place a ward on the ground that heals allies in an area for <c val="#TooltipNumbers">2%</c> of their maximum Health every second for <c val="#TooltipNumbers">10</c> seconds.
 GenericIceBlockTalent=Activate to place yourself in Stasis and gain Invulnerability for <c val="#TooltipNumbers">3</c> seconds.
 GenericImposingPresenceTalent=Heroes and Summons that attack you have their Attack Speed slowed by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2.5 </c>seconds.<n/><n/>Activate to slow the Attack Speed by <c val="#TooltipNumbers">50%</c> and Movement Speed by <c val="#TooltipNumbers">20%</c> of nearby Heroes and Summons for <c val="#TooltipNumbers">2.5</c> seconds.
 GenericMercenaryLordTalent=Friendly non-Boss Mercenaries near you deal <c val="#TooltipNumbers">50%</c> more damage. Reduces damage taken from Minions and Mercenaries by <c val="#TooltipNumbers">50%</c>.
-GenericOverdriveTalent=Activate to increase Ability Power by <c val="#TooltipNumbers"><VALUE>%</c> and Mana costs by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericOverdriveTalent=Activate to increase Ability Power by <c val="#TooltipNumbers">25%</c> and Mana costs by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers">5</c> seconds.
 GenericPromote=Activate to cause an allied lane Minion to take <c val="#TooltipNumbers"><VALUE>%</c> reduced damage from non-Heroic targets and deal <c val="#TooltipNumbers"><VALUE>%</c> bonus damage to non-Heroic targets for <c val="#TooltipNumbers"><VALUE></c> seconds. Has <c val="#TooltipNumbers">2</c> charges.
-GenericProtectiveShield=Activate to shield an allied Hero for <c val="#TooltipNumbers"><VALUE>%</c> of their max Health for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericProtectiveShield=Activate to shield an allied Hero for <c val="#TooltipNumbers">15%</c> of their max Health for <c val="#TooltipNumbers">5</c> seconds.
 GenericRegenerationMasterTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your Health Regeneration by <c val="#TooltipNumbers">1</c> per second, up to <c val="#TooltipNumbers">30</c>. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">30</c> Regeneration Globes, you also gain <c val="#TooltipNumbers">500</c> Health.
 GenericRelentlessTalent=Reduces the duration of stuns, slows, and roots against your Hero by <c val="#TooltipNumbers">50%</c>.
 GenericRewindHotbar=Activate to reset the cooldowns of your Basic Abilities.
-GenericScoutingDrone=Places a Scouting Drone at target location, granting vision of a large area around it for <c val="#TooltipNumbers"><VALUE></c> seconds. This drone cannot be hidden and is killed by enemies with <c val="#TooltipNumbers"><VALUE></c> Basic Attacks.  Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
+GenericScoutingDrone=Places a Scouting Drone at target location, granting vision of a large area around it for <c val="#TooltipNumbers">45</c> seconds. This drone cannot be hidden and is killed by enemies with <c val="#TooltipNumbers">2</c> Basic Attacks.  Stores up to <c val="#TooltipNumbers">2</c> charges.
 GenericSearingAttacks=Activate to increase Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Each attack costs <c val="#TooltipNumbers"><VALUE></c> Mana.
 GenericSeasonedMarksmanTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every Minion killed near you grants <c val="#TooltipNumbers">0.2</c> Attack Damage, and Takedowns grant <c val="#TooltipNumbers">0.5</c> Attack Damage, to a max of <c val="#TooltipNumbers">40</c> damage.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Upon gaining <c val="#TooltipNumbers">40</c> bonus Attack Damage, you can also activate Seasoned Marksman to increase your Attack Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds. <c val="#TooltipNumbers">60</c> second cooldown.
-GenericShrinkRayTalent=Activate to reduce an enemy Hero's damage by <c val="#TooltipNumbers"><VALUE>%</c> and Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GenericShrinkRayTalent=Activate to reduce an enemy Hero's damage by <c val="#TooltipNumbers">50%</c> and Movement Speed by <c val="#TooltipNumbers">4%</c> for <c val="#TooltipNumbers">4</c> seconds.
 GenericSpellShieldTalent=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds. This can only trigger once every <c val="#TooltipNumbers">30</c> seconds.<n/><n/>Can be toggled to allow or prevent this talent from triggering.
 GenericSpellShieldTalentHotbar=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. This can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Toggle to allow this talent to trigger.
 GenericSpellShieldTalentToggleOff=Upon taking Ability Damage, reduce that damage and further Ability Damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. This can only trigger once every <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Toggle to prevent this talent from triggering until reactivated.
 GenericSprint=Activate to gain <c val="#TooltipNumbers">75%</c> Movement Speed for <c val="#TooltipNumbers">3</c> seconds.
 GenericStoneskin=Activate to gain <c val="#TooltipNumbers">30%</c> of your maximum Health as a Shield for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GenericStormShield=Activate to give all nearby allied Heroes a Shield for <c val="#TooltipNumbers">20%</c> of their max Health for <c val="#TooltipNumbers">3</c> seconds.
-GenericVigorousAssaultTalent=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of the damage dealt to the primary target.
+GenericVigorousAssaultTalent=Basic Attacks heal for <c val="#TooltipNumbers">15%</c> of the damage dealt to the primary target.
 GenericVigorousStrikeTalent=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of the damage dealt to the primary target.
 GraveGolemBindingRoots=Roots roots roots
 GraveGolemMegaStun=Slam the ground, dealing <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies and stunning them.
@@ -727,82 +727,84 @@ JainaBlizzard=Bombard an area with <c val="#TooltipNumbers"><VALUE></c> waves of
 JainaBlizzardSnowCrashTalent=Increases the number of Blizzard waves from <c val="#TooltipNumbers">3</c> to <c val="#TooltipNumbers">4</c>.
 JainaBlizzardSnowstormTalent=Increases the radius of Blizzard by <c val="#TooltipNumbers">30%</c>.
 JainaBlizzardStormFrontTalent=Increases the cast range of Blizzard by <c val="#TooltipNumbers">100%</c>.
-JainaConeOfColdIceFloesTalent=Doubles the width of Cone of Cold and causes each target hit to reduce its cooldown by <c val="#TooltipNumbers"><VALUE></c> second, to a maximum of <c val="#TooltipNumbers"><VALUE></c> seconds per cast.
-JainaConeOfColdNorthernExposureTalent=Enemies damaged by Cone of Cold are also afflicted with Vulnerable, increasing the damage they take by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-JainaConeOfColdNumbingBlastTalent=Cone of Cold also roots Chilled targets for <c val="#TooltipNumbers"><VALUE></c> second.
-JainaFrostbiteArcaneIntellectTalent=Dealing damage to a Chilled target returns Mana to Jaina. Basic Attacks return <c val="#TooltipNumbers"><VALUE></c> Mana and Abilities return <c val="#TooltipNumbers"><VALUE></c>.
+JainaConeOfColdIceFloesTalent=Doubles the width of Cone of Cold and causes each target hit to reduce its cooldown by <c val="#TooltipNumbers">1</c> second, to a maximum of <c val="#TooltipNumbers">5</c> seconds per cast.
+JainaConeOfColdNorthernExposureTalent=Enemies damaged by Cone of Cold are also afflicted with Vulnerable, increasing the damage they take by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
+JainaConeOfColdNumbingBlastTalent=Cone of Cold also roots Chilled targets for <c val="#TooltipNumbers">1</c> second.
+JainaFrostbiteArcaneIntellectTalent=Dealing damage to a Chilled target returns Mana to Jaina. Basic Attacks return <c val="#TooltipNumbers">5</c> Mana and Abilities return <c val="#TooltipNumbers">20</c>.
 JainaFrostbiteDeepChillTalent=Increases the slow of Chill from <c val="#TooltipNumbers">25% </c>to <c val="#TooltipNumbers">30%</c>.
-JainaFrostbiteFrostArmorTalent=Enemies that attack you are Chilled. Additionally, every <c val="#TooltipNumbers"><VALUE></c> seconds you reduce damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.
+JainaFrostbiteFrostArmorTalent=Enemies that attack you are Chilled. Additionally, every <c val="#TooltipNumbers">10</c> seconds you reduce damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers">50%</c>.
 JainaFrostbiteFrostbittenTalent=Increases the damage bonus of Frostbite from <c val="#TooltipNumbers">50% </c>to <c val="#TooltipNumbers">65%</c>.
-JainaFrostbiteIceBarrierTalent=When Jaina does increased damage from Frostbite, she is shielded for <c val="#TooltipNumbers">25%</c> of the total damage dealt. This Shield lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
+JainaFrostbiteIceBarrierTalent=When Jaina does increased damage from Frostbite, she is shielded for <c val="#TooltipNumbers">25%</c> of the total damage dealt. This Shield lasts <c val="#TooltipNumbers">4</c> seconds.
 JainaFrostbiteLingeringChillTalent=Increases the duration of Chill from <c val="#TooltipNumbers">4</c> seconds to <c val="#TooltipNumbers">6</c> seconds.
 JainaFrostbolt=Deal <c val="#TooltipNumbers"><VALUE></c> damage and Chill the target.
 JainaFrostboltFrostShardsTalent=Frostbolt will now pierce the first target to hit an additional target behind them.
-JainaFrostboltIceLanceTalent=When Frostbolt hits a Chilled target its cooldown is reduced by <c val="#TooltipNumbers">2</c> seconds and you regain <c val="#TooltipNumbers"><VALUE></c> Mana.
+JainaFrostboltIceLanceTalent=When Frostbolt hits a Chilled target its cooldown is reduced by <c val="#TooltipNumbers">2</c> seconds and you regain <c val="#TooltipNumbers">10</c> Mana.
 JainaFrostboltWintersReachTalent=Increases the range of Frostbolt by <c val="#TooltipNumbers">30%</c>.
-JainaIcyVeinsHotbar=Activate to make your Basic Abilities' cooldowns recharge three times as fast and reduce their Mana cost by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-JainaImprovedIceBlockHotbar=Activate to place yourself in Stasis and gain Invulnerability for <c val="#TooltipNumbers"><VALUE></c> seconds. When this effect expires, nearby enemies are Chilled.
-JainaRingOfFrost=After a <c val="#TooltipNumbers">1.5</c> second delay, create a Ring of Frost in an area that deals <c val="#TooltipNumbers"><VALUE></c> damage and roots enemies for <c val="#TooltipNumbers"><VALUE></c> seconds. The ring persists for <c val="#TooltipNumbers">3</c> seconds afterward, Chilling any enemies who touch it.
+JainaIcyVeinsHotbar=Activate to make your Basic Abilities' cooldowns recharge three times as fast and reduce their Mana cost by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">5</c> seconds.
+JainaImprovedIceBlockHotbar=Activate to place yourself in Stasis and gain Invulnerability for <c val="#TooltipNumbers">2.5</c> seconds. When this effect expires, nearby enemies are Chilled.
+JainaRingOfFrost=After a <c val="#TooltipNumbers">1.5</c> second delay, create a Ring of Frost in an area that deals <c val="#TooltipNumbers">310</c> damage and roots enemies for <c val="#TooltipNumbers">3</c> seconds. The ring persists for <c val="#TooltipNumbers">3</c> seconds afterward, Chilling any enemies who touch it.
 JainaRingOfFrostColdSnapTalent=The center of the ring also explodes with frost after the first ring expires.
-JainaSummonWaterElemental=Summons a Water Elemental at target location. The Water Elemental's Basic Attacks do <c val="#TooltipNumbers"><VALUE></c> damage, splash for <c val="#TooltipNumbers">25%</c> damage and Chill. Can reactivate the Ability to retarget the Water Elemental.  Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
+JainaSummonWaterElemental=Summons a Water Elemental at target location. The Water Elemental's Basic Attacks do <c val="#TooltipNumbers">78</c> damage, splash for <c val="#TooltipNumbers">25%</c> damage and Chill. Can reactivate the Ability to retarget the Water Elemental.  Lasts <c val="#TooltipNumbers">20</c> seconds.
 JainaSummonWaterElementalWintermuteTalent=Increases the cast range of Water Elemental by <c val="#TooltipNumbers">50%</c>, and the Water Elemental will now mimic your Basic Abilities for <c val="#TooltipNumbers">50%</c> damage.
 JainaTraitFrostbite=All Abilities Chill targets, slowing Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> and amplifying damage from your Abilities by <c val="#TooltipNumbers">50%</c>. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-JohannaBlessedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers"><VALUE></c> seconds.
+JohannaBlessedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers">0.5</c> seconds.
 KaelthasArcaneBarrier=Gain a Shield equal to <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Mana for <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>
-KaelthasArcaneDynamo=Using a Basic Ability increases your Ability Power by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds, stacking up to <c val="#TooltipNumbers"><VALUE>%</c>.
-KaelthasBurnedFleshTalent=When Flamestrike damages <c val="#TooltipNumbers">2</c> or more Heroes, they take additional damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of their maximum Health.
+KaelthasArcaneDynamo=Using a Basic Ability increases your Ability Power by <c val="#TooltipNumbers">3%</c> for <c val="#TooltipNumbers">5</c> seconds, stacking up to <c val="#TooltipNumbers">15%</c>.
+KaelthasBurnedFleshTalent=When Flamestrike damages <c val="#TooltipNumbers">2</c> or more Heroes, they take additional damage equal to <c val="#TooltipNumbers">8%</c> of their maximum Health.
 KaelthasFlamestrike=After <c val="#TooltipNumbers"><VALUE></c> second, deal <c val="#TooltipNumbers"><VALUE></c> damage in an area. <n/><n/><c val="ff00">Verdant Spheres</c> increases the radius by <c val="#TooltipNumbers">50%</c>.
 KaelthasFlamestrikeConvectionTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time Flamestrike damages an enemy Hero increase its damage by <c val="#TooltipNumbers">5</c>, up to <c val="#TooltipNumbers">100</c>. Lose all damage bonuses if you die.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gaining <c val="#TooltipNumbers">100</c> Flamestrike damage, increase Flamestrike damage by an additional <c val="#TooltipNumbers">100</c> and no longer lose any bonuses if you die.
-KaelthasFlamestrikeFuryOfTheSunwellTalent=Flamestrike will explode a second time <c val="#TooltipNumbers"><VALUE></c> seconds later.
-KaelthasFlamethrowerTalent=Increases the cast range of Flamestrike by <c val="#TooltipNumbers">40%</c>. If you hit <c val="#TooltipNumbers">2</c> or more Heroes, Flamestrike's cooldown is reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
+KaelthasFlamestrikeFuryOfTheSunwellTalent=Flamestrike will explode a second time <c val="#TooltipNumbers">1.5</c> seconds later.
+KaelthasFlamethrowerTalent=Increases the cast range of Flamestrike by <c val="#TooltipNumbers">40%</c>. If you hit <c val="#TooltipNumbers">2</c> or more Heroes, Flamestrike's cooldown is reduced by <c val="#TooltipNumbers">4</c> seconds.
 KaelthasGravityCrushTalent=Gravity Lapse causes enemies to take <c val="#TooltipNumbers"><VALUE>%</c> additional damage from Kael'thas for <c val="#TooltipNumbers"><VALUE></c> seconds. 
 KaelthasGravityLapse=Stun the first enemy hit for <c val="#TooltipNumbers"><VALUE></c> second. <n/><n/><c val="ff00">Verdant Spheres</c> causes Gravity Lapse to stun the first <c val="#TooltipNumbers"><VALUE></c> enemies hit and increases the stun duration by <c val="#TooltipNumbers">50%</c>.
-KaelthasGravityLapseEnergyRoilTalent=When Gravity Lapse hits a Hero, reduce its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds.
+KaelthasGravityLapseEnergyRoilTalent=When Gravity Lapse hits a Hero, reduce its cooldown by <c val="#TooltipNumbers">9</c> seconds.
 KaelthasGravityLapseGravityThrowTalent=Increases the duration of Gravity Lapse's stun by <c val="#TooltipNumbers">33%</c> and causes it to instantly destroy Minions.
-KaelthasGravityLapseNetherWindTalent=Increases Gravity Lapse's range by <c val="#TooltipNumbers">30%</c>. When Gravity Lapse hits an enemy Hero, refund <c val="#TooltipNumbers"><VALUE></c> Mana.
+KaelthasGravityLapseNetherWindTalent=Increases Gravity Lapse's range by <c val="#TooltipNumbers">30%</c>. When Gravity Lapse hits an enemy Hero, refund <c val="#TooltipNumbers">80</c> Mana.
 KaelthasGravityLapseTriOptimalTalent=The cooldown of Verdant Spheres is refreshed by <c val="#TooltipNumbers">2</c> seconds per target hit with Gravity Lapse.
 KaelthasLivingBomb=Deal <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds to an enemy, then they explode dealing <c val="#TooltipNumbers"><VALUE></c> damage to all nearby enemies.  Other Heroes damaged by this explosion are also affected by Living Bomb, though the secondary explosions cannot spread.<n/><n/><c val="ff00">Verdant Spheres</c> makes this Ability cost no Mana and have no cooldown.
-KaelthasLivingBombBackdraftTalent=Living Bomb's explosion slows enemy Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+KaelthasLivingBombBackdraftTalent=Living Bomb's explosion slows enemy Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2</c> seconds.
 KaelthasLivingBombChainBombTalent=Living Bomb's explosion applies Living Bomb to the <c val="#TooltipNumbers">3</c> closest enemies not already affected by it.  Prefers Heroes.
 KaelthasLivingBombFissionBombTalent=Increases Living Bomb's explosion radius by <c val="#TooltipNumbers">20%</c>.
-KaelthasLivingBombPyromaniacTalent=Each time Living Bomb deals periodic damage, your Basic Ability cooldowns are reduced by <c val="#TooltipNumbers"><VALUE></c> second.
+KaelthasLivingBombPyromaniacTalent=Each time Living Bomb deals periodic damage, your Basic Ability cooldowns are reduced by <c val="#TooltipNumbers">1</c> second.
 KaelthasLivingBombSunKingsFury=Living Bombs that spread to enemy Heroes deal <c val="#TooltipNumbers">30%</c> more damage.
 KaelthasMakethemPayLivingBomb=Living bomb now explodes a second time after a short delay for <c val="#TooltipNumbers"><VALUE>%</c> damage.
-KaelthasManaAddictTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your maximum Mana by <c val="#TooltipNumbers"><VALUE></c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">20</c> Globes, you can also activate Arcane Barrier to gain a Shield equal to <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Mana for <c val="#TooltipNumbers"><VALUE></c> seconds. <c val="#TooltipNumbers"><VALUE></c> second cooldown.
-KaelthasManaTapTalent=Activating Verdant Spheres restores <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Mana.
-KaelthasPhoenix=Launch a Phoenix to an area, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies along the way. The Phoenix persists for <c val="#TooltipNumbers"><VALUE></c> seconds, attacking enemies for <c val="#TooltipNumbers"><VALUE></c> damage and splashing for <c val="#TooltipNumbers">50%</c>.
+KaelthasManaAddictTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases your maximum Mana by <c val="#TooltipNumbers">15</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">20</c> Globes, you can also activate Arcane Barrier to gain a Shield equal to <c val="#TooltipNumbers">100%</c> of your maximum Mana for <c val="#TooltipNumbers">4</c> seconds. <c val="#TooltipNumbers">45</c> second cooldown.
+KaelthasManaTapTalent=Activating Verdant Spheres restores <c val="#TooltipNumbers">4%</c> of your maximum Mana.
+KaelthasMasterOfFlamesLivingBomb=Living Bomb's spread from explosions can now also spread Living Bomb.
+KaelthasMasterofFlamesTalent=Increases your Ability Power by <c val="#TooltipNumbers">20%</c> . For each <c val="#TooltipNumbers">20%</c> of Mana you are missing, this bonus is reduced by <c val="#TooltipNumbers">4%</c>.
+KaelthasPhoenix=Launch a Phoenix to an area, dealing <c val="#TooltipNumbers">78</c> damage to enemies along the way. The Phoenix persists for <c val="#TooltipNumbers">7</c> seconds, attacking enemies for <c val="#TooltipNumbers">78</c> damage and splashing for <c val="#TooltipNumbers">50%</c>.
 KaelthasPhoenixRebirthTalent=Increases Phoenix duration by <c val="#TooltipNumbers">100%</c>. You may order the Phoenix to move to a different location once while the Phoenix is alive. 
-KaelthasPyroblast=After <c val="#TooltipNumbers"><VALUE></c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers"><VALUE></c> damage to an enemy Hero and <c val="#TooltipNumbers"><VALUE></c> damage to enemies nearby.
-KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast's explosion radius by <c val="#TooltipNumbers">50%</c> and reduces its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds per enemy Hero hit.
-KaelthasSunfireEnchantmentTalent=Activating Verdant Spheres causes your next Basic Attack to instead shoot a spell dealing <c val="#TooltipNumbers"><VALUE></c> damage.
+KaelthasPyroblast=After <c val="#TooltipNumbers">2</c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers">810</c> damage to an enemy Hero and <c val="#TooltipNumbers">405</c> damage to enemies nearby.
+KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast's explosion radius by <c val="#TooltipNumbers">50%</c> and reduces its cooldown by <c val="#TooltipNumbers">25</c> seconds per enemy Hero hit.
+KaelthasSunfireEnchantmentTalent=Activating Verdant Spheres causes your next Basic Attack to instead shoot a spell dealing <c val="#TooltipNumbers">165</c> damage.
 KaelthasVerdantSpheres=Activate to make your next Basic Ability more powerful.
-KaelthasVerdantSpheresFelInfusionTalent=Increases your Ability Power by <c val="#TooltipNumbers"><VALUE>%</c>. Heal for <c val="#TooltipNumbers"><VALUE></c> Health when you activate Verdant Spheres.
+KaelthasVerdantSpheresFelInfusionTalent=Increases your Ability Power by <c val="#TooltipNumbers">4%</c>. Heal for <c val="#TooltipNumbers">94</c> Health when you activate Verdant Spheres.
 KaelthasVerdantSpheresTwinSpheresTalent=Verdant Spheres gains a second charge.
 KerriganAdaptationTalent=Ravage can be used to jump to allies, refunding <c val="#TooltipNumbers">50%</c> of the cooldown and <c val="#TooltipNumbers">100%</c> of the Mana cost.
 KerriganAggressiveDefenseTalent=Increases base Shield amount gained from Assimilation by <c val="#TooltipNumbers">100%</c>.
 KerriganAssimilation=Gain <c val="#TooltipNumbers">10%</c> of damage dealt from Basic Attacks and Abilities as Shields for <c val="#TooltipNumbers"><VALUE></c> seconds. Shield amount gained doubled against Heroes.<n/><n/><c val="ffff8a">Current maximum: <c val="#TooltipNumbers"><VALUE></c></c>
 KerriganAssimilationDoubleStrikeTalent=When your Basic Abilities damage an enemy, your next Basic Attack hits for <c val="#TooltipNumbers">75%</c> bonus damage.
-KerriganAssimilationFuryOfTheSwarmTalent=Your Basic Attacks splash for <c val="#TooltipNumbers"><VALUE>%</c> damage around the target.
+KerriganAssimilationFuryOfTheSwarmTalent=Your Basic Attacks splash for <c val="#TooltipNumbers">60%</c> damage around the target.
 KerriganAssimilationLingeringEssenceTalent=Increases Assimilation Shield's duration to <c val="#TooltipNumbers"><VALUE></c> seconds.
-KerriganAssimilationMasteryTalent=Increases the duration of Assimilation by <c val="#TooltipNumbers">100%</c>. While Assimilation is active, your Health and Mana regeneration is increased by <c val="#TooltipNumbers"><VALUE>%</c>.
-KerriganBladedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers"><VALUE></c> seconds.
-KerriganEssenceForEssenceHotbar=Activate to deal <c val="#TooltipNumbers"><VALUE>%</c> of target enemy Hero's Max Health and gain Assimilation Shields for twice that amount.
+KerriganAssimilationMasteryTalent=Increases the duration of Assimilation by <c val="#TooltipNumbers">100%</c>. While Assimilation is active, your Health and Mana regeneration is increased by <c val="#TooltipNumbers">100%</c>.
+KerriganBladedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers">0.6</c> seconds.
+KerriganEssenceForEssenceHotbar=Activate to deal <c val="#TooltipNumbers">10%</c> of target enemy Hero's Max Health and gain Assimilation Shields for twice that amount.
 KerriganImpalingBlades=After <c val="#TooltipNumbers">1.25</c> seconds, deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within the target area, stunning them for <c val="#TooltipNumbers"><VALUE></c> second.
 KerriganImpalingBladesBladeTorrentTalent=Increases Impaling Blades' radius by <c val="#TooltipNumbers">30%</c>.
 KerriganImpalingBladesImpalingSwarmTalent=Impaling Blades spawns <c val="#TooltipNumbers"><VALUE></c> Zerglings that attack your enemies.
-KerriganImpalingBladesSharpenedBladesTalent=Impaling Blades deals <c val="#TooltipNumbers"><VALUE>%</c> more damage.
-KerriganMaelstrom=Deals <c val="#TooltipNumbers"><VALUE></c> damage per second to nearby enemies. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
+KerriganImpalingBladesSharpenedBladesTalent=Impaling Blades deals <c val="#TooltipNumbers">25%</c> more damage.
+KerriganMaelstrom=Deals <c val="#TooltipNumbers">74</c> damage per second to nearby enemies. Lasts for <c val="#TooltipNumbers">7</c> seconds.
 KerriganMaelstromOmegastormTalent=Maelstrom size increased by <c val="#TooltipNumbers">25%</c> . Amount of Assimilation Shields generated by Maelstrom increased by <c val="#TooltipNumbers">100%</c>.
 KerriganPrimalGrasp=Pulls enemies within the target area towards you, dealing <c val="#TooltipNumbers"><VALUE></c> damage.
 KerriganPrimalGraspEnergizingGraspTalent=Reduces the Mana cost of Primal Grasp by <c val="#TooltipNumbers">75%</c>. 
-KerriganPrimalGraspPsionicPulseTalent=After casting Primal Grasp, deal <c val="#TooltipNumbers"><VALUE></c> damage per second to nearby enemies. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-KerriganQueensRushHotbar=Activate to increase your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Queen's Rush is also applied for free on Takedowns.
+KerriganPrimalGraspPsionicPulseTalent=After casting Primal Grasp, deal <c val="#TooltipNumbers">36</c> damage per second to nearby enemies. Lasts <c val="#TooltipNumbers">5</c> seconds.
+KerriganQueensRushHotbar=Activate to increase your Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">4</c> seconds. Queen's Rush is also applied for free on Takedowns.
 KerriganRavage=Leap to a target, dealing <c val="#TooltipNumbers"><VALUE></c> damage. If the enemy dies within <c val="#TooltipNumbers"><VALUE></c> seconds, this cooldown is instantly reset.
 KerriganRavageCleanKillTalent=If Ravage kills the target, it restores <c val="#TooltipNumbers">75%</c> of its Mana cost and increases the damage of your next Ravage by <c val="#TooltipNumbers">25%</c>.
 KerriganRavageEviscerateTalent=Increases Ravage's range by <c val="#TooltipNumbers">40%</c>.
-KerriganRavageSiphoningImpactTalent=If the targeted enemy dies within <c val="#TooltipNumbers"><VALUE></c> seconds, Kerrigan heals for <c val="#TooltipNumbers"><VALUE>%</c> of her maximum Health.
-KerriganSummonUltralisk=Summon an Ultralisk that attacks the target to deal <c val="#TooltipNumbers"><VALUE></c> damage. Attacks splash to nearby enemies for <c val="#TooltipNumbers">50%</c> damage. Can reactivate the Ability to retarget the Ultralisk. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
-KerriganSummonUltraliskTorrasqueTalent=The Ultralisk morphs into an egg when it dies. If the egg isn't killed within <c val="#TooltipNumbers"><VALUE></c> seconds, a new Ultralisk is born.
+KerriganRavageSiphoningImpactTalent=If the targeted enemy dies within <c val="#TooltipNumbers">1.5</c> seconds, Kerrigan heals for <c val="#TooltipNumbers">10%</c> of her maximum Health.
+KerriganSummonUltralisk=Summon an Ultralisk that attacks the target to deal <c val="#TooltipNumbers">100</c> damage. Attacks splash to nearby enemies for <c val="#TooltipNumbers">50%</c> damage. Can reactivate the Ability to retarget the Ultralisk. Lasts for <c val="#TooltipNumbers">20</c> seconds.
+KerriganSummonUltraliskTorrasqueTalent=The Ultralisk morphs into an egg when it dies. If the egg isn't killed within <c val="#TooltipNumbers">4</c> seconds, a new Ultralisk is born.
 KnightMagicVolley=Channels to repeatedly deal Ability damage.
 L90ETCDeathMetalTalent=Upon dying, a ghost uses Mosh Pit at your location.
 L90ETCFaceMelt=Deals <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies, knocking them back.
@@ -817,27 +819,27 @@ L90ETCPowerslide=Slide to a location dealing <c val="#TooltipNumbers"><VALUE></c
 L90ETCRockstar=When you use a Basic or Heroic ability, give <c val="#TooltipNumbers"><VALUE>%</c> Attack Speed for <c val="#TooltipNumbers"><VALUE></c> seconds to all nearby allied Heroes.
 L90ETCRockstarEchoPedalTalent=Using a Basic or Heroic Ability releases two pulses of <c val="#TooltipNumbers">29</c> damage.  This deals <c val="#TooltipNumbers">100% </c> bonus damage to Minions and Mercenaries. The first occurs instantly, the second occurs <c val="#TooltipNumbers">2</c> seconds later.
 L90ETCStageDive=Leap to target location, landing after <c val="#TooltipNumbers">2.75</c> seconds, dealing <c val="#TooltipNumbers">330</c> damage to enemies in the area, and slowing them by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
-LeoricBuriedAliveTalent=Enemies inside Entomb take <c val="#TooltipNumbers"><VALUE></c> damage per second.
+LeoricBuriedAliveTalent=Enemies inside Entomb take <c val="#TooltipNumbers">90</c> damage per second.
 LeoricConsumeVitalityTalent=Skeletal Swing heals you for <c val="#TooltipNumbers">2%</c> of your maximum Health per target hit, up to <c val="#TooltipNumbers">10%</c>. Half as effective while Undying.
-LeoricCrushingHopeTalent=If Drain Hope lasts its full duration, it deals bonus damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of the victim's Maximum Health. This damage does not heal you.
+LeoricCrushingHopeTalent=If Drain Hope lasts its full duration, it deals bonus damage equal to <c val="#TooltipNumbers">10%</c> of the victim's Maximum Health. This damage does not heal you.
 LeoricDeathMarchTalent=Your final swing of March of the Black King also applies the base version of Drain Hope to all enemy Heroes in a large area.
 LeoricDrainHope=Grab an enemy Hero's soul, dealing up to <c val="#TooltipNumbers">25%</c> of their maximum Health as damage and healing you for up to <c val="#TooltipNumbers">25%</c> of your maximum Health while you are nearby, over <c val="#TooltipNumbers"><VALUE></c> seconds. You are slowed by <c val="#TooltipNumbers"><VALUE>%</c> while this is active.
 LeoricDrainMomentumTalent=Drain Hope now increases your Movement Speed by <c val="#TooltipNumbers">10%</c> instead of reducing it.
 LeoricEntomb=Create an unpathable tomb in front of you for <c val="#TooltipNumbers">4</c> seconds.
-LeoricFealtyUntoDeathTalent=When a nearby Minion dies, you restore <c val="#TooltipNumbers">1%</c> of your maximum Health and <c val="#TooltipNumbers"><VALUE></c> Mana. Half as effective while Undying.
+LeoricFealtyUntoDeathTalent=When a nearby Minion dies, you restore <c val="#TooltipNumbers">1%</c> of your maximum Health and <c val="#TooltipNumbers">5</c> Mana. Half as effective while Undying.
 LeoricGhastlyReachTalent=Increases the range of Skeletal Swing by <c val="#TooltipNumbers">25%</c>.
 LeoricHardenedBonesTalent=During Wraith Walk, you take <c val="#TooltipNumbers">25%</c> less damage.
 LeoricHopelessnessTalent=Increases the range of Drain Hope by <c val="#TooltipNumbers">25%</c>.
 LeoricLingeringApparitionTalent=Increases the duration of Wraith Walk by <c val="#TooltipNumbers">80%</c>.
-LeoricManaThirstTalent=Skeletal Swing restores <c val="#TooltipNumbers"><VALUE></c> Mana per enemy hit.
-LeoricMarchoftheBlackKing=Become Unstoppable and swing your mace three times, healing yourself for <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health for each enemy Hero hit and dealing <c val="#TooltipNumbers"><VALUE></c> damage.
-LeoricOsseinRenewalHotbar=Activate to heal <c val="#TooltipNumbers">20%</c> of your maximum life over <c val="#TooltipNumbers"><VALUE></c> seconds. Half as effective while Undying.
+LeoricManaThirstTalent=Skeletal Swing restores <c val="#TooltipNumbers">10</c> Mana per enemy hit.
+LeoricMarchoftheBlackKing=Become Unstoppable and swing your mace three times, healing yourself for <c val="#TooltipNumbers">7%</c> of your maximum Health for each enemy Hero hit and dealing <c val="#TooltipNumbers">183</c> damage.
+LeoricOsseinRenewalHotbar=Activate to heal <c val="#TooltipNumbers">20%</c> of your maximum life over <c val="#TooltipNumbers">6</c> seconds. Half as effective while Undying.
 LeoricParalyzingRageTalent=Increases the Movement Speed slow of Skeletal Swing to <c val="#TooltipNumbers">60%</c>.
-LeoricReanimationTalent=You can gather Regeneration Globes while Undying.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c>  Gathering a Regeneration Globe increases your Health Regeneration by <c val="#TooltipNumbers"><VALUE></c> per second, up to <c val="#TooltipNumbers"><VALUE></c> per second. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers"><VALUE></c> Globes, you also respawn <c val="#TooltipNumbers">10</c> seconds faster.
-LeoricRenewedSwingTalent=Skeletal Swing can be recast again for free within <c val="#TooltipNumbers"><VALUE></c> seconds for <c val="#TooltipNumbers">50%</c> damage.
-LeoricRoyalFocusTalent=If your body takes no damage during Wraith Walk's duration, the cooldown is reduced to <c val="#TooltipNumbers"><VALUE></c> seconds. Wraith Walk also increases the damage of your next Skeletal Swing within <c val="#TooltipNumbers"><VALUE></c> seconds by <c val="#TooltipNumbers">50%</c>.
+LeoricReanimationTalent=You can gather Regeneration Globes while Undying.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c>  Gathering a Regeneration Globe increases your Health Regeneration by <c val="#TooltipNumbers">1</c> per second, up to <c val="#TooltipNumbers">30</c> per second. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">30</c> Globes, you also respawn <c val="#TooltipNumbers">10</c> seconds faster.
+LeoricRenewedSwingTalent=Skeletal Swing can be recast again for free within <c val="#TooltipNumbers">3</c> seconds for <c val="#TooltipNumbers">50%</c> damage.
+LeoricRoyalFocusTalent=If your body takes no damage during Wraith Walk's duration, the cooldown is reduced to <c val="#TooltipNumbers">4</c> seconds. Wraith Walk also increases the damage of your next Skeletal Swing within <c val="#TooltipNumbers">5</c> seconds by <c val="#TooltipNumbers">50%</c>.
 LeoricSkeletalSwing=Swing in front of you to deal <c val="#TooltipNumbers"><VALUE></c> damage and slow enemies by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Deals double damage to non-Heroic units.
-LeoricSpectralLeechTalent=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of the Hero's maximum Health and heal you for the same amount.
+LeoricSpectralLeechTalent=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers">5%</c> of the Hero's maximum Health and heal you for the same amount.
 LeoricUndyingTrait=Become a ghost when you die, and resurrect upon reaching full Health. Your Abilities and Talents don't do damage while dead, but will still heal you for <c val="#TooltipNumbers">50%</c> of their normal amount, causing you to cheat death.
 LeoricUnyieldingDespairTalent=Every second Drain Hope is active, its cooldown is reduced by <c val="#TooltipNumbers">1</c> second.
 LeoricWillingVesselTalent=Increases the healing from Drain Hope to <c val="#TooltipNumbers">30%</c> of your maximum Health and Drain Essence to <c val="#TooltipNumbers">15%</c> of your maximum Health.
@@ -848,24 +850,24 @@ LiLiBlindingWindHinderingWindsTalent=Blinding Wind also slows enemy Movement Spe
 LiLiBlindingWindLingeringBlindTalent=Increases the duration of Blinding Wind by <c val="#TooltipNumbers">50%</c>.
 LiLiBlindingWindMassVortexTalent=Increases the number of enemies hit by Blinding Wind from <c val="#TooltipNumbers">2</c> to <c val="#TooltipNumbers">4</c>.
 LiLiCloudSerpent=Summon a Cloud Serpent on an allied Hero that attacks nearby enemies for <c val="#TooltipNumbers"><VALUE></c> damage per attack. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
-LiLiCloudSerpentLightningSerpentTalent=Cloud Serpent's attacks bounce to <c val="#TooltipNumbers">3</c> nearby enemy targets, dealing <c val="#TooltipNumbers"><VALUE></c> damage each.
+LiLiCloudSerpentLightningSerpentTalent=Cloud Serpent's attacks bounce to <c val="#TooltipNumbers">3</c> nearby enemy targets, dealing <c val="#TooltipNumbers">15</c> damage each.
 LiLiCloudSerpentTimelessCreatureTalent=Increases the duration of Cloud Serpent by <c val="#TooltipNumbers">50%</c>.
 LiLiFastFeet=Upon taking damage, gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> second.
-LiLiFastFeetElusiveFeetTalent=When Fast Feet is triggered, the damage of the next <c val="#TooltipNumbers"><VALUE></c> Basic Attacks from enemy Heroes is reduced by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers">10</c> seconds. Can only trigger once every <c val="#TooltipNumbers">10</c> seconds.
+LiLiFastFeetElusiveFeetTalent=When Fast Feet is triggered, the damage of the next <c val="#TooltipNumbers">2</c> Basic Attacks from enemy Heroes is reduced by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">10</c> seconds. Can only trigger once every <c val="#TooltipNumbers">10</c> seconds.
 LiLiHealingBrew=Heal lowest Health ally (prioritizing Heroes) for <c val="#TooltipNumbers"><VALUE></c> Health.
-LiLiHealingBrewTheGoodStuffTalent=Healing Brew heals for an additional <c val="#TooltipNumbers"><VALUE></c> Health over <c val="#TooltipNumbers">6</c> seconds.
+LiLiHealingBrewTheGoodStuffTalent=Healing Brew heals for an additional <c val="#TooltipNumbers">60</c> Health over <c val="#TooltipNumbers">6</c> seconds.
 LiLiHealingBrewTwoForOneTalent=Increases the number of allies healed by Healing Brew to <c val="#TooltipNumbers">2</c>, but increases the cooldown by <c val="#TooltipNumbers">1.5</c> seconds.
-LiLiJugof1000Cups=Rapidly tosses brew to the most injured nearby allies, prioritizing Heroes, restoring a total of <c val="#TooltipNumbers"><VALUE></c> Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
+LiLiJugof1000Cups=Rapidly tosses brew to the most injured nearby allies, prioritizing Heroes, restoring a total of <c val="#TooltipNumbers">1632</c> Health over <c val="#TooltipNumbers">6</c> seconds.
 LiLiJugof1000CupsJugof1000000CupsTalent=Jug of 1,000 Cups hits two targets at a time.
 LiLiKungFuHustleTalent=Ability cooldowns refresh <c val="#TooltipNumbers">150%</c> faster while Fast Feet is active.
-LiLiMendingSerpentTalent=Cloud Serpent heals the friendly unit for <c val="#TooltipNumbers"><VALUE></c> Health each time it attacks.
-LiLiPitchPerfectTalent=After casting Healing Brew, its cost is reduced by <c val="#TooltipNumbers">10</c> Mana for <c val="#TooltipNumbers"><VALUE></c> seconds.  This effect does not stack.
+LiLiMendingSerpentTalent=Cloud Serpent heals the friendly unit for <c val="#TooltipNumbers">22</c> Health each time it attacks.
+LiLiPitchPerfectTalent=After casting Healing Brew, its cost is reduced by <c val="#TooltipNumbers">10</c> Mana for <c val="#TooltipNumbers">6</c> seconds.  This effect does not stack.
 LiLiProTossTalent=Increases the range of Healing Brew by <c val="#TooltipNumbers">30%</c>.
-LiLiSafetySprintTalent=Increases Fast Feet's Movement Speed bonus from <c val="#TooltipNumbers"><VALUE>%</c> to <c val="#TooltipNumbers"><VALUE>%</c>. 
+LiLiSafetySprintTalent=Increases Fast Feet's Movement Speed bonus from <c val="#TooltipNumbers">10%</c> to <c val="#TooltipNumbers">20%</c>. 
 LiLiSerpentSidekickTalent=You also gain a Cloud Serpent whenever you cast it on another ally.
-LiLiShakeItOffTalent=Being Stunned or Rooted causes you to become Resistant, reducing the damage you take by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-LiLiSurgingWindsTalent=Gain <c val="#TooltipNumbers">5%</c> Ability Power for <c val="#TooltipNumbers">8</c> seconds for every enemy hit by Blinding Wind. Additional enemies hit refresh the duration of this buff and further increase Ability Power. Stacks up to <c val="#TooltipNumbers"><VALUE></c> times.
-LiLiWaterDragon=Summon a Water Dragon that after a delay hits the nearest enemy Hero and all enemies near them, dealing <c val="#TooltipNumbers"><VALUE></c> damage and slowing their Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+LiLiShakeItOffTalent=Being Stunned or Rooted causes you to become Resistant, reducing the damage you take by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">4</c> seconds.
+LiLiSurgingWindsTalent=Gain <c val="#TooltipNumbers">5%</c> Ability Power for <c val="#TooltipNumbers">8</c> seconds for every enemy hit by Blinding Wind. Additional enemies hit refresh the duration of this buff and further increase Ability Power. Stacks up to <c val="#TooltipNumbers">4</c> times.
+LiLiWaterDragon=Summon a Water Dragon that after a delay hits the nearest enemy Hero and all enemies near them, dealing <c val="#TooltipNumbers">318</c> damage and slowing their Movement Speed by <c val="#TooltipNumbers">70%</c> for <c val="#TooltipNumbers">4</c> seconds.
 LiLiWaterDragonDoubleDragonTalent=After hitting a target with Water Dragon, another dragon is summoned at the point of impact.
 LostVikingSelectBaleog=<s val="StandardTooltip">Baleog's Basic Attacks deal <c val="#TooltipNumbers">50%</c> splash damage to enemies behind his attack target.
 LostVikingSelectErik=<s val="StandardTooltip">Erik moves faster than the other Vikings and has increased Basic Attack range.
@@ -899,115 +901,144 @@ LostVikingsWereOnABoatTalent=The Longboat can attack two targets at once and the
 MalfurionEntanglingRoots=Root enemies within the target area for <c val="#TooltipNumbers"><VALUE></c> seconds, and deals <c val="#TooltipNumbers"><VALUE></c> damage over the duration. Affected area grows over <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionEntanglingRootsStranglingVinesTalent=Entangling Roots deals <c val="#TooltipNumbers">100%</c> more damage.
 MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#TooltipNumbers">25%</c> larger, lasts <c val="#TooltipNumbers">25%</c> longer, and roots targets for <c val="#TooltipNumbers">0.5</c> seconds longer.
-MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers"><VALUE></c> damage per second and lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers">64</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">30%</c>.
-MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervateVersatileTalent=Increases the Mana return of Innervate to <c val="#TooltipNumbers">30%</c>.
 MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">60%</c> and reduces its Mana cost by <c val="#TooltipNumbers">50%</c>.
-MalfurionMoonfireHinderingMoonfireTalent=Moonfire slows targets by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MalfurionMoonfireLunarShowerTalent=Using Moonfire reduces the cooldown of your next Moonfire by <c val="#TooltipNumbers">0.5</c> seconds, and increases the damage by <c val="#TooltipNumbers">15%</c>. Stacks up to <c val="#TooltipNumbers"><VALUE></c> times and resets after <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionMoonfireHinderingMoonfireTalent=Moonfire slows targets by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
+MalfurionMoonfireLunarShowerTalent=Using Moonfire reduces the cooldown of your next Moonfire by <c val="#TooltipNumbers">0.5</c> seconds, and increases the damage by <c val="#TooltipNumbers">15%</c>. Stacks up to <c val="#TooltipNumbers">3</c> times and resets after <c val="#TooltipNumbers">6</c> seconds.
 MalfurionMoonfireMoonburnTalent=Increases Moonfire's damage to Minions, Mercenaries, and Monsters by <c val="#TooltipNumbers">100%</c>.
 MalfurionRampantGrowthTalent=Increases the initial heal of Regrowth by <c val="#TooltipNumbers">40%</c>.
 MalfurionRegrowth=Heal target ally for <c val="#TooltipNumbers"><VALUE> </c>Health instantly and an additional <c val="#TooltipNumbers"><VALUE> </c>Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionRegrowthEnduringGrowthTalent=Increases the duration of Regrowth by <c val="#TooltipNumbers">6</c> seconds.
 MalfurionRegrowthHarmonyTalent=If Moonfire hits a target, reduce the Mana cost of Regrowth by <c val="#TooltipNumbers">10</c>.
-MalfurionRegrowthLifeSeedTalent=Nearby damaged allied Heroes will automatically gain the heal over time portion of Regrowth. This effect has a <c val="#TooltipNumbers"><VALUE></c> second cooldown.
-MalfurionTranquility=Heals <c val="#TooltipNumbers"><VALUE></c> Health per second to nearby allied Heroes over <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionRegrowthLifeSeedTalent=Nearby damaged allied Heroes will automatically gain the heal over time portion of Regrowth. This effect has a <c val="#TooltipNumbers">20</c> second cooldown.
+MalfurionTranquility=Heals <c val="#TooltipNumbers">80</c> Health per second to nearby allied Heroes over <c val="#TooltipNumbers">10</c> seconds.
 MalfurionTranquilitySerenityTalent=Increases Tranquility's healing by <c val="#TooltipNumbers">25%</c> and it also restores <c val="#TooltipNumbers">5</c> Mana per second.
-MalfurionTwilightDream=After a short delay, deal <c val="#TooltipNumbers"><VALUE></c> damage in a large area around you, silencing enemies making them unable to use Abilities for <c val="#TooltipNumbers"><VALUE> </c>seconds. Also passively increases your Mana Regeneration by <c val="#TooltipNumbers"><VALUE></c>.
-MalfurionTwilightDreamNightmareTalent=Increases Twilight Dream's silence duration to <c val="#TooltipNumbers">4</c> seconds and it also slows enemies by <c val="#TooltipNumbers"><VALUE>%</c>.
-MedicAutomatedBlockTalent=Every <c val="#TooltipNumbers"><VALUE></c> seconds, reduce the damage taken from the next enemy Hero Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.  Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
-MedicBioshieldTalent=If your target is at full Health, they gain a Shield that absorbs <c val="#TooltipNumbers"><VALUE></c> damage, stacking up to <c val="#TooltipNumbers"><VALUE></c> times.
+MalfurionTwilightDream=After a short delay, deal <c val="#TooltipNumbers">374</c> damage in a large area around you, silencing enemies making them unable to use Abilities for <c val="#TooltipNumbers">3 </c>seconds. Also passively increases your Mana Regeneration by <c val="#TooltipNumbers">1.5</c>.
+MalfurionTwilightDreamNightmareTalent=Increases Twilight Dream's silence duration to <c val="#TooltipNumbers">4</c> seconds and it also slows enemies by <c val="#TooltipNumbers">50%</c>.
+MedicAutomatedBlockTalent=Every <c val="#TooltipNumbers">5</c> seconds, reduce the damage taken from the next enemy Hero Basic Attack by <c val="#TooltipNumbers">50%</c>.  Stores up to <c val="#TooltipNumbers">3</c> charges.
+MedicBioshieldTalent=If your target is at full Health, they gain a Shield that absorbs <c val="#TooltipNumbers">78</c> damage, stacking up to <c val="#TooltipNumbers">5</c> times.
 MedicCaduceusReactor=Regenerate <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health every second after not taking damage for <c val="#TooltipNumbers">4</c> seconds.
-MedicCaduceusReactor2dot0Talent=While Caduceus Reactor is active you restore <c val="#TooltipNumbers"><VALUE></c> Mana a second and gain a Shield that absorbs <c val="#TooltipNumbers"><VALUE></c> damage, stacking up to <c val="#TooltipNumbers"><VALUE></c> times.
+MedicCaduceusReactor2dot0Talent=While Caduceus Reactor is active you restore <c val="#TooltipNumbers">8</c> Mana a second and gain a Shield that absorbs <c val="#TooltipNumbers">96</c> damage, stacking up to <c val="#TooltipNumbers">5</c> times.
 MedicClearTalent=Displacement Grenade's explosion radius increased by <c val="#TooltipNumbers">33%</c> and knocks back farther.
-MedicCouplesTherapyTalent=While channeling Healing Beam you are healed for <c val="#TooltipNumbers">25%</c> of the healing amount at the cost of an additional <c val="#TooltipNumbers"><VALUE></c> Mana per second.
+MedicCouplesTherapyTalent=While channeling Healing Beam you are healed for <c val="#TooltipNumbers">25%</c> of the healing amount at the cost of an additional <c val="#TooltipNumbers">4</c> Mana per second.
 MedicDetonateDisplacementGrenade=Detonate your Displacement Grenade, dealing <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies and knocking them away.
 MedicDisplacementGrenade=Fire a grenade that can be manually detonated, dealing <c val="#TooltipNumbers"><VALUE></c> damage and knocking enemies away.
-MedicFeedbackLoopTalent=When Safeguard expires, <c val="#TooltipNumbers"><VALUE></c> Mana is refunded.
+MedicFeedbackLoopTalent=When Safeguard expires, <c val="#TooltipNumbers">45</c> Mana is refunded.
 MedicHealingBeam=Heal an ally for <c val="#TooltipNumbers"><VALUE></c> health a second as long as they are in range. <n/><n/>Reactivate to switch targets, or activate your Trait to cancel the channel.
 MedicInfusedGrenadeTalent=Displacement Grenade's Mana cost is refunded if you hit an enemy Hero.
-MedicInoculationTalent=Increases Safeguard's initial damage reduction to <c val="#TooltipNumbers"><VALUE>%</c> for the first <c val="#TooltipNumbers"><VALUE></c> seconds.
-MedicIntensiveCareTalent=When Healing Beam is on a single target for over <c val="#TooltipNumbers">3</c> seconds, its healing amount increases by <c val="#TooltipNumbers">25%</c> and Mana cost increases by <c val="#TooltipNumbers"><VALUE></c>. 
-MedicIrradiateTalent=Enemies near your Healing Beam's target take <c val="#TooltipNumbers"><VALUE></c> damage a second.
-MedicMedbayTalent=Medivac heals nearby allies and everyone aboard for <c val="#TooltipNumbers"><VALUE></c> Health per second.
-MedicMedivacDropship=Target a location for a Medivac transport. For up to <c val="#TooltipNumbers"><VALUE></c> seconds before takeoff, allies can right-click to enter the Medivac.
-MedicPreventativeCareTalent=Basic Attacks against your Healing Beam target reduce the attacker's Attack Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MedicProlongedSafeguardTalent=Increases Safeguard's duration by <c val="#TooltipNumbers"><VALUE></c> second.
+MedicInoculationTalent=Increases Safeguard's initial damage reduction to <c val="#TooltipNumbers">50%</c> for the first <c val="#TooltipNumbers">1.5</c> seconds.
+MedicIntensiveCareTalent=When Healing Beam is on a single target for over <c val="#TooltipNumbers">3</c> seconds, its healing amount increases by <c val="#TooltipNumbers">25%</c> and Mana cost increases by <c val="#TooltipNumbers">4</c>. 
+MedicIrradiateTalent=Enemies near your Healing Beam's target take <c val="#TooltipNumbers">22</c> damage a second.
+MedicMedbayTalent=Medivac heals nearby allies and everyone aboard for <c val="#TooltipNumbers">137</c> Health per second.
+MedicMedivacDropship=Target a location for a Medivac transport. For up to <c val="#TooltipNumbers">10</c> seconds before takeoff, allies can right-click to enter the Medivac.
+MedicPreventativeCareTalent=Basic Attacks against your Healing Beam target reduce the attacker's Attack Speed by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2.5</c> seconds.
+MedicProlongedSafeguardTalent=Increases Safeguard's duration by <c val="#TooltipNumbers">1</c> second.
 MedicSafeguard=Grant target ally Resistant, reducing damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MedicSecondOpinionTalent=Reduces Displacement Grenade's cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds and it now holds a second charge.
-MedicShieldSequencerTalent=After casting Safeguard, you can cast it a second time within <c val="#TooltipNumbers"><VALUE></c> seconds at no cost.
-MedicStimDrone=Grant an allied Hero <c val="#TooltipNumbers"><VALUE>%</c> Attack Speed and <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MedicSystemShockTalent=Displacement Grenade slows enemies by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. The slow amount decays over its duration.
-MedicTransfusionTalent=Increases the duration of Stim Drone by <c val="#TooltipNumbers"><VALUE></c> seconds.  You also gain the effect of Stim Drone when cast on an ally.
-MedicTraumaTriggerTalent=You gain an untalented Safeguard automatically if you take damage while below <c val="#TooltipNumbers">50%</c> Health. This effect has a <c val="#TooltipNumbers"><VALUE></c> second cooldown.
+MedicSecondOpinionTalent=Reduces Displacement Grenade's cooldown by <c val="#TooltipNumbers">2</c> seconds and it now holds a second charge.
+MedicShieldSequencerTalent=After casting Safeguard, you can cast it a second time within <c val="#TooltipNumbers">3</c> seconds at no cost.
+MedicStimDrone=Grant an allied Hero <c val="#TooltipNumbers">75%</c> Attack Speed and <c val="#TooltipNumbers">25%</c> Movement Speed for <c val="#TooltipNumbers">10</c> seconds.
+MedicSystemShockTalent=Displacement Grenade slows enemies by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">4</c> seconds. The slow amount decays over its duration.
+MedicTransfusionTalent=Increases the duration of Stim Drone by <c val="#TooltipNumbers">2</c> seconds.  You also gain the effect of Stim Drone when cast on an ally.
+MedicTraumaTriggerTalent=You gain an untalented Safeguard automatically if you take damage while below <c val="#TooltipNumbers">50%</c> Health. This effect has a <c val="#TooltipNumbers">20</c> second cooldown.
 MedicUpgradedBallisticsTalent=Displacement Grenade travels <c val="#TooltipNumbers">50%</c> faster and enemies directly impacted take <c val="#TooltipNumbers">33%</c> more damage.
+MedivhArcaneBrilliance=Activate to instantly restore <c val="#TooltipNumbers">200</c> mana to all nearby allied Heroes and grant them <c val="#TooltipNumbers">10%</c> Ability Power for <c val="#TooltipNumbers">10</c> seconds.
+MedivhArcaneRift=Launch a rift that deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies in its path. If an enemy Hero is hit, reduce its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds and refund <c val="#TooltipNumbers"><VALUE></c> Mana.
+MedivhArcaneRiftArcaneCharge=When Arcane Rift damages an enemy Hero, the next Arcane Rift deals <c val="#TooltipNumbers">30%</c> more damage.
+MedivhArcaneRiftGuardianOfTirisfal=Minions and Catapults hit by Arcane Rift are instantly killed.
+MedivhArcaneRiftManaAdept=Increases Arcane Rift's Mana refund for hitting enemy Heroes by <c val="#TooltipNumbers"><VALUE>%</c>.
+MedivhArcaneRiftTheMastersTouch=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">30</c> enemy Heroes with Arcane Rift without dying.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Permanently increases the damage dealt by <c val="#TooltipNumbers">75</c> and cooldown reduction for hitting a Hero by <c val="#TooltipNumbers">1</c> second.
+MedivhDustOfAppearance=Activate to reveal enemy Heroes in the area surrounding Medivh for <c val="#TooltipNumbers">10</c> seconds. Does not cancel Raven Form.
+MedivhForceOfWill=Protect an allied Hero from all damage for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MedivhForceOfWillArcaneExplosion=The first time Force of Will absorbs damage, it deals <c val="#TooltipNumbers">183</c> damage to nearby enemies.
+MedivhForceOfWillCircleOfProtection=An untalented Force of Will is also applied to allies near the target.
+MedivhForceOfWillEnduringWill=Increases Force of Will duration by <c val="#TooltipNumbers">33%</c>.
+MedivhForceOfWillReabsorption=Upon expiration, Force of Will heals the target for <c val="#TooltipNumbers">50%</c> of the damage it absorbed.
+MedivhInvisibility=Stealth an allied Hero for <c val="#TooltipNumbers">20</c> seconds. <c val="#TooltipNumbers">2</c> charges.
+MedivhLeyLineSeal=After <c val="#TooltipNumbers">0.5</C> seconds, unleash a wave of energy that imprisons enemy Heroes in Stasis for <c val="#TooltipNumbers">3</C> seconds.
+MedivhLeyLineSealMedivhCheats=Increase the duration of the Stasis effect by <c val="#TooltipNumbers">33%</c> and gain the ability to redirect the wave once while it's active.
+MedivhPolyBomb=Polymorph an enemy Hero, suppressing their attacks and Silencing them for <c val="#TooltipNumbers">2</c> seconds. On expiration, Poly Bomb spreads to other nearby enemy Heroes.
+MedivhPolyBombGlyphOfPolyBomb=Poly Bomb explodes <c val="#TooltipNumbers">1</c> second sooner and the spread radius is increased by <c val="#TooltipNumbers">7%</c>.
+MedivhPortal=Create a set of portals between you and the target location, allowing allies to teleport between both. The portals last <c val="#TooltipNumbers"><VALUE></c> seconds.
+MedivhPortalAstralProjection=Increases Portal cast range by <c val="#TooltipNumbers">50%</c>.
+MedivhPortalMageArmor=Allies gain Block the first time they use a Portal, reducing damage taken from the next <c val="#TooltipNumbers">3</c> enemy Heroic Basic Attacks by <c val="#TooltipNumbers">50%</c>. Lasts <c val="#TooltipNumbers">5</c> seconds.
+MedivhPortalPortalMastery=Medivh can manually place both Portal locations. <n/><n/><c val="#ColorCreamYellow">Activate your Trait to cancel an unlinked Portal</c>.
+MedivhPortalQuickening=Reduces Portal cooldown by <c val="#TooltipNumbers">50%</c>.
+MedivhPortalRavenFamiliar=A Raven Familiar joins allies that use a Portal. The Raven will dive at the ally's next Basic Attack target for <c val="#TooltipNumbers">114</c> damage.
+MedivhPortalStablePortal=Increases Portal duration by <c val="#TooltipNumbers">50%</c>.
+MedivhRavenForm=Instead of mounting, Medivh can transform into a raven, increasing Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c>. While transformed, Medivh can see and fly over all terrain and is immune to all effects.
+MedivhTransformRaven=Transform into a raven, increasing Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c>. While transformed, Medivh can see and fly over terrain and is immune to all effects.
+MedivhTransformRavenBirdsEyeView=Permanently increase Raven Form's vision range by <c val="#TooltipNumbers">25%</c>. Activate to increase this bonus to <c val="#TooltipNumbers">200%</c> for <c val="#TooltipNumbers">5</c> seconds.
+MedivhTransformRavenRavensIntellect=Raven Form increases Medivh's Mana Regeneration by <c val="#TooltipNumbers">100%</c>.
+MedivhTransformRavenWindsOfCelerity=Increases Raven Form's Movement Speed bonus by <c val="#TooltipNumbers">50%</c>.
 MonkBlankTrait=<c val="#TooltipNumbers">Choose between Transcendence, Iron Fists, and Insight from the Talents panel.
-MonkBlazingFistsTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack reduces the cooldown of Deadly Reach by <c val="#TooltipNumbers"><VALUE></c> second.
-MonkBlindingSpeedTalent=Decreases Radiant Dash's cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds and increases the maximum number of charges by <c val="#TooltipNumbers"><VALUE></c>.
+MonkBlazingFistsTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack reduces the cooldown of Deadly Reach by <c val="#TooltipNumbers">1</c> second.
+MonkBlindingSpeedTalent=Decreases Radiant Dash's cooldown by <c val="#TooltipNumbers">2</c> seconds and increases the maximum number of charges by <c val="#TooltipNumbers">1</c>.
 MonkBreathOfHeaven=Heal nearby Heroes for <c val="#TooltipNumbers"><VALUE></c> and give them <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MonkBreathOfHeavenCircleOfLifeTalent=Increases Breath of Heaven's healing by <c val="#TooltipNumbers">10%</c> for each allied Hero in the cast range.
 MonkDeadlyReach=Your next Basic Attack increases your Attack Speed and Attack Range by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MonkDivinePalm=Protect an allied Hero from death, causing them to be healed for <c val="#TooltipNumbers"><VALUE></c> if they take fatal damage in the next <c val="#TooltipNumbers"><VALUE></c> seconds.
-MonkEchoofHeavenTalent=Breath of Heaven heals a second time <c val="#TooltipNumbers"><VALUE></c> seconds later for <c val="#TooltipNumbers"><VALUE>%</c>.
+MonkDivinePalm=Protect an allied Hero from death, causing them to be healed for <c val="#TooltipNumbers">1141</c> if they take fatal damage in the next <c val="#TooltipNumbers">3</c> seconds.
+MonkEchoofHeavenTalent=Breath of Heaven heals a second time <c val="#TooltipNumbers">2</c> seconds later for <c val="#TooltipNumbers">35%</c>.
 MonkElevenSidedStrikeTalent=Seven-Sided Strike hits <c val="#TooltipNumbers">4</c> additional times.
-MonkEpiphany=Activate to restore <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Mana and refill <c val="#TooltipNumbers">2</c> charges of Radiant Dash. 
+MonkEpiphany=Activate to restore <c val="#TooltipNumbers">33%</c> of your maximum Mana and refill <c val="#TooltipNumbers">2</c> charges of Radiant Dash. 
 MonkFistsofFuryTalent=Increases Deadly Reach's duration by <c val="#TooltipNumbers">50%</c>.
-MonkForesightTalent=Radiant Dash reveals the area around the target for <c val="#TooltipNumbers"><VALUE></c> seconds. Only one area can be revealed at a time.
-MonkInsightTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20"height="22" /><c val="#TooltipQuest">Quest:</c> Every <c val="#TooltipNumbers">3rd</c> Basic Attack restores <c val="#TooltipNumbers"><VALUE></c> Mana and grants a stack of Insight. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20"height="22" /><c val="#TooltipQuest">Reward:</c> Once you have <c val="#TooltipNumbers"><VALUE></c> stacks of Insight, every <c val="#TooltipNumbers">3rd</c> attack also reduces the cooldown of all your Basic Abilities by <c val="#TooltipNumbers"><VALUE></c> second.
-MonkIronFistsTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack deals <c val="#TooltipNumbers"><VALUE>%</c> bonus damage.
-MonkOvertakeTalent=Basic Attacks while Deadly Reach is active increase your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MonkPeacefulReposeTalent=Divine Palm's cooldown is set to <c val="#TooltipNumbers"><VALUE></c> seconds if the Hero does not die.
-MonkQuicksilverTalent=Radiant Dashing to an ally gives you and the target <c val="#TooltipNumbers"><VALUE>%</c> bonus Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MonkForesightTalent=Radiant Dash reveals the area around the target for <c val="#TooltipNumbers">3</c> seconds. Only one area can be revealed at a time.
+MonkInsightTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20"height="22" /><c val="#TooltipQuest">Quest:</c> Every <c val="#TooltipNumbers">3rd</c> Basic Attack restores <c val="#TooltipNumbers">14</c> Mana and grants a stack of Insight. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20"height="22" /><c val="#TooltipQuest">Reward:</c> Once you have <c val="#TooltipNumbers">100</c> stacks of Insight, every <c val="#TooltipNumbers">3rd</c> attack also reduces the cooldown of all your Basic Abilities by <c val="#TooltipNumbers">1</c> second.
+MonkIronFistsTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack deals <c val="#TooltipNumbers">125%</c> bonus damage.
+MonkOvertakeTalent=Basic Attacks while Deadly Reach is active increase your Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2</c> seconds.
+MonkPeacefulReposeTalent=Divine Palm's cooldown is set to <c val="#TooltipNumbers">5</c> seconds if the Hero does not die.
+MonkQuicksilverTalent=Radiant Dashing to an ally gives you and the target <c val="#TooltipNumbers">30%</c> bonus Movement Speed for <c val="#TooltipNumbers">3</c> seconds.
 MonkRadiantDash=Jump to an allied or enemy unit. Enemies are immediately hit with a Basic Attack. Stores <c val="#TooltipNumbers"><VALUE></c> charges.
-MonkSevenSidedStrike=Become Invulnerable and strike <c val="#TooltipNumbers">7</c> times over <c val="#TooltipNumbers"><VALUE></c> seconds. Each strike hits the highest Health nearby Hero for <c val="#TooltipNumbers"><VALUE>%</c> of their maximum Health.
-MonkSixthSense=When you are stunned or rooted, you Block all Basic Attacks, reducing their damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MonkSevenSidedStrike=Become Invulnerable and strike <c val="#TooltipNumbers">7</c> times over <c val="#TooltipNumbers">2</c> seconds. Each strike hits the highest Health nearby Hero for <c val="#TooltipNumbers">7%</c> of their maximum Health.
+MonkSixthSense=When you are stunned or rooted, you Block all Basic Attacks, reducing their damage by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">4</c> seconds.
 MonkSoothingBreezeTalent=Breath of Heaven removes silences, blinds, slows and roots.
-MonkTranscendenceTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack heals the lowest nearby allied Hero for <c val="#TooltipNumbers"><VALUE></c>.
-MonkWayoftheHundredFistsTalent=Radiant Dashing to an enemy causes you to launch a volley of blows dealing <c val="#TooltipNumbers"><VALUE></c> total damage instead of a Basic Attack.
-MuradinAvatar=Transform for <c val="#TooltipNumbers"><VALUE></c> seconds, gaining <c val="#TooltipNumbers"><VALUE></c> Health.
+MonkTranscendenceTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack heals the lowest nearby allied Hero for <c val="#TooltipNumbers">73</c>.
+MonkWayoftheHundredFistsTalent=Radiant Dashing to an enemy causes you to launch a volley of blows dealing <c val="#TooltipNumbers">246</c> total damage instead of a Basic Attack.
+MuradinAvatar=Transform for <c val="#TooltipNumbers">20</c> seconds, gaining <c val="#TooltipNumbers">1124</c> Health.
 MuradinAvatarUnstoppableForceTalent=Increases the duration of Avatar by <c val="#TooltipNumbers">30%</c>, and the duration of Disables are reduced by <c val="#TooltipNumbers">75%</c> while in Avatar.
 MuradinDwarfToss=Leap to target location, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies on landing. Upon leaping, you also become Resistant, reducing damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MuradinDwarfTossDwarfLaunchTalent=Increases the range and impact radius of Dwarf Toss by <c val="#TooltipNumbers">50%</c>.
-MuradinDwarfTossHeavyImpactTalent=Enemies hit by Dwarf Toss are stunned for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MuradinDwarfTossLandingMomentumTalent=Increases your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds upon landing with Dwarf Toss.
-MuradinGiveEmTheAxeTalent=Attacking a Hero that is slowed, rooted, or stunned increases your Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MuradinHaymaker=Stun target enemy Hero, and wind up a punch dealing <c val="#TooltipNumbers"><VALUE></c> damage and knocking the target back, hitting enemies in the way for <c val="#TooltipNumbers"><VALUE></c> damage and knocking them aside.
-MuradinHaymakerGrandSlamTalent=Damage of Haymaker increased by <c val="#TooltipNumbers"><VALUE>%</c>, Mana cost lowered by <c val="#TooltipNumbers"><VALUE></c>, and can store <c val="#TooltipNumbers">2</c> charges.
-MuradinIronforgedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers"><VALUE></c> seconds.
+MuradinDwarfTossHeavyImpactTalent=Enemies hit by Dwarf Toss are stunned for <c val="#TooltipNumbers">0.75</c> seconds.
+MuradinDwarfTossLandingMomentumTalent=Increases your Movement Speed by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">5</c> seconds upon landing with Dwarf Toss.
+MuradinGiveEmTheAxeTalent=Attacking a Hero that is slowed, rooted, or stunned increases your Basic Attack damage by <c val="#TooltipNumbers">60%</c> for <c val="#TooltipNumbers">3</c> seconds.
+MuradinHaymaker=Stun target enemy Hero, and wind up a punch dealing <c val="#TooltipNumbers">319</c> damage and knocking the target back, hitting enemies in the way for <c val="#TooltipNumbers">319</c> damage and knocking them aside.
+MuradinHaymakerGrandSlamTalent=Damage of Haymaker increased by <c val="#TooltipNumbers">25%</c>, Mana cost lowered by <c val="#TooltipNumbers">40</c>, and can store <c val="#TooltipNumbers">2</c> charges.
+MuradinIronforgedMomentum=Basic Attacks reduce your Basic Ability cooldowns by <c val="#TooltipNumbers">0.75</c> seconds.
 MuradinSecondWind=Restore <c val="#TooltipNumbers"><VALUE></c> Health per second when you have not taken damage for <c val="#TooltipNumbers">4</c> seconds. When below <c val="#TooltipNumbers"><VALUE>%</c> Health, increased to <c val="#TooltipNumbers"><VALUE></c> Health per second.
-MuradinSecondWindSkullcrackerTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack against the same target will stun them for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MuradinSecondWindStoneformTalent=Activate to heal for <c val="#TooltipNumbers">40%</c> of your maximum Health over <c val="#TooltipNumbers"><VALUE></c> seconds. Second Wind is disabled during this time.
-MuradinSecondWindThirdWindTalent=Increases Health Restoration rate to <c val="#TooltipNumbers"><VALUE></c> per second, and raises Health threshold to <c val="#TooltipNumbers"><VALUE>%</c> Health for improved <c val="#TooltipNumbers"><VALUE></c> per second Restoration.
+MuradinSecondWindSkullcrackerTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack against the same target will stun them for <c val="#TooltipNumbers">0.25</c> seconds.
+MuradinSecondWindStoneformTalent=Activate to heal for <c val="#TooltipNumbers">40%</c> of your maximum Health over <c val="#TooltipNumbers">10</c> seconds. Second Wind is disabled during this time.
+MuradinSecondWindThirdWindTalent=Increases Health Restoration rate to <c val="#TooltipNumbers">77</c> per second, and raises Health threshold to <c val="#TooltipNumbers">60%</c> Health for improved <c val="#TooltipNumbers">153</c> per second Restoration.
 MuradinStormbolt=Throw a hammer, dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit and stunning it for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MuradinStormboltInfusedHammerTalent=Refunds <c val="#TooltipNumbers"><VALUE></c> Mana for each enemy hit.
 MuradinStormboltPerfectStormTalent=Reduces Storm Bolt's Mana cost by <c val="#TooltipNumbers">25%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time Storm Bolt hits a Hero, increase its damage by <c val="#TooltipNumbers">5</c>.
 MuradinStormboltPiercingBoltTalent=Penetrates through the first target hit, hitting <c val="#TooltipNumbers">1</c> additional target.
-MuradinStormboltSledgehammerTalent=Deals <c val="#TooltipNumbers">400%</c> damage to non-Heroic enemies. Destroys <c val="#TooltipNumbers"><VALUE></c> ammo from Structures.
+MuradinStormboltSledgehammerTalent=Deals <c val="#TooltipNumbers">400%</c> damage to non-Heroic enemies. Destroys <c val="#TooltipNumbers">4</c> ammo from Structures.
 MuradinThunderclap=Deals <c val="#TooltipNumbers"><VALUE></c> damage and slows enemies Movement and Attack speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-MuradinThunderclapCrowdControlTalent=Each enemy hit by Thunder Clap reduces its cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds.
+MuradinThunderclapCrowdControlTalent=Each enemy hit by Thunder Clap reduces its cooldown by <c val="#TooltipNumbers">0.75</c> seconds.
 MuradinThunderclapHealingStaticTalent=Heal for <c val="#TooltipNumbers">5%</c> of your Max Health for each Hero hit by Thunder Clap.
 MuradinThunderclapReverberationTalent=Increases the Attack Speed slow from <c val="#TooltipNumbers">25%</c> to <c val="#TooltipNumbers">50%</c> and the duration from <c val="#TooltipNumbers">2.5</c> seconds to <c val="#TooltipNumbers">3</c> seconds.
-MuradinThunderclapThunderburnTalent=Thunder Clap leaves a zone on the ground that explodes after <c val="#TooltipNumbers"><VALUE></c> seconds dealing <c val="#TooltipNumbers"><VALUE></c> damage and applying a <c val="#TooltipNumbers"><VALUE>%</c> slow for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MuradinThunderclapThunderburnTalent=Thunder Clap leaves a zone on the ground that explodes after <c val="#TooltipNumbers">2</c> seconds dealing <c val="#TooltipNumbers">48</c> damage and applying a <c val="#TooltipNumbers">25%</c> slow for <c val="#TooltipNumbers">2.5</c> seconds.
 MuradinThunderclapThunderstrikeTalent=Thunder Clap deals <c val="#TooltipNumbers">300%</c> damage if only one target is hit.
 MurkyContinuousSlimeTalent=Decreases the cooldown of Slime from <c val="#TooltipNumbers">4 </c>seconds to <c val="#TooltipNumbers">3</c> seconds.
-MurkyFishtank=Every <c val="#TooltipNumbers"><VALUE></c> seconds, reduce the damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.  Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
+MurkyFishtank=Every <c val="#TooltipNumbers">5</c> seconds, reduce the damage taken from the next Hero Basic Attack by <c val="#TooltipNumbers">50%</c>.  Stores up to <c val="#TooltipNumbers">2</c> charges.
 MurkyHinderingSlimeTalent=Increases the slow amount of Slime from <c val="#TooltipNumbers">20%</c> to <c val="#TooltipNumbers">30%</c>.
-MurkyLivingTheDreamTalent=You gain <c val="#TooltipNumbers"><VALUE>%</c> Ability Power.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every <c val="#TooltipNumbers"><VALUE></c> seconds you are alive you gain an additional <c val="#TooltipNumbers"><VALUE>%</c> Ability Power, up to an additional <c val="#TooltipNumbers"><VALUE>%</c>. These stacks are lost on death.
-MurkyMarchOfTheMurlocs=Command a legion of Murlocs to march in a target direction, each one leaping onto the first enemy Hero or Structure they find. Each Murloc deals <c val="#TooltipNumbers"><VALUE></c> damage and slows its target by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Murlocs deal <c val="#TooltipNumbers">50%</c> damage to Structures.
+MurkyLivingTheDreamTalent=You gain <c val="#TooltipNumbers">5%</c> Ability Power.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every <c val="#TooltipNumbers">5</c> seconds you are alive you gain an additional <c val="#TooltipNumbers">1%</c> Ability Power, up to an additional <c val="#TooltipNumbers">15%</c>. These stacks are lost on death.
+MurkyMarchOfTheMurlocs=Command a legion of Murlocs to march in a target direction, each one leaping onto the first enemy Hero or Structure they find. Each Murloc deals <c val="#TooltipNumbers">125</c> damage and slows its target by <c val="#TooltipNumbers">15%</c> for <c val="#TooltipNumbers">5</c> seconds. Murlocs deal <c val="#TooltipNumbers">50%</c> damage to Structures.
 MurkyMarchOfTheMurlocsNeverEndingMurlocsTalent=Murlocs from March of the Murlocs travel farther and cling to targets for <c val="#TooltipNumbers">2</c> seconds longer.
-MurkyOctoGrab=Summon an octopus to stun target enemy Hero for <c val="#TooltipNumbers"><VALUE></c> seconds while you hit them for <c val="#TooltipNumbers"><VALUE></c> damage a second.
-MurkyOctoGrabAndASharkTooTalent=Increases the damage of Octo-Grab by <c val="#TooltipNumbers"><VALUE>%</c>.
+MurkyOctoGrab=Summon an octopus to stun target enemy Hero for <c val="#TooltipNumbers">3</c> seconds while you hit them for <c val="#TooltipNumbers">1</c> damage a second.
+MurkyOctoGrabAndASharkTooTalent=Increases the damage of Octo-Grab by <c val="#TooltipNumbers">13700%</c>.
 MurkyPufferfish=Spit out a Pufferfish at the target point. After <c val="#TooltipNumbers"><VALUE></c> seconds, the fish will blow up for <c val="#TooltipNumbers"><VALUE></c> damage. Enemies can attack the fish to prevent it from exploding.
 MurkyPufferfishCompressedAirTalent=Increases the radius of Pufferfish by <c val="#TooltipNumbers">50%</c>.
 MurkyPufferfishSlimyPufferfishTalent=The Pufferfish casts Slime at its location upon landing.
 MurkyPufferfishTufferfishTalent=Pufferfish take an additional attack before being disarmed.
 MurkyPufferfishWrathOfCodTalent=Increase Pufferfish's damage by <c val="#TooltipNumbers">35%</c> against Slimed targets.
-MurkyRejuvenatingBubbleTalent=Safety Bubble restores <c val="#TooltipNumbers"><VALUE>%</c> of your Health.
+MurkyRejuvenatingBubbleTalent=Safety Bubble restores <c val="#TooltipNumbers">50%</c> of your Health.
 MurkySafetyBubble=Becomes Invulnerable for <c val="#TooltipNumbers"><VALUE></c> seconds. While active, you cannot attack or use abilities.
-MurkySafetyBubbleBubbleBreezeTalent=Gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed while in Safety Bubble.
+MurkySafetyBubbleBubbleBreezeTalent=Gain <c val="#TooltipNumbers">20%</c> Movement Speed while in Safety Bubble.
 MurkySafetyBubbleBubbleMachineTalent=Safety Bubble cooldown reduced by <c val="#TooltipNumbers">5</c> seconds.
 MurkySlime=Deals <c val="#TooltipNumbers"><VALUE></c> damage and applies Slime on nearby enemies for <c val="#TooltipNumbers"><VALUE></c> seconds, slowing them by <c val="#TooltipNumbers"><VALUE>%</c>. <n/><n/>Deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies who are already Slimed.
 MurkySlimeBiggerSlimeTalent=Increases Slime radius by<c val="#TooltipNumbers"> 30%</c>.
@@ -1015,7 +1046,7 @@ MurkySlimeSlimeAdvantageTalent=Your Basic Attacks deal <c val="#TooltipNumbers">
 MurkySlimeSlimyEndTalent=Slime is used on death.
 MurkySpawnEgg=Place an Egg at target location, revealing the nearby area. Upon dying, you respawn at the Egg after <c val="#TooltipNumbers">5</c> seconds.  If your egg is killed, you are revealed to enemies for <c val="#TooltipNumbers">15</c> seconds. You only grant <c val="#TooltipNumbers">25%</c> of a Hero's experience upon dying.
 MurkySpawnEggAssaultEggTalent=Health and sight range of Egg increased by <c val="#TooltipNumbers">150%</c>.
-MurkySpawnEggHiddenAssaultTalent=When you respawn from the Egg, you gain Stealth and <c val="#TooltipNumbers">20%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MurkySpawnEggHiddenAssaultTalent=When you respawn from the Egg, you gain Stealth and <c val="#TooltipNumbers">20%</c> Movement Speed for <c val="#TooltipNumbers">5</c> seconds.
 MurkySpawnEggLivingtheDream=Place an Egg at target location, revealing the nearby area. Upon dying, you respawn at the Egg after <c val="#TooltipNumbers">5</c> seconds.  If your egg is killed, you are revealed to enemies for <c val="#TooltipNumbers">15</c> seconds. You only grant <c val="#TooltipNumbers">25%</c> of a Hero's experience upon dying.
 NecromancerAmplifyDamage=Enemies rooted by Bone Prison become Vulnerable for <c val="#TooltipNumbers"><VALUE></c> seconds, taking <c val="#TooltipNumbers"><VALUE>%</c> increased damage.
 NecromancerBoneArmorBacklash=When Bone Armor expires, nearby enemy Heroes take damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of their maximum Health.
@@ -1048,59 +1079,59 @@ NexusBladesTalent=Basic Attacks deal <c val="#TooltipNumbers">20%</c> more damag
 NexusFrenzyTalent=Increases Attack Speed by <c val="#TooltipNumbers">20%</c> and Attack Range by <c val="#TooltipNumbers">20%</c>.
 NovaAntiArmorShellsTalent=Your Basic Attacks deal <c val="#TooltipNumbers">250%</c> damage, but your Attack Speed is proportionally slower.
 NovaCovertMission=Enemy Minions killed near you grant a stack of Bribe. Hero Takedowns grant <c val="#TooltipNumbers">10 </c>stacks of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Current number of Bribe stacks: <c val="#TooltipNumbers"><VALUE></c></c>
-NovaCovertMissionTalent=Enemy Minions killed near you grant a stack of Bribe. Hero Takedowns grant <c val="#TooltipNumbers">10 </c>stacks of Bribe. Use <c val="#TooltipNumbers"><VALUE></c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers"><VALUE></c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.
+NovaCovertMissionTalent=Enemy Minions killed near you grant a stack of Bribe. Hero Takedowns grant <c val="#TooltipNumbers">10 </c>stacks of Bribe. Use <c val="#TooltipNumbers">25</c> stacks to bribe a Mercenary, instantly defeating them.  Does not work on Bosses.  Maximum of <c val="#TooltipNumbers">100</c> stacks. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.
 NovaCovertMissionToken=<c val="#TooltipQuest">Bribe Stacks:</c> <VALUE>/<VALUE>
 NovaCovertOpsTalent=Increases Pinning Shot's slow by <c val="#TooltipNumbers">2%</c> for every second that Nova is Cloaked, to a maximum of a <c val="#TooltipNumbers">60%</c>. Bonus fades when Nova is un-Cloaked for <c val="#TooltipNumbers">1</c> second.
 NovaDoubleFakeTalent=Casting Holo Decoy creates an additional Decoy at your current location.
-NovaGhostProtocol=Activate to gain Stealth.  You do not lose Stealth from taking damage, attacking, or using Abilities for <c val="#TooltipNumbers"><VALUE></c> seconds.
+NovaGhostProtocol=Activate to gain Stealth.  You do not lose Stealth from taking damage, attacking, or using Abilities for <c val="#TooltipNumbers">2</c> seconds.
 NovaHoloDecoy=Create a Decoy for <c val="#TooltipNumbers"><VALUE></c> seconds that appears to attack enemies. <n/><n/>Using this Ability does not break Cloak.
 NovaHoloDecoyHoloStabilityTalent=Increases the duration of Holo Decoy by <c val="#TooltipNumbers">120%</c>.
 NovaHoloDecoyLethalDecoyTalent=Holo Decoy deals <c val="#TooltipNumbers">40%</c> of Nova's damage.
 NovaHoloDecoyRapidProjectionTalent=Reduces Holo Decoy's cooldown and Mana cost by <c val="#TooltipNumbers">40%</c>.
 NovaHoloDecoyRemoteDeliveryTalent=Increases Holo Decoy cast range by <c val="#TooltipNumbers">100%</c> and its sight range by <c val="#TooltipNumbers">50%</c>
 NovaMyKillTalent=Reduces your Ability cooldowns by <c val="#TooltipNumbers">4</c> seconds when you kill an enemy Hero. 
-NovaOneintheChamberTalent=After using an Ability, your next Basic Attack within <c val="#TooltipNumbers"><VALUE></c> seconds deals <c val="#TooltipNumbers"><VALUE>%</c> additional damage.
-NovaPerfectShotTalent=Hitting an enemy Hero with Snipe reduces the cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds. 
+NovaOneintheChamberTalent=After using an Ability, your next Basic Attack within <c val="#TooltipNumbers">3</c> seconds deals <c val="#TooltipNumbers">80%</c> additional damage.
+NovaPerfectShotTalent=Hitting an enemy Hero with Snipe reduces the cooldown by <c val="#TooltipNumbers">3</c> seconds. 
 NovaPermanentCloakSniper=Gain Stealth when out of combat for <c val="#TooltipNumbers"><VALUE></c> seconds. Taking damage, attacking, using Abilities, or channeling reveals you.<n/><n/>Basic Attack range is <c val="#TooltipNumbers">20%</c> further than other ranged Heroes, and you see <c val="#TooltipNumbers">10%</c> further than other Heroes.
-NovaPermanentCloakSniperAdvancedCloakingTalent=Increases your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> while Cloaked.
-NovaPermanentCloakSniperTacticalEspionageTalent=While Cloaked, Nova gains <c val="#TooltipNumbers"><VALUE></C> Mana per second.
+NovaPermanentCloakSniperAdvancedCloakingTalent=Increases your Movement Speed by <c val="#TooltipNumbers">25%</c> while Cloaked.
+NovaPermanentCloakSniperTacticalEspionageTalent=While Cloaked, Nova gains <c val="#TooltipNumbers">4</C> Mana per second.
 NovaPinningShot=Deal <c val="#TooltipNumbers"><VALUE></c> damage to an enemy and slow it by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-NovaPinningShotCripplingShotTalent=Enemies hit by Pinning Shot become Vulnerable, taking <c val="#TooltipNumbers"><VALUE>%</c> increased damage for the duration of the slow.
+NovaPinningShotCripplingShotTalent=Enemies hit by Pinning Shot become Vulnerable, taking <c val="#TooltipNumbers">25%</c> increased damage for the duration of the slow.
 NovaPinningShotDoubleTapTalent=Pinning Shot now has <c val="#TooltipNumbers">2</c> charges.
 NovaPinningShotLongshotTalent=Increases the cast range of Pinning Shot by <c val="#TooltipNumbers">30%</c>. Pinning Shot also increases your next Basic Attack range by <c val="#TooltipNumbers">30%</c>.
 NovaPinningShotTazerRoundsTalent=Increases the duration of Pinning Shot's slow to <c val="#TooltipNumbers">4</c> seconds.
-NovaPrecisionStrike=After a <c val="#TooltipNumbers"><VALUE></c> second delay, deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies within an area. Unlimited range.
+NovaPrecisionStrike=After a <c val="#TooltipNumbers">1.5</c> second delay, deals <c val="#TooltipNumbers">456</c> damage to enemies within an area. Unlimited range.
 NovaPrecisionStrikePrecisionBarrageTalent=Precision Strike holds <c val="#TooltipNumbers">2</c> charges with a short cooldown.
 NovaSnipe=Deals <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit.
 NovaSnipeAmbushSnipeTalent=Increases Snipe's range by <c val="#TooltipNumbers">40%</c> while Cloaked.
 NovaSnipeExplosiveRoundTalent=Snipe also deals <c val="#TooltipNumbers">50%</c> damage to enemies near the impact.
 NovaSnipeHotShotTalent=Damaging an enemy Hero with Snipe increases its damage by <c val="#TooltipNumbers">4%</c>. Stacks up to <c val="#TooltipNumbers">10</c> times. Lose all stacks if a single Snipe fails to hit an enemy Hero.
-NovaSnipeMasterTalent=Hitting an enemy Hero with Snipe permanently increases the damage of Snipe by <c val="#TooltipNumbers"><VALUE>%</c>. Stacks up to <c val="#TooltipNumbers"><VALUE></c> times. All stacks are lost if Snipe fails to hit an enemy Hero.
+NovaSnipeMasterTalent=Hitting an enemy Hero with Snipe permanently increases the damage of Snipe by <c val="#TooltipNumbers">15%</c>. Stacks up to <c val="#TooltipNumbers">5</c> times. All stacks are lost if Snipe fails to hit an enemy Hero.
 NovaSnipePsiOpRangefinderTalent=Increases Snipe's range by <c val="#TooltipNumbers">20%</c> and reduces the Cooldown by <c val="#TooltipNumbers">2</c> seconds.
 NovaSnipePsionicEfficiencyTalent=Removes Snipe's Mana cost and increases its range by <c val="#TooltipNumbers">10%</c>.
 NovaSnipeRailgunTalent=Snipe penetrates through the first enemy hit and deals <c val="#TooltipNumbers">50%</c> damage to subsequent targets. Snipe cooldown is reduced by <c val="#TooltipNumbers">1</c> second for each target hit.
-NovaTripleTap=Locks in on the target Hero, then fires <c val="#TooltipNumbers"><VALUE></c> shots that hit the first Hero or Structure they come in contact with for <c val="#TooltipNumbers"><VALUE></c> damage each.
+NovaTripleTap=Locks in on the target Hero, then fires <c val="#TooltipNumbers">3</c> shots that hit the first Hero or Structure they come in contact with for <c val="#TooltipNumbers">338</c> damage each.
 NovaTripleTapFastReloadTalent=Triple Tap's cooldown is reset if it kills an enemy Hero.
 RaynorACardToPlayTalent=Whenever a Hero (ally or enemy) is killed, the cooldown of your Heroic Ability is reduced by <c val="#TooltipNumbers">15</c> seconds.
 RaynorAdrenalineRush=Automatically activates to heal for <c val="#TooltipNumbers"><VALUE></c> when you are below <c val="#TooltipNumbers">30%</c> Health.
-RaynorAdrenalineRushFightOrFlightTalent=Whenever Adrenaline Rush activates it also grants Resistant, reducing damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.  Adrenaline Rush can also be manually activated.
+RaynorAdrenalineRushFightOrFlightTalent=Whenever Adrenaline Rush activates it also grants Resistant, reducing damage taken by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">4</c> seconds.  Adrenaline Rush can also be manually activated.
 RaynorAdrenalineRushGiveMeMoreTalent=Increases Adrenaline Rush healing by <c val="#TooltipNumbers">50%</c>.
 RaynorAdvancedOptics=Basic Attack range is <c val="#TooltipNumbers">20%</c> further than other ranged Heroes, and you see <c val="#TooltipNumbers">10%</c> further than other Heroes.
-RaynorHyperion=Order the Hyperion to make a strafing run dealing <c val="#TooltipNumbers"><VALUE></c> damage a second, hitting up to <c val="#TooltipNumbers"><VALUE></c> enemies. Also occasionally fires its Yamato Cannon on Structures for <c val="#TooltipNumbers"><VALUE></c> damage. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-RaynorHyperionGroundStrafeTalent=An additional set of lasers blast the ground <c val="#TooltipNumbers"><VALUE></c> times per second, dealing <c val="#TooltipNumbers"><VALUE></c> damage in an area.
+RaynorHyperion=Order the Hyperion to make a strafing run dealing <c val="#TooltipNumbers">66</c> damage a second, hitting up to <c val="#TooltipNumbers">4</c> enemies. Also occasionally fires its Yamato Cannon on Structures for <c val="#TooltipNumbers">794</c> damage. Lasts <c val="#TooltipNumbers">12</c> seconds.
+RaynorHyperionGroundStrafeTalent=An additional set of lasers blast the ground <c val="#TooltipNumbers">5</c> times per second, dealing <c val="#TooltipNumbers">40</c> damage in an area.
 RaynorInspire=Gain <c val="#TooltipNumbers"><VALUE>%</c> bonus Attack Speed for <c val="#TooltipNumbers"><VALUE></c> seconds. Nearby allies gain half of the bonus.
-RaynorInspireRevolutionOverdriveTalent=Gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed while affected by Inspire.  Increase this bonus by <c val="#TooltipNumbers"><VALUE>%</c> for each allied Hero nearby when Inspire is cast.
+RaynorInspireRevolutionOverdriveTalent=Gain <c val="#TooltipNumbers">10%</c> Movement Speed while affected by Inspire.  Increase this bonus by <c val="#TooltipNumbers">5%</c> for each allied Hero nearby when Inspire is cast.
 RaynorInspireSteelResolveTalent=Increases Inspire's duration by <c val="#TooltipNumbers">50%</c> and causes Adrenaline Rush to also apply Inspire.
-RaynorLeadFromTheFrontPuttinOnAClinicTalent=Whenever an enemy Minion you have recently damaged is destroyed, your Ability cooldowns are reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
+RaynorLeadFromTheFrontPuttinOnAClinicTalent=Whenever an enemy Minion you have recently damaged is destroyed, your Ability cooldowns are reduced by <c val="#TooltipNumbers">1.5</c> seconds.
 RaynorPenetratingRound=Deals <c val="#TooltipNumbers"><VALUE></c> damage and knocks enemies back.
-RaynorPenetratingRoundBullseyeTalent=The first enemy hit by Penetrating Round is stunned for <c val="#TooltipNumbers"><VALUE></c> second.
-RaynorPenetratingRoundClusterRoundTalent=Penetrating Round damage is increased by <c val="#TooltipNumbers"><VALUE>%</c> for each additional target hit up to <c val="#TooltipNumbers">100%</c>, and the width is increased by <c val="#TooltipNumbers">50%</c>.
-RaynorPenetratingRoundConfidentAimTalent=Lowers the cooldown of Penetrating Round by <c val="#TooltipNumbers"><VALUE></c> seconds if it hits an enemy Hero.
+RaynorPenetratingRoundBullseyeTalent=The first enemy hit by Penetrating Round is stunned for <c val="#TooltipNumbers">1</c> second.
+RaynorPenetratingRoundClusterRoundTalent=Penetrating Round damage is increased by <c val="#TooltipNumbers">20%</c> for each additional target hit up to <c val="#TooltipNumbers">100%</c>, and the width is increased by <c val="#TooltipNumbers">50%</c>.
+RaynorPenetratingRoundConfidentAimTalent=Lowers the cooldown of Penetrating Round by <c val="#TooltipNumbers">4</c> seconds if it hits an enemy Hero.
 RaynorPenetratingRoundDoubleBarreledTalent=Penetrating Round gains a second charge.
-RaynorPenetratingRoundHamstringShotTalent=Enemies hit by Penetrating Round have a <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed slow for <c val="#TooltipNumbers"><VALUE></c> seconds.
-RaynorRaynorsRaiders=Summon two Stealthed Banshees that attack an enemy. Each Banshee deals <c val="#TooltipNumbers"><VALUE></c> damage a second and lasts <c val="#TooltipNumbers"><VALUE></c> seconds. Can reactivate the Ability to retarget the Banshees.
+RaynorPenetratingRoundHamstringShotTalent=Enemies hit by Penetrating Round have a <c val="#TooltipNumbers">20%</c> Movement Speed slow for <c val="#TooltipNumbers">3</c> seconds.
+RaynorRaynorsRaiders=Summon two Stealthed Banshees that attack an enemy. Each Banshee deals <c val="#TooltipNumbers">43</c> damage a second and lasts <c val="#TooltipNumbers">22</c> seconds. Can reactivate the Ability to retarget the Banshees.
 RaynorRaynorsRaidersHelsAngelsTalent=Banshees remain Stealthed while attacking and fire <c val="#TooltipNumbers">50%</c> more frequently.
-RaynorRelentlessLeaderTalent=Once every <c val="#TooltipNumbers"><VALUE></c> seconds, if you are Stunned or Rooted you knock nearby enemies away and reduce the cooldown of Adrenaline Rush by <c val="#TooltipNumbers"><VALUE></c> seconds.
+RaynorRelentlessLeaderTalent=Once every <c val="#TooltipNumbers">8</c> seconds, if you are Stunned or Rooted you knock nearby enemies away and reduce the cooldown of Adrenaline Rush by <c val="#TooltipNumbers">15</c> seconds.
 RehgarAncestralHealing=After <c val="#TooltipNumbers"><VALUE></c> second, heal an allied Hero for <c val="#TooltipNumbers"><VALUE></c> Health.<n/><n/><c val="ffff8a">Cannot be used on yourself.</c>
 RehgarAncestralHealingFarseersBlessingTalent=Increases healing amount by <c val="#TooltipNumbers">50%</c>. Allies near the target are healed for <c val="#TooltipNumbers">25%</c> of the amount of health regained.
 RehgarBloodlust=Grant nearby allied Heroes <c val="#TooltipNumbers"><VALUE>%</c> Attack Speed and <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -1423,32 +1454,32 @@ UtherRighteousDefense=Healing a Hero with Holy Light reduces all damage they tak
 Windfury=Increase your Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Your next <c val="#TooltipNumbers"><VALUE> </c>Basic Attacks occur <c val="#TooltipNumbers"><VALUE>%</c> faster.
 WitchDoctorBigVoodoo=Increases the Health and Mana bonuses from Voodoo Ritual by <c val="#TooltipNumbers">100%</c>.
 WitchDoctorCorpseSpiders=Hurl a jar of spiders that deals <c val="#TooltipNumbers"><VALUE></c> damage. If it hits at least one enemy, create <c val="#TooltipNumbers"><VALUE> </c>Corpse Spiders that attack for <c val="#TooltipNumbers"><VALUE></c> damage. Spiders last for <c val="#TooltipNumbers"><VALUE></c> seconds.
-WitchDoctorGargantuan=Summon a Gargantuan to guard an area for <c val="#TooltipNumbers"><VALUE></c> seconds. Deals <c val="#TooltipNumbers"><VALUE></c> damage when summoned, attacks for <c val="#TooltipNumbers"><VALUE></c> damage, and can be ordered to stomp nearby enemies.
-WitchDoctorGargantuanHumongoidTalent=Reduce Gargantuan's cooldown by <c val="#TooltipNumbers"><VALUE></c> seconds and its Mana cost by <c val="#TooltipNumbers">50%</c>.
-WitchDoctorGuardianToads=Hitting an enemy Hero with Plague of Toads grants you Resistant, reducing damage taken by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
-WitchDoctorHexedCrawlers=Corpse spiders restore <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health and Mana when they attack an enemy Hero.
-WitchDoctorPandemic=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers"><VALUE></c> Heroes with Plague of Toads, it spawns <c val="#TooltipNumbers">2 </c>additional toads.
+WitchDoctorGargantuan=Summon a Gargantuan to guard an area for <c val="#TooltipNumbers">20</c> seconds. Deals <c val="#TooltipNumbers">100</c> damage when summoned, attacks for <c val="#TooltipNumbers">176</c> damage, and can be ordered to stomp nearby enemies.
+WitchDoctorGargantuanHumongoidTalent=Reduce Gargantuan's cooldown by <c val="#TooltipNumbers">45</c> seconds and its Mana cost by <c val="#TooltipNumbers">50%</c>.
+WitchDoctorGuardianToads=Hitting an enemy Hero with Plague of Toads grants you Resistant, reducing damage taken by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
+WitchDoctorHexedCrawlers=Corpse spiders restore <c val="#TooltipNumbers">0.75%</c> of your maximum Health and Mana when they attack an enemy Hero.
+WitchDoctorPandemic=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">40</c> Heroes with Plague of Toads, it spawns <c val="#TooltipNumbers">2 </c>additional toads.
 WitchDoctorPandemicToken=<c val="#TooltipQuest">Heroes Hit: <c val="#TooltipNumbers"><VALUE>/<VALUE>
 WitchDoctorPandemicTokenComplete=<c val="#TooltipQuest">QUEST COMPLETE!</c>
 WitchDoctorPlagueOfToads=Create a wave of <c val="#TooltipNumbers">3</c> Toads that explode on contact, dealing <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds. This effect stacks.
 WitchDoctorPlagueOfToadsToadsOfHugenessTalent=Increase the damage and explosion radius of Plague of Toads by <c val="#TooltipNumbers">15%</c> after each hop, up to a maximum of <c val="#TooltipNumbers">60%</c>.
-WitchDoctorRavenousSpirit=Channel a Ravenous Spirit that deals <c val="#TooltipNumbers"><VALUE></c> damage per second. Cannot move while channeling. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
+WitchDoctorRavenousSpirit=Channel a Ravenous Spirit that deals <c val="#TooltipNumbers">207</c> damage per second. Cannot move while channeling. Lasts for <c val="#TooltipNumbers">8</c> seconds.
 WitchDoctorRavenousSpiritAnnihilatingSpiritTalent=Increases the range of Ravenous Spirit by <c val="#TooltipNumbers">50%</c> and Movement Speed by <c val="#TooltipNumbers">30%</c>.
-WitchDoctorRingOfPoison=Zombie Wall lasts <c val="#TooltipNumbers"><VALUE></c> second longer, and the center is filled with poison that deals a total of <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers">4</c> seconds. This damage starts small and increases over the duration.
-WitchDoctorSoulHarvest=Activate to increase your Health and Ability Power by <c val="#TooltipNumbers">4%</c> for each nearby enemy, up to a maximum of <c val="#TooltipNumbers">20%</c>. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-WitchDoctorSpiderColony=Corpse Spiders' cooldown recharges <c val="#TooltipNumbers">100%</c> faster while above <c val="#TooltipNumbers"><VALUE></c> Health.
-WitchDoctorSpiritofArachyr=If Corpse Spiders hits only one enemy, it creates <c val="#TooltipNumbers"><VALUE></c> additional spiders.
-WitchDoctorSuperstition=You take <c val="#TooltipNumbers"><VALUE>%</c> less damage from Abilities, but <c val="#TooltipNumbers"><VALUE>%</c> more damage from Basic Attacks.
+WitchDoctorRingOfPoison=Zombie Wall lasts <c val="#TooltipNumbers">1</c> second longer, and the center is filled with poison that deals a total of <c val="#TooltipNumbers">319</c> damage over <c val="#TooltipNumbers">4</c> seconds. This damage starts small and increases over the duration.
+WitchDoctorSoulHarvest=Activate to increase your Health and Ability Power by <c val="#TooltipNumbers">4%</c> for each nearby enemy, up to a maximum of <c val="#TooltipNumbers">20%</c>. Lasts <c val="#TooltipNumbers">15</c> seconds.
+WitchDoctorSpiderColony=Corpse Spiders' cooldown recharges <c val="#TooltipNumbers">100%</c> faster while above <c val="#TooltipNumbers">850</c> Health.
+WitchDoctorSpiritofArachyr=If Corpse Spiders hits only one enemy, it creates <c val="#TooltipNumbers">2</c> additional spiders.
+WitchDoctorSuperstition=You take <c val="#TooltipNumbers">50%</c> less damage from Abilities, but <c val="#TooltipNumbers">30%</c> more damage from Basic Attacks.
 WitchDoctorThingOfTheDeepTalent=Increases the range of your Basic Abilities by <c val="#TooltipNumbers">20%</c>.
 WitchDoctorVileInfection=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After reaching <c val="#TooltipNumbers">150</c> stacks of Voodoo Ritual, it can also be applied to Heroes and its damage is increased by <c val="#TooltipNumbers">200%</c>.
-WitchDoctorVoodooRitualBloodRitualTalent=If an enemy dies while poisoned by Voodoo Ritual, restore <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health and Mana.
+WitchDoctorVoodooRitualBloodRitualTalent=If an enemy dies while poisoned by Voodoo Ritual, restore <c val="#TooltipNumbers">2%</c> of your maximum Health and Mana.
 WitchDoctorVoodooRitualToken=
 WitchDoctorVoodooRitualTrait=Your Basic Attacks and Abilites poison Non-Heroic enemies, causing them to take <c val="#TooltipNumbers"><VALUE></c> additional damage over <c val="#TooltipNumbers"><VALUE></c> seconds. <n/><n/>If a Minion dies while poisoned by Voodoo Ritual, you permanently gain <c val="#TooltipNumbers"><VALUE></c> Health and <c val="#TooltipNumbers"><VALUE></c> Mana.
-WitchDoctorWidowmakers=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After your Corpse Spiders attack Heroes <c val="#TooltipNumbers"><VALUE></c> times, their attack damage is increased by <c val="#TooltipNumbers">30%</c>.
+WitchDoctorWidowmakers=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After your Corpse Spiders attack Heroes <c val="#TooltipNumbers">100</c> times, their attack damage is increased by <c val="#TooltipNumbers">30%</c>.
 WitchDoctorWidowmakersToken=<c val="#TooltipQuest">Attacks against Heroes: <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
 WitchDoctorWidowmakersTokenComplete=<c val="#TooltipQuest">QUEST COMPLETE!</c>
 WitchDoctorZombieWall=After <c val="#TooltipNumbers">1</c> second, create a ring of Zombies surrounding the target area that deal <c val="#TooltipNumbers"><VALUE> </c>damage and last for <c val="#TooltipNumbers"><VALUE></c> seconds.
-WitchDoctorZombieWallDeadRushTalent=Zombie Wall deals <c val="#TooltipNumbers"><VALUE>%</c> more damage. When it expires up to <c val="#TooltipNumbers">5</c> remaining Zombies uproot and attack nearby enemies for <c val="#TooltipNumbers"><VALUE></c> seconds.
+WitchDoctorZombieWallDeadRushTalent=Zombie Wall deals <c val="#TooltipNumbers">75%</c> more damage. When it expires up to <c val="#TooltipNumbers">5</c> remaining Zombies uproot and attack nearby enemies for <c val="#TooltipNumbers">3</c> seconds.
 WitchDoctorZombieWallFreshCorpsesTalent=Zombie Wall cooldown reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
 WizardAetherWalkerTalent=If you haven't taken damage in the last <c val="#TooltipNumbers">5</c> seconds, Teleport costs no mana and its cooldown is decreased by <c val="#TooltipNumbers">2</c> seconds.
 WizardArcaneOrb=Fire an Orb that powers up as it travels, dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit. The amount of damage dealt is increased the further it travels, up to <c val="#TooltipNumbers"><VALUE></c> damage.
@@ -1462,33 +1493,33 @@ WizardArcaneOrbZeisVengeanceTalent=Arcane Orb does up to <c val="#TooltipNumbers
 WizardArchonPurePowerDisintegrate=Channel a powerful beam, dealing <c val="#TooltipNumbers"><VALUE></c> damage per second to enemies while they are in it. The direction of the beam changes with your mouse cursor position.
 WizardArchonPurePowerHotbar=Activate to enter Archon form, allowing you to repeatedly use Disintegrate, but be unable to cast other Abilities.
 WizardArchonPurePowerHotbarCancel=Cancel Archon: Pure Power.
-WizardAstralPresence=Your Mana regeneration is increased by <c val="#TooltipNumbers"><VALUE>%</c> while below <c val="#TooltipNumbers">25%</c> Mana.
-WizardCannoneerTalent=When you use an Ability, increase your next Basic Attack by <c val="#TooltipNumbers">75%</c> and cause it to deal Ability damage.  Stacks up to <c val="#TooltipNumbers"><VALUE></c> times.
-WizardDisintegrate=Channel a powerful beam, dealing <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds to enemies while they are in it. The direction of the beam changes with your mouse cursor position.
+WizardAstralPresence=Your Mana regeneration is increased by <c val="#TooltipNumbers">100%</c> while below <c val="#TooltipNumbers">25%</c> Mana.
+WizardCannoneerTalent=When you use an Ability, increase your next Basic Attack by <c val="#TooltipNumbers">75%</c> and cause it to deal Ability damage.  Stacks up to <c val="#TooltipNumbers">3</c> times.
+WizardDisintegrate=Channel a powerful beam, dealing <c val="#TooltipNumbers">440</c> damage over <c val="#TooltipNumbers">2.5</c> seconds to enemies while they are in it. The direction of the beam changes with your mouse cursor position.
 WizardDisintegrateConvergenceTalent=If Disintegrate hits a target for over <c val="#TooltipNumbers">2</c> seconds, they take an additional <c val="#TooltipNumbers"><VALUE></c> damage.
-WizardDisintegrateTemporalFluxTalent=Disintegrate gradually slows enemies caught in its beam, to a maximum of <c val="#TooltipNumbers"><VALUE>%</c>.
-WizardDominanceTalent=Takedowns restore <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health.
+WizardDisintegrateTemporalFluxTalent=Disintegrate gradually slows enemies caught in its beam, to a maximum of <c val="#TooltipNumbers">60%</c>.
+WizardDominanceTalent=Takedowns restore <c val="#TooltipNumbers">20%</c> of your maximum Health.
 WizardEnergyArmor=Your Mana regeneration is increased by <c val="#TooltipNumbers"><VALUE>%</c> while below half mana.
 WizardFirebirdsFineryTalent=If you would die, a Meteor crashes to the ground, and your are resurrected with <c val="#TooltipNumbers"><VALUE>%</c> of your life. This effect has a <c val="#TooltipNumbers"><VALUE></c> second cooldown.
-WizardFireflies=Drastically increases Magic Missiles speed. Its cooldown is reduced by <c val="#TooltipNumbers">1</c> second, and its Mana cost is reduced by <c val="#TooltipNumbers"><VALUE></c>.
-WizardForceArmorTalent=When Magic Missiles damages an enemy Hero, you gain a charge of Spell Block, reducing the damage from the next enemy Ability against you by <c val="#TooltipNumbers">50%</c>. Can hold up to <c val="#TooltipNumbers">4</c> charges.  Can only gain <c val="#TooltipNumbers"><VALUE></c> charge per cast.
-WizardGlassCannonTalent=Increases your Ability Power by <c val="#TooltipNumbers"><VALUE>%</c>, but decreases your maximum Health by <c val="#TooltipNumbers"><VALUE>%</c>.
+WizardFireflies=Drastically increases Magic Missiles speed. Its cooldown is reduced by <c val="#TooltipNumbers">1</c> second, and its Mana cost is reduced by <c val="#TooltipNumbers">5</c>.
+WizardForceArmorTalent=When Magic Missiles damages an enemy Hero, you gain a charge of Spell Block, reducing the damage from the next enemy Ability against you by <c val="#TooltipNumbers">50%</c>. Can hold up to <c val="#TooltipNumbers">4</c> charges.  Can only gain <c val="#TooltipNumbers">1</c> charge per cast.
+WizardGlassCannonTalent=Increases your Ability Power by <c val="#TooltipNumbers">15%</c>, but decreases your maximum Health by <c val="#TooltipNumbers">15%</c>.
 WizardMagicMissiles=Fire three missiles toward an area, each dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit. These missiles do <c val="#TooltipNumbers">50%</c> damage to Structures.
-WizardMagicMissilesChargedBlastTalent=Basic Attacking a target recently hit by a Magic Missile does an extra <c val="#TooltipNumbers"><VALUE></c> damage.
-WizardMagicMissilesMirrorballTalent=Magic Missiles fires an additional <c val="#TooltipNumbers">2</c> missiles, but its Mana cost is increased by <c val="#TooltipNumbers"><VALUE></c>.
-WizardMagicMissilesSeekerTalent=If three Magic Missiles hit the same target, the third one deals an additional <c val="#TooltipNumbers"><VALUE></c> damage.
-WizardPowerHungryTalent=Regeneration Globes restore <c val="#TooltipNumbers"><VALUE>%</c> more Mana and grant <c val="#TooltipNumbers"><VALUE>%</c> Ability Power for <c val="#TooltipNumbers"><VALUE></c> seconds.
+WizardMagicMissilesChargedBlastTalent=Basic Attacking a target recently hit by a Magic Missile does an extra <c val="#TooltipNumbers">87</c> damage.
+WizardMagicMissilesMirrorballTalent=Magic Missiles fires an additional <c val="#TooltipNumbers">2</c> missiles, but its Mana cost is increased by <c val="#TooltipNumbers">5</c>.
+WizardMagicMissilesSeekerTalent=If three Magic Missiles hit the same target, the third one deals an additional <c val="#TooltipNumbers">125</c> damage.
+WizardPowerHungryTalent=Regeneration Globes restore <c val="#TooltipNumbers">100%</c> more Mana and grant <c val="#TooltipNumbers">10%</c> Ability Power for <c val="#TooltipNumbers">20</c> seconds.
 WizardSpectralBladesTalent=Your Basic Attack is now in melee range, dealing <c val="#TooltipNumbers">150%</c> more damage, and hitting all nearby enemies.
 WizardSuperiorityTalent=Takedowns restore <c val="#TooltipNumbers"><VALUE>%</c> of your Maximum Mana.
-WizardTalRashasElementsTalent=Using Abilities grants <c val="#TooltipNumbers"><VALUE>%</c> Ability Power, to a maximum of <c val="#TooltipNumbers"><VALUE>%</c>.  This bonus is reset when the same Ability is used within a chain.
+WizardTalRashasElementsTalent=Using Abilities grants <c val="#TooltipNumbers">5%</c> Ability Power, to a maximum of <c val="#TooltipNumbers">20%</c>.  This bonus is reset when the same Ability is used within a chain.
 WizardTeleport=Teleport a short distance instantly.
-WizardTeleportCalamityTalent=Teleport does <c val="#TooltipNumbers"><VALUE></c> damage to enemies near your destination.
-WizardTeleportDiamondSkinTalent=When you Teleport, gain <c val="#TooltipNumbers"><VALUE>%</c> of your maximum Health as a Shield for <c val="#TooltipNumbers"><VALUE></c> seconds.
-WizardTeleportIllusionistTalent=Increases Teleport range by <c val="#TooltipNumbers">50%</c>, and if you lose more than <c val="#TooltipNumbers">20%</c> of your Health at once, its cooldown is instantly refreshed. This cannot happen more than once every <c val="#TooltipNumbers"><VALUE></c> seconds.
+WizardTeleportCalamityTalent=Teleport does <c val="#TooltipNumbers">300</c> damage to enemies near your destination.
+WizardTeleportDiamondSkinTalent=When you Teleport, gain <c val="#TooltipNumbers">20%</c> of your maximum Health as a Shield for <c val="#TooltipNumbers">4</c> seconds.
+WizardTeleportIllusionistTalent=Increases Teleport range by <c val="#TooltipNumbers">50%</c>, and if you lose more than <c val="#TooltipNumbers">20%</c> of your Health at once, its cooldown is instantly refreshed. This cannot happen more than once every <c val="#TooltipNumbers">4</c> seconds.
 WizardTeleportPrismTalent=After using Teleport, your next Ability costs no mana.
 WizardTeleportWormholeTalent=After you use Teleport, it can be used again for free in the next <c val="#TooltipNumbers">1.5</c> seconds.
 WizardTraitCriticalMass=Getting a Takedown will refresh the cooldown on all of your Abilities.
-WizardWaveOfForce=Knock away all enemies from an area and deal <c val="#TooltipNumbers"><VALUE></c> damage.
+WizardWaveOfForce=Knock away all enemies from an area and deal <c val="#TooltipNumbers">160</c> damage.
 WizardWaveOfForceMirrorMimics=Wave of Force summons <c val="#TooltipNumbers"><VALUE></c> additional Mirror Images to cast Wave of Force, surrounding your original position.
 WizardWaveOfForceRepulsionTalent=Increases Wave of Force knockback distance by <c val="#TooltipNumbers">150%</c> and increases its cast range by <c val="#TooltipNumbers">100%</c>.
 ZagaraBanelingBarrage=Launch <c val="#TooltipNumbers"><VALUE> </c>Baneling that deals <c val="#TooltipNumbers"><VALUE></c> splash damage.

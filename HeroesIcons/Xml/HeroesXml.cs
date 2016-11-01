@@ -280,16 +280,24 @@ namespace HeroesIcons.Xml
                 {
                     while (!reader.EndOfStream)
                     {
-                        string[] talent = reader.ReadLine().Split(new char[] { '=' }, 2);
-                        TalentShortDesc.Add(talent[0], talent[1]);
+                        string line = reader.ReadLine();
+                        if (!line.StartsWith("--"))
+                        {
+                            string[] talent = line.Split(new char[] { '=' }, 2);
+                            TalentShortDesc.Add(talent[0], talent[1]);
+                        }
                     }
                 }
                 using (StreamReader reader = new StreamReader(@"Xml\Strings\FullTalentDescriptions.txt"))
                 {
                     while (!reader.EndOfStream)
                     {
-                        string[] talent = reader.ReadLine().Split(new char[] { '=' }, 2);
-                        TalentLongDesc.Add(talent[0], talent[1]);
+                        string line = reader.ReadLine();
+                        if (!line.StartsWith("--"))
+                        {
+                            string[] talent = line.Split(new char[] { '=' }, 2);
+                            TalentLongDesc.Add(talent[0], talent[1]);
+                        }
                     }
                 }
             }
