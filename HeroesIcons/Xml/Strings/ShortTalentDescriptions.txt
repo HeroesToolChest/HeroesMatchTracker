@@ -1201,6 +1201,44 @@ RexxarThrilloftheHuntTalent=Basic Attacks increase Move Speed
 RexxarThrowingAxesTalent=Increases Basic Attack range
 RexxarUnleashTheBoars=Send a pack of boars to hunt enemy Heroes
 RexxarUnleashTheBoarsKillCommandTalent=Unleash the Boars deals more damage and roots
+IllusionMasterImageSelfCast=Switch places with Samuro
+SamuroAdvancingStrikes=Increase Movement Speed when attacking Heroes
+SamuroBlademastersPursuitTalent=Increase Advancing Strikes effect and duration
+SamuroBladestorm=Become an unstoppable whirlwind of death
+SamuroBurningBlade=Critical Strikes damage nearby enemies
+SamuroCriticalStrike=Critically Strike for increased damage.
+SamuroDanceOfDeathTalent=Images use Bladestorm
+SamuroDeflectionTalent=Advancing Strikes reduces incoming attacks
+SamuroHarshWinds=Attack from Wind Walk to increase damage
+SamuroIllusionMaster=Images can be controlled
+SamuroImageAIDsiabled=Select Samuro Prime
+SamuroImageAIEnabled=Select Samuro Prime
+SamuroImageDancer=You can control Mirror Images separately or as a group
+SamuroImageSwap=Swap positions with target Mirror Image.
+SamuroLethalIntentTalent=[PH] Critical Strike makes target Vulnerable
+SamuroMercilessStrikes=Always Critically Strike disabled targets
+SamuroMirage=Mirror Image grants Spell Block
+SamuroMirrorImage=Create Mirror Images to confuse and attack enemies
+SamuroMirroredSteelTalent=Attacks reduce Mirror Image cooldown
+SamuroOneWithTheWindTalent=Take less damage while Wind Walking
+SamuroOverpoweringBlow=Critical Strike has two charges
+SamuroPhantomsStrikeTalent=Images increase Critical Strike damage
+SamuroPressTheAttack=Advancing Strikes increases Attack Speed
+SamuroSelectAll=Select All
+SamuroSelectMirrorImages=Select Mirror Image
+SamuroSelectSamuroPrime=Select Samuro
+SamuroShukuchiTalent=Wind Walk teleports you
+SamuroSplitForm=Create two Mirror Images instantly.
+SamuroThreeBladeStyleTalent=Images have increased Health and Duration
+SamuroThreeBladeStyleTalent2=[PH] Illusion Master cooldown reduced, Images last indefinitely
+SamuroWayOfIllusion=<c val="#TooltipQuest">Quest:</c> Image Critical Strikes empower Basic Attacks
+SamuroWayOfIllusionComplete=<c val="#TooltipQuest">Quest:</c> Increase Basic Attack damage
+SamuroWayOfTheWind=<c val="#TooltipQuest"> Quest:</c> Attacks from Stealth empower Wind Walk
+SamuroWayoftheBlade=Critical Strike happens more often
+SamuroWhispersFromtheWindTalent=[PH] Attacking from Wind Walk will do <c val="#TooltipNumbers"><d ref="Effect,SamuroWhispersFromtheWindDamage,Amount"/></c> bonus damage
+SamuroWindStrider=Greatly reduce Wind Walk cooldown
+SamuroWindwalk=Become Stealthed and gain Movement Speed
+WindwalkKawarimiTalent=Wind Walk creates an Image
 SgtHammerArtillery=Deal more damage to enemies that are far away
 SgtHammerArtilleryAdvancedArtilleryTalent=Increase damage to distant enemies
 SgtHammerArtilleryFirstStrikeTalent=Basic Attacks do extra damage if not attacked

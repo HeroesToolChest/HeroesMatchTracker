@@ -34,7 +34,7 @@ namespace HeroesParserData.Converters
                     // example <c val="#TooltipNumbers">
                     string startTag = text.Substring(startIndex, endIndex - startIndex);
 
-                    if (startTag == "<n/>")
+                    if (startTag == "<n/>" || startTag == "</n>")
                     {
                         span.Inlines.Add(new Run(text.Substring(0, startIndex)));
                         span.Inlines.Add(new Run("\n"));
@@ -129,7 +129,10 @@ namespace HeroesParserData.Converters
                     color = Colors.GhostWhite;
                     break;
                 case "#TooltipQuest": // yellow-gold
-                    color = (Color)ColorConverter.ConvertFromString("#AE9C54");
+                    color = (Color)ColorConverter.ConvertFromString("#B48E4C");
+                    break;
+                case "#AbilityPassive":
+                    color = (Color)ColorConverter.ConvertFromString("#16D486");
                     break;
                 case "#ColorViolet":
                     color = (Color)ColorConverter.ConvertFromString("#A85EC6");
