@@ -8,7 +8,7 @@
   </Level1>
   <Level4>
     <UtherMasteryBoundlessConvictionHolyRadiance name="Boundless Conviction" desc="UtherBoundlessConvictionTalent">storm_ui_icon_uther_holyradiance.dds</UtherMasteryBoundlessConvictionHolyRadiance>
-    <UtherBeaconofLight name="Beacon of Light" desc="UtherBeaconofLight">storm_ui_icon_holylight.dds</UtherBeaconofLight>
+    <UtherBeaconofLight name="Beacon of Light" desc="UtherBeaconofLight">storm_ui_icon_uther_beaconoflight.dds</UtherBeaconofLight>
     <GenericTalentProtectiveShield name="Protective Shield" desc="GenericProtectiveShield">storm_ui_icon_talent_protectiveshield.dds</GenericTalentProtectiveShield>
   </Level4>
   <Level7>

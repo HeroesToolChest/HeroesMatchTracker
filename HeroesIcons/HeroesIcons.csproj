@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\storm_ui_ingame_talentpanel_upgrade_quest_icon.dds" />
+    <Resource Include="Icons\Talents\Uther\storm_ui_icon_uther_beaconoflight.dds" />
     <Content Include="Xml\Heroes\Abathur.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -873,8 +874,6 @@
     <Resource Include="Icons\Talents\Leoric\storm_temp_war3_btnanimatedead.dds" />
     <Resource Include="Icons\Talents\Medivh\storm_temp_war3_btnmagicalsentry.dds" />
     <Resource Include="Icons\Talents\Arthas\storm_ui_icon_talent_icebound_fortitude.dds" />
-    <Resource Include="Icons\Talents\Uther\storm_ui_icon_holylight.dds" />
-    <Resource Include="Icons\Talents\Uther\storm_ui_icon_holylight_2.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_astralpresence.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_elementalexposure.dds" />
     <Resource Include="Icons\Talents\LiMing\storm_btn_d3_traits_wizard_glasscannon.dds" />
