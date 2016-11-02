@@ -18,6 +18,21 @@ namespace HeroesParserData.Models.MatchModels
         public string TalentName13 { get; set; }
         public string TalentName16 { get; set; }
         public string TalentName20 { get; set; }
+        public string TalentShortDescription1 { get; set; }
+        public string TalentShortDescription4 { get; set; }
+        public string TalentShortDescription7 { get; set; }
+        public string TalentShortDescription10 { get; set; }
+        public string TalentShortDescription13 { get; set; }
+        public string TalentShortDescription16 { get; set; }
+        public string TalentShortDescription20 { get; set; }
+        public string TalentFullDescription1 { get; set; }
+        public string TalentFullDescription4 { get; set; }
+        public string TalentFullDescription7 { get; set; }
+        public string TalentFullDescription10 { get; set; }
+        public string TalentFullDescription13 { get; set; }
+        public string TalentFullDescription16 { get; set; }
+        public string TalentFullDescription20 { get; set; }
+
 
         public MatchTalents(MatchPlayerInfoBase matchPlayerInfoBase)
         {

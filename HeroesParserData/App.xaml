@@ -25,6 +25,8 @@
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
             <converters:IntToStringThousandSeperatorConverter x:Key="IntToStringThousandSeperatorConverter"/>
             <converters:DoubleToStringThousandSeperatorConverter x:Key="DoubleToStringThousandSeperatorConverter"/>
+            <converters:BoolInverterConverter x:Key="BoolInverterConverter"/>
+            <converters:TalentDescriptionTextStyleConverter x:Key="TalentDescriptionTextStyleConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

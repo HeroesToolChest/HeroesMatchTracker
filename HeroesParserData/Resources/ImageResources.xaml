@@ -5,4 +5,5 @@
     <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/HeroesIcons;component/Icons/storm_ui_silencepenalty.dds"/>
     <BitmapImage x:Key="XOut" UriSource="pack://application:,,,/Resources/Images/XOut.png"/>
     <BitmapImage x:Key="HPDStartup" UriSource="pack://application:,,,/Resources/Images/HPDStartup.png"/>
+    <BitmapImage x:Key="QuestIcon" UriSource="pack://application:,,,/HeroesIcons;component/Icons/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds"/>
 </ResourceDictionary>

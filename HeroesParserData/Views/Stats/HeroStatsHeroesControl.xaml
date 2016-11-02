@@ -516,18 +516,38 @@
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                <DataTemplate  >
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage1" IsHitTestVisible="{Binding ElementName=PopupDesc1, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc1" IsOpen="{Binding IsChecked, ElementName=TalentImage1}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -543,17 +563,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage4" IsHitTestVisible="{Binding ElementName=PopupDesc4, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc4" IsOpen="{Binding IsChecked, ElementName=TalentImage4}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -569,17 +609,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage7" IsHitTestVisible="{Binding ElementName=PopupDesc7, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc7" IsOpen="{Binding IsChecked, ElementName=TalentImage7}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -595,17 +655,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage10" IsHitTestVisible="{Binding ElementName=PopupDesc10, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc10" IsOpen="{Binding IsChecked, ElementName=TalentImage10}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -621,17 +701,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage13" IsHitTestVisible="{Binding ElementName=PopupDesc13, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc13" IsOpen="{Binding IsChecked, ElementName=TalentImage13}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -647,17 +747,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage16" IsHitTestVisible="{Binding ElementName=PopupDesc16, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc16" IsOpen="{Binding IsChecked, ElementName=TalentImage16}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -673,17 +793,37 @@
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>
-                                                    <Grid>
-                                                        <Image Source="{Binding TalentImage}" Height="40" Width="40" HorizontalAlignment="Left" Margin="10,0,0,0">
-                                                            <Image.ToolTip>
-                                                                <ToolTip Content="{Binding TalentName}"></ToolTip>
-                                                            </Image.ToolTip>
-                                                        </Image>
-                                                    </Grid>
+                                                    <StackPanel>
+                                                        <ToggleButton Name="TalentImage20" IsHitTestVisible="{Binding ElementName=PopupDesc20, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
+                                                            <ToggleButton.Template>
+                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                    <Image Source="{Binding TalentImage}" Height="44" Width="44">
+                                                                        <Image.ToolTip>
+                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                                <ToolTip.Content>
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                </ToolTip.Content>
+                                                                            </ToolTip>
+                                                                        </Image.ToolTip>
+                                                                    </Image>
+                                                                </ControlTemplate>
+                                                            </ToggleButton.Template>
+                                                        </ToggleButton>
+                                                        <Popup Name="PopupDesc20" IsOpen="{Binding IsChecked, ElementName=TalentImage20}" StaysOpen="False">
+                                                            <Border Style="{StaticResource TalentDescPopupBorder}">
+                                                                <StackPanel Style="{StaticResource TalentDescPopupStackPanel}">
+                                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentDescPopupLabelTitle}" />
+                                                                    <Label>
+                                                                        <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentFullDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescPopupLabelDescription}" />
+                                                                    </Label>
+                                                                </StackPanel>
+                                                            </Border>
+                                                        </Popup>
+                                                    </StackPanel>
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>

@@ -433,6 +433,30 @@ namespace HeroesParserData.ViewModels.Match
                         matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName16);
                         matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName20);
 
+                        TalentDescription talent1 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName1);
+                        TalentDescription talent4 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName4);
+                        TalentDescription talent7 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName7);
+                        TalentDescription talent10 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName10);
+                        TalentDescription talent13 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName13);
+                        TalentDescription talent16 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName16);
+                        TalentDescription talent20 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName20);
+
+                        matchTalents.TalentShortDescription1 = $"{matchTalents.TalentName1}: {talent1.Short}";
+                        matchTalents.TalentShortDescription4 = $"{matchTalents.TalentName4}: {talent4.Short}";
+                        matchTalents.TalentShortDescription7 = $"{matchTalents.TalentName7}: {talent7.Short}";
+                        matchTalents.TalentShortDescription10 = $"{matchTalents.TalentName10}: {talent10.Short}";
+                        matchTalents.TalentShortDescription13 = $"{matchTalents.TalentName13}: {talent13.Short}";
+                        matchTalents.TalentShortDescription16 = $"{matchTalents.TalentName16}: {talent16.Short}";
+                        matchTalents.TalentShortDescription20 = $"{matchTalents.TalentName20}: {talent20.Short}";
+
+                        matchTalents.TalentFullDescription1 = talent1.Full;
+                        matchTalents.TalentFullDescription4 = talent4.Full;
+                        matchTalents.TalentFullDescription7 = talent7.Full;
+                        matchTalents.TalentFullDescription10 = talent10.Full;
+                        matchTalents.TalentFullDescription13 = talent13.Full;
+                        matchTalents.TalentFullDescription16 = talent16.Full;
+                        matchTalents.TalentFullDescription20 = talent20.Full;
+
                         matchScores.SoloKills = playerScoresList[player.PlayerNumber].SoloKills;
                         matchScores.Assists = playerScoresList[player.PlayerNumber].Assists;
                         matchScores.Deaths = playerScoresList[player.PlayerNumber].Deaths;

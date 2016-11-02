@@ -191,8 +191,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="AutoUpdater.cs" />
+    <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
+    <Compile Include="Converters\TalentDescriptionTextStyleConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\Migrations\IMigrationAddon.cs" />
     <Compile Include="Database\Migrations\Migration1_1_0\MigrationAddon1_1_0_2.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="DataQueries\UserSettings.cs" />
     <Compile Include="Generic\AppVersion.cs" />
+    <Compile Include="Generic\FormattedTextBlock.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />

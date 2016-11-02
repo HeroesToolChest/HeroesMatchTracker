@@ -49,9 +49,11 @@
     <Compile Include="HeroesInfo.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="IconException.cs" />
+    <Compile Include="OtherIcon.cs" />
     <Compile Include="ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TalentDescription.cs" />
     <Compile Include="TalentTier.cs" />
     <Compile Include="Xml\HeroesXml.cs" />
     <Compile Include="Xml\HomeScreensXml.cs" />
@@ -485,6 +487,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\_AllMatchAwards.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Strings\FullTalentDescriptions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Strings\ShortTalentDescriptions.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Icons\Franchises\hero_franchise_classic.png" />

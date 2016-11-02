@@ -854,10 +854,13 @@ namespace HeroesParserData.ViewModels.Stats
                 int talentLoss = Query.PlayerStatistics.ReadCharacterTalentsIsWinner(talent, tier, GetSeasonSelected, gameMode, SelectedHero, SelectedTalentMap, false);
                 int talentTotal = talentWin + talentLoss;
                 int talentWinPercentage = Utilities.CalculateWinPercentage(talentWin, talentTotal);
+                TalentDescription talentDescription = HeroesInfo.GetTalentDescriptions(talent);
 
                 StatsHeroesTalentPicks talentPicks = new StatsHeroesTalentPicks
                 {
                     TalentName = HeroesInfo.GetTrueTalentName(talent),
+                    TalentShortDescription = talentDescription.Short,
+                    TalentFullDescription = talentDescription.Full,
                     Wins = talentWin,
                     Losses = talentLoss,
                     Total = talentTotal,
