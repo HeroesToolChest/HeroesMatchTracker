@@ -547,7 +547,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -593,7 +593,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -639,7 +639,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -685,7 +685,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -731,7 +731,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -777,7 +777,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>
@@ -823,7 +823,7 @@
                                                 </DataTemplate>
                                             </DataGridTemplateColumn.CellTemplate>
                                         </DataGridTemplateColumn>
-                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="145" />
+                                        <DataGridTextColumn Header="Talent" Binding="{Binding TalentName}" MinWidth="158" />
                                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" MaxWidth="120"/>
                                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="140" MaxWidth="140"/>
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" MinWidth="120" MaxWidth="120"/>

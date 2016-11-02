@@ -123,34 +123,37 @@ namespace HeroesParserData.Converters
         private SolidColorBrush SetTooltipColors(string colorValue)
         {
             Color color;
-            switch (colorValue)
+            switch (colorValue.ToUpper())
             {
-                case "#TooltipNumbers":
+                case "#TOOLTIPNUMBERS":
                     color = Colors.GhostWhite;
                     break;
-                case "#TooltipQuest": // yellow-gold
+                case "#TOOLTIPQUEST": // yellow-gold
                     color = (Color)ColorConverter.ConvertFromString("#B48E4C");
                     break;
-                case "#AbilityPassive":
+                case "#ABILITYPASSIVE":
                     color = (Color)ColorConverter.ConvertFromString("#16D486");
                     break;
-                case "#ColorViolet":
+                case "#COLORVIOLET":
                     color = (Color)ColorConverter.ConvertFromString("#A85EC6");
                     break;
-                case "#ColorCreamYellow":
+                case "#COLORCREAMYELLOW":
                     color = (Color)ColorConverter.ConvertFromString("#CED077");
                     break;
-                case "ffff8a": // light-yellow
-                    color = (Color)ColorConverter.ConvertFromString("#ffff8a");
+                case "FFFF8A": // light-yellow
+                    color = (Color)ColorConverter.ConvertFromString("#FFFF8A");
                     break;
-                case "00ffff": // teal
-                    color = (Color)ColorConverter.ConvertFromString("#00ffff");
+                case "00FFFF": // teal
+                    color = (Color)ColorConverter.ConvertFromString("#00FFFF");
                     break;
-                case "00ff00": // green
-                    color = (Color)ColorConverter.ConvertFromString("#00ff00");
+                case "00FF00": // green
+                    color = (Color)ColorConverter.ConvertFromString("#00FF00");
                     break;
-                case "ff6600": // orange
-                    color = (Color)ColorConverter.ConvertFromString("#ff6600");
+                case "FF6600": // orange
+                    color = (Color)ColorConverter.ConvertFromString("#FF6600");
+                    break;
+                case "FFFF00": // yellow
+                    color = (Color)ColorConverter.ConvertFromString("#FFFF00");
                     break;
                 default:
                     WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");

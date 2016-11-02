@@ -1395,6 +1395,34 @@ TinkerXplodiumCharge=Throw a timed bomb which stuns and damages enemies in an ar
 TinkerXplodiumChargeExtraTNTTalent=Xplodium Charge deals more damage
 TinkerXplodiumChargeKwikReleaseChargeTalent=Xplodium Charge gains second charge
 TinkerXplodiumChargeXtraLargeBombsTalent=Increases Xplodium Charge range and radius
+TracerBlink=Dash towards an area
+TracerBlinkHeroSelect=Dash towards an area
+TracerBulletSprayMelee=Melee hits all enemies in range
+TracerBulletTime=Basic Attacks reduce Blink cooldown
+TracerCompositionBPulseBomb=Hitting Heroes with Pulse Bomb leaves a second
+TracerFocusFire=Unloading a magazine on an enemy does bonus damage
+TracerGetStuffedMelee=Reduces Melee cooldown and knocks away
+TracerIsthataHealthPack=Increases Regen Globe and Healing Fountain healing
+TracerJumper=Increases Blink charges
+TracerLeechingRounds=Basic Attacks against Heroes heal you
+TracerLockedandLoaded=Time Reload perfectly to gain Basic Attack damage
+TracerLockedandLoadedAbility=Time Reload perfectly to gain Basic Attack damage
+TracerMelee=Attack a nearby enemy
+TracerPartingGift=Using Recall leaves bombs
+TracerPulseBomb=Attach a bomb to enemies that deals heavy damage
+TracerPulseRounds=Increases Pulse Bomb range and charge rate
+TracerPulseStrikeMelee=Increases Melee Pulse Bomb charge rate
+TracerQuantumSpike=Increases Pulse Bomb single target damage
+TracerRecall=Return to a recent location and remove negative effects
+TracerReload=You can move while Basic Attacking and Basic Attacks cost ammo
+TracerRicochetHeroWeapon=Basic Attacks can bounce to a nearby enemy
+TracerSleightofHand=Reload twice as fast
+TracerSlipstreamRecall=Recall rewinds more time
+TracerSpatialEcho=Takedowns grant Blink charges
+TracerStickyBomb=Increases Pulse Bomb area and adds slow
+TracerTotalRecallRecall=Recall can heal you but has increased cooldown
+TracerTracerRounds=Basic Attacks reveal enemies
+TracerUntouchable=<c val="#TooltipQuest">Quest:</c> Takedowns increase Attack Damage
 TychusCombatTactician=Basic Attacks reduce Run and Gun cooldown
 TychusCommandeerOdin=Call down an Odin to pilot
 TychusCommandeerOdinAnnihilate=Deals damage in a line
@@ -1605,6 +1633,41 @@ ZagaraNydusNetworkBroodlingNestTalent=Spawn broodlings when exiting a Nydus Worm
 ZagaraRapidIncubation=Channel to regenerate Health and Mana
 ZagaraSerratedSpines=<c val="#TooltipQuest">Quest:</c> Basic Attacks against Heroes increase damage
 ZagaraViscousAcid=Banelings also slow enemies
+ZaryaDefensiveShieldingTalent=Personal Barrier and Shield Ally grant Block
+ZaryaEnergy=Damage absorbed by Zarya's Shields increase her damage.
+ZaryaEnergyBornInBattleTalent=Reduces cooldowns at high Energy
+ZaryaEnergyEnduranceTrainingTalent=Gain Resistant at high Energy
+ZaryaEnergyHitMeTalent=Shield damage absorbed contributes more Energy
+ZaryaEnergyMaximumChargeCompleteTalent=Regen globes now regenerate Energy<n/><c val="#TooltipQuest">QUEST COMPLETE!</c><n/>Maximum Energy is increased
+ZaryaEnergyMaximumChargeTalent=Regen Globes grant Energy<n/><c val="#TooltipQuest">Quest</c>: Increases maximum Energy
+ZaryaEnergyTogetherWeAreStrongTalent=Ally damage contributes to your shields
+ZaryaExpulsionZone=Launch a bomb that continually pushes enemies
+ZaryaExpulsionZoneClearOutTalent=Increases Expulsion Zone radius and provides Energy
+ZaryaGravitonSurge=Launch a gravity bomb that draws in enemies
+ZaryaGravitonSurgeGravityKillsTalent=Graviton Surge has increased duration and deals damage
+ZaryaPainIsTemporaryTalent=Consume Energy to gain a shield
+ZaryaParticleGrenade=Deals damage to enemies in a small area
+ZaryaParticleGrenadeDemolitionsExpertComplete=<c val="#TooltipQuest">QUEST COMPLETE!</c><n/>Recharge rate is reduced and effect radius is increased
+ZaryaParticleGrenadeDemolitionsExpertCompleteTalent=<c val="#TooltipQuest">QUEST COMPLETE!</c><n/>Recharge rate is reduced and effect radius is increased
+ZaryaParticleGrenadeDemolitionsExpertTalent=<c val="#TooltipQuest">Quest</c>: Increases Particle Grenade radius and reduces cooldown
+ZaryaParticleGrenadeGrenadierTalent=Particle Grenade charges are returned at once
+ZaryaParticleGrenadePinpointAccuracyTalent=Particle Grenade deals more damage in center area
+ZaryaParticleGrenadePlasmaShockTalent=Particle Grenade slows enemies near the center
+ZaryaPersonalBarrier=Gain a shield that absorbs damage
+ZaryaPersonalBarrierExplosiveBarrierTalent=Personal Barrier deals area damage
+ZaryaPersonalBarrierIAmTheStrongestTalent=Increases Personal Barrier shield amount
+ZaryaPersonalBarrierSpellBarrierTalent=Personal Barrier grants Spell Shield
+ZaryaPersonalBarrierUnstoppableCompetitorTalent=Personal Barrier grants Unstoppable
+ZaryaShieldAlly=Grant an ally a shield that absorbs damage
+ZaryaShieldAllyCleansingShieldTalent=Shield Ally removes all disabling effects
+ZaryaShieldAllyGainTrainTalent=Shield Ally now affects a second ally
+ZaryaShieldAllyGiveMeTwentyCompleteTalent=<c val="#TooltipQuest">QUEST COMPLETE!</c><n/>Shield Ally shield amount increased and cooldown permanently reduced
+ZaryaShieldAllyGiveMeTwentyTalent=<c val="#TooltipQuest">Quest</c>: Increases Shield Ally absorb amount and reduces cooldown
+ZaryaShieldAllySpeedBarrierTalent=Shield Ally increases allied Hero Movement Speed
+ZaryaShieldAllyTogetherWeAreStrongTalent=Allied damage dealt with Shield Ally contributes to Energy
+ZaryaUnyieldingDefenderTalent=Activate to reset Shield cooldowns
+ZaryaWeaponFeelTheHeatTalent=Basic Attack deals more damage to close enemies
+ZaryaWeaponToTheLimitTalent=Increases Basic Attack size at high Energy
 ZeratulBlink=Teleport to a location. Ability does not break cloak
 ZeratulBlinkRapidDisplacementTalent=Reduces cooldown of Blink
 ZeratulBlinkWormholeTalent=Can return from Blink location
