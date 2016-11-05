@@ -1,6 +1,7 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Properties;
 using HeroesParserData.Views;
+using MahApps.Metro;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -59,16 +60,15 @@ namespace HeroesParserData
             NewReleaseApplied = false;
             DatabaseFileExists();
 
-            // add custom accent and theme resource dictionaries
-            //ThemeManager.AddAccent("Theme", new Uri("pack://application:,,,/Resources/Theme.xaml"));
+            //// add custom accent and theme resource dictionaries
+            //ThemeManager.AddAccent("Accent", new Uri("pack://application:,,,/Resources/CustomAccent.xaml"));
 
             //// get the theme from the current application
-            //var theme = ThemeManager.DetectAppStyle(Application.Current);
+            //var theme = ThemeManager.DetectAppStyle();
+            //ThemeManager.
 
             //// now use the custom accent
-            //ThemeManager.ChangeAppStyle(Application.Current,
-            //                        ThemeManager.GetAccent("Theme"),
-            //                        theme.Item1);
+            //ThemeManager.ChangeAppStyle(Current, ThemeManager.GetAccent("Accent"), );
 
             base.OnStartup(e);
         }

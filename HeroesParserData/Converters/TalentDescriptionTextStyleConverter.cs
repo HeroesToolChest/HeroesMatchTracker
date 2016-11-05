@@ -126,7 +126,7 @@ namespace HeroesParserData.Converters
             switch (colorValue.ToUpper())
             {
                 case "#TOOLTIPNUMBERS":
-                    color = Colors.GhostWhite;
+                    color = Colors.WhiteSmoke;
                     break;
                 case "#TOOLTIPQUEST": // yellow-gold
                     color = (Color)ColorConverter.ConvertFromString("#B48E4C");
@@ -154,6 +154,9 @@ namespace HeroesParserData.Converters
                     break;
                 case "FFFF00": // yellow
                     color = (Color)ColorConverter.ConvertFromString("#FFFF00");
+                    break;
+                case "FFFFFF": // white
+                    color = Colors.WhiteSmoke;
                     break;
                 default:
                     WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");

@@ -3,13 +3,48 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:base="clr-namespace:HeroesParserData"
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
-
-    <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="#12112F" />
-    <SolidColorBrush x:Key="DefaultBorderBrush" Color="#998DBF" />
-    <SolidColorBrush x:Key="DefaultFontBrush" Color="#82A4EA" />
-    <SolidColorBrush x:Key="DefaultTitleFontBrush" Color="White" />
     
-    <Style TargetType="DataGridRow" x:Key="DataGrid" BasedOn="{StaticResource MetroDataGridRow}">
+    <SolidColorBrush x:Key="TooltipAndPopupBackgroundBrush" Color="#12112F" />
+    <SolidColorBrush x:Key="TooltipAndPopupBorderBrush" Color="#998DBF" />
+    <SolidColorBrush x:Key="TooltipAndPopupFontBrush" Color="#82A4EA" />
+    <SolidColorBrush x:Key="TooltipAndPopupTitleFontBrush" Color="White" />
+
+    <!--Override default control styles-->
+    <Style TargetType="ToolTip">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource TooltipAndPopupBorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource TooltipAndPopupBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource TooltipAndPopupFontBrush}" />
+    </Style>
+
+    <!--Talent Popups-->
+    <Style TargetType="Border" x:Key="TalentDescPopupBorder">
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="{StaticResource TooltipAndPopupBorderBrush}" />
+    </Style>
+
+    <Style TargetType="StackPanel" x:Key="TalentDescPopupStackPanel">
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="330" />
+        <Setter Property="Background" Value="{StaticResource TooltipAndPopupBackgroundBrush}" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="TalentDescPopupLabelTitle">
+        <Setter Property="Padding" Value="9,9,9,0" />
+        <Setter Property="FontWeight" Value="DemiBold" />
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="Foreground" Value="{StaticResource TooltipAndPopupTitleFontBrush}" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TalentDescPopupLabelDescription">
+        <Setter Property="Padding" Value="4,0,4,4" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Foreground" Value="{StaticResource TooltipAndPopupFontBrush}" />
+    </Style>
+    
+    <!--DataGrid-->
+    <Style TargetType="DataGridRow" x:Key="DefaultDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background" Value="White"></Setter>
@@ -28,7 +63,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="DataGridRow" x:Key="PlayerDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
+    <Style TargetType="DataGridRow" x:Key="SummaryDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background">
@@ -76,11 +111,11 @@
         <Setter Property="FontWeight" Value="{Binding HighestExpFont}"/>
     </Style>
 
-    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+    <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
-
-    <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
+    
+    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
 
@@ -94,7 +129,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         <Setter Property="Effect" Value="{StaticResource HomeFontTheme}"></Setter>
     </Style>
-    
+
     <Style TargetType="CheckBox" x:Key="SettingsCheckBoxTheme" BasedOn="{StaticResource MetroCheckBox}">
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
@@ -126,60 +161,5 @@
         <Setter Property="Foreground" Value="Black"></Setter>
         <Setter Property="Background" Value="White"></Setter>
     </Style>
-
-    <Style TargetType="ToolTip" x:Key="TalentDescTooltip">
-        <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="BorderBrush" Value="{StaticResource DefaultBorderBrush}"></Setter>
-        <Setter Property="Background" Value="{StaticResource DefaultBackgroundBrush}"></Setter>
-    </Style>
-
-    <Style TargetType="TextBlock" x:Key="TalentDescTooltipTextBlock">
-        <Setter Property="Foreground" Value="{StaticResource DefaultFontBrush}"></Setter>
-    </Style>
     
-    <Style TargetType="Border" x:Key="TalentDescPopupBorder">
-        <Setter Property="BorderThickness" Value="2"></Setter>
-        <Setter Property="BorderBrush" Value="{StaticResource DefaultBorderBrush}"></Setter>
-    </Style>
-
-    <Style TargetType="StackPanel" x:Key="TalentDescPopupStackPanel">
-        <Setter Property="Height" Value="Auto"></Setter>
-        <Setter Property="Width" Value="330"></Setter>
-        <Setter Property="Background" Value="{StaticResource DefaultBackgroundBrush}"></Setter>
-    </Style>
-
-    <Style TargetType="Label" x:Key="TalentDescPopupLabelTitle">
-        <Setter Property="Padding" Value="9,9,9,0"></Setter>
-        <Setter Property="FontWeight" Value="DemiBold"></Setter>
-        <Setter Property="FontSize" Value="16"></Setter>
-        <Setter Property="Foreground" Value="{StaticResource DefaultTitleFontBrush}"></Setter>
-    </Style>
-
-    <Style TargetType="TextBlock" x:Key="TalentDescPopupLabelDescription">
-        <Setter Property="Padding" Value="4,0,4,4"></Setter>
-        <Setter Property="TextWrapping" Value="Wrap"></Setter>
-        <Setter Property="FontSize" Value="15"></Setter>
-        <Setter Property="Foreground" Value="{StaticResource DefaultFontBrush}"></Setter>
-    </Style>
-
-
-    
-    <!--<DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}" />-->
-    <!--<Color x:Key="HighlightColor">#4e80ca</Color>
-    <Color x:Key="AccentColor">#595959</Color>-->
-    
-    <!-- re-set brushes too -->
-    <!--<SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
-    <SolidColorBrush x:Key="AccentColorBrush" Color="{StaticResource AccentColor}"/>-->
-    <!--<SolidColorBrush x:Key="WindowTitleColorBrush" Color="{StaticResource AccentColor}" />-->
-
-    <!--<SolidColorBrush x:Key="CheckmarkFill" Color="{StaticResource AccentColor}" />-->
-    <!--<SolidColorBrush x:Key="RightArrowFill" Color="{StaticResource AccentColor}" />-->
-
-    <!--<Color x:Key="IdealForegroundColor">White</Color>
-    <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{StaticResource IdealForegroundColor}"/>-->
 </ResourceDictionary>
-
-<!--<Grid Background="#FFE5E5E5"/> light
-
-<Grid Background="#595959"> darker-->

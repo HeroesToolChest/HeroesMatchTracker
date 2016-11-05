@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Margin="0,12,0,0"/>
         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
-                        EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}" SelectedItem="{Binding SelectedReplay}"
+                        EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}" SelectedItem="{Binding SelectedReplay}"
                         ItemsSource="{Binding MatchList, IsAsync=True}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Replay Id" Binding="{Binding ReplayId}" />

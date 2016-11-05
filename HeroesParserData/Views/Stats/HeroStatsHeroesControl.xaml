@@ -79,7 +79,7 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesQuickMatchDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -111,7 +111,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesQuickMatchDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -151,7 +151,7 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesUnrankedDraftDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -183,7 +183,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesUnrankedDraftDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -223,7 +223,7 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesHeroLeagueDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -255,7 +255,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesHeroLeagueDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -295,7 +295,7 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesTeamLeagueDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -327,7 +327,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesTeamLeagueDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -367,7 +367,7 @@
                                 <RowDefinition Height="auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="0"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesCustomGameDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -399,7 +399,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding StatsHeroesCustomGameDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="90" MaxWidth="90">
@@ -442,7 +442,7 @@
                             <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshAwardsCommand}" ItemsSource="{Binding MapList}" SelectedValue="{Binding SelectedAwardMap}"
                                 IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0"/>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding MatchAwardDataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -467,7 +467,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" Grid.Row="2"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding MatchAwardDataTotalCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -511,7 +511,7 @@
                                 IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top" Width="186" Grid.Row="0"/>
                             <Expander Header="Level 1" IsExpanded="true" Grid.Row="1" Margin="0,10,0,0">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel1DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -523,9 +523,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -557,7 +557,7 @@
                             </Expander>
                             <Expander Header="Level 4" IsExpanded="true" Grid.Row="2">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel4DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -569,9 +569,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -603,7 +603,7 @@
                             </Expander>
                             <Expander Header="Level 7" IsExpanded="true" Grid.Row="3">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel7DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -615,9 +615,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -649,7 +649,7 @@
                             </Expander>
                             <Expander Header="Level 10" IsExpanded="true" Grid.Row="4">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel10DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -661,9 +661,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -695,7 +695,7 @@
                             </Expander>
                             <Expander Header="Level 13" IsExpanded="true" Grid.Row="5">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel13DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -707,9 +707,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -741,7 +741,7 @@
                             </Expander>
                             <Expander Header="Level 16" IsExpanded="true" Grid.Row="6">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel16DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -753,9 +753,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
@@ -787,7 +787,7 @@
                             </Expander>
                             <Expander Header="Level 20" IsExpanded="true" Grid.Row="7">
                                 <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DataGrid}"
+                                          EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
                                           ItemsSource="{Binding TalentsPickLevel20DataCollection}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
@@ -799,9 +799,9 @@
                                                                 <ControlTemplate TargetType="ToggleButton">
                                                                     <Image Source="{Binding TalentImage}" Height="44" Width="44">
                                                                         <Image.ToolTip>
-                                                                            <ToolTip Style="{StaticResource TalentDescTooltip}">
+                                                                            <ToolTip>
                                                                                 <ToolTip.Content>
-                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" Style="{StaticResource TalentDescTooltipTextBlock}" />
+                                                                                    <TextBlock base:FormattedTextBlock.FormattedText="{Binding TalentShortDescription, Converter={StaticResource TalentDescriptionTextStyleConverter}}" />
                                                                                 </ToolTip.Content>
                                                                             </ToolTip>
                                                                         </Image.ToolTip>
