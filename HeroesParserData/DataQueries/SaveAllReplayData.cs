@@ -65,6 +65,7 @@ namespace HeroesParserData.DataQueries
                                 BattleNetId = player.BattleNetId,
                                 BattleNetRegionId = player.BattleNetRegionId,
                                 BattleNetSubId = player.BattleNetSubId,
+                                BattleNetTId = player.BattleNetTId,
                                 LastSeen = replay.Timestamp,
                                 Seen = 1
                             };

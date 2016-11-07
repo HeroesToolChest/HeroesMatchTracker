@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace HeroesParserData.Database.Migrations
 {
-    public class MigrationAddon1_2_0_1 : IMigrationAddon
+    public class MigrationAddon1_2_0_2 : IMigrationAddon
     {
         public async Task Execute()
         {
             bool columnExists = false;
             using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings["HeroesParserData"].ConnectionString))
             {
-                using (var cmd = new SQLiteCommand("PRAGMA table_info(ReplayAllHotsPlayers);"))
+                using (var cmd = new SQLiteCommand("PRAGMA table_info(ReplayRenamedPlayers);"))
                 {
                     var table = new DataTable();
 
@@ -34,7 +34,7 @@ namespace HeroesParserData.Database.Migrations
             {
                 using (HeroesParserDataContext db = new HeroesParserDataContext())
                 {
-                    await db.Database.ExecuteSqlCommandAsync("ALTER TABLE ReplayAllHotsPlayers ADD COLUMN BattleNetTId NVARCHAR");
+                    await db.Database.ExecuteSqlCommandAsync("ALTER TABLE ReplayRenamedPlayers ADD COLUMN BattleNetTId NVARCHAR");
                 }
             }
         }

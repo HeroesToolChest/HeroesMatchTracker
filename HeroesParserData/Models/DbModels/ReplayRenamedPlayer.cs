@@ -27,6 +27,8 @@
 
         public int BattleNetSubId { get; set; }
 
+        public string BattleNetTId { get; set; }
+
         public DateTime DateAdded { get; set; }
 
         public virtual ReplayAllHotsPlayer ReplayAllHotsPlayer { get; set; }

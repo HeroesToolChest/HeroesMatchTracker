@@ -200,6 +200,8 @@
     <Compile Include="Database\Migrations\Migration1_1_0\MigrationAddon1_1_0_2.cs" />
     <Compile Include="Database\Migrations\Migration1_1_0\MigrationAddon1_1_0_1.cs" />
     <Compile Include="Database\Migrations\Migration1_2_0\MigrationAddon1_2_0_1.cs" />
+    <Compile Include="Database\Migrations\Migration1_2_0\MigrationAddon1_2_0_2.cs" />
+    <Compile Include="Database\Migrations\Migration1_2_0\MigrationAddon1_2_0_3.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />

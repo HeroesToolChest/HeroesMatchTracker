@@ -34,6 +34,8 @@ namespace HeroesParserData.Models.DbModels
 
         public int BattleNetSubId { get; set; }
 
+        public string BattleNetTId { get; set; }
+
         public DateTime LastSeen { get; set; }
 
         public int Seen { get; set; }

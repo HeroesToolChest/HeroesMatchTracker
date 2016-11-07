@@ -52,6 +52,8 @@ namespace HeroesParserData.Database
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
             addonSteps.Add(new MigrationAddon1_2_0_1());
+            addonSteps.Add(new MigrationAddon1_2_0_2());
+            addonSteps.Add(new MigrationAddon1_2_0_3());
 
             MigrationAddons.Add(2, addonSteps);
         }

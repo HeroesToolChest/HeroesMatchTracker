@@ -34,6 +34,7 @@
                     <DataGridTextColumn Header="BattleNetId" Binding="{Binding BattleNetId}" />
                     <DataGridTextColumn Header="BattleNetRegionId" Binding="{Binding BattleNetRegionId}" />
                     <DataGridTextColumn Header="BattleNetSubId" Binding="{Binding BattleNetSubId}" />
+                    <DataGridTextColumn Header="BattleNetTId" Binding="{Binding BattleNetTId}" />
                     <DataGridTextColumn Header="DateAdded" Binding="{Binding DateAdded}" />
                 </DataGrid.Columns>
             </DataGrid>

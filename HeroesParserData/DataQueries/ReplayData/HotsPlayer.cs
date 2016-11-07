@@ -103,17 +103,42 @@ namespace HeroesParserData.DataQueries
 
             public static bool IsExistingHotsPlayer(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
-                // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
-                                                        x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId &&
-                                                        x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
+                if (replayAllHotsPlayer.BattleNetId > 0)
+                {
+                    // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
+                    return db.ReplayAllHotsPlayers.Any(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                                                            x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId &&
+                                                            x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
+                }
+                else if (!string.IsNullOrEmpty(replayAllHotsPlayer.BattleNetTId))
+                {
+                    // has tag but no BattleNetId - observer
+                    return db.ReplayAllHotsPlayers.Any(x => x.BattleNetTId == replayAllHotsPlayer.BattleNetTId);
+                }
+                else 
+                {
+                    // only choice left is to search by BattleTagName
+                    return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName && x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId);
+                }
             }
 
             public static long UpdateRecord(HeroesParserDataContext db, ReplayAllHotsPlayer replayAllHotsPlayer)
             {
-                var record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
+                ReplayAllHotsPlayer record;
+
+                if (replayAllHotsPlayer.BattleNetId > 0)
+                {
+                    record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == replayAllHotsPlayer.BattleNetId &&
                                                                           x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId &&
                                                                           x.BattleNetSubId == replayAllHotsPlayer.BattleNetSubId);
+                }       
+                else // if its an observer with no battlenetid
+                {
+                    if (!string.IsNullOrEmpty(replayAllHotsPlayer.BattleNetTId))
+                        record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetTId == replayAllHotsPlayer.BattleNetTId);
+                    else
+                        record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == replayAllHotsPlayer.BattleTagName && x.BattleNetRegionId == replayAllHotsPlayer.BattleNetRegionId);
+                }
 
                 if (record != null)
                 {
@@ -123,6 +148,7 @@ namespace HeroesParserData.DataQueries
                         record.BattleNetId = replayAllHotsPlayer.BattleNetId;
                         record.BattleNetRegionId = replayAllHotsPlayer.BattleNetRegionId;
                         record.BattleNetSubId = replayAllHotsPlayer.BattleNetSubId;
+                        record.BattleNetTId = replayAllHotsPlayer.BattleNetTId;
                         record.LastSeen = replayAllHotsPlayer.LastSeen;
                     }
 
@@ -137,18 +163,21 @@ namespace HeroesParserData.DataQueries
                                 BattleTagName = record.BattleTagName,
                                 BattleNetRegionId = record.BattleNetRegionId,
                                 BattleNetSubId = record.BattleNetSubId,
+                                BattleNetTId = record.BattleNetTId,
                                 DateAdded = replayAllHotsPlayer.LastSeen
                             };
 
                             RenamedPlayer.CreateRecord(db, samePlayer);
                         }
                         record.BattleTagName = replayAllHotsPlayer.BattleTagName; // update the player's battletag, it may have changed
+                        record.BattleNetTId = replayAllHotsPlayer.BattleNetTId;
                         record.LastSeen = replayAllHotsPlayer.LastSeen;
                     }
 
                     record.Seen += 1;
 
                     db.SaveChanges();
+
                 }
 
                 return record.PlayerId;
