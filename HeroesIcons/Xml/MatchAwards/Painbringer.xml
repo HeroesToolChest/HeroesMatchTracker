@@ -3,5 +3,6 @@
   <MostHeroDamageDone>
     <MVPScreen>storm_ui_mvp_painbringer_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_painbringer_{mvpColor}.png</ScoreScreen>
+    <Description>Most hero damage done</Description>
   </MostHeroDamageDone>
 </Painbringer>

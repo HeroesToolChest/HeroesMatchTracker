@@ -3,5 +3,6 @@
   <MostDamageToPlants>
     <MVPScreen>storm_ui_mvp_gardenterror_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_gardenterror_{mvpColor}.png</ScoreScreen>
+    <Description>Most damage done to Plants</Description>
   </MostDamageToPlants>
 </GardenTerror>

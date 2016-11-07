@@ -8,6 +8,7 @@ namespace HeroesIcons.Xml
     {
         public Dictionary<string, Tuple<string, Uri>> MVPScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
         public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, string> MVPAwardDescriptions { get; private set; } = new Dictionary<string, string>();
 
         private MatchAwardsXml(string parentFile, string xmlFolder)
         {
@@ -51,16 +52,23 @@ namespace HeroesIcons.Xml
                                 {
                                     if (reader.NodeType == XmlNodeType.Element)
                                     {
-                                        string awardLocation = reader.Name;
+                                        string elementName = reader.Name;
 
                                         if (reader.Read())
                                         {
-                                            var awardTuple = new Tuple<string, Uri>(realAwardName, SetMVPAwardUri(reader.Value));
+                                            if (elementName == "Description")
+                                            {
+                                                MVPAwardDescriptions.Add(awardType, reader.Value);
+                                            }
+                                            else
+                                            {
+                                                var awardTuple = new Tuple<string, Uri>(realAwardName, SetMVPAwardUri(reader.Value));
 
-                                            if (awardLocation == "MVPScreen")
-                                                MVPScreenAwards.Add(awardType, awardTuple);
-                                            else if (awardLocation == "ScoreScreen")
-                                                MVPScoreScreenAwards.Add(awardType, awardTuple);
+                                                if (elementName == "MVPScreen")
+                                                    MVPScreenAwards.Add(awardType, awardTuple);
+                                                else if (elementName == "ScoreScreen")
+                                                    MVPScoreScreenAwards.Add(awardType, awardTuple);
+                                            }
                                         }
                                     }
                                 }

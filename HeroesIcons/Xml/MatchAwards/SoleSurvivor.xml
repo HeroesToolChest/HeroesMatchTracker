@@ -3,5 +3,6 @@
   <ZeroDeaths>
     <MVPScreen>storm_ui_mvp_solesurvivor_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_solesurvivor_{mvpColor}.png</ScoreScreen>
+    <Description>Only hero with no deaths</Description>
   </ZeroDeaths>
 </SoleSurvivor>

@@ -1,4 +1,5 @@
-﻿using System.Windows.Media.Imaging;
+﻿using System;
+using System.Windows.Media.Imaging;
 
 namespace HeroesParserData.Models.StatsModels
 {
@@ -18,5 +19,6 @@ namespace HeroesParserData.Models.StatsModels
         public double Experience { get; set; }
         public double Role { get; set; }
         public int MercsCaptured { get; set; }
+        public TimeSpan GameTime { get; set; }
     }
 }

@@ -474,6 +474,11 @@ namespace HeroesParserData.ViewModels.Match
                         matchTalents.RowBackColor = Color.FromRgb(233, 252, 233);
                         matchScores.RowBackColor = Color.FromRgb(233, 252, 233);
                     }
+                    else
+                    {
+                        matchTalents.RowBackColor = Colors.AliceBlue;
+                        matchScores.RowBackColor = Colors.AliceBlue;
+                    }
 
                     if (player.Team == 0 || player.Team == 1)
                     {

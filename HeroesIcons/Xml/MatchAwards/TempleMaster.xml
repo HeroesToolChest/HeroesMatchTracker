@@ -3,5 +3,6 @@
   <MostTimeInTemple>
     <MVPScreen>storm_ui_mvp_templemaster_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_templemaster_{mvpColor}.png</ScoreScreen>
+    <Description>Most time on temples</Description>
   </MostTimeInTemple>
 </TempleMaster>

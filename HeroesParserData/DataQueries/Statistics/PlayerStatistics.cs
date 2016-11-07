@@ -2,6 +2,7 @@
 using HeroesIcons;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Properties;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
@@ -348,6 +349,32 @@ namespace HeroesParserData.DataQueries
                                                                 new SQLiteParameter("@IsWinner", isWinner),
                                                                 new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
                     return amount.HasValue ? amount.Value : 0;
+                }
+            }
+
+            public static TimeSpan ReadMapGameTime(string heroName, Season season, GameMode gameMode, string map)
+            {
+                var replayBuild = Utilities.GetSeasonReplayBuild(season);
+
+                string gameModeString;
+                if (gameMode != GameMode.Cooperative)
+                    gameModeString = GameModeQueryString(false);
+                else
+                    gameModeString = GameModeQueryString(true);
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    long? gameTimeTicks = db.Database.SqlQuery<long?>($@"SELECT Sum(ReplayLengthTicks) FROM ReplayMatchPlayers mp
+                                                                        JOIN Replays r
+                                                                        ON mp.ReplayId = r.ReplayId
+                                                                        WHERE PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
+                                                                        new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
+                                                                        new SQLiteParameter("@Character", heroName),
+                                                                        new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
+                                                                        new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
+                                                                        new SQLiteParameter("@GameMode", gameMode),
+                                                                        new SQLiteParameter("@MapName", map)).FirstOrDefault();
+                    return gameTimeTicks.HasValue ? TimeSpan.FromTicks(gameTimeTicks.Value) : new TimeSpan();
                 }
             }
 

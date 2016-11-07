@@ -47,10 +47,10 @@
     <Style TargetType="DataGridRow" x:Key="DefaultDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                <Setter Property="Background" Value="White"></Setter>
+                <Setter Property="Background" Value="AliceBlue" />
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                <Setter Property="Background" Value="AliceBlue"></Setter>
+                <Setter Property="Background" Value="Lavender" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="LightSkyBlue" />
@@ -90,6 +90,22 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridRow" x:Key="SingleRowDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background" Value="MintCream"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+            <Trigger Property="IsSelected"  Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style TargetType="DataGridCell" x:Key="PortraitBackColor">
         <Setter Property="Background">
             <Setter.Value>
@@ -161,5 +177,13 @@
         <Setter Property="Foreground" Value="Black"></Setter>
         <Setter Property="Background" Value="White"></Setter>
     </Style>
-    
+
+    <Style TargetType="Border" x:Key="InnerTabItemBorder">
+        <Setter Property="BorderBrush" Value="SlateBlue"/>
+        <Setter Property="BorderThickness" Value="0,2,0,0"/>
+    </Style>
+
+    <Style TargetType="Expander" x:Key="InnerTabItemExpander" BasedOn="{StaticResource MetroExpander}">
+        <Setter Property="Margin" Value="10,10,10,0"/>
+    </Style>
 </ResourceDictionary>

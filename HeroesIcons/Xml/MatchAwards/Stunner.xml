@@ -3,5 +3,6 @@
   <MostStuns>
     <MVPScreen>storm_ui_mvp_stunner_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_stunner_{mvpColor}.png</ScoreScreen>
+    <Description>Most stun time on heroes</Description>
   </MostStuns>
 </Stunner>

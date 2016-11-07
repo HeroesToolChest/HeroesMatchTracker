@@ -3,5 +3,6 @@
   <MostNukeDamageDone>
     <MVPScreen>storm_ui_mvp_dabomb_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_dabomb_{mvpColor}.png</ScoreScreen>
+    <Description>Most nuke damage done</Description>
   </MostNukeDamageDone>
 </DaBomb>

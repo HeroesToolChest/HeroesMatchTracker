@@ -383,6 +383,19 @@ namespace HeroesIcons
         }
 
         /// <summary>
+        /// Returns the decription of the award
+        /// </summary>
+        /// <param name="mvpAwardType">Reference name of award</param>
+        /// <returns></returns>
+        public string GetMatchAwardDescription(string mvpAwardType)
+        {
+            if (string.IsNullOrEmpty(mvpAwardType) || !MatchAwardsXml.MVPAwardDescriptions.ContainsKey(mvpAwardType))
+                return string.Empty;
+
+            return MatchAwardsXml.MVPAwardDescriptions[mvpAwardType];
+        }
+
+        /// <summary>
         /// Returns a list of all the match awards (reference names)
         /// </summary>
         /// <returns></returns>

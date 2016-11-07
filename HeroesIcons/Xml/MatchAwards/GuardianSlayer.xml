@@ -3,5 +3,6 @@
   <MostDamageToMinions>
     <MVPScreen>storm_ui_mvp_guardianslayer_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_guardianslayer_{mvpColor}.png</ScoreScreen>
+    <Description>Most damage done to Minions</Description>
   </MostDamageToMinions>
 </GuardianSlayer>
