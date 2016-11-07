@@ -212,6 +212,7 @@
     <Compile Include="DataQueries\UserSettings.cs" />
     <Compile Include="Generic\AppVersion.cs" />
     <Compile Include="Generic\FormattedTextBlock.cs" />
+    <Compile Include="Generic\LogFile.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />

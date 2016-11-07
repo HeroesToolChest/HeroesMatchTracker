@@ -12,10 +12,11 @@ namespace HeroesParserData.ViewModels
         private BitmapImage _backgroundMapImage;
         private Color _labelGlowColor;
 
-        protected HeroesInfo HeroesInfo {get; private set; }
+        protected HeroesInfo HeroesInfo { get; private set; }
         protected Logger ExceptionLog { get; private set; }
         protected Logger FailedReplaysLog { get; private set; }
         protected Logger SqlExceptionReplaysLog { get; private set; }
+        protected Logger WarningLog { get; private set; }
         protected List<string> AllSeasonsList { get; private set; }
         protected List<string> AllGameModesList { get; private set; }
 
@@ -42,9 +43,10 @@ namespace HeroesParserData.ViewModels
         protected ViewModelBase()
         {
             HeroesInfo = App.HeroesInfo;
-            ExceptionLog = LogManager.GetLogger("ExceptionLogFile");
-            FailedReplaysLog = LogManager.GetLogger("UnParsedReplaysLogFile");
-            SqlExceptionReplaysLog = LogManager.GetLogger("SqlExceptionReplaysLogFile");
+            ExceptionLog = LogManager.GetLogger(LogFile.ExceptionLogFile);
+            FailedReplaysLog = LogManager.GetLogger(LogFile.UnParsedReplaysLogFile);
+            SqlExceptionReplaysLog = LogManager.GetLogger(LogFile.SqlExceptionReplaysLogFile);
+            WarningLog = LogManager.GetLogger(LogFile.WarningLogFile);
 
             AllSeasonsList = Utilities.GetSeasonList();
             AllGameModesList = Utilities.GetGameModeList();

@@ -580,6 +580,8 @@ namespace HeroesParserData.ViewModels
                                 file.Status = ReplayParseResult.NotYetSupported;
                             else
                                 file.Status = ReplayParseResult.ParserException;
+
+                            WarningLog.Log(LogLevel.Warn, $"Could not parse relay {file.FilePath}: {file.Status}");
                         }
                         else
                         {
@@ -592,7 +594,6 @@ namespace HeroesParserData.ViewModels
                         file.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
-
                     }
                     finally
                     {

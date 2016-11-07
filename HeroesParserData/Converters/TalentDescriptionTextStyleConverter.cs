@@ -11,7 +11,7 @@ namespace HeroesParserData.Converters
 {
     public class TalentDescriptionTextStyleConverter : IValueConverter
     {
-        private static Logger WarningLog = LogManager.GetLogger("WarningLogFile");
+        private static Logger WarningLog = LogManager.GetLogger(LogFile.WarningLogFile);
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -98,7 +98,7 @@ namespace HeroesParserData.Converters
                         span.Inlines.Add(new Run(text));
                         text = string.Empty;
 
-                        WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown tag: {startTag}");
+                        WarningLog.Log(LogLevel.Warn, $"[{nameof(TalentDescriptionTextStyleConverter)}] Unknown tag: {startTag} - FullText: {value.ToString()}");
                     }
                         
                 }
