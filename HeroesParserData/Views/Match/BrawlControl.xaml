@@ -21,7 +21,7 @@
                 <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="1024"></ColumnDefinition>
+                        <ColumnDefinition MinWidth="1036"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>

@@ -39,7 +39,7 @@
 
             <DataGrid x:Name="MostStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1" 
                                   Grid.Column="0"
-                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
+                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}"
                                   ItemsSource="{Binding StatsMostAmountsCollection}" Margin="15,127,0,0" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
@@ -49,7 +49,7 @@
 
             <DataGrid x:Name="MapStatsDg" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
                                   Grid.Column="1"
-                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
+                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}"
                                   ItemsSource="{Binding StatsMapPercentagesCollection}" Margin="10,127,0,0" Width="540" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>

@@ -44,7 +44,7 @@
     </Style>
     
     <!--DataGrid-->
-    <Style TargetType="DataGridRow" x:Key="DefaultDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
+    <Style TargetType="DataGridRow" x:Key="DefaultDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background" Value="AliceBlue" />
@@ -93,7 +93,7 @@
     <Style TargetType="DataGridRow" x:Key="SingleRowDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                <Setter Property="Background" Value="MintCream"></Setter>
+                <Setter Property="Background" Value="Honeydew"></Setter>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="LightSkyBlue" />
@@ -135,6 +135,37 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
 
+    <Style TargetType="DataGrid" x:Key="DefaultDataGrid" BasedOn="{StaticResource MetroDataGrid}">
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="CanUserAddRows" Value="False" />
+        <Setter Property="CanUserDeleteRows" Value="False" />
+        <Setter Property="IsReadOnly" Value="False" />
+        <Setter Property="EnableColumnVirtualization" Value="True" />
+        <Setter Property="EnableRowVirtualization" Value="True" />
+        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserResizeColumns" Value="False" />
+        <Setter Property="CanUserResizeRows" Value="False" />
+    </Style>
+
+    <Style TargetType="DataGrid" x:Key="StatisticsHeroesDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
+        <Setter Property="Margin" Value="10,10,10,0" />
+        <Setter Property="GridLinesVisibility" Value="Vertical" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    
+    <!--Expanders-->
+    <Style TargetType="Expander" x:Key="SummaryControlExpander" BasedOn="{StaticResource MetroExpander}">
+        <Setter Property="Margin" Value="10,10,0,0"/>
+    </Style>
+
+    <Style TargetType="Expander" x:Key="InnerSummaryControlExpander" BasedOn="{StaticResource MetroExpander}">
+        <Setter Property="Margin" Value="5,5"/>
+    </Style>
+
+    <Style TargetType="Expander" x:Key="InnerTabItemExpander" BasedOn="{StaticResource MetroExpander}">
+        <Setter Property="Margin" Value="10,10,10,0"/>
+    </Style>
+    
     <Style TargetType="Label" x:Key="HomeLabelTheme" BasedOn="{StaticResource MetroLabel}">
         <Style.Resources>
             <DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>
@@ -182,8 +213,5 @@
         <Setter Property="BorderBrush" Value="SlateBlue"/>
         <Setter Property="BorderThickness" Value="0,2,0,0"/>
     </Style>
-
-    <Style TargetType="Expander" x:Key="InnerTabItemExpander" BasedOn="{StaticResource MetroExpander}">
-        <Setter Property="Margin" Value="10,10,10,0"/>
-    </Style>
+    
 </ResourceDictionary>

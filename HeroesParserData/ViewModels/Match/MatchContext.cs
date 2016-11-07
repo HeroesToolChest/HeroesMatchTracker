@@ -18,6 +18,11 @@ namespace HeroesParserData.ViewModels.Match
     public abstract class MatchContext : ViewModelBase
     {
         #region properties
+        private readonly Color Team1BackColor = Color.FromRgb(179, 179, 255);
+        private readonly Color Team2BackColor = Color.FromRgb(235, 159, 159);
+        private readonly Color WinningTeamBackColor = Color.FromRgb(233, 252, 233);
+        private readonly Color LosingTeamBackColor = Colors.AliceBlue;
+
         private string _matchTitle;
         private string _queryStatus;
         private string _selectedSeasonOption;
@@ -471,21 +476,21 @@ namespace HeroesParserData.ViewModels.Match
 
                     if (player.IsWinner)
                     {
-                        matchTalents.RowBackColor = Color.FromRgb(233, 252, 233);
-                        matchScores.RowBackColor = Color.FromRgb(233, 252, 233);
+                        matchTalents.RowBackColor = WinningTeamBackColor;
+                        matchScores.RowBackColor = WinningTeamBackColor;
                     }
                     else
                     {
-                        matchTalents.RowBackColor = Colors.AliceBlue;
-                        matchScores.RowBackColor = Colors.AliceBlue;
+                        matchTalents.RowBackColor = LosingTeamBackColor;
+                        matchScores.RowBackColor = LosingTeamBackColor;
                     }
 
                     if (player.Team == 0 || player.Team == 1)
                     {
                         if (player.Team == 0)
                         {
-                            matchTalents.PortraitBackColor = Color.FromRgb(155, 155, 235);
-                            matchScores.PortraitBackColor = Color.FromRgb(179, 179, 255);
+                            matchTalents.PortraitBackColor = Team1BackColor;
+                            matchScores.PortraitBackColor = Team1BackColor;
 
                             HighestSiegeDamage(MatchScoreTeam1, matchScores, ref highestSiegeTeam1Index, ref highestSiegeTeam1Count);
                             HighestHeroDamage(MatchScoreTeam1, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
@@ -497,8 +502,8 @@ namespace HeroesParserData.ViewModels.Match
                         }
                         else
                         {
-                            matchTalents.PortraitBackColor = Color.FromRgb(235, 155, 155);
-                            matchScores.PortraitBackColor = Color.FromRgb(235, 159, 159);
+                            matchTalents.PortraitBackColor = Team2BackColor;
+                            matchScores.PortraitBackColor = Team2BackColor;
 
                             HighestSiegeDamage(MatchScoreTeam2, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
                             HighestHeroDamage(MatchScoreTeam2, matchScores, ref highestHeroDamageTeam2Index, ref highestHeroDamageTeam2Count);
@@ -779,17 +784,20 @@ namespace HeroesParserData.ViewModels.Match
             int? heroDamageTotal = matchScoreTeam.Sum(x => x.HeroDamage);
             int? experienceTotal = matchScoreTeam.Sum(x => x.ExperienceContribution);
 
+            Color currentColor = matchScoreTeam[0].RowBackColor;
+            Color newColor = Color.FromArgb(currentColor.A, (byte)(currentColor.R * 0.9), (byte)(currentColor.G * 0.9), (byte)(currentColor.B * 0.9));
+
             MatchScores matchScoresTotal = new MatchScores
             {
                 PlayerName = "Total",
-                CharacterLevel = $"Team Level: {highestLevel.ToString()}",
+                CharacterLevel = $"Team: {highestLevel.ToString()}",
                 SoloKills = killsTotal,
                 Assists = assistsTotal,
                 Deaths = deathsTotal,
                 SiegeDamage = siegeDamageTotal,
                 HeroDamage = heroDamageTotal,
                 ExperienceContribution = experienceTotal,
-                RowBackColor = matchScoreTeam[0].RowBackColor
+                RowBackColor = matchScoreTeam[0].PortraitBackColor
             };
 
             collection.Add(matchScoresTotal);

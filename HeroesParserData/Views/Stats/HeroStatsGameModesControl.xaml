@@ -19,7 +19,7 @@
     <Grid>
         <local:HeroStatsGenericControl></local:HeroStatsGenericControl>
         <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical"  BorderThickness="1"
-                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
+                              EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}"
                               ItemsSource="{Binding StatsHeroesGameModes}" Margin="10,45.5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Hero" MinWidth="95" MaxWidth="95">

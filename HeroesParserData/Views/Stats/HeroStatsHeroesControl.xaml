@@ -68,10 +68,8 @@
                             <StackPanel>
                                 <Expander Header="Total" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                    EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                    ItemsSource="{Binding StatsHeroesQuickMatchDataCollection}" Margin="10,10,0,0"
-                                                    CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesQuickMatchDataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -102,10 +100,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                    EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                    ItemsSource="{Binding StatsHeroesQuickMatchDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                    CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesQuickMatchDataTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -140,10 +136,8 @@
                                 </Expander>
                                 <Expander Header="Average" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                    EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                    ItemsSource="{Binding StatsHeroesQuickMatchDataAverageCollection}" Margin="10,10,0,0"
-                                                    CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesQuickMatchDataAverageCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -171,10 +165,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                    EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                    ItemsSource="{Binding StatsHeroesQuickMatchDataAverageTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                    CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesQuickMatchDataAverageTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -214,10 +206,8 @@
                             <StackPanel>
                                 <Expander Header="Total" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesUnrankedDraftDataCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesUnrankedDraftDataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -248,10 +238,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesUnrankedDraftDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesUnrankedDraftDataTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -286,10 +274,8 @@
                                 </Expander>
                                 <Expander Header="Average" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesUnrankedDraftDataAverageCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesUnrankedDraftDataAverageCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -317,10 +303,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesUnrankedDraftDataAverageTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesUnrankedDraftDataAverageTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -360,10 +344,8 @@
                             <StackPanel>
                                 <Expander Header="Total" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesHeroLeagueDataCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesHeroLeagueDataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -394,10 +376,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesHeroLeagueDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesHeroLeagueDataTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -432,10 +412,8 @@
                                 </Expander>
                                 <Expander Header="Average" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesHeroLeagueDataAverageCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesHeroLeagueDataAverageCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -463,10 +441,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesHeroLeagueDataAverageTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesHeroLeagueDataAverageTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -506,10 +482,8 @@
                             <StackPanel>
                                 <Expander Header="Total" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesTeamLeagueDataCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesTeamLeagueDataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -540,10 +514,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesTeamLeagueDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesTeamLeagueDataTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -578,10 +550,8 @@
                                 </Expander>
                                 <Expander Header="Average" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesTeamLeagueDataAverageCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesTeamLeagueDataAverageCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -609,10 +579,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesTeamLeagueDataAverageTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesTeamLeagueDataAverageTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -652,10 +620,8 @@
                             <StackPanel>
                                 <Expander Header="Total" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesCustomGameDataCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesCustomGameDataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -686,10 +652,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesCustomGameDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesCustomGameDataTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -724,10 +688,8 @@
                                 </Expander>
                                 <Expander Header="Average" Style="{StaticResource InnerTabItemExpander}">
                                     <StackPanel>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesCustomGameDataAverageCollection}" Margin="10,10,0,0"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding StatsHeroesCustomGameDataAverageCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -755,10 +717,8 @@
                                                 <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                                ItemsSource="{Binding StatsHeroesCustomGameDataAverageTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                                CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                                  ItemsSource="{Binding StatsHeroesCustomGameDataAverageTotalCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="90">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -798,10 +758,8 @@
                             <StackPanel>
                                 <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshAwardsCommand}" ItemsSource="{Binding MapList}" SelectedValue="{Binding SelectedAwardMap}"
                                           IsEnabled="{Binding IsComboBoxEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186"/>
-                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                        EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                        ItemsSource="{Binding MatchAwardDataCollection}" Margin="10,10,0,0"
-                                          CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                          ItemsSource="{Binding MatchAwardDataCollection}">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn Width="65">
                                             <DataGridTemplateColumn.CellTemplate>
@@ -824,10 +782,8 @@
                                         <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="120" FontWeight="Bold"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                        EnableColumnVirtualization="True" EnableRowVirtualization="True" RowStyle="{StaticResource SingleRowDataGrid}"
-                                        ItemsSource="{Binding MatchAwardDataTotalCollection}" Margin="10,10,0,0" HeadersVisibility="None"
-                                          CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource SingleRowDataGrid}" HeadersVisibility="None"
+                                          ItemsSource="{Binding MatchAwardDataTotalCollection}">
                                     <DataGrid.Columns>
                                         <DataGridTemplateColumn MinWidth="65" MaxWidth="65">
                                             <DataGridTemplateColumn.CellTemplate>
@@ -866,10 +822,8 @@
                                 </StackPanel>
                                 <StackPanel>
                                     <Expander Header="Level 1" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel1DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel1DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -913,10 +867,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 4" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel4DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel4DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -960,10 +912,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 7" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel7DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel7DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -1007,10 +957,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 10" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel10DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel10DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -1054,10 +1002,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 13" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel13DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel13DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -1101,10 +1047,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 16" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel16DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel16DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
@@ -1148,10 +1092,8 @@
                                         </DataGrid>
                                     </Expander>
                                     <Expander Header="Level 20" IsExpanded="true" Style="{StaticResource InnerTabItemExpander}">
-                                        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" GridLinesVisibility="Vertical" BorderThickness="1"
-                                                  EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGrid}"
-                                                  ItemsSource="{Binding TalentsPickLevel20DataCollection}" Margin="10,10,0,0"
-                                                  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+                                        <DataGrid Style="{StaticResource StatisticsHeroesDataGrid}" RowStyle="{StaticResource DefaultDataGridRow}" AlternationCount="2" 
+                                                  ItemsSource="{Binding TalentsPickLevel20DataCollection}">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Width="65">
                                                     <DataGridTemplateColumn.CellTemplate>
