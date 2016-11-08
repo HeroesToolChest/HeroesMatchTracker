@@ -1,11 +1,10 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
+using HeroesParserData.Messages;
 using HeroesParserData.Models.StatsModels;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
-using HeroesParserData.Messages;
-using System;
 
 namespace HeroesParserData.ViewModels.Stats
 {

@@ -1,8 +1,8 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Properties;
 using HeroesParserData.Views;
-using MahApps.Metro;
 using System;
+using System.Data.SqlClient;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -82,7 +82,10 @@ namespace HeroesParserData
 
             // this should only trigger if the update is applied through the settings menu
             if (NewReleaseApplied)
+            {
+                SqlConnection.ClearAllPools();
                 AutoUpdater.CopyDatabaseToLatestRelease();
+            }
 
             base.OnExit(e);
         }
