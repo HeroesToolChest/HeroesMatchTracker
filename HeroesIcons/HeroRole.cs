@@ -7,6 +7,6 @@
         Assassin,
         Support,
         Specialist,
-        MultiClass
+        Multiclass
     }
 }

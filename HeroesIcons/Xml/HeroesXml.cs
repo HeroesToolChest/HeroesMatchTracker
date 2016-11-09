@@ -249,7 +249,7 @@ namespace HeroesIcons.Xml
                 builds.Add(int.Parse(Path.GetFileName(directory)));
             }
 
-            builds.OrderByDescending(x => x);
+            builds = builds.OrderByDescending(x => x).ToList();
 
             SelectedBuild = builds[0];
         }

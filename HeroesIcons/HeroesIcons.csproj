@@ -601,6 +601,7 @@
     </Content>
     <Content Include="Xml\Heroes\47801\Varian.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\Heroes\47801\Xul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
