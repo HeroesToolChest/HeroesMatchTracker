@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TeamPlayer>
+  <ZeroOutnumberedDeaths>
+    <MVPScreen>storm_ui_mvp_teamplayer_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_teamplayer_{mvpColor}.png</ScoreScreen>
+    <Description>No deaths while outnumbered by enemy heroes</Description>
+  </ZeroOutnumberedDeaths>
+</TeamPlayer>

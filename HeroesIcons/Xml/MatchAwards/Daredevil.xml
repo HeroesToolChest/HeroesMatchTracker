@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Daredevil>
+  <MostDaredevilEscapes>
+    <MVPScreen>storm_ui_mvp_daredevil_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_daredevil_{mvpColor}.png</ScoreScreen>
+    <Description>Most escaped deaths in team fights</Description>
+  </MostDaredevilEscapes>
+</Daredevil>
