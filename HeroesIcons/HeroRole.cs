@@ -6,6 +6,7 @@
         Warrior,
         Assassin,
         Support,
-        Specialist
+        Specialist,
+        MultiClass
     }
 }

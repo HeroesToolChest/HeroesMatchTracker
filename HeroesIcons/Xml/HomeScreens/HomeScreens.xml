@@ -19,6 +19,6 @@
   <Starcraft fontglow="#FF00008B">storm_ui_homescreenbackground_starcraft.jpg</Starcraft>
   <StarcraftProtoss fontglow="#FF00FFFF">storm_ui_homescreenbackground_starcraft_protoss.jpg</StarcraftProtoss>
   <StarcraftZerg fontglow="#FF8B0000">storm_ui_homescreenbackground_starcraft_zerg.jpg</StarcraftZerg>
-  <Varian fontglow="#FFFF0000">storm_ui_homescreenbackground_varian.jpg</Varian>
+  <Varian fontglow="#FFFF0000">storm_ui_homescreen_varian_background.jpg</Varian>
   <Zarya fontglow="#FF800080">storm_ui_homescreenbackground_zarya.jpg</Zarya>
 </HomeScreens>

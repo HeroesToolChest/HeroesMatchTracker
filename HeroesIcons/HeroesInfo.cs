@@ -23,7 +23,7 @@ namespace HeroesIcons
         private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
         private Dictionary<HeroRole, Uri> RoleIcons = new Dictionary<HeroRole, Uri>();
         private Dictionary<HeroFranchise, Uri> FranchiseIcons = new Dictionary<HeroFranchise, Uri>();
-        private Dictionary<OtherIcon, Uri> OtherIcons = new Dictionary<HeroesIcons.OtherIcon, Uri>();
+        private Dictionary<OtherIcon, Uri> OtherIcons = new Dictionary<OtherIcon, Uri>();
 
         private HeroesInfo()
         {
