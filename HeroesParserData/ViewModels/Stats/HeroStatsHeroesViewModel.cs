@@ -721,21 +721,24 @@ namespace HeroesParserData.ViewModels.Stats
                 int total = wins + losses;
                 int winPercentage = Utilities.CalculateWinPercentage(wins, total);
 
-                int kills = Query.PlayerStatistics.ReadTotalStatTypeForMapCharacter(StatType.kills, GetSeasonSelected, gameMode, map, SelectedHero);
-                int assists = Query.PlayerStatistics.ReadTotalStatTypeForMapCharacter(StatType.assists, GetSeasonSelected, gameMode, map, SelectedHero);
-                int deaths = Query.PlayerStatistics.ReadTotalStatTypeForMapCharacter(StatType.deaths, GetSeasonSelected, gameMode, map, SelectedHero);
+                var scoreResultsList = Query.PlayerStatistics.ReadScoreResult(GetSeasonSelected, gameMode, map, SelectedHero);
 
-                double siegeDamage = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.SiegeDamage, GetSeasonSelected, gameMode, map, SelectedHero);
-                double heroDamage = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.HeroDamage, GetSeasonSelected, gameMode, map, SelectedHero);
-                double experience = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.ExperienceContribution, GetSeasonSelected, gameMode, map, SelectedHero);
-                int mercsCaptured = (int)Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.MercCampCaptures, GetSeasonSelected, gameMode, map, SelectedHero);
+                int kills = (int)scoreResultsList.Sum(x => x.SoloKills);
+                int assists = (int)scoreResultsList.Sum(x => x.Assists);
+                int deaths = (int)scoreResultsList.Sum(x => x.Deaths);
+
+                double siegeDamage = (double)scoreResultsList.Sum(x => x.SiegeDamage);
+                double heroDamage = (double)scoreResultsList.Sum(x => x.HeroDamage);
+                double experience = (double)scoreResultsList.Sum(x => x.ExperienceContribution);
+                int mercsCaptured = (int)scoreResultsList.Sum(x => x.MercCampCaptures);
+
                 TimeSpan gameTime = Query.PlayerStatistics.ReadMapGameTime(SelectedHero, GetSeasonSelected, gameMode, map);
 
                 double role = 0;
                 if (HeroesInfo.GetHeroRole(SelectedHero) == HeroRole.Warrior)
-                    role = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.DamageTaken, GetSeasonSelected, gameMode, map, SelectedHero);
+                    role = (double)scoreResultsList.Sum(x => x.DamageTaken);
                 else if (HeroesInfo.GetHeroRole(SelectedHero) == HeroRole.Support || HeroesInfo.IsNonSupportHeroWithHealingStat(SelectedHero))
-                    role = Query.PlayerStatistics.ReadTotalScoreResult(PlayerScoreResultTypes.Healing, GetSeasonSelected, gameMode, map, SelectedHero);
+                    role = (double)scoreResultsList.Sum(x => x.Healing);
 
                 var mapImage = HeroesInfo.GetMapBackground(map, true);
                 mapImage.Freeze();
@@ -879,10 +882,11 @@ namespace HeroesParserData.ViewModels.Stats
         {
             foreach (var award in HeroesInfo.GetMatchAwardsList())
             {
-                int quickmatchAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.QuickMatch, SelectedHero, SelectedAwardMap);
-                int unrankedDraftAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero, SelectedAwardMap);
-                int heroLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero, SelectedAwardMap);
-                int teamLeagueAwards = Query.PlayerStatistics.ReadTotalMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero, SelectedAwardMap);
+                int quickmatchAwards = Query.PlayerStatistics.ReadMatchAwards(award, GetSeasonSelected, GameMode.QuickMatch, SelectedHero, SelectedAwardMap);
+                int unrankedDraftAwards = Query.PlayerStatistics.ReadMatchAwards(award, GetSeasonSelected, GameMode.UnrankedDraft, SelectedHero, SelectedAwardMap);
+                int heroLeagueAwards = Query.PlayerStatistics.ReadMatchAwards(award, GetSeasonSelected, GameMode.HeroLeague, SelectedHero, SelectedAwardMap);
+                int teamLeagueAwards = Query.PlayerStatistics.ReadMatchAwards(award, GetSeasonSelected, GameMode.TeamLeague, SelectedHero, SelectedAwardMap);
+
                 int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 if (award == "MVP")

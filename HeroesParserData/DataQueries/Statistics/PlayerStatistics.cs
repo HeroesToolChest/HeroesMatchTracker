@@ -1,7 +1,6 @@
 ﻿using Heroes.ReplayParser;
 using HeroesIcons;
 using HeroesParserData.Models.DbModels;
-using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -51,12 +50,9 @@ namespace HeroesParserData.DataQueries
                     {
                         int? amount = db.Database.SqlQuery<int?>($@"SELECT Sum(mpsr.{type}) FROM ReplayMatchPlayers mp
                                                                     JOIN Replays r
-                                                                    JOIN ReplayAllHotsPlayers hp
                                                                     JOIN ReplayMatchPlayerScoreResults mpsr 
                                                                     ON mp.ReplayId = mpsr.ReplayId AND 
                                                                     mp.ReplayId = r.ReplayId AND 
-                                                                    mp.PlayerId = mpsr.PlayerId AND
-                                                                    mp.PlayerId = hp.PlayerId AND
                                                                     mp.PlayerId = mpsr.PlayerId
                                                                     WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd",
                                                                     new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
@@ -64,63 +60,6 @@ namespace HeroesParserData.DataQueries
                                                                     new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
                                                                     new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
                                                                     new SQLiteParameter("@GameMode", gameMode)).FirstOrDefault();
-                        return amount.HasValue ? amount.Value : 0;
-                    }
-                }
-            }
-
-            public static int ReadTotalStatTypeForMapCharacter(StatType statType, Season season, GameMode gameMode, string mapName, string character)
-            {
-                var replayBuild = Utilities.GetSeasonReplayBuild(season);
-
-                string type = string.Empty;
-                if (statType == StatType.assists)
-                    type = "Assists";
-                else if (statType == StatType.deaths)
-                    type = "Deaths";
-                else if (statType == StatType.kills)
-                    type = "SoloKills";
-
-                string gameModeString;
-                if (gameMode != GameMode.Cooperative)
-                    gameModeString = GameModeQueryString(false);
-                else
-                    gameModeString = GameModeQueryString(true);
-
-                using (var db = new HeroesParserDataContext())
-                {
-                    if (statType == StatType.wins)
-                    {
-                        int? wins = db.Database.SqlQuery<int?>($@"SELECT Count(IsWinner) FROM ReplayMatchPlayers mp
-                                                                  JOIN Replays r
-                                                                  ON mp.ReplayId = r.ReplayId
-                                                                  WHERE PlayerId = @PlayerId AND IsWinner = 1 AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                  new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
-                                                                  new SQLiteParameter("@Character", character),
-                                                                  new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
-                                                                  new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
-                                                                  new SQLiteParameter("@GameMode", gameMode),
-                                                                  new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
-                        return wins.HasValue ? wins.Value : 0;
-                    }
-                    else
-                    {
-                        int? amount = db.Database.SqlQuery<int?>($@"SELECT Sum(mpsr.{type}) FROM ReplayMatchPlayers mp
-                                                                    JOIN Replays r
-                                                                    JOIN ReplayAllHotsPlayers hp
-                                                                    JOIN ReplayMatchPlayerScoreResults mpsr 
-                                                                    ON mp.ReplayId = mpsr.ReplayId AND 
-                                                                    mp.ReplayId = r.ReplayId AND 
-                                                                    mp.PlayerId = mpsr.PlayerId AND
-                                                                    mp.PlayerId = hp.PlayerId AND
-                                                                    mp.PlayerId = mpsr.PlayerId
-                                                                    WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
-                                                                    new SQLiteParameter("@Character", character),
-                                                                    new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
-                                                                    new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
-                                                                    new SQLiteParameter("@GameMode", gameMode),
-                                                                    new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
                         return amount.HasValue ? amount.Value : 0;
                     }
                 }
@@ -238,75 +177,64 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
-            public static double ReadTotalScoreResult(PlayerScoreResultTypes scoreResultTypes, Season season, GameMode gameMode, string mapName, string character)
+            public static List<ReplayMatchPlayerScoreResult> ReadScoreResult(Season season, GameMode gameMode, string mapName, string character)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
-                string gameModeString;
-                if (gameMode != GameMode.Cooperative)
-                    gameModeString = GameModeQueryString(false);
-                else
-                    gameModeString = GameModeQueryString(true);
-
                 using (var db = new HeroesParserDataContext())
                 {
-                    double? amount = db.Database.SqlQuery<double?>($@"SELECT Sum(mpsr.{scoreResultTypes}) FROM ReplayMatchPlayers mp
-                                                                    JOIN Replays r
-                                                                    JOIN ReplayAllHotsPlayers hp
-                                                                    JOIN ReplayMatchPlayerScoreResults mpsr 
-                                                                    ON mp.ReplayId = mpsr.ReplayId AND 
-                                                                    mp.ReplayId = r.ReplayId AND 
-                                                                    mp.PlayerId = mpsr.PlayerId AND
-                                                                    mp.PlayerId = hp.PlayerId AND
-                                                                    mp.PlayerId = mpsr.PlayerId
-                                                                    WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd AND MapName = @MapName",
-                                                                    new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
-                                                                    new SQLiteParameter("@Character", character),
-                                                                    new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
-                                                                    new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
-                                                                    new SQLiteParameter("@GameMode", gameMode),
-                                                                    new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
-                    return amount.HasValue ? amount.Value : 0;
+                    var query = from r in db.Replays
+                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                join mpsr in db.ReplayMatchPlayerScoreResults on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
+                                where mp.PlayerId == UserSettings.Default.UserPlayerId && 
+                                      mp.Character == character && 
+                                      r.GameMode == gameMode && 
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                      r.MapName == mapName
+                                select mpsr;
+
+                    return query.ToList();
                 }
             }
 
-            public static int ReadTotalMatchAwards(string mvpAwardType, Season season, GameMode gameMode, string character, string mapName)
+            public static int ReadMatchAwards(string mvpAwardType, Season season, GameMode gameMode, string character, string mapName)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
 
-                string gameModeString;
-                if (gameMode != GameMode.Cooperative)
-                    gameModeString = GameModeQueryString(false);
-                else
-                    gameModeString = GameModeQueryString(true);
-
-                string mapNameString;
                 if (App.HeroesInfo.IsValidMapName(mapName))
-                    mapNameString = MapNameQueryString(false);
-                else
-                    mapNameString = MapNameQueryString(true);
-
-                using (var db = new HeroesParserDataContext())
                 {
-                    int? amount = db.Database.SqlQuery<int?>($@"SELECT Count(ma.Award) FROM ReplayMatchPlayers mp
-                                                                JOIN Replays r
-                                                                JOIN ReplayAllHotsPlayers hp
-                                                                JOIN ReplayMatchAwards ma 
-                                                                ON mp.ReplayId = ma.ReplayId AND 
-                                                                mp.ReplayId = r.ReplayId AND 
-                                                                mp.PlayerId = ma.PlayerId AND
-                                                                mp.PlayerId = hp.PlayerId AND
-                                                                mp.PlayerId = ma.PlayerId
-                                                                WHERE mp.PlayerId = @PlayerId AND Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
-                                                                AND Award = @AwardType AND {mapNameString}",
-                                                                new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),
-                                                                new SQLiteParameter("@Character", character),
-                                                                new SQLiteParameter("@ReplayBuildBegin", replayBuild.Item1),
-                                                                new SQLiteParameter("@ReplayBuildEnd", replayBuild.Item2),
-                                                                new SQLiteParameter("@GameMode", gameMode),
-                                                                new SQLiteParameter("@AwardType", mvpAwardType),
-                                                                new SQLiteParameter("@MapName", mapName)).FirstOrDefault();
-                    return amount.HasValue ? amount.Value : 0;
+                    using (var db = new HeroesParserDataContext())
+                    {
+                        var query = from r in db.Replays
+                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                    join ma in db.ReplayMatchAwards on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
+                                    where mp.PlayerId == UserSettings.Default.UserPlayerId &&
+                                          mp.Character == character &&
+                                          r.GameMode == gameMode &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                          r.MapName == mapName &&
+                                          ma.Award == mvpAwardType
+                                    select ma;
+
+                        return query.Count();
+                    }
+                }
+                else // all maps
+                {
+                    using (var db = new HeroesParserDataContext())
+                    {
+                        var query = from r in db.Replays
+                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                    join ma in db.ReplayMatchAwards on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
+                                    where mp.PlayerId == UserSettings.Default.UserPlayerId &&
+                                          mp.Character == character &&
+                                          r.GameMode == gameMode &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                          ma.Award == mvpAwardType
+                                    select ma;
+
+                        return query.Count();
+                    }
                 }
             }
 
@@ -332,12 +260,10 @@ namespace HeroesParserData.DataQueries
                 {
                     int? amount = db.Database.SqlQuery<int?>($@"SELECT Count(IsWinner) FROM ReplayMatchPlayerTalents mpt
                                                                 JOIN Replays r
-                                                                JOIN ReplayAllHotsPlayers hp
                                                                 JOIN ReplayMatchPlayers mp
                                                                 ON mpt.ReplayId = r.ReplayId AND 
-                                                                mpt.PlayerId = hp.PlayerId AND
-                                                                mp.ReplayId = r.ReplayId AND 
-                                                                mp.PlayerId = hp.PlayerId
+                                                                mpt.PlayerId = mp.PlayerId AND 
+                                                                mp.ReplayId = r.ReplayId
                                                                 WHERE mpt.PlayerId = @PlayerId AND IsWinner = @IsWinner AND mpt.Character = @Character AND {gameModeString} AND ReplayBuild >= @ReplayBuildBegin AND ReplayBuild < @ReplayBuildEnd 
                                                                 AND {talentNameColumn} = @Talent AND {mapNameString}",
                                                                 new SQLiteParameter("@PlayerId", UserSettings.Default.UserPlayerId),

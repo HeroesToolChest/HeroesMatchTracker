@@ -1,7 +1,5 @@
 ﻿using Heroes.ReplayParser;
-using HeroesIcons;
 using HeroesParserData.Models.DbModels;
-using HeroesParserData.Properties;
 using System.Data.SQLite;
 using System.Linq;
 
