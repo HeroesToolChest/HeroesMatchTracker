@@ -29,7 +29,7 @@ namespace HeroesIcons.Xml
             {
                 foreach (var award in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml/{XmlFolder}/{award}.xml"))
+                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{award}.xml"))
                     {
                         reader.MoveToContent();
 
@@ -85,7 +85,7 @@ namespace HeroesIcons.Xml
 
         private Uri SetMVPAwardUri(string fileName)
         {
-            return new Uri($"{ApplicationPath}Awards/{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationPath}Awards\{fileName}", UriKind.Absolute);
         }
     }
 }

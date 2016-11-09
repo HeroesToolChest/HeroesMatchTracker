@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Uther attributeid="Uthe" role="Support" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_uther.dds" leader="storm_ui_ingame_hero_leaderboard_uther.dds">
+  <Level1>
+    <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
+    <UtherCombatStyleHammeroftheLightbringer name="Hammer of the Lightbringer" generic="true" desc="UtherEternalDevotionHammeroftheLightbringerTalent">storm_ui_icon_talent_autoattack_mana.dds</UtherCombatStyleHammeroftheLightbringer>
+    <UtherMasteryFistofJustice name="Fist of Justice" desc="UtherHammerofJusticeFistofJusticeTalent">storm_ui_icon_uther_hammerofjustice.dds</UtherMasteryFistofJustice>
+    <UtherMasteryWaveofLightHolyRadiance name="Wave of Light" desc="UtherHolyRadianceWaveofLightTalent">storm_ui_icon_uther_holyradiance.dds</UtherMasteryWaveofLightHolyRadiance>
+  </Level1>
+  <Level4>
+    <UtherMasteryBoundlessConvictionHolyRadiance name="Boundless Conviction" desc="UtherBoundlessConvictionTalent">storm_ui_icon_uther_holyradiance.dds</UtherMasteryBoundlessConvictionHolyRadiance>
+    <UtherBeaconofLight name="Beacon of Light" desc="UtherBeaconofLight">storm_ui_icon_uther_beaconoflight.dds</UtherBeaconofLight>
+    <GenericTalentProtectiveShield name="Protective Shield" desc="GenericProtectiveShield">storm_ui_icon_talent_protectiveshield.dds</GenericTalentProtectiveShield>
+  </Level4>
+  <Level7>
+    <UtherMasteryBurdenofGuilt name="Burden of Guilt" desc="UtherBurdenOfGuiltTalent">storm_ui_icon_uther_hammerofjustice.dds</UtherMasteryBurdenofGuilt>
+    <UtherHolyFire name="Holy Fire" desc="UtherHolyFireTalent">storm_ui_icon_uther_holyfire.dds</UtherHolyFire>
+    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+  </Level7>
+  <Level10>
+    <UtherHeroicAbilityDivineShield name="Divine Shield" desc="UtherDivineShield">storm_ui_icon_uther_divineshield.dds</UtherHeroicAbilityDivineShield>
+    <UtherHeroicAbilityDivineStorm name="Divine Storm" desc="UtherDivineStorm">storm_ui_icon_uther_divinestorm.dds</UtherHeroicAbilityDivineStorm>
+  </Level10>
+  <Level13>
+    <UtherMasteryBlessedChampion name="Blessed Champion" desc="UtherEternalDevotionBlessedChampionTalent">storm_ui_icon_uther_holylight.dds</UtherMasteryBlessedChampion>
+    <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <UtherMasteryHolyShock name="Holy Shock" desc="UtherHolyLightHolyShockTalent">storm_ui_icon_uther_holylight_var1.dds</UtherMasteryHolyShock>
+    <GenericTalentShrinkRay name="Shrink Ray" desc="GenericShrinkRayTalent">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>
+  </Level13>
+  <Level16>
+    <UtherMasteryGatheringRadiance name="Gathering Radiance" desc="UtherHolyRadianceGatheringRadianceTalent">storm_ui_icon_uther_holyradiance.dds</UtherMasteryGatheringRadiance>
+    <UtherHardenedFocus name="Hardened Focus" generic="true" desc="GenericHardenedFocusTalent">storm_ui_icon_Talent_HardenedFocus.dds</UtherHardenedFocus>
+    <UtherRighteousDefense name="Righteous Defense" desc="UtherRighteousDefense">storm_ui_icon_uther_holylight.dds</UtherRighteousDefense>
+    <UtherMasteryBenediction name="Benediction" desc="UtherBenedictionHotbar">storm_ui_icon_uther_benediction.dds</UtherMasteryBenediction>
+  </Level16>
+  <Level20>
+    <UtherMasteryBulwarkOfLightDivineShield name="Bulwark of Light" desc="UtherDivineShieldBulwarkofLightTalent">storm_ui_icon_uther_divineshield.dds</UtherMasteryBulwarkOfLightDivineShield>
+    <UtherMasteryDivineHurricaneDivineStorm name="Divine Hurricane" desc="UtherDivineStormDivineHurricaneTalent">storm_ui_icon_uther_divinestorm.dds</UtherMasteryDivineHurricaneDivineStorm>
+    <UtherMasteryRedemption name="Redemption" desc="UtherRedemptionTalent">storm_ui_icon_uther_eternaldevotion.dds</UtherMasteryRedemption>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+  </Level20>
+</Uther>

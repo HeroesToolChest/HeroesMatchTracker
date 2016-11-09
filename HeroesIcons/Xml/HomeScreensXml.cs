@@ -35,7 +35,7 @@ namespace HeroesIcons.Xml
                 if (!ValidateRequiredFiles())
                     return;
 
-                using (XmlReader reader = XmlReader.Create($@"Xml/{XmlFolder}/{XmlParentFile}"))
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{XmlParentFile}"))
                 {
                     reader.MoveToContent();
                     if (reader.Name != XmlFolder)
@@ -64,7 +64,7 @@ namespace HeroesIcons.Xml
 
         private BitmapImage SetHomeScreenBitmapImage(string fileName)
         {
-            return new BitmapImage(new Uri($"{ApplicationPath}Homescreens/{fileName}", UriKind.Absolute));
+            return new BitmapImage(new Uri($@"{ApplicationPath}Homescreens\{fileName}", UriKind.Absolute));
         }
     }
 }

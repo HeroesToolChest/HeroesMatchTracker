@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Varian attributeid="Vari" role="MultiClass" franchise="Warcraft" portrait="" leader="storm_ui_ingame_hero_leaderboard_varian.dds">
+  <Level1>
+    <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="">storm_ui_icon_varian_lionsfang.dds</VarianLionsFangLionsMawQuest>
+    <VarianParryOverpower name="Overpower" desc="">storm_ui_icon_varian_parry.dds</VarianParryOverpower>
+    <VarianHighKingsQuestQuest name="High King's Quest" desc="">storm_ui_icon_varian_highkingsquest.dds</VarianHighKingsQuestQuest>
+  </Level1>
+  <Level4>
+    <VarianParryShieldWall name="Shield Wall" desc="">storm_ui_icon_varian_parry.dds</VarianParryShieldWall>
+    <VarianChargeWarbringer name="Warbringer" desc="">storm_ui_icon_varian_charge.dds</VarianChargeWarbringer>
+  </Level4>
+  <Level7>
+    <VarianParryLivebytheSword name="Live by the Sword" desc="">storm_ui_icon_varian_parry.dds</VarianParryLivebytheSword>
+    <VarianSecondWind name="Second Wind" desc="">storm_ui_icon_varian_secondwind.dds</VarianSecondWind>
+    <VarianVictoryRush name="Victory Rush" desc="">storm_ui_icon_varian_victoryrush.dds</VarianVictoryRush>
+  </Level7>
+  <Level10>
+    <VarianTaunt name="Taunt" desc="">storm_ui_icon_varian_taunt.dds</VarianTaunt>
+    <VarianColossusSmash name="Colossus Smash" desc="">storm_ui_icon_varian_colossus_smash.dds</VarianColossusSmash>
+    <VarianTwinBladesOfFury name="Twin Blades of Fury" desc="">storm_ui_icon_varian_twinbladesoffury.dds</VarianTwinBladesOfFury>
+  </Level10>
+  <Level13>
+    <VarianBannerOfStormwind name="Banner of Stormwind" desc="">storm_ui_icon_varian_bannerofstormwind.dds</VarianBannerOfStormwind>
+    <VarianBannerOfIronforge name="Banner of Ironforge" desc="">storm_ui_icon_varian_bannerofironforge.dds</VarianBannerOfIronforge>
+    <VarianBannerOfDalaran name="Banner of Dalaran" desc="">storm_ui_icon_varian_bannerofdalaran.dds</VarianBannerOfDalaran>
+  </Level13>
+  <Level16>
+    <VarianChargeJuggernaut name="Juggernaut" desc="">storm_ui_icon_varian_charge.dds</VarianChargeJuggernaut>
+    <VarianMortalStrike name="Mortal Strike" desc="">storm_ui_icon_varian_mortalstrike.dds</VarianMortalStrike>
+    <VarianShatteringThrow name="Shattering Throw" desc="">storm_ui_icon_varian_shatteringthrow.dds</VarianShatteringThrow>
+  </Level16>
+</Varian>

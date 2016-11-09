@@ -39,9 +39,23 @@ namespace HeroesIcons
             SetOtherIcons();
         }
 
+        /// <summary>
+        /// Initialize all Xml files and sets all icons
+        /// </summary>
+        /// <returns></returns>
         public static HeroesInfo Initialize()
         {
             return new HeroesInfo();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="replayBuild"></param>
+        /// <returns></returns>
+        public void InitializeSpecificHeroesXml(int? build)
+        {
+            //HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
         }
 
         #region public methods
@@ -58,7 +72,7 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(nameOfHeroTalent))
-                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_no_pick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}Talents\_Generic\storm_ui_icon_no_pick.dds", UriKind.Absolute));
 
 
             // not found
@@ -66,7 +80,7 @@ namespace HeroesIcons
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
 
-                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}Talents\_Generic\storm_ui_icon_default.dds", UriKind.Absolute));
             }
                 
             try
@@ -76,7 +90,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Talent icon: {nameOfHeroTalent}"));
-                return new BitmapImage(new Uri($"{ApplicationPath}Talents/_Generic/storm_ui_icon_default.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}Talents\_Generic\storm_ui_icon_default.dds", UriKind.Absolute));
             }
         }
 
@@ -91,14 +105,14 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
 
             // not found
             if (!HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
 
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
          
             try
@@ -108,7 +122,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroPortraits/storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
             }
         }
 
@@ -123,14 +137,14 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
 
             // not found
             if (!HeroesXml.LeaderboardPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
 
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
            
             try
@@ -140,7 +154,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
-                return new BitmapImage(new Uri($"{ApplicationPath}HeroLeaderboardPortraits/storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
             }
         }
 

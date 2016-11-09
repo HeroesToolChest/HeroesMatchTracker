@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tassadar attributeid="Tass" role="Support" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_tassadar.dds" leader="storm_ui_ingame_hero_leaderboard_tassadar.dds">
+  <Level1>
+    <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
+    <TassadarPsionicStormOverload name="Overload" desc="TassadarPsionicStormOverloadTalent">storm_ui_icon_tassadar_psionicstorm.dds</TassadarPsionicStormOverload>
+    <TassadarPsionicStormPsiInfusion name="Psi-Infusion" desc="TassadarPsionicStormPsiInfusionTalent">storm_ui_icon_tassadar_psionicstorm_var1.dds</TassadarPsionicStormPsiInfusion>
+    <TassadarMasteryReinforceStructure name="Reinforce Structure" desc="TassadarPlasmaShieldReinforceStructureTalent">storm_ui_icon_tassadar_plasmashield.dds</TassadarMasteryReinforceStructure>
+  </Level1>
+  <Level4>
+    <TassadarMasteryLeechingPlasma name="Leeching Plasma" desc="TassadarPlasmaShieldLeechingPlasmaTalent">storm_ui_icon_tassadar_plasmashield.dds</TassadarMasteryLeechingPlasma>
+    <TassadarMasteryMentalAcuity name="Mental Acuity" desc="TassadarOracleMentalAcuityTalent">storm_ui_icon_tassadar_oracle.dds</TassadarMasteryMentalAcuity>
+    <GenericTalentHealingWard name="Healing Ward" desc="GenericHealingWardTalent">storm_ui_icon_talent_healingward.dds</GenericTalentHealingWard>
+    <GenericTalentPromote name="Promote" desc="GenericPromote">storm_ui_icon_Talent_Promote.dds</GenericTalentPromote>
+  </Level4>
+  <Level7>
+    <TassadarMasteryKhalasEmbrace name="Khala's Embrace" desc="TassadarPlasmaShieldKhalasEmbraceTalent">storm_ui_icon_tassadar_plasmashield.dds</TassadarMasteryKhalasEmbrace>
+    <TassadarMasteryDeepShift name="Deep Shift" desc="TassadarDimensionalShiftDeepShiftTalent">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarMasteryDeepShift>
+    <TassadarMasteryStaticCharge name="Static Charge" desc="TassadarPsionicStormStaticChargeTalent">storm_ui_icon_tassadar_psionicstorm.dds</TassadarMasteryStaticCharge>
+    <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+  </Level7>
+  <Level10>
+    <TassadarHeroicAbilityArchon name="Archon" desc="TassadarArchon">storm_ui_icon_tassadar_archon.dds</TassadarHeroicAbilityArchon>
+    <TassadarHeroicAbilityForceWall name="Force Wall" desc="TassadarForceWall">storm_ui_icon_tassadar_forcewall.dds</TassadarHeroicAbilityForceWall>
+  </Level10>
+  <Level13>
+    <TassadarCombatStyleDistortionBeam name="Distortion Beam" generic="true" desc="TassadarOracleDistortionBeamTalent">storm_ui_icon_talent_autoattack_slow.dds</TassadarCombatStyleDistortionBeam>
+    <TassadarMasteryPrescience name="Prescience" desc="TassadarDimensionalShiftPrescienceTalent">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarMasteryPrescience>
+    <TassadarCombatStyleScryer name="Scryer" desc="TassadarOracleScryerTalent">storm_ui_icon_tassadar_oracle.dds</TassadarCombatStyleScryer>
+    <GenericTalentShrinkRay name="Shrink Ray" desc="GenericShrinkRayTalent">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>
+  </Level13>
+  <Level16>
+    <TassadarMasteryEvasiveShielding name="Evasive Shielding" desc="TassadarPlasmaShieldEvasiveShieldingTalent">storm_ui_icon_tassadar_plasmashield.dds</TassadarMasteryEvasiveShielding>
+    <TassadarMasteryDimensionalWarp name="Dimensional Warp" desc="TassadarDimensionalShiftDimensionalWarpTalent">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarMasteryDimensionalWarp>
+    <TassadarMasteryResonation name="Resonation" desc="TassadarPsionicStormResonationTalent">storm_ui_icon_tassadar_psionicstorm.dds</TassadarMasteryResonation>
+    <TassadarPsionicStormSecondStrike name="Second Strike" desc="TassadarPsionicStormSecondStrikeTalent">storm_ui_icon_tassadar_psionicstorm_var1.dds</TassadarPsionicStormSecondStrike>
+  </Level16>
+  <Level20>
+    <TassadarMasteryTwilightArchon name="Twilight Archon" desc="TassadarArchonTwilightArchonTalent">storm_ui_icon_tassadar_archon.dds</TassadarMasteryTwilightArchon>
+    <TassadarMasteryForceBarrier name="Force Barrier" desc="TassadarForceWallForceBarrierTalent">storm_ui_icon_tassadar_forcewall.dds</TassadarMasteryForceBarrier>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+  </Level20>
+</Tassadar>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rehgar attributeid="Rehg" role="Support" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_rehgar.dds" leader="storm_ui_ingame_hero_leaderboard_rehgar.dds">
+  <Level1>
+    <RehgarMasteryColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotemTalent">storm_ui_icon_rehgar_earthbindtotem.dds</RehgarMasteryColossalTotem>
+    <RehgarMasteryElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricChargeTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryElectricCharge>
+    <RehgarMasteryWolfRun name="Wolf Run" desc="RehgarGhostWolfWolfRunTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarMasteryWolfRun>
+    <RehgarMasteryLightningBond name="Lightning Bond" desc="RehgarLightningShieldLightningBondTalent">storm_ui_icon_rehgar_lightningshield_a.dds</RehgarMasteryLightningBond>
+  </Level1>
+  <Level4>
+    <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace" desc="RehgarChainHealSpiritwalkersGraceTalent">storm_ui_icon_rehgar_chainheal.dds</RehgarMasterySpiritwalkersGrace>
+    <RehgarMasteryFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarMasteryFeralHeart>
+    <RehgarMasteryStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcallerTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryStormcaller>
+    <RehgarMasteryShamanHealingWard name="Healing Totem" generic="true" desc="RehgarHealingTotem">storm_ui_icon_talent_healingward.dds</RehgarMasteryShamanHealingWard>
+  </Level4>
+  <Level7>
+    <RehgarGhostWolfBloodAndThunder name="Blood and Thunder" desc="GenericForwardMomentumTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarGhostWolfBloodAndThunder>
+    <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight">storm_ui_icon_rehgar_farsight.dds</RehgarMasteryFarsight>
+    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+    <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">storm_ui_icon_rehgar_earthbindtotem_a.dds</RehgarTotemicProjection>
+  </Level7>
+  <Level10>
+    <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarHeroicAbilityAncestralHealing>
+    <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust">storm_ui_icon_rehgar_bloodlust.dds</RehgarHeroicAbilityBloodlust>
+  </Level10>
+  <Level13>
+    <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryEarthShield>
+    <RehgarMasteryTidalWaves name="Tidal Waves" desc="RehgarChainHealTidalWavesTalent">storm_ui_icon_rehgar_chainheal.dds</RehgarMasteryTidalWaves>
+    <RehgarEarthlivingEnchant name="Earthliving Enchant" desc="RehgarEarthlivingEnchant">storm_ui_icon_rehgar_chainheal_a.dds</RehgarEarthlivingEnchant>
+  </Level13>
+  <Level16>
+    <RehgarMasteryEarthGraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotemTalent">storm_ui_icon_rehgar_earthbindtotem.dds</RehgarMasteryEarthGraspTotem>
+    <RehgarHungeroftheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarHungeroftheWolf>
+    <RehgarRisingStorm name="Rising Storm" desc="RehgarRisingStorm">storm_ui_icon_rehgar_lightningshield.dds</RehgarRisingStorm>
+  </Level16>
+  <Level20>
+    <RehgarMasteryFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessingTalent">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarMasteryFarseersBlessing>
+    <RehgarMasteryGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShoutTalent">storm_ui_icon_rehgar_bloodlust.dds</RehgarMasteryGladiatorsWarShout>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+  </Level20>
+</Rehgar>

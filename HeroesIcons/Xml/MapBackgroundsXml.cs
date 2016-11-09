@@ -31,7 +31,7 @@ namespace HeroesIcons.Xml
             {
                 foreach (var mapBackground in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml/{XmlFolder}/{mapBackground}.xml"))
+                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}/{mapBackground}.xml"))
                     {
                         reader.MoveToContent();
 
@@ -83,7 +83,7 @@ namespace HeroesIcons.Xml
 
         private Uri SetMapBackgroundUri(string fileName)
         {
-            return new Uri($"{ApplicationPath}MapBackgrounds/{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationPath}MapBackgrounds\{fileName}", UriKind.Absolute);
         }
     }
 }

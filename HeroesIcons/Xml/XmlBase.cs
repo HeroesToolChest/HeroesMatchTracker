@@ -28,9 +28,9 @@ namespace HeroesIcons.Xml
                 if (!ValidateRequiredFiles())
                     return;
 
-                using (XmlTextReader reader = new XmlTextReader($@"Xml/{XmlFolder}/{XmlParentFile}"))
+                using (XmlTextReader reader = new XmlTextReader($@"Xml\{XmlFolder}\{XmlParentFile}"))
                 {
-                    reader.ReadStartElement(XmlFolder);
+                    reader.ReadStartElement();
 
                     while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
                     {

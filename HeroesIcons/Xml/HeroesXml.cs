@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace HeroesIcons.Xml
 {
     internal class HeroesXml : XmlBase
     {
+        private int? SelectedBuild;
         private Dictionary<string, string> TalentShortDesc = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongDesc = new Dictionary<string, string>();
 
@@ -66,15 +68,20 @@ namespace HeroesIcons.Xml
         /// </summary>
         public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
 
-        private HeroesXml(string parentFile, string xmlFolder)
+        private HeroesXml(string parentFile, string xmlFolder, int? build = null)
         {
+            if (build == null)
+                SetDefaultBuildDirectory();
+            else
+                SelectedBuild = build;
+
             XmlParentFile = parentFile;
-            XmlFolder = xmlFolder;
+            XmlFolder = $@"{xmlFolder}\{SelectedBuild}";
         }
 
-        public static HeroesXml Initialize(string parentFile, string xmlFolder)
+        public static HeroesXml Initialize(string parentFile, string xmlFolder, int? build = null)
         {
-            HeroesXml xml = new HeroesXml(parentFile, xmlFolder);
+            HeroesXml xml = new HeroesXml(parentFile, xmlFolder, build);
             xml.Parse();
             return xml;
         }
@@ -232,14 +239,29 @@ namespace HeroesIcons.Xml
             }
         }
 
+        private void SetDefaultBuildDirectory()
+        {
+            List<string> buildDirectories = Directory.GetDirectories(@"Xml\Heroes").ToList();
+            List<int> builds = new List<int>();
+
+            foreach (var directory in buildDirectories)
+            {
+                builds.Add(int.Parse(Path.GetFileName(directory)));
+            }
+
+            builds.OrderByDescending(x => x);
+
+            SelectedBuild = builds[0];
+        }
+
         private Uri SetHeroPortraitUri(string fileName)
         {
-            return new Uri($"{ApplicationPath}HeroPortraits/{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationPath}HeroPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLeaderboardPortraitUri(string fileName)
         {
-            return new Uri($"{ApplicationPath}HeroLeaderboardPortraits/{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
@@ -248,9 +270,9 @@ namespace HeroesIcons.Xml
                 throw new IconException($"Image file does not have .dds extension [{fileName}]");
 
             if (!isGenericTalent)
-                return new Uri($"{ApplicationPath}Talents/{hero}/{fileName}", UriKind.Absolute);
+                return new Uri($@"{ApplicationPath}Talents\{hero}\{fileName}", UriKind.Absolute);
             else
-                return new Uri($"{ApplicationPath}Talents/_Generic/{fileName}", UriKind.Absolute);
+                return new Uri($@"{ApplicationPath}Talents\_Generic\{fileName}", UriKind.Absolute);
         }
 
         private void SetTalentDescriptions(string talentReferenceName, string desc)
@@ -275,7 +297,7 @@ namespace HeroesIcons.Xml
         {
             try
             {
-                using (StreamReader reader = new StreamReader(@"Xml\Strings\ShortTalentDescriptions.txt"))
+                using (StreamReader reader = new StreamReader($@"Xml\Heroes\{SelectedBuild}\_ShortTalentDescriptions.txt"))
                 {
                     while (!reader.EndOfStream)
                     {
@@ -287,7 +309,7 @@ namespace HeroesIcons.Xml
                         }
                     }
                 }
-                using (StreamReader reader = new StreamReader(@"Xml\Strings\FullTalentDescriptions.txt"))
+                using (StreamReader reader = new StreamReader($@"Xml\Heroes\{SelectedBuild}\_FullTalentDescriptions.txt"))
                 {
                     while (!reader.EndOfStream)
                     {
