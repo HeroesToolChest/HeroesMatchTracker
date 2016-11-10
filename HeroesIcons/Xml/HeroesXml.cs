@@ -8,12 +8,14 @@ namespace HeroesIcons.Xml
 {
     internal class HeroesXml : XmlBase
     {
-        private int? SelectedBuild;
+        private int SelectedBuild;
+
         private Dictionary<string, string> TalentShortDesc = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongDesc = new Dictionary<string, string>();
 
-        public int? CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
-        public int? LatestHeroesBuild { get; private set; }
+        public int CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
+        public int EarliestHeroesBuild { get; private set; } // cleared once initialized
+        public int LatestHeroesBuild { get; private set; } // cleared once initialized
 
         /// <summary>
         /// key is attributeid, value is hero name
@@ -76,7 +78,7 @@ namespace HeroesIcons.Xml
             if (build == null)
                 SetDefaultBuildDirectory();
             else
-                SelectedBuild = build;
+                SelectedBuild = build.Value;
 
             XmlParentFile = parentFile;
             XmlFolder = $@"{xmlFolder}\{SelectedBuild}";
@@ -242,6 +244,7 @@ namespace HeroesIcons.Xml
             }
         }
 
+        // this should only run once on startup
         private void SetDefaultBuildDirectory()
         {
             List<string> buildDirectories = Directory.GetDirectories(@"Xml\Heroes").ToList();
@@ -249,11 +252,17 @@ namespace HeroesIcons.Xml
 
             foreach (var directory in buildDirectories)
             {
-                builds.Add(int.Parse(Path.GetFileName(directory)));
+                int buildNumber;
+                if (int.TryParse(Path.GetFileName(directory), out buildNumber))
+                    builds.Add(buildNumber);
             }
+
+            if (buildDirectories.Count < 1 || builds.Count < 1)
+                throw new ParseXmlException("No Heroes Xml build folders found!");
 
             builds = builds.OrderByDescending(x => x).ToList();
 
+            EarliestHeroesBuild = builds[builds.Count - 1];
             LatestHeroesBuild = SelectedBuild = builds[0];
         }
 

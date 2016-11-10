@@ -10,6 +10,8 @@ namespace HeroesIcons
 {
     public class HeroesInfo : HeroesIconsBase
     {
+        private int EarliestHeroesBuild;
+        private int LatestHeroesBuild;
         private HeroesXml HeroesXml;
         private MatchAwardsXml MatchAwardsXml;
         private MapBackgroundsXml MapBackgroundsXml;
@@ -31,6 +33,9 @@ namespace HeroesIcons
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
             MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds");
             HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens");
+
+            EarliestHeroesBuild = HeroesXml.EarliestHeroesBuild;
+            LatestHeroesBuild = HeroesXml.LatestHeroesBuild;
 
             SetNonSupportHeroesWithSupportStat();
             SetPartyIcons();
@@ -55,9 +60,19 @@ namespace HeroesIcons
         /// <returns></returns>
         public void ReInitializeSpecificHeroesXml(int? build)
         {
+            if (build == null)
+                return;
+
+            if (build < EarliestHeroesBuild)
+                build = EarliestHeroesBuild;
+            else if (build > LatestHeroesBuild)
+                build = LatestHeroesBuild;
+
             // if the build is already loaded into memory then don't reload
             if (build != HeroesXml.CurrentLoadedHeroesBuild)
+            {
                 HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes", build);
+            }
         }
 
         /// <summary>
@@ -66,7 +81,7 @@ namespace HeroesIcons
         public void ReInitializeLatestHeroesXml()
         {
             // if the build is already loaded into memory then don't reload
-            if (HeroesXml.CurrentLoadedHeroesBuild != HeroesXml.LatestHeroesBuild)
+            if (HeroesXml.CurrentLoadedHeroesBuild != LatestHeroesBuild)
                 HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
         }
 
