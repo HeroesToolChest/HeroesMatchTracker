@@ -261,9 +261,9 @@ namespace HeroesParserData.ViewModels
         private void StartScan()
         {
             AreProcessButtonsEnabled = false;
-            Task.Run(() => 
+            Task.Run(async () =>
             {
-                LoadAccountDirectory();
+                await LoadAccountDirectory();
                 AreProcessButtonsEnabled = true;
             });           
         }
@@ -297,12 +297,12 @@ namespace HeroesParserData.ViewModels
         /// </summary>
         private void InitProcessing(bool isAutoScan)
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
                 if (isAutoScan)
-                    LoadAccountDirectory();
+                    await LoadAccountDirectory();
 
-                ParseReplays();
+                await ParseReplays();
             });           
         }
         #endregion start processing/init
@@ -464,7 +464,7 @@ namespace HeroesParserData.ViewModels
         /// <summary>
         /// Scan the default replays location and get all the replay files
         /// </summary>
-        private void LoadAccountDirectory()
+        private async Task LoadAccountDirectory()
         {
             CurrentStatus = "Scanning replay folder(s)...";
 
@@ -477,7 +477,7 @@ namespace HeroesParserData.ViewModels
             try
             {
                 var dateTime = LatestParsedChecked == true ? ReplaysLatestSaved : ReplaysLastSaved;
-                List <FileInfo> listFiles = new DirectoryInfo(UserSettings.Default.ReplaysLocation)
+                List<FileInfo> listFiles = new DirectoryInfo(UserSettings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", searchOption)
                     .OrderBy(x => x.LastWriteTime)
                     .Where(x => x.LastWriteTime > dateTime)
@@ -485,7 +485,7 @@ namespace HeroesParserData.ViewModels
 
                 TotalReplaysGrid = listFiles.Count;
 
-                Application.Current.Dispatcher.Invoke(delegate
+                await Application.Current.Dispatcher.InvokeAsync(delegate
                 {
                     ReplayFiles = new ObservableCollection<ReplayFile>();
                     ReplayFileLocations = new Dictionary<string, int>();
@@ -526,7 +526,7 @@ namespace HeroesParserData.ViewModels
         /// <summary>
         /// Parse all the replay files in the ReplayFiles list
         /// </summary> 
-        private void ParseReplays()
+        private async Task ParseReplays()
         {
             int currentCount = 0;
 
@@ -567,10 +567,12 @@ namespace HeroesParserData.ViewModels
                         {
                             file.Status = ReplayParseResult.Success;
 
-                            if (ReplayDataQueue.Count > 5) // give it a chance to dequeue some replays
-                                Thread.Sleep(1500);
-                            else if (ReplayDataQueue.Count > 7)
-                                Thread.Sleep(2000);
+                            if (ReplayDataQueue.Count >= 5) // give it a chance to dequeue some replays
+                                await Task.Delay(1500);
+                            else if (ReplayDataQueue.Count >= 7)
+                                await Task.Delay(2500);
+                            else if (ReplayDataQueue.Count >= 9)
+                                await Task.Delay(4000);
 
                             ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
                         }
@@ -581,7 +583,7 @@ namespace HeroesParserData.ViewModels
                             else
                                 file.Status = ReplayParseResult.ParserException;
 
-                            WarningLog.Log(LogLevel.Warn, $"Could not parse relay {file.FilePath}: {file.Status}");
+                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {file.FilePath}: {file.Status}");
                         }
                         else
                         {
@@ -616,7 +618,7 @@ namespace HeroesParserData.ViewModels
                 else if (IsProcessWatchChecked && currentCount == ReplayFiles.Count)
                 {
                     CurrentStatus = "Watching for new replays...";
-                    Thread.Sleep(2000);
+                    await Task.Delay(2000);
                 }
             } // end while
 
