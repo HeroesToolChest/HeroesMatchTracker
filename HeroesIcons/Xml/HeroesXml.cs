@@ -12,6 +12,9 @@ namespace HeroesIcons.Xml
         private Dictionary<string, string> TalentShortDesc = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongDesc = new Dictionary<string, string>();
 
+        public int? CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
+        public int? LatestHeroesBuild { get; private set; }
+
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
@@ -81,9 +84,9 @@ namespace HeroesIcons.Xml
 
         public static HeroesXml Initialize(string parentFile, string xmlFolder, int? build = null)
         {
-            HeroesXml xml = new HeroesXml(parentFile, xmlFolder, build);
-            xml.Parse();
-            return xml;
+            HeroesXml heroesXml = new HeroesXml(parentFile, xmlFolder, build);
+            heroesXml.Parse();
+            return heroesXml;
         }
 
         protected override void Parse()
@@ -98,7 +101,7 @@ namespace HeroesIcons.Xml
             {
                 foreach (var hero in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml/{XmlFolder}/{hero}.xml"))
+                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{hero}.xml"))
                     {
                         reader.MoveToContent();
 
@@ -251,7 +254,7 @@ namespace HeroesIcons.Xml
 
             builds = builds.OrderByDescending(x => x).ToList();
 
-            SelectedBuild = builds[0];
+            LatestHeroesBuild = SelectedBuild = builds[0];
         }
 
         private Uri SetHeroPortraitUri(string fileName)

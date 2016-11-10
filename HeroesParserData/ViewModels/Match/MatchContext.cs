@@ -376,6 +376,9 @@ namespace HeroesParserData.ViewModels.Match
                 // get replay
                 Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
 
+                if (replay.ReplayBuild < Properties.Settings.Default.SupportedReplayBuild)
+                    HeroesInfo.ReInitializeSpecificHeroesXml(replay.ReplayBuild);
+
                 // get players info 
                 var playersList = replay.ReplayMatchPlayers.ToList();
                 var playerTalentsList = replay.ReplayMatchPlayerTalents.ToList();
@@ -574,7 +577,7 @@ namespace HeroesParserData.ViewModels.Match
             }
             catch (Exception ex)
             {
-                ExceptionLog.Log(LogLevel.Warn, ex);
+                WarningLog.Log(LogLevel.Warn, ex);
                 throw;
             }
         }

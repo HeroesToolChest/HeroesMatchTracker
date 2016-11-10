@@ -49,13 +49,25 @@ namespace HeroesIcons
         }
 
         /// <summary>
-        /// 
+        /// Reinitialize a specific heroes xml build
         /// </summary>
-        /// <param name="replayBuild"></param>
+        /// <param name="replayBuild">The replay build to load</param>
         /// <returns></returns>
-        public void InitializeSpecificHeroesXml(int? build)
+        public void ReInitializeSpecificHeroesXml(int? build)
         {
-            //HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
+            // if the build is already loaded into memory then don't reload
+            if (build != HeroesXml.CurrentLoadedHeroesBuild)
+                HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes", build);
+        }
+
+        /// <summary>
+        /// Reinitialize the latest heroes xml build
+        /// </summary>
+        public void ReInitializeLatestHeroesXml()
+        {
+            // if the build is already loaded into memory then don't reload
+            if (HeroesXml.CurrentLoadedHeroesBuild != HeroesXml.LatestHeroesBuild)
+                HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
         }
 
         #region public methods

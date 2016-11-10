@@ -942,6 +942,8 @@ namespace HeroesParserData.ViewModels.Stats
             if (string.IsNullOrEmpty(SelectedHero))
                 return;
 
+            HeroesInfo.ReInitializeLatestHeroesXml();
+
             var allTalentTierForHero = HeroesInfo.GetTalentsForHero(SelectedHero);
 
             GameMode gameMode = Utilities.GetGameModeFromString(SelectedTalentGameMode);
