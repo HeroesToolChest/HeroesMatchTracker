@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Butcher name="The Butcher" attributeid="Butc" role="Assassin" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
+  <Level1>
+    <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringInvigoration>
+    <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+    <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringChopMeat>
+    <ButcherMasteryFreshMeatAbattoir name="Abattoir" desc="ButcherFreshMeatAbattoirTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatAbattoir>
+  </Level1>
+  <Level4>
+    <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringFlailAxe>
+    <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit" desc="ButcherRuthlessOnslaughtUnrelentingPursuitTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
+    <ButcherMasteryHamstringCheapShot name="Cheap Shot" desc="ButcherHamstringCheapShotTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringCheapShot>
+  </Level4>
+  <Level7>
+    <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade" desc="ButcherButchersBrandInsatiableBladeTalent">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandInsatiableBlade>
+    <ButcherMasteryFreshMeatVictuals name="Victuals" desc="ButcherFreshMeatVictualsTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatVictuals>
+    <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
+  </Level7>
+  <Level10>
+    <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
+    <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
+  </Level10>
+  <Level13>
+    <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>
+    <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge" desc="ButcherRuthlessOnslaughtSavageChargeTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtSavageCharge>
+    <ButcherMasteryHamstringBrutalStrike name="Brutal Strike" desc="ButcherHamstringBrutalStrikeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringBrutalStrike>
+  </Level13>
+  <Level16>
+    <ButcherMasteryHamstringCripplingSlam name="Crippling Slam" desc="ButcherHamstringCripplingSlamTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringCripplingSlam>
+    <ButcherTalentEnraged name="Enraged" desc="ButcherEnragedTalent">storm_ui_icon_butcher_enraged.dds</ButcherTalentEnraged>
+    <ButcherMasteryFreshMeatBloodFrenzy name="Blood Frenzy" desc="ButcherFreshBloodFrenzyMeatTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatBloodFrenzy>
+  </Level16>
+  <Level20>
+    <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherMasteryFiresofHell>
+    <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherMasterySlaughterhouse>
+    <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+  <Old>
+    <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
+    <GenericTalentBurningRage name="Burning Rage">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+    <ButcherMasteryRuthlessOnslaughtFinalAssault name="Final Assault">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtFinalAssault>
+    <ButcherMasteryButchersBrandCraveFlesh name="Crave Flesh">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandCraveFlesh>
+    <GenericTalentSpellShield name="Spell Shield">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+  </Old>
+</Butcher>

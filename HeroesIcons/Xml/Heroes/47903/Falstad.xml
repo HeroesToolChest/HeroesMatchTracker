@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Falstad attributeid="Fals" role="Assassin" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
+  <Level1>
+    <FalstadHammerangGatheringStorm name="Gathering Storm" desc="FalstadGatheringStormTalent">storm_ui_icon_falstad_hammerang.dds</FalstadHammerangGatheringStorm>
+    <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
+    <FalstadWingman name="Wingman" generic="true" desc="FalstadWingmanHotbarTalent">storm_ui_icon_talent_bribe.dds</FalstadWingman>
+  </Level1>
+  <Level4>
+    <FalstadMasteryLightningRodStaticShield name="Static Shield" desc="FalstadStaticShieldTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodStaticShield>
+    <FalstadMasteryUpdraftBarrelRoll name="Updraft" desc="FalstadBarrelRollUpdraftTalent">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryUpdraftBarrelRoll>
+    <FalstadTalentHammerGains name="Hammer Gains" generic="true" desc="FalstadHammerGainsTalent">storm_ui_icon_talent_autoattack_heal.dds</FalstadTalentHammerGains>
+  </Level4>
+  <Level7>
+    <FalstadMasteryHammerangSecretWeapon name="Secret Weapon" desc="FalstadSecretWeaponTalent">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangSecretWeapon>
+    <FalstadMasteryBolterang name="BOOMerang" desc="FalstadHammerangBOOMerangTalent">storm_ui_icon_falstad_hammerang_a.dds</FalstadMasteryBolterang>
+    <FalstadMasteryLightningRodChargedUp name="Charged Up" desc="FalstadChargedUpTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodChargedUp>
+  </Level7>
+  <Level10>
+    <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast" desc="FalstadHinterlandBlast">storm_ui_icon_falstad_hinterlandblast.dds</FalstadHeroicAbilityHinterlandBlast>
+    <FalstadHeroicAbilityMightyGust name="Mighty Gust" desc="FalstadMightyGust">storm_ui_icon_falstad_mightygust.dds</FalstadHeroicAbilityMightyGust>
+  </Level10>
+  <Level13>
+    <FalstadMasteryLightningRodThunderstrikes name="Thunderstrikes" desc="FalstadThunderstrikesTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodThunderstrikes>
+    <FalstadMasteryBarrelRollFlowRider name="Flow Rider" desc="FalstadFlowRiderTalent">storm_ui_icon_falstad_tailwind.dds</FalstadMasteryBarrelRollFlowRider>
+    <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+  </Level13>
+  <Level16>
+    <FalstadMasteryCripplingHammerHammerang name="Crippling Hammer" desc="FalstadHammerangCripplingHammerTalent">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryCripplingHammerHammerang>
+    <FalstadMasteryAerieGustsTailwind name="Aerie Gusts" desc="FalstadTailwindAerieGustsTalent">storm_ui_icon_falstad_tailwind.dds</FalstadMasteryAerieGustsTailwind>
+    <FalstadMasteryAfterburner name="Afterburner" desc="FalstadBarrelRollAfterburnerTalent">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryAfterburner>
+  </Level16>
+  <Level20>
+    <FalstadMasteryCalloftheWildhammerHinterlandBlast name="Call of the Wildhammer" desc="FalstadHinterlandBlastCalloftheWildhammerTalent">storm_ui_icon_falstad_hinterlandblast.dds</FalstadMasteryCalloftheWildhammerHinterlandBlast>
+    <FalstadMasteryMightyGustWindTunnel name="Wind Tunnel" desc="FalstadWindTunnelTalent">storm_ui_icon_falstad_mightygust.dds</FalstadMasteryMightyGustWindTunnel>
+    <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
+    <FalstadMasteryFlightEpicMount name="Epic Mount" desc="FalstadEpicMountTalent">storm_ui_icon_falstad_epicmount.dds</FalstadMasteryFlightEpicMount>
+  </Level20>
+  <Old>
+    <FalstadGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadGatheringStorm>
+    <FalstadMasteryHammerangPowerThrow name="Power Throw">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangPowerThrow>
+    <FalstadMasteryBarrelRollFreeRoll name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeRoll>
+    <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
+    <BattleMomentumFalstad name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumFalstad>
+    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
+  </Old>
+</Falstad>

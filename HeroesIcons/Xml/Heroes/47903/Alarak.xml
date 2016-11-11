@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Alarak attributeid="Alar" role="Assassin" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
+  <Level1>
+    <AlarakWithoutEffort name="Without Effort" desc="AlarakWithoutEffort">storm_ui_icon_alarak_telekinesis.dds</AlarakWithoutEffort>
+    <AlarakAppliedForce name="Applied Force" desc="AlarakAppliedForce">storm_ui_icon_alarak_telekinesis_a.dds</AlarakAppliedForce>
+    <AlarakPowerConduit name="Power Conduit" desc="AlarakPowerConduit">storm_ui_icon_alarak_lightningsurge.dds</AlarakPowerConduit>
+  </Level1>
+  <Level4>
+    <AlarakDoubleCross name="Double Cross" desc="AlarakDoubleCross">storm_ui_icon_alarak_discordstrike.dds</AlarakDoubleCross>
+    <AlarakRecklessStrike name="Reckless Strike" desc="AlarakRecklessStrike">storm_ui_icon_alarak_discordstrike_a.dds</AlarakRecklessStrike>
+    <AlarakCycleofDiscord name="Cycle of Discord" desc="AlarakCycleofDiscord">storm_ui_icon_alarak_discordstrike_b.dds</AlarakCycleofDiscord>
+    <AlarakExtendedLightning name="Extended Lightning" desc="AlarakExtendedLightning">storm_ui_icon_alarak_lightningsurge.dds</AlarakExtendedLightning>
+  </Level4>
+  <Level7>
+    <AlarakChaosReigns name="Chaos Reigns" desc="AlarakChaosReigns">storm_ui_icon_alarak_discordstrike.dds</AlarakChaosReigns>
+    <AlarakEndlessEnergy name="Endless Energy" desc="AlarakEndlessEnergy">storm_ui_icon_alarak_lightningsurge.dds</AlarakEndlessEnergy>
+    <AlarakThunderstruck name="Thunderstruck" desc="AlarakThunderstruck">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakThunderstruck>
+  </Level7>
+  <Level10>
+    <AlarakHeroicAbilityDeadlyCharge name="Deadly Charge" desc="AlarakDeadlyCharge">storm_ui_icon_alarak_recklesscharge.dds</AlarakHeroicAbilityDeadlyCharge>
+    <AlarakHeroicAbilityCounterStrike name="Counter-Strike" desc="AlarakCounterStrikeTargeted">storm_ui_icon_alarak_counterstrike.dds</AlarakHeroicAbilityCounterStrike>
+  </Level10>
+  <Level13>
+    <AlarakDissonance name="Dissonance" desc="AlarakDissonance">storm_ui_icon_alarak_discordstrike.dds</AlarakDissonance>
+    <AlarakPsychokinesis name="Psychokinesis" desc="AlarakPsychokinesis">storm_ui_icon_alarak_telekinesis.dds</AlarakPsychokinesis>
+    <AlarakHinderedMotion name="Hindered Motion" desc="AlarakHinderedMotion">storm_ui_icon_alarak_telekinesis_a.dds</AlarakHinderedMotion>
+    <AlarakPureMalice name="Pure Malice" desc="AlarakPureMalice">storm_ui_icon_alarak_sadism.dds</AlarakPureMalice>
+  </Level13>
+  <Level16>
+    <AlarakQuickMind name="Quick Mind" desc="AlarakQuickMind">storm_ui_icon_alarak_telekinesis.dds</AlarakQuickMind>
+    <AlarakProjectedForce name="Projected Force" desc="AlarakProjectedForce">storm_ui_icon_alarak_telekinesis_a.dds</AlarakProjectedForce>
+    <AlarakSustainingPower name="Sustaining Power" desc="AlarakSustainingPower">storm_ui_icon_alarak_lightningsurge.dds</AlarakSustainingPower>
+    <AlarakNegativelyCharged name="Negatively Charged" desc="AlarakNegativelyCharged">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakNegativelyCharged>
+  </Level16>
+  <Level20>
+    <AlarakCounterStrikeItem name="Counter-Strike" desc="AlarakCounterStrike2ndHeroic">storm_ui_icon_alarak_counterstrike.dds</AlarakCounterStrikeItem>
+    <AlarakDeadlyChargeItem name="Deadly Charge" desc="AlarakDeadlyCharge2ndHeroic">storm_ui_icon_alarak_recklesscharge.dds</AlarakDeadlyChargeItem>
+    <AlarakLastLaugh name="Last Laugh" desc="AlarakLastLaugh">storm_ui_icon_alarak_lasttrick.dds</AlarakLastLaugh>
+    <AlarakHastyBargain name="Hasty Bargain" desc="AlarakHastyBargain">storm_ui_icon_alarak_hastybargain.dds</AlarakHastyBargain>
+  </Level20>
+  <Old>
+    <AlarakWideLightning name="Wide Lightning">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakWideLightning>
+  </Old>
+</Alarak>
