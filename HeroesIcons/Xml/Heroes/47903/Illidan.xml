@@ -35,13 +35,4 @@
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old>
-    <IllidanMasteryShadowShieldEvasion name="Shadow Shield">storm_ui_icon_illidan_evasion.dds</IllidanMasteryShadowShieldEvasion>
-    <IllidanMasteryLungeDive name="Lunge Dive">storm_ui_icon_illidan_dive.dds</IllidanMasteryLungeDive>
-    <IllidanCombatStyleThirstingBlade name="Thirsting Blade">storm_ui_icon_illidan_betrayersthirst.dds</IllidanCombatStyleThirstingBlade>
-    <IllidanMasteryFelReachSweepingStrike name="Fel Reach">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasteryFelReachSweepingStrike>
-    <IllidanMasterySecondSweepSweepingStrike name="Second Sweep">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasterySecondSweepSweepingStrike>
-    <IllidanCombatStyleThrillOfBattle name="Thrill of Battle">storm_ui_icon_illidan_betrayersthirst.dds</IllidanCombatStyleThrillOfBattle>
-    <IllidanMasteryReflexiveBlockEvasion name="Reflexive Block">storm_ui_icon_illidan_evasion.dds</IllidanMasteryReflexiveBlockEvasion>
-  </Old>
 </Illidan>

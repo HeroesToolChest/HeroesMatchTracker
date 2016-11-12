@@ -39,7 +39,4 @@
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <SonyaTalentIgnorePain name="Ignore Pain" desc="SonyaIgnorePain">storm_ui_icon_sonya_ignorepain.dds</SonyaTalentIgnorePain>
   </Level20>
-  <Old>
-    <BarbarianCombatStyleEndlessFury name="Endless Fury" desc="">storm_ui_icon_sonya_fury.dds</BarbarianCombatStyleEndlessFury>
-  </Old>
 </Sonya>

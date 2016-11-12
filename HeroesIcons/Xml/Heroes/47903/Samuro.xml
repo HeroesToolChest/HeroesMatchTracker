@@ -35,6 +35,4 @@
     <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_mirrorimage.dds</SamuroWindStrider>
     <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroBlademastersPursuit>
   </Level20>
-  <Old>
-  </Old>
 </Samuro>

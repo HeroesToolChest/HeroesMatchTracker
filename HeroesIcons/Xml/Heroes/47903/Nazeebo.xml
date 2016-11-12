@@ -35,28 +35,4 @@
     <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
     <WitchDoctorVileInfection name="Vile Infection" desc="WitchDoctorVileInfection">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorVileInfection>
   </Level20>
-  <Old>
-    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
-    <WitchDoctorCombatStyleBloodRitual name="Blood Ritual">storm_ui_icon_Nazeebo_VoodooRitual.dds</WitchDoctorCombatStyleBloodRitual>
-    <WitchDoctorCombatStyleDeathRitual name="Death Ritual">storm_ui_icon_nazeebo_voodooritual_a.dds</WitchDoctorCombatStyleDeathRitual>
-    <GenericTalentDemolitionist name="Demolitionist">storm_ui_icon_talent_autoattack_building.dds</GenericTalentDemolitionist>
-    <WitchDoctorMasterySpiderCluster name="Spider Cluster">storm_ui_icon_Nazeebo_CorpseSpider.dds</WitchDoctorMasterySpiderCluster>
-    <GenericTalentGatheringPower name="Gathering Power">storm_ui_icon_Talent_GatheringPower.dds</GenericTalentGatheringPower>
-    <GenericTalentMercenaryLord name="Mercenary Lord">storm_ui_icon_Talent_MercenaryLord.dds</GenericTalentMercenaryLord>
-    <GenericTalentEnvenom name="Envenom">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
-    <GenericTalentPromote name="Promote">storm_ui_icon_Talent_Promote.dds</GenericTalentPromote>
-    <WitchDoctorCombatStyleGidbinn name="Gidbinn" generic="true">storm_ui_icon_Talent_Gidbin.dds</WitchDoctorCombatStyleGidbinn>
-    <WitchDoctorMasteryFreshCorpses name="Fresh Corpses">storm_ui_icon_Nazeebo_ZombieWall.dds</WitchDoctorMasteryFreshCorpses>
-    <WitchDoctorToadAffinity name="Toad Affinity">storm_ui_icon_Nazeebo_PlagueOfToads.dds</WitchDoctorToadAffinity>
-    <WitchDoctorMasteryDeadRush name="Dead Rush">storm_ui_icon_Nazeebo_ZombieWall.dds</WitchDoctorMasteryDeadRush>
-    <WitchDoctorMasteryToadsofHugenessPlagueofToads name="Toads of Hugeness">storm_ui_icon_Nazeebo_PlagueOfToads.dds</WitchDoctorMasteryToadsofHugenessPlagueofToads>
-    <WitchDoctorMasteryThingOfTheDeep name="Thing of the Deep" generic="true">storm_ui_icon_talent_elunesgrace.dds</WitchDoctorMasteryThingOfTheDeep>
-    <WitchDoctorCombatStyleSpecializedToxin name="Specialized Toxin">storm_ui_icon_Nazeebo_VoodooRitual.dds</WitchDoctorCombatStyleSpecializedToxin>
-    <WitchDoctorMasteryLeapingSpidersCorpseSpiders name="Leaping Spiders">storm_ui_icon_Nazeebo_CorpseSpider.dds</WitchDoctorMasteryLeapingSpidersCorpseSpiders>
-    <WitchDoctorMasteryInfestedToads name="Infested Toads">storm_ui_icon_Nazeebo_PlagueOfToads.dds</WitchDoctorMasteryInfestedToads>
-    <WitchDoctorHardenedFocus name="Hardened Focus" generic="true">storm_ui_icon_Talent_HardenedFocus.dds</WitchDoctorHardenedFocus>
-    <WitchDoctorMasteryHumongoid name="Humongoid">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorMasteryHumongoid>
-    <WitchDoctorMasteryAnnihilatingSpirits name="Annihilating Spirit">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorMasteryAnnihilatingSpirits>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
-  </Old>
 </Nazeebo>

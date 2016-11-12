@@ -39,7 +39,4 @@
     <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor" generic="true" desc="RexxarFrenzyofKalimdorTalent">storm_ui_icon_talent_autoattack_slow.dds</RexxarFrenzyofKalimdor>
     <RexxarHardenedSkin name="Hardened Skin" generic="true" desc="RexxarHardenedSkin">storm_ui_icon_Talent_HardenedShield.dds</RexxarHardenedSkin>
   </Level20>
-  <Old>
-    <RexxarThrowingAxes name="Throwing Axes" generic="true">storm_ui_icon_talent_autoattack_range.dds</RexxarThrowingAxes>
-  </Old>
 </Rexxar>

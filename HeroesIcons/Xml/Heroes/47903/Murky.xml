@@ -40,7 +40,4 @@
     <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old>
-    <MurkyBlockFishtank name="Fishtank" generic="true">storm_ui_icon_talent_block.dds</MurkyBlockFishtank>
-  </Old>
 </Murky>

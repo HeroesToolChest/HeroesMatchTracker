@@ -38,5 +38,4 @@
     <DehakaBrushstalkerApexPredator name="Apex Predator" desc="DehakaBrushstalkerApexPredatorTalent">storm_ui_icon_dehaka_brushstalker.dds</DehakaBrushstalkerApexPredator>
     <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
   </Level20>
-  <Old></Old>
 </Dehaka>

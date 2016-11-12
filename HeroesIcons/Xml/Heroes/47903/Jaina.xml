@@ -36,7 +36,4 @@
     <JainaImprovedIceBlock name="Improved Ice Block" desc="JainaImprovedIceBlockHotbar">storm_ui_icon_jaina_improvediceblock.dds</JainaImprovedIceBlock>
     <GenericArcanePower name="Arcane Power" desc="GenericArcanePowerHotbar">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
   </Level20>
-  <Old>
-    <JainaBlizzardSnowCrash name="Snow Crash">storm_ui_icon_jaina_blizzard.dds</JainaBlizzardSnowCrash>
-  </Old>
 </Jaina>

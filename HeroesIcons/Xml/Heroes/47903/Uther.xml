@@ -38,7 +38,4 @@
     <UtherMasteryRedemption name="Redemption" desc="UtherRedemptionTalent">storm_ui_icon_uther_eternaldevotion.dds</UtherMasteryRedemption>
     <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
-  <Old>
-    <UtherMasteryReachHolyLight name="Reach">storm_ui_icon_uther_holylight.dds</UtherMasteryReachHolyLight>
-  </Old>
 </Uther>

@@ -36,7 +36,4 @@
     <NecromancerTalentMortalWound name="Mortal Wound" desc="NecromancerMortalWound">storm_ui_icon_Necromancer_Reap.dds</NecromancerTalentMortalWound>
     <NecromancerTalentBoneSpear name="Bone Spear" desc="NecromancerBoneSpear">storm_ui_icon_Necromancer_BoneSpear.dds</NecromancerTalentBoneSpear>
   </Level20>
-  <Old>
-    <NecromancerTalentExecutioner name="Excecutioner" generic="true">storm_ui_icon_talent_autoattack_damage.dds</NecromancerTalentExecutioner>
-  </Old>
 </Xul>

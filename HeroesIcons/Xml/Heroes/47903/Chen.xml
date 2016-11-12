@@ -36,27 +36,4 @@
     <ChenPurifyingBrew name="Purifying Brew" desc="ChenPurifyingBrew">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenPurifyingBrew>
     <ChenStormstoutSecretRecipe name="Stormstout Secret Recipe" desc="ChenStormstoutSecretRecipe">storm_ui_icon_chen_stormstoutsecretrecipe.dds</ChenStormstoutSecretRecipe>
   </Level20>
-  <Old>
-    <GenericTalentRegenerationMaster name="Regeneration Master">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
-    <ChenMasteryKegSmashKegToss name="Keg Toss">storm_ui_icon_chen_kegsmash.dds</ChenMasteryKegSmashKegToss>
-    <ChenMasteryFortifyingBrewGroundingBrew name="Grounding Brew">storm_ui_icon_chen_fortifyingbrew.dds</ChenMasteryFortifyingBrewGroundingBrew>
-    <ChenMasteryBreathOfFireConsumingFlame name="Consuming Flame">storm_ui_icon_chen_breathoffire.dds</ChenMasteryBreathOfFireConsumingFlame>
-    <ChenTalentSwiftReflexes name="Swift Reflexes">storm_ui_icon_Chen_SwiftReflexes.dds</ChenTalentSwiftReflexes>
-    <ChenMasteryFlyingKickDeadlyStrike name="Deadly Strike">storm_ui_icon_chen_flyingkick.dds</ChenMasteryFlyingKickDeadlyStrike>
-    <GenericTalentAmplifiedHealing name="Amplified Healing">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
-    <ChenMasteryBreathOfFireDeepBreath name="Deep Breath">storm_ui_icon_chen_breathoffire.dds</ChenMasteryBreathOfFireDeepBreath>
-    <ChenMasteryKegSmashFullKeg name="Full Keg">storm_ui_icon_chen_kegsmash.dds</ChenMasteryKegSmashFullKeg>
-    <ChenMasteryFortifyingBrewCombatStance name="Combat Stance">storm_ui_icon_chen_fortifyingbrew.dds</ChenMasteryFortifyingBrewCombatStance>
-    <ChenMasteryBrewmastersBalance name="Brewmaster's Balance">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenMasteryBrewmastersBalance>
-    <ChenMasteryBreathOfFireRingOfFire name="Ring of Fire">storm_ui_icon_chen_breathoffire.dds</ChenMasteryBreathOfFireRingOfFire>
-    <ChenMasteryFlyingKickBrewStrike name="Brew Strike">storm_ui_icon_chen_flyingkick.dds</ChenMasteryFlyingKickBrewStrike>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
-    <ChenCombatStyleBottomlessMug name="Bottomless Mug">storm_ui_icon_chen_fortifyingbrew.dds</ChenCombatStyleBottomlessMug>
-    <ChenMasteryFortifyingBrewBolderFlavor name="Bolder Flavor">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenMasteryFortifyingBrewBolderFlavor>
-    <ChenMasteryFlyingKickPressurePoint name="Pressure Point">storm_ui_icon_chen_flyingkick.dds</ChenMasteryFlyingKickPressurePoint>
-    <ChenMasteryFlyingKickCombinationAttack name="Combination Attack">storm_ui_icon_chen_flyingkick_a.dds</ChenMasteryFlyingKickCombinationAttack>
-    <ChenMasteryStormEarthFireElementalConduit name="Elemental Conduit">storm_ui_icon_chen_stormearthfire.dds</ChenMasteryStormEarthFireElementalConduit>
-    <GenericTalentHardenedShield name="Hardened Shield">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
-  </Old>
 </Chen>

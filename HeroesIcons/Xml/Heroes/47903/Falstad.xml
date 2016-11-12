@@ -35,12 +35,4 @@
     <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">storm_ui_icon_talent_autoattack_range.dds</GenericTalentNexusFrenzy>
     <FalstadMasteryFlightEpicMount name="Epic Mount" desc="FalstadEpicMountTalent">storm_ui_icon_falstad_epicmount.dds</FalstadMasteryFlightEpicMount>
   </Level20>
-  <Old>
-    <FalstadGatheringStorm name="Gathering Storm">storm_ui_icon_falstad_hammerang.dds</FalstadGatheringStorm>
-    <FalstadMasteryHammerangPowerThrow name="Power Throw">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangPowerThrow>
-    <FalstadMasteryBarrelRollFreeRoll name="Free Roll">storm_ui_icon_falstad_barrelroll.dds</FalstadMasteryBarrelRollFreeRoll>
-    <FalstadMasteryHammerangHammerTime name="Hammer Time">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangHammerTime>
-    <BattleMomentumFalstad name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumFalstad>
-    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
-  </Old>
 </Falstad>

@@ -39,7 +39,4 @@
     <BrightwingRevitalizingMistSoothingMist name="Revitalizing Mist" desc="BrightwingRevitalizingMistTalent">storm_ui_icon_brightwing_soothingmist.dds</BrightwingRevitalizingMistSoothingMist>
     <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
-  <Old>
-    <GenericTalentBribe name="Bribe">storm_ui_icon_talent_bribe.dds</GenericTalentBribe>
-  </Old>
 </Brightwing>

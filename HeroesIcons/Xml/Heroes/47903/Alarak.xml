@@ -38,7 +38,4 @@
     <AlarakLastLaugh name="Last Laugh" desc="AlarakLastLaugh">storm_ui_icon_alarak_lasttrick.dds</AlarakLastLaugh>
     <AlarakHastyBargain name="Hasty Bargain" desc="AlarakHastyBargain">storm_ui_icon_alarak_hastybargain.dds</AlarakHastyBargain>
   </Level20>
-  <Old>
-    <AlarakWideLightning name="Wide Lightning">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakWideLightning>
-  </Old>
 </Alarak>

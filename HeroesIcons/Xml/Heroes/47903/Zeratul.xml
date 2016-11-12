@@ -43,8 +43,4 @@
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
     <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
-  <Old>
-    <GenericVampiricStrikePassive name="VampiricStrike">storm_ui_icon_talent_autoattack_heal.dds</GenericVampiricStrikePassive>
-    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
-  </Old>
 </Zeratul>

@@ -38,10 +38,4 @@
     <AzmodanBoltoftheStorms name="Bolt of the Storm" generic="true" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</AzmodanBoltoftheStorms>
     <AzmodanMasteryForcedRecruitment name="Forced Recruitment" desc="AzmodanGeneralOfHellForcedRecruitmentTalent">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryForcedRecruitment>
   </Level20>
-  <Old>
-    <AzmodanBloodForBlood name="Blood for Blood" generic="true">storm_ui_icon_talent_bloodforblood.dds</AzmodanBloodForBlood>
-    <AzmodanBribe name="Bribe" generic="true">storm_ui_icon_talent_bribe.dds</AzmodanBribe>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
-    <AzmodanMasteryHellCaptain name="Bound Minion">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryHellCaptain>
-  </Old>
 </Azmodan>

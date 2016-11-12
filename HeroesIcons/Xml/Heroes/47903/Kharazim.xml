@@ -39,7 +39,4 @@
     <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
     <MonkEpiphany name="Epiphany" desc="MonkEpiphany">storm_ui_icon_kharazim_epiphany.dds</MonkEpiphany>
   </Level20>
-  <Old>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
-  </Old>
 </Kharazim>

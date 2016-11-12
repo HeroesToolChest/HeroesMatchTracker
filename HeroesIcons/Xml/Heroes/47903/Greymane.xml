@@ -38,8 +38,4 @@
     <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss" desc="GreymaneHuntersBlunderbussTalent">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
     <GreymaneToothAndClaw name="Tooth and Claw" desc="GreymaneToothAndClawTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
   </Level20>
-  <Old>
-    <GreymaneGilneanCocktailConcentratedBlast name="Concentrated Blast">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailConcentratedBlast>
-    <GreymaneWorgenFormRelentlessPredator name="Relentless Predator">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneWorgenFormRelentlessPredator>
-  </Old>
 </Greymane>

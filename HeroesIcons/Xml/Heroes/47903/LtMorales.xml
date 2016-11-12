@@ -39,8 +39,4 @@
     <MedicCaduceusReactor2dot0 name="Caduceus Reactor 2.0" desc="MedicCaduceusReactor2dot0Talent">storm_ui_icon_medic_caduceusreactor.dds</MedicCaduceusReactor2dot0>
     <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
-  <Old>
-    <MedicAdvancedBlock name="Advanced Block">storm_ui_icon_medic_advancedblock.dds</MedicAdvancedBlock>
-    <MedicUpgradedBallistics name="Upgraded Ballistics">storm_ui_icon_medic_displacementgrenade.dds</MedicUpgradedBallistics>
-  </Old>
 </LtMorales>

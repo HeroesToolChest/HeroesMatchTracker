@@ -35,10 +35,4 @@
     <KaelthasMasterOfFlames name="Master of Flames" desc="KaelthasMasterOfFlamesLivingBomb">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasMasterOfFlames>
     <KaelthasMasteryFlamethrower name="Flamethrower" desc="KaelthasFlamethrowerTalent">storm_ui_icon_kaelthas_flamestrike.dds</KaelthasMasteryFlamethrower>
   </Level20>
-  <Old>
-    <KaelthasLivingBombChainBomb name="ChainBomb">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombChainBomb>
-    <KaelthasArcaneBarrier name="ArcaneBarrier">storm_ui_icon_kaelthas_arcanebarrier.dds</KaelthasArcaneBarrier>
-    <GenericArcanePower name="Arcane Power">storm_ui_icon_talent_arcanepower.dds</GenericArcanePower>
-    <KaelthasGravityCrush name="Gravity Crush">storm_ui_icon_kaelthas_gravitylapse.dds</KaelthasGravityCrush>
-  </Old>
 </Kaelthas>

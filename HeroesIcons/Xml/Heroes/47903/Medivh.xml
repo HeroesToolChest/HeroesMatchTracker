@@ -37,7 +37,4 @@
     <MedivhArcaneBrilliance name="Arcane Brilliance" desc="MedivhArcaneBrilliance">storm_ui_icon_jaina_arcaneintellect.dds</MedivhArcaneBrilliance>
     <MedivhInvisibility name="Invisibility" desc="MedivhInvisibility">storm_ui_icon_medivh_invisibility.dds</MedivhInvisibility>
   </Level20>
-  <Old>
-    <MedivhArcaneRiftManaAdept name="Mana Adept">storm_ui_icon_medivh_arcanemissile.dds</MedivhArcaneRiftManaAdept>
-  </Old>
 </Medivh>

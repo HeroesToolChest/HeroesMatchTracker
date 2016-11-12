@@ -40,5 +40,4 @@
     <LeoricMasterySpectralLeech name="Spectral Leech" generic="true" desc="LeoricSpectralLeechTalent">storm_ui_icon_talent_autoattack_heal.dds</LeoricMasterySpectralLeech>
     <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
   </Level20>
-  <Old></Old>
 </Leoric>

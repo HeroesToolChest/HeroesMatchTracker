@@ -40,5 +40,4 @@
     <ZaryaParticleGrenadeGrenadier name="Grenadier" desc="ZaryaParticleGrenadeGrenadierTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeGrenadier>
     <ZaryaUnyieldingDefender name="Unyielding Defender" desc="ZaryaUnyieldingDefenderTalent">storm_ui_icon_zarya_unyieldingdefender.dds</ZaryaUnyieldingDefender>
   </Level20>
-  <Old></Old>
 </Zarya>

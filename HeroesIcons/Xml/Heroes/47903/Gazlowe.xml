@@ -38,8 +38,4 @@
     <TinkerTalentFirinMahLazorz name="Firin' Mah Lazorz" desc="TinkerFirinMahLazorz">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerTalentFirinMahLazorz>
     <TinkerItsRainingScrap name="It's Raining Scrap" desc="TinkerItsRainingScrap">storm_ui_icon_gazlowe_itsrainingscrap.dds</TinkerItsRainingScrap>
   </Level20>
-  <Old>
-    <TinkerMasteryLongRangedTurrets name="Long Ranged Turrets">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryLongRangedTurrets>
-    <TinkerMasterySapperTurrets name="Engine Gunk">storm_ui_icon_Gazlowe_RockItTurret_Var1.dds</TinkerMasterySapperTurrets>
-  </Old>
 </Gazlowe>

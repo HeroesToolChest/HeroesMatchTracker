@@ -38,10 +38,4 @@
     <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
     <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
-  <Old>
-    <StitchesCombatStyleVileCleaver name="Vile Cleaver">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleVileCleaver>
-    <StitchesCombatStyleToxicGas name="Toxic Gas">storm_ui_icon_stitches_acidcloud.dds</StitchesCombatStyleToxicGas>
-    <StitchesMasteryHelpingHandHook name="Helping Hand">storm_ui_icon_stitches_hook.dds</StitchesMasteryHelpingHandHook>
-    <GenericTalentRelentless name="Relentless">storm_ui_icon_Talent_Relentless.dds</GenericTalentRelentless>
-  </Old>
 </Stitches>

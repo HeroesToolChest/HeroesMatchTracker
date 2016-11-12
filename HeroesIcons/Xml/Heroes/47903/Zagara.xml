@@ -34,17 +34,4 @@
     <ZagaraMasteryEndlessCreep name="Endless Creep" desc="ZagaraCreepTumorEndlessCreepTalent">storm_ui_icon_zagara_nydusworm.dds</ZagaraMasteryEndlessCreep>
     <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
   </Level20>
-  <Old>
-    <ZagaraMasteryReconstitution name="Reconstitution">storm_ui_icon_zagara_creep.dds</ZagaraMasteryReconstitution>
-    <ZagaraCombatStyleEnvenomedSpines name="Envenomed Spines" generic="true">storm_ui_icon_talent_autoattack_range.dds</ZagaraCombatStyleEnvenomedSpines>
-    <ZagaraMasteryTumorClutch name="Tumor Clutch">storm_ui_icon_zagara_creep.dds</ZagaraMasteryTumorClutch>
-    <ZagaraMasteryRapidIncubation name="Rapid Incubation">storm_ui_icon_zagara_rapidincubation.dds</ZagaraMasteryRapidIncubation>
-    <ZagaraMasteryVentralSacs name="Ventral Sacs">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryVentralSacs>
-    <ZagaraSwarmMomentum name="Swarm Momentum" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</ZagaraSwarmMomentum>
-    <ZagaraMasteryGroovedSpines name="Grooved Spines">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryGroovedSpines>
-    <ZagaraMasteryMetabolicBoost name="Metabolic Boost">storm_ui_icon_zagara_creep.dds</ZagaraMasteryMetabolicBoost>
-    <ZagaraMasteryCentrifugalHooks name="Centrifugal Hooks">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryCentrifugalHooks>
-    <BattleMomentumZagara name="Battle Momentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumZagara>
-    <ZagaraMasteryBroodlingNest name="Broodling Nest">storm_ui_icon_zagara_nydusworm.dds</ZagaraMasteryBroodlingNest>
-  </Old>
 </Zagara>
