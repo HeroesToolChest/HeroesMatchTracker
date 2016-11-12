@@ -32,4 +32,10 @@
     <AurielWillofHeavenBestowHopeTalent name="Will of Heaven" desc="AurielWillofHeavenBestowHopeTalent">storm_ui_icon_auriel_bestowhope.dds</AurielWillofHeavenBestowHopeTalent>
     <AurielWrathofHeavenBestowHopeTalent name="Wrath of Heaven" desc="AurielWrathofHeavenBestowHopeTalent">storm_ui_icon_auriel_bestowhope_a.dds</AurielWrathofHeavenBestowHopeTalent>
   </Level16>
+  <Level20>
+    <AurielLightSpeedResurrectTalent name="Light Speed" desc="AurielLightSpeedResurrectTalent">storm_ui_icon_auriel_resurrect.dds</AurielLightSpeedResurrectTalent>
+    <AurielDiamondResolveCrystalAegisTalent name="Diamond Resolve" desc="AurielDiamondResolveCrystalAegisTalent">storm_ui_icon_auriel_ribboncocoon.dds</AurielDiamondResolveCrystalAegisTalent>
+    <AurielAngelicFlightTalent name="Angelic Flight" desc="AurielAngelicFlightTalent">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
+    <AurielShieldOfHopeTalent name="Shield of Hope" desc="AurielShieldOfHopeTalent">storm_ui_icon_auriel_shieldofhope.dds</AurielShieldOfHopeTalent>
+  </Level20>
 </Auriel>
