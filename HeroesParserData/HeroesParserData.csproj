@@ -409,6 +409,10 @@
     <Compile Include="Views\Stats\QueryStatusBarControl.xaml.cs">
       <DependentUpon>QueryStatusBarControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\CustomScrollBars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\ImageResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
