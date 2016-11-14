@@ -11,12 +11,12 @@
              Height="auto"
              Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:BrawlViewModel}" d:DesignWidth="1597" d:DesignHeight="551">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <ViewModels:BrawlViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <DockPanel>
                 <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
                 <Grid DockPanel.Dock="Bottom">
@@ -24,10 +24,10 @@
                         <ColumnDefinition MinWidth="1036"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+                    --><!--<local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>--><!--
                     <local:MatchListControl Grid.Column="1"/>
                 </Grid>
             </DockPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </Grid>
 </UserControl>

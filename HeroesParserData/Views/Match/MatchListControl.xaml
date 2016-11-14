@@ -7,30 +7,83 @@
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
              xmlns:base="clr-namespace:HeroesParserData"
              mc:Ignorable="d" 
-             d:DesignHeight="435.115" d:DesignWidth="546.932">
+             d:DesignWidth="1920" d:DesignHeight="1080">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="52"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Button Content="Refresh" Command="{Binding Refresh}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0"/>
-        <ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="105,12,0,12" VerticalAlignment="Center" Width="124" Height="28" Grid.Row="0"/>
-        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Row="1" GridLinesVisibility="Vertical" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
-                        EnableColumnVirtualization="True" EnableRowVirtualization="True" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" SelectedItem="{Binding SelectedReplay}"
-                        ItemsSource="{Binding MatchList, IsAsync=True}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Replay Id" Binding="{Binding ReplayId}" />
-                <DataGridTextColumn Header="Map Name" Binding="{Binding MapName}" />
-                <DataGridTextColumn Header="Replay Build" Binding="{Binding ReplayBuild}" />
-                <DataGridTextColumn Header="Game Time" Binding="{Binding ReplayLength}" />
-                <DataGridTextColumn Header="Game Date" Binding="{Binding TimeStamp}" />
-            </DataGrid.Columns>
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding DisplayReplayDetails}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </DataGrid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+            <Button Content="Refresh" Command="{Binding LoadMatchListCommand}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <!--<ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="105,12,0,12" VerticalAlignment="Center" Width="124" Height="28" />-->
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <DataGrid Style="{StaticResource MatchListDataGrid}" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
+                      AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" SelectedItem="{Binding SelectedReplay}"
+                      ItemsSource="{Binding MatchListCollection, IsAsync=True}" Width="600" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeWindowHeightConverter}}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Replay Id" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="Map Name" Binding="{Binding MapName}" />
+                    <DataGridTextColumn Header="Replay Build" Binding="{Binding ReplayBuild}" />
+                    <DataGridTextColumn Header="Game Time" Binding="{Binding ReplayLength}" />
+                    <DataGridTextColumn Header="Game Date" Binding="{Binding TimeStamp}" />
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding ShowMatchOverviewCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Margin="0,20,0,0">
+            <GroupBox Header="Team 1">
+                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam1Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}" AlternationCount="1">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Hero" Width="79">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
+                                            <Image.ToolTip>
+                                                <ToolTip Content="{Binding CharacterName}"/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                        <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-30,-4,0,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                        <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="*" FontSize="14"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <GroupBox Header="Team 2">
+                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam2Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Hero" Width="79">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
+                                            <Image.ToolTip>
+                                                <ToolTip Content="{Binding CharacterName}"/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                        <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-30,-4,0,0" Visibility="{Binding PlayerSilenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                        <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="0,-8,0,0"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="*" FontSize="14"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" Width="150" Height="30"/>
+        </StackPanel>
     </Grid>
 </UserControl>

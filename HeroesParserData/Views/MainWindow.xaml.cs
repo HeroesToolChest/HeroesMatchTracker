@@ -18,6 +18,7 @@ namespace HeroesParserData.Views
         {
             SetTrayIcon();
             Messenger.Default.Register<StatisticsTabMessage>(this, async (action) => await ReceiveMessage(action));
+            Messenger.Default.Register<MatchSummaryMessage>(this, (action) => ReceiveMessage(action));
 
             InitializeComponent();
         }
@@ -46,6 +47,7 @@ namespace HeroesParserData.Views
                 SettingsFlyout.IsOpen = false;
             else
                 SettingsFlyout.IsOpen = true;
+
         }
 
         private void SetTrayIcon()
@@ -95,6 +97,14 @@ namespace HeroesParserData.Views
             if (action.StatisticsTab == StatisticsTab.Overview && UserSettings.Default.UserPlayerId < 1)
             {
                 await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Settings menu.");
+            }
+        }
+
+        private void ReceiveMessage(MatchSummaryMessage action)
+        {
+            if (action.MatchSummary == MatchSummary.QuickMatch)
+            {
+                QuickMatchSummaryFlyout.IsOpen = true;
             }
         }
 

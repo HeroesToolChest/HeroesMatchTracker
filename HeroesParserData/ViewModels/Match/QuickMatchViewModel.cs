@@ -4,24 +4,18 @@ using System.Collections.ObjectModel;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class QuickMatchViewModel : MatchContext
+    public class QuickMatchViewModel : MatchOverviewContext
     {
         public QuickMatchViewModel()
             :base()
         {
-            HasObservers = false;
-            HasBans = false;
+
         }
 
-        protected override void RefreshExecute()
+        protected override void ExecuteLoadMatchListCommmand()
         {
-            QueryMatchList();
-        }
-
-        private void QueryMatchList()
-        {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.QuickMatch, GetSelectedSeason));
-            RowsReturned = MatchList.Count;
+            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.QuickMatch, GetSelectedSeason));
+            RowsReturned = MatchListCollection.Count;
         }
     }
 }

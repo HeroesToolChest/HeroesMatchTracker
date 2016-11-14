@@ -218,6 +218,23 @@ namespace HeroesParserData.DataQueries
                 return replay;
             }
 
+            public static Models.DbModels.Replay ReplayReplayBasicPlayerDataRecord(long replayId)
+            {
+                Models.DbModels.Replay replay = new Models.DbModels.Replay();
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    replay = db.Replays.Where(x => x.ReplayId == replayId)
+                        .Include(x => x.ReplayMatchPlayers)
+                        .FirstOrDefault();
+
+                    if (replay == null)
+                        return null;
+                }
+
+                return replay;
+            }
+
             public static int ReadTotalGames(GameMode gameMode)
             {
                 using (var db = new HeroesParserDataContext())

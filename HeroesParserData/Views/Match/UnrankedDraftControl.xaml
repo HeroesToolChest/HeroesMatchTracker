@@ -11,11 +11,11 @@
              Height="auto"
              Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:UnrankedDraftViewModel}" d:DesignWidth="1436" d:DesignHeight="528">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <ViewModels:UnrankedDraftViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
-        <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
+        <!--<Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <DockPanel>
                 <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
@@ -24,10 +24,10 @@
                         <ColumnDefinition MinWidth="1036"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+                    --><!--<local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>--><!--
                     <local:MatchListControl Grid.Column="1"></local:MatchListControl>
                 </Grid>
             </DockPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </Grid>
 </UserControl>

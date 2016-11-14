@@ -10,24 +10,15 @@
              VerticalAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:QuickMatchViewModel}" d:DesignWidth="1597" d:DesignHeight="551">
+             d:DataContext="{d:DesignInstance ViewModels:QuickMatchViewModel}" d:DesignWidth="1920" d:DesignHeight="1080">
     <UserControl.DataContext>
         <ViewModels:QuickMatchViewModel />
     </UserControl.DataContext>
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-            <DockPanel>
-                <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
-                <Grid DockPanel.Dock="Bottom">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="1036"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
-                    <local:MatchListControl Grid.Column="1"/>
-                </Grid>
-            </DockPanel>
-        </ScrollViewer>
+        <DockPanel>
+            <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
+            <local:MatchListControl DockPanel.Dock="Bottom"/>
+        </DockPanel>
     </Grid>
 </UserControl>

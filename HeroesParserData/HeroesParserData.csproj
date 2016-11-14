@@ -194,6 +194,7 @@
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
+    <Compile Include="Converters\ResizeWindowHeightConverter.cs" />
     <Compile Include="Converters\TalentDescriptionTextStyleConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\Migrations\IMigrationAddon.cs" />
@@ -217,6 +218,8 @@
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
+    <Compile Include="Messages\MatchSummary.cs" />
+    <Compile Include="Messages\MatchSummaryMessage.cs" />
     <Compile Include="Messages\HomeTabMessage.cs" />
     <Compile Include="Messages\MainTab.cs" />
     <Compile Include="Messages\MainTabMessage.cs" />
@@ -260,15 +263,18 @@
     <Compile Include="ViewModels\Heroes\HeroesUsableViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
-    <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Match\LastMatchViewModel.cs" />
-    <Compile Include="ViewModels\Match\LatestMatchesViewModel.cs" />
-    <Compile Include="ViewModels\Match\MatchContext.cs" />
-    <Compile Include="ViewModels\Match\BrawlViewModel.cs" />
+    <Compile Include="ViewModels\Match\MatchContextBase.cs" />
+    <Compile Include="ViewModels\Match\MatchOverviewContext.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
-    <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\CustomGameViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\HeroLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\LastMatchViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\LatestMatchesViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\MatchSummaryContext.cs" />
+    <Compile Include="ViewModels\Match\Summary\BrawlViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\QuickMatchSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\TeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Stats\HeroStatsContext.cs" />
@@ -351,7 +357,7 @@
     <Compile Include="Views\Match\MatchStatusBarControl.xaml.cs">
       <DependentUpon>MatchStatusBarControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Match\MatchSummaryControl.xaml.cs">
+    <Compile Include="Views\Match\Summary\MatchSummaryControl.xaml.cs">
       <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\BrawlControl.xaml.cs">
@@ -359,6 +365,9 @@
     </Compile>
     <Compile Include="Views\Match\QuickMatchControl.xaml.cs">
       <DependentUpon>QuickMatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\QuickMatchSummaryControl.xaml.cs">
+      <DependentUpon>QuickMatchSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\TeamLeagueControl.xaml.cs">
       <DependentUpon>TeamLeagueControl.xaml</DependentUpon>
@@ -529,7 +538,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Match\MatchSummaryControl.xaml">
+    <Page Include="Views\Match\Summary\MatchSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -538,6 +547,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Match\QuickMatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\QuickMatchSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

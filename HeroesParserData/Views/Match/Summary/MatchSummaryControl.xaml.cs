@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HeroesParserData.Views.Match
+namespace HeroesParserData.Views.Match.Summary
 {
     /// <summary>
     /// Interaction logic for MatchSummaryControl.xaml

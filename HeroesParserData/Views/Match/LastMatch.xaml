@@ -13,11 +13,11 @@
              Height="auto"
              Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:LastMatchViewModel}">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <ViewModels:LastMatchViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
-        <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
+        <!--<Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
         <DockPanel>
             <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
             <Grid DockPanel.Dock="Bottom">
@@ -25,9 +25,9 @@
                     <ColumnDefinition MinWidth="1036"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+                --><!--<local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>--><!--
                 <Button Content="Refresh" Command="{Binding Refresh}" HorizontalAlignment="Left" Margin="905,14,0,0" VerticalAlignment="Top" Width="105"/>
             </Grid>
-        </DockPanel>
+        </DockPanel>-->
     </Grid>
 </UserControl>
