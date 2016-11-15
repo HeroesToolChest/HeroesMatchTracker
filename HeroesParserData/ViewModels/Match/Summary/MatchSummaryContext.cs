@@ -22,14 +22,14 @@ namespace HeroesParserData.ViewModels.Match.Summary
         #region properties
         private string _matchTitle;
         private long _replayId;
+        private bool _hasBans;
+        private bool _hasObservers;
+        private bool _hasChat;
         private GameMode _gameMode;
         private DateTime? _gameDate;
         private TimeSpan _gameTime;
         private Models.DbModels.Replay _selectedReplay;
         private Color _mapNameGlowColor;
-        private bool _hasBans;
-        private bool _hasObservers;
-        private bool _hasChat;
 
         private ObservableCollection<MatchTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchTalents>();
@@ -42,7 +42,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         #endregion properties
 
         #region public properties
-        public MatchHeroBans MatchHeroBans { get; set; } = new MatchHeroBans();
+        public MatchHeroBans MatchHeroBans { get; private set; } = new MatchHeroBans();
 
         public ObservableCollection<MatchTalents> MatchTalentsTeam1
         {

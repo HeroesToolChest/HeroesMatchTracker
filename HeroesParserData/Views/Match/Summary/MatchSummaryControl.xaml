@@ -13,12 +13,18 @@
              Height="auto"
              Width="auto"
              d:DesignWidth="1920" d:DesignHeight="1080">
-    <Grid>
-        <Grid.Resources>
+    <StackPanel>
+        <StackPanel.Resources>
             <system:Double x:Key="TabItemFontSize">20</system:Double>
-        </Grid.Resources>
+        </StackPanel.Resources>
+        <StackPanel Orientation="Horizontal" Height="42">
+            <Label Content="{Binding MatchTitle}" VerticalAlignment="Center" FontSize="24" Foreground="WhiteSmoke" Margin="10,0,0,0" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding MapNameGlowColor}" />
+                </Label.Effect>
+            </Label>
+        </StackPanel>
         <TabControl>
-            <!--<Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />-->
             <TabItem Header="Talents">
                 <StackPanel>
                     <StackPanel.Resources>
@@ -554,7 +560,7 @@
             </TabItem>-->
 
         </TabControl>
-    </Grid>
+    </StackPanel>
     <!--<ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">-->
         <!--<StackPanel Width="1020">-->
             <!--<StackPanel Orientation="Horizontal" Height="42">

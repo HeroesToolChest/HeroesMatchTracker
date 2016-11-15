@@ -15,6 +15,7 @@
         <ViewModels:QuickMatchSummaryViewModel />
     </UserControl.DataContext>
     <Grid>
+        <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
         <local:MatchSummaryControl />
     </Grid>
 </UserControl>
