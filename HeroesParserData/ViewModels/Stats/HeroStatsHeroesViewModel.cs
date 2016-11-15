@@ -681,10 +681,11 @@ namespace HeroesParserData.ViewModels.Stats
                 list.Add(SetMapMatchStats(maps, GameMode.HeroLeague, StatsHeroesHeroLeagueDataCollection, StatsHeroesHeroLeagueDataTotalCollection, StatsHeroesHeroLeagueDataAverageCollection, StatsHeroesHeroLeagueDataAverageTotalCollection));
                 list.Add(SetMapMatchStats(maps, GameMode.TeamLeague, StatsHeroesTeamLeagueDataCollection, StatsHeroesTeamLeagueDataTotalCollection, StatsHeroesTeamLeagueDataAverageCollection, StatsHeroesTeamLeagueDataAverageTotalCollection));
                 list.Add(SetMapMatchStats(customGameModeMaps, GameMode.Custom, StatsHeroesCustomGameDataCollection, StatsHeroesCustomGameDataTotalCollection, StatsHeroesCustomGameDataAverageCollection, StatsHeroesCustomGameDataAverageTotalCollection));
-                list.Add(SetMatchAwards());
-                list.Add(SetAllTalentPicks());
 
                 await Task.WhenAll(list.ToArray());
+
+                await SetMatchAwards();
+                await SetAllTalentPicks();
 
                 TotalWins = StatsHeroesQuickMatchDataTotalCollection[0].Wins + StatsHeroesUnrankedDraftDataTotalCollection[0].Wins +
                             StatsHeroesHeroLeagueDataTotalCollection[0].Wins + StatsHeroesTeamLeagueDataTotalCollection[0].Wins;
