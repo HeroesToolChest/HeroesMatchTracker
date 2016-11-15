@@ -749,7 +749,7 @@ namespace HeroesParserData.ViewModels.Match
 
             foreach (var player in playersList)
             {
-                if (player.PartyValue > 0)
+                if (player.PartyValue != 0)
                 {
                     if (!parties.ContainsKey(player.PartyValue))
                     {
