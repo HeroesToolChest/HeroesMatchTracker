@@ -1,15 +1,15 @@
-# Heroes Parser Data
+3 Heroes Parser Data
 [![Build status](https://ci.appveyor.com/api/projects/status/9ufforppr67h7low/branch/master?svg=true)](https://ci.appveyor.com/project/koliva8245/heroesparserdata/branch/master)
 
 This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes.ReplayParser) to parse Blizzard's Heroes of the Storm replay files and then saves the data into a local database.  
-- Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, and Custom Games
+- Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, Non-Arena Brawls, and Custom Games
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - Also view statistics about your heroes like wins, losses, winrates, and much more for different maps and gamemodes
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_2_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_2_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Stats_1_2_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_3_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_3_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Stats_1_3_0.jpg)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
