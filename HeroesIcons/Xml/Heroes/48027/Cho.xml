@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Cho attributeid="CCho" role="Warrior" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
+<Cho attributeid="CCho" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
   <Level1>
     <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_Cho_MoltenSurge_A.dds</ChoSurgingDash>
     <ChoBlazingBulwark name="Blazing Bulwark" desc="ChoBlazingBulwarkTalent">storm_ui_icon_cho_consumingflame.dds</ChoBlazingBulwark>

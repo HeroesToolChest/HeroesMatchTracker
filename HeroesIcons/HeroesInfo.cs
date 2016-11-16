@@ -132,14 +132,14 @@ namespace HeroesIcons
 
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_nopick.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds", UriKind.Absolute));
 
             // not found
             if (!HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
 
-                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds", UriKind.Absolute));
             }
          
             try
@@ -149,7 +149,7 @@ namespace HeroesIcons
             catch (Exception)
             {
                 Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
-                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_glues_draft_portrait_notfound.dds", UriKind.Absolute));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds", UriKind.Absolute));
             }
         }
 

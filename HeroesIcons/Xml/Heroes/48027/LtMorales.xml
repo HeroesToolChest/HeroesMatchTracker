@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LtMorales name="Lt. Morales" attributeid="Medi" role="Support" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_medic.dds" leader="storm_ui_ingame_hero_leaderboard_medic.dds">
+<LtMorales name="Lt. Morales" attributeid="Medi" role="Support" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_medic.dds" loading="storm_ui_ingame_hero_loadingscreen_medic.dds" leader="storm_ui_ingame_hero_leaderboard_medic.dds">
   <Level1>
     <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguardTalent">storm_ui_icon_medic_deployshield.dds</MedicProlongedSafeguard>
     <MedicTraumaTrigger name="Trauma Trigger" desc="MedicTraumaTriggerTalent">storm_ui_icon_medic_deployshield_b.dds</MedicTraumaTrigger>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tychus attributeid="Tych" role="Assassin" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_tychus.dds" leader="storm_ui_ingame_hero_leaderboard_tychus.dds">
+<Tychus attributeid="Tych" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_tychus.dds" loading="storm_ui_ingame_hero_loadingscreen_tychus.dds" leader="storm_ui_ingame_hero_leaderboard_tychus.dds">
   <Level1>
     <TychusPressTheAdvantage name="Press the Advantage" desc="TychusPressTheAdvantage">storm_ui_icon_tychus_runandgun_A.dds</TychusPressTheAdvantage>
     <TychusMasteryRunandGunDash name="Dash" desc="TychusRunandGunDashTalent">storm_ui_icon_tychus_runandgun_B.dds</TychusMasteryRunandGunDash>

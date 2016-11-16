@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Varian attributeid="Vari" role="Multiclass" franchise="Warcraft" portrait="" leader="storm_ui_ingame_hero_leaderboard_varian.dds">
+<Varian attributeid="Vari" role="Multiclass" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_varian.dds" loading="storm_ui_ingame_hero_loadingscreen_varian.dds" leader="storm_ui_ingame_hero_leaderboard_varian.dds">
   <Level1>
     <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="VarianLionsFangLionsMawQuest">storm_ui_icon_varian_lionsfang.dds</VarianLionsFangLionsMawQuest>
     <VarianParryOverpower name="Overpower" desc="VarianParryOverpower">storm_ui_icon_varian_parry.dds</VarianParryOverpower>

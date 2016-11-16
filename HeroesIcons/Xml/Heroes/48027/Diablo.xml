@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Diablo attributeid="Diab" role="Warrior" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
+<Diablo attributeid="Diab" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_diablo.dds" loading="storm_ui_ingame_hero_loadingscreen_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
   <Level1>
     <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <DiabloMasterySoulFeastBlackSoulstone name="Soul Feast" desc="DiabloBlackSoulstoneSoulStealTalent">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasterySoulFeastBlackSoulstone>

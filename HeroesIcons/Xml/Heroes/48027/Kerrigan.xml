@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kerrigan attributeid="Kerr" role="Assassin" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
+<Kerrigan attributeid="Kerr" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_kerrigan.dds" loading="storm_ui_ingame_hero_loadingscreen_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
   <Level1>
     <KerriganMasteryRavageSiphoningImpact name="Siphoning Impact" desc="KerriganRavageSiphoningImpactTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageSiphoningImpact>
     <KerriganMasteryImpalingBladesSharpenedBlades name="Sharpened Blades" desc="KerriganImpalingBladesSharpenedBladesTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesSharpenedBlades>

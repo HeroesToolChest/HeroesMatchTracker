@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Guldan name="Gul'dan" role="Assassin" attributeid="Guld" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_guldan.dds" leader="storm_ui_ingame_hero_leaderboard_guldan.dds">
+<Guldan name="Gul'dan" role="Assassin" attributeid="Guld" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_guldan.dds" loading="storm_ui_ingame_hero_loadingscreen_guldan.dds" leader="storm_ui_ingame_hero_leaderboard_guldan.dds">
   <Level1>
     <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame" desc="GuldanFelFlameTalentPursuitOfFlame">storm_ui_icon_guldan_felflame.dds</GuldanFelFlamePursuitOfFlame>
     <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life" desc="GuldanDrainLifeTalentGlyphofDrainLife">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeGlyphOfDrainLife>
