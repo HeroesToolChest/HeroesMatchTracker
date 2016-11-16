@@ -16,5 +16,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("4168d60d-d0eb-40a2-9304-d38f14106a48")]
 
 // Versions will follow the replay version
-[assembly: AssemblyVersion("1.0.21.0")]
-[assembly: AssemblyFileVersion("1.0.21.0")]
+[assembly: AssemblyVersion("1.0.22.0")]
+[assembly: AssemblyFileVersion("1.0.22.0")]
