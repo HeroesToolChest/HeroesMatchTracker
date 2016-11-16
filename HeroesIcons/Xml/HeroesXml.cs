@@ -160,6 +160,9 @@ namespace HeroesIcons.Xml
                             case "Specialist":
                                 HeroesRole.Add(realHeroName, HeroRole.Specialist);
                                 break;
+                            case "Multiclass":
+                                HeroesRole.Add(realHeroName, HeroRole.Multiclass);
+                                break;
                             default:
                                 HeroesRole.Add(realHeroName, HeroRole.Unknown);
                                 break;
