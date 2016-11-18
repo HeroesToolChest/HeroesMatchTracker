@@ -44,83 +44,83 @@ namespace HeroesParserData.ViewModels.Match.Summary
         #region public properties
         public MatchHeroBans MatchHeroBans { get; private set; } = new MatchHeroBans();
 
-        public ObservableCollection<MatchTalents> MatchTalentsTeam1
+        public ObservableCollection<MatchTalents> MatchTalentsTeam1Collection
         {
             get { return _matchTalentsTeam1Collection; }
             set
             {
                 _matchTalentsTeam1Collection = value;
-                RaisePropertyChangedEvent(nameof(MatchTalentsTeam1));
+                RaisePropertyChangedEvent(nameof(MatchTalentsTeam1Collection));
             }
         }
 
-        public ObservableCollection<MatchTalents> MatchTalentsTeam2
+        public ObservableCollection<MatchTalents> MatchTalentsTeam2Collection
         {
             get { return _matchTalentsTeam2Collection; }
             set
             {
                 _matchTalentsTeam2Collection = value;
-                RaisePropertyChangedEvent(nameof(MatchTalentsTeam2));
+                RaisePropertyChangedEvent(nameof(MatchTalentsTeam2Collection));
             }
         }
 
-        public ObservableCollection<MatchTalents> MatchObservers
+        public ObservableCollection<MatchTalents> MatchObserversCollection
         {
             get { return _matchObserversCollection; }
             set
             {
                 _matchObserversCollection = value;
-                RaisePropertyChangedEvent(nameof(MatchObservers));
+                RaisePropertyChangedEvent(nameof(MatchObserversCollection));
             }
         }
 
-        public ObservableCollection<MatchScores> MatchScoreTeam1
+        public ObservableCollection<MatchScores> MatchScoreTeam1Collection
         {
             get { return _matchScoreTeam1Collection; }
             set
             {
                 _matchScoreTeam1Collection = value;
-                RaisePropertyChangedEvent(nameof(MatchScoreTeam1));
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam1Collection));
             }
         }
 
-        public ObservableCollection<MatchScores> MatchScoreTeam2
+        public ObservableCollection<MatchScores> MatchScoreTeam2Collection
         {
             get { return _matchScoreTeam2Collection; }
             set
             {
                 _matchScoreTeam2Collection = value;
-                RaisePropertyChangedEvent(nameof(MatchScoreTeam2));
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam2Collection));
             }
         }
 
-        public ObservableCollection<MatchScores> MatchScoreTeam1Total
+        public ObservableCollection<MatchScores> MatchScoreTeam1TotalCollection
         {
             get { return _matchScoreTeam1TotalCollection; }
             set
             {
                 _matchScoreTeam1TotalCollection = value;
-                RaisePropertyChangedEvent(nameof(MatchScoreTeam1Total));
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam1TotalCollection));
             }
         }
 
-        public ObservableCollection<MatchScores> MatchScoreTeam2Total
+        public ObservableCollection<MatchScores> MatchScoreTeam2TotalCollection
         {
             get { return _matchScoreTeam2TotalCollection; }
             set
             {
                 _matchScoreTeam2TotalCollection = value;
-                RaisePropertyChangedEvent(nameof(MatchScoreTeam2Total));
+                RaisePropertyChangedEvent(nameof(MatchScoreTeam2TotalCollection));
             }
         }
 
-        public ObservableCollection<MatchChat> MatchChatMessages
+        public ObservableCollection<MatchChat> MatchChatMessagesCollection
         {
             get { return _matchChatMessagesCollection; }
             set
             {
                 _matchChatMessagesCollection = value;
-                RaisePropertyChangedEvent(nameof(MatchChatMessages));
+                RaisePropertyChangedEvent(nameof(MatchChatMessagesCollection));
             }
         }
 
@@ -378,39 +378,39 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             matchTalents.PortraitBackColor = Team1BackColor;
                             matchScores.PortraitBackColor = Team1BackColor;
 
-                            HighestSiegeDamage(MatchScoreTeam1, matchScores, ref highestSiegeTeam1Index, ref highestSiegeTeam1Count);
-                            HighestHeroDamage(MatchScoreTeam1, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
-                            HighestExpContribution(MatchScoreTeam1, matchScores, ref highestExpTeam1Index, ref highestExpTeam1Count);
+                            HighestSiegeDamage(MatchScoreTeam1Collection, matchScores, ref highestSiegeTeam1Index, ref highestSiegeTeam1Count);
+                            HighestHeroDamage(MatchScoreTeam1Collection, matchScores, ref highestHeroDamageTeam1Index, ref highestHeroDamageTeam1Count);
+                            HighestExpContribution(MatchScoreTeam1Collection, matchScores, ref highestExpTeam1Index, ref highestExpTeam1Count);
 
                             // add to collection
-                            MatchTalentsTeam1.Add(matchTalents);
-                            MatchScoreTeam1.Add(matchScores);
+                            MatchTalentsTeam1Collection.Add(matchTalents);
+                            MatchScoreTeam1Collection.Add(matchScores);
                         }
                         else
                         {
                             matchTalents.PortraitBackColor = Team2BackColor;
                             matchScores.PortraitBackColor = Team2BackColor;
 
-                            HighestSiegeDamage(MatchScoreTeam2, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
-                            HighestHeroDamage(MatchScoreTeam2, matchScores, ref highestHeroDamageTeam2Index, ref highestHeroDamageTeam2Count);
-                            HighestExpContribution(MatchScoreTeam2, matchScores, ref highestExpTeam2Index, ref highestExpTeam2Count);
+                            HighestSiegeDamage(MatchScoreTeam2Collection, matchScores, ref highestSiegeTeam2Index, ref highestSiegeTeam2Count);
+                            HighestHeroDamage(MatchScoreTeam2Collection, matchScores, ref highestHeroDamageTeam2Index, ref highestHeroDamageTeam2Count);
+                            HighestExpContribution(MatchScoreTeam2Collection, matchScores, ref highestExpTeam2Index, ref highestExpTeam2Count);
 
                             // add to collection
-                            MatchTalentsTeam2.Add(matchTalents);
-                            MatchScoreTeam2.Add(matchScores);
+                            MatchTalentsTeam2Collection.Add(matchTalents);
+                            MatchScoreTeam2Collection.Add(matchScores);
                         }
                     }
                     else if (player.Team == 4) // observers
                     {
                         HasObservers = true;
                         matchTalents.CharacterLevel = "Observer";
-                        MatchObservers.Add(matchTalents);
+                        MatchObserversCollection.Add(matchTalents);
                     }
                 } // end foreach players
 
                 // Total for score summaries
-                SetScoreSummaryTotals(MatchScoreTeam1, MatchScoreTeam1Total, matchTeamLevelsList.Max(x => x.Team0Level));
-                SetScoreSummaryTotals(MatchScoreTeam2, MatchScoreTeam2Total, matchTeamLevelsList.Max(x => x.Team1Level));
+                SetScoreSummaryTotals(MatchScoreTeam1Collection, MatchScoreTeam1TotalCollection, matchTeamLevelsList.Max(x => x.Team0Level));
+                SetScoreSummaryTotals(MatchScoreTeam2Collection, MatchScoreTeam2TotalCollection, matchTeamLevelsList.Max(x => x.Team1Level));
 
                 MatchTitle = $"{replay.MapName} - {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}]";
 
@@ -451,12 +451,12 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             else
                                 matchChat.ChatMessage = $"{message.PlayerName}: {message.Message}";
 
-                            MatchChatMessages.Add(matchChat);
+                            MatchChatMessagesCollection.Add(matchChat);
                         }
                     }
                 }
 
-                HasChat = MatchChatMessages.Count < 1 ? false : true;
+                HasChat = MatchChatMessagesCollection.Count < 1 ? false : true;
             }
             catch (Exception ex)
             {
@@ -470,7 +470,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private void ClearSummaryDetails()
         {
             // talents
-            foreach (var matchTalent in MatchTalentsTeam1)
+            foreach (var matchTalent in MatchTalentsTeam1Collection)
             {
                 matchTalent.LeaderboardPortrait = null;
                 matchTalent.Talent1 = null;
@@ -482,9 +482,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 matchTalent.Talent20 = null;
                 matchTalent.MvpAward = null;
             }
-            MatchTalentsTeam1 = null;
+            MatchTalentsTeam1Collection = null;
 
-            foreach (var matchTalent in MatchTalentsTeam2)
+            foreach (var matchTalent in MatchTalentsTeam2Collection)
             {
                 matchTalent.LeaderboardPortrait = null;
                 matchTalent.Talent1 = null;
@@ -496,28 +496,28 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 matchTalent.Talent20 = null;
                 matchTalent.MvpAward = null;
             }
-            MatchTalentsTeam2 = null;
+            MatchTalentsTeam2Collection = null;
 
             // score summary
-            foreach (var matchScore in MatchScoreTeam1)
+            foreach (var matchScore in MatchScoreTeam1Collection)
             {
                 matchScore.LeaderboardPortrait = null;
                 matchScore.MvpAward = null;
             }
-            MatchScoreTeam1 = null;
+            MatchScoreTeam1Collection = null;
 
-            foreach (var matchScore in MatchScoreTeam2)
+            foreach (var matchScore in MatchScoreTeam2Collection)
             {
                 matchScore.LeaderboardPortrait = null;
                 matchScore.MvpAward = null;
             }
-            MatchScoreTeam2 = null;
-            MatchScoreTeam1Total = null;
-            MatchScoreTeam2Total = null;
+            MatchScoreTeam2Collection = null;
+            MatchScoreTeam1TotalCollection = null;
+            MatchScoreTeam2TotalCollection = null;
 
             // observers
             HasObservers = false;
-            MatchObservers = null;
+            MatchObserversCollection = null;
 
             // bans
             MatchHeroBans.Team0Ban0 = null;
@@ -531,19 +531,19 @@ namespace HeroesParserData.ViewModels.Match.Summary
             HasBans = false;
 
             // chat
-            MatchChatMessages = null;
+            MatchChatMessagesCollection = null;
             HasChat = true;
 
             BackgroundMapImage = null;
 
-            MatchTalentsTeam1 = new ObservableCollection<MatchTalents>();
-            MatchTalentsTeam2 = new ObservableCollection<MatchTalents>();
-            MatchScoreTeam1 = new ObservableCollection<MatchScores>();
-            MatchScoreTeam2 = new ObservableCollection<MatchScores>();
-            MatchScoreTeam1Total = new ObservableCollection<MatchScores>();
-            MatchScoreTeam2Total = new ObservableCollection<MatchScores>();
-            MatchObservers = new ObservableCollection<MatchTalents>();
-            MatchChatMessages = new ObservableCollection<MatchChat>();
+            MatchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
+            MatchTalentsTeam2Collection = new ObservableCollection<MatchTalents>();
+            MatchScoreTeam1Collection = new ObservableCollection<MatchScores>();
+            MatchScoreTeam2Collection = new ObservableCollection<MatchScores>();
+            MatchScoreTeam1TotalCollection = new ObservableCollection<MatchScores>();
+            MatchScoreTeam2TotalCollection = new ObservableCollection<MatchScores>();
+            MatchObserversCollection = new ObservableCollection<MatchTalents>();
+            MatchChatMessagesCollection = new ObservableCollection<MatchChat>();
 
         }
 
