@@ -4,6 +4,7 @@ using HeroesParserData.Messages;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Models.MatchModels;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -12,6 +13,7 @@ namespace HeroesParserData.ViewModels.Match
 {
     public abstract class MatchOverviewContext : MatchContextBase
     {
+        private bool _isViewMatchSummaryEnabled;
         private int _rowsReturned;
 
         private string _queryStatus;
@@ -24,6 +26,18 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchPlayerInfoBase> _matchOverviewTeam2Collection = new ObservableCollection<MatchPlayerInfoBase>();
 
         #region public properties
+        public List<string> SelectedHeroesOption { get; set; }
+
+        public bool IsViewMatchSummaryEnabled
+        {
+            get { return _isViewMatchSummaryEnabled; }
+            set
+            {
+                _isViewMatchSummaryEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsViewMatchSummaryEnabled));
+            }
+        }
+
         public string QueryStatus
         {
             get { return _queryStatus; }
@@ -42,6 +56,17 @@ namespace HeroesParserData.ViewModels.Match
                 _rowsReturned = value;
                 RaisePropertyChangedEvent(nameof(RowsReturned));
             }
+        }
+
+        // databinded
+        public List<string> SeasonList
+        {
+            get { return AllSeasonsList; }
+        }
+
+        public List<string> HeroesList
+        {
+            get { return HeroesInfo.GetListOfHeroes(); }
         }
 
         public Season GetSelectedSeason
@@ -133,6 +158,7 @@ namespace HeroesParserData.ViewModels.Match
         protected MatchOverviewContext()
             :base()
         {
+            IsViewMatchSummaryEnabled = false;
             SelectedSeasonOption = "Season 2";
         }
 
@@ -140,6 +166,9 @@ namespace HeroesParserData.ViewModels.Match
 
         private void LoadMatchOverviewCommand(Models.DbModels.Replay replay)
         {
+            IsViewMatchSummaryEnabled = false;
+            ClearMatchOverview();
+
             if (replay == null)
                 return;
 
@@ -148,7 +177,7 @@ namespace HeroesParserData.ViewModels.Match
 
         private void QueryMatchOverview(long replayId)
         {
-            ClearMatchOverview();
+            IsViewMatchSummaryEnabled = true;
 
             // get info
             Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);

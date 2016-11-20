@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
              xmlns:base="clr-namespace:HeroesParserData"
              mc:Ignorable="d" 
@@ -16,9 +17,19 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1">
-            <Button Content="Refresh" Command="{Binding LoadMatchListCommand}" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <!--<ComboBox base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" HorizontalAlignment="Left" Margin="105,12,0,12" VerticalAlignment="Center" Width="124" Height="28" />-->
+        <StackPanel Grid.Column="1" Margin="0,25,0,0">
+            <GroupBox Header="Search" Height="200">
+                <Grid Background="AliceBlue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Button Opacity="1" Content="Refresh" Command="{Binding LoadMatchListCommand}" Height="28" Width="128" Margin="140,43,10,90"/>
+                    <ComboBox Opacity="1" base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" Width="128" Height="28" Margin="140,10,10,123"/>
+                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHeroOption}" Margin="140,108,0,0" Width="128" Height="28"/>
+                </Grid>
+            </GroupBox>
+            <!--<GroupBox Header="Advanced Search" Height="400">
+                <Grid Background="AliceBlue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <ListBox ItemsSource="{Binding HeroesList}" SelectionMode="Multiple" SelectedValue="{Binding SelectedHeroesOption}" Height="200" Width="120" />
+                </Grid>
+            </GroupBox>-->
         </StackPanel>
         <StackPanel Grid.Column="2">
             <DataGrid Style="{StaticResource MatchListDataGrid}" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
@@ -38,7 +49,7 @@
                 </i:Interaction.Triggers>
             </DataGrid>
         </StackPanel>
-        <StackPanel Grid.Column="3" Margin="0,20,0,0">
+        <StackPanel Grid.Column="3" Margin="0,25,0,0">
             <GroupBox Header="Team 1">
                 <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam1Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}" AlternationCount="1">
                     <DataGrid.Columns>
@@ -83,7 +94,8 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>
-            <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" Width="150" Height="30"/>
+            <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" Width="150" Height="30" IsEnabled="{Binding IsViewMatchSummaryEnabled}"/>
         </StackPanel>
+
     </Grid>
 </UserControl>

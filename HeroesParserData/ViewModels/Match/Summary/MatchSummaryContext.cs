@@ -21,14 +21,14 @@ namespace HeroesParserData.ViewModels.Match.Summary
     {
         #region properties
         private string _matchTitle;
-        private long _replayId;
+        //private long _replayId;
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
-        private GameMode _gameMode;
-        private DateTime? _gameDate;
-        private TimeSpan _gameTime;
-        private Models.DbModels.Replay _selectedReplay;
+        //private GameMode _gameMode;
+        //private DateTime? _gameDate;
+        //private TimeSpan _gameTime;
+        //private Models.DbModels.Replay _selectedReplay;
         private Color _mapNameGlowColor;
 
         private ObservableCollection<MatchTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
@@ -124,25 +124,25 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
         }
 
-        public long ReplayId
-        {
-            get { return _replayId; }
-            set
-            {
-                _replayId = value;
-                RaisePropertyChangedEvent(nameof(ReplayId));
-            }
-        }
+        //public long ReplayId
+        //{
+        //    get { return _replayId; }
+        //    set
+        //    {
+        //        _replayId = value;
+        //        RaisePropertyChangedEvent(nameof(ReplayId));
+        //    }
+        //}
 
-        public GameMode GameMode
-        {
-            get { return _gameMode; }
-            set
-            {
-                _gameMode = value;
-                RaisePropertyChangedEvent(nameof(GameMode));
-            }
-        }
+        //public GameMode GameMode
+        //{
+        //    get { return _gameMode; }
+        //    set
+        //    {
+        //        _gameMode = value;
+        //        RaisePropertyChangedEvent(nameof(GameMode));
+        //    }
+        //}
 
         public string MatchTitle
         {
@@ -154,35 +154,35 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
         }
 
-        public DateTime? GameDate
-        {
-            get { return _gameDate; }
-            set
-            {
-                _gameDate = value;
-                RaisePropertyChangedEvent(nameof(GameDate));
-            }
-        }
+        //public DateTime? GameDate
+        //{
+        //    get { return _gameDate; }
+        //    set
+        //    {
+        //        _gameDate = value;
+        //        RaisePropertyChangedEvent(nameof(GameDate));
+        //    }
+        //}
 
-        public TimeSpan GameTime
-        {
-            get { return _gameTime; }
-            set
-            {
-                _gameTime = value;
-                RaisePropertyChangedEvent(nameof(GameTime));
-            }
-        }
+        //public TimeSpan GameTime
+        //{
+        //    get { return _gameTime; }
+        //    set
+        //    {
+        //        _gameTime = value;
+        //        RaisePropertyChangedEvent(nameof(GameTime));
+        //    }
+        //}
 
-        public Models.DbModels.Replay SelectedReplay
-        {
-            get { return _selectedReplay; }
-            set
-            {
-                _selectedReplay = value;
-                RaisePropertyChangedEvent(nameof(SelectedReplay));
-            }
-        }
+        //public Models.DbModels.Replay SelectedReplay
+        //{
+        //    get { return _selectedReplay; }
+        //    set
+        //    {
+        //        _selectedReplay = value;
+        //        RaisePropertyChangedEvent(nameof(SelectedReplay));
+        //    }
+        //}
 
         public Color MapNameGlowColor
         {

@@ -29,9 +29,7 @@
                 <Views:SettingControl></Views:SettingControl>
             </Controls:Flyout>
             <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                    <ViewsMatchSummary:QuickMatchSummaryControl></ViewsMatchSummary:QuickMatchSummaryControl>
-                </ScrollViewer>
+                <ViewsMatchSummary:QuickMatchSummaryControl></ViewsMatchSummary:QuickMatchSummaryControl>
             </Controls:Flyout>
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>

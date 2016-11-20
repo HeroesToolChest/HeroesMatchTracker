@@ -16,6 +16,8 @@
     </UserControl.DataContext>
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        <local:MatchSummaryControl />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <local:MatchSummaryControl />
+        </ScrollViewer>
     </Grid>
 </UserControl>

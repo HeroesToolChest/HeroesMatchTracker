@@ -16,9 +16,11 @@
     </UserControl.DataContext>
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        <DockPanel>
-            <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
-            <local:MatchListControl DockPanel.Dock="Bottom"/>
-        </DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <DockPanel>
+                <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
+                <local:MatchListControl DockPanel.Dock="Bottom"/>
+            </DockPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
