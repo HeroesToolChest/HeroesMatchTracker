@@ -114,6 +114,12 @@
                     <Label Content="{Binding WinRolesPercentagesCollection[3]}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
                 </StackPanel>
             </GroupBox>
+            <GroupBox Grid.Column="2" Header="Multiclass" HorizontalAlignment="Left" Margin="303,567,0,0" VerticalAlignment="Top" Width="247">
+                <StackPanel>
+                    <Label Content="{Binding TotalRolesCollection[4]}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                    <Label Content="{Binding WinRolesPercentagesCollection[4]}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                </StackPanel>
+            </GroupBox>
         </Grid>
     </ScrollViewer>
 </UserControl>
