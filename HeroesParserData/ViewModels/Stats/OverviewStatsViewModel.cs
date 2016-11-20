@@ -432,6 +432,8 @@ namespace HeroesParserData.ViewModels.Stats
             int assassinWin = 0;
             int supportWin = 0;
             int specialistWin = 0;
+            int multiclassTotal = 0;
+            int multiclassWin = 0;
 
             Season season = Utilities.GetSeasonFromString(SelectedSeasonOption);
 
@@ -469,8 +471,15 @@ namespace HeroesParserData.ViewModels.Stats
                                 specialistWin++;
                             break;
                         }
+                    case HeroesIcons.HeroRole.Multiclass:
+                        {
+                            multiclassTotal++;
+                            if (hero.IsWinner)
+                                multiclassWin++;
+                            break;
+                        }
                     default:
-                        ExceptionLog.Log(LogLevel.Info, $"SetRoleStats(): Hero: {hero}, could not find role for hero or unknown hero name");
+                        ExceptionLog.Log(LogLevel.Info, $"SetRoleStats(): Hero: {hero.Character}, could not find role for hero or unknown hero name");
                         break;
                 }
             }
@@ -479,18 +488,21 @@ namespace HeroesParserData.ViewModels.Stats
             int assassinWinRate = Utilities.CalculateWinPercentage(assassinWin, assassinTotal);
             int supportWinRate = Utilities.CalculateWinPercentage(supportWin, supportTotal);
             int specialistWinRate = Utilities.CalculateWinPercentage(specialistWin, specialistTotal);
+            int multiclassWinRate = Utilities.CalculateWinPercentage(multiclassWin, multiclassTotal);
 
             TotalRolesCollection.Clear();
             TotalRolesCollection.Add($"{warriorTotal} total games");
             TotalRolesCollection.Add($"{assassinTotal} total games");
             TotalRolesCollection.Add($"{supportTotal} total games");
             TotalRolesCollection.Add($"{specialistTotal} total games");
+            TotalRolesCollection.Add($"{multiclassTotal} total games");
 
             WinRolesPercentagesCollection.Clear();
             WinRolesPercentagesCollection.Add($"{warriorWinRate}% winrate");
             WinRolesPercentagesCollection.Add($"{assassinWinRate}% winrate");
             WinRolesPercentagesCollection.Add($"{supportWinRate}% winrate");
             WinRolesPercentagesCollection.Add($"{specialistWinRate}% winrate");
+            WinRolesPercentagesCollection.Add($"{multiclassWinRate}% winrate");
         }
     }
 }
