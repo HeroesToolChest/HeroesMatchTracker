@@ -139,7 +139,7 @@
         <Setter Property="AutoGenerateColumns" Value="False" />
         <Setter Property="CanUserAddRows" Value="False" />
         <Setter Property="CanUserDeleteRows" Value="False" />
-        <Setter Property="IsReadOnly" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
         <Setter Property="EnableColumnVirtualization" Value="True" />
         <Setter Property="EnableRowVirtualization" Value="True" />
         <Setter Property="CanUserReorderColumns" Value="False" />
