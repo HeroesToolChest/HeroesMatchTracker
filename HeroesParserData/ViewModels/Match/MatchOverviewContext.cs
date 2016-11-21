@@ -14,10 +14,16 @@ namespace HeroesParserData.ViewModels.Match
     public abstract class MatchOverviewContext : MatchContextBase
     {
         private bool _isViewMatchSummaryEnabled;
+
         private int _rowsReturned;
+        private int _selectedReplayBuildIdValue;
 
         private string _queryStatus;
         private string _selectedSeasonOption;
+        private string _selectedMapOption;
+        private string _selectedBuildOption;
+        private string _selectedGameTimeOption;
+        private string _selectedGameDateOption;
 
         private Replay _selectedReplay;
 
@@ -26,7 +32,12 @@ namespace HeroesParserData.ViewModels.Match
         private ObservableCollection<MatchPlayerInfoBase> _matchOverviewTeam2Collection = new ObservableCollection<MatchPlayerInfoBase>();
 
         #region public properties
-        public List<string> SelectedHeroesOption { get; set; }
+        public UniqueStringLists UniqueStringLists { get; private set; } = new UniqueStringLists();
+        public List<string> SeasonList { get; private set; } = new List<string>();
+        public List<string> MapsList { get; private set; } = new List<string>();
+        public List<string> ReplayBuildsList { get; private set; } = new List<string>();
+        public List<string> GameTimeList { get; private set; } = new List<string>();
+        public List<string> GameDateList { get; private set; } = new List<string>();
 
         public bool IsViewMatchSummaryEnabled
         {
@@ -48,6 +59,67 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
+        public string SelectedSeasonOption
+        {
+            get { return _selectedSeasonOption; }
+            set
+            {
+                _selectedSeasonOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedSeasonOption));
+            }
+        }
+
+        public string SelectedMapOption
+        {
+            get { return _selectedMapOption; }
+            set
+            {
+                _selectedMapOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedMapOption));
+            }
+        }
+
+        public string SelectedBuildOption
+        {
+            get { return _selectedBuildOption; }
+            set
+            {
+                _selectedBuildOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedBuildOption));
+            }
+        }
+
+        public int SelectedReplayBuildIdValue
+        {
+            get { return _selectedReplayBuildIdValue; }
+            set
+            {
+                _selectedReplayBuildIdValue = value;
+                RaisePropertyChangedEvent(nameof(SelectedReplayBuildIdValue));
+            }
+        }
+
+        public string SelectedGameTimeOption
+        {
+            get { return _selectedGameTimeOption; }
+            set
+            {
+
+                _selectedGameTimeOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedGameTimeOption));
+            }
+        }
+
+        public string SelectedGameDateOption
+        {
+            get { return _selectedGameDateOption; }
+            set
+            {
+                _selectedGameDateOption = value;
+                RaisePropertyChangedEvent(nameof(SelectedGameDateOption));
+            }
+        }
+
         public int RowsReturned
         {
             get { return _rowsReturned; }
@@ -59,11 +131,6 @@ namespace HeroesParserData.ViewModels.Match
         }
 
         // databinded
-        public List<string> SeasonList
-        {
-            get { return AllSeasonsList; }
-        }
-
         public List<string> HeroesList
         {
             get { return HeroesInfo.GetListOfHeroes(); }
@@ -72,16 +139,6 @@ namespace HeroesParserData.ViewModels.Match
         public Season GetSelectedSeason
         {
             get { return Utilities.GetSeasonFromString(SelectedSeasonOption); }
-        }
-
-        public string SelectedSeasonOption
-        {
-            get { return _selectedSeasonOption; }
-            set
-            {
-                _selectedSeasonOption = value;
-                RaisePropertyChangedEvent(nameof(SelectedSeasonOption));
-            }
         }
 
         public Models.DbModels.Replay SelectedReplay
@@ -137,9 +194,10 @@ namespace HeroesParserData.ViewModels.Match
                         ExecuteLoadMatchListCommmand();
                         QueryStatus = "Match list queried successfully";
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         QueryStatus = "Match list queried failed";
+                        WarningLog.Log(NLog.LogLevel.Warn, ex, "Failed to load match list");
                     }
                 });
             }
@@ -155,16 +213,40 @@ namespace HeroesParserData.ViewModels.Match
             get { return new DelegateCommand(() => ExecuteShowMatchSummaryCommand()); }
         }
 
+        public ICommand ClearSearchCommand
+        {
+            get { return new DelegateCommand(() => ExecuteClearSearchCommand()); }
+        }
+
         protected MatchOverviewContext()
             :base()
         {
             IsViewMatchSummaryEnabled = false;
-            SelectedSeasonOption = "Season 2";
+
+            SelectedReplayBuildIdValue = 0;
+
+            SeasonList.Add("Lifetime");
+            SeasonList.AddRange(AllSeasonsList);
+            SelectedSeasonOption = SeasonList[0];
+
+            GameTimeList = UniqueStringLists.GameTimeList;
+            SelectedGameTimeOption = GameTimeList[0];
+
+            GameDateList = UniqueStringLists.GameDateList;
+            SelectedGameDateOption = GameDateList[0];
+
+            MapsList.Add("Any");
+            MapsList.AddRange(HeroesInfo.GetMapsList());
+            SelectedMapOption = MapsList[0];
+
+            ReplayBuildsList.Add("Any");
+            ReplayBuildsList.AddRange(AllReplayBuildsList);
+            SelectedBuildOption = ReplayBuildsList[0];
         }
 
         protected abstract void ExecuteLoadMatchListCommmand();
 
-        private void LoadMatchOverviewCommand(Models.DbModels.Replay replay)
+        private void LoadMatchOverviewCommand(Replay replay)
         {
             IsViewMatchSummaryEnabled = false;
             ClearMatchOverview();
@@ -238,6 +320,16 @@ namespace HeroesParserData.ViewModels.Match
                 return;
 
             Messenger.Default.Send(new MatchSummaryMessage { ReplayId = SelectedReplay.ReplayId, MatchSummary = MatchSummary.QuickMatch });
+        }
+
+        private void ExecuteClearSearchCommand()
+        {
+            SelectedSeasonOption = SeasonList[0];
+            SelectedReplayBuildIdValue = 0;
+            SelectedMapOption = MapsList[0];
+            SelectedBuildOption = ReplayBuildsList[0];
+            SelectedGameTimeOption = GameTimeList[0];
+            SelectedGameDateOption = GameDateList[0];
         }
     }
 }

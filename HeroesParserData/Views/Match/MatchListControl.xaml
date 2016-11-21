@@ -18,11 +18,24 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" Margin="0,25,0,0">
-            <GroupBox Header="Search" Height="200">
+            <GroupBox Header="Search" Height="340">
                 <Grid Background="AliceBlue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                    <Button Opacity="1" Content="Refresh" Command="{Binding LoadMatchListCommand}" Height="28" Width="128" Margin="140,43,10,90"/>
-                    <ComboBox Opacity="1" base:SelectionChangedBehaviour.Command="{Binding RefreshMatchListCommand}" ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" Width="128" Height="28" Margin="140,10,10,123"/>
-                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHeroOption}" Margin="140,108,0,0" Width="128" Height="28"/>
+                    <Button Content="Search" Command="{Binding LoadMatchListCommand}" Height="28" Margin="10,245,10,-12"/>
+                    <Button Content="Clear" Command="{Binding ClearSearchCommand}" Height="28" Margin="107,208,10,65"/>
+
+                    <Label Content="SEASON" Margin="10,10,176,263" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+                    <Label Content="REPLAY ID" Margin="10,43,176,230" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+                    <Label Content="MAP NAME" Margin="10,76,176,197" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+                    <Label Content="REPLAY BUILD" Margin="10,109,176,164" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+                    <Label Content="GAME TIME" Margin="10,142,176,131" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+                    <Label Content="GAME DATE" Margin="10,175,176,98" Height="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+
+                    <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" Height="28" Margin="107,10,10,263"/>
+                    <Controls:NumericUpDown Minimum="0" Maximum="99999" Value="{Binding SelectedReplayBuildIdValue}" Height="28" Margin="107,43,10,230"/>
+                    <ComboBox ItemsSource="{Binding MapsList}" SelectedValue="{Binding SelectedMapOption}" Height="28" Margin="107,76,10,197"/>
+                    <ComboBox ItemsSource="{Binding ReplayBuildsList}" SelectedValue="{Binding SelectedBuildOption}" Margin="107,109,10,164" Height="28"/>
+                    <ComboBox ItemsSource="{Binding GameTimeList}" SelectedValue="{Binding SelectedGameTimeOption}" Height="28" Margin="107,142,10,131"/>
+                    <ComboBox ItemsSource="{Binding GameDateList}" SelectedValue="{Binding SelectedGameDateOption}" Height="28" Margin="107,175,10,98"/>
                 </Grid>
             </GroupBox>
             <!--<GroupBox Header="Advanced Search" Height="400">

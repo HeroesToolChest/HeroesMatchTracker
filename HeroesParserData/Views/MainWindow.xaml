@@ -49,7 +49,7 @@
                     <TabItem Header="Quick Match">
                         <ViewsMatch:QuickMatchControl />
                     </TabItem>
-                    <!--<TabItem Header="Unranked Draft">
+                    <TabItem Header="Unranked Draft">
                         <ViewsMatch:UnrankedDraftControl />
                     </TabItem>
                     <TabItem Header="Hero League">
@@ -63,7 +63,7 @@
                     </TabItem>
                     <TabItem Header="Custom Game">
                         <ViewsMatch:CustomGameControl />
-                    </TabItem>-->
+                    </TabItem>
                 </TabControl>
             </TabItem>
             <TabItem Header="Player Heroes">

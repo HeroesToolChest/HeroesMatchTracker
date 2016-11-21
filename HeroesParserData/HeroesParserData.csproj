@@ -218,6 +218,7 @@
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
+    <Compile Include="Generic\UniqueStringLists.cs" />
     <Compile Include="Messages\MatchSummary.cs" />
     <Compile Include="Messages\MatchSummaryMessage.cs" />
     <Compile Include="Messages\HomeTabMessage.cs" />
@@ -263,8 +264,13 @@
     <Compile Include="ViewModels\Heroes\HeroesUsableViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Match\CustomGameViewModel.cs" />
+    <Compile Include="ViewModels\Match\TeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\BrawlViewModel.cs" />
     <Compile Include="ViewModels\Match\MatchContextBase.cs" />
     <Compile Include="ViewModels\Match\MatchOverviewContext.cs" />
+    <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Match\Summary\CustomGameViewModel.cs" />
     <Compile Include="ViewModels\Match\Summary\HeroLeagueViewModel.cs" />

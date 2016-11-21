@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class QuickMatchViewModel : MatchOverviewContext
+    public class BrawlViewModel : MatchOverviewContext
     {
-        public QuickMatchViewModel()
+        public BrawlViewModel()
             :base()
         {
 
@@ -14,7 +14,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected override void ExecuteLoadMatchListCommmand()
         {
-            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.QuickMatch, this));
+            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.Brawl, this));
             RowsReturned = MatchListCollection.Count;
         }
     }

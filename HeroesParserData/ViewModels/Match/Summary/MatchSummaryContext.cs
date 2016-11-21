@@ -462,7 +462,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
             {
                 WarningLog.Log(LogLevel.Warn, ex.Message);
                 ExceptionLog.Log(LogLevel.Error, ex);
-                throw;
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.Models.DbModels;
+using HeroesParserData.ViewModels.Match;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -39,6 +40,7 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            // used in the match listings
             public static List<Models.DbModels.Replay> ReadGameModeRecords(GameMode gameMode, Season season)
             {
                 var replayBuild = Utilities.GetSeasonReplayBuild(season);
@@ -47,6 +49,52 @@ namespace HeroesParserData.DataQueries
                 {
                     return db.Replays.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2)
                         .OrderByDescending(x => x.TimeStamp).ToList();
+                }
+            }
+
+            // used in the match listings
+            public static List<Models.DbModels.Replay> ReadGameModeRecords(GameMode gameMode, MatchOverviewContext matchOverviewFilter)
+            {
+                var replayBuild = Utilities.GetSeasonReplayBuild(matchOverviewFilter.GetSelectedSeason);
+
+                using (var db = new HeroesParserDataContext())
+                {
+                    IQueryable<Models.DbModels.Replay> query = db.Set<Models.DbModels.Replay>();
+
+                    query = query.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
+
+                    if (matchOverviewFilter.SelectedReplayBuildIdValue > 0)
+                        query = query.Where(x => x.ReplayId == matchOverviewFilter.SelectedReplayBuildIdValue);
+
+                    if (matchOverviewFilter.SelectedMapOption != matchOverviewFilter.MapsList[0])
+                        query = query.Where(x => x.MapName == matchOverviewFilter.SelectedMapOption);
+
+                    if (matchOverviewFilter.SelectedBuildOption != matchOverviewFilter.ReplayBuildsList[0])
+                    {
+                        int? build = Convert.ToInt32(matchOverviewFilter.SelectedBuildOption);
+                        query = query.Where(x => x.ReplayBuild == build);
+                    }
+
+                    if (matchOverviewFilter.SelectedGameTimeOption != matchOverviewFilter.GameTimeList[0])
+                    {
+                        var value = matchOverviewFilter.UniqueStringLists.GetGameTimeModifiedTime(matchOverviewFilter.SelectedGameTimeOption);
+
+                        if (value.Item1 == "less than")
+                            query = query.Where(x => x.ReplayLengthTicks < value.Item2.Ticks);
+                        else if (value.Item1 == "longer than")
+                            query = query.Where(x => x.ReplayLengthTicks > value.Item2.Ticks);
+                    }
+
+                    if (matchOverviewFilter.SelectedGameDateOption != matchOverviewFilter.GameDateList[0])
+                    {
+                        var value = matchOverviewFilter.UniqueStringLists.GetGameDateModifiedDate(matchOverviewFilter.SelectedGameDateOption);
+
+                        if (value.Item1 == "last")
+                            query = query.Where(x => x.TimeStamp >= value.Item2);
+                        else if (value.Item1 == "more than")
+                            query = query.Where(x => x.TimeStamp <= value.Item2);
+                    }
+                    return query.OrderByDescending(x => x.TimeStamp).ToList();
                 }
             }
 
