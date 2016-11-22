@@ -1,26 +1,23 @@
-﻿<UserControl x:Class="HeroesParserData.Views.Match.LastMatch"
+﻿<UserControl x:Class="HeroesParserData.Views.Match.Summary.BrawlSummaryControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:HeroesParserData.Views.Match"
+             xmlns:local="clr-namespace:HeroesParserData.Views.Match.Summary"
              xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match.Summary"
-             xmlns:Summary="clr-namespace:HeroesParserData.Views.Match.Summary"
              mc:Ignorable="d" 
              HorizontalAlignment="Stretch"
-             HorizontalContentAlignment="Stretch"
              VerticalAlignment="Stretch"
-             VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:LastMatchSummaryViewModel}">
+             d:DataContext="{d:DesignInstance ViewModels:BrawlSummaryViewModel}" d:DesignWidth="1920" d:DesignHeight="1080">
     <UserControl.DataContext>
-        <ViewModels:LastMatchSummaryViewModel />
+        <ViewModels:BrawlSummaryViewModel />
     </UserControl.DataContext>
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Summary:MatchSummaryControl />
+            <local:MatchSummaryControl />
         </ScrollViewer>
     </Grid>
 </UserControl>

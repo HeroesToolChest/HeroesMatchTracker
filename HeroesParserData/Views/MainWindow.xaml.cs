@@ -103,9 +103,17 @@ namespace HeroesParserData.Views
         private void ReceiveMessage(MatchSummaryMessage action)
         {
             if (action.MatchSummary == MatchSummary.QuickMatch)
-            {
                 QuickMatchSummaryFlyout.IsOpen = true;
-            }
+            else if (action.MatchSummary == MatchSummary.UnrankedDraft)
+                UnrankedDraftSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.HeroLeague)
+                HeroLeagueSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.TeamLeague)
+                TeamLeagueSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.Brawl)
+                BrawlSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.CustomGame)
+                CustomGameSummaryFlyout.IsOpen = true;
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

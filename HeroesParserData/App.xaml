@@ -29,6 +29,7 @@
             <converters:BoolInverterConverter x:Key="BoolInverterConverter"/>
             <converters:TalentDescriptionTextStyleConverter x:Key="TalentDescriptionTextStyleConverter"/>
             <converters:ResizeWindowHeightConverter x:Key="ResizeWindowHeightConverter"/>
+            <converters:ResizeTeamChatWindowHeightConverter x:Key="ResizeTeamChatWindowHeightConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

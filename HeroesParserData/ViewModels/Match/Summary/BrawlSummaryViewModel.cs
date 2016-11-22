@@ -2,9 +2,9 @@
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
-    public class QuickMatchSummaryViewModel : MatchSummaryContext
+    public class BrawlSummaryViewModel : MatchSummaryContext
     {
-        public QuickMatchSummaryViewModel()
+        public BrawlSummaryViewModel()
             :base()
         {
             HasObservers = false;
@@ -13,7 +13,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.QuickMatch)
+            if (action.MatchSummary == MatchSummary.Brawl)
             {
                 QuerySummaryDetails(action.ReplayId);
             }

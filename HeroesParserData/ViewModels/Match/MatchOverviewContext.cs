@@ -246,6 +246,8 @@ namespace HeroesParserData.ViewModels.Match
 
         protected abstract void ExecuteLoadMatchListCommmand();
 
+        protected abstract void ExecuteShowMatchSummaryCommand();
+
         private void LoadMatchOverviewCommand(Replay replay)
         {
             IsViewMatchSummaryEnabled = false;
@@ -312,14 +314,6 @@ namespace HeroesParserData.ViewModels.Match
 
             MatchOverviewTeam1Collection.Clear();
             MatchOverviewTeam2Collection.Clear();
-        }
-
-        private void ExecuteShowMatchSummaryCommand()
-        {
-            if (SelectedReplay == null)
-                return;
-
-            Messenger.Default.Send(new MatchSummaryMessage { ReplayId = SelectedReplay.ReplayId, MatchSummary = MatchSummary.QuickMatch });
         }
 
         private void ExecuteClearSearchCommand()

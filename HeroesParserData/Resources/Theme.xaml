@@ -10,7 +10,7 @@
     <SolidColorBrush x:Key="TooltipAndPopupTitleFontBrush" Color="White" />
 
     <SolidColorBrush x:Key="MetroDataGrid.InactiveSelectionHighlightTextBrush" Color="Black"/>
-    
+
     <!--Override default control styles-->
     <Style TargetType="ToolTip">
         <Setter Property="BorderThickness" Value="1" />
@@ -231,6 +231,7 @@
         <Setter Property="Margin" Value="10,10,10,0"/>
     </Style>
     
+    <!--Other-->
     <Style TargetType="Label" x:Key="HomeLabelTheme" BasedOn="{StaticResource MetroLabel}">
         <Style.Resources>
             <DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>

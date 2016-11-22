@@ -2,6 +2,12 @@
 {
     public enum MatchSummary
     {
-        QuickMatch
+        QuickMatch,
+        UnrankedDraft,
+        HeroLeague,
+        TeamLeague,
+        Brawl,
+        CustomGame,
+        LastMatch
     }
 }

@@ -2,18 +2,17 @@
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
-    public class QuickMatchSummaryViewModel : MatchSummaryContext
+    public class CustomGameSummaryViewModel : MatchSummaryContext
     {
-        public QuickMatchSummaryViewModel()
-            :base()
+        public CustomGameSummaryViewModel()
+            : base()
         {
-            HasObservers = false;
-            HasBans = false;
+
         }
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.QuickMatch)
+            if (action.MatchSummary == MatchSummary.CustomGame)
             {
                 QuerySummaryDetails(action.ReplayId);
             }

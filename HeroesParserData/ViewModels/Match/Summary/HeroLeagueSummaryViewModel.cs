@@ -2,18 +2,18 @@
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
-    public class QuickMatchSummaryViewModel : MatchSummaryContext
+    public class HeroLeagueSummaryViewModel : MatchSummaryContext
     {
-        public QuickMatchSummaryViewModel()
+        public HeroLeagueSummaryViewModel()
             :base()
         {
             HasObservers = false;
-            HasBans = false;
+            HasBans = true;
         }
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.QuickMatch)
+            if (action.MatchSummary == MatchSummary.HeroLeague)
             {
                 QuerySummaryDetails(action.ReplayId);
             }

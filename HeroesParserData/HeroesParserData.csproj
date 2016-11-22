@@ -194,6 +194,7 @@
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
+    <Compile Include="Converters\ResizeTeamChatWindowHeightConverter.cs" />
     <Compile Include="Converters\ResizeWindowHeightConverter.cs" />
     <Compile Include="Converters\TalentDescriptionTextStyleConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
@@ -272,15 +273,14 @@
     <Compile Include="ViewModels\Match\HeroLeagueViewModel.cs" />
     <Compile Include="ViewModels\Match\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\Match\QuickMatchViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\CustomGameViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\HeroLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\LastMatchViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\LatestMatchesViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\CustomGameSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\HeroLeagueSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\LastMatchSummaryViewModel.cs" />
     <Compile Include="ViewModels\Match\Summary\MatchSummaryContext.cs" />
-    <Compile Include="ViewModels\Match\Summary\BrawlViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\BrawlSummaryViewModel.cs" />
     <Compile Include="ViewModels\Match\Summary\QuickMatchSummaryViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\TeamLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\UnrankedDraftViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\TeamLeagueSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\UnrankedDraftSummaryViewModel.cs" />
     <Compile Include="ViewModels\ReplaysViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\Stats\HeroStatsContext.cs" />
@@ -363,6 +363,15 @@
     <Compile Include="Views\Match\MatchStatusBarControl.xaml.cs">
       <DependentUpon>MatchStatusBarControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Match\Summary\BrawlSummaryControl.xaml.cs">
+      <DependentUpon>BrawlSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\CustomGameSummaryControl.xaml.cs">
+      <DependentUpon>CustomGameSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\HeroLeagueSummaryControl.xaml.cs">
+      <DependentUpon>HeroLeagueSummaryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Match\Summary\MatchSummaryControl.xaml.cs">
       <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
     </Compile>
@@ -374,6 +383,12 @@
     </Compile>
     <Compile Include="Views\Match\Summary\QuickMatchSummaryControl.xaml.cs">
       <DependentUpon>QuickMatchSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\TeamLeagueSummaryControl.xaml.cs">
+      <DependentUpon>TeamLeagueSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\UnrankedDraftSummaryControl.xaml.cs">
+      <DependentUpon>UnrankedDraftSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\TeamLeagueControl.xaml.cs">
       <DependentUpon>TeamLeagueControl.xaml</DependentUpon>
@@ -544,6 +559,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Match\Summary\BrawlSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\CustomGameSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\HeroLeagueSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Match\Summary\MatchSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -557,6 +584,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Match\Summary\QuickMatchSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\TeamLeagueSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\UnrankedDraftSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

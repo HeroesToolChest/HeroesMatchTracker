@@ -26,10 +26,25 @@
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
             <Controls:Flyout x:Name="SettingsFlyout" Header="Settings" Position="Right" Width="440" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
-                <Views:SettingControl></Views:SettingControl>
+                <Views:SettingControl />
             </Controls:Flyout>
             <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
-                <ViewsMatchSummary:QuickMatchSummaryControl></ViewsMatchSummary:QuickMatchSummaryControl>
+                <ViewsMatchSummary:QuickMatchSummaryControl/> 
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="UnrankedDraftSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+                <ViewsMatchSummary:UnrankedDraftSummaryControl/>
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="HeroLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+                <ViewsMatchSummary:HeroLeagueSummaryControl/>
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="TeamLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+                <ViewsMatchSummary:TeamLeagueSummaryControl/>
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="BrawlSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+                <ViewsMatchSummary:BrawlSummaryControl/>
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="CustomGameSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+                <ViewsMatchSummary:CustomGameSummaryControl/>
             </Controls:Flyout>
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
@@ -38,12 +53,9 @@
             <TabItem Header="Home">
                 <Views:HomeWindow />
             </TabItem>
-            <!--<TabItem Header="Last Match">
+            <TabItem Header="Last Match">
                 <ViewsMatch:LastMatch />
-            </TabItem>-->
-            <!--<TabItem Header="30 Latest Matches">
-                <ViewsMatch:LatestMatchesControl />
-            </TabItem>-->
+            </TabItem>
             <TabItem Header="Game Modes">
                 <TabControl>
                     <TabItem Header="Quick Match">
