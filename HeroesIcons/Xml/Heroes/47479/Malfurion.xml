@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Malfurion attributeid="Malf" role="Support" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
+<Malfurion attributeid="Malf" role="Support" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_malfurion.dds" loading="storm_ui_ingame_hero_loadingscreen_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
   <Level1>
     <MalfurionCombatStyleShandosClarity name="Shan'do's Clarity" desc="MalfurionInnervateShandosClarityTalent">storm_ui_icon_malfurion_innerrvate.dds</MalfurionCombatStyleShandosClarity>
     <MalfurionMasteryMoonburn name="Moonburn" desc="MalfurionMoonfireMoonburnTalent">storm_ui_icon_malfurion_moonfire.dds</MalfurionMasteryMoonburn>

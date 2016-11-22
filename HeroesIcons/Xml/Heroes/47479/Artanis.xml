@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Artanis attributeid="Arts" role="Warrior" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_artanis.dds" leader="storm_ui_ingame_hero_leaderboard_artanis.dds">
+<Artanis attributeid="Arts" role="Warrior" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_artanis.dds" loading="storm_ui_ingame_hero_loadingscreen_artanis.dds" leader="storm_ui_ingame_hero_leaderboard_artanis.dds">
   <Level1>
     <ArtanisTwinBladesReactiveParry name="Reactive Parry" desc="ArtanisTwinBladesReactiveParryTalent">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBladesReactiveParry>
     <ArtanisTwinBladesAmateurOpponent name="Amateur Opponent" desc="ArtanisTwinBladesAmateurOpponentTalent">storm_ui_icon_artanis_doubleslash_var1.dds</ArtanisTwinBladesAmateurOpponent>

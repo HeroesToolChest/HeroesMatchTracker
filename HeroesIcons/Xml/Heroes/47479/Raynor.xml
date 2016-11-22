@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Raynor attributeid="Rayn" role="Assassin" franchise="Starcraft" portrait="storm_ui_glues_draft_portrait_raynor.dds" leader="storm_ui_ingame_hero_leaderboard_raynor.dds">
+<Raynor attributeid="Rayn" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_raynor.dds" loading="storm_ui_ingame_hero_loadingscreen_raynor.dds" leader="storm_ui_ingame_hero_leaderboard_raynor.dds">
   <Level1>
     <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!" desc="RaynorAdrenalineRushGiveMeMoreTalent">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryGiveMeMoreAdrenalineRush>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>

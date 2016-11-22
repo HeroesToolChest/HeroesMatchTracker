@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Samuro attributeid="Samu" role="Assassin" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_samuro.dds" leader="storm_ui_ingame_hero_leaderboard_samuro.dds">
+<Samuro attributeid="Samu" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_samuro.dds" loading="storm_ui_ingame_hero_loadingscreen_samuro.dds" leader="storm_ui_ingame_hero_leaderboard_samuro.dds">
   <Level1>
     <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">storm_ui_icon_samuro_mirrorimage.dds</SamuroWayOfIllusion>
     <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroMirrorImageWayOfTheBlade>
@@ -35,6 +35,5 @@
     <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_mirrorimage.dds</SamuroWindStrider>
     <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroBlademastersPursuit>
   </Level20>
-  <Old>
-  </Old>
+  <Old></Old>
 </Samuro>

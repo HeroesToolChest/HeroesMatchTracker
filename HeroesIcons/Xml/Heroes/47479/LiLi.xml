@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LiLi name="Li Li" attributeid="LiLi" role="Support" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
+<LiLi name="Li Li" attributeid="LiLi" role="Support" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_lili.dds" loading="storm_ui_ingame_hero_loadingscreen_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
   <Level1>
     <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
     <LiLiMasteryHealingBrewProToss name="Pro Toss" desc="LiLiProTossTalent">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewProToss>

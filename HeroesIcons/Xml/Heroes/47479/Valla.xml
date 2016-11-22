@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Valla attributeid="Demo" role="Assassin" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_demonhunter.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
+<Valla attributeid="Demo" role="Assassin" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_demonhunter.dds" loading="storm_ui_ingame_hero_loadingscreen_demonhunter.dds.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
   <Level1>
     <DemonHunterMasteryMonsterHunterHungeringArrow name="Monster Hunger" desc="DemonHunterHungeringArrowMonsterHunterTalent">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasteryMonsterHunterHungeringArrow>
     <DemonHunterMasteryCaltrops name="Caltrops" desc="DemonHunterVaultCaltropsTalent">storm_ui_icon_valla_vault.dds</DemonHunterMasteryCaltrops>

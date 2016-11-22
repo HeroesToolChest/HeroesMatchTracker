@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Zarya attributeid="Zary" role="Warrior" franchise="Overwatch" portrait="storm_ui_glues_draft_portrait_zarya.dds" leader="storm_ui_ingame_hero_leaderboard_zarya.dds">
+<Zarya attributeid="Zary" role="Warrior" franchise="Overwatch" portrait="storm_ui_ingame_heroselect_btn_zarya.dds" loading="storm_ui_ingame_hero_loadingscreen_zarya.dds" leader="storm_ui_ingame_hero_leaderboard_zarya.dds">
   <Level1>
     <ZaryaParticleGrenadeDemolitionsExpertQuest name="Demolitions Expert" desc="ZaryaParticleGrenadeDemolitionsExpertTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeDemolitionsExpertQuest>
     <ZaryaShieldAllyTogetherWeAreStrong name="Together We Are Strong" desc="ZaryaShieldAllyTogetherWeAreStrongTalent">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyTogetherWeAreStrong>

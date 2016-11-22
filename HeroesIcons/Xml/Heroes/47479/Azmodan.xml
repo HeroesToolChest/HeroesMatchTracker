@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Azmodan attributeid="Azmo" role="Specialist" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_azmodan.dds" leader="storm_ui_ingame_hero_leaderboard_azmodan.dds">
+<Azmodan attributeid="Azmo" role="Specialist" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_azmodan.dds" loading="storm_ui_ingame_hero_loadingscreen_azmodan.dds" leader="storm_ui_ingame_hero_leaderboard_azmodan.dds">
   <Level1>
     <AzmodanMasteryTasteForBlood name="Taste for Blood" desc="AzmodanGlobeOfAnnihilationTasteForBloodTalent">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryTasteForBlood>
     <AzmodanMasterySiegingWrath name="Sieging Wrath" desc="AzmodanGlobeOfAnnihilationSiegingWrathTalent">storm_ui_icon_azmodan_globeofannihilation_a.dds</AzmodanMasterySiegingWrath>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tyrael attributeid="Tyrl" role="Warrior" franchise="Diablo" portrait="storm_ui_glues_draft_portrait_tyrael.dds" leader="storm_ui_ingame_hero_leaderboard_tyrael.dds">
+<Tyrael attributeid="Tyrl" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_tyrael.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrael.dds" leader="storm_ui_ingame_hero_leaderboard_tyrael.dds">
   <Level1>
     <TyraelMasteryPurgeEvil name="Purge Evil" desc="TyraelSmitePurgeEvilTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasteryPurgeEvil>
     <TyraelMasteryPassiveProtectioninDeath name="Protection in Death" desc="TyraelArchangelsWrathProtectionInDeathTalent">storm_ui_icon_tyrael_archangelswrath.dds</TyraelMasteryPassiveProtectioninDeath>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Falstad attributeid="Fals" role="Assassin" franchise="Warcraft" portrait="storm_ui_glues_draft_portrait_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
+<Falstad attributeid="Fals" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_gryphon_rider.dds" loading="storm_ui_ingame_hero_loadingscreen_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
   <Level1>
     <FalstadHammerangGatheringStorm name="Gathering Storm" desc="FalstadGatheringStormTalent">storm_ui_icon_falstad_hammerang.dds</FalstadHammerangGatheringStorm>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
