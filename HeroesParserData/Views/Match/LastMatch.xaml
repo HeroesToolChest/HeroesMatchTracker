@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesParserData.Views.Match"
-             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match"
+             xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels.Match.Summary"
+             xmlns:Summary="clr-namespace:HeroesParserData.Views.Match.Summary"
              mc:Ignorable="d" 
              HorizontalAlignment="Stretch"
              HorizontalContentAlignment="Stretch"
@@ -12,22 +13,14 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:LastMatchViewModel}">
+             d:DataContext="{d:DesignInstance ViewModels:LastMatchSummaryViewModel}">
     <UserControl.DataContext>
-        <ViewModels:LastMatchViewModel />
+        <ViewModels:LastMatchSummaryViewModel />
     </UserControl.DataContext>
     <Grid>
         <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
-        <DockPanel>
-            <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
-            <Grid DockPanel.Dock="Bottom">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="1036"></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
-                <Button Content="Refresh" Command="{Binding Refresh}" HorizontalAlignment="Left" Margin="905,14,0,0" VerticalAlignment="Top" Width="105"/>
-            </Grid>
-        </DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Summary:MatchSummaryControl />
+        </ScrollViewer>
     </Grid>
 </UserControl>

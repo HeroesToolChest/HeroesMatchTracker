@@ -9,6 +9,8 @@
     <SolidColorBrush x:Key="TooltipAndPopupFontBrush" Color="#82A4EA" />
     <SolidColorBrush x:Key="TooltipAndPopupTitleFontBrush" Color="White" />
 
+    <SolidColorBrush x:Key="MetroDataGrid.InactiveSelectionHighlightTextBrush" Color="Black"/>
+
     <!--Override default control styles-->
     <Style TargetType="ToolTip">
         <Setter Property="BorderThickness" Value="1" />
@@ -63,6 +65,58 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridRow" x:Key="MatchOverviewDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding PortraitBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+            
+            <!--  IsSelected  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="LightSkyBlue" />
+            </MultiTrigger>
+            
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding PortraitBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="false" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding PortraitBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style TargetType="DataGridRow" x:Key="SummaryDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
@@ -147,6 +201,17 @@
         <Setter Property="CanUserResizeRows" Value="False" />
     </Style>
 
+    <Style TargetType="DataGrid" x:Key="MatchListDataGrid" BasedOn="{StaticResource MetroDataGrid}">
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="CanUserAddRows" Value="False" />
+        <Setter Property="CanUserDeleteRows" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="EnableColumnVirtualization" Value="True" />
+        <Setter Property="EnableRowVirtualization" Value="True" />
+        <Setter Property="CanUserResizeRows" Value="False" />
+        <Setter Property="GridLinesVisibility" Value="Vertical" />
+    </Style>
+
     <Style TargetType="DataGrid" x:Key="StatisticsHeroesDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
         <Setter Property="Margin" Value="10,10,10,0" />
         <Setter Property="GridLinesVisibility" Value="Vertical" />
@@ -166,6 +231,7 @@
         <Setter Property="Margin" Value="10,10,10,0"/>
     </Style>
     
+    <!--Other-->
     <Style TargetType="Label" x:Key="HomeLabelTheme" BasedOn="{StaticResource MetroLabel}">
         <Style.Resources>
             <DropShadowEffect x:Key="HomeFontTheme" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="{Binding LabelGlowColor}"/>

@@ -18,6 +18,7 @@ namespace HeroesParserData.Views
         {
             SetTrayIcon();
             Messenger.Default.Register<StatisticsTabMessage>(this, async (action) => await ReceiveMessage(action));
+            Messenger.Default.Register<MatchSummaryMessage>(this, (action) => ReceiveMessage(action));
 
             InitializeComponent();
         }
@@ -46,6 +47,7 @@ namespace HeroesParserData.Views
                 SettingsFlyout.IsOpen = false;
             else
                 SettingsFlyout.IsOpen = true;
+
         }
 
         private void SetTrayIcon()
@@ -96,6 +98,22 @@ namespace HeroesParserData.Views
             {
                 await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Settings menu.");
             }
+        }
+
+        private void ReceiveMessage(MatchSummaryMessage action)
+        {
+            if (action.MatchSummary == MatchSummary.QuickMatch)
+                QuickMatchSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.UnrankedDraft)
+                UnrankedDraftSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.HeroLeague)
+                HeroLeagueSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.TeamLeague)
+                TeamLeagueSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.Brawl)
+                BrawlSummaryFlyout.IsOpen = true;
+            else if (action.MatchSummary == MatchSummary.CustomGame)
+                CustomGameSummaryFlyout.IsOpen = true;
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

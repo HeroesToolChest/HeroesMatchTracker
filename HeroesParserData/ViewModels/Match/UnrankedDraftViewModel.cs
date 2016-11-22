@@ -1,27 +1,31 @@
-﻿using Heroes.ReplayParser;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
+using HeroesParserData.Messages;
 using System.Collections.ObjectModel;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class UnrankedDraftViewModel : MatchContext
+    public class UnrankedDraftViewModel : MatchOverviewContext
     {
         public UnrankedDraftViewModel()
             :base()
         {
-            HasObservers = false;
-            HasBans = true;
+
         }
 
-        protected override void RefreshExecute()
+        protected override void ExecuteLoadMatchListCommmand()
         {
-            QueryMatchList();
+            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.UnrankedDraft, this));
+            RowsReturned = MatchListCollection.Count;
         }
 
-        private void QueryMatchList()
+        protected override void ExecuteShowMatchSummaryCommand()
         {
-            MatchList = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.UnrankedDraft, GetSelectedSeason));
-            RowsReturned = MatchList.Count;
+            if (SelectedReplay == null)
+                return;
+
+            Messenger.Default.Send(new MatchSummaryMessage { ReplayId = SelectedReplay.ReplayId, MatchSummary = MatchSummary.UnrankedDraft });
         }
     }
 }

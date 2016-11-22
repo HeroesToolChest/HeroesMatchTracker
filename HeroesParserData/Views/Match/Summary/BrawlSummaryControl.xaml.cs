@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HeroesParserData.Views.Match
+namespace HeroesParserData.Views.Match.Summary
 {
     /// <summary>
-    /// Interaction logic for MatchSummaryControl.xaml
+    /// Interaction logic for BrawlSummaryControl.xaml
     /// </summary>
-    public partial class MatchSummaryControl : UserControl
+    public partial class BrawlSummaryControl : UserControl
     {
-        public MatchSummaryControl()
+        public BrawlSummaryControl()
         {
             InitializeComponent();
         }

@@ -19,6 +19,7 @@ namespace HeroesParserData.ViewModels
         protected Logger WarningLog { get; private set; }
         protected List<string> AllSeasonsList { get; private set; }
         protected List<string> AllGameModesList { get; private set; }
+        protected List<string> AllReplayBuildsList { get; private set; }
 
         public BitmapImage BackgroundMapImage
         {
@@ -50,6 +51,7 @@ namespace HeroesParserData.ViewModels
 
             AllSeasonsList = Utilities.GetSeasonList();
             AllGameModesList = Utilities.GetGameModeList();
+            AllReplayBuildsList = Utilities.GetBuildsList();
 
             SetDefaultBackgroundImage();
         }

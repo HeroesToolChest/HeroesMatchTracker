@@ -23,11 +23,13 @@
             <system:Double x:Key="TabItemFontSize">16</system:Double>
             <system:Double x:Key="PlayersHeroesImageHeight">120</system:Double>
             <system:Double x:Key="PlayersHeroesImageWidth">102</system:Double>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
             <converters:IntToStringThousandSeperatorConverter x:Key="IntToStringThousandSeperatorConverter"/>
             <converters:DoubleToStringThousandSeperatorConverter x:Key="DoubleToStringThousandSeperatorConverter"/>
             <converters:BoolInverterConverter x:Key="BoolInverterConverter"/>
-            <converters:TalentDescriptionTextStyleConverter x:Key="TalentDescriptionTextStyleConverter" />
+            <converters:TalentDescriptionTextStyleConverter x:Key="TalentDescriptionTextStyleConverter"/>
+            <converters:ResizeWindowHeightConverter x:Key="ResizeWindowHeightConverter"/>
+            <converters:ResizeTeamChatWindowHeightConverter x:Key="ResizeTeamChatWindowHeightConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

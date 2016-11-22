@@ -13,11 +13,11 @@
              Height="auto"
              Width="auto"
              d:DataContext="{d:DesignInstance ViewModels:LatestMatchesViewModel}">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <ViewModels:LatestMatchesViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
-        <Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
+        <!--<Image Source="{Binding BackgroundMapImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <DockPanel>
                 <local:MatchStatusBarControl DockPanel.Dock="Bottom" Background="LightBlue"></local:MatchStatusBarControl>
@@ -26,10 +26,10 @@
                         <ColumnDefinition MinWidth="1036"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>
+                    --><!--<local:MatchSummaryControl Grid.Column="0"></local:MatchSummaryControl>--><!--
                     <local:MatchListLatestMatchesControl Grid.Column="1"></local:MatchListLatestMatchesControl>
                 </Grid>
             </DockPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </Grid>
 </UserControl>

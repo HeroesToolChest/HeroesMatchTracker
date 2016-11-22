@@ -24,10 +24,11 @@ namespace HeroesParserData.ViewModels
                 _selectedMainTab = value;
                 if (value == 0)
                     Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Update });
-                else
-                    Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Stop });
 
-                if (value == 5) // stats tab
+                if (value == 1)
+                    Messenger.Default.Send(new MatchSummaryMessage() { MatchSummary = MatchSummary.LastMatch });
+
+                if (value == 4) // stats tab
                 {
                     SelectedStatisticsTab = SelectedStatisticsTab;
                 }
