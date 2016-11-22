@@ -786,7 +786,7 @@
             </TabItem>
             <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}">
                 <DataGrid Style="{StaticResource DefaultDataGrid}"  GridLinesVisibility="Vertical"  BorderThickness="1" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" CanUserSortColumns="False"
-                          ItemsSource="{Binding MatchChatMessagesCollection, IsAsync=True}" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeTeamChatWindowHeightConverter}}">
+                          ItemsSource="{Binding MatchChatMessagesCollection, IsAsync=True}" MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeTeamChatWindowHeightConverter}}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" HeaderStyle="{StaticResource DataGridCenterHeader}" MinWidth="90" CellStyle="{StaticResource DataGridCenterCell}" />
                         <DataGridTextColumn Header="Target" Binding="{Binding Target}" MinWidth="90" />
