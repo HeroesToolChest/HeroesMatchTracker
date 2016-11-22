@@ -777,18 +777,11 @@
                     <Label Content=" Team 2 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0"/>
                     <Label Content="{Binding MatchHeroBans.Team1Ban0HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="0"/>
                     <Label Content="{Binding MatchHeroBans.Team1Ban1HeroName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="0"/>
-                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="0" Grid.Row="1">
-                        <Image Source="{Binding MatchHeroBans.Team0Ban0}" Height="120" Width="102"/>
-                    </Border>
-                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="1" Grid.Row="1">
-                        <Image Source="{Binding MatchHeroBans.Team0Ban1}" Height="120" Width="102"/>
-                    </Border>
-                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="2" Grid.Row="1">
-                        <Image Source="{Binding MatchHeroBans.Team1Ban0}" Height="120" Width="102"/>
-                    </Border>
-                    <Border BorderThickness="2" BorderBrush="Black" Height="120" Width="102" Grid.Column="3" Grid.Row="1">
-                        <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102"/>
-                    </Border>
+
+                    <Image Source="{Binding MatchHeroBans.Team0Ban0}" Height="120" Width="102" Grid.Column="0" Grid.Row="1"/>
+                    <Image Source="{Binding MatchHeroBans.Team0Ban1}" Height="120" Width="102" Grid.Column="1" Grid.Row="1"/>
+                    <Image Source="{Binding MatchHeroBans.Team1Ban0}" Height="120" Width="102" Grid.Column="2" Grid.Row="1"/>
+                    <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102" Grid.Column="3" Grid.Row="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}">
