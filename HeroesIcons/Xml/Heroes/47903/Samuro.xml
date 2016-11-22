@@ -32,7 +32,7 @@
   <Level20>
     <SamuroWhirlwindStorm name="Dance of Death" desc="SamuroDanceOfDeathTalent">storm_ui_icon_samuro_bladestorm.dds</SamuroWhirlwindStorm>
     <SamuroThreeBladeStyle name="Three Blade Style" desc="SamuroThreeBladeStyleTalent">storm_ui_icon_samuro_illusiondancer.dds</SamuroThreeBladeStyle>
-    <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_mirrorimage.dds</SamuroWindStrider>
+    <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_windwalk.dds</SamuroWindStrider>
     <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroBlademastersPursuit>
   </Level20>
 </Samuro>
