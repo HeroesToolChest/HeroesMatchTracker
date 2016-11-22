@@ -9,7 +9,7 @@
       <Value Profile="(Default)">HeroesParserData.db</Value>
     </Setting>
     <Setting Name="SupportedReplayBuild" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">48027</Value>
+      <Value Profile="(Default)">48297</Value>
     </Setting>
   </Settings>
 </SettingsFile>

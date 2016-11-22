@@ -49,7 +49,7 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("48027")]
+        [global::System.Configuration.DefaultSettingValueAttribute("48297")]
         public int SupportedReplayBuild {
             get {
                 return ((int)(this["SupportedReplayBuild"]));
