@@ -2,12 +2,15 @@
 using HeroesIcons;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
+using HeroesParserData.Models.DbModels;
 using HeroesParserData.Models.MatchModels;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -16,10 +19,15 @@ namespace HeroesParserData.ViewModels.Match.Summary
     public abstract class MatchSummaryContext : MatchContextBase
     {
         #region properties
+
         private string _matchTitle;
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
+        private bool _isLeftChangeButtonVisible;
+        private bool _isRightChangeButtonVisible;
+        private bool _isLeftChangeButtonEnabled;
+        private bool _isRightChangeButtonEnabled;
         private Color _mapNameGlowColor;
 
         private ObservableCollection<MatchTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
@@ -31,6 +39,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private ObservableCollection<MatchScores> _matchScoreTeam2TotalCollection = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessagesCollection = new ObservableCollection<MatchChat>();
         #endregion properties
+
+        protected Replay CurrentReplay { get; set; }
+        protected List<Replay> MatchList { get; set; }
 
         #region public properties
         public MatchHeroBans MatchHeroBans { get; private set; } = new MatchHeroBans();
@@ -167,6 +178,56 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 RaisePropertyChangedEvent(nameof(HasChat));
             }
         }
+
+        public bool IsLeftChangeButtonVisible
+        {
+            get { return _isLeftChangeButtonVisible; }
+            set
+            {
+                _isLeftChangeButtonVisible = value;
+                RaisePropertyChangedEvent(nameof(IsLeftChangeButtonVisible));
+            }
+        }
+
+        public bool IsRightChangeButtonVisible
+        {
+            get { return _isRightChangeButtonVisible; }
+            set
+            {
+                _isRightChangeButtonVisible = value;
+                RaisePropertyChangedEvent(nameof(IsRightChangeButtonVisible));
+            }
+        }
+
+        public bool IsLeftChangeButtonEnabled
+        {
+            get { return _isLeftChangeButtonEnabled; }
+            set
+            {
+                _isLeftChangeButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsLeftChangeButtonEnabled));
+            }
+        }
+
+        public bool IsRightChangeButtonEnabled
+        {
+            get { return _isRightChangeButtonEnabled; }
+            set
+            {
+                _isRightChangeButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsRightChangeButtonEnabled));
+            }
+        }
+
+        public ICommand LeftChangeButtonCommand
+        {
+            get { return new DelegateCommand(() => ChangeCurrentMatchSummary(-1)); }
+        }
+
+        public ICommand RightChangeButtonCommand
+        {
+            get { return new DelegateCommand(() => ChangeCurrentMatchSummary(1)); }
+        }
         #endregion public properties
 
         /// <summary>
@@ -178,18 +239,42 @@ namespace HeroesParserData.ViewModels.Match.Summary
             Messenger.Default.Register<MatchSummaryMessage>(this, (action) => ReceiveMessage(action));
 
             HasChat = true;
+            IsLeftChangeButtonEnabled = true;
+            IsRightChangeButtonEnabled = true;
+            IsLeftChangeButtonVisible = true;
+            IsRightChangeButtonVisible = true;
         }
 
         protected abstract void ReceiveMessage(MatchSummaryMessage action);
 
-        protected void QuerySummaryDetails(long replayId)
+        protected virtual void ExecuteSelectedReplay(MatchSummaryMessage action)
         {
+            MatchList = action.MatchList;
+            CurrentReplay = action.Replay;
+            QuerySummaryDetails();
+
+            if (CurrentReplay.ReplayId == MatchList[0].ReplayId)
+                IsLeftChangeButtonEnabled = false;
+            else
+                IsLeftChangeButtonEnabled = true;
+
+            if (CurrentReplay.ReplayId == MatchList[MatchList.Count - 1].ReplayId)
+                IsRightChangeButtonEnabled = false;
+            else
+                IsRightChangeButtonEnabled = true;
+        }
+
+        protected void QuerySummaryDetails()
+        {
+            if (CurrentReplay == null)
+                return;
+
             try
             {
                 ClearSummaryDetails();
 
                 // get replay info
-                Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
+                Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(CurrentReplay.ReplayId);
 
                 // load up correct build information
                 HeroesInfo.ReInitializeSpecificHeroesXml(replay.ReplayBuild);
@@ -344,7 +429,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 SetScoreSummaryTotals(MatchScoreTeam1Collection, MatchScoreTeam1TotalCollection, matchTeamLevelsList.Max(x => x.Team0Level));
                 SetScoreSummaryTotals(MatchScoreTeam2Collection, MatchScoreTeam2TotalCollection, matchTeamLevelsList.Max(x => x.Team1Level));
 
-                MatchTitle = $"{replay.MapName} - {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}]";
+                MatchTitle = $"{replay.MapName} - {replay.GameMode} [{replay.TimeStamp}] [{replay.ReplayLength}] [Id: {replay.ReplayId}] [Build: {replay.ReplayBuild}]";
 
                 Color mapNameGlowColor;
                 BackgroundMapImage = SetMapImage(replay.MapName, out mapNameGlowColor);
@@ -583,6 +668,30 @@ namespace HeroesParserData.ViewModels.Match.Summary
             };
 
             collection.Add(matchScoresTotal);
+        }
+
+        private void ChangeCurrentMatchSummary(int value)
+        {
+            int index = MatchList.FindIndex(x => x.TimeStamp == CurrentReplay.TimeStamp);
+
+            if (value == -1)
+                CurrentReplay = MatchList[index - 1];
+            else if (value == 1)
+                CurrentReplay = MatchList[index + 1];
+
+            QuerySummaryDetails();
+
+            if (CurrentReplay.ReplayId == MatchList[0].ReplayId)
+                IsLeftChangeButtonEnabled = false;
+            else
+                IsLeftChangeButtonEnabled = true;
+
+            if (CurrentReplay.ReplayId == MatchList[MatchList.Count - 1].ReplayId)
+                IsRightChangeButtonEnabled = false;
+            else
+                IsRightChangeButtonEnabled = true;
+
+            Messenger.Default.Send(new MatchOverviewMessage { Replay = CurrentReplay });
         }
     }
 }

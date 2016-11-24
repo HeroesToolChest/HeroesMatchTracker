@@ -1,8 +1,12 @@
-﻿namespace HeroesParserData.Messages
+﻿using HeroesParserData.Models.DbModels;
+using System.Collections.Generic;
+
+namespace HeroesParserData.Messages
 {
     public class MatchSummaryMessage
     {
-        public long ReplayId { get; set; }
+        public Replay Replay { get; set; }
         public MatchSummary MatchSummary { get; set; }
+        public List<Replay> MatchList { get; set; }
     }
 }

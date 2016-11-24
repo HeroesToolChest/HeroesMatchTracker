@@ -13,6 +13,11 @@ namespace HeroesParserData.ViewModels.Match.Summary
             :base()
         {
             IsRefreshLastMatchDataOn = false;
+
+            IsLeftChangeButtonEnabled = false;
+            IsRightChangeButtonEnabled = false;
+            IsLeftChangeButtonVisible = false;
+            IsRightChangeButtonVisible = false;
         }
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
@@ -22,7 +27,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 if (!IsRefreshLastMatchDataOn)
                 {
                     IsRefreshLastMatchDataOn = true;
-                    QuerySummaryDetails(Query.Replay.ReadLastRecords(1)[0].ReplayId);
+
+                    CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
+                    QuerySummaryDetails();
 
                     Task.Run(async () =>
                     {
@@ -31,7 +38,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             await Task.Delay(5000);
                             await Application.Current.Dispatcher.InvokeAsync(delegate
                             {
-                                QuerySummaryDetails(Query.Replay.ReadLastRecords(1)[0].ReplayId);
+                                CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
+                                QuerySummaryDetails();
                             });
                         }
 

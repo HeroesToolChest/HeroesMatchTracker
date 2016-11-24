@@ -151,7 +151,7 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        public ObservableCollection<Models.DbModels.Replay> MatchListCollection
+        public ObservableCollection<Replay> MatchListCollection
         {
             get { return _matchListCollection; }
             set
@@ -221,6 +221,8 @@ namespace HeroesParserData.ViewModels.Match
         protected MatchOverviewContext()
             :base()
         {
+            Messenger.Default.Register<MatchOverviewMessage>(this, (action) => ReceiveMessage(action));
+
             IsViewMatchSummaryEnabled = false;
 
             SelectedReplayBuildIdValue = 0;
@@ -264,7 +266,7 @@ namespace HeroesParserData.ViewModels.Match
             IsViewMatchSummaryEnabled = true;
 
             // get info
-            Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
+            Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
             var playersList = replay.ReplayMatchPlayers.ToList();
 
             FindPlayerParties(playersList);
@@ -324,6 +326,11 @@ namespace HeroesParserData.ViewModels.Match
             SelectedBuildOption = ReplayBuildsList[0];
             SelectedGameTimeOption = GameTimeList[0];
             SelectedGameDateOption = GameDateList[0];
+        }
+
+        private void ReceiveMessage(MatchOverviewMessage action)
+        {
+            SelectedReplay = action.Replay;
         }
     }
 }

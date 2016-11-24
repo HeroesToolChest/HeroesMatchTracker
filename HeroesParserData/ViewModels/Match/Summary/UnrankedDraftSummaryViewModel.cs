@@ -15,7 +15,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         {
             if (action.MatchSummary == MatchSummary.UnrankedDraft)
             {
-                QuerySummaryDetails(action.ReplayId);
+                ExecuteSelectedReplay(action);
             }
         }
     }

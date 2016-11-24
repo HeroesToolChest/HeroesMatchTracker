@@ -3,6 +3,7 @@ using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace HeroesParserData.ViewModels.Match
 {
@@ -25,7 +26,12 @@ namespace HeroesParserData.ViewModels.Match
             if (SelectedReplay == null)
                 return;
 
-            Messenger.Default.Send(new MatchSummaryMessage { ReplayId = SelectedReplay.ReplayId, MatchSummary = MatchSummary.HeroLeague });
+            Messenger.Default.Send(new MatchSummaryMessage
+            {
+                Replay = SelectedReplay,
+                MatchSummary = MatchSummary.HeroLeague,
+                MatchList = MatchListCollection.ToList()
+            });
         }
     }
 }

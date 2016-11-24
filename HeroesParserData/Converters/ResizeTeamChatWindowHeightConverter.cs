@@ -15,7 +15,7 @@ namespace HeroesParserData.Converters
             if (number <= 200)
                 return number.Value;
             else
-                return number - 200;
+                return number - 220;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

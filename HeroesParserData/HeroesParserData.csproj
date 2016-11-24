@@ -220,6 +220,7 @@
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Generic\UniqueStringLists.cs" />
+    <Compile Include="Messages\MatchOverviewMessage.cs" />
     <Compile Include="Messages\MatchSummary.cs" />
     <Compile Include="Messages\MatchSummaryMessage.cs" />
     <Compile Include="Messages\HomeTabMessage.cs" />
