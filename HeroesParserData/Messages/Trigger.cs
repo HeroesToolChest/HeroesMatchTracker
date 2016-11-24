@@ -4,6 +4,8 @@
     {
         Update,
         Stop,
-        Send
+        Send,
+        Open,
+        Close
     }
 }

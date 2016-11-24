@@ -30,7 +30,8 @@ namespace HeroesParserData.ViewModels.Match
             {
                 Replay = SelectedReplay,
                 MatchSummary = MatchSummary.CustomGame,
-                MatchList = MatchListCollection.ToList()
+                MatchList = MatchListCollection.ToList(),
+                Trigger = Trigger.Open
             });
         }
     }

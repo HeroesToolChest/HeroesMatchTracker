@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using HeroesParserData.Messages;
+using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels
 {

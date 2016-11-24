@@ -28,22 +28,22 @@
             <Controls:Flyout x:Name="SettingsFlyout" Header="Settings" Position="Right" Width="440" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
                 <Views:SettingControl />
             </Controls:Flyout>
-            <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="QuickMatchSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:QuickMatchSummaryControl/> 
             </Controls:Flyout>
-            <Controls:Flyout x:Name="UnrankedDraftSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="UnrankedDraftSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="UnrankedDraftSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:UnrankedDraftSummaryControl/>
             </Controls:Flyout>
-            <Controls:Flyout x:Name="HeroLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="HeroLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="HeroLeagueSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:HeroLeagueSummaryControl/>
             </Controls:Flyout>
-            <Controls:Flyout x:Name="TeamLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="TeamLeagueSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="TeamLeagueSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:TeamLeagueSummaryControl/>
             </Controls:Flyout>
-            <Controls:Flyout x:Name="BrawlSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="BrawlSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="BrawlSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:BrawlSummaryControl/>
             </Controls:Flyout>
-            <Controls:Flyout x:Name="CustomGameSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
+            <Controls:Flyout x:Name="CustomGameSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="CustomGameSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:CustomGameSummaryControl/>
             </Controls:Flyout>
         </Controls:FlyoutsControl>

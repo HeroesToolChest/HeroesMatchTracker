@@ -8,5 +8,6 @@ namespace HeroesParserData.Messages
         public Replay Replay { get; set; }
         public MatchSummary MatchSummary { get; set; }
         public List<Replay> MatchList { get; set; }
+        public Trigger Trigger { get; set; }
     }
 }

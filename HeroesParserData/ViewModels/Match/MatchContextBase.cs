@@ -1,10 +1,6 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Models.DbModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace HeroesParserData.ViewModels.Match
@@ -18,7 +14,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected Dictionary<int, PartyIconColor> PlayerPartyIcons { get; private set; } = new Dictionary<int, PartyIconColor>();
 
-        protected bool ShowPlayerTagColumn
+        public bool ShowPlayerTagColumn
         {
             get { return !UserSettings.Default.IsBattleTagHidden; }
             set

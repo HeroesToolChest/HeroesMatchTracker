@@ -1,4 +1,5 @@
 ﻿using HeroesParserData.Messages;
+using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
@@ -13,10 +14,10 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.HeroLeague)
-            {
+            if (action.MatchSummary == MatchSummary.HeroLeague && action.Trigger == Trigger.Open)
                 ExecuteSelectedReplay(action);
-            }
+            else if (action.MatchSummary == MatchSummary.HeroLeague && action.Trigger == Trigger.Close)
+                ClearSummaryDetails();
         }
     }
 }

@@ -102,18 +102,21 @@ namespace HeroesParserData.Views
 
         private void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.QuickMatch)
-                QuickMatchSummaryFlyout.IsOpen = true;
-            else if (action.MatchSummary == MatchSummary.UnrankedDraft)
-                UnrankedDraftSummaryFlyout.IsOpen = true;
-            else if (action.MatchSummary == MatchSummary.HeroLeague)
-                HeroLeagueSummaryFlyout.IsOpen = true;
-            else if (action.MatchSummary == MatchSummary.TeamLeague)
-                TeamLeagueSummaryFlyout.IsOpen = true;
-            else if (action.MatchSummary == MatchSummary.Brawl)
-                BrawlSummaryFlyout.IsOpen = true;
-            else if (action.MatchSummary == MatchSummary.CustomGame)
-                CustomGameSummaryFlyout.IsOpen = true;
+            if (action.Trigger == Messages.Trigger.Open)
+            {
+                if (action.MatchSummary == MatchSummary.QuickMatch)
+                    QuickMatchSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.UnrankedDraft)
+                    UnrankedDraftSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.HeroLeague)
+                    HeroLeagueSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.TeamLeague)
+                    TeamLeagueSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.Brawl)
+                    BrawlSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.CustomGame)
+                    CustomGameSummaryFlyout.IsOpen = true;
+            }
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
@@ -126,6 +129,36 @@ namespace HeroesParserData.Views
             }
 
             return IntPtr.Zero;
+        }
+
+        private void QuickMatchSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.QuickMatch, Trigger = Messages.Trigger.Close });
+        }
+
+        private void UnrankedDraftSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.UnrankedDraft, Trigger = Messages.Trigger.Close });
+        }
+
+        private void HeroLeagueSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.HeroLeague, Trigger = Messages.Trigger.Close });
+        }
+
+        private void TeamLeagueSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.TeamLeague, Trigger = Messages.Trigger.Close });
+        }
+
+        private void BrawlSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.Brawl, Trigger = Messages.Trigger.Close });
+        }
+
+        private void CustomGameSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.CustomGame, Trigger = Messages.Trigger.Close });
         }
     }
 }

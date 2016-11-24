@@ -271,8 +271,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
             try
             {
-                ClearSummaryDetails();
-
                 // get replay info
                 Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(CurrentReplay.ReplayId);
 
@@ -483,7 +481,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         }
 
         // clear everything and free up resources
-        private void ClearSummaryDetails()
+        protected void ClearSummaryDetails()
         {
             // talents
             foreach (var matchTalent in MatchTalentsTeam1Collection)
@@ -564,7 +562,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
             MatchScoreTeam2TotalCollection = new ObservableCollection<MatchScores>();
             MatchObserversCollection = new ObservableCollection<MatchTalents>();
             MatchChatMessagesCollection = new ObservableCollection<MatchChat>();
-
         }
 
         private bool IsHealingStatCharacter(string realHeroName)
@@ -683,6 +680,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             else if (value == 1)
                 CurrentReplay = MatchList[index + 1];
 
+            ClearSummaryDetails();
             QuerySummaryDetails();
 
             if (CurrentReplay.ReplayId == MatchList[0].ReplayId)

@@ -29,6 +29,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     IsRefreshLastMatchDataOn = true;
 
                     CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
+                    ClearSummaryDetails();
                     QuerySummaryDetails();
 
                     Task.Run(async () =>
@@ -39,6 +40,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             await Application.Current.Dispatcher.InvokeAsync(delegate
                             {
                                 CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
+                                ClearSummaryDetails();
                                 QuerySummaryDetails();
                             });
                         }

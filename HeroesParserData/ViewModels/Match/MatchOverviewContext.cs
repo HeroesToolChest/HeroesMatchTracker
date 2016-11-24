@@ -309,10 +309,16 @@ namespace HeroesParserData.ViewModels.Match
         private void ClearMatchOverview()
         {
             foreach (var player in MatchOverviewTeam1Collection)
+            {
                 player.LeaderboardPortrait = null;
+                player.PartyIcon = null;
+            }
 
             foreach (var player in MatchOverviewTeam2Collection)
+            {
                 player.LeaderboardPortrait = null;
+                player.PartyIcon = null;
+            }
 
             MatchOverviewTeam1Collection.Clear();
             MatchOverviewTeam2Collection.Clear();
