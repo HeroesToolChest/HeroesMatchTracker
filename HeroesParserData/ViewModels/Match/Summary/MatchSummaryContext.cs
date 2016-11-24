@@ -489,6 +489,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             foreach (var matchTalent in MatchTalentsTeam1Collection)
             {
                 matchTalent.LeaderboardPortrait = null;
+                matchTalent.PartyIcon = null;
                 matchTalent.Talent1 = null;
                 matchTalent.Talent4 = null;
                 matchTalent.Talent7 = null;
@@ -503,6 +504,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             foreach (var matchTalent in MatchTalentsTeam2Collection)
             {
                 matchTalent.LeaderboardPortrait = null;
+                matchTalent.PartyIcon = null;
                 matchTalent.Talent1 = null;
                 matchTalent.Talent4 = null;
                 matchTalent.Talent7 = null;
@@ -518,6 +520,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             foreach (var matchScore in MatchScoreTeam1Collection)
             {
                 matchScore.LeaderboardPortrait = null;
+                matchScore.PartyIcon = null;
                 matchScore.MvpAward = null;
             }
             MatchScoreTeam1Collection = null;
@@ -525,6 +528,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             foreach (var matchScore in MatchScoreTeam2Collection)
             {
                 matchScore.LeaderboardPortrait = null;
+                matchScore.PartyIcon = null;
                 matchScore.MvpAward = null;
             }
             MatchScoreTeam2Collection = null;
