@@ -4,7 +4,7 @@
     <NovaTacticalEspionage name="Tactical Espionage" desc="NovaPermanentCloakSniperTacticalEspionageTalent">storm_ui_icon_nova_personalcloaking.dds</NovaTacticalEspionage>
     <NovaAdvancedCloaking name="Advanced Cloaking" desc="NovaPermanentCloakSniperAdvancedCloakingTalent">storm_ui_icon_nova_personalcloaking_var1.dds</NovaAdvancedCloaking>
     <NovaMasteryLongshot name="Longshot" desc="NovaPinningShotLongshotTalent">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryLongshot>
-    <NovaMasteryCovertOpsPinningShot name="Covert Ops" desc="NovaCovertOpsTalent">storm_ui_icon_nova_pinningshot_var1.dds</NovaMasteryCovertOpsPinningShot>
+    <NovaCovertOps name="Covert Ops" desc="NovaCovertOpsTalent">storm_ui_icon_nova_pinningshot_var1.dds</NovaCovertOps>
   </Level1>
   <Level4>
     <NovaNewRemoteDelivery name="Remote Delivery" desc="NovaHoloDecoyRemoteDeliveryTalent">storm_ui_icon_nova_holodecoy.dds</NovaNewRemoteDelivery>
