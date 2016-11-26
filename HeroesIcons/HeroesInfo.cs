@@ -154,6 +154,38 @@ namespace HeroesIcons
         }
 
         /// <summary>
+        /// Returns a loading portrait BitmapImage of the hero
+        /// </summary>
+        /// <param name="realHeroName">Real hero name</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroLoadingPortrait(string realHeroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(realHeroName))
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds", UriKind.Absolute));
+
+            // not found
+            if (!HeroesXml.LoadingPortraits.TryGetValue(realHeroName, out uri))
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Loading hero portrait: {realHeroName}"));
+
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds", UriKind.Absolute));
+            }
+
+            try
+            {
+                return new BitmapImage(uri);
+            }
+            catch (Exception)
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Loading hero portrait: {realHeroName}"));
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds", UriKind.Absolute));
+            }
+
+        }
+        /// <summary>
         /// Returns a leaderboard portrait BitmapImage of the hero
         /// </summary>
         /// <param name="realHeroName">Real hero name</param>
@@ -629,7 +661,7 @@ namespace HeroesIcons
         {
             using (StreamWriter writer = new StreamWriter($"logs/{fileName}", true))
             {
-                writer.WriteLine(message);
+                writer.WriteLine($"[{HeroesXml.CurrentLoadedHeroesBuild}] {message}");
             }
         }
         #endregion private methods

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Sonya attributeid="Barb" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_femalebarbarian.dds" loading="storm_ui_ingame_hero_loadingscreen_barbarian.dds.dds" leader="storm_ui_ingame_hero_leaderboard_femalebarbarian.dds">
+<Sonya attributeid="Barb" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_femalebarbarian.dds" loading="storm_ui_ingame_hero_loadingscreen_barbarian.dds" leader="storm_ui_ingame_hero_leaderboard_femalebarbarian.dds">
   <Level1>
     <BarbarianMasteryWarPaint name="War Paint" generic="true" desc="BarbarianFuryWarPaintTalent">storm_ui_icon_talent_autoattack_heal.dds</BarbarianMasteryWarPaint>
     <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>

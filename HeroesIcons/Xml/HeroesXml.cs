@@ -71,6 +71,11 @@ namespace HeroesIcons.Xml
         /// <summary>
         /// key is real hero name
         /// </summary>
+        public Dictionary<string, Uri> LoadingPortraits { get; private set; } = new Dictionary<string, Uri>();
+
+        /// <summary>
+        /// key is real hero name
+        /// </summary>
         public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
 
         private HeroesXml(string parentFile, string xmlFolder, int? build = null)
@@ -129,6 +134,9 @@ namespace HeroesIcons.Xml
                         // get portrait
                         string portraitName = reader["portrait"];
 
+                        // get loading portrait
+                        string loadingPortrait = reader["loading"];
+
                         // get leaderboard portrait
                         string lbPortrait = reader["leader"];
 
@@ -139,6 +147,9 @@ namespace HeroesIcons.Xml
 
                         if (!string.IsNullOrEmpty(portraitName))
                             HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
+
+                        if (!string.IsNullOrEmpty(loadingPortrait))
+                            LoadingPortraits.Add(realHeroName, SetLoadingPortraitUri(loadingPortrait));
 
                         if (!string.IsNullOrEmpty(lbPortrait))
                             LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortraitUri(lbPortrait));
@@ -274,6 +285,11 @@ namespace HeroesIcons.Xml
             return new Uri($@"{ApplicationPath}HeroPortraits\{fileName}", UriKind.Absolute);
         }
 
+        private Uri SetLoadingPortraitUri(string fileName)
+        {
+            return new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\{fileName}", UriKind.Absolute);
+
+        }
         private Uri SetLeaderboardPortraitUri(string fileName)
         {
             return new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
