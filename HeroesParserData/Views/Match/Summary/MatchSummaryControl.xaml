@@ -48,7 +48,7 @@
                     </StackPanel.Resources>
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
-                        <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="2"  
+                        <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                   RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam1Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -309,7 +309,7 @@
                         </DataGrid>
                     </Expander>
                     <Expander Header="Team 2" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#ffb3b3">
-                        <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="2"  
+                        <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam2Collection}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -579,7 +579,7 @@
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
                         <StackPanel>
-                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="2" CanUserResizeColumns="True"
+                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam1Collection}">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -614,7 +614,7 @@
                                     <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="2" CanUserResizeColumns="True"
+                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam1TotalCollection}" Margin="0,5,0,0" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -653,7 +653,7 @@
                     </Expander>
                     <Expander Header="Team 2" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#ffb3b3">
                         <StackPanel>
-                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="2" CanUserResizeColumns="True"
+                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam2Collection}">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -688,7 +688,7 @@
                                     <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="2" CanUserResizeColumns="True"
+                            <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam2TotalCollection}" Margin="0,5,0,0" HeadersVisibility="None">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn Header="Hero" MinWidth="128" CellStyle="{StaticResource PortraitBackColor}">
@@ -736,7 +736,8 @@
                     <Expander Header="Advanced Stats" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
-                                      CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam1Collection}" RowHeight="100" ColumnHeaderHeight="32">
+                                      CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam1Collection}" RowHeight="100" ColumnHeaderHeight="30"
+                                      RowStyle="{StaticResource SummaryDataGridRow}">
                                 <DataGrid.Resources>
                                     <Style TargetType="DataGridCell" BasedOn="{StaticResource RotatedDataGridCell}"/>
                                     <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}"/>
@@ -802,7 +803,8 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
-                                      CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam2Collection}" RowHeight="100" ColumnHeaderHeight="32" HeadersVisibility="None">
+                                      CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam2Collection}" RowHeight="100" ColumnHeaderHeight="30" HeadersVisibility="None"
+                                      RowStyle="{StaticResource SummaryDataGridRow}">
                                 <DataGrid.Resources>
                                     <Style TargetType="DataGridCell" BasedOn="{StaticResource RotatedDataGridCell}"/>
                                     <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}"/>

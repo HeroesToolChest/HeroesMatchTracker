@@ -10,6 +10,15 @@
     <SolidColorBrush x:Key="TooltipAndPopupTitleFontBrush" Color="White" />
 
     <SolidColorBrush x:Key="MetroDataGrid.InactiveSelectionHighlightTextBrush" Color="Black"/>
+
+    <Style TargetType="Border" x:Key="BorderBackgroundColor">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding RowBackColor}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Override default control styles-->
     <Style TargetType="ToolTip">
         <Setter Property="BorderThickness" Value="1" />
@@ -57,10 +66,54 @@
                 <Setter Property="Background" Value="LightSkyBlue" />
                 <Setter Property="Foreground" Value="Black" />
             </Trigger>
-            <Trigger Property="IsSelected"  Value="True">
+            
+            <!--  IsSelected  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                </MultiTrigger.Conditions>
                 <Setter Property="Background" Value="LightSkyBlue" />
-                <Setter Property="Foreground" Value="Black" />
-            </Trigger>
+            </MultiTrigger>
+
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="0" />
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="AliceBlue" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Lavender" />
+            </MultiTrigger>
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="0" />
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="false" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="AliceBlue" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="false" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Lavender" />
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
 
@@ -125,24 +178,61 @@
                     </Setter.Value>
                 </Setter>
             </Trigger>
-            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+            
+            <!--  IsSelected  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="LightSkyBlue" />
+            </MultiTrigger>
+
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
                 <Setter Property="Background">
                     <Setter.Value>
                         <SolidColorBrush Color="{Binding RowBackColor}" />
                     </Setter.Value>
                 </Setter>
-            </Trigger>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="LightSkyBlue" />
-                <Setter Property="Foreground" Value="Black" />
-            </Trigger>
-            <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="LightSkyBlue" />
-                <Setter Property="Foreground" Value="Black" />
-            </Trigger>
+            </MultiTrigger>
+            <!--  IsSelected and Selector.IsSelectionActive  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="false" />
+                    <Condition Property="Selector.IsSelectionActive" Value="false" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="{Binding RowBackColor}" />
+                    </Setter.Value>
+                </Setter>
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridRow" x:Key="SummaryAdvDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridRow">
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GrayBrush5}" Style="{StaticResource BorderBackgroundColor}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style TargetType="DataGridRow" x:Key="SingleRowDataGrid" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
@@ -265,7 +355,8 @@
     </Style>
     
     <Style TargetType="DataGridColumnHeader" x:Key="MatchAdvDataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}">
-        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="BorderThickness" Value="0,0,2,0" />
+        <Setter Property="BorderBrush" Value="SlateBlue" />
         <Setter Property="Background" Value="AliceBlue" />
     </Style>
 
@@ -293,18 +384,11 @@
         </Setter>
     </Style>
 
-    <Style TargetType="Border" x:Key="BorderBackgroundColor">
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="{Binding RowBackColor}" />
-            </Setter.Value>
-        </Setter>
-    </Style>
     <Style TargetType="DataGridCell" x:Key="MatchAdvDataGridCell" BasedOn="{StaticResource RotatedDataGridCell}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DataGridCell">
-                    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GrayBrush5}" Style="{StaticResource BorderBackgroundColor}">
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GrayBrush5}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </ControlTemplate>
