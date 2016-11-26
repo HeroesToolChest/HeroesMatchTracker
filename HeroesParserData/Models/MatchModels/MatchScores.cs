@@ -28,6 +28,7 @@ namespace HeroesParserData.Models.MatchModels
             PlayerSilenced = matchPlayerInfoBase.PlayerSilenced;
             MvpAward = matchPlayerInfoBase.MvpAward;
             MvpAwardName = matchPlayerInfoBase.MvpAwardName;
+            RowBackColor = matchPlayerInfoBase.RowBackColor;
         }
     }
 }

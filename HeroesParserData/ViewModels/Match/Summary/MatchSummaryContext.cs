@@ -8,8 +8,11 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -38,6 +41,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private ObservableCollection<MatchScores> _matchScoreTeam1TotalCollection = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchScores> _matchScoreTeam2TotalCollection = new ObservableCollection<MatchScores>();
         private ObservableCollection<MatchChat> _matchChatMessagesCollection = new ObservableCollection<MatchChat>();
+        private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam1Collection = new ObservableCollection<MatchAdvancedScores>();
+        private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam2Collection = new ObservableCollection<MatchAdvancedScores>();
         #endregion properties
 
         protected Replay CurrentReplay { get; set; }
@@ -126,6 +131,25 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
         }
 
+        public ObservableCollection<MatchAdvancedScores> MatchAdvancedScoreTeam1Collection
+        {
+            get { return _matchAdvancedScoreTeam1Collection; }
+            set
+            {
+                _matchAdvancedScoreTeam1Collection = value;
+                RaisePropertyChangedEvent(nameof(MatchAdvancedScoreTeam1Collection));
+            }
+        }
+
+        public ObservableCollection<MatchAdvancedScores> MatchAdvancedScoreTeam2Collection
+        {
+            get { return _matchAdvancedScoreTeam2Collection; }
+            set
+            {
+                _matchAdvancedScoreTeam2Collection = value;
+                RaisePropertyChangedEvent(nameof(MatchAdvancedScoreTeam2Collection));
+            }
+        }
         public string MatchTitle
         {
             get { return _matchTitle; }
@@ -318,72 +342,20 @@ namespace HeroesParserData.ViewModels.Match.Summary
                         matchPlayerInfoBase.PartyIcon = HeroesInfo.GetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
                     }
 
+                    if (player.IsWinner)
+                        matchPlayerInfoBase.RowBackColor = WinningTeamBackColor;
+                    else
+                        matchPlayerInfoBase.RowBackColor = LosingTeamBackColor;
+
                     MatchTalents matchTalents = new MatchTalents(matchPlayerInfoBase);
                     MatchScores matchScores = new MatchScores(matchPlayerInfoBase);
+                    MatchAdvancedScores matchAdvancedScores = new MatchAdvancedScores(matchPlayerInfoBase);
 
                     if (player.Character != "None")
                     {
-                        matchTalents.Talent1 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName1);
-                        matchTalents.Talent4 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName4);
-                        matchTalents.Talent7 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName7);
-                        matchTalents.Talent10 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName10);
-                        matchTalents.Talent13 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName13);
-                        matchTalents.Talent16 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName16);
-                        matchTalents.Talent20 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName20);
-
-                        matchTalents.TalentName1 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName1);
-                        matchTalents.TalentName4 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName4);
-                        matchTalents.TalentName7 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName7);
-                        matchTalents.TalentName10 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName10);
-                        matchTalents.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName13);
-                        matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName16);
-                        matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName20);
-
-                        TalentDescription talent1 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName1);
-                        TalentDescription talent4 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName4);
-                        TalentDescription talent7 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName7);
-                        TalentDescription talent10 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName10);
-                        TalentDescription talent13 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName13);
-                        TalentDescription talent16 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName16);
-                        TalentDescription talent20 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName20);
-
-                        matchTalents.TalentShortDescription1 = $"<c val=\"FFFFFF\">{matchTalents.TalentName1}:</c> {talent1.Short}";
-                        matchTalents.TalentShortDescription4 = $"<c val=\"FFFFFF\">{matchTalents.TalentName4}:</c> {talent4.Short}";
-                        matchTalents.TalentShortDescription7 = $"<c val=\"FFFFFF\">{matchTalents.TalentName7}:</c> {talent7.Short}";
-                        matchTalents.TalentShortDescription10 = $"<c val=\"FFFFFF\">{matchTalents.TalentName10}:</c> {talent10.Short}";
-                        matchTalents.TalentShortDescription13 = $"<c val=\"FFFFFF\">{matchTalents.TalentName13}:</c> {talent13.Short}";
-                        matchTalents.TalentShortDescription16 = $"<c val=\"FFFFFF\">{matchTalents.TalentName16}:</c> {talent16.Short}";
-                        matchTalents.TalentShortDescription20 = $"<c val=\"FFFFFF\">{matchTalents.TalentName20}:</c> {talent20.Short}";
-
-                        matchTalents.TalentFullDescription1 = talent1.Full;
-                        matchTalents.TalentFullDescription4 = talent4.Full;
-                        matchTalents.TalentFullDescription7 = talent7.Full;
-                        matchTalents.TalentFullDescription10 = talent10.Full;
-                        matchTalents.TalentFullDescription13 = talent13.Full;
-                        matchTalents.TalentFullDescription16 = talent16.Full;
-                        matchTalents.TalentFullDescription20 = talent20.Full;
-
-                        matchScores.SoloKills = playerScoresList[player.PlayerNumber].SoloKills;
-                        matchScores.Assists = playerScoresList[player.PlayerNumber].Assists;
-                        matchScores.Deaths = playerScoresList[player.PlayerNumber].Deaths;
-                        matchScores.SiegeDamage = playerScoresList[player.PlayerNumber].SiegeDamage;
-                        matchScores.HeroDamage = playerScoresList[player.PlayerNumber].HeroDamage;
-                        matchScores.ExperienceContribution = playerScoresList[player.PlayerNumber].ExperienceContribution;
-                        if (playerScoresList[player.PlayerNumber].DamageTaken != null)
-                            matchScores.Role = playerScoresList[player.PlayerNumber].DamageTaken;
-                        else if (IsHealingStatCharacter(player.Character))
-                            matchScores.Role = playerScoresList[player.PlayerNumber].Healing;
-                    }
-
-                    if (player.IsWinner)
-                    {
-                        matchTalents.RowBackColor = WinningTeamBackColor;
-                        matchScores.RowBackColor = WinningTeamBackColor;
-                    }
-                    else
-                    {
-                        matchTalents.RowBackColor = LosingTeamBackColor;
-                        matchScores.RowBackColor = LosingTeamBackColor;
+                        SetTalents(matchTalents, playerTalentsList, player);
+                        SetScoreSummary(matchScores, playerScoresList, player);
+                        SetAdvancedScoreSummary(matchAdvancedScores, playerScoresList, player);
                     }
 
                     if (player.Team == 0 || player.Team == 1)
@@ -400,6 +372,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             // add to collection
                             MatchTalentsTeam1Collection.Add(matchTalents);
                             MatchScoreTeam1Collection.Add(matchScores);
+                            MatchAdvancedScoreTeam1Collection.Add(matchAdvancedScores);
                         }
                         else
                         {
@@ -413,6 +386,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             // add to collection
                             MatchTalentsTeam2Collection.Add(matchTalents);
                             MatchScoreTeam2Collection.Add(matchScores);
+                            MatchAdvancedScoreTeam2Collection.Add(matchAdvancedScores);
                         }
                     }
                     else if (player.Team == 4) // observers
@@ -533,6 +507,23 @@ namespace HeroesParserData.ViewModels.Match.Summary
             MatchScoreTeam1TotalCollection = null;
             MatchScoreTeam2TotalCollection = null;
 
+            // advanced score 
+            foreach (var matchAdvanced in MatchAdvancedScoreTeam1Collection)
+            {
+                matchAdvanced.LeaderboardPortrait = null;
+                matchAdvanced.PartyIcon = null;
+                matchAdvanced.MvpAward = null;
+            }
+            MatchAdvancedScoreTeam1Collection = null;
+
+            foreach (var matchAdvanced in MatchAdvancedScoreTeam2Collection)
+            {
+                matchAdvanced.LeaderboardPortrait = null;
+                matchAdvanced.PartyIcon = null;
+                matchAdvanced.MvpAward = null;
+            }
+            MatchAdvancedScoreTeam2Collection = null;
+
             // observers
             HasObservers = false;
             MatchObserversCollection = null;
@@ -560,6 +551,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
             MatchScoreTeam2Collection = new ObservableCollection<MatchScores>();
             MatchScoreTeam1TotalCollection = new ObservableCollection<MatchScores>();
             MatchScoreTeam2TotalCollection = new ObservableCollection<MatchScores>();
+            MatchAdvancedScoreTeam1Collection = new ObservableCollection<MatchAdvancedScores>();
+            MatchAdvancedScoreTeam2Collection = new ObservableCollection<MatchAdvancedScores>();
             MatchObserversCollection = new ObservableCollection<MatchTalents>();
             MatchChatMessagesCollection = new ObservableCollection<MatchChat>();
         }
@@ -641,6 +634,88 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
 
             return HeroesInfo.GetMVPScoreScreenAward(awardType, teamColor, out awardName);
+        }
+
+        private void SetTalents(MatchTalents matchTalents, List<ReplayMatchPlayerTalent> playerTalentsList, ReplayMatchPlayer player)
+        {
+            matchTalents.Talent1 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName1);
+            matchTalents.Talent4 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName4);
+            matchTalents.Talent7 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName7);
+            matchTalents.Talent10 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName10);
+            matchTalents.Talent13 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName13);
+            matchTalents.Talent16 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName16);
+            matchTalents.Talent20 = HeroesInfo.GetTalentIcon(playerTalentsList[player.PlayerNumber].TalentName20);
+
+            matchTalents.TalentName1 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName1);
+            matchTalents.TalentName4 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName4);
+            matchTalents.TalentName7 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName7);
+            matchTalents.TalentName10 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName10);
+            matchTalents.TalentName13 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName13);
+            matchTalents.TalentName16 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName16);
+            matchTalents.TalentName20 = HeroesInfo.GetTrueTalentName(playerTalentsList[player.PlayerNumber].TalentName20);
+
+            TalentDescription talent1 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName1);
+            TalentDescription talent4 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName4);
+            TalentDescription talent7 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName7);
+            TalentDescription talent10 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName10);
+            TalentDescription talent13 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName13);
+            TalentDescription talent16 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName16);
+            TalentDescription talent20 = HeroesInfo.GetTalentDescriptions(playerTalentsList[player.PlayerNumber].TalentName20);
+
+            matchTalents.TalentShortDescription1 = $"<c val=\"FFFFFF\">{matchTalents.TalentName1}:</c> {talent1.Short}";
+            matchTalents.TalentShortDescription4 = $"<c val=\"FFFFFF\">{matchTalents.TalentName4}:</c> {talent4.Short}";
+            matchTalents.TalentShortDescription7 = $"<c val=\"FFFFFF\">{matchTalents.TalentName7}:</c> {talent7.Short}";
+            matchTalents.TalentShortDescription10 = $"<c val=\"FFFFFF\">{matchTalents.TalentName10}:</c> {talent10.Short}";
+            matchTalents.TalentShortDescription13 = $"<c val=\"FFFFFF\">{matchTalents.TalentName13}:</c> {talent13.Short}";
+            matchTalents.TalentShortDescription16 = $"<c val=\"FFFFFF\">{matchTalents.TalentName16}:</c> {talent16.Short}";
+            matchTalents.TalentShortDescription20 = $"<c val=\"FFFFFF\">{matchTalents.TalentName20}:</c> {talent20.Short}";
+
+            matchTalents.TalentFullDescription1 = talent1.Full;
+            matchTalents.TalentFullDescription4 = talent4.Full;
+            matchTalents.TalentFullDescription7 = talent7.Full;
+            matchTalents.TalentFullDescription10 = talent10.Full;
+            matchTalents.TalentFullDescription13 = talent13.Full;
+            matchTalents.TalentFullDescription16 = talent16.Full;
+            matchTalents.TalentFullDescription20 = talent20.Full;
+        }
+        
+        private void SetScoreSummary(MatchScores matchScores, List<ReplayMatchPlayerScoreResult> playerScoresList, ReplayMatchPlayer player)
+        {
+            var playerStat = playerScoresList[player.PlayerNumber];
+
+            matchScores.SoloKills = playerStat.SoloKills;
+            matchScores.Assists = playerStat.Assists;
+            matchScores.Deaths = playerStat.Deaths;
+            matchScores.SiegeDamage = playerStat.SiegeDamage;
+            matchScores.HeroDamage = playerStat.HeroDamage;
+            matchScores.ExperienceContribution = playerStat.ExperienceContribution;
+            if (playerStat.DamageTaken != null)
+                matchScores.Role = playerStat.DamageTaken;
+            else if (IsHealingStatCharacter(player.Character))
+                matchScores.Role = playerStat.Healing;
+        }
+
+        private void SetAdvancedScoreSummary(MatchAdvancedScores matchAdvancedScores, List<ReplayMatchPlayerScoreResult> playerScoresList, ReplayMatchPlayer player)
+        {
+            var playerStat = playerScoresList[player.PlayerNumber];
+
+            matchAdvancedScores.SoloKills = playerStat.SoloKills;
+            matchAdvancedScores.TakeDowns = playerStat.TakeDowns;
+            matchAdvancedScores.Assists = playerStat.Assists;
+            matchAdvancedScores.Deaths = playerStat.Deaths;
+            matchAdvancedScores.SiegeDamage = playerStat.SiegeDamage;
+            matchAdvancedScores.CreepDamage = playerStat.CreepDamage;
+            matchAdvancedScores.MinionDamage = playerStat.MinionDamage;
+            matchAdvancedScores.StrutureDamage = playerStat.StructureDamage;
+            matchAdvancedScores.SummonDamage = playerStat.SummonDamage;
+            matchAdvancedScores.HeroDamage = playerStat.HeroDamage;
+            matchAdvancedScores.DamageTaken = playerStat.DamageTaken;
+            matchAdvancedScores.Healing = playerStat.Healing;
+            matchAdvancedScores.SelfHealing = playerStat.SelfHealing;
+            matchAdvancedScores.ExperienceContribution = playerStat.ExperienceContribution;
+            matchAdvancedScores.MercCampCaptures = playerStat.MercCampCaptures;
+            matchAdvancedScores.WatchTowerCaptures = playerStat.WatchTowerCaptures;
+            matchAdvancedScores.TimeSpentDead = playerStat.TimeSpentDead;
         }
 
         private void SetScoreSummaryTotals(ObservableCollection<MatchScores> matchScoreTeam, ObservableCollection<MatchScores> collection, int? highestLevel)

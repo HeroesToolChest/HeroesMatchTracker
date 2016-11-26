@@ -10,7 +10,6 @@
     <SolidColorBrush x:Key="TooltipAndPopupTitleFontBrush" Color="White" />
 
     <SolidColorBrush x:Key="MetroDataGrid.InactiveSelectionHighlightTextBrush" Color="Black"/>
-
     <!--Override default control styles-->
     <Style TargetType="ToolTip">
         <Setter Property="BorderThickness" Value="1" />
@@ -184,7 +183,7 @@
     <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
-    
+
     <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
@@ -218,6 +217,101 @@
         <Setter Property="BorderThickness" Value="1" />
     </Style>
     
+    <!--Rotated Datagrid-->
+    <Style TargetType="DataGridCell" x:Key="RotatedDataGridCell" BasedOn="{StaticResource MetroDataGridCell}">
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <RotateTransform Angle="-90" />
+                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+    </Style>
+    <Style TargetType="DataGridColumnHeader" x:Key="RotatedDataGridColumnHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <RotateTransform Angle="-90" />
+                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+    </Style>
+    <Style TargetType="DataGridRowHeader" x:Key="RotatedDataGridRowHeader" BasedOn="{StaticResource MetroDataGridRowHeader}">
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <RotateTransform Angle="-90" />
+                    <ScaleTransform ScaleX="1" ScaleY="-1" />
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader" x:Key="MatchAdvNoneDataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="AliceBlue" />
+        <Setter Property="Background" Value="AliceBlue" />
+    </Style>
+    
+    <Style TargetType="DataGridColumnHeader" x:Key="MatchAdvThickDataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}">
+        <Setter Property="BorderThickness" Value="0,0,0,3"/>
+        <Setter Property="BorderBrush" Value="SlateBlue" />
+        <Setter Property="Background" Value="Lavender" />
+    </Style>
+    
+    <Style TargetType="DataGridColumnHeader" x:Key="MatchAdvDataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}">
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Background" Value="AliceBlue" />
+    </Style>
+
+    <Style TargetType="DataGridCell" x:Key="MatchAdvNoneDataGridCell" BasedOn="{StaticResource RotatedDataGridCell}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <Border BorderThickness="0">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="DataGridCell" x:Key="MatchAdvThickDataGridCell" BasedOn="{StaticResource RotatedDataGridCell}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <Border BorderThickness="0,0,0,3" BorderBrush="SlateBlue" Background="Lavender">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Border" x:Key="BorderBackgroundColor">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding RowBackColor}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="DataGridCell" x:Key="MatchAdvDataGridCell" BasedOn="{StaticResource RotatedDataGridCell}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource GrayBrush5}" Style="{StaticResource BorderBackgroundColor}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Expanders-->
     <Style TargetType="Expander" x:Key="SummaryControlExpander" BasedOn="{StaticResource MetroExpander}">
         <Setter Property="Margin" Value="10,10,0,0"/>

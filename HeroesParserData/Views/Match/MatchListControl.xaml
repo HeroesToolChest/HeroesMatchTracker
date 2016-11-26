@@ -47,7 +47,7 @@
         <StackPanel Grid.Column="2">
             <DataGrid Style="{StaticResource MatchListDataGrid}" BorderThickness="1" SelectionMode="Single" Opacity="0.90"
                       AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" SelectedItem="{Binding SelectedReplay}"
-                      ItemsSource="{Binding MatchListCollection, IsAsync=True}" Width="600" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeTeamChatWindowHeightConverter}}">
+                      ItemsSource="{Binding MatchListCollection, IsAsync=True}" Width="600" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeWindowHeightConverter}}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Replay Id" Binding="{Binding ReplayId}" />
                     <DataGridTextColumn Header="Map Name" Binding="{Binding MapName}" />

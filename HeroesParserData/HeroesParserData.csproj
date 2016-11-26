@@ -236,6 +236,7 @@
     <Compile Include="Models\DbModels\ReplayRenamedPlayer.cs" />
     <Compile Include="Models\DbModels\UserSetting.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
+    <Compile Include="Models\MatchModels\MatchAdvancedScores.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchHeroBans.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
