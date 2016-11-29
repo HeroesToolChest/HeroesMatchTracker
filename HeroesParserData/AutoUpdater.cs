@@ -119,6 +119,8 @@ namespace HeroesParserData
 
                     UpdaterLog.Log(LogLevel.Info, $"New directory path: {directoryPath}");
 
+                    UserSettings.Default.IsNewUpdateApplied = true;
+
                     return true;
                 }
             }
@@ -161,8 +163,6 @@ namespace HeroesParserData
 
                     return;
                 }
-
-                UserSettings.Default.IsNewUpdateApplied = true;
 
                 Directory.CreateDirectory(newAppDirectory);
                 UpdaterLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");

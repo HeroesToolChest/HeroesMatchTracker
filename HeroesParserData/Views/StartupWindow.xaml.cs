@@ -60,8 +60,9 @@ namespace HeroesParserData.Views
 
                 if (UserSettings.Default.IsNewUpdateApplied)
                 {
-                    ReleaseNotesWindow changeLog = new ReleaseNotesWindow();
-                    changeLog.ShowDialog();
+                    UserSettings.Default.IsNewUpdateApplied = false;
+                    ReleaseNotesWindow releaseNotesWindow = new ReleaseNotesWindow();
+                    releaseNotesWindow.ShowDialog();
                 }
             }
             catch (Exception ex)
