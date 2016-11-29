@@ -13,7 +13,7 @@ namespace HeroesParserData.ViewModels
         {
             get
             {
-                return HPDVersion.GetVersion();
+                return HPDVersion.GetVersionAsString();
             }
         }
 

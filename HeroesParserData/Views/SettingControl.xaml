@@ -7,14 +7,14 @@
              xmlns:local="clr-namespace:HeroesParserData.Views"
              xmlns:ViewModels="clr-namespace:HeroesParserData.ViewModels"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance ViewModels:SettingsViewModel}" d:DesignHeight="385" d:DesignWidth="551">
+             d:DataContext="{d:DesignInstance ViewModels:SettingsViewModel}" d:DesignHeight="385" d:DesignWidth="440">
     <Control.DataContext>
         <ViewModels:SettingsViewModel />
     </Control.DataContext>
     <Grid>
         <CheckBox Content="Update on Startup" IsChecked="{Binding IsAutoUpdates}" Margin="10,10,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
         <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}" Margin="10,34,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
-        <CheckBox Content="Hide BattleTags in Talents and Score (requires restart)" IsChecked="{Binding IsBattleTagsHidden}" Margin="10,58,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
+        <CheckBox Content="Hide BattleTags (requires restart)" IsChecked="{Binding IsBattleTagsHidden}" Margin="10,58,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
 
         <Label Content="Enter BattleTag for the Statistics Tab" Margin="0,84,0,0" Width="274" Style="{StaticResource SettingsLabelTheme}"/>
         <TextBox Controls:TextBoxHelper.Watermark="BattleTag#0000" Text="{Binding UserBattleTag}" HorizontalAlignment="Left" Height="23" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>

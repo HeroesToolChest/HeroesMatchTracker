@@ -560,5 +560,11 @@
         <Setter Property="BorderBrush" Value="SlateBlue"/>
         <Setter Property="BorderThickness" Value="0,2,0,0"/>
     </Style>
+
+    <Style TargetType="TextBlock" x:Key="AboutTextBlock" BasedOn="{StaticResource MetroTextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
     
 </ResourceDictionary>

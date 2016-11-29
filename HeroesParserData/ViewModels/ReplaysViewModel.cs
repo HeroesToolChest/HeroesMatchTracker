@@ -577,7 +577,7 @@ namespace HeroesParserData.ViewModels
                         }
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
-                            if (replayParsed.Item2.ReplayBuild > Settings.Default.SupportedReplayBuild)
+                            if (replayParsed.Item2.ReplayBuild > HPDVersion.GetHeroesReplayParserSupportedBuild())
                                 file.Status = ReplayParseResult.NotYetSupported;
                             else
                                 file.Status = ReplayParseResult.ParserException;

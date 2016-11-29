@@ -1,6 +1,5 @@
 ﻿using HeroesIcons;
 using HeroesParserData.Models.DbModels;
-using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.IO;
@@ -20,7 +19,7 @@ namespace HeroesParserData.Views
         public StartupWindow()
         {
             InitializeComponent();
-            AppVersion.Content = HPDVersion.GetVersion();
+            AppVersion.Content = HPDVersion.GetVersionAsString();
         }
 
         protected override async void OnContentRendered(EventArgs e)
@@ -36,13 +35,14 @@ namespace HeroesParserData.Views
                 StatusLabel.Content = "Starting up...";
 
                 // order is important
+                await Message("Performing database migration");
+                await InitializeDatabase();
+
                 await ApplicationUpdater();
 
                 await Message("Initializing Hero Icons");
                 App.HeroesInfo = HeroesInfo.Initialize();
 
-                await Message("Performing database migration");
-                await InitializeDatabase();
                 // must be last
                 await Message("Initializing Heroes Parser Data");
                 MainWindow mainWindow = new MainWindow();
@@ -55,6 +55,14 @@ namespace HeroesParserData.Views
 
                 Close();
                 mainWindow.Show();
+
+                await Task.Delay(500);
+
+                if (UserSettings.Default.IsNewUpdateApplied)
+                {
+                    ReleaseNotesWindow changeLog = new ReleaseNotesWindow();
+                    changeLog.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -81,7 +89,20 @@ namespace HeroesParserData.Views
             await (new HeroesParserDataContext()).Initialize(DatabaseMigrateLog);
 
             if (App.NewDatabaseCreated)
+            {
                 UserSettings.Default.SetDefaultSettings();
+
+                try
+                {
+                    ReleaseNoteHandler releaseNoteHandler = new ReleaseNoteHandler();
+                    await releaseNoteHandler.InitializeClient();
+                    releaseNoteHandler.AddAllReleasesUpToCurrentVersion();
+                }
+                catch (Exception ex)
+                {
+                    await Message($"Could not retreive Release notes: {ex.Message}");
+                }
+            }
         }
 
         private async Task ApplicationUpdater()
@@ -112,7 +133,9 @@ namespace HeroesParserData.Views
                     return;
                 }
 
-                await Message("Releases applied");
+                await Message("Retreiving release notes...");
+                await AutoUpdater.RetrieveReleaseNotes();
+
                 await Message("Copying database to new folder...");
                 AutoUpdater.CopyDatabaseToLatestRelease();
 

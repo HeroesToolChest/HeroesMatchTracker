@@ -1,5 +1,4 @@
 ﻿using HeroesParserData.DataQueries;
-using HeroesParserData.Properties;
 using NLog;
 using System;
 using System.Threading.Tasks;
@@ -175,9 +174,14 @@ namespace HeroesParserData.ViewModels
                 try
                 {
                     CheckForUpdatesResponse = "Downloading and applying updates...";
+
                     await AutoUpdater.ApplyReleases();
-                    CheckForUpdatesResponse = $"Finished applying update ({AutoUpdater.LatestVersion.Major}.{AutoUpdater.LatestVersion.Minor}.{AutoUpdater.LatestVersion.Revision}). A restart is required for changes to apply.";
-                    App.NewReleaseApplied = true;
+
+                    CheckForUpdatesResponse = "Retreiving release notes...";
+                    await AutoUpdater.RetrieveReleaseNotes();
+
+                    CheckForUpdatesResponse = $"Finished applying update ({AutoUpdater.LatestVersion.Major}.{AutoUpdater.LatestVersion.Minor}.{AutoUpdater.LatestVersion.Build}). A restart is required for changes to apply.";
+                    App.ManualUpdateApplied = true;
                     IsCheckForUpdatesEnabled = false;
                     IsApplyUpdateEnabled = false;
                 }

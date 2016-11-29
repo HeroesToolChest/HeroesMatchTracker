@@ -22,7 +22,7 @@ namespace HeroesParserData
         public static string NewLatestDirectory { get; set; }
         public static bool IsProcessingReplays { get; set; }
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
-        public static bool NewReleaseApplied { get; set; }
+        public static bool ManualUpdateApplied { get; set; }
         public static bool NewDatabaseCreated { get; private set; }
 
         App()
@@ -58,7 +58,7 @@ namespace HeroesParserData
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            NewReleaseApplied = false;
+            ManualUpdateApplied = false;
             DatabaseFileExists();
 
             // add custom accent and theme resource dictionaries
@@ -81,7 +81,7 @@ namespace HeroesParserData
             }
 
             // this should only trigger if the update is applied through the settings menu
-            if (NewReleaseApplied)
+            if (ManualUpdateApplied)
             {
                 SqlConnection.ClearAllPools();
                 AutoUpdater.CopyDatabaseToLatestRelease();

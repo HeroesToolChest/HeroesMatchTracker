@@ -138,6 +138,10 @@
       <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\NuGet.Squirrel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Octokit, Version=0.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.0.23.0\lib\net45\Octokit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
       <Private>True</Private>
@@ -197,6 +201,7 @@
     <Compile Include="Converters\ResizeTeamChatWindowHeightConverter.cs" />
     <Compile Include="Converters\ResizeWindowHeightConverter.cs" />
     <Compile Include="Converters\TalentDescriptionTextStyleConverter.cs" />
+    <Compile Include="Converters\TextToFlowDocumentConverter.cs" />
     <Compile Include="Database\HeroesParserDataContextMigrator.cs" />
     <Compile Include="Database\Migrations\IMigrationAddon.cs" />
     <Compile Include="Database\Migrations\Migration1_2_0\MigrationAddon1_2_0_2.cs" />
@@ -205,6 +210,7 @@
     <Compile Include="Database\Migrations\Migration1_3_0\MigrationAddon1_3_0_2.cs" />
     <Compile Include="Database\Migrations\Migration1_3_0\MigrationAddon1_3_0_3.cs" />
     <Compile Include="Database\SchemaInfo.cs" />
+    <Compile Include="DataQueries\ReleaseNotes.cs" />
     <Compile Include="DataQueries\ReplayData\HotsPlayerHero.cs" />
     <Compile Include="DataQueries\ReplayData\MatchAward.cs" />
     <Compile Include="DataQueries\ReplayData\MatchTeamObjective.cs" />
@@ -212,7 +218,7 @@
     <Compile Include="DataQueries\Statistics\PlayerStatistics.cs" />
     <Compile Include="DataQueries\ReplayData\RenamedPlayer.cs" />
     <Compile Include="DataQueries\UserSettings.cs" />
-    <Compile Include="Generic\AppVersion.cs" />
+    <Compile Include="Generic\HPDVersion.cs" />
     <Compile Include="Generic\FormattedTextBlock.cs" />
     <Compile Include="Generic\LogFile.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
@@ -220,6 +226,7 @@
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Generic\UniqueStringLists.cs" />
+    <Compile Include="Markdown.cs" />
     <Compile Include="Messages\MatchOverviewMessage.cs" />
     <Compile Include="Messages\MatchSummary.cs" />
     <Compile Include="Messages\MatchSummaryMessage.cs" />
@@ -229,6 +236,7 @@
     <Compile Include="Messages\StatisticsTab.cs" />
     <Compile Include="Messages\StatisticsTabMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />
+    <Compile Include="Models\DbModels\ReleaseNote.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />
     <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
@@ -250,6 +258,9 @@
     <Compile Include="Models\StatsModels\StatsHeroesTalentPicks.cs" />
     <Compile Include="Models\StatsModels\StatsMapPercentages.cs" />
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
+    <Compile Include="ReleaseNoteHandler.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ReleaseNotesViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\Data\RawDataContext.cs" />
@@ -290,6 +301,12 @@
     <Compile Include="ViewModels\Stats\HeroStatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\Stats\OverviewStatsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AboutControl.xaml.cs">
+      <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReleaseNotesWindow.xaml.cs">
+      <DependentUpon>ReleaseNotesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\QueryControl.xaml.cs">
       <DependentUpon>QueryControl.xaml</DependentUpon>
     </Compile>
@@ -457,6 +474,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\MarkdownTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\StringResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -464,6 +485,14 @@
     <Page Include="Resources\Theme.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReleaseNotesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Data\QueryControl.xaml">
       <Generator>MSBuild:Compile</Generator>

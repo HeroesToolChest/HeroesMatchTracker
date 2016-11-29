@@ -6,7 +6,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("HeroesParserData")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Application that allows you to save and view Heroes of the Storm replay data")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HeroesParserData")]

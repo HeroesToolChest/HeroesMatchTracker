@@ -12,7 +12,7 @@ namespace HeroesParserData.Models.DbModels
 
     public partial class HeroesParserDataContext : DbContext
     {
-        public static int RequiredDatabaseVersion = 2;
+        public static int RequiredDatabaseVersion = Properties.Settings.Default.DatabaseMigrationVersion;
 
         public HeroesParserDataContext()
             : base("name=HeroesParserData") { }
@@ -56,9 +56,13 @@ namespace HeroesParserData.Models.DbModels
                         {
                             await db.Database.ExecuteSqlCommandAsync(migration);
                         }
-                        foreach (IMigrationAddon migration in contextMigrator.MigrationAddons[currentVersion])
+
+                        if (contextMigrator.MigrationAddons.ContainsKey(currentVersion))
                         {
-                            await migration.Execute();
+                            foreach (IMigrationAddon migration in contextMigrator.MigrationAddons[currentVersion])
+                            {
+                                await migration.Execute();
+                            }
                         }
 
                         db.SchemaInfo.Add(new SchemaInfo() { Version = currentVersion });
@@ -115,6 +119,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
         public virtual DbSet<UserSetting> UserSettings { get; set; }
+        public virtual DbSet<ReleaseNote> ReleaseNotes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

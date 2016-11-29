@@ -28,7 +28,11 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 {
                     IsRefreshLastMatchDataOn = true;
 
-                    CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
+                    var lastRecord = Query.Replay.ReadLastRecords(1);
+                    if (lastRecord.Count == 0)
+                        return;
+
+                    CurrentReplay = lastRecord[0];
                     ClearSummaryDetails();
                     QuerySummaryDetails();
 

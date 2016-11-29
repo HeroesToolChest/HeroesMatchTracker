@@ -49,13 +49,13 @@ namespace HeroesParserData.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("48297")]
-        public int SupportedReplayBuild {
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int DatabaseMigrationVersion {
             get {
-                return ((int)(this["SupportedReplayBuild"]));
+                return ((int)(this["DatabaseMigrationVersion"]));
             }
             set {
-                this["SupportedReplayBuild"] = value;
+                this["DatabaseMigrationVersion"] = value;
             }
         }
     }

@@ -21,6 +21,7 @@ namespace HeroesParserData
             IsMinimizeToTray = false;
             IsBattleTagHidden = true;
             IsIncludeSubDirectories = true;
+            IsNewUpdateApplied = false;
 
             UserPlayerId = 0;
 
@@ -74,6 +75,12 @@ namespace HeroesParserData
             set { SetBooleanValue(nameof(IsIncludeSubDirectories), value); }
         }
 
+        public bool IsNewUpdateApplied
+        {
+            get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
+            set { SetBooleanValue(nameof(IsNewUpdateApplied), value); }
+        }
+
         public long UserPlayerId
         {
             get { return GetLongValue(nameof(UserPlayerId)); }
@@ -110,20 +117,20 @@ namespace HeroesParserData
             set { SetDateTimeValue(nameof(ReplaysLastSaved), value); }
         }
 
-        private bool GetBooleanValue(string name)
-        {
-            using (var db = new HeroesParserDataContext())
-            {
-                return bool.Parse(db.UserSettings.Where(x => x.Name == name).FirstOrDefault().Value);
-            }
-        }
-
         private void CreateNewSetting(UserSetting userSetting)
         {
             using (var db = new HeroesParserDataContext())
             {
                 db.UserSettings.Add(userSetting);
                 db.SaveChanges();
+            }
+        }
+
+        private bool GetBooleanValue(string name)
+        {
+            using (var db = new HeroesParserDataContext())
+            {
+                return bool.Parse(db.UserSettings.Where(x => x.Name == name).FirstOrDefault().Value);
             }
         }
 

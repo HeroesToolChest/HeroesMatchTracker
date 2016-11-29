@@ -12,10 +12,12 @@ namespace HeroesParserData
         private UpdateManager UpdateManager;
         private UpdateInfo UpdateInfo;
         private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
+
         public Version CurrentVersion { get; private set; }
         public string CurrentVersionString => CurrentVersion != null? $"{CurrentVersion.Major}.{CurrentVersion.Minor}.{CurrentVersion.Build}" : string.Empty; 
         public Version LatestVersion { get; private set; }
         public string LatestVersionString => LatestVersion != null? $"{LatestVersion.Major}.{LatestVersion.Minor}.{LatestVersion.Build}" : string.Empty;
+        //public Dictionary<string, ReleaseNote> ReleaseNotes { get; private set; } = new Dictionary<string, ReleaseNote>();
 
         /// <summary>
         /// Checks for updates and applies the update if IsAutoUpdates in settings is true. 
@@ -61,7 +63,7 @@ namespace HeroesParserData
         {
             try
             {
-                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl))
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: false))
                 {
                     UpdaterLog.Log(LogLevel.Info, "Update Check");
 
@@ -109,6 +111,7 @@ namespace HeroesParserData
                     await UpdateManager.DownloadReleases(UpdateInfo.ReleasesToApply);
                     UpdaterLog.Log(LogLevel.Info, "Downloading...Completed");
 
+                    // apply the releases
                     UpdaterLog.Log(LogLevel.Info, "Applying releases");
                     string directoryPath = await UpdateManager.ApplyReleases(UpdateInfo);
 
@@ -125,6 +128,22 @@ namespace HeroesParserData
             }
         }
 
+        public static async Task RetrieveReleaseNotes()
+        {
+            try
+            {
+                ReleaseNoteHandler releaseNoteHandler = new ReleaseNoteHandler();
+                await releaseNoteHandler.InitializeClient();
+
+                // save the needed release notes
+                releaseNoteHandler.AddApplyReleasesReleaseNotes();
+            }
+            catch (Exception ex)
+            {
+                UpdaterLog.Log(LogLevel.Info, ex);
+            }
+        }
+
         public static void CopyDatabaseToLatestRelease()
         {
             string dbFile = Settings.Default.DatabaseFile;
@@ -132,6 +151,7 @@ namespace HeroesParserData
             string newAppDirectory = Path.Combine(App.NewLatestDirectory, "Database");
             string rootDirectory = Directory.GetParent(App.NewLatestDirectory).FullName;
             string backupDirectory = Path.Combine(rootDirectory, "BackupDatabases");
+
             try
             {
                 if (!File.Exists(dbFilePath))
@@ -141,6 +161,8 @@ namespace HeroesParserData
 
                     return;
                 }
+
+                UserSettings.Default.IsNewUpdateApplied = true;
 
                 Directory.CreateDirectory(newAppDirectory);
                 UpdaterLog.Log(LogLevel.Info, $"Directory created: {newAppDirectory}");

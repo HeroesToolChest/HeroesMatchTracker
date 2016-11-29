@@ -50,6 +50,20 @@ namespace HeroesParserData.Views
 
         }
 
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (AboutFlyout.IsOpen)
+                AboutFlyout.IsOpen = false;
+            else
+                AboutFlyout.IsOpen = true;
+        }
+
+        private void ChangeLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            ReleaseNotesWindow changeLog = new ReleaseNotesWindow();
+            changeLog.ShowDialog();
+        }
+
         private void SetTrayIcon()
         {
             Version version = Assembly.GetEntryAssembly().GetName().Version;
