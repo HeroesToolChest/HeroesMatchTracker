@@ -46,7 +46,10 @@ namespace HeroesParserData.Views
             if (SettingsFlyout.IsOpen)
                 SettingsFlyout.IsOpen = false;
             else
+            {
                 SettingsFlyout.IsOpen = true;
+                AboutFlyout.IsOpen = false;
+            }
 
         }
 
@@ -55,7 +58,10 @@ namespace HeroesParserData.Views
             if (AboutFlyout.IsOpen)
                 AboutFlyout.IsOpen = false;
             else
+            {
                 AboutFlyout.IsOpen = true;
+                SettingsFlyout.IsOpen = false;
+            }
         }
 
         private void ChangeLogButton_Click(object sender, RoutedEventArgs e)
