@@ -20,8 +20,5 @@
         <TextBox Controls:TextBoxHelper.Watermark="BattleTag#0000" Text="{Binding UserBattleTag}" HorizontalAlignment="Left" Height="23" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <Label Content="{Binding InputBattleTagError}" Margin="10,141,0,0" Width="293" Style="{StaticResource SettingsLabelTheme}" Foreground="Red"/>
         <Button Content="Set" Command="{Binding SetUserBattleTagCommand}" HorizontalAlignment="Left" Margin="215,118,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
-        <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesEnabled}" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label Content="{Binding CheckForUpdatesResponse}" HorizontalAlignment="Left" Margin="10,214,0,0" VerticalAlignment="Top" Width="531" Foreground="White"/>
-        <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateEnabled}" HorizontalAlignment="Left" Margin="137,194,0,0" VerticalAlignment="Top" Width="97"/>
     </Grid>
 </UserControl>

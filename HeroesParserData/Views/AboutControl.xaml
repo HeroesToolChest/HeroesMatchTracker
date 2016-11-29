@@ -13,7 +13,11 @@
     <Grid>
         <TextBlock Margin="10,10,0,0" Text="Heroes Parser Data" FontSize="24" Style="{StaticResource AboutTextBlock}"/>
         <TextBlock Margin="10,42,0,0" Text="{Binding AppVersion, StringFormat=Version: {0}}" Style="{StaticResource AboutTextBlock}"/>
-        <TextBlock Margin="10,77,0,0" Style="{StaticResource AboutTextBlock}">
+        <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesEnabled}" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="122"/>
+        <Label Content="{Binding CheckForUpdatesResponse}" HorizontalAlignment="Left" Margin="10,88,-101,0" VerticalAlignment="Top" Width="531" Foreground="White"/>
+        <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateEnabled}" HorizontalAlignment="Left" Margin="137,68,0,0" VerticalAlignment="Top" Width="97"/>
+
+        <TextBlock Margin="10,123,0,0" Style="{StaticResource AboutTextBlock}">
             <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White">
                 Project Website
             </Hyperlink>
@@ -27,7 +31,7 @@
             </Hyperlink>
                         <LineBreak />
         </TextBlock>
-        <TextBlock Margin="10,162,0,0" Text="{Binding HeroesIconsVersion, StringFormat=Heroes Icons {0}}" Style="{StaticResource AboutTextBlock}"/>
-        <TextBlock Margin="10,188,0,0" Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}" Style="{StaticResource AboutTextBlock}"/>
+        <TextBlock Margin="10,208,0,0" Text="{Binding HeroesIconsVersion, StringFormat=Heroes Icons {0}}" Style="{StaticResource AboutTextBlock}"/>
+        <TextBlock Margin="10,234,0,0" Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}" Style="{StaticResource AboutTextBlock}"/>
     </Grid>
 </UserControl>

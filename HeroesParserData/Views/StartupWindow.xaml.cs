@@ -133,7 +133,7 @@ namespace HeroesParserData.Views
                     return;
                 }
 
-                await Message("Retreiving release notes...");
+                await Message("Retrieving release notes...");
                 await AutoUpdater.RetrieveReleaseNotes();
 
                 await Message("Copying database to new folder...");
