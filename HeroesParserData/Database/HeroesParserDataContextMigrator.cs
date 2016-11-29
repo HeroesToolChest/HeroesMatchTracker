@@ -66,7 +66,7 @@ namespace HeroesParserData.Database
 
             List<string> steps = new List<string>();
             steps.Add(@"CREATE TABLE IF NOT EXISTS ReleaseNotes(
-                        Version NVARCHAR PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        Version NVARCHAR PRIMARY KEY NOT NULL,
                         PreRelease BOOLEAN,
                         DateReleased DateTime,
                         PatchNote TEXT)");
@@ -158,6 +158,9 @@ namespace HeroesParserData.Database
             steps.Add($@"INSERT INTO ReleaseNotes(Version, PreRelease, DateReleased, PatchNote) 
                         VALUES ('1.3.1', 0, '2016-11-20T00:47:35Z',
                         '{text}')");
+
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('IsNewUpdateApplied', 'True')");
 
             Migrations.Add(3, steps);
         }
