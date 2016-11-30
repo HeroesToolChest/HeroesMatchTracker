@@ -1,4 +1,4 @@
-﻿using NuGet;
+﻿using HeroesParserData.DataQueries;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -21,7 +21,7 @@ namespace HeroesParserData
         }
 
         /// <summary>
-        /// Returns the Version fo Heroes Parser Data
+        /// Returns the Version of Heroes Parser Data
         /// </summary>
         /// <returns></returns>
         public static Version GetVersion()
@@ -57,6 +57,15 @@ namespace HeroesParserData
         {
             Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.ReplayParser").ToList()[0].Version;
             return version.Revision;
+        }
+
+        /// <summary>
+        /// Returns true if the current version of HeroesParserData is a pre-release build
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsPreReleaseVersion()
+        {
+            return Query.ReleaseNotes.IsCurrentVersionPreReleaes();
         }
     }
 }

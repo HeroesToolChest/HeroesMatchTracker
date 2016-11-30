@@ -46,6 +46,18 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            public static bool IsCurrentVersionPreReleaes()
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    var list = db.ReleaseNotes.OrderByDescending(x => x.DateReleased).Take(1).ToList();
+                    if (list.Count > 0)
+                        return list[0].PreRelease;
+                    else
+                        return false;
+                }
+            }
+
             public static void UpdateReleaseNote(ReleaseNote releaseNote)
             {
                 using (var db = new HeroesParserDataContext())

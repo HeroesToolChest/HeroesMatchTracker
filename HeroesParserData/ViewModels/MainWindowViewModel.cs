@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using HeroesParserData.Messages;
-using System.Windows.Input;
 
 namespace HeroesParserData.ViewModels
 {
@@ -15,7 +14,10 @@ namespace HeroesParserData.ViewModels
         {
             get
             {
-                return HPDVersion.GetVersionAsString();
+                if (HPDVersion.IsPreReleaseVersion())
+                    return $"{HPDVersion.GetVersionAsString()} [Pre-release]";
+                else
+                    return HPDVersion.GetVersionAsString();
             }
         }
 
