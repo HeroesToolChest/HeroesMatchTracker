@@ -18,10 +18,12 @@ namespace HeroesParserData
             ReplayAutoScanCheckBox = false;
             ParsedDateTimeCheckBox = true;
             IsAutoUpdates = true;
+            IsIncludePreRelease = false;
             IsMinimizeToTray = false;
             IsBattleTagHidden = true;
             IsIncludeSubDirectories = true;
             IsNewUpdateApplied = false;
+            IsIncludeManualPreRelease = false;
 
             UserPlayerId = 0;
 
@@ -49,6 +51,18 @@ namespace HeroesParserData
         {
             get { return GetBooleanValue(nameof(IsAutoUpdates)); }
             set { SetBooleanValue(nameof(IsAutoUpdates), value); }
+        }
+
+        public bool IsIncludePreRelease
+        {
+            get { return GetBooleanValue(nameof(IsIncludePreRelease)); }
+            set { SetBooleanValue(nameof(IsIncludePreRelease), value); }
+        }
+
+        public bool IsIncludeManualPreRelease
+        {
+            get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
+            set { SetBooleanValue(nameof(IsIncludeManualPreRelease), value); }
         }
 
         public bool ReplayWatchCheckBox

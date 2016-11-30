@@ -115,7 +115,7 @@ namespace HeroesParserData.Views
 
                 await Message("Checking for updates...");
 
-                if (!await autoUpdater.CheckForUpdates())
+                if (!await autoUpdater.CheckForUpdates(UserSettings.Default.IsIncludePreRelease))
                 {
                     await Message("Already latest version");
                     return;

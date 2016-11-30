@@ -17,53 +17,16 @@ namespace HeroesParserData
         public string CurrentVersionString => CurrentVersion != null? $"{CurrentVersion.Major}.{CurrentVersion.Minor}.{CurrentVersion.Build}" : string.Empty; 
         public Version LatestVersion { get; private set; }
         public string LatestVersionString => LatestVersion != null? $"{LatestVersion.Major}.{LatestVersion.Minor}.{LatestVersion.Build}" : string.Empty;
-        //public Dictionary<string, ReleaseNote> ReleaseNotes { get; private set; } = new Dictionary<string, ReleaseNote>();
-
-        /// <summary>
-        /// Checks for updates and applies the update if IsAutoUpdates in settings is true. 
-        /// Returns true if update is applied.
-        /// </summary>
-        /// <returns></returns>
-        public async Task<bool> AutoUpdate()
-        {
-            try
-            {
-                await CheckForUpdates();
-
-                if (UpdateInfo != null)
-                {
-                    if (UserSettings.Default.IsAutoUpdates)
-                    {
-                        await ApplyReleases();
-                        return true;
-                    }
-                    else
-                    {
-                        UpdaterLog.Log(LogLevel.Info, "Auto updates off. Not updating.");
-                    }
-                }
-                else
-                    UpdaterLog.Log(LogLevel.Info, "Have latest already. No update needed. ");
-
-                return false;
-            }
-            catch (Exception ex)
-            {
-                UpdaterLog.Log(LogLevel.Info, ex.Message);
-                UpdaterLog.Log(LogLevel.Info, ex.StackTrace);
-                throw;
-            }
-        }
 
         /// <summary>
         /// Checks for updates, sets property UpdateInfo to null if no updates found. Returns true is update is available.
         /// </summary>
         /// <returns></returns>
-        public async Task<bool> CheckForUpdates()
+        public async Task<bool> CheckForUpdates(bool includePrelease)
         {
             try
             {
-                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: false))
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: includePrelease))
                 {
                     UpdaterLog.Log(LogLevel.Info, "Update Check");
 

@@ -162,6 +162,12 @@ namespace HeroesParserData.Database
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsNewUpdateApplied', 'True')");
 
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('IsIncludePreRelease', 'False')");
+
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('IsIncludeManualPreRelease', 'False')");
+     
             Migrations.Add(3, steps);
         }
     }
