@@ -20,7 +20,12 @@
     </Control.DataContext>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button x:Name="AboutButton" Content="About" Click="AboutButton_Click"/>
+            <Button x:Name="AboutButton" Click="AboutButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="About"/>
+                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
+                </StackPanel>
+            </Button>
             <Button x:Name="SettingsButton" Content="Settings" Click="SettingsButton_Click"/>
             <Button x:Name="ChangeLogButton" Content="What's New?" Click="ChangeLogButton_Click"/>
         </Controls:WindowCommands>

@@ -91,6 +91,10 @@ namespace HeroesParserData
             {
                 throw new AutoUpdaterException("Error checking for updates", ex);
             }
+
+            // these two lines of code are for debugging/testing the update process
+            //using (UpdateManager = new UpdateManager(@"C:\Users\koliva\Documents\Visual Studio 2015\Projects\GitHub\UpdateTest\UpdateTestRelease"))
+            //CurrentVersion = new Version("1.3.0");
         }
 
         /// <summary>

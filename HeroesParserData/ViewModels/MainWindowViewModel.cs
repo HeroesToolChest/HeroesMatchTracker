@@ -8,6 +8,8 @@ namespace HeroesParserData.ViewModels
     {
         private int _selectedMainTab;
         private int _selectedStatisticsTab;
+        private bool _isExtendedAboutTextVisible;
+        private string _extendedAboutText;
 
         public string AppVersion
         {
@@ -53,10 +55,38 @@ namespace HeroesParserData.ViewModels
             }
         }
 
+        public bool IsExtendedAboutTextVisible
+        {
+            get { return _isExtendedAboutTextVisible; }
+            set
+            {
+                _isExtendedAboutTextVisible = value;
+                RaisePropertyChangedEvent(nameof(IsExtendedAboutTextVisible));
+            }
+        }
+
+        public string ExtendedAboutText
+        {
+            get { return _extendedAboutText; }
+            set
+            {
+                _extendedAboutText = value;
+                RaisePropertyChangedEvent(nameof(ExtendedAboutText));
+            }
+        }
+
         public MainWindowViewModel() 
             : base()
         {
+            Messenger.Default.Register<AboutUpdateMessage>(this, (action) => ReceiveMessage(action));
 
+            IsExtendedAboutTextVisible = false;
+        }
+
+        private void ReceiveMessage(AboutUpdateMessage action)
+        {
+            ExtendedAboutText = action.Message;
+            IsExtendedAboutTextVisible = action.IsVisible;
         }
     }
 }

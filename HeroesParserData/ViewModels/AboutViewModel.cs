@@ -1,4 +1,6 @@
-﻿using NLog;
+﻿using GalaSoft.MvvmLight.Messaging;
+using HeroesParserData.Messages;
+using NLog;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -8,8 +10,8 @@ namespace HeroesParserData.ViewModels
     public class AboutViewModel : ViewModelBase
     {
         private string _checkForUpdatesResponse;
-        private bool _isApplyUpdateEnabled;
-        private bool _isCheckForUpdatesEnabled;
+        private bool _isApplyUpdateButtonEnabled;
+        private bool _isCheckForUpdatesButtonEnabled;
 
         private AutoUpdater AutoUpdater;
 
@@ -38,22 +40,23 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public bool IsApplyUpdateEnabled
+        public bool IsApplyUpdateButtonEnabled
         {
-            get { return _isApplyUpdateEnabled; }
+            get { return _isApplyUpdateButtonEnabled; }
             set
             {
-                _isApplyUpdateEnabled = value;
-                RaisePropertyChangedEvent(nameof(IsApplyUpdateEnabled));
+                _isApplyUpdateButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsApplyUpdateButtonEnabled));
             }
         }
-        public bool IsCheckForUpdatesEnabled
+
+        public bool IsCheckForUpdatesButtonEnabled
         {
-            get { return _isCheckForUpdatesEnabled; }
+            get { return _isCheckForUpdatesButtonEnabled; }
             set
             {
-                _isCheckForUpdatesEnabled = value;
-                RaisePropertyChangedEvent(nameof(IsCheckForUpdatesEnabled));
+                _isCheckForUpdatesButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsCheckForUpdatesButtonEnabled));
             }
         }
 
@@ -68,9 +71,10 @@ namespace HeroesParserData.ViewModels
         }
 
         public AboutViewModel()
-            :base()
+            : base()
         {
-            IsCheckForUpdatesEnabled = true;
+            IsCheckForUpdatesButtonEnabled = true;
+            PeriodicallyCheckUpdates();
         }
 
         private void CheckForUpdates()
@@ -79,22 +83,27 @@ namespace HeroesParserData.ViewModels
             {
                 try
                 {
-                    IsApplyUpdateEnabled = false;
+                    IsCheckForUpdatesButtonEnabled = false;
+                    IsApplyUpdateButtonEnabled = false;
+
                     CheckForUpdatesResponse = "Checking for updates...";
                     AutoUpdater = new AutoUpdater();
                     if (await AutoUpdater.CheckForUpdates())
                     {
                         CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
-                        IsApplyUpdateEnabled = true;
+                        UpdateIsAvailableMessage();
+                        IsApplyUpdateButtonEnabled = true;
                     }
                     else
                         CheckForUpdatesResponse = "Heroes Parser Data is up to date";
                 }
                 catch (Exception ex)
                 {
-                    CheckForUpdatesResponse = "Failed to check for updates";
-                    ExceptionLog.Log(LogLevel.Error, ex);
+                    CheckForUpdatesResponse = "Unable to check for updates";
+                    WarningLog.Log(LogLevel.Warn, $"Unable to check for updates: {ex.Message}");
                 }
+
+                IsCheckForUpdatesButtonEnabled = true;
             });
         }
 
@@ -104,6 +113,10 @@ namespace HeroesParserData.ViewModels
             {
                 try
                 {
+                    // set both buttons to false and keep them false as a restart is required
+                    IsCheckForUpdatesButtonEnabled = false;
+                    IsApplyUpdateButtonEnabled = false;
+
                     CheckForUpdatesResponse = "Downloading and applying updates...";
 
                     await AutoUpdater.ApplyReleases();
@@ -112,16 +125,64 @@ namespace HeroesParserData.ViewModels
                     await AutoUpdater.RetrieveReleaseNotes();
 
                     CheckForUpdatesResponse = $"Finished applying update ({AutoUpdater.LatestVersion.Major}.{AutoUpdater.LatestVersion.Minor}.{AutoUpdater.LatestVersion.Build}). A restart is required for changes to apply.";
+                    RestartIsRequiredMessage();
                     App.ManualUpdateApplied = true;
-                    IsCheckForUpdatesEnabled = false;
-                    IsApplyUpdateEnabled = false;
                 }
                 catch (Exception ex)
                 {
-                    CheckForUpdatesResponse = "Failed to apply updates";
+                    CheckForUpdatesResponse = "Unable to apply updates. Check logs for details.";
+
+                    IsCheckForUpdatesButtonEnabled = true;
+                    IsApplyUpdateButtonEnabled = true;
+
                     ExceptionLog.Log(LogLevel.Error, ex);
                 }
             });
+        }
+
+        private void PeriodicallyCheckUpdates()
+        {
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    await Task.Delay(3600000); // 1 hour
+
+                    if (IsCheckForUpdatesButtonEnabled == false)
+                        continue;
+
+                    try
+                    {
+                        IsCheckForUpdatesButtonEnabled = false;
+
+                        AutoUpdater = new AutoUpdater();
+                        if (await AutoUpdater.CheckForUpdates())
+                        {
+                            CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
+                            UpdateIsAvailableMessage();
+                            IsApplyUpdateButtonEnabled = true;
+                        }
+                        else
+                            CheckForUpdatesResponse = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        WarningLog.Log(LogLevel.Warn, $"Unable to periodically check for update: {ex.Message}");
+                    }
+
+                    IsCheckForUpdatesButtonEnabled = true;
+                }
+            });
+        }
+
+        private void UpdateIsAvailableMessage()
+        {
+            Messenger.Default.Send(new AboutUpdateMessage { Message = " (Update Available)", IsVisible = true });
+        }
+
+        private void RestartIsRequiredMessage()
+        {
+            Messenger.Default.Send(new AboutUpdateMessage { Message = " (Restart Required)", IsVisible = true });
         }
     }
 }

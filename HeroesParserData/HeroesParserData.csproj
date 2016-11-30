@@ -227,6 +227,7 @@
     <Compile Include="Generic\StatType.cs" />
     <Compile Include="Generic\UniqueStringLists.cs" />
     <Compile Include="Markdown.cs" />
+    <Compile Include="Messages\AboutUpdateMessage.cs" />
     <Compile Include="Messages\MatchOverviewMessage.cs" />
     <Compile Include="Messages\MatchSummary.cs" />
     <Compile Include="Messages\MatchSummaryMessage.cs" />
