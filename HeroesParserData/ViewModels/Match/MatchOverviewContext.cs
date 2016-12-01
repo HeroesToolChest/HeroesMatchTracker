@@ -14,6 +14,7 @@ namespace HeroesParserData.ViewModels.Match
     public abstract class MatchOverviewContext : MatchContextBase
     {
         private bool _isViewMatchSummaryEnabled;
+        private bool _isGivenBattleTagOnlyChecked;
 
         private int _rowsReturned;
         private int _selectedReplayBuildIdValue;
@@ -24,6 +25,8 @@ namespace HeroesParserData.ViewModels.Match
         private string _selectedBuildOption;
         private string _selectedGameTimeOption;
         private string _selectedGameDateOption;
+        private string _selectedPlayerBattleTag;
+        private string _selectedCharacter;
 
         private Replay _selectedReplay;
 
@@ -38,6 +41,7 @@ namespace HeroesParserData.ViewModels.Match
         public List<string> ReplayBuildsList { get; private set; } = new List<string>();
         public List<string> GameTimeList { get; private set; } = new List<string>();
         public List<string> GameDateList { get; private set; } = new List<string>();
+        public List<string> HeroesList { get; private set; } = new List<string>();
 
         public bool IsViewMatchSummaryEnabled
         {
@@ -46,6 +50,16 @@ namespace HeroesParserData.ViewModels.Match
             {
                 _isViewMatchSummaryEnabled = value;
                 RaisePropertyChangedEvent(nameof(IsViewMatchSummaryEnabled));
+            }
+        }
+
+        public bool IsGivenBattleTagOnlyChecked
+        {
+            get { return _isGivenBattleTagOnlyChecked; }
+            set
+            {
+                _isGivenBattleTagOnlyChecked = value;
+                RaisePropertyChangedEvent(nameof(IsGivenBattleTagOnlyChecked));
             }
         }
 
@@ -120,6 +134,26 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
+        public string SelectedPlayerBattleTag
+        {
+            get { return _selectedPlayerBattleTag; }
+            set
+            {
+                _selectedPlayerBattleTag = value.Trim();
+                RaisePropertyChangedEvent(nameof(SelectedPlayerBattleTag));
+            }
+        }
+
+        public string SelectedCharacter
+        {
+            get { return _selectedCharacter; }
+            set
+            {
+                _selectedCharacter = value;
+                RaisePropertyChangedEvent(nameof(SelectedCharacter));
+            }
+        }
+
         public int RowsReturned
         {
             get { return _rowsReturned; }
@@ -128,12 +162,6 @@ namespace HeroesParserData.ViewModels.Match
                 _rowsReturned = value;
                 RaisePropertyChangedEvent(nameof(RowsReturned));
             }
-        }
-
-        // databinded
-        public List<string> HeroesList
-        {
-            get { return HeroesInfo.GetListOfHeroes(); }
         }
 
         public Season GetSelectedSeason
@@ -197,7 +225,7 @@ namespace HeroesParserData.ViewModels.Match
                     catch (Exception ex)
                     {
                         QueryStatus = "Match list queried failed";
-                        WarningLog.Log(NLog.LogLevel.Warn, ex, "Failed to load match list");
+                        WarningLog.Log(NLog.LogLevel.Warn, $"Failed to load match list: {ex}");
                     }
                 });
             }
@@ -244,6 +272,12 @@ namespace HeroesParserData.ViewModels.Match
             ReplayBuildsList.Add("Any");
             ReplayBuildsList.AddRange(AllReplayBuildsList);
             SelectedBuildOption = ReplayBuildsList[0];
+
+            HeroesList.Add("Any");
+            HeroesList.AddRange(HeroesInfo.GetListOfHeroes());
+            SelectedCharacter = HeroesList[0];
+
+            IsGivenBattleTagOnlyChecked = false;
         }
 
         protected abstract void ExecuteLoadMatchListCommmand();
@@ -332,6 +366,9 @@ namespace HeroesParserData.ViewModels.Match
             SelectedBuildOption = ReplayBuildsList[0];
             SelectedGameTimeOption = GameTimeList[0];
             SelectedGameDateOption = GameDateList[0];
+            SelectedPlayerBattleTag = string.Empty;
+            SelectedCharacter = HeroesList[0];
+            IsGivenBattleTagOnlyChecked = false;
         }
 
         private void ReceiveMessage(MatchOverviewMessage action)

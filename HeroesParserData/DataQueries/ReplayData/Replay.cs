@@ -94,6 +94,37 @@ namespace HeroesParserData.DataQueries
                         else if (value.Item1 == "more than")
                             query = query.Where(x => x.TimeStamp <= value.Item2);
                     }
+
+                    if (!string.IsNullOrEmpty(matchOverviewFilter.SelectedPlayerBattleTag))
+                    {
+                        query = from r in query
+                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
+                                where ahp.BattleTagName.ToLower().Contains(matchOverviewFilter.SelectedPlayerBattleTag.ToLower())
+                                select r;           
+                    }
+
+                    if (matchOverviewFilter.SelectedCharacter != matchOverviewFilter.HeroesList[0])
+                    {
+                        if (matchOverviewFilter.IsGivenBattleTagOnlyChecked)
+                        {
+                            query = from r in query
+                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                    join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
+                                    where ahp.BattleTagName.ToLower().Contains(matchOverviewFilter.SelectedPlayerBattleTag.ToLower()) &&
+                                    mp.Character == matchOverviewFilter.SelectedCharacter
+                                    
+                                    select r;
+                        }
+                        else
+                        {
+                            query = from r in query
+                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                    where mp.Character == matchOverviewFilter.SelectedCharacter
+                                    select r;
+                        }
+                    }
+
                     return query.OrderByDescending(x => x.TimeStamp).ToList();
                 }
             }
