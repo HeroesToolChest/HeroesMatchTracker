@@ -16,6 +16,7 @@ namespace HeroesIcons.Xml
         public int CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
         public int EarliestHeroesBuild { get; private set; } // cleared once initialized
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
+        public List<int> Builds { get; private set; } = new List<int>();
 
         /// <summary>
         /// key is attributeid, value is hero name
@@ -262,22 +263,21 @@ namespace HeroesIcons.Xml
         private void SetDefaultBuildDirectory()
         {
             List<string> buildDirectories = Directory.GetDirectories(@"Xml\Heroes").ToList();
-            List<int> builds = new List<int>();
 
             foreach (var directory in buildDirectories)
             {
                 int buildNumber;
                 if (int.TryParse(Path.GetFileName(directory), out buildNumber))
-                    builds.Add(buildNumber);
+                    Builds.Add(buildNumber);
             }
 
-            if (buildDirectories.Count < 1 || builds.Count < 1)
+            if (buildDirectories.Count < 1 || Builds.Count < 1)
                 throw new ParseXmlException("No Heroes Xml build folders found!");
 
-            builds = builds.OrderByDescending(x => x).ToList();
+            Builds = Builds.OrderByDescending(x => x).ToList();
 
-            EarliestHeroesBuild = builds[builds.Count - 1];
-            LatestHeroesBuild = SelectedBuild = builds[0];
+            EarliestHeroesBuild = Builds[Builds.Count - 1];
+            LatestHeroesBuild = SelectedBuild = Builds[0];
         }
 
         private Uri SetHeroPortraitUri(string fileName)

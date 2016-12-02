@@ -87,10 +87,9 @@ namespace HeroesParserData
 
         public static List<string> GetBuildsList()
         {
-            List<string> list = new List<string>();
-            list.Add("48027");
-            list.Add("47903");
-            list.Add("47479"); list.Add("47219"); list.Add("47133"); list.Add("46889");
+            List<string> list = App.HeroesInfo.GetListOfHeroesBuilds().ConvertAll(x => x.ToString());
+            
+            list.Add("47219"); list.Add("47133"); list.Add("46889");
             list.Add("46869"); list.Add("46787"); list.Add("46690"); list.Add("46446");
             list.Add("46158"); list.Add("45635"); list.Add("45228"); list.Add("44941");
             list.Add("44797"); list.Add("44468"); list.Add("44468"); list.Add("44124");

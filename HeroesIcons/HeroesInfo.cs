@@ -618,6 +618,11 @@ namespace HeroesIcons
         {
             return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
         }
+
+        public List<int> GetListOfHeroesBuilds()
+        {
+            return HeroesXml.Builds;
+        }
         #endregion public methods
 
         #region private methods
