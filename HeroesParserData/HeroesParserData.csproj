@@ -228,6 +228,8 @@
     <Compile Include="Generic\UniqueStringLists.cs" />
     <Compile Include="Markdown.cs" />
     <Compile Include="Messages\AboutUpdateMessage.cs" />
+    <Compile Include="Messages\GameModesMessage.cs" />
+    <Compile Include="Messages\GameModesTab.cs" />
     <Compile Include="Messages\MatchOverviewMessage.cs" />
     <Compile Include="Messages\MatchSummary.cs" />
     <Compile Include="Messages\MatchSummaryMessage.cs" />
@@ -251,6 +253,7 @@
     <Compile Include="Models\MatchModels\MatchPlayerInfoBase.cs" />
     <Compile Include="Models\MatchModels\MatchScores.cs" />
     <Compile Include="Models\MatchModels\MatchTalents.cs" />
+    <Compile Include="Models\PlayerSearchContextMenu.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesBase.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesGameModes.cs" />
     <Compile Include="Models\StatsModels\StatsHeroesMapMatch.cs" />

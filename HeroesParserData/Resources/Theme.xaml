@@ -512,6 +512,37 @@
         </Setter>
     </Style>
 
+    <!--context menu-->
+    <ContextMenu x:Key="PlayerSearchContextMenu">
+        <MenuItem Header="Hero search in...">
+            <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.HeroSearchQuickMatchCommand}"/>
+            <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.HeroSearchUnrankedDraftCommand}"/>
+            <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.HeroSearchHeroLeagueCommand}"/>
+            <MenuItem Header="Team League" Command="{Binding PlayerSearchContextMenu.HeroSearchTeamLeagueCommand}"/>
+            <MenuItem Header="Brawl" Command="{Binding PlayerSearchContextMenu.HeroSearchBrawlCommand}"/>
+            <MenuItem Header="Custom Game" Command="{Binding PlayerSearchContextMenu.HeroSearchCustomGameCommand}"/>
+        </MenuItem>
+        <MenuItem Header="Player name search in...">
+            <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.PlayerSearchQuickMatchCommand}"/>
+            <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.PlayerSearchUnrankedDraftCommand}"/>
+            <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.PlayerSearchHeroLeagueCommand}"/>
+            <MenuItem Header="Team League" Command="{Binding PlayerSearchContextMenu.PlayerSearchTeamLeagueCommand}"/>
+            <MenuItem Header="Brawl" Command="{Binding PlayerSearchContextMenu.PlayerSearchBrawlCommand}"/>
+            <MenuItem Header="Custom Game" Command="{Binding PlayerSearchContextMenu.PlayerSearchCustomGameCommand}"/>
+        </MenuItem>
+        <MenuItem Header="Player name with Hero search in...">
+            <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchQuickMatchCommand}"/>
+            <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchUnrankedDraftCommand}"/>
+            <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchHeroLeagueCommand}"/>
+            <MenuItem Header="Team League" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchTeamLeagueCommand}"/>
+            <MenuItem Header="Brawl" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchBrawlCommand}"/>
+            <MenuItem Header="Custom Game" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchCustomGameCommand}"/>
+        </MenuItem>
+        <MenuItem Header="Copy Hero" Command="{Binding PlayerSearchContextMenu.CopyHeroNameToClipboardCommand}"/>
+        <MenuItem Header="Copy Player name" Command="{Binding PlayerSearchContextMenu.CopyPlayerNameToClipboardCommand}"/>
+        <MenuItem Header="Copy Player name with Hero" Command="{Binding PlayerSearchContextMenu.CopyHeroWithPlayerNameToClipboardCommand}"/>
+    </ContextMenu>
+    
     <!--Other-->
     <Style TargetType="Label" x:Key="HomeLabelTheme" BasedOn="{StaticResource MetroLabel}">
         <Style.Resources>

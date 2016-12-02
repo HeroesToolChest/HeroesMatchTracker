@@ -67,7 +67,7 @@
                 <ViewsMatch:LastMatch />
             </TabItem>
             <TabItem Header="Game Modes">
-                <TabControl>
+                <TabControl SelectedIndex="{Binding SelectedGameModesTab}">
                     <TabItem Header="Quick Match">
                         <ViewsMatch:QuickMatchControl />
                     </TabItem>

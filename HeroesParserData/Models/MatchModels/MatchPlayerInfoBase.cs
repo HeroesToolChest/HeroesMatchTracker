@@ -17,5 +17,6 @@ namespace HeroesParserData.Models.MatchModels
         public Color PortraitBackColor { get; set; }
         public int PlayerNumber { get; set; }
         public bool PlayerSilenced { get; set; }
+        public PlayerSearchContextMenu PlayerSearchContextMenu { get; set; } = new PlayerSearchContextMenu();
     }
 }

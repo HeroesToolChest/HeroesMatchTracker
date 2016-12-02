@@ -29,6 +29,7 @@ namespace HeroesParserData.Models.MatchModels
             MvpAward = matchPlayerInfoBase.MvpAward;
             MvpAwardName = matchPlayerInfoBase.MvpAwardName;
             RowBackColor = matchPlayerInfoBase.RowBackColor;
+            PlayerSearchContextMenu = matchPlayerInfoBase.PlayerSearchContextMenu;
         }
     }
 }

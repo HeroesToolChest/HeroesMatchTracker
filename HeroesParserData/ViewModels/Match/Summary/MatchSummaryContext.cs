@@ -8,11 +8,8 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -293,10 +290,14 @@ namespace HeroesParserData.ViewModels.Match.Summary
             if (CurrentReplay == null)
                 return;
 
+            // quick check to see if the previous match summary is cleared
+            if (BackgroundMapImage != null)
+                ClearSummaryDetails();
+
             try
             {
                 // get replay info
-                Models.DbModels.Replay replay = Query.Replay.ReadReplayIncludeRecord(CurrentReplay.ReplayId);
+                Replay replay = Query.Replay.ReadReplayIncludeRecord(CurrentReplay.ReplayId);
 
                 // load up correct build information
                 HeroesInfo.ReInitializeSpecificHeroesXml(replay.ReplayBuild);
@@ -331,6 +332,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
                     matchPlayerInfoBase.MvpAward = matchAwardDictionary.ContainsKey(player.PlayerId) == true ? SetPlayerMVPAward(player.Team, matchAwardDictionary[player.PlayerId], out mvpAwardName) : null;
                     matchPlayerInfoBase.MvpAwardName = mvpAwardName;
+
+                    SetContextMenuCommands(matchPlayerInfoBase);
 
                     if (!player.IsAutoSelect)
                         matchPlayerInfoBase.CharacterLevel = player.CharacterLevel.ToString();

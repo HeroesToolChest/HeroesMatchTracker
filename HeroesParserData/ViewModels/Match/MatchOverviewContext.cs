@@ -29,7 +29,6 @@ namespace HeroesParserData.ViewModels.Match
         private string _selectedCharacter;
 
         private Replay _selectedReplay;
-
         private ObservableCollection<Replay> _matchListCollection = new ObservableCollection<Replay>();
         private ObservableCollection<MatchPlayerInfoBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerInfoBase>();
         private ObservableCollection<MatchPlayerInfoBase> _matchOverviewTeam2Collection = new ObservableCollection<MatchPlayerInfoBase>();
@@ -169,7 +168,7 @@ namespace HeroesParserData.ViewModels.Match
             get { return Utilities.GetSeasonFromString(SelectedSeasonOption); }
         }
 
-        public Models.DbModels.Replay SelectedReplay
+        public Replay SelectedReplay
         {
             get { return _selectedReplay; }
             set
@@ -284,6 +283,8 @@ namespace HeroesParserData.ViewModels.Match
 
         protected abstract void ExecuteShowMatchSummaryCommand();
 
+        protected abstract void ReceiveMessage(GameModesMessage action);
+
         private void LoadMatchOverviewCommand(Replay replay)
         {
             IsViewMatchSummaryEnabled = false;
@@ -331,6 +332,8 @@ namespace HeroesParserData.ViewModels.Match
                 {
                     matchPlayerInfoBase.PartyIcon = HeroesInfo.GetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
                 }
+
+                SetContextMenuCommands(matchPlayerInfoBase);
 
                 // add to collection
                 if (player.Team == 0)

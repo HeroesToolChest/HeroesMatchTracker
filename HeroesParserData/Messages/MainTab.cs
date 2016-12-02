@@ -4,7 +4,6 @@
     {
         Home,
         LastMatch,
-        LatestMatches,
         GameModes,
         PlayerHeroes,
         Statistics,

@@ -12,7 +12,7 @@ namespace HeroesParserData.ViewModels.Match
         public TeamLeagueViewModel()
             :base()
         {
-
+            Messenger.Default.Register<GameModesMessage>(this, (action) => ReceiveMessage(action));
         }
 
         protected override void ExecuteLoadMatchListCommmand()
@@ -33,6 +33,19 @@ namespace HeroesParserData.ViewModels.Match
                 MatchList = MatchListCollection.ToList(),
                 Trigger = Trigger.Open
             });
+        }
+
+        protected override void ReceiveMessage(GameModesMessage action)
+        {
+            if (action.GameModesTab == GameModesTab.TeamLeague)
+            {
+                if (!string.IsNullOrEmpty(action.SelectedCharacter))
+                    SelectedCharacter = action.SelectedCharacter;
+                if (!string.IsNullOrEmpty(action.SelectedBattleTag))
+                    SelectedPlayerBattleTag = action.SelectedBattleTag;
+                if (!string.IsNullOrEmpty(action.SelectedCharacter) && !string.IsNullOrEmpty(action.SelectedBattleTag))
+                    IsGivenBattleTagOnlyChecked = true;
+            }
         }
     }
 }

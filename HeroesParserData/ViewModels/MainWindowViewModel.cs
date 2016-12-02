@@ -7,7 +7,10 @@ namespace HeroesParserData.ViewModels
     {
         private int _selectedMainTab;
         private int _selectedStatisticsTab;
+        private int _selectedGameModesTab;
+
         private bool _isExtendedAboutTextVisible;
+
         private string _extendedAboutText;
 
         public string AppVersion
@@ -33,11 +36,9 @@ namespace HeroesParserData.ViewModels
                 _selectedMainTab = value;
                 if (value == 0)
                     Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Update });
-
-                if (value == 1)
+                else if (value == 1)
                     Messenger.Default.Send(new MatchSummaryMessage() { MatchSummary = MatchSummary.LastMatch });
-
-                if (value == 4) // stats tab
+                else if (value == 4) // stats tab
                 {
                     SelectedStatisticsTab = SelectedStatisticsTab;
                 }
@@ -58,6 +59,16 @@ namespace HeroesParserData.ViewModels
                 else if (value == 2)
                     Messenger.Default.Send(new StatisticsTabMessage { StatisticsTab = StatisticsTab.GameModes });
                 RaisePropertyChangedEvent(nameof(SelectedStatisticsTab));
+            }
+        }
+
+        public int SelectedGameModesTab
+        {
+            get { return _selectedStatisticsTab; }
+            set
+            {
+                _selectedStatisticsTab = value;
+                RaisePropertyChangedEvent(nameof(SelectedGameModesTab));
             }
         }
 
@@ -85,6 +96,8 @@ namespace HeroesParserData.ViewModels
             : base()
         {
             Messenger.Default.Register<AboutUpdateMessage>(this, (action) => ReceiveMessage(action));
+            Messenger.Default.Register<MainTabMessage>(this, (action) => ReceiveMessage(action));
+            Messenger.Default.Register<GameModesMessage>(this, (action) => ReceiveMessage(action));
 
             IsExtendedAboutTextVisible = false;
         }
@@ -93,6 +106,16 @@ namespace HeroesParserData.ViewModels
         {
             ExtendedAboutText = action.Message;
             IsExtendedAboutTextVisible = action.IsVisible;
+        }
+
+        private void ReceiveMessage(MainTabMessage action)
+        {
+            SelectedMainTab = (int)action.MainTab;
+        }
+
+        private void ReceiveMessage(GameModesMessage action)
+        { 
+             SelectedGameModesTab = (int)action.GameModesTab;
         }
     }
 }

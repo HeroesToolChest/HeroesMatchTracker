@@ -1,14 +1,12 @@
 ﻿namespace HeroesParserData.Messages
 {
-    public enum MatchSummary
+    public enum GameModesTab
     {
-        All = -1,
         QuickMatch,
         UnrankedDraft,
         HeroLeague,
         TeamLeague,
         Brawl,
-        CustomGame,
-        LastMatch
+        CustomGame
     }
 }

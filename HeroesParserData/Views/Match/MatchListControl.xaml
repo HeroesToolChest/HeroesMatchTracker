@@ -65,12 +65,13 @@
         </StackPanel>
         <StackPanel Grid.Column="3" Margin="0,25,0,0">
             <GroupBox Header="Team 1">
-                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam1Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}" AlternationCount="1">
+                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam1Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}" AlternationCount="1"
+                          SelectedItem="{Binding SelectedDataPlayer}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="Hero" Width="79">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
                                         <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
                                             <Image.ToolTip>
                                                 <ToolTip Content="{Binding CharacterName}"/>
@@ -82,17 +83,24 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="*" FontSize="14"/>
+                        <DataGridTemplateColumn Header="Player" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PlayerName}" FontSize="14" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>
             <GroupBox Header="Team 2">
-                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam2Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}">
+                <DataGrid Style="{StaticResource DefaultDataGrid}" HeadersVisibility="None" ItemsSource="{Binding MatchOverviewTeam2Collection}" RowStyle="{StaticResource MatchOverviewDataGridRow}"
+                          SelectedItem="{Binding SelectedDataPlayer}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="Hero" Width="79">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
                                         <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
                                             <Image.ToolTip>
                                                 <ToolTip Content="{Binding CharacterName}"/>
@@ -104,7 +112,13 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="*" FontSize="14"/>
+                        <DataGridTemplateColumn Header="Player" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PlayerName}" FontSize="14" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>

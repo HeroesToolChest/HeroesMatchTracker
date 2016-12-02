@@ -137,6 +137,30 @@ namespace HeroesParserData.Views
                 else if (action.MatchSummary == MatchSummary.CustomGame)
                     CustomGameSummaryFlyout.IsOpen = true;
             }
+            else if (action.Trigger == Messages.Trigger.Close)
+            {
+                if (action.MatchSummary == MatchSummary.QuickMatch)
+                    QuickMatchSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.UnrankedDraft)
+                    UnrankedDraftSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.HeroLeague)
+                    HeroLeagueSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.TeamLeague)
+                    TeamLeagueSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.Brawl)
+                    BrawlSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.CustomGame)
+                    CustomGameSummaryFlyout.IsOpen = false;
+                else
+                {
+                    QuickMatchSummaryFlyout.IsOpen = false;
+                    UnrankedDraftSummaryFlyout.IsOpen = false;
+                    HeroLeagueSummaryFlyout.IsOpen = false;
+                    TeamLeagueSummaryFlyout.IsOpen = false;
+                    BrawlSummaryFlyout.IsOpen = false;
+                    CustomGameSummaryFlyout.IsOpen = false;
+                }
+            }
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
