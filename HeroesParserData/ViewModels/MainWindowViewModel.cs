@@ -14,10 +14,14 @@ namespace HeroesParserData.ViewModels
         {
             get
             {
+            #if DEBUG
+                return $"{ HPDVersion.GetVersionAsString()} [DEBUG]";
+            #else
                 if (HPDVersion.IsPreReleaseVersion())
                     return $"{HPDVersion.GetVersionAsString()} [Pre-release]";
                 else
                     return HPDVersion.GetVersionAsString();
+            #endif
             }
         }
 
