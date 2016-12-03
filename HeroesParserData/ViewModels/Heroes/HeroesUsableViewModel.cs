@@ -137,28 +137,27 @@ namespace HeroesParserData.ViewModels.Heroes
             if (player == null)
                 return;
 
-            var heroRecords = Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerIdAsync(playerId);
+            var heroRecords = Query.HotsPlayerHero.ReadListOfHeroRecordsForPlayerId(playerId);
 
             int heroesUsable = 0;
 
-            if (heroRecords.Count == 0)
+
+            int count = 0;
+            foreach (var row in Heroes)
             {
-                int count = 0;
-                foreach (var row in Heroes)
+                for (int i = 0; i < row.IsXOut.Count; i++)
                 {
-                    for (int i = 0; i < row.IsXOut.Count; i++)
-                    {
-                        if (count >= Heroes.Count)
-                            break;
+                    if (count >= HeroesGridLocation.Count)
+                        break;
 
-                        row.IsXOut[i] = true;
-                        count++;
-                        
-                    }
+                    row.IsXOut[i] = true;
+                    count++;
+
                 }
-
-                PlayerInfo = $"{player.BattleTagName}  Last Seen: {player.LastSeen}  -- NO HERO INFO FOUND --";
             }
+
+            if (heroRecords.Count == 0)
+                PlayerInfo = $"{player.BattleTagName}  Last Seen: {player.LastSeen}  -- NO HERO INFO FOUND --";
             else
             {
                 foreach (var hero in heroRecords)

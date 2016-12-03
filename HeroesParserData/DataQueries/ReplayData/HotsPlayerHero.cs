@@ -77,7 +77,7 @@ namespace HeroesParserData.DataQueries
                 return db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == playerId).ToList();
             }
 
-            public static List<ReplayAllHotsPlayerHero> ReadListOfHeroRecordsForPlayerIdAsync(long playerId)
+            public static List<ReplayAllHotsPlayerHero> ReadListOfHeroRecordsForPlayerId(long playerId)
             {
                 using (var db = new HeroesParserDataContext())
                 {
