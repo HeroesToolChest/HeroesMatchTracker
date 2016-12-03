@@ -761,7 +761,7 @@
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
                                       CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam1Collection}" RowHeight="100" ColumnHeaderHeight="30"
-                                      RowStyle="{StaticResource SummaryDataGridRow}">
+                                      RowStyle="{StaticResource SummaryDataGridRow}" SelectedItem="{Binding SelectedDataPlayer}">
                                 <DataGrid.Resources>
                                     <Style TargetType="DataGridCell" BasedOn="{StaticResource RotatedDataGridCell}"/>
                                     <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}"/>
@@ -789,7 +789,7 @@
                                     <DataGridTemplateColumn Header="Hero" HeaderStyle="{StaticResource MatchAdvNoneDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Grid>
+                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
                                                     <Image Source="{Binding LeaderboardPortrait}" MinHeight="56" MinWidth="100" HorizontalAlignment="Left">
                                                         <Image.ToolTip>
                                                             <ToolTip Content="{Binding CharacterName}"></ToolTip>
@@ -800,7 +800,13 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
+                                    <DataGridTemplateColumn Header="Player" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                     <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Combat" HeaderStyle="{StaticResource MatchAdvThickDataGridColumnHeader}" CellStyle="{StaticResource MatchAdvThickDataGridCell}"/>
@@ -828,7 +834,7 @@
                             </DataGrid>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
                                       CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam2Collection}" RowHeight="100" ColumnHeaderHeight="30" HeadersVisibility="None"
-                                      RowStyle="{StaticResource SummaryDataGridRow}">
+                                      RowStyle="{StaticResource SummaryDataGridRow}" SelectedItem="{Binding SelectedDataPlayer}">
                                 <DataGrid.Resources>
                                     <Style TargetType="DataGridCell" BasedOn="{StaticResource RotatedDataGridCell}"/>
                                     <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource RotatedDataGridColumnHeader}"/>
@@ -856,7 +862,7 @@
                                     <DataGridTemplateColumn Header="Hero" HeaderStyle="{StaticResource MatchAdvNoneDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Grid>
+                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
                                                     <Image Source="{Binding LeaderboardPortrait}" MinHeight="56" MinWidth="100" HorizontalAlignment="Left">
                                                         <Image.ToolTip>
                                                             <ToolTip Content="{Binding CharacterName}"></ToolTip>
@@ -867,7 +873,13 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
+                                    <DataGridTemplateColumn Header="Player" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                     <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Combat" HeaderStyle="{StaticResource MatchAdvThickDataGridColumnHeader}" CellStyle="{StaticResource MatchAdvThickDataGridCell}"/>
@@ -904,7 +916,7 @@
                     </StackPanel.Resources>
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" AlternationCount="2"  
-                                      RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}">
+                                      RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}" SelectedItem="{Binding SelectedDataPlayer}">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="Hero" Width="134">
                                 <DataGridTemplateColumn.CellTemplate>
@@ -929,7 +941,13 @@
                                     </Style>
                                 </DataGridTemplateColumn.CellStyle>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" Width="110"/>
+                            <DataGridTemplateColumn Header="Player" MinWidth="110">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Width="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                             <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}" Width="110"/>
                         </DataGrid.Columns>
