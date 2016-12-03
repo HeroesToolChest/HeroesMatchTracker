@@ -120,6 +120,30 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="DataGridRow" x:Key="NoDeselectDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                <Setter Property="Background" Value="AliceBlue" />
+            </Trigger>
+            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                <Setter Property="Background" Value="Lavender" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+
+            <!--  IsSelected  -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Controls:DataGridRowHelper.SelectionUnit" Value="FullRow" />
+                    <Condition Property="IsSelected" Value="true" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="LightSkyBlue" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style TargetType="DataGridRow" x:Key="MatchOverviewDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
