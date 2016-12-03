@@ -304,6 +304,9 @@ namespace HeroesParserData.ViewModels.Match
             Replay replay = Query.Replay.ReadReplayIncludeRecord(replayId);
             var playersList = replay.ReplayMatchPlayers.ToList();
 
+            // load up correct build information
+            HeroesInfo.ReInitializeSpecificHeroesXml(replay.ReplayBuild);
+
             FindPlayerParties(playersList);
 
             foreach (var player in playersList)
