@@ -64,10 +64,10 @@ namespace HeroesParserData.ViewModels
 
         public int SelectedGameModesTab
         {
-            get { return _selectedStatisticsTab; }
+            get { return _selectedGameModesTab; }
             set
             {
-                _selectedStatisticsTab = value;
+                _selectedGameModesTab = value;
                 RaisePropertyChangedEvent(nameof(SelectedGameModesTab));
             }
         }
