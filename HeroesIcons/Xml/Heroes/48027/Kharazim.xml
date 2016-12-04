@@ -6,9 +6,9 @@
     <MonkInsight name="Insight" desc="MonkInsightTalent">storm_ui_icon_monk_trait_insight.dds</MonkInsight>
   </Level1>
   <Level4>
-    <MonkSpiritAlly name="Spirit Ally" desc="MonkSpiritAlly">storm_ui_icon_monk_allyair.dds</MonkSpiritAlly>
+    <MonkSpiritAlly name="Spirit Ally" desc="MonkSpiritAlly">storm_ui_icon_monk_allyspirit.dds</MonkSpiritAlly>
     <MonkEarthAlly name="Earth Ally" desc="MonkEarthAlly">storm_ui_icon_monk_allyearth.dds</MonkEarthAlly>
-    <MonkAirAlly name="Air Ally" desc="MonkAirAlly">storm_ui_icon_monk_allyspirit.dds</MonkAirAlly>
+    <MonkAirAlly name="Air Ally" desc="MonkAirAlly">storm_ui_icon_monk_allyair.dds</MonkAirAlly>
   </Level4>
   <Level7>
     <MonkBlindingSpeedRadiantDash name="Blinding Speed" desc="MonkBlindingSpeedTalent">storm_ui_icon_monk_dash.dds</MonkBlindingSpeedRadiantDash>
