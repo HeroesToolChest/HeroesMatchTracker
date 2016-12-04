@@ -326,8 +326,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     var playerInfo = Query.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
                     matchPlayerInfoBase.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.GetHeroLeaderboardPortrait(player.Character) : null;
                     matchPlayerInfoBase.CharacterName = player.Character;
-                    matchPlayerInfoBase.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
-                    matchPlayerInfoBase.PlayerTag = Utilities.GetTagFromBattleTagName(playerInfo.BattleTagName).ToString();
+                    matchPlayerInfoBase.PlayerName = ShowPlayerTagNumber == true? playerInfo.BattleTagName : Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);
                     matchPlayerInfoBase.PlayerNumber = player.PlayerNumber;
                     matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
                     matchPlayerInfoBase.MvpAward = matchAwardDictionary.ContainsKey(player.PlayerId) == true ? SetPlayerMVPAward(player.Team, matchAwardDictionary[player.PlayerId], out mvpAwardName) : null;

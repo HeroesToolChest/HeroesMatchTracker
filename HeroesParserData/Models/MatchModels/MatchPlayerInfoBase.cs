@@ -9,7 +9,6 @@ namespace HeroesParserData.Models.MatchModels
         public BitmapImage MvpAward { get; set; }
         public BitmapImage PartyIcon { get; set; }
         public string PlayerName { get; set; }
-        public string PlayerTag { get; set; }
         public string CharacterName { get; set; }
         public string CharacterLevel { get; set; }
         public string MvpAwardName { get; set; }

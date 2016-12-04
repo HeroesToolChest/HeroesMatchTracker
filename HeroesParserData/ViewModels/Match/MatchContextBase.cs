@@ -20,13 +20,13 @@ namespace HeroesParserData.ViewModels.Match
 
         protected Dictionary<int, PartyIconColor> PlayerPartyIcons { get; private set; } = new Dictionary<int, PartyIconColor>();
 
-        public bool ShowPlayerTagColumn
+        public bool ShowPlayerTagNumber
         {
             get { return !UserSettings.Default.IsBattleTagHidden; }
             set
             {
                 UserSettings.Default.IsBattleTagHidden = !value;
-                RaisePropertyChangedEvent(nameof(ShowPlayerTagColumn));
+                RaisePropertyChangedEvent(nameof(ShowPlayerTagNumber));
             }
         }
 
@@ -82,20 +82,6 @@ namespace HeroesParserData.ViewModels.Match
             }
         }
 
-        private string SetPlayerBattleTag(string playerName, string playerTag)
-        {
-            string fullName = string.Empty;
-
-            if (string.IsNullOrEmpty(playerTag))
-                fullName = playerName;
-            else if (playerName.Contains("#"))
-                fullName = playerName;
-            else
-                fullName = $"{playerName}#{playerTag}";
-
-            return fullName;
-        }
-
         protected void SetContextMenuCommands(MatchPlayerInfoBase matchPlayerInfoBase)
         {
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchQuickMatchCommand = new DelegateCommand(() => ExecuteHeroSearchQuickMatchCommand());
@@ -120,8 +106,8 @@ namespace HeroesParserData.ViewModels.Match
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerHeroSearchCustomGameCommand = new DelegateCommand(() => ExecutePlayerHeroSearchCustomGameCommand());
 
             matchPlayerInfoBase.PlayerSearchContextMenu.CopyHeroNameToClipboardCommand = new DelegateCommand(() => ExecuteCopyHeroNameToClipboardCommand());
-            matchPlayerInfoBase.PlayerSearchContextMenu.CopyPlayerNameToClipboardCommand = new DelegateCommand(() => ExecuteCopyPlayerNameToClipboardCommand());
-            matchPlayerInfoBase.PlayerSearchContextMenu.CopyHeroWithPlayerNameToClipboardCommand = new DelegateCommand(() => ExecuteCopyHerowithPlayerNameToClipboardCommand());
+            matchPlayerInfoBase.PlayerSearchContextMenu.CopyPlayerNameToClipboardCommand = new DelegateCommand(() => ExecuteCopyPlayerTagNameToClipboardCommand());
+            matchPlayerInfoBase.PlayerSearchContextMenu.CopyHeroWithPlayerNameToClipboardCommand = new DelegateCommand(() => ExecuteCopyHerowithPlayerTagNameToClipboardCommand());
         }
 
         // -------- Hero Search
@@ -174,42 +160,42 @@ namespace HeroesParserData.ViewModels.Match
         private void ExecutePlayerSearchQuickMatchCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.QuickMatch, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.QuickMatch, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerSearchUnrankedDraftCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.UnrankedDraft, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.UnrankedDraft, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerSearchHeroLeagueCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.HeroLeague, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.HeroLeague, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerSearchTeamLeagueCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.TeamLeague, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.TeamLeague, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerSearchBrawlCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Brawl, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Brawl, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerSearchCustomGameCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.CustomGame, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.CustomGame, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
         #endregion Execute Player Search
@@ -219,42 +205,42 @@ namespace HeroesParserData.ViewModels.Match
         private void ExecutePlayerHeroSearchQuickMatchCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.QuickMatch, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.QuickMatch, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerHeroSearchUnrankedDraftCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.UnrankedDraft, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.UnrankedDraft, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerHeroSearchHeroLeagueCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.HeroLeague, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.HeroLeague, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerHeroSearchTeamLeagueCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.TeamLeague, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.TeamLeague, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerHeroSearchBrawlCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Brawl, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Brawl, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
 
         private void ExecutePlayerHeroSearchCustomGameCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
-            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.CustomGame, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTag = SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag) });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.CustomGame, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
             Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
         }
         #endregion Execute Player with Hero
@@ -265,14 +251,14 @@ namespace HeroesParserData.ViewModels.Match
             Clipboard.SetText(SelectedDataPlayer.CharacterName);
         }
 
-        private void ExecuteCopyPlayerNameToClipboardCommand()
+        private void ExecuteCopyPlayerTagNameToClipboardCommand()
         {
-            Clipboard.SetText(SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag));
+            Clipboard.SetText(SelectedDataPlayer.PlayerName);
         }
 
-        private void ExecuteCopyHerowithPlayerNameToClipboardCommand()
+        private void ExecuteCopyHerowithPlayerTagNameToClipboardCommand()
         {
-            Clipboard.SetText($"{SelectedDataPlayer.CharacterName} - {SetPlayerBattleTag(SelectedDataPlayer.PlayerName, SelectedDataPlayer.PlayerTag)}");
+            Clipboard.SetText($"{SelectedDataPlayer.CharacterName} - {SelectedDataPlayer.PlayerName}");
         }
         #endregion Execute Copy Commands
     }

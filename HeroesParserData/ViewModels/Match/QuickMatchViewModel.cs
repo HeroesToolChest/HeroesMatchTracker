@@ -41,9 +41,9 @@ namespace HeroesParserData.ViewModels.Match
             {
                 if (!string.IsNullOrEmpty(action.SelectedCharacter))
                     SelectedCharacter = action.SelectedCharacter;
-                if (!string.IsNullOrEmpty(action.SelectedBattleTag))
-                    SelectedPlayerBattleTag = action.SelectedBattleTag;
-                if (!string.IsNullOrEmpty(action.SelectedCharacter) && !string.IsNullOrEmpty(action.SelectedBattleTag))
+                if (!string.IsNullOrEmpty(action.SelectedBattleTagName))
+                    SelectedPlayerBattleTag = action.SelectedBattleTagName;
+                if (!string.IsNullOrEmpty(action.SelectedCharacter) && !string.IsNullOrEmpty(action.SelectedBattleTagName))
                     IsGivenBattleTagOnlyChecked = true;
             }
         }

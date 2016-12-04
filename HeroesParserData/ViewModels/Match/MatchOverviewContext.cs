@@ -321,7 +321,7 @@ namespace HeroesParserData.ViewModels.Match
                 matchPlayerInfoBase.CharacterName = player.Character;
                 matchPlayerInfoBase.PlayerSilenced = player.IsSilenced;
 
-                if (ShowPlayerTagColumn)
+                if (ShowPlayerTagNumber)
                     matchPlayerInfoBase.PlayerName = playerInfo.BattleTagName;
                 else
                     matchPlayerInfoBase.PlayerName = Utilities.GetNameFromBattleTagName(playerInfo.BattleTagName);

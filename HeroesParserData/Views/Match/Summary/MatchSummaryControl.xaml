@@ -43,10 +43,6 @@
         <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
             <TabItem Header="Talents">
                 <StackPanel>
-                    <StackPanel.Resources>
-                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
-                    </StackPanel.Resources>
-                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                   RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam1Collection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -71,14 +67,13 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Player" MinWidth="110">
+                                <DataGridTemplateColumn Header="Player" MinWidth="130">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
                                 <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -338,14 +333,13 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header="Player" MinWidth="110">
+                                <DataGridTemplateColumn Header="Player" MinWidth="130">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                 <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
                                 <DataGridTemplateColumn Header="1" MinWidth="80" HeaderStyle="{StaticResource DataGridCenterHeader}">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -585,10 +579,6 @@
             </TabItem>
             <TabItem Header="Stats">
                 <StackPanel>
-                    <StackPanel.Resources>
-                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
-                    </StackPanel.Resources>
-                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <Expander Header="Team 1" IsExpanded="True">
                         <StackPanel>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
@@ -614,14 +604,13 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Player" MinWidth="110">
+                                    <DataGridTemplateColumn Header="Player" MinWidth="130">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
                                     <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                     <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
@@ -655,8 +644,7 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110" FontWeight="DemiBold"/>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="130" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
@@ -694,14 +682,13 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn Header="Player" MinWidth="110">
+                                    <DataGridTemplateColumn Header="Player" MinWidth="130">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
                                     <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
                                     <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
@@ -735,8 +722,7 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110" FontWeight="DemiBold"/>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="130" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
                                     <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
@@ -753,10 +739,6 @@
             </TabItem>
             <TabItem Header="Advanced Stats">
                 <StackPanel>
-                    <StackPanel.Resources>
-                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
-                    </StackPanel.Resources>
-                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <GroupBox Header="Advanced Stats">
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
@@ -789,7 +771,7 @@
                                     <DataGridTemplateColumn Header="Hero" HeaderStyle="{StaticResource MatchAdvNoneDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
+                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}" Margin="2,2,2,0">
                                                     <Image Source="{Binding LeaderboardPortrait}" MinHeight="56" MinWidth="100" HorizontalAlignment="Left">
                                                         <Image.ToolTip>
                                                             <ToolTip Content="{Binding CharacterName}"></ToolTip>
@@ -803,11 +785,10 @@
                                     <DataGridTemplateColumn Header="Player" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontSize="11"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Combat" HeaderStyle="{StaticResource MatchAdvThickDataGridColumnHeader}" CellStyle="{StaticResource MatchAdvThickDataGridCell}"/>
                                     <DataGridTextColumn Header="- Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
@@ -862,7 +843,7 @@
                                     <DataGridTemplateColumn Header="Hero" HeaderStyle="{StaticResource MatchAdvNoneDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}">
+                                                <Grid ContextMenu="{StaticResource PlayerSearchContextMenu}" Margin="2,2,2,0">
                                                     <Image Source="{Binding LeaderboardPortrait}" MinHeight="56" MinWidth="100" HorizontalAlignment="Left">
                                                         <Image.ToolTip>
                                                             <ToolTip Content="{Binding CharacterName}"></ToolTip>
@@ -876,11 +857,10 @@
                                     <DataGridTemplateColumn Header="Player" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontSize="11" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Combat" HeaderStyle="{StaticResource MatchAdvThickDataGridColumnHeader}" CellStyle="{StaticResource MatchAdvThickDataGridCell}"/>
                                     <DataGridTextColumn Header="- Kills" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
@@ -911,10 +891,6 @@
             </TabItem>
             <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
                 <StackPanel>
-                    <StackPanel.Resources>
-                        <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
-                    </StackPanel.Resources>
-                    <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
                     <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" AlternationCount="2"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}" SelectedItem="{Binding SelectedDataPlayer}">
                         <DataGrid.Columns>
@@ -948,7 +924,6 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" Width="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
                             <DataGridTextColumn Header="Hero Level" Binding="{Binding CharacterLevel}" Width="110"/>
                         </DataGrid.Columns>
                     </DataGrid>

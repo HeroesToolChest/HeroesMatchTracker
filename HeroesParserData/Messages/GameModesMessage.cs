@@ -4,6 +4,6 @@
     {
         public GameModesTab GameModesTab { get; set; }
         public string SelectedCharacter { get; set; }
-        public string SelectedBattleTag { get; set; }
+        public string SelectedBattleTagName { get; set; }
     }
 }
