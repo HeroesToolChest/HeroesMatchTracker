@@ -47,7 +47,7 @@
                         <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
                     </StackPanel.Resources>
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
-                    <Expander Header="Team 1" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
+                    <Expander Header="Team 1" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                   RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam1Collection}" SelectedItem="{Binding SelectedDataPlayer}">
                             <DataGrid.Columns>
@@ -314,7 +314,7 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </Expander>
-                    <Expander Header="Team 2" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#ffb3b3">
+                    <Expander Header="Team 2" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam2Collection}" SelectedItem="{Binding SelectedDataPlayer}">
                             <DataGrid.Columns>
@@ -589,7 +589,7 @@
                         <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
                     </StackPanel.Resources>
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
-                    <Expander Header="Team 1" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
+                    <Expander Header="Team 1" IsExpanded="True">
                         <StackPanel>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam1Collection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -655,21 +655,21 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
-                                    <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
-                                    <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Deaths" MinWidth="80"  Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Siege Damage" MinWidth="120" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}"/>
-                                    <DataGridTextColumn Header="Hero Damage" MinWidth="120" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
-                                    <DataGridTextColumn Header="Role" MinWidth="120" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Deaths" MinWidth="80"  Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Siege Damage" MinWidth="120" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Hero Damage" MinWidth="120" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Role" MinWidth="120" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}" FontWeight="DemiBold"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </StackPanel>
                     </Expander>
-                    <Expander Header="Team 2" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#ffb3b3">
+                    <Expander Header="Team 2" IsExpanded="True">
                         <StackPanel>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchScoreTeam2Collection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -735,16 +735,16 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110"/>
-                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}"/>
-                                    <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80"/>
-                                    <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Deaths" MinWidth="80"  Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Siege Damage" MinWidth="120" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}"/>
-                                    <DataGridTextColumn Header="Hero Damage" MinWidth="120" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}"/>
-                                    <DataGridTextColumn Header="Role" MinWidth="120" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-                                    <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}"/>
+                                    <DataGridTextColumn Header="Player" Binding="{Binding PlayerName}" MinWidth="110" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Tag" Binding="{Binding PlayerTag}" MinWidth="80" Visibility="{Binding DataContext.ShowPlayerTagColumn, Source={StaticResource ProxyElement}, Converter={StaticResource BooleanToVisibility}}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Level" Binding="{Binding CharacterLevel}" MinWidth="80" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Kills" MinWidth="80" Binding="{Binding SoloKills}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Assists" MinWidth="80"  Binding="{Binding Assists}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Deaths" MinWidth="80"  Binding="{Binding Deaths}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Siege Damage" MinWidth="120" Binding="{Binding SiegeDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestSiegeFont}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Hero Damage" MinWidth="120" Binding="{Binding HeroDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestHeroDamageFont}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Role" MinWidth="120" Binding="{Binding Role, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" FontWeight="DemiBold"/>
+                                    <DataGridTextColumn Header="Experience" MinWidth="120" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource HighestExpFont}" FontWeight="DemiBold"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </StackPanel>
@@ -757,7 +757,7 @@
                         <FrameworkElement x:Key="ProxyElement" DataContext="{Binding}"/>
                     </StackPanel.Resources>
                     <ContentControl Visibility="Collapsed" Content="{StaticResource ProxyElement}"/>
-                    <Expander Header="Advanced Stats" Style="{StaticResource InnerSummaryControlExpander}" IsExpanded="True" Background="#b3b3ff">
+                    <GroupBox Header="Advanced Stats">
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
                                       CellStyle="{StaticResource MatchAdvDataGridCell}" ItemsSource="{Binding MatchAdvancedScoreTeam1Collection}" RowHeight="100" ColumnHeaderHeight="30"
@@ -906,7 +906,7 @@
                                 </DataGrid.Columns>
                             </DataGrid>
                         </StackPanel>
-                    </Expander>
+                    </GroupBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">

@@ -195,7 +195,7 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
-    
+
     <Style TargetType="DataGridRow" x:Key="SummaryDataGridRow" BasedOn="{StaticResource MetroDataGridRow}">
         <Style.Triggers>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
