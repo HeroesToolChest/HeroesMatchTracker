@@ -13,6 +13,12 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Defaults;
+using LiveCharts.Configurations;
+using HeroesParserData.Models;
+using HeroesParserData.Models.GraphModels;
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
@@ -30,6 +36,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private bool _isRightChangeButtonEnabled;
         private Color _mapNameGlowColor;
 
+        private SeriesCollection _matchTeamLevelsSeriesCollection;
+
         private ObservableCollection<MatchTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchObserversCollection = new ObservableCollection<MatchTalents>();
@@ -40,13 +48,16 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private ObservableCollection<MatchChat> _matchChatMessagesCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam1Collection = new ObservableCollection<MatchAdvancedScores>();
         private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam2Collection = new ObservableCollection<MatchAdvancedScores>();
+
         #endregion properties
 
         protected Replay CurrentReplay { get; set; }
         protected List<Replay> MatchList { get; set; }
 
         #region public properties
+        public Func<double, string> MatchTeamLevelsFormatter { get; set; }
         public MatchHeroBans MatchHeroBans { get; private set; } = new MatchHeroBans();
+
 
         public ObservableCollection<MatchTalents> MatchTalentsTeam1Collection
         {
@@ -240,6 +251,16 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
         }
 
+        public SeriesCollection MatchTeamLevelsSeriesCollection
+        {
+            get { return _matchTeamLevelsSeriesCollection; }
+            set
+            {
+                _matchTeamLevelsSeriesCollection = value;
+                RaisePropertyChangedEvent(nameof(MatchTeamLevelsSeriesCollection));
+            }
+        }
+
         public ICommand LeftChangeButtonCommand
         {
             get { return new DelegateCommand(() => ChangeCurrentMatchSummary(-1)); }
@@ -313,6 +334,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
                 int highestExpTeam1Index = 0, highestExpTeam1Count = 0, highestExpTeam2Index = 0, highestExpTeam2Count = 0;
+
+                bool team1Won = false;
+                bool team2Won = false;
 
                 FindPlayerParties(playersList);
 
@@ -399,6 +423,17 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     }
                 } // end foreach players
 
+                if (playersList[0].IsWinner)
+                {
+                    team1Won = true;
+                    team2Won = false;
+                }
+                else
+                {
+                    team1Won = false;
+                    team2Won = true;
+                }
+
                 // Total for score summaries
                 SetScoreSummaryTotals(MatchScoreTeam1Collection, MatchScoreTeam1TotalCollection, matchTeamLevelsList.Max(x => x.Team0Level));
                 SetScoreSummaryTotals(MatchScoreTeam2Collection, MatchScoreTeam2TotalCollection, matchTeamLevelsList.Max(x => x.Team1Level));
@@ -448,6 +483,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 }
 
                 HasChat = MatchChatMessagesCollection.Count < 1 ? false : true;
+
+                // graphs
+                SetTeamLevelSeriesCollection(matchTeamLevelsList, team1Won);
             }
             catch (Exception ex)
             {
@@ -771,6 +809,64 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 IsRightChangeButtonEnabled = true;
 
             Messenger.Default.Send(new MatchOverviewMessage { Replay = CurrentReplay });
+        }
+
+        private void SetTeamLevelSeriesCollection(List<ReplayMatchTeamLevel> matchTeamLevels, bool team1Won)
+        {
+            var timeConfig = Mappers.Xy<GraphTeamLevelModel>()
+                .X(x => x.DateTime.Ticks)
+                .Y(x => x.Value);
+
+            MatchTeamLevelsFormatter = value => new DateTime((long)value).ToString("mm:ss");
+
+            var chartValuesTeam0 = new ChartValues<GraphTeamLevelModel>();
+            var chartValuesTeam1 = new ChartValues<GraphTeamLevelModel>();
+
+            foreach (var time in matchTeamLevels)
+            {
+                if (time.Team0Level.HasValue)
+                {
+                    chartValuesTeam0.Add(new GraphTeamLevelModel
+                    {
+                        Value = time.Team0Level.Value,
+                        DateTime = DateTime.MinValue + time.TeamTime0.Value
+                    });
+                }
+
+                if (time.Team1Level.HasValue)
+                {
+                    chartValuesTeam1.Add(new GraphTeamLevelModel
+                    {
+                        Value = time.Team1Level.Value,
+                        DateTime = DateTime.MinValue + time.TeamTime1.Value
+                    });
+                }
+            }
+
+            string team1 = "Team 1";
+            string team2 = "Team 2";
+
+            if (team1Won)
+                team1 = team1 + " (Winner)";
+            else
+                team2 = team2 + " (Winner)";
+
+            MatchTeamLevelsSeriesCollection = new SeriesCollection(timeConfig)
+            {
+                new LineSeries
+                {
+                    Title = team1,
+                    Values = chartValuesTeam0,
+                    Fill = Brushes.Transparent
+                },
+                new LineSeries
+                {
+                    Title = team2,
+                    Values = chartValuesTeam1,
+                    Fill = Brushes.Transparent
+                }
+
+            };
         }
     }
 }

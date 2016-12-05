@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:base="clr-namespace:HeroesParserData"
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:HeroesParserData.Views.Match.Summary"
@@ -963,6 +964,18 @@
                         <DataGridTextColumn Header="Message" MinWidth="800" Binding="{Binding ChatMessage}" />
                     </DataGrid.Columns>
                 </DataGrid>
+            </TabItem>
+            <TabItem Header="Team Level over Time">
+                <Grid Background="White" Width="1400" Height="800" VerticalAlignment="Top">
+                    <lvc:CartesianChart Series="{Binding MatchTeamLevelsSeriesCollection}" LegendLocation="Right">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Team Level"/>
+                        </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
