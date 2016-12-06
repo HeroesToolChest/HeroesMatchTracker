@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData
 {
@@ -33,7 +34,7 @@ namespace HeroesParserData
         public static Season GetSeasonFromString(string season)
         {
             if (string.IsNullOrEmpty(season))
-                throw new Exception("GetSeasonFromString is null");
+                throw new ArgumentNullException("season");
 
             Season seasonEnum;
             season = Regex.Replace(season, @"\s+", "");
@@ -46,7 +47,7 @@ namespace HeroesParserData
         public static GameMode GetGameModeFromString(string gameMode)
         {
             if (string.IsNullOrEmpty(gameMode))
-                throw new Exception("GetSeasonFromString is null");
+                throw new ArgumentNullException("gameMode");
 
             GameMode gameModeEnum;
             gameMode = Regex.Replace(gameMode, @"\s+", "");
@@ -57,6 +58,20 @@ namespace HeroesParserData
                 return gameModeEnum;
             else
                 throw new Exception("GetSeasonFromString failed to convert to Season Enum");
+        }
+
+        public static ReplayParseResult GetReplayParseResultFromString(string replayParseResult)
+        {
+            if (string.IsNullOrEmpty(replayParseResult))
+                throw new ArgumentNullException("replayParseResult");
+
+            ReplayParseResult replayParseResultEnum;
+            replayParseResult = Regex.Replace(replayParseResult, @"\s+", "");
+
+            if (Enum.TryParse(replayParseResult, true, out replayParseResultEnum))
+                return replayParseResultEnum;
+            else
+                throw new Exception("GetReplayParseResultFromString failed to convert to ReplayParseResult Enum");
         }
 
         public static int CalculateWinPercentage(int wins, double total)

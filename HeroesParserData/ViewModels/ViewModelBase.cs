@@ -17,6 +17,7 @@ namespace HeroesParserData.ViewModels
         protected Logger FailedReplaysLog { get; private set; }
         protected Logger SqlExceptionReplaysLog { get; private set; }
         protected Logger WarningLog { get; private set; }
+        protected Logger HotsLogsLog { get; private set; }
         protected List<string> AllSeasonsList { get; private set; }
         protected List<string> AllGameModesList { get; private set; }
         protected List<string> AllReplayBuildsList { get; private set; }
@@ -48,6 +49,7 @@ namespace HeroesParserData.ViewModels
             FailedReplaysLog = LogManager.GetLogger(LogFile.UnParsedReplaysLogFile);
             SqlExceptionReplaysLog = LogManager.GetLogger(LogFile.SqlExceptionReplaysLogFile);
             WarningLog = LogManager.GetLogger(LogFile.WarningLogFile);
+            HotsLogsLog = LogManager.GetLogger(LogFile.HotsLogsLogFile);
 
             AllSeasonsList = Utilities.GetSeasonList();
             AllGameModesList = Utilities.GetGameModeList();

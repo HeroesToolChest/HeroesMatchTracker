@@ -1,5 +1,7 @@
-﻿using Heroes.ReplayParser;
+﻿using Amazon.S3;
+using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
+using HeroesParserData.HotsLogs;
 using HeroesParserData.Models;
 using HeroesParserData.Properties;
 using Microsoft.Win32;
@@ -31,6 +33,7 @@ namespace HeroesParserData.ViewModels
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
+        private Queue<Tuple<Replay, ReplayFile>> ReplayHotsLogsUploadQueue = new Queue<Tuple<Replay, ReplayFile>>();
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private FileSystemWatcher FileWatcher;
 
@@ -254,6 +257,7 @@ namespace HeroesParserData.ViewModels
             AreProcessButtonsEnabled = true;
             LatestParsedChecked = true;
             InitReplaySaveDataQueue();
+            InitReplayHotsLogsUploadQueue();
         }
 
         #region start processing/init
@@ -574,6 +578,7 @@ namespace HeroesParserData.ViewModels
                                 await Task.Delay(4000);
 
                             ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
+                            ReplayHotsLogsUploadQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
                         }
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
@@ -675,6 +680,59 @@ namespace HeroesParserData.ViewModels
                         currentReplayFile.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         FailedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
+                    }
+                }
+            });
+        }
+
+        private void InitReplayHotsLogsUploadQueue()
+        {
+            Task.Run(async () =>
+            {
+                ReplayFile currentReplayFile = null;
+
+                while (true)
+                {
+                    if (ReplayHotsLogsUploadQueue.Count < 1)
+                    {
+                        await Task.Delay(1000);
+                        continue;
+                    }
+
+                    var item = ReplayHotsLogsUploadQueue.Dequeue();
+                    var replay = item.Item1;
+                    var replayFile = item.Item2;
+
+                    try
+                    {
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[replayFile.FilePath]];
+
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Uploading;
+                        var status = await HotsLogsUploader.UploadReplay(replayFile.FilePath);
+
+                        if (status == ReplayParseResult.Success)
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Success;
+                        else if (status == ReplayParseResult.Duplicate)
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Duplicate;
+                        else
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Failed;
+                    }
+                    catch (MaintenanceException)
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Maintenance;
+                        break;
+                    }
+                    catch (AmazonS3Exception ex)
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
+                        HotsLogsLog.Log(LogLevel.Error, ex);
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                        break;
                     }
                 }
             });

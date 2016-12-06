@@ -42,6 +42,7 @@
                     <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" SortDirection="Descending" />
                     <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                    <DataGridTextColumn Header="HOTS Logs Status" Binding="{Binding HotsLogsStatus}" />
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Grid.Column="1">
