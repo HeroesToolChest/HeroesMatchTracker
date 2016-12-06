@@ -340,7 +340,7 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeClear()
         {
-            ReplaysLatestSaved = new DateTime(1);
+            ReplaysLatestSaved = new DateTime(2014, 1, 1);
         }
 
         private void LastReplaysDateTimeSet()
@@ -355,7 +355,7 @@ namespace HeroesParserData.ViewModels
 
         private void LastReplaysDateTimeClear()
         {
-            ReplaysLastSaved = new DateTime(1);
+            ReplaysLastSaved = new DateTime(2014, 1, 1);
         }
         #endregion date/time buttons
 
