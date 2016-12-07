@@ -24,6 +24,7 @@ namespace HeroesParserData
             IsIncludeSubDirectories = true;
             IsNewUpdateApplied = false;
             IsIncludeManualPreRelease = false;
+            IsHotsLogsUploaderEnabled = false;
 
             UserPlayerId = 0;
 
@@ -93,6 +94,12 @@ namespace HeroesParserData
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
             set { SetBooleanValue(nameof(IsNewUpdateApplied), value); }
+        }
+
+        public bool IsHotsLogsUploaderEnabled
+        {
+            get { return GetBooleanValue(nameof(IsHotsLogsUploaderEnabled)); }
+            set { SetBooleanValue(nameof(IsHotsLogsUploaderEnabled), value); }
         }
 
         public long UserPlayerId

@@ -8,5 +8,6 @@
         UploadError,
         Maintenance,
         Uploading,
+        FileNotFound,
     }
 }

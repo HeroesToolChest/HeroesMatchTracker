@@ -13,7 +13,7 @@
              VerticalContentAlignment="Stretch"
              Height="auto"
              Width="auto"
-             d:DataContext="{d:DesignInstance ViewModels:ReplaysViewModel}" d:DesignWidth="1149" d:DesignHeight="751">
+             d:DataContext="{d:DesignInstance ViewModels:ReplaysViewModel}" d:DesignWidth="1920" d:DesignHeight="1080">
     <UserControl.DataContext>
         <ViewModels:ReplaysViewModel/>
     </UserControl.DataContext>
@@ -45,38 +45,47 @@
                     <DataGridTextColumn Header="HOTS Logs Status" Binding="{Binding HotsLogsStatus}" />
                 </DataGrid.Columns>
             </DataGrid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Content="(Re)Scan" Grid.Row="0" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="120" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Scan}"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Column="1">
+                <Grid>
+                    <Button Content="(Re)Scan" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="120" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Scan}"/>
 
-                <Button Content="Start" Command="{Binding Start}" IsEnabled="{Binding AreProcessButtonsEnabled}" Height="28" Width="120" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,56,0,0" />
-                <Button Content="Stop" Command="{Binding Stop}" IsEnabled="{Binding IsProcessSelected}" Height="28" Width="120" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,89,0,0" />
-                <CheckBox Content="Watch" Grid.Row="0" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding IsProcessWatchChecked}"/>
-                <CheckBox Content="Auto Scan on Start" Grid.Row="0" HorizontalAlignment="Left" Margin="72,122,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding IsAutoScanChecked}"/>
+                    <Button Content="Start" Command="{Binding Start}" IsEnabled="{Binding AreProcessButtonsEnabled}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,56,0,0" />
+                    <Button Content="Stop" Command="{Binding Stop}" IsEnabled="{Binding IsProcessSelected}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,89,0,0" />
+                    <CheckBox Content="Watch" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding IsProcessWatchChecked}"/>
+                    <CheckBox Content="Auto Scan on Start" HorizontalAlignment="Left" Margin="72,122,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding IsAutoScanChecked}"/>
 
-                <Button Content="Manually Select Files" Grid.Row="0" HorizontalAlignment="Left" Margin="168,25,0,0" VerticalAlignment="Top" Width="141" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding ManualSelectFiles}"/>
-                <Label Content="*Disables Auto Scan*" Grid.Row="0" HorizontalAlignment="Left" Margin="309,25,0,0" VerticalAlignment="Top" FontSize="10" Height="26" />
+                    <Button Content="Manually Select Files" HorizontalAlignment="Left" Margin="168,25,0,0" VerticalAlignment="Top" Width="141" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding ManualSelectFiles}"/>
+                    <Label Content="*Disables Auto Scan*" HorizontalAlignment="Left" Margin="309,25,0,0" VerticalAlignment="Top" FontSize="10" Height="26" />
 
-                <Label Content="Replays Location" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150,0,0"/>
-                <CheckBox Grid.Row="0" Content="Include Subdirectories" IsChecked="{Binding IsIncludeSubDirectories}" HorizontalAlignment="Left" Margin="108,154,0,0" VerticalAlignment="Top"/>
-                <TextBox Height="23" Margin="10,176,0,0" IsReadOnly="True" TextWrapping="NoWrap" Text="{Binding ReplaysLocation}" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368"/>
-                <Button Content="Browse" Margin="383,176,0,0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Browse}"/>
+                    <Label Content="Replays Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150,0,0"/>
+                    <CheckBox Content="Include Subdirectories" IsChecked="{Binding IsIncludeSubDirectories}" HorizontalAlignment="Left" Margin="108,154,0,0" VerticalAlignment="Top"/>
+                    <TextBox Height="23" Margin="10,176,0,0" IsReadOnly="True" TextWrapping="NoWrap" Text="{Binding ReplaysLocation}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368"/>
+                    <Button Content="Browse" Margin="383,176,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Browse}"/>
 
-                <CheckBox Content="Latest Saved Replay Date/Time" Grid.Row="0" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LatestParsedChecked}"/>
-                <TextBox Grid.Row="0" HorizontalAlignment="Left" Height="23" Margin="10,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
-                <Button Content="Set" Grid.Row="0" HorizontalAlignment="Left" Margin="223,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
-                <Button Content="Default" Grid.Row="0" HorizontalAlignment="Left" Margin="303,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
-                <Button Content="Clear" Grid.Row="0" HorizontalAlignment="Left" Margin="383,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
+                    <CheckBox Content="Latest Saved Replay Date/Time" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LatestParsedChecked}"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
+                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
+                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
 
-                <CheckBox Content="Last Saved Replay Date/Time" Grid.Row="0" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LastParsedChecked}"/>
-                <TextBox Grid.Row="0" HorizontalAlignment="Left" Height="23" Margin="10,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
-                <Button Content="Set" Grid.Row="0" HorizontalAlignment="Left" Margin="223,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeSet}"/>
-                <Button Content="Default" Grid.Row="0" HorizontalAlignment="Left" Margin="303,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeDefault}"/>
-                <Button Content="Clear" Grid.Row="0" HorizontalAlignment="Left" Margin="383,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeClear}"/>
-            </Grid>
+                    <CheckBox Content="Last Saved Replay Date/Time" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LastParsedChecked}"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
+                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeSet}"/>
+                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeDefault}"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeClear}"/>
+
+                    <GroupBox Header="HOTS Logs Uploader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,342,0,0" Height="220" Width="600">
+                        <Grid>
+                            <CheckBox Content="Enable Uploader" IsChecked="{Binding IsHotsLogsUploaderEnabled}" IsEnabled="{Binding AreProcessButtonsEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Button Content="{Binding HotsLogsStopButtonText}" Command="{Binding HotsLogsStopButtonCommand}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,0"/>
+
+                            <Label Content="Status" HorizontalAlignment="Left" Height="28" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="16"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="58,106,0,0" TextWrapping="Wrap" Text="{Binding HotsLogsUploaderStatus}" VerticalAlignment="Top"/>
+                            <TextBlock Text="{Binding HotsLogsUploaderUploadStatus}" Height="28" TextWrapping="Wrap" Margin="10,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="568"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </ScrollViewer>
         </Grid>
     </DockPanel>
 </UserControl>

@@ -167,7 +167,10 @@ namespace HeroesParserData.Database
 
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsIncludeManualPreRelease', 'False')");
-     
+
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('IsHotsLogsUploaderEnabled', 'False')");
+
             Migrations.Add(3, steps);
         }
     }

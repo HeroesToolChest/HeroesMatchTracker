@@ -24,6 +24,9 @@ namespace HeroesParserData.ViewModels
     public class ReplaysViewModel : ViewModelBase, IDisposable
     {
         private string _currentStatus;
+        private string _hotsLogsUploaderUploadStatus;
+        private string _hotsLogsUploaderStatus;
+        private string _hotsLogsStopButtonText;
         private bool _isProcessSelected;
         private bool _areProcessButtonsEnabled;
         private int _totalParsedGrid;
@@ -32,8 +35,10 @@ namespace HeroesParserData.ViewModels
 
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
+        private bool IsHotsLogsUploaderQueueOn = false;
+
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
-        private Queue<Tuple<Replay, ReplayFile>> ReplayHotsLogsUploadQueue = new Queue<Tuple<Replay, ReplayFile>>();
+        private Queue<ReplayFile> ReplayHotsLogsUploadQueue = new Queue<ReplayFile>();
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private FileSystemWatcher FileWatcher;
 
@@ -45,6 +50,36 @@ namespace HeroesParserData.ViewModels
             {
                 _currentStatus = value;
                 RaisePropertyChangedEvent(nameof(CurrentStatus));
+            }
+        }
+
+        public string HotsLogsUploaderUploadStatus
+        {
+            get { return _hotsLogsUploaderUploadStatus; }
+            set
+            {
+                _hotsLogsUploaderUploadStatus = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsUploaderUploadStatus));
+            }
+        }
+
+        public string HotsLogsUploaderStatus
+        {
+            get { return _hotsLogsUploaderStatus; }
+            set
+            {
+                _hotsLogsUploaderStatus = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsUploaderStatus));
+            }
+        }
+
+        public string HotsLogsStopButtonText
+        {
+            get { return _hotsLogsStopButtonText; }
+            set
+            {
+                _hotsLogsStopButtonText = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsStopButtonText));
             }
         }
 
@@ -190,6 +225,16 @@ namespace HeroesParserData.ViewModels
                 RaisePropertyChangedEvent(nameof(IsIncludeSubDirectories));
             }
         }
+
+        public bool IsHotsLogsUploaderEnabled
+        {
+            get { return UserSettings.Default.IsHotsLogsUploaderEnabled; }
+            set
+            {
+                UserSettings.Default.IsHotsLogsUploaderEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsHotsLogsUploaderEnabled));
+            }
+        }
         #endregion
 
         #region Button Commands
@@ -256,8 +301,8 @@ namespace HeroesParserData.ViewModels
         {
             AreProcessButtonsEnabled = true;
             LatestParsedChecked = true;
+            HotsLogsStopButtonText = "Stop";
             InitReplaySaveDataQueue();
-            InitReplayHotsLogsUploadQueue();
         }
 
         #region start processing/init
@@ -280,6 +325,14 @@ namespace HeroesParserData.ViewModels
                 InitReplayWatcher();
 
             InitProcessing(IsAutoScanChecked);
+
+            if (IsHotsLogsUploaderEnabled)
+            {
+                if (!IsHotsLogsUploaderQueueOn)
+                    InitReplayHotsLogsUploadQueue();
+            }
+            else
+                IsHotsLogsUploaderQueueOn = false;
         }
 
         private void StopProcessing()
@@ -543,71 +596,75 @@ namespace HeroesParserData.ViewModels
                         break;
 
                     #region parse replay and queue data to be saved
-                    var tmpPath = Path.GetTempFileName();
-                    var file = ReplayFiles[currentCount];
+                    string tempReplayFile = Path.GetTempFileName();
+                    ReplayFile originalfile = ReplayFiles[currentCount];
 
-                    CurrentStatus = $"Parsing file {file.FileName}";
+                    CurrentStatus = $"Parsing file {originalfile.FileName}";
 
                     try
                     {
-                        if (!File.Exists(file.FilePath))
+                        if (!File.Exists(originalfile.FilePath))
                         {
-                            file.Status = ReplayParseResult.FileNotFound;
-                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            originalfile.Status = ReplayParseResult.FileNotFound;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                             TotalParsedGrid++;
-                            CurrentStatus = $"Failed to find file {file.FileName}";
+                            CurrentStatus = $"Failed to find file {originalfile.FileName}";
                             continue;
                         }
-                        else if (file.Status == ReplayParseResult.Saved)
+                        else if (originalfile.Status == ReplayParseResult.Saved)
                             continue;
 
-                        File.Copy(file.FilePath, tmpPath, overwrite: true);
+                        // copy the contents of the replay file to the tempReplayFile file
+                        File.Copy(originalfile.FilePath, tempReplayFile, overwrite: true);
 
-                        var replayParsed = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
-                        file.Build = replayParsed.Item2.ReplayBuild;
+                        var replayParsed = ParseReplay(tempReplayFile, ignoreErrors: false, deleteFile: false);
+                        originalfile.Build = replayParsed.Item2.ReplayBuild;
 
                         if (replayParsed.Item1 == ReplayParseResult.Success)
                         {
-                            file.Status = ReplayParseResult.Success;
+                            originalfile.Status = ReplayParseResult.Success;
 
-                            if (ReplayDataQueue.Count >= 5) // give it a chance to dequeue some replays
+                            // give it a chance to dequeue some replays as the replay object takes quite a bit of memory
+                            if (ReplayDataQueue.Count >= 5) 
                                 await Task.Delay(1500);
                             else if (ReplayDataQueue.Count >= 7)
                                 await Task.Delay(2500);
                             else if (ReplayDataQueue.Count >= 9)
                                 await Task.Delay(4000);
 
-                            ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
-                            ReplayHotsLogsUploadQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
+                            ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, originalfile));
+
+                            if (IsHotsLogsUploaderEnabled)
+                                ReplayHotsLogsUploadQueue.Enqueue(originalfile);
                         }
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
                             if (replayParsed.Item2.ReplayBuild > HPDVersion.GetHeroesReplayParserSupportedBuild())
-                                file.Status = ReplayParseResult.NotYetSupported;
+                                originalfile.Status = ReplayParseResult.NotYetSupported;
                             else
-                                file.Status = ReplayParseResult.ParserException;
+                                originalfile.Status = ReplayParseResult.ParserException;
 
-                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {file.FilePath}: {file.Status}");
+                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {originalfile.FilePath}: {originalfile.Status}");
                         }
                         else
                         {
-                            file.Status = replayParsed.Item1;
-                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            originalfile.Status = replayParsed.Item1;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                         }
                     }
                     catch (Exception ex)
                     {
-                        file.Status = ReplayParseResult.Exception;
+                        originalfile.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                        FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                     }
                     finally
                     {
                         TotalParsedGrid++;
-                        CurrentStatus = $"Parsed {file.FileName}";
+                        CurrentStatus = $"Parsed {originalfile.FileName}";
 
-                        if (File.Exists(tmpPath))
-                            File.Delete(tmpPath);
+                        if (File.Exists(tempReplayFile))
+                            File.Delete(tempReplayFile);
                     }
                     #endregion parse replay and save data
                 } // end for
@@ -633,14 +690,23 @@ namespace HeroesParserData.ViewModels
         {
             Task.Run(async () =>
             {
+                DateTime parsedDateTime;
+                ReplayFile currentReplayFile;
+                Tuple<Replay, ReplayFile> dequeuedItem;
+
                 while (true)
                 {
+                    currentReplayFile = null;
+                    dequeuedItem = null;
+
                     if (ReplayDataQueue.Count < 1)
                     {
                         if (!IsProcessSelected)
                         {
-                            AreProcessButtonsEnabled = true;
                             CurrentStatus = "Processing stopped";
+
+                            if (ReplayHotsLogsUploadQueue.Count < 1)
+                                AreProcessButtonsEnabled = true;
                         }
                         await Task.Delay(1000);
                         continue;
@@ -648,20 +714,15 @@ namespace HeroesParserData.ViewModels
                     else if (!IsProcessSelected)
                     {
                         if (ReplayDataQueue.Count > 0)
-                            CurrentStatus = "Processing stopped; Waiting for parsed replays to be saved to database...";
+                            CurrentStatus = "Processing stopped, waiting for parsed replays to be saved to database...";
                     }
 
-                    DateTime parsedDateTime;
-                    ReplayFile currentReplayFile = null;
-
-                    var item = ReplayDataQueue.Dequeue();
-                    var replay = item.Item1;
-                    var replayFile = item.Item2;
+                    dequeuedItem = ReplayDataQueue.Dequeue();
 
                     try
                     {
-                        currentReplayFile = ReplayFiles[ReplayFileLocations[replayFile.FilePath]];
-                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(replay, replayFile.FileName, out parsedDateTime);
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
+                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out parsedDateTime);
                         if (currentReplayFile.Status == ReplayParseResult.Saved)
                         {
                             TotalSavedInDatabase++;
@@ -687,28 +748,54 @@ namespace HeroesParserData.ViewModels
 
         private void InitReplayHotsLogsUploadQueue()
         {
+            IsHotsLogsUploaderQueueOn = true;
+
             Task.Run(async () =>
             {
-                ReplayFile currentReplayFile = null;
+                ReplayFile currentReplayFile;
+                ReplayFile dequeuedReplayFile;
 
-                while (true)
+                while (IsHotsLogsUploaderQueueOn)
                 {
+                    currentReplayFile = null;
+                    dequeuedReplayFile = null;
+                    HotsLogsUploaderUploadStatus = string.Empty;
+
                     if (ReplayHotsLogsUploadQueue.Count < 1)
                     {
+                        if (!IsProcessSelected)
+                        {
+                            HotsLogsUploaderStatus = "Uploader stopped";
+
+                            if (ReplayDataQueue.Count < 1)
+                                AreProcessButtonsEnabled = true;
+
+                        }
                         await Task.Delay(1000);
                         continue;
                     }
+                    else if (!IsProcessSelected)
+                    {
+                        if (ReplayHotsLogsUploadQueue.Count > 0)
+                            HotsLogsUploaderStatus = "Processing stopped, waiting for parsed replays to be uploaded...";
+                    }
 
-                    var item = ReplayHotsLogsUploadQueue.Dequeue();
-                    var replay = item.Item1;
-                    var replayFile = item.Item2;
+                    dequeuedReplayFile = ReplayHotsLogsUploadQueue.Dequeue();
 
                     try
                     {
-                        currentReplayFile = ReplayFiles[ReplayFileLocations[replayFile.FilePath]];
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedReplayFile.FilePath]];
 
+                        if (!File.Exists(currentReplayFile.FilePath))
+                        {
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.FileNotFound;
+                            HotsLogsLog.Log(LogLevel.Info, $"File does not exists: {currentReplayFile.FilePath}");
+                            continue;
+                        }
+
+                        HotsLogsUploaderUploadStatus = $"Uploading {currentReplayFile.FileName} ...";
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Uploading;
-                        var status = await HotsLogsUploader.UploadReplay(replayFile.FilePath);
+                        var status = await HotsLogsUploader.UploadReplay(currentReplayFile.FilePath);
 
                         if (status == ReplayParseResult.Success)
                             currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Success;
