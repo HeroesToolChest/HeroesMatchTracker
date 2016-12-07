@@ -405,6 +405,9 @@
     <Resource Include="Icons\Talents\Ragnaros\storm_ui_icon_ragnaros_submerge.dds" />
     <Resource Include="Icons\Talents\Ragnaros\storm_ui_icon_ragnaros_sulfurassmash.dds" />
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_talent_resistance.dds" />
+    <Resource Include="Icons\Talents\Artanis\storm_ui_icon_artanis_repositionmatrix_a.dds" />
+    <Resource Include="Icons\Talents\Artanis\storm_ui_icon_artanis_shieldoverload_a.dds" />
+    <Resource Include="Icons\Talents\Diablo\storm_ui_icon_diablo_firestomp_a.dds" />
     <Content Include="Xml\Heroes\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

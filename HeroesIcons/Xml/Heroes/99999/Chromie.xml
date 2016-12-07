@@ -3,8 +3,7 @@
   <Level1>
     <ChromieSandBlastCompoundingAether name="Compounding Aether" desc="ChromieSandBlastCompoundingAether">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastCompoundingAether>
     <ChromieDragonsBreathDeepBreathing name="Deep Breathing" desc="ChromieDragonsBreathDeepBreathing">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathDeepBreathing>
-    <ChromieTimewalkersPursuit name="Timewalker's Pursuit" generic="true" desc="ChromieTimewalkersPursuit">storm_ui_icon_talent_conjurerspursuit.dds</ChromieTimewalkersPursuit>
-    <ChromiePeerIntoTheFuture name="Peer Into The Future" generic="true" desc="ChromiePeerIntoTheFuture">storm_ui_icon_talent_clairvoyance.dds</ChromiePeerIntoTheFuture>
+    <ChromieTimewalkersPursuit name="Timewalker's Pursuit" generic="true" desc="ChromieTimewalkersPursuit">storm_ui_icon_talent_clairvoyance.dds</ChromieTimewalkersPursuit>
   </Level1>
   <Level4>
     <ChromieSandBlastPiercingSands name="Piercing Sands" desc="ChromieSandBlastPiercingSands">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastPiercingSands>
