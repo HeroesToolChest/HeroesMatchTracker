@@ -244,7 +244,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime();         
+                        return new DateTime(2014, 1, 1);
                 }                   
             }
 
@@ -257,7 +257,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime();
+                        return new DateTime(2014, 1, 1);
                 }
             }
 

@@ -16,7 +16,6 @@ namespace HeroesParserData
         {
             ReplayWatchCheckBox = false;
             ReplayAutoScanCheckBox = false;
-            ParsedDateTimeCheckBox = true;
             IsAutoUpdates = true;
             IsIncludePreRelease = false;
             IsMinimizeToTray = false;
@@ -26,6 +25,8 @@ namespace HeroesParserData
             IsIncludeManualPreRelease = false;
             IsHotsLogsUploaderEnabled = false;
 
+            SelectedScanDateTimeIndex = 0;
+
             UserPlayerId = 0;
 
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
@@ -34,18 +35,14 @@ namespace HeroesParserData
 
             ReplaysLatestSaved = new DateTime();
             ReplaysLastSaved = new DateTime();
+            ReplaysLatestHotsLogs = new DateTime();
+            ReplaysLastHotsLogs = new DateTime();
         }
 
         public bool ReplayAutoScanCheckBox
         {
             get { return GetBooleanValue(nameof(ReplayAutoScanCheckBox)); }
             set { SetBooleanValue(nameof(ReplayAutoScanCheckBox), value); }
-        }
-
-        public bool ParsedDateTimeCheckBox
-        {
-            get { return GetBooleanValue(nameof(ParsedDateTimeCheckBox)); }
-            set { SetBooleanValue(nameof(ParsedDateTimeCheckBox), value); }
         }
 
         public bool IsAutoUpdates
@@ -102,6 +99,12 @@ namespace HeroesParserData
             set { SetBooleanValue(nameof(IsHotsLogsUploaderEnabled), value); }
         }
 
+        public int SelectedScanDateTimeIndex
+        {
+            get { return GetIntValue(nameof(SelectedScanDateTimeIndex)); }
+            set { SetIntValue(nameof(SelectedScanDateTimeIndex), value); }
+        }
+
         public long UserPlayerId
         {
             get { return GetLongValue(nameof(UserPlayerId)); }
@@ -136,6 +139,18 @@ namespace HeroesParserData
         {
             get { return GetDateTimeValue(nameof(ReplaysLastSaved)); }
             set { SetDateTimeValue(nameof(ReplaysLastSaved), value); }
+        }
+
+        public DateTime ReplaysLatestHotsLogs
+        {
+            get { return GetDateTimeValue(nameof(ReplaysLatestHotsLogs)); }
+            set { SetDateTimeValue(nameof(ReplaysLatestHotsLogs), value); }
+        }
+
+        public DateTime ReplaysLastHotsLogs
+        {
+            get { return GetDateTimeValue(nameof(ReplaysLastHotsLogs)); }
+            set { SetDateTimeValue(nameof(ReplaysLastHotsLogs), value); }
         }
 
         private void CreateNewSetting(UserSetting userSetting)

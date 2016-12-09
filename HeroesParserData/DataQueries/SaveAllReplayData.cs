@@ -9,8 +9,10 @@ namespace HeroesParserData.DataQueries
 {
     public static class SaveAllReplayData
     {
-        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, out DateTime parsedDateTime)
+        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, out DateTime parsedDateTime, out long replayId)
         {
+            replayId = 0;
+
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
                 using (var dbTransaction = db.Database.BeginTransaction())
@@ -41,7 +43,7 @@ namespace HeroesParserData.DataQueries
                             return ReplayParseResult.Duplicate;
                         }
 
-                        long replayId = Query.Replay.CreateRecord(db, replayData);
+                        replayId = Query.Replay.CreateRecord(db, replayData);
                         #endregion save basic data
 
                         #region save player related data

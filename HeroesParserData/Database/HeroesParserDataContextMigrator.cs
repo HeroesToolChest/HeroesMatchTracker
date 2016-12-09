@@ -171,6 +171,25 @@ namespace HeroesParserData.Database
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsHotsLogsUploaderEnabled', 'False')");
 
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('ReplaysLatestHotsLogs', '1/1/2014 1:00:00 AM')");
+
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('ReplaysLastHotsLogs', '1/1/2014 1:00:00 AM')");
+
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('SelectedScanDateTimeIndex', '0')");
+
+            steps.Add(@"DELETE FROM UserSettings
+                        WHERE Name = 'ParsedDateTimeCheckBox'");
+
+            steps.Add(@"CREATE TABLE IF NOT EXISTS ReplayHotsLogsUploads(
+                        ReplaysHotsLogsUploadId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        ReplayId INTEGER,
+                        ReplayFileTimeStamp DATETIME,
+                        Status INTEGER,
+                        FOREIGN KEY (ReplayId) REFERENCES Replays (ReplayId))");
+
             Migrations.Add(3, steps);
         }
     }

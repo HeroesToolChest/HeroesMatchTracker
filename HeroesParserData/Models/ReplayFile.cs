@@ -13,6 +13,8 @@ namespace HeroesParserData.Models
         public string FileName { get; set; }
         public DateTime LastWriteTime { get; set; }   
         public string FilePath { get; set; }
+        public long ReplayId { get; set; }
+        public DateTime TimeStamp { get; set; }
         public int? Build
         {
             get { return _build; }

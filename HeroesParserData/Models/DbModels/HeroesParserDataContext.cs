@@ -118,6 +118,7 @@ namespace HeroesParserData.Models.DbModels
         public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
+        public virtual DbSet<ReplayHotsLogsUpload> ReplayHotsLogsUploads { get; set; }
         public virtual DbSet<UserSetting> UserSettings { get; set; }
         public virtual DbSet<ReleaseNote> ReleaseNotes { get; set; }
 
@@ -164,6 +165,11 @@ namespace HeroesParserData.Models.DbModels
 
             modelBuilder.Entity<Replay>()
                 .HasMany(e => e.ReplayMatchAward)
+                .WithRequired(e => e.Replay)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Replay>()
+                .HasMany(e => e.ReplayHotsLogsUpload)
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
 

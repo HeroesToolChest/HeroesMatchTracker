@@ -62,26 +62,41 @@
                     <TextBox Height="23" Margin="10,176,0,0" IsReadOnly="True" TextWrapping="NoWrap" Text="{Binding ReplaysLocation}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368"/>
                     <Button Content="Browse" Margin="383,176,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding Browse}"/>
 
-                    <CheckBox Content="Latest Saved Replay Date/Time" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LatestParsedChecked}"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
-                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
-                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
-                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,242,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
+                    <Label Content="Scan Date/Time Options" HorizontalAlignment="Left" Margin="0,207,0,0" VerticalAlignment="Top" Width="366" FontSize="16"/>
+                    <CheckBox Name="LastestSaved" Content="Latest Saved Replay" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LatestParsedChecked}" Click="LastestSaved_Click"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
+                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,261,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeSet}"/>
+                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,261,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeDefault}"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,261,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding DateTimeClear}"/>
 
-                    <CheckBox Content="Last Saved Replay Date/Time" HorizontalAlignment="Left" Margin="10,273,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LastParsedChecked}"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
-                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeSet}"/>
-                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeDefault}"/>
-                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,296,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeClear}"/>
+                    <CheckBox Name="LastSaved" Content="Last Saved Replay" HorizontalAlignment="Left" Margin="10,292,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreProcessButtonsEnabled}" IsChecked="{Binding LastParsedChecked}" Click="LastSaved_Click"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
+                    <Button Content="Set" HorizontalAlignment="Left" Margin="223,315,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeSet}"/>
+                    <Button Content="Default" HorizontalAlignment="Left" Margin="303,315,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeDefault}"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="383,315,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreProcessButtonsEnabled}" Command="{Binding LastDateTimeClear}"/>
 
-                    <GroupBox Header="HOTS Logs Uploader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,342,0,0" Height="220" Width="600">
+                    <GroupBox Header="HOTS Logs Uploader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,357,0,0" Height="246" Width="700">
                         <Grid>
                             <CheckBox Content="Enable Uploader" IsChecked="{Binding IsHotsLogsUploaderEnabled}" IsEnabled="{Binding AreProcessButtonsEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <Button Content="{Binding HotsLogsStopButtonText}" Command="{Binding HotsLogsStopButtonCommand}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,0"/>
+                            <Button Content="{Binding HotsLogsStopButtonText}" Command="{Binding HotsLogsStopButtonCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,0"/>
 
-                            <Label Content="Status" HorizontalAlignment="Left" Height="28" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="16"/>
-                            <TextBlock HorizontalAlignment="Left" Margin="58,106,0,0" TextWrapping="Wrap" Text="{Binding HotsLogsUploaderStatus}" VerticalAlignment="Top"/>
-                            <TextBlock Text="{Binding HotsLogsUploaderUploadStatus}" Height="28" TextWrapping="Wrap" Margin="10,125,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="568"/>
+                            <Label Content="Scan Date/Time Options" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top" Width="366" FontSize="16"/>
+                            <CheckBox Name="LastestUploaded" Content="Latest Uploaded Replay" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" IsChecked="{Binding LatestHotsLogsChecked}" Click="LastestUploaded_Click"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLatestHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}"/>
+                            <Button Content="Set" HorizontalAlignment="Left" Margin="223,120,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding DateTimeHotsLogsSetCommand}"/>
+                            <Button Content="Default" HorizontalAlignment="Left" Margin="303,120,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding DateTimeHotsLogsDefaultCommand}"/>
+                            <Button Content="Clear" HorizontalAlignment="Left" Margin="383,120,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding DateTimeHotsLogsClearCommand}"/>
+
+                            <CheckBox Name="LastUploaded" Content="Last Uploaded Replay" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" IsChecked="{Binding LastHotsLogsChecked}" Click="LastUploaded_Click"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="{Binding ReplaysLastHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}"/>
+                            <Button Content="Set" HorizontalAlignment="Left" Margin="223,174,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding LastDateTimeHotsLogsSetCommand}"/>
+                            <Button Content="Default" HorizontalAlignment="Left" Margin="303,174,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding LastDateTimeHotsLogsDefaultCommand}"/>
+                            <Button Content="Clear" HorizontalAlignment="Left" Margin="383,174,0,0" VerticalAlignment="Top" Width="75" Height="26" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Command="{Binding LastDateTimeHotsLogsClearCommand}"/>
+
+                            <Label Content="Uploader Status:" Background="GhostWhite" HorizontalAlignment="Left" Height="28" Margin="158,10,0,0" VerticalAlignment="Top" FontSize="14"/>
+                            <Label Content="File Status:" Background="GhostWhite" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="28" Margin="158,38,0,0" VerticalAlignment="Top" FontSize="14" Width="111"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="274,17,0,0" TextWrapping="Wrap" Text="{Binding HotsLogsUploaderStatus}" VerticalAlignment="Top"/>
+                            <TextBlock Text="{Binding HotsLogsUploaderUploadStatus}" Height="28" TextWrapping="Wrap" Margin="274,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="404"/>
                         </Grid>
                     </GroupBox>
                 </Grid>

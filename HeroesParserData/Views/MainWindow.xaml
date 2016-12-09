@@ -116,6 +116,9 @@
                     <TabItem Name="RawReplays" Header="Replays">
                         <ViewsData:RawReplaysControl></ViewsData:RawReplaysControl>
                     </TabItem>
+                    <TabItem Name="RawHotsLogsUploads" Header="HOTS Logs Uploads">
+                        <ViewsData:RawHotsLogsUploadControl></ViewsData:RawHotsLogsUploadControl>
+                    </TabItem>
                     <TabItem Name="RawAllHotsPlayers" Header="All Players">
                         <ViewsData:RawAllHotsPlayerControl></ViewsData:RawAllHotsPlayerControl>
                     </TabItem>
