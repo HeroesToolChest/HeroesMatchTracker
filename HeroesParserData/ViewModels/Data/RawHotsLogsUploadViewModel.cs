@@ -29,7 +29,7 @@ namespace HeroesParserData.ViewModels.Data
 
         protected void AddListColumnNames()
         {
-            ReplayAllHotsPlayerHero r = new ReplayAllHotsPlayerHero();
+            ReplayHotsLogsUpload r = new ReplayHotsLogsUpload();
 
             foreach (var prop in r.GetType().GetMethods())
             {
