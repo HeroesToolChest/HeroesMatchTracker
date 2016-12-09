@@ -918,10 +918,11 @@ namespace HeroesParserData.ViewModels
                         currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out replayTimeStamp, out replayId);
 
                         currentReplayFile.ReplayId = replayId;
+                        currentReplayFile.TimeStamp = replayTimeStamp;
+
                         if (currentReplayFile.Status == ReplayParseResult.Saved)
                         {
                             TotalSavedInDatabase++;
-                            currentReplayFile.TimeStamp = replayTimeStamp;
                             ReplaysLatestSaved = Query.Replay.ReadLatestReplayByDateTime();
                             ReplaysLastSaved = replayTimeStamp.ToLocalTime();
                         }
@@ -1027,10 +1028,10 @@ namespace HeroesParserData.ViewModels
                             continue;
                         }
 
-                        if (currentReplayFile.ReplayId == 0)
+                        if (currentReplayFile.ReplayId == 0 || currentReplayFile.TimeStamp == DateTime.Now)
                         {
-                            WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A replayId of 0 was detected");
-
+                            if (currentReplayFile.ReplayId == 0) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A ReplayId of 0 was detected");
+                            if (currentReplayFile.TimeStamp == DateTime.Now) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A TimeStamp of 1/1/0001 was detected");
                             // remove it before we continue
                             ReplayHotsLogsUploadQueue.Dequeue();
                             continue;
@@ -1042,7 +1043,7 @@ namespace HeroesParserData.ViewModels
                             Status = ReplayHotsLogStatus.Uploading
                         };
 
-                        // check if a record exists for the replay
+                        // check if an upload record exists for the replay
                         if (Query.HotsLogsUpload.IsExistingRecord(replayHotsLogsUpload))
                         {
                             var existingStatus = Query.HotsLogsUpload.ReadUploadStatus(replayHotsLogsUpload);
