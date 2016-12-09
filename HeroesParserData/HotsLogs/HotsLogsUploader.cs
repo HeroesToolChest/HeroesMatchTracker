@@ -9,10 +9,10 @@ namespace HeroesParserData.HotsLogs
 {
     public class HotsLogsUploader
     {
-        public static async Task<ReplayParseResult> UploadReplay(string filePath)
-        {
-            AmazonS3Client client = new AmazonS3Client("AKIAIESBHEUH4KAAG4UA", "LJUzeVlvw1WX1TmxDqSaIZ9ZU04WQGcshPQyp21x", Amazon.RegionEndpoint.USEast1);
+        private AmazonS3Client AmazonS3Client = new AmazonS3Client("AKIAIESBHEUH4KAAG4UA", "LJUzeVlvw1WX1TmxDqSaIZ9ZU04WQGcshPQyp21x", Amazon.RegionEndpoint.USEast1);
 
+        public async Task<ReplayParseResult> UploadReplay(string filePath)
+        {
             string fileGuidName = $"{Guid.NewGuid()}.StormReplay";
 
             PutObjectRequest request = new PutObjectRequest
@@ -22,7 +22,7 @@ namespace HeroesParserData.HotsLogs
                 FilePath = filePath
             };
 
-            PutObjectResponse response = await client.PutObjectAsync(request);
+            PutObjectResponse response = await AmazonS3Client.PutObjectAsync(request);
 
             if (response.HttpStatusCode != HttpStatusCode.OK)
                 throw new Exception("Failed to upload");
