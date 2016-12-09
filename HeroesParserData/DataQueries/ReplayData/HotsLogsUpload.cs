@@ -123,11 +123,9 @@ namespace HeroesParserData.DataQueries
 
                     if (record != null)
                     {
-                        if (replayHotsLogsUpload.Status == ReplayHotsLogStatus.Success)
-                        {
+                        if (replayHotsLogsUpload.Status == ReplayHotsLogStatus.Success || replayHotsLogsUpload.Status == ReplayHotsLogStatus.Duplicate)
                             record.ReplayFileTimeStamp = replayHotsLogsUpload.ReplayFileTimeStamp;
-                        }
-
+                            
                         record.Status = replayHotsLogsUpload.Status;
                         db.SaveChanges();
                     }

@@ -1028,6 +1028,7 @@ namespace HeroesParserData.ViewModels
                             }
 
                             Query.HotsLogsUpload.UpdateHotsLogsUploadedDateTime(replayHotsLogsUpload);
+
                             ReplaysLatestHotsLogs = Query.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime();
                             ReplaysLastHotsLogs = replayHotsLogsUpload.ReplayFileTimeStamp.Value.ToLocalTime();
                         }
