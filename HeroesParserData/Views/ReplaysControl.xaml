@@ -78,7 +78,7 @@
                     <GroupBox Header="HOTS Logs Uploader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,357,0,0" Height="246" Width="700">
                         <Grid>
                             <CheckBox Content="Enable Uploader" IsChecked="{Binding IsHotsLogsUploaderEnabled}" IsEnabled="{Binding AreProcessButtonsEnabled}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <Button Content="{Binding HotsLogsStopButtonText}" Command="{Binding HotsLogsStopButtonCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,0"/>
+                            <Button Content="{Binding HotsLogsStopButtonText}" Command="{Binding HotsLogsStopButtonCommand}" IsEnabled="{Binding IsHotsLogsStopButtonEnabled}" Height="28" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,33,0,0"/>
 
                             <Label Content="Scan Date/Time Options" HorizontalAlignment="Left" Margin="0,66,0,0" VerticalAlignment="Top" Width="366" FontSize="16"/>
                             <CheckBox Name="LastestUploaded" Content="Latest Uploaded Replay" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" IsChecked="{Binding LatestHotsLogsChecked}" Click="LastestUploaded_Click"/>

@@ -30,6 +30,7 @@ namespace HeroesParserData.ViewModels
         private bool _isProcessSelected;
         private bool _areProcessButtonsEnabled;
         private bool _areHotsLogsUploaderButtonsEnabled;
+        private bool _isHotsLogsStopButtonEnabled;
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
@@ -130,6 +131,19 @@ namespace HeroesParserData.ViewModels
                 else if (!value)
                     AreHotsLogsUploaderButtonsEnabled = false;
                 RaisePropertyChangedEvent(nameof(AreProcessButtonsEnabled));
+            }
+        }
+
+        public bool IsHotsLogsStopButtonEnabled
+        {
+            get
+            {
+                return _isHotsLogsStopButtonEnabled;
+            }
+            set
+            {
+                _isHotsLogsStopButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsHotsLogsStopButtonEnabled));
             }
         }
 
@@ -306,7 +320,10 @@ namespace HeroesParserData.ViewModels
             {
                 UserSettings.Default.IsHotsLogsUploaderEnabled = value;
                 if (value)
+                {
                     AreHotsLogsUploaderButtonsEnabled = true;
+                    IsHotsLogsStopButtonEnabled = false;
+                }
                 else
                 {
                     AreHotsLogsUploaderButtonsEnabled = false;
@@ -430,7 +447,6 @@ namespace HeroesParserData.ViewModels
         {
             get { return new DelegateCommand(LastReplaysDateTimeHotsLogsClear); }
         }
-
         #endregion
 
         /// <summary>
@@ -461,6 +477,7 @@ namespace HeroesParserData.ViewModels
         {
             IsProcessSelected = true;
             AreProcessButtonsEnabled = false;
+            IsHotsLogsStopButtonEnabled = true;
             IsHotsLogsUploaderQueueOn = true;
 
             if (IsProcessWatchChecked)
@@ -958,6 +975,7 @@ namespace HeroesParserData.ViewModels
                             {
                                 HotsLogsStopButtonText = "STOP";
                                 AreProcessButtonsEnabled = true;
+                                IsHotsLogsStopButtonEnabled = false;
                             }
                         }
 
