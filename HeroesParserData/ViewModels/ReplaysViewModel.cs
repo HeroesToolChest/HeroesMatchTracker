@@ -308,15 +308,7 @@ namespace HeroesParserData.ViewModels
 
         public bool IsHotsLogsUploaderEnabled
         {
-            get
-            {
-                bool enabled = UserSettings.Default.IsHotsLogsUploaderEnabled;
-                if (enabled)
-                    AreHotsLogsUploaderButtonsEnabled = true;
-                else
-                    AreHotsLogsUploaderButtonsEnabled = false;
-                return enabled;
-            }
+            get { return UserSettings.Default.IsHotsLogsUploaderEnabled; }
             set
             {
                 UserSettings.Default.IsHotsLogsUploaderEnabled = value;
@@ -479,9 +471,9 @@ namespace HeroesParserData.ViewModels
         private void StartProcessing()
         {
             IsProcessSelected = true;
-            AreProcessButtonsEnabled = false;
-            IsHotsLogsStopButtonEnabled = true;
+            if (IsHotsLogsUploaderEnabled) IsHotsLogsStopButtonEnabled = true;
             IsHotsLogsUploaderQueueOn = true;
+            AreProcessButtonsEnabled = false;
 
             if (IsProcessWatchChecked)
                 InitReplayWatcher();
@@ -490,7 +482,6 @@ namespace HeroesParserData.ViewModels
                 ReplayHotsLogsUploadQueue.Clear();
 
             InitProcessing(IsAutoScanChecked);
-
         }
 
         private void StopProcessing()
@@ -1028,12 +1019,18 @@ namespace HeroesParserData.ViewModels
                         {
                             currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.FileNotFound;
                             HotsLogsLog.Log(LogLevel.Info, $"File does not exists: {currentReplayFile.FilePath}");
+
+                            // remove it before we continue
+                            ReplayHotsLogsUploadQueue.Dequeue();
                             continue;
                         }
 
                         if (currentReplayFile.ReplayId == 0)
                         {
                             WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A replayId of 0 was detected");
+
+                            // remove it before we continue
+                            ReplayHotsLogsUploadQueue.Dequeue();
                             continue;
                         }
 
@@ -1051,6 +1048,9 @@ namespace HeroesParserData.ViewModels
                             {
                                 // already added, so its a duplicate
                                 currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Duplicate;
+
+                                // remove it before we continue
+                                ReplayHotsLogsUploadQueue.Dequeue(); 
                                 continue;
                             }
                         }
@@ -1093,12 +1093,12 @@ namespace HeroesParserData.ViewModels
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Maintenance;
                         HotsLogsMaintenance = true;
                     }
-                    catch (AmazonS3Exception ex)
+                    catch (AmazonS3Exception ex) // note: the replay is still in front of the queue
                     {
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
                         HotsLogsLog.Log(LogLevel.Error, ex);
                     }
-                    catch (Exception ex)
+                    catch (Exception ex) // note: the replay is still in front of the queue
                     {
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
                         ExceptionLog.Log(LogLevel.Error, ex);
