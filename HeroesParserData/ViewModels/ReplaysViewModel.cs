@@ -40,6 +40,7 @@ namespace HeroesParserData.ViewModels
         private bool IsSaveDataQueueSaving = false;
         private bool IsHotsLogsQueueUploading = false;
         private bool IsHotsLogsUploaderQueueOn = false;
+        private bool HotsLogsMaintenance = false;
 
         private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
@@ -466,6 +467,8 @@ namespace HeroesParserData.ViewModels
         private void StartScan()
         {
             AreProcessButtonsEnabled = false;
+            ReplayHotsLogsUploadQueue.Clear();
+
             Task.Run(async () =>
             {
                 await LoadAccountDirectory();
@@ -903,7 +906,7 @@ namespace HeroesParserData.ViewModels
                         {
                             CurrentStatus = "Processing stopped";
 
-                            if (!IsHotsLogsQueueUploading)
+                            if (!IsHotsLogsQueueUploading || HotsLogsMaintenance)
                                 AreProcessButtonsEnabled = true;
                         }
                         await Task.Delay(1500);
@@ -956,13 +959,35 @@ namespace HeroesParserData.ViewModels
             Task.Run(async () =>
             {
                 ReplayFile currentReplayFile;
-                ReplayFile dequeuedReplayFile;
+                ReplayFile onQueuedReplayFile;
 
                 while (true)
                 {
                     currentReplayFile = null;
-                    dequeuedReplayFile = null;
+                    onQueuedReplayFile = null;
                     HotsLogsUploaderUploadStatus = string.Empty;
+
+                    if (HotsLogsMaintenance)
+                    {
+                        HotsLogsUploaderStatus = "HOTSLogs.com is currently down for maintenance";
+
+                        // wait 30 mintues before retrying again
+                        for (int i = 1800000; i >= 0; i = i - 1000)
+                        {
+                            HotsLogsUploaderUploadStatus = $"(HOTSLogs.com maintenance) Retrying in {TimeSpan.FromMilliseconds(i).ToString("mm':'ss")} minutes";
+                            await Task.Delay(1000);
+
+                            if (AreProcessButtonsEnabled || !IsHotsLogsUploaderQueueOn || !IsProcessSelected)
+                            {
+                                ReplayHotsLogsUploadQueue.Clear();
+                                break;
+                            }
+                        }
+
+                        HotsLogsMaintenance = false;
+                        HotsLogsUploaderUploadStatus = string.Empty;
+                    }
+
                     HotsLogsUploaderStatus = "Uploading";
 
                     if (ReplayHotsLogsUploadQueue.Count < 1 || !IsHotsLogsUploaderQueueOn)
@@ -990,11 +1015,11 @@ namespace HeroesParserData.ViewModels
                     }
 
                     IsHotsLogsQueueUploading = true;
-                    dequeuedReplayFile = ReplayHotsLogsUploadQueue.Dequeue();
+                    onQueuedReplayFile = ReplayHotsLogsUploadQueue.Peek(); // just grab the replay, will remove it later
 
                     try
                     {
-                        currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedReplayFile.FilePath]];
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[onQueuedReplayFile.FilePath]];
                         HotsLogsUploaderUploadStatus = $"Uploading {currentReplayFile.FileName}";
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Uploading;
 
@@ -1035,6 +1060,7 @@ namespace HeroesParserData.ViewModels
                         }
 
                         // upload it to the amazon bucket
+                        // this will throw MaintenanceException if there is ongoing maintenance
                         var status = await HotsLogsUploader.UploadReplay(currentReplayFile.FilePath);
 
                         if (status == ReplayParseResult.Success || status == ReplayParseResult.Duplicate)
@@ -1059,11 +1085,13 @@ namespace HeroesParserData.ViewModels
                         }
                         else
                             currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Failed;
+
+                        ReplayHotsLogsUploadQueue.Dequeue(); // we're done with the replay so remove it from the queue
                     }
                     catch (MaintenanceException)
                     {
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Maintenance;
-                        break;
+                        HotsLogsMaintenance = true;
                     }
                     catch (AmazonS3Exception ex)
                     {
