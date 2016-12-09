@@ -9,10 +9,8 @@ namespace HeroesParserData.DataQueries
 {
     public static class SaveAllReplayData
     {
-        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, out DateTime parsedDateTime, out long replayId)
+        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, out DateTime replayTimeStamp, out long replayId)
         {
-            replayId = 0;
-
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
                 using (var dbTransaction = db.Database.BeginTransaction())
@@ -39,7 +37,9 @@ namespace HeroesParserData.DataQueries
                         // check if replay was added to database already
                         if (Query.Replay.IsExistingReplay(replayData, db))
                         {
-                            parsedDateTime = new DateTime();
+                            replayTimeStamp = replayData.TimeStamp.Value;
+                            replayId = Query.Replay.ReadReplayIdByRandomValue(replayData);
+
                             return ReplayParseResult.Duplicate;
                         }
 
@@ -486,7 +486,7 @@ namespace HeroesParserData.DataQueries
 
                         dbTransaction.Commit();
 
-                        parsedDateTime = replay.Timestamp;
+                        replayTimeStamp = replay.Timestamp;
 
                         return ReplayParseResult.Saved;
                     }

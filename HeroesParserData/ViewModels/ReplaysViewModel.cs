@@ -868,7 +868,7 @@ namespace HeroesParserData.ViewModels
             Task.Run(async () =>
             {
                 long replayId;
-                DateTime parsedDateTime;
+                DateTime replayTimeStamp;
                 ReplayFile currentReplayFile;
                 Tuple<Replay, ReplayFile> dequeuedItem;
 
@@ -904,14 +904,15 @@ namespace HeroesParserData.ViewModels
                     try
                     {
                         currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
-                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out parsedDateTime, out replayId);
+                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out replayTimeStamp, out replayId);
+
+                        currentReplayFile.ReplayId = replayId;
                         if (currentReplayFile.Status == ReplayParseResult.Saved)
                         {
                             TotalSavedInDatabase++;
-                            currentReplayFile.ReplayId = replayId;
-                            currentReplayFile.TimeStamp = parsedDateTime;
+                            currentReplayFile.TimeStamp = replayTimeStamp;
                             ReplaysLatestSaved = Query.Replay.ReadLatestReplayByDateTime();
-                            ReplaysLastSaved = parsedDateTime.ToLocalTime();
+                            ReplaysLastSaved = replayTimeStamp.ToLocalTime();
                         }
 
                         if (IsHotsLogsUploaderEnabled && (currentReplayFile.Status == ReplayParseResult.Saved || currentReplayFile.Status == ReplayParseResult.Duplicate))
@@ -976,7 +977,7 @@ namespace HeroesParserData.ViewModels
                     try
                     {
                         currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedReplayFile.FilePath]];
-                        HotsLogsUploaderUploadStatus = $"Uploading {currentReplayFile.FileName} ...";
+                        HotsLogsUploaderUploadStatus = $"Uploading {currentReplayFile.FileName}";
                         currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Uploading;
 
                         // check if file exists
@@ -984,6 +985,12 @@ namespace HeroesParserData.ViewModels
                         {
                             currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.FileNotFound;
                             HotsLogsLog.Log(LogLevel.Info, $"File does not exists: {currentReplayFile.FilePath}");
+                            continue;
+                        }
+
+                        if (currentReplayFile.ReplayId == 0)
+                        {
+                            WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A replayId of 0 was detected");
                             continue;
                         }
 

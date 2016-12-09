@@ -211,6 +211,14 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            public static long ReadReplayIdByRandomValue(Models.DbModels.Replay replay)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.Replays.SingleOrDefault(x => x.RandomValue == replay.RandomValue).ReplayId;
+                }
+            }
+
             /// <summary>
             /// Check if the replay was already submitted
             /// </summary>
