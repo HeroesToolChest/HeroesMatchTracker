@@ -28,18 +28,7 @@ namespace HeroesParserData.ViewModels.Data
         public RawAllHotsPlayerViewModel()
             : base()
         {
-            AddListColumnNames();
-        }
-
-        protected void AddListColumnNames()
-        {
-            ReplayAllHotsPlayer r = new ReplayAllHotsPlayer();
-
-            foreach (var prop in r.GetType().GetMethods())
-            {
-                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                    ColumnNames.Add(prop.Name.Split('_')[1]);
-            }
+            AddListColumnNames(new ReplayAllHotsPlayer());
         }
 
         protected override void ReadDataTop()

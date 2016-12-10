@@ -3,7 +3,7 @@ namespace HeroesParserData.Models.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayMatchPlayer
+    public partial class ReplayMatchPlayer : IReplayDataTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

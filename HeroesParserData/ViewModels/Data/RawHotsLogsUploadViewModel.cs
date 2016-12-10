@@ -24,18 +24,7 @@ namespace HeroesParserData.ViewModels.Data
         public RawHotsLogsUploadViewModel()
             : base()
         {
-            AddListColumnNames();
-        }
-
-        protected void AddListColumnNames()
-        {
-            ReplayHotsLogsUpload r = new ReplayHotsLogsUpload();
-
-            foreach (var prop in r.GetType().GetMethods())
-            {
-                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                    ColumnNames.Add(prop.Name.Split('_')[1]);
-            }
+            AddListColumnNames(new ReplayHotsLogsUpload());
         }
 
         protected override void ReadDataTop()

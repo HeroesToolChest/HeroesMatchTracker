@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayHotsLogsUpload
+    public partial class ReplayHotsLogsUpload : IReplayDataTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

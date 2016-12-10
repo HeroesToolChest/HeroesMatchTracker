@@ -4,7 +4,7 @@ namespace HeroesParserData.Models.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayMatchMessage
+    public partial class ReplayMatchMessage : IReplayDataTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

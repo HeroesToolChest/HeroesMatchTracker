@@ -28,22 +28,7 @@ namespace HeroesParserData.ViewModels.Data
         public RawMatchMessageViewModel()
             : base()
         {
-            AddListColumnNames();
-        }
-
-        private void AddListColumnNames()
-        {
-            ReplayMatchMessage r = new ReplayMatchMessage();
-
-            foreach (var prop in r.GetType().GetMethods())
-            {
-                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                {
-                    string columnName = prop.Name.Split('_')[1];
-                    if (!columnName.Contains("Ticks"))
-                        ColumnNames.Add(columnName);
-                }
-            }
+            AddListColumnNames(new ReplayMatchMessage());
         }
 
         protected override void ReadDataTop()

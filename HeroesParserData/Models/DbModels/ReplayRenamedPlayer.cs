@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayRenamedPlayer
+    public partial class ReplayRenamedPlayer : IReplayDataTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using HeroesParserData.Models.DbModels;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -186,6 +187,19 @@ namespace HeroesParserData.ViewModels.Data
         protected abstract void ReadDataCustomTop();
         protected abstract void ReadDataWhere();
         #endregion Abstract Query Methods
+
+        protected void AddListColumnNames(IReplayDataTable replayDataTable)
+        {
+            foreach (var prop in replayDataTable.GetType().GetMethods())
+            {
+                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
+                {
+                    string columnName = prop.Name.Split('_')[1];
+                    if (!columnName.Contains("Ticks"))
+                        ColumnNames.Add(columnName);
+                }
+            }
+        }
 
         private void AddButtonCommandsActions()
         {

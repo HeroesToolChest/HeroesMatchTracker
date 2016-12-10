@@ -250,6 +250,7 @@
     <Compile Include="Messages\StatisticsTab.cs" />
     <Compile Include="Messages\StatisticsTabMessage.cs" />
     <Compile Include="Messages\Trigger.cs" />
+    <Compile Include="Models\DbModels\IReplayDataTable.cs" />
     <Compile Include="Models\DbModels\ReleaseNote.cs" />
     <Compile Include="Models\DbModels\HeroesParserDataContext.cs" />
     <Compile Include="Models\DbModels\ReplayAllHotsPlayerHero.cs" />

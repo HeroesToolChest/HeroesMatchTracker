@@ -28,18 +28,7 @@ namespace HeroesParserData.ViewModels.Data
         public RawMatchTeamBanViewModel()
             : base()
         {
-            AddListColumnNames();
-        }
-
-        private void AddListColumnNames()
-        {
-            ReplayMatchTeamBan r = new ReplayMatchTeamBan();
-
-            foreach (var prop in r.GetType().GetMethods())
-            {
-                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                    ColumnNames.Add(prop.Name.Split('_')[1]);
-            }
+            AddListColumnNames(new ReplayMatchTeamBan());
         }
 
         protected override void ReadDataTop()

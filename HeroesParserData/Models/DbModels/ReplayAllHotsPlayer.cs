@@ -5,7 +5,7 @@ namespace HeroesParserData.Models.DbModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public partial class ReplayAllHotsPlayer
+    public partial class ReplayAllHotsPlayer : IReplayDataTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ReplayAllHotsPlayer()

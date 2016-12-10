@@ -1,7 +1,6 @@
 ﻿using HeroesParserData.DataQueries;
 using HeroesParserData.Models.DbModels;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Data
 {
@@ -28,22 +27,7 @@ namespace HeroesParserData.ViewModels.Data
         public RawReplayViewModel()
             : base()
         {
-            AddListColumnNames();
-        }
-
-        private void AddListColumnNames()
-        {
-            Replay r = new Replay();
-
-            foreach (var prop in r.GetType().GetMethods())
-            {
-                if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
-                {
-                    string columnName = prop.Name.Split('_')[1];
-                    if (!columnName.Contains("Ticks"))
-                        ColumnNames.Add(columnName);
-                }
-            }
+            AddListColumnNames(new Replay());
         }
 
         protected override void ReadDataTop()
