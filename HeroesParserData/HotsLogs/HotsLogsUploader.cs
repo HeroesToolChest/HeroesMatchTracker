@@ -7,7 +7,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.HotsLogs
 {
-    public class HotsLogsUploader
+    public class HotsLogsUploader: IDisposable
     {
         private AmazonS3Client AmazonS3Client = new AmazonS3Client("AKIAIESBHEUH4KAAG4UA", "LJUzeVlvw1WX1TmxDqSaIZ9ZU04WQGcshPQyp21x", Amazon.RegionEndpoint.USEast1);
 
@@ -37,7 +37,30 @@ namespace HeroesParserData.HotsLogs
                 return Utilities.GetReplayParseResultFromString(result);
             }
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    ((IDisposable)AmazonS3Client).Dispose();
+                }
+                disposedValue = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
+
 
     [Serializable]
     public class MaintenanceException : Exception
