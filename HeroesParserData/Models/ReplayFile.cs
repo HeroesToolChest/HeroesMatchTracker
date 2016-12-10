@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroesParserData.HotsLogs;
+using System;
 using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.Models
@@ -7,10 +8,13 @@ namespace HeroesParserData.Models
     {
         private int? _build;
         private ReplayParseResult? _status;
+        private ReplayHotsLogStatus? _hotsLogsStatus;
 
         public string FileName { get; set; }
         public DateTime LastWriteTime { get; set; }   
         public string FilePath { get; set; }
+        public long ReplayId { get; set; }
+        public DateTime TimeStamp { get; set; }
         public int? Build
         {
             get { return _build; }
@@ -27,6 +31,15 @@ namespace HeroesParserData.Models
             {
                 _status = value;
                 RaisePropertyChangedEvent(nameof(Status));
+            }
+        }
+        public ReplayHotsLogStatus? HotsLogsStatus
+        {
+            get { return _hotsLogsStatus; }
+            set
+            {
+                _hotsLogsStatus = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsStatus));
             }
         }
     }

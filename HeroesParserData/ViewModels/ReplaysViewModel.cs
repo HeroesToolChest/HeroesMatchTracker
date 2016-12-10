@@ -1,5 +1,7 @@
-﻿using Heroes.ReplayParser;
+﻿using Amazon.S3;
+using Heroes.ReplayParser;
 using HeroesParserData.DataQueries;
+using HeroesParserData.HotsLogs;
 using HeroesParserData.Models;
 using HeroesParserData.Properties;
 using Microsoft.Win32;
@@ -22,17 +24,30 @@ namespace HeroesParserData.ViewModels
     public class ReplaysViewModel : ViewModelBase, IDisposable
     {
         private string _currentStatus;
+        private string _hotsLogsUploaderUploadStatus;
+        private string _hotsLogsUploaderStatus;
+        private string _hotsLogsStopButtonText;
         private bool _isProcessSelected;
         private bool _areProcessButtonsEnabled;
+        private bool _areHotsLogsUploaderButtonsEnabled;
+        private bool _isHotsLogsStopButtonEnabled;
         private int _totalParsedGrid;
         private int _totalReplaysGrid;
         private long _totalSavedInDatabase;
 
         private ObservableCollection<ReplayFile> _replayFiles = new ObservableCollection<ReplayFile>();
 
-        private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
+        private bool IsSaveDataQueueSaving = false;
+        private bool IsHotsLogsQueueUploading = false;
+        private bool IsHotsLogsUploaderQueueOn = false;
+        private bool HotsLogsMaintenance = false;
+
+        private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private FileSystemWatcher FileWatcher;
+
+        private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
+        private Queue<ReplayFile> ReplayHotsLogsUploadQueue = new Queue<ReplayFile>();
 
         #region public properties
         public string CurrentStatus
@@ -42,6 +57,36 @@ namespace HeroesParserData.ViewModels
             {
                 _currentStatus = value;
                 RaisePropertyChangedEvent(nameof(CurrentStatus));
+            }
+        }
+
+        public string HotsLogsUploaderUploadStatus
+        {
+            get { return _hotsLogsUploaderUploadStatus; }
+            set
+            {
+                _hotsLogsUploaderUploadStatus = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsUploaderUploadStatus));
+            }
+        }
+
+        public string HotsLogsUploaderStatus
+        {
+            get { return _hotsLogsUploaderStatus; }
+            set
+            {
+                _hotsLogsUploaderStatus = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsUploaderStatus));
+            }
+        }
+
+        public string HotsLogsStopButtonText
+        {
+            get { return _hotsLogsStopButtonText; }
+            set
+            {
+                _hotsLogsStopButtonText = value;
+                RaisePropertyChangedEvent(nameof(HotsLogsStopButtonText));
             }
         }
 
@@ -82,7 +127,34 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _areProcessButtonsEnabled = value;
+                if (value && IsHotsLogsUploaderEnabled)
+                    AreHotsLogsUploaderButtonsEnabled = true;
+                else if (!value)
+                    AreHotsLogsUploaderButtonsEnabled = false;
                 RaisePropertyChangedEvent(nameof(AreProcessButtonsEnabled));
+            }
+        }
+
+        public bool IsHotsLogsStopButtonEnabled
+        {
+            get
+            {
+                return _isHotsLogsStopButtonEnabled;
+            }
+            set
+            {
+                _isHotsLogsStopButtonEnabled = value;
+                RaisePropertyChangedEvent(nameof(IsHotsLogsStopButtonEnabled));
+            }
+        }
+
+        public bool AreHotsLogsUploaderButtonsEnabled
+        {
+            get { return _areHotsLogsUploaderButtonsEnabled; }
+            set
+            {
+                _areHotsLogsUploaderButtonsEnabled = value;
+                RaisePropertyChangedEvent(nameof(AreHotsLogsUploaderButtonsEnabled));
             }
         }
 
@@ -158,23 +230,69 @@ namespace HeroesParserData.ViewModels
 
         public bool LatestParsedChecked
         {
-            get { return UserSettings.Default.ParsedDateTimeCheckBox; }
+            get { return ScanDateTimeCheckboxes[0]; }
             set
             {
-                UserSettings.Default.ParsedDateTimeCheckBox = value;
+                ScanDateTimeCheckboxes[0] = value;
+                if (value)
+                {
+                    UserSettings.Default.SelectedScanDateTimeIndex = 0;
+                    LastParsedChecked = false;
+                    LatestHotsLogsChecked = false;
+                    LastHotsLogsChecked = false;
+                }
                 RaisePropertyChangedEvent(nameof(LatestParsedChecked));
-                RaisePropertyChangedEvent(nameof(LastParsedChecked));
             }
         }
 
         public bool LastParsedChecked
         {
-            get { return !UserSettings.Default.ParsedDateTimeCheckBox; }
+            get { return ScanDateTimeCheckboxes[1]; }
             set
             {
-                UserSettings.Default.ParsedDateTimeCheckBox = !value;
+                ScanDateTimeCheckboxes[1] = value;
+                if (value)
+                {
+                    UserSettings.Default.SelectedScanDateTimeIndex = 1;
+                    LatestParsedChecked = false;
+                    LatestHotsLogsChecked = false;
+                    LastHotsLogsChecked = false;
+                }
                 RaisePropertyChangedEvent(nameof(LastParsedChecked));
-                RaisePropertyChangedEvent(nameof(LatestParsedChecked));
+            }
+        }
+
+        public bool LatestHotsLogsChecked
+        {
+            get { return ScanDateTimeCheckboxes[2]; }
+            set
+            {
+                ScanDateTimeCheckboxes[2] = value;
+                if (value)
+                {
+                    UserSettings.Default.SelectedScanDateTimeIndex = 2;
+                    LatestParsedChecked = false;
+                    LastParsedChecked = false;
+                    LastHotsLogsChecked = false;
+                }
+                RaisePropertyChangedEvent(nameof(LatestHotsLogsChecked));
+            }
+        }
+
+        public bool LastHotsLogsChecked
+        {
+            get { return ScanDateTimeCheckboxes[3]; }
+            set
+            {
+                ScanDateTimeCheckboxes[3] = value;
+                if (value)
+                {
+                    UserSettings.Default.SelectedScanDateTimeIndex = 3;
+                    LatestParsedChecked = false;
+                    LastParsedChecked = false;
+                    LatestHotsLogsChecked = false;
+                }
+                RaisePropertyChangedEvent(nameof(LastHotsLogsChecked));
             }
         }
 
@@ -185,6 +303,49 @@ namespace HeroesParserData.ViewModels
             {
                 UserSettings.Default.IsIncludeSubDirectories = value;
                 RaisePropertyChangedEvent(nameof(IsIncludeSubDirectories));
+            }
+        }
+
+        public bool IsHotsLogsUploaderEnabled
+        {
+            get { return UserSettings.Default.IsHotsLogsUploaderEnabled; }
+            set
+            {
+                UserSettings.Default.IsHotsLogsUploaderEnabled = value;
+                if (value)
+                {
+                    AreHotsLogsUploaderButtonsEnabled = true;
+                    IsHotsLogsStopButtonEnabled = false;
+                }
+                else
+                {
+                    AreHotsLogsUploaderButtonsEnabled = false;
+                    if (LatestHotsLogsChecked || LastHotsLogsChecked)
+                        LatestParsedChecked = true;
+                    LatestHotsLogsChecked = false;
+                    LastHotsLogsChecked = false;
+                }
+                RaisePropertyChangedEvent(nameof(IsHotsLogsUploaderEnabled));
+            }
+        }
+
+        public DateTime ReplaysLatestHotsLogs
+        {
+            get { return UserSettings.Default.ReplaysLatestHotsLogs != DateTime.MinValue ? UserSettings.Default.ReplaysLatestHotsLogs : Query.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime(); }
+            set
+            {
+                UserSettings.Default.ReplaysLatestHotsLogs = value;
+                RaisePropertyChangedEvent(nameof(ReplaysLatestHotsLogs));
+            }
+        }
+
+        public DateTime ReplaysLastHotsLogs
+        {
+            get { return UserSettings.Default.ReplaysLastHotsLogs != DateTime.MinValue ? UserSettings.Default.ReplaysLastHotsLogs : Query.HotsLogsUpload.ReadLastReplayHotsLogsUploadedByDateTime(); }
+            set
+            {
+                UserSettings.Default.ReplaysLastHotsLogs = value;
+                RaisePropertyChangedEvent(nameof(ReplaysLastHotsLogs));
             }
         }
         #endregion
@@ -244,6 +405,41 @@ namespace HeroesParserData.ViewModels
         {
             get { return new DelegateCommand(RetrieveUserSelectFiles); }
         }
+
+        public ICommand HotsLogsStopButtonCommand
+        {
+            get { return new DelegateCommand(ExecuteHotsLogsStopButtonCommand); }
+        }
+
+        public ICommand DateTimeHotsLogsSetCommand
+        {
+            get { return new DelegateCommand(ReplaysDateTimeHotsLogsSet); }
+        }
+
+        public ICommand DateTimeHotsLogsDefaultCommand
+        {
+            get { return new DelegateCommand(ReplaysDateTimeHotsLogsDefault); }
+        }
+
+        public ICommand DateTimeHotsLogsClearCommand
+        {
+            get { return new DelegateCommand(ReplaysDateTimeHotsLogsClear); }
+        }
+
+        public ICommand LastDateTimeHotsLogsSetCommand
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeHotsLogsSet); }
+        }
+
+        public ICommand LastDateTimeHotsLogsDefaultCommand
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeHotsLogsDefault); }
+        }
+
+        public ICommand LastDateTimeHotsLogsClearCommand
+        {
+            get { return new DelegateCommand(LastReplaysDateTimeHotsLogsClear); }
+        }
         #endregion
 
         /// <summary>
@@ -251,15 +447,20 @@ namespace HeroesParserData.ViewModels
         /// </summary>
         public ReplaysViewModel()
         {
+            ScanDateTimeCheckboxes[UserSettings.Default.SelectedScanDateTimeIndex] = true;
+
             AreProcessButtonsEnabled = true;
-            LatestParsedChecked = true;
+            HotsLogsStopButtonText = "STOP";
             InitReplaySaveDataQueue();
+            InitReplayHotsLogsUploadQueue();
         }
 
         #region start processing/init
         private void StartScan()
         {
             AreProcessButtonsEnabled = false;
+            ReplayHotsLogsUploadQueue.Clear();
+
             Task.Run(async () =>
             {
                 await LoadAccountDirectory();
@@ -270,10 +471,15 @@ namespace HeroesParserData.ViewModels
         private void StartProcessing()
         {
             IsProcessSelected = true;
+            if (IsHotsLogsUploaderEnabled) IsHotsLogsStopButtonEnabled = true;
+            IsHotsLogsUploaderQueueOn = true;
             AreProcessButtonsEnabled = false;
 
             if (IsProcessWatchChecked)
                 InitReplayWatcher();
+
+            if (!IsHotsLogsUploaderEnabled)
+                ReplayHotsLogsUploadQueue.Clear();
 
             InitProcessing(IsAutoScanChecked);
         }
@@ -336,7 +542,7 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeClear()
         {
-            ReplaysLatestSaved = new DateTime(1);
+            ReplaysLatestSaved = new DateTime(2014, 1, 1);
         }
 
         private void LastReplaysDateTimeSet()
@@ -351,7 +557,38 @@ namespace HeroesParserData.ViewModels
 
         private void LastReplaysDateTimeClear()
         {
-            ReplaysLastSaved = new DateTime(1);
+            ReplaysLastSaved = new DateTime(2014, 1, 1);
+        }
+
+        // HotsLogs uploader options
+        private void ReplaysDateTimeHotsLogsSet()
+        {
+            ReplaysLatestHotsLogs = ReplaysLatestHotsLogs;
+        }
+
+        private void ReplaysDateTimeHotsLogsDefault()
+        {
+            ReplaysLatestHotsLogs = Query.Replay.ReadLatestReplayByDateTime();
+        }
+
+        private void ReplaysDateTimeHotsLogsClear()
+        {
+            ReplaysLatestHotsLogs = new DateTime(2014, 1, 1);
+        }
+
+        private void LastReplaysDateTimeHotsLogsSet()
+        {
+            ReplaysLastHotsLogs = ReplaysLastSaved;
+        }
+
+        private void LastReplaysDateTimeHotsLogsDefault()
+        {
+            ReplaysLastHotsLogs = Query.Replay.ReadLastReplayByDateTime();
+        }
+
+        private void LastReplaysDateTimeHotsLogsClear()
+        {
+            ReplaysLastHotsLogs = new DateTime(2014, 1, 1);
         }
         #endregion date/time buttons
 
@@ -475,7 +712,18 @@ namespace HeroesParserData.ViewModels
 
             try
             {
-                var dateTime = LatestParsedChecked == true ? ReplaysLatestSaved : ReplaysLastSaved;
+                DateTime dateTime;
+                int selectedScanDateTime = UserSettings.Default.SelectedScanDateTimeIndex;
+
+                if (selectedScanDateTime == 1)
+                    dateTime = ReplaysLastSaved;
+                else if (selectedScanDateTime == 2)
+                    dateTime = ReplaysLatestHotsLogs;
+                else if (selectedScanDateTime == 3)
+                    dateTime = ReplaysLastHotsLogs;
+                else // default
+                    dateTime = ReplaysLatestSaved;
+
                 List<FileInfo> listFiles = new DirectoryInfo(UserSettings.Default.ReplaysLocation)
                     .GetFiles($"*.{Resources.HeroesReplayFileType}", searchOption)
                     .OrderBy(x => x.LastWriteTime)
@@ -539,70 +787,72 @@ namespace HeroesParserData.ViewModels
                         break;
 
                     #region parse replay and queue data to be saved
-                    var tmpPath = Path.GetTempFileName();
-                    var file = ReplayFiles[currentCount];
+                    string tempReplayFile = Path.GetTempFileName();
+                    ReplayFile originalfile = ReplayFiles[currentCount];
 
-                    CurrentStatus = $"Parsing file {file.FileName}";
+                    CurrentStatus = $"Parsing file {originalfile.FileName}";
 
                     try
                     {
-                        if (!File.Exists(file.FilePath))
+                        if (!File.Exists(originalfile.FilePath))
                         {
-                            file.Status = ReplayParseResult.FileNotFound;
-                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            originalfile.Status = ReplayParseResult.FileNotFound;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                             TotalParsedGrid++;
-                            CurrentStatus = $"Failed to find file {file.FileName}";
+                            CurrentStatus = $"Failed to find file {originalfile.FileName}";
                             continue;
                         }
-                        else if (file.Status == ReplayParseResult.Saved)
+                        else if (originalfile.Status == ReplayParseResult.Saved)
                             continue;
 
-                        File.Copy(file.FilePath, tmpPath, overwrite: true);
+                        // copy the contents of the replay file to the tempReplayFile file
+                        File.Copy(originalfile.FilePath, tempReplayFile, overwrite: true);
 
-                        var replayParsed = ParseReplay(tmpPath, ignoreErrors: false, deleteFile: false);
-                        file.Build = replayParsed.Item2.ReplayBuild;
+                        var replayParsed = ParseReplay(tempReplayFile, ignoreErrors: false, deleteFile: false);
+                        originalfile.Build = replayParsed.Item2.ReplayBuild;
 
                         if (replayParsed.Item1 == ReplayParseResult.Success)
                         {
-                            file.Status = ReplayParseResult.Success;
+                            originalfile.Status = ReplayParseResult.Success;
 
-                            if (ReplayDataQueue.Count >= 5) // give it a chance to dequeue some replays
+                            // give it a chance to dequeue some replays as the replay object takes quite a bit of memory
+                            if (ReplayDataQueue.Count >= 5) 
                                 await Task.Delay(1500);
                             else if (ReplayDataQueue.Count >= 7)
                                 await Task.Delay(2500);
                             else if (ReplayDataQueue.Count >= 9)
                                 await Task.Delay(4000);
 
-                            ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, file));
+                            ReplayDataQueue.Enqueue(new Tuple<Replay, ReplayFile>(replayParsed.Item2, originalfile));
                         }
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
                             if (replayParsed.Item2.ReplayBuild > HPDVersion.GetHeroesReplayParserSupportedBuild())
-                                file.Status = ReplayParseResult.NotYetSupported;
+                                originalfile.Status = ReplayParseResult.NotYetSupported;
                             else
-                                file.Status = ReplayParseResult.ParserException;
+                                originalfile.Status = ReplayParseResult.ParserException;
 
-                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {file.FilePath}: {file.Status}");
+                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {originalfile.FilePath}: {originalfile.Status}");
                         }
                         else
                         {
-                            file.Status = replayParsed.Item1;
-                            FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                            originalfile.Status = replayParsed.Item1;
+                            FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                         }
                     }
                     catch (Exception ex)
                     {
-                        file.Status = ReplayParseResult.Exception;
+                        originalfile.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        FailedReplaysLog.Log(LogLevel.Info, $"{file.FileName}: {file.Status}");
+                        FailedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                     }
                     finally
                     {
                         TotalParsedGrid++;
-                        CurrentStatus = $"Parsed {file.FileName}";
+                        CurrentStatus = $"Parsed {originalfile.FileName}";
 
-                        if (File.Exists(tmpPath))
-                            File.Delete(tmpPath);
+                        if (File.Exists(tempReplayFile))
+                            File.Delete(tempReplayFile);
                     }
                     #endregion parse replay and save data
                 } // end for
@@ -628,41 +878,57 @@ namespace HeroesParserData.ViewModels
         {
             Task.Run(async () =>
             {
+                long replayId;
+                DateTime replayTimeStamp;
+                ReplayFile currentReplayFile;
+                Tuple<Replay, ReplayFile> dequeuedItem;
+
                 while (true)
                 {
+                    replayId = 0;
+                    currentReplayFile = null;
+                    dequeuedItem = null;
+
                     if (ReplayDataQueue.Count < 1)
                     {
+                        IsSaveDataQueueSaving = false;
+
                         if (!IsProcessSelected)
                         {
-                            AreProcessButtonsEnabled = true;
                             CurrentStatus = "Processing stopped";
+
+                            if (!IsHotsLogsQueueUploading || HotsLogsMaintenance)
+                                AreProcessButtonsEnabled = true;
                         }
-                        await Task.Delay(1000);
+                        await Task.Delay(1500);
                         continue;
                     }
                     else if (!IsProcessSelected)
                     {
                         if (ReplayDataQueue.Count > 0)
-                            CurrentStatus = "Processing stopped; Waiting for parsed replays to be saved to database...";
+                            CurrentStatus = "Processing stopped, waiting for parsed replays to be saved to database...";
                     }
 
-                    DateTime parsedDateTime;
-                    ReplayFile currentReplayFile = null;
-
-                    var item = ReplayDataQueue.Dequeue();
-                    var replay = item.Item1;
-                    var replayFile = item.Item2;
+                    IsSaveDataQueueSaving = true;
+                    dequeuedItem = ReplayDataQueue.Dequeue();
 
                     try
                     {
-                        currentReplayFile = ReplayFiles[ReplayFileLocations[replayFile.FilePath]];
-                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(replay, replayFile.FileName, out parsedDateTime);
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
+                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out replayTimeStamp, out replayId);
+
+                        currentReplayFile.ReplayId = replayId;
+                        currentReplayFile.TimeStamp = replayTimeStamp;
+
                         if (currentReplayFile.Status == ReplayParseResult.Saved)
                         {
                             TotalSavedInDatabase++;
                             ReplaysLatestSaved = Query.Replay.ReadLatestReplayByDateTime();
-                            ReplaysLastSaved = parsedDateTime.ToLocalTime();
+                            ReplaysLastSaved = replayTimeStamp.ToLocalTime();
                         }
+
+                        if (IsHotsLogsUploaderEnabled && (currentReplayFile.Status == ReplayParseResult.Saved || currentReplayFile.Status == ReplayParseResult.Duplicate))
+                            ReplayHotsLogsUploadQueue.Enqueue(currentReplayFile);
                     }
                     catch (Exception ex) when (ex is SqlException || ex is DbEntityValidationException)
                     {
@@ -678,6 +944,195 @@ namespace HeroesParserData.ViewModels
                     }
                 }
             });
+        }
+
+        private void InitReplayHotsLogsUploadQueue()
+        {
+            HotsLogsUploader hotsLogsUploader = new HotsLogsUploader();
+
+            Task.Run(async () =>
+            {
+                ReplayFile currentReplayFile;
+                ReplayFile onQueuedReplayFile;
+
+                while (true)
+                {
+                    currentReplayFile = null;
+                    onQueuedReplayFile = null;
+                    HotsLogsUploaderUploadStatus = string.Empty;
+
+                    if (HotsLogsMaintenance)
+                    {
+                        HotsLogsUploaderStatus = "HOTSLogs.com is currently down for maintenance";
+
+                        // wait 30 mintues before retrying again
+                        for (int i = 1800000; i >= 0; i = i - 1000)
+                        {
+                            HotsLogsUploaderUploadStatus = $"(HOTSLogs.com maintenance) Retrying in {TimeSpan.FromMilliseconds(i).ToString("mm':'ss")} minutes";
+                            await Task.Delay(1000);
+
+                            if (AreProcessButtonsEnabled || !IsHotsLogsUploaderQueueOn || !IsProcessSelected)
+                            {
+                                ReplayHotsLogsUploadQueue.Clear();
+                                break;
+                            }
+                        }
+
+                        HotsLogsMaintenance = false;
+                        HotsLogsUploaderUploadStatus = string.Empty;
+                    }
+
+                    HotsLogsUploaderStatus = "Uploading";
+
+                    if (ReplayHotsLogsUploadQueue.Count < 1 || !IsHotsLogsUploaderQueueOn)
+                    {
+                        IsHotsLogsQueueUploading = false;
+
+                        if (!IsProcessSelected)
+                        {
+                            if (!IsSaveDataQueueSaving)
+                            {
+                                HotsLogsStopButtonText = "STOP";
+                                AreProcessButtonsEnabled = true;
+                                IsHotsLogsStopButtonEnabled = false;
+                            }
+                        }
+
+                        HotsLogsUploaderStatus = "Idle";
+                        await Task.Delay(1500);
+                        continue;
+                    }
+                    else if (!IsProcessSelected)
+                    {
+                        if (ReplayHotsLogsUploadQueue.Count > 0)
+                            HotsLogsUploaderStatus = "Processing stopped, waiting for parsed replays to be uploaded...";
+                    }
+
+                    IsHotsLogsQueueUploading = true;
+                    onQueuedReplayFile = ReplayHotsLogsUploadQueue.Peek(); // just grab the replay, will remove it later
+
+                    try
+                    {
+                        currentReplayFile = ReplayFiles[ReplayFileLocations[onQueuedReplayFile.FilePath]];
+                        HotsLogsUploaderUploadStatus = $"Uploading {currentReplayFile.FileName}";
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Uploading;
+
+                        // check if file exists
+                        if (!File.Exists(currentReplayFile.FilePath))
+                        {
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.FileNotFound;
+                            HotsLogsLog.Log(LogLevel.Info, $"File does not exists: {currentReplayFile.FilePath}");
+
+                            // remove it before we continue
+                            ReplayHotsLogsUploadQueue.Dequeue();
+                            continue;
+                        }
+
+                        if (currentReplayFile.ReplayId == 0 || currentReplayFile.TimeStamp == DateTime.Now)
+                        {
+                            if (currentReplayFile.ReplayId == 0) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A ReplayId of 0 was detected");
+                            if (currentReplayFile.TimeStamp == DateTime.Now) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A TimeStamp of 1/1/0001 was detected");
+                            // remove it before we continue
+                            ReplayHotsLogsUploadQueue.Dequeue();
+                            continue;
+                        }
+
+                        Models.DbModels.ReplayHotsLogsUpload replayHotsLogsUpload = new Models.DbModels.ReplayHotsLogsUpload
+                        {
+                            ReplayId = currentReplayFile.ReplayId,
+                            Status = ReplayHotsLogStatus.Uploading
+                        };
+
+                        // check if an upload record exists for the replay
+                        if (Query.HotsLogsUpload.IsExistingRecord(replayHotsLogsUpload))
+                        {
+                            var existingStatus = Query.HotsLogsUpload.ReadUploadStatus(replayHotsLogsUpload);
+                            if (existingStatus == ReplayHotsLogStatus.Success || existingStatus == ReplayHotsLogStatus.Duplicate)
+                            {
+                                // already added, so its a duplicate
+                                currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Duplicate;
+
+                                // remove it before we continue
+                                ReplayHotsLogsUploadQueue.Dequeue(); 
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            Query.HotsLogsUpload.CreateRecord(replayHotsLogsUpload);
+                        }
+
+                        // upload it to the amazon bucket
+                        // this will throw MaintenanceException if there is ongoing maintenance
+                        var status = await hotsLogsUploader.UploadReplay(currentReplayFile.FilePath);
+
+                        if (status == ReplayParseResult.Success || status == ReplayParseResult.Duplicate)
+                        {
+                            replayHotsLogsUpload.ReplayFileTimeStamp = currentReplayFile.TimeStamp; // the date/time of the replay itself
+
+                            if (status == ReplayParseResult.Success)
+                            {
+                                replayHotsLogsUpload.Status = ReplayHotsLogStatus.Success;
+                                currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Success;
+                            }
+                            else if (status == ReplayParseResult.Duplicate)
+                            {
+                                replayHotsLogsUpload.Status = ReplayHotsLogStatus.Duplicate;
+                                currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Duplicate;
+                            }
+
+                            Query.HotsLogsUpload.UpdateHotsLogsUploadedDateTime(replayHotsLogsUpload);
+
+                            ReplaysLatestHotsLogs = Query.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime();
+                            ReplaysLastHotsLogs = replayHotsLogsUpload.ReplayFileTimeStamp.Value.ToLocalTime();
+                        }
+                        else
+                            currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Failed;
+
+                        ReplayHotsLogsUploadQueue.Dequeue(); // we're done with the replay so remove it from the queue
+                    }
+                    catch (MaintenanceException)
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.Maintenance;
+                        HotsLogsMaintenance = true;
+                    }
+                    catch (AmazonS3Exception ex) // note: the replay is still in front of the queue
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
+                        HotsLogsLog.Log(LogLevel.Error, ex);
+                    }
+                    catch (Exception ex) // note: the replay is still in front of the queue
+                    {
+                        currentReplayFile.HotsLogsStatus = ReplayHotsLogStatus.UploadError;
+                        ExceptionLog.Log(LogLevel.Error, ex);
+                    }
+                }
+            });
+        }
+
+        private void ExecuteHotsLogsStopButtonCommand()
+        {
+            if (IsProcessSelected) // still parsing replays
+            {
+                if (IsHotsLogsUploaderQueueOn)
+                {
+                    HotsLogsUploaderStatus = "Uploader stopped";
+                    IsHotsLogsUploaderQueueOn = false;
+                    HotsLogsStopButtonText = "--START--";
+                }
+                else
+                {
+                    HotsLogsUploaderStatus = "Uploading";
+                    IsHotsLogsUploaderQueueOn = true;
+                    HotsLogsStopButtonText = "STOP";
+                }
+            }
+            else
+            {
+                HotsLogsUploaderStatus = "Uploader stopped";
+                IsHotsLogsUploaderQueueOn = false;
+                HotsLogsStopButtonText = "--START--";
+            }
         }
 
         #region IDisposable Support

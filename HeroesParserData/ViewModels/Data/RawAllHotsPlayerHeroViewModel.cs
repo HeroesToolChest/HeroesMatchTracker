@@ -1,7 +1,6 @@
 ﻿using HeroesParserData.DataQueries;
 using HeroesParserData.Models.DbModels;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace HeroesParserData.ViewModels.Data
 {

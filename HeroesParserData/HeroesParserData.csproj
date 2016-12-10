@@ -58,6 +58,14 @@
     <ApplicationIcon>HPD.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.3.5\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.3.4\lib\net45\AWSSDK.S3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
       <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
       <Private>True</Private>
@@ -195,6 +203,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="AutoUpdater.cs" />
+    <Compile Include="DataQueries\ReplayData\HotsLogsUpload.cs" />
+    <Compile Include="HotsLogs\HotsLogsUploader.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
     <Compile Include="Converters\IntToStringThousandSeperatorConverter.cs" />
@@ -222,6 +232,7 @@
     <Compile Include="Generic\FormattedTextBlock.cs" />
     <Compile Include="Generic\LogFile.cs" />
     <Compile Include="Generic\PlayerScoreResultTypes.cs" />
+    <Compile Include="HotsLogs\ReplayHotsLogStatus.cs" />
     <Compile Include="Generic\Season.cs" />
     <Compile Include="Generic\SelectionChangeBehavior.cs" />
     <Compile Include="Generic\StatType.cs" />
@@ -245,6 +256,7 @@
     <Compile Include="Models\DbModels\ReplayMatchAward.cs" />
     <Compile Include="Models\DbModels\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\DbModels\ReplayRenamedPlayer.cs" />
+    <Compile Include="Models\DbModels\ReplayHotsLogsUpload.cs" />
     <Compile Include="Models\DbModels\UserSetting.cs" />
     <Compile Include="Models\HeroesModels\HeroesUsable.cs" />
     <Compile Include="Models\MatchModels\MatchAdvancedScores.cs" />
@@ -264,6 +276,7 @@
     <Compile Include="Models\StatsModels\StatsMostAmounts.cs" />
     <Compile Include="ReleaseNoteHandler.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\Data\RawHotsLogsUploadViewModel.cs" />
     <Compile Include="ViewModels\ReleaseNotesViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
@@ -307,6 +320,9 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AboutControl.xaml.cs">
       <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RawHotsLogsUploadControl.xaml.cs">
+      <DependentUpon>RawHotsLogsUploadControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReleaseNotesWindow.xaml.cs">
       <DependentUpon>ReleaseNotesWindow.xaml</DependentUpon>
@@ -438,7 +454,6 @@
     <Compile Include="DataQueries\SaveAllReplayData.cs" />
     <Compile Include="Generic\DelegateCommand.cs" />
     <Compile Include="Generic\ObservableObject.cs" />
-    <Compile Include="Generic\ReplayHotsLogStatus.cs" />
     <Compile Include="Generic\SaveDataException.cs" />
     <Compile Include="Generic\Utilities.cs" />
     <Compile Include="Views\SettingControl.xaml.cs">
@@ -491,6 +506,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Data\RawHotsLogsUploadControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -746,7 +765,9 @@
       <Name>HeroesIcons</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.3.4\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>; Move all assemblies and related files to lib folder

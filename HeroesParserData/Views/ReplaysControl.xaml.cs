@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HeroesParserData.Views
 {
@@ -23,6 +11,30 @@ namespace HeroesParserData.Views
         public ReplaysControl()
         {
             InitializeComponent();
+        }
+
+        private void LastestSaved_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(bool)LastestSaved.IsChecked)
+                LastestSaved.IsChecked = true;
+        }
+
+        private void LastSaved_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(bool)LastSaved.IsChecked)
+                LastSaved.IsChecked = true;
+        }
+
+        private void LastestUploaded_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(bool)LastestUploaded.IsChecked)
+                LastestUploaded.IsChecked = true;
+        }
+
+        private void LastUploaded_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(bool)LastUploaded.IsChecked)
+                LastUploaded.IsChecked = true;
         }
     }
 }

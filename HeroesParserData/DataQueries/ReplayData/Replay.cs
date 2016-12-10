@@ -211,6 +211,14 @@ namespace HeroesParserData.DataQueries
                 }
             }
 
+            public static long ReadReplayIdByRandomValue(Models.DbModels.Replay replay)
+            {
+                using (var db = new HeroesParserDataContext())
+                {
+                    return db.Replays.SingleOrDefault(x => x.RandomValue == replay.RandomValue).ReplayId;
+                }
+            }
+
             /// <summary>
             /// Check if the replay was already submitted
             /// </summary>
@@ -244,7 +252,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime();         
+                        return new DateTime(2014, 1, 1);
                 }                   
             }
 
@@ -257,7 +265,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime();
+                        return new DateTime(2014, 1, 1);
                 }
             }
 
