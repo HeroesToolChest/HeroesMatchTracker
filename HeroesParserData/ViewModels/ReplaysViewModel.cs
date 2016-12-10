@@ -316,6 +316,7 @@ namespace HeroesParserData.ViewModels
                 {
                     AreHotsLogsUploaderButtonsEnabled = true;
                     IsHotsLogsStopButtonEnabled = false;
+                    InitReplayHotsLogsUploadQueue();
                 }
                 else
                 {
@@ -955,7 +956,7 @@ namespace HeroesParserData.ViewModels
                 ReplayFile currentReplayFile;
                 ReplayFile onQueuedReplayFile;
 
-                while (true)
+                while (IsHotsLogsUploaderEnabled)
                 {
                     currentReplayFile = null;
                     onQueuedReplayFile = null;
@@ -982,7 +983,7 @@ namespace HeroesParserData.ViewModels
                         HotsLogsUploaderUploadStatus = string.Empty;
                     }
 
-                    HotsLogsUploaderStatus = "Uploading";
+                    if (IsProcessSelected) HotsLogsUploaderStatus = "Uploading";
 
                     if (ReplayHotsLogsUploadQueue.Count < 1 || !IsHotsLogsUploaderQueueOn)
                     {
@@ -1107,6 +1108,8 @@ namespace HeroesParserData.ViewModels
                         ExceptionLog.Log(LogLevel.Error, ex);
                     }
                 }
+
+                HotsLogsUploaderStatus = "Off";
             });
         }
 
