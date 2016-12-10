@@ -1,5 +1,6 @@
 ﻿using Heroes.ReplayParser;
 using HeroesParserData.Models.DbModels;
+using HeroesParserData.Properties;
 using HeroesParserData.ViewModels.Match;
 using System;
 using System.Collections.Generic;
@@ -252,7 +253,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime(2014, 1, 1);
+                        return Settings.Default.ClearedStartDate;
                 }                   
             }
 
@@ -265,7 +266,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null)
                         return record.TimeStamp.Value;
                     else
-                        return new DateTime(2014, 1, 1);
+                        return Settings.Default.ClearedStartDate;
                 }
             }
 

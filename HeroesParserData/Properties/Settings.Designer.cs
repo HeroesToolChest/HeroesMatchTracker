@@ -58,5 +58,17 @@ namespace HeroesParserData.Properties {
                 this["DatabaseMigrationVersion"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2014-01-01")]
+        public global::System.DateTime ClearedStartDate {
+            get {
+                return ((global::System.DateTime)(this["ClearedStartDate"]));
+            }
+            set {
+                this["ClearedStartDate"] = value;
+            }
+        }
     }
 }

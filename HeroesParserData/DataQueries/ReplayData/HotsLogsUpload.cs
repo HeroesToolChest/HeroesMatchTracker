@@ -1,5 +1,6 @@
 ﻿using HeroesParserData.HotsLogs;
 using HeroesParserData.Models.DbModels;
+using HeroesParserData.Properties;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -98,7 +99,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null && record.ReplayFileTimeStamp.HasValue)
                         return record.ReplayFileTimeStamp.Value;
                     else
-                        return new DateTime(2014, 1, 1);
+                        return Settings.Default.ClearedStartDate;
                 }
             }
 
@@ -111,7 +112,7 @@ namespace HeroesParserData.DataQueries
                     if (record != null && record.ReplayFileTimeStamp.HasValue)
                         return record.ReplayFileTimeStamp.Value;
                     else
-                        return new DateTime(2014, 1, 1);
+                        return Settings.Default.ClearedStartDate;
                 }
             }
 

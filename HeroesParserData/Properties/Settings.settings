@@ -11,5 +11,8 @@
     <Setting Name="DatabaseMigrationVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
+    <Setting Name="ClearedStartDate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2014-01-01</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

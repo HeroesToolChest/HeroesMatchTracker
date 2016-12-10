@@ -332,7 +332,7 @@ namespace HeroesParserData.ViewModels
 
         public DateTime ReplaysLatestHotsLogs
         {
-            get { return UserSettings.Default.ReplaysLatestHotsLogs != DateTime.MinValue ? UserSettings.Default.ReplaysLatestHotsLogs : Query.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime(); }
+            get { return UserSettings.Default.ReplaysLatestHotsLogs != DateTime.MinValue? UserSettings.Default.ReplaysLatestHotsLogs : Query.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime(); }
             set
             {
                 UserSettings.Default.ReplaysLatestHotsLogs = value;
@@ -342,7 +342,7 @@ namespace HeroesParserData.ViewModels
 
         public DateTime ReplaysLastHotsLogs
         {
-            get { return UserSettings.Default.ReplaysLastHotsLogs != DateTime.MinValue ? UserSettings.Default.ReplaysLastHotsLogs : Query.HotsLogsUpload.ReadLastReplayHotsLogsUploadedByDateTime(); }
+            get { return UserSettings.Default.ReplaysLastHotsLogs != DateTime.MinValue? UserSettings.Default.ReplaysLastHotsLogs : Query.HotsLogsUpload.ReadLastReplayHotsLogsUploadedByDateTime(); }
             set
             {
                 UserSettings.Default.ReplaysLastHotsLogs = value;
@@ -543,7 +543,7 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeClear()
         {
-            ReplaysLatestSaved = new DateTime(2014, 1, 1);
+            ReplaysLatestSaved = Settings.Default.ClearedStartDate;
         }
 
         private void LastReplaysDateTimeSet()
@@ -558,7 +558,7 @@ namespace HeroesParserData.ViewModels
 
         private void LastReplaysDateTimeClear()
         {
-            ReplaysLastSaved = new DateTime(2014, 1, 1);
+            ReplaysLastSaved = Settings.Default.ClearedStartDate;
         }
 
         // HotsLogs uploader options
@@ -574,7 +574,7 @@ namespace HeroesParserData.ViewModels
 
         private void ReplaysDateTimeHotsLogsClear()
         {
-            ReplaysLatestHotsLogs = new DateTime(2014, 1, 1);
+            ReplaysLatestHotsLogs = Settings.Default.ClearedStartDate;
         }
 
         private void LastReplaysDateTimeHotsLogsSet()
@@ -589,7 +589,7 @@ namespace HeroesParserData.ViewModels
 
         private void LastReplaysDateTimeHotsLogsClear()
         {
-            ReplaysLastHotsLogs = new DateTime(2014, 1, 1);
+            ReplaysLastHotsLogs = Settings.Default.ClearedStartDate;
         }
         #endregion date/time buttons
 
