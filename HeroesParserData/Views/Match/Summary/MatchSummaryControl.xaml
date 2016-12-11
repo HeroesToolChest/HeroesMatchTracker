@@ -41,8 +41,8 @@
                 </Label.Effect>
             </Label>
         </StackPanel>
-        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
-            <TabItem Header="Talents">
+        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Controls:TabControlHelper.IsUnderlined="True">
+            <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}">
                 <StackPanel>
                     <Expander Header="Team 1" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
@@ -578,7 +578,7 @@
                     </Expander>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Stats">
+            <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
                 <StackPanel>
                     <Expander Header="Team 1" IsExpanded="True">
                         <StackPanel>
@@ -738,7 +738,7 @@
                     </Expander>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Advanced Stats">
+            <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}">
                 <StackPanel>
                     <GroupBox Header="Advanced Stats">
                         <StackPanel Orientation="Horizontal">
@@ -890,7 +890,7 @@
                     </GroupBox>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
+            <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                 <StackPanel>
                     <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" AlternationCount="2"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -930,7 +930,7 @@
                     </DataGrid>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Team Bans" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
+            <TabItem Header="Team Bans" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                 <Grid Background="AliceBlue" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"></ColumnDefinition>
@@ -955,7 +955,7 @@
                     <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102" Grid.Column="3" Grid.Row="1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}">
+            <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                 <DataGrid Style="{StaticResource DefaultDataGrid}"  GridLinesVisibility="Vertical"  BorderThickness="1" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" CanUserSortColumns="False" VerticalAlignment="Top"
                           ItemsSource="{Binding MatchChatMessagesCollection}" MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeTeamChatWindowHeightConverter}}">
                     <DataGrid.Columns>
@@ -965,17 +965,21 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
-            <TabItem Header="Team Level over Time">
-                <Grid Background="White" Width="1400" Height="800" VerticalAlignment="Top">
-                    <lvc:CartesianChart Series="{Binding MatchTeamLevelsSeriesCollection}" LegendLocation="Right">
-                        <lvc:CartesianChart.AxisY>
-                            <lvc:Axis Title="Team Level"/>
-                        </lvc:CartesianChart.AxisY>
-                        <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
-                        </lvc:CartesianChart.AxisX>
-                    </lvc:CartesianChart>
-                </Grid>
+            <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
+                <TabControl>
+                    <TabItem Header="Team Levels" Style="{StaticResource CustomInnerMetroTabItem}">
+                        <Grid Background="White" Width="1400" Height="800" VerticalAlignment="Top">
+                            <lvc:CartesianChart Series="{Binding MatchTeamLevelsSeriesCollection}" LegendLocation="Right">
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis Title="Team Level"/>
+                                </lvc:CartesianChart.AxisY>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
+                                </lvc:CartesianChart.AxisX>
+                            </lvc:CartesianChart>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </TabItem>
         </TabControl>
     </Grid>
