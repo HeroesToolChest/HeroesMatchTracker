@@ -16,40 +16,6 @@
              d:DesignWidth="1920" d:DesignHeight="1080">
     <UserControl.Resources>
         <SolidColorBrush x:Key="GraphGridBackgroundBrush" Color="#EEFFFFFF" />
-
-        <!--<Style TargetType="lvc:ColumnSeries">
-            <Setter Property="DataLabels" Value="True"></Setter>
-            <Setter Property="FontSize" Value="13"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="LabelsPosition" Value="Top"></Setter>
-        </Style>
-        <Style TargetType="lvc:LineSeries">
-            <Setter Property="FontSize" Value="13"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="Fill" Value="Transparent"></Setter>
-            <Setter Property="Stroke" Value="#99ffffff"></Setter>
-            <Setter Property="StrokeThickness" Value="4"></Setter>
-            <Setter Property="PointGeometry" Value="{x:Null}"></Setter>
-        </Style>
-        <Style TargetType="lvc:PieSeries">
-            <Setter Property="StrokeThickness" Value="0"></Setter>
-        </Style>
-        <Style TargetType="lvc:Axis">
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="ShowLabels" Value="False"></Setter>
-            <Setter Property="Separator">
-                <Setter.Value>
-                    <lvc:Separator IsEnabled="False"></lvc:Separator>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="lvc:AngularGauge">
-            <Setter Property="NeedleFill" Value="#FF8F00"></Setter>
-            <Setter Property="SectionsInnerRadius" Value=".5"></Setter>
-        </Style>
-        <Style TargetType="lvc:Gauge">
-            <Setter Property="GaugeBackground" Value="#30ffffff"></Setter>
-        </Style>-->
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -1008,7 +974,17 @@
                         <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="800">
                             <lvc:CartesianChart Series="{Binding MatchTeamLevelsLineChartCollection}" LegendLocation="Right">
                                 <lvc:CartesianChart.AxisY>
-                                    <lvc:Axis Title="Team Level"/>
+                                    <lvc:Axis Title="Team Level">
+                                        <lvc:Axis.Sections>
+                                            <lvc:AxisSection Value="1" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="4" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="7" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="10" StrokeThickness="2" Stroke="Green"/>
+                                            <lvc:AxisSection Value="13" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="16" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="20" StrokeThickness="2" Stroke="Green"/>
+                                        </lvc:Axis.Sections>
+                                    </lvc:Axis>
                                 </lvc:CartesianChart.AxisY>
                                 <lvc:CartesianChart.AxisX>
                                     <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
