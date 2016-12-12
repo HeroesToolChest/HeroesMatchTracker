@@ -14,6 +14,43 @@
              Height="auto"
              Width="auto"
              d:DesignWidth="1920" d:DesignHeight="1080">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="GraphGridBackgroundBrush" Color="#EEFFFFFF" />
+
+        <!--<Style TargetType="lvc:ColumnSeries">
+            <Setter Property="DataLabels" Value="True"></Setter>
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="LabelsPosition" Value="Top"></Setter>
+        </Style>
+        <Style TargetType="lvc:LineSeries">
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Fill" Value="Transparent"></Setter>
+            <Setter Property="Stroke" Value="#99ffffff"></Setter>
+            <Setter Property="StrokeThickness" Value="4"></Setter>
+            <Setter Property="PointGeometry" Value="{x:Null}"></Setter>
+        </Style>
+        <Style TargetType="lvc:PieSeries">
+            <Setter Property="StrokeThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="lvc:Axis">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="ShowLabels" Value="False"></Setter>
+            <Setter Property="Separator">
+                <Setter.Value>
+                    <lvc:Separator IsEnabled="False"></lvc:Separator>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="lvc:AngularGauge">
+            <Setter Property="NeedleFill" Value="#FF8F00"></Setter>
+            <Setter Property="SectionsInnerRadius" Value=".5"></Setter>
+        </Style>
+        <Style TargetType="lvc:Gauge">
+            <Setter Property="GaugeBackground" Value="#30ffffff"></Setter>
+        </Style>-->
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="90"></ColumnDefinition>
@@ -966,10 +1003,10 @@
                 </DataGrid>
             </TabItem>
             <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
-                <TabControl>
+                <TabControl Controls:TabControlHelper.IsUnderlined="True">
                     <TabItem Header="Team Levels" Style="{StaticResource CustomInnerMetroTabItem}">
-                        <Grid Background="White" VerticalAlignment="Top" Height="800">
-                            <lvc:CartesianChart Series="{Binding MatchTeamLevelsSeriesCollection}" LegendLocation="Right">
+                        <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="800">
+                            <lvc:CartesianChart Series="{Binding MatchTeamLevelsLineChartCollection}" LegendLocation="Right">
                                 <lvc:CartesianChart.AxisY>
                                     <lvc:Axis Title="Team Level"/>
                                 </lvc:CartesianChart.AxisY>
@@ -978,6 +1015,68 @@
                                 </lvc:CartesianChart.AxisX>
                             </lvc:CartesianChart>
                         </Grid>
+                    </TabItem>
+                    <TabItem Header="Team Experience" Style="{StaticResource CustomInnerMetroTabItem}">
+                        <TabControl Controls:TabControlHelper.IsUnderlined="True">
+                            <TabItem Header="Stacked Area" Style="{StaticResource CustomInnerMetroTabItem}">
+                                <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="Team 1" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Team 2" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Experience Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                                    <lvc:CartesianChart Series="{Binding MatchTeam0ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1">
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                        </lvc:CartesianChart.AxisY>
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                        </lvc:CartesianChart.AxisX>
+                                    </lvc:CartesianChart>
+                                    <lvc:CartesianChart Series="{Binding MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="1">
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                        </lvc:CartesianChart.AxisY>
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                        </lvc:CartesianChart.AxisX>
+                                    </lvc:CartesianChart>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Pie Chart" Style="{StaticResource CustomInnerMetroTabItem}">
+                                <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="Team 1" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Team 2" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                                    <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam0ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="0">
+                                        <lvc:PieChart.ChartLegend>
+                                            <lvc:DefaultLegend BulletSize="26"/>
+                                        </lvc:PieChart.ChartLegend>
+                                    </lvc:PieChart>
+                                    <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam1ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="2">
+                                        <lvc:PieChart.ChartLegend>
+                                            <lvc:DefaultLegend BulletSize="26"/>
+                                        </lvc:PieChart.ChartLegend>
+                                    </lvc:PieChart>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
                     </TabItem>
                 </TabControl>
             </TabItem>
