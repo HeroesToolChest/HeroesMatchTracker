@@ -41,9 +41,9 @@
                 </Label.Effect>
             </Label>
         </StackPanel>
-        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Controls:TabControlHelper.IsUnderlined="True">
+        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Controls:TabControlHelper.IsUnderlined="True">
             <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <Expander Header="Team 1" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                   RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam1Collection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -579,7 +579,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <Expander Header="Team 1" IsExpanded="True">
                         <StackPanel>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
@@ -739,7 +739,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <GroupBox Header="Advanced Stats">
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
@@ -891,7 +891,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" AlternationCount="2"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}" SelectedItem="{Binding SelectedDataPlayer}">
                         <DataGrid.Columns>
@@ -961,14 +961,14 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" HeaderStyle="{StaticResource DataGridCenterHeader}" MinWidth="90" CellStyle="{StaticResource DataGridCenterCell}" />
                         <DataGridTextColumn Header="Target" Binding="{Binding Target}" MinWidth="90" />
-                        <DataGridTextColumn Header="Message" MinWidth="800" Binding="{Binding ChatMessage}" />
+                        <DataGridTextColumn Header="Message" Binding="{Binding ChatMessage}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
             <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
                 <TabControl>
                     <TabItem Header="Team Levels" Style="{StaticResource CustomInnerMetroTabItem}">
-                        <Grid Background="White" Width="1400" Height="800" VerticalAlignment="Top">
+                        <Grid Background="White" VerticalAlignment="Top" Height="800">
                             <lvc:CartesianChart Series="{Binding MatchTeamLevelsSeriesCollection}" LegendLocation="Right">
                                 <lvc:CartesianChart.AxisY>
                                     <lvc:Axis Title="Team Level"/>
