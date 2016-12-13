@@ -4,6 +4,9 @@ using HeroesParserData.DataQueries;
 using HeroesParserData.Messages;
 using HeroesParserData.Models.DbModels;
 using HeroesParserData.Models.MatchModels;
+using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -13,11 +16,6 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using LiveCharts;
-using LiveCharts.Wpf;
-using LiveCharts.Defaults;
-using LiveCharts.Configurations;
-using HeroesParserData.Models;
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
@@ -33,6 +31,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
         private bool _isRightChangeButtonEnabled;
+        private bool _toggleSwitchRowOrPie;
+        private bool _isTeamExperiencePieChartVisible;
+        private bool _isTeamExperienceRowChartVisible;
         private Color _mapNameGlowColor;
 
         private SeriesCollection _matchTeamLevelsLineChartCollection;
@@ -40,6 +41,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private SeriesCollection _matchTeam1ExperienceStackedGraphCollection;
         private SeriesCollection _matchTeam0ExperiencePieChartCollection;
         private SeriesCollection _matchTeam1ExperiencePieChartCollection;
+        private SeriesCollection _matchTeamExperienceRowChartCollection;
 
         private ObservableCollection<MatchTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchTalents>();
         private ObservableCollection<MatchTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchTalents>();
@@ -51,8 +53,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private ObservableCollection<MatchChat> _matchChatMessagesCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam1Collection = new ObservableCollection<MatchAdvancedScores>();
         private ObservableCollection<MatchAdvancedScores> _matchAdvancedScoreTeam2Collection = new ObservableCollection<MatchAdvancedScores>();
-
-
         #endregion properties
 
         protected Replay CurrentReplay { get; set; }
@@ -62,6 +62,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         public Func<double, string> MatchTeamLevelsFormatter { get; set; }
         public Func<double, string> MatchTeamExperienceFormatter { get; set; }
         public Func<ChartPoint, string> MatchTeamExperiencePiePointLabel { get; set; }
+        public string[] ExperienceTypesLabels { get; set; }
         public MatchHeroBans MatchHeroBans { get; private set; } = new MatchHeroBans();
 
         public double MatchTeamExperienceMaxYValue { get; set; }
@@ -258,6 +259,46 @@ namespace HeroesParserData.ViewModels.Match.Summary
             }
         }
 
+        public bool ToggleSwitchRowOrPie
+        {
+            get { return _toggleSwitchRowOrPie; }
+            set
+            {
+                _toggleSwitchRowOrPie = value;
+                if (value)
+                {
+                    IsTeamExperienceRowChartVisible = true;
+                    IsTeamExperiencePieChartVisible = false;
+                }
+                else
+                {
+                    IsTeamExperienceRowChartVisible = false;
+                    IsTeamExperiencePieChartVisible = true;
+                }
+                RaisePropertyChangedEvent(nameof(ToggleSwitchRowOrPie));
+            }
+        }
+
+        public bool IsTeamExperiencePieChartVisible
+        {
+            get { return _isTeamExperiencePieChartVisible; }
+            set
+            {
+                _isTeamExperiencePieChartVisible = value;
+                RaisePropertyChangedEvent(nameof(IsTeamExperiencePieChartVisible));
+            }
+        }
+
+        public bool IsTeamExperienceRowChartVisible
+        {
+            get { return _isTeamExperienceRowChartVisible; }
+            set
+            {
+                _isTeamExperienceRowChartVisible = value;
+                RaisePropertyChangedEvent(nameof(IsTeamExperienceRowChartVisible));
+            }
+        }
+
         public SeriesCollection MatchTeamLevelsLineChartCollection
         {
             get { return _matchTeamLevelsLineChartCollection; }
@@ -306,6 +347,17 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 RaisePropertyChangedEvent(nameof(MatchTeam1ExperiencePieChartCollection));
             }
         }
+
+        public SeriesCollection MatchTeamExperienceRowChartCollection
+        {
+            get { return _matchTeamExperienceRowChartCollection; }
+            set
+            {
+                _matchTeamExperienceRowChartCollection = value;
+                RaisePropertyChangedEvent(nameof(MatchTeamExperienceRowChartCollection));
+            }
+        }
+
         public ICommand LeftChangeButtonCommand
         {
             get { return new DelegateCommand(() => ChangeCurrentMatchSummary(-1)); }
@@ -330,6 +382,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
             IsRightChangeButtonEnabled = true;
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
+
+            ToggleSwitchRowOrPie = false;
         }
 
         protected abstract void ReceiveMessage(MatchSummaryMessage action);
@@ -532,7 +586,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
                 // graphs
                 SetTeamLevelSeriesCollection(matchTeamLevelsList, team1Won);
-                SetTeamExperienceSeriesCollection(matchTeamExperienceList);
+                SetTeamExperienceSeriesCollection(matchTeamExperienceList, team1Won);
             }
             catch (Exception ex)
             {
@@ -909,16 +963,16 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     Values = chartValuesTeam1,
                     Fill = Brushes.Transparent
                 }
-
             };
         }
 
-        private void SetTeamExperienceSeriesCollection(List<ReplayMatchTeamExperience> matchTeamExperience)
+        private void SetTeamExperienceSeriesCollection(List<ReplayMatchTeamExperience> matchTeamExperience , bool team1Won)
         {
             MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
             MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
+            //ExperienceTypesLabels = new[] { "Heroes", "Mercenaries", "Minions", "Passive", "Structures" };
+            ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
 
-            #region stacked graph
             var chartValuesTeam0Mercs = new ChartValues<DateTimePoint>();
             var chartValuesTeam0Minions = new ChartValues<DateTimePoint>();
             var chartValuesTeam0Heroes = new ChartValues<DateTimePoint>();
@@ -929,10 +983,19 @@ namespace HeroesParserData.ViewModels.Match.Summary
             var chartValuesTeam1Minions = new ChartValues<DateTimePoint>();
             var chartValuesTeam1Heroes = new ChartValues<DateTimePoint>();
             var chartValuesTeam1Structures = new ChartValues<DateTimePoint>();
-            var chartValuesTeam1Passive = new ChartValues<DateTimePoint>();
+            var chartValuesTeam1Passive = new ChartValues<DateTimePoint>();;
 
             double totalTeam0 = 0;
             double totalTeam1 = 0;
+
+            string team1 = "Team 1";
+            string team2 = "Team 2";
+
+            if (team1Won)
+                team1 = team1 + " (Winner)";
+            else
+                team2 = team2 + " (Winner)";
+
             foreach (var item in matchTeamExperience)
             {
                 if (item.Time.HasValue)
@@ -943,12 +1006,14 @@ namespace HeroesParserData.ViewModels.Match.Summary
                     chartValuesTeam0Minions.Add(new DateTimePoint(time, (double)item.Team0MinionXP));
                     chartValuesTeam0Passive.Add(new DateTimePoint(time, (double)item.Team0TrickleXP));
                     chartValuesTeam0Structures.Add(new DateTimePoint(time, (double)item.Team0StructureXP));
+                    double total0 = (double)(item.Team0HeroXP + item.Team0CreepXP + item.Team0MinionXP + item.Team0TrickleXP + item.Team0StructureXP);
 
                     chartValuesTeam1Heroes.Add(new DateTimePoint(time, (double)item.Team1HeroXP));
                     chartValuesTeam1Mercs.Add(new DateTimePoint(time, (double)item.Team1CreepXP));
                     chartValuesTeam1Minions.Add(new DateTimePoint(time, (double)item.Team1MinionXP));
                     chartValuesTeam1Passive.Add(new DateTimePoint(time, (double)item.Team1TrickleXP));
                     chartValuesTeam1Structures.Add(new DateTimePoint(time, (double)item.Team1StructureXP));
+                    double total1 = (double)(item.Team1HeroXP + item.Team1CreepXP + item.Team1MinionXP + item.Team1TrickleXP + item.Team1StructureXP);
                 }
             }
 
@@ -956,6 +1021,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             totalTeam0 += (double)(lastExpTime.Team0HeroXP + lastExpTime.Team0CreepXP + lastExpTime.Team0MinionXP + lastExpTime.Team0TrickleXP + lastExpTime.Team0StructureXP);
             totalTeam1 += (double)(lastExpTime.Team1HeroXP + lastExpTime.Team1CreepXP + lastExpTime.Team1MinionXP + lastExpTime.Team1TrickleXP + lastExpTime.Team1StructureXP);
 
+            #region stacked graph
             MatchTeam0ExperienceStackedGraphCollection = new SeriesCollection()
             {
                 new StackedAreaSeries
@@ -1106,6 +1172,24 @@ namespace HeroesParserData.ViewModels.Match.Summary
             };
 
             #endregion pie chart
+
+            #region row chart
+            MatchTeamExperienceRowChartCollection = new SeriesCollection()
+            {
+                new RowSeries
+                {
+                    Title = team1,
+                    Values = new ChartValues<double> { (double)lastExpTime.Team0StructureXP, (double)lastExpTime.Team0TrickleXP, (double)lastExpTime.Team0MinionXP, (double)lastExpTime.Team0CreepXP, (double)lastExpTime.Team0HeroXP },
+                    DataLabels = true,
+                },
+                new RowSeries
+                {
+                    Title = team2,
+                    Values = new ChartValues<double> { (double)lastExpTime.Team1StructureXP, (double)lastExpTime.Team1TrickleXP, (double)lastExpTime.Team1MinionXP, (double)lastExpTime.Team1CreepXP, (double)lastExpTime.Team1HeroXP },
+                    DataLabels = true,
+                },
+            };
+            #endregion row chart
         }
         #endregion graphs
     }
