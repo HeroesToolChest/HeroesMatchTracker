@@ -24,6 +24,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
         #region properties
 
         private string _matchTitle;
+        private string _graphTeam0Title;
+        private string _graphTeam1Title;
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
@@ -173,6 +175,26 @@ namespace HeroesParserData.ViewModels.Match.Summary
             {
                 _matchTitle = value;
                 RaisePropertyChangedEvent(nameof(MatchTitle));
+            }
+        }
+
+        public string GraphTeam0Title
+        {
+            get { return _graphTeam0Title; }
+            set
+            {
+                _graphTeam0Title = value;
+                RaisePropertyChangedEvent(nameof(GraphTeam0Title));
+            }
+        }
+
+        public string GraphTeam1Title
+        {
+            get { return _graphTeam1Title; }
+            set
+            {
+                _graphTeam1Title = value;
+                RaisePropertyChangedEvent(nameof(GraphTeam1Title));
             }
         }
 
@@ -384,6 +406,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
             IsRightChangeButtonVisible = true;
 
             ToggleSwitchRowOrPie = false;
+
+            GraphTeam0Title = "Team 1";
+            GraphTeam1Title = "Team 2";
         }
 
         protected abstract void ReceiveMessage(MatchSummaryMessage action);
@@ -434,9 +459,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 int highestSiegeTeam1Index = 0, highestSiegeTeam1Count = 0, highestSiegeTeam2Index = 0, highestSiegeTeam2Count = 0;
                 int highestHeroDamageTeam1Index = 0, highestHeroDamageTeam1Count = 0, highestHeroDamageTeam2Index = 0, highestHeroDamageTeam2Count = 0;
                 int highestExpTeam1Index = 0, highestExpTeam1Count = 0, highestExpTeam2Index = 0, highestExpTeam2Count = 0;
-
-                bool team1Won = false;
-                //bool team2Won = false;
 
                 FindPlayerParties(playersList);
 
@@ -525,13 +547,13 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
                 if (playersList[0].IsWinner)
                 {
-                    team1Won = true;
-                    //team2Won = false;
+                    GraphTeam0Title = "Team 1 (Winner)";
+                    GraphTeam1Title = "Team 2";
                 }
                 else
                 {
-                    team1Won = false;
-                    //team2Won = true;
+                    GraphTeam0Title = "Team 1";
+                    GraphTeam1Title = "Team 2 (Winner)";
                 }
 
                 // Total for score summaries
@@ -585,8 +607,8 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 HasChat = MatchChatMessagesCollection.Count < 1 ? false : true;
 
                 // graphs
-                SetTeamLevelSeriesCollection(matchTeamLevelsList, team1Won);
-                SetTeamExperienceSeriesCollection(matchTeamExperienceList, team1Won);
+                SetTeamLevelSeriesCollection(matchTeamLevelsList);
+                SetTeamExperienceSeriesCollection(matchTeamExperienceList);
             }
             catch (Exception ex)
             {
@@ -913,7 +935,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
         }
 
         #region graphs
-        private void SetTeamLevelSeriesCollection(List<ReplayMatchTeamLevel> matchTeamLevels, bool team1Won)
+        private void SetTeamLevelSeriesCollection(List<ReplayMatchTeamLevel> matchTeamLevels)
         {
             MatchTeamLevelsFormatter = value => new DateTime((long)value).ToString("mm:ss");
 
@@ -941,32 +963,24 @@ namespace HeroesParserData.ViewModels.Match.Summary
                 }
             }
 
-            string team1 = "Team 1";
-            string team2 = "Team 2";
-
-            if (team1Won)
-                team1 = team1 + " (Winner)";
-            else
-                team2 = team2 + " (Winner)";
-
             MatchTeamLevelsLineChartCollection = new SeriesCollection()
             {
                 new LineSeries
                 {
-                    Title = team1,
+                    Title = GraphTeam0Title,
                     Values = chartValuesTeam0,
                     Fill = Brushes.Transparent
                 },
                 new LineSeries
                 {
-                    Title = team2,
+                    Title = GraphTeam1Title,
                     Values = chartValuesTeam1,
                     Fill = Brushes.Transparent
                 }
             };
         }
 
-        private void SetTeamExperienceSeriesCollection(List<ReplayMatchTeamExperience> matchTeamExperience , bool team1Won)
+        private void SetTeamExperienceSeriesCollection(List<ReplayMatchTeamExperience> matchTeamExperience)
         {
             MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
             MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
@@ -987,14 +1001,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
             double totalTeam0 = 0;
             double totalTeam1 = 0;
-
-            string team1 = "Team 1";
-            string team2 = "Team 2";
-
-            if (team1Won)
-                team1 = team1 + " (Winner)";
-            else
-                team2 = team2 + " (Winner)";
 
             foreach (var item in matchTeamExperience)
             {
@@ -1178,13 +1184,13 @@ namespace HeroesParserData.ViewModels.Match.Summary
             {
                 new RowSeries
                 {
-                    Title = team1,
+                    Title = GraphTeam0Title,
                     Values = new ChartValues<double> { (double)lastExpTime.Team0StructureXP, (double)lastExpTime.Team0TrickleXP, (double)lastExpTime.Team0MinionXP, (double)lastExpTime.Team0CreepXP, (double)lastExpTime.Team0HeroXP },
                     DataLabels = true,
                 },
                 new RowSeries
                 {
-                    Title = team2,
+                    Title = GraphTeam1Title,
                     Values = new ChartValues<double> { (double)lastExpTime.Team1StructureXP, (double)lastExpTime.Team1TrickleXP, (double)lastExpTime.Team1MinionXP, (double)lastExpTime.Team1CreepXP, (double)lastExpTime.Team1HeroXP },
                     DataLabels = true,
                 },
