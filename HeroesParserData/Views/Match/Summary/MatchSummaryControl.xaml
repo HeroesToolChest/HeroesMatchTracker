@@ -813,7 +813,7 @@
                                     <DataGridTextColumn Header="- Time Spent Dead" Binding="{Binding TimeSpentDead}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="- Experience" Binding="{Binding ExperienceContribution, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="Other" HeaderStyle="{StaticResource MatchAdvThickDataGridColumnHeader}" CellStyle="{StaticResource MatchAdvThickDataGridCell}"/>
-                                    <DataGridTextColumn Header="- Creep Damage" Binding="{Binding CreepDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
+                                    <DataGridTextColumn Header="- Merc Damage" Binding="{Binding CreepDamage, Converter={StaticResource IntToStringThousandSeperatorConverter}}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="- Merc Camp Captures" Binding="{Binding MercCampCaptures}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                     <DataGridTextColumn Header="- WatchTower Captures" Binding="{Binding WatchTowerCaptures}" HeaderStyle="{StaticResource MatchAdvDataGridColumnHeader}"/>
                                 </DataGrid.Columns>
