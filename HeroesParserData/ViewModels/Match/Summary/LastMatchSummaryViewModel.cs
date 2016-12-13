@@ -43,9 +43,13 @@ namespace HeroesParserData.ViewModels.Match.Summary
                             await Task.Delay(5000);
                             await Application.Current.Dispatcher.InvokeAsync(delegate
                             {
-                                CurrentReplay = Query.Replay.ReadLastRecords(1)[0];
-                                ClearSummaryDetails();
-                                QuerySummaryDetails();
+                                var replay = Query.Replay.ReadLastRecords(1)[0];
+                                if (CurrentReplay.ReplayId != replay.ReplayId)
+                                {
+                                    CurrentReplay = replay;
+                                    ClearSummaryDetails();
+                                    QuerySummaryDetails();
+                                }
                             });
                         }
 

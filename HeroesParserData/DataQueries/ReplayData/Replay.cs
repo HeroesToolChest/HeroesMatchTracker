@@ -279,7 +279,7 @@ namespace HeroesParserData.DataQueries
             }
 
             /// <summary>
-            /// Returns the Replay along with ReplayMatchPlayers, ReplayMatchPlayerTalents, ReplayMatchTeamBan, ReplayMatchPlayerScoreResults, ReplayMatchMessage, ReplayMatchAward, ReplayMatchTeamLevel
+            /// Returns the Replay along all the other ReplayMatch models
             /// </summary>
             /// <param name="replayId">Replay Id</param>
             /// <returns>Replay</returns>
@@ -297,6 +297,7 @@ namespace HeroesParserData.DataQueries
                         .Include(x => x.ReplayMatchMessage)
                         .Include(x => x.ReplayMatchAward)
                         .Include(x => x.ReplayMatchTeamLevels)
+                        .Include(x => x.ReplayMatchTeamExperiences)
                         .FirstOrDefault();
 
                     if (replay == null)

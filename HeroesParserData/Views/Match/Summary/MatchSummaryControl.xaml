@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:base="clr-namespace:HeroesParserData"
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:local="clr-namespace:HeroesParserData.Views.Match.Summary"
@@ -13,6 +14,10 @@
              Height="auto"
              Width="auto"
              d:DesignWidth="1920" d:DesignHeight="1080">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="GraphGridBackgroundBrush" Color="#EEFFFFFF" />
+        <system:Double x:Key="MaxGraphWidth">2400</system:Double>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="90"></ColumnDefinition>
@@ -40,9 +45,9 @@
                 </Label.Effect>
             </Label>
         </StackPanel>
-        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left">
-            <TabItem Header="Talents">
-                <StackPanel>
+        <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Controls:TabControlHelper.IsUnderlined="True">
+            <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}">
+                <StackPanel HorizontalAlignment="Left">
                     <Expander Header="Team 1" IsExpanded="True">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" CanUserResizeColumns="True" AlternationCount="1"  
                                   RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchTalentsTeam1Collection}" SelectedItem="{Binding SelectedDataPlayer}">
@@ -577,8 +582,8 @@
                     </Expander>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Stats">
-                <StackPanel>
+            <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
+                <StackPanel HorizontalAlignment="Left">
                     <Expander Header="Team 1" IsExpanded="True">
                         <StackPanel>
                             <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="True" AlternationCount="1" CanUserResizeColumns="True"
@@ -737,8 +742,8 @@
                     </Expander>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Advanced Stats">
-                <StackPanel>
+            <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}">
+                <StackPanel HorizontalAlignment="Left">
                     <GroupBox Header="Advanced Stats">
                         <StackPanel Orientation="Horizontal">
                             <DataGrid Style="{StaticResource DefaultDataGrid}" CanUserSortColumns="False" GridLinesVisibility="None" BorderThickness="1" AlternationCount="1"
@@ -889,8 +894,8 @@
                     </GroupBox>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
-                <StackPanel>
+            <TabItem Header="Observers" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
+                <StackPanel HorizontalAlignment="Left">
                     <DataGrid Style="{StaticResource DefaultDataGrid}" GridLinesVisibility="Vertical" BorderThickness="1" CanUserSortColumns="False" AlternationCount="2"  
                                       RowStyle="{StaticResource SummaryDataGridRow}" ItemsSource="{Binding MatchObserversCollection}" SelectedItem="{Binding SelectedDataPlayer}">
                         <DataGrid.Columns>
@@ -929,7 +934,7 @@
                     </DataGrid>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Team Bans" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
+            <TabItem Header="Team Bans" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                 <Grid Background="AliceBlue" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"></ColumnDefinition>
@@ -954,15 +959,126 @@
                     <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102" Grid.Column="3" Grid.Row="1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}">
+            <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                 <DataGrid Style="{StaticResource DefaultDataGrid}"  GridLinesVisibility="Vertical"  BorderThickness="1" AlternationCount="2" RowStyle="{StaticResource DefaultDataGridRow}" CanUserSortColumns="False" VerticalAlignment="Top"
                           ItemsSource="{Binding MatchChatMessagesCollection}" MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight, Converter={StaticResource ResizeTeamChatWindowHeightConverter}}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" HeaderStyle="{StaticResource DataGridCenterHeader}" MinWidth="90" CellStyle="{StaticResource DataGridCenterCell}" />
                         <DataGridTextColumn Header="Target" Binding="{Binding Target}" MinWidth="90" />
-                        <DataGridTextColumn Header="Message" MinWidth="800" Binding="{Binding ChatMessage}" />
+                        <DataGridTextColumn Header="Message" Binding="{Binding ChatMessage}" />
                     </DataGrid.Columns>
                 </DataGrid>
+            </TabItem>
+            <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
+                <TabControl Controls:TabControlHelper.IsUnderlined="True">
+                    <TabItem Header="Team Levels" Style="{StaticResource CustomInner1MetroTabItem}">
+                        <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="800" MaxWidth="{StaticResource MaxGraphWidth}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Team Levels Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                            <lvc:CartesianChart Series="{Binding MatchTeamLevelsLineChartCollection}" LegendLocation="Right" Grid.Row="1">
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis Title="Team Level">
+                                        <lvc:Axis.Sections>
+                                            <lvc:AxisSection Value="1" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="4" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="7" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="10" StrokeThickness="2" Stroke="Green"/>
+                                            <lvc:AxisSection Value="13" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="16" StrokeThickness="1" Stroke="LightBlue"/>
+                                            <lvc:AxisSection Value="20" StrokeThickness="2" Stroke="Green"/>
+                                        </lvc:Axis.Sections>
+                                    </lvc:Axis>
+                                </lvc:CartesianChart.AxisY>
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
+                                </lvc:CartesianChart.AxisX>
+                            </lvc:CartesianChart>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Team Experience" Style="{StaticResource CustomInner1MetroTabItem}" MaxWidth="{StaticResource MaxGraphWidth}">
+                        <TabControl Controls:TabControlHelper.IsUnderlined="True">
+                            <TabItem Header="Over Time" Style="{StaticResource CustomInner2MetroTabItem}">
+                                <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60"></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Experience Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                                    <lvc:CartesianChart Series="{Binding MatchTeam0ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1">
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                        </lvc:CartesianChart.AxisY>
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                        </lvc:CartesianChart.AxisX>
+                                    </lvc:CartesianChart>
+                                    <lvc:CartesianChart Series="{Binding MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="1">
+                                        <lvc:CartesianChart.AxisY>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                        </lvc:CartesianChart.AxisY>
+                                        <lvc:CartesianChart.AxisX>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                        </lvc:CartesianChart.AxisX>
+                                    </lvc:CartesianChart>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Final Exp Breakdown" Style="{StaticResource CustomInner2MetroTabItem}">
+                                <Grid>
+                                    <Controls:ToggleSwitch Header="Show as Row Chart" OnLabel="Yes" OffLabel="No" IsChecked="{Binding ToggleSwitchRowOrPie}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Panel.ZIndex="999"/>
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam0ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="0">
+                                            <lvc:PieChart.ChartLegend>
+                                                <lvc:DefaultLegend BulletSize="26"/>
+                                            </lvc:PieChart.ChartLegend>
+                                        </lvc:PieChart>
+                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam1ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="2">
+                                            <lvc:PieChart.ChartLegend>
+                                                <lvc:DefaultLegend BulletSize="26"/>
+                                            </lvc:PieChart.ChartLegend>
+                                        </lvc:PieChart>
+                                    </Grid>
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding IsTeamExperienceRowChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+                                        <lvc:CartesianChart Series="{Binding MatchTeamExperienceRowChartCollection}" LegendLocation="Left" Grid.Row="1">
+                                            <lvc:CartesianChart.AxisY>
+                                                <lvc:Axis Title="Experience Types" Labels="{Binding ExperienceTypesLabels}" />
+                                            </lvc:CartesianChart.AxisY>
+                                            <lvc:CartesianChart.AxisX>
+                                                <lvc:Axis Title="Points"/>
+                                            </lvc:CartesianChart.AxisX>
+                                        </lvc:CartesianChart>
+                                    </Grid>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                </TabControl>
             </TabItem>
         </TabControl>
     </Grid>
