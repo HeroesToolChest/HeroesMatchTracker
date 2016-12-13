@@ -17,6 +17,8 @@
     <UserControl.Resources>
         <SolidColorBrush x:Key="GraphGridBackgroundBrush" Color="#EEFFFFFF" />
         <system:Double x:Key="MaxGraphWidth">2400</system:Double>
+        <system:Double x:Key="InnerTab1Height">786</system:Double>
+        <system:Double x:Key="InnerTab2Height">740</system:Double>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -972,13 +974,13 @@
             <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
                 <TabControl Controls:TabControlHelper.IsUnderlined="True">
                     <TabItem Header="Team Levels" Style="{StaticResource CustomInner1MetroTabItem}">
-                        <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="800" MaxWidth="{StaticResource MaxGraphWidth}">
+                        <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab1Height}" MaxWidth="{StaticResource MaxGraphWidth}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="60"></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <TextBlock Text="Team Levels Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-                            <lvc:CartesianChart Series="{Binding MatchTeamLevelsLineChartCollection}" LegendLocation="Right" Grid.Row="1">
+                            <lvc:CartesianChart Series="{Binding MatchSummaryGraphs.MatchTeamLevelsLineChartCollection}" LegendLocation="Right" Grid.Row="1">
                                 <lvc:CartesianChart.AxisY>
                                     <lvc:Axis Title="Team Level">
                                         <lvc:Axis.Sections>
@@ -1001,7 +1003,7 @@
                     <TabItem Header="Team Experience" Style="{StaticResource CustomInner1MetroTabItem}" MaxWidth="{StaticResource MaxGraphWidth}">
                         <TabControl Controls:TabControlHelper.IsUnderlined="True">
                             <TabItem Header="Over Time" Style="{StaticResource CustomInner2MetroTabItem}">
-                                <Grid Background="{StaticResource  GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}">
+                                <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition Width="40"></ColumnDefinition>
@@ -1014,28 +1016,28 @@
                                     <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
                                     <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Experience Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-                                    <lvc:CartesianChart Series="{Binding MatchTeam0ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1">
+                                    <lvc:CartesianChart Series="{Binding MatchSummaryGraphs.MatchTeam0ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1">
                                         <lvc:CartesianChart.AxisY>
-                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchSummaryGraphs.MatchTeamExperienceMaxYValue}"/>
                                         </lvc:CartesianChart.AxisY>
                                         <lvc:CartesianChart.AxisX>
-                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchSummaryGraphs.MatchTeamExperienceFormatter}"/>
                                         </lvc:CartesianChart.AxisX>
                                     </lvc:CartesianChart>
-                                    <lvc:CartesianChart Series="{Binding MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="1">
+                                    <lvc:CartesianChart Series="{Binding MatchSummaryGraphs.MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="1">
                                         <lvc:CartesianChart.AxisY>
-                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchTeamExperienceMaxYValue}"/>
+                                            <lvc:Axis Title="Experience" MaxValue="{Binding MatchSummaryGraphs.MatchTeamExperienceMaxYValue}"/>
                                         </lvc:CartesianChart.AxisY>
                                         <lvc:CartesianChart.AxisX>
-                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamExperienceFormatter}"/>
+                                            <lvc:Axis Title="Time" LabelFormatter="{Binding MatchSummaryGraphs.MatchTeamExperienceFormatter}"/>
                                         </lvc:CartesianChart.AxisX>
                                     </lvc:CartesianChart>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Final Exp Breakdown" Style="{StaticResource CustomInner2MetroTabItem}">
                                 <Grid>
-                                    <Controls:ToggleSwitch Header="Show as Row Chart" OnLabel="Yes" OffLabel="No" IsChecked="{Binding ToggleSwitchRowOrPie}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Panel.ZIndex="999"/>
-                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                    <Controls:ToggleSwitch Header="Show as Row Chart" OnLabel="Yes" OffLabel="No" IsChecked="{Binding MatchSummaryGraphs.ToggleSwitchRowOrPie}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Panel.ZIndex="999"/>
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition></ColumnDefinition>
                                             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -1048,26 +1050,26 @@
                                         <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
                                         <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
                                         <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam0ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="0">
+                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchSummaryGraphs.MatchTeam0ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="0">
                                             <lvc:PieChart.ChartLegend>
                                                 <lvc:DefaultLegend BulletSize="26"/>
                                             </lvc:PieChart.ChartLegend>
                                         </lvc:PieChart>
-                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchTeam1ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="2">
+                                        <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchSummaryGraphs.MatchTeam1ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="2">
                                             <lvc:PieChart.ChartLegend>
                                                 <lvc:DefaultLegend BulletSize="26"/>
                                             </lvc:PieChart.ChartLegend>
                                         </lvc:PieChart>
                                     </Grid>
-                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="740" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding IsTeamExperienceRowChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperienceRowChartVisible, Converter={StaticResource BooleanToVisibility}}">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="60"></RowDefinition>
                                             <RowDefinition></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-                                        <lvc:CartesianChart Series="{Binding MatchTeamExperienceRowChartCollection}" LegendLocation="Left" Grid.Row="1">
+                                        <lvc:CartesianChart Series="{Binding MatchSummaryGraphs.MatchTeamExperienceRowChartCollection}" LegendLocation="Left" Grid.Row="1">
                                             <lvc:CartesianChart.AxisY>
-                                                <lvc:Axis Title="Experience Types" Labels="{Binding ExperienceTypesLabels}" />
+                                                <lvc:Axis Title="Experience Types" Labels="{Binding MatchSummaryGraphs.ExperienceTypesLabels}" />
                                             </lvc:CartesianChart.AxisY>
                                             <lvc:CartesianChart.AxisX>
                                                 <lvc:Axis Title="Points"/>

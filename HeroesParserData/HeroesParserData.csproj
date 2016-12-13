@@ -212,6 +212,7 @@
     </Page>
     <Compile Include="AutoUpdater.cs" />
     <Compile Include="DataQueries\ReplayData\HotsLogsUpload.cs" />
+    <Compile Include="Graphs\MatchSummaryGraphs.cs" />
     <Compile Include="HotsLogs\HotsLogsUploader.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\DoubleToStringThousandSeperatorConverter.cs" />
@@ -777,6 +778,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.4\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>; Move all assemblies and related files to lib folder
