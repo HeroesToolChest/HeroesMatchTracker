@@ -75,7 +75,7 @@
                                 <DataGridTemplateColumn Header="Player" MinWidth="130">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold" />
+                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -341,7 +341,7 @@
                                 <DataGridTemplateColumn Header="Player" MinWidth="130">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold" />
+                                            <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -612,7 +612,7 @@
                                     <DataGridTemplateColumn Header="Player" MinWidth="130">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -690,7 +690,7 @@
                                     <DataGridTemplateColumn Header="Player" MinWidth="130">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding PlayerName}" ContextMenu="{StaticResource PlayerSearchContextMenu}"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
