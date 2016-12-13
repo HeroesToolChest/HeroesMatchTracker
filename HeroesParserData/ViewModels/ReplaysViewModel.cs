@@ -949,8 +949,6 @@ namespace HeroesParserData.ViewModels
 
         private void InitReplayHotsLogsUploadQueue()
         {
-            HotsLogsUploader hotsLogsUploader = new HotsLogsUploader();
-
             Task.Run(async () =>
             {
                 ReplayFile currentReplayFile;
@@ -1065,7 +1063,7 @@ namespace HeroesParserData.ViewModels
 
                         // upload it to the amazon bucket
                         // this will throw MaintenanceException if there is ongoing maintenance
-                        var status = await hotsLogsUploader.UploadReplay(currentReplayFile.FilePath);
+                        var status = await HotsLogsUploader.UploadReplay(currentReplayFile.FilePath);
 
                         if (status == ReplayParseResult.Success || status == ReplayParseResult.Duplicate)
                         {
