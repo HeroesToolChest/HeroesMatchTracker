@@ -159,6 +159,7 @@ namespace HeroesParserData.Database
                         VALUES ('1.3.1', 0, '2016-11-20T00:47:35Z',
                         '{text}')");
 
+            // create
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsNewUpdateApplied', 'True')");
 
@@ -180,6 +181,10 @@ namespace HeroesParserData.Database
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('SelectedScanDateTimeIndex', '0')");
 
+            steps.Add(@"INSERT INTO UserSettings(Name, Value)
+                        VALUES ('IsTeamExperienceRowChartEnabled', 'True')");
+
+            // delete
             steps.Add(@"DELETE FROM UserSettings
                         WHERE Name = 'ParsedDateTimeCheckBox'");
 

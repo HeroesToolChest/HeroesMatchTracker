@@ -24,6 +24,7 @@ namespace HeroesParserData
             IsNewUpdateApplied = false;
             IsIncludeManualPreRelease = false;
             IsHotsLogsUploaderEnabled = false;
+            IsTeamExperienceRowChartEnabled = true;
 
             SelectedScanDateTimeIndex = 0;
 
@@ -97,6 +98,12 @@ namespace HeroesParserData
         {
             get { return GetBooleanValue(nameof(IsHotsLogsUploaderEnabled)); }
             set { SetBooleanValue(nameof(IsHotsLogsUploaderEnabled), value); }
+        }
+
+        public bool IsTeamExperienceRowChartEnabled
+        {
+            get { return GetBooleanValue(nameof(IsTeamExperienceRowChartEnabled)); }
+            set { SetBooleanValue(nameof(IsTeamExperienceRowChartEnabled), value); }
         }
 
         public int SelectedScanDateTimeIndex

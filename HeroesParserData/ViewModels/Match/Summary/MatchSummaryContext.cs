@@ -33,7 +33,6 @@ namespace HeroesParserData.ViewModels.Match.Summary
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
         private bool _isRightChangeButtonEnabled;
-        private bool _toggleSwitchRowOrPie;
         private bool _isTeamExperiencePieChartVisible;
         private bool _isTeamExperienceRowChartVisible;
         private Color _mapNameGlowColor;
@@ -283,10 +282,10 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
         public bool ToggleSwitchRowOrPie
         {
-            get { return _toggleSwitchRowOrPie; }
+            get { return UserSettings.Default.IsTeamExperienceRowChartEnabled; }
             set
             {
-                _toggleSwitchRowOrPie = value;
+                UserSettings.Default.IsTeamExperienceRowChartEnabled = value;
                 if (value)
                 {
                     IsTeamExperienceRowChartVisible = true;
@@ -405,7 +404,7 @@ namespace HeroesParserData.ViewModels.Match.Summary
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
 
-            ToggleSwitchRowOrPie = false;
+            ToggleSwitchRowOrPie = UserSettings.Default.IsTeamExperienceRowChartEnabled;
 
             GraphTeam0Title = "Team 1";
             GraphTeam1Title = "Team 2";
