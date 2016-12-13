@@ -7,7 +7,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesParserData.HotsLogs
 {
-    public class HotsLogsUploader: IDisposable
+    public class HotsLogsUploader
     {
         public static async Task<ReplayParseResult> UploadReplay(string filePath)
         {
@@ -37,28 +37,6 @@ namespace HeroesParserData.HotsLogs
                 return Utilities.GetReplayParseResultFromString(result);
             }
         }
-
-        #region IDisposable Support
-        private bool disposedValue = false;
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposedValue)
-            {
-                if (disposing)
-                {
-                    ((IDisposable)AmazonS3Client).Dispose();
-                }
-                disposedValue = true;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        #endregion
     }
 
 
