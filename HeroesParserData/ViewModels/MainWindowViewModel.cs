@@ -34,6 +34,7 @@ namespace HeroesParserData.ViewModels
             set
             {
                 _selectedMainTab = value;
+                App.CurrentSelectedMainTab = (MainTab)value;
                 if (value == 0)
                     Messenger.Default.Send(new HomeTabMessage() { Trigger = Trigger.Update });
                 else if (value == 1)

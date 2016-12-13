@@ -24,6 +24,7 @@ namespace HeroesParserData
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
         public static bool ManualUpdateApplied { get; set; }
         public static bool NewDatabaseCreated { get; private set; }
+        public static Messages.MainTab CurrentSelectedMainTab { get; set; }
 
         App()
         {
