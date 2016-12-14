@@ -143,8 +143,7 @@ namespace HeroesParserData.Views
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
-                System.Diagnostics.Process.Start(Path.Combine(App.NewLatestDirectory, "HeroesParserData.exe"));
-                Application.Current.Shutdown();
+                autoUpdater.RestartApp();
             #endif
             }
             catch (AutoUpdaterException ex)
