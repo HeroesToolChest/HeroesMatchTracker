@@ -85,6 +85,7 @@ namespace HeroesParserData
             list.Add("Preseason");
             list.Add("Season 1");
             list.Add("Season 2");
+            list.Add("Season 3");
 
             return list;
         }
@@ -121,13 +122,15 @@ namespace HeroesParserData
 
         public static Tuple<int?, int?> GetSeasonReplayBuild(Season season)
         {
-            // item 1: beginning
-            // item 2: end
+            // item 1: beginning (inclusive)
+            // item 2: end (exclusive)
 
             switch (season)
             {
+                case Season.Season3:
+                    return new Tuple<int?, int?>(48760, 99999);
                 case Season.Season2:
-                    return new Tuple<int?, int?>(45949, 99999);
+                    return new Tuple<int?, int?>(45949, 48760);
                 case Season.Season1:
                     return new Tuple<int?, int?>(43571, 45949);
                 case Season.Preseason:

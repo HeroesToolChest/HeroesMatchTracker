@@ -4,7 +4,8 @@
     {
         Lifetime = -1,
         Preseason = 0,
-        Season1 = 1,
-        Season2 = 2
+        Season1,
+        Season2,
+        Season3
     }
 }
