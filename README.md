@@ -9,8 +9,9 @@ This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_4_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Overview_1_4_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_TL_1_4_0.jpg)
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Graph1_1_4_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_4_0.jpg)
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_ST_1_4_0.jpg)
 
 ## Installation
