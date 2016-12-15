@@ -995,7 +995,7 @@
                                     </lvc:Axis>
                                 </lvc:CartesianChart.AxisY>
                                 <lvc:CartesianChart.AxisX>
-                                    <lvc:Axis Title="Time" LabelFormatter="{Binding MatchTeamLevelsFormatter}"/>
+                                    <lvc:Axis Title="Time" LabelFormatter="{Binding MatchSummaryGraphs.MatchTeamLevelsFormatter}"/>
                                 </lvc:CartesianChart.AxisX>
                             </lvc:CartesianChart>
                         </Grid>
@@ -1013,8 +1013,8 @@
                                         <RowDefinition Height="60"></RowDefinition>
                                         <RowDefinition></RowDefinition>
                                     </Grid.RowDefinitions>
-                                    <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding MatchSummaryGraphs.GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding MatchSummaryGraphs.GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
                                     <TextBlock Text="Experience Over Time" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
                                     <lvc:CartesianChart Series="{Binding MatchSummaryGraphs.MatchTeam0ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1">
                                         <lvc:CartesianChart.AxisY>
@@ -1047,8 +1047,8 @@
                                             <RowDefinition Height="60"></RowDefinition>
                                             <RowDefinition></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <TextBlock Text="{Binding GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="{Binding GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding MatchSummaryGraphs.GraphTeam0Title}" FontSize="34" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{Binding MatchSummaryGraphs.GraphTeam1Title}" FontSize="34" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
                                         <TextBlock Text="Final Experience Breakdown" FontSize="38" FontWeight="Medium" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
                                         <lvc:PieChart LegendLocation="Bottom" Series="{Binding MatchSummaryGraphs.MatchTeam0ExperiencePieChartCollection}" Grid.Row="1" Grid.Column="0">
                                             <lvc:PieChart.ChartLegend>
