@@ -287,6 +287,8 @@
     <Compile Include="ReleaseNoteHandler.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\Data\RawHotsLogsUploadViewModel.cs" />
+    <Compile Include="ViewModels\Match\LatestMatchesViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\LatestMatchesSummaryViewModel.cs" />
     <Compile Include="ViewModels\ReleaseNotesViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
@@ -333,6 +335,12 @@
     </Compile>
     <Compile Include="Views\Data\RawHotsLogsUploadControl.xaml.cs">
       <DependentUpon>RawHotsLogsUploadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\LatestMatchesControl.xaml.cs">
+      <DependentUpon>LatestMatchesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match\Summary\Latest30MatchesSummaryControl.xaml.cs">
+      <DependentUpon>Latest30MatchesSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReleaseNotesWindow.xaml.cs">
       <DependentUpon>ReleaseNotesWindow.xaml</DependentUpon>
@@ -399,9 +407,6 @@
     </Compile>
     <Compile Include="Views\Match\LastMatch.xaml.cs">
       <DependentUpon>LastMatch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Match\LatestMatchesControl.xaml.cs">
-      <DependentUpon>LatestMatchesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match\MatchListControl.xaml.cs">
       <DependentUpon>MatchListControl.xaml</DependentUpon>
@@ -523,6 +528,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Match\LatestMatchesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match\Summary\Latest30MatchesSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ReleaseNotesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -608,10 +621,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Match\LastMatch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Match\LatestMatchesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

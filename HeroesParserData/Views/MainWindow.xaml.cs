@@ -124,7 +124,9 @@ namespace HeroesParserData.Views
         {
             if (action.Trigger == Messages.Trigger.Open)
             {
-                if (action.MatchSummary == MatchSummary.QuickMatch)
+                if (action.MatchSummary == MatchSummary.LatestMatches)
+                    Latest30MatchesSummaryFlyout.IsOpen = true;
+                else if (action.MatchSummary == MatchSummary.QuickMatch)
                     QuickMatchSummaryFlyout.IsOpen = true;
                 else if (action.MatchSummary == MatchSummary.UnrankedDraft)
                     UnrankedDraftSummaryFlyout.IsOpen = true;
@@ -139,7 +141,9 @@ namespace HeroesParserData.Views
             }
             else if (action.Trigger == Messages.Trigger.Close)
             {
-                if (action.MatchSummary == MatchSummary.QuickMatch)
+                if (action.MatchSummary == MatchSummary.LatestMatches)
+                    Latest30MatchesSummaryFlyout.IsOpen = false;
+                else if (action.MatchSummary == MatchSummary.QuickMatch)
                     QuickMatchSummaryFlyout.IsOpen = false;
                 else if (action.MatchSummary == MatchSummary.UnrankedDraft)
                     UnrankedDraftSummaryFlyout.IsOpen = false;
@@ -173,6 +177,11 @@ namespace HeroesParserData.Views
             }
 
             return IntPtr.Zero;
+        }
+
+        private void Latest30MatchesSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.LatestMatches, Trigger = Messages.Trigger.Close });
         }
 
         private void QuickMatchSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)

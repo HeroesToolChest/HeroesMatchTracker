@@ -9,6 +9,7 @@
         TeamLeague,
         Brawl,
         CustomGame,
-        LastMatch
+        LastMatch,
+        LatestMatches
     }
 }

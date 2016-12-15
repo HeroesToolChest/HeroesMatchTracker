@@ -38,6 +38,9 @@
             <Controls:Flyout x:Name="AboutFlyout" Header="About" Position="Right" Width="440" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
                 <Views:AboutControl />
             </Controls:Flyout>
+            <Controls:Flyout x:Name="Latest30MatchesSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="Latest30MatchesSummaryFlyout_ClosingFinished">
+                <ViewsMatchSummary:Latest30MatchesSummaryControl/>
+            </Controls:Flyout>
             <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="QuickMatchSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:QuickMatchSummaryControl/> 
             </Controls:Flyout>
@@ -63,11 +66,11 @@
             <TabItem Header="Home">
                 <Views:HomeWindow />
             </TabItem>
-            <TabItem Header="Last Match">
-                <ViewsMatch:LastMatch />
-            </TabItem>
             <TabItem Header="Game Modes">
                 <TabControl SelectedIndex="{Binding SelectedGameModesTab}">
+                    <TabItem Header="Latest Matches">
+                        <ViewsMatch:LatestMatchesControl />
+                    </TabItem>
                     <TabItem Header="Quick Match">
                         <ViewsMatch:QuickMatchControl />
                     </TabItem>

@@ -2,6 +2,7 @@
 {
     public enum GameModesTab
     {
+        LastestMatches,
         QuickMatch,
         UnrankedDraft,
         HeroLeague,

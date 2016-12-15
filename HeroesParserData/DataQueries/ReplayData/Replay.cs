@@ -62,7 +62,10 @@ namespace HeroesParserData.DataQueries
                 {
                     IQueryable<Models.DbModels.Replay> query = db.Set<Models.DbModels.Replay>();
 
-                    query = query.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
+                    if (gameMode == GameMode.Cooperative)
+                        query = query.Where(x => x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
+                    else 
+                        query = query.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
 
                     if (matchOverviewFilter.SelectedReplayBuildIdValue > 0)
                         query = query.Where(x => x.ReplayId == matchOverviewFilter.SelectedReplayBuildIdValue);
