@@ -4,12 +4,14 @@
 This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes.ReplayParser) to parse Blizzard's Heroes of the Storm replay files and then saves the data into a local database.  
 - Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, Non-Arena Brawls, and Custom Games
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
-- Also view statistics about your heroes like wins, losses, winrates, and much more for different maps and gamemodes
+- Also view personal statistics about your heroes: wins, losses, winrates, talent winrates and much more for different maps and gamemodes
+- Includes a built-in HOTS Logs uploader
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
 
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_3_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_3_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Stats_1_3_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_1_4_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Graph1_1_4_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_QM_1_4_0.jpg)
+![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_ST_1_4_0.jpg)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
@@ -22,4 +24,4 @@ Please visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki).
 ## License
 [MIT license](/LICENSE.txt)
 
-All hero icons are the property of Blizzard Entertainment.
+All hero icons (talents, backgrounds, homescreens, etc) are the property of Blizzard Entertainment.
