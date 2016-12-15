@@ -3,11 +3,11 @@
 namespace HeroesParserData.Views.Match.Summary
 {
     /// <summary>
-    /// Interaction logic for LatestMatchesSummaryControl.xaml
+    /// Interaction logic for MatchesSummaryControl.xaml
     /// </summary>
-    public partial class LatestMatchesSummaryControl : UserControl
+    public partial class MatchesSummaryControl : UserControl
     {
-        public LatestMatchesSummaryControl()
+        public MatchesSummaryControl()
         {
             InitializeComponent();
         }

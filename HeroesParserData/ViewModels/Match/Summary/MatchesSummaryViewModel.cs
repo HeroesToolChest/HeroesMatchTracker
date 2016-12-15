@@ -2,9 +2,9 @@
 
 namespace HeroesParserData.ViewModels.Match.Summary
 {
-    public class LatestMatchesSummaryViewModel : MatchSummaryContext
+    public class MatchesSummaryViewModel : MatchSummaryContext
     {
-        public LatestMatchesSummaryViewModel()
+        public MatchesSummaryViewModel()
             :base()
         {
             HasObservers = false;
@@ -13,9 +13,9 @@ namespace HeroesParserData.ViewModels.Match.Summary
 
         protected override void ReceiveMessage(MatchSummaryMessage action)
         {
-            if (action.MatchSummary == MatchSummary.LatestMatches && action.Trigger == Trigger.Open)
+            if (action.MatchSummary == MatchSummary.Matches && action.Trigger == Trigger.Open)
                 ExecuteSelectedReplay(action);
-            else if (action.MatchSummary == MatchSummary.LatestMatches && action.Trigger == Trigger.Close)
+            else if (action.MatchSummary == MatchSummary.Matches && action.Trigger == Trigger.Close)
                 ClearSummaryDetails();
         }
     }

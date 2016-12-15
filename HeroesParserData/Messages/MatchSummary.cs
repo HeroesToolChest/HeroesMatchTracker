@@ -10,6 +10,6 @@
         Brawl,
         CustomGame,
         LastMatch,
-        LatestMatches
+        Matches
     }
 }

@@ -7,9 +7,9 @@ using System.Linq;
 
 namespace HeroesParserData.ViewModels.Match
 {
-    public class LatestMatchesViewModel : MatchOverviewContext
+    public class MatchesViewModel : MatchOverviewContext
     {
-        public LatestMatchesViewModel()
+        public MatchesViewModel()
             :base()
         {
             Messenger.Default.Register<GameModesMessage>(this, (action) => ReceiveMessage(action));
@@ -17,7 +17,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected override void ExecuteLoadMatchListCommmand()
         {
-            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.Cooperative, this).Take(50));
+            MatchListCollection = new ObservableCollection<Models.DbModels.Replay>(Query.Replay.ReadGameModeRecords(GameMode.Cooperative, this));
             RowsReturned = MatchListCollection.Count;
         }
 
@@ -29,7 +29,7 @@ namespace HeroesParserData.ViewModels.Match
             Messenger.Default.Send(new MatchSummaryMessage
             {
                 Replay = SelectedReplay,
-                MatchSummary = MatchSummary.LatestMatches,
+                MatchSummary = MatchSummary.Matches,
                 MatchList = MatchListCollection.ToList(),
                 Trigger = Trigger.Open
             });
@@ -37,7 +37,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected override void ReceiveMessage(GameModesMessage action)
         {
-            if (action.GameModesTab == GameModesTab.LastestMatches)
+            if (action.GameModesTab == GameModesTab.Matches)
             {
                 if (!string.IsNullOrEmpty(action.SelectedCharacter))
                     SelectedCharacter = action.SelectedCharacter;

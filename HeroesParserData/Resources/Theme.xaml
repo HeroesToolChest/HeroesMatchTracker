@@ -825,6 +825,7 @@
     <!--context menu-->
     <ContextMenu x:Key="PlayerSearchContextMenu">
         <MenuItem Header="Hero search in...">
+            <MenuItem Header="All Matches" Command="{Binding PlayerSearchContextMenu.HeroSearchAllMatchCommand}"/>
             <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.HeroSearchQuickMatchCommand}"/>
             <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.HeroSearchUnrankedDraftCommand}"/>
             <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.HeroSearchHeroLeagueCommand}"/>
@@ -833,6 +834,7 @@
             <MenuItem Header="Custom Game" Command="{Binding PlayerSearchContextMenu.HeroSearchCustomGameCommand}"/>
         </MenuItem>
         <MenuItem Header="Player name search in...">
+            <MenuItem Header="All Matches" Command="{Binding PlayerSearchContextMenu.PlayerSearchAllMatchCommand}"/>
             <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.PlayerSearchQuickMatchCommand}"/>
             <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.PlayerSearchUnrankedDraftCommand}"/>
             <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.PlayerSearchHeroLeagueCommand}"/>
@@ -841,6 +843,7 @@
             <MenuItem Header="Custom Game" Command="{Binding PlayerSearchContextMenu.PlayerSearchCustomGameCommand}"/>
         </MenuItem>
         <MenuItem Header="Player name with Hero search in...">
+            <MenuItem Header="All Matches" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchAllMatchCommand}"/>
             <MenuItem Header="Quick Match" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchQuickMatchCommand}"/>
             <MenuItem Header="Unranked Draft" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchUnrankedDraftCommand}"/>
             <MenuItem Header="Hero League" Command="{Binding PlayerSearchContextMenu.PlayerHeroSearchHeroLeagueCommand}"/>

@@ -124,7 +124,7 @@ namespace HeroesParserData.Views
         {
             if (action.Trigger == Messages.Trigger.Open)
             {
-                if (action.MatchSummary == MatchSummary.LatestMatches)
+                if (action.MatchSummary == MatchSummary.Matches)
                     LatestMatchesSummaryFlyout.IsOpen = true;
                 else if (action.MatchSummary == MatchSummary.QuickMatch)
                     QuickMatchSummaryFlyout.IsOpen = true;
@@ -141,7 +141,7 @@ namespace HeroesParserData.Views
             }
             else if (action.Trigger == Messages.Trigger.Close)
             {
-                if (action.MatchSummary == MatchSummary.LatestMatches)
+                if (action.MatchSummary == MatchSummary.Matches)
                     LatestMatchesSummaryFlyout.IsOpen = false;
                 else if (action.MatchSummary == MatchSummary.QuickMatch)
                     QuickMatchSummaryFlyout.IsOpen = false;
@@ -157,6 +157,7 @@ namespace HeroesParserData.Views
                     CustomGameSummaryFlyout.IsOpen = false;
                 else
                 {
+                    LatestMatchesSummaryFlyout.IsOpen = false;
                     QuickMatchSummaryFlyout.IsOpen = false;
                     UnrankedDraftSummaryFlyout.IsOpen = false;
                     HeroLeagueSummaryFlyout.IsOpen = false;
@@ -181,7 +182,7 @@ namespace HeroesParserData.Views
 
         private void LatestMatchesSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
         {
-            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.LatestMatches, Trigger = Messages.Trigger.Close });
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.Matches, Trigger = Messages.Trigger.Close });
         }
 
         private void QuickMatchSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)

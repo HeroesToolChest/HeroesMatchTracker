@@ -287,8 +287,8 @@
     <Compile Include="ReleaseNoteHandler.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\Data\RawHotsLogsUploadViewModel.cs" />
-    <Compile Include="ViewModels\Match\LatestMatchesViewModel.cs" />
-    <Compile Include="ViewModels\Match\Summary\LatestMatchesSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Match\MatchesViewModel.cs" />
+    <Compile Include="ViewModels\Match\Summary\MatchesSummaryViewModel.cs" />
     <Compile Include="ViewModels\ReleaseNotesViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerHeroViewModel.cs" />
     <Compile Include="ViewModels\Data\RawAllHotsPlayerViewModel.cs" />
@@ -336,11 +336,11 @@
     <Compile Include="Views\Data\RawHotsLogsUploadControl.xaml.cs">
       <DependentUpon>RawHotsLogsUploadControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Match\LatestMatchesControl.xaml.cs">
-      <DependentUpon>LatestMatchesControl.xaml</DependentUpon>
+    <Compile Include="Views\Match\MatchesControl.xaml.cs">
+      <DependentUpon>MatchesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Match\Summary\LatestMatchesSummaryControl.xaml.cs">
-      <DependentUpon>LatestMatchesSummaryControl.xaml</DependentUpon>
+    <Compile Include="Views\Match\Summary\MatchesSummaryControl.xaml.cs">
+      <DependentUpon>MatchesSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReleaseNotesWindow.xaml.cs">
       <DependentUpon>ReleaseNotesWindow.xaml</DependentUpon>
@@ -528,11 +528,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Match\LatestMatchesControl.xaml">
+    <Page Include="Views\Match\MatchesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Match\Summary\LatestMatchesSummaryControl.xaml">
+    <Page Include="Views\Match\Summary\MatchesSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

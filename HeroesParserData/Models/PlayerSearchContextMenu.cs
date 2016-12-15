@@ -4,6 +4,7 @@ namespace HeroesParserData.Models
 {
     public class PlayerSearchContextMenu
     {
+        public ICommand HeroSearchAllMatchCommand { get; set; }
         public ICommand HeroSearchQuickMatchCommand { get; set; }
         public ICommand HeroSearchUnrankedDraftCommand { get; set; }
         public ICommand HeroSearchHeroLeagueCommand { get; set; }
@@ -11,6 +12,7 @@ namespace HeroesParserData.Models
         public ICommand HeroSearchBrawlCommand { get; set; }
         public ICommand HeroSearchCustomGameCommand { get; set; }
 
+        public ICommand PlayerSearchAllMatchCommand { get; set; }
         public ICommand PlayerSearchQuickMatchCommand { get; set; }
         public ICommand PlayerSearchUnrankedDraftCommand { get; set; }
         public ICommand PlayerSearchHeroLeagueCommand { get; set; }
@@ -18,6 +20,7 @@ namespace HeroesParserData.Models
         public ICommand PlayerSearchBrawlCommand { get; set; }
         public ICommand PlayerSearchCustomGameCommand { get; set; }
 
+        public ICommand PlayerHeroSearchAllMatchCommand { get; set; }
         public ICommand PlayerHeroSearchQuickMatchCommand { get; set; }
         public ICommand PlayerHeroSearchUnrankedDraftCommand { get; set; }
         public ICommand PlayerHeroSearchHeroLeagueCommand { get; set; }

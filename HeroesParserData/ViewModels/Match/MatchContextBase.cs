@@ -84,6 +84,7 @@ namespace HeroesParserData.ViewModels.Match
 
         protected void SetContextMenuCommands(MatchPlayerInfoBase matchPlayerInfoBase)
         {
+            matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchAllMatchCommand = new DelegateCommand(() => ExecuteHeroSearchAllMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchQuickMatchCommand = new DelegateCommand(() => ExecuteHeroSearchQuickMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchUnrankedDraftCommand = new DelegateCommand(() => ExecuteHeroSearchUnrankedDraftCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchHeroLeagueCommand = new DelegateCommand(() => ExecuteHeroSearchHeroLeagueCommand());
@@ -91,6 +92,7 @@ namespace HeroesParserData.ViewModels.Match
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchBrawlCommand = new DelegateCommand(() => ExecuteHeroSearchBrawlCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.HeroSearchCustomGameCommand = new DelegateCommand(() => ExecuteHeroSearchCustomGameCommand());
 
+            matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchAllMatchCommand = new DelegateCommand(() => ExecutePlayerSearchAllMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchQuickMatchCommand = new DelegateCommand(() => ExecutePlayerSearchQuickMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchUnrankedDraftCommand = new DelegateCommand(() => ExecutePlayerSearchUnrankedDraftCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchHeroLeagueCommand = new DelegateCommand(() => ExecutePlayerSearchHeroLeagueCommand());
@@ -98,6 +100,7 @@ namespace HeroesParserData.ViewModels.Match
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchBrawlCommand = new DelegateCommand(() => ExecutePlayerSearchBrawlCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerSearchCustomGameCommand = new DelegateCommand(() => ExecutePlayerSearchCustomGameCommand());
 
+            matchPlayerInfoBase.PlayerSearchContextMenu.PlayerHeroSearchAllMatchCommand = new DelegateCommand(() => ExecutePlayerHeroSearchAllMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerHeroSearchQuickMatchCommand = new DelegateCommand(() => ExecutePlayerHeroSearchQuickMatchCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerHeroSearchUnrankedDraftCommand = new DelegateCommand(() => ExecutePlayerHeroSearchUnrankedDraftCommand());
             matchPlayerInfoBase.PlayerSearchContextMenu.PlayerHeroSearchHeroLeagueCommand = new DelegateCommand(() => ExecutePlayerHeroSearchHeroLeagueCommand());
@@ -112,6 +115,13 @@ namespace HeroesParserData.ViewModels.Match
 
         // -------- Hero Search
         #region Execute Hero Search
+        private void ExecuteHeroSearchAllMatchCommand()
+        {
+            Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Matches, SelectedCharacter = SelectedDataPlayer.CharacterName });
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
+        }
+
         private void ExecuteHeroSearchQuickMatchCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
@@ -157,6 +167,13 @@ namespace HeroesParserData.ViewModels.Match
 
         // -------- Player Search
         #region Execute Player Search
+        private void ExecutePlayerSearchAllMatchCommand()
+        {
+            Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Matches, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
+        }
+
         private void ExecutePlayerSearchQuickMatchCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
@@ -202,6 +219,13 @@ namespace HeroesParserData.ViewModels.Match
 
         // -------- Player with Hero Search
         #region Execute Player with Hero
+        private void ExecutePlayerHeroSearchAllMatchCommand()
+        {
+            Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
+            Messenger.Default.Send(new GameModesMessage { GameModesTab = GameModesTab.Matches, SelectedCharacter = SelectedDataPlayer.CharacterName, SelectedBattleTagName = SelectedDataPlayer.PlayerName });
+            Messenger.Default.Send(new MatchSummaryMessage { MatchSummary = MatchSummary.All, Trigger = Messages.Trigger.Close });
+        }
+
         private void ExecutePlayerHeroSearchQuickMatchCommand()
         {
             Messenger.Default.Send(new MainTabMessage { MainTab = MainTab.GameModes });
