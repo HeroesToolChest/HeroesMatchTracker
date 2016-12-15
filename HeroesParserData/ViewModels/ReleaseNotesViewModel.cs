@@ -25,7 +25,9 @@ namespace HeroesParserData.ViewModels
             if (listOfReleases.Count <= 0)
                 return;
 
-            Version currentVersion = HPDVersion.GetVersion();
+            Version versionTemp = HPDVersion.GetVersion();
+            Version currentVersion = new Version(versionTemp.Major, versionTemp.Minor, versionTemp.Build);
+
             if (new Version(listOfReleases[0].Version) < currentVersion)
             {
                 if (listOfReleases[0].PreRelease)

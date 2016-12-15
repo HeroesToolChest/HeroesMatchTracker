@@ -56,7 +56,9 @@ namespace HeroesParserData
         /// </summary>
         public void AddAllReleasesUpToCurrentVersion()
         {
-            Version currentVersion = HPDVersion.GetVersion();
+            Version versionTemp = HPDVersion.GetVersion();
+            Version currentVersion = new Version(versionTemp.Major, versionTemp.Minor, versionTemp.Build);
+
             foreach (var releaseNote in Releases)
             {
                 if (new Version(releaseNote.TagName.TrimStart('v')) <= currentVersion)
