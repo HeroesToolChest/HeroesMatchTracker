@@ -17,8 +17,7 @@
     <UserControl.Resources>
         <SolidColorBrush x:Key="GraphGridBackgroundBrush" Color="#EEFFFFFF" />
         <system:Double x:Key="MaxGraphWidth">2400</system:Double>
-        <system:Double x:Key="InnerTab1Height">786</system:Double>
-        <system:Double x:Key="InnerTab2Height">740</system:Double>
+        <system:Double x:Key="MaxGraphHeight">1800</system:Double>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -974,7 +973,7 @@
             <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
                 <TabControl Controls:TabControlHelper.IsUnderlined="True">
                     <TabItem Header="Team Levels" Style="{StaticResource CustomInner1MetroTabItem}">
-                        <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab1Height}" MaxWidth="{StaticResource MaxGraphWidth}">
+                        <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="60"></RowDefinition>
                                 <RowDefinition></RowDefinition>
@@ -1003,7 +1002,7 @@
                     <TabItem Header="Team Experience" Style="{StaticResource CustomInner1MetroTabItem}" MaxWidth="{StaticResource MaxGraphWidth}">
                         <TabControl Controls:TabControlHelper.IsUnderlined="True">
                             <TabItem Header="Over Time" Style="{StaticResource CustomInner2MetroTabItem}">
-                                <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}">
+                                <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition Width="40"></ColumnDefinition>
@@ -1037,7 +1036,7 @@
                             <TabItem Header="Final Exp Breakdown" Style="{StaticResource CustomInner2MetroTabItem}">
                                 <Grid>
                                     <Controls:ToggleSwitch Header="Show as Row Chart" OnLabel="Yes" OffLabel="No" IsChecked="{Binding MatchSummaryGraphs.ToggleSwitchRowOrPie}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Panel.ZIndex="999"/>
-                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition></ColumnDefinition>
                                             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -1061,7 +1060,7 @@
                                             </lvc:PieChart.ChartLegend>
                                         </lvc:PieChart>
                                     </Grid>
-                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Top" Height="{StaticResource InnerTab2Height}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperienceRowChartVisible, Converter={StaticResource BooleanToVisibility}}">
+                                    <Grid Background="{StaticResource GraphGridBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding MatchSummaryGraphs.IsTeamExperienceRowChartVisible, Converter={StaticResource BooleanToVisibility}}">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="60"></RowDefinition>
                                             <RowDefinition></RowDefinition>
