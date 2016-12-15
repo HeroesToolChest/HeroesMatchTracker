@@ -165,6 +165,12 @@ namespace HeroesParserData.Database
                         VALUES ('1.3.2', 0, '2016-12-07T06:21:19Z',
                         '{text}')");
 
+            text = "## What''s New\r\n- Updated for Ragnaros patch\r\n  - Added build 48760\r\n  - Added Season 3\r\n- Added built-in HOTS Logs uploader\r\n- Redesigned the `Games Modes` tab\r\n  - Now has search options and replay filtering\r\n  - Click on a replay to view the `Overview` which shows the heroes and players\r\n  - Click on the `View Match Summary` button to view the `Match Summary` details\r\n- `Latest 30 Matches` tab is now in the `Games Modes` tab and has been renamed to `All Matches`\r\n- New tabs in `Match Summary`\r\n  - Advanced Stats\r\n - Team Level over time graph\r\n - Experience graphs\r\n- Removed Tag column form `Match Summaries` and added the tag to the player name\r\n- Added About and What''s New menu\r\n- Auto update/manual update has been changed\r\n  - The manual update check has been moved to the about menu\r\n  - Added option to update to pre-release builds\r\n  - Will now check for updates about every hour and will notify you if an update is available to download\r\n- Added player/hero search context menus\r\n  - Available by right-clicking on most hero portraits and battletags\r\n\r\n## Fixes\r\n- Fixed application not restarting after update\r\n  -  **Will still need to manual start the application after updating to this version**\r\n- Fixed Samuro''s level 20 image for `Wind Strider`\r\n- Some new talents references for Nova\r\n- Fixed `Heroes Usable` not x-outing none usable heroes\r\n- Fixed Clear buttons not working in the `Replays` tab and now clears to 1/1/2014\r\n\r\n## Other\r\n- Running in debug mode now shows DEBUG in the title";
+            text = text.Replace("\r\n", Environment.NewLine);
+            steps.Add($@"INSERT INTO ReleaseNotes(Version, PreRelease, DateReleased, PatchNote) 
+                        VALUES ('1.4.0', 0, '2016-12-15T22:07:16Z',
+                        '{text}')");
+
             // create
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsNewUpdateApplied', 'True')");
