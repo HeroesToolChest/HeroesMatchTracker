@@ -159,6 +159,12 @@ namespace HeroesParserData.Database
                         VALUES ('1.3.1', 0, '2016-11-20T00:47:35Z',
                         '{text}')");
 
+            text = "## Fixes \r\n - Added build 48297 and 48548";
+            text = text.Replace("\r\n", Environment.NewLine);
+            steps.Add($@"INSERT INTO ReleaseNotes(Version, PreRelease, DateReleased, PatchNote) 
+                        VALUES ('1.3.2', 0, '2016-12-07T06:21:19Z',
+                        '{text}')");
+
             // create
             steps.Add(@"INSERT INTO UserSettings(Name, Value)
                         VALUES ('IsNewUpdateApplied', 'True')");
