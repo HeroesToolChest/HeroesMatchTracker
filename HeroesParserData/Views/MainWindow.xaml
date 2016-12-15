@@ -66,6 +66,9 @@
             <TabItem Header="Home">
                 <Views:HomeWindow />
             </TabItem>
+            <TabItem Header="Last Match">
+                <ViewsMatch:LastMatch />
+            </TabItem>
             <TabItem Header="Game Modes">
                 <TabControl SelectedIndex="{Binding SelectedGameModesTab}">
                     <TabItem Header="Latest Matches">
