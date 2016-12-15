@@ -737,6 +737,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Images\HeroesParserData_Overview_1_4_0.jpg" />
     <None Include="Resources\Images\HeroesParserData_1_2_0.jpg" />
     <None Include="Resources\Images\HeroesParserData_1_3_0.jpg" />
     <None Include="Resources\Images\HeroesParserData_1_4_0.jpg" />
