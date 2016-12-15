@@ -339,8 +339,8 @@
     <Compile Include="Views\Match\LatestMatchesControl.xaml.cs">
       <DependentUpon>LatestMatchesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Match\Summary\Latest30MatchesSummaryControl.xaml.cs">
-      <DependentUpon>Latest30MatchesSummaryControl.xaml</DependentUpon>
+    <Compile Include="Views\Match\Summary\LatestMatchesSummaryControl.xaml.cs">
+      <DependentUpon>LatestMatchesSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReleaseNotesWindow.xaml.cs">
       <DependentUpon>ReleaseNotesWindow.xaml</DependentUpon>
@@ -532,7 +532,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Match\Summary\Latest30MatchesSummaryControl.xaml">
+    <Page Include="Views\Match\Summary\LatestMatchesSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

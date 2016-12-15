@@ -38,8 +38,8 @@
             <Controls:Flyout x:Name="AboutFlyout" Header="About" Position="Right" Width="440" Theme="Accent" IsOpen="False" Margin="0,15,0,0">
                 <Views:AboutControl />
             </Controls:Flyout>
-            <Controls:Flyout x:Name="Latest30MatchesSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="Latest30MatchesSummaryFlyout_ClosingFinished">
-                <ViewsMatchSummary:Latest30MatchesSummaryControl/>
+            <Controls:Flyout x:Name="LatestMatchesSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="LatestMatchesSummaryFlyout_ClosingFinished">
+                <ViewsMatchSummary:LatestMatchesSummaryControl/>
             </Controls:Flyout>
             <Controls:Flyout x:Name="QuickMatchSummaryFlyout" Header="Match Summary" Position="Left" Theme="Accent" IsOpen="False" Margin="0,15,0,0" ClosingFinished="QuickMatchSummaryFlyout_ClosingFinished">
                 <ViewsMatchSummary:QuickMatchSummaryControl/> 
