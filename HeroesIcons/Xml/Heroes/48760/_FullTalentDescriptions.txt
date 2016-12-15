@@ -1000,7 +1000,7 @@ MonkSoothingBreezeTalent=Breath of Heaven removes silences, blinds, slows and ro
 MonkSpiritAlly=Place a Spirit Ally that heals allies in a large area around it for <c val="#TooltipNumbers">2%</c> of their maximum Health every second. Has <c val="#TooltipNumbers">150</c> Health and lasts <c val="#TooltipNumbers">2</c> seconds. Kharazim can Radiant Dash to Spirit Allies.
 MonkTranscendenceTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack heals the lowest nearby allied Hero for <c val="#TooltipNumbers">73</c>.
 MonkWayoftheHundredFistsTalent=Radiant Dashing to an enemy launches a rapid volley of <c val="#TooltipNumbers">6</c> Basic Attacks dealing <c val="#TooltipNumbers">50%</c> damage each.
-MuradinAvatar=Transform for <c val="#TooltipNumbers">20</c> seconds, gaining <c val="#TooltipNumbers">1124</c> Health.
+MuradinAvatar=Transform for <c val="#TooltipNumbers">20</c> seconds, gaining <c val="#TooltipNumbers">1053</c> Health.
 MuradinAvatarUnstoppableForceTalent=Increases the duration of Avatar by <c val="#TooltipNumbers">30%</c>, and the duration of Stuns, Roots, and Slows are reduced by <c val="#TooltipNumbers">75%</c> while in Avatar.
 MuradinDwarfToss=Leap to target location, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies on landing. Upon leaping, you also become Resistant, reducing damage taken by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MuradinDwarfTossDwarfLaunchTalent=Increases the range and impact radius of Dwarf Toss by <c val="#TooltipNumbers">50%</c>.
