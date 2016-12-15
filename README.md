@@ -12,7 +12,6 @@ This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Overview_1_4_0.jpg)
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_TL_1_4_0.jpg)
 ![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_Graph1_1_4_0.jpg)
-![HeroesParserData](/HeroesParserData/Resources/Images/HeroesParserData_ST_1_4_0.jpg)
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
