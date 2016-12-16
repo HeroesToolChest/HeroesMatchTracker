@@ -15,6 +15,7 @@ namespace HeroesParserData.Graphs
         private string _graphTeam1Title;
         private bool _isTeamExperiencePieChartVisible;
         private bool _isTeamExperienceRowChartVisible;
+        private double _matchTeamExperienceMaxYValue;
 
         private SeriesCollection _matchTeamLevelsLineChartCollection;
         private SeriesCollection _matchTeam0ExperienceStackedGraphCollection;
@@ -27,7 +28,6 @@ namespace HeroesParserData.Graphs
         public Func<double, string> MatchTeamExperienceFormatter { get; set; }
         public Func<ChartPoint, string> MatchTeamExperiencePiePointLabel { get; set; }
         public string[] ExperienceTypesLabels { get; set; }
-        public double MatchTeamExperienceMaxYValue { get; set; }
 
 
         public string GraphTeam0Title
@@ -67,6 +67,16 @@ namespace HeroesParserData.Graphs
             {
                 _isTeamExperienceRowChartVisible = value;
                 RaisePropertyChangedEvent(nameof(IsTeamExperienceRowChartVisible));
+            }
+        }
+
+        public double MatchTeamExperienceMaxYValue
+        {
+            get { return _matchTeamExperienceMaxYValue; }
+            set
+            {
+                _matchTeamExperienceMaxYValue = value;
+                RaisePropertyChangedEvent(nameof(MatchTeamExperienceMaxYValue));
             }
         }
 
