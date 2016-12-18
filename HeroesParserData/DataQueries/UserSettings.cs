@@ -32,7 +32,6 @@ namespace HeroesParserData
 
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
             UserBattleTagName = string.Empty;
-            SelectedSeason = "Season 2";
 
             ReplaysLatestSaved = new DateTime();
             ReplaysLastSaved = new DateTime();
@@ -122,12 +121,6 @@ namespace HeroesParserData
         {
             get { return GetStringValue(nameof(ReplaysLocation)); }
             set { SetStringValue(nameof(ReplaysLocation), value); }
-        }
-
-        public string SelectedSeason
-        {
-            get { return GetStringValue(nameof(SelectedSeason)); }
-            set { SetStringValue(nameof(SelectedSeason), value); }
         }
 
         public string UserBattleTagName
