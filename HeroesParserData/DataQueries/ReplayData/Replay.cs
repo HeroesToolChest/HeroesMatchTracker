@@ -129,7 +129,7 @@ namespace HeroesParserData.DataQueries
                         }
                     }
 
-                    return query.OrderByDescending(x => x.TimeStamp).ToList();
+                    return query.Distinct().OrderByDescending(x => x.TimeStamp).ToList();
                 }
             }
 
