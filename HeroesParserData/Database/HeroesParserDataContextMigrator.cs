@@ -15,6 +15,7 @@ namespace HeroesParserData.Database
             MigrationVersion1();
             MigrationVersion2();
             MigrationVersion3();
+            MigrationVersion4();
         }
 
         // Add new migration versions here
@@ -208,6 +209,17 @@ namespace HeroesParserData.Database
                         FOREIGN KEY (ReplayId) REFERENCES Replays (ReplayId))");
 
             Migrations.Add(3, steps);
+        }
+
+        private void MigrationVersion4()
+        {
+            List<string> steps = new List<string>();
+
+            // delete
+            steps.Add(@"DELETE FROM UserSettings
+                        WHERE Name = 'SelectedSeason'");
+
+            Migrations.Add(4, steps);
         }
     }
 }

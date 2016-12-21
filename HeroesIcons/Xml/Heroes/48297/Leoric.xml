@@ -4,7 +4,7 @@
     <LeoricMasteryManaThirstSkeletalSwing name="Mana Thirst" desc="LeoricManaThirstTalent">storm_ui_icon_leoric_SkeletalSwing.dds</LeoricMasteryManaThirstSkeletalSwing>
     <LeoricMasteryHopelessnessDrainHope name="Hopelessness" desc="LeoricHopelessnessTalent">storm_ui_icon_leoric_DrainHope.dds</LeoricMasteryHopelessnessDrainHope>
     <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
-    <LeoricMasteryReanimation name="Reanimation" desc="LeoricReanimationTalent">storm_temp_war3_btnanimatedead.dds</LeoricMasteryReanimation>
+    <LeoricMasteryReanimation name="Reanimation" desc="LeoricReanimationTalent">storm_ui_icon_leoric_Trait.dds</LeoricMasteryReanimation>
   </Level1>
   <Level4>
     <LeoricMasteryFealtyUntoDeathUndying name="Fealty Unto Death" desc="LeoricFealtyUntoDeathTalent">storm_ui_icon_leoric_Trait.dds</LeoricMasteryFealtyUntoDeathUndying>
