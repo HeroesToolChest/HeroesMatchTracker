@@ -1973,6 +1973,9 @@
     <Content Include="Xml\MapBackgrounds\TowersofDoom.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Xml\MapBackgrounds\SilverCity.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Xml\MapBackgrounds\WarheadJunction.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
