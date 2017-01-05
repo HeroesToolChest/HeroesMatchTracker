@@ -994,7 +994,7 @@
                                     </lvc:Axis>
                                 </lvc:CartesianChart.AxisY>
                                 <lvc:CartesianChart.AxisX>
-                                    <lvc:Axis Title="Time" LabelFormatter="{Binding MatchSummaryGraphs.MatchTeamLevelsFormatter}"/>
+                                    <lvc:Axis Title="Time" MinValue="0" LabelFormatter="{Binding MatchSummaryGraphs.MatchTeamLevelsFormatter}"/>
                                 </lvc:CartesianChart.AxisX>
                             </lvc:CartesianChart>
                         </Grid>
