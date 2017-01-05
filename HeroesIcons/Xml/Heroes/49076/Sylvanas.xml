@@ -2,7 +2,7 @@
 <Sylvanas attributeid="Sylv" role="Specialist" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_sylvanas.dds" loading="storm_ui_ingame_hero_loadingscreen_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
   <Level1>
     <SylvanasTalentOverflowingQuiver name="Overflowing Quiver" desc="SylvanasWitheringFireOverflowingQuiverTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
-    <SylvanasTalentBlackArrowsParalysis name="Paralysis" desc="SylvanasBlackArrowsParalysisTalent">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentBlackArrowsParalysis>
+    <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasBlackArrowsParalysisTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasDreadfulWake>
     <SylvanasTalentMercenaryQueen name="Mercenary Queen" desc="SylvanasMercenaryQueenTalent">storm_ui_icon_sylvanas_bansheequeen.dds</SylvanasTalentMercenaryQueen>
   </Level1>
   <Level4>

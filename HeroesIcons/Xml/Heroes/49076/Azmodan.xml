@@ -8,7 +8,7 @@
   <Level4>
     <AzmodanMasteryGluttony name="Gluttony" desc="AzmodanAllShallBurnGluttonyTalent">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryGluttony>
     <AzmodanMasteryArmyOfHell name="Army of Hell" desc="AzmodanSummonDemonWarriorArmyOfHellTalent">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanMasteryArmyOfHell>
-    <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.dds</GenericTalentMercenaryLord>
+    <AzmodanHellishHirelings name="Hellish Hirelings" desc="AzmodanHellishHirelings">storm_ui_icon_azmodan_generalofhell.dds</AzmodanHellishHirelings>
     <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">storm_ui_icon_azmodan_sinsgrasp.dds</AzmodanSinsGrasp>
   </Level4>
   <Level7>
@@ -29,7 +29,6 @@
   <Level16>
     <AzmodanMasteryBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryBattleborn>
     <AzmodanMasteryDemonicSmite name="Demonic Smite" desc="AzmodanGeneralOfHellDemonicSmiteTalent">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryDemonicSmite>
-    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
     <AzmodanSinforSin name="Sin for Sin" generic="true" desc="AzmodanSinforSin">storm_ui_icon_talent_bloodforblood.dds</AzmodanSinforSin>
   </Level16>
   <Level20>

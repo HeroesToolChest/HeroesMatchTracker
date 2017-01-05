@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Nova attributeid="Nova" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_nova.dds" loading="storm_ui_ingame_hero_loadingscreen_nova.dds" leader="storm_ui_ingame_hero_leaderboard_nova.dds">
   <Level1>
-    <NovaTacticalEspionage name="Tactical Espionage" desc="NovaPermanentCloakSniperTacticalEspionageTalent">storm_ui_icon_nova_personalcloaking.dds</NovaTacticalEspionage>
     <NovaAdvancedCloaking name="Advanced Cloaking" desc="NovaPermanentCloakSniperAdvancedCloakingTalent">storm_ui_icon_nova_personalcloaking_var1.dds</NovaAdvancedCloaking>
     <NovaMasteryLongshot name="Longshot" desc="NovaPinningShotLongshotTalent">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryLongshot>
     <NovaCovertOps name="Covert Ops" desc="NovaCovertOpsTalent">storm_ui_icon_nova_pinningshot_var1.dds</NovaCovertOps>

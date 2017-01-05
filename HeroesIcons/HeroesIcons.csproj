@@ -409,6 +409,22 @@
     <Resource Include="Icons\Talents\Artanis\storm_ui_icon_artanis_shieldoverload_a.dds" />
     <Resource Include="Icons\Talents\Diablo\storm_ui_icon_diablo_firestomp_a.dds" />
     <Resource Include="Icons\Homescreens\homescreen_ragnaros.jpg" />
+    <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_zuljin.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_zuljin.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_zuljin.dds" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_silvercity.jpg" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_arcaniteaxes.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_berzerker.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_berzerker_off.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_davoodooshuffle.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_grievousthrow.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_guillotine.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_headhunter.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_regeneration.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_tazdingo.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_trollnet.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_twincleave.dds" />
+    <Resource Include="Icons\Talents\Zuljin\storm_ui_icon_zuljin_twincleave_a.dds" />
     <Content Include="Xml\Heroes\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1901,6 +1917,10 @@
     </Content>
     <Content Include="Xml\Heroes\49076\Zarya.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Heroes\49076\Zuljin.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Xml\Heroes\49076\Zeratul.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
