@@ -159,8 +159,19 @@ namespace HeroesParserData.Graphs
             }
         }
 
+
+        public MatchSummaryGraphs()
+        {
+            ToggleSwitchRowOrPie = UserSettings.Default.IsTeamExperienceRowChartEnabled;
+
+            GraphTeam0Title = "Team 1";
+            GraphTeam1Title = "Team 2";
+        }
+
         public void SetTeamLevelSeriesCollection(List<ReplayMatchTeamLevel> matchTeamLevels)
         {
+            MatchTeamLevelsLineChartCollection = null;
+
             MatchTeamLevelsFormatter = value => new DateTime((long)value).ToString("mm:ss");
 
             var chartValuesTeam0 = new ChartValues<DateTimePoint>();
@@ -204,16 +215,12 @@ namespace HeroesParserData.Graphs
             };
         }
 
-        public MatchSummaryGraphs()
-        {
-            ToggleSwitchRowOrPie = UserSettings.Default.IsTeamExperienceRowChartEnabled;
-
-            GraphTeam0Title = "Team 1";
-            GraphTeam1Title = "Team 2";
-        }
-
         public void SetTeamExperienceSeriesCollection(List<ReplayMatchTeamExperience> matchTeamExperience)
         {
+            MatchTeam0ExperienceStackedGraphCollection = null;
+            MatchTeam1ExperienceStackedGraphCollection = null;
+            MatchTeamExperienceRowChartCollection = null;
+
             MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
             MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
             ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
