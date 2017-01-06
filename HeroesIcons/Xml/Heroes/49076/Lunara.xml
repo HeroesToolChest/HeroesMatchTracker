@@ -13,10 +13,10 @@
     <DryadDividingWisp name="Dividing Wisp" desc="DryadDividingWispTalent">storm_ui_icon_Lunara_Wisp_C.dds</DryadDividingWisp>
   </Level4>
   <Level7>
-    <DryadSiphoningToxin name="Siphoning Toxin" desc="DryadSiphoningToxinTalent">storm_ui_icon_lunara_stiflingblossom.dds</DryadSiphoningToxin>
+    <DryadSiphoningToxin name="Siphoning Toxin" desc="DryadSiphoningToxinTalent">storm_ui_icon_lunara_stiflingblossom_var1.dds</DryadSiphoningToxin>
     <DryadWildVigor name="Wild Vigor" desc="DryadWildVigorTalent">storm_ui_icon_Lunara_FullBloom.dds</DryadWildVigor>
     <DryadSplinteredSpear name="Splintered Spear" desc="DryadSplinteredSpearTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadSplinteredSpear>
-    <DryadNaturesCulling name="Nature's Culling" desc="DryadNaturesCullingTalent">storm_ui_icon_lunara_stiflingblossom_var1.dds</DryadNaturesCulling>
+    <DryadNaturesCulling name="Nature's Culling" desc="DryadNaturesCullingTalent">storm_ui_icon_lunara_stiflingblossom.dds</DryadNaturesCulling>
   </Level7>
   <Level10>
     <DryadHeroicAbilityThornwoodVine name="Thornwood Vine" desc="DryadThornwoodVine">storm_ui_icon_Lunara_WildSpear.dds</DryadHeroicAbilityThornwoodVine>
