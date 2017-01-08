@@ -1598,7 +1598,7 @@ WitchDoctorRingOfPoison=Zombie Wall lasts <c val="#TooltipNumbers">1</c> second 
 WitchDoctorSoulHarvest=Activate to increase Nazeebo's Health and Ability Power by <c val="#TooltipNumbers">5%</c> for each nearby enemy, up to a maximum of <c val="#TooltipNumbers">25%</c>. Lasts <c val="#TooltipNumbers">15</c> seconds.
 WitchDoctorSpiderColony=Corpse Spiders' cooldown recharges <c val="#TooltipNumbers">100%</c> faster while above <c val="#TooltipNumbers">850</c> Health.
 WitchDoctorSpiritofArachyr=If Corpse Spiders hits only one enemy, it creates <c val="#TooltipNumbers">2</c> additional spiders.
-WitchDoctorSuperstition=Gain <c val="#TooltipNumbers">50</c> Spell Armor, taking <c val="#TooltipNumbers">50%</c> less damage from Abilities, but lose <c val="#ToolttipNumbers">30</c> Physical Armor, taking <c val="#TooltipNumbers">30%</c> more damage from Basic Attacks.
+WitchDoctorSuperstition=Gain <c val="#TooltipNumbers">50</c> Spell Armor, taking <c val="#TooltipNumbers">50%</c> less damage from Abilities, but lose <c val="#TooltipNumbers">30</c> Physical Armor, taking <c val="#TooltipNumbers">30%</c> more damage from Basic Attacks.
 WitchDoctorThingOfTheDeepTalent=Increases the range of Nazeebo's Basic Abilities by <c val="#TooltipNumbers">20%</c>.
 WitchDoctorVileInfection=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After reaching <c val="#TooltipNumbers">150</c> stacks of Voodoo Ritual, it can also be applied to Heroes and its damage is increased by <c val="#TooltipNumbers">200%</c>.
 WitchDoctorVoodooRitualBloodRitualTalent=If an enemy dies while poisoned by Voodoo Ritual, restore <c val="#TooltipNumbers">2%</c> of Nazeebo's maximum Health and Mana.
