@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HeroesStatTracker.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReplaysConnNameDb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Replays</Value>
+    </Setting>
+    <Setting Name="SettingsConnNameDb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Settings</Value>
+    </Setting>
+    <Setting Name="DatabaseFolderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Database</Value>
+    </Setting>
+    <Setting Name="ReplaysDbFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Replays.sqlite</Value>
+    </Setting>
+    <Setting Name="SettingsDbFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Settings.sqlite</Value>
+    </Setting>
+    <Setting Name="ReplaysDatabaseMigrationVersion" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SettingsDatabaseMigrationVersion" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

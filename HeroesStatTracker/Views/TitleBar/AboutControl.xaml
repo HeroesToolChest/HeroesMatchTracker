@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="HeroesStatTracker.Views.TitleBar.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesStatTracker.Views"
+             mc:Ignorable="d" 
+             DataContext="{Binding AboutControlViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="1000" d:DesignWidth="400">
+    <UserControl.Resources>
+        <Thickness x:Key="SectionMargin" Left="12" Top="6" Right="12" Bottom="6"/>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock Text="Heroes Stat Tracker" FontSize="24" Margin="12 12 12 0"/>
+        <TextBlock x:Name="AppVersion" Text="Version: 0.0.0" Margin="12 4 "/>
+        <StackPanel Orientation="Horizontal" Margin="12 0">
+            <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesButtonEnabled}" Width="150" Margin="0 0 8 0" />
+            <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 8 0"/>
+            <CheckBox Content="Pre-release" IsChecked="{Binding IsIncludeManualPreRelease}"/>
+        </StackPanel>
+        <TextBlock Text="{Binding CheckForUpdatesResponse}" Margin="12 4"/>
+        <StackPanel Margin="{StaticResource SectionMargin}">
+            <TextBlock>
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData" RequestNavigate="Hyperlink_RequestNavigate">
+                    Project Website
+                </Hyperlink>
+                <LineBreak />
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData/wiki" RequestNavigate="Hyperlink_RequestNavigate">
+                    Project Wiki
+                </Hyperlink>
+                <LineBreak />
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData/releases" RequestNavigate="Hyperlink_RequestNavigate">
+                    Project Releases
+                </Hyperlink>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Margin="{StaticResource SectionMargin}">
+            <TextBlock Text="{Binding HeroesStatTrackerCoreVersion, StringFormat=HeroesStatTracker.Core {0}}"/>
+            <TextBlock Text="{Binding HeroesStatTrackerDataVersion, StringFormat=HeroesStatTracker.Data {0}}"/>
+            <TextBlock Text="{Binding HeroesStatTrackerHelpersVersion, StringFormat=Heroes.Helpers {0}}"/>
+            <TextBlock Text="{Binding HeroesIconsVersion, StringFormat=Heroes.Icons {0}}"/>
+            <TextBlock Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
