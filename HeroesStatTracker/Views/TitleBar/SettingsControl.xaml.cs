@@ -19,7 +19,7 @@ namespace HeroesStatTracker.Views.TitleBar
         public void CreatePaletteWindow()
         {
             PaletteSelectorWindow window = new PaletteSelectorWindow();
-            window.Show();
+            window.ShowDialog();
         }
     }
 }

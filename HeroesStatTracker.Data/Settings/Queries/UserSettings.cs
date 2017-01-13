@@ -9,18 +9,25 @@ namespace HeroesStatTracker.Data.Settings.Queries
 
         internal void SetDefaultSettings()
         {
-            ReplayWatchCheckBox = false;
-            ReplayAutoScanCheckBox = false;
+            // Settings
             IsAutoUpdates = true;
             IsIncludePreRelease = false;
             IsMinimizeToTray = false;
             IsBattleTagHidden = true;
+            IsNightMode = false;
+            IsAlternateStyle = false;
+            MainStylePrimary = "blue";
+            MainStyleAccent = "lightblue";
+
+            // needs to be organized
+            ReplayWatchCheckBox = false;
+            ReplayAutoScanCheckBox = false;
+
             IsIncludeSubDirectories = true;
             IsNewUpdateApplied = false;
             IsIncludeManualPreRelease = false;
             IsHotsLogsUploaderEnabled = false;
             IsTeamExperienceRowChartEnabled = true;
-
             SelectedScanDateTimeIndex = 0;
 
             UserPlayerId = 0;
@@ -34,12 +41,7 @@ namespace HeroesStatTracker.Data.Settings.Queries
             ReplaysLastHotsLogs = new DateTime();
         }
 
-        public bool ReplayAutoScanCheckBox
-        {
-            get { return GetBooleanValue(nameof(ReplayAutoScanCheckBox)); }
-            set { SetBooleanValue(nameof(ReplayAutoScanCheckBox), value); }
-        }
-
+        #region Settings
         public bool IsAutoUpdates
         {
             get { return GetBooleanValue(nameof(IsAutoUpdates)); }
@@ -52,18 +54,6 @@ namespace HeroesStatTracker.Data.Settings.Queries
             set { SetBooleanValue(nameof(IsIncludePreRelease), value); }
         }
 
-        public bool IsIncludeManualPreRelease
-        {
-            get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
-            set { SetBooleanValue(nameof(IsIncludeManualPreRelease), value); }
-        }
-
-        public bool ReplayWatchCheckBox
-        {
-            get { return GetBooleanValue(nameof(ReplayWatchCheckBox)); }
-            set { SetBooleanValue(nameof(ReplayWatchCheckBox), value); }
-        }
-
         public bool IsMinimizeToTray
         {
             get { return GetBooleanValue(nameof(IsMinimizeToTray)); }
@@ -74,6 +64,50 @@ namespace HeroesStatTracker.Data.Settings.Queries
         {
             get { return GetBooleanValue(nameof(IsBattleTagHidden)); }
             set { SetBooleanValue(nameof(IsBattleTagHidden), value); }
+        }
+
+        public bool IsNightMode
+        {
+            get { return GetBooleanValue(nameof(IsNightMode)); }
+            set { SetBooleanValue(nameof(IsNightMode), value); }
+        }
+
+        public bool IsAlternateStyle
+        {
+            get { return GetBooleanValue(nameof(IsAlternateStyle)); }
+            set { SetBooleanValue(nameof(IsAlternateStyle), value); }
+        }
+
+        public string MainStylePrimary
+        {
+            get { return GetStringValue(nameof(MainStylePrimary)); }
+            set { SetStringValue(nameof(MainStylePrimary), value); }
+        }
+
+        public string MainStyleAccent
+        {
+            get { return GetStringValue(nameof(MainStyleAccent)); }
+            set { SetStringValue(nameof(MainStyleAccent), value); }
+        }
+        #endregion Settings
+
+        public bool ReplayAutoScanCheckBox
+        {
+            get { return GetBooleanValue(nameof(ReplayAutoScanCheckBox)); }
+            set { SetBooleanValue(nameof(ReplayAutoScanCheckBox), value); }
+        }
+
+
+        public bool IsIncludeManualPreRelease
+        {
+            get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
+            set { SetBooleanValue(nameof(IsIncludeManualPreRelease), value); }
+        }
+
+        public bool ReplayWatchCheckBox
+        {
+            get { return GetBooleanValue(nameof(ReplayWatchCheckBox)); }
+            set { SetBooleanValue(nameof(ReplayWatchCheckBox), value); }
         }
 
         public bool IsIncludeSubDirectories

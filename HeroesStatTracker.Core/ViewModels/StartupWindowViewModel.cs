@@ -91,7 +91,7 @@ namespace HeroesStatTracker.Core.ViewModels
         {
             DetailedStatusLabel = message;
             StartupLogFile.Log(LogLevel.Info, message);
-            await Task.Delay(100);
+            await Task.Delay(1);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace HeroesStatTracker.Core
     public static class LogFileNames
     {
         public static string StartupLogFileName => "StartupLogFile";
+        public static string WarningLogFileName => "WarningLogFile";
     }
 }

@@ -16,6 +16,11 @@ namespace HeroesStatTracker.Core.ViewModels
             get { return ServiceLocator.Current.GetInstance<IWhatsNewWindowService>(); }
         }
 
+        public MainWindowViewModel()
+        {
+
+        }
+
         private void ExecuteOpenWhatsNewWindowCommand()
         {
             WhatsNewWindowService.CreateWhatsNewWindow();

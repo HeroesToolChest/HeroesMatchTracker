@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using HeroesStatTracker.Core;
 using HeroesStatTracker.Core.ViewServices;
+using HeroesStatTracker.Data;
 using HeroesStatTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
 using System;
@@ -17,10 +19,25 @@ namespace HeroesStatTracker.Views
     {
         public MainWindow()
         {
+            StylePalette.ApplyBase(QueryDb.SettingsDb.UserSettings.IsNightMode);
+            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(QueryDb.SettingsDb.UserSettings.MainStylePrimary));
+            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(QueryDb.SettingsDb.UserSettings.MainStyleAccent));
+
             SetTrayIcon();
+
             InitializeComponent();
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            base.OnStateChanged(e);
+            if (QueryDb.SettingsDb.UserSettings.IsMinimizeToTray && WindowState == WindowState.Minimized)
+            {
+                Hide();
+                NotifyIcon.Visible = true;
+            }
         }
 
         protected override void OnSourceInitialized(EventArgs e)
@@ -28,6 +45,12 @@ namespace HeroesStatTracker.Views
             base.OnSourceInitialized(e);
             HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
             source.AddHook(WndProc);
+        }
+
+        protected override void OnContentRendered(EventArgs e)
+        {
+            StylePalette.ApplyStyle(QueryDb.SettingsDb.UserSettings.IsAlternateStyle);
+            base.OnContentRendered(e);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)

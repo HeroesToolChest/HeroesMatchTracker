@@ -1,4 +1,6 @@
-﻿using HeroesStatTracker.Views;
+﻿using HeroesStatTracker.Data;
+using HeroesStatTracker.Views;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;

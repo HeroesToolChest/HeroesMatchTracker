@@ -13,34 +13,16 @@
     </UserControl.Resources>
     <StackPanel>
         <StackPanel Margin="{StaticResource BorderMargin}">
-            <CheckBox Content="Automatically Update on Startup" IsChecked="{Binding IsAutoUpdates}"/>
-            <CheckBox Content="Include Pre-Release builds" IsChecked="{Binding IsIncludePreReleaseBuilds}" IsEnabled="{Binding IsIncludePreReleaseBuildsEnabled}" Margin="20,0,0,0"/>
+            <CheckBox Content="Automatically Update on Startup" x:Name="AutoUpdateCB" IsChecked="{Binding IsAutoUpdates}"/>
+            <CheckBox Content="Include Pre-Release builds" IsChecked="{Binding IsIncludePreReleaseBuilds}" IsEnabled="{Binding IsChecked, ElementName=AutoUpdateCB}" Margin="20,0,0,0"/>
+            <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}"/>
+            <CheckBox Content="Hide Battle Tag Numbers" IsChecked="{Binding IsBattleTagsHidden}"/>
+            <CheckBox Content="Night Mode" IsChecked="{Binding IsNightMode}" Command="{Binding ToggleBaseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"/>
         </StackPanel>
         <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1"/>
         <StackPanel Margin="{StaticResource BorderMargin}">
-            <TextBlock Text="Minimize to Tray"/>
-            <StackPanel Orientation="Horizontal">
-                <ToggleButton Margin="4"/>
-                <TextBlock VerticalAlignment="Center" Text="Off"/>
-            </StackPanel>
+            <TextBlock Text="Dynamically change the color style" FontSize="15" Margin="0 0 0 4" />
+            <Button Content="Open Color Palette" Command="{Binding OpenPaletteSelectorWindowCommand}" />
         </StackPanel>
-        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1"/>
-        <StackPanel Margin="{StaticResource BorderMargin}">
-            <TextBlock Text="Hide Battle Tag Numbers"/>
-            <StackPanel Orientation="Horizontal">
-                <ToggleButton Margin="4"/>
-                <TextBlock VerticalAlignment="Center" Text="Off"/>
-            </StackPanel>
-        </StackPanel>
-        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1"/>
-        <StackPanel Margin="{StaticResource BorderMargin}">
-            <TextBlock Text="Night Mode"/>
-            <StackPanel Orientation="Horizontal">
-                <ToggleButton Margin="4"/>
-                <TextBlock VerticalAlignment="Center" Text="Off"/>
-            </StackPanel>
-        </StackPanel>
-        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1"/>
-        <Button Content="hi" Command="{Binding OpenPaletteSelectorWindowCommand}" />
     </StackPanel>
 </UserControl>

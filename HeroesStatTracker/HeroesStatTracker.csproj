@@ -167,11 +167,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Converters\BoolToOffOnConverter.cs" />
     <Compile Include="Views\TitleBar\AboutControl.xaml.cs">
       <DependentUpon>AboutControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleBar\PaletteControl.xaml.cs">
+      <DependentUpon>PaletteControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TitleBar\PaletteSelectorWindow.xaml.cs">
       <DependentUpon>PaletteSelectorWindow.xaml</DependentUpon>
@@ -198,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleBar\PaletteControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -252,6 +260,10 @@
     <ProjectReference Include="..\HeroesStatTracker.Core\HeroesStatTracker.Core.csproj">
       <Project>{89afa05a-40d2-4ba0-bf72-6d920177f7ae}</Project>
       <Name>HeroesStatTracker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesStatTracker.Data.csproj">
+      <Project>{038BEA71-201F-4C56-9EDD-152FED4D9B41}</Project>
+      <Name>HeroesStatTracker.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
