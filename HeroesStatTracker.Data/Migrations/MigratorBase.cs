@@ -14,8 +14,12 @@ namespace HeroesStatTracker.Data.Migrations
         bool DatabaseFileCreated;
         int RequiredDatabaseVersion;
 
+        private readonly string MigrationLogFile = "Logs/DatabasesMigrationLog.txt";
+
         public MigratorBase(string dbName, bool databaseFileCreated, int requiredDatabaseVersion)
         {
+            DeleteMigrationLog();
+
             DbName = dbName;
             DatabaseFileCreated = databaseFileCreated;
             RequiredDatabaseVersion = requiredDatabaseVersion;
@@ -94,10 +98,16 @@ namespace HeroesStatTracker.Data.Migrations
 
         protected void MigrationLogger(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"Logs/DatabasesMigrationLog.txt", true))
+            using (StreamWriter writer = new StreamWriter(MigrationLogFile, true))
             {
-                writer.WriteLine($"[{DbName}] {message}");
+                writer.WriteLine($"[{DateTime.Now.ToLocalTime()}] [{DbName}] {message}");
             }
+        }
+
+        private void DeleteMigrationLog()
+        {
+            if (File.Exists(MigrationLogFile))
+                File.Delete(MigrationLogFile);
         }
     }
 }
