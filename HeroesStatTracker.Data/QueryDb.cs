@@ -1,5 +1,5 @@
-﻿using HeroesStatTracker.Data.Replays.Queries;
-using HeroesStatTracker.Data.Settings.Queries;
+﻿using HeroesStatTracker.Data.Queries.Replays;
+using HeroesStatTracker.Data.Queries.Settings;
 
 namespace HeroesStatTracker.Data
 {
@@ -23,6 +23,8 @@ namespace HeroesStatTracker.Data
             public static MatchMessage MatchMessage => new MatchMessage();
             public static MatchTeamObjective MatchTeamObjective => new MatchTeamObjective();
             public static RenamedPlayer RenamedPlayer => new RenamedPlayer();
+            public static ReplayFileData ReplayFileData => new ReplayFileData();
+            public static HotsLogsUpload HotsLogsUpload => new HotsLogsUpload();
         }
 
         public static class SettingsDb

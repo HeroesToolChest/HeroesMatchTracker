@@ -1,4 +1,5 @@
 using GalaSoft.MvvmLight.Ioc;
+using HeroesStatTracker.Core.ViewModels.Replays;
 using HeroesStatTracker.Core.ViewModels.TitleBar;
 using Microsoft.Practices.ServiceLocation;
 
@@ -30,10 +31,15 @@ namespace HeroesStatTracker.Core.ViewModels
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
+
+            // TitleBar
             SimpleIoc.Default.Register<SettingsControlViewModel>();
             SimpleIoc.Default.Register<AboutControlViewModel>();
             SimpleIoc.Default.Register<PaletteSelectorWindowViewModel>();
             SimpleIoc.Default.Register<WhatsNewWindowViewModel>();
+
+            // Replays
+            SimpleIoc.Default.Register<ReplaysControlViewModel>();
         }
 
         public MainWindowViewModel MainWindowViewModel { get { return ServiceLocator.Current.GetInstance<MainWindowViewModel>(); } }
@@ -42,6 +48,7 @@ namespace HeroesStatTracker.Core.ViewModels
         public AboutControlViewModel AboutControlViewModel { get { return ServiceLocator.Current.GetInstance<AboutControlViewModel>(); } }
         public PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel { get { return ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>(); } }
         public WhatsNewWindowViewModel WhatsNewWindowViewModel { get { return ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>(); } }
+        public ReplaysControlViewModel ReplaysControlViewModel { get { return ServiceLocator.Current.GetInstance<ReplaysControlViewModel>(); } }
 
         public static void Cleanup()
         {

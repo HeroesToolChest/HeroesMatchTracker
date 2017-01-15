@@ -67,7 +67,7 @@ namespace HeroesStatTracker.Core.ViewModels
                 // auto update stuff
 
                 await Message("Initializing Heroes.Icons");
-                CoreGlobal.HeroesIcons = HeroesIcons.Initialize(true);
+                AppCore.HeroesIcons = HeroesIcons.Initialize(true);
 
                 await Message("Initializing Heroes Stat Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window

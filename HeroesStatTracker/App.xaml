@@ -30,8 +30,9 @@
                 <!-- Dragablz Material Design -->
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
                 
-                <!--this app-->
+                <!--This app-->
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/DataGrid.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!--MahApps Brushes-->

@@ -158,6 +158,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -168,6 +169,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
+    <Compile Include="Views\Replays\ReplaysControl.xaml.cs">
+      <DependentUpon>ReplaysControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TitleBar\AboutControl.xaml.cs">
       <DependentUpon>AboutControl.xaml</DependentUpon>
     </Compile>
@@ -193,7 +197,15 @@
     <Compile Include="Views\TitleBar\WhatsNewWindow.xaml.cs">
       <DependentUpon>WhatsNewWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\CustomStyles\DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\ImageResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Replays\ReplaysControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

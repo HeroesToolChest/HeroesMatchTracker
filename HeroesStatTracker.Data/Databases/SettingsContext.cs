@@ -1,6 +1,6 @@
 namespace HeroesStatTracker.Data.Databases
 {
-    using Data.Settings.Models;
+    using Models.Settings;
     using SQLite.CodeFirst;
     using System.Data.Entity;
 

@@ -6,6 +6,7 @@
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HeroesStatTracker.Views"
         xmlns:titleBar="clr-namespace:HeroesStatTracker.Views.TitleBar"
+        xmlns:replays="clr-namespace:HeroesStatTracker.Views.Replays"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -76,6 +77,9 @@
             <dragablz:TabablzControl>
                 <TabItem Header="Home">
 
+                </TabItem>
+                <TabItem Header="Replays">
+                    <replays:ReplaysControl />
                 </TabItem>
             </dragablz:TabablzControl>
         </Grid>
