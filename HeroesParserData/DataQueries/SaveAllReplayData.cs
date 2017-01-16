@@ -18,13 +18,17 @@ namespace HeroesParserData.DataQueries
                     try
                     {
                         #region save basic data
+                        string mapName;
+                        if (!App.HeroesInfo.MapNameTranslation(replay.Map, out mapName))
+                            throw new Exception($"Unknown map name detected: {replay.Map}");
+
                         Models.DbModels.Replay replayData = new Models.DbModels.Replay
                         {
                             Frames = replay.Frames,
                             GameMode = replay.GameMode,
                             GameSpeed = replay.GameSpeed.ToString(),
                             IsGameEventsParsed = replay.IsGameEventsParsedSuccessfully,
-                            MapName = replay.Map,
+                            MapName = mapName,
                             RandomValue = replay.RandomValue,
                             ReplayBuild = replay.ReplayBuild,
                             ReplayLength = replay.ReplayLength,
@@ -131,11 +135,15 @@ namespace HeroesParserData.DataQueries
                             else
                             {
                                 #region save match players
+                                string characterName;
+                                if (!App.HeroesInfo.HeroNameTranslation(player.Character, out characterName))
+                                    throw new Exception($"Unknown hero name detected: {player.Character}");
+
                                 ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
                                 {
                                     ReplayId = replayId,
                                     PlayerId = playerId,
-                                    Character = player.Character,
+                                    Character = characterName,
                                     CharacterLevel = player.CharacterLevel,
                                     Difficulty = player.Difficulty.ToString(),
                                     Handicap = player.Handicap,
@@ -208,7 +216,7 @@ namespace HeroesParserData.DataQueries
                                 {
                                     ReplayId = replayId,
                                     PlayerId = playerId,
-                                    Character = player.Character,
+                                    Character = characterName,
                                     TalentId1 = talentArray[0].TalentID,
                                     TalentName1 = talentArray[0].TalentName,
                                     TimeSpanSelected1 = talentArray[0].TimeSpanSelected,
