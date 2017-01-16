@@ -134,6 +134,15 @@ namespace HeroesIcons
             if (string.IsNullOrEmpty(realHeroName))
                 return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds", UriKind.Absolute));
 
+
+            // translation
+            if (!HeroesXml.HeroTranslationsNames.TryGetValue(realHeroName, out realHeroName))
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Hero portrait: {realHeroName}"));
+
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds", UriKind.Absolute));
+            }
+
             // not found
             if (!HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
             {
@@ -166,6 +175,14 @@ namespace HeroesIcons
             if (string.IsNullOrEmpty(realHeroName))
                 return new BitmapImage(new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds", UriKind.Absolute));
 
+            // translation
+            if (!HeroesXml.HeroTranslationsNames.TryGetValue(realHeroName, out realHeroName))
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Loading hero portrait: {realHeroName}"));
+
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds", UriKind.Absolute));
+            }
+
             // not found
             if (!HeroesXml.LoadingPortraits.TryGetValue(realHeroName, out uri))
             {
@@ -197,6 +214,14 @@ namespace HeroesIcons
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
                 return new BitmapImage(new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds", UriKind.Absolute));
+
+            // translation
+            if (!HeroesXml.HeroTranslationsNames.TryGetValue(realHeroName, out realHeroName))
+            {
+                Task.Run(() => Log(ImageMissingLogName, $"Leader hero portrait: {realHeroName}"));
+
+                return new BitmapImage(new Uri($@"{ApplicationPath}HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds", UriKind.Absolute));
+            }
 
             // not found
             if (!HeroesXml.LeaderboardPortraits.TryGetValue(realHeroName, out uri))
@@ -248,6 +273,13 @@ namespace HeroesIcons
         /// <returns></returns>
         public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
         {
+            // translation
+            if (!HeroesXml.HeroTranslationsNames.TryGetValue(realHeroName, out realHeroName))
+            {
+                Task.Run(() => Log(ReferenceLogName, $"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}"));
+                return null;
+            }
+
             Dictionary<TalentTier, List<string>> talents;
             if (HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
             {
@@ -345,6 +377,10 @@ namespace HeroesIcons
         public HeroRole GetHeroRole(string realName)
         {
             HeroRole role;
+
+            // translation
+            if (!HeroesXml.HeroTranslationsNames.TryGetValue(realName, out realName))
+                return HeroRole.Unknown;
 
             if (HeroesXml.HeroesRole.TryGetValue(realName, out role))
                 return role;
@@ -483,6 +519,8 @@ namespace HeroesIcons
         {
             try
             {
+                MapBackgroundsXml.MapTranslationsNames.TryGetValue(mapRealName, out mapRealName);
+
                 if (useSmallImage == false)
                     return new BitmapImage(MapBackgroundsXml.MapBackgrounds[mapRealName]);
                 else
@@ -502,6 +540,9 @@ namespace HeroesIcons
         /// <returns></returns>
         public Color GetMapBackgroundFontGlowColor(string mapRealName)
         {
+            if (!MapBackgroundsXml.MapTranslationsNames.TryGetValue(mapRealName, out mapRealName))
+                return Colors.Black;
+
             Color color;
             if (MapBackgroundsXml.MapBackgroundFontGlowColor.TryGetValue(mapRealName, out color))
                 return color;

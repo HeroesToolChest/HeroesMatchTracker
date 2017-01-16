@@ -10,6 +10,8 @@ namespace HeroesIcons.Xml
         public Dictionary<string, Uri> MapBackgrounds { get; private set; } = new Dictionary<string, Uri>();
         public Dictionary<string, Color> MapBackgroundFontGlowColor { get; private set; } = new Dictionary<string, Color>();
         public Dictionary<string, Uri> MapBackgroundsSmall { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, string> MapAlternativeName { get; private set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> MapTranslationsNames { get; private set; } = new Dictionary<string, string>();
         public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
 
         private MapBackgroundsXml(string parentFile, string xmlFolder)
@@ -22,6 +24,7 @@ namespace HeroesIcons.Xml
         {
             MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlFolder);
             xml.Parse();
+            xml.LoadTranslationMapNames();
             return xml;
         }
 
@@ -49,6 +52,8 @@ namespace HeroesIcons.Xml
                         bool isCustomOnly;
                         if (!bool.TryParse(custom, out isCustomOnly))
                             isCustomOnly = false;
+
+                        MapAlternativeName.Add(mapBackground, realMapBackgroundName);
 
                         while (reader.Read())
                         {
@@ -84,6 +89,34 @@ namespace HeroesIcons.Xml
         private Uri SetMapBackgroundUri(string fileName)
         {
             return new Uri($@"{ApplicationPath}MapBackgrounds\{fileName}", UriKind.Absolute);
+        }
+
+        private void LoadTranslationMapNames()
+        {
+            using (XmlReader reader = XmlReader.Create($@"Xml\MapBackgrounds\MapTranslations.xml"))
+            {
+                reader.MoveToContent();
+
+                while (reader.Read())
+                {
+                    if (reader.IsStartElement())
+                    {
+                        string mapName = reader.Name;
+
+                        if (reader.Read())
+                        {
+                            string languageNames = reader.Value;
+
+                            var diffNames = languageNames.Split(',');
+                            foreach (var name in diffNames)
+                            {
+                                if (!MapTranslationsNames.ContainsKey(name) && MapAlternativeName.ContainsKey(mapName))
+                                    MapTranslationsNames.Add(name, MapAlternativeName[mapName]);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

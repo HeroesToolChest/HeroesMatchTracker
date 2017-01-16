@@ -79,6 +79,11 @@ namespace HeroesIcons.Xml
         /// </summary>
         public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
 
+        /// <summary>
+        /// key is language name, value is real name
+        /// </summary>
+        public Dictionary<string, string> HeroTranslationsNames { get; private set; } = new Dictionary<string, string>();
+
         private HeroesXml(string parentFile, string xmlFolder, int? build = null)
         {
             if (build == null)
@@ -101,6 +106,7 @@ namespace HeroesIcons.Xml
         {
             LoadTalentDescriptionStrings();
             base.Parse();
+            LoadTranslationHeroNames();
         }
 
         protected override void ParseChildFiles()
@@ -356,6 +362,34 @@ namespace HeroesIcons.Xml
             catch (Exception ex)
             {
                 throw new ParseXmlException("Error on loading talent descriptions", ex);
+            }
+        }
+
+        private void LoadTranslationHeroNames()
+        {
+            using (XmlReader reader = XmlReader.Create($@"Xml\Heroes\HeroTranslations.xml"))
+            {
+                reader.MoveToContent();
+
+                while (reader.Read())
+                {
+                    if (reader.IsStartElement())
+                    {
+                        string heroName = reader.Name;
+                        
+                        if (reader.Read())
+                        {
+                            string languageNames = reader.Value;
+
+                            var diffNames = languageNames.Split(',');
+                            foreach (var name in diffNames)
+                            {
+                                if (!HeroTranslationsNames.ContainsKey(name) && HeroesAlternativeName.ContainsKey(heroName))
+                                    HeroTranslationsNames.Add(name, HeroesAlternativeName[heroName]);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
