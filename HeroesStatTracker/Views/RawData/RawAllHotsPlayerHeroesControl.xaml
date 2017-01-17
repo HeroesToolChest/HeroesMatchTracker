@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="HeroesStatTracker.Views.RawData.RawAllHotsPlayerHeroesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesStatTracker.Views.RawData"
+             DataContext="{Binding RawAllHotsPlayerHeroesViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl/>
+            <DataGrid Style="{StaticResource DefaultDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="PlayerHeroesId" Binding="{Binding PlayerHeroesId}" />
+                    <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />
+                    <DataGridTextColumn Header="HeroName" Binding="{Binding HeroName}" />
+                    <DataGridTextColumn Header="IsUsable" Binding="{Binding IsUsable}" />
+                    <DataGridTextColumn Header="LastUpdated" Binding="{Binding LastUpdated}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

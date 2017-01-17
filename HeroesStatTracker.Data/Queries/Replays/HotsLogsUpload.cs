@@ -7,9 +7,15 @@ using System.Linq;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
-    public class HotsLogsUpload : QueriesBase, IRawQueries<ReplayHotsLogsUpload>
+    public class HotsLogsUpload : QueriesBase, IRawDataQueries<ReplayHotsLogsUpload>
     {
-        internal HotsLogsUpload() { }
+        public List<ReplayHotsLogsUpload> ReadAllRecords()
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayHotsLogsUploads.ToList();
+            }
+        }
 
         public List<ReplayHotsLogsUpload> ReadLastRecords(int amount)
         {

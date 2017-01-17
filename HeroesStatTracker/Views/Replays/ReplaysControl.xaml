@@ -62,10 +62,6 @@
                         <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" Margin="0 0 0 16"/>
 
                         <TextBlock Text="Replays Location" FontSize="16"/>
-                        <!--<StackPanel Orientation="Horizontal">
-
-                            <CheckBox Content="Include Subdirectories" IsChecked="{Binding IsIncludeSubDirectories}" IsEnabled="{Binding AreProcessButtonsEnabled}" />
-                        </StackPanel>-->
                         <StackPanel Orientation="Horizontal">
                             <TextBox Text="{Binding ReplaysFolderLocation}" IsEnabled="{Binding AreProcessButtonsEnabled}" IsReadOnly="True" TextWrapping="NoWrap" Width="520" />
                             <Button Content="BROWSE" Command="{Binding ReplaysLocationBrowseCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="12 0 0 0" Width="120"/>

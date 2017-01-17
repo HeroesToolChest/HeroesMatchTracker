@@ -6,10 +6,52 @@
              xmlns:local="clr-namespace:HeroesStatTracker.Views.RawData"
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <dragablz:TabablzControl>
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <Thickness x:Key="Spacing" Left="0" Top="12" Right="0" Bottom="0"/>
+    </UserControl.Resources>
+    <dragablz:TabablzControl FixedHeaderCount="14">
         <TabItem Header="Match Replays">
-            <local:RawMatchReplaysControl />
+            <local:RawMatchReplaysControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="All Players">
+            <local:RawAllHotsPlayerControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Player Heroes">
+            <local:RawAllHotsPlayerHeroesControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Renamed Players">
+            <local:RawRenamedPlayerControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Players">
+            <local:RawMatchPlayerControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Player Talents">
+            <local:RawMatchPlayerTalentControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Player Score Results">
+            <local:RawMatchPlayerScoreResultControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Team Levels">
+            <local:RawMatchTeamLevelControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Team Experience">
+            <local:RawMatchTeamExperienceControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Team Bans">
+            <local:RawMatchTeamBanControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Team Objectives">
+            <local:RawMatchTeamObjectiveControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Messages">
+            <local:RawMatchMessageControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="Match Awards">
+            <local:RawMatchAwardControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
+        <TabItem Header="HOTS Logs Uploads">
+            <local:RawHotsLogsUploadControl Margin="{StaticResource Spacing}"/>
         </TabItem>
     </dragablz:TabablzControl>
 </UserControl>

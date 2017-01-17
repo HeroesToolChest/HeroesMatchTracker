@@ -77,6 +77,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -180,11 +181,50 @@
     <Compile Include="Views\RawData\QueryStatusBarControl.xaml.cs">
       <DependentUpon>QueryStatusBarControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RawData\RawAllHotsPlayerControl.xaml.cs">
+      <DependentUpon>RawAllHotsPlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawAllHotsPlayerHeroesControl.xaml.cs">
+      <DependentUpon>RawAllHotsPlayerHeroesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RawData\RawDataControl.xaml.cs">
       <DependentUpon>RawDataControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RawData\RawHotsLogsUploadControl.xaml.cs">
+      <DependentUpon>RawHotsLogsUploadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchAwardControl.xaml.cs">
+      <DependentUpon>RawMatchAwardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchMessageControl.xaml.cs">
+      <DependentUpon>RawMatchMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchPlayerControl.xaml.cs">
+      <DependentUpon>RawMatchPlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchPlayerScoreResultControl.xaml.cs">
+      <DependentUpon>RawMatchPlayerScoreResultControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchPlayerTalentControl.xaml.cs">
+      <DependentUpon>RawMatchPlayerTalentControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RawData\RawMatchReplaysControl.xaml.cs">
       <DependentUpon>RawMatchReplaysControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchTeamBanControl.xaml.cs">
+      <DependentUpon>RawMatchTeamBanControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchTeamExperienceControl.xaml.cs">
+      <DependentUpon>RawMatchTeamExperienceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchTeamLevelControl.xaml.cs">
+      <DependentUpon>RawMatchTeamLevelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawMatchTeamObjectiveControl.xaml.cs">
+      <DependentUpon>RawMatchTeamObjectiveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawData\RawRenamedPlayerControl.xaml.cs">
+      <DependentUpon>RawRenamedPlayerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Replays\ReplaysControl.xaml.cs">
       <DependentUpon>ReplaysControl.xaml</DependentUpon>
@@ -230,11 +270,63 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RawData\RawAllHotsPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawAllHotsPlayerHeroesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RawData\RawDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RawData\RawHotsLogsUploadControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchAwardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchMessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchPlayerScoreResultControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchPlayerTalentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RawData\RawMatchReplaysControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchTeamBanControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchTeamExperienceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchTeamLevelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawMatchTeamObjectiveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawRenamedPlayerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

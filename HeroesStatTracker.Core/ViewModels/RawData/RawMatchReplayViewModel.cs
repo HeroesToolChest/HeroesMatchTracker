@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HeroesStatTracker.Data.Models.Replays;
+using HeroesStatTracker.Data.Queries.Replays;
 
 namespace HeroesStatTracker.Core.ViewModels.RawData
 {
-    public class RawMatchReplayViewModel
+    public class RawMatchReplayViewModel : RawDataContextBase<ReplayMatch>
     {
-        public RawMatchReplayViewModel()
+        public RawMatchReplayViewModel(IRawDataQueries<ReplayMatch> iRawDataQueries)
+            : base(iRawDataQueries)
         { }
     }
 }

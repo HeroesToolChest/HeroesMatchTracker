@@ -63,6 +63,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -210,8 +211,21 @@
     </Compile>
     <Compile Include="User\UserAccount.cs" />
     <Compile Include="ViewModels\HstViewModel.cs" />
-    <Compile Include="ViewModels\RawData\RawDatabase.cs" />
+    <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawDataContextBase.cs" />
+    <Compile Include="ViewModels\RawData\RawHotsLogsUploadViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchMessageViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerScoreResultViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerTalentViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchReplayViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamBanViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamExperienceViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamLevelViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\PaletteSelectorWindowViewModel.cs" />

@@ -7,9 +7,15 @@ using System.Linq;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
-    public class MatchTeamExperience : NonContextQueriesBase<ReplayMatchTeamExperience>, IRawQueries<ReplayMatchTeamExperience>
+    public class MatchTeamExperience : NonContextQueriesBase<ReplayMatchTeamExperience>, IRawDataQueries<ReplayMatchTeamExperience>
     {
-        internal MatchTeamExperience() { }
+        public List<ReplayMatchTeamExperience> ReadAllRecords()
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayMatchTeamExperiences.ToList();
+            }
+        }
 
         public List<ReplayMatchTeamExperience> ReadLastRecords(int amount)
         {

@@ -7,9 +7,15 @@ using static HeroesStatTracker.Data.QueryDb;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
-    public class HotsPlayer : NonContextQueriesBase<ReplayAllHotsPlayer>, IRawQueries<ReplayAllHotsPlayer>
+    public class HotsPlayer : NonContextQueriesBase<ReplayAllHotsPlayer>, IRawDataQueries<ReplayAllHotsPlayer>
     {
-        internal HotsPlayer() { }
+        public List<ReplayAllHotsPlayer> ReadAllRecords()
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.ToList();
+            }
+        }
 
         public List<ReplayAllHotsPlayer> ReadLastRecords(int amount)
         {

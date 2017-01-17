@@ -8,15 +8,21 @@ using System.Linq;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
-    public class MatchReplay : NonContextQueriesBase<ReplayMatch>, IRawQueries<ReplayMatch>
+    public class MatchReplay : NonContextQueriesBase<ReplayMatch>, IRawDataQueries<ReplayMatch>
     {
-        internal MatchReplay() { }
+        public List<ReplayMatch> ReadAllRecords()
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.Replays.ToList();
+            }
+        }
 
         public List<ReplayMatch> ReadTopRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.Take(amount).ToList();
+                return db.Replays.OrderByDescending(x => x.ReplayId).Take(amount).ToList();
             }
         }
 

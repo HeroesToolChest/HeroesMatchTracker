@@ -6,7 +6,7 @@ namespace HeroesStatTracker.Data.Models.Replays
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Replay")]
+    [Table("Replays")]
     public class ReplayMatch : IRawDataDisplay, INonContextModels
     {
         public ReplayMatch()

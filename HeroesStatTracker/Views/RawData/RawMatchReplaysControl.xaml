@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.RawData"
+             DataContext="{Binding RawMatchReplayViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <DockPanel>
@@ -13,9 +14,22 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <local:QueryControl />
-            <DataGrid Style="{StaticResource DefaultDataGrid}" AutoGenerateColumns="True" Grid.Row="1" ItemsSource="{Binding MatchReplays}">
-                
+            <local:QueryControl/>
+            <DataGrid Style="{StaticResource DefaultDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="MapName" Binding="{Binding MapName}" />
+                    <DataGridTextColumn Header="ReplayBuild" Binding="{Binding ReplayBuild}" />
+                    <DataGridTextColumn Header="ReplayVersion" Binding="{Binding ReplayVersion}" />
+                    <DataGridTextColumn Header="ReplayLength" Binding="{Binding ReplayLength}" />
+                    <DataGridTextColumn Header="GameMode" Binding="{Binding GameMode}" />
+                    <DataGridTextColumn Header="GameSpeed" Binding="{Binding GameSpeed}" />
+                    <DataGridTextColumn Header="IsGameEventsParsed" Binding="{Binding IsGameEventsParsed}" />
+                    <DataGridTextColumn Header="Frames" Binding="{Binding Frames}" />
+                    <DataGridTextColumn Header="TeamSize" Binding="{Binding TeamSize}" />
+                    <DataGridTextColumn Header="TimeStamp" Binding="{Binding TimeStamp}" />
+                    <DataGridTextColumn Header="FileName" Binding="{Binding FileName}" />
+                </DataGrid.Columns>
             </DataGrid>
         </Grid>
     </DockPanel>

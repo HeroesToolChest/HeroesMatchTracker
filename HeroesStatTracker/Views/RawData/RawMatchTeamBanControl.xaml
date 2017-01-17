@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="HeroesStatTracker.Views.RawData.RawMatchTeamBanControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HeroesStatTracker.Views.RawData"
+             DataContext="{Binding RawMatchTeamBanViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl/>
+            <DataGrid Style="{StaticResource DefaultDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="Team0Ban0" Binding="{Binding Team0Ban0}" />
+                    <DataGridTextColumn Header="Team0Ban1" Binding="{Binding Team0Ban1}" />
+                    <DataGridTextColumn Header="Team1Ban0" Binding="{Binding Team1Ban0}" />
+                    <DataGridTextColumn Header="Team1Ban1" Binding="{Binding Team1Ban1}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

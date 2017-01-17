@@ -161,7 +161,7 @@
     <Compile Include="QueryDb.cs" />
     <Compile Include="Queries\Replays\HotsPlayer.cs" />
     <Compile Include="Queries\Replays\HotsPlayerHero.cs" />
-    <Compile Include="Queries\Replays\IRawQueries.cs" />
+    <Compile Include="Queries\Replays\IRawDataQueries.cs" />
     <Compile Include="Queries\Replays\MatchAward.cs" />
     <Compile Include="Queries\Replays\MatchMessage.cs" />
     <Compile Include="Queries\Replays\MatchTeamBan.cs" />

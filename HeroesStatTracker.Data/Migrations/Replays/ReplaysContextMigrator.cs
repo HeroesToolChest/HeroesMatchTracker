@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace HeroesStatTracker.Data.Migrations.Replays
+﻿namespace HeroesStatTracker.Data.Migrations.Replays
 {
     internal class ReplaysContextMigrator : ContextMigrator
     {
