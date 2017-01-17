@@ -3,8 +3,5 @@
     /// <summary>
     /// Models that have methods that require the data context to be passed
     /// </summary>
-    public interface INonContextModels
-    {
-
-    }
+    public interface INonContextModels { }
 }

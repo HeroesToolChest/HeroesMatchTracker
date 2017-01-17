@@ -5,7 +5,7 @@
         public SettingsContextMigrator()
         {
             // add new migration commands here
-            //new Migration1_v2_0_0().Command(Migrations, MigrationAddons);
+            // new Migration1_v2_0_0().Command(Migrations, MigrationAddons);
         }
     }
 }

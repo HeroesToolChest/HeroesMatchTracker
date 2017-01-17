@@ -6,15 +6,15 @@ namespace Heroes.Icons.Xml
 {
     internal class MatchAwardsXml : XmlBase
     {
-        public Dictionary<string, Tuple<string, Uri>> MVPScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-        public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-        public Dictionary<string, string> MVPAwardDescriptions { get; private set; } = new Dictionary<string, string>();
-
         private MatchAwardsXml(string parentFile, string xmlFolder)
         {
             XmlParentFile = parentFile;
             XmlFolder = xmlFolder;
         }
+
+        public Dictionary<string, Tuple<string, Uri>> MVPScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, string> MVPAwardDescriptions { get; private set; } = new Dictionary<string, string>();
 
         public static MatchAwardsXml Initialize(string parentFile, string xmlFolder)
         {

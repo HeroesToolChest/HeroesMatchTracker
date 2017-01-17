@@ -32,7 +32,7 @@ namespace Heroes.Icons
         {
             Logger = logger;
 
-            HeroesXmlLatest= HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
+            HeroesXmlLatest = HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
             MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds");
             HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens");
@@ -78,12 +78,15 @@ namespace Heroes.Icons
                     HeroesXml = HeroesXmlLatest;
             }
             else
+            {
                 HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes", build);
+            }
         }
 
         #region public methods
 
         #region HeroesXml
+
         /// <summary>
         /// Returns a BitmapImage of the talent
         /// </summary>
@@ -98,7 +101,9 @@ namespace Heroes.Icons
                 return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
 
             if (HeroesXml.TalentIcons.TryGetValue(talentReferenceName, out talent))
+            {
                 return new BitmapImage(talent.Item2);
+            }
             else
             {
                 if (Logger)
@@ -122,7 +127,9 @@ namespace Heroes.Icons
                 return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
 
             if (HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
+            {
                 return new BitmapImage(uri);
+            }
             else
             {
                 if (Logger)
@@ -146,7 +153,9 @@ namespace Heroes.Icons
                 return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
 
             if (HeroesXml.LoadingPortraits.TryGetValue(realHeroName, out uri))
+            {
                 return new BitmapImage(uri);
+            }
             else
             {
                 if (Logger)
@@ -170,7 +179,9 @@ namespace Heroes.Icons
                 return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
 
             if (HeroesXml.LeaderboardPortraits.TryGetValue(realHeroName, out uri))
+            {
                 return new BitmapImage(uri);
+            }
             else
             {
                 if (Logger)
@@ -194,7 +205,9 @@ namespace Heroes.Icons
                 return "No pick";
 
             if (HeroesXml.TalentIcons.TryGetValue(talentReferenceName, out talent))
+            {
                 return talent.Item1;
+            }
             else
             {
                 if (Logger)
@@ -213,7 +226,9 @@ namespace Heroes.Icons
         {
             Dictionary<TalentTier, List<string>> talents;
             if (HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            {
                 return talents;
+            }
             else
             {
                 if (Logger)
@@ -221,7 +236,6 @@ namespace Heroes.Icons
 
                 return null;
             }
-
         }
 
         /// <summary>
@@ -238,7 +252,9 @@ namespace Heroes.Icons
                 return null;
 
             if (HeroesXml.HeroNamesFromAttributeId.TryGetValue(attributeId, out heroName))
+            {
                 return heroName;
+            }
             else
             {
                 if (Logger)
@@ -257,7 +273,9 @@ namespace Heroes.Icons
                 return null;
 
             if (HeroesXml.HeroesAlternativeName.TryGetValue(realName, out altName))
+            {
                 return altName;
+            }
             else
             {
                 if (Logger)
@@ -275,9 +293,10 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(altName))
                 return null;
 
-
             if (HeroesXml.HeroesAlternativeName.TryGetValue(altName, out realName))
+            {
                 return realName;
+            }
             else
             {
                 if (Logger)
@@ -314,7 +333,6 @@ namespace Heroes.Icons
                 return role;
             else
                 return HeroRole.Unknown;
-
         }
 
         /// <summary>
@@ -339,6 +357,7 @@ namespace Heroes.Icons
             {
                 heroes.Add(hero.Key);
             }
+
             heroes.Sort();
             return heroes;
         }
@@ -367,6 +386,7 @@ namespace Heroes.Icons
         #endregion Heroes Xml
 
         #region MatchAwardsXml
+
         /// <summary>
         /// Returns the MVPScreen award BitmapImage of the given mvpAwardType and color
         /// </summary>
@@ -496,6 +516,7 @@ namespace Heroes.Icons
                     allMaps.Remove(customMap);
                 }
             }
+
             return new List<string>(allMaps.Keys);
         }
 

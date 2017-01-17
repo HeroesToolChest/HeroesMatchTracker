@@ -9,7 +9,6 @@ namespace HeroesStatTracker.Data.Models.Replays
     [Table("Replay")]
     public class ReplayMatch : IRawDataDisplay, INonContextModels
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ReplayMatch()
         {
             ReplayMatchTeamExperiences = new HashSet<ReplayMatchTeamExperience>();
@@ -66,33 +65,24 @@ namespace HeroesStatTracker.Data.Models.Replays
         [NotMapped]
         public string Result { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayer> ReplayMatchPlayers { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; }
 
         public virtual ReplayMatchTeamBan ReplayMatchTeamBan { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchMessage> ReplayMatchMessage { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchAward> ReplayMatchAward { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayHotsLogsUpload> ReplayHotsLogsUpload { get; set; }
     }
 }

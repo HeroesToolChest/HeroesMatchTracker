@@ -7,6 +7,8 @@ namespace HeroesStatTracker.Core.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        public MainWindowViewModel() { }
+
         public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
 
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(ExecuteOpenWhatsNewWindowCommand);
@@ -14,11 +16,6 @@ namespace HeroesStatTracker.Core.ViewModels
         public IWhatsNewWindowService WhatsNewWindowService
         {
             get { return ServiceLocator.Current.GetInstance<IWhatsNewWindowService>(); }
-        }
-
-        public MainWindowViewModel()
-        {
-
         }
 
         private void ExecuteOpenWhatsNewWindowCommand()

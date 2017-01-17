@@ -6,8 +6,8 @@ namespace HeroesStatTracker.Data.Migrations.Replays
     {
         public ReplaysContextMigrator()
         {
-            // add new migration commands here
-            //IMigrationList.Add(new Migration1_v2_0_0());
+            /* add new migration commands here
+             IMigrationList.Add(new Migration1_v2_0_0()); */
 
             ExecuteMigrationCommands();
         }

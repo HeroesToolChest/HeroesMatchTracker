@@ -49,8 +49,8 @@
                         <Button Content="(RE)SCAN" Command="{Binding ScanCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedLightButton}" Width="120" Margin="0,0,0,8" HorizontalAlignment="Left"/>
                         <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="120" Grid.Row="0" Margin="140 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         <Button Content="STOP" Command="{Binding StopCommand}" IsEnabled="{Binding IsParsingReplaysOn}" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Width="120" Grid.Row="0" Margin="280 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                        
-                        <Button Content="MANUALLY SELECT FILES" Command="{Binding ManualSelectFilesCommnad}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="200" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                        <Button Content="MANUALLY SELECT FILES" Command="{Binding ManualSelectFilesCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="200" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         <Label Content="*Disables Auto Scan*" Grid.Row="1" VerticalContentAlignment="Center" Margin="200 4 0 0" VerticalAlignment="Top" />
 
 

@@ -115,7 +115,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 if (record != null && record.ReplayFileTimeStamp.HasValue)
                     return record.ReplayFileTimeStamp.Value;
                 else
-                    return new DateTime();
+                    return DateTime.Today;
             }
         }
     }

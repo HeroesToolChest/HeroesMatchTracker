@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Heroes.Icons")]
@@ -18,3 +19,4 @@ using System.Runtime.InteropServices;
 // revision number will be the latest supported build
 [assembly: AssemblyVersion("2.0.0.49278")]
 [assembly: AssemblyFileVersion("2.0.0.49278")]
+[assembly: NeutralResourcesLanguage("en-US")]

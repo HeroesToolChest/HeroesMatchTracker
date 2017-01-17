@@ -11,31 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchMessage() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchMessage model)
-        {
-            db.Database.ExecuteSqlCommand(@"INSERT INTO ReplayMatchMessages(ReplayId, MessageEventType, TimeStampTicks, MessageTarget, PlayerName, CharacterName, Message) VALUES 
-                                                (@ReplayId, @MessageEventType, @TimeStampTicks, @MessageTarget, @PlayerName, @CharacterName, @Message)",
-                                            new SQLiteParameter("@ReplayId", model.ReplayId),
-                                            new SQLiteParameter("@MessageEventType", model.MessageEventType),
-                                            new SQLiteParameter("@TimeStampTicks", model.TimeStampTicks),
-                                            new SQLiteParameter("@MessageTarget", model.MessageTarget),
-                                            new SQLiteParameter("@PlayerName", model.PlayerName),
-                                            new SQLiteParameter("@CharacterName", model.CharacterName),
-                                            new SQLiteParameter("@Message", model.Message));
-
-            return model.ReplayId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchMessage model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchMessage model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchMessage> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -75,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatchMessage>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -94,6 +75,32 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchMessages.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchMessage model)
+        {
+            db.Database.ExecuteSqlCommand(
+                @"INSERT INTO ReplayMatchMessages(ReplayId, MessageEventType, TimeStampTicks, MessageTarget, PlayerName, CharacterName, Message) VALUES 
+                                                (@ReplayId, @MessageEventType, @TimeStampTicks, @MessageTarget, @PlayerName, @CharacterName, @Message)",
+                new SQLiteParameter("@ReplayId", model.ReplayId),
+                new SQLiteParameter("@MessageEventType", model.MessageEventType),
+                new SQLiteParameter("@TimeStampTicks", model.TimeStampTicks),
+                new SQLiteParameter("@MessageTarget", model.MessageTarget),
+                new SQLiteParameter("@PlayerName", model.PlayerName),
+                new SQLiteParameter("@CharacterName", model.CharacterName),
+                new SQLiteParameter("@Message", model.Message));
+
+            return model.ReplayId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchMessage model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchMessage model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

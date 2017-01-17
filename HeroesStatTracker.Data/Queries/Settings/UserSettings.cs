@@ -7,45 +7,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
     {
         internal UserSettings() { }
 
-        internal void SetDefaultSettings()
-        {
-            // Settings
-            IsAutoUpdates = true;
-            IsIncludePreRelease = false;
-            IsMinimizeToTray = false;
-            IsBattleTagHidden = true;
-            IsNightMode = false;
-            IsAlternateStyle = false;
-            MainStylePrimary = "blue";
-            MainStyleAccent = "lightblue";
-
-            // Replays
-            ReplayWatchCheckBox = false;
-            ReplayAutoScanCheckBox = false;
-            IsIncludeSubDirectories = true;
-            ReplayAutoStartStartUp = false;
-            IsHotsLogsUploaderEnabled = false;
-            ReplaysLatestSaved = new DateTime();
-            ReplaysLastSaved = new DateTime();
-            ReplaysLatestHotsLogs = new DateTime();
-            ReplaysLastHotsLogs = new DateTime();
-            SelectedScanDateTimeIndex = 0;
-            ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
-
-            // needs to be organized
-            IsNewUpdateApplied = false;
-            IsIncludeManualPreRelease = false;
-
-            IsTeamExperienceRowChartEnabled = true;
-
-
-            UserPlayerId = 0;
-
-
-            UserBattleTagName = string.Empty;
-
-        }
-
         #region Settings
         public bool IsAutoUpdates
         {
@@ -164,23 +125,17 @@ namespace HeroesStatTracker.Data.Queries.Settings
         }
         #endregion Replays
 
-
-
         public bool IsIncludeManualPreRelease
         {
             get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
             set { SetBooleanValue(nameof(IsIncludeManualPreRelease), value); }
         }
 
-
-
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
             set { SetBooleanValue(nameof(IsNewUpdateApplied), value); }
         }
-
-
 
         public bool IsTeamExperienceRowChartEnabled
         {
@@ -200,6 +155,40 @@ namespace HeroesStatTracker.Data.Queries.Settings
             set { SetStringValue(nameof(UserBattleTagName), value); }
         }
 
+        internal void SetDefaultSettings()
+        {
+            // Settings
+            IsAutoUpdates = true;
+            IsIncludePreRelease = false;
+            IsMinimizeToTray = false;
+            IsBattleTagHidden = true;
+            IsNightMode = false;
+            IsAlternateStyle = false;
+            MainStylePrimary = "blue";
+            MainStyleAccent = "lightblue";
 
+            // Replays
+            ReplayWatchCheckBox = false;
+            ReplayAutoScanCheckBox = false;
+            IsIncludeSubDirectories = true;
+            ReplayAutoStartStartUp = false;
+            IsHotsLogsUploaderEnabled = false;
+            ReplaysLatestSaved = DateTime.Now;
+            ReplaysLastSaved = DateTime.Now;
+            ReplaysLatestHotsLogs = DateTime.Now;
+            ReplaysLastHotsLogs = DateTime.Now;
+            SelectedScanDateTimeIndex = 0;
+            ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
+
+            // needs to be organized
+            IsNewUpdateApplied = false;
+            IsIncludeManualPreRelease = false;
+
+            IsTeamExperienceRowChartEnabled = true;
+
+            UserPlayerId = 0;
+
+            UserBattleTagName = string.Empty;
+        }
     }
 }

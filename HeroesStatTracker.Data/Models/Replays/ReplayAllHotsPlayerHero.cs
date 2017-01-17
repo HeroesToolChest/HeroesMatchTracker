@@ -14,7 +14,7 @@
 
         [StringLength(50)]
         public string HeroName { get; set; }
-        
+
         public bool IsUsable { get; set; }
 
         public DateTime LastUpdated { get; set; }

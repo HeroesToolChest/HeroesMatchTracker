@@ -7,16 +7,16 @@ namespace Heroes.Icons.Xml
 {
     internal class MapBackgroundsXml : XmlBase
     {
-        public Dictionary<string, Uri> MapBackgrounds { get; private set; } = new Dictionary<string, Uri>();
-        public Dictionary<string, Color> MapBackgroundFontGlowColor { get; private set; } = new Dictionary<string, Color>();
-        public Dictionary<string, Uri> MapBackgroundsSmall { get; private set; } = new Dictionary<string, Uri>();
-        public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
-
         private MapBackgroundsXml(string parentFile, string xmlFolder)
         {
             XmlParentFile = parentFile;
             XmlFolder = xmlFolder;
         }
+
+        public Dictionary<string, Uri> MapBackgrounds { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Color> MapBackgroundFontGlowColor { get; private set; } = new Dictionary<string, Color>();
+        public Dictionary<string, Uri> MapBackgroundsSmall { get; private set; } = new Dictionary<string, Uri>();
+        public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
 
         public static MapBackgroundsXml Initialize(string parentFile, string xmlFolder)
         {
@@ -68,7 +68,9 @@ namespace Heroes.Icons.Xml
                                         MapBackgroundFontGlowColor.Add(realMapBackgroundName, (Color)ColorConverter.ConvertFromString(fontGlow));
                                     }
                                     else if (mapSize == "Small")
+                                    {
                                         MapBackgroundsSmall.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
+                                    }
                                 }
                             }
                         }

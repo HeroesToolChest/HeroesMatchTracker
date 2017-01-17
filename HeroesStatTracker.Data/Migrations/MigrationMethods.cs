@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace HeroesStatTracker.Data.Migrations
 {
-    internal class MigrationMethods<T> where T : StatTrackerDbContext, new()
+    internal class MigrationMethods<T>
+        where T : StatTrackerDbContext, new()
     {
         private string DbConnectionStringName;
 
@@ -15,6 +16,12 @@ namespace HeroesStatTracker.Data.Migrations
             DbConnectionStringName = dbConnectionStringName;
         }
 
+        /// <summary>
+        /// Adds a new column to an existing table
+        /// </summary>
+        /// <param name="tableName">The existing table name</param>
+        /// <param name="columnName">The new column to be added</param>
+        /// <param name="dataType">The data type (INTEGER), may allow other parameters (DEFAULT 0)</param>
         protected void AddColumnToTable(string tableName, string columnName, string dataType)
         {
             bool columnExists = false;
@@ -40,7 +47,7 @@ namespace HeroesStatTracker.Data.Migrations
             {
                 using (T db = new T())
                 {
-                    db.Database.ExecuteSqlCommand($"ALTER TABLE {tableName} ADD COLUMN {columnName} INTEGER DEFAULT 0");
+                    db.Database.ExecuteSqlCommand($"ALTER TABLE {tableName} ADD COLUMN {columnName} {dataType}");
                 }
             }
         }

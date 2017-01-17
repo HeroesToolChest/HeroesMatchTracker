@@ -11,6 +11,52 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal HotsPlayer() { }
 
+        public List<ReplayAllHotsPlayer> ReadLastRecords(int amount)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(amount).ToList();
+            }
+        }
+
+        public List<ReplayAllHotsPlayer> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
+        {
+            if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
+                return new List<ReplayAllHotsPlayer>();
+
+            if (amount == 0)
+                amount = 1;
+
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers ORDER BY {columnName} {orderBy} LIMIT {amount}").ToList();
+            }
+        }
+
+        public List<ReplayAllHotsPlayer> ReadRecordsWhere(string columnName, string operand, string input)
+        {
+            if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
+                return new List<ReplayAllHotsPlayer>();
+
+            if (LikeOperatorInputCheck(operand, input))
+                input = $"%{input}%";
+            else if (input == null)
+                input = string.Empty;
+
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
+            }
+        }
+
+        public List<ReplayAllHotsPlayer> ReadTopRecords(int amount)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(amount).ToList();
+            }
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayer model)
         {
             db.ReplayAllHotsPlayers.Add(model);
@@ -61,11 +107,12 @@ namespace HeroesStatTracker.Data.Queries.Replays
                             BattleNetRegionId = record.BattleNetRegionId,
                             BattleNetSubId = record.BattleNetSubId,
                             BattleNetTId = record.BattleNetTId,
-                            DateAdded = model.LastSeen
+                            DateAdded = model.LastSeen,
                         };
 
                         ReplaysDb.RenamedPlayer.CreateRecord(db, samePlayer);
                     }
+
                     record.BattleTagName = model.BattleTagName; // update the player's battletag, it may have changed
                     record.BattleNetTId = model.BattleNetTId;
                     record.LastSeen = model.LastSeen;
@@ -74,7 +121,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 record.Seen += 1;
 
                 db.SaveChanges();
-
             }
 
             return record.PlayerId;
@@ -105,52 +151,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
         {
             // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
             return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
-        }
-
-        public List<ReplayAllHotsPlayer> ReadLastRecords(int amount)
-        {
-            using (var db = new ReplaysContext())
-            {
-                return db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(amount).ToList();
-            }
-        }
-
-        public List<ReplayAllHotsPlayer> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
-        {
-            if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
-                return new List<ReplayAllHotsPlayer>();
-
-            if (amount == 0)
-                amount = 1;
-
-            using (var db = new ReplaysContext())
-            {
-                return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers ORDER BY {columnName} {orderBy} LIMIT {amount}").ToList();
-            }
-        }
-
-        public List<ReplayAllHotsPlayer> ReadRecordsWhere(string columnName, string operand, string input)
-        {
-            if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
-                return new List<ReplayAllHotsPlayer>();
-
-            if (LikeOperatorInputCheck(operand, input))
-                input = $"%{input}%";
-            else if (input == null)
-                input = string.Empty;
-
-            using (var db = new ReplaysContext())
-            {
-                return db.ReplayAllHotsPlayers.SqlQuery($"SELECT * FROM ReplayAllHotsPlayers WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
-            }
-        }
-
-        public List<ReplayAllHotsPlayer> ReadTopRecords(int amount)
-        {
-            using (var db = new ReplaysContext())
-            {
-                return db.ReplayAllHotsPlayers.OrderByDescending(x => x.PlayerId).Take(amount).ToList();
-            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Heroes.Helpers.Tests
         public void BattleTagNameTest()
         {
             Assert.AreEqual("name1234#998866", HeroesHelpers.BattleTags.GetBattleTagName("name1234", 998866));
-            Assert.AreEqual(null, HeroesHelpers.BattleTags.GetBattleTagName("", 1111));
+            Assert.AreEqual(null, HeroesHelpers.BattleTags.GetBattleTagName(string.Empty, 1111));
         }
 
         [TestMethod]
@@ -19,7 +19,7 @@ namespace Heroes.Helpers.Tests
             Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName("name"));
             Assert.AreEqual("name", HeroesHelpers.BattleTags.GetNameFromBattleTagName("name#"));
             Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName("#456"));
-            Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName(""));
+            Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName(string.Empty));
         }
 
         [TestMethod]
@@ -29,7 +29,7 @@ namespace Heroes.Helpers.Tests
             Assert.AreEqual(0, HeroesHelpers.BattleTags.GetTagFromBattleTagName("name"));
             Assert.AreEqual(0, HeroesHelpers.BattleTags.GetTagFromBattleTagName("name#"));
             Assert.AreEqual(456, HeroesHelpers.BattleTags.GetTagFromBattleTagName("#456"));
-            Assert.AreEqual(0, HeroesHelpers.BattleTags.GetTagFromBattleTagName(""));
+            Assert.AreEqual(0, HeroesHelpers.BattleTags.GetTagFromBattleTagName(string.Empty));
         }
     }
 }

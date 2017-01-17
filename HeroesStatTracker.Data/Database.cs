@@ -69,7 +69,7 @@ namespace HeroesStatTracker.Data
         {
             if (SettingsDbFileCreated)
             {
-                QueryDb.SettingsDb.UserSettings.SetDefaultSettings();    
+                QueryDb.SettingsDb.UserSettings.SetDefaultSettings();
             }
         }
     }

@@ -57,8 +57,8 @@ namespace HeroesStatTracker.Data.Models.Replays
         [NotMapped]
         public TimeSpan? TimeSpentDead
         {
-            get { return TimeSpentDeadTicks.HasValue? TimeSpan.FromTicks(TimeSpentDeadTicks.Value) : (TimeSpan?)null; }
-            set { TimeSpentDeadTicks = value.HasValue? value.Value.Ticks : (long?)null; }
+            get { return TimeSpentDeadTicks.HasValue ? TimeSpan.FromTicks(TimeSpentDeadTicks.Value) : (TimeSpan?)null; }
+            set { TimeSpentDeadTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
         public virtual ReplayMatch Replay { get; set; }

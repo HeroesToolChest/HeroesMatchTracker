@@ -6,15 +6,11 @@ namespace Heroes.Icons.Xml
     public class ParseXmlException : Exception
     {
         public ParseXmlException(string message, Exception ex)
-            :base(message, ex)
-        {
-
-        }
+            : base(message, ex)
+        { }
 
         public ParseXmlException(string message)
             : base(message)
-        {
-
-        }
+        { }
     }
 }

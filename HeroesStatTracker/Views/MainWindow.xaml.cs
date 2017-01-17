@@ -30,6 +30,12 @@ namespace HeroesStatTracker.Views
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
         }
 
+        public void CreateWhatsNewWindow()
+        {
+            WhatsNewWindow window = new WhatsNewWindow();
+            window.ShowDialog();
+        }
+
         protected override void OnStateChanged(EventArgs e)
         {
             base.OnStateChanged(e);
@@ -56,7 +62,9 @@ namespace HeroesStatTracker.Views
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             if (SettingsFlyout.IsOpen)
+            {
                 SettingsFlyout.IsOpen = false;
+            }
             else
             {
                 SettingsFlyout.IsOpen = true;
@@ -67,7 +75,9 @@ namespace HeroesStatTracker.Views
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             if (AboutFlyout.IsOpen)
+            {
                 AboutFlyout.IsOpen = false;
+            }
             else
             {
                 AboutFlyout.IsOpen = true;
@@ -77,8 +87,6 @@ namespace HeroesStatTracker.Views
 
         private void SetTrayIcon()
         {
-            Version version = Assembly.GetEntryAssembly().GetName().Version;
-
             // menu items
             var menuItem1 = new System.Windows.Forms.MenuItem();
             var menuItem2 = new System.Windows.Forms.MenuItem();
@@ -90,7 +98,7 @@ namespace HeroesStatTracker.Views
             // menu items
             menuItem1.Index = 0;
             menuItem1.Text = "Open";
-            menuItem1.Click += (Sender, e) =>
+            menuItem1.Click += (sender, e) =>
             {
                 Show();
                 WindowState = WindowState.Maximized;
@@ -98,7 +106,7 @@ namespace HeroesStatTracker.Views
 
             menuItem2.Index = 1;
             menuItem2.Text = "Exit";
-            menuItem2.Click += (Sender, e) =>
+            menuItem2.Click += (sender, e) =>
             {
                 Application.Current.Shutdown();
             };
@@ -108,7 +116,7 @@ namespace HeroesStatTracker.Views
                 Icon = System.Drawing.Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Visible = false,
                 ContextMenu = contextMenu,
-                Text = $"Heroes Stat Tracker {VersionAsString()}"
+                Text = $"Heroes Stat Tracker {VersionAsString()}",
             };
             NotifyIcon.DoubleClick += (sender, e) =>
             {
@@ -127,12 +135,6 @@ namespace HeroesStatTracker.Views
             }
 
             return IntPtr.Zero;
-        }
-
-        public void CreateWhatsNewWindow()
-        {
-            WhatsNewWindow window = new WhatsNewWindow();
-            window.ShowDialog();
         }
     }
 }

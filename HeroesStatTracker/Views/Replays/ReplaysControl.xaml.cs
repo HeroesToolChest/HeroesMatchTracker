@@ -15,7 +15,7 @@ namespace HeroesStatTracker.Views.Replays
             InitializeComponent();
 
             if (QueryDb.SettingsDb.UserSettings.ReplayAutoStartStartUp)
-                ((IInvokeProvider)(new ButtonAutomationPeer(StartButton).GetPattern(PatternInterface‌​.Invoke))).Invoke();
+                ((IInvokeProvider)new ButtonAutomationPeer(StartButton).GetPattern(PatternInterface‌​.Invoke)).Invoke();
         }
     }
 }

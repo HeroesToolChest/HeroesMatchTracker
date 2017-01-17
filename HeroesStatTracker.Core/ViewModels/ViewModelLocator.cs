@@ -42,13 +42,13 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<ReplaysControlViewModel>();
         }
 
-        public MainWindowViewModel MainWindowViewModel { get { return ServiceLocator.Current.GetInstance<MainWindowViewModel>(); } }
-        public StartupWindowViewModel StartupWindowViewModel { get { return ServiceLocator.Current.GetInstance<StartupWindowViewModel>(); } }
-        public SettingsControlViewModel SettingsControlViewModel { get { return ServiceLocator.Current.GetInstance<SettingsControlViewModel>(); }}
-        public AboutControlViewModel AboutControlViewModel { get { return ServiceLocator.Current.GetInstance<AboutControlViewModel>(); } }
-        public PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel { get { return ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>(); } }
-        public WhatsNewWindowViewModel WhatsNewWindowViewModel { get { return ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>(); } }
-        public ReplaysControlViewModel ReplaysControlViewModel { get { return ServiceLocator.Current.GetInstance<ReplaysControlViewModel>(); } }
+        public static MainWindowViewModel MainWindowViewModel { get { return ServiceLocator.Current.GetInstance<MainWindowViewModel>(); } }
+        public static StartupWindowViewModel StartupWindowViewModel { get { return ServiceLocator.Current.GetInstance<StartupWindowViewModel>(); } }
+        public static SettingsControlViewModel SettingsControlViewModel { get { return ServiceLocator.Current.GetInstance<SettingsControlViewModel>(); } }
+        public static AboutControlViewModel AboutControlViewModel { get { return ServiceLocator.Current.GetInstance<AboutControlViewModel>(); } }
+        public static PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel { get { return ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>(); } }
+        public static WhatsNewWindowViewModel WhatsNewWindowViewModel { get { return ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>(); } }
+        public static ReplaysControlViewModel ReplaysControlViewModel { get { return ServiceLocator.Current.GetInstance<ReplaysControlViewModel>(); } }
 
         public static void Cleanup()
         {

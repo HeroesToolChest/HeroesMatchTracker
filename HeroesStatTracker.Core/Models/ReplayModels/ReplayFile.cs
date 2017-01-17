@@ -25,6 +25,7 @@ namespace HeroesStatTracker.Core.Models.ReplayModels
                 RaisePropertyChanged();
             }
         }
+
         public ReplayParseResult? Status
         {
             get { return _status; }
@@ -34,6 +35,7 @@ namespace HeroesStatTracker.Core.Models.ReplayModels
                 RaisePropertyChanged();
             }
         }
+
         public ReplayFileHotsLogsStatus? ReplayFileHotsLogsStatus
         {
             get { return _replayFileHotsLogsStatus; }

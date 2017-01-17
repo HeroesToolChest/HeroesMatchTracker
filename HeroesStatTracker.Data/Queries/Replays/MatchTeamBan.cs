@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchTeamBan() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamBan model)
-        {
-            db.ReplayMatchTeamBans.Add(model);
-            db.SaveChanges();
-
-            return 0;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamBan model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamBan model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchTeamBan> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -73,6 +55,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchTeamBans.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamBan model)
+        {
+            db.ReplayMatchTeamBans.Add(model);
+            db.SaveChanges();
+
+            return 0;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamBan model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamBan model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

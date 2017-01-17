@@ -3,7 +3,8 @@ using HeroesStatTracker.Data.Models;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
-    public abstract class NonContextQueriesBase<T> : QueriesBase where T : INonContextModels
+    public abstract class NonContextQueriesBase<T> : QueriesBase
+        where T : INonContextModels
     {
         internal NonContextQueriesBase() { }
 

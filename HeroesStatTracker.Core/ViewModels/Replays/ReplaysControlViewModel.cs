@@ -19,7 +19,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesStatTracker.Core.ViewModels.Replays
 {
-    public class ReplaysControlViewModel : HSTViewModel, IDisposable
+    public class ReplaysControlViewModel : HstViewModel, IDisposable
     {
         private bool _areProcessButtonsEnabled;
         private bool _areHotsLogsUploaderButtonsEnabled;
@@ -47,10 +47,24 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private ObservableCollection<ReplayFile> _replayFileCollection = new ObservableCollection<ReplayFile>();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public ReplaysControlViewModel()
+        {
+            HotsLogsStartButtonText = "[Stop]";
+
+            ScanDateTimeCheckboxes[QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex] = true;
+            AreProcessButtonsEnabled = true;
+
+            InitializeReplaySaveDataQueue();
+            InitializeReplayHotsLogsUploadQueue();
+        }
+
         public RelayCommand ScanCommand => new RelayCommand(Scan);
         public RelayCommand StartCommand => new RelayCommand(Start);
         public RelayCommand StopCommand => new RelayCommand(Stop);
-        public RelayCommand ManualSelectFilesCommnad => new RelayCommand(ManualSelectFiles);
+        public RelayCommand ManualSelectFilesCommand => new RelayCommand(ManualSelectFiles);
         public RelayCommand ReplaysLocationBrowseCommand => new RelayCommand(ReplaysLocationBrowse);
         public RelayCommand LatestDateTimeDefaultCommand => new RelayCommand(LatestDateTimeDefault);
         public RelayCommand LatestDateTimeSetCommand => new RelayCommand(LatestDateTimeSet);
@@ -65,7 +79,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         #region public properties
         public bool AreProcessButtonsEnabled
         {
-            get { return _areProcessButtonsEnabled;}
+            get { return _areProcessButtonsEnabled; }
             set
             {
                 _areProcessButtonsEnabled = value;
@@ -203,6 +217,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     LatestHotsLogsChecked = false;
                     LastHotsLogsChecked = false;
                 }
+
                 RaisePropertyChanged();
             }
         }
@@ -220,6 +235,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     LatestHotsLogsChecked = false;
                     LastHotsLogsChecked = false;
                 }
+
                 RaisePropertyChanged();
             }
         }
@@ -237,6 +253,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     LatestHotsLogsChecked = false;
                     LastHotsLogsChecked = false;
                 }
+
                 RaisePropertyChanged();
             }
         }
@@ -254,6 +271,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     LastParsedChecked = false;
                     LastHotsLogsChecked = false;
                 }
+
                 RaisePropertyChanged();
             }
         }
@@ -281,6 +299,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     LastParsedChecked = false;
                     LatestHotsLogsChecked = false;
                 }
+
                 RaisePropertyChanged();
             }
         }
@@ -367,20 +386,6 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         }
         #endregion public properties
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public ReplaysControlViewModel()
-        {
-            HotsLogsStartButtonText = "[Stop]";
-
-            ScanDateTimeCheckboxes[QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex] = true;
-            AreProcessButtonsEnabled = true;
-
-            InitializeReplaySaveDataQueue();
-            InitializeReplayHotsLogsUploadQueue();
-        }
-
         private void ManualSelectFiles()
         {
             var dialog = new OpenFileDialog();
@@ -409,7 +414,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                             FileName = replayFile.Name,
                             LastWriteTime = replayFile.LastWriteTime,
                             FilePath = replayFile.FullName,
-                            Status = null
+                            Status = null,
                         });
                         ReplayFileLocations.Add(replayFile.FullName, ReplayFileCollection.Count - 1);
                     }
@@ -421,7 +426,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 CurrentStatus = $"{ReplayFileCollection.Count} replay file(s) retrieved";
             }
         }
-        
+
         private void ReplaysLocationBrowse()
         {
             var dialog = new CommonOpenFileDialog();
@@ -498,6 +503,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 IsHotsLogsStartButtonEnabled = true;
                 ReplayHotsLogsUploadQueue.Clear();
             }
+
             IsHotsLogsUploaderQueueOn = true;
             AreProcessButtonsEnabled = false;
 
@@ -553,7 +559,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         {
             var filePath = e.FullPath;
 
-            Application.Current.Dispatcher.Invoke(delegate
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 if (ReplayFileCollection.FirstOrDefault(x => x.FilePath == filePath) == null)
                 {
@@ -562,7 +568,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         FileName = Path.GetFileName(filePath),
                         LastWriteTime = File.GetLastWriteTime(filePath),
                         FilePath = filePath,
-                        Status = null
+                        Status = null,
                     });
                     ReplayFileLocations.Add(filePath, ReplayFileCollection.Count - 1);
                 }
@@ -575,7 +581,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         {
             var filePath = e.FullPath;
 
-            Application.Current.Dispatcher.Invoke(delegate
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 var file = ReplayFileCollection.FirstOrDefault(x => x.FilePath == filePath);
                 if (file != null)
@@ -624,7 +630,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
                 TotalReplaysGrid = listFiles.Count;
 
-                await Application.Current.Dispatcher.InvokeAsync(delegate
+                await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
                     ReplayFileCollection = new ObservableCollection<ReplayFile>();
                     ReplayFileLocations = new Dictionary<string, int>();
@@ -638,7 +644,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                             FileName = file.Name,
                             LastWriteTime = file.LastWriteTime,
                             FilePath = file.FullName,
-                            Status = null
+                            Status = null,
                         });
 
                         ReplayFileLocations.Add(file.FullName, index);
@@ -704,7 +710,6 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     if (!IsParsingReplaysOn)
                         break;
 
-                    #region parse replay and queue data to be saved
                     string tempReplayFile = Path.GetTempFileName();
                     ReplayFile originalfile = ReplayFileCollection[currentCount];
 
@@ -721,7 +726,9 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                             continue;
                         }
                         else if (originalfile.Status == ReplayParseResult.Saved)
+                        {
                             continue;
+                        }
 
                         // copy the contents of the replay file to the tempReplayFile file
                         File.Copy(originalfile.FilePath, tempReplayFile, overwrite: true);
@@ -772,7 +779,6 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         if (File.Exists(tempReplayFile))
                             File.Delete(tempReplayFile);
                     }
-                    #endregion parse replay and save data
                 } // end for
 
                 // if no watch is selected and if all replays got parsed then automatically end
@@ -942,6 +948,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         {
                             if (currentReplayFile.ReplayId == 0) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A ReplayId of 0 was detected");
                             if (currentReplayFile.TimeStamp == DateTime.Now) WarningLog.Log(LogLevel.Info, "HOTS Logs Queue: A TimeStamp of 1/1/0001 was detected");
+
                             // remove it before we continue
                             ReplayHotsLogsUploadQueue.Dequeue();
                             continue;
@@ -950,7 +957,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         ReplayHotsLogsUpload replayHotsLogsUpload = new ReplayHotsLogsUpload
                         {
                             ReplayId = currentReplayFile.ReplayId,
-                            Status = (int)ReplayFileHotsLogsStatus.Uploading
+                            Status = (int)ReplayFileHotsLogsStatus.Uploading,
                         };
 
                         // check if an upload record exists for the replay
@@ -997,7 +1004,9 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                             ReplaysLastHotsLogs = replayHotsLogsUpload.ReplayFileTimeStamp.Value.ToLocalTime();
                         }
                         else
+                        {
                             currentReplayFile.ReplayFileHotsLogsStatus = ReplayFileHotsLogsStatus.Failed;
+                        }
 
                         ReplayHotsLogsUploadQueue.Dequeue(); // we're done with the replay so remove it from the queue
                     }
@@ -1025,7 +1034,9 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         }
 
         #region IDisposable Support
+#pragma warning disable SA1201 // Elements must appear in the correct order
         private bool disposedValue = false;
+#pragma warning restore SA1201 // Elements must appear in the correct order
 
         protected virtual void Dispose(bool disposing)
         {
@@ -1035,11 +1046,14 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 {
                     ((IDisposable)FileWatcher).Dispose();
                 }
+
                 disposedValue = true;
             }
         }
 
+#pragma warning disable SA1202 // Elements must be ordered by access
         public void Dispose()
+#pragma warning restore SA1202 // Elements must be ordered by access
         {
             Dispose(true);
             GC.SuppressFinalize(this);

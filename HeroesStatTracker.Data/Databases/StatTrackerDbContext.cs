@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace HeroesStatTracker.Data.Databases
 {
-    internal class StatTrackerDbContext: DbContext
+    internal class StatTrackerDbContext : DbContext
     {
-        public virtual DbSet<SchemaInfo> SchemaInfo { get; set; }
-
         protected StatTrackerDbContext(string nameOrConnectionString)
-            :base(nameOrConnectionString) { }
+            : base(nameOrConnectionString) { }
+
+        public virtual DbSet<SchemaInfo> SchemaInfo { get; set; }
 
         public override int SaveChanges()
         {
@@ -37,7 +37,7 @@ namespace HeroesStatTracker.Data.Databases
             }
         }
 
-        private string CustomErrorMessage(DbEntityValidationException ex)
+        private static string CustomErrorMessage(DbEntityValidationException ex)
         {
             // Retrieve the error messages as a list of strings.
             var errorMessages = ex.EntityValidationErrors

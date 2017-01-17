@@ -7,7 +7,8 @@ namespace HeroesStatTracker.Data.Queries.Replays
     /// Raw data queries
     /// </summary>
     /// <typeparam name="T">IReplayModelDataTable</typeparam>
-    internal interface IRawQueries<T> where T : IRawDataDisplay
+    internal interface IRawQueries<T>
+        where T : IRawDataDisplay
     {
         List<T> ReadTopRecords(int amount);
         List<T> ReadLastRecords(int amount);

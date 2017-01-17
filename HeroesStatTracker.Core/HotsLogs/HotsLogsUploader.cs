@@ -7,7 +7,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesStatTracker.Core.HotsLogs
 {
-    public class HotsLogsUploader
+    public static class HotsLogsUploader
     {
         public static async Task<ReplayParseResult> UploadReplay(string filePath)
         {
@@ -19,7 +19,7 @@ namespace HeroesStatTracker.Core.HotsLogs
             {
                 BucketName = "heroesreplays",
                 Key = fileGuidName,
-                FilePath = filePath
+                FilePath = filePath,
             };
 
             PutObjectResponse response = await client.PutObjectAsync(request);
@@ -36,22 +36,6 @@ namespace HeroesStatTracker.Core.HotsLogs
 
                 return EnumParser.GetReplayParseResultFromString(result);
             }
-        }
-    }
-
-    [Serializable]
-    public class MaintenanceException : Exception
-    {
-        public MaintenanceException(string message, Exception ex)
-            : base(message, ex)
-        {
-
-        }
-
-        public MaintenanceException(string message)
-            : base(message)
-        {
-
         }
     }
 }

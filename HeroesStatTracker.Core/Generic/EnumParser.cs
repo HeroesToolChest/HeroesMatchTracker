@@ -12,7 +12,7 @@ namespace HeroesStatTracker.Core
                 throw new ArgumentNullException("replayParseResult");
 
             ReplayParseResult replayParseResultEnum;
-            replayParseResult = Regex.Replace(replayParseResult, @"\s+", "");
+            replayParseResult = Regex.Replace(replayParseResult, @"\s+", string.Empty);
 
             if (Enum.TryParse(replayParseResult, true, out replayParseResultEnum))
                 return replayParseResultEnum;

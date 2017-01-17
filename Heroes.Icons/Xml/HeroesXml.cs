@@ -13,6 +13,17 @@ namespace Heroes.Icons.Xml
         private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
 
+        private HeroesXml(string parentFile, string xmlFolder, int? build = null)
+        {
+            if (build == null)
+                SetDefaultBuildDirectory();
+            else
+                SelectedBuild = build.Value;
+
+            XmlParentFile = parentFile;
+            XmlFolder = $@"{xmlFolder}\{SelectedBuild}";
+        }
+
         public int CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
         public int EarliestHeroesBuild { get; private set; } // cleared once initialized
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
@@ -78,17 +89,6 @@ namespace Heroes.Icons.Xml
         /// key is real hero name
         /// </summary>
         public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
-
-        private HeroesXml(string parentFile, string xmlFolder, int? build = null)
-        {
-            if (build == null)
-                SetDefaultBuildDirectory();
-            else
-                SelectedBuild = build.Value;
-
-            XmlParentFile = parentFile;
-            XmlFolder = $@"{xmlFolder}\{SelectedBuild}";
-        }
 
         public static HeroesXml Initialize(string parentFile, string xmlFolder, int? build = null)
         {
@@ -288,8 +288,8 @@ namespace Heroes.Icons.Xml
         private Uri SetLoadingPortraitUri(string fileName)
         {
             return new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{fileName}", UriKind.Absolute);
-
         }
+
         private Uri SetLeaderboardPortraitUri(string fileName)
         {
             return new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
@@ -319,7 +319,6 @@ namespace Heroes.Icons.Xml
                 if (!TalentLongTooltip.TryGetValue(desc, out longDesc))
                     longDesc = string.Empty;
 
-
                 TalentTooltips.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc));
             }
         }
@@ -340,6 +339,7 @@ namespace Heroes.Icons.Xml
                         }
                     }
                 }
+
                 using (StreamReader reader = new StreamReader($@"Xml\Heroes\{SelectedBuild}\_FullTalentTooltips.txt"))
                 {
                     while (!reader.EndOfStream)

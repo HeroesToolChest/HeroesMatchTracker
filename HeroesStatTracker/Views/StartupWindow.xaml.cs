@@ -24,5 +24,5 @@ namespace HeroesStatTracker.Views
 
             Close();
         }
-    } 
+    }
 }

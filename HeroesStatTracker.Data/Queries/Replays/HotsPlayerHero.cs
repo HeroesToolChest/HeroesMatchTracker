@@ -10,51 +10,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal HotsPlayerHero() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
-        {
-            db.Database.ExecuteSqlCommand("INSERT INTO ReplayAllHotsPlayerHeroes(PlayerId, HeroName, IsUsable, LastUpdated) VALUES (@PlayerId, @HeroName, @IsUsable, @LastUpdated)",
-                                            new SQLiteParameter("@PlayerId", model.PlayerId),
-                                            new SQLiteParameter("@HeroName", model.HeroName),
-                                            new SQLiteParameter("@IsUsable", model.IsUsable),
-                                            new SQLiteParameter("@LastUpdated", model.LastUpdated));
-
-            return 0;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
-        {
-            var record = db.Database.SqlQuery<ReplayAllHotsPlayerHero>("SELECT * FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1",
-                                                            new SQLiteParameter("@PlayerId", model.PlayerId),
-                                                            new SQLiteParameter("@HeroName", model.HeroName)).FirstOrDefault();
-
-            if (record != null)
-            {
-                if (model.LastUpdated > record.LastUpdated)
-                {
-                    db.Database.ExecuteSqlCommand("UPDATE ReplayAllHotsPlayerHeroes SET IsUsable = @IsUsable, LastUpdated = @LastUpdated WHERE PlayerId=@PlayerId AND HeroName=@HeroName",
-                                                    new SQLiteParameter("@IsUsable", model.IsUsable),
-                                                    new SQLiteParameter("@LastUpdated", model.LastUpdated),
-                                                    new SQLiteParameter("@PlayerId", model.PlayerId),
-                                                    new SQLiteParameter("@HeroName", model.HeroName));
-                }
-            }
-            else
-            {
-                db.ReplayAllHotsPlayerHeroes.Add(model);
-                db.SaveChanges();
-                return record.PlayerId;
-            }
-
-            return 0;
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
-        {
-            return db.Database.SqlQuery<bool>("SELECT EXISTS(SELECT 1 FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1)",
-                                                           new SQLiteParameter("@PlayerId", model.PlayerId),
-                                                           new SQLiteParameter("@HeroName", model.HeroName)).FirstOrDefault();
-        }
-
         public List<ReplayAllHotsPlayerHero> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -90,9 +45,13 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     input = "0";
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -108,6 +67,53 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
+        internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
+        {
+            db.Database.ExecuteSqlCommand(
+                "INSERT INTO ReplayAllHotsPlayerHeroes(PlayerId, HeroName, IsUsable, LastUpdated) VALUES (@PlayerId, @HeroName, @IsUsable, @LastUpdated)",
+                new SQLiteParameter("@PlayerId", model.PlayerId),
+                new SQLiteParameter("@HeroName", model.HeroName),
+                new SQLiteParameter("@IsUsable", model.IsUsable),
+                new SQLiteParameter("@LastUpdated", model.LastUpdated));
 
+            return 0;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
+        {
+            var record = db.Database.SqlQuery<ReplayAllHotsPlayerHero>(
+                "SELECT * FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1",
+                new SQLiteParameter("@PlayerId", model.PlayerId),
+                new SQLiteParameter("@HeroName", model.HeroName)).FirstOrDefault();
+
+            if (record != null)
+            {
+                if (model.LastUpdated > record.LastUpdated)
+                {
+                    db.Database.ExecuteSqlCommand(
+                        "UPDATE ReplayAllHotsPlayerHeroes SET IsUsable = @IsUsable, LastUpdated = @LastUpdated WHERE PlayerId=@PlayerId AND HeroName=@HeroName",
+                        new SQLiteParameter("@IsUsable", model.IsUsable),
+                        new SQLiteParameter("@LastUpdated", model.LastUpdated),
+                        new SQLiteParameter("@PlayerId", model.PlayerId),
+                        new SQLiteParameter("@HeroName", model.HeroName));
+                }
+            }
+            else
+            {
+                db.ReplayAllHotsPlayerHeroes.Add(model);
+                db.SaveChanges();
+                return record.PlayerId;
+            }
+
+            return 0;
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayAllHotsPlayerHero model)
+        {
+            return db.Database.SqlQuery<bool>(
+                "SELECT EXISTS(SELECT 1 FROM ReplayAllHotsPlayerHeroes WHERE PlayerId=@PlayerId AND HeroName=@HeroName LIMIT 1)",
+                new SQLiteParameter("@PlayerId", model.PlayerId),
+                new SQLiteParameter("@HeroName", model.HeroName)).FirstOrDefault();
+        }
     }
 }

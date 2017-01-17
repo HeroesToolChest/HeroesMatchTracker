@@ -7,7 +7,6 @@ namespace HeroesStatTracker.Data.Models.Replays
 
     public class ReplayAllHotsPlayer : IRawDataDisplay, INonContextModels
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ReplayAllHotsPlayer()
         {
             ReplayMatchPlayers = new HashSet<ReplayMatchPlayer>();
@@ -40,19 +39,14 @@ namespace HeroesStatTracker.Data.Models.Replays
 
         public int Seen { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayer> ReplayMatchPlayers { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReplayMatchAward> ReplayMatchAwards { get; set; }
     }
 }

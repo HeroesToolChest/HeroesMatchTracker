@@ -12,16 +12,24 @@ namespace HeroesStatTracker
     /// </summary>
     public partial class App : Application
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields", Justification = "Only used in Release mode")]
         private static readonly Mutex Mutex = new Mutex(true, "{66563FC5-C7B4-4CAA-84D7-ECE5819B6C8C}");
-        public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
 
         internal App()
         {
             InitializeComponent();
         }
 
+        public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
+
+        public static string VersionAsString()
+        {
+            Version version = Assembly.GetEntryAssembly().GetName().Version;
+            return $"{version.Major}.{version.Minor}.{version.Build}";
+        }
+
         [STAThread]
-        static void Main()
+        internal static void Main()
         {
 #if !DEBUG
             // check if another instance is already running
@@ -46,12 +54,6 @@ namespace HeroesStatTracker
 #endif
         }
 
-        public static string VersionAsString()
-        {
-            Version version = Assembly.GetEntryAssembly().GetName().Version;
-            return $"{version.Major}.{version.Minor}.{version.Build}";
-        }
-
         protected override void OnExit(ExitEventArgs e)
         {
             if (NotifyIcon != null)
@@ -66,6 +68,9 @@ namespace HeroesStatTracker
         {
             public const int HWND_BROADCAST = 0xffff;
             public static readonly int WM_SHOWME = RegisterWindowMessage("WM_SHOWME");
+
+            private NativeMethods() { }
+
             [DllImport("user32")]
             public static extern bool PostMessage(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam);
             [DllImport("user32", CharSet = CharSet.Unicode)]

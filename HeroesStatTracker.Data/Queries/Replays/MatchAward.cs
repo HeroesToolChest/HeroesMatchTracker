@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchAward() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchAward model)
-        {
-            db.ReplayMatchAwards.Add(model);
-            db.SaveChanges();
-
-            return model.PlayerId;
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchAward model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchAward model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchAward> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -73,6 +55,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchAwards.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchAward model)
+        {
+            db.ReplayMatchAwards.Add(model);
+            db.SaveChanges();
+
+            return model.PlayerId;
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchAward model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchAward model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

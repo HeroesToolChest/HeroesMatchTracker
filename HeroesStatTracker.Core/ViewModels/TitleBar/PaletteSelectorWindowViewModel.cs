@@ -11,6 +11,17 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         private string _currentSelectedPrimary;
         private string _currentSelectedAccent;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public PaletteSelectorWindowViewModel()
+        {
+            Swatches = new SwatchesProvider().Swatches;
+
+            CurrentSelectedPrimary = QueryDb.SettingsDb.UserSettings.MainStylePrimary;
+            CurrentSelectedAccent = QueryDb.SettingsDb.UserSettings.MainStyleAccent;
+        }
+
         public IEnumerable<Swatch> Swatches { get; }
 
         public RelayCommand<bool> ToggleStyleCommand => new RelayCommand<bool>(x => StylePalette.ApplyStyle(x));
@@ -56,17 +67,6 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
                 QueryDb.SettingsDb.UserSettings.IsNightMode = value;
                 RaisePropertyChanged();
             }
-        }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public PaletteSelectorWindowViewModel()
-        {
-            Swatches = new SwatchesProvider().Swatches;
-
-            CurrentSelectedPrimary = QueryDb.SettingsDb.UserSettings.MainStylePrimary;
-            CurrentSelectedAccent = QueryDb.SettingsDb.UserSettings.MainStyleAccent;
         }
 
         private void ApplyPrimary(Swatch swatch)

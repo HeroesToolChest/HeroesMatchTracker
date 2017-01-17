@@ -6,15 +6,15 @@ using System.Linq;
 
 namespace HeroesStatTracker.Data.Migrations
 {
-    internal class MigratorBase<T, U> 
+    internal class MigratorBase<T, TMigrator>
         where T : StatTrackerDbContext, new()
-        where U : ContextMigrator, new()
+        where TMigrator : ContextMigrator, new()
     {
-        private string DbName;
-        bool DatabaseFileCreated;
-        int RequiredDatabaseVersion;
-
         private readonly string MigrationLogFile = "Logs/DatabasesMigrationLog.txt";
+
+        private string DbName;
+        private bool DatabaseFileCreated;
+        private int RequiredDatabaseVersion;
 
         public MigratorBase(string dbName, bool databaseFileCreated, int requiredDatabaseVersion)
         {
@@ -57,7 +57,7 @@ namespace HeroesStatTracker.Data.Migrations
                         return;
                     }
 
-                    U contextMigrator = new U();
+                    TMigrator contextMigrator = new TMigrator();
 
                     while (currentVersion < RequiredDatabaseVersion)
                     {

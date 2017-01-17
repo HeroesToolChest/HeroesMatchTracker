@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchPlayerScoreResult() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
-        {
-            db.ReplayMatchPlayerScoreResults.Add(model);
-            db.SaveChanges();
-
-            return model.MatchPlayerScoreResultId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchPlayerScoreResult> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -68,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatchPlayerScoreResult>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -87,6 +75,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchPlayerScoreResults.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
+        {
+            db.ReplayMatchPlayerScoreResults.Add(model);
+            db.SaveChanges();
+
+            return model.MatchPlayerScoreResultId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchPlayerScoreResult model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

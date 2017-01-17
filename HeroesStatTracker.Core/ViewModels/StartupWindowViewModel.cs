@@ -11,12 +11,17 @@ using System.Windows;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
-    public class StartupWindowViewModel: ViewModelBase
+    public class StartupWindowViewModel : ViewModelBase
     {
         private Logger StartupLogFile = LogManager.GetLogger(LogFileNames.StartupLogFileName);
 
         private string _statusLabel;
         private string _detailedStatusLabel;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public StartupWindowViewModel() { }
 
         public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
 
@@ -45,14 +50,6 @@ namespace HeroesStatTracker.Core.ViewModels
         public IMainWindowService StartupWindowService
         {
             get { return ServiceLocator.Current.GetInstance<IMainWindowService>(); }
-        }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public StartupWindowViewModel()
-        {
-
         }
 
         private async Task ExecuteStartup()

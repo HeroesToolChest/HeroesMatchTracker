@@ -6,15 +6,11 @@ namespace Heroes.Icons
     public class HeroesIconException : Exception
     {
         public HeroesIconException(string message, Exception ex)
-            :base(message, ex)
-        {
-
-        }
+            : base(message, ex)
+        { }
 
         public HeroesIconException(string message)
             : base(message)
-        {
-
-        }
+        { }
     }
 }

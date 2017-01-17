@@ -11,19 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchPlayerTalent() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchPlayerTalent model)
-        {
-            db.ReplayMatchPlayerTalents.Add(model);
-            db.SaveChanges();
-
-            return model.MatchPlayerTalentId;
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchPlayerTalent model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchPlayerTalent> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -63,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatchPlayerTalent>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -82,6 +75,19 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchPlayerTalents.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchPlayerTalent model)
+        {
+            db.ReplayMatchPlayerTalents.Add(model);
+            db.SaveChanges();
+
+            return model.MatchPlayerTalentId;
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchPlayerTalent model)
+        {
+            throw new NotImplementedException();
         }
 
         internal override long UpdateRecord(ReplaysContext db, ReplayMatchPlayerTalent model)

@@ -4,6 +4,5 @@
     {
         public string BattleTagName { get; set; }
         public long PlayerId { get; set; }
-
     }
 }

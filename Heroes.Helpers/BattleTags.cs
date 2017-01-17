@@ -21,7 +21,7 @@ namespace Heroes.Helpers
 
                 string name = battleTagName.Substring(0, battleTagName.IndexOf('#'));
 
-                if (name == string.Empty)
+                if (string.IsNullOrEmpty(name))
                     return null;
                 else
                     return name;

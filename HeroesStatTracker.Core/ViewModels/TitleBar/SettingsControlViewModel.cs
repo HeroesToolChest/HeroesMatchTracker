@@ -10,6 +10,14 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 {
     public class SettingsControlViewModel : ViewModelBase
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public SettingsControlViewModel()
+        {
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ToggleIsNightMode(message));
+        }
+
         public RelayCommand OpenPaletteSelectorWindowCommand => new RelayCommand(OpenPaletteSelectorWindow);
         public RelayCommand<bool> ToggleBaseCommand => new RelayCommand<bool>(x => StylePalette.ApplyBase(x));
 
@@ -66,39 +74,9 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
             }
         }
 
-        //public string UserBattleTag
-        //{
-        //    get { return QueryDb.SettingsDb.UserSettings.UserBattleTagName; }
-        //    set
-        //    {
-        //        QueryDb.SettingsDb.UserSettings.UserBattleTagName = value;
-        //        RaisePropertyChanged();
-        //    }
-        //}
-
-        //public string InputBattleTagError
-        //{
-        //    get { return _inputBattleTagError; }
-        //    set
-        //    {
-        //        _inputBattleTagError = value;
-        //        RaisePropertyChanged();
-        //    }
-        //}
-
-
-
         public IPaletteSelectorWindowService PaletteSelectorWindowService
         {
             get { return ServiceLocator.Current.GetInstance<IPaletteSelectorWindowService>(); }
-        }
-        
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public SettingsControlViewModel()
-        {
-            Messenger.Default.Register<NotificationMessage>(this, (message) => ToggleIsNightMode(message));
         }
 
         private void OpenPaletteSelectorWindow()

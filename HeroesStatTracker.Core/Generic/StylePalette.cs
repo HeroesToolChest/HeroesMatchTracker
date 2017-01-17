@@ -16,7 +16,7 @@ namespace HeroesStatTracker.Core
         {
             var resourceDictionary = new ResourceDictionary
             {
-                Source = new Uri(@"pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml")
+                Source = new Uri(@"pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"),
             };
 
             var styleKey = alternate ? "MaterialDesignAlternateTabablzControlStyle" : "MaterialDesignTabablzControlStyle";

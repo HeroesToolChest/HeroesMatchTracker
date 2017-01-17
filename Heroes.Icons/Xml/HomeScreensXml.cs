@@ -8,13 +8,13 @@ namespace Heroes.Icons.Xml
 {
     internal class HomeScreensXml : XmlBase
     {
-        public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
-
         private HomeScreensXml(string parentFile, string xmlFolder)
         {
             XmlParentFile = parentFile;
             XmlFolder = xmlFolder;
         }
+
+        public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
 
         public static HomeScreensXml Initialize(string parentFile, string xmlFolder)
         {
@@ -51,7 +51,6 @@ namespace Heroes.Icons.Xml
                             {
                                 HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(SetHomeScreenBitmapImage(reader.Value), (Color)ColorConverter.ConvertFromString(fontGlow)));
                             }
-
                         }
                     }
                 }

@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchTeamExperience() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamExperience model)
-        {
-            db.ReplayMatchTeamExperiences.Add(model);
-            db.SaveChanges();
-
-            return model.ReplayId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamExperience model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamExperience model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchTeamExperience> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -68,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatchTeamExperience>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -87,6 +75,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchTeamExperiences.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamExperience model)
+        {
+            db.ReplayMatchTeamExperiences.Add(model);
+            db.SaveChanges();
+
+            return model.ReplayId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamExperience model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamExperience model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

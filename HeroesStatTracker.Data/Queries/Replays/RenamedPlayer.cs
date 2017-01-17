@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal RenamedPlayer() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayRenamedPlayer model)
-        {
-            db.ReplayRenamedPlayers.Add(model);
-            db.SaveChanges();
-
-            return model.RenamedPlayerId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayRenamedPlayer model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayRenamedPlayer model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayRenamedPlayer> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -68,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayRenamedPlayer>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -87,6 +75,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayRenamedPlayers.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayRenamedPlayer model)
+        {
+            db.ReplayRenamedPlayers.Add(model);
+            db.SaveChanges();
+
+            return model.RenamedPlayerId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayRenamedPlayer model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayRenamedPlayer model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

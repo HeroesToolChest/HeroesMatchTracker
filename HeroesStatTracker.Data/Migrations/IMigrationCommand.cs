@@ -2,7 +2,7 @@
 
 namespace HeroesStatTracker.Data.Migrations
 {
-    interface IMigrationCommand
+    internal interface IMigrationCommand
     {
         void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons);
     }

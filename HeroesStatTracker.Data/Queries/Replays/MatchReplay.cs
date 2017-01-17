@@ -12,30 +12,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchReplay() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatch model)
-        {
-            db.Replays.Add(model);
-            db.SaveChanges();
-
-            return model.ReplayId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatch model)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Check if the replay was already submitted
-        /// </summary>
-        /// <param name="db">ReplaysContext</param>
-        /// <param name="model">ReplayMatch model</param>
-        /// <returns>The date (UTC) of the last replay</returns>
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatch model)
-        {
-            return db.Replays.Any(x => x.RandomValue == model.RandomValue);
-        }
-
         public List<ReplayMatch> ReadTopRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -86,7 +62,9 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatch>();
+                }
             }
             else if (columnName == "GameMode")
             {
@@ -95,9 +73,13 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     input = ((int)gameMode).ToString();
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -130,7 +112,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 if (record != null)
                     return record.TimeStamp.Value;
                 else
-                    return new DateTime();
+                    return DateTime.Now;
             }
         }
 
@@ -143,8 +125,32 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 if (record != null)
                     return record.TimeStamp.Value;
                 else
-                    return new DateTime();
+                    return DateTime.Now;
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatch model)
+        {
+            db.Replays.Add(model);
+            db.SaveChanges();
+
+            return model.ReplayId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatch model)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Check if the replay was already submitted
+        /// </summary>
+        /// <param name="db">ReplaysContext</param>
+        /// <param name="model">ReplayMatch model</param>
+        /// <returns>The date (UTC) of the last replay</returns>
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatch model)
+        {
+            return db.Replays.Any(x => x.RandomValue == model.RandomValue);
         }
     }
 }

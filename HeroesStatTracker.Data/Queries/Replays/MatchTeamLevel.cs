@@ -11,24 +11,6 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         internal MatchTeamLevel() { }
 
-        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamLevel model)
-        {
-            db.ReplayMatchTeamLevels.Add(model);
-            db.SaveChanges();
-
-            return model.ReplayId;
-        }
-
-        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamLevel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamLevel model)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ReplayMatchTeamLevel> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
@@ -68,12 +50,18 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     columnName = string.Concat(columnName, "Ticks");
                 }
                 else
+                {
                     return new List<ReplayMatchTeamLevel>();
+                }
             }
             else if (LikeOperatorInputCheck(operand, input))
+            {
                 input = $"%{input}%";
+            }
             else if (input == null)
+            {
                 input = string.Empty;
+            }
 
             using (var db = new ReplaysContext())
             {
@@ -87,6 +75,24 @@ namespace HeroesStatTracker.Data.Queries.Replays
             {
                 return db.ReplayMatchTeamLevels.Take(amount).ToList();
             }
+        }
+
+        internal override long CreateRecord(ReplaysContext db, ReplayMatchTeamLevel model)
+        {
+            db.ReplayMatchTeamLevels.Add(model);
+            db.SaveChanges();
+
+            return model.ReplayId;
+        }
+
+        internal override long UpdateRecord(ReplaysContext db, ReplayMatchTeamLevel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal override bool IsExistingRecord(ReplaysContext db, ReplayMatchTeamLevel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }

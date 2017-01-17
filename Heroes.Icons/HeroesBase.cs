@@ -5,15 +5,15 @@ namespace Heroes.Icons
 {
     public class HeroesBase
     {
-        protected readonly string ImageMissingLogName = "_ImageMissingLog.txt";
-        protected readonly string ReferenceLogName = "_ReferenceNameLog.txt";
-        protected readonly string LogFileName = "Logs";
-        protected readonly string ApplicationIconsPath = "pack://application:,,,/Heroes.Icons;component/Icons";
+        protected static string ImageMissingLogName => "_ImageMissingLog.txt";
+        protected static string ReferenceLogName => "_ReferenceNameLog.txt";
+        protected static string LogFileName => "Logs";
+        protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
 
         protected BitmapImage HeroesBitmapImage(string iconPath)
         {
             if (string.IsNullOrEmpty(iconPath))
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Requires icon path");
 
             if (iconPath[0] != '\\')
                 iconPath = '\\' + iconPath;
