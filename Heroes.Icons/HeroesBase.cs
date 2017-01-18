@@ -13,7 +13,7 @@ namespace Heroes.Icons
         protected BitmapImage HeroesBitmapImage(string iconPath)
         {
             if (string.IsNullOrEmpty(iconPath))
-                throw new ArgumentNullException("Requires icon path");
+                throw new ArgumentNullException(nameof(iconPath));
 
             if (iconPath[0] != '\\')
                 iconPath = '\\' + iconPath;

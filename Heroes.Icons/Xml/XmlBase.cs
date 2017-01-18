@@ -9,6 +9,15 @@ namespace Heroes.Icons.Xml
     internal abstract class XmlBase : HeroesBase
     {
         protected string XmlParentFile { get; set; }
+
+        /// <summary>
+        /// The base folder. Should only contain a single folder, use XmlFolder to include a sub folder
+        /// </summary>
+        protected string XmlBaseFolder { get; set; }
+
+        /// <summary>
+        /// May contain a sub folder
+        /// </summary>
         protected string XmlFolder { get; set; }
 
         protected List<string> XmlChildFiles { get; set; } = new List<string>();
@@ -57,6 +66,12 @@ namespace Heroes.Icons.Xml
             {
                 valid = false;
                 throw new ParseXmlException($"{XmlParentFile} is not an Xml file");
+            }
+
+            if (string.IsNullOrEmpty(XmlBaseFolder))
+            {
+                valid = false;
+                throw new ParseXmlException($"Parameter xmlBaseFolder is required");
             }
 
             if (string.IsNullOrEmpty(XmlFolder))

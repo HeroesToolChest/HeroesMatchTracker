@@ -2,4 +2,5 @@
 <SkyTemple name="Sky Temple">
   <Normal fontglow="#FFFFD700">ui_ingame_mapmechanic_loadscreen_skytemple.jpg</Normal>
   <Small>ui_ingame_mapmechanic_loadscreen_skytemple_small.jpg</Small>
+  <Aliases>Temple céleste,Templo celeste,天空殿,Tempel des Himmels,Podniebna Świątynia,Tempio Celeste,Небесный храм,天空神殿,하늘 사원</Aliases>
 </SkyTemple>

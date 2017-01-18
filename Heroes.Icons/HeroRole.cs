@@ -3,10 +3,10 @@
     public enum HeroRole
     {
         Unknown = -1,
-        Warrior,
-        Assassin,
-        Support,
-        Specialist,
-        Multiclass
+        Multiclass = 0,
+        Warrior = 1,
+        Assassin = 2,
+        Support = 3,
+        Specialist = 4,
     }
 }

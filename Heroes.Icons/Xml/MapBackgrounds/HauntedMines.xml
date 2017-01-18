@@ -2,4 +2,5 @@
 <HauntedMines name="Haunted Mines">
   <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg</Normal>
   <Small>ui_ingame_mapmechanic_loadscreen_hauntedmines_small.jpg</Small>
+  <Aliases>Mines hantées,Geisterminen,Minas Encantadas,Nawiedzone Kopalnie,Miniere Infestate,Призрачные копи,Minas embrujadas,Mina Assombrada,죽음의 광산,鬼灵矿,亡骸礦坑</Aliases>
 </HauntedMines>

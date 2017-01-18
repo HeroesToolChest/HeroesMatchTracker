@@ -8,10 +8,11 @@ namespace Heroes.Icons.Xml
 {
     internal class HomeScreensXml : XmlBase
     {
-        private HomeScreensXml(string parentFile, string xmlFolder)
+        private HomeScreensXml(string parentFile, string xmlBaseFolder)
         {
             XmlParentFile = parentFile;
-            XmlFolder = xmlFolder;
+            XmlBaseFolder = xmlBaseFolder;
+            XmlFolder = xmlBaseFolder;
         }
 
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
@@ -35,10 +36,10 @@ namespace Heroes.Icons.Xml
                 if (!ValidateRequiredFiles())
                     return;
 
-                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{XmlParentFile}"))
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{XmlParentFile}"))
                 {
                     reader.MoveToContent();
-                    if (reader.Name != XmlFolder)
+                    if (reader.Name != XmlBaseFolder)
                         return;
 
                     while (reader.Read())

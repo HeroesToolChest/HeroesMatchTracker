@@ -7,20 +7,22 @@ namespace Heroes.Icons.Xml
 {
     internal class MapBackgroundsXml : XmlBase
     {
-        private MapBackgroundsXml(string parentFile, string xmlFolder)
+        private MapBackgroundsXml(string parentFile, string xmlBaseFolder)
         {
             XmlParentFile = parentFile;
-            XmlFolder = xmlFolder;
+            XmlBaseFolder = xmlBaseFolder;
+            XmlFolder = xmlBaseFolder;
         }
 
-        public Dictionary<string, Uri> MapBackgrounds { get; private set; } = new Dictionary<string, Uri>();
-        public Dictionary<string, Color> MapBackgroundFontGlowColor { get; private set; } = new Dictionary<string, Color>();
-        public Dictionary<string, Uri> MapBackgroundsSmall { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> MapUriByMapRealName { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Color> MapFontGlowColorByMapRealName { get; private set; } = new Dictionary<string, Color>();
+        public Dictionary<string, Uri> MapSmallUriByMapRealName { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, string> MapRealNameByMapAliasName { get; private set; } = new Dictionary<string, string>();
         public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
 
-        public static MapBackgroundsXml Initialize(string parentFile, string xmlFolder)
+        public static MapBackgroundsXml Initialize(string parentFile, string xmlBaseFolder)
         {
-            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlFolder);
+            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlBaseFolder);
             xml.Parse();
             return xml;
         }
@@ -31,7 +33,7 @@ namespace Heroes.Icons.Xml
             {
                 foreach (var mapBackground in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}/{mapBackground}.xml"))
+                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{mapBackground}.xml"))
                     {
                         reader.MoveToContent();
 
@@ -54,7 +56,7 @@ namespace Heroes.Icons.Xml
                         {
                             if (reader.IsStartElement())
                             {
-                                string mapSize = reader.Name;
+                                string element = reader.Name;
                                 string fontGlow = reader["fontglow"];
 
                                 if (reader.Read())
@@ -62,14 +64,30 @@ namespace Heroes.Icons.Xml
                                     if (isCustomOnly)
                                         CustomOnlyMaps.Add(realMapBackgroundName);
 
-                                    if (mapSize == "Normal")
+                                    if (element == "Normal")
                                     {
-                                        MapBackgrounds.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
-                                        MapBackgroundFontGlowColor.Add(realMapBackgroundName, (Color)ColorConverter.ConvertFromString(fontGlow));
+                                        MapUriByMapRealName.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
+                                        MapFontGlowColorByMapRealName.Add(realMapBackgroundName, (Color)ColorConverter.ConvertFromString(fontGlow));
                                     }
-                                    else if (mapSize == "Small")
+                                    else if (element == "Small")
                                     {
-                                        MapBackgroundsSmall.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
+                                        MapSmallUriByMapRealName.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
+                                    }
+                                    else if (element == "Aliases")
+                                    {
+                                        string[] aliases = reader.Value.Split(',');
+
+                                        // add the english name
+                                        MapRealNameByMapAliasName.Add(realMapBackgroundName, realMapBackgroundName);
+
+                                        // add all the other aliases
+                                        foreach (var alias in aliases)
+                                        {
+                                            if (MapRealNameByMapAliasName.ContainsKey(alias))
+                                                throw new ArgumentException($"Alias already added to {realMapBackgroundName}: {alias}");
+
+                                            MapRealNameByMapAliasName.Add(alias, realMapBackgroundName);
+                                        }
                                     }
                                 }
                             }

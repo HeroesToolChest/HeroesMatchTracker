@@ -6,19 +6,20 @@ namespace Heroes.Icons.Xml
 {
     internal class MatchAwardsXml : XmlBase
     {
-        private MatchAwardsXml(string parentFile, string xmlFolder)
+        private MatchAwardsXml(string parentFile, string xmlBaseFolder)
         {
             XmlParentFile = parentFile;
-            XmlFolder = xmlFolder;
+            XmlBaseFolder = xmlBaseFolder;
+            XmlFolder = xmlBaseFolder;
         }
 
-        public Dictionary<string, Tuple<string, Uri>> MVPScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-        public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwards { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-        public Dictionary<string, string> MVPAwardDescriptions { get; private set; } = new Dictionary<string, string>();
+        public Dictionary<string, Tuple<string, Uri>> MVPScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, string> MVPAwardDescriptionByAwardType { get; private set; } = new Dictionary<string, string>();
 
-        public static MatchAwardsXml Initialize(string parentFile, string xmlFolder)
+        public static MatchAwardsXml Initialize(string parentFile, string xmlBaseFolder)
         {
-            MatchAwardsXml xml = new MatchAwardsXml(parentFile, xmlFolder);
+            MatchAwardsXml xml = new MatchAwardsXml(parentFile, xmlBaseFolder);
             xml.Parse();
             return xml;
         }
@@ -29,7 +30,7 @@ namespace Heroes.Icons.Xml
             {
                 foreach (var award in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{award}.xml"))
+                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{award}.xml"))
                     {
                         reader.MoveToContent();
 
@@ -58,16 +59,16 @@ namespace Heroes.Icons.Xml
                                         {
                                             if (elementName == "Description")
                                             {
-                                                MVPAwardDescriptions.Add(awardType, reader.Value);
+                                                MVPAwardDescriptionByAwardType.Add(awardType, reader.Value);
                                             }
                                             else
                                             {
                                                 var awardTuple = new Tuple<string, Uri>(realAwardName, SetMVPAwardUri(reader.Value));
 
                                                 if (elementName == "MVPScreen")
-                                                    MVPScreenAwards.Add(awardType, awardTuple);
+                                                    MVPScreenAwardByAwardType.Add(awardType, awardTuple);
                                                 else if (elementName == "ScoreScreen")
-                                                    MVPScoreScreenAwards.Add(awardType, awardTuple);
+                                                    MVPScoreScreenAwardByAwardType.Add(awardType, awardTuple);
                                             }
                                         }
                                     }

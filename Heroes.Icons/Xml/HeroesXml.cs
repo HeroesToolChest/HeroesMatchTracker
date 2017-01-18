@@ -1,283 +1,217 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
     internal class HeroesXml : XmlBase
     {
-        private int SelectedBuild;
-
-        private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
-        private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
-
-        private HeroesXml(string parentFile, string xmlFolder, int? build = null)
+        private HeroesXml(string parentFile, string xmlBaseFolder)
         {
-            if (build == null)
-                SetDefaultBuildDirectory();
-            else
-                SelectedBuild = build.Value;
-
             XmlParentFile = parentFile;
-            XmlFolder = $@"{xmlFolder}\{SelectedBuild}";
+            XmlBaseFolder = xmlBaseFolder;
         }
-
-        public int CurrentLoadedHeroesBuild { get { return SelectedBuild; } }
-        public int EarliestHeroesBuild { get; private set; } // cleared once initialized
-        public int LatestHeroesBuild { get; private set; } // cleared once initialized
-        public List<int> Builds { get; private set; } = new List<int>();
 
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
-        public Dictionary<string, string> HeroNamesFromAttributeId { get; private set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> RealHeroNameByAttributeId { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name, value alt name (if any)
         /// example: Anub'arak, Anubarak
         /// </summary>
-        public Dictionary<string, string> HeroesRealName { get; private set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> AlternativeHeroNameByRealName { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is alt hero name, value real name
         /// example: Anubarak, Anub'arak
         /// </summary>
-        public Dictionary<string, string> HeroesAlternativeName { get; private set; } = new Dictionary<string, string>();
-
-        /// <summary>
-        /// key is real hero name
-        /// value is HeroRole
-        /// </summary>
-        public Dictionary<string, HeroRole> HeroesRole { get; private set; } = new Dictionary<string, HeroRole>();
+        public Dictionary<string, string> RealHeroNameByAlternativeName { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name
         /// value is HeroFrancise
         /// </summary>
-        public Dictionary<string, HeroFranchise> HeroesFranchise { get; private set; } = new Dictionary<string, HeroFranchise>();
+        public Dictionary<string, HeroFranchise> HeroFranchiseByRealName { get; private set; } = new Dictionary<string, HeroFranchise>();
 
         /// <summary>
-        /// key is reference name of talent
-        /// Tuple: key is real name of talent
+        /// key is real hero name
+        /// value is HeroRole
         /// </summary>
-        public Dictionary<string, Tuple<string, Uri>> TalentIcons { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-
-        /// <summary>
-        /// key is TalentTier enum
-        /// value is a string of all talent reference names for that tier
-        /// </summary>
-        public Dictionary<string, Dictionary<TalentTier, List<string>>> HeroesListOfTalents { get; private set; } = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
-
-        /// <summary>
-        /// key is the talent reference name
-        /// </summary>
-        public Dictionary<string, TalentTooltip> TalentTooltips { get; private set; } = new Dictionary<string, TalentTooltip>();
+        public Dictionary<string, List<HeroRole>> HeroRolesListByRealName { get; private set; } = new Dictionary<string, List<HeroRole>>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> HeroPortraits { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> HeroPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> LoadingPortraits { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> HeroLoadingPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> LeaderboardPortraits { get; private set; } = new Dictionary<string, Uri>();
+        public Dictionary<string, Uri> HeroLeaderboardPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
 
-        public static HeroesXml Initialize(string parentFile, string xmlFolder, int? build = null)
+        /// <summary>
+        /// key is alias name
+        /// </summary>
+        public Dictionary<string, string> HeroRealNameByHeroAliasName { get; private set; } = new Dictionary<string, string>();
+
+        public static HeroesXml Initialize(string parentFile, string xmlBaseFolder)
         {
-            HeroesXml heroesXml = new HeroesXml(parentFile, xmlFolder, build);
+            HeroesXml heroesXml = new HeroesXml(parentFile, xmlBaseFolder);
             heroesXml.Parse();
             return heroesXml;
         }
 
         protected override void Parse()
         {
-            LoadTalentTooltipStrings();
-            base.Parse();
+            ParseChildFiles();
         }
 
         protected override void ParseChildFiles()
         {
             try
             {
-                foreach (var hero in XmlChildFiles)
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{XmlParentFile}"))
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlFolder}\{hero}.xml"))
+                    reader.MoveToContent();
+
+                    // read each hero
+                    while (reader.Read())
                     {
-                        reader.MoveToContent();
-
-                        if (reader.Name != hero)
-                            continue;
-
-                        // get real name
-                        // example: Anubarak -> (real)Anub'arak
-                        string realHeroName = reader["name"];
-                        if (string.IsNullOrEmpty(realHeroName))
-                            realHeroName = hero; // default to hero name
-
-                        // get attributeid from hero name
-                        // example: Anub
-                        string attributeId = reader["attributeid"];
-
-                        // get the role: warrior, assassin, support, specialist
-                        string role = reader["role"];
-
-                        // get the franchise: classic, diablo, overwatch, starcraft, warcraft
-                        string franchise = reader["franchise"];
-
-                        // get portrait
-                        string portraitName = reader["portrait"];
-
-                        // get loading portrait
-                        string loadingPortrait = reader["loading"];
-
-                        // get leaderboard portrait
-                        string lbPortrait = reader["leader"];
-
-                        if (!string.IsNullOrEmpty(attributeId))
+                        if (reader.IsStartElement())
                         {
-                            HeroNamesFromAttributeId.Add(attributeId, realHeroName);
-                        }
+                            string hero = reader.Name;
 
-                        if (!string.IsNullOrEmpty(portraitName))
-                            HeroPortraits.Add(realHeroName, SetHeroPortraitUri(portraitName));
+                            // get real name
+                            // example: Anubarak-> (real)Anub'arak
+                            string realHeroName = reader["name"];
+                            if (string.IsNullOrEmpty(realHeroName))
+                                realHeroName = hero; // default to hero name
 
-                        if (!string.IsNullOrEmpty(loadingPortrait))
-                            LoadingPortraits.Add(realHeroName, SetLoadingPortraitUri(loadingPortrait));
+                            // get attributeid from hero name
+                            // example: Anub
+                            string attributeId = reader["attributeid"];
 
-                        if (!string.IsNullOrEmpty(lbPortrait))
-                            LeaderboardPortraits.Add(realHeroName, SetLeaderboardPortraitUri(lbPortrait));
+                            // get the franchise: classic, diablo, overwatch, starcraft, warcraft
+                            string franchise = reader["franchise"];
 
-                        HeroesRealName.Add(realHeroName, hero);
-                        HeroesAlternativeName.Add(hero, realHeroName);
+                            // get portrait
+                            string portraitName = reader["portrait"];
 
-                        switch (role)
-                        {
-                            case "Warrior":
-                                HeroesRole.Add(realHeroName, HeroRole.Warrior);
-                                break;
-                            case "Assassin":
-                                HeroesRole.Add(realHeroName, HeroRole.Assassin);
-                                break;
-                            case "Support":
-                                HeroesRole.Add(realHeroName, HeroRole.Support);
-                                break;
-                            case "Specialist":
-                                HeroesRole.Add(realHeroName, HeroRole.Specialist);
-                                break;
-                            case "Multiclass":
-                                HeroesRole.Add(realHeroName, HeroRole.Multiclass);
-                                break;
-                            default:
-                                HeroesRole.Add(realHeroName, HeroRole.Unknown);
-                                break;
-                        }
+                            // get loading portrait
+                            string loadingPortrait = reader["loading"];
 
-                        switch (franchise)
-                        {
-                            case "Classic":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Classic);
-                                break;
-                            case "Diablo":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Diablo);
-                                break;
-                            case "Overwatch":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Overwatch);
-                                break;
-                            case "Starcraft":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Starcraft);
-                                break;
-                            case "Warcraft":
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Warcraft);
-                                break;
-                            default:
-                                HeroesFranchise.Add(realHeroName, HeroFranchise.Unknown);
-                                break;
-                        }
+                            // get leaderboard portrait
+                            string lbPortrait = reader["leader"];
 
-                        var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
+                            if (!string.IsNullOrEmpty(attributeId))
+                                RealHeroNameByAttributeId.Add(attributeId, realHeroName);
 
-                        // add talents, read each tier
-                        while (reader.Read())
-                        {
-                            if (reader.IsStartElement())
+                            if (!string.IsNullOrEmpty(portraitName))
+                                HeroPortraitUriByRealName.Add(realHeroName, SetHeroPortraitUri(portraitName));
+
+                            if (!string.IsNullOrEmpty(loadingPortrait))
+                                HeroLoadingPortraitUriByRealName.Add(realHeroName, SetLoadingPortraitUri(loadingPortrait));
+
+                            if (!string.IsNullOrEmpty(lbPortrait))
+                                HeroLeaderboardPortraitUriByRealName.Add(realHeroName, SetLeaderboardPortraitUri(lbPortrait));
+
+                            AlternativeHeroNameByRealName.Add(realHeroName, hero);
+                            RealHeroNameByAlternativeName.Add(hero, realHeroName);
+
+                            switch (franchise)
                             {
-                                var talentTierList = new List<string>();
-                                TalentTier tier;
+                                case "Classic":
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Classic);
+                                    break;
+                                case "Diablo":
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Diablo);
+                                    break;
+                                case "Overwatch":
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Overwatch);
+                                    break;
+                                case "Starcraft":
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Starcraft);
+                                    break;
+                                case "Warcraft":
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Warcraft);
+                                    break;
+                                default:
+                                    HeroFranchiseByRealName.Add(realHeroName, HeroFranchise.Unknown);
+                                    break;
+                            }
 
-                                // is tier Level1, Level4, etc...
-                                if (Enum.TryParse(reader.Name, out tier))
+                            while (reader.Read() && reader.Name != hero)
+                            {
+                                if (reader.NodeType == XmlNodeType.Element)
                                 {
-                                    // read each talent in tier
-                                    while (reader.Read() && reader.Name != tier.ToString())
+                                    if (reader.Name == "Roles")
                                     {
-                                        if (reader.NodeType == XmlNodeType.Element)
+                                        reader.Read();
+                                        string[] roles = reader.Value.Split(',');
+
+                                        List<HeroRole> rolesList = new List<HeroRole>();
+
+                                        foreach (var role in roles)
                                         {
-                                            string name = reader.Name; // reference name of talent
-                                            string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
-                                            string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
-                                            string desc = reader["desc"] == null ? string.Empty : reader["desc"]; // reference name for talent desciptions
-
-                                            SetTalentTooltip(name, desc);
-
-                                            bool isGeneric;
-                                            if (!bool.TryParse(generic, out isGeneric))
-                                                isGeneric = false;
-
-                                            if (reader.Read())
+                                            switch (role)
                                             {
-                                                if (name.StartsWith("Generic") || name.StartsWith("HeroGeneric") || name.StartsWith("BattleMomentum"))
-                                                    isGeneric = true;
-
-                                                if (!TalentIcons.ContainsKey(name))
-                                                    TalentIcons.Add(name, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
-
-                                                talentTierList.Add(name);
+                                                case "Multiclass":
+                                                    rolesList.Add(HeroRole.Multiclass);
+                                                    break;
+                                                case "Warrior":
+                                                    rolesList.Add(HeroRole.Warrior);
+                                                    break;
+                                                case "Assassin":
+                                                    rolesList.Add(HeroRole.Assassin);
+                                                    break;
+                                                case "Support":
+                                                    rolesList.Add(HeroRole.Support);
+                                                    break;
+                                                case "Specialist":
+                                                    rolesList.Add(HeroRole.Specialist);
+                                                    break;
+                                                default:
+                                                    rolesList.Add(HeroRole.Unknown);
+                                                    break;
                                             }
                                         }
-                                    }
 
-                                    talentTiersForHero.Add(tier, talentTierList);
+                                        HeroRolesListByRealName.Add(realHeroName, rolesList);
+                                    }
+                                    else if (reader.Name == "Aliases")
+                                    {
+                                        reader.Read();
+                                        string[] aliases = reader.Value.Split(',');
+
+                                        // add the english name
+                                        HeroRealNameByHeroAliasName.Add(realHeroName, realHeroName);
+
+                                        // add all the other aliases
+                                        foreach (var alias in aliases)
+                                        {
+                                            if (HeroRealNameByHeroAliasName.ContainsKey(alias))
+                                                throw new ArgumentException($"Alias already added to {realHeroName}: {alias}");
+
+                                            HeroRealNameByHeroAliasName.Add(alias, realHeroName);
+                                        }
+                                    }
                                 }
                             }
-                        } // end while
-
-                        HeroesListOfTalents.Add(realHeroName, talentTiersForHero);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new ParseXmlException("Error on parsing of xml files", ex);
+                throw new ParseXmlException($"Error on loading {XmlParentFile}", ex);
             }
-        }
-
-        // this should only run once on startup
-        private void SetDefaultBuildDirectory()
-        {
-            List<string> buildDirectories = Directory.GetDirectories(@"Xml\Heroes").ToList();
-
-            foreach (var directory in buildDirectories)
-            {
-                int buildNumber;
-                if (int.TryParse(Path.GetFileName(directory), out buildNumber))
-                    Builds.Add(buildNumber);
-            }
-
-            if (buildDirectories.Count < 1 || Builds.Count < 1)
-                throw new ParseXmlException("No Heroes Xml build folders found!");
-
-            Builds = Builds.OrderByDescending(x => x).ToList();
-
-            EarliestHeroesBuild = Builds[Builds.Count - 1];
-            LatestHeroesBuild = SelectedBuild = Builds[0];
         }
 
         private Uri SetHeroPortraitUri(string fileName)
@@ -293,70 +227,6 @@ namespace Heroes.Icons.Xml
         private Uri SetLeaderboardPortraitUri(string fileName)
         {
             return new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
-        }
-
-        private Uri SetHeroTalentUri(string hero, string fileName, bool isGenericTalent)
-        {
-            if (!(Path.GetExtension(fileName) != ".dds" || Path.GetExtension(fileName) != ".png"))
-                throw new HeroesIconException($"Image file does not have .dds or .png extension [{fileName}]");
-
-            if (!isGenericTalent)
-                return new Uri($@"{ApplicationIconsPath}\Talents\{hero}\{fileName}", UriKind.Absolute);
-            else
-                return new Uri($@"{ApplicationIconsPath}\Talents\_Generic\{fileName}", UriKind.Absolute);
-        }
-
-        private void SetTalentTooltip(string talentReferenceName, string desc)
-        {
-            // checking keys because of generic talents
-            if (!TalentTooltips.ContainsKey(talentReferenceName) && !string.IsNullOrEmpty(desc))
-            {
-                string shortDesc;
-                string longDesc;
-                if (!TalentShortTooltip.TryGetValue(desc, out shortDesc))
-                    shortDesc = string.Empty;
-
-                if (!TalentLongTooltip.TryGetValue(desc, out longDesc))
-                    longDesc = string.Empty;
-
-                TalentTooltips.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc));
-            }
-        }
-
-        private void LoadTalentTooltipStrings()
-        {
-            try
-            {
-                using (StreamReader reader = new StreamReader($@"Xml\Heroes\{SelectedBuild}\_ShortTalentTooltips.txt"))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        string line = reader.ReadLine();
-                        if (!line.StartsWith("--"))
-                        {
-                            string[] talent = line.Split(new char[] { '=' }, 2);
-                            TalentShortTooltip.Add(talent[0], talent[1]);
-                        }
-                    }
-                }
-
-                using (StreamReader reader = new StreamReader($@"Xml\Heroes\{SelectedBuild}\_FullTalentTooltips.txt"))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        string line = reader.ReadLine();
-                        if (!line.StartsWith("--"))
-                        {
-                            string[] talent = line.Split(new char[] { '=' }, 2);
-                            TalentLongTooltip.Add(talent[0], talent[1]);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ParseXmlException("Error on loading talent tooltips", ex);
-            }
         }
     }
 }

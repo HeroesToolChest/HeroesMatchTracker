@@ -13,7 +13,8 @@ namespace Heroes.Icons
         private int EarliestHeroesBuild;
         private int LatestHeroesBuild;
         private HeroesXml HeroesXml;
-        private HeroesXml HeroesXmlLatest;
+        private HeroBuildsXml HeroBuildsXml;
+        private HeroBuildsXml HeroBuildsXmlLatest;
         private MatchAwardsXml MatchAwardsXml;
         private MapBackgroundsXml MapBackgroundsXml;
         private HomeScreensXml HomeScreensXml;
@@ -32,13 +33,14 @@ namespace Heroes.Icons
         {
             Logger = logger;
 
-            HeroesXmlLatest = HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes");
+            HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes");
+            HeroBuildsXmlLatest = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml);
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards");
             MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds");
             HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens");
 
-            EarliestHeroesBuild = HeroesXml.EarliestHeroesBuild;
-            LatestHeroesBuild = HeroesXml.LatestHeroesBuild;
+            EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
+            LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
 
             SetNonSupportHeroesWithSupportStat();
             SetPartyIcons();
@@ -74,12 +76,12 @@ namespace Heroes.Icons
             if (build == LatestHeroesBuild)
             {
                 // if the build is already loaded into memory then don't reload
-                if (build != HeroesXml.CurrentLoadedHeroesBuild)
-                    HeroesXml = HeroesXmlLatest;
+                if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
+                    HeroBuildsXml = HeroBuildsXmlLatest;
             }
             else
             {
-                HeroesXml = HeroesXml.Initialize("_AllHeroes.xml", "Heroes", build);
+                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "Heroes", HeroesXml, build);
             }
         }
 
@@ -100,7 +102,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(talentReferenceName))
                 return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
 
-            if (HeroesXml.TalentIcons.TryGetValue(talentReferenceName, out talent))
+            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
             {
                 return new BitmapImage(talent.Item2);
             }
@@ -126,7 +128,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
 
-            if (HeroesXml.HeroPortraits.TryGetValue(realHeroName, out uri))
+            if (HeroesXml.HeroPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
                 return new BitmapImage(uri);
             }
@@ -152,7 +154,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
 
-            if (HeroesXml.LoadingPortraits.TryGetValue(realHeroName, out uri))
+            if (HeroesXml.HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
                 return new BitmapImage(uri);
             }
@@ -178,7 +180,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
 
-            if (HeroesXml.LeaderboardPortraits.TryGetValue(realHeroName, out uri))
+            if (HeroesXml.HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
                 return new BitmapImage(uri);
             }
@@ -204,7 +206,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(talentReferenceName))
                 return "No pick";
 
-            if (HeroesXml.TalentIcons.TryGetValue(talentReferenceName, out talent))
+            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
             {
                 return talent.Item1;
             }
@@ -225,7 +227,7 @@ namespace Heroes.Icons
         public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
         {
             Dictionary<TalentTier, List<string>> talents;
-            if (HeroesXml.HeroesListOfTalents.TryGetValue(realHeroName, out talents))
+            if (HeroBuildsXml.HeroTalentsListByRealName.TryGetValue(realHeroName, out talents))
             {
                 return talents;
             }
@@ -243,7 +245,7 @@ namespace Heroes.Icons
         /// </summary>
         /// <param name="attributeId">Four character hero id</param>
         /// <returns>Full hero name</returns>
-        public string GetRealHeroNameFromAttId(string attributeId)
+        public string GetRealHeroNameFromAttributeId(string attributeId)
         {
             string heroName;
 
@@ -251,14 +253,14 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(attributeId))
                 return null;
 
-            if (HeroesXml.HeroNamesFromAttributeId.TryGetValue(attributeId, out heroName))
+            if (HeroesXml.RealHeroNameByAttributeId.TryGetValue(attributeId, out heroName))
             {
                 return heroName;
             }
             else
             {
                 if (Logger)
-                    LogReferenceNameNotFound($"No hero name for reference: {attributeId}");
+                    LogReferenceNameNotFound($"No hero name for attribute: {attributeId}");
 
                 return "Hero not found";
             }
@@ -272,7 +274,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(realName))
                 return null;
 
-            if (HeroesXml.HeroesAlternativeName.TryGetValue(realName, out altName))
+            if (HeroesXml.AlternativeHeroNameByRealName.TryGetValue(realName, out altName))
             {
                 return altName;
             }
@@ -293,7 +295,7 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(altName))
                 return null;
 
-            if (HeroesXml.HeroesAlternativeName.TryGetValue(altName, out realName))
+            if (HeroesXml.RealHeroNameByAlternativeName.TryGetValue(altName, out realName))
             {
                 return realName;
             }
@@ -315,24 +317,24 @@ namespace Heroes.Icons
         public bool HeroExists(string heroName, bool realName = true)
         {
             if (realName)
-                return HeroesXml.HeroesRealName.ContainsKey(heroName);
+                return HeroesXml.AlternativeHeroNameByRealName.ContainsKey(heroName);
             else
-                return HeroesXml.HeroesAlternativeName.ContainsKey(heroName);
+                return HeroesXml.RealHeroNameByAlternativeName.ContainsKey(heroName);
         }
 
         /// <summary>
-        /// Returns the hero's role: Warrior, Assassin, Support, Specialist, or Multiclass. Will return Unknown if hero name not found
+        /// Returns the hero's list of roles. Multiclass will be first if hero has multiple roles. Will return a role of Unknown if hero name not found.
         /// </summary>
         /// <param name="realName">Hero real name</param>
         /// <returns>HeroRole</returns>
-        public HeroRole GetHeroRole(string realName)
+        public List<HeroRole> GetHeroRole(string realName)
         {
-            HeroRole role;
+            List<HeroRole> roleList;
 
-            if (HeroesXml.HeroesRole.TryGetValue(realName, out role))
-                return role;
+            if (HeroesXml.HeroRolesListByRealName.TryGetValue(realName, out roleList))
+                return roleList;
             else
-                return HeroRole.Unknown;
+                return new List<HeroRole> { HeroRole.Unknown };
         }
 
         /// <summary>
@@ -344,7 +346,7 @@ namespace Heroes.Icons
         {
             HeroFranchise franchise;
 
-            if (HeroesXml.HeroesFranchise.TryGetValue(realName, out franchise))
+            if (HeroesXml.HeroFranchiseByRealName.TryGetValue(realName, out franchise))
                 return franchise;
             else
                 return HeroFranchise.Unknown;
@@ -353,7 +355,7 @@ namespace Heroes.Icons
         public List<string> GetListOfHeroes()
         {
             List<string> heroes = new List<string>();
-            foreach (var hero in HeroesXml.HeroesRealName)
+            foreach (var hero in HeroesXml.AlternativeHeroNameByRealName)
             {
                 heroes.Add(hero.Key);
             }
@@ -364,7 +366,7 @@ namespace Heroes.Icons
 
         public int TotalAmountOfHeroes()
         {
-            return HeroesXml.HeroesRealName.Count;
+            return HeroesXml.AlternativeHeroNameByRealName.Count;
         }
 
         /// <summary>
@@ -376,10 +378,10 @@ namespace Heroes.Icons
         {
             TalentTooltip talentTooltip = new TalentTooltip(string.Empty, string.Empty);
 
-            if (string.IsNullOrEmpty(talentReferenceName) || !HeroesXml.TalentTooltips.ContainsKey(talentReferenceName))
+            if (string.IsNullOrEmpty(talentReferenceName) || !HeroBuildsXml.HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName))
                 return talentTooltip;
 
-            HeroesXml.TalentTooltips.TryGetValue(talentReferenceName, out talentTooltip);
+            HeroBuildsXml.HeroTalentTooltipsByRealName.TryGetValue(talentReferenceName, out talentTooltip);
 
             return talentTooltip;
         }
@@ -398,7 +400,7 @@ namespace Heroes.Icons
         {
             try
             {
-                var award = MatchAwardsXml.MVPScreenAwards[mvpAwardType];
+                var award = MatchAwardsXml.MVPScreenAwardByAwardType[mvpAwardType];
                 var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
                 awardName = award.Item1;
@@ -424,7 +426,7 @@ namespace Heroes.Icons
         {
             try
             {
-                var award = MatchAwardsXml.MVPScoreScreenAwards[mvpAwardType];
+                var award = MatchAwardsXml.MVPScoreScreenAwardByAwardType[mvpAwardType];
                 var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
                 awardName = award.Item1;
@@ -446,10 +448,10 @@ namespace Heroes.Icons
         /// <returns></returns>
         public string GetMatchAwardDescription(string mvpAwardType)
         {
-            if (string.IsNullOrEmpty(mvpAwardType) || !MatchAwardsXml.MVPAwardDescriptions.ContainsKey(mvpAwardType))
+            if (string.IsNullOrEmpty(mvpAwardType) || !MatchAwardsXml.MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
                 return string.Empty;
 
-            return MatchAwardsXml.MVPAwardDescriptions[mvpAwardType];
+            return MatchAwardsXml.MVPAwardDescriptionByAwardType[mvpAwardType];
         }
 
         /// <summary>
@@ -458,7 +460,7 @@ namespace Heroes.Icons
         /// <returns></returns>
         public List<string> GetMatchAwardsList()
         {
-            return new List<string>(MatchAwardsXml.MVPScoreScreenAwards.Keys);
+            return new List<string>(MatchAwardsXml.MVPScoreScreenAwardByAwardType.Keys);
         }
         #endregion MatchAwardsXml
 
@@ -468,9 +470,9 @@ namespace Heroes.Icons
             try
             {
                 if (useSmallImage == false)
-                    return new BitmapImage(MapBackgroundsXml.MapBackgrounds[mapRealName]);
+                    return new BitmapImage(MapBackgroundsXml.MapUriByMapRealName[mapRealName]);
                 else
-                    return new BitmapImage(MapBackgroundsXml.MapBackgroundsSmall[mapRealName]);
+                    return new BitmapImage(MapBackgroundsXml.MapSmallUriByMapRealName[mapRealName]);
             }
             catch (Exception)
             {
@@ -487,7 +489,7 @@ namespace Heroes.Icons
         public Color GetMapBackgroundFontGlowColor(string mapRealName)
         {
             Color color;
-            if (MapBackgroundsXml.MapBackgroundFontGlowColor.TryGetValue(mapRealName, out color))
+            if (MapBackgroundsXml.MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out color))
                 return color;
             else
                 return Colors.Black;
@@ -499,7 +501,7 @@ namespace Heroes.Icons
         /// <returns></returns>
         public List<string> GetMapsList()
         {
-            return new List<string>(MapBackgroundsXml.MapBackgrounds.Keys);
+            return new List<string>(MapBackgroundsXml.MapUriByMapRealName.Keys);
         }
 
         /// <summary>
@@ -508,7 +510,7 @@ namespace Heroes.Icons
         /// <returns></returns>
         public List<string> GetMapsListExceptCustomOnly()
         {
-            var allMaps = new Dictionary<string, Uri>(MapBackgroundsXml.MapBackgrounds);
+            var allMaps = new Dictionary<string, Uri>(MapBackgroundsXml.MapUriByMapRealName);
             foreach (var customMap in GetCustomOnlyMapsList())
             {
                 if (allMaps.ContainsKey(customMap))
@@ -536,7 +538,7 @@ namespace Heroes.Icons
         /// <returns></returns>
         public bool IsValidMapName(string mapName)
         {
-            return MapBackgroundsXml.MapBackgrounds.ContainsKey(mapName);
+            return MapBackgroundsXml.MapUriByMapRealName.ContainsKey(mapName);
         }
         #endregion MapBackgroundsXml
 
@@ -606,7 +608,7 @@ namespace Heroes.Icons
 
         public List<int> GetListOfHeroesBuilds()
         {
-            return HeroesXml.Builds;
+            return HeroBuildsXml.Builds;
         }
         #endregion public methods
 
@@ -651,7 +653,7 @@ namespace Heroes.Icons
         {
             using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
             {
-                writer.WriteLine($"[{HeroesXml.CurrentLoadedHeroesBuild}] {message}");
+                writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
             }
         }
 
@@ -659,7 +661,7 @@ namespace Heroes.Icons
         {
             using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
             {
-                writer.WriteLine($"[{HeroesXml.CurrentLoadedHeroesBuild}] {message}");
+                writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
             }
         }
         #endregion private methods
