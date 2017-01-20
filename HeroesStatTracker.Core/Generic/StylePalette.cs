@@ -1,4 +1,5 @@
-﻿using HeroesStatTracker.Data;
+﻿using Heroes.Helpers;
+using HeroesStatTracker.Data;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using NLog;
@@ -61,11 +62,11 @@ namespace HeroesStatTracker.Core
 
         public static void SetDefaultPalette()
         {
-            ApplyPrimary(GetSwatchByName("blue"));
-            ApplyAccent(GetSwatchByName("lightblue"));
+            ApplyPrimary(GetSwatchByName(HeroesHelpers.DefaultColorPalette.DefaultPrimary));
+            ApplyAccent(GetSwatchByName(HeroesHelpers.DefaultColorPalette.DefaultAccent));
 
-            QueryDb.SettingsDb.UserSettings.MainStylePrimary = "blue";
-            QueryDb.SettingsDb.UserSettings.MainStyleAccent = "lightblue";
+            QueryDb.SettingsDb.UserSettings.MainStylePrimary = HeroesHelpers.DefaultColorPalette.DefaultPrimary;
+            QueryDb.SettingsDb.UserSettings.MainStyleAccent = HeroesHelpers.DefaultColorPalette.DefaultAccent;
         }
     }
 }

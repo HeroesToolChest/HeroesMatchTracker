@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.Helpers;
+using System;
 using System.IO;
 
 namespace HeroesStatTracker.Data.Queries.Settings
@@ -164,8 +165,8 @@ namespace HeroesStatTracker.Data.Queries.Settings
             IsBattleTagHidden = true;
             IsNightMode = false;
             IsAlternateStyle = false;
-            MainStylePrimary = "blue";
-            MainStyleAccent = "lightblue";
+            MainStylePrimary = HeroesHelpers.DefaultColorPalette.DefaultPrimary;
+            MainStyleAccent = HeroesHelpers.DefaultColorPalette.DefaultAccent;
 
             // Replays
             ReplayWatchCheckBox = false;
