@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Generic\ReplaySaveResult.cs" />
     <Compile Include="Migrations\ContextMigrator.cs" />
     <Compile Include="Databases\StatTrackerDbContext.cs" />
     <Compile Include="Migrations\IMigrator.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Queries\QueriesBase.cs" />
     <Compile Include="Queries\QueryException.cs" />
     <Compile Include="Queries\Replays\HotsLogsUpload.cs" />
+    <Compile Include="Queries\Replays\TranslationException.cs" />
     <Compile Include="QueryDb.cs" />
     <Compile Include="Queries\Replays\HotsPlayer.cs" />
     <Compile Include="Queries\Replays\HotsPlayerHero.cs" />

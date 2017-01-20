@@ -1,10 +1,13 @@
-﻿namespace Heroes.Icons
+﻿using System;
+
+namespace Heroes.Icons
 {
-    public enum PartyIconColor
+    [Flags]
+    public enum PartyIconColor : uint
     {
         Purple = 0,
-        Yellow,
-        Brown,
-        Teal,
+        Yellow = 1 << 1,
+        Brown = 1 << 2,
+        Teal = 1 << 3,
     }
 }

@@ -162,7 +162,7 @@
     <Aliases>Leoryk,Леорик,李奥瑞克,李奧瑞克,레오릭,Léoric</Aliases>
   </Leoric>
 
-  <LiLi available="47479" attributeid="LiLi" franchise="Warcraft"
+  <LiLi available="47479" name="Li Li" attributeid="LiLi" franchise="Warcraft"
         portrait="storm_ui_ingame_heroselect_btn_lili.dds" loading="storm_ui_ingame_hero_loadingscreen_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
     <Roles>Support</Roles>
     <Aliases>ЛИ ЛИ,리 리,丽丽,莉莉</Aliases>

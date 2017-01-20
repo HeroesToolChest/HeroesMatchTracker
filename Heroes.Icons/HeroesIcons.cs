@@ -385,6 +385,17 @@ namespace Heroes.Icons
 
             return talentTooltip;
         }
+
+        /// <summary>
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// </summary>
+        /// <param name="heroNameAlias">Alias name</param>
+        /// <param name="heroNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool HeroNameTranslation(string heroNameAlias, out string heroNameEnglish)
+        {
+            return HeroesXml.HeroRealNameByHeroAliasName.TryGetValue(heroNameAlias, out heroNameEnglish);
+        }
         #endregion Heroes Xml
 
         #region MatchAwardsXml
@@ -539,6 +550,17 @@ namespace Heroes.Icons
         public bool IsValidMapName(string mapName)
         {
             return MapBackgroundsXml.MapUriByMapRealName.ContainsKey(mapName);
+        }
+
+        /// <summary>
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// </summary>
+        /// <param name="mapNameAlias">Alias name</param>
+        /// <param name="mapNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
+        {
+            return MapBackgroundsXml.MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
         }
         #endregion MapBackgroundsXml
 

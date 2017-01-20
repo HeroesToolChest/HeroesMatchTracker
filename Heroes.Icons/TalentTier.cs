@@ -1,14 +1,17 @@
-﻿namespace Heroes.Icons
+﻿using System;
+
+namespace Heroes.Icons
 {
-    public enum TalentTier
+    [Flags]
+    public enum TalentTier : uint
     {
-        Level1,
-        Level4,
-        Level7,
-        Level10,
-        Level13,
-        Level16,
-        Level20,
-        Old
+        Old = 0,
+        Level1 = 1 << 0,
+        Level4 = 1 << 1,
+        Level7 = 1 << 2,
+        Level10 = 1 << 3,
+        Level13 = 1 << 4,
+        Level16 = 1 << 5,
+        Level20 = 1 << 6,
     }
 }

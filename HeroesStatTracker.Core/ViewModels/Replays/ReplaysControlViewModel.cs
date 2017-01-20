@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using GalaSoft.MvvmLight.Command;
+using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.HotsLogs;
 using HeroesStatTracker.Core.Models.ReplayModels;
@@ -35,6 +36,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         private string _hotsLogsUploaderUploadStatus;
 
         private FileSystemWatcher FileWatcher;
+        private HeroesIcons HeroesIcons;
 
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
@@ -57,6 +59,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
             ScanDateTimeCheckboxes[QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
+            HeroesIcons = AppCore.HeroesIcons;
 
             InitializeReplaySaveDataQueue();
             InitializeReplayHotsLogsUploadQueue();
@@ -720,13 +723,13 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     {
                         if (!File.Exists(originalfile.FilePath))
                         {
-                            originalfile.Status = ReplayParseResult.FileNotFound;
+                            originalfile.Status = ReplayResult.FileNotFound;
                             UnParsedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                             TotalParsedGrid++;
                             CurrentStatus = $"Failed to find file {originalfile.FileName}";
                             continue;
                         }
-                        else if (originalfile.Status == ReplayParseResult.Saved)
+                        else if (originalfile.Status == ReplayResult.Saved)
                         {
                             continue;
                         }
@@ -739,7 +742,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
                         if (replayParsed.Item1 == ReplayParseResult.Success)
                         {
-                            originalfile.Status = ReplayParseResult.Success;
+                            originalfile.Status = ReplayResult.Success;
 
                             // give it a chance to dequeue some replays as the replay object takes quite a bit of memory
                             if (ReplayDataQueue.Count >= 5)
@@ -754,21 +757,21 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
                             if (replayParsed.Item2.ReplayBuild > AssemblyVersions.HeroesReplayParserVersion().Version.Revision)
-                                originalfile.Status = ReplayParseResult.NotYetSupported;
+                                originalfile.Status = ReplayResult.NotYetSupported;
                             else
-                                originalfile.Status = ReplayParseResult.ParserException;
+                                originalfile.Status = ReplayResult.ParserException;
 
                             WarningLog.Log(LogLevel.Warn, $"Could not parse replay {originalfile.FilePath}: {originalfile.Status}");
                         }
                         else
                         {
-                            originalfile.Status = replayParsed.Item1;
+                            originalfile.Status = (ReplayResult)Enum.Parse(typeof(ReplayResult), replayParsed.Item1.ToString());
                             UnParsedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                         }
                     }
                     catch (Exception ex)
                     {
-                        originalfile.Status = ReplayParseResult.Exception;
+                        originalfile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         UnParsedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
                     }
@@ -840,25 +843,31 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         currentReplayFile = ReplayFileCollection[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
 
                         // save parsed data to database
-                        replayFileData = new ReplayFileData(dequeuedItem.Item1, AppCore.HeroesIcons);
+                        replayFileData = new ReplayFileData(dequeuedItem.Item1, HeroesIcons);
                         currentReplayFile.Status = replayFileData.SaveAllData(dequeuedItem.Item2.FileName);
 
                         currentReplayFile.ReplayId = replayFileData.ReplayId;
                         currentReplayFile.TimeStamp = replayFileData.ReplayTimeStamp;
 
-                        if (currentReplayFile.Status == ReplayParseResult.Saved)
+                        if (currentReplayFile.Status == ReplayResult.Saved)
                         {
                             TotalSavedInDatabase++;
                             ReplaysLatestSaved = QueryDb.ReplaysDb.MatchReplay.ReadLatestReplayByDateTime();
                             ReplaysLastSaved = replayFileData.ReplayTimeStamp.ToLocalTime();
                         }
 
-                        if (IsHotsLogsUploaderEnabled && (currentReplayFile.Status == ReplayParseResult.Saved || currentReplayFile.Status == ReplayParseResult.Duplicate))
+                        if (IsHotsLogsUploaderEnabled && (currentReplayFile.Status == ReplayResult.Saved || currentReplayFile.Status == ReplayResult.Duplicate))
                             ReplayHotsLogsUploadQueue.Enqueue(currentReplayFile);
+                    }
+                    catch (TranslationException ex)
+                    {
+                        currentReplayFile.Status = ReplayResult.TranslationException;
+                        TranslationsLog.Log(LogLevel.Error, ex.Message);
+                        UnParsedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
                     }
                     catch (Exception ex)
                     {
-                        currentReplayFile.Status = ReplayParseResult.Exception;
+                        currentReplayFile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         UnParsedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
                     }

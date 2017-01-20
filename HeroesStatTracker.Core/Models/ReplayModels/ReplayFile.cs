@@ -1,14 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
 using HeroesStatTracker.Core.HotsLogs;
+using HeroesStatTracker.Data;
 using System;
-using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesStatTracker.Core.Models.ReplayModels
 {
     public class ReplayFile : ObservableObject
     {
         private int? _build;
-        private ReplayParseResult? _status;
+        private ReplayResult? _status;
         private ReplayFileHotsLogsStatus? _replayFileHotsLogsStatus;
 
         public string FileName { get; set; }
@@ -26,7 +26,7 @@ namespace HeroesStatTracker.Core.Models.ReplayModels
             }
         }
 
-        public ReplayParseResult? Status
+        public ReplayResult? Status
         {
             get { return _status; }
             set

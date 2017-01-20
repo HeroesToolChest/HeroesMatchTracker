@@ -6,7 +6,6 @@ using HeroesStatTracker.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
@@ -27,7 +26,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
         public long ReplayId { get; private set; }
         public DateTime ReplayTimeStamp { get; private set; }
 
-        public ReplayParseResult SaveAllData(string fileName)
+        public ReplayResult SaveAllData(string fileName)
         {
             using (ReplaysContext)
             {
@@ -36,7 +35,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     try
                     {
                         if (BasicData(fileName))
-                            return ReplayParseResult.Duplicate;
+                            return ReplayResult.Duplicate;
 
                         PlayerRelatedData();
                         MatchTeamBans();
@@ -47,7 +46,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
 
                         dbTransaction.Commit();
 
-                        return ReplayParseResult.Saved;
+                        return ReplayResult.Saved;
                     }
                     catch (Exception)
                     {
@@ -77,16 +76,20 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
-        // returns true is replay already exists in database
+        // returns true if replay already exists in database
         private bool BasicData(string fileName)
         {
+            string mapName;
+            if (!HeroesIcons.MapNameTranslation(Replay.Map, out mapName))
+                throw new TranslationException(RetrieveAllMapAndHeroNames());
+
             ReplayMatch replayMatch = new ReplayMatch
             {
                 Frames = Replay.Frames,
                 GameMode = Replay.GameMode,
                 GameSpeed = Replay.GameSpeed.ToString(),
                 IsGameEventsParsed = Replay.IsGameEventsParsedSuccessfully,
-                MapName = Replay.Map,
+                MapName = mapName,
                 RandomValue = Replay.RandomValue,
                 ReplayBuild = Replay.ReplayBuild,
                 ReplayLength = Replay.ReplayLength,
@@ -115,17 +118,12 @@ namespace HeroesStatTracker.Data.Queries.Replays
         {
             int playerNum = 0;
 
-            Player[] players;
-
-            if (Replay.ReplayBuild > 39445)
-                players = Replay.ClientListByUserID;
-            else
-                players = Replay.Players;
+            Player[] players = GetPlayers();
 
             foreach (var player in players)
             {
                 if (player == null)
-                    break;
+                    continue;
 
                 ReplayAllHotsPlayer hotsPlayer = new ReplayAllHotsPlayer
                 {
@@ -173,11 +171,15 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 }
                 else
                 {
+                    string character;
+                    if (!HeroesIcons.HeroNameTranslation(player.Character, out character))
+                        throw new TranslationException(RetrieveAllMapAndHeroNames());
+
                     ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
                     {
                         ReplayId = ReplayId,
                         PlayerId = playerId,
-                        Character = player.Character,
+                        Character = character,
                         CharacterLevel = player.CharacterLevel,
                         Difficulty = player.Difficulty.ToString(),
                         Handicap = player.Handicap,
@@ -194,7 +196,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     QueryDb.ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
 
                     AddScoreResults(player.ScoreResult, playerId);
-                    AddPlayerTalents(player.Talents, playerId, player.Character);
+                    AddPlayerTalents(player.Talents, playerId, character);
                     AddMatchAwards(player.ScoreResult.MatchAwards, playerId);
 
                     playerNum++;
@@ -533,6 +535,54 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     QueryDb.ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
                 }
             }
+        }
+
+        private Player[] GetPlayers()
+        {
+            if (Replay.ReplayBuild > 39445)
+                return Replay.ClientListByUserID;
+            else
+                return Replay.Players;
+        }
+
+        private string RetrieveAllMapAndHeroNames()
+        {
+            List<string> names = new List<string>();
+
+            string mapName;
+            if (HeroesIcons.MapNameTranslation(Replay.Map, out mapName))
+                names.Add($"{Replay.Map}: {mapName} [Good]");
+            else
+                names.Add($"{Replay.Map}: ??? [Unknown]");
+
+            foreach (var player in GetPlayers())
+            {
+                if (player == null)
+                    continue;
+
+                if (player.Character == null)
+                {
+                    names.Add($"No character");
+                    continue;
+                }
+
+                string character;
+                if (HeroesIcons.HeroNameTranslation(player.Character, out character))
+                    names.Add($"{player.Character}: {character} [Good]");
+                else
+                    names.Add($"{player.Character}: ??? [Unknown]");
+            }
+
+            string output = "Unable to translate some or all of the following names";
+            output += Environment.NewLine;
+
+            foreach (var name in names)
+            {
+                output += name;
+                output += Environment.NewLine;
+            }
+
+            return output;
         }
     }
 }

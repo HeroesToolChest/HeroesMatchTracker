@@ -1,15 +1,19 @@
-﻿namespace Heroes.Icons
+﻿using System;
+
+namespace Heroes.Icons
 {
-    public enum MVPScreenColor
+    [Flags]
+    public enum MVPScreenColor : uint
     {
-        Blue,
-        Red,
-        Gold,
+        Blue = 0,
+        Red = 1 << 0,
+        Gold = 1 << 1,
     }
 
-    public enum MVPScoreScreenColor
+    [Flags]
+    public enum MVPScoreScreenColor : uint
     {
-        Blue,
-        Red,
+        Blue = 0,
+        Red = 1 << 0,
     }
 }
