@@ -5,6 +5,7 @@ using HeroesStatTracker.Core.HotsLogs;
 using HeroesStatTracker.Core.Models.ReplayModels;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
+using HeroesStatTracker.Data.Queries.Replays;
 using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using NLog;
@@ -802,14 +803,12 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         {
             Task.Run(async () =>
             {
-                long replayId;
-                DateTime replayTimeStamp;
                 ReplayFile currentReplayFile;
                 Tuple<Replay, ReplayFile> dequeuedItem;
+                ReplayFileData replayFileData = null;
 
                 while (true)
                 {
-                    replayId = 0;
                     currentReplayFile = null;
                     dequeuedItem = null;
 
@@ -839,16 +838,19 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                     try
                     {
                         currentReplayFile = ReplayFileCollection[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
-                        currentReplayFile.Status = QueryDb.ReplaysDb.ReplayFileData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out replayTimeStamp, out replayId, AppCore.HeroesIcons);
 
-                        currentReplayFile.ReplayId = replayId;
-                        currentReplayFile.TimeStamp = replayTimeStamp;
+                        // save parsed data to database
+                        replayFileData = new ReplayFileData(dequeuedItem.Item1, AppCore.HeroesIcons);
+                        currentReplayFile.Status = replayFileData.SaveAllData(dequeuedItem.Item2.FileName);
+
+                        currentReplayFile.ReplayId = replayFileData.ReplayId;
+                        currentReplayFile.TimeStamp = replayFileData.ReplayTimeStamp;
 
                         if (currentReplayFile.Status == ReplayParseResult.Saved)
                         {
                             TotalSavedInDatabase++;
                             ReplaysLatestSaved = QueryDb.ReplaysDb.MatchReplay.ReadLatestReplayByDateTime();
-                            ReplaysLastSaved = replayTimeStamp.ToLocalTime();
+                            ReplaysLastSaved = replayFileData.ReplayTimeStamp.ToLocalTime();
                         }
 
                         if (IsHotsLogsUploaderEnabled && (currentReplayFile.Status == ReplayParseResult.Saved || currentReplayFile.Status == ReplayParseResult.Duplicate))
@@ -859,6 +861,13 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         currentReplayFile.Status = ReplayParseResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
                         UnParsedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
+                    }
+                    finally
+                    {
+                        if (replayFileData != null)
+                        {
+                            replayFileData.Dispose();
+                        }
                     }
                 }
             });
