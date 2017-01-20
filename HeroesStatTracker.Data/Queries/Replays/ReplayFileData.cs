@@ -173,7 +173,10 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 {
                     string character;
                     if (!HeroesIcons.HeroNameTranslation(player.Character, out character))
-                        throw new TranslationException(RetrieveAllMapAndHeroNames());
+                    {
+                        if (!AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
+                            throw new TranslationException(RetrieveAllMapAndHeroNames());
+                    }
 
                     ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
                     {
@@ -569,6 +572,8 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 string character;
                 if (HeroesIcons.HeroNameTranslation(player.Character, out character))
                     names.Add($"{player.Character}: {character} [Good]");
+                else if (AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
+                    names.Add($"{player.Character}: {character} [Auto]");
                 else
                     names.Add($"{player.Character}: ??? [Unknown]");
             }
@@ -583,6 +588,29 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
 
             return output;
+        }
+
+        private bool AttemptAutoTranslateHeroNameByTalent(Talent[] talents, out string character)
+        {
+            int talentCount = talents.Count();
+            character = string.Empty;
+
+            if (talentCount == 0)
+            {
+                return false;
+            }
+            else if (talentCount >= 4)
+            {
+                if (HeroesIcons.GetHeroNameFromTalentReferenceName(talents[3].TalentName, out character))
+                    return true;
+            }
+            else if (talentCount <= 3)
+            {
+                if (HeroesIcons.GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
+                    return true;
+            }
+
+            return false;
         }
     }
 }

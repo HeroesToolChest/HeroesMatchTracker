@@ -90,29 +90,14 @@ namespace Heroes.Icons
         #region HeroesXml
 
         /// <summary>
-        /// Returns a BitmapImage of the talent
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
         /// </summary>
-        /// <param name="talentReferenceName">Reference talent name</param>
-        /// <returns>BitmapImage of the talent</returns>
-        public BitmapImage GetTalentIcon(string talentReferenceName)
+        /// <param name="heroNameAlias">Alias name</param>
+        /// <param name="heroNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool HeroNameTranslation(string heroNameAlias, out string heroNameEnglish)
         {
-            Tuple<string, Uri> talent;
-
-            // no pick
-            if (string.IsNullOrEmpty(talentReferenceName))
-                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
-
-            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
-            {
-                return new BitmapImage(talent.Item2);
-            }
-            else
-            {
-                if (Logger)
-                    LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
-
-                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
-            }
+            return HeroesXml.HeroRealNameByHeroAliasName.TryGetValue(heroNameAlias, out heroNameEnglish);
         }
 
         /// <summary>
@@ -190,53 +175,6 @@ namespace Heroes.Icons
                     LogMissingImage($"Leader hero portrait: {realHeroName}");
 
                 return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
-            }
-        }
-
-        /// <summary>
-        /// Returns the talent name from the talent reference name
-        /// </summary>
-        /// <param name="talentReferenceName">Reference talent name</param>
-        /// <returns>Talent name</returns>
-        public string GetTrueTalentName(string talentReferenceName)
-        {
-            Tuple<string, Uri> talent;
-
-            // no pick
-            if (string.IsNullOrEmpty(talentReferenceName))
-                return "No pick";
-
-            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
-            {
-                return talent.Item1;
-            }
-            else
-            {
-                if (Logger)
-                    LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
-
-                return talentReferenceName;
-            }
-        }
-
-        /// <summary>
-        /// Returns a dictionary of all the talents of a hero
-        /// </summary>
-        /// <param name="realHeroName">real hero name</param>
-        /// <returns></returns>
-        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
-        {
-            Dictionary<TalentTier, List<string>> talents;
-            if (HeroBuildsXml.HeroTalentsListByRealName.TryGetValue(realHeroName, out talents))
-            {
-                return talents;
-            }
-            else
-            {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}");
-
-                return null;
             }
         }
 
@@ -368,6 +306,82 @@ namespace Heroes.Icons
         {
             return HeroesXml.AlternativeHeroNameByRealName.Count;
         }
+        #endregion HeroesXml
+
+        #region HeroBuildXml
+
+        /// <summary>
+        /// Returns a BitmapImage of the talent
+        /// </summary>
+        /// <param name="talentReferenceName">Reference talent name</param>
+        /// <returns>BitmapImage of the talent</returns>
+        public BitmapImage GetTalentIcon(string talentReferenceName)
+        {
+            Tuple<string, Uri> talent;
+
+            // no pick
+            if (string.IsNullOrEmpty(talentReferenceName))
+                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
+
+            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            {
+                return new BitmapImage(talent.Item2);
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
+
+                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
+            }
+        }
+
+        /// <summary>
+        /// Returns the talent name from the talent reference name
+        /// </summary>
+        /// <param name="talentReferenceName">Reference talent name</param>
+        /// <returns>Talent name</returns>
+        public string GetTrueTalentName(string talentReferenceName)
+        {
+            Tuple<string, Uri> talent;
+
+            // no pick
+            if (string.IsNullOrEmpty(talentReferenceName))
+                return "No pick";
+
+            if (HeroBuildsXml.RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            {
+                return talent.Item1;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
+
+                return talentReferenceName;
+            }
+        }
+
+        /// <summary>
+        /// Returns a dictionary of all the talents of a hero
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <returns></returns>
+        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
+        {
+            Dictionary<TalentTier, List<string>> talents;
+            if (HeroBuildsXml.HeroTalentsListByRealName.TryGetValue(realHeroName, out talents))
+            {
+                return talents;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}");
+
+                return null;
+            }
+        }
 
         /// <summary>
         /// Returns a TalentTooltip object which contains the short and full tooltips of the talent
@@ -387,16 +401,17 @@ namespace Heroes.Icons
         }
 
         /// <summary>
-        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// Gets the hero name associated with the given talent. Returns true is found, otherwise returns false
         /// </summary>
-        /// <param name="heroNameAlias">Alias name</param>
-        /// <param name="heroNameEnglish">English name</param>
+        /// <param name="talentName">The talent reference name</param>
+        /// <param name="heroRealName">The hero name</param>
         /// <returns></returns>
-        public bool HeroNameTranslation(string heroNameAlias, out string heroNameEnglish)
+        public bool GetHeroNameFromTalentReferenceName(string talentName, out string heroRealName)
         {
-            return HeroesXml.HeroRealNameByHeroAliasName.TryGetValue(heroNameAlias, out heroNameEnglish);
+            return HeroBuildsXml.RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
         }
-        #endregion Heroes Xml
+
+        #endregion HeroBuildXml
 
         #region MatchAwardsXml
 

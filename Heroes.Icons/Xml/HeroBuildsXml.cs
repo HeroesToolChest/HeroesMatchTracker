@@ -53,6 +53,11 @@ namespace Heroes.Icons.Xml
         /// </summary>
         public Dictionary<string, TalentTooltip> HeroTalentTooltipsByRealName { get; private set; } = new Dictionary<string, TalentTooltip>();
 
+        /// <summary>
+        /// key is the talent reference name
+        /// </summary>
+        public Dictionary<string, string> RealHeroNameByTalentReferenceName { get; private set; } = new Dictionary<string, string>();
+
         public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, int? build = null)
         {
             if (heroesXml == null)
@@ -121,6 +126,14 @@ namespace Heroes.Icons.Xml
                                                     RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
 
                                                 talentTierList.Add(refName);
+
+                                                if (!isGeneric)
+                                                {
+                                                    if (!HeroesXml.RealHeroNameByAlternativeName.ContainsKey(heroAltName))
+                                                        throw new ArgumentException($"Hero alt name not found: {heroAltName}");
+
+                                                    RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.RealHeroNameByAlternativeName[heroAltName]);
+                                                }
                                             }
                                         }
                                     }
