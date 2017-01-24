@@ -1,4 +1,5 @@
 using GalaSoft.MvvmLight.Ioc;
+using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
 using HeroesStatTracker.Core.ViewModels.TitleBar;
@@ -64,6 +65,15 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<RawMatchTeamLevelViewModel>();
             SimpleIoc.Default.Register<RawMatchTeamObjectiveViewModel>();
             SimpleIoc.Default.Register<RawRenamedPlayerViewModel>();
+
+            // Matches
+            SimpleIoc.Default.Register<AllMatchesViewModel>();
+            SimpleIoc.Default.Register<BrawlViewModel>();
+            SimpleIoc.Default.Register<CustomGameViewModel>();
+            SimpleIoc.Default.Register<HeroLeagueViewModel>();
+            SimpleIoc.Default.Register<QuickMatchViewModel>();
+            SimpleIoc.Default.Register<TeamLeagueViewModel>();
+            SimpleIoc.Default.Register<UnrankedDraftViewModel>();
         }
 
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
@@ -87,6 +97,14 @@ namespace HeroesStatTracker.Core.ViewModels
         public static RawMatchTeamLevelViewModel RawMatchTeamLevelViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamLevelViewModel>();
         public static RawMatchTeamObjectiveViewModel RawMatchTeamObjectiveViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamObjectiveViewModel>();
         public static RawRenamedPlayerViewModel RawRenamedPlayerViewModel => ServiceLocator.Current.GetInstance<RawRenamedPlayerViewModel>();
+
+        public static AllMatchesViewModel AllMatchesViewModel => ServiceLocator.Current.GetInstance<AllMatchesViewModel>();
+        public static BrawlViewModel BrawlViewModel => ServiceLocator.Current.GetInstance<BrawlViewModel>();
+        public static CustomGameViewModel CustomGameViewModel => ServiceLocator.Current.GetInstance<CustomGameViewModel>();
+        public static HeroLeagueViewModel HeroLeagueViewModel => ServiceLocator.Current.GetInstance<HeroLeagueViewModel>();
+        public static QuickMatchViewModel QuickMatchViewModel => ServiceLocator.Current.GetInstance<QuickMatchViewModel>();
+        public static TeamLeagueViewModel TeamLeagueViewModel => ServiceLocator.Current.GetInstance<TeamLeagueViewModel>();
+        public static UnrankedDraftViewModel UnrankedDraftViewModel => ServiceLocator.Current.GetInstance<UnrankedDraftViewModel>();
 
         public static void Cleanup()
         {

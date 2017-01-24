@@ -81,7 +81,7 @@ namespace Heroes.Icons
             }
             else
             {
-                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "Heroes", HeroesXml, build);
+                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, build);
             }
         }
 

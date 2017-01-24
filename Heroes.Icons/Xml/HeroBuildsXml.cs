@@ -132,7 +132,11 @@ namespace Heroes.Icons.Xml
                                                     if (!HeroesXml.RealHeroNameByAlternativeName.ContainsKey(heroAltName))
                                                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                                                    RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.RealHeroNameByAlternativeName[heroAltName]);
+                                                    if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
+                                                        throw new ArgumentException($"Same key {refName}");
+
+                                                    if (tier != TalentTier.Old)
+                                                        RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.RealHeroNameByAlternativeName[heroAltName]);
                                                 }
                                             }
                                         }

@@ -63,6 +63,14 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
+        public ReplayAllHotsPlayer ReadRecordFromPlayerId(long playerId)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefault();
+            }
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayer model)
         {
             db.ReplayAllHotsPlayers.Add(model);

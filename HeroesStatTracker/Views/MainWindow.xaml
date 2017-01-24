@@ -8,6 +8,7 @@
         xmlns:titleBar="clr-namespace:HeroesStatTracker.Views.TitleBar"
         xmlns:replays="clr-namespace:HeroesStatTracker.Views.Replays"
         xmlns:rawData="clr-namespace:HeroesStatTracker.Views.RawData"
+        xmlns:matches="clr-namespace:HeroesStatTracker.Views.Matches"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -78,6 +79,9 @@
             <dragablz:TabablzControl FixedHeaderCount="2">
                 <TabItem Header="Home">
 
+                </TabItem>
+                <TabItem Header="Matches">
+                    <matches:MatchesControl />
                 </TabItem>
                 <TabItem Header="Replays">
                     <replays:ReplaysControl />

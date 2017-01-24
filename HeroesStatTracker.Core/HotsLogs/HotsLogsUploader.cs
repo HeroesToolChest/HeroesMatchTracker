@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using Amazon.S3.Model;
+using Heroes.Helpers;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace HeroesStatTracker.Core.HotsLogs
                 if (result == "Maintenance")
                     throw new MaintenanceException("Maintenance");
 
-                return EnumParser.GetReplayParseResultFromString(result);
+                return HeroesHelpers.EnumParser.ConvertReplayParseResultStringToEnum(result);
             }
         }
     }

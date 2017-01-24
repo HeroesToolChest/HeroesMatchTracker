@@ -14,22 +14,25 @@
     </UserControl.Resources>
     <StackPanel>
         <StackPanel Orientation="Horizontal" Margin="{StaticResource PanelSpacing}">
-            <Button Content="SELECT ALL" Command="{Binding SelectAllCommand}" IsEnabled="{Binding IsQueryActive}" Width="180" Margin="{StaticResource ButtonSpacing}"/>
-            <Button Content="SELECT TOP 100" Command="{Binding SelectTop100Command}" IsEnabled="{Binding IsQueryActive}" Width="180" Margin="{StaticResource ButtonSpacing}"/>
-            <Button Content="SELECT BOTTOM 100" Command="{Binding SelectBottom100Command}" IsEnabled="{Binding IsQueryActive}" Width="180" Margin="{StaticResource ButtonSpacing}"/>
+            <Button Content="SELECT ALL" Command="{Binding SelectAllCommand}" IsEnabled="{Binding IsQueryActive}"
+                    Width="180" Margin="{StaticResource ButtonSpacing}" Style="{StaticResource MaterialDesignRaisedLightButton}"/>
+            <Button Content="SELECT TOP 100" Command="{Binding SelectTop100Command}" IsEnabled="{Binding IsQueryActive}" 
+                    Width="180" Margin="{StaticResource ButtonSpacing}" Style="{StaticResource MaterialDesignRaisedLightButton}"/>
+            <Button Content="SELECT BOTTOM 100" Command="{Binding SelectBottom100Command}" IsEnabled="{Binding IsQueryActive}" 
+                    Width="180" Margin="{StaticResource ButtonSpacing}" Style="{StaticResource MaterialDesignRaisedLightButton}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="{StaticResource PanelSpacing}">
-            <Button Content="SELECT" Command="{Binding SelectCustomTopCommand}" IsEnabled="{Binding IsQueryActive}" Width="130" Margin="{StaticResource ButtonSpacing}"/>
-            <controls:NumericUpDown Value="{Binding SelectedCustomTopCount}" IsEnabled="{Binding IsQueryActive}" Width="100" Minimum="1" Maximum="10000" Interval="1" Margin="{StaticResource ButtonSpacing}" HorizontalContentAlignment="Center"/>
+            <Button Content="SELECT" Command="{Binding SelectCustomTopCommand}" IsEnabled="{Binding IsQueryActive}" Width="130" Margin="{StaticResource ButtonSpacing}" Style="{StaticResource MaterialDesignRaisedLightButton}"/>
+            <TextBox Text="{Binding SelectedCustomTopCount}" IsEnabled="{Binding IsQueryActive}" Margin="{StaticResource ButtonSpacing}" materialDesign:HintAssist.Hint="Count" Style="{StaticResource MaterialDesignFloatingHintTextBox}" PreviewTextInput="TextBox_PreviewTextInput" Width="120"/>
             <TextBlock Text="ORDER BY" Margin="{StaticResource ButtonSpacing}" VerticalAlignment="Center" />
-            <ComboBox ItemsSource="{Binding ColumnNamesList}" SelectedValue="{Binding SelectedTopColumnName}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Column Name" Width="200" Margin="{StaticResource ButtonSpacing}"/>
-            <ComboBox ItemsSource="{Binding OrderByList}" SelectedValue="{Binding SelectedTopOrderBy}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Order By"  Width="80" Margin="{StaticResource ButtonSpacing}"/>
+            <ComboBox ItemsSource="{Binding ColumnNamesList}" SelectedValue="{Binding SelectedTopColumnName}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Column Name" Width="200" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="{StaticResource ButtonSpacing}"/>
+            <ComboBox ItemsSource="{Binding OrderByList}" SelectedValue="{Binding SelectedTopOrderBy}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Order By" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="80" Margin="{StaticResource ButtonSpacing}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="{StaticResource PanelSpacing}">
-            <Button Content="SELECT WHERE" Command="{Binding SelectCustomWhereCommand}" IsEnabled="{Binding IsQueryActive}" Width="130" Margin="{StaticResource ButtonSpacing}"/>
-            <ComboBox ItemsSource="{Binding ColumnNamesList}" SelectedValue="{Binding SelectedWhereColumnName}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Column Name"  Width="200" Margin="{StaticResource ButtonSpacing}"/>
-            <ComboBox ItemsSource="{Binding ConditionalOperandsList}" SelectedValue="{Binding SelectedWhereOperand}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="OP"  Width="60" Margin="{StaticResource ButtonSpacing}"/>
-            <TextBox Text="{Binding SelectedWhereTextBoxInput}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Input"  Width="240" Margin="{StaticResource ButtonSpacing}"/>
+            <Button Content="SELECT WHERE" Command="{Binding SelectCustomWhereCommand}" IsEnabled="{Binding IsQueryActive}" Width="130" Margin="{StaticResource ButtonSpacing}" Style="{StaticResource MaterialDesignRaisedLightButton}"/>
+            <ComboBox ItemsSource="{Binding ColumnNamesList}" SelectedValue="{Binding SelectedWhereColumnName}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Column Name" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="200" Margin="{StaticResource ButtonSpacing}"/>
+            <ComboBox ItemsSource="{Binding ConditionalOperandsList}" SelectedValue="{Binding SelectedWhereOperand}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="OP" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="60" Margin="{StaticResource ButtonSpacing}"/>
+            <TextBox Text="{Binding SelectedWhereTextBoxInput}" IsEnabled="{Binding IsQueryActive}" materialDesign:HintAssist.Hint="Input" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Width="240" Margin="{StaticResource ButtonSpacing}" />
         </StackPanel>
         <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 3"/>
     </StackPanel>

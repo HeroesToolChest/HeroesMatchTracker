@@ -56,8 +56,7 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -175,6 +174,33 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
+    <Compile Include="Views\Matches\AllMatchesControl.xaml.cs">
+      <DependentUpon>AllMatchesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\BrawlControl.xaml.cs">
+      <DependentUpon>BrawlControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\CustomGameControl.xaml.cs">
+      <DependentUpon>CustomGameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\MatchesControl.xaml.cs">
+      <DependentUpon>MatchesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\HeroLeagueControl.xaml.cs">
+      <DependentUpon>HeroLeagueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\MatchListControl.xaml.cs">
+      <DependentUpon>MatchListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\QuickMatchControl.xaml.cs">
+      <DependentUpon>QuickMatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\TeamLeagueControl.xaml.cs">
+      <DependentUpon>TeamLeagueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\UnrankedDraftControl.xaml.cs">
+      <DependentUpon>UnrankedDraftControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RawData\QueryControl.xaml.cs">
       <DependentUpon>QueryControl.xaml</DependentUpon>
     </Compile>
@@ -259,6 +285,42 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\ImageResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\AllMatchesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\BrawlControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\CustomGameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\MatchesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\HeroLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\MatchListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\QuickMatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\TeamLeagueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\UnrankedDraftControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

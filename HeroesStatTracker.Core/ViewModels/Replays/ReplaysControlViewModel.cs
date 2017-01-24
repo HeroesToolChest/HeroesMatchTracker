@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using GalaSoft.MvvmLight.Command;
+using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.HotsLogs;
@@ -59,7 +60,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
             ScanDateTimeCheckboxes[QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
-            HeroesIcons = AppCore.HeroesIcons;
+            HeroesIcons = HeroesHelpers.HeroesInfo.HeroesIcons;
 
             InitializeReplaySaveDataQueue();
             InitializeReplayHotsLogsUploadQueue();

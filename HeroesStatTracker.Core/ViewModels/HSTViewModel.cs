@@ -1,10 +1,15 @@
 ﻿using GalaSoft.MvvmLight;
 using NLog;
+using System;
+using System.Windows.Media.Imaging;
+using static Heroes.Helpers.HeroesHelpers;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
     public class HstViewModel : ViewModelBase
     {
+        private BitmapImage _backgroundImage;
+
         protected HstViewModel()
         {
             ExceptionLog = LogManager.GetLogger(LogFileNames.Exceptions);
@@ -12,6 +17,18 @@ namespace HeroesStatTracker.Core.ViewModels
             UnParsedReplaysLog = LogManager.GetLogger(LogFileNames.UnParsedReplaysLogFileName);
             TranslationsLog = LogManager.GetLogger(LogFileNames.TranslationLogFileName);
             HotsLogsLog = LogManager.GetLogger(LogFileNames.TranslationLogFileName);
+
+            SetBackgroundImage();
+        }
+
+        public BitmapImage BackgroundImage
+        {
+            get { return _backgroundImage; }
+            set
+            {
+                _backgroundImage = value;
+                RaisePropertyChanged();
+            }
         }
 
         protected Logger ExceptionLog { get; private set; }
@@ -19,5 +36,16 @@ namespace HeroesStatTracker.Core.ViewModels
         protected Logger UnParsedReplaysLog { get; private set; }
         protected Logger TranslationsLog { get; private set; }
         protected Logger HotsLogsLog { get; private set; }
+
+        private void SetBackgroundImage()
+        {
+            Random random = new Random();
+            var listOfBackgroundImages = HeroesInfo.HeroesIcons.GetListOfHomeScreens();
+
+            int num = random.Next(0, listOfBackgroundImages.Count);
+            BackgroundImage = listOfBackgroundImages[num].Item1;
+
+            // LabelGlowColor = listOfBackgroundImages[num].Item2;
+        }
     }
 }
