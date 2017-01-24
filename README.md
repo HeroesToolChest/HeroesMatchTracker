@@ -15,7 +15,7 @@ This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes
 
 ## Installation
 - Download and run Setup.exe from the [releases](https://github.com/koliva8245/HeroesParserData/releases) page
-- .NET Framework 4.6.2 is required and will be downloaded automatically if needed
+- .NET Framework 4.6.2 is recommended
 - Recommended to have at least 2GB of memory (for the replay parsing)
 
 ## How to use
