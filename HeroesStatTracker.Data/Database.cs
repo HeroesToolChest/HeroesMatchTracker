@@ -1,5 +1,6 @@
 ﻿using HeroesStatTracker.Data.Migration.Replays;
 using HeroesStatTracker.Data.Migrations;
+using HeroesStatTracker.Data.Queries.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -69,7 +70,7 @@ namespace HeroesStatTracker.Data
         {
             if (SettingsDbFileCreated)
             {
-                QueryDb.SettingsDb.UserSettings.SetDefaultSettings();
+                new SettingsDb().UserSettings.SetDefaultSettings();
             }
         }
     }

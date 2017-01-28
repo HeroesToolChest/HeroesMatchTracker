@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using HeroesStatTracker.Core;
+using HeroesStatTracker.Core.ViewModels;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Views.TitleBar;
@@ -17,15 +18,21 @@ namespace HeroesStatTracker.Views
     /// </summary>
     public partial class MainWindow : MetroWindow, IWhatsNewWindowService
     {
+        private MainWindowViewModel MainWindowViewModel;
+        private IDatabaseService IDatabaseService;
+
         public MainWindow()
         {
-            StylePalette.ApplyBase(QueryDb.SettingsDb.UserSettings.IsNightMode);
-            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(QueryDb.SettingsDb.UserSettings.MainStylePrimary));
-            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(QueryDb.SettingsDb.UserSettings.MainStyleAccent));
+            InitializeComponent();
+
+            MainWindowViewModel = (MainWindowViewModel)DataContext;
+            IDatabaseService = MainWindowViewModel.GetDatabaseService;
+
+            StylePalette.ApplyBase(IDatabaseService.SettingsDb().UserSettings.IsNightMode);
+            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(IDatabaseService.SettingsDb().UserSettings.MainStylePrimary));
+            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(IDatabaseService.SettingsDb().UserSettings.MainStyleAccent));
 
             SetTrayIcon();
-
-            InitializeComponent();
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
         }
@@ -39,7 +46,7 @@ namespace HeroesStatTracker.Views
         protected override void OnStateChanged(EventArgs e)
         {
             base.OnStateChanged(e);
-            if (QueryDb.SettingsDb.UserSettings.IsMinimizeToTray && WindowState == WindowState.Minimized)
+            if (IDatabaseService.SettingsDb().UserSettings.IsMinimizeToTray && WindowState == WindowState.Minimized)
             {
                 Hide();
                 NotifyIcon.Visible = true;
@@ -55,7 +62,7 @@ namespace HeroesStatTracker.Views
 
         protected override void OnContentRendered(EventArgs e)
         {
-            StylePalette.ApplyStyle(QueryDb.SettingsDb.UserSettings.IsAlternateStyle);
+            StylePalette.ApplyStyle(IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle);
             base.OnContentRendered(e);
         }
 

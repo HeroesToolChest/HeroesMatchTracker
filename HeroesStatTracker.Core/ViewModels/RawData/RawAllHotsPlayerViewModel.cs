@@ -3,7 +3,7 @@ using HeroesStatTracker.Data.Queries.Replays;
 
 namespace HeroesStatTracker.Core.ViewModels.RawData
 {
-    public class RawAllHotsPlayerViewModel : RawDataContextBase<ReplayAllHotsPlayer>
+    public class RawAllHotsPlayerViewModel : RawDataBase<ReplayAllHotsPlayer>
     {
         public RawAllHotsPlayerViewModel(IRawDataQueries<ReplayAllHotsPlayer> iRawDataQueries)
             : base(iRawDataQueries)

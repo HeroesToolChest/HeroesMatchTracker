@@ -11,15 +11,18 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         private string _currentSelectedPrimary;
         private string _currentSelectedAccent;
 
+        private IDatabaseService IDatabaseService;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public PaletteSelectorWindowViewModel()
+        public PaletteSelectorWindowViewModel(IDatabaseService iDatabaseService)
         {
+            IDatabaseService = iDatabaseService;
             Swatches = new SwatchesProvider().Swatches;
 
-            CurrentSelectedPrimary = QueryDb.SettingsDb.UserSettings.MainStylePrimary;
-            CurrentSelectedAccent = QueryDb.SettingsDb.UserSettings.MainStyleAccent;
+            CurrentSelectedPrimary = IDatabaseService.SettingsDb().UserSettings.MainStylePrimary;
+            CurrentSelectedAccent = IDatabaseService.SettingsDb().UserSettings.MainStyleAccent;
         }
 
         public IEnumerable<Swatch> Swatches { get; }
@@ -51,20 +54,20 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 
         public bool IsAlternateStyle
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsAlternateStyle; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsAlternateStyle = value;
+                IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsNightMode
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsNightMode; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsNightMode; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsNightMode = value;
+                IDatabaseService.SettingsDb().UserSettings.IsNightMode = value;
                 RaisePropertyChanged();
             }
         }
@@ -73,19 +76,19 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         {
             StylePalette.ApplyPrimary(swatch);
             CurrentSelectedPrimary = swatch.ToString();
-            QueryDb.SettingsDb.UserSettings.MainStylePrimary = swatch.ToString();
+            IDatabaseService.SettingsDb().UserSettings.MainStylePrimary = swatch.ToString();
         }
 
         private void ApplyAccent(Swatch swatch)
         {
             StylePalette.ApplyAccent(swatch);
             CurrentSelectedAccent = swatch.ToString();
-            QueryDb.SettingsDb.UserSettings.MainStyleAccent = swatch.ToString();
+            IDatabaseService.SettingsDb().UserSettings.MainStyleAccent = swatch.ToString();
         }
 
         private void DefaultPalette()
         {
-            StylePalette.SetDefaultPalette();
+            StylePalette.SetDefaultPalette(IDatabaseService);
         }
     }
 }

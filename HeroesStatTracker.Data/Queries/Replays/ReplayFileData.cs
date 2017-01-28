@@ -14,6 +14,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
         private ReplaysContext ReplaysContext;
         private Replay Replay;
         private HeroesIcons HeroesIcons;
+        private ReplaysDb ReplaysDb;
         private bool DisposedValue = false;
 
         public ReplayFileData(Replay replay, HeroesIcons heroesIcons = null)
@@ -21,6 +22,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
             ReplaysContext = new ReplaysContext();
             Replay = replay;
             HeroesIcons = heroesIcons;
+            ReplaysDb = new ReplaysDb();
         }
 
         public long ReplayId { get; private set; }
@@ -102,14 +104,14 @@ namespace HeroesStatTracker.Data.Queries.Replays
             ReplayTimeStamp = replayMatch.TimeStamp.Value;
 
             // check if replay was added to database already
-            if (QueryDb.ReplaysDb.MatchReplay.IsExistingRecord(ReplaysContext, replayMatch))
+            if (ReplaysDb.MatchReplay.IsExistingRecord(ReplaysContext, replayMatch))
             {
-                ReplayId = QueryDb.ReplaysDb.MatchReplay.ReadReplayIdByRandomValue(replayMatch);
+                ReplayId = ReplaysDb.MatchReplay.ReadReplayIdByRandomValue(replayMatch);
                 return true;
             }
             else
             {
-                ReplayId = QueryDb.ReplaysDb.MatchReplay.CreateRecord(ReplaysContext, replayMatch);
+                ReplayId = ReplaysDb.MatchReplay.CreateRecord(ReplaysContext, replayMatch);
                 return false;
             }
         }
@@ -139,10 +141,10 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 long playerId;
 
                 // check if player is already in the database, update if found, otherwise add a new record
-                if (QueryDb.ReplaysDb.HotsPlayer.IsExistingRecord(ReplaysContext, hotsPlayer))
-                    playerId = QueryDb.ReplaysDb.HotsPlayer.UpdateRecord(ReplaysContext, hotsPlayer);
+                if (ReplaysDb.HotsPlayer.IsExistingRecord(ReplaysContext, hotsPlayer))
+                    playerId = ReplaysDb.HotsPlayer.UpdateRecord(ReplaysContext, hotsPlayer);
                 else
-                    playerId = QueryDb.ReplaysDb.HotsPlayer.CreateRecord(ReplaysContext, hotsPlayer);
+                    playerId = ReplaysDb.HotsPlayer.CreateRecord(ReplaysContext, hotsPlayer);
 
                 if (player.Character == null && Replay.GameMode == GameMode.Custom)
                 {
@@ -167,7 +169,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         Team = player.Team,
                     };
 
-                    QueryDb.ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
+                    ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
                 }
                 else
                 {
@@ -196,7 +198,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         Team = player.Team,
                     };
 
-                    QueryDb.ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
+                    ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
 
                     AddScoreResults(player.ScoreResult, playerId);
                     AddPlayerTalents(player.Talents, playerId, character);
@@ -237,7 +239,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 WatchTowerCaptures = sr.WatchTowerCaptures,
             };
 
-            QueryDb.ReplaysDb.MatchPlayerScoreResult.CreateRecord(ReplaysContext, playerScore);
+            ReplaysDb.MatchPlayerScoreResult.CreateRecord(ReplaysContext, playerScore);
         }
 
         private void AddPlayerTalents(Talent[] talents, long playerId, string playerCharacter)
@@ -290,7 +292,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 TimeSpanSelected20 = talentArray[6].TimeSpanSelected,
             };
 
-            QueryDb.ReplaysDb.MatchPlayerTalent.CreateRecord(ReplaysContext, replayTalent);
+            ReplaysDb.MatchPlayerTalent.CreateRecord(ReplaysContext, replayTalent);
         }
 
         private void AddMatchAwards(List<MatchAwardType> playerAwards, long playerId)
@@ -303,7 +305,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     PlayerId = playerId,
                     Award = award.ToString(),
                 };
-                QueryDb.ReplaysDb.MatchAward.CreateRecord(ReplaysContext, matchAward);
+                ReplaysDb.MatchAward.CreateRecord(ReplaysContext, matchAward);
             }
         }
 
@@ -321,10 +323,10 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         playersHero.IsUsable = hero.Value;
                         playersHero.LastUpdated = Replay.Timestamp;
 
-                        if (QueryDb.ReplaysDb.HotsPlayerHero.IsExistingRecord(ReplaysContext, playersHero))
-                            QueryDb.ReplaysDb.HotsPlayerHero.UpdateRecord(ReplaysContext, playersHero);
+                        if (ReplaysDb.HotsPlayerHero.IsExistingRecord(ReplaysContext, playersHero))
+                            ReplaysDb.HotsPlayerHero.UpdateRecord(ReplaysContext, playersHero);
                         else
-                            QueryDb.ReplaysDb.HotsPlayerHero.CreateRecord(ReplaysContext, playersHero);
+                            ReplaysDb.HotsPlayerHero.CreateRecord(ReplaysContext, playersHero);
                     }
                 }
             }
@@ -346,7 +348,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     };
 
                     if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null)
-                        QueryDb.ReplaysDb.MatchTeamBan.CreateRecord(ReplaysContext, replayTeamBan);
+                        ReplaysDb.MatchTeamBan.CreateRecord(ReplaysContext, replayTeamBan);
                 }
             }
         }
@@ -386,7 +388,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         Team1Level = team1[level].HasValue ? level : (int?)null,
                     };
 
-                    QueryDb.ReplaysDb.MatchTeamLevel.CreateRecord(ReplaysContext, replayTeamLevel);
+                    ReplaysDb.MatchTeamLevel.CreateRecord(ReplaysContext, replayTeamLevel);
                 }
             }
         }
@@ -428,7 +430,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         Team1TrickleXP = y.TrickleXP,
                     };
 
-                    QueryDb.ReplaysDb.MatchTeamExperience.CreateRecord(ReplaysContext, xp);
+                    ReplaysDb.MatchTeamExperience.CreateRecord(ReplaysContext, xp);
                 }
             }
         }
@@ -455,7 +457,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         TimeStamp = message.Timestamp,
                     };
 
-                    QueryDb.ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, chat);
+                    ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, chat);
                 }
                 else if (messageEventType == ReplayMessageEvents.MessageEventType.SPingMessage)
                 {
@@ -472,7 +474,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         TimeStamp = message.Timestamp,
                     };
 
-                    QueryDb.ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, ping);
+                    ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, ping);
                 }
                 else if (messageEventType == ReplayMessageEvents.MessageEventType.SPlayerAnnounceMessage)
                 {
@@ -489,7 +491,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                         TimeStamp = message.Timestamp,
                     };
 
-                    QueryDb.ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, announce);
+                    ReplaysDb.MatchMessage.CreateRecord(ReplaysContext, announce);
                 }
             }
         }
@@ -508,14 +510,14 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = player != null ? QueryDb.ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
                         Value = objCount.Value,
                     };
 
-                    QueryDb.ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
+                    ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
                 }
             }
 
@@ -528,14 +530,14 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = player != null ? QueryDb.ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
                         Value = objCount.Value,
                     };
 
-                    QueryDb.ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
+                    ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
                 }
             }
         }

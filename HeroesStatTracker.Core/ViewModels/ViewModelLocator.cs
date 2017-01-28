@@ -3,6 +3,7 @@ using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
 using HeroesStatTracker.Core.ViewModels.TitleBar;
+using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using HeroesStatTracker.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
@@ -21,6 +22,9 @@ namespace HeroesStatTracker.Core.ViewModels
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            // Db
+            SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
@@ -97,7 +101,6 @@ namespace HeroesStatTracker.Core.ViewModels
         public static RawMatchTeamLevelViewModel RawMatchTeamLevelViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamLevelViewModel>();
         public static RawMatchTeamObjectiveViewModel RawMatchTeamObjectiveViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamObjectiveViewModel>();
         public static RawRenamedPlayerViewModel RawRenamedPlayerViewModel => ServiceLocator.Current.GetInstance<RawRenamedPlayerViewModel>();
-
         public static AllMatchesViewModel AllMatchesViewModel => ServiceLocator.Current.GetInstance<AllMatchesViewModel>();
         public static BrawlViewModel BrawlViewModel => ServiceLocator.Current.GetInstance<BrawlViewModel>();
         public static CustomGameViewModel CustomGameViewModel => ServiceLocator.Current.GetInstance<CustomGameViewModel>();

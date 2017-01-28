@@ -10,11 +10,14 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 {
     public class SettingsControlViewModel : ViewModelBase
     {
+        private IDatabaseService IDatabaseService;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public SettingsControlViewModel()
+        public SettingsControlViewModel(IDatabaseService iDatabaseService)
         {
+            IDatabaseService = iDatabaseService;
             Messenger.Default.Register<NotificationMessage>(this, (message) => ToggleIsNightMode(message));
         }
 
@@ -23,20 +26,20 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 
         public bool IsMinimizeToTray
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsMinimizeToTray; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsMinimizeToTray; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsMinimizeToTray = value;
+                IDatabaseService.SettingsDb().UserSettings.IsMinimizeToTray = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsAutoUpdates
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsAutoUpdates; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsAutoUpdates; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsAutoUpdates = value;
+                IDatabaseService.SettingsDb().UserSettings.IsAutoUpdates = value;
                 if (!value)
                     IsIncludePreReleaseBuilds = false;
 
@@ -46,30 +49,30 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 
         public bool IsIncludePreReleaseBuilds
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsIncludePreRelease; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsIncludePreRelease; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsIncludePreRelease = value;
+                IDatabaseService.SettingsDb().UserSettings.IsIncludePreRelease = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsBattleTagsHidden
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsBattleTagHidden; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsBattleTagHidden; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsBattleTagHidden = value;
+                IDatabaseService.SettingsDb().UserSettings.IsBattleTagHidden = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsNightMode
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsNightMode; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsNightMode; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsNightMode = value;
+                IDatabaseService.SettingsDb().UserSettings.IsNightMode = value;
                 RaisePropertyChanged();
             }
         }
@@ -87,7 +90,7 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         private void ToggleIsNightMode(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.IsNightModeToggle)
-                IsNightMode = QueryDb.SettingsDb.UserSettings.IsNightMode;
+                IsNightMode = IDatabaseService.SettingsDb().UserSettings.IsNightMode;
         }
     }
 }

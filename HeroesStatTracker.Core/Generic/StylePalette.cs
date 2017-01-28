@@ -60,13 +60,13 @@ namespace HeroesStatTracker.Core
             return swatches.ToList()[0];
         }
 
-        public static void SetDefaultPalette()
+        public static void SetDefaultPalette(IDatabaseService iDatabaseService)
         {
             ApplyPrimary(GetSwatchByName(HeroesHelpers.DefaultColorPalette.DefaultPrimary));
             ApplyAccent(GetSwatchByName(HeroesHelpers.DefaultColorPalette.DefaultAccent));
 
-            QueryDb.SettingsDb.UserSettings.MainStylePrimary = HeroesHelpers.DefaultColorPalette.DefaultPrimary;
-            QueryDb.SettingsDb.UserSettings.MainStyleAccent = HeroesHelpers.DefaultColorPalette.DefaultAccent;
+            iDatabaseService.SettingsDb().UserSettings.MainStylePrimary = HeroesHelpers.DefaultColorPalette.DefaultPrimary;
+            iDatabaseService.SettingsDb().UserSettings.MainStyleAccent = HeroesHelpers.DefaultColorPalette.DefaultAccent;
         }
     }
 }

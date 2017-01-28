@@ -38,6 +38,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private FileSystemWatcher FileWatcher;
         private HeroesIcons HeroesIcons;
+        private IDatabaseService IDatabaseService;
 
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
@@ -54,11 +55,12 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         /// <summary>
         /// Constructor
         /// </summary>
-        public ReplaysControlViewModel()
+        public ReplaysControlViewModel(IDatabaseService iDatabaseService)
         {
+            IDatabaseService = iDatabaseService;
             HotsLogsStartButtonText = "[Stop]";
 
-            ScanDateTimeCheckboxes[QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex] = true;
+            ScanDateTimeCheckboxes[IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
             HeroesIcons = HeroesHelpers.HeroesInfo.HeroesIcons;
 
@@ -82,6 +84,11 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         public RelayCommand HotsLogsStartButtonCommand => new RelayCommand(HotsLogsStartButton);
 
         #region public properties
+        public IDatabaseService GetDatabaseService
+        {
+            get { return IDatabaseService; }
+        }
+
         public bool AreProcessButtonsEnabled
         {
             get { return _areProcessButtonsEnabled; }
@@ -164,50 +171,50 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         public bool IsReplayWatch
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplayWatchCheckBox; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplayWatchCheckBox; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplayWatchCheckBox = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplayWatchCheckBox = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsAutoScanStart
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplayAutoScanCheckBox; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplayAutoScanCheckBox; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplayAutoScanCheckBox = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplayAutoScanCheckBox = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsAutoStartStartup
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplayAutoStartStartUp; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplayAutoStartStartUp; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplayAutoStartStartUp = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplayAutoStartStartUp = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsIncludeSubDirectories
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsIncludeSubDirectories; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsIncludeSubDirectories; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsIncludeSubDirectories = value;
+                IDatabaseService.SettingsDb().UserSettings.IsIncludeSubDirectories = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsHotsLogsUploaderEnabled
         {
-            get { return QueryDb.SettingsDb.UserSettings.IsHotsLogsUploaderEnabled; }
+            get { return IDatabaseService.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.IsHotsLogsUploaderEnabled = value;
+                IDatabaseService.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled = value;
                 if (value)
                 {
                     AreHotsLogsUploaderButtonsEnabled = true;
@@ -235,7 +242,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 ScanDateTimeCheckboxes[0] = value;
                 if (value)
                 {
-                    QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex = 0;
+                    IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex = 0;
                     LastParsedChecked = false;
                     LatestHotsLogsChecked = false;
                     LastHotsLogsChecked = false;
@@ -253,7 +260,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 ScanDateTimeCheckboxes[1] = value;
                 if (value)
                 {
-                    QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex = 1;
+                    IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex = 1;
                     LatestParsedChecked = false;
                     LatestHotsLogsChecked = false;
                     LastHotsLogsChecked = false;
@@ -271,7 +278,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 ScanDateTimeCheckboxes[2] = value;
                 if (value)
                 {
-                    QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex = 2;
+                    IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex = 2;
                     LatestParsedChecked = false;
                     LastParsedChecked = false;
                     LastHotsLogsChecked = false;
@@ -299,7 +306,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 ScanDateTimeCheckboxes[3] = value;
                 if (value)
                 {
-                    QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex = 3;
+                    IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex = 3;
                     LatestParsedChecked = false;
                     LastParsedChecked = false;
                     LatestHotsLogsChecked = false;
@@ -311,50 +318,50 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         public DateTime ReplaysLatestSaved
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplaysLatestSaved; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplaysLatestSaved; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplaysLatestSaved = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplaysLatestSaved = value;
                 RaisePropertyChanged();
             }
         }
 
         public DateTime ReplaysLastSaved
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplaysLastSaved; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplaysLastSaved; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplaysLastSaved = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplaysLastSaved = value;
                 RaisePropertyChanged();
             }
         }
 
         public DateTime ReplaysLatestHotsLogs
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplaysLatestHotsLogs; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplaysLatestHotsLogs; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplaysLatestHotsLogs = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplaysLatestHotsLogs = value;
                 RaisePropertyChanged();
             }
         }
 
         public DateTime ReplaysLastHotsLogs
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplaysLastHotsLogs; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplaysLastHotsLogs; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplaysLastHotsLogs = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplaysLastHotsLogs = value;
                 RaisePropertyChanged();
             }
         }
 
         public string ReplaysFolderLocation
         {
-            get { return QueryDb.SettingsDb.UserSettings.ReplaysLocation; }
+            get { return IDatabaseService.SettingsDb().UserSettings.ReplaysLocation; }
             set
             {
-                QueryDb.SettingsDb.UserSettings.ReplaysLocation = value;
+                IDatabaseService.SettingsDb().UserSettings.ReplaysLocation = value;
                 RaisePropertyChanged();
             }
         }
@@ -448,7 +455,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         #region date/time options
         private void LatestDateTimeDefault()
         {
-            ReplaysLatestSaved = QueryDb.ReplaysDb.MatchReplay.ReadLatestReplayByDateTime();
+            ReplaysLatestSaved = IDatabaseService.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime();
         }
 
         private void LatestDateTimeSet()
@@ -458,7 +465,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private void LastDateTimeDefault()
         {
-            ReplaysLastSaved = QueryDb.ReplaysDb.MatchReplay.ReadLastReplayByDateTime();
+            ReplaysLastSaved = IDatabaseService.ReplaysDb().MatchReplay.ReadLastReplayByDateTime();
         }
 
         private void LastDateTimeSet()
@@ -468,7 +475,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private void LatestHotsLogsDateTimeDefault()
         {
-            ReplaysLatestHotsLogs = QueryDb.ReplaysDb.MatchReplay.ReadLatestReplayByDateTime();
+            ReplaysLatestHotsLogs = IDatabaseService.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime();
         }
 
         private void LatestHotsLogsDateTimeSet()
@@ -478,7 +485,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private void LastHotsLogsDateTimeDefault()
         {
-            ReplaysLastHotsLogs = QueryDb.ReplaysDb.MatchReplay.ReadLastReplayByDateTime();
+            ReplaysLastHotsLogs = IDatabaseService.ReplaysDb().MatchReplay.ReadLastReplayByDateTime();
         }
 
         private void LastHotsLogsDateTimeSet()
@@ -549,7 +556,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         {
             FileWatcher = new FileSystemWatcher();
 
-            FileWatcher.Path = QueryDb.SettingsDb.UserSettings.ReplaysLocation;
+            FileWatcher.Path = IDatabaseService.SettingsDb().UserSettings.ReplaysLocation;
             FileWatcher.IncludeSubdirectories = true;
             FileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes;
             FileWatcher.Filter = $"*.{Properties.Settings.Default.HeroesReplayFileType}";
@@ -616,7 +623,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
             try
             {
                 DateTime dateTime;
-                int selectedScanDateTime = QueryDb.SettingsDb.UserSettings.SelectedScanDateTimeIndex;
+                int selectedScanDateTime = IDatabaseService.SettingsDb().UserSettings.SelectedScanDateTimeIndex;
 
                 if (selectedScanDateTime == 1)
                     dateTime = ReplaysLastSaved;
@@ -627,7 +634,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 else // default
                     dateTime = ReplaysLatestSaved;
 
-                List<FileInfo> listFiles = new DirectoryInfo(QueryDb.SettingsDb.UserSettings.ReplaysLocation)
+                List<FileInfo> listFiles = new DirectoryInfo(IDatabaseService.SettingsDb().UserSettings.ReplaysLocation)
                     .GetFiles($"*.{Properties.Settings.Default.HeroesReplayFileType}", searchOption)
                     .OrderBy(x => x.LastWriteTime)
                     .Where(x => x.LastWriteTime > dateTime)
@@ -670,7 +677,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private long GetTotalReplayDbCount()
         {
-            return QueryDb.ReplaysDb.MatchReplay.GetTotalReplayCount();
+            return IDatabaseService.ReplaysDb().MatchReplay.GetTotalReplayCount();
         }
 
         private void HotsLogsStartButton()
@@ -853,7 +860,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         if (currentReplayFile.Status == ReplayResult.Saved)
                         {
                             TotalSavedInDatabase++;
-                            ReplaysLatestSaved = QueryDb.ReplaysDb.MatchReplay.ReadLatestReplayByDateTime();
+                            ReplaysLatestSaved = IDatabaseService.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime();
                             ReplaysLastSaved = replayFileData.ReplayTimeStamp.ToLocalTime();
                         }
 
@@ -980,9 +987,9 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         };
 
                         // check if an upload record exists for the replay
-                        if (QueryDb.ReplaysDb.HotsLogsUpload.IsExistingRecord(replayHotsLogsUpload))
+                        if (IDatabaseService.ReplaysDb().HotsLogsUpload.IsExistingRecord(replayHotsLogsUpload))
                         {
-                            var existingStatus = QueryDb.ReplaysDb.HotsLogsUpload.ReadUploadStatus(replayHotsLogsUpload);
+                            var existingStatus = IDatabaseService.ReplaysDb().HotsLogsUpload.ReadUploadStatus(replayHotsLogsUpload);
                             if (existingStatus == (int)ReplayFileHotsLogsStatus.Success || existingStatus == (int)ReplayFileHotsLogsStatus.Duplicate)
                             {
                                 // already added, so its a duplicate
@@ -995,7 +1002,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                         }
                         else
                         {
-                            QueryDb.ReplaysDb.HotsLogsUpload.CreateRecord(replayHotsLogsUpload);
+                            IDatabaseService.ReplaysDb().HotsLogsUpload.CreateRecord(replayHotsLogsUpload);
                         }
 
                         // upload it to the amazon bucket
@@ -1017,9 +1024,9 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                                 currentReplayFile.ReplayFileHotsLogsStatus = ReplayFileHotsLogsStatus.Duplicate;
                             }
 
-                            QueryDb.ReplaysDb.HotsLogsUpload.UpdateHotsLogsUploadedDateTime(replayHotsLogsUpload);
+                            IDatabaseService.ReplaysDb().HotsLogsUpload.UpdateHotsLogsUploadedDateTime(replayHotsLogsUpload);
 
-                            ReplaysLatestHotsLogs = QueryDb.ReplaysDb.HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime();
+                            ReplaysLatestHotsLogs = IDatabaseService.ReplaysDb().HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime();
                             ReplaysLastHotsLogs = replayHotsLogsUpload.ReplayFileTimeStamp.Value.ToLocalTime();
                         }
                         else

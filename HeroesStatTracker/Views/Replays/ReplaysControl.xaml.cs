@@ -1,4 +1,5 @@
-﻿using HeroesStatTracker.Data;
+﻿using HeroesStatTracker.Core.ViewModels.Replays;
+using HeroesStatTracker.Data;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
 using System.Windows.Controls;
@@ -10,12 +11,21 @@ namespace HeroesStatTracker.Views.Replays
     /// </summary>
     public partial class ReplaysControl : UserControl
     {
+        private IDatabaseService IDatabaseService;
+
         public ReplaysControl()
         {
             InitializeComponent();
 
-            if (QueryDb.SettingsDb.UserSettings.ReplayAutoStartStartUp)
+            IDatabaseService = ReplaysControlViewModel.GetDatabaseService;
+
+            if (IDatabaseService.SettingsDb().UserSettings.ReplayAutoStartStartUp)
                 ((IInvokeProvider)new ButtonAutomationPeer(StartButton).GetPattern(PatternInterface‌​.Invoke)).Invoke();
+        }
+
+        public ReplaysControlViewModel ReplaysControlViewModel
+        {
+            get { return (ReplaysControlViewModel)DataContext; }
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HeroesStatTracker.Core.ViewModels.RawData
 {
-    public abstract class RawDataContextBase<T> : HstViewModel
+    public abstract class RawDataBase<T> : HstViewModel
         where T : IRawDataDisplay, new()
     {
         private bool _isQueryActive;
@@ -35,7 +35,7 @@ namespace HeroesStatTracker.Core.ViewModels.RawData
         /// Contstructor
         /// </summary>
         /// <param name="iRawDataQueries"></param>
-        protected RawDataContextBase(IRawDataQueries<T> iRawDataQueries)
+        protected RawDataBase(IRawDataQueries<T> iRawDataQueries)
         {
             AddColumnNamesList();
             AddOrderByList();

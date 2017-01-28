@@ -3,7 +3,6 @@ using HeroesStatTracker.Data.Models.Replays;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
-using static HeroesStatTracker.Data.QueryDb;
 
 namespace HeroesStatTracker.Data.Queries.Replays
 {
@@ -124,7 +123,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                             DateAdded = model.LastSeen,
                         };
 
-                        ReplaysDb.RenamedPlayer.CreateRecord(db, samePlayer);
+                        new RenamedPlayer().CreateRecord(db, samePlayer);
                     }
 
                     record.BattleTagName = model.BattleTagName; // update the player's battletag, it may have changed

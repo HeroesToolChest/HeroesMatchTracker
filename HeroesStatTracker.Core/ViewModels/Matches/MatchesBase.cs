@@ -24,6 +24,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private string _selectedPlayerBattleTag;
         private string _selectedCharacter;
 
+        private IDatabaseService IDatabaseService;
         private ReplayMatch _selectedReplay;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
@@ -32,8 +33,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private GameMode MatchGameMode;
 
-        public MatchesBase(GameMode matchGameMode)
+        public MatchesBase(IDatabaseService iDatabaseService, GameMode matchGameMode)
         {
+            IDatabaseService = iDatabaseService;
+
             MatchGameMode = matchGameMode;
 
             SeasonList.Add("Lifetime");
@@ -220,7 +223,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 MapOptionsList = MapsList,
             };
 
-            MatchListCollection = new ObservableCollection<ReplayMatch>(QueryDb.ReplaysDb.MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
+            MatchListCollection = new ObservableCollection<ReplayMatch>(IDatabaseService.ReplaysDb().MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
         }
 
         private void LoadMatchOverview(ReplayMatch replayMatch)
@@ -231,7 +234,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 return;
 
             // get info
-            replayMatch = QueryDb.ReplaysDb.MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
+            replayMatch = IDatabaseService.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
             var playersList = replayMatch.ReplayMatchPlayers.ToList();
 
             // load up correct build information
@@ -245,7 +248,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     continue;
 
                 MatchPlayerBase matchPlayerBase = new MatchPlayerBase();
-                var playerInfo = QueryDb.ReplaysDb.HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
+                var playerInfo = IDatabaseService.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
 
                 matchPlayerBase.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.HeroesIcons.GetHeroLeaderboardPortrait(player.Character) : null;
                 matchPlayerBase.CharacterName = player.Character;
