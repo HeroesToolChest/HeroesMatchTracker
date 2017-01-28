@@ -1,4 +1,5 @@
 using GalaSoft.MvvmLight.Ioc;
+using Heroes.Icons;
 using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
@@ -23,9 +24,21 @@ namespace HeroesStatTracker.Core.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            // Db
+            // Databases
             SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
 
+            // HeroesIcons
+            SimpleIoc.Default.Register(() =>
+            {
+                return new HeroesIcons(true);
+            });
+
+            SimpleIoc.Default.Register<IHeroesIconsService>(() =>
+            {
+                return SimpleIoc.Default.GetInstance<HeroesIcons>();
+            });
+
+            // start ups
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
 

@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using Heroes.Helpers;
+using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.Models.MatchModels;
 using HeroesStatTracker.Data;
@@ -8,7 +9,6 @@ using HeroesStatTracker.Data.Queries.Replays;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using static Heroes.Helpers.HeroesHelpers;
 
 namespace HeroesStatTracker.Core.ViewModels.Matches
 {
@@ -23,9 +23,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private string _selectedGameDateOption;
         private string _selectedPlayerBattleTag;
         private string _selectedCharacter;
-
-        private IDatabaseService IDatabaseService;
         private ReplayMatch _selectedReplay;
+
+        private IDatabaseService Database;
+        private IHeroesIconsService HeroesIcons;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
@@ -33,9 +34,11 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private GameMode MatchGameMode;
 
-        public MatchesBase(IDatabaseService iDatabaseService, GameMode matchGameMode)
+        public MatchesBase(IDatabaseService database, IHeroesIconsService heroesIcons, GameMode matchGameMode)
+            : base(heroesIcons)
         {
-            IDatabaseService = iDatabaseService;
+            Database = database;
+            HeroesIcons = heroesIcons;
 
             MatchGameMode = matchGameMode;
 
@@ -50,15 +53,15 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             SelectedGameDateOption = GameDateList[0];
 
             MapsList.Add("Any");
-            MapsList.AddRange(HeroesHelpers.HeroesInfo.HeroesIcons.GetMapsList());
+            MapsList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
             SelectedMapOption = MapsList[0];
 
             ReplayBuildsList.Add("Any");
-            ReplayBuildsList.AddRange(HeroesHelpers.Builds.GetBuildsList());
+            ReplayBuildsList.AddRange(HeroesHelpers.Builds.GetBuildsList(HeroesIcons));
             SelectedBuildOption = ReplayBuildsList[0];
 
             HeroesList.Add("Any");
-            HeroesList.AddRange(HeroesHelpers.HeroesInfo.HeroesIcons.GetListOfHeroes());
+            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
             SelectedCharacter = HeroesList[0];
         }
 
@@ -223,7 +226,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 MapOptionsList = MapsList,
             };
 
-            MatchListCollection = new ObservableCollection<ReplayMatch>(IDatabaseService.ReplaysDb().MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
+            MatchListCollection = new ObservableCollection<ReplayMatch>(Database.ReplaysDb().MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
         }
 
         private void LoadMatchOverview(ReplayMatch replayMatch)
@@ -234,11 +237,11 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 return;
 
             // get info
-            replayMatch = IDatabaseService.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
+            replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
             var playersList = replayMatch.ReplayMatchPlayers.ToList();
 
             // load up correct build information
-            HeroesInfo.HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
+            HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
 
             //FindPlayerParties(playersList);
 
@@ -248,9 +251,9 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     continue;
 
                 MatchPlayerBase matchPlayerBase = new MatchPlayerBase();
-                var playerInfo = IDatabaseService.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
+                var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
 
-                matchPlayerBase.LeaderboardPortrait = player.Character != "None" ? HeroesInfo.HeroesIcons.GetHeroLeaderboardPortrait(player.Character) : null;
+                matchPlayerBase.LeaderboardPortrait = player.Character != "None" ? HeroesIcons.Heroes().GetHeroLeaderboardPortrait(player.Character) : null;
                 matchPlayerBase.CharacterName = player.Character;
                 matchPlayerBase.Silenced = player.IsSilenced;
 

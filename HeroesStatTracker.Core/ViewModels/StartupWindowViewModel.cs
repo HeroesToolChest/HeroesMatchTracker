@@ -1,7 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using Heroes.Helpers;
-using Heroes.Icons;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using Microsoft.Practices.ServiceLocation;
@@ -62,9 +60,7 @@ namespace HeroesStatTracker.Core.ViewModels
                 await Message("Initializing HeroesStatTracker.Data");
                 Database.Initialize().ExecuteDatabaseMigrations();
 
-                // auto update stuff
-                await Message("Initializing Heroes.Icons");
-                HeroesHelpers.HeroesInfo.HeroesIcons = HeroesIcons.Initialize(true);
+                // auto update stuff goes here
 
                 await Message("Initializing Heroes Stat Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window

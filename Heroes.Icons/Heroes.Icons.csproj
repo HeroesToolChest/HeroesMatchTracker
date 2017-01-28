@@ -87,12 +87,18 @@
   <ItemGroup>
     <Compile Include="HeroesBase.cs" />
     <Compile Include="HeroFranchise.cs" />
+    <Compile Include="IHeroesIconsService.cs" />
     <Compile Include="MVPAwardColor.cs" />
     <Compile Include="HeroesIcons.cs" />
     <Compile Include="HeroRole.cs" />
     <Compile Include="HeroesIconException.cs" />
     <Compile Include="OtherIcon.cs" />
     <Compile Include="Xml\HeroesXml.cs" />
+    <Compile Include="Xml\IHeroBuilds.cs" />
+    <Compile Include="Xml\IHeroes.cs" />
+    <Compile Include="Xml\IHomeScreens.cs" />
+    <Compile Include="Xml\IMapBackgrounds.cs" />
+    <Compile Include="Xml\IMatchAwards.cs" />
     <Compile Include="Xml\ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

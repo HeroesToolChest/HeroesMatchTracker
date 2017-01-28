@@ -11,18 +11,18 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         private string _currentSelectedPrimary;
         private string _currentSelectedAccent;
 
-        private IDatabaseService IDatabaseService;
+        private IDatabaseService Database;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public PaletteSelectorWindowViewModel(IDatabaseService iDatabaseService)
+        public PaletteSelectorWindowViewModel(IDatabaseService database)
         {
-            IDatabaseService = iDatabaseService;
+            Database = database;
             Swatches = new SwatchesProvider().Swatches;
 
-            CurrentSelectedPrimary = IDatabaseService.SettingsDb().UserSettings.MainStylePrimary;
-            CurrentSelectedAccent = IDatabaseService.SettingsDb().UserSettings.MainStyleAccent;
+            CurrentSelectedPrimary = Database.SettingsDb().UserSettings.MainStylePrimary;
+            CurrentSelectedAccent = Database.SettingsDb().UserSettings.MainStyleAccent;
         }
 
         public IEnumerable<Swatch> Swatches { get; }
@@ -54,20 +54,20 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
 
         public bool IsAlternateStyle
         {
-            get { return IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle; }
+            get { return Database.SettingsDb().UserSettings.IsAlternateStyle; }
             set
             {
-                IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle = value;
+                Database.SettingsDb().UserSettings.IsAlternateStyle = value;
                 RaisePropertyChanged();
             }
         }
 
         public bool IsNightMode
         {
-            get { return IDatabaseService.SettingsDb().UserSettings.IsNightMode; }
+            get { return Database.SettingsDb().UserSettings.IsNightMode; }
             set
             {
-                IDatabaseService.SettingsDb().UserSettings.IsNightMode = value;
+                Database.SettingsDb().UserSettings.IsNightMode = value;
                 RaisePropertyChanged();
             }
         }
@@ -76,19 +76,19 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         {
             StylePalette.ApplyPrimary(swatch);
             CurrentSelectedPrimary = swatch.ToString();
-            IDatabaseService.SettingsDb().UserSettings.MainStylePrimary = swatch.ToString();
+            Database.SettingsDb().UserSettings.MainStylePrimary = swatch.ToString();
         }
 
         private void ApplyAccent(Swatch swatch)
         {
             StylePalette.ApplyAccent(swatch);
             CurrentSelectedAccent = swatch.ToString();
-            IDatabaseService.SettingsDb().UserSettings.MainStyleAccent = swatch.ToString();
+            Database.SettingsDb().UserSettings.MainStyleAccent = swatch.ToString();
         }
 
         private void DefaultPalette()
         {
-            StylePalette.SetDefaultPalette(IDatabaseService);
+            StylePalette.SetDefaultPalette(Database);
         }
     }
 }

@@ -13,11 +13,11 @@ namespace HeroesStatTracker.Data.Queries.Replays
     {
         private ReplaysContext ReplaysContext;
         private Replay Replay;
-        private HeroesIcons HeroesIcons;
         private ReplaysDb ReplaysDb;
         private bool DisposedValue = false;
+        private IHeroesIconsService HeroesIcons;
 
-        public ReplayFileData(Replay replay, HeroesIcons heroesIcons = null)
+        public ReplayFileData(Replay replay, IHeroesIconsService heroesIcons)
         {
             ReplaysContext = new ReplaysContext();
             Replay = replay;
@@ -82,7 +82,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
         private bool BasicData(string fileName)
         {
             string mapName;
-            if (!HeroesIcons.MapNameTranslation(Replay.Map, out mapName))
+            if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
                 throw new TranslationException(RetrieveAllMapAndHeroNames());
 
             ReplayMatch replayMatch = new ReplayMatch
@@ -174,7 +174,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 else
                 {
                     string character;
-                    if (!HeroesIcons.HeroNameTranslation(player.Character, out character))
+                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.Character, out character))
                     {
                         if (!AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
                             throw new TranslationException(RetrieveAllMapAndHeroNames());
@@ -316,7 +316,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                 foreach (var hero in playersHeroes)
                 {
-                    if (HeroesIcons.HeroExists(hero.Key, false))
+                    if (HeroesIcons.Heroes().HeroExists(hero.Key, false))
                     {
                         playersHero.PlayerId = playerId;
                         playersHero.HeroName = hero.Key;
@@ -555,7 +555,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
             List<string> names = new List<string>();
 
             string mapName;
-            if (HeroesIcons.MapNameTranslation(Replay.Map, out mapName))
+            if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
                 names.Add($"{Replay.Map}: {mapName} [Good]");
             else
                 names.Add($"{Replay.Map}: ??? [Unknown]");
@@ -572,7 +572,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 }
 
                 string character;
-                if (HeroesIcons.HeroNameTranslation(player.Character, out character))
+                if (HeroesIcons.Heroes().HeroNameTranslation(player.Character, out character))
                     names.Add($"{player.Character}: {character} [Good]");
                 else if (AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
                     names.Add($"{player.Character}: {character} [Auto]");
@@ -603,12 +603,12 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
             else if (talentCount >= 4)
             {
-                if (HeroesIcons.GetHeroNameFromTalentReferenceName(talents[3].TalentName, out character))
+                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[3].TalentName, out character))
                     return true;
             }
             else if (talentCount <= 3)
             {
-                if (HeroesIcons.GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
+                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
                     return true;
             }
 

@@ -2,23 +2,49 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
-    internal class HeroBuildsXml : XmlBase
+    internal class HeroBuildsXml : XmlBase, IHeroBuilds
     {
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
 
         private int SelectedBuild;
         private HeroesXml HeroesXml;
+        private bool Logger;
 
         private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
 
-        private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, int? build = null)
+        /// <summary>
+        /// key is reference name of talent
+        /// Tuple: key is real name of talent
+        /// </summary>
+        private Dictionary<string, Tuple<string, Uri>> RealTalentNameUriByReferenceName = new Dictionary<string, Tuple<string, Uri>>();
+
+        /// <summary>
+        /// key is real hero name
+        /// value is a string of all talent reference names for that tier
+        /// </summary>
+        private Dictionary<string, Dictionary<TalentTier, List<string>>> HeroTalentsListByRealName = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
+
+        /// <summary>
+        /// key is the talent reference name
+        /// </summary>
+        private Dictionary<string, TalentTooltip> HeroTalentTooltipsByRealName = new Dictionary<string, TalentTooltip>();
+
+        /// <summary>
+        /// key is the talent reference name
+        /// </summary>
+        private Dictionary<string, string> RealHeroNameByTalentReferenceName = new Dictionary<string, string>();
+
+        private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
+            : base(build.HasValue ? build.Value : 0)
         {
+            Logger = logger;
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
             HeroesXml = heroesXml;
@@ -36,36 +62,120 @@ namespace Heroes.Icons.Xml
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
         public List<int> Builds { get; private set; } = new List<int>();
 
-        /// <summary>
-        /// key is reference name of talent
-        /// Tuple: key is real name of talent
-        /// </summary>
-        public Dictionary<string, Tuple<string, Uri>> RealTalentNameUriByReferenceName { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-
-        /// <summary>
-        /// key is real hero name
-        /// value is a string of all talent reference names for that tier
-        /// </summary>
-        public Dictionary<string, Dictionary<TalentTier, List<string>>> HeroTalentsListByRealName { get; private set; } = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
-
-        /// <summary>
-        /// key is the talent reference name
-        /// </summary>
-        public Dictionary<string, TalentTooltip> HeroTalentTooltipsByRealName { get; private set; } = new Dictionary<string, TalentTooltip>();
-
-        /// <summary>
-        /// key is the talent reference name
-        /// </summary>
-        public Dictionary<string, string> RealHeroNameByTalentReferenceName { get; private set; } = new Dictionary<string, string>();
-
-        public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, int? build = null)
+        public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
         {
             if (heroesXml == null)
                 return null;
 
-            HeroBuildsXml xml = new HeroBuildsXml(parentFile, xmlBaseFolder, heroesXml, build);
+            HeroBuildsXml xml = new HeroBuildsXml(parentFile, xmlBaseFolder, heroesXml, logger, build);
             xml.Parse();
             return xml;
+        }
+
+        /// <summary>
+        /// Returns a BitmapImage of the talent
+        /// </summary>
+        /// <param name="talentReferenceName">Reference talent name</param>
+        /// <returns>BitmapImage of the talent</returns>
+        public BitmapImage GetTalentIcon(string talentReferenceName)
+        {
+            Tuple<string, Uri> talent;
+
+            // no pick
+            if (string.IsNullOrEmpty(talentReferenceName))
+                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
+
+            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            {
+                return new BitmapImage(talent.Item2);
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
+
+                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
+            }
+        }
+
+        /// <summary>
+        /// Returns the talent name from the talent reference name
+        /// </summary>
+        /// <param name="talentReferenceName">Reference talent name</param>
+        /// <returns>Talent name</returns>
+        public string GetTrueTalentName(string talentReferenceName)
+        {
+            Tuple<string, Uri> talent;
+
+            // no pick
+            if (string.IsNullOrEmpty(talentReferenceName))
+                return "No pick";
+
+            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            {
+                return talent.Item1;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
+
+                return talentReferenceName;
+            }
+        }
+
+        /// <summary>
+        /// Returns a dictionary of all the talents of a hero
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <returns></returns>
+        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
+        {
+            Dictionary<TalentTier, List<string>> talents;
+            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out talents))
+            {
+                return talents;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}");
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns a TalentTooltip object which contains the short and full tooltips of the talent
+        /// </summary>
+        /// <param name="talentReferenceName">Talent reference name</param>
+        /// <returns></returns>
+        public TalentTooltip GetTalentTooltips(string talentReferenceName)
+        {
+            TalentTooltip talentTooltip = new TalentTooltip(string.Empty, string.Empty);
+
+            if (string.IsNullOrEmpty(talentReferenceName) || !HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName))
+                return talentTooltip;
+
+            HeroTalentTooltipsByRealName.TryGetValue(talentReferenceName, out talentTooltip);
+
+            return talentTooltip;
+        }
+
+        /// <summary>
+        /// Gets the hero name associated with the given talent. Returns true is found, otherwise returns false
+        /// </summary>
+        /// <param name="talentName">The talent reference name</param>
+        /// <param name="heroRealName">The hero name</param>
+        /// <returns></returns>
+        public bool GetHeroNameFromTalentReferenceName(string talentName, out string heroRealName)
+        {
+            return RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
+        }
+
+        public List<int> GetListOfHeroesBuilds()
+        {
+            return Builds;
         }
 
         protected override void Parse()
@@ -129,14 +239,14 @@ namespace Heroes.Icons.Xml
 
                                                 if (!isGeneric)
                                                 {
-                                                    if (!HeroesXml.RealHeroNameByAlternativeName.ContainsKey(heroAltName))
+                                                    if (!HeroesXml.HeroExists(heroAltName, false))
                                                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
                                                     if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
                                                         throw new ArgumentException($"Same key {refName}");
 
                                                     if (tier != TalentTier.Old)
-                                                        RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.RealHeroNameByAlternativeName[heroAltName]);
+                                                        RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
                                                 }
                                             }
                                         }
@@ -147,10 +257,10 @@ namespace Heroes.Icons.Xml
                             }
                         } // end while
 
-                        if (!HeroesXml.RealHeroNameByAlternativeName.ContainsKey(heroAltName))
+                        if (!HeroesXml.HeroExists(heroAltName, false))
                             throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                        HeroTalentsListByRealName.Add(HeroesXml.RealHeroNameByAlternativeName[heroAltName], talentTiersForHero);
+                        HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
                     }
                 }
             }

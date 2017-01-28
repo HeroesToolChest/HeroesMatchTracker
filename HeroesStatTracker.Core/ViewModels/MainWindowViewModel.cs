@@ -8,14 +8,14 @@ namespace HeroesStatTracker.Core.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private IDatabaseService IDatabaseService;
+        private IDatabaseService Database;
 
-        public MainWindowViewModel(IDatabaseService iDatabaseService)
+        public MainWindowViewModel(IDatabaseService database)
         {
-            IDatabaseService = iDatabaseService;
+            Database = database;
         }
 
-        public IDatabaseService GetDatabaseService { get { return IDatabaseService; } }
+        public IDatabaseService GetDatabaseService { get { return Database; } }
 
         public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
 

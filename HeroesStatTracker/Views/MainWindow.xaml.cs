@@ -19,18 +19,18 @@ namespace HeroesStatTracker.Views
     public partial class MainWindow : MetroWindow, IWhatsNewWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
-        private IDatabaseService IDatabaseService;
+        private IDatabaseService Database;
 
         public MainWindow()
         {
             InitializeComponent();
 
             MainWindowViewModel = (MainWindowViewModel)DataContext;
-            IDatabaseService = MainWindowViewModel.GetDatabaseService;
+            Database = MainWindowViewModel.GetDatabaseService;
 
-            StylePalette.ApplyBase(IDatabaseService.SettingsDb().UserSettings.IsNightMode);
-            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(IDatabaseService.SettingsDb().UserSettings.MainStylePrimary));
-            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(IDatabaseService.SettingsDb().UserSettings.MainStyleAccent));
+            StylePalette.ApplyBase(Database.SettingsDb().UserSettings.IsNightMode);
+            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(Database.SettingsDb().UserSettings.MainStylePrimary));
+            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(Database.SettingsDb().UserSettings.MainStyleAccent));
 
             SetTrayIcon();
 
@@ -46,7 +46,7 @@ namespace HeroesStatTracker.Views
         protected override void OnStateChanged(EventArgs e)
         {
             base.OnStateChanged(e);
-            if (IDatabaseService.SettingsDb().UserSettings.IsMinimizeToTray && WindowState == WindowState.Minimized)
+            if (Database.SettingsDb().UserSettings.IsMinimizeToTray && WindowState == WindowState.Minimized)
             {
                 Hide();
                 NotifyIcon.Visible = true;
@@ -62,7 +62,7 @@ namespace HeroesStatTracker.Views
 
         protected override void OnContentRendered(EventArgs e)
         {
-            StylePalette.ApplyStyle(IDatabaseService.SettingsDb().UserSettings.IsAlternateStyle);
+            StylePalette.ApplyStyle(Database.SettingsDb().UserSettings.IsAlternateStyle);
             base.OnContentRendered(e);
         }
 

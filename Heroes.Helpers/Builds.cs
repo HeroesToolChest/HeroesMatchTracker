@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.Icons;
+using System;
 using System.Collections.Generic;
 
 namespace Heroes.Helpers
@@ -31,9 +32,9 @@ namespace Heroes.Helpers
                 }
             }
 
-            public static List<string> GetBuildsList()
+            public static List<string> GetBuildsList(IHeroesIconsService heroesIcons)
             {
-                List<string> list = HeroesInfo.HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => x.ToString());
+                List<string> list = heroesIcons.HeroBuilds().GetListOfHeroesBuilds().ConvertAll(x => x.ToString());
 
                 list.Add("47219");
                 list.Add("47133");

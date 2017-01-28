@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
+using Heroes.Icons;
 using NLog;
 using System;
 using System.Windows.Media.Imaging;
-using static Heroes.Helpers.HeroesHelpers;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
@@ -10,8 +10,12 @@ namespace HeroesStatTracker.Core.ViewModels
     {
         private BitmapImage _backgroundImage;
 
-        protected HstViewModel()
+        private IHeroesIconsService HeroesIcons;
+
+        protected HstViewModel(IHeroesIconsService heroesIcons)
         {
+            HeroesIcons = heroesIcons;
+
             ExceptionLog = LogManager.GetLogger(LogFileNames.Exceptions);
             WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
             UnParsedReplaysLog = LogManager.GetLogger(LogFileNames.UnParsedReplaysLogFileName);
@@ -40,7 +44,7 @@ namespace HeroesStatTracker.Core.ViewModels
         private void SetBackgroundImage()
         {
             Random random = new Random();
-            var listOfBackgroundImages = HeroesInfo.HeroesIcons.GetListOfHomeScreens();
+            var listOfBackgroundImages = HeroesIcons.HomeScreens().GetListOfHomeScreens();
 
             int num = random.Next(0, listOfBackgroundImages.Count);
             BackgroundImage = listOfBackgroundImages[num].Item1;

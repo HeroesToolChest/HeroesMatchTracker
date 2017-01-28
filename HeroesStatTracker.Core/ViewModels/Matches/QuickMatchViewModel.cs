@@ -1,12 +1,13 @@
-﻿using Heroes.ReplayParser;
+﻿using Heroes.Icons;
+using Heroes.ReplayParser;
 using HeroesStatTracker.Data;
 
 namespace HeroesStatTracker.Core.ViewModels.Matches
 {
     public class QuickMatchViewModel : MatchesBase
     {
-        public QuickMatchViewModel(IDatabaseService iDatabaseService)
-            : base(iDatabaseService, GameMode.QuickMatch)
+        public QuickMatchViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
+            : base(database, heroesIcons, GameMode.QuickMatch)
         {
         }
     }

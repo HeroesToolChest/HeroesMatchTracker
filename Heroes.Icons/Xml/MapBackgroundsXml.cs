@@ -1,30 +1,119 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
-    internal class MapBackgroundsXml : XmlBase
+    internal class MapBackgroundsXml : XmlBase, IMapBackgrounds
     {
-        private MapBackgroundsXml(string parentFile, string xmlBaseFolder)
+        private Dictionary<string, Uri> MapUriByMapRealName = new Dictionary<string, Uri>();
+        private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
+        private Dictionary<string, Uri> MapSmallUriByMapRealName = new Dictionary<string, Uri>();
+        private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
+        private List<string> CustomOnlyMaps = new List<string>();
+
+        private MapBackgroundsXml(string parentFile, string xmlBaseFolder, int currentBuild)
+            : base(currentBuild)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
             XmlFolder = xmlBaseFolder;
         }
 
-        public Dictionary<string, Uri> MapUriByMapRealName { get; private set; } = new Dictionary<string, Uri>();
-        public Dictionary<string, Color> MapFontGlowColorByMapRealName { get; private set; } = new Dictionary<string, Color>();
-        public Dictionary<string, Uri> MapSmallUriByMapRealName { get; private set; } = new Dictionary<string, Uri>();
-        public Dictionary<string, string> MapRealNameByMapAliasName { get; private set; } = new Dictionary<string, string>();
-        public List<string> CustomOnlyMaps { get; private set; } = new List<string>();
-
-        public static MapBackgroundsXml Initialize(string parentFile, string xmlBaseFolder)
+        public static MapBackgroundsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild)
         {
-            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlBaseFolder);
+            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlBaseFolder, currentBuild);
             xml.Parse();
             return xml;
+        }
+
+        public BitmapImage GetMapBackground(string mapRealName, bool useSmallImage = false)
+        {
+            try
+            {
+                if (useSmallImage == false)
+                    return new BitmapImage(MapUriByMapRealName[mapRealName]);
+                else
+                    return new BitmapImage(MapSmallUriByMapRealName[mapRealName]);
+            }
+            catch (Exception)
+            {
+                LogReferenceNameNotFound($"Map background: {mapRealName}");
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns the color associated with the map, returns black if map not found
+        /// </summary>
+        /// <param name="mapRealName">Real map name</param>
+        /// <returns></returns>
+        public Color GetMapBackgroundFontGlowColor(string mapRealName)
+        {
+            Color color;
+            if (MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out color))
+                return color;
+            else
+                return Colors.Black;
+        }
+
+        /// <summary>
+        /// Returns a list of all maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetMapsList()
+        {
+            return new List<string>(MapUriByMapRealName.Keys);
+        }
+
+        /// <summary>
+        /// Returns a list of all maps, except custom only maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetMapsListExceptCustomOnly()
+        {
+            var allMaps = new Dictionary<string, Uri>(MapUriByMapRealName);
+            foreach (var customMap in GetCustomOnlyMapsList())
+            {
+                if (allMaps.ContainsKey(customMap))
+                {
+                    allMaps.Remove(customMap);
+                }
+            }
+
+            return new List<string>(allMaps.Keys);
+        }
+
+        /// <summary>
+        /// Returns a list of custom only maps
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetCustomOnlyMapsList()
+        {
+            return CustomOnlyMaps;
+        }
+
+        /// <summary>
+        /// Returns true if mapName is a valid name
+        /// </summary>
+        /// <param name="mapName">The map name that needs to be checked</param>
+        /// <returns></returns>
+        public bool IsValidMapName(string mapName)
+        {
+            return MapUriByMapRealName.ContainsKey(mapName);
+        }
+
+        /// <summary>
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// </summary>
+        /// <param name="mapNameAlias">Alias name</param>
+        /// <param name="mapNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
+        {
+            return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
         }
 
         protected override void ParseChildFiles()

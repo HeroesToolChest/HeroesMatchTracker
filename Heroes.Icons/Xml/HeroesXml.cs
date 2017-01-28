@@ -1,71 +1,294 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
-    internal class HeroesXml : XmlBase
+    internal class HeroesXml : XmlBase, IHeroes
     {
-        private HeroesXml(string parentFile, string xmlBaseFolder)
-        {
-            XmlParentFile = parentFile;
-            XmlBaseFolder = xmlBaseFolder;
-        }
+        private bool Logger;
 
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
-        public Dictionary<string, string> RealHeroNameByAttributeId { get; private set; } = new Dictionary<string, string>();
+        private Dictionary<string, string> RealHeroNameByAttributeId = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name, value alt name (if any)
         /// example: Anub'arak, Anubarak
         /// </summary>
-        public Dictionary<string, string> AlternativeHeroNameByRealName { get; private set; } = new Dictionary<string, string>();
+        private Dictionary<string, string> AlternativeHeroNameByRealName = new Dictionary<string, string>();
 
         /// <summary>
         /// key is alt hero name, value real name
         /// example: Anubarak, Anub'arak
         /// </summary>
-        public Dictionary<string, string> RealHeroNameByAlternativeName { get; private set; } = new Dictionary<string, string>();
+        private Dictionary<string, string> RealHeroNameByAlternativeName = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name
         /// value is HeroFrancise
         /// </summary>
-        public Dictionary<string, HeroFranchise> HeroFranchiseByRealName { get; private set; } = new Dictionary<string, HeroFranchise>();
+        private Dictionary<string, HeroFranchise> HeroFranchiseByRealName = new Dictionary<string, HeroFranchise>();
 
         /// <summary>
         /// key is real hero name
         /// value is HeroRole
         /// </summary>
-        public Dictionary<string, List<HeroRole>> HeroRolesListByRealName { get; private set; } = new Dictionary<string, List<HeroRole>>();
+        private Dictionary<string, List<HeroRole>> HeroRolesListByRealName = new Dictionary<string, List<HeroRole>>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> HeroPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
+        private Dictionary<string, Uri> HeroPortraitUriByRealName = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> HeroLoadingPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
+        private Dictionary<string, Uri> HeroLoadingPortraitUriByRealName = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is real hero name
         /// </summary>
-        public Dictionary<string, Uri> HeroLeaderboardPortraitUriByRealName { get; private set; } = new Dictionary<string, Uri>();
+        private Dictionary<string, Uri> HeroLeaderboardPortraitUriByRealName = new Dictionary<string, Uri>();
 
         /// <summary>
         /// key is alias name
         /// </summary>
-        public Dictionary<string, string> HeroRealNameByHeroAliasName { get; private set; } = new Dictionary<string, string>();
+        private Dictionary<string, string> HeroRealNameByHeroAliasName = new Dictionary<string, string>();
 
-        public static HeroesXml Initialize(string parentFile, string xmlBaseFolder)
+        private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
+            : base(currentBuild)
         {
-            HeroesXml heroesXml = new HeroesXml(parentFile, xmlBaseFolder);
+            Logger = logger;
+            XmlParentFile = parentFile;
+            XmlBaseFolder = xmlBaseFolder;
+        }
+
+        public static HeroesXml Initialize(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
+        {
+            HeroesXml heroesXml = new HeroesXml(parentFile, xmlBaseFolder, logger, currentBuild);
             heroesXml.Parse();
             return heroesXml;
+        }
+
+        /// <summary>
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// </summary>
+        /// <param name="heroNameAlias">Alias name</param>
+        /// <param name="heroNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool HeroNameTranslation(string heroNameAlias, out string heroNameEnglish)
+        {
+            return HeroRealNameByHeroAliasName.TryGetValue(heroNameAlias, out heroNameEnglish);
+        }
+
+        /// <summary>
+        /// Returns a BitmapImage of the hero
+        /// </summary>
+        /// <param name="realHeroName">Real hero name</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroPortrait(string realHeroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(realHeroName))
+                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
+
+            if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            {
+                return new BitmapImage(uri);
+            }
+            else
+            {
+                if (Logger)
+                    LogMissingImage($"Hero portrait: {realHeroName}");
+
+                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds");
+            }
+        }
+
+        /// <summary>
+        /// Returns a loading portrait BitmapImage of the hero
+        /// </summary>
+        /// <param name="realHeroName">Real hero name</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroLoadingPortrait(string realHeroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(realHeroName))
+                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
+
+            if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            {
+                return new BitmapImage(uri);
+            }
+            else
+            {
+                if (Logger)
+                    LogMissingImage($"Loading hero portrait: {realHeroName}");
+
+                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+            }
+        }
+
+        /// <summary>
+        /// Returns a leaderboard portrait BitmapImage of the hero
+        /// </summary>
+        /// <param name="realHeroName">Real hero name</param>
+        /// <returns>BitmpImage of the hero</returns>
+        public BitmapImage GetHeroLeaderboardPortrait(string realHeroName)
+        {
+            Uri uri;
+
+            // no pick
+            if (string.IsNullOrEmpty(realHeroName))
+                return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
+
+            if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            {
+                return new BitmapImage(uri);
+            }
+            else
+            {
+                if (Logger)
+                    LogMissingImage($"Leader hero portrait: {realHeroName}");
+
+                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+            }
+        }
+
+        /// <summary>
+        /// Returns the real hero name from the hero's attribute id
+        /// </summary>
+        /// <param name="attributeId">Four character hero id</param>
+        /// <returns>Full hero name</returns>
+        public string GetRealHeroNameFromAttributeId(string attributeId)
+        {
+            string heroName;
+
+            // no pick
+            if (string.IsNullOrEmpty(attributeId))
+                return null;
+
+            if (RealHeroNameByAttributeId.TryGetValue(attributeId, out heroName))
+            {
+                return heroName;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero name for attribute: {attributeId}");
+
+                return "Hero not found";
+            }
+        }
+
+        public string GetAltNameFromRealHeroName(string realName)
+        {
+            string altName;
+
+            // no pick
+            if (string.IsNullOrEmpty(realName))
+                return null;
+
+            if (AlternativeHeroNameByRealName.TryGetValue(realName, out altName))
+            {
+                return altName;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero alt name for reference: {realName}");
+
+                return "Hero alt name not found";
+            }
+        }
+
+        public string GetRealHeroNameFromAltName(string altName)
+        {
+            string realName;
+
+            // no pick
+            if (string.IsNullOrEmpty(altName))
+                return null;
+
+            if (RealHeroNameByAlternativeName.TryGetValue(altName, out realName))
+            {
+                return realName;
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero real name for reference: {altName}");
+
+                return "Hero real name not found";
+            }
+        }
+
+        /// <summary>
+        /// Checks to see if the hero name exists
+        /// </summary>
+        /// <param name="heroName">Hero name</param>
+        /// <param name="realName">Is the name a real name or alt name</param>
+        /// <returns>True if found</returns>
+        public bool HeroExists(string heroName, bool realName = true)
+        {
+            if (realName)
+                return AlternativeHeroNameByRealName.ContainsKey(heroName);
+            else
+                return RealHeroNameByAlternativeName.ContainsKey(heroName);
+        }
+
+        /// <summary>
+        /// Returns the hero's list of roles. Multiclass will be first if hero has multiple roles. Will return a role of Unknown if hero name not found.
+        /// </summary>
+        /// <param name="realName">Hero real name</param>
+        /// <returns>HeroRole</returns>
+        public List<HeroRole> GetHeroRole(string realName)
+        {
+            List<HeroRole> roleList;
+
+            if (HeroRolesListByRealName.TryGetValue(realName, out roleList))
+                return roleList;
+            else
+                return new List<HeroRole> { HeroRole.Unknown };
+        }
+
+        /// <summary>
+        /// Returns the hero's franchise. Will return Unknown if hero not found
+        /// </summary>
+        /// <param name="realName">Heroes real name</param>
+        /// <returns>HeroRole</returns>
+        public HeroFranchise GetHeroFranchise(string realName)
+        {
+            HeroFranchise franchise;
+
+            if (HeroFranchiseByRealName.TryGetValue(realName, out franchise))
+                return franchise;
+            else
+                return HeroFranchise.Unknown;
+        }
+
+        public List<string> GetListOfHeroes()
+        {
+            List<string> heroes = new List<string>();
+            foreach (var hero in AlternativeHeroNameByRealName)
+            {
+                heroes.Add(hero.Key);
+            }
+
+            heroes.Sort();
+            return heroes;
+        }
+
+        public int TotalAmountOfHeroes()
+        {
+            return AlternativeHeroNameByRealName.Count;
         }
 
         protected override void Parse()

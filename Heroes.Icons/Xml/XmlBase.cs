@@ -8,6 +8,13 @@ namespace Heroes.Icons.Xml
 {
     internal abstract class XmlBase : HeroesBase
     {
+        protected XmlBase(int currentBuild)
+        {
+            CurrentBuild = currentBuild;
+        }
+
+        protected int CurrentBuild { get; }
+
         protected string XmlParentFile { get; set; }
 
         /// <summary>
@@ -80,10 +87,23 @@ namespace Heroes.Icons.Xml
                 throw new ParseXmlException($"Parameter xmlFolder is required");
             }
 
-            if (string.IsNullOrEmpty(fileExtension))
-                XmlParentFile += ".xml";
-
             return valid;
+        }
+
+        protected void LogMissingImage(string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
+            {
+                writer.WriteLine($"[{CurrentBuild}] {message}");
+            }
+        }
+
+        protected void LogReferenceNameNotFound(string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
+            {
+                writer.WriteLine($"[{CurrentBuild}] {message}");
+            }
         }
     }
 }

@@ -6,9 +6,10 @@ using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
-    internal class HomeScreensXml : XmlBase
+    internal class HomeScreensXml : XmlBase, IHomeScreens
     {
-        private HomeScreensXml(string parentFile, string xmlBaseFolder)
+        private HomeScreensXml(string parentFile, string xmlBaseFolder, int currentBuild)
+            : base(currentBuild)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
@@ -17,11 +18,16 @@ namespace Heroes.Icons.Xml
 
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
 
-        public static HomeScreensXml Initialize(string parentFile, string xmlFolder)
+        public static HomeScreensXml Initialize(string parentFile, string xmlFolder, int currentBuild)
         {
-            HomeScreensXml xml = new HomeScreensXml(parentFile, xmlFolder);
+            HomeScreensXml xml = new HomeScreensXml(parentFile, xmlFolder, currentBuild);
             xml.Parse();
             return xml;
+        }
+
+        public List<Tuple<BitmapImage, Color>> GetListOfHomeScreens()
+        {
+            return HomeScreenBackgrounds;
         }
 
         protected override void Parse()

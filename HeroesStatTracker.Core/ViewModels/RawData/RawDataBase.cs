@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
+using Heroes.Icons;
 using HeroesStatTracker.Data.Models;
 using HeroesStatTracker.Data.Queries.Replays;
 using NLog;
@@ -35,7 +36,8 @@ namespace HeroesStatTracker.Core.ViewModels.RawData
         /// Contstructor
         /// </summary>
         /// <param name="iRawDataQueries"></param>
-        protected RawDataBase(IRawDataQueries<T> iRawDataQueries)
+        protected RawDataBase(IRawDataQueries<T> iRawDataQueries, IHeroesIconsService heroesIcons)
+            : base(heroesIcons)
         {
             AddColumnNamesList();
             AddOrderByList();

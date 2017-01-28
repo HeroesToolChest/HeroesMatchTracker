@@ -11,15 +11,15 @@ namespace HeroesStatTracker.Views.Replays
     /// </summary>
     public partial class ReplaysControl : UserControl
     {
-        private IDatabaseService IDatabaseService;
+        private IDatabaseService Database;
 
         public ReplaysControl()
         {
             InitializeComponent();
 
-            IDatabaseService = ReplaysControlViewModel.GetDatabaseService;
+            Database = ReplaysControlViewModel.GetDatabaseService;
 
-            if (IDatabaseService.SettingsDb().UserSettings.ReplayAutoStartStartUp)
+            if (Database.SettingsDb().UserSettings.ReplayAutoStartStartUp)
                 ((IInvokeProvider)new ButtonAutomationPeer(StartButton).GetPattern(PatternInterface‌​.Invoke)).Invoke();
         }
 
