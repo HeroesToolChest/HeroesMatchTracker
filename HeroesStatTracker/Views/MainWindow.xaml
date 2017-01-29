@@ -76,7 +76,7 @@
                     </materialDesign:PopupBox>
                 </StackPanel>
             </materialDesign:ColorZone>
-            <dragablz:TabablzControl FixedHeaderCount="2">
+            <dragablz:TabablzControl FixedHeaderCount="4">
                 <TabItem Header="Home">
 
                 </TabItem>

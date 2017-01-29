@@ -7,7 +7,7 @@
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <dragablz:TabablzControl>
+    <dragablz:TabablzControl FixedHeaderCount="7">
         <TabItem Header="All Matches">
             <local:AllMatchesControl />
         </TabItem>

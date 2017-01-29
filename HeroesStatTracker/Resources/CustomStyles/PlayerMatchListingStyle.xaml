@@ -1,0 +1,183 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomStyles"
+                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core">
+
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+
+    <Color x:Key="RowTeam1SideColor">#64E5FF</Color>
+    <Color x:Key="RowTeam2SideColor">#F25B5C</Color>
+    <Color x:Key="RowTeamUserSideColor">#FFE660</Color>
+    
+    <Color x:Key="Team1CharacterNameColor">#CDFDFF</Color>
+    <Color x:Key="Team2CharacterNameColor">#FEA9BA</Color>
+    
+    <SolidColorBrush x:Key="RowTeam1SideBrush" Color="{StaticResource RowTeam1SideColor}" />
+    <SolidColorBrush x:Key="RowTeam2SideBrush" Color="{StaticResource RowTeam2SideColor}" />
+    <SolidColorBrush x:Key="RowTeamUserSideBrush" Color="{StaticResource RowTeamUserSideColor}" />
+
+    <LinearGradientBrush x:Key="RowTeam1BackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0.0" Color="#0D1333" />
+            <GradientStop Offset="1.0" Color="#10183C" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="RowTeam2BackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0.0" Color="#200F1C" />
+            <GradientStop Offset="1.0" Color="#330E1F" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="RowTeam1BorderBrush" Color="#374A96" />
+    <SolidColorBrush x:Key="RowTeam2BorderBrush" Color="#683959" />
+    
+    <SolidColorBrush x:Key="Team1CharacterNameBrush" Color="{StaticResource Team1CharacterNameColor}" />
+    <SolidColorBrush x:Key="Team1PlayerNameBrush" Color="#77B8EA" />
+
+    <SolidColorBrush x:Key="Team2CharacterNameBrush" Color="{StaticResource Team2CharacterNameColor}" />
+    <SolidColorBrush x:Key="Team2PlayerNameBrush" Color="#E69090" />
+
+    <SolidColorBrush x:Key="MatchOverviewBackgroundBrush" Color="#12112F" />
+    <!--Styles-->
+    <Style TargetType="TextBlock" x:Key="Team1MatchListingCharacterName">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource Team1CharacterNameBrush}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="0" Color="{StaticResource Team1CharacterNameColor}" Opacity="1" BlurRadius="8" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Team1MatchListingPlayerName">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource Team1PlayerNameBrush}" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Team2MatchListingCharacterName">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource Team2CharacterNameBrush}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="0" Color="{StaticResource Team2CharacterNameColor}" Opacity="1" BlurRadius="8" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Team2MatchListingPlayerName">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource Team2PlayerNameBrush}" />
+    </Style>
+    
+    <Style x:Key="MatchPlayerTeam1OverviewItemsControl" TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type coreModels:MatchPlayerBase}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="{DynamicResource RowTeam1SideBrush}" />
+                                        <!--<Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsMe}" Value="True">
+                                                <Setter Property="BorderBrush" Value="{StaticResource RowSideHighlightSelectedBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>-->
+                                    </Style>
+                                </Border.Style>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Color="{StaticResource RowTeam1SideColor}" Opacity="1" BlurRadius="8" />
+                                </Border.Effect>
+                            </Border>
+                            <Border BorderThickness="2" Height="52" Width="260" Margin="0, 1" Background="{DynamicResource RowTeam1BackgroundBrush}">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="{DynamicResource RowTeam1BorderBrush}" />
+                                        <!--<Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsMe}" Value="True">
+                                                <Setter Property="BorderBrush" Value="{StaticResource RowBorderSelectedBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>-->
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid>
+                                        <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
+                                            <Image.ToolTip>
+                                                <ToolTip Content="{Binding CharacterTooltip}"/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                        <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                        <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-4 -16 0 0"/>
+                                    </Grid>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CharacterName}" Style="{StaticResource Team1MatchListingCharacterName}" Padding="4 4 0 5" />
+                                        <TextBlock Text="{Binding PlayerName}" Style="{StaticResource Team1MatchListingPlayerName}" Padding="4 0 0 0" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MatchPlayerTeam2OverviewItemsControl" TargetType="ItemsControl">
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="{x:Type coreModels:MatchPlayerBase}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="{DynamicResource RowTeam2SideBrush}" />
+                                        <!--<Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsMe}" Value="True">
+                                                <Setter Property="BorderBrush" Value="{StaticResource RowSideHighlightSelectedBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>-->
+                                    </Style>
+                                </Border.Style>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Color="{StaticResource RowTeam2SideColor}" Opacity="1" BlurRadius="8" />
+                                </Border.Effect>
+                            </Border>
+                            <Border BorderThickness="2" Height="52" Width="260" Margin="0, 1" Background="{DynamicResource RowTeam2BackgroundBrush}">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="{DynamicResource RowTeam2BorderBrush}" />
+                                        <!--<Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsMe}" Value="True">
+                                                <Setter Property="BorderBrush" Value="{StaticResource RowBorderSelectedBrush}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>-->
+                                    </Style>
+                                </Border.Style>
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid>
+                                        <Image Source="{Binding LeaderboardPortrait}" Height="44" Width="79" HorizontalAlignment="Left">
+                                            <Image.ToolTip>
+                                                <ToolTip Content="{Binding CharacterTooltip}"/>
+                                            </Image.ToolTip>
+                                        </Image>
+                                        <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
+                                        <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-4 -16 0 0"/>
+                                    </Grid>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding CharacterName}" Style="{StaticResource Team2MatchListingCharacterName}" Padding="4 4 0 5" />
+                                        <TextBlock Text="{Binding PlayerName}" Style="{StaticResource Team2MatchListingPlayerName}" Padding="4 0 0 0" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -165,33 +165,33 @@ namespace Heroes.Icons
 
         private void SetPartyIcons()
         {
-            PartyIcons.Add(PartyIconColor.Purple, new Uri($"{ApplicationIconsPath}PartyIcons/ui_ingame_loadscreen_partylink_purple.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationIconsPath}PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationIconsPath}PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationIconsPath}PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Purple, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_purple.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
         }
 
         private void SetRoleIcons()
         {
-            RoleIcons.Add(HeroRole.Warrior, new Uri($"{ApplicationIconsPath}Roles/hero_role_warrior.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Assassin, new Uri($"{ApplicationIconsPath}Roles/hero_role_assassin.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Support, new Uri($"{ApplicationIconsPath}Roles/hero_role_support.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Specialist, new Uri($"{ApplicationIconsPath}Roles/hero_role_specialist.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Warrior, new Uri($"{ApplicationIconsPath}/Roles/hero_role_warrior.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Assassin, new Uri($"{ApplicationIconsPath}/Roles/hero_role_assassin.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Support, new Uri($"{ApplicationIconsPath}/Roles/hero_role_support.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Specialist, new Uri($"{ApplicationIconsPath}/Roles/hero_role_specialist.png", UriKind.Absolute));
         }
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}Roles/hero_franchise_classic.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}Roles/hero_franchise_diablo.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}Roles/hero_franchise_overwatch.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}Roles/hero_franchise_starcraft.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}Roles/hero_franchise_warcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_classic.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_diablo.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_overwatch.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_starcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_warcraft.png", UriKind.Absolute));
         }
 
         private void SetOtherIcons()
         {
-            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute));
-            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}storm_ui_silencepenalty.dds", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.dds", UriKind.Absolute));
         }
 
         private void LogMissingImage(string message)

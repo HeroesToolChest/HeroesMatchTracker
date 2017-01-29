@@ -10,6 +10,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public BitmapImage PartyIcon { get; set; }
         public string PlayerName { get; set; }
         public string CharacterName { get; set; }
+        public string CharacterTooltip { get; set; }
         public string CharacterLevel { get; set; }
         public string MvpAwardName { get; set; }
         public Color RowBackColor { get; set; }

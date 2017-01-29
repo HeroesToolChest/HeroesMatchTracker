@@ -3,4 +3,5 @@
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources">
 
     <BitmapImage x:Key="HPDStartup" UriSource="pack://application:,,,/Resources/Images/HPDStartup.png"/>
+    <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_silencepenalty.dds"/>
 </ResourceDictionary>
