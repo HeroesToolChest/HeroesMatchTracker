@@ -262,6 +262,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             // get info
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
             var playersList = replayMatch.ReplayMatchPlayers.ToList();
+            var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
 
             // load up correct build information
             HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
@@ -273,23 +274,14 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase();
-                var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
-
-                matchPlayerBase.LeaderboardPortrait = player.Character != "None" ? HeroesIcons.Heroes().GetHeroLeaderboardPortrait(player.Character) : null;
-                matchPlayerBase.CharacterTooltip = $"{player.Character}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRole(player.Character)[0]}";
-                matchPlayerBase.Silenced = player.IsSilenced;
-                matchPlayerBase.CharacterName = player.Character;
-
-                if (Database.SettingsDb().UserSettings.IsBattleTagHidden)
-                    matchPlayerBase.PlayerName = HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName);
-                else
-                    matchPlayerBase.PlayerName = playerInfo.BattleTagName;
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
+                matchPlayerBase.SetPlayerInfo();
 
                 if (PlayerPartyIcons.ContainsKey(player.PlayerNumber))
-                {
-                    matchPlayerBase.PartyIcon = HeroesIcons.GetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
-                }
+                    matchPlayerBase.SetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
+
+                if (matchAwardDictionary.ContainsKey(player.PlayerId))
+                    matchPlayerBase.SetMVPAward(matchAwardDictionary[player.PlayerId]);
 
                 //SetContextMenuCommands(matchPlayerInfoBase);
 
@@ -365,16 +357,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private void ClearMatchOverview()
         {
             foreach (var player in MatchOverviewTeam1Collection)
-            {
-                player.LeaderboardPortrait = null;
-                player.PartyIcon = null;
-            }
+                player.ClearInfo();
 
             foreach (var player in MatchOverviewTeam2Collection)
-            {
-                player.LeaderboardPortrait = null;
-                player.PartyIcon = null;
-            }
+                player.ClearInfo();
 
             MatchOverviewTeam1Collection.Clear();
             MatchOverviewTeam2Collection.Clear();

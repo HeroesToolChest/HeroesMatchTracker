@@ -24,7 +24,7 @@ namespace Heroes.Icons.Xml
         BitmapImage GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName);
 
         /// <summary>
-        /// Returns the decription of the award
+        /// Returns the description of the award
         /// </summary>
         /// <param name="mvpAwardType">Reference name of award</param>
         /// <returns></returns>
