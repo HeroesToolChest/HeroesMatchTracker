@@ -29,7 +29,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ReplayMatch _selectedReplay;
 
         private IDatabaseService Database;
-        private IHeroesIconsService HeroesIcons;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
@@ -41,7 +40,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             : base(heroesIcons)
         {
             Database = database;
-            HeroesIcons = heroesIcons;
 
             MatchGameMode = matchGameMode;
 

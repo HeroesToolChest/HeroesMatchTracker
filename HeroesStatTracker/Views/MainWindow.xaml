@@ -68,10 +68,10 @@
         <Grid>
             <materialDesign:ColorZone HorizontalAlignment="Right" Width="200" Padding="7" Mode="PrimaryMid" Panel.ZIndex="1000">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock VerticalAlignment="Center" Text="SomeName"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Text="{Binding UserBattleTag}"></TextBlock>
                     <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                        <StackPanel>
-                            <Button Content="Hello World"/>
+                        <StackPanel Width="180">
+                            <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>

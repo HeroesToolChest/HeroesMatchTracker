@@ -208,7 +208,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="User\UserAccount.cs" />
+    <Compile Include="User\IUserProfileService.cs" />
+    <Compile Include="User\UserProfile.cs" />
+    <Compile Include="Validation\NotEmptyValidation.cs" />
     <Compile Include="ViewModels\HstViewModel.cs" />
     <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />
@@ -218,6 +220,7 @@
     <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
+    <Compile Include="ViewModels\ProfileWindowViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />
@@ -242,6 +245,7 @@
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewServices\IPaletteSelectorWindowService.cs" />
+    <Compile Include="ViewServices\IProfileWindowService.cs" />
     <Compile Include="ViewServices\IWhatsNewWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowService.cs" />
   </ItemGroup>

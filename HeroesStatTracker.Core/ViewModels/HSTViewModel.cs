@@ -10,8 +10,6 @@ namespace HeroesStatTracker.Core.ViewModels
     {
         private BitmapImage _backgroundImage;
 
-        private IHeroesIconsService HeroesIcons;
-
         protected HstViewModel(IHeroesIconsService heroesIcons)
         {
             HeroesIcons = heroesIcons;
@@ -35,11 +33,12 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
-        protected Logger ExceptionLog { get; private set; }
-        protected Logger WarningLog { get; private set; }
-        protected Logger UnParsedReplaysLog { get; private set; }
-        protected Logger TranslationsLog { get; private set; }
-        protected Logger HotsLogsLog { get; private set; }
+        protected IHeroesIconsService HeroesIcons { get; }
+        protected Logger ExceptionLog { get; }
+        protected Logger WarningLog { get; }
+        protected Logger UnParsedReplaysLog { get; }
+        protected Logger TranslationsLog { get; }
+        protected Logger HotsLogsLog { get; }
 
         private void SetBackgroundImage()
         {

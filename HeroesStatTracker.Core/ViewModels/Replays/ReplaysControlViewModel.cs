@@ -36,7 +36,6 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         private string _hotsLogsUploaderUploadStatus;
 
         private FileSystemWatcher FileWatcher;
-        private IHeroesIconsService HeroesIcons;
         private IDatabaseService Database;
 
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
@@ -62,7 +61,6 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
             ScanDateTimeCheckboxes[Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
-            HeroesIcons = heroesIcons;
 
             InitializeReplaySaveDataQueue();
             InitializeReplayHotsLogsUploadQueue();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using static Heroes.Helpers.HeroesHelpers.Regions;
 using static Heroes.ReplayParser.DataParser;
 
 namespace Heroes.Helpers
@@ -33,6 +34,20 @@ namespace Heroes.Helpers
                     return replayParseResultEnum;
                 else
                     throw new ArgumentException(nameof(replayParseResult));
+            }
+
+            public static Region ConvertRegionStringtoEnum(string region)
+            {
+                if (string.IsNullOrEmpty(region))
+                    throw new ArgumentNullException(nameof(region));
+
+                Region regionEnum;
+                region = Regex.Replace(region, @"\s+", string.Empty);
+
+                if (Enum.TryParse(region, true, out regionEnum))
+                    return regionEnum;
+                else
+                    throw new ArgumentException(nameof(region));
             }
         }
     }

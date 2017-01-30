@@ -70,6 +70,19 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
+        public long ReadPlayerIdFromBattleTagName(string battleTagName, int battleNetRegionId)
+        {
+            using (var db = new ReplaysContext())
+            {
+                // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
+                var result = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetRegionId == battleNetRegionId);
+                if (result != null)
+                    return result.PlayerId;
+                else
+                    return 0;
+            }
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayer model)
         {
             db.ReplayAllHotsPlayers.Add(model);

@@ -16,7 +16,7 @@ namespace HeroesStatTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, IWhatsNewWindowService
+    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -35,11 +35,18 @@ namespace HeroesStatTracker.Views
             SetTrayIcon();
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
+            SimpleIoc.Default.Register<IProfileWindowService>(() => this);
         }
 
         public void CreateWhatsNewWindow()
         {
             WhatsNewWindow window = new WhatsNewWindow();
+            window.ShowDialog();
+        }
+
+        public void CreateProfileWindow()
+        {
+            ProfileWindow window = new ProfileWindow();
             window.ShowDialog();
         }
 

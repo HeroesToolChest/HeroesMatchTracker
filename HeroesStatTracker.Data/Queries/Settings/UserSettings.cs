@@ -126,6 +126,26 @@ namespace HeroesStatTracker.Data.Queries.Settings
         }
         #endregion Replays
 
+        #region User Profile
+        public string UserBattleTagName
+        {
+            get { return GetStringValue(nameof(UserBattleTagName)); }
+            set { SetStringValue(nameof(UserBattleTagName), value); }
+        }
+
+        public int UserRegion
+        {
+            get { return GetIntValue(nameof(UserRegion)); }
+            set { SetIntValue(nameof(UserRegion), value); }
+        }
+
+        public long UserPlayerId
+        {
+            get { return GetLongValue(nameof(UserPlayerId)); }
+            set { SetLongValue(nameof(UserPlayerId), value); }
+        }
+        #endregion User Profile
+
         public bool IsIncludeManualPreRelease
         {
             get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
@@ -142,18 +162,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
         {
             get { return GetBooleanValue(nameof(IsTeamExperienceRowChartEnabled)); }
             set { SetBooleanValue(nameof(IsTeamExperienceRowChartEnabled), value); }
-        }
-
-        public long UserPlayerId
-        {
-            get { return GetLongValue(nameof(UserPlayerId)); }
-            set { SetLongValue(nameof(UserPlayerId), value); }
-        }
-
-        public string UserBattleTagName
-        {
-            get { return GetStringValue(nameof(UserBattleTagName)); }
-            set { SetStringValue(nameof(UserBattleTagName), value); }
         }
 
         internal void SetDefaultSettings()
@@ -181,15 +189,16 @@ namespace HeroesStatTracker.Data.Queries.Settings
             SelectedScanDateTimeIndex = 0;
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
 
+            // User Profile
+            UserBattleTagName = string.Empty;
+            UserRegion = -1;
+            UserPlayerId = 0;
+
             // needs to be organized
             IsNewUpdateApplied = false;
             IsIncludeManualPreRelease = false;
 
             IsTeamExperienceRowChartEnabled = true;
-
-            UserPlayerId = 0;
-
-            UserBattleTagName = string.Empty;
         }
     }
 }

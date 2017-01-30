@@ -1,5 +1,6 @@
 using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
+using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
@@ -20,27 +21,25 @@ namespace HeroesStatTracker.Core.ViewModels
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public ViewModelLocator()
+        static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            // Databases
+            // Services
             SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
 
-            // HeroesIcons
-            SimpleIoc.Default.Register(() =>
-            {
-                return new HeroesIcons(true);
-            });
-
+            SimpleIoc.Default.Register(() => { return new HeroesIcons(true); });
             SimpleIoc.Default.Register<IHeroesIconsService>(() =>
             {
                 return SimpleIoc.Default.GetInstance<HeroesIcons>();
             });
 
+            SimpleIoc.Default.Register<IUserProfileService, UserProfile>();
+
             // start ups
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
+            SimpleIoc.Default.Register<ProfileWindowViewModel>();
 
             // TitleBar
             SimpleIoc.Default.Register<SettingsControlViewModel>();
@@ -95,6 +94,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public static StartupWindowViewModel StartupWindowViewModel => ServiceLocator.Current.GetInstance<StartupWindowViewModel>();
+        public static ProfileWindowViewModel ProfileWindowViewModel => ServiceLocator.Current.GetInstance<ProfileWindowViewModel>();
         public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();
         public static AboutControlViewModel AboutControlViewModel => ServiceLocator.Current.GetInstance<AboutControlViewModel>();
         public static PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel => ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>();
