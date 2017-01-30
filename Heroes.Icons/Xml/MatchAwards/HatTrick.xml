@@ -3,6 +3,6 @@
   <HatTrick>
     <MVPScreen>storm_ui_mvp_hattrick_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_hattrick_{mvpColor}.png</ScoreScreen>
-    <Description>First three kills of the match</Description>
+    <Description>First Three Kills of Match</Description>
   </HatTrick>
 </HatTrick>

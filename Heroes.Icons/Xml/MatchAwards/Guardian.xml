@@ -3,6 +3,6 @@
   <MostTeamfightDamageTaken>
     <MVPScreen>storm_ui_mvp_guardian_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_guardian_{mvpColor}.png</ScoreScreen>
-    <Description>Most damage taken in team fights</Description>
+    <Description>Soaked High Damage in Team Fights</Description>
   </MostTeamfightDamageTaken>
 </Guardian>

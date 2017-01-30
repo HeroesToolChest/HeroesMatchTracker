@@ -3,6 +3,6 @@
   <MostRoots>
     <MVPScreen>storm_ui_mvp_trapper_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_trapper_{mvpColor}.png</ScoreScreen>
-    <Description>Most root time on heroes</Description>
+    <Description>High Root Time on Enemy Heroes</Description>
   </MostRoots>
 </Trapper>

@@ -3,6 +3,6 @@
   <ZeroOutnumberedDeaths>
     <MVPScreen>storm_ui_mvp_teamplayer_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_teamplayer_{mvpColor}.png</ScoreScreen>
-    <Description>No deaths while outnumbered by enemy heroes</Description>
+    <Description>No Deaths While Outnumbered</Description>
   </ZeroOutnumberedDeaths>
 </TeamPlayer>

@@ -3,6 +3,6 @@
   <ClutchHealer>
     <MVPScreen>storm_ui_mvp_clutchhealer_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_clutchhealer_{mvpColor}.png</ScoreScreen>
-    <Description>Most clutch heals</Description>
+    <Description>Many Heals That Saved a Dying Ally</Description>
   </ClutchHealer>
 </ClutchHealer>

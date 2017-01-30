@@ -3,6 +3,6 @@
   <MostEscapes>
     <MVPScreen>storm_ui_mvp_escapeartist_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_escapeartist_{mvpColor}.png</ScoreScreen>
-    <Description>Most escaped deaths</Description>
+    <Description>Escaped Death Many Times</Description>
   </MostEscapes>
 </EscapeArtist>

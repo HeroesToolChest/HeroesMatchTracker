@@ -3,6 +3,6 @@
   <MostCoinsPaid>
     <MVPScreen>storm_ui_mvp_moneybags_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_moneybags_{mvpColor}.png</ScoreScreen>
-    <Description>Most coins turned in</Description>
+    <Description>High Coins Delivered</Description>
   </MostCoinsPaid>
 </Moneybags>

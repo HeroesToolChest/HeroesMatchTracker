@@ -3,6 +3,6 @@
   <MostSilences>
     <MVPScreen>storm_ui_mvp_silencer_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_silencer_{mvpColor}.png</ScoreScreen>
-    <Description>Most silence time on enemy heroes</Description>
+    <Description>High Silence Time</Description>
   </MostSilences>
 </Silencer>

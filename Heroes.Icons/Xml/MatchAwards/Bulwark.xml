@@ -3,6 +3,6 @@
   <MostDamageTaken>
     <MVPScreen>storm_ui_mvp_bulwark_{mvpColor}.png</MVPScreen>
     <ScoreScreen>storm_ui_scorescreen_mvp_bulwark_{mvpColor}.png</ScoreScreen>
-    <Description>Most damage taken</Description>
+    <Description>High Efficient Damage Soaked</Description>
   </MostDamageTaken>
 </Bulwark>
