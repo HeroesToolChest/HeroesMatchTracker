@@ -11,157 +11,157 @@ namespace HeroesStatTracker.Data.Queries.Settings
         #region Settings
         public bool IsAutoUpdates
         {
-            get { return GetBooleanValue(nameof(IsAutoUpdates)); }
-            set { SetBooleanValue(nameof(IsAutoUpdates), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsIncludePreRelease
         {
-            get { return GetBooleanValue(nameof(IsIncludePreRelease)); }
-            set { SetBooleanValue(nameof(IsIncludePreRelease), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsMinimizeToTray
         {
-            get { return GetBooleanValue(nameof(IsMinimizeToTray)); }
-            set { SetBooleanValue(nameof(IsMinimizeToTray), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsBattleTagHidden
         {
-            get { return GetBooleanValue(nameof(IsBattleTagHidden)); }
-            set { SetBooleanValue(nameof(IsBattleTagHidden), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsNightMode
         {
-            get { return GetBooleanValue(nameof(IsNightMode)); }
-            set { SetBooleanValue(nameof(IsNightMode), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsAlternateStyle
         {
-            get { return GetBooleanValue(nameof(IsAlternateStyle)); }
-            set { SetBooleanValue(nameof(IsAlternateStyle), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public string MainStylePrimary
         {
-            get { return GetStringValue(nameof(MainStylePrimary)); }
-            set { SetStringValue(nameof(MainStylePrimary), value); }
+            get { return GetStringValue(); }
+            set { SetStringValue(value); }
         }
 
         public string MainStyleAccent
         {
-            get { return GetStringValue(nameof(MainStyleAccent)); }
-            set { SetStringValue(nameof(MainStyleAccent), value); }
+            get { return GetStringValue(); }
+            set { SetStringValue(value); }
         }
         #endregion Settings
 
         #region Replays
         public bool ReplayAutoScanCheckBox
         {
-            get { return GetBooleanValue(nameof(ReplayAutoScanCheckBox)); }
-            set { SetBooleanValue(nameof(ReplayAutoScanCheckBox), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool ReplayWatchCheckBox
         {
-            get { return GetBooleanValue(nameof(ReplayWatchCheckBox)); }
-            set { SetBooleanValue(nameof(ReplayWatchCheckBox), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsIncludeSubDirectories
         {
-            get { return GetBooleanValue(nameof(IsIncludeSubDirectories)); }
-            set { SetBooleanValue(nameof(IsIncludeSubDirectories), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool ReplayAutoStartStartUp
         {
-            get { return GetBooleanValue(nameof(ReplayAutoStartStartUp)); }
-            set { SetBooleanValue(nameof(ReplayAutoStartStartUp), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public DateTime ReplaysLatestSaved
         {
-            get { return GetDateTimeValue(nameof(ReplaysLatestSaved)); }
-            set { SetDateTimeValue(nameof(ReplaysLatestSaved), value); }
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
         }
 
         public DateTime ReplaysLastSaved
         {
-            get { return GetDateTimeValue(nameof(ReplaysLastSaved)); }
-            set { SetDateTimeValue(nameof(ReplaysLastSaved), value); }
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
         }
 
         public DateTime ReplaysLatestHotsLogs
         {
-            get { return GetDateTimeValue(nameof(ReplaysLatestHotsLogs)); }
-            set { SetDateTimeValue(nameof(ReplaysLatestHotsLogs), value); }
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
         }
 
         public DateTime ReplaysLastHotsLogs
         {
-            get { return GetDateTimeValue(nameof(ReplaysLastHotsLogs)); }
-            set { SetDateTimeValue(nameof(ReplaysLastHotsLogs), value); }
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
         }
 
         public bool IsHotsLogsUploaderEnabled
         {
-            get { return GetBooleanValue(nameof(IsHotsLogsUploaderEnabled)); }
-            set { SetBooleanValue(nameof(IsHotsLogsUploaderEnabled), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public int SelectedScanDateTimeIndex
         {
-            get { return GetIntValue(nameof(SelectedScanDateTimeIndex)); }
-            set { SetIntValue(nameof(SelectedScanDateTimeIndex), value); }
+            get { return GetIntValue(); }
+            set { SetIntValue(value); }
         }
 
         public string ReplaysLocation
         {
-            get { return GetStringValue(nameof(ReplaysLocation)); }
-            set { SetStringValue(nameof(ReplaysLocation), value); }
+            get { return GetStringValue(); }
+            set { SetStringValue(value); }
         }
         #endregion Replays
 
         #region User Profile
         public string UserBattleTagName
         {
-            get { return GetStringValue(nameof(UserBattleTagName)); }
-            set { SetStringValue(nameof(UserBattleTagName), value); }
+            get { return GetStringValue(); }
+            set { SetStringValue(value); }
         }
 
         public int UserRegion
         {
-            get { return GetIntValue(nameof(UserRegion)); }
-            set { SetIntValue(nameof(UserRegion), value); }
+            get { return GetIntValue(); }
+            set { SetIntValue(value); }
         }
 
         public long UserPlayerId
         {
-            get { return GetLongValue(nameof(UserPlayerId)); }
-            set { SetLongValue(nameof(UserPlayerId), value); }
+            get { return GetLongValue(); }
+            set { SetLongValue(value); }
         }
         #endregion User Profile
 
         public bool IsIncludeManualPreRelease
         {
-            get { return GetBooleanValue(nameof(IsIncludeManualPreRelease)); }
-            set { SetBooleanValue(nameof(IsIncludeManualPreRelease), value); }
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
-            set { SetBooleanValue(nameof(IsNewUpdateApplied), value); }
+            set { SetBooleanValue(value); }
         }
 
         public bool IsTeamExperienceRowChartEnabled
         {
             get { return GetBooleanValue(nameof(IsTeamExperienceRowChartEnabled)); }
-            set { SetBooleanValue(nameof(IsTeamExperienceRowChartEnabled), value); }
+            set { SetBooleanValue(value); }
         }
 
         internal void SetDefaultSettings()

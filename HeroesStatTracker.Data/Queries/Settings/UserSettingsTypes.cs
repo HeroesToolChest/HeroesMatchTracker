@@ -2,6 +2,7 @@
 using HeroesStatTracker.Data.Models.Settings;
 using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace HeroesStatTracker.Data.Queries.Settings
 {
@@ -16,7 +17,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private bool GetBooleanValue(string name)
+        private bool GetBooleanValue([CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -24,7 +25,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private void SetBooleanValue(string name, bool value)
+        private void SetBooleanValue(bool value, [CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -41,7 +42,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private string GetStringValue(string name)
+        private string GetStringValue([CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -49,7 +50,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private void SetStringValue(string name, string value)
+        private void SetStringValue(string value, [CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -66,7 +67,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private DateTime GetDateTimeValue(string name)
+        private DateTime GetDateTimeValue([CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -74,7 +75,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private void SetDateTimeValue(string name, DateTime value)
+        private void SetDateTimeValue(DateTime value, [CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -91,7 +92,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private long GetLongValue(string name)
+        private long GetLongValue([CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -99,7 +100,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private void SetLongValue(string name, long value)
+        private void SetLongValue(long value, [CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -116,7 +117,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private int GetIntValue(string name)
+        private int GetIntValue([CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
@@ -124,7 +125,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             }
         }
 
-        private void SetIntValue(string name, int value)
+        private void SetIntValue(int value, [CallerMemberName] string name = null)
         {
             using (var db = new SettingsContext())
             {
