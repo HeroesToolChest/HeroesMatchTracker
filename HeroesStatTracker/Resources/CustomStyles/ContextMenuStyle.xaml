@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomStyles">
+
+    <ContextMenu x:Key="PlayerSearchContextMenu">
+        <MenuItem Header="Search Hero in...">
+            <MenuItem Header="All Matches" />
+            <MenuItem Header="Quick Match" />
+            <MenuItem Header="Unranked Draft" />
+            <MenuItem Header="Hero League"/>
+            <MenuItem Header="Team League"/>
+            <MenuItem Header="Brawl" />
+            <MenuItem Header="Custom Game" />
+        </MenuItem>
+        <MenuItem Header="Search Player in...">
+            <MenuItem Header="All Matches" />
+            <MenuItem Header="Quick Match" />
+            <MenuItem Header="Unranked Draft" />
+            <MenuItem Header="Hero League"/>
+            <MenuItem Header="Team League"/>
+            <MenuItem Header="Brawl" />
+            <MenuItem Header="Custom Game" />
+        </MenuItem>
+        <MenuItem Header="Search Hero/Player in...">
+            <MenuItem Header="All Matches" />
+            <MenuItem Header="Quick Match" />
+            <MenuItem Header="Unranked Draft" />
+            <MenuItem Header="Hero League"/>
+            <MenuItem Header="Team League"/>
+            <MenuItem Header="Brawl" />
+            <MenuItem Header="Custom Game" />
+        </MenuItem>
+        <MenuItem Header="Copy Hero" />
+        <MenuItem Header="Copy Player name" />
+        <MenuItem Header="Copy Hero/Player name" />
+    </ContextMenu>
+</ResourceDictionary>

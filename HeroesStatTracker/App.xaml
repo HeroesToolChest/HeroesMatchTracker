@@ -33,7 +33,9 @@
                 <!--This app-->
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DataGridStyle.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomStyles/PlayerMatchListingStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/ContextMenuStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchOverviewTemplate.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
             
             <!--MahApps Brushes-->

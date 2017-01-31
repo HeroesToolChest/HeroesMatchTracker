@@ -1,4 +1,5 @@
-﻿using Heroes.Helpers;
+﻿using GalaSoft.MvvmLight.CommandWpf;
+using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
@@ -19,6 +20,8 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             HeroesIcons = heroesIcons;
             Player = player;
         }
+
+        public RelayCommand ShowHotsLogsPlayerProfileCommand => new RelayCommand(ShowHotsLogsPlayerProfile);
 
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
@@ -77,6 +80,11 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             PartyIcon = null;
             MvpAward = null;
             MvpAwardDescription = null;
+        }
+
+        private void ShowHotsLogsPlayerProfile()
+        {
+
         }
     }
 }

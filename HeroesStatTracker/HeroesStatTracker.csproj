@@ -173,6 +173,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Browser\BrowserWindow.xaml.cs">
+      <DependentUpon>BrowserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
     <Compile Include="Views\Matches\AllMatchesControl.xaml.cs">
       <DependentUpon>AllMatchesControl.xaml</DependentUpon>
@@ -283,11 +286,19 @@
     <Compile Include="Views\TitleBar\WhatsNewWindow.xaml.cs">
       <DependentUpon>WhatsNewWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Browser\BrowserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\ContextMenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\CustomStyles\DataGridStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomStyles\PlayerMatchListingStyle.xaml">
+    <Page Include="Resources\CustomTemplates\MatchOverviewTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
