@@ -10,6 +10,8 @@ namespace HeroesStatTracker.Browser
         public BrowserWindow()
         {
             InitializeComponent();
+
+            TabControl.Items.Add("testingggggg");
         }
     }
 }

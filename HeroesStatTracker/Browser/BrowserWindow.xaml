@@ -16,8 +16,9 @@
         TextElement.FontSize="14"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{StaticResource MaterialDesignFont}"
-        Title="BrowserWindow" Height="300" Width="300">
-    <Grid>
-        <!--<cefSharp:ChromiumWebBrowser Address="https://github.com" />-->
-    </Grid>
+        Title="BrowserWindow" Height="500" Width="720">
+    <dragablz:TabablzControl x:Name="TabControl" ShowDefaultCloseButton="True" ShowDefaultAddButton="True">
+        <TabItem Header="test" />
+    </dragablz:TabablzControl>
+
 </controls:MetroWindow>

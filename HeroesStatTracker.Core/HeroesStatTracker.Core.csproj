@@ -244,6 +244,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewServices\IBrowserWindowService.cs" />
     <Compile Include="ViewServices\IPaletteSelectorWindowService.cs" />
     <Compile Include="ViewServices\IProfileWindowService.cs" />
     <Compile Include="ViewServices\IWhatsNewWindowService.cs" />

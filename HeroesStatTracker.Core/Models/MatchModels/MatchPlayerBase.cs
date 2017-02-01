@@ -1,8 +1,10 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
 using Heroes.Icons;
+using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Windows.Media.Imaging;
 
@@ -34,6 +36,11 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public int PlayerNumber { get; private set; }
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
+
+        public IBrowserWindowService BrowserWindow
+        {
+            get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
+        }
 
         public void SetPlayerInfo()
         {
@@ -84,7 +91,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void ShowHotsLogsPlayerProfile()
         {
-
+            BrowserWindow.CreateBrowserWindow();
         }
     }
 }
