@@ -60,16 +60,6 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public bool IsIncludeManualPreRelease
-        {
-            get { return UserSettings.Default.IsIncludeManualPreRelease; }
-            set
-            {
-                UserSettings.Default.IsIncludeManualPreRelease = value;
-                RaisePropertyChangedEvent(nameof(IsIncludeManualPreRelease));
-            }
-        }
-
         public ICommand CheckForUpdatesCommand
         {
             get { return new DelegateCommand(() => CheckForUpdates()); }
@@ -98,7 +88,7 @@ namespace HeroesParserData.ViewModels
 
                     CheckForUpdatesResponse = "Checking for updates...";
                     AutoUpdater = new AutoUpdater();
-                    if (await AutoUpdater.CheckForUpdates(UserSettings.Default.IsIncludeManualPreRelease))
+                    if (await AutoUpdater.CheckForUpdates())
                     {
                         CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                         UpdateIsAvailableMessage();
@@ -166,7 +156,7 @@ namespace HeroesParserData.ViewModels
                         IsCheckForUpdatesButtonEnabled = false;
 
                         AutoUpdater = new AutoUpdater();
-                        if (await AutoUpdater.CheckForUpdates(IsIncludeManualPreRelease))
+                        if (await AutoUpdater.CheckForUpdates())
                         {
                             CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                             UpdateIsAvailableMessage();

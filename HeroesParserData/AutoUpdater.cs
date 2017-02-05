@@ -21,13 +21,12 @@ namespace HeroesParserData
         /// <summary>
         /// Checks for updates, sets property UpdateInfo to null if no updates found. Returns true is update is available.
         /// </summary>
-        /// <param name="includePrelease"></param>
         /// <returns></returns>
-        public async Task<bool> CheckForUpdates(bool includePrelease)
+        public async Task<bool> CheckForUpdates()
         {
             try
             {
-                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: includePrelease))
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl))
                 {
                     UpdaterLog.Log(LogLevel.Info, "Update Check");
 

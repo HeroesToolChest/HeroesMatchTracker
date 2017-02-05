@@ -6,7 +6,6 @@ namespace HeroesParserData.ViewModels
     public class SettingsViewModel : ViewModelBase
     {
         private string _inputBattleTagError;
-        private bool _isIncludePreReleaseBuildsEnabled;
 
         public bool IsMinimizeToTray
         {
@@ -24,27 +23,8 @@ namespace HeroesParserData.ViewModels
             set
             {
                 UserSettings.Default.IsAutoUpdates = value;
-                if (!value)
-                {
-                    IsIncludePreReleaseBuilds = false;
-                    IsIncludePreReleaseBuildsEnabled = false;
-                }
-                else
-                {
-                    IsIncludePreReleaseBuildsEnabled = true;
-                }
 
                 RaisePropertyChangedEvent(nameof(IsAutoUpdates));
-            }
-        }
-
-        public bool IsIncludePreReleaseBuilds
-        {
-            get { return UserSettings.Default.IsIncludePreRelease; }
-            set
-            {
-                UserSettings.Default.IsIncludePreRelease = value;
-                RaisePropertyChangedEvent(nameof(IsIncludePreReleaseBuilds));
             }
         }
 
@@ -78,16 +58,6 @@ namespace HeroesParserData.ViewModels
             }
         }
 
-        public bool IsIncludePreReleaseBuildsEnabled
-        {
-            get { return _isIncludePreReleaseBuildsEnabled; }
-            set
-            {
-                _isIncludePreReleaseBuildsEnabled = value;
-                RaisePropertyChangedEvent(nameof(IsIncludePreReleaseBuildsEnabled));
-            }
-        }
-
         public ICommand SetUserBattleTagCommand
         {
             get { return new DelegateCommand(() => SetBattleTagName()); }
@@ -98,10 +68,7 @@ namespace HeroesParserData.ViewModels
         /// </summary>
         public SettingsViewModel()
             :base()
-        {
-            if (IsAutoUpdates)
-                IsIncludePreReleaseBuildsEnabled = true;
-        }
+        { }
 
         private void SetBattleTagName()
         {
