@@ -40,19 +40,6 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
             set
             {
                 Database.SettingsDb().UserSettings.IsAutoUpdates = value;
-                if (!value)
-                    IsIncludePreReleaseBuilds = false;
-
-                RaisePropertyChanged();
-            }
-        }
-
-        public bool IsIncludePreReleaseBuilds
-        {
-            get { return Database.SettingsDb().UserSettings.IsIncludePreRelease; }
-            set
-            {
-                Database.SettingsDb().UserSettings.IsIncludePreRelease = value;
                 RaisePropertyChanged();
             }
         }

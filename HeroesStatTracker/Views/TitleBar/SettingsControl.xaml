@@ -13,8 +13,7 @@
     </UserControl.Resources>
     <StackPanel>
         <StackPanel Margin="{StaticResource BorderMargin}">
-            <CheckBox Content="Automatically Update on Startup" x:Name="AutoUpdateCB" IsChecked="{Binding IsAutoUpdates}"/>
-            <CheckBox Content="Include Pre-Release builds" IsChecked="{Binding IsIncludePreReleaseBuilds}" IsEnabled="{Binding IsChecked, ElementName=AutoUpdateCB}" Margin="20,0,0,0"/>
+            <CheckBox Content="Automatically Update on Startup" IsChecked="{Binding IsAutoUpdates}"/>
             <CheckBox Content="Minimize to Tray" IsChecked="{Binding IsMinimizeToTray}"/>
             <CheckBox Content="Hide Battle Tag Numbers" IsChecked="{Binding IsBattleTagsHidden}"/>
             <CheckBox Content="Night Mode" IsChecked="{Binding IsNightMode}" Command="{Binding ToggleBaseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"/>

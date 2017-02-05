@@ -15,12 +15,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
-        public bool IsIncludePreRelease
-        {
-            get { return GetBooleanValue(); }
-            set { SetBooleanValue(value); }
-        }
-
         public bool IsMinimizeToTray
         {
             get { return GetBooleanValue(); }
@@ -146,12 +140,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
         }
         #endregion User Profile
 
-        public bool IsIncludeManualPreRelease
-        {
-            get { return GetBooleanValue(); }
-            set { SetBooleanValue(value); }
-        }
-
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
@@ -168,7 +156,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
         {
             // Settings
             IsAutoUpdates = true;
-            IsIncludePreRelease = false;
             IsMinimizeToTray = false;
             IsBattleTagHidden = true;
             IsNightMode = false;
@@ -196,7 +183,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
 
             // needs to be organized
             IsNewUpdateApplied = false;
-            IsIncludeManualPreRelease = false;
 
             IsTeamExperienceRowChartEnabled = true;
         }

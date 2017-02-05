@@ -16,7 +16,6 @@
         <StackPanel Orientation="Horizontal" Margin="12 0">
             <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesButtonEnabled}" Width="150" Margin="0 0 8 0" />
             <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 0 8 0"/>
-            <CheckBox Content="Pre-release" IsChecked="{Binding IsIncludeManualPreRelease}"/>
         </StackPanel>
         <TextBlock Text="{Binding CheckForUpdatesResponse}" Margin="12 4"/>
         <StackPanel Margin="{StaticResource SectionMargin}">
