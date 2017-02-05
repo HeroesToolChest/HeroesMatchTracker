@@ -5,6 +5,11 @@ namespace Heroes.Icons
 {
     public interface IHeroesIconsService
     {
+        /// <summary>
+        /// Load a specific build, other than the latest one
+        /// </summary>
+        /// <param name="replayBuild">The replay build to load</param>
+        /// <returns></returns>
         void LoadHeroesBuild(int? build);
 
         IHeroes Heroes();

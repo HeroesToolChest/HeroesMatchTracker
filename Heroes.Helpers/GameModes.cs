@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Heroes.ReplayParser;
+using System.Collections.Generic;
 
 namespace Heroes.Helpers
 {
@@ -28,6 +29,23 @@ namespace Heroes.Helpers
                 list.Add("Team League");
 
                 return list;
+            }
+
+            public static string GetStringFromGameMode(GameMode gameMode)
+            {
+                switch (gameMode)
+                {
+                    case GameMode.QuickMatch:
+                        return "Quick Match";
+                    case GameMode.UnrankedDraft:
+                        return "Unranked Draft";
+                    case GameMode.HeroLeague:
+                        return "Hero League";
+                    case GameMode.TeamLeague:
+                        return "Team League";
+                    default:
+                        return gameMode.ToString();
+                }
             }
         }
     }

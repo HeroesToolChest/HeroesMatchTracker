@@ -3,10 +3,11 @@ using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using HeroesStatTracker.Data.Queries.Replays;
-using System;
+using Microsoft.Practices.ServiceLocation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -223,11 +224,20 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public IMatchSummaryFlyoutService MatchSummaryFlyout
+        {
+            get { return ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>(); }
+        }
+
+        public IMatchSummaryReplayService MatchSummaryReplay
+        {
+            get { return ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>(); }
+        }
+
         public RelayCommand ClearSearchCommand => new RelayCommand(ClearSearch);
         public RelayCommand LoadMatchListCommand => new RelayCommand(LoadMatchList);
-        public RelayCommand ShowMatchOverviewCommand => new RelayCommand(() => LoadMatchOverview(SelectedReplay));
-
-        protected Dictionary<int, PartyIconColor> PlayerPartyIcons { get; private set; } = new Dictionary<int, PartyIconColor>();
+        public RelayCommand ShowMatchOverviewCommand => new RelayCommand(LoadMatchOverview);
+        public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
 
         private void LoadMatchList()
         {
@@ -252,12 +262,14 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             MatchListCollection = new ObservableCollection<ReplayMatch>(Database.ReplaysDb().MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
         }
 
-        private void LoadMatchOverview(ReplayMatch replayMatch)
+        private void LoadMatchOverview()
         {
             ClearMatchOverview();
 
-            if (replayMatch == null)
+            if (SelectedReplay == null)
                 return;
+
+            ReplayMatch replayMatch = SelectedReplay;
 
             // get info
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
@@ -275,13 +287,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     continue;
 
                 MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
-                matchPlayerBase.SetPlayerInfo();
-
-                if (PlayerPartyIcons.ContainsKey(player.PlayerNumber))
-                    matchPlayerBase.SetPartyIcon(PlayerPartyIcons[player.PlayerNumber]);
-
-                if (matchAwardDictionary.ContainsKey(player.PlayerId))
-                    matchPlayerBase.SetMVPAward(matchAwardDictionary[player.PlayerId]);
+                matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
 
                 //SetContextMenuCommands(matchPlayerInfoBase);
 
@@ -304,43 +310,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
-        private void FindPlayerParties(List<ReplayMatchPlayer> playersList)
-        {
-            Dictionary<long, List<int>> parties = new Dictionary<long, List<int>>();
-
-            foreach (var player in playersList)
-            {
-                if (player.PartyValue != 0)
-                {
-                    if (!parties.ContainsKey(player.PartyValue))
-                    {
-                        var listOfMembers = new List<int>();
-                        listOfMembers.Add(player.PlayerNumber);
-                        parties.Add(player.PartyValue, listOfMembers);
-                    }
-                    else
-                    {
-                        var listOfMembers = parties[player.PartyValue];
-                        listOfMembers.Add(player.PlayerNumber);
-                        parties[player.PartyValue] = listOfMembers;
-                    }
-                }
-            }
-
-            PlayerPartyIcons = new Dictionary<int, PartyIconColor>();
-            PartyIconColor color = 0;
-
-            foreach (var party in parties)
-            {
-                foreach (int playerNum in party.Value)
-                {
-                    PlayerPartyIcons.Add(playerNum, color);
-                }
-
-                color++;
-            }
-        }
-
         private void ClearSearch()
         {
             SelectedSeasonOption = SeasonList[0];
@@ -357,13 +326,24 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private void ClearMatchOverview()
         {
             foreach (var player in MatchOverviewTeam1Collection)
-                player.ClearInfo();
+                player.Dispose();
 
             foreach (var player in MatchOverviewTeam2Collection)
-                player.ClearInfo();
+                player.Dispose();
 
             MatchOverviewTeam1Collection.Clear();
             MatchOverviewTeam2Collection.Clear();
+        }
+
+        private void ShowMatchSummary()
+        {
+            if (SelectedReplay == null)
+                return;
+
+            MatchSummaryReplay.LoadMatchSummary(SelectedReplay, MatchListCollection.ToList());
+
+            MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
+            MatchSummaryFlyout.ToggleMatchSummaryFlyout();
         }
     }
 }

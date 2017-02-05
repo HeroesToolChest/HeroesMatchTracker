@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates">
+
+    <ResourceDictionary x:Key="LeftButtons">
+        <BitmapImage x:Key="ArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_normal.png"/>
+        <BitmapImage x:Key="ArrowHover" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_hover.png"/>
+        <BitmapImage x:Key="ArrowDown" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_down.png"/>
+        <BitmapImage x:Key="ArrowDisabled" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_disabled.png"/>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="RightButtons">
+        <BitmapImage x:Key="ArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_normal.png"/>
+        <BitmapImage x:Key="ArrowHover" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_hover.png"/>
+        <BitmapImage x:Key="ArrowDown" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_down.png"/>
+        <BitmapImage x:Key="ArrowDisabled" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_disabled.png"/>
+    </ResourceDictionary>
+    
+    <ControlTemplate TargetType="Button" x:Key="ButtonTriggers">
+        <Border Background="Transparent">
+            <ContentPresenter/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Image Source="{DynamicResource ArrowHover}" Width="80" Height="163"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Image Source="{DynamicResource ArrowDown}" Width="80" Height="163"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Image Source="{DynamicResource ArrowDisabled}" Width="80" Height="163"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="Button" x:Key="LeftChangeButton" Resources="{StaticResource LeftButtons}">
+        <Setter Property="Background" Value="{DynamicResource ArrowNormal}"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Image Source="{DynamicResource ArrowNormal}" Width="80" Height="163"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{StaticResource ButtonTriggers}"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="RightChangeButton" Resources="{StaticResource RightButtons}">
+        <Setter Property="Background" Value="{DynamicResource ArrowNormal}"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Image Source="{DynamicResource ArrowNormal}" Width="80" Height="163"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template" Value="{StaticResource ButtonTriggers}"/>
+    </Style>
+</ResourceDictionary>

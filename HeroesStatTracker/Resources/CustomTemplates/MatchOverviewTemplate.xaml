@@ -1,63 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomStyles"
+                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates"
                     xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core"
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-
-    <SolidColorBrush x:Key="MatchOverviewBackgroundBrush" Color="#12112F" />
-    
-    <!--User Colors (yellow)-->
-    <Color x:Key="RowUserSideColor">#FFE660</Color>
-    <Color x:Key="UserCharacterNameColor">#FFE4C7</Color>
-
-    <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" />
-    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#BC9C51" />
-    <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" />
-    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#E1B325" />
-
-    <!--Team 1 (Blue)-->
-    <ResourceDictionary x:Key="Team1Brushes">
-        <Color x:Key="RowSideColor">#64E5FF</Color>
-        <Color x:Key="CharacterNameColor">#CDFDFF</Color>
-        <Color x:Key="PlayerNameColor">#77B8EA</Color>
-        <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
-        
-        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
-        <SolidColorBrush x:Key="RowBorderBrush" Color="#374A96" />
-        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
-        
-        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStop Offset="0.0" Color="#0D1333" />
-                <GradientStop Offset="1.0" Color="#10183C" />
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-    </ResourceDictionary>
-    
-    <!--Team 2 (Red)-->
-    <ResourceDictionary x:Key="Team2Brushes">
-        <Color x:Key="RowSideColor">#F25B5C</Color>
-        <Color x:Key="CharacterNameColor">#FEA9BA</Color>
-        <Color x:Key="PlayerNameColor">#FEA9BA</Color>
-        <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
-        
-        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
-        <SolidColorBrush x:Key="RowBorderBrush" Color="#683959" />
-        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
-        
-        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStop Offset="0.0" Color="#200F1C" />
-                <GradientStop Offset="1.0" Color="#330E1F" />
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-    </ResourceDictionary>
 
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerBase}" x:Key="MatchOverviewRow">
         <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}">
@@ -66,16 +13,23 @@
                     <Border.Style>
                         <Style TargetType="Border">
                             <Setter Property="BorderBrush" Value="{DynamicResource RowSideBrush}" />
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowSideColor}" Opacity="1" BlurRadius="8" />
+                                </Setter.Value>
+                            </Setter>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
                                     <Setter Property="BorderBrush" Value="{StaticResource RowUserSideBrush}" />
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="8" />
+                                        </Setter.Value>
+                                    </Setter>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Border.Style>
-                    <Border.Effect>
-                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowSideColor}" Opacity="1" BlurRadius="8" />
-                    </Border.Effect>
                 </Border>
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}">
                     <Border.Style>
@@ -84,6 +38,11 @@
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
                                     <Setter Property="BorderBrush" Value="{StaticResource RowUserBorderBrush}" />
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="8" />
+                                        </Setter.Value>
+                                    </Setter>
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
@@ -174,19 +133,18 @@
         </StackPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="Team1Template">
+    <DataTemplate x:Key="Team1OverviewTemplate">
         <ContentPresenter Content="{Binding}" ContentTemplate="{StaticResource MatchOverviewRow}" />
     </DataTemplate>
 
-    <DataTemplate x:Key="Team2Template">
+    <DataTemplate x:Key="Team2OverviewTemplate">
         <ContentPresenter Content="{Binding}" ContentTemplate="{StaticResource MatchOverviewRow}" />
     </DataTemplate>
 
-    <!--ItemsControl-->
     <Style x:Key="MatchPlayerTeam1OverviewItemsControl" TargetType="ItemsControl" Resources="{StaticResource Team1Brushes}">
-        <Setter Property="ItemTemplate" Value="{StaticResource Team1Template}" />
+        <Setter Property="ItemTemplate" Value="{StaticResource Team1OverviewTemplate}" />
     </Style>
     <Style x:Key="MatchPlayerTeam2OverviewItemsControl" TargetType="ItemsControl" Resources="{StaticResource Team2Brushes}">
-        <Setter Property="ItemTemplate" Value="{StaticResource Team2Template}" />
+        <Setter Property="ItemTemplate" Value="{StaticResource Team2OverviewTemplate}" />
     </Style>
 </ResourceDictionary>

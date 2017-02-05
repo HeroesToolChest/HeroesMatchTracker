@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
+
+    <Color x:Key="MatchBackgroundColor">#12112F</Color>
+    <SolidColorBrush x:Key="MatchBackgroundBrush" Color="#12112F" />
+
+    <!--User Colors (yellow)-->
+    <Color x:Key="RowUserSideColor">#FFE660</Color>
+    <Color x:Key="UserCharacterNameColor">#FFE4C7</Color>
+
+    <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" />
+    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#BC9C51" />
+    <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" />
+    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#E1B325" />
+
+    <!--Team 1 (Blue)-->
+    <ResourceDictionary x:Key="Team1Brushes">
+        <Color x:Key="RowSideColor">#64E5FF</Color>
+        <Color x:Key="CharacterNameColor">#CDFDFF</Color>
+        <Color x:Key="PlayerNameColor">#77B8EA</Color>
+        <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
+
+        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
+        <SolidColorBrush x:Key="RowBorderBrush" Color="#3E53A8" />
+        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
+        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
+        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
+
+        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.0" Color="#151E51" />
+                <GradientStop Offset="1.0" Color="#1F307A" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </ResourceDictionary>
+
+    <!--Team 2 (Red)-->
+    <ResourceDictionary x:Key="Team2Brushes">
+        <Color x:Key="RowSideColor">#F25B5C</Color>
+        <Color x:Key="CharacterNameColor">#FEA9BA</Color>
+        <Color x:Key="PlayerNameColor">#FEA9BA</Color>
+        <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
+
+        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
+        <SolidColorBrush x:Key="RowBorderBrush" Color="#733F63" />
+        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
+        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
+        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
+
+        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.0" Color="#34182E" />
+                <GradientStop Offset="1.0" Color="#501631" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </ResourceDictionary>
+</ResourceDictionary>

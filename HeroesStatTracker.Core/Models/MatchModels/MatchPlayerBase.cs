@@ -6,21 +6,36 @@ using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
+using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
 namespace HeroesStatTracker.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {
-        private IDatabaseService Database;
-        private IHeroesIconsService HeroesIcons;
-        private ReplayMatchPlayer Player;
-
         public MatchPlayerBase(IDatabaseService database, IHeroesIconsService heroesIcons, ReplayMatchPlayer player)
         {
             Database = database;
             HeroesIcons = heroesIcons;
             Player = player;
+        }
+
+        protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)
+        {
+            Database = matchPlayerBase.Database;
+            HeroesIcons = matchPlayerBase.HeroesIcons;
+            Player = matchPlayerBase.Player;
+
+            LeaderboardPortrait = matchPlayerBase.LeaderboardPortrait;
+            MvpAward = matchPlayerBase.MvpAward;
+            PartyIcon = matchPlayerBase.PartyIcon;
+            PlayerName = matchPlayerBase.PlayerName;
+            CharacterName = matchPlayerBase.CharacterName;
+            CharacterTooltip = matchPlayerBase.CharacterTooltip;
+            CharacterLevel = matchPlayerBase.CharacterLevel;
+            MvpAwardDescription = matchPlayerBase.MvpAwardDescription;
+            Silenced = matchPlayerBase.Silenced;
+            IsUserPlayer = matchPlayerBase.IsUserPlayer;
         }
 
         public RelayCommand ShowHotsLogsPlayerProfileCommand => new RelayCommand(ShowHotsLogsPlayerProfile);
@@ -33,7 +48,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public string CharacterTooltip { get; private set; }
         public string CharacterLevel { get; private set; }
         public string MvpAwardDescription { get; private set; }
-        public int PlayerNumber { get; private set; }
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
 
@@ -42,7 +56,11 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
         }
 
-        public void SetPlayerInfo()
+        protected IDatabaseService Database { get; }
+        protected IHeroesIconsService HeroesIcons { get; }
+        protected ReplayMatchPlayer Player { get; }
+
+        public void SetPlayerInfo(bool isAutoSelect, Dictionary<int, PartyIconColor> playerPartyIcons, Dictionary<long, string> matchAwardDictionary)
         {
             var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(Player.PlayerId);
 
@@ -51,23 +69,31 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             Silenced = Player.IsSilenced;
             CharacterName = Player.Character;
 
-            if (Database.SettingsDb().UserSettings.IsBattleTagHidden)
-                PlayerName = HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName);
-            else
-                PlayerName = playerInfo.BattleTagName;
+            PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
+            IsUserPlayer = (playerInfo.BattleTagName == Database.SettingsDb().UserSettings.UserBattleTagName && playerInfo.BattleNetRegionId == Database.SettingsDb().UserSettings.UserRegion) ? true : false;
+            CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
-            if (playerInfo.BattleTagName == Database.SettingsDb().UserSettings.UserBattleTagName && playerInfo.BattleNetRegionId == Database.SettingsDb().UserSettings.UserRegion)
-                IsUserPlayer = true;
-            else
-                IsUserPlayer = false;
+            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
+                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
+
+            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
+                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
         }
 
-        public void SetPartyIcon(PartyIconColor icon)
+        public virtual void Dispose()
+        {
+            LeaderboardPortrait = null;
+            PartyIcon = null;
+            MvpAward = null;
+            MvpAwardDescription = null;
+        }
+
+        private void SetPartyIcon(PartyIconColor icon)
         {
             PartyIcon = HeroesIcons.GetPartyIcon(icon);
         }
 
-        public void SetMVPAward(string awardType)
+        private void SetMVPAward(string awardType)
         {
             string mvpAwardName = null;
             MVPScoreScreenColor teamColor;
@@ -79,14 +105,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
             MvpAward = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(awardType, teamColor, out mvpAwardName);
             MvpAwardDescription = $"{mvpAwardName}{Environment.NewLine}{HeroesIcons.MatchAwards().GetMatchAwardDescription(awardType)}";
-        }
-
-        public void ClearInfo()
-        {
-            LeaderboardPortrait = null;
-            PartyIcon = null;
-            MvpAward = null;
-            MvpAwardDescription = null;
         }
 
         private void ShowHotsLogsPlayerProfile()

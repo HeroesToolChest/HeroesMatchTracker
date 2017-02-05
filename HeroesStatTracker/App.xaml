@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              xmlns:local="clr-namespace:HeroesStatTracker" 
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
-             xmlns:converters="clr-namespace:HeroesStatTracker.Converters"
+             xmlns:converter="clr-namespace:HeroesStatTracker.Core.Converters;assembly=HeroesStatTracker.Core"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              d1p1:Ignorable="d" 
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -32,9 +32,25 @@
                 
                 <!--This app-->
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
+
+                <ResourceDictionary Source="/Resources/CustomThemes/PlayerMatchRowTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
+                
+                <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
+
                 <ResourceDictionary Source="/Resources/CustomStyles/DataGridStyle.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomStyles/ContextMenuStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/ItemsControlStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/LabelStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/StackPanelStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/BorderStyle.xaml"/>
+
+                <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchOverviewTemplate.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryTalentsTemplate.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
             
@@ -63,7 +79,9 @@
 
             <!--Converters-->
             <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-            <converters:BoolToOffOnConverter x:Key="BooleanToOffOn" />
+            <converter:BoolToOffOnConverter x:Key="BooleanToOffOn" />
+            <converter:BoolInverterConverter x:Key="BoolInverterConverter"/>
+            <converter:TalentTooltipTextConverter x:Key="TalentTooltipTextConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

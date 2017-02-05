@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace HeroesStatTracker.Converters
+namespace HeroesStatTracker.Core.Converters
 {
     public class BoolToOffOnConverter : IValueConverter
     {

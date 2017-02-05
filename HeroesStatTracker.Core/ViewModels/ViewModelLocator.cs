@@ -90,6 +90,8 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<QuickMatchViewModel>();
             SimpleIoc.Default.Register<TeamLeagueViewModel>();
             SimpleIoc.Default.Register<UnrankedDraftViewModel>();
+
+            SimpleIoc.Default.Register<MatchSummaryViewModel>();
         }
 
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
@@ -121,6 +123,7 @@ namespace HeroesStatTracker.Core.ViewModels
         public static QuickMatchViewModel QuickMatchViewModel => ServiceLocator.Current.GetInstance<QuickMatchViewModel>();
         public static TeamLeagueViewModel TeamLeagueViewModel => ServiceLocator.Current.GetInstance<TeamLeagueViewModel>();
         public static UnrankedDraftViewModel UnrankedDraftViewModel => ServiceLocator.Current.GetInstance<UnrankedDraftViewModel>();
+        public static MatchSummaryViewModel MatchSummaryViewModel => ServiceLocator.Current.GetInstance<MatchSummaryViewModel>();
 
         public static void Cleanup()
         {

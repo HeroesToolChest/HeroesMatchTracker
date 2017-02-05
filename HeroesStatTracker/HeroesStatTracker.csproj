@@ -176,7 +176,6 @@
     <Compile Include="Browser\BrowserWindow.xaml.cs">
       <DependentUpon>BrowserWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\BoolToOffOnConverter.cs" />
     <Compile Include="Views\Matches\AllMatchesControl.xaml.cs">
       <DependentUpon>AllMatchesControl.xaml</DependentUpon>
     </Compile>
@@ -194,6 +193,9 @@
     </Compile>
     <Compile Include="Views\Matches\MatchListControl.xaml.cs">
       <DependentUpon>MatchListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Matches\MatchSummaryControl.xaml.cs">
+      <DependentUpon>MatchSummaryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Matches\QuickMatchControl.xaml.cs">
       <DependentUpon>QuickMatchControl.xaml</DependentUpon>
@@ -290,7 +292,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomStyles\ContextMenuStyle.xaml">
+    <Page Include="Resources\CustomControls\TabItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\BorderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomControls\ContextMenuSearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -298,7 +312,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\CustomStyles\ItemsControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\LabelStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\StackPanelStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomStyles\TooltipStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\CustomTemplates\MatchOverviewTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomTemplates\MatchSummaryTalentsTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomTemplates\RightLeftButtonTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomThemes\PlayerMatchRowTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CustomThemes\TalentTooltipTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +377,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Matches\MatchListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\MatchSummaryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -478,6 +532,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
+      <Project>{4168D60D-D0EB-40A2-9304-D38F14106A48}</Project>
+      <Name>Heroes.Icons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HeroesStatTracker.Core\HeroesStatTracker.Core.csproj">
       <Project>{89afa05a-40d2-4ba0-bf72-6d920177f7ae}</Project>
       <Name>HeroesStatTracker.Core</Name>
@@ -487,9 +545,7 @@
       <Name>HeroesStatTracker.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\CustomControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\HPDStartup.png" />
   </ItemGroup>
