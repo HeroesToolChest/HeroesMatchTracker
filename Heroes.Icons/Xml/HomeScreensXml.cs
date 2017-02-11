@@ -70,7 +70,10 @@ namespace Heroes.Icons.Xml
 
         private BitmapImage SetHomeScreenBitmapImage(string fileName)
         {
-            return new BitmapImage(new Uri($@"{ApplicationIconsPath}\Homescreens\{fileName}", UriKind.Absolute));
+            BitmapImage image = new BitmapImage(new Uri($@"{ApplicationIconsPath}\Homescreens\{fileName}", UriKind.Absolute));
+            image.Freeze();
+
+            return image;
         }
     }
 }

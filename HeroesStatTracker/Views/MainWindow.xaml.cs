@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using HeroesStatTracker.Browser;
 using HeroesStatTracker.Core;
+using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.ViewModels;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -160,6 +162,11 @@ namespace HeroesStatTracker.Views
             }
 
             return IntPtr.Zero;
+        }
+
+        private void MatchSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send(new NotificationMessage(StaticMessage.MatchSummaryClosed));
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <param name="realName">Hero real name</param>
         /// <returns>HeroRole</returns>
-        List<HeroRole> GetHeroRole(string realName);
+        List<HeroRole> GetHeroRoleList(string realName);
 
         /// <summary>
         /// Returns the hero's franchise. Will return Unknown if hero not found

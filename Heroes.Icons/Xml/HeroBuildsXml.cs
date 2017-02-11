@@ -87,7 +87,10 @@ namespace Heroes.Icons.Xml
 
             if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
             {
-                return new BitmapImage(talent.Item2);
+                BitmapImage image = new BitmapImage(talent.Item2);
+                image.Freeze();
+
+                return image;
             }
             else
             {

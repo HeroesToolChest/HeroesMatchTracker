@@ -14,7 +14,7 @@
     <system:Double x:Key="PopupHorizontalOffset">-30</system:Double>
     <system:Double x:Key="PopupVerticalOffset">5</system:Double>
 
-    <Thickness x:Key="TalentIconMargin" Left="20" Top="0" Right="20" Bottom="0" />
+    <Thickness x:Key="TalentIconMargin" Left="30" Top="0" Right="30" Bottom="0" />
     
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerTalents}" x:Key="MatchTalentRow">
         <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}">
@@ -135,206 +135,208 @@
                         </StackPanel>
                         
                         <!--Talent 1-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage1" IsHitTestVisible="{Binding ElementName=PopupDesc1, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[0]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc1" IsOpen="{Binding IsChecked, ElementName=TalentImage1}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 4-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage2" IsHitTestVisible="{Binding ElementName=PopupDesc2, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[1]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc2" IsOpen="{Binding IsChecked, ElementName=TalentImage2}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 7-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage3" IsHitTestVisible="{Binding ElementName=PopupDesc3, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[2]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc3" IsOpen="{Binding IsChecked, ElementName=TalentImage3}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 10-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage4" IsHitTestVisible="{Binding ElementName=PopupDesc4, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[3]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc4" IsOpen="{Binding IsChecked, ElementName=TalentImage4}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 13-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage5" IsHitTestVisible="{Binding ElementName=PopupDesc5, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[4]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc5" IsOpen="{Binding IsChecked, ElementName=TalentImage5}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 16-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage6" IsHitTestVisible="{Binding ElementName=PopupDesc6, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[5]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc6" IsOpen="{Binding IsChecked, ElementName=TalentImage6}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
-                        </StackPanel>
-                        
-                        <!--Talent 20-->
-                        <StackPanel DockPanel.Dock="Left" Margin="{StaticResource TalentIconMargin}" VerticalAlignment="Center">
-                            <ToggleButton Name="TalentImage7" IsHitTestVisible="{Binding ElementName=PopupDesc7, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}">
-                                <ToggleButton.Template>
-                                    <ControlTemplate TargetType="ToggleButton">
-                                        <Image Source="{Binding Talents[6]}" Height="44" Width="44">
-                                            <Image.ToolTip>
-                                                <ToolTip Style="{StaticResource TalentTooltip}">
-                                                    <ToolTip.Content>
-                                                        <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                    </ToolTip.Content>
-                                                </ToolTip>
-                                            </Image.ToolTip>
-                                        </Image>
-                                    </ControlTemplate>
-                                </ToggleButton.Template>
-                            </ToggleButton>
-                            <Popup Name="PopupDesc7" IsOpen="{Binding IsChecked, ElementName=TalentImage7}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                        <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
-                                        <Label>
-                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </Border>
-                            </Popup>
+                        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage1" IsHitTestVisible="{Binding ElementName=PopupDesc1, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[0]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc1" IsOpen="{Binding IsChecked, ElementName=TalentImage1}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 4-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage2" IsHitTestVisible="{Binding ElementName=PopupDesc2, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[1]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc2" IsOpen="{Binding IsChecked, ElementName=TalentImage2}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 7-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage3" IsHitTestVisible="{Binding ElementName=PopupDesc3, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[2]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc3" IsOpen="{Binding IsChecked, ElementName=TalentImage3}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 10-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage4" IsHitTestVisible="{Binding ElementName=PopupDesc4, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[3]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc4" IsOpen="{Binding IsChecked, ElementName=TalentImage4}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 13-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage5" IsHitTestVisible="{Binding ElementName=PopupDesc5, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[4]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc5" IsOpen="{Binding IsChecked, ElementName=TalentImage5}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 16-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage6" IsHitTestVisible="{Binding ElementName=PopupDesc6, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[5]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc6" IsOpen="{Binding IsChecked, ElementName=TalentImage6}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
+
+                            <!--Talent 20-->
+                            <StackPanel>
+                                <ToggleButton Name="TalentImage7" IsHitTestVisible="{Binding ElementName=PopupDesc7, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Image Source="{Binding Talents[6]}" Height="44" Width="44">
+                                                <Image.ToolTip>
+                                                    <ToolTip Style="{StaticResource TalentTooltip}">
+                                                        <ToolTip.Content>
+                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                        </ToolTip.Content>
+                                                    </ToolTip>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Popup Name="PopupDesc7" IsOpen="{Binding IsChecked, ElementName=TalentImage7}" StaysOpen="False" HorizontalOffset="{StaticResource PopupHorizontalOffset}" VerticalOffset="{StaticResource PopupVerticalOffset}">
+                                    <Border Style="{StaticResource TalentPopupBorder}">
+                                        <StackPanel Style="{StaticResource TalentPopupStackPanel}">
+                                            <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label>
+                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                            </StackPanel>
                         </StackPanel>
 
                         <StackPanel />

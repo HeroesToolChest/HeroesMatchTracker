@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.ReplayParser;
@@ -17,6 +18,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
     public class MatchesBase : HstViewModel
     {
         private bool _isGivenBattleTagOnlyChecked;
+        private bool _showMatchSummaryButtonEnabled;
         private long _selectedReplayIdValue;
         private string _selectedSeasonOption;
         private string _selectedMapOption;
@@ -44,6 +46,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
             MatchGameMode = matchGameMode;
 
+            ShowMatchSummaryButtonEnabled = true;
+
             SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeasonOption = SeasonList[0];
@@ -65,6 +69,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             HeroesList.Add("Any");
             HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
             SelectedCharacter = HeroesList[0];
+
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public List<string> SeasonList { get; private set; } = new List<string>();
@@ -80,6 +86,16 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             set
             {
                 _isGivenBattleTagOnlyChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool ShowMatchSummaryButtonEnabled
+        {
+            get { return _showMatchSummaryButtonEnabled; }
+            set
+            {
+                _showMatchSummaryButtonEnabled = value;
                 RaisePropertyChanged();
             }
         }
@@ -340,10 +356,17 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             if (SelectedReplay == null)
                 return;
 
+            ShowMatchSummaryButtonEnabled = false;
             MatchSummaryReplay.LoadMatchSummary(SelectedReplay, MatchListCollection.ToList());
 
             MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
             MatchSummaryFlyout.ToggleMatchSummaryFlyout();
+        }
+
+        private void ReceivedMessage(NotificationMessage message)
+        {
+            if (message.Notification == Messaging.StaticMessage.ReEnableMatchSummaryButton)
+                ShowMatchSummaryButtonEnabled = true;
         }
     }
 }

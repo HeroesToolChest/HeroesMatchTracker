@@ -21,36 +21,36 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public List<string> TalentShortTooltips { get; set; }
         public List<string> TalentFullTooltips { get; set; }
 
-        public void SetTalents(List<ReplayMatchPlayerTalent> playerTalentList, int playerNum)
+        public void SetTalents(ReplayMatchPlayerTalent playerTalentList)
         {
             List<BitmapImage> talents = new List<BitmapImage>();
             List<string> talentNames = new List<string>();
             List<string> talentShortTooltips = new List<string>();
             List<string> talentFullTooltips = new List<string>();
 
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName1));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName4));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName7));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName10));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName13));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName16));
-            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList[playerNum].TalentName20));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName1));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName4));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName7));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName10));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName13));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName16));
+            talents.Add(HeroesIcons.HeroBuilds().GetTalentIcon(playerTalentList.TalentName20));
 
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName1));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName4));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName7));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName10));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName13));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName16));
-            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList[playerNum].TalentName20));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName1));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName4));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName7));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName10));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName13));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName16));
+            talentNames.Add(HeroesIcons.HeroBuilds().GetTrueTalentName(playerTalentList.TalentName20));
 
-            var talent1 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName1);
-            var talent4 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName4);
-            var talent7 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName7);
-            var talent10 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName10);
-            var talent13 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName13);
-            var talent16 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName16);
-            var talent20 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList[playerNum].TalentName20);
+            var talent1 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName1);
+            var talent4 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName4);
+            var talent7 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName7);
+            var talent10 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName10);
+            var talent13 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName13);
+            var talent16 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName16);
+            var talent20 = HeroesIcons.HeroBuilds().GetTalentTooltips(playerTalentList.TalentName20);
 
             talentShortTooltips.Add($"<c val=\"FFFFFF\">{talentNames[0]}:</c> {talent1.Short}");
             talentShortTooltips.Add($"<c val=\"FFFFFF\">{talentNames[1]}:</c> {talent4.Short}");

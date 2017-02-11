@@ -99,7 +99,10 @@ namespace Heroes.Icons.Xml
 
             if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
-                return new BitmapImage(uri);
+                BitmapImage image = new BitmapImage(uri);
+                image.Freeze();
+
+                return image;
             }
             else
             {
@@ -125,7 +128,10 @@ namespace Heroes.Icons.Xml
 
             if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
-                return new BitmapImage(uri);
+                BitmapImage image = new BitmapImage(uri);
+                image.Freeze();
+
+                return image;
             }
             else
             {
@@ -151,7 +157,10 @@ namespace Heroes.Icons.Xml
 
             if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out uri))
             {
-                return new BitmapImage(uri);
+                BitmapImage image = new BitmapImage(uri);
+                image.Freeze();
+
+                return image;
             }
             else
             {
@@ -249,7 +258,7 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <param name="realName">Hero real name</param>
         /// <returns>HeroRole</returns>
-        public List<HeroRole> GetHeroRole(string realName)
+        public List<HeroRole> GetHeroRoleList(string realName)
         {
             List<HeroRole> roleList;
 

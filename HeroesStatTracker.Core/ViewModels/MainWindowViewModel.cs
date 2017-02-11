@@ -27,7 +27,7 @@ namespace HeroesStatTracker.Core.ViewModels
             UserProfile = userProfile;
 
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
-            Messenger.Default.Register<NotificationMessage>(this, (message) => UpdateUserBattleTag(message));
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public IDatabaseService GetDatabaseService { get { return Database; } }
@@ -96,7 +96,7 @@ namespace HeroesStatTracker.Core.ViewModels
             ProfileWindow.CreateProfileWindow();
         }
 
-        private void UpdateUserBattleTag(NotificationMessage message)
+        private void ReceivedMessage(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.UpdateUserBattleTag)
                 UserBattleTag = UserProfile.BattleTagName;

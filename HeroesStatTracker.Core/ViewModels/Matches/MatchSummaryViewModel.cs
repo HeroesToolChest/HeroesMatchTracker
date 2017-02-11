@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
+using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchModels;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -24,6 +26,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
         private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
+        private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
+        private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
 
         private IDatabaseService Database;
 
@@ -36,6 +40,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             IsRightChangeButtonVisible = true;
             IsLeftChangeButtonEnabled = false;
             IsRightChangeButtonEnabled = false;
+
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
 
             SimpleIoc.Default.Register<IMatchSummaryReplayService>(() => this);
         }
@@ -120,6 +126,26 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public ObservableCollection<MatchPlayerStats> MatchStatsTeam1Collection
+        {
+            get { return _matchStatsTeam1Collection; }
+            set
+            {
+                _matchStatsTeam1Collection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<MatchPlayerStats> MatchStatsTeam2Collection
+        {
+            get { return _matchStatsTeam2Collection; }
+            set
+            {
+                _matchStatsTeam2Collection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
             if (replayMatch == null || matchList == null || matchList.Count == 0)
@@ -135,7 +161,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         {
             try
             {
-                DisposeMatchSummary();
+                if (BackgroundImage != null)
+                    DisposeMatchSummary();
 
                 replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
 
@@ -160,16 +187,18 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     if (player.Team == 4)
                         continue;
 
+                    //SetContextMenuCommands(matchPlayerInfoBase);
+
                     MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
                     matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
 
-                    //SetContextMenuCommands(matchPlayerInfoBase);
-
                     MatchPlayerTalents matchPlayerTalents = new MatchPlayerTalents(matchPlayerBase);
+                    MatchPlayerStats matchPlayerStats = new MatchPlayerStats(matchPlayerBase);
 
                     if (player.Character != "None")
                     {
-                        matchPlayerTalents.SetTalents(playerTalentsList, player.PlayerNumber);
+                        matchPlayerTalents.SetTalents(playerTalentsList[player.PlayerNumber]);
+                        matchPlayerStats.SetStats(playerScoresList[player.PlayerNumber], player);
                     }
 
                     if (player.Team == 0 || player.Team == 1)
@@ -177,10 +206,12 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                         if (player.Team == 0)
                         {
                             MatchTalentsTeam1Collection.Add(matchPlayerTalents);
+                            MatchStatsTeam1Collection.Add(matchPlayerStats);
                         }
                         else
                         {
                             MatchTalentsTeam2Collection.Add(matchPlayerTalents);
+                            MatchStatsTeam2Collection.Add(matchPlayerStats);
                         }
                     }
                 }
@@ -191,20 +222,35 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        private void ReceivedMessage(NotificationMessage message)
+        {
+            if (message.Notification == StaticMessage.MatchSummaryClosed)
+            {
+                DisposeMatchSummary();
+                Messenger.Default.Send(new NotificationMessage(StaticMessage.ReEnableMatchSummaryButton));
+            }
+        }
+
         private void DisposeMatchSummary()
         {
             foreach (var player in MatchTalentsTeam1Collection)
-            {
                 player.Dispose();
-            }
 
             foreach (var player in MatchTalentsTeam2Collection)
-            {
                 player.Dispose();
-            }
+
+            foreach (var player in MatchStatsTeam1Collection)
+                player.Dispose();
+
+            foreach (var player in MatchStatsTeam2Collection)
+                player.Dispose();
 
             MatchTalentsTeam1Collection.Clear();
             MatchTalentsTeam2Collection.Clear();
+            MatchStatsTeam1Collection.Clear();
+            MatchStatsTeam2Collection.Clear();
+
+            BackgroundImage = null;
         }
     }
 }

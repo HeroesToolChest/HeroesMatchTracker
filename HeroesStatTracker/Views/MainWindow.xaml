@@ -34,7 +34,7 @@
             <controls:Flyout x:Name="AboutFlyout" Position="Right" Header="About" materialDesign:FlyoutAssist.HeaderColorMode="Accent" Width="{StaticResource RightFlyoutWidth}">
                 <titleBar:AboutControl />
             </controls:Flyout>
-            <controls:Flyout Header="{Binding MatchSummaryHeader}" Position="Right" IsOpen="{Binding MatchSummaryIsOpen}" AnimateOpacity="True" HorizontalContentAlignment="Stretch" materialDesign:FlyoutAssist.HeaderColorMode="Standard">
+            <controls:Flyout Header="{Binding MatchSummaryHeader}" Position="Right" IsOpen="{Binding MatchSummaryIsOpen}" ClosingFinished="MatchSummaryFlyout_ClosingFinished"  AnimateOpacity="True" HorizontalContentAlignment="Stretch" materialDesign:FlyoutAssist.HeaderColorMode="Standard">
                 <matches:MatchSummaryControl />
             </controls:Flyout>
         </controls:FlyoutsControl>

@@ -18,7 +18,7 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         public SettingsControlViewModel(IDatabaseService database)
         {
             Database = database;
-            Messenger.Default.Register<NotificationMessage>(this, (message) => ToggleIsNightMode(message));
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public RelayCommand OpenPaletteSelectorWindowCommand => new RelayCommand(OpenPaletteSelectorWindow);
@@ -74,7 +74,7 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
             PaletteSelectorWindowService.CreatePaletteWindow();
         }
 
-        private void ToggleIsNightMode(NotificationMessage message)
+        private void ReceivedMessage(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.IsNightModeToggle)
                 IsNightMode = Database.SettingsDb().UserSettings.IsNightMode;

@@ -34,9 +34,17 @@ namespace Heroes.Icons.Xml
             try
             {
                 if (useSmallImage == false)
-                    return new BitmapImage(MapUriByMapRealName[mapRealName]);
+                {
+                    BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
+                    image.Freeze();
+                    return image;
+                }
                 else
-                    return new BitmapImage(MapSmallUriByMapRealName[mapRealName]);
+                {
+                    BitmapImage image = new BitmapImage(MapSmallUriByMapRealName[mapRealName]);
+                    image.Freeze();
+                    return image;
+                }
             }
             catch (Exception)
             {

@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="options"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
 
     <Color x:Key="MatchBackgroundColor">#12112F</Color>
@@ -9,10 +12,10 @@
     <Color x:Key="RowUserSideColor">#FFE660</Color>
     <Color x:Key="UserCharacterNameColor">#FFE4C7</Color>
 
-    <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" />
-    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#BC9C51" />
-    <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" />
-    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#E1B325" />
+    <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" options:Freeze="True" />
+    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#BC9C51" options:Freeze="True" />
+    <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" options:Freeze="True" />
+    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#E1B325" options:Freeze="True" />
 
     <!--Team 1 (Blue)-->
     <ResourceDictionary x:Key="Team1Brushes">
@@ -20,14 +23,16 @@
         <Color x:Key="CharacterNameColor">#CDFDFF</Color>
         <Color x:Key="PlayerNameColor">#77B8EA</Color>
         <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
+        <Color x:Key="TextValueColor">#919FD8</Color>
 
-        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
-        <SolidColorBrush x:Key="RowBorderBrush" Color="#3E53A8" />
-        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
+        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="RowBorderBrush" Color="#3E53A8" options:Freeze="True" />
+        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
 
-        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1" options:Freeze="True">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Offset="0.0" Color="#151E51" />
                 <GradientStop Offset="1.0" Color="#1F307A" />
@@ -41,18 +46,31 @@
         <Color x:Key="CharacterNameColor">#FEA9BA</Color>
         <Color x:Key="PlayerNameColor">#FEA9BA</Color>
         <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
+        <Color x:Key="TextValueColor">#E49192</Color>
 
-        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" />
-        <SolidColorBrush x:Key="RowBorderBrush" Color="#733F63" />
-        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" />
+        <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="RowBorderBrush" Color="#733F63" options:Freeze="True" />
+        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
 
-        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1">
+        <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1" options:Freeze="True">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Offset="0.0" Color="#34182E" />
                 <GradientStop Offset="1.0" Color="#501631" />
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
     </ResourceDictionary>
+
+    <Style x:Key="TableContentText">
+        <Style.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Foreground" Value="{DynamicResource TextValueBrush}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </Style.Resources>
+    </Style>
 </ResourceDictionary>

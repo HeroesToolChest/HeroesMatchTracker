@@ -42,7 +42,10 @@ namespace Heroes.Icons.Xml
 
                 awardName = award.Item1;
 
-                return new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {
@@ -68,7 +71,10 @@ namespace Heroes.Icons.Xml
 
                 awardName = award.Item1;
 
-                return new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {

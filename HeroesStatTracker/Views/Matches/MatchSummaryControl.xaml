@@ -12,7 +12,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <UserControl.Resources>
-        <system:Double x:Key="HeaderSpacing">68</system:Double>
+        <system:Double x:Key="HeaderTalentSpacing">78</system:Double>
+        <system:Double x:Key="HeaderStatSpacing">160</system:Double>
     </UserControl.Resources>
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
@@ -48,23 +49,46 @@
                             <StackPanel.Background>
                                 <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
                             </StackPanel.Background>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeader}" HorizontalAlignment="Right">
-                                <TextBlock Text="1" Width="{StaticResource HeaderSpacing}" />
-                                <TextBlock Text="4" Width="{StaticResource HeaderSpacing}" Margin="16 0 0 0" />
-                                <TextBlock Text="7" Width="{StaticResource HeaderSpacing}" Margin="16 0 0 0" />
-                                <TextBlock Text="10" Width="{StaticResource HeaderSpacing}" Margin="10 0 0 0" />
-                                <TextBlock Text="13" Width="{StaticResource HeaderSpacing}" Margin="16 0 0 0" />
-                                <TextBlock Text="16" Width="{StaticResource HeaderSpacing}" Margin="16 0 0 0" />
-                                <TextBlock Text="20" Width="{StaticResource HeaderSpacing}" Margin="18 0 0 0" />
+                            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
+                                <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
+                                <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                                <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                                <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="18 0 0 0" />
+                                <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                                <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
                             </StackPanel>
                             <StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 10 15 0"/>
+                                <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>
                                 <ItemsControl ItemsSource="{Binding MatchTalentsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2TalentsItemsControl}" Margin="15 0 15 15"/>
                             </StackPanel>
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
-
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel.Background>
+                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
+                            </StackPanel.Background>
+                            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right">
+                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                                    <Image Source="{StaticResource ScoreKill}" Width="24" ToolTip="Kills" VerticalAlignment="Stretch"/>
+                                </StackPanel>
+                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                                    <Image Source="{StaticResource ScoreAssist}" Width="24" ToolTip="Assists" />
+                                </StackPanel>
+                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                                    <Image Source="{StaticResource ScoreDeath}" Width="24"  ToolTip="Deaths" />
+                                </StackPanel>
+                                <TextBlock Text="Siege Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                                <TextBlock Text="Hero Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                                <TextBlock Text="Role" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 22 0" />
+                            </StackPanel>
+                            <StackPanel>
+                                <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>
+                                <ItemsControl ItemsSource="{Binding MatchStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2StatsItemsControl}" Margin="15 0 15 15"/>
+                            </StackPanel>
+                        </StackPanel>
                     </TabItem>
                 </TabControl>
             </Grid>

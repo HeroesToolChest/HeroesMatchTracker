@@ -104,7 +104,10 @@ namespace Heroes.Icons
         {
             try
             {
-                return new BitmapImage(PartyIcons[partyIconColor]);
+                BitmapImage image = new BitmapImage(PartyIcons[partyIconColor]);
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {
@@ -117,7 +120,10 @@ namespace Heroes.Icons
         {
             try
             {
-                return new BitmapImage(OtherIcons[otherIcon]);
+                BitmapImage image = new BitmapImage(OtherIcons[otherIcon]);
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {
@@ -130,7 +136,10 @@ namespace Heroes.Icons
         {
             try
             {
-                return new BitmapImage(RoleIcons[heroRole]);
+                BitmapImage image = new BitmapImage(RoleIcons[heroRole]);
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {
@@ -143,7 +152,10 @@ namespace Heroes.Icons
         {
             try
             {
-                return new BitmapImage(FranchiseIcons[heroFranchise]);
+                BitmapImage image = new BitmapImage(FranchiseIcons[heroFranchise]);
+                image.Freeze();
+
+                return image;
             }
             catch (Exception)
             {

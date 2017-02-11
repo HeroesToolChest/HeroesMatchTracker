@@ -478,6 +478,14 @@
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_starcraft_zerg.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_zarya.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreen_varian_background.jpg" />
+    <Resource Include="Icons\Other\storm_ui_scorescreen_icon_assist.png" />
+    <Resource Include="Icons\Other\storm_ui_scorescreen_icon_death.png" />
+    <Resource Include="Icons\Other\storm_ui_scorescreen_icon_kill.png" />
+    <Resource Include="Icons\Other\storm_ui_play_filter_assassin-on.png" />
+    <Resource Include="Icons\Other\storm_ui_play_filter_multiclass-on.png" />
+    <Resource Include="Icons\Other\storm_ui_play_filter_specialist-on.png" />
+    <Resource Include="Icons\Other\storm_ui_play_filter_support-on.png" />
+    <Resource Include="Icons\Other\storm_ui_play_filter_warrior-on.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
