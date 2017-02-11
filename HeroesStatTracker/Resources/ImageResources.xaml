@@ -21,4 +21,6 @@
     <BitmapImage x:Key="FilterSpecialist" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_play_filter_specialist-on.png"/>
     <BitmapImage x:Key="FilterSupport" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_play_filter_support-on.png"/>
     <BitmapImage x:Key="FilterWarrior" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_play_filter_warrior-on.png"/>
+    <BitmapImage x:Key="BlueKills" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_kills_blue.png"/>
+    <BitmapImage x:Key="RedKills" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_kills_red.png"/>
 </ResourceDictionary>

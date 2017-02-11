@@ -486,6 +486,8 @@
     <Resource Include="Icons\Other\storm_ui_play_filter_specialist-on.png" />
     <Resource Include="Icons\Other\storm_ui_play_filter_support-on.png" />
     <Resource Include="Icons\Other\storm_ui_play_filter_warrior-on.png" />
+    <Resource Include="Icons\Other\storm_ui_scorescreen_icon_kills_blue.png" />
+    <Resource Include="Icons\Other\storm_ui_scorescreen_icon_kills_red.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

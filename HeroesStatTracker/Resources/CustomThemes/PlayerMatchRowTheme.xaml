@@ -1,12 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     mc:Ignorable="options"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
 
     <Color x:Key="MatchBackgroundColor">#12112F</Color>
     <SolidColorBrush x:Key="MatchBackgroundBrush" Color="#12112F" />
+    <system:Double x:Key="StatTalentsWidth">1120</system:Double>
 
     <!--User Colors (yellow)-->
     <Color x:Key="RowUserSideColor">#FFE660</Color>
@@ -43,8 +45,8 @@
     <!--Team 2 (Red)-->
     <ResourceDictionary x:Key="Team2Brushes">
         <Color x:Key="RowSideColor">#F25B5C</Color>
-        <Color x:Key="CharacterNameColor">#FEA9BA</Color>
-        <Color x:Key="PlayerNameColor">#FEA9BA</Color>
+        <Color x:Key="CharacterNameColor">#FFDAE3</Color>
+        <Color x:Key="PlayerNameColor">#E28E8D</Color>
         <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
         <Color x:Key="TextValueColor">#E49192</Color>
 

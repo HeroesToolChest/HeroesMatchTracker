@@ -17,11 +17,20 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 {
     public class MatchSummaryViewModel : HstViewModel, IMatchSummaryReplayService
     {
+        private int _teamBlueKills;
+        private int _teamRedKills;
+        private int _teamBlueLevel;
+        private int _teamRedLevel;
         private bool _isLeftChangeButtonVisible;
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
         private bool _isRightChangeButtonEnabled;
+        private string _teamBlueIsWinner;
+        private string _teamRedIsWinner;
         private string _matchTitle;
+        private string _teamBlueName;
+        private string _teamRedName;
+        private string _matchLength;
         private Color _matchTitleGlowColor;
 
         private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
@@ -44,6 +53,46 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
 
             SimpleIoc.Default.Register<IMatchSummaryReplayService>(() => this);
+        }
+
+        public int TeamBlueKills
+        {
+            get { return _teamBlueKills; }
+            set
+            {
+                _teamBlueKills = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public int TeamRedKills
+        {
+            get { return _teamRedKills; }
+            set
+            {
+                _teamRedKills = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public int TeamBlueLevel
+        {
+            get { return _teamBlueLevel; }
+            set
+            {
+                _teamBlueLevel = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public int TeamRedLevel
+        {
+            get { return _teamRedLevel; }
+            set
+            {
+                _teamRedLevel = value;
+                RaisePropertyChanged();
+            }
         }
 
         public bool IsLeftChangeButtonVisible
@@ -92,6 +141,56 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             set
             {
                 _matchTitle = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string TeamBlueName
+        {
+            get { return _teamBlueName; }
+            set
+            {
+                _teamBlueName = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string TeamRedName
+        {
+            get { return _teamRedName; }
+            set
+            {
+                _teamRedName = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string TeamBlueIsWinner
+        {
+            get { return _teamBlueIsWinner; }
+            set
+            {
+                _teamBlueIsWinner = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string TeamRedIsWinner
+        {
+            get { return _teamRedIsWinner; }
+            set
+            {
+                _teamRedIsWinner = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string MatchLength
+        {
+            get { return _matchLength; }
+            set
+            {
+                _matchLength = value;
                 RaisePropertyChanged();
             }
         }
@@ -170,7 +269,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 SetBackgroundImage(replayMatch.MapName);
                 MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
                 MatchTitle = $"{replayMatch.MapName} - {HeroesHelpers.GameModes.GetStringFromGameMode(replayMatch.GameMode)} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
-
+                MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
                 // get players info
                 var playersList = replayMatch.ReplayMatchPlayers.ToList();
                 var playerTalentsList = replayMatch.ReplayMatchPlayerTalents.ToList();
@@ -215,11 +314,30 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                         }
                     }
                 }
+
+                MatchResult matchResult = new MatchResult(Database);
+                matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
+                SetMatchResults(matchResult);
             }
             catch (Exception ex)
             {
                 ExceptionLog.Log(NLog.LogLevel.Error, ex);
             }
+        }
+
+        private void SetMatchResults(MatchResult matchResult)
+        {
+            TeamBlueKills = matchResult.TeamBlueKills;
+            TeamRedKills = matchResult.TeamRedKills;
+
+            TeamBlueLevel = matchResult.TeamBlueLevel;
+            TeamRedLevel = matchResult.TeamRedLevel;
+
+            TeamBlueName = matchResult.TeamBlue;
+            TeamRedName = matchResult.TeamRed;
+
+            TeamBlueIsWinner = matchResult.TeamBlueIsWinner;
+            TeamRedIsWinner = matchResult.TeamRedIsWinner;
         }
 
         private void ReceivedMessage(NotificationMessage message)

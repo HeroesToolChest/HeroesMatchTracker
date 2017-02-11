@@ -14,15 +14,15 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             : base(database, heroesIcons, player)
         { }
 
-        public int? SoloKills { get; set; }
-        public int? Assists { get; set; }
-        public int? Deaths { get; set; }
-        public int? SiegeDamage { get; set; }
-        public int? HeroDamage { get; set; }
-        public int? Role { get; set; }
-        public int? ExperienceContribution { get; set; }
-        public bool RoleWarrior { get; set; }
-        public bool RoleSupport { get; set; }
+        public int? SoloKills { get; private set; }
+        public int? Assists { get; private set; }
+        public int? Deaths { get; private set; }
+        public int? SiegeDamage { get; private set; }
+        public int? HeroDamage { get; private set; }
+        public int? Role { get; private set; }
+        public int? ExperienceContribution { get; private set; }
+        public bool RoleWarrior { get; private set; }
+        public bool RoleSupport { get; private set; }
 
         public void SetStats(ReplayMatchPlayerScoreResult playerScore, ReplayMatchPlayer player)
         {

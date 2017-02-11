@@ -14,10 +14,10 @@
     <system:Double x:Key="PopupHorizontalOffset">-30</system:Double>
     <system:Double x:Key="PopupVerticalOffset">5</system:Double>
 
-    <Thickness x:Key="TalentIconMargin" Left="30" Top="0" Right="30" Bottom="0" />
+    <Thickness x:Key="TalentIconMargin" Left="34" Top="0" Right="34" Bottom="0" />
     
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerTalents}" x:Key="MatchTalentRow">
-        <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}">
+        <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}" Width="{StaticResource StatTalentsWidth}">
             <DockPanel>
                 <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
                     <Border.Style>

@@ -16,10 +16,10 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             : base(database, heroesIcons, player)
         { }
 
-        public List<BitmapImage> Talents { get; set; }
-        public List<string> TalentNames { get; set; }
-        public List<string> TalentShortTooltips { get; set; }
-        public List<string> TalentFullTooltips { get; set; }
+        public List<BitmapImage> Talents { get; private set; }
+        public List<string> TalentNames { get; private set; }
+        public List<string> TalentShortTooltips { get; private set; }
+        public List<string> TalentFullTooltips { get; private set; }
 
         public void SetTalents(ReplayMatchPlayerTalent playerTalentList)
         {

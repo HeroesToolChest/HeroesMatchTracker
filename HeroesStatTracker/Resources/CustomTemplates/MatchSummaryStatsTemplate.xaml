@@ -20,7 +20,7 @@
     <Thickness x:Key="TextValueMargin" Left="4" Top="0" Right="4" Bottom="0" />
     
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerStats}" x:Key="MatchStatRow">
-        <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}">
+        <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}" Width="{StaticResource StatTalentsWidth}">
             <DockPanel>
                 <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
                     <Border.Style>
@@ -159,7 +159,7 @@
                                         </Image.Style>
                                     </Image>
                                 </InlineUIContainer>
-                                <Run Text="{Binding Role, StringFormat={}{0:N0}}" BaselineAlignment="Center"/>
+                                <Run Text="{Binding Role, Mode=OneWay, StringFormat={}{0:N0}}" BaselineAlignment="Center"/>
                             </TextBlock>
                             <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                         </StackPanel>
