@@ -314,6 +314,9 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     }
                 }
 
+                SetHighestTeamStatValues();
+
+                // Set the match results: total kills, team levels, game time
                 MatchResult matchResult = new MatchResult(Database);
                 matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
                 SetMatchResults(matchResult);
@@ -337,6 +340,60 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
             TeamBlueIsWinner = matchResult.TeamBlueIsWinner;
             TeamRedIsWinner = matchResult.TeamRedIsWinner;
+        }
+
+        private void SetHighestTeamStatValues()
+        {
+            int? highestSiege1 = MatchStatsTeam1Collection.Max(x => x.SiegeDamage);
+            int? highestSiege2 = MatchStatsTeam2Collection.Max(x => x.SiegeDamage);
+
+            int? highestHero1 = MatchStatsTeam1Collection.Max(x => x.HeroDamage);
+            int? highestHero2 = MatchStatsTeam2Collection.Max(x => x.HeroDamage);
+
+            int? highestExp1 = MatchStatsTeam1Collection.Max(x => x.ExperienceContribution);
+            int? highestExp2 = MatchStatsTeam2Collection.Max(x => x.ExperienceContribution);
+
+            int? highestDamageTaken1 = MatchStatsTeam1Collection.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken2 = MatchStatsTeam2Collection.Max(x => x.DamageTakenRole);
+
+            int? highestHealing1 = MatchStatsTeam1Collection.Max(x => x.HealingRole);
+            int? highestHealing2 = MatchStatsTeam2Collection.Max(x => x.HealingRole);
+
+            foreach (var item in MatchStatsTeam1Collection)
+            {
+                if (item.SiegeDamage == highestSiege1)
+                    item.HighestSiegeDamage = true;
+
+                if (item.HeroDamage == highestHero1)
+                    item.HighestHeroDamage = true;
+
+                if (item.ExperienceContribution == highestExp1)
+                    item.HighestExperience = true;
+
+                if (item.DamageTakenRole == highestDamageTaken1)
+                    item.HighestDamageTaken = true;
+
+                if (item.HealingRole == highestHealing1)
+                    item.HighestHealing = true;
+            }
+
+            foreach (var item in MatchStatsTeam2Collection)
+            {
+                if (item.SiegeDamage == highestSiege2)
+                    item.HighestSiegeDamage = true;
+
+                if (item.HeroDamage == highestHero2)
+                    item.HighestHeroDamage = true;
+
+                if (item.ExperienceContribution == highestExp2)
+                    item.HighestExperience = true;
+
+                if (item.DamageTakenRole == highestDamageTaken2)
+                    item.HighestDamageTaken = true;
+
+                if (item.HealingRole == highestHealing2)
+                    item.HighestHealing = true;
+            }
         }
 
         private void ReceivedMessage(NotificationMessage message)

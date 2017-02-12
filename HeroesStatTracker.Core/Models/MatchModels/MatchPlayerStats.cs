@@ -19,10 +19,16 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public int? Deaths { get; private set; }
         public int? SiegeDamage { get; private set; }
         public int? HeroDamage { get; private set; }
-        public int? Role { get; private set; }
+        public int? DamageTakenRole { get; private set; }
+        public int? HealingRole { get; private set; }
         public int? ExperienceContribution { get; private set; }
         public bool RoleWarrior { get; private set; }
         public bool RoleSupport { get; private set; }
+        public bool HighestSiegeDamage { get; set; }
+        public bool HighestHeroDamage { get; set; }
+        public bool HighestExperience { get; set; }
+        public bool HighestDamageTaken { get; set; }
+        public bool HighestHealing { get; set; }
 
         public void SetStats(ReplayMatchPlayerScoreResult playerScore, ReplayMatchPlayer player)
         {
@@ -38,12 +44,12 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
             if (playerScore.DamageTaken != null)
             {
-                Role = playerScore.DamageTaken;
+                DamageTakenRole = playerScore.DamageTaken;
                 RoleWarrior = true;
             }
             else if (IsHealingStatCharacter(player.Character))
             {
-                Role = playerScore.Healing;
+                HealingRole = playerScore.Healing;
                 RoleSupport = true;
             }
         }

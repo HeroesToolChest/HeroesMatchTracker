@@ -20,7 +20,7 @@ namespace HeroesStatTracker.Core.ViewModels
             WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
             UnParsedReplaysLog = LogManager.GetLogger(LogFileNames.UnParsedReplaysLogFileName);
             TranslationsLog = LogManager.GetLogger(LogFileNames.TranslationLogFileName);
-            HotsLogsLog = LogManager.GetLogger(LogFileNames.TranslationLogFileName);
+            HotsLogsLog = LogManager.GetLogger(LogFileNames.HotsLogsLogFileName);
 
             SetRandomBackgroundImage();
         }

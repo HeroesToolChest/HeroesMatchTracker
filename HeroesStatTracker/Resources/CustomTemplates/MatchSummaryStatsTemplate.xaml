@@ -18,6 +18,12 @@
     <system:Double x:Key="StatLargeNumberWidth">140</system:Double>
     
     <Thickness x:Key="TextValueMargin" Left="4" Top="0" Right="4" Bottom="0" />
+
+    <Style x:Key="TableContentText">
+        <Style.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}" />
+        </Style.Resources>
+    </Style>
     
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerStats}" x:Key="MatchStatRow">
         <StackPanel Width="{StaticResource StatTalentsWidth}">
@@ -140,11 +146,41 @@
                             <TextBlock Text="{Binding SoloKills}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                             <TextBlock Text="{Binding Assists}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                             <TextBlock Text="{Binding Deaths}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                            <TextBlock Text="{Binding SiegeDamage, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                            <TextBlock Text="{Binding HeroDamage, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                            <TextBlock Margin="{StaticResource TextValueMargin}" Width="{StaticResource StatLargeNumberWidth}" VerticalAlignment="Center">
-                                <InlineUIContainer>
-                                    <Image Height="23" Margin="0 6 0 0">
+                            <TextBlock Text="{Binding SiegeDamage, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestSiegeDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding HeroDamage, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestHeroDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Margin="{StaticResource TextValueMargin}" Width="{StaticResource StatLargeNumberWidth}">
+                                <InlineUIContainer BaselineAlignment="Bottom">
+                                    <Image Height="23">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Style.Triggers>
@@ -159,9 +195,53 @@
                                         </Image.Style>
                                     </Image>
                                 </InlineUIContainer>
-                                <Run Text="{Binding Role, Mode=OneWay, StringFormat={}{0:N0}}" BaselineAlignment="Center"/>
+                                <TextBlock>
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RoleWarrior}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding DamageTakenRole, Mode=OneWay, StringFormat={}{0:N0}}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding RoleSupport}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding HealingRole, Mode=OneWay, StringFormat={}{0:N0}}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding HighestDamageTaken}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                    <Setter Property="Effect">
+                                                        <Setter.Value>
+                                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding HighestHealing}" Value="True">
+                                                    <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                    <Setter Property="Effect">
+                                                        <Setter.Value>
+                                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
                             </TextBlock>
-                            <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                            <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestExperience}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </StackPanel>
                         
                         <StackPanel />
