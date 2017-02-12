@@ -10,9 +10,10 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService
+    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabsService
     {
         private bool _matchSummaryIsOpen;
+        private int _selectedMainTab;
         private string _matchSummaryHeader;
 
         private IDatabaseService Database;
@@ -27,6 +28,7 @@ namespace HeroesStatTracker.Core.ViewModels
             UserProfile = userProfile;
 
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
+            SimpleIoc.Default.Register<IMainTabsService>(() => this);
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
@@ -66,6 +68,16 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
+        public int SelectedMainTab
+        {
+            get { return _selectedMainTab; }
+            set
+            {
+                _selectedMainTab = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string MatchSummaryHeader
         {
             get { return _matchSummaryHeader; }
@@ -81,9 +93,24 @@ namespace HeroesStatTracker.Core.ViewModels
             MatchSummaryIsOpen = !MatchSummaryIsOpen;
         }
 
+        public void CloseMatchSummaryFlyout()
+        {
+            MatchSummaryIsOpen = false;
+        }
+
+        public void OpenMatchSummaryFlyout()
+        {
+            MatchSummaryIsOpen = true;
+        }
+
         public void SetMatchSummaryHeader(string headerTitle)
         {
             MatchSummaryHeader = headerTitle;
+        }
+
+        public void SwitchToTab(MainTabs selectedMainTab)
+        {
+            SelectedMainTab = (int)selectedMainTab;
         }
 
         private void OpenWhatsNewWindow()

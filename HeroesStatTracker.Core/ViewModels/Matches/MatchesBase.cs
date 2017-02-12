@@ -1,8 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.ReplayParser;
+using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchModels;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -15,7 +17,7 @@ using System.Linq;
 
 namespace HeroesStatTracker.Core.ViewModels.Matches
 {
-    public class MatchesBase : HstViewModel
+    public class MatchesBase : HstViewModel, IMatchesDataService
     {
         private bool _isGivenBattleTagOnlyChecked;
         private bool _showMatchSummaryButtonEnabled;
@@ -70,6 +72,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
             SelectedCharacter = HeroesList[0];
 
+            SimpleIoc.Default.Register<IMatchesDataService>(() => this);
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
@@ -255,6 +258,18 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         public RelayCommand ShowMatchOverviewCommand => new RelayCommand(LoadMatchOverview);
         public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
 
+        public void SendSearchData(MatchesDataMessage matchesDataMessage)
+        {
+            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedCharacter))
+                SelectedCharacter = matchesDataMessage.SelectedCharacter;
+
+            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedBattleTagName))
+                SelectedPlayerBattleTag = matchesDataMessage.SelectedBattleTagName;
+
+            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedCharacter) && !string.IsNullOrEmpty(matchesDataMessage.SelectedBattleTagName))
+                IsGivenBattleTagOnlyChecked = true;
+        }
+
         private void LoadMatchList()
         {
             ReplayFilter filter = new ReplayFilter
@@ -304,8 +319,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
                 MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
-
-                //SetContextMenuCommands(matchPlayerInfoBase);
 
                 // add to collection
                 if (player.Team == 0)
@@ -365,7 +378,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private void ReceivedMessage(NotificationMessage message)
         {
-            if (message.Notification == Messaging.StaticMessage.ReEnableMatchSummaryButton)
+            if (message.Notification == StaticMessage.ReEnableMatchSummaryButton)
                 ShowMatchSummaryButtonEnabled = true;
         }
     }

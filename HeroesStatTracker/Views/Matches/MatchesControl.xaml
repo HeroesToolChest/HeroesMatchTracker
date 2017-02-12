@@ -5,9 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.Matches"
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             DataContext="{Binding MatchesViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <dragablz:TabablzControl FixedHeaderCount="7">
+    <dragablz:TabablzControl FixedHeaderCount="7" SelectedIndex="{Binding SelectedMatchesTab}">
         <TabItem Header="All Matches">
             <local:AllMatchesControl />
         </TabItem>

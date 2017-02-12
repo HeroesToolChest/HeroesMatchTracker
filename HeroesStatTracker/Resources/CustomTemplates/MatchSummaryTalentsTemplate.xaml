@@ -17,7 +17,7 @@
     <Thickness x:Key="TalentIconMargin" Left="34" Top="0" Right="34" Bottom="0" />
     
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerTalents}" x:Key="MatchTalentRow">
-        <StackPanel ContextMenu="{StaticResource PlayerSearchContextMenu}" Width="{StaticResource StatTalentsWidth}">
+        <StackPanel Width="{StaticResource StatTalentsWidth}">
             <DockPanel>
                 <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
                     <Border.Style>
@@ -58,7 +58,7 @@
                         </Style>
                     </Border.Style>
                     <DockPanel>
-                        <Grid DockPanel.Dock="Left">
+                        <Grid DockPanel.Dock="Left" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left">
                                 <Image.ToolTip>
                                     <ToolTip Content="{Binding CharacterTooltip}"/>
@@ -67,7 +67,7 @@
                             <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-4 -16 0 0"/>
                         </Grid>
-                        <StackPanel DockPanel.Dock="Left" Width="180">
+                        <StackPanel DockPanel.Dock="Left" Width="180" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <TextBlock Text="{Binding CharacterName}" Padding="4 4 0 5">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock">
@@ -91,7 +91,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                                 <TextBlock Text="{Binding PlayerName}" Padding="4 0 0 0">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">

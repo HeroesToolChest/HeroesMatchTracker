@@ -79,7 +79,7 @@
                     </materialDesign:PopupBox>
                 </StackPanel>
             </materialDesign:ColorZone>
-            <dragablz:TabablzControl FixedHeaderCount="4">
+            <dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
                 <TabItem Header="Home">
 
                 </TabItem>

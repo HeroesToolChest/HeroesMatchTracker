@@ -270,6 +270,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
                 MatchTitle = $"{replayMatch.MapName} - {HeroesHelpers.GameModes.GetStringFromGameMode(replayMatch.GameMode)} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
                 MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
+
                 // get players info
                 var playersList = replayMatch.ReplayMatchPlayers.ToList();
                 var playerTalentsList = replayMatch.ReplayMatchPlayerTalents.ToList();
@@ -285,8 +286,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 {
                     if (player.Team == 4)
                         continue;
-
-                    //SetContextMenuCommands(matchPlayerInfoBase);
 
                     MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
                     matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);

@@ -1,12 +1,14 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
 using Heroes.Icons;
+using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace HeroesStatTracker.Core.Models.MatchModels
@@ -51,9 +53,57 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
 
+        public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
+        public RelayCommand HeroSearchQuickMatchCommand => new RelayCommand(HeroSearchQuickMatch);
+        public RelayCommand HeroSearchUnrankedDraftCommand => new RelayCommand(HeroSearchUnrankedDraft);
+        public RelayCommand HeroSearchHeroLeagueCommand => new RelayCommand(HeroSearchHeroLeague);
+        public RelayCommand HeroSearchTeamLeagueCommand => new RelayCommand(HeroSearchTeamLeague);
+        public RelayCommand HeroSearchBrawlCommand => new RelayCommand(HeroSearchBrawl);
+        public RelayCommand HeroSearchCustomGameCommand => new RelayCommand(HeroSearchCustomGame);
+
+        public RelayCommand PlayerSearchAllMatchCommand => new RelayCommand(PlayerSearchAllMatch);
+        public RelayCommand PlayerSearchQuickMatchCommand => new RelayCommand(PlayerSearchQuickMatch);
+        public RelayCommand PlayerSearchUnrankedDraftCommand => new RelayCommand(PlayerSearchUnrankedDraft);
+        public RelayCommand PlayerSearchHeroLeagueCommand => new RelayCommand(PlayerSearchHeroLeague);
+        public RelayCommand PlayerSearchTeamLeagueCommand => new RelayCommand(PlayerSearchTeamLeague);
+        public RelayCommand PlayerSearchBrawlCommand => new RelayCommand(PlayerSearchBrawl);
+        public RelayCommand PlayerSearchCustomGameCommand => new RelayCommand(PlayerSearchCustomGame);
+
+        public RelayCommand PlayerAndHeroSearchAllMatchCommand => new RelayCommand(PlayerAndHeroSearchAllMatch);
+        public RelayCommand PlayerAndHeroSearchQuickMatchCommand => new RelayCommand(PlayerAndHeroSearchQuickMatch);
+        public RelayCommand PlayerAndHeroSearchUnrankedDraftCommand => new RelayCommand(PlayerAndHeroSearchUnrankedDraft);
+        public RelayCommand PlayerAndHeroSearchHeroLeagueCommand => new RelayCommand(PlayerAndHeroSearchHeroLeague);
+        public RelayCommand PlayerAndHeroSearchTeamLeagueCommand => new RelayCommand(PlayerAndHeroSearchTeamLeague);
+        public RelayCommand PlayerAndHeroSearchBrawlCommand => new RelayCommand(PlayerAndHeroSearchBrawl);
+        public RelayCommand PlayerAndHeroSearchCustomGameCommand => new RelayCommand(PlayerAndHeroSearchCustomGame);
+
+        public RelayCommand CopyHeroNameToClipboardCommand => new RelayCommand(CopyHeroNameToClipboard);
+        public RelayCommand CopyPlayerNameToClipboardCommand => new RelayCommand(CopyPlayerNameToClipboard);
+        public RelayCommand CopyHeroAndPlayerNameToClipboardCommand => new RelayCommand(CopyHeroAndPlayerNameToClipboard);
+
         public IBrowserWindowService BrowserWindow
         {
             get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
+        }
+
+        public IMainTabsService MainTabs
+        {
+            get { return ServiceLocator.Current.GetInstance<IMainTabsService>(); }
+        }
+
+        public IMatchesTabService MatchesTab
+        {
+            get { return ServiceLocator.Current.GetInstance<IMatchesTabService>(); }
+        }
+
+        public IMatchesDataService MatchesData
+        {
+            get { return ServiceLocator.Current.GetInstance<IMatchesDataService>(); }
+        }
+
+        public IMatchSummaryFlyoutService MatchSummaryFlyout
+        {
+            get { return ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>(); }
         }
 
         protected IDatabaseService Database { get; }
@@ -110,6 +160,150 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         private void ShowHotsLogsPlayerProfile()
         {
             BrowserWindow.CreateBrowserWindow();
+        }
+
+        private void HeroSearchAllMatch()
+        {
+            HeroSearch(MatchesTabs.AllMatches);
+        }
+
+        private void HeroSearchQuickMatch()
+        {
+            HeroSearch(MatchesTabs.QuickMatch);
+        }
+
+        private void HeroSearchUnrankedDraft()
+        {
+            HeroSearch(MatchesTabs.UnrankedDraft);
+        }
+
+        private void HeroSearchHeroLeague()
+        {
+            HeroSearch(MatchesTabs.HeroLeague);
+        }
+
+        private void HeroSearchTeamLeague()
+        {
+            HeroSearch(MatchesTabs.TeamLeague);
+        }
+
+        private void HeroSearchBrawl()
+        {
+            HeroSearch(MatchesTabs.Brawl);
+        }
+
+        private void HeroSearchCustomGame()
+        {
+            HeroSearch(MatchesTabs.Custom);
+        }
+
+        private void PlayerSearchAllMatch()
+        {
+            PlayerSearch(MatchesTabs.AllMatches);
+        }
+
+        private void PlayerSearchQuickMatch()
+        {
+            PlayerSearch(MatchesTabs.QuickMatch);
+        }
+
+        private void PlayerSearchUnrankedDraft()
+        {
+            PlayerSearch(MatchesTabs.UnrankedDraft);
+        }
+
+        private void PlayerSearchHeroLeague()
+        {
+            PlayerSearch(MatchesTabs.HeroLeague);
+        }
+
+        private void PlayerSearchTeamLeague()
+        {
+            PlayerSearch(MatchesTabs.TeamLeague);
+        }
+
+        private void PlayerSearchBrawl()
+        {
+            PlayerSearch(MatchesTabs.Brawl);
+        }
+
+        private void PlayerSearchCustomGame()
+        {
+            PlayerSearch(MatchesTabs.Custom);
+        }
+
+        private void PlayerAndHeroSearchAllMatch()
+        {
+            PlayerAndHeroSearch(MatchesTabs.AllMatches);
+        }
+
+        private void PlayerAndHeroSearchQuickMatch()
+        {
+            PlayerAndHeroSearch(MatchesTabs.QuickMatch);
+        }
+
+        private void PlayerAndHeroSearchUnrankedDraft()
+        {
+            PlayerAndHeroSearch(MatchesTabs.UnrankedDraft);
+        }
+
+        private void PlayerAndHeroSearchHeroLeague()
+        {
+            PlayerAndHeroSearch(MatchesTabs.HeroLeague);
+        }
+
+        private void PlayerAndHeroSearchTeamLeague()
+        {
+            PlayerAndHeroSearch(MatchesTabs.TeamLeague);
+        }
+
+        private void PlayerAndHeroSearchBrawl()
+        {
+            PlayerAndHeroSearch(MatchesTabs.Brawl);
+        }
+
+        private void PlayerAndHeroSearchCustomGame()
+        {
+            PlayerAndHeroSearch(MatchesTabs.Custom);
+        }
+
+        private void CopyHeroNameToClipboard()
+        {
+            Clipboard.SetText(CharacterName);
+        }
+
+        private void CopyPlayerNameToClipboard()
+        {
+            Clipboard.SetText(PlayerName);
+        }
+
+        private void CopyHeroAndPlayerNameToClipboard()
+        {
+            Clipboard.SetText($"{CharacterName} - {PlayerName}");
+        }
+
+        private void HeroSearch(MatchesTabs matchTab)
+        {
+            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MatchesTab.SwitchToTab(matchTab);
+            MatchesData.SendSearchData(new MatchesDataMessage { SelectedCharacter = CharacterName });
+            MatchSummaryFlyout.CloseMatchSummaryFlyout();
+        }
+
+        private void PlayerSearch(MatchesTabs matchTab)
+        {
+            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MatchesTab.SwitchToTab(matchTab);
+            MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName });
+            MatchSummaryFlyout.CloseMatchSummaryFlyout();
+        }
+
+        private void PlayerAndHeroSearch(MatchesTabs matchTab)
+        {
+            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MatchesTab.SwitchToTab(matchTab);
+            MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName, SelectedCharacter = CharacterName });
+            MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
     }
 }

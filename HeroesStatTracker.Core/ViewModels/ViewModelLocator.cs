@@ -83,6 +83,7 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<RawRenamedPlayerViewModel>();
 
             // Matches
+            SimpleIoc.Default.Register<MatchesViewModel>();
             SimpleIoc.Default.Register<AllMatchesViewModel>();
             SimpleIoc.Default.Register<BrawlViewModel>();
             SimpleIoc.Default.Register<CustomGameViewModel>();
@@ -90,18 +91,24 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<QuickMatchViewModel>();
             SimpleIoc.Default.Register<TeamLeagueViewModel>();
             SimpleIoc.Default.Register<UnrankedDraftViewModel>();
-
             SimpleIoc.Default.Register<MatchSummaryViewModel>();
         }
 
+        // start ups
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public static StartupWindowViewModel StartupWindowViewModel => ServiceLocator.Current.GetInstance<StartupWindowViewModel>();
         public static ProfileWindowViewModel ProfileWindowViewModel => ServiceLocator.Current.GetInstance<ProfileWindowViewModel>();
+
+        // TitleBar
         public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();
         public static AboutControlViewModel AboutControlViewModel => ServiceLocator.Current.GetInstance<AboutControlViewModel>();
         public static PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel => ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>();
         public static WhatsNewWindowViewModel WhatsNewWindowViewModel => ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>();
+
+        // Replays
         public static ReplaysControlViewModel ReplaysControlViewModel => ServiceLocator.Current.GetInstance<ReplaysControlViewModel>();
+
+        // RawData
         public static RawMatchReplayViewModel RawMatchReplayViewModel => ServiceLocator.Current.GetInstance<RawMatchReplayViewModel>();
         public static RawAllHotsPlayerViewModel RawAllHotsPlayerViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerViewModel>();
         public static RawAllHotsPlayerHeroesViewModel RawAllHotsPlayerHeroesViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerHeroesViewModel>();
@@ -116,6 +123,9 @@ namespace HeroesStatTracker.Core.ViewModels
         public static RawMatchTeamLevelViewModel RawMatchTeamLevelViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamLevelViewModel>();
         public static RawMatchTeamObjectiveViewModel RawMatchTeamObjectiveViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamObjectiveViewModel>();
         public static RawRenamedPlayerViewModel RawRenamedPlayerViewModel => ServiceLocator.Current.GetInstance<RawRenamedPlayerViewModel>();
+
+        // Matches
+        public static MatchesViewModel MatchesViewModel => ServiceLocator.Current.GetInstance<MatchesViewModel>();
         public static AllMatchesViewModel AllMatchesViewModel => ServiceLocator.Current.GetInstance<AllMatchesViewModel>();
         public static BrawlViewModel BrawlViewModel => ServiceLocator.Current.GetInstance<BrawlViewModel>();
         public static CustomGameViewModel CustomGameViewModel => ServiceLocator.Current.GetInstance<CustomGameViewModel>();
