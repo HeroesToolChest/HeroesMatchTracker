@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stitches attributeid="Stit" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
+  <Level1>
+    <StitchesMasteryChewYourFood name="Chew Your Food" desc="StitchesDevourChewYourFoodTalent">storm_ui_icon_stitches_devour.dds</StitchesMasteryChewYourFood>
+    <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
+    <StitchesHungryforMore name="Hungry for More" generic="true" desc="StitchesHungryforMore">storm_ui_icon_talent_regenerationmaster.dds</StitchesHungryforMore>
+    <StitchesMasteryHeavySlam name="Heavy Slam" desc="StitchesSlamHeavySlamTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryHeavySlam>
+  </Level1>
+  <Level4>
+    <GenericTalentAmplifiedHealing name="Amplified Healing" desc="GenericAmplifiedHealingTalent">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
+    <StitchesRestorativeFumes name="Restorative Fumes" desc="StitchesRestorativeFumes">storm_ui_icon_stitches_acidcloud.dds</StitchesRestorativeFumes>
+    <StitchesMasteryPutridGroundSlam name="Putrid Ground" desc="StitchesSlamPutridGroundTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryPutridGroundSlam>
+  </Level4>
+  <Level7>
+    <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor" desc="StitchesDevourSavorTheFlavorTalent">storm_ui_icon_stitches_devour.dds</StitchesMasterySavorTheFlavorDevour>
+    <StitchesMasteryLastBiteDevour name="Last Bite" desc="StitchesDevourLastBiteTalent">storm_ui_icon_stitches_devour_var1.dds</StitchesMasteryLastBiteDevour>
+    <StitchesCombatStyleTenderizer name="Tenderizer" generic="true" desc="StitchesVileGasTenderizerTalent">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
+    <StitchesToxicGas name="Toxic Gas" desc="StitchesVileGasToxicGasTalent">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
+  </Level7>
+  <Level10>
+    <StitchesHeroicAbilityPutridBile name="Putrid Bile" desc="StitchesPutridBile">storm_ui_icon_stitches_putridbile.dds</StitchesHeroicAbilityPutridBile>
+    <StitchesHeroicAbilityGorge name="Gorge" desc="StitchesGorge">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
+  </Level10>
+  <Level13>
+    <StitchesFleaBag name="Flea Bag" generic="true" desc="StitchesFleaBag">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>
+    <StitchesMasteryMegaSmashSlam name="Mega Smash" desc="StitchesSlamMegaSmashTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryMegaSmashSlam>
+    <StitchesMasteryIndigestionDevour name="Indigestion" desc="StitchesDevourIndigestionTalent">storm_ui_icon_stitches_devour.dds</StitchesMasteryIndigestionDevour>
+  </Level13>
+  <Level16>
+    <StitchesMasteryPulverizeSlam name="Pulverize" desc="StitchesSlamPulverizeTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryPulverizeSlam>
+    <StitchesMasteryFishingHook name="Fishing Hook" desc="StitchesHookFishingHookTalent">storm_ui_icon_stitches_hook.dds</StitchesMasteryFishingHook>
+    <StitchesMasteryShishKabobHook name="Shish Kabob" desc="StitchesHookShishKabobTalent">storm_ui_icon_stitches_hook_var1.dds</StitchesMasteryShishKabobHook>
+    <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+  </Level16>
+  <Level20>
+    <StitchesMasteryRegenerativeBilePutridBile name="Regenerative Bile" desc="StitchesPutridBileRegenerativeBileTalent">storm_ui_icon_stitches_putridbile.dds</StitchesMasteryRegenerativeBilePutridBile>
+    <StitchesMasteryHungryHungryStitchesGorge name="Hungry Hungry Stitches" desc="StitchesGorgeHungryHungryStitchesTalent">storm_ui_icon_stitches_cannibalize.dds</StitchesMasteryHungryHungryStitchesGorge>
+    <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+</Stitches>
