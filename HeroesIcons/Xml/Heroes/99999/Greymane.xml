@@ -18,7 +18,7 @@
   </Level7>
   <Level10>
     <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat" desc="GreymaneGoForTheThroat">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
-    <GreymaneHeroicAbilityMarkedForTheKill name="Marked for the Kill" desc="GreymaneMarkedForTheKill">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityMarkedForTheKill>
+    <GreymaneHeroicAbilityCursedBullet name="Cursed Bullet" desc="GreymaneCursedBullet">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityCursedBullet>
   </Level10>
   <Level13>
     <GreymaneDarkflightDisengageRunningWild name="Running Wild" desc="GreymaneDarkflightRunningWildTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightDisengageRunningWild>
@@ -33,7 +33,7 @@
   </Level16>
   <Level20>
     <GreymaneGoForTheThroatUnleashed name="Unleashed" desc="GreymaneUnleashed">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneGoForTheThroatUnleashed>
-    <GreymaneMarkedForTheKillGilneanRoulette name="Gilnean Roulette" desc="GreymaneMarkedForTheKillGilneanRouletteTalent">storm_ui_icon_Greymane_Snapshot.dds</GreymaneMarkedForTheKillGilneanRoulette>
+    <GreymaneCursedBulletGilneanRoulette name="Gilnean Roulette" desc="GreymaneCursedBulletGilneanRouletteTalent">storm_ui_icon_Greymane_Snapshot.dds</GreymaneCursedBulletGilneanRoulette>
     <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss" desc="GreymaneHuntersBlunderbussTalent">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
     <GreymaneToothAndClaw name="Tooth and Claw" desc="GreymaneToothAndClawTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
   </Level20>
