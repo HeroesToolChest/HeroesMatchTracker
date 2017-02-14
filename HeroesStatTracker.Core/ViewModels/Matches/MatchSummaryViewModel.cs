@@ -37,7 +37,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
-
+        private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private IDatabaseService Database;
 
         public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
@@ -245,6 +245,16 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public ObservableCollection<MatchChat> MatchChatCollection
+        {
+            get { return _matchChatCollection; }
+            set
+            {
+                _matchChatCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
             if (replayMatch == null || matchList == null || matchList.Count == 0)
@@ -315,6 +325,20 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 }
 
                 SetHighestTeamStatValues();
+
+                if (matchMessagesList != null && matchMessagesList.Count > 0)
+                {
+                    foreach (var message in matchMessagesList)
+                    {
+                        if (message.MessageEventType == "SChatMessage")
+                        {
+                            MatchChat matchChat = new MatchChat();
+                            matchChat.SetChatMessages(message);
+
+                            MatchChatCollection.Add(matchChat);
+                        }
+                    }
+                }
 
                 // Set the match results: total kills, team levels, game time
                 MatchResult matchResult = new MatchResult(Database);
