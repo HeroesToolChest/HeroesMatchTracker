@@ -900,8 +900,8 @@ LostVikingsVikingHoardTokenCounter=Gather Regen Globes to increase Health Regen
 LostVikingsWereOnABoatTalent=Increased combat prowess
 LucioAmpItUp=Boost the effect of Lúcio's Crossfade track
 LucioAmpItUpBringItTogether=<c val="FFF800">Healing Boost</c> increased near allies
-LucioAmpItUpEncore=Using Crossfade refreshes Amp It Up
-LucioAmpItUpLoudspeaker=Amp It Up increases Crossfade radius
+LucioAmptItUpBonusTrack=Using Crossfade refreshes Amp It Up
+LucioAmpItUpSonicAmplifier=Amp It Up increases Crossfade radius
 LucioAmpItUpMaximumTempo=<c val="#TooltipQuest">Quest:</c> Hero kills increase Amp It Up speed
 LucioAmpItUpRejuvenescencia=<c val="FFF800">Healing Boost</c> also heals a percentage of life
 LucioAmpItUpSynaesthesiaAuditiva=Casting Amp It Up removes Stuns, Slows, and Roots

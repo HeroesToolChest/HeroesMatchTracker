@@ -13,7 +13,7 @@
   </Level4>
   <Level7>
     <LucioCrossfadePartyMixQuest name="Party Mix" desc="LucioCrossfadePartyMix">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadePartyMixQuest>
-    <LucioAmpItUpLoudspeaker name="Loudspeaker" desc="LucioAmpItUpLoudspeaker">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpLoudspeaker>
+    <LucioAmpItUpSonicAmplifier name="Sonic Amplifier" desc="LucioAmpItUpSonicAmplifier">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpSonicAmplifier>
     <LucioBoombox name="Boombox" desc="LucioBoomboxBoombox">storm_ui_icon_lucio_fineshrine.dds</LucioBoombox>
   </Level7>
   <Level10>
@@ -35,7 +35,7 @@
   <Level20>
     <LucioSoundBarrierBossaNova name="Bossa Nova" desc="LucioSoundBarrierBossaNova">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrierBossaNova>
     <LucioReverseAmpNonstopRemix name="Nonstop Remix" desc="LucioReverseAmpNonstopRemix">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmpNonstopRemix>
-    <LucioAmpItUpEncore name="Encore" desc="LucioAmpItUpEncore">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpEncore>
+    <LucioAmptItUpBonusTrack name="Bonus Track" desc="LucioAmptItUpBonusTrack">storm_ui_icon_lucio_ampitup.dds</LucioAmptItUpBonusTrack>
     <LucioAmpItUpSynaesthesiaAuditiva name="Synaesthesia Auditiva" desc="LucioAmpItUpSynaesthesiaAuditiva">storm_ui_icon_lucio_ampitup_a.dds</LucioAmpItUpSynaesthesiaAuditiva>
   </Level20>
 </Lucio>

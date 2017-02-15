@@ -12,7 +12,7 @@
   </Level4>
   <Level7>
     <FalstadMasteryHammerangSecretWeapon name="Secret Weapon" desc="FalstadSecretWeaponTalent">storm_ui_icon_falstad_hammerang.dds</FalstadMasteryHammerangSecretWeapon>
-    <FalstadMasteryBolterang name="BOOMerang" desc="FalstadHammerangBOOMerangTalent">storm_ui_icon_falstad_hammerang_a.dds</FalstadMasteryBolterang>
+    <FalstadHammerangBOOMerang name="BOOMerang" desc="FalstadHammerangBOOMerangTalent">storm_ui_icon_falstad_hammerang_a.dds</FalstadHammerangBOOMerang>
     <FalstadMasteryLightningRodChargedUp name="Charged Up" desc="FalstadChargedUpTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodChargedUp>
   </Level7>
   <Level10>
