@@ -16,8 +16,7 @@
         <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesButtonEnabled}" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="122"/>
         <Label Content="{Binding CheckForUpdatesResponse}" HorizontalAlignment="Left" Margin="10,88,-101,0" VerticalAlignment="Top" Width="531" Foreground="White"/>
         <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateButtonEnabled}" HorizontalAlignment="Left" Margin="137,68,0,0" VerticalAlignment="Top" Width="97"/>
-        <CheckBox Content="Include Pre-release" IsChecked="{Binding IsIncludeManualPreRelease}" Margin="239,71,0,0" Style="{StaticResource SettingsCheckBoxTheme}"/>
-        
+
         <TextBlock Margin="10,123,0,0" Style="{StaticResource AboutTextBlock}">
             <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData" RequestNavigate="Hyperlink_RequestNavigate" Foreground="White">
                 Project Website

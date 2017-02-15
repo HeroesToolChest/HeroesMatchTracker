@@ -155,6 +155,12 @@ namespace HeroesParserData.Converters
                 case "FFFF00": // yellow
                     color = (Color)ColorConverter.ConvertFromString("#FFFF00");
                     break;
+                case "3DFF7F": // green (speed boost)
+                    color = (Color)ColorConverter.ConvertFromString("#3DFF7F");
+                    break;
+                case "FFF800": // yellow (heal up)
+                    color = (Color)ColorConverter.ConvertFromString("#FFF800");
+                    break;
                 case "FFFFFF": // white
                     color = Colors.WhiteSmoke;
                     break;
