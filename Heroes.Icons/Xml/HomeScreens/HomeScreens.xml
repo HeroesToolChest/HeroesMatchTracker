@@ -8,9 +8,11 @@
   <EternalConflictDark fontglow="#FF8B0000">storm_ui_homescreenbackground_eternalconflict_dark.jpg</EternalConflictDark>
   <Greymane fontglow="#FFADD8E6">storm_ui_homescreenbackground_greymane.jpg</Greymane>
   <Guldan fontglow="#FF008000">storm_ui_homescreenbackground_guldan.jpg</Guldan>
+  <Lucio fontglow="#FF008000">storm_ui_homescreenbackground_lucio.jpg</Lucio>
   <Lunara fontglow="#FF800080">storm_ui_homescreenbackground_lunara.jpg</Lunara>
   <LunarNewYear fontglow="#FF800080">storm_ui_homescreenbackground_lunarnewyear.jpg</LunarNewYear>
   <Medivh fontglow="#FF808080">storm_ui_homescreenbackground_medivh.jpg</Medivh>
+  <MonkeyKing fontglow="#FF00CC00">homescreen_monkeyking.jpg</MonkeyKing>
   <Nexus fontglow="#FF800080">storm_ui_homescreenbackground_nexus.jpg</Nexus>
   <OverwatchHanger fontglow="#FF808080">storm_ui_homescreenbackground_overwatchhangar.jpg</OverwatchHanger>
   <Ragnaros fontglow="#FFFF6A00">homescreen_ragnaros.jpg</Ragnaros>
@@ -20,6 +22,7 @@
   <Starcraft fontglow="#FF00008B">storm_ui_homescreenbackground_starcraft.jpg</Starcraft>
   <StarcraftProtoss fontglow="#FF00FFFF">storm_ui_homescreenbackground_starcraft_protoss.jpg</StarcraftProtoss>
   <StarcraftZerg fontglow="#FF8B0000">storm_ui_homescreenbackground_starcraft_zerg.jpg</StarcraftZerg>
+  <Valeera fontglow="#FF004D00">homescreen_valeera.jpg</Valeera>
   <Varian fontglow="#FFFF0000">storm_ui_homescreen_varian_background.jpg</Varian>
   <Zarya fontglow="#FF800080">storm_ui_homescreenbackground_zarya.jpg</Zarya>
 </HomeScreens>

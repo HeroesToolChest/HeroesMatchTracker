@@ -186,6 +186,12 @@
     <Aliases>Lt Morales,Ten. Morales,Teniente Morales,Tte. Morales,莫拉莉斯中尉,모랄레스 중위,Лейтенант Моралес,莫拉萊斯中尉,Por. Morales</Aliases>
   </LtMorales>
 
+  <Lucio available="50441" name="Lúcio" attributeid="Luci" franchise="Overwatch"
+         portrait="storm_ui_ingame_heroselect_btn_lucio.dds" loading="storm_ui_ingame_hero_loadingscreen_lucio.dds" leader="storm_ui_ingame_hero_leaderboard_lucio.dds">
+    <Roles>Support</Roles>
+    <Aliases>Lucio,Лусио,루시우,卢西奥,路西歐</Aliases>
+  </Lucio>
+  
   <Lunara available="47479" attributeid="Drya" franchise="Warcraft"
           portrait="storm_ui_ingame_heroselect_btn_lunara.dds" loading="storm_ui_ingame_hero_loadingscreen_dryad.dds" leader="storm_ui_ingame_hero_leaderboard_lunara.dds">
     <Roles>Assassin</Roles>
@@ -324,6 +330,12 @@
     <Aliases>УТЕР,우서,乌瑟尔,烏瑟</Aliases>
   </Uther>
 
+  <Valeera available="49747" attributeid="VALE" franchise="Warcraft"
+           portrait="storm_ui_ingame_heroselect_btn_valeera.dds" loading="storm_ui_ingame_hero_loadingscreen_valeera.dds" leader="storm_ui_ingame_hero_leaderboard_valeera.dds">
+    <Roles>Assassin</Roles>
+    <Aliases>Valira,Валира,瓦莉拉,瓦麗拉,발리라</Aliases>
+  </Valeera>
+  
   <Valla available="47479" attributeid="Demo" franchise="Diablo"
          portrait="storm_ui_ingame_heroselect_btn_demonhunter.dds" loading="storm_ui_ingame_hero_loadingscreen_demonhunter.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
     <Roles>Assassin</Roles>
