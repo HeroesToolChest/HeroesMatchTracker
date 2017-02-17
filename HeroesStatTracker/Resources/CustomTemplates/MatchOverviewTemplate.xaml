@@ -9,44 +9,8 @@
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerBase}" x:Key="MatchOverviewRow">
         <StackPanel>
             <DockPanel>
-                <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2">
-                    <Border.Style>
-                        <Style TargetType="Border">
-                            <Setter Property="BorderBrush" Value="{DynamicResource RowSideBrush}" />
-                            <Setter Property="Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowSideColor}" Opacity="1" BlurRadius="8" />
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
-                                    <Setter Property="BorderBrush" Value="{StaticResource RowUserSideBrush}" />
-                                    <Setter Property="Effect">
-                                        <Setter.Value>
-                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="8" />
-                                        </Setter.Value>
-                                    </Setter>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Border.Style>
-                </Border>
-                <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}">
-                    <Border.Style>
-                        <Style TargetType="Border">
-                            <Setter Property="BorderBrush" Value="{DynamicResource RowBorderBrush}" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
-                                    <Setter Property="BorderBrush" Value="{StaticResource RowUserBorderBrush}" />
-                                    <Setter Property="Effect">
-                                        <Setter.Value>
-                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="8" />
-                                        </Setter.Value>
-                                    </Setter>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Border.Style>
+                <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2" Style="{StaticResource MatchRowSideBorder}" />
+                <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel>
                         <Grid DockPanel.Dock="Left" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left">
