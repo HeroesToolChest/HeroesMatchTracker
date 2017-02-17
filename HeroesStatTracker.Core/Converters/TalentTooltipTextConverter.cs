@@ -1,6 +1,7 @@
 ﻿using NLog;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -125,45 +126,35 @@ namespace HeroesStatTracker.Core.Converters
         private SolidColorBrush SetTooltipColors(string colorValue)
         {
             Color color;
-            switch (colorValue.ToUpper())
+
+            if (colorValue.All(char.IsLetterOrDigit))
             {
-                case "#TOOLTIPNUMBERS":
-                    color = Colors.WhiteSmoke;
-                    break;
-                case "#TOOLTIPQUEST": // yellow-gold
-                    color = (Color)ColorConverter.ConvertFromString("#B48E4C");
-                    break;
-                case "#ABILITYPASSIVE":
-                    color = (Color)ColorConverter.ConvertFromString("#16D486");
-                    break;
-                case "#COLORVIOLET":
-                    color = (Color)ColorConverter.ConvertFromString("#A85EC6");
-                    break;
-                case "#COLORCREAMYELLOW":
-                    color = (Color)ColorConverter.ConvertFromString("#CED077");
-                    break;
-                case "FFFF8A": // light-yellow
-                    color = (Color)ColorConverter.ConvertFromString("#FFFF8A");
-                    break;
-                case "00FFFF": // teal
-                    color = (Color)ColorConverter.ConvertFromString("#00FFFF");
-                    break;
-                case "00FF00": // green
-                    color = (Color)ColorConverter.ConvertFromString("#00FF00");
-                    break;
-                case "FF6600": // orange
-                    color = (Color)ColorConverter.ConvertFromString("#FF6600");
-                    break;
-                case "FFFF00": // yellow
-                    color = (Color)ColorConverter.ConvertFromString("#FFFF00");
-                    break;
-                case "FFFFFF": // white
-                    color = Colors.WhiteSmoke;
-                    break;
-                default:
-                    WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");
-                    color = Colors.Gray;
-                    break;
+                color = (Color)ColorConverter.ConvertFromString($"#{colorValue}");
+            }
+            else
+            {
+                switch (colorValue.ToUpper())
+                {
+                    case "#TOOLTIPNUMBERS":
+                        color = Colors.WhiteSmoke;
+                        break;
+                    case "#TOOLTIPQUEST": // yellow-gold
+                        color = (Color)ColorConverter.ConvertFromString("#B48E4C");
+                        break;
+                    case "#ABILITYPASSIVE":
+                        color = (Color)ColorConverter.ConvertFromString("#16D486");
+                        break;
+                    case "#COLORVIOLET":
+                        color = (Color)ColorConverter.ConvertFromString("#A85EC6");
+                        break;
+                    case "#COLORCREAMYELLOW":
+                        color = (Color)ColorConverter.ConvertFromString("#CED077");
+                        break;
+                    default:
+                        WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");
+                        color = Colors.Gray;
+                        break;
+                }
             }
 
             return new SolidColorBrush(color);
