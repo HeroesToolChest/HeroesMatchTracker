@@ -57,7 +57,7 @@
                                 <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="22 0 0 0" />
                                 <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
                                 <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 -8 0" />
                             </StackPanel>
                             <StackPanel>
                                 <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>
@@ -84,7 +84,7 @@
                                 <TextBlock Text="Siege Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                                 <TextBlock Text="Hero Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                                 <TextBlock Text="Role" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 16 0" />
+                                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 12 0" />
                             </StackPanel>
                             <StackPanel>
                                 <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>
