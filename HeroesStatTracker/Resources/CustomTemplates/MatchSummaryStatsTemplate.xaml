@@ -69,8 +69,8 @@
                                 </TextBlock.Style>
                             </TextBlock>
                             <TextBlock Margin="{StaticResource TextValueMargin}" Width="{StaticResource StatLargeNumberWidth}">
-                                <InlineUIContainer BaselineAlignment="Bottom">
-                                    <Image Height="23">
+                                <InlineUIContainer BaselineAlignment="Center">
+                                    <Image Height="22">
                                         <Image.Style>
                                             <Style TargetType="Image">
                                                 <Style.Triggers>
