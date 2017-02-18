@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
@@ -294,6 +295,9 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
 
+        public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
+        public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
+
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
             if (replayMatch == null || matchList == null || matchList.Count == 0)
@@ -302,7 +306,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             LoadMatchSummaryData(replayMatch);
 
             IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
-            IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? true : false;
+            IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
         }
 
         private void LoadMatchSummaryData(ReplayMatch replayMatch)
@@ -482,9 +486,16 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         {
             if (message.Notification == StaticMessage.MatchSummaryClosed)
             {
-                DisposeMatchSummary();
                 Messenger.Default.Send(new NotificationMessage(StaticMessage.ReEnableMatchSummaryButton));
             }
+        }
+
+        private void ChangeCurrentMatchSummary(int value)
+        {
+            if (value < 0)
+                Messenger.Default.Send(new NotificationMessage(StaticMessage.ChangeCurrentSelectedReplayMatchLeft));
+            else
+                Messenger.Default.Send(new NotificationMessage(StaticMessage.ChangeCurrentSelectedReplayMatchRight));
         }
 
         private void DisposeMatchSummary()

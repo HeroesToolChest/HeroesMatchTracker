@@ -373,13 +373,25 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             MatchSummaryReplay.LoadMatchSummary(SelectedReplay, MatchListCollection.ToList());
 
             MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
-            MatchSummaryFlyout.ToggleMatchSummaryFlyout();
+            MatchSummaryFlyout.OpenMatchSummaryFlyout();
         }
 
         private void ReceivedMessage(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.ReEnableMatchSummaryButton)
                 ShowMatchSummaryButtonEnabled = true;
+
+            if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft || message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
+            {
+                int index = MatchListCollection.ToList().FindIndex(x => x.ReplayId == SelectedReplay.ReplayId);
+
+                if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft)
+                    SelectedReplay = MatchListCollection[index - 1];
+                else if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
+                    SelectedReplay = MatchListCollection[index + 1];
+
+                ShowMatchSummary();
+            }
         }
     }
 }
