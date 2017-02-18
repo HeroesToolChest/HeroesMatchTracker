@@ -207,6 +207,7 @@
     <Compile Include="Generic\LogFileNames.cs" />
     <Compile Include="Messaging\MatchesDataMessage.cs" />
     <Compile Include="Messaging\StaticMessage.cs" />
+    <Compile Include="Models\MatchModels\MatchBans.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerBase.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />

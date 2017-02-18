@@ -5,7 +5,7 @@
     
     <Style x:Key="CustomMetroTabItem" TargetType="TabItem">
         <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
-        <Setter Property="Background" Value="#AA595959" />
+        <Setter Property="Background" Value="#AA12112F" />
         <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <!--special property for header font size-->

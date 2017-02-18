@@ -25,6 +25,9 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
         private bool _isRightChangeButtonEnabled;
+        private bool _hasBans;
+        private bool _hasObservers;
+        private bool _hasChat;
         private string _teamBlueIsWinner;
         private string _teamRedIsWinner;
         private string _matchTitle;
@@ -49,6 +52,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             IsRightChangeButtonVisible = true;
             IsLeftChangeButtonEnabled = false;
             IsRightChangeButtonEnabled = false;
+
+            HasBans = false;
+            HasObservers = false;
+            HasChat = false;
 
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
 
@@ -131,6 +138,36 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             set
             {
                 _isRightChangeButtonEnabled = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool HasBans
+        {
+            get { return _hasBans; }
+            set
+            {
+                _hasBans = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool HasObservers
+        {
+            get { return _hasObservers; }
+            set
+            {
+                _hasObservers = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool HasChat
+        {
+            get { return _hasChat; }
+            set
+            {
+                _hasChat = value;
                 RaisePropertyChanged();
             }
         }
@@ -255,6 +292,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
+
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
             if (replayMatch == null || matchList == null || matchList.Count == 0)
@@ -326,6 +365,22 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
                 SetHighestTeamStatValues();
 
+                // match bans
+                if (replayMatch.ReplayMatchTeamBan != null)
+                {
+                    MatchHeroBans.Team0Ban0HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
+                    MatchHeroBans.Team0Ban1HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
+                    MatchHeroBans.Team1Ban0HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
+                    MatchHeroBans.Team1Ban1HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
+                    MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team0Ban0HeroName);
+                    MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team0Ban1HeroName);
+                    MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team1Ban0HeroName);
+                    MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team1Ban1HeroName);
+
+                    HasBans = true;
+                }
+
+                // match chat
                 if (matchMessagesList != null && matchMessagesList.Count > 0)
                 {
                     foreach (var message in matchMessagesList)
@@ -338,6 +393,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                             MatchChatCollection.Add(matchChat);
                         }
                     }
+
+                    HasChat = true;
                 }
 
                 // Set the match results: total kills, team levels, game time

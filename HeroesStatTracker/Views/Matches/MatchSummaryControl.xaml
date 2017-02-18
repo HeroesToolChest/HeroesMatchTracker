@@ -14,6 +14,7 @@
     <UserControl.Resources>
         <system:Double x:Key="HeaderTalentSpacing">85</system:Double>
         <system:Double x:Key="HeaderStatSpacing">160</system:Double>
+        <system:Double x:Key="TabMinWidth">80</system:Double>
     </UserControl.Resources>
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
@@ -44,7 +45,7 @@
                     </Label>
                 </StackPanel>
                 <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" controls:TabControlHelper.IsUnderlined="True">
-                    <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}">
+                    <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
                             <StackPanel.Background>
                                 <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
@@ -65,7 +66,7 @@
                             </StackPanel>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
+                    <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
                             <StackPanel.Background>
                                 <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
@@ -92,7 +93,35 @@
                             </StackPanel>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
+                    <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
+                    </TabItem>
+                    <TabItem Header="Team Bans" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
+                        <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <Grid.Background>
+                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
+                            </Grid.Background>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                                <ColumnDefinition Width="150"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Content=" Team 1 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" Foreground="#D5FCFF"/>
+                            <Label Content=" Team 2 " HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" Foreground="#D5FCFF"/>
+
+                            <Image Source="{Binding MatchHeroBans.Team0Ban0}" Height="120" Width="102" Grid.Column="0" Grid.Row="1" ToolTip="{Binding MatchHeroBans.Team0Ban0HeroName}"/>
+                            <Image Source="{Binding MatchHeroBans.Team0Ban1}" Height="120" Width="102" Grid.Column="1" Grid.Row="1" ToolTip="{Binding MatchHeroBans.Team0Ban1HeroName}"/>
+                            <Image Source="{Binding MatchHeroBans.Team1Ban0}" Height="120" Width="102" Grid.Column="2" Grid.Row="1" ToolTip="{Binding MatchHeroBans.Team1Ban0HeroName}"/>
+                            <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102" Grid.Column="3" Grid.Row="1" ToolTip="{Binding MatchHeroBans.Team1Ban1HeroName}"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Observers" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
+                    </TabItem>
+                    <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding MatchChatCollection}" HorizontalAlignment="Stretch">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" MinWidth="90" />
