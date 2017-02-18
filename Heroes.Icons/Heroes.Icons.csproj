@@ -545,6 +545,8 @@
     <Resource Include="Icons\Talents\Murky\storm_ui_icon_murky_egghunt.dds" />
     <Resource Include="Icons\Talents\Murky\storm_ui_icon_murky_fishtank.dds" />
     <Resource Include="Icons\Talents\Murky\storm_ui_icon_murky_pufferfish_b.dds" />
+    <Resource Include="Icons\Talents\Tassadar\storm_ui_icon_tassadar_plasmashield_a.dds" />
+    <Resource Include="Icons\Talents\Tassadar\storm_ui_icon_tassadar_plasmashield_b.dds" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
