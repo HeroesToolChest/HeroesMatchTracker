@@ -394,7 +394,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                         }
                     }
 
-                    HasChat = true;
+                    if (MatchChatCollection.Count > 0)
+                        HasChat = true;
                 }
 
                 // Set the match results: total kills, team levels, game time
@@ -500,12 +501,30 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             foreach (var player in MatchStatsTeam2Collection)
                 player.Dispose();
 
-            MatchTalentsTeam1Collection.Clear();
-            MatchTalentsTeam2Collection.Clear();
-            MatchStatsTeam1Collection.Clear();
-            MatchStatsTeam2Collection.Clear();
+            // bans
+            MatchHeroBans.Team0Ban0 = null;
+            MatchHeroBans.Team0Ban1 = null;
+            MatchHeroBans.Team1Ban0 = null;
+            MatchHeroBans.Team1Ban1 = null;
+            MatchHeroBans.Team0Ban0HeroName = null;
+            MatchHeroBans.Team0Ban1HeroName = null;
+            MatchHeroBans.Team1Ban0HeroName = null;
+            MatchHeroBans.Team1Ban1HeroName = null;
+
+            // chat
+            MatchChatCollection = null;
 
             BackgroundImage = null;
+
+            HasBans = false;
+            HasChat = false;
+            HasObservers = false;
+
+            MatchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
+            MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
+            MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
+            MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
+            MatchChatCollection = new ObservableCollection<MatchChat>();
         }
     }
 }
