@@ -28,7 +28,7 @@
     <DataTemplate DataType="{x:Type coreModels:MatchPlayerStats}" x:Key="MatchStatRow">
         <StackPanel Width="{StaticResource StatTalentsWidth}">
             <DockPanel>
-                <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2" Style="{StaticResource MatchRowSideBorder}" />
+                <Border DockPanel.Dock="Left" BorderThickness="4 0 0 0" CornerRadius="3" Margin="0 2 4 2" Style="{StaticResource MatchRowSideBorder}" />
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel>
                         <ContentPresenter ContentTemplate="{StaticResource PlayerInfo}" />

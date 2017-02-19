@@ -7,7 +7,7 @@
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
 
     <Color x:Key="MatchBackgroundColor">#12112F</Color>
-    <SolidColorBrush x:Key="MatchBackgroundBrush" Color="#12112F" />
+    <SolidColorBrush x:Key="MatchBackgroundBrush" Color="{StaticResource MatchBackgroundColor}" />
     <system:Double x:Key="StatTalentsWidth">1120</system:Double>
 
     <!--User Colors (yellow)-->

@@ -15,6 +15,7 @@
         <system:Double x:Key="HeaderTalentSpacing">85</system:Double>
         <system:Double x:Key="HeaderStatSpacing">160</system:Double>
         <system:Double x:Key="TabMinWidth">80</system:Double>
+        <system:Double x:Key="AdvStatsGroupHeaderWidth">200</system:Double>
     </UserControl.Resources>
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
@@ -94,6 +95,44 @@
                         </StackPanel>
                     </TabItem>
                     <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel.Background>
+                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
+                            </StackPanel.Background>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
+                                    <TextBlock Text="Player" />
+                                    <TextBlock Text="Level" />
+                                    <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
+                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                                    <TextBlock Text="Kills" />
+                                    <TextBlock Text="Takedowns" />
+                                    <TextBlock Text="Assists" />
+                                    <TextBlock Text="Deaths" />
+                                    <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
+                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                                    <TextBlock Text="Minion Damage" />
+                                    <TextBlock Text="Summon Damage" />
+                                    <TextBlock Text="Structure Damage" />
+                                    <TextBlock Text="Total Siege Damage" />
+                                    <TextBlock Text="HERO" HorizontalAlignment="Left" />
+                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                                    <TextBlock Text="Hero Damage" />
+                                    <TextBlock Text="Damage Taken" />
+                                    <TextBlock Text="Healing" />
+                                    <TextBlock Text="Self Healing" />
+                                    <TextBlock Text="Time Spent Dead" />
+                                    <TextBlock Text="Experience " />
+                                    <TextBlock Text="OTHER" HorizontalAlignment="Left" Margin="0 -1 0 0" />
+                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                                    <TextBlock Text="Merc Damage" />
+                                    <TextBlock Text="Merc Camp Captures" />
+                                    <TextBlock Text="Watchtower Captures" />
+                                </StackPanel>
+                                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
+                                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
+                            </StackPanel>
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="Team Bans" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
                         <Grid VerticalAlignment="Top" HorizontalAlignment="Left">

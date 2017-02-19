@@ -6,6 +6,26 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 {
     public class MatchPlayerStats : MatchPlayerBase
     {
+        public MatchPlayerStats(MatchPlayerStats matchPlayerStats)
+            : base(matchPlayerStats)
+        {
+            SoloKills = matchPlayerStats.SoloKills;
+            Assists = matchPlayerStats.Assists;
+            Deaths = matchPlayerStats.Deaths;
+            SiegeDamage = matchPlayerStats.SiegeDamage;
+            HeroDamage = matchPlayerStats.HeroDamage;
+            DamageTakenRole = matchPlayerStats.DamageTakenRole;
+            HealingRole = matchPlayerStats.HealingRole;
+            ExperienceContribution = matchPlayerStats.ExperienceContribution;
+            RoleWarrior = matchPlayerStats.RoleWarrior;
+            RoleSupport = matchPlayerStats.RoleSupport;
+            HighestSiegeDamage = matchPlayerStats.HighestSiegeDamage;
+            HighestHeroDamage = matchPlayerStats.HighestHeroDamage;
+            HighestExperience = matchPlayerStats.HighestExperience;
+            HighestDamageTaken = matchPlayerStats.HighestDamageTaken;
+            HighestHealing = matchPlayerStats.HighestHealing;
+        }
+
         public MatchPlayerStats(MatchPlayerBase matchPlayerBase)
             : base(matchPlayerBase)
         { }

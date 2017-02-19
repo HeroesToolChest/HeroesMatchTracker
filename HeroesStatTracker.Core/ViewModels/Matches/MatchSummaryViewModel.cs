@@ -41,6 +41,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
+        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
+        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
         private IDatabaseService Database;
@@ -284,6 +286,26 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public ObservableCollection<MatchPlayerAdvancedStats> MatchAdvancedStatsTeam1Collection
+        {
+            get { return _matchAdvancedStatsTeam1Collection; }
+            set
+            {
+                _matchAdvancedStatsTeam1Collection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<MatchPlayerAdvancedStats> MatchAdvancedStatsTeam2Collection
+        {
+            get { return _matchAdvancedStatsTeam2Collection; }
+            set
+            {
+                _matchAdvancedStatsTeam2Collection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ObservableCollection<MatchChat> MatchChatCollection
         {
             get { return _matchChatCollection; }
@@ -309,7 +331,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
-
 
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
@@ -350,32 +371,43 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
                 foreach (var player in playersList)
                 {
-                    MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
-                    matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
+                    MatchPlayerBase matchPlayerBase;
+                    MatchPlayerTalents matchPlayerTalents;
+                    MatchPlayerStats matchPlayerStats;
+                    MatchPlayerAdvancedStats matchPlayerAdvancedStats;
 
-                    MatchPlayerTalents matchPlayerTalents = new MatchPlayerTalents(matchPlayerBase);
-                    MatchPlayerStats matchPlayerStats = new MatchPlayerStats(matchPlayerBase);
+                    matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
+                    matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
 
                     if (player.Character != "None")
                     {
+                        matchPlayerTalents = new MatchPlayerTalents(matchPlayerBase);
                         matchPlayerTalents.SetTalents(playerTalentsList[player.PlayerNumber]);
+
+                        matchPlayerStats = new MatchPlayerStats(matchPlayerBase);
                         matchPlayerStats.SetStats(playerScoresList[player.PlayerNumber], player);
+
+                        matchPlayerAdvancedStats = new MatchPlayerAdvancedStats(matchPlayerStats);
+                        matchPlayerAdvancedStats.SetAdvancedStats(playerScoresList[player.PlayerNumber], player);
+
+                        if (player.Team == 0 || player.Team == 1)
+                        {
+                            if (player.Team == 0)
+                            {
+                                MatchTalentsTeam1Collection.Add(matchPlayerTalents);
+                                MatchStatsTeam1Collection.Add(matchPlayerStats);
+                                MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
+                            }
+                            else
+                            {
+                                MatchTalentsTeam2Collection.Add(matchPlayerTalents);
+                                MatchStatsTeam2Collection.Add(matchPlayerStats);
+                                MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
+                            }
+                        }
                     }
 
-                    if (player.Team == 0 || player.Team == 1)
-                    {
-                        if (player.Team == 0)
-                        {
-                            MatchTalentsTeam1Collection.Add(matchPlayerTalents);
-                            MatchStatsTeam1Collection.Add(matchPlayerStats);
-                        }
-                        else
-                        {
-                            MatchTalentsTeam2Collection.Add(matchPlayerTalents);
-                            MatchStatsTeam2Collection.Add(matchPlayerStats);
-                        }
-                    }
-                    else // team 4
+                    if (player.Team == 4)
                     {
                         MatchObserversCollection.Add(new MatchObserver(matchPlayerBase));
                         HasObservers = true;
@@ -527,6 +559,12 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             foreach (var player in MatchStatsTeam2Collection)
                 player.Dispose();
 
+            foreach (var player in MatchAdvancedStatsTeam1Collection)
+                player.Dispose();
+
+            foreach (var player in MatchAdvancedStatsTeam2Collection)
+                player.Dispose();
+
             foreach (var player in MatchObserversCollection)
                 player.Dispose();
 
@@ -553,6 +591,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
             MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
             MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
+            MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
+            MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
             MatchChatCollection = new ObservableCollection<MatchChat>();
             MatchObserversCollection = new ObservableCollection<MatchObserver>();
         }
