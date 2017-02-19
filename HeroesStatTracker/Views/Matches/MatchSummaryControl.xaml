@@ -125,7 +125,7 @@
                                 <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
                             </StackPanel.Background>
                             <StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchObserversCollection}" Style="{StaticResource MatchPlayerObserverItemsControl}" Margin="15 8 15 0"/>
+                                <ItemsControl ItemsSource="{Binding MatchObserversCollection}" Style="{StaticResource MatchPlayerObserverItemsControl}" Margin="15 8 15 8"/>
                             </StackPanel>
                         </StackPanel>
                     </TabItem>

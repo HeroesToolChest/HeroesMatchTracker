@@ -68,13 +68,15 @@
     <!--Neutral (purple)-->
     <ResourceDictionary x:Key="NeutralBrushes">
         <Color x:Key="RowSideColor">#667FCD</Color>
-        <Color x:Key="TextValueColor">#708DE3</Color>
+        <Color x:Key="CharacterNameColor">#D5DDF6</Color>
+        <Color x:Key="PlayerNameColor">#708DE3</Color>
         <Color x:Key="PlayerNameHighlightColor">#D5DDF6</Color>
-        
+        <Color x:Key="TextValueColor">#708DE3</Color>
+   
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#292767" options:Freeze="True" />
-        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
-        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBackgroundBrush" Color="#11112C" options:Freeze="True" />
