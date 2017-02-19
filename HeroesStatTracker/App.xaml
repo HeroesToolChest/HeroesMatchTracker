@@ -54,7 +54,8 @@
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryTalentsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResult.xaml"/>
-              
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
             
             <!--MahApps Brushes-->

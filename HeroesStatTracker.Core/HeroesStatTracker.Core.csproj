@@ -209,6 +209,7 @@
     <Compile Include="Messaging\StaticMessage.cs" />
     <Compile Include="Models\MatchModels\MatchBans.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
+    <Compile Include="Models\MatchModels\MatchObserver.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerBase.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerTalents.cs" />

@@ -121,7 +121,11 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             IsUserPlayer = (playerInfo.BattleTagName == Database.SettingsDb().UserSettings.UserBattleTagName && playerInfo.BattleNetRegionId == Database.SettingsDb().UserSettings.UserRegion) ? true : false;
-            CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
+
+            if (Player.Team == 4)
+                CharacterLevel = "Observer";
+            else
+                CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
             if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
                 SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);

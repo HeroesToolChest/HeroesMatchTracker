@@ -42,6 +42,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
         private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
+        private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
         private IDatabaseService Database;
 
         public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
@@ -293,10 +294,22 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
+        public ObservableCollection<MatchObserver> MatchObserversCollection
+        {
+            get { return _matchObserversCollection; }
+
+            set
+            {
+                _matchObserversCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
 
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
+
 
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
@@ -337,9 +350,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
                 foreach (var player in playersList)
                 {
-                    if (player.Team == 4)
-                        continue;
-
                     MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
                     matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
 
@@ -364,6 +374,11 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                             MatchTalentsTeam2Collection.Add(matchPlayerTalents);
                             MatchStatsTeam2Collection.Add(matchPlayerStats);
                         }
+                    }
+                    else // team 4
+                    {
+                        MatchObserversCollection.Add(new MatchObserver(matchPlayerBase));
+                        HasObservers = true;
                     }
                 }
 
@@ -512,6 +527,9 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             foreach (var player in MatchStatsTeam2Collection)
                 player.Dispose();
 
+            foreach (var player in MatchObserversCollection)
+                player.Dispose();
+
             // bans
             MatchHeroBans.Team0Ban0 = null;
             MatchHeroBans.Team0Ban1 = null;
@@ -536,6 +554,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
             MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
             MatchChatCollection = new ObservableCollection<MatchChat>();
+            MatchObserversCollection = new ObservableCollection<MatchObserver>();
         }
     }
 }

@@ -120,6 +120,14 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Observers" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel.Background>
+                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
+                            </StackPanel.Background>
+                            <StackPanel>
+                                <ItemsControl ItemsSource="{Binding MatchObserversCollection}" Style="{StaticResource MatchPlayerObserverItemsControl}" Margin="15 8 15 0"/>
+                            </StackPanel>
+                        </StackPanel>
                     </TabItem>
                     <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding MatchChatCollection}" HorizontalAlignment="Stretch">
