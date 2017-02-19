@@ -510,7 +510,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
-                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, player.BattleNetId, player.BattleNetRegionId, player.BattleNetSubId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,
@@ -530,7 +530,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
-                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag), player.BattleNetId) : (long?)null,
+                        PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, player.BattleNetId, player.BattleNetRegionId, player.BattleNetSubId) : (long?)null,
                         ReplayId = ReplayId,
                         TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
                         TimeStamp = objCount.TimeSpan,

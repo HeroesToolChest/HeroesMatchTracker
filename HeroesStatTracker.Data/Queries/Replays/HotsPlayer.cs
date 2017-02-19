@@ -173,10 +173,12 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
-        internal long ReadPlayerIdFromBattleNetId(ReplaysContext db, string battleTagName, int battleNetId)
+        internal long ReadPlayerIdFromBattleNetId(ReplaysContext db, int battleNetId, int battleNetRegionId, int battleNetSubId)
         {
             // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-            return db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetId == battleNetId).PlayerId;
+            return db.ReplayAllHotsPlayers.FirstOrDefault(x => x.BattleNetId == battleNetId &&
+                                                               x.BattleNetRegionId == battleNetRegionId &&
+                                                               x.BattleNetSubId == battleNetSubId).PlayerId;
         }
     }
 }
