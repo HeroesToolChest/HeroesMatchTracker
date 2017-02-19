@@ -11,7 +11,7 @@
     <TassadarKhalasLight name="Khala's Light" desc="TassadarKhalasLight">storm_ui_icon_tassadar_plasmashield_b.dds</TassadarKhalasLight>
   </Level4>
   <Level7>
-    <TassadarPsionicProjection name="Psionic Projection" desc="TassadarPsionicProjection">storm_ui_icon_tassadar_plasmashield.dds</TassadarPsionicProjection>
+    <TassadarPsionicProjection name="Psionic Projection" generic="true" desc="TassadarPsionicProjection">storm_ui_icon_talent_elunesgrace.dds</TassadarPsionicProjection>
     <TassadarResonation name="Resonation" desc="TassadarPsionicStormResonationTalent">storm_ui_icon_tassadar_psionicstorm.dds</TassadarResonation>
     <TassadarMasteryMentalAcuity name="Mental Acuity" desc="TassadarOracleMentalAcuityTalent">storm_ui_icon_tassadar_oracle.dds</TassadarMasteryMentalAcuity>
   </Level7>
