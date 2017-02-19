@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using Heroes.ReplayParser;
+using HeroesIcons;
 using HeroesParserData.DataQueries;
 using HeroesParserData.HotsLogs;
 using HeroesParserData.Models;
@@ -877,6 +878,8 @@ namespace HeroesParserData.ViewModels
 
         private void InitReplaySaveDataQueue()
         {
+            HeroesInfo heroesInfo = HeroesInfo.Initialize();
+
             Task.Run(async () =>
             {
                 long replayId;
@@ -916,7 +919,7 @@ namespace HeroesParserData.ViewModels
                     try
                     {
                         currentReplayFile = ReplayFiles[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
-                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, out replayTimeStamp, out replayId);
+                        currentReplayFile.Status = SaveAllReplayData.SaveAllData(dequeuedItem.Item1, dequeuedItem.Item2.FileName, heroesInfo, out replayTimeStamp, out replayId);
 
                         currentReplayFile.ReplayId = replayId;
                         currentReplayFile.TimeStamp = replayTimeStamp;

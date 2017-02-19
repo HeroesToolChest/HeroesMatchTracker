@@ -1,4 +1,5 @@
 ﻿using Heroes.ReplayParser;
+using HeroesIcons;
 using HeroesParserData.Models.DbModels;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace HeroesParserData.DataQueries
 {
     public static class SaveAllReplayData
     {
-        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, out DateTime replayTimeStamp, out long replayId)
+        public static ReplayParseResult SaveAllData(Heroes.ReplayParser.Replay replay, string fileName, HeroesInfo heroesInfo, out DateTime replayTimeStamp, out long replayId)
         {
             using (HeroesParserDataContext db = new HeroesParserDataContext())
             {
@@ -19,7 +20,7 @@ namespace HeroesParserData.DataQueries
                     {
                         #region save basic data
                         string mapName;
-                        if (!App.HeroesInfo.MapNameTranslation(replay.Map, out mapName))
+                        if (!heroesInfo.MapNameTranslation(replay.Map, out mapName))
                             throw new Exception($"Unknown map name detected: {replay.Map}");
 
                         Models.DbModels.Replay replayData = new Models.DbModels.Replay
@@ -112,7 +113,6 @@ namespace HeroesParserData.DataQueries
 
                                 #region save players heroes
                                 var playersHeroes = player.SkinsDictionary;
-                                var heroesInfo = App.HeroesInfo;
 
                                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                                 foreach (var hero in playersHeroes)
@@ -136,7 +136,7 @@ namespace HeroesParserData.DataQueries
                             {
                                 #region save match players
                                 string characterName;
-                                if (!App.HeroesInfo.HeroNameTranslation(player.Character, out characterName))
+                                if (!heroesInfo.HeroNameTranslation(player.Character, out characterName))
                                     throw new Exception($"Unknown hero name detected: {player.Character}");
 
                                 ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
@@ -245,7 +245,6 @@ namespace HeroesParserData.DataQueries
 
                                 #region save players heroes
                                 var playersHeroes = player.SkinsDictionary;
-                                var heroesInfo = App.HeroesInfo;
 
                                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                                 foreach (var hero in playersHeroes)
