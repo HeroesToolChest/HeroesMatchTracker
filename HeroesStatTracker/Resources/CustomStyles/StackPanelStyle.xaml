@@ -41,7 +41,7 @@
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="HorizontalAlignment" Value="Right" />
                 <Setter Property="TextAlignment" Value="Center" />
-                <Setter Property="Foreground" Value="#D5FCFF" />
+                <Setter Property="Foreground" Value="{StaticResource DefaultTextBrush}" />
             </Style>
         </Style.Resources>
     </Style>

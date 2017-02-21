@@ -140,15 +140,17 @@ namespace HeroesStatTracker.Data.Queries.Settings
         }
         #endregion User Profile
 
-        public bool IsNewUpdateApplied
-        {
-            get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
-            set { SetBooleanValue(value); }
-        }
-
+        #region Graphs
         public bool IsTeamExperienceRowChartEnabled
         {
             get { return GetBooleanValue(nameof(IsTeamExperienceRowChartEnabled)); }
+            set { SetBooleanValue(value); }
+        }
+        #endregion
+
+        public bool IsNewUpdateApplied
+        {
+            get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
             set { SetBooleanValue(value); }
         }
 
@@ -181,10 +183,11 @@ namespace HeroesStatTracker.Data.Queries.Settings
             UserRegion = -1;
             UserPlayerId = 0;
 
+            // Graphs
+            IsTeamExperienceRowChartEnabled = true;
+
             // needs to be organized
             IsNewUpdateApplied = false;
-
-            IsTeamExperienceRowChartEnabled = true;
         }
     }
 }

@@ -24,5 +24,15 @@
     <Style x:Key="MatchPlayerObserverItemsControl" TargetType="ItemsControl" Resources="{StaticResource NeutralBrushes}">
         <Setter Property="ItemTemplate" Value="{StaticResource TeamObserverTemplate}" />
     </Style>
-    
+
+    <DataTemplate x:Key="MatchObservers">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
+            </StackPanel.Background>
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding MatchObserversCollection}" Style="{StaticResource MatchPlayerObserverItemsControl}" Margin="15 8 15 8"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>

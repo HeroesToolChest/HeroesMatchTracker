@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
+using HeroesStatTracker.Core.Models.GraphSummaryModels;
 using HeroesStatTracker.Core.Models.MatchModels;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -45,6 +46,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
+
         private IDatabaseService Database;
 
         public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
@@ -61,10 +63,18 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             HasObservers = false;
             HasChat = false;
 
+            TeamLevelTimeGraph = new TeamLevelTimeGraph();
+            TeamExperienceGraph = new TeamExperienceGraph(Database);
+
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
 
             SimpleIoc.Default.Register<IMatchSummaryReplayService>(() => this);
         }
+
+        public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
+
+        public TeamLevelTimeGraph TeamLevelTimeGraph { get; private set; }
+        public TeamExperienceGraph TeamExperienceGraph { get; private set; }
 
         public int TeamBlueKills
         {
@@ -327,8 +337,6 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
-        public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
-
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
 
@@ -366,6 +374,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
                 var matchTeamLevelsList = replayMatch.ReplayMatchTeamLevels.ToList();
                 var matchTeamExperienceList = replayMatch.ReplayMatchTeamExperiences.ToList();
+
+                // graphs
+                TeamLevelTimeGraph.SetTeamLevelGraphs(matchTeamLevelsList, playersList[0].IsWinner);
+                TeamExperienceGraph.SetTeamExperienceGraphs(matchTeamExperienceList, playersList[0].IsWinner);
 
                 FindPlayerParties(playersList);
 

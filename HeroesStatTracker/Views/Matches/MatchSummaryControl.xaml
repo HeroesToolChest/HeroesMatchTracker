@@ -11,12 +11,6 @@
              DataContext="{Binding MatchSummaryViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <UserControl.Resources>
-        <system:Double x:Key="HeaderTalentSpacing">85</system:Double>
-        <system:Double x:Key="HeaderStatSpacing">160</system:Double>
-        <system:Double x:Key="TabMinWidth">80</system:Double>
-        <system:Double x:Key="AdvStatsGroupHeaderWidth">200</system:Double>
-    </UserControl.Resources>
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -46,98 +40,19 @@
                     </Label>
                 </StackPanel>
                 <TabControl Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" controls:TabControlHelper.IsUnderlined="True">
-                    <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
-                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <StackPanel.Background>
-                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
-                            </StackPanel.Background>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
-                                <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
-                                <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                                <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                                <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="22 0 0 0" />
-                                <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                                <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 -8 0" />
-                            </StackPanel>
-                            <StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>
-                                <ItemsControl ItemsSource="{Binding MatchTalentsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2TalentsItemsControl}" Margin="15 0 15 15"/>
-                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchResultTemplate}" />
-                            </StackPanel>
-                        </StackPanel>
+                    <TabItem Header="Talents" Style="{StaticResource CustomMetroTabItem}">
+                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchTalents}" />
                     </TabItem>
-                    <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
-                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <StackPanel.Background>
-                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
-                            </StackPanel.Background>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right">
-                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                                    <Image Source="{StaticResource ScoreKill}" Width="24" ToolTip="Kills" VerticalAlignment="Stretch"/>
-                                </StackPanel>
-                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                                    <Image Source="{StaticResource ScoreAssist}" Width="24" ToolTip="Assists" />
-                                </StackPanel>
-                                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                                    <Image Source="{StaticResource ScoreDeath}" Width="24"  ToolTip="Deaths" />
-                                </StackPanel>
-                                <TextBlock Text="Siege Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                                <TextBlock Text="Hero Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                                <TextBlock Text="Role" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 12 0" />
-                            </StackPanel>
-                            <StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>
-                                <ItemsControl ItemsSource="{Binding MatchStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2StatsItemsControl}" Margin="15 0 15 15"/>
-                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchResultTemplate}" />
-                            </StackPanel>
-                        </StackPanel>
+                    <TabItem Header="Stats" Style="{StaticResource CustomMetroTabItem}">
+                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchStats}" />
                     </TabItem>
-                    <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
-                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <StackPanel.Background>
-                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
-                            </StackPanel.Background>
-                            <StackPanel Orientation="Horizontal">
-                                <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
-                                    <TextBlock Text="Player" />
-                                    <TextBlock Text="Level" />
-                                    <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
-                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                                    <TextBlock Text="Kills" />
-                                    <TextBlock Text="Takedowns" />
-                                    <TextBlock Text="Assists" />
-                                    <TextBlock Text="Deaths" />
-                                    <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
-                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                                    <TextBlock Text="Minion Damage" />
-                                    <TextBlock Text="Summon Damage" />
-                                    <TextBlock Text="Structure Damage" />
-                                    <TextBlock Text="Total Siege Damage" />
-                                    <TextBlock Text="HERO" HorizontalAlignment="Left" />
-                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                                    <TextBlock Text="Hero Damage" />
-                                    <TextBlock Text="Damage Taken" />
-                                    <TextBlock Text="Healing" />
-                                    <TextBlock Text="Self Healing" />
-                                    <TextBlock Text="Time Spent Dead" />
-                                    <TextBlock Text="Experience " />
-                                    <TextBlock Text="OTHER" HorizontalAlignment="Left" Margin="0 -1 0 0" />
-                                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                                    <TextBlock Text="Merc Damage" />
-                                    <TextBlock Text="Merc Camp Captures" />
-                                    <TextBlock Text="Watchtower Captures" />
-                                </StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
-                                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
-                            </StackPanel>
-                        </StackPanel>
+                    <TabItem Header="Advanced Stats" Style="{StaticResource CustomMetroTabItem}">
+                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchAdvancedStats}" />
                     </TabItem>
-                    <TabItem Header="Team Bans" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
+                    <TabItem Header="Team Bans" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasBans, Converter={StaticResource BooleanToVisibility}}">
                         <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
                             <Grid.Background>
-                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
+                                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
                             </Grid.Background>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150"></ColumnDefinition>
@@ -158,17 +73,10 @@
                             <Image Source="{Binding MatchHeroBans.Team1Ban1}" Height="120" Width="102" Grid.Column="3" Grid.Row="1" ToolTip="{Binding MatchHeroBans.Team1Ban1HeroName}"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Observers" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}" MinWidth="{StaticResource TabMinWidth}">
-                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-                            <StackPanel.Background>
-                                <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.5" />
-                            </StackPanel.Background>
-                            <StackPanel>
-                                <ItemsControl ItemsSource="{Binding MatchObserversCollection}" Style="{StaticResource MatchPlayerObserverItemsControl}" Margin="15 8 15 8"/>
-                            </StackPanel>
-                        </StackPanel>
+                    <TabItem Header="Observers" Style="{StaticResource CustomMetroTabItem}" Visibility="{Binding HasObservers, Converter={StaticResource BooleanToVisibility}}">
+                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchObservers}" />
                     </TabItem>
-                    <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}" MinWidth="{StaticResource TabMinWidth}">
+                    <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
                         <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding MatchChatCollection}" HorizontalAlignment="Stretch">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" MinWidth="90" />
@@ -176,6 +84,23 @@
                                 <DataGridTextColumn Header="Message" Binding="{Binding ChatMessage}" />
                             </DataGrid.Columns>
                         </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
+                        <TabControl controls:TabControlHelper.IsUnderlined="True">
+                            <TabItem Header="Team Levels" Style="{StaticResource CustomInner1MetroTabItem}">
+                                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource TeamLevelGraph}" />
+                            </TabItem>
+                            <TabItem Header="Team Experience" Style="{StaticResource CustomInner1MetroTabItem}">
+                                <TabControl controls:TabControlHelper.IsUnderlined="True">
+                                    <TabItem Header="Over Time" Style="{StaticResource CustomInner2MetroTabItem}">
+                                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource TeamExperienceOverTimeGraph}" />
+                                    </TabItem>
+                                    <TabItem Header="Final Exp Breakdown" Style="{StaticResource CustomInner2MetroTabItem}">
+                                        <ContentControl Content="{Binding}" ContentTemplate="{StaticResource TeamExperienceBreakdown}" />
+                                    </TabItem>
+                                </TabControl>
+                            </TabItem>
+                        </TabControl>
                     </TabItem>
                 </TabControl>
             </Grid>

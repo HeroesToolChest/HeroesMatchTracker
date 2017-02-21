@@ -23,4 +23,20 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0 4 0 4" />
     </Style>
+
+    <Style TargetType="TextBlock" x:Key="GraphHeader">
+        <Setter Property="Foreground" Value="{StaticResource DefaultTextBrush}" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0 12 0 0" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="GraphSubHeader">
+        <Setter Property="Foreground" Value="{StaticResource DefaultTextBrush}" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
 </ResourceDictionary>

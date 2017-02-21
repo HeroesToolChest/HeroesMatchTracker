@@ -83,16 +83,16 @@
                 </i:Interaction.Triggers>
             </DataGrid>
         </DockPanel>
-        <StackPanel Grid.Column="3" Margin="10 50 0 0" Opacity="0.9">
+        <StackPanel Grid.Column="3" Margin="10 50 0 0">
             <GroupBox Header="{Binding Team1OverviewHeader}" UseLayoutRounding="True" SnapsToDevicePixels="True">
                 <GroupBox.Background>
-                    <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.8" />
+                    <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
                 </GroupBox.Background>
                 <ItemsControl ItemsSource="{Binding MatchOverviewTeam1Collection}" Style="{StaticResource MatchPlayerTeam1OverviewItemsControl}"/>
             </GroupBox>
             <GroupBox Header="{Binding Team2OverviewHeader}" UseLayoutRounding="True" SnapsToDevicePixels="True" Margin="0 8 0 0">
                 <GroupBox.Background>
-                    <SolidColorBrush Color="{StaticResource MatchBackgroundColor}" Opacity="0.8" />
+                    <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
                 </GroupBox.Background>
                 <ItemsControl ItemsSource="{Binding MatchOverviewTeam2Collection}" Style="{StaticResource MatchPlayerTeam2OverviewItemsControl}"/>
             </GroupBox>

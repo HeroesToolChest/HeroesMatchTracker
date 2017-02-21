@@ -5,7 +5,8 @@
                     xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core">
 
     <system:Double x:Key="AdvancedStatWidth">140</system:Double>
-
+    <system:Double x:Key="AdvStatsGroupHeaderWidth">200</system:Double>
+    
     <Style x:Key="AdvancedTableContentText">
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}" />
@@ -89,4 +90,45 @@
     <Style x:Key="MatchPlayerTeam2AdvancedStatsItemsControl" TargetType="ItemsControl" Resources="{StaticResource Team2Brushes}">
         <Setter Property="ItemTemplate" Value="{StaticResource Team2AdvancedStatsTemplate}" />
     </Style>
+
+    <DataTemplate x:Key="MatchAdvancedStats">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
+                    <TextBlock Text="Player" />
+                    <TextBlock Text="Level" />
+                    <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
+                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                    <TextBlock Text="Kills" />
+                    <TextBlock Text="Takedowns" />
+                    <TextBlock Text="Assists" />
+                    <TextBlock Text="Deaths" />
+                    <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
+                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                    <TextBlock Text="Minion Damage" />
+                    <TextBlock Text="Summon Damage" />
+                    <TextBlock Text="Structure Damage" />
+                    <TextBlock Text="Total Siege Damage" />
+                    <TextBlock Text="HERO" HorizontalAlignment="Left" />
+                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                    <TextBlock Text="Hero Damage" />
+                    <TextBlock Text="Damage Taken" />
+                    <TextBlock Text="Healing" />
+                    <TextBlock Text="Self Healing" />
+                    <TextBlock Text="Time Spent Dead" />
+                    <TextBlock Text="Experience " />
+                    <TextBlock Text="OTHER" HorizontalAlignment="Left" Margin="0 -1 0 0" />
+                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                    <TextBlock Text="Merc Damage" />
+                    <TextBlock Text="Merc Camp Captures" />
+                    <TextBlock Text="Watchtower Captures" />
+                </StackPanel>
+                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
+                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>

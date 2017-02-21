@@ -29,12 +29,20 @@
 
                 <!-- Dragablz Material Design -->
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
+
+                <!-- Live Charts-->
+                <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/Colors/material.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/Size/l.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/Weight/normal.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/base.xaml" />
                 
                 <!--This app-->
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
 
+                <ResourceDictionary Source="/Resources/CustomThemes/DefaultTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/PlayerMatchRowTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
                 
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
@@ -47,16 +55,19 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/TextBlockStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/BorderStyle.xaml"/>
-
+                <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
+                
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchOverviewTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryTalentsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryAdvancedStatsTemplate.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResult.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
-
+                
+                <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamExperienceTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!--MahApps Brushes-->

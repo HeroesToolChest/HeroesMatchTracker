@@ -6,8 +6,6 @@
                     mc:Ignorable="options"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
 
-    <Color x:Key="MatchBackgroundColor">#12112F</Color>
-    <SolidColorBrush x:Key="MatchBackgroundBrush" Color="{StaticResource MatchBackgroundColor}" />
     <system:Double x:Key="StatTalentsWidth">1120</system:Double>
 
     <!--User Colors (yellow)-->
@@ -72,7 +70,7 @@
         <Color x:Key="PlayerNameColor">#708DE3</Color>
         <Color x:Key="PlayerNameHighlightColor">#D5DDF6</Color>
         <Color x:Key="TextValueColor">#708DE3</Color>
-   
+
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#292767" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />

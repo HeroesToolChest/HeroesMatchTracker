@@ -119,6 +119,14 @@
       <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.3.5, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.3.5\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.3.5, Culture=neutral, PublicKeyToken=3b585c2a5f1a92c1, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.3.5\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
       <Private>True</Private>
@@ -183,6 +191,7 @@
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -207,6 +216,9 @@
     <Compile Include="Generic\LogFileNames.cs" />
     <Compile Include="Messaging\MatchesDataMessage.cs" />
     <Compile Include="Messaging\StaticMessage.cs" />
+    <Compile Include="Models\GraphSummaryModels\GraphSummaryBase.cs" />
+    <Compile Include="Models\GraphSummaryModels\TeamExperienceGraph.cs" />
+    <Compile Include="Models\GraphSummaryModels\TeamLevelTimeGraph.cs" />
     <Compile Include="Models\MatchModels\MatchBans.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchObserver.cs" />

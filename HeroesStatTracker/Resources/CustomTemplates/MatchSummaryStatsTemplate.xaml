@@ -16,6 +16,7 @@
 
     <system:Double x:Key="StatSimpleNumberWidth">60</system:Double>
     <system:Double x:Key="StatLargeNumberWidth">140</system:Double>
+    <system:Double x:Key="HeaderStatSpacing">160</system:Double>
     
     <Thickness x:Key="TextValueMargin" Left="4" Top="0" Right="4" Bottom="0" />
 
@@ -155,4 +156,32 @@
     <Style x:Key="MatchPlayerTeam2StatsItemsControl" TargetType="ItemsControl" Resources="{StaticResource Team2Brushes}">
         <Setter Property="ItemTemplate" Value="{StaticResource Team2StatsTemplate}" />
     </Style>
+
+    <DataTemplate x:Key="MatchStats">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right">
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                    <Image Source="{StaticResource ScoreKill}" Width="24" ToolTip="Kills" VerticalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                    <Image Source="{StaticResource ScoreAssist}" Width="24" ToolTip="Assists" />
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
+                    <Image Source="{StaticResource ScoreDeath}" Width="24"  ToolTip="Deaths" />
+                </StackPanel>
+                <TextBlock Text="Siege Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                <TextBlock Text="Hero Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                <TextBlock Text="Role" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
+                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 12 0" />
+            </StackPanel>
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>
+                <ItemsControl ItemsSource="{Binding MatchStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2StatsItemsControl}" Margin="15 0 15 15"/>
+                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchResultTemplate}" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>
