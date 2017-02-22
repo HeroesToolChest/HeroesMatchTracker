@@ -18,7 +18,7 @@
         TextElement.FontSize="14"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{StaticResource MaterialDesignFont}"
-        Title="ProfileWindow" Height="300" Width="560">
+        Title="Profile" Height="300" Width="560">
     <Grid Margin="8">
         <StackPanel >
             <TextBlock Text="Enter your BattleTag to enable more features" />

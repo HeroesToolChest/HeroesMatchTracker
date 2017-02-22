@@ -68,31 +68,39 @@
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
     <materialDesign:DialogHost>
-        <Grid>
-            <materialDesign:ColorZone HorizontalAlignment="Right" Width="200" Padding="7" Mode="PrimaryMid" Panel.ZIndex="1000">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock VerticalAlignment="Center" Text="{Binding UserBattleTag}"></TextBlock>
-                    <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                        <StackPanel Width="180">
-                            <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
-                        </StackPanel>
-                    </materialDesign:PopupBox>
-                </StackPanel>
-            </materialDesign:ColorZone>
-            <dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
-                <TabItem Header="Home">
+        <DockPanel>
+            <materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryLight" Height="40">
 
-                </TabItem>
-                <TabItem Header="Matches">
-                    <matches:MatchesControl />
-                </TabItem>
-                <TabItem Header="Replays">
-                    <replays:ReplaysControl />
-                </TabItem>
-                <TabItem Header="Raw Data">
-                    <rawData:RawDataControl />
-                </TabItem>
-            </dragablz:TabablzControl>
-        </Grid>
+            </materialDesign:ColorZone>
+            <Grid DockPanel.Dock="Bottom">
+                <materialDesign:ColorZone HorizontalAlignment="Right" Width="200" Padding="7" Mode="PrimaryMid" Panel.ZIndex="1000">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock VerticalAlignment="Center" Text="{Binding UserBattleTag}"></TextBlock>
+                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                            <StackPanel Width="180">
+                                <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+                <dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
+                    <TabItem Header="Home">
+
+                    </TabItem>
+                    <TabItem Header="Matches">
+                        <matches:MatchesControl />
+                    </TabItem>
+                    <TabItem Header="Replays">
+                        <replays:ReplaysControl />
+                    </TabItem>
+                    <TabItem Header="Raw Data">
+                        <rawData:RawDataControl />
+                    </TabItem>
+                </dragablz:TabablzControl>
+            </Grid>
+
+
+        </DockPanel>
+
     </materialDesign:DialogHost>
 </controls:MetroWindow>

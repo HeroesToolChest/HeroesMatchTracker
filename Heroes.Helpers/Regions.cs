@@ -22,7 +22,6 @@ namespace Heroes.Helpers
                 regions.Add("EU");
                 regions.Add("KR");
                 regions.Add("CN");
-                regions.Add("XX");
 
                 return regions;
             }
