@@ -1,4 +1,5 @@
 ﻿using Heroes.Icons;
+using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using System.Collections.Generic;
@@ -12,8 +13,8 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             : base(matchPlayerBase)
         { }
 
-        public MatchPlayerTalents(IDatabaseService database, IHeroesIconsService heroesIcons, ReplayMatchPlayer player)
-            : base(database, heroesIcons, player)
+        public MatchPlayerTalents(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatchPlayer player)
+            : base(database, heroesIcons, userProfile, player)
         { }
 
         public List<BitmapImage> Talents { get; private set; }

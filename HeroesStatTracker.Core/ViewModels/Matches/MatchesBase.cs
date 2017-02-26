@@ -6,6 +6,7 @@ using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
@@ -34,6 +35,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ReplayMatch _selectedReplay;
 
         private IDatabaseService Database;
+        private IUserProfileService UserProfile;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
@@ -41,10 +43,11 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private GameMode MatchGameMode;
 
-        public MatchesBase(IDatabaseService database, IHeroesIconsService heroesIcons, GameMode matchGameMode)
+        public MatchesBase(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, GameMode matchGameMode)
             : base(heroesIcons)
         {
             Database = database;
+            UserProfile = userProfile;
 
             MatchGameMode = matchGameMode;
 
@@ -304,21 +307,21 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
             // get info
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
-            var playersList = replayMatch.ReplayMatchPlayers.ToList();
+            var playersList = replayMatch.ReplayMatchPlayers;
             var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
 
             // load up correct build information
             HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
 
-            FindPlayerParties(playersList);
+            var playerParties = PlayerParties.FindPlayerParties(playersList);
 
             foreach (var player in playersList)
             {
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
-                matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, UserProfile, player);
+                matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 // add to collection
                 if (player.Team == 0)
@@ -327,7 +330,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     MatchOverviewTeam2Collection.Add(matchPlayerBase);
             }
 
-            if (playersList[0].IsWinner)
+            if (playersList.First().IsWinner)
             {
                 Team1OverviewHeader = "TEAM 1 (WINNER)";
                 Team2OverviewHeader = "TEAM 2";

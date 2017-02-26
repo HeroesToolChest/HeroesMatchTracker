@@ -2,13 +2,21 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomThemes">
 
+    <Color x:Key="DefaultBlue">#2196F3</Color>
+    <Color x:Key="DefaultRed">#F44336</Color>
+    
     <Color x:Key="DefaultBackgroundColor">#BB12112F</Color>
     <Color x:Key="DefaultTextColor">#D5FCFF</Color>
+    <Color x:Key="DefaultTextColor2">#C4CEEE</Color>
     <Color x:Key="DefaultGraphTooltipColor">#77202020</Color>
     <Color x:Key="DefaultBorderColor">#998DBF</Color>
+
+    <SolidColorBrush x:Key="DefaultBlueBrush" Color="{StaticResource DefaultBlue}" />
+    <SolidColorBrush x:Key="DefaultRedBrush" Color="{StaticResource DefaultRed}" />
     
     <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="{StaticResource DefaultBackgroundColor}" />
     <SolidColorBrush x:Key="DefaultTextBrush" Color="{StaticResource DefaultTextColor}" />
+    <SolidColorBrush x:Key="DefaultText2Brush" Color="{StaticResource DefaultTextColor2}" />
     <SolidColorBrush x:Key="DefaultGraphTooltipBrush" Color="{StaticResource DefaultGraphTooltipColor}" />
     <SolidColorBrush x:Key="DefaultBorderBrush" Color="{StaticResource DefaultBorderColor}" />
 </ResourceDictionary>

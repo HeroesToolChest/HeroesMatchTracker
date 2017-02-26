@@ -1,6 +1,7 @@
 using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
 using HeroesStatTracker.Core.User;
+using HeroesStatTracker.Core.ViewModels.Home;
 using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
@@ -40,6 +41,9 @@ namespace HeroesStatTracker.Core.ViewModels
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
             SimpleIoc.Default.Register<ProfileWindowViewModel>();
+
+            // Home
+            SimpleIoc.Default.Register<HomeViewModel>();
 
             // TitleBar
             SimpleIoc.Default.Register<SettingsControlViewModel>();
@@ -98,6 +102,9 @@ namespace HeroesStatTracker.Core.ViewModels
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public static StartupWindowViewModel StartupWindowViewModel => ServiceLocator.Current.GetInstance<StartupWindowViewModel>();
         public static ProfileWindowViewModel ProfileWindowViewModel => ServiceLocator.Current.GetInstance<ProfileWindowViewModel>();
+
+        // Home
+        public static HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();
 
         // TitleBar
         public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();

@@ -59,13 +59,14 @@
                 
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomTemplates/MatchOverviewTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchOverviewTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryTalentsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryAdvancedStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
-                
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
+
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamExperienceTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>

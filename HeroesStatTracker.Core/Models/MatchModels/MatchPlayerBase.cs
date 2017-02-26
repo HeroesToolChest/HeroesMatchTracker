@@ -2,6 +2,7 @@
 using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
+using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
@@ -15,10 +16,11 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {
-        public MatchPlayerBase(IDatabaseService database, IHeroesIconsService heroesIcons, ReplayMatchPlayer player)
+        public MatchPlayerBase(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatchPlayer player)
         {
             Database = database;
             HeroesIcons = heroesIcons;
+            UserProfile = userProfile;
             Player = player;
         }
 
@@ -108,6 +110,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
+        protected IUserProfileService UserProfile { get; }
         protected ReplayMatchPlayer Player { get; }
 
         public void SetPlayerInfo(bool isAutoSelect, Dictionary<int, PartyIconColor> playerPartyIcons, Dictionary<long, string> matchAwardDictionary)
@@ -120,7 +123,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             CharacterName = Player.Character;
 
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
-            IsUserPlayer = (playerInfo.BattleTagName == Database.SettingsDb().UserSettings.UserBattleTagName && playerInfo.BattleNetRegionId == Database.SettingsDb().UserSettings.UserRegion) ? true : false;
+            IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
 
             if (Player.Team == 4)
                 CharacterLevel = "Observer";

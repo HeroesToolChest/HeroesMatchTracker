@@ -4,7 +4,7 @@ using HeroesStatTracker.Data.Queries.Replays;
 
 namespace HeroesStatTracker.Core.ViewModels.RawData
 {
-    public class RawMatchTeamBanViewModel : RawDataBase<ReplayMatchTeamBan>
+    public class RawMatchTeamBanViewModel : RawDataViewModelBase<ReplayMatchTeamBan>
     {
         public RawMatchTeamBanViewModel(IRawDataQueries<ReplayMatchTeamBan> iRawDataQueries, IHeroesIconsService heroesIcons)
             : base(iRawDataQueries, heroesIcons)

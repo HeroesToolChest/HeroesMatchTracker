@@ -10,30 +10,35 @@ namespace HeroesStatTracker.Core.ViewModels
     public class ProfileWindowViewModel : ViewModelBase
     {
         private IUserProfileService UserProfile;
+        private string _userBattleTag;
+        private int _userRegion;
 
         public ProfileWindowViewModel(IUserProfileService userProfile)
         {
             UserProfile = userProfile;
+
+            UserBattleTag = UserProfile.BattleTagName;
+            SelectedRegion = ((Region)UserProfile.RegionId).ToString();
         }
 
         public RelayCommand SetUserCommand => new RelayCommand(SetUser);
 
         public string UserBattleTag
         {
-            get { return UserProfile.BattleTagName; }
+            get { return _userBattleTag; }
             set
             {
-                UserProfile.BattleTagName = value;
+                _userBattleTag = value;
                 RaisePropertyChanged();
             }
         }
 
         public string SelectedRegion
         {
-            get { return ((Region)UserProfile.RegionId).ToString(); }
+            get { return ((Region)_userRegion).ToString(); }
             set
             {
-                UserProfile.RegionId = (int)HeroesHelpers.EnumParser.ConvertRegionStringtoEnum(value);
+                _userRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringtoEnum(value);
                 RaisePropertyChanged();
             }
         }
@@ -48,7 +53,7 @@ namespace HeroesStatTracker.Core.ViewModels
             if (string.IsNullOrEmpty(UserBattleTag) || string.IsNullOrWhiteSpace(UserBattleTag) || string.IsNullOrEmpty(SelectedRegion))
                 return;
 
-            UserProfile.SetProfile();
+            UserProfile.SetProfile(_userBattleTag, _userRegion);
         }
     }
 }

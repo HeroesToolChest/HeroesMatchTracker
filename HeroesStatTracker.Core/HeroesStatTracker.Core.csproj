@@ -219,6 +219,7 @@
     <Compile Include="Models\GraphSummaryModels\GraphSummaryBase.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamExperienceGraph.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamLevelTimeGraph.cs" />
+    <Compile Include="Models\MatchHistoryModels\MatchHistoryMatch.cs" />
     <Compile Include="Models\MatchModels\MatchBans.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />
     <Compile Include="Models\MatchModels\MatchObserver.cs" />
@@ -227,6 +228,7 @@
     <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerTalents.cs" />
     <Compile Include="Models\MatchModels\MatchResult.cs" />
+    <Compile Include="Generic\PlayerParties.cs" />
     <Compile Include="Models\PlayerSearchContextMenu.cs" />
     <Compile Include="Models\ReplayModels\ReplayFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,6 +240,7 @@
     <Compile Include="User\IUserProfileService.cs" />
     <Compile Include="User\UserProfile.cs" />
     <Compile Include="Validation\NotEmptyValidation.cs" />
+    <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\HstViewModel.cs" />
     <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />

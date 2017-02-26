@@ -4,7 +4,7 @@ using HeroesStatTracker.Data.Queries.Replays;
 
 namespace HeroesStatTracker.Core.ViewModels.RawData
 {
-    public class RawMatchPlayerScoreResultViewModel : RawDataBase<ReplayMatchPlayerScoreResult>
+    public class RawMatchPlayerScoreResultViewModel : RawDataViewModelBase<ReplayMatchPlayerScoreResult>
     {
         public RawMatchPlayerScoreResultViewModel(IRawDataQueries<ReplayMatchPlayerScoreResult> iRawDataQueries, IHeroesIconsService heroesIcons)
             : base(iRawDataQueries, heroesIcons)

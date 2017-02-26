@@ -6,6 +6,7 @@ using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.GraphSummaryModels;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
@@ -48,11 +49,13 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
         private IDatabaseService Database;
+        private IUserProfileService UserProfile;
 
-        public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
+        public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile)
             : base(heroesIcons)
         {
             Database = database;
+            UserProfile = userProfile;
 
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
@@ -342,13 +345,33 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
-            if (replayMatch == null || matchList == null || matchList.Count == 0)
+            if (replayMatch == null)
                 return;
 
             LoadMatchSummaryData(replayMatch);
 
-            IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
-            IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
+            if (matchList == null)
+            {
+                IsLeftChangeButtonEnabled = false;
+                IsLeftChangeButtonVisible = false;
+                IsRightChangeButtonEnabled = false;
+                IsRightChangeButtonVisible = false;
+            }
+            else if (matchList.Count <= 0)
+            {
+                IsLeftChangeButtonEnabled = false;
+                IsLeftChangeButtonVisible = true;
+                IsRightChangeButtonEnabled = false;
+                IsRightChangeButtonVisible = true;
+            }
+            else
+            {
+                IsLeftChangeButtonVisible = true;
+                IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
+
+                IsRightChangeButtonVisible = true;
+                IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
+            }
         }
 
         private void LoadMatchSummaryData(ReplayMatch replayMatch)
@@ -379,7 +402,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 TeamLevelTimeGraph.SetTeamLevelGraphs(matchTeamLevelsList, playersList[0].IsWinner);
                 TeamExperienceGraph.SetTeamExperienceGraphs(matchTeamExperienceList, playersList[0].IsWinner);
 
-                FindPlayerParties(playersList);
+                var playerParties = PlayerParties.FindPlayerParties(playersList);
 
                 foreach (var player in playersList)
                 {
@@ -388,8 +411,8 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     MatchPlayerStats matchPlayerStats;
                     MatchPlayerAdvancedStats matchPlayerAdvancedStats;
 
-                    matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, player);
-                    matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, PlayerPartyIcons, matchAwardDictionary);
+                    matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, UserProfile, player);
+                    matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                     if (player.Character != "None")
                     {

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:HeroesStatTracker.Views"
+        xmlns:home="clr-namespace:HeroesStatTracker.Views.Home"
         xmlns:titleBar="clr-namespace:HeroesStatTracker.Views.TitleBar"
         xmlns:replays="clr-namespace:HeroesStatTracker.Views.Replays"
         xmlns:rawData="clr-namespace:HeroesStatTracker.Views.RawData"
@@ -85,7 +86,7 @@
                 </materialDesign:ColorZone>
                 <dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
                     <TabItem Header="Home">
-
+                        <home:HomeControl />
                     </TabItem>
                     <TabItem Header="Matches">
                         <matches:MatchesControl />

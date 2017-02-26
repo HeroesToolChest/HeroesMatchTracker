@@ -14,27 +14,19 @@ namespace HeroesStatTracker.Core.User
         {
             HeroesIcons = heroesIcons;
             Database = database;
-            RetrieveUserProfile();
         }
 
-        public string BattleTagName { get; set; }
-        public long PlayerId { get; set; }
-        public int RegionId { get; set; }
+        public string BattleTagName { get { return Database.SettingsDb().UserSettings.UserBattleTagName; } }
+        public long PlayerId { get { return Database.SettingsDb().UserSettings.UserPlayerId; } }
+        public int RegionId { get { return Database.SettingsDb().UserSettings.UserRegion; } }
 
-        public void SetProfile()
+        public void SetProfile(string battleTag, int regionId)
         {
-            Database.SettingsDb().UserSettings.UserBattleTagName = BattleTagName;
-            Database.SettingsDb().UserSettings.UserRegion = RegionId;
+            Database.SettingsDb().UserSettings.UserBattleTagName = battleTag;
+            Database.SettingsDb().UserSettings.UserRegion = regionId;
 
-            Database.SettingsDb().UserSettings.UserPlayerId = Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(BattleTagName, RegionId);
+            Database.SettingsDb().UserSettings.UserPlayerId = Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(battleTag, regionId);
             Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateUserBattleTag));
-        }
-
-        private void RetrieveUserProfile()
-        {
-            BattleTagName = Database.SettingsDb().UserSettings.UserBattleTagName;
-            PlayerId = Database.SettingsDb().UserSettings.UserPlayerId;
-            RegionId = Database.SettingsDb().UserSettings.UserRegion;
         }
     }
 }

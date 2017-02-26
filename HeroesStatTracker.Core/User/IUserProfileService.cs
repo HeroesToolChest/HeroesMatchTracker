@@ -2,10 +2,10 @@
 {
     public interface IUserProfileService
     {
-        string BattleTagName { get; set; }
-        long PlayerId { get; set; }
-        int RegionId { get; set; }
+        string BattleTagName { get; }
+        long PlayerId { get; }
+        int RegionId { get; }
 
-        void SetProfile();
+        void SetProfile(string battleTag, int region);
     }
 }

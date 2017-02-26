@@ -95,6 +95,14 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
+        public List<ReplayMatch> ReadLatestReplaysByDateTime(int amount)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.Replays.OrderByDescending(x => x.TimeStamp).Take(amount).ToList();
+            }
+        }
+
         public long ReadReplayIdByRandomValue(ReplayMatch model)
         {
             using (var db = new ReplaysContext())
