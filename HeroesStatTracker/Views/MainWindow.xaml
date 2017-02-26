@@ -23,7 +23,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{StaticResource MaterialDesignFont}"
         Title="{Binding AppVersion, StringFormat=Heroes Stat Tracker - {0}}"
-        MinHeight="584" MinWidth="720">
+        MinHeight="768" MinWidth="1024">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
     </Window.Resources>
@@ -70,7 +70,7 @@
     </controls:MetroWindow.RightWindowCommands>
     <materialDesign:DialogHost>
         <DockPanel>
-            <materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryLight" Height="40">
+            <materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryDark" Height="40">
 
             </materialDesign:ColorZone>
             <Grid DockPanel.Dock="Bottom">
@@ -99,8 +99,6 @@
                     </TabItem>
                 </dragablz:TabablzControl>
             </Grid>
-
-
         </DockPanel>
 
     </materialDesign:DialogHost>

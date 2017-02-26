@@ -29,12 +29,12 @@
                     <Expander.HeaderTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Style="{StaticResource MatchHeaderTemplate}">
-                                <TextBlock Text="{Binding GameMode}" Width="150" />
-                                <StackPanel Orientation="Horizontal" Width="180">
+                                <TextBlock Text="{Binding GameMode}" Width="140" />
+                                <StackPanel Orientation="Horizontal" Width="160">
                                     <Image Source="{Binding UserHeroImage}" Height="40" />
                                     <TextBlock Text="{Binding UserHero}" Margin="8 0 0 0" />
                                 </StackPanel>
-                                <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="240" />
+                                <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="220" />
                                 <TextBlock Text="{Binding WinnerResult}" Width="140">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">

@@ -11,7 +11,7 @@
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="20" Width="1000" HorizontalAlignment="Left" Background="{StaticResource DefaultBackgroundBrush}">
+            <StackPanel Margin="20" Width="960" HorizontalAlignment="Left" Background="{StaticResource DefaultBackgroundBrush}">
                 <StackPanel Margin="20">
                     <ItemsControl ItemsSource="{Binding MatchCollection}" Style="{StaticResource MatchHistoryMatchItemsControl}" />
                 </StackPanel>

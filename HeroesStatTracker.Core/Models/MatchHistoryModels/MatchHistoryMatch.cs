@@ -62,7 +62,6 @@ namespace HeroesStatTracker.Core.Models.MatchHistoryModels
             if (ReplayMatch == null)
                 return;
 
-            //ShowMatchSummaryButtonEnabled = false;
             MatchSummaryReplay.LoadMatchSummary(ReplayMatch, null);
 
             MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{ReplayMatch.ReplayId}] [Build:{ReplayMatch.ReplayBuild}]");

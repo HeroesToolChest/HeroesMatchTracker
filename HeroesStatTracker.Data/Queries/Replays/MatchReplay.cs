@@ -95,11 +95,19 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
         }
 
-        public List<ReplayMatch> ReadLatestReplaysByDateTime(int amount)
+        public List<ReplayMatch> ReadLatestReplaysByDateTimeList(int amount)
         {
             using (var db = new ReplaysContext())
             {
                 return db.Replays.OrderByDescending(x => x.TimeStamp).Take(amount).ToList();
+            }
+        }
+
+        public List<ReplayMatch> ReadNewestLatestReplayByDateTimeList(DateTime? dateTime)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.Replays.OrderBy(x => x.TimeStamp).Where(x => x.TimeStamp > dateTime).ToList();
             }
         }
 
