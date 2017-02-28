@@ -253,24 +253,23 @@
     </Style>
 
     <DataTemplate x:Key="MatchTalents">
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel.Background>
-                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
-            </StackPanel.Background>
-            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
-                <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
-                <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="22 0 0 0" />
-                <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 -8 0" />
-            </StackPanel>
+        <materialDesign:Card Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel>
-                <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>
-                <ItemsControl ItemsSource="{Binding MatchTalentsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2TalentsItemsControl}" Margin="15 0 15 15"/>
-                <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchResultTemplate}" />
+                <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
+                    <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
+                    <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                    <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                    <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="22 0 0 0" />
+                    <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                    <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
+                    <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 -8 0" />
+                </StackPanel>
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>
+                    <ItemsControl ItemsSource="{Binding MatchTalentsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2TalentsItemsControl}" Margin="15 0 15 15"/>
+                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchResultTemplate}" />
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </materialDesign:Card>
     </DataTemplate>
 </ResourceDictionary>

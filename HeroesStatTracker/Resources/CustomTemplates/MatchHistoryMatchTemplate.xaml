@@ -78,7 +78,7 @@
                                     <TextBlock Text="{Binding GameLength}" />
                                 </StackPanel>
                                 <StackPanel>
-                                    <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="30 20 0 0"/>
+                                    <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="20 20 0 0"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates"
-                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core">
+                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <system:Double x:Key="AdvancedStatWidth">140</system:Double>
     <system:Double x:Key="AdvStatsGroupHeaderWidth">200</system:Double>
@@ -92,10 +93,7 @@
     </Style>
 
     <DataTemplate x:Key="MatchAdvancedStats">
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel.Background>
-                <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
-            </StackPanel.Background>
+        <materialDesign:Card Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
                     <TextBlock Text="Player" />
@@ -129,6 +127,6 @@
                 <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
                 <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
             </StackPanel>
-        </StackPanel>
+        </materialDesign:Card>
     </DataTemplate>
 </ResourceDictionary>

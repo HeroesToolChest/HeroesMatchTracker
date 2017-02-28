@@ -77,13 +77,15 @@
                         <ContentControl Content="{Binding}" ContentTemplate="{StaticResource MatchObservers}" />
                     </TabItem>
                     <TabItem Header="Team Chat" Visibility="{Binding HasChat, Converter={StaticResource BooleanToVisibility}}" Style="{StaticResource CustomMetroTabItem}">
-                        <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding MatchChatCollection}" HorizontalAlignment="Stretch">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" MinWidth="90" />
-                                <DataGridTextColumn Header="Target" Binding="{Binding Target}" MinWidth="90"/>
-                                <DataGridTextColumn Header="Message" Binding="{Binding ChatMessage}" />
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <materialDesign:Card>
+                            <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding MatchChatCollection}" HorizontalAlignment="Stretch">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Time" Binding="{Binding TimeStamp}" MinWidth="90" />
+                                    <DataGridTextColumn Header="Target" Binding="{Binding Target}" MinWidth="90"/>
+                                    <DataGridTextColumn Header="Message" Binding="{Binding ChatMessage}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </materialDesign:Card>
                     </TabItem>
                     <TabItem Header="Graphs" Style="{StaticResource CustomMetroTabItem}">
                         <TabControl controls:TabControlHelper.IsUnderlined="True">

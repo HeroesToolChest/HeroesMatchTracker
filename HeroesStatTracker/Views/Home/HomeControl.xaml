@@ -11,11 +11,11 @@
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="20" Width="960" HorizontalAlignment="Left" Background="{StaticResource DefaultBackgroundBrush}">
+            <materialDesign:Card Margin="10" Background="{StaticResource DefaultBackgroundBrush}" Width="980" HorizontalAlignment="Left">
                 <StackPanel Margin="20">
                     <ItemsControl ItemsSource="{Binding MatchCollection}" Style="{StaticResource MatchHistoryMatchItemsControl}" />
                 </StackPanel>
-            </StackPanel>
+            </materialDesign:Card>
         </ScrollViewer>
     </Grid>
 </UserControl>
