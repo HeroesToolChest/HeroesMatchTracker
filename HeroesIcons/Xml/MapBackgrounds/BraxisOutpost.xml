@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BraxisOutpost name="Braxis Outpost" custom="true">
+  <Normal fontglow="#FF0000FF">ui_ingame_mapmechanic_loadscreen_braxisoutpost.jpg</Normal>
+  <Small>ui_ingame_mapmechanic_loadscreen_braxisoutpost_small.jpg</Small>
+</BraxisOutpost>

@@ -470,6 +470,9 @@
     <Resource Include="Icons\Talents\Murky\storm_ui_icon_murky_fishtank.dds" />
     <Resource Include="Icons\Talents\Murky\storm_ui_icon_murky_pufferfish_b.dds" />
     <Resource Include="Icons\Talents\Murky\big_tuna_kahuna.dds" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_silvercity_small.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_braxisoutpost.jpg" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_braxisoutpost_small.jpg" />
     <Content Include="Xml\Heroes\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -3389,6 +3392,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\BlackheartsBay.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\BraxisOutpost.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\BraxisHoldout.xml">
