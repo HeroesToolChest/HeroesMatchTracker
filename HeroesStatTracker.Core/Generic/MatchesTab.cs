@@ -1,6 +1,6 @@
 ﻿namespace HeroesStatTracker.Core
 {
-    public enum MatchesTabs
+    public enum MatchesTab
     {
         AllMatches,
         QuickMatch,

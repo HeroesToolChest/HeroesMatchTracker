@@ -106,10 +106,10 @@
                 </materialDesign:ColorZone>
                 <Grid DockPanel.Dock="Bottom">
                     <Grid Visibility="{Binding IsHomeControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <home:HomeControl />                        
+                        <home:HomeControl />
                     </Grid>
                     <Grid Visibility="{Binding IsMatchesControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <matches:MatchesControl />                        
+                        <matches:MatchesControl />
                     </Grid>
                     <Grid Visibility="{Binding IsReplaysControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <replays:ReplaysControl />
@@ -117,70 +117,8 @@
                     <Grid Visibility="{Binding IsRawDataControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <rawData:RawDataControl />
                     </Grid>
-
-
-                    <!--<Grid Visibility="Collapsed">
-                        <home:HomeControl />
-                    </Grid>
-                    <Grid Visibility="Collapsed">
-                        <matches:MatchesControl />
-                    </Grid>
-                    <Grid>
-
-                    </Grid>
-                    <Grid>
-
-                    </Grid>-->
-                    <!--<ContentControl Content="{Binding ElementName=MainPagesItems, Path=SelectedItem}" />-->
-                    <!--<dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
-                        <TabItem Header="Home">
-                            <home:HomeControl />
-                        </TabItem>
-                        <TabItem Header="Matches">
-                            <matches:MatchesControl />
-                        </TabItem>
-                        <TabItem Header="Replays">
-                            <replays:ReplaysControl />
-                        </TabItem>
-                        <TabItem Header="Raw Data">
-                            <rawData:RawDataControl />
-                        </TabItem>
-                    </dragablz:TabablzControl>-->
                 </Grid>
-
             </DockPanel>
         </materialDesign:DrawerHost>
-        <!--<DockPanel>
-            <materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryDark" Height="40">
-
-            </materialDesign:ColorZone>
-            <Grid DockPanel.Dock="Bottom">
-                <materialDesign:ColorZone HorizontalAlignment="Right" Width="200" Padding="7" Mode="PrimaryMid" Panel.ZIndex="1000">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <TextBlock VerticalAlignment="Center" Text="{Binding UserBattleTag}"></TextBlock>
-                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                            <StackPanel Width="180">
-                                <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                    </StackPanel>
-                </materialDesign:ColorZone>
-                <dragablz:TabablzControl FixedHeaderCount="4" SelectedIndex="{Binding SelectedMainTab}">
-                    <TabItem Header="Home">
-                        <home:HomeControl />
-                    </TabItem>
-                    <TabItem Header="Matches">
-                        <matches:MatchesControl />
-                    </TabItem>
-                    <TabItem Header="Replays">
-                        <replays:ReplaysControl />
-                    </TabItem>
-                    <TabItem Header="Raw Data">
-                        <rawData:RawDataControl />
-                    </TabItem>
-                </dragablz:TabablzControl>
-            </Grid>
-        </DockPanel>-->
-
     </materialDesign:DialogHost>
 </controls:MetroWindow>

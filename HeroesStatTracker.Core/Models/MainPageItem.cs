@@ -2,11 +2,21 @@
 {
     public class MainPageItem
     {
-        public MainPageItem(string name)
+        public MainPageItem(MainPage page)
         {
-            Name = name;
+            if (page == MainPage.Home)
+                Name = "Home";
+            else if (page == MainPage.Matches)
+                Name = "Matches";
+            else if (page == MainPage.ReplayParser)
+                Name = "Replay Parser";
+            else if (page == MainPage.RawData)
+                Name = "Raw Data Tables";
+
+            MainPage = page;
         }
 
         public string Name { get; }
+        public MainPage MainPage { get; }
     }
 }

@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace HeroesStatTracker.Core.ViewModels.Home
 {
-    public class HomeViewModel : HstViewModel, IMainPage
+    public class HomeViewModel : HstViewModel
     {
         private IDatabaseService Database;
         private IUserProfileService UserProfile;
@@ -30,8 +30,6 @@ namespace HeroesStatTracker.Core.ViewModels.Home
             InitDynamicMatchLoading();
         }
 
-        public string Name => "Home";
-
         public ObservableCollection<MatchHistoryMatch> MatchCollection
         {
             get { return _matchCollection; }
@@ -41,8 +39,6 @@ namespace HeroesStatTracker.Core.ViewModels.Home
                 RaisePropertyChanged();
             }
         }
-
-
 
         private void InitialMatchHistoryLoad()
         {

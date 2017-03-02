@@ -206,8 +206,8 @@
     <Compile Include="Converters\TalentTooltipTextConverter.cs" />
     <Compile Include="Generic\AssemblyVersions.cs" />
     <Compile Include="Generic\AppCore.cs" />
-    <Compile Include="Generic\MainTabs.cs" />
-    <Compile Include="Generic\MatchesTabs.cs" />
+    <Compile Include="Generic\MainPage.cs" />
+    <Compile Include="Generic\MatchesTab.cs" />
     <Compile Include="Generic\StylePalette.cs" />
     <Compile Include="HotsLogs\HotsLogsUploader.cs" />
     <Compile Include="HotsLogs\MaintenanceException.cs" />
@@ -242,7 +242,6 @@
     <Compile Include="Validation\NotEmptyValidation.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\HstViewModel.cs" />
-    <Compile Include="ViewModels\IMainPage.cs" />
     <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />
     <Compile Include="ViewModels\Matches\CustomGameViewModel.cs" />
@@ -280,7 +279,7 @@
     <Compile Include="ViewServices\IBrowserWindowService.cs" />
     <Compile Include="ViewServices\IMatchesDataService.cs" />
     <Compile Include="ViewServices\IMatchesTabService.cs" />
-    <Compile Include="ViewServices\IMainTabsService.cs" />
+    <Compile Include="ViewServices\IMainPageService.cs" />
     <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />
     <Compile Include="ViewServices\IMatchSummaryReplayService.cs" />
     <Compile Include="ViewServices\IPaletteSelectorWindowService.cs" />

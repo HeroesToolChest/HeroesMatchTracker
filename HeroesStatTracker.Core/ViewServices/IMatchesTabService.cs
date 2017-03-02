@@ -6,6 +6,6 @@
         /// Sets the selected tab in the Matches tab (Quick Match, Unranked Draft, etc...)
         /// </summary>
         /// <param name="selectedMatchesTab"></param>
-        void SwitchToTab(MatchesTabs selectedMatchesTab);
+        void SwitchToTab(MatchesTab selectedMatchesTab);
     }
 }

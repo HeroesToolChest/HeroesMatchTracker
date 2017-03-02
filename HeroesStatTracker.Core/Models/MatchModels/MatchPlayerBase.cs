@@ -88,9 +88,9 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
         }
 
-        public IMainTabsService MainTabs
+        public IMainPageService MainTabs
         {
-            get { return ServiceLocator.Current.GetInstance<IMainTabsService>(); }
+            get { return ServiceLocator.Current.GetInstance<IMainPageService>(); }
         }
 
         public IMatchesTabService MatchesTab
@@ -171,107 +171,107 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void HeroSearchAllMatch()
         {
-            HeroSearch(MatchesTabs.AllMatches);
+            HeroSearch(Core.MatchesTab.AllMatches);
         }
 
         private void HeroSearchQuickMatch()
         {
-            HeroSearch(MatchesTabs.QuickMatch);
+            HeroSearch(Core.MatchesTab.QuickMatch);
         }
 
         private void HeroSearchUnrankedDraft()
         {
-            HeroSearch(MatchesTabs.UnrankedDraft);
+            HeroSearch(Core.MatchesTab.UnrankedDraft);
         }
 
         private void HeroSearchHeroLeague()
         {
-            HeroSearch(MatchesTabs.HeroLeague);
+            HeroSearch(Core.MatchesTab.HeroLeague);
         }
 
         private void HeroSearchTeamLeague()
         {
-            HeroSearch(MatchesTabs.TeamLeague);
+            HeroSearch(Core.MatchesTab.TeamLeague);
         }
 
         private void HeroSearchBrawl()
         {
-            HeroSearch(MatchesTabs.Brawl);
+            HeroSearch(Core.MatchesTab.Brawl);
         }
 
         private void HeroSearchCustomGame()
         {
-            HeroSearch(MatchesTabs.Custom);
+            HeroSearch(Core.MatchesTab.Custom);
         }
 
         private void PlayerSearchAllMatch()
         {
-            PlayerSearch(MatchesTabs.AllMatches);
+            PlayerSearch(Core.MatchesTab.AllMatches);
         }
 
         private void PlayerSearchQuickMatch()
         {
-            PlayerSearch(MatchesTabs.QuickMatch);
+            PlayerSearch(Core.MatchesTab.QuickMatch);
         }
 
         private void PlayerSearchUnrankedDraft()
         {
-            PlayerSearch(MatchesTabs.UnrankedDraft);
+            PlayerSearch(Core.MatchesTab.UnrankedDraft);
         }
 
         private void PlayerSearchHeroLeague()
         {
-            PlayerSearch(MatchesTabs.HeroLeague);
+            PlayerSearch(Core.MatchesTab.HeroLeague);
         }
 
         private void PlayerSearchTeamLeague()
         {
-            PlayerSearch(MatchesTabs.TeamLeague);
+            PlayerSearch(Core.MatchesTab.TeamLeague);
         }
 
         private void PlayerSearchBrawl()
         {
-            PlayerSearch(MatchesTabs.Brawl);
+            PlayerSearch(Core.MatchesTab.Brawl);
         }
 
         private void PlayerSearchCustomGame()
         {
-            PlayerSearch(MatchesTabs.Custom);
+            PlayerSearch(Core.MatchesTab.Custom);
         }
 
         private void PlayerAndHeroSearchAllMatch()
         {
-            PlayerAndHeroSearch(MatchesTabs.AllMatches);
+            PlayerAndHeroSearch(Core.MatchesTab.AllMatches);
         }
 
         private void PlayerAndHeroSearchQuickMatch()
         {
-            PlayerAndHeroSearch(MatchesTabs.QuickMatch);
+            PlayerAndHeroSearch(Core.MatchesTab.QuickMatch);
         }
 
         private void PlayerAndHeroSearchUnrankedDraft()
         {
-            PlayerAndHeroSearch(MatchesTabs.UnrankedDraft);
+            PlayerAndHeroSearch(Core.MatchesTab.UnrankedDraft);
         }
 
         private void PlayerAndHeroSearchHeroLeague()
         {
-            PlayerAndHeroSearch(MatchesTabs.HeroLeague);
+            PlayerAndHeroSearch(Core.MatchesTab.HeroLeague);
         }
 
         private void PlayerAndHeroSearchTeamLeague()
         {
-            PlayerAndHeroSearch(MatchesTabs.TeamLeague);
+            PlayerAndHeroSearch(Core.MatchesTab.TeamLeague);
         }
 
         private void PlayerAndHeroSearchBrawl()
         {
-            PlayerAndHeroSearch(MatchesTabs.Brawl);
+            PlayerAndHeroSearch(Core.MatchesTab.Brawl);
         }
 
         private void PlayerAndHeroSearchCustomGame()
         {
-            PlayerAndHeroSearch(MatchesTabs.Custom);
+            PlayerAndHeroSearch(Core.MatchesTab.Custom);
         }
 
         private void CopyHeroNameToClipboard()
@@ -289,25 +289,25 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             Clipboard.SetText($"{CharacterName} - {PlayerName}");
         }
 
-        private void HeroSearch(MatchesTabs matchTab)
+        private void HeroSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             MatchesData.SendSearchData(new MatchesDataMessage { SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
 
-        private void PlayerSearch(MatchesTabs matchTab)
+        private void PlayerSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
 
-        private void PlayerAndHeroSearch(MatchesTabs matchTab)
+        private void PlayerAndHeroSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToTab(Core.MainTabs.Matches);
+            MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName, SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();

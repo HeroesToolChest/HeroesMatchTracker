@@ -13,14 +13,13 @@ using System.Collections.ObjectModel;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabsService
+    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainPageService
     {
         private bool _matchSummaryIsOpen;
         private bool _isHomeControlVisible;
         private bool _isMatchesControlVisible;
         private bool _isReplaysControlVisible;
         private bool _isRawDataControlVisible;
-        private int _selectedMainTab;
         private string _matchSummaryHeader;
         private MainPageItem _selectedMainPage;
 
@@ -36,17 +35,15 @@ namespace HeroesStatTracker.Core.ViewModels
             UserProfile = userProfile;
             HeroesIcons = heroesIcons;
 
+            SetMainPages();
+
             MatchSummaryIsOpen = false;
             MatchSummaryHeader = "Match Summary";
 
             IsHomeControlVisible = true;
-            IsMatchesControlVisible = false;
-
-            MainPagesCollection.Add(new MainPageItem("Home"));
-            MainPagesCollection.Add(new MainPageItem("Matches"));
 
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
-            SimpleIoc.Default.Register<IMainTabsService>(() => this);
+            SimpleIoc.Default.Register<IMainPageService>(() => this);
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
@@ -86,16 +83,6 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
-        public int SelectedMainTab
-        {
-            get { return _selectedMainTab; }
-            set
-            {
-                _selectedMainTab = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public string MatchSummaryHeader
         {
             get { return _matchSummaryHeader; }
@@ -103,6 +90,21 @@ namespace HeroesStatTracker.Core.ViewModels
             {
                 _matchSummaryHeader = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        public MainPageItem SelectedMainPage
+        {
+            get { return _selectedMainPage; }
+            set
+            {
+                if (_selectedMainPage != value)
+                {
+                    SetMainPagesToFalse();
+                    _selectedMainPage = value;
+                    SetControlVisible(value.MainPage);
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -126,21 +128,7 @@ namespace HeroesStatTracker.Core.ViewModels
             {
                 if (_isMatchesControlVisible != value)
                 {
-                    SetMainPagesToFalse();
                     _isMatchesControlVisible = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public MainPageItem SelectedMainPage
-        {
-            get { return _selectedMainPage; }
-            set
-            {
-                if (_selectedMainPage != value)
-                {
-                    _selectedMainPage = value;
                     RaisePropertyChanged();
                 }
             }
@@ -197,17 +185,10 @@ namespace HeroesStatTracker.Core.ViewModels
             MatchSummaryHeader = headerTitle;
         }
 
-        public void SwitchToTab(MainTabs selectedMainTab)
+        public void SwitchToPage(MainPage selectedMainPage)
         {
-            SelectedMainTab = (int)selectedMainTab;
-        }
-
-        private void SetMainPagesToFalse()
-        {
-            IsHomeControlVisible = false;
-            IsMatchesControlVisible = false;
-            IsReplaysControlVisible = false;
-            IsRawDataControlVisible = false;
+            SetMainPagesToFalse();
+            SetControlVisible(selectedMainPage);
         }
 
         private void OpenWhatsNewWindow()
@@ -224,6 +205,34 @@ namespace HeroesStatTracker.Core.ViewModels
         {
             if (message.Notification == StaticMessage.UpdateUserBattleTag)
                 UserBattleTag = UserProfile.BattleTagName;
+        }
+
+        private void SetMainPages()
+        {
+            MainPagesCollection.Add(new MainPageItem(MainPage.Home));
+            MainPagesCollection.Add(new MainPageItem(MainPage.Matches));
+            MainPagesCollection.Add(new MainPageItem(MainPage.ReplayParser));
+            MainPagesCollection.Add(new MainPageItem(MainPage.RawData));
+        }
+
+        private void SetMainPagesToFalse()
+        {
+            IsHomeControlVisible = false;
+            IsMatchesControlVisible = false;
+            IsReplaysControlVisible = false;
+            IsRawDataControlVisible = false;
+        }
+
+        private void SetControlVisible(MainPage page)
+        {
+            if (page == MainPage.Home)
+                IsHomeControlVisible = true;
+            else if (page == MainPage.Matches)
+                IsMatchesControlVisible = true;
+            else if (page == MainPage.ReplayParser)
+                IsReplaysControlVisible = true;
+            else if (page == MainPage.RawData)
+                IsRawDataControlVisible = true;
         }
     }
 }

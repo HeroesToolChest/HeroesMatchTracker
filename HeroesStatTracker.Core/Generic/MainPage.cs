@@ -1,8 +1,10 @@
 ﻿namespace HeroesStatTracker.Core
 {
-    public enum MainTabs
+    public enum MainPage
     {
         Home,
         Matches,
+        ReplayParser,
+        RawData,
     }
 }

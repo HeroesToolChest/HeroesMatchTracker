@@ -1,21 +1,18 @@
-﻿using System;
-using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
 using HeroesStatTracker.Core.ViewServices;
 
 namespace HeroesStatTracker.Core.ViewModels.Matches
 {
-    public class MatchesViewModel : HstViewModel, IMatchesTabService, IMainPage
+    public class MatchesViewModel : HstViewModel, IMatchesTabService
     {
         private int _selectedMatchesTab;
 
         public MatchesViewModel(IHeroesIconsService heroesIcons)
             : base(heroesIcons)
         {
-            //SimpleIoc.Default.Register<IMatchesTabService>(() => this);
+            SimpleIoc.Default.Register<IMatchesTabService>(() => this);
         }
-
-        public string Name => "Matches";
 
         public int SelectedMatchesTab
         {
@@ -27,7 +24,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             }
         }
 
-        public void SwitchToTab(MatchesTabs selectedMatchesTab)
+        public void SwitchToTab(MatchesTab selectedMatchesTab)
         {
             SelectedMatchesTab = (int)selectedMatchesTab;
         }
