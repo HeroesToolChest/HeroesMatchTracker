@@ -5,7 +5,7 @@
     <Color x:Key="DefaultBlue">#2196F3</Color>
     <Color x:Key="DefaultRed">#F44336</Color>
     
-    <Color x:Key="DefaultBackgroundColor">#44000000</Color>
+    <Color x:Key="DefaultBackgroundColor">#88000000</Color>
     <Color x:Key="DefaultTextColor">#D5FCFF</Color>
     <Color x:Key="DefaultTextColor2">#C4CEEE</Color>
     <Color x:Key="DefaultGraphTooltipColor">#77202020</Color>

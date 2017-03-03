@@ -97,13 +97,24 @@
                                 <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
                             </StackPanel>
                         </materialDesign:PopupBox>
-                        <TextBlock Text="Material Design In XAML Toolkit" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8 0 0 0" />
-                        <TextBlock Text="Hello" HorizontalAlignment="Right" VerticalAlignment="Center"  />
+                        <TextBlock Text="{Binding CurrentPageTitle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8 0 0 0" />
+                        <TextBlock Text="{Binding UserBattleTag}" HorizontalAlignment="Right" VerticalAlignment="Center"  />
                     </DockPanel>
                 </materialDesign:ColorZone>
-                <materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryDark" Height="40">
-
-                </materialDesign:ColorZone>
+                <StatusBar DockPanel.Dock="Bottom">
+                    <StatusBarItem Content="status" />
+                    <StatusBarItem Content="replays in database" Padding="0 0 8 0" DockPanel.Dock="Right" />
+                    <StatusBarItem Content="1000" Padding="8 0 0 0" DockPanel.Dock="Right" />
+                    <StatusBarItem Content="Parser Enabled" Padding="8 0" DockPanel.Dock="Right" />
+                    <StatusBarItem Content="HOTS Logs Uploader Enabled" Padding="8 0" DockPanel.Dock="Right" />
+                    <StatusBarItem />
+                </StatusBar>
+                <!--<materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryDark" Height="48" Padding="8">
+                    <DockPanel>
+                        <TextBlock Text="Waiting replays" />
+                        <StackPanel />
+                    </DockPanel>
+                </materialDesign:ColorZone>-->
                 <Grid DockPanel.Dock="Bottom">
                     <Grid Visibility="{Binding IsHomeControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <home:HomeControl />

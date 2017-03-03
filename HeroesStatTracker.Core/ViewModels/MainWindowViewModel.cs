@@ -21,6 +21,7 @@ namespace HeroesStatTracker.Core.ViewModels
         private bool _isReplaysControlVisible;
         private bool _isRawDataControlVisible;
         private string _matchSummaryHeader;
+        private string _currentPageTitle;
         private MainPageItem _selectedMainPage;
 
         private IDatabaseService Database;
@@ -41,6 +42,7 @@ namespace HeroesStatTracker.Core.ViewModels
             MatchSummaryHeader = "Match Summary";
 
             IsHomeControlVisible = true;
+            CurrentPageTitle = "Home";
 
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
             SimpleIoc.Default.Register<IMainPageService>(() => this);
@@ -83,6 +85,16 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
+        public string CurrentPageTitle
+        {
+            get { return _currentPageTitle; }
+            set
+            {
+                _currentPageTitle = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string MatchSummaryHeader
         {
             get { return _matchSummaryHeader; }
@@ -100,9 +112,11 @@ namespace HeroesStatTracker.Core.ViewModels
             {
                 if (_selectedMainPage != value)
                 {
-                    SetMainPagesToFalse();
                     _selectedMainPage = value;
+
+                    SetMainPagesToFalse();
                     SetControlVisible(value.MainPage);
+                    CurrentPageTitle = value.Name;
                     RaisePropertyChanged();
                 }
             }
