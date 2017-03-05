@@ -1,10 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
-using Microsoft.Practices.ServiceLocation;
 
 namespace HeroesStatTracker.Core.ViewModels.TitleBar
 {
@@ -18,11 +13,7 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
         public SettingsControlViewModel(IDatabaseService database)
         {
             Database = database;
-            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
-
-        public RelayCommand OpenPaletteSelectorWindowCommand => new RelayCommand(OpenPaletteSelectorWindow);
-        public RelayCommand<bool> ToggleBaseCommand => new RelayCommand<bool>(x => StylePalette.ApplyBase(x));
 
         public bool IsMinimizeToTray
         {
@@ -52,32 +43,6 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
                 Database.SettingsDb().UserSettings.IsBattleTagHidden = value;
                 RaisePropertyChanged();
             }
-        }
-
-        public bool IsNightMode
-        {
-            get { return Database.SettingsDb().UserSettings.IsNightMode; }
-            set
-            {
-                Database.SettingsDb().UserSettings.IsNightMode = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public IPaletteSelectorWindowService PaletteSelectorWindowService
-        {
-            get { return ServiceLocator.Current.GetInstance<IPaletteSelectorWindowService>(); }
-        }
-
-        private void OpenPaletteSelectorWindow()
-        {
-            PaletteSelectorWindowService.CreatePaletteWindow();
-        }
-
-        private void ReceivedMessage(NotificationMessage message)
-        {
-            if (message.Notification == StaticMessage.IsNightModeToggle)
-                IsNightMode = Database.SettingsDb().UserSettings.IsNightMode;
         }
     }
 }

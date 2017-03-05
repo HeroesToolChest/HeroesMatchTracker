@@ -14,7 +14,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <local:QueryControl/>
+            <local:QueryControl />
             <DataGrid Style="{StaticResource DefaultDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="PlayerId" Binding="{Binding PlayerId}" />

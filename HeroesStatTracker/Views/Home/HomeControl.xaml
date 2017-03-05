@@ -5,17 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.Home"
              DataContext="{Binding HomeViewModel, Source={StaticResource Locator}}"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
-        <materialDesign:Card Margin="10" Background="{StaticResource DefaultBackgroundBrush}" Width="1000" HorizontalAlignment="Left">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <DockPanel Margin="10" Background="#BBF1F1F1" Width="950" HorizontalAlignment="Left">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel Margin="20">
                     <ItemsControl ItemsSource="{Binding MatchCollection}" Style="{StaticResource MatchHistoryMatchItemsControl}" />
                 </StackPanel>
             </ScrollViewer>
-        </materialDesign:Card>
+        </DockPanel>
     </Grid>
 </UserControl>

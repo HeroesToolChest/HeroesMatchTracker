@@ -4,7 +4,6 @@
                     xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
 
     <Style TargetType="lvc:DefaultTooltip" x:Key="DefaultDataTooltip">
-        <Setter Property="Foreground" Value="{StaticResource MaterialDesignDarkForeground}" />
-        <Setter Property="Background" Value="{StaticResource DefaultGraphTooltipBrush}" />
+        <Setter Property="Foreground" Value="Black" />
     </Style>
 </ResourceDictionary>

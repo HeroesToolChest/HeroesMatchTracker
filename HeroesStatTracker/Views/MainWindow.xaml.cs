@@ -32,10 +32,6 @@ namespace HeroesStatTracker.Views
             MainWindowViewModel = (MainWindowViewModel)DataContext;
             Database = MainWindowViewModel.GetDatabaseService;
 
-            StylePalette.ApplyBase(Database.SettingsDb().UserSettings.IsNightMode);
-            StylePalette.ApplyPrimary(StylePalette.GetSwatchByName(Database.SettingsDb().UserSettings.MainStylePrimary));
-            StylePalette.ApplyAccent(StylePalette.GetSwatchByName(Database.SettingsDb().UserSettings.MainStyleAccent));
-
             SetTrayIcon();
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
@@ -78,12 +74,6 @@ namespace HeroesStatTracker.Views
             base.OnSourceInitialized(e);
             HwndSource source = PresentationSource.FromVisual(this) as HwndSource;
             source.AddHook(WndProc);
-        }
-
-        protected override void OnContentRendered(EventArgs e)
-        {
-            StylePalette.ApplyStyle(Database.SettingsDb().UserSettings.IsAlternateStyle);
-            base.OnContentRendered(e);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)

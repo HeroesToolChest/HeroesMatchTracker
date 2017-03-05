@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates"
-                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchHistoryModels;assembly=HeroesStatTracker.Core">
 
     <Style x:Key="MatchHeaderTemplate">
@@ -16,25 +15,28 @@
     <Style x:Key="MatchDetailsTemplate">
         <Style.Resources>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="{StaticResource DefaultTextBrush}" />
+                <Setter Property="Foreground" Value="Black" />
                 <Setter Property="FontSize" Value="16" />
             </Style>
         </Style.Resources>
     </Style>
 
     <DataTemplate DataType="{x:Type coreModels:MatchHistoryMatch}" x:Key="MatchHistoryMatch">
-        <materialDesign:Card Margin="0 0 0 8" Background="{StaticResource DefaultBackgroundBrush}">
+        <StackPanel Margin="0 0 0 8">
             <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1">
-                <Expander Header="{Binding}" Background="Transparent" Foreground="{StaticResource DefaultText2Brush}" IsExpanded="{Binding IsExpanded}">
+                <Expander Header="{Binding}" IsExpanded="{Binding IsExpanded}">
+                    <Expander.Background>
+                        <SolidColorBrush Color="#FFFFFF" />
+                    </Expander.Background>
                     <Expander.HeaderTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Style="{StaticResource MatchHeaderTemplate}">
                                 <TextBlock Text="{Binding GameMode}" Width="140" />
                                 <StackPanel Orientation="Horizontal" Width="160">
-                                    <Image Source="{Binding UserHeroImage}" Height="40" />
+                                    <Image Source="{Binding UserHeroImage}" RenderOptions.BitmapScalingMode="HighQuality" Height="40" />
                                     <TextBlock Text="{Binding UserHero}" Margin="8 0 0 0" />
                                 </StackPanel>
-                                <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="220" />
+                                <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="200" />
                                 <TextBlock Text="{Binding WinnerResult}" Width="140">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
@@ -56,7 +58,6 @@
                         </DataTemplate>
                     </Expander.HeaderTemplate>
                     <StackPanel>
-                        <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1" />
                         <StackPanel Orientation="Horizontal" Margin="12">
                             <StackPanel Margin="0 0 16 0">
                                 <ItemsControl ItemsSource="{Binding MatchOverviewTeam1List}" Style="{StaticResource MatchPlayerTeam1OverviewItemsControl}"/>
@@ -78,14 +79,14 @@
                                     <TextBlock Text="{Binding GameLength}" />
                                 </StackPanel>
                                 <StackPanel>
-                                    <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="20 20 0 0"/>
+                                    <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Margin="20 20 0 0"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </Expander>
             </Border>
-        </materialDesign:Card>
+        </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="MatchTemplate">

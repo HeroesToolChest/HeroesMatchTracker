@@ -4,31 +4,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.Matches"
-             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              DataContext="{Binding MatchesViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
-    <dragablz:TabablzControl FixedHeaderCount="7" SelectedIndex="{Binding SelectedMatchesTab}">
-        <TabItem Header="All Matches">
+    <UserControl.Resources>
+        <system:Double x:Key="TabControlFontSize">16</system:Double>
+    </UserControl.Resources>
+    <TabControl SelectedIndex="{Binding SelectedMatchesTab}" controls:TabControlHelper.IsUnderlined="True">
+        <TabItem Header="All Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:AllMatchesControl />
         </TabItem>
-        <TabItem Header="Quick Match">
+        <TabItem Header="Quick Match" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:QuickMatchControl />
         </TabItem>
-        <TabItem Header="Unranked Draft">
+        <TabItem Header="Unranked Draft" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:UnrankedDraftControl />
         </TabItem>
-        <TabItem Header="Hero League">
+        <TabItem Header="Hero League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:HeroLeagueControl />
         </TabItem>
-        <TabItem Header="Team League">
+        <TabItem Header="Team League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:TeamLeagueControl />
         </TabItem>
-        <TabItem Header="Brawl">
+        <TabItem Header="Brawl" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:BrawlControl />
         </TabItem>
-        <TabItem Header="Custom Game">
+        <TabItem Header="Custom Game" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:CustomGameControl />
         </TabItem>
-    </dragablz:TabablzControl>
+    </TabControl>
 </UserControl>

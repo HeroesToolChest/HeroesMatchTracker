@@ -7,7 +7,7 @@
     <Style x:Key="CustomMetroTabItem" TargetType="TabItem">
         <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
         <Setter Property="Background" Value="#AA12112F" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="BorderBrush" Value="#647687" />
         <Setter Property="BorderThickness" Value="0" />
         <!--special property for header font size-->
         <Setter Property="Controls:ControlsHelper.HeaderFontSize" Value="18" />
@@ -86,7 +86,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />
-                            <Setter TargetName="Underline" Property="Fill" Value="#2195F2" />
+                            <Setter TargetName="Underline" Property="Fill" Value="#0050EF" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="false">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />
@@ -176,7 +176,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />
-                            <Setter TargetName="Underline" Property="Fill" Value="#F34336" />
+                            <Setter TargetName="Underline" Property="Fill" Value="#E51400" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="false">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />
@@ -266,7 +266,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />
-                            <Setter TargetName="Underline" Property="Fill" Value="#FEC007" />
+                            <Setter TargetName="Underline" Property="Fill" Value="#E3C800" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="false">
                             <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="White" />

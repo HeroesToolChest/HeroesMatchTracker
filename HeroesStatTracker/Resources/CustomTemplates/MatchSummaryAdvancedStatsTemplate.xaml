@@ -2,8 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates"
-                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core"
-                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core">
 
     <system:Double x:Key="AdvancedStatWidth">140</system:Double>
     <system:Double x:Key="AdvStatsGroupHeaderWidth">200</system:Double>
@@ -23,7 +22,7 @@
         <StackPanel Width="{StaticResource AdvancedStatWidth}" Margin="1 0 1 0">
             <DockPanel>
                 <Border DockPanel.Dock="Top" BorderThickness="0 4 0 0" CornerRadius="3" Margin="2 0 2 4" Style="{StaticResource MatchRowSideBorder}" />
-                <Border BorderThickness="2" Height="700" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
+                <Border BorderThickness="2" Height="748" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel>
                         <Grid DockPanel.Dock="Top" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86">
@@ -34,7 +33,7 @@
                             <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
-                        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}" Margin="0 0 0 0">
+                        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
                             <TextBlock Text="{Binding PlayerNameOnly}" />
                             <TextBlock Text="{Binding CharacterLevel}" />
 
@@ -44,7 +43,7 @@
                             <TextBlock Text="{Binding TakeDowns}" ToolTip="Takedowns" />
                             <TextBlock Text="{Binding Assists}" ToolTip="Assists" />
                             <TextBlock Text="{Binding Deaths}" ToolTip="Deaths" />
-                            
+
                             <TextBlock />
                             <Border />
                             <TextBlock Text="{Binding MinionDamage, StringFormat={}{0:N0}}" ToolTip="Minion Damage" />
@@ -93,40 +92,38 @@
     </Style>
 
     <DataTemplate x:Key="MatchAdvancedStats">
-        <materialDesign:Card Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
-                    <TextBlock Text="Player" />
-                    <TextBlock Text="Level" />
-                    <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
-                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                    <TextBlock Text="Kills" />
-                    <TextBlock Text="Takedowns" />
-                    <TextBlock Text="Assists" />
-                    <TextBlock Text="Deaths" />
-                    <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
-                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                    <TextBlock Text="Minion Damage" />
-                    <TextBlock Text="Summon Damage" />
-                    <TextBlock Text="Structure Damage" />
-                    <TextBlock Text="Total Siege Damage" />
-                    <TextBlock Text="HERO" HorizontalAlignment="Left" />
-                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                    <TextBlock Text="Hero Damage" />
-                    <TextBlock Text="Damage Taken" />
-                    <TextBlock Text="Healing" />
-                    <TextBlock Text="Self Healing" />
-                    <TextBlock Text="Time Spent Dead" />
-                    <TextBlock Text="Experience " />
-                    <TextBlock Text="OTHER" HorizontalAlignment="Left" Margin="0 -1 0 0" />
-                    <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
-                    <TextBlock Text="Merc Damage" />
-                    <TextBlock Text="Merc Camp Captures" />
-                    <TextBlock Text="Watchtower Captures" />
-                </StackPanel>
-                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
-                <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
+        <StackPanel Orientation="Horizontal" Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
+                <TextBlock Text="Player" />
+                <TextBlock Text="Level" />
+                <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
+                <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                <TextBlock Text="Kills" />
+                <TextBlock Text="Takedowns" />
+                <TextBlock Text="Assists" />
+                <TextBlock Text="Deaths" />
+                <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
+                <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                <TextBlock Text="Minion Damage" />
+                <TextBlock Text="Summon Damage" />
+                <TextBlock Text="Structure Damage" />
+                <TextBlock Text="Total Siege Damage" />
+                <TextBlock Text="HERO" HorizontalAlignment="Left" />
+                <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                <TextBlock Text="Hero Damage" />
+                <TextBlock Text="Damage Taken" />
+                <TextBlock Text="Healing" />
+                <TextBlock Text="Self Healing" />
+                <TextBlock Text="Time Spent Dead" />
+                <TextBlock Text="Experience " />
+                <TextBlock Text="OTHER" HorizontalAlignment="Left" />
+                <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                <TextBlock Text="Merc Damage" />
+                <TextBlock Text="Merc Camp Captures" />
+                <TextBlock Text="Watchtower Captures" />
             </StackPanel>
-        </materialDesign:Card>
+            <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
+            <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />
+        </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

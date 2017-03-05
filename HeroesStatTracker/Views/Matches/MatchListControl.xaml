@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:HeroesStatTracker.Views.Matches"
              xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
@@ -12,62 +12,78 @@
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <UserControl.Resources>
-        <Thickness x:Key="SearchMarginSpacing" Left="0" Top="0" Right="0" Bottom="8" />
+        <Style x:Key="Search" TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0 0 0 8" />
+            <Style.Resources>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource MetroTextBlock}">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0 0 8 0" />
+                </Style>
+                <Style TargetType="ComboBox" BasedOn="{StaticResource MetroComboBox}">
+                    <Setter Property="Width" Value="170" />
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource MetroTextBox}">
+                    <Setter Property="Width" Value="170" />
+                </Style>
+            </Style.Resources>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="280"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="370"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1" Margin="0 50 10 0" Opacity="0.9">
-            <GroupBox Header="SEARCH" Style="{DynamicResource MaterialDesignCardGroupBox}" UseLayoutRounding="True" SnapsToDevicePixels="True">
-                <Grid HorizontalAlignment="Stretch">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Margin="0 20 10 0">
+            <GroupBox Header="SEARCH">
+                <StackPanel Background="{StaticResource DefaultLightBlueBrush}">
+                    <StackPanel Margin="8">
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Season" />
+                            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Replay ID" />
+                            <TextBox Text="{Binding SelectedReplayIdValue}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Maps" />
+                            <ComboBox ItemsSource="{Binding MapsList}" SelectedValue="{Binding SelectedMapOption}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Builds" />
+                            <ComboBox ItemsSource="{Binding ReplayBuildsList}" SelectedValue="{Binding SelectedBuildOption}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Game Time" />
+                            <ComboBox ItemsSource="{Binding GameTimeList}" SelectedValue="{Binding SelectedGameTimeOption}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Game Date" />
+                            <ComboBox ItemsSource="{Binding GameDateList}" SelectedValue="{Binding SelectedGameDateOption}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="BattleTag" />
+                            <TextBox Text="{Binding SelectedPlayerBattleTag}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Hero" />
+                            <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter}" />
+                        </StackPanel>
+                        <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsGivenBattleTagOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 8 0"/>
 
-                    <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" Grid.Column="1" Grid.Row="0" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Season" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <TextBox Text="{Binding SelectedReplayIdValue}" Grid.Column="1" Grid.Row="1" PreviewTextInput="TextBox_PreviewTextInput" Margin="{StaticResource SearchMarginSpacing}"
-                             materialDesign:HintAssist.Hint="Replay Id" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <ComboBox ItemsSource="{Binding MapsList}" SelectedValue="{Binding SelectedMapOption}" Grid.Column="1" Grid.Row="2" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Map Name" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <ComboBox ItemsSource="{Binding ReplayBuildsList}" SelectedValue="{Binding SelectedBuildOption}" Grid.Column="1" Grid.Row="3" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Replay Build" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <ComboBox ItemsSource="{Binding GameTimeList}" SelectedValue="{Binding SelectedGameTimeOption}" Grid.Column="1" Grid.Row="4" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Game Time" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <ComboBox ItemsSource="{Binding GameDateList}" SelectedValue="{Binding SelectedGameDateOption}" Grid.Column="1" Grid.Row="5" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Game Date" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <TextBox Text="{Binding SelectedPlayerBattleTag}" Grid.Column="1" Grid.Row="6" Margin="0 0 0 6"
-                             materialDesign:HintAssist.Hint="BattleTag" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter}" Grid.Column="1" Grid.Row="7" Margin="{StaticResource SearchMarginSpacing}"
-                              materialDesign:HintAssist.Hint="Hero" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsGivenBattleTagOnlyChecked}" Grid.Column="1" Grid.Row="8" Margin="0 0 0 18"/>
-
-                    <Button Content="CLEAR" Command="{Binding ClearSearchCommand}" Grid.Column="1" Grid.Row="9" Margin="{StaticResource SearchMarginSpacing}" Width="140" HorizontalAlignment="Right"/>
-                    <Button Content="SEARCH" Command="{Binding LoadMatchListCommand}" Grid.ColumnSpan="2" Grid.Row="10" Margin="{StaticResource SearchMarginSpacing}"/>
-                </Grid>
+                        <Button Content="CLEAR" Command="{Binding ClearSearchCommand}" Margin="8 16 0 8" Width="140" HorizontalAlignment="Right"/>
+                        <Button Content="SEARCH" Command="{Binding LoadMatchListCommand}" />
+                    </StackPanel>
+                </StackPanel>
             </GroupBox>
         </StackPanel>
-        <DockPanel Grid.Column="2" Opacity="0.9">
-            <DataGrid Style="{StaticResource DefaultDataGrid}" SelectedItem="{Binding SelectedReplay}" ItemsSource="{Binding MatchListCollection}" Width="760" DockPanel.Dock="Bottom">
+        <DockPanel Grid.Column="2">
+            <DataGrid Style="{StaticResource DefaultDataGrid}" Padding="8" SelectedItem="{Binding SelectedReplay}" ItemsSource="{Binding MatchListCollection}" Width="700" DockPanel.Dock="Bottom">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Replay Id" Binding="{Binding ReplayId}" />
                     <DataGridTextColumn Header="Game Mode" Binding="{Binding GameMode}" />
@@ -83,20 +99,14 @@
                 </i:Interaction.Triggers>
             </DataGrid>
         </DockPanel>
-        <StackPanel Grid.Column="3" Margin="10 50 0 0">
-            <GroupBox Header="{Binding Team1OverviewHeader}" UseLayoutRounding="True" SnapsToDevicePixels="True">
-                <GroupBox.Background>
-                    <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
-                </GroupBox.Background>
-                <ItemsControl ItemsSource="{Binding MatchOverviewTeam1Collection}" Style="{StaticResource MatchPlayerTeam1OverviewItemsControl}"/>
+        <StackPanel Grid.Column="3" Margin="10 20 0 0">
+            <GroupBox Header="{Binding Team1OverviewHeader}">
+                <ItemsControl ItemsSource="{Binding MatchOverviewTeam1Collection}" Style="{StaticResource MatchPlayerTeam1OverviewItemsControl}" />
             </GroupBox>
-            <GroupBox Header="{Binding Team2OverviewHeader}" UseLayoutRounding="True" SnapsToDevicePixels="True" Margin="0 8 0 0">
-                <GroupBox.Background>
-                    <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}" />
-                </GroupBox.Background>
-                <ItemsControl ItemsSource="{Binding MatchOverviewTeam2Collection}" Style="{StaticResource MatchPlayerTeam2OverviewItemsControl}"/>
+            <GroupBox Header="{Binding Team2OverviewHeader}" Margin="0 8 0 0">
+                <ItemsControl ItemsSource="{Binding MatchOverviewTeam2Collection}" Style="{StaticResource MatchPlayerTeam2OverviewItemsControl}" />
             </GroupBox>
-            <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="0 12 0 0" />
+            <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Margin="0 8 0 0" />
         </StackPanel>
     </Grid>
 </UserControl>

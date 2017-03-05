@@ -4,54 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.RawData"
-             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <UserControl.Resources>
-        <Thickness x:Key="Spacing" Left="0" Top="12" Right="0" Bottom="0"/>
+        <Thickness x:Key="Spacing">0 12 0 0</Thickness>
+        <system:Double x:Key="TabControlFontSize">16</system:Double>
     </UserControl.Resources>
-    <dragablz:TabablzControl FixedHeaderCount="14">
-        <TabItem Header="Match Replays">
+    <TabControl controls:TabControlHelper.IsUnderlined="True">
+        <TabItem Header="Replays" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchReplaysControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="All Players">
+        <TabItem Header="All Players" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawAllHotsPlayerControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Player Heroes">
+        <TabItem Header="Player Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawAllHotsPlayerHeroesControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Renamed Players">
+        <TabItem Header="Renamed Players" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawRenamedPlayerControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Players">
+        <TabItem Header="Match Players" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchPlayerControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Player Talents">
+        <TabItem Header="Match Player Talents" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchPlayerTalentControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Player Score Results">
+        <TabItem Header="Match Player Score Results" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchPlayerScoreResultControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Team Levels">
+        <TabItem Header="Match Team Levels" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamLevelControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Team Experience">
+        <TabItem Header="Match Team Experience" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamExperienceControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Team Bans">
+        <TabItem Header="Match Team Bans" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamBanControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Team Objectives">
+        <TabItem Header="Match Team Objectives" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamObjectiveControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Messages">
+        <TabItem Header="Match Messages" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchMessageControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Match Awards">
+        <TabItem Header="Match Awards" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchAwardControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="HOTS Logs Uploads">
+        <TabItem Header="HOTS Logs Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawHotsLogsUploadControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-    </dragablz:TabablzControl>
+    </TabControl>
 </UserControl>

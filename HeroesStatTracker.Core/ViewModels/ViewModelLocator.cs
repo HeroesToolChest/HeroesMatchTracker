@@ -6,6 +6,7 @@ using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
 using HeroesStatTracker.Core.ViewModels.TitleBar;
+using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using HeroesStatTracker.Data.Queries.Replays;
@@ -48,7 +49,6 @@ namespace HeroesStatTracker.Core.ViewModels
             // TitleBar
             SimpleIoc.Default.Register<SettingsControlViewModel>();
             SimpleIoc.Default.Register<AboutControlViewModel>();
-            SimpleIoc.Default.Register<PaletteSelectorWindowViewModel>();
             SimpleIoc.Default.Register<WhatsNewWindowViewModel>();
 
             // Replays
@@ -109,7 +109,6 @@ namespace HeroesStatTracker.Core.ViewModels
         // TitleBar
         public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();
         public static AboutControlViewModel AboutControlViewModel => ServiceLocator.Current.GetInstance<AboutControlViewModel>();
-        public static PaletteSelectorWindowViewModel PaletteSelectorWindowViewModel => ServiceLocator.Current.GetInstance<PaletteSelectorWindowViewModel>();
         public static WhatsNewWindowViewModel WhatsNewWindowViewModel => ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>();
 
         // Replays

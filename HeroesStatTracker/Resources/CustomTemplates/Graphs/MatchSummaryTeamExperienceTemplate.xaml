@@ -65,9 +65,7 @@
             <StackPanel Panel.ZIndex="999" Margin="8">
                 <TextBlock Text="Show as Row Chart" FontSize="18" Foreground="{StaticResource DefaultTextBrush}" />
                 <StackPanel Orientation="Horizontal" Margin="4">
-                    <TextBlock Text="NO" FontSize="14" Foreground="{StaticResource DefaultTextBrush}" />
-                    <ToggleButton IsChecked="{Binding TeamExperienceGraph.ToggleSwitchRowOrPie}" Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Center" Margin="4 0 4 0" />
-                    <TextBlock Text="YES" FontSize="14" Foreground="{StaticResource DefaultTextBrush}" />
+                    <controls:ToggleSwitch IsChecked="{Binding TeamExperienceGraph.ToggleSwitchRowOrPie}" OffLabel="No" OnLabel="Yes" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
                 </StackPanel>
             </StackPanel>
             <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding TeamExperienceGraph.IsTeamExperiencePieChartVisible, Converter={StaticResource BooleanToVisibility}}">

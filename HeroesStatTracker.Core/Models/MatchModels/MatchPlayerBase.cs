@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
@@ -96,11 +97,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public IMatchesTabService MatchesTab
         {
             get { return ServiceLocator.Current.GetInstance<IMatchesTabService>(); }
-        }
-
-        public IMatchesDataService MatchesData
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchesDataService>(); }
         }
 
         public IMatchSummaryFlyoutService MatchSummaryFlyout
@@ -293,7 +289,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         {
             MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
-            MatchesData.SendSearchData(new MatchesDataMessage { SelectedCharacter = CharacterName });
+            Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
 
@@ -301,7 +297,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         {
             MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
-            MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName });
+            Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedBattleTagName = PlayerName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
 
@@ -309,7 +305,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         {
             MainTabs.SwitchToPage(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
-            MatchesData.SendSearchData(new MatchesDataMessage { SelectedBattleTagName = PlayerName, SelectedCharacter = CharacterName });
+            Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedBattleTagName = PlayerName, SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
     }

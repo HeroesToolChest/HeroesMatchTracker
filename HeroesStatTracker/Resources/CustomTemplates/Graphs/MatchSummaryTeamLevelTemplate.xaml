@@ -18,13 +18,13 @@
                 <lvc:CartesianChart.AxisY>
                     <lvc:Axis Title="Team Level" MinValue="0" Foreground="{StaticResource DefaultTextBrush}">
                         <lvc:Axis.Sections>
-                            <lvc:AxisSection Value="1" StrokeThickness="2" Stroke="{DynamicResource PrimaryHueMidBrush}" />
-                            <lvc:AxisSection Value="4" StrokeThickness="2" Stroke="{DynamicResource PrimaryHueMidBrush}" />
-                            <lvc:AxisSection Value="7" StrokeThickness="2" Stroke="{DynamicResource PrimaryHueMidBrush}" />
-                            <lvc:AxisSection Value="10" StrokeThickness="3" Stroke="{DynamicResource SecondaryAccentBrush}" />
-                            <lvc:AxisSection Value="13" StrokeThickness="2" Stroke="{DynamicResource PrimaryHueMidBrush}" />
-                            <lvc:AxisSection Value="16" StrokeThickness="2" Stroke="{DynamicResource PrimaryHueMidBrush}" />
-                            <lvc:AxisSection Value="20" StrokeThickness="3" Stroke="{DynamicResource SecondaryAccentBrush}" />
+                            <lvc:AxisSection Value="1" StrokeThickness="2" Stroke="{StaticResource DefaultTealBrush}" />
+                            <lvc:AxisSection Value="4" StrokeThickness="2" Stroke="{StaticResource DefaultTealBrush}" />
+                            <lvc:AxisSection Value="7" StrokeThickness="2" Stroke="{StaticResource DefaultTealBrush}" />
+                            <lvc:AxisSection Value="10" StrokeThickness="3" Stroke="{StaticResource DefaultYellowBrush}" />
+                            <lvc:AxisSection Value="13" StrokeThickness="2" Stroke="{StaticResource DefaultTealBrush}" />
+                            <lvc:AxisSection Value="16" StrokeThickness="2" Stroke="{StaticResource DefaultTealBrush}" />
+                            <lvc:AxisSection Value="20" StrokeThickness="3" Stroke="{StaticResource DefaultYellowBrush}" />
                         </lvc:Axis.Sections>
                         <lvc:Axis.Separator>
                             <lvc:Separator IsEnabled="False" />

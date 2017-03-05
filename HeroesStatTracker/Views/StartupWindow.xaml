@@ -12,11 +12,6 @@
         Height="287" Width="490" MaxHeight="291" MaxWidth="505"
         WindowStartupLocation="CenterScreen"
         BorderThickness="0" WindowStyle="None"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Medium"
-        TextElement.FontSize="14"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{StaticResource MaterialDesignFont}"
         Title="Heroes Stat Tracker Startup" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="StartupWindowLabelStyle" TargetType="Label">

@@ -9,6 +9,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
-        <local:MatchListControl />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <local:MatchListControl />
+        </ScrollViewer>
     </Grid>
 </UserControl>

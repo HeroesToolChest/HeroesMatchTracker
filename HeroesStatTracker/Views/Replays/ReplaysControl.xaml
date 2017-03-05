@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HeroesStatTracker.Views.Replays"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d" 
              DataContext="{Binding ReplaysControlViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="1080" d:DesignWidth="1920">
@@ -38,55 +37,45 @@
                 </DataGrid>
 
                 <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <Grid Margin="12" VerticalAlignment="Top">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Button Content="(RE)SCAN" Command="{Binding ScanCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedLightButton}" Width="120" Margin="0,0,0,8" HorizontalAlignment="Left"/>
-                            <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="120" Grid.Row="0" Margin="140 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Button Content="STOP" Command="{Binding StopCommand}" IsEnabled="{Binding IsParsingReplaysOn}" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Width="120" Grid.Row="0" Margin="280 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-                            <Button Content="MANUALLY SELECT FILES" Command="{Binding ManualSelectFilesCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="200" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="*Disables Auto Scan*" Grid.Row="1" VerticalContentAlignment="Center" Margin="200 4 0 0" VerticalAlignment="Top" />
-
-
-                            <CheckBox Content="Watch" IsChecked="{Binding IsReplayWatch}" IsEnabled="{Binding AreProcessButtonsEnabled}" Grid.Row="2" Margin="0,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                            <CheckBox Content="Auto Scan on Start" IsChecked="{Binding IsAutoScanStart}" IsEnabled="{Binding AreProcessButtonsEnabled}" Grid.Row="2" Margin="72,37,-10,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                            <CheckBox Content="Auto Start on Startup" IsChecked="{Binding IsAutoStartStartup}" IsEnabled="{Binding AreProcessButtonsEnabled}" Grid.Row="2" Margin="222,37,-144,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                        </Grid>
-                        <StackPanel Margin="12">
-                            <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" Margin="0 0 0 16"/>
-
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
+                            <Button Content="(RE)SCAN" Command="{Binding ScanCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="120" />
+                            <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="8 0" Width="120" />
+                            <Button Content="STOP" Command="{Binding StopCommand}" IsEnabled="{Binding IsParsingReplaysOn}" Width="120" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 8 0 0"> 
+                            <Button Content="MANUALLY SELECT FILES" Command="{Binding ManualSelectFilesCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="200" />
+                            <Label Content="*Disables Auto Scan*" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 8 0 0">
+                            <CheckBox Content="Watch" IsChecked="{Binding IsReplayWatch}" Margin="0 0 5 0" IsEnabled="{Binding AreProcessButtonsEnabled}" />
+                            <CheckBox Content="Auto Scan on Start" IsChecked="{Binding IsAutoScanStart}" Margin="5 0" IsEnabled="{Binding AreProcessButtonsEnabled}" />
+                            <CheckBox Content="Auto Start on Startup" IsChecked="{Binding IsAutoStartStartup}" Margin="5 0" IsEnabled="{Binding AreProcessButtonsEnabled}" />
+                        </StackPanel>
+                        <StackPanel Margin="0 8 0 0">
+                            <Label Content="Replays Location" />
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Text="{Binding ReplaysFolderLocation}" IsEnabled="{Binding AreProcessButtonsEnabled}" IsReadOnly="True" TextWrapping="NoWrap" Width="520"
-                                         materialDesign:HintAssist.Hint="Replays Location" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                                <Button Content="BROWSE" Command="{Binding ReplaysLocationBrowseCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="12 0 0 0" Width="120"/>
+                                <TextBox Text="{Binding ReplaysFolderLocation}" IsEnabled="{Binding AreProcessButtonsEnabled}" IsReadOnly="True" TextWrapping="NoWrap" Width="520" />
+                                <Button Content="BROWSE" Command="{Binding ReplaysLocationBrowseCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="8 0 0 0" Width="120"/>
                             </StackPanel>
-                            <CheckBox Content="Include Subdirectories" IsChecked="{Binding IsIncludeSubDirectories}" IsEnabled="{Binding AreProcessButtonsEnabled}" />
-
-                            <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0 0 0 1" Margin="0 16 0 16"/>
-
+                            <CheckBox Content="Include Subdirectories" Margin="0 5 5 5" IsChecked="{Binding IsIncludeSubDirectories}" IsEnabled="{Binding AreProcessButtonsEnabled}" />
+                        </StackPanel>
+                        <StackPanel>
                             <Label Content="Scan Date/Time Options" FontSize="16" />
-                            <CheckBox Content="Lastest Saved Replay" IsChecked="{Binding LatestParsedChecked}" IsEnabled="{Binding AreProcessButtonsEnabled}" HorizontalAlignment="Left"/>
+                            <CheckBox Content="Lastest Saved Replay" Margin="0 5 5 5" IsChecked="{Binding LatestParsedChecked}" IsEnabled="{Binding AreProcessButtonsEnabled}" />
                             <StackPanel Orientation="Horizontal">
-                                <Controls:DateTimePicker SelectedDate="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                <Button Content="SET" Command="{Binding LatestDateTimeSetCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="12 0 0 0" />
-                                <Button Content="DEFAULT" Command="{Binding LatestDateTimeDefaultCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="12 0 0 0" />
+                                <controls:DateTimePicker SelectedDate="{Binding ReplaysLatestSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
+                                <Button Content="SET" Command="{Binding LatestDateTimeSetCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="8 0 0 0" />
+                                <Button Content="DEFAULT" Command="{Binding LatestDateTimeDefaultCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="8 0 0 0" />
+                            </StackPanel>
+                            <CheckBox Content="Last Saved Replay" Margin="0 5 5 5" IsChecked="{Binding LastParsedChecked}" IsEnabled="{Binding AreProcessButtonsEnabled}" />
+                            <StackPanel Orientation="Horizontal">
+                                <controls:DateTimePicker SelectedDate="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
+                                <Button Content="SET" Command="{Binding LastDateTimeSetCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="8 0 0 0" />
+                                <Button Content="DEFAULT" Command="{Binding LastDateTimeDefaultCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="8 0 0 0" />
                             </StackPanel>
 
-                            <CheckBox Content="Last Saved Replay" IsChecked="{Binding LastParsedChecked}" IsEnabled="{Binding AreProcessButtonsEnabled}" HorizontalAlignment="Left" Margin="0 6 0 0"/>
-                            <StackPanel Orientation="Horizontal">
-                                <Controls:DateTimePicker SelectedDate="{Binding ReplaysLastSaved}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                <Button Content="SET" Command="{Binding LastDateTimeSetCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="12 0 0 0" />
-                                <Button Content="DEFAULT" Command="{Binding LastDateTimeDefaultCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="100" Margin="12 0 0 0" />
-                            </StackPanel>
-
-                            <GroupBox Header="HOTS Logs Uploader" Margin="0 20 0 0" Width="700" HorizontalAlignment="Left" materialDesign:ColorZoneAssist.Mode="Accent">
+                            <GroupBox Header="HOTS Logs Uploader" Margin="0 20 0 0" Width="700" HorizontalAlignment="Left">
                                 <StackPanel>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -95,34 +84,31 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel>
                                             <CheckBox Content="Enable Uploader" IsChecked="{Binding IsHotsLogsUploaderEnabled}" IsEnabled="{Binding AreProcessButtonsEnabled}"/>
-                                            <Button Content="{Binding HotsLogsStartButtonText}" Command="{Binding HotsLogsStartButtonCommand}" IsEnabled="{Binding IsHotsLogsStartButtonEnabled}" Style="{DynamicResource MaterialDesignRaisedAccentButton}" Width="120" HorizontalAlignment="Left" Margin="0 6 0 0" />
+                                            <Button Content="{Binding HotsLogsStartButtonText}" Command="{Binding HotsLogsStartButtonCommand}" IsEnabled="{Binding IsHotsLogsStartButtonEnabled}" Width="120" HorizontalAlignment="Left" Margin="0 5 0 0" />
                                         </StackPanel>
-                                        <materialDesign:Card Grid.Column="1" UniformCornerRadius="0" materialDesign:ShadowAssist.ShadowDepth="Depth0">
-                                            <StackPanel Margin="12">
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="Uploader Status:" FontSize="14" Margin="0 0 8 0" />
-                                                    <TextBlock Text="{Binding HotsLogsUploaderStatus}" FontSize="14"/>
-                                                </StackPanel>
-                                                <StackPanel Orientation="Horizontal" >
-                                                    <TextBlock Text="File Status:" FontSize="14" Margin="35 0 8 0"/>
-                                                    <TextBlock Text="{Binding HotsLogsUploaderUploadStatus }" FontSize="14"/>
-                                                </StackPanel>
+                                        <StackPanel Grid.Column="1" Margin="12">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Uploader Status:" FontSize="14" Margin="0 0 8 0" />
+                                                <TextBlock Text="{Binding HotsLogsUploaderStatus}" FontSize="14"/>
                                             </StackPanel>
-                                        </materialDesign:Card>
+                                            <StackPanel Orientation="Horizontal" >
+                                                <TextBlock Text="File Status:" FontSize="14" Margin="35 0 8 0"/>
+                                                <TextBlock Text="{Binding HotsLogsUploaderUploadStatus }" FontSize="14"/>
+                                            </StackPanel>
+                                        </StackPanel>
                                     </Grid>
                                     <Label Content="Scan Date/Time Options" FontSize="16" Margin="0 8 0 0" />
-                                    <CheckBox Content="Lastest Uploaded Replay" IsChecked="{Binding LatestHotsLogsChecked}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" HorizontalAlignment="Left"/>
+                                    <CheckBox Content="Lastest Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding LatestHotsLogsChecked}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" />
                                     <StackPanel Orientation="Horizontal">
-                                        <Controls:DateTimePicker SelectedDate="{Binding ReplaysLatestHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                        <Button Content="SET" Command="{Binding LatestHotsLogsDateTimeSetCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedAccentButton}" Width="100" Margin="12 0 0 0" />
-                                        <Button Content="DEFAULT" Command="{Binding LatestHotsLogsDateTimeDefaultCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedAccentButton}" Width="100" Margin="12 0 0 0" />
+                                        <controls:DateTimePicker SelectedDate="{Binding ReplaysLatestHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
+                                        <Button Content="SET" Command="{Binding LatestHotsLogsDateTimeSetCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}"  Width="100" Margin="8 0 0 0" />
+                                        <Button Content="DEFAULT" Command="{Binding LatestHotsLogsDateTimeDefaultCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="100" Margin="8 0 0 0" />
                                     </StackPanel>
-
-                                    <CheckBox Content="Last Uploaded Replay" IsChecked="{Binding LastHotsLogsChecked}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" HorizontalAlignment="Left" Margin="0 6 0 0"/>
+                                    <CheckBox Content="Last Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding LastHotsLogsChecked}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" />
                                     <StackPanel Orientation="Horizontal">
-                                        <Controls:DateTimePicker SelectedDate="{Binding ReplaysLastHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                        <Button Content="SET" Command="{Binding LatestHotsLogsDateTimeSetCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedAccentButton}" Width="100" Margin="12 0 0 0" />
-                                        <Button Content="DEFAULT" Command="{Binding LastHotsLogsDateTimeDefaultCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Style="{DynamicResource MaterialDesignRaisedAccentButton}" Width="100" Margin="12 0 0 0" />
+                                        <controls:DateTimePicker SelectedDate="{Binding ReplaysLastHotsLogs}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
+                                        <Button Content="SET" Command="{Binding LatestHotsLogsDateTimeSetCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="100" Margin="8 0 0 0" />
+                                        <Button Content="DEFAULT" Command="{Binding LastHotsLogsDateTimeDefaultCommand}" IsEnabled="{Binding AreHotsLogsUploaderButtonsEnabled}" Width="100" Margin="8 0 0 0" />
                                     </StackPanel>
                                 </StackPanel>
                             </GroupBox>

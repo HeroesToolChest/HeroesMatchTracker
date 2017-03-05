@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
@@ -18,7 +17,7 @@ using System.Linq;
 
 namespace HeroesStatTracker.Core.ViewModels.Matches
 {
-    public class MatchesBase : HstViewModel, IMatchesDataService
+    public abstract class MatchesBase : HstViewModel
     {
         private bool _isGivenBattleTagOnlyChecked;
         private bool _showMatchSummaryButtonEnabled;
@@ -75,7 +74,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
             HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
             SelectedCharacter = HeroesList[0];
 
-            SimpleIoc.Default.Register<IMatchesDataService>(() => this);
+            Messenger.Default.Register<MatchesDataMessage>(this, (message) => ReceivedMatchSearchData(message));
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
@@ -261,15 +260,15 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         public RelayCommand ShowMatchOverviewCommand => new RelayCommand(LoadMatchOverview);
         public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
 
-        public void SendSearchData(MatchesDataMessage matchesDataMessage)
+        protected virtual void ReceivedMatchSearchData(MatchesDataMessage message)
         {
-            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedCharacter))
-                SelectedCharacter = matchesDataMessage.SelectedCharacter;
+            if (!string.IsNullOrEmpty(message.SelectedCharacter))
+                SelectedCharacter = message.SelectedCharacter;
 
-            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedBattleTagName))
-                SelectedPlayerBattleTag = matchesDataMessage.SelectedBattleTagName;
+            if (!string.IsNullOrEmpty(message.SelectedBattleTagName))
+                SelectedPlayerBattleTag = message.SelectedBattleTagName;
 
-            if (!string.IsNullOrEmpty(matchesDataMessage.SelectedCharacter) && !string.IsNullOrEmpty(matchesDataMessage.SelectedBattleTagName))
+            if (!string.IsNullOrEmpty(message.SelectedCharacter) && !string.IsNullOrEmpty(message.SelectedBattleTagName))
                 IsGivenBattleTagOnlyChecked = true;
         }
 
