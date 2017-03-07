@@ -551,6 +551,8 @@
     <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_silvercity_small.jpg" />
     <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_braxisoutpost.jpg" />
     <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_braxisoutpost_small.jpg" />
+    <Resource Include="Icons\Other\storm_ui_ingame_leader_talent_unavailable.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_leader_talent_unselected.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

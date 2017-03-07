@@ -30,15 +30,18 @@
                                 <ToggleButton Name="TalentImage1" IsHitTestVisible="{Binding ElementName=PopupDesc1, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[0]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[0]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -59,15 +62,18 @@
                                 <ToggleButton Name="TalentImage2" IsHitTestVisible="{Binding ElementName=PopupDesc2, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[1]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[1]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -88,15 +94,18 @@
                                 <ToggleButton Name="TalentImage3" IsHitTestVisible="{Binding ElementName=PopupDesc3, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[2]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[2]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -117,15 +126,18 @@
                                 <ToggleButton Name="TalentImage4" IsHitTestVisible="{Binding ElementName=PopupDesc4, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[3]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[3]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -146,15 +158,18 @@
                                 <ToggleButton Name="TalentImage5" IsHitTestVisible="{Binding ElementName=PopupDesc5, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[4]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[4]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -175,15 +190,18 @@
                                 <ToggleButton Name="TalentImage6" IsHitTestVisible="{Binding ElementName=PopupDesc6, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[5]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[5]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
@@ -204,15 +222,18 @@
                                 <ToggleButton Name="TalentImage7" IsHitTestVisible="{Binding ElementName=PopupDesc7, Path=IsOpen, Mode=OneWay, Converter={StaticResource BoolInverterConverter}}" Margin="{StaticResource TalentIconMargin}">
                                     <ToggleButton.Template>
                                         <ControlTemplate TargetType="ToggleButton">
-                                            <Image Source="{Binding Talents[6]}" Height="44" Width="44">
-                                                <Image.ToolTip>
-                                                    <ToolTip Style="{StaticResource TalentTooltip}">
-                                                        <ToolTip.Content>
-                                                            <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
-                                                        </ToolTip.Content>
-                                                    </ToolTip>
-                                                </Image.ToolTip>
-                                            </Image>
+                                            <Grid>
+                                                <Image Source="{Binding Talents[6]}" Height="40">
+                                                    <Image.ToolTip>
+                                                        <ToolTip Style="{StaticResource TalentTooltip}">
+                                                            <ToolTip.Content>
+                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                            </ToolTip.Content>
+                                                        </ToolTip>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" />
+                                            </Grid>
                                         </ControlTemplate>
                                     </ToggleButton.Template>
                                 </ToggleButton>
