@@ -8,6 +8,7 @@
             <Style TargetType="TextBlock">
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="TextAlignment" Value="Left" />
+                <Setter Property="FontWeight" Value="SemiBold" />
             </Style>
         </Style.Resources>
     </Style>
@@ -15,7 +16,7 @@
     <Style x:Key="MatchDetailsTemplate">
         <Style.Resources>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Foreground" Value="{StaticResource DefaultTextBrush}" />
                 <Setter Property="FontSize" Value="16" />
             </Style>
         </Style.Resources>
@@ -23,18 +24,21 @@
 
     <DataTemplate DataType="{x:Type coreModels:MatchHistoryMatch}" x:Key="MatchHistoryMatch">
         <StackPanel Margin="0 0 0 8">
-            <Border BorderBrush="{StaticResource DefaultBorderBrush}" BorderThickness="1">
+            <Border BorderBrush="{StaticResource DefaultBackgroundBrush}"  BorderThickness="1">
                 <Expander Header="{Binding}" IsExpanded="{Binding IsExpanded}">
                     <Expander.Background>
-                        <SolidColorBrush Color="#FFFFFF" />
+                        <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}"/>
                     </Expander.Background>
+                    <Expander.Foreground>
+                        <SolidColorBrush Color="{StaticResource Gray1}" />
+                    </Expander.Foreground>
                     <Expander.HeaderTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" Style="{StaticResource MatchHeaderTemplate}">
                                 <TextBlock Text="{Binding GameMode}" Width="140" />
                                 <StackPanel Orientation="Horizontal" Width="160">
                                     <Image Source="{Binding UserHeroImage}" RenderOptions.BitmapScalingMode="HighQuality" Height="40" />
-                                    <TextBlock Text="{Binding UserHero}" Margin="8 0 0 0" />
+                                    <TextBlock Text="{Binding UserHero}" FontWeight="SemiBold" Margin="8 0 0 0" />
                                 </StackPanel>
                                 <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="200" />
                                 <TextBlock Text="{Binding WinnerResult}" Width="140">
@@ -42,6 +46,7 @@
                                         <Style TargetType="TextBlock">
                                             <Setter Property="VerticalAlignment" Value="Center" />
                                             <Setter Property="TextAlignment" Value="Center" />
+                                            <Setter Property="FontWeight" Value="SemiBold" />
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding WinnerResult}" Value="Win">
                                                     <Setter Property="Foreground" Value="{StaticResource DefaultBlueBrush}" />

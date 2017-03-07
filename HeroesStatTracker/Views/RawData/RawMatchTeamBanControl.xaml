@@ -15,7 +15,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <local:QueryControl/>
-            <DataGrid Style="{StaticResource DefaultDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+            <DataGrid Style="{StaticResource RawDataDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
                     <DataGridTextColumn Header="Team0Ban0" Binding="{Binding Team0Ban0}" />

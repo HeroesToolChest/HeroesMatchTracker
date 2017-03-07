@@ -4,6 +4,7 @@ using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.HotsLogs;
 using HeroesStatTracker.Core.Models.ReplayModels;
+using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using HeroesStatTracker.Data.Queries.Replays;
@@ -37,6 +38,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
 
         private FileSystemWatcher FileWatcher;
         private IDatabaseService Database;
+        private IMainTabService MainTab;
 
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
         private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
@@ -53,14 +55,20 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
         /// <summary>
         /// Constructor
         /// </summary>
-        public ReplaysControlViewModel(IDatabaseService database, IHeroesIconsService heroesIcons)
+        public ReplaysControlViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IMainTabService mainTab)
             : base(heroesIcons)
         {
             Database = database;
+            MainTab = mainTab;
             HotsLogsStartButtonText = "[Stop]";
 
             ScanDateTimeCheckboxes[Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
+            IsParsingReplaysOn = false;
+
+            IsReplayWatch = Database.SettingsDb().UserSettings.ReplayWatchCheckBox;
+            IsHotsLogsUploaderEnabled = Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
+            TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
 
             InitializeReplaySaveDataQueue();
             InitializeReplayHotsLogsUploadQueue();
@@ -143,6 +151,7 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
             set
             {
                 _totalSavedInDatabase = value;
+                MainTab.SetTotalParsedReplays(value);
                 RaisePropertyChanged();
             }
         }
@@ -172,6 +181,11 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
             get { return Database.SettingsDb().UserSettings.ReplayWatchCheckBox; }
             set
             {
+                if (value)
+                    MainTab.SetReplayParserWatchStatus(ReplayParserWatchStatus.Enabled);
+                else
+                    MainTab.SetReplayParserWatchStatus(ReplayParserWatchStatus.Disabled);
+
                 Database.SettingsDb().UserSettings.ReplayWatchCheckBox = value;
                 RaisePropertyChanged();
             }
@@ -215,12 +229,16 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
                 Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled = value;
                 if (value)
                 {
+                    MainTab.SetReplayParserHotsLogsStatus(ReplayParserHotsLogsStatus.Enabled);
+
                     AreHotsLogsUploaderButtonsEnabled = true;
                     IsHotsLogsStartButtonEnabled = false;
                     InitializeReplayHotsLogsUploadQueue();
                 }
                 else
                 {
+                    MainTab.SetReplayParserHotsLogsStatus(ReplayParserHotsLogsStatus.Disabled);
+
                     AreHotsLogsUploaderButtonsEnabled = false;
                     if (LatestHotsLogsChecked || LastHotsLogsChecked)
                         LatestParsedChecked = true;
@@ -369,7 +387,13 @@ namespace HeroesStatTracker.Core.ViewModels.Replays
             get { return _isParsingReplaysOn; }
             set
             {
+                if (value)
+                    MainTab.SetReplayParserStatus(ReplayParserStatus.Parsing);
+                else
+                    MainTab.SetReplayParserStatus(ReplayParserStatus.Stopped);
+
                 _isParsingReplaysOn = value;
+
                 AppCore.IsParsingReplaysOn = value;
                 RaisePropertyChanged();
             }

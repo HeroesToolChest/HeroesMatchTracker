@@ -12,4 +12,8 @@
         <Setter Property="CanUserResizeRows" Value="False" />
         <Setter Property="AlternatingRowBackground" Value="{DynamicResource GrayBrush10}" />
     </Style>
+
+    <Style TargetType="DataGrid" x:Key="RawDataDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
+        <Setter Property="GridLinesVisibility" Value="Vertical" />
+    </Style>
 </ResourceDictionary>

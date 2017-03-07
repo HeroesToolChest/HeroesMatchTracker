@@ -27,29 +27,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
-        public bool IsNightMode
-        {
-            get { return GetBooleanValue(); }
-            set { SetBooleanValue(value); }
-        }
-
-        public bool IsAlternateStyle
-        {
-            get { return GetBooleanValue(); }
-            set { SetBooleanValue(value); }
-        }
-
-        public string MainStylePrimary
-        {
-            get { return GetStringValue(); }
-            set { SetStringValue(value); }
-        }
-
-        public string MainStyleAccent
-        {
-            get { return GetStringValue(); }
-            set { SetStringValue(value); }
-        }
         #endregion Settings
 
         #region Replays
@@ -160,10 +137,6 @@ namespace HeroesStatTracker.Data.Queries.Settings
             IsAutoUpdates = true;
             IsMinimizeToTray = false;
             IsBattleTagHidden = true;
-            IsNightMode = false;
-            IsAlternateStyle = false;
-            MainStylePrimary = HeroesHelpers.DefaultColorPalette.DefaultPrimary;
-            MainStyleAccent = HeroesHelpers.DefaultColorPalette.DefaultAccent;
 
             // Replays
             ReplayWatchCheckBox = false;

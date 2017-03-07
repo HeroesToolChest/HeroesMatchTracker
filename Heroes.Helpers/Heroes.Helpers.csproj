@@ -86,7 +86,6 @@
   <ItemGroup>
     <Compile Include="BattleTags.cs" />
     <Compile Include="Builds.cs" />
-    <Compile Include="DefaultColorPalette.cs" />
     <Compile Include="EnumParser.cs" />
     <Compile Include="GameDates.cs" />
     <Compile Include="GameModes.cs" />

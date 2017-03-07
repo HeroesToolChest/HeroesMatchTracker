@@ -9,10 +9,13 @@
     <Color x:Key="DefaultLime">#A4C400</Color>
     <Color x:Key="DefaultYellow">#E3C800</Color>
     <Color x:Key="DefaultTeal">#00ABA9</Color>
-    
+    <Color x:Key="DefaultGreen">#60A917</Color>
+    <Color x:Key="DefaultEmerald">#008A00</Color>
+    <Color x:Key="DefaultCrimson">#A20025</Color>
+    <Color x:Key="DefaultRed">#E51400</Color>
+
     <Color x:Key="DefaultBlue">#2196F3</Color>
-    <Color x:Key="DefaultRed">#F44336</Color>
-    
+
     <Color x:Key="DefaultBackgroundColor">#88000000</Color>
     <Color x:Key="DefaultTextColor">#D5FCFF</Color>
     <Color x:Key="DefaultTextColor2">#C4CEEE</Color>
@@ -25,10 +28,13 @@
     <SolidColorBrush x:Key="DefaultLimeBrush" Color="{StaticResource DefaultLime}" />
     <SolidColorBrush x:Key="DefaultYellowBrush" Color="{StaticResource DefaultYellow}" />
     <SolidColorBrush x:Key="DefaultTealBrush" Color="{StaticResource DefaultTeal}" />
-    
-    <SolidColorBrush x:Key="DefaultBlueBrush" Color="{StaticResource DefaultBlue}" />
+    <SolidColorBrush x:Key="DefaultGreenBrush" Color="{StaticResource DefaultGreen}" />
+    <SolidColorBrush x:Key="DefaultEmeraldBrush" Color="{StaticResource DefaultEmerald}" />
+    <SolidColorBrush x:Key="DefaultCrimsonBrush" Color="{StaticResource DefaultCrimson}" />
     <SolidColorBrush x:Key="DefaultRedBrush" Color="{StaticResource DefaultRed}" />
-    
+
+    <SolidColorBrush x:Key="DefaultBlueBrush" Color="{StaticResource DefaultBlue}" />
+
     <SolidColorBrush x:Key="DefaultBackgroundBrush" Color="{StaticResource DefaultBackgroundColor}" />
     <SolidColorBrush x:Key="DefaultTextBrush" Color="{StaticResource DefaultTextColor}" />
     <SolidColorBrush x:Key="DefaultText2Brush" Color="{StaticResource DefaultTextColor2}" />

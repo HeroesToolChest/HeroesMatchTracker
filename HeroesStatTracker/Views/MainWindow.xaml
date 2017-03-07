@@ -22,7 +22,7 @@
                       MinHeight="768" MinWidth="1024">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
-        <system:Double x:Key="TabControlFontSize">20</system:Double>
+        <system:Double x:Key="TabControlFontSize">18</system:Double>
     </Window.Resources>
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
@@ -50,19 +50,16 @@
             </Button>-->
             <Button x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel Orientation="Horizontal">
-                    <!--<materialDesign:PackIcon Kind="InformationOutline" />-->
                     <TextBlock Margin="4 0 0 0" Text="About"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
                 <StackPanel Orientation="Horizontal">
-                    <!--<materialDesign:PackIcon Kind="Settings" />-->
                     <TextBlock Margin="4 0 0 0" Text="Settings"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenWhatsNewWindowCommand}">
                 <StackPanel Orientation="Horizontal">
-                    <!--<materialDesign:PackIcon Kind="NoteOutline" />-->
                     <TextBlock Margin="4 0 0 0" Text="What's New"/>
                 </StackPanel>
             </Button>
@@ -70,14 +67,19 @@
     </controls:MetroWindow.RightWindowCommands>
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom" Background="{StaticResource DefaultBlueBrush}">
-            <StatusBarItem Content="status" />
-            <StatusBarItem Content="replays in database" Padding="0 0 8 0" DockPanel.Dock="Right" />
-            <StatusBarItem Content="1000" Padding="8 0 0 0" DockPanel.Dock="Right" />
-            <StatusBarItem Content="Parser Enabled" Padding="8 0" DockPanel.Dock="Right" />
-            <StatusBarItem Content="HOTS Logs Uploader Enabled" Padding="8 0" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding ApplicationStatus}" />
+            <StatusBarItem Content="replays in database" DockPanel.Dock="Right" />
+            <StatusBarItem Content="{Binding TotalParsedReplays}" DockPanel.Dock="Right" />
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+            <StatusBarItem Content="{Binding HotsLogsStatus}" DockPanel.Dock="Right" />
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+            <StatusBarItem Content="{Binding ParserWatchStatus}" DockPanel.Dock="Right" />
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+            <StatusBarItem Content="{Binding ParserStatus}" DockPanel.Dock="Right" />
+
             <StatusBarItem />
         </StatusBar>
-        <TabControl TabStripPlacement="Top">
+        <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}">
             <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                 <home:HomeControl />
             </TabItem>
@@ -85,76 +87,11 @@
                 <matches:MatchesControl />
             </TabItem>
             <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                <replays:ReplaysControl />         
+                <replays:ReplaysControl />
             </TabItem>
             <TabItem Header="Raw Data Tables" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                 <rawData:RawDataControl />
             </TabItem>
         </TabControl>
     </DockPanel>
-
-
-    <!--<rawData:RawDataControl />-->
-
-    <!--<materialDesign:DialogHost>
-        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
-            <materialDesign:DrawerHost.LeftDrawerContent>
-                <DockPanel MinWidth="212">
-                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" DockPanel.Dock="Top"
-                                  HorizontalAlignment="Right" Margin="16"
-                                  IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
-                    <ListBox x:Name="MainPagesItems" Margin="0 16 0 16" SelectedItem="{Binding SelectedMainPage}" ItemsSource="{Binding MainPagesCollection}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </DockPanel>
-            </materialDesign:DrawerHost.LeftDrawerContent>
-            <DockPanel>
-                <materialDesign:ColorZone Padding="8" materialDesign:ShadowAssist.ShadowDepth="Depth2" Mode="PrimaryMid" DockPanel.Dock="Top">
-                    <DockPanel>
-                        <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" Height="28" IsChecked="False" x:Name="MenuToggleButton"/>
-
-                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                            <StackPanel Width="180">
-                                <Button Command="{Binding OpenProfileCommand}" Content="Profile"/>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
-                        <TextBlock Text="{Binding CurrentPageTitle}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8 0 0 0" />
-                        <TextBlock Text="{Binding UserBattleTag}" HorizontalAlignment="Right" VerticalAlignment="Center"  />
-                    </DockPanel>
-                </materialDesign:ColorZone>
-                <StatusBar DockPanel.Dock="Bottom">
-                    <StatusBarItem Content="status" />
-                    <StatusBarItem Content="replays in database" Padding="0 0 8 0" DockPanel.Dock="Right" />
-                    <StatusBarItem Content="1000" Padding="8 0 0 0" DockPanel.Dock="Right" />
-                    <StatusBarItem Content="Parser Enabled" Padding="8 0" DockPanel.Dock="Right" />
-                    <StatusBarItem Content="HOTS Logs Uploader Enabled" Padding="8 0" DockPanel.Dock="Right" />
-                    <StatusBarItem />
-                </StatusBar>
-                --><!--<materialDesign:ColorZone DockPanel.Dock="Bottom" Mode="PrimaryDark" Height="48" Padding="8">
-                    <DockPanel>
-                        <TextBlock Text="Waiting replays" />
-                        <StackPanel />
-                    </DockPanel>
-                </materialDesign:ColorZone>--><!--
-                <Grid DockPanel.Dock="Bottom">
-                    <Grid Visibility="{Binding IsHomeControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <home:HomeControl />
-                    </Grid>
-                    <Grid Visibility="{Binding IsMatchesControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <matches:MatchesControl />
-                    </Grid>
-                    <Grid Visibility="{Binding IsReplaysControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <replays:ReplaysControl />
-                    </Grid>
-                    <Grid Visibility="{Binding IsRawDataControlVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <rawData:RawDataControl />
-                    </Grid>
-                </Grid>
-            </DockPanel>
-        </materialDesign:DrawerHost>
-    </materialDesign:DialogHost>-->
 </controls:MetroWindow>

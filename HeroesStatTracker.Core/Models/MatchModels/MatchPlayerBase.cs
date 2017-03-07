@@ -89,9 +89,9 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
         }
 
-        public IMainPageService MainTabs
+        public IMainTabService MainTabs
         {
-            get { return ServiceLocator.Current.GetInstance<IMainPageService>(); }
+            get { return ServiceLocator.Current.GetInstance<IMainTabService>(); }
         }
 
         public IMatchesTabService MatchesTab
@@ -287,7 +287,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void HeroSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToPage(MainPage.Matches);
+            MainTabs.SwitchToTab(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
@@ -295,7 +295,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void PlayerSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToPage(MainPage.Matches);
+            MainTabs.SwitchToTab(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedBattleTagName = PlayerName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();
@@ -303,7 +303,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void PlayerAndHeroSearch(MatchesTab matchTab)
         {
-            MainTabs.SwitchToPage(MainPage.Matches);
+            MainTabs.SwitchToTab(MainPage.Matches);
             MatchesTab.SwitchToTab(matchTab);
             Messenger.Default.Send(new MatchesDataMessage { MatchTab = matchTab, SelectedBattleTagName = PlayerName, SelectedCharacter = CharacterName });
             MatchSummaryFlyout.CloseMatchSummaryFlyout();

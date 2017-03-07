@@ -1,34 +1,32 @@
+using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Icons;
+using HeroesStatTracker.Core.HotsLogs;
 using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Models;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using Microsoft.Practices.ServiceLocation;
-using System.Collections.ObjectModel;
 
 namespace HeroesStatTracker.Core.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainPageService
+    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabService
     {
+        private int _selectedMainTab;
+        private long _totalParsedReplays;
         private bool _matchSummaryIsOpen;
-        private bool _isHomeControlVisible;
-        private bool _isMatchesControlVisible;
-        private bool _isReplaysControlVisible;
-        private bool _isRawDataControlVisible;
         private string _matchSummaryHeader;
-        private string _currentPageTitle;
-        private MainPageItem _selectedMainPage;
+        private string _applicationStatus;
+        private string _parserStatus;
+        private string _parserWatchStatus;
+        private string _hotsLogsStatus;
 
         private IDatabaseService Database;
         private IHeroesIconsService HeroesIcons;
         private IUserProfileService UserProfile;
-
-        private ObservableCollection<MainPageItem> _mainPagesCollection = new ObservableCollection<MainPageItem>();
 
         public MainWindowViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile)
         {
@@ -36,16 +34,11 @@ namespace HeroesStatTracker.Core.ViewModels
             UserProfile = userProfile;
             HeroesIcons = heroesIcons;
 
-            SetMainPages();
-
             MatchSummaryIsOpen = false;
             MatchSummaryHeader = "Match Summary";
 
-            IsHomeControlVisible = true;
-            CurrentPageTitle = "Home";
-
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
-            SimpleIoc.Default.Register<IMainPageService>(() => this);
+            SimpleIoc.Default.Register<IMainTabService>(() => this);
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
@@ -85,16 +78,6 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
-        public string CurrentPageTitle
-        {
-            get { return _currentPageTitle; }
-            set
-            {
-                _currentPageTitle = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public string MatchSummaryHeader
         {
             get { return _matchSummaryHeader; }
@@ -105,78 +88,64 @@ namespace HeroesStatTracker.Core.ViewModels
             }
         }
 
-        public MainPageItem SelectedMainPage
+        public string ApplicationStatus
         {
-            get { return _selectedMainPage; }
+            get { return _applicationStatus; }
             set
             {
-                if (_selectedMainPage != value)
-                {
-                    _selectedMainPage = value;
-
-                    SetMainPagesToFalse();
-                    SetControlVisible(value.MainPage);
-                    CurrentPageTitle = value.Name;
-                    RaisePropertyChanged();
-                }
+                _applicationStatus = value;
+                RaisePropertyChanged();
             }
         }
 
-        public bool IsHomeControlVisible
+        public long TotalParsedReplays
         {
-            get { return _isHomeControlVisible; }
+            get { return _totalParsedReplays; }
             set
             {
-                if (_isHomeControlVisible != value)
-                {
-                    _isHomeControlVisible = value;
-                    RaisePropertyChanged();
-                }
+                _totalParsedReplays = value;
+                RaisePropertyChanged();
             }
         }
 
-        public bool IsMatchesControlVisible
+        public string ParserStatus
         {
-            get { return _isMatchesControlVisible; }
+            get { return _parserStatus; }
             set
             {
-                if (_isMatchesControlVisible != value)
-                {
-                    _isMatchesControlVisible = value;
-                    RaisePropertyChanged();
-                }
+                _parserStatus = value;
+                RaisePropertyChanged();
             }
         }
 
-        public bool IsReplaysControlVisible
+        public string ParserWatchStatus
         {
-            get { return _isReplaysControlVisible; }
+            get { return _parserWatchStatus; }
             set
             {
-                if (_isReplaysControlVisible != value)
-                {
-                    _isReplaysControlVisible = value;
-                    RaisePropertyChanged();
-                }
+                _parserWatchStatus = value;
+                RaisePropertyChanged();
             }
         }
 
-        public bool IsRawDataControlVisible
+        public string HotsLogsStatus
         {
-            get { return _isRawDataControlVisible; }
+            get { return _hotsLogsStatus; }
             set
             {
-                if (_isRawDataControlVisible != value)
-                {
-                    _isRawDataControlVisible = value;
-                    RaisePropertyChanged();
-                }
+                _hotsLogsStatus = value;
+                RaisePropertyChanged();
             }
         }
 
-        public ObservableCollection<MainPageItem> MainPagesCollection
+        public int SelectedMainTab
         {
-            get { return _mainPagesCollection; }
+            get { return _selectedMainTab; }
+            set
+            {
+                _selectedMainTab = value;
+                RaisePropertyChanged();
+            }
         }
 
         public void ToggleMatchSummaryFlyout()
@@ -199,10 +168,44 @@ namespace HeroesStatTracker.Core.ViewModels
             MatchSummaryHeader = headerTitle;
         }
 
-        public void SwitchToPage(MainPage selectedMainPage)
+        public void SwitchToTab(MainPage selectedMainTab)
         {
-            SetMainPagesToFalse();
-            SetControlVisible(selectedMainPage);
+            SelectedMainTab = (int)selectedMainTab;
+        }
+
+        public void SetApplicationStatus(string status)
+        {
+            if (ApplicationStatus != status)
+                ApplicationStatus = status;
+        }
+
+        public void SetReplayParserStatus(ReplayParserStatus status)
+        {
+            if (status == ReplayParserStatus.Parsing)
+                ParserStatus = "Replay Parser [PARSING]";
+            else if (status == ReplayParserStatus.Stopped)
+                ParserStatus = "Replay Parser [STOPPED]";
+        }
+
+        public void SetReplayParserWatchStatus(ReplayParserWatchStatus status)
+        {
+            if (status == ReplayParserWatchStatus.Enabled)
+                ParserWatchStatus = "Watch [ENABLED]";
+            else if (status == ReplayParserWatchStatus.Disabled)
+                ParserWatchStatus = "Watch [DISABLED]";
+        }
+
+        public void SetReplayParserHotsLogsStatus(ReplayParserHotsLogsStatus status)
+        {
+            if (status == ReplayParserHotsLogsStatus.Enabled)
+                HotsLogsStatus = "HotsLogs Uploader [ENABLED]";
+            else if (status == ReplayParserHotsLogsStatus.Disabled)
+                HotsLogsStatus = "HotsLogs Uploader [DISABLED]";
+        }
+
+        public void SetTotalParsedReplays(long amount)
+        {
+            TotalParsedReplays = amount;
         }
 
         private void OpenWhatsNewWindow()
@@ -219,34 +222,6 @@ namespace HeroesStatTracker.Core.ViewModels
         {
             if (message.Notification == StaticMessage.UpdateUserBattleTag)
                 UserBattleTag = UserProfile.BattleTagName;
-        }
-
-        private void SetMainPages()
-        {
-            MainPagesCollection.Add(new MainPageItem(MainPage.Home));
-            MainPagesCollection.Add(new MainPageItem(MainPage.Matches));
-            MainPagesCollection.Add(new MainPageItem(MainPage.ReplayParser));
-            MainPagesCollection.Add(new MainPageItem(MainPage.RawData));
-        }
-
-        private void SetMainPagesToFalse()
-        {
-            IsHomeControlVisible = false;
-            IsMatchesControlVisible = false;
-            IsReplaysControlVisible = false;
-            IsRawDataControlVisible = false;
-        }
-
-        private void SetControlVisible(MainPage page)
-        {
-            if (page == MainPage.Home)
-                IsHomeControlVisible = true;
-            else if (page == MainPage.Matches)
-                IsMatchesControlVisible = true;
-            else if (page == MainPage.ReplayParser)
-                IsReplaysControlVisible = true;
-            else if (page == MainPage.RawData)
-                IsRawDataControlVisible = true;
         }
     }
 }
