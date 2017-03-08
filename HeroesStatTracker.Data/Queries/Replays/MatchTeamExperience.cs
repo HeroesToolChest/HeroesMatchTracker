@@ -49,8 +49,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
 
             if (columnName.Contains("Time"))
             {
-                TimeSpan timeSpan;
-                if (TimeSpan.TryParse(input, out timeSpan))
+                if (TimeSpan.TryParse(input, out TimeSpan timeSpan))
                 {
                     input = timeSpan.Ticks.ToString();
                     columnName = string.Concat(columnName, "Ticks");

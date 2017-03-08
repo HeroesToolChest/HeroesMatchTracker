@@ -91,13 +91,11 @@ namespace Heroes.Icons.Xml
         /// <returns>BitmpImage of the hero</returns>
         public BitmapImage GetHeroPortrait(string realHeroName)
         {
-            Uri uri;
-
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
 
-            if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
             {
                 BitmapImage image = new BitmapImage(uri);
                 image.Freeze();
@@ -120,13 +118,11 @@ namespace Heroes.Icons.Xml
         /// <returns>BitmpImage of the hero</returns>
         public BitmapImage GetHeroLoadingPortrait(string realHeroName)
         {
-            Uri uri;
-
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
 
-            if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
             {
                 BitmapImage image = new BitmapImage(uri);
                 image.Freeze();
@@ -149,13 +145,11 @@ namespace Heroes.Icons.Xml
         /// <returns>BitmpImage of the hero</returns>
         public BitmapImage GetHeroLeaderboardPortrait(string realHeroName)
         {
-            Uri uri;
-
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
                 return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
 
-            if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out uri))
+            if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
             {
                 BitmapImage image = new BitmapImage(uri);
                 image.Freeze();
@@ -178,13 +172,11 @@ namespace Heroes.Icons.Xml
         /// <returns>Full hero name</returns>
         public string GetRealHeroNameFromAttributeId(string attributeId)
         {
-            string heroName;
-
             // no pick
             if (string.IsNullOrEmpty(attributeId))
                 return null;
 
-            if (RealHeroNameByAttributeId.TryGetValue(attributeId, out heroName))
+            if (RealHeroNameByAttributeId.TryGetValue(attributeId, out string heroName))
             {
                 return heroName;
             }
@@ -199,13 +191,11 @@ namespace Heroes.Icons.Xml
 
         public string GetAltNameFromRealHeroName(string realName)
         {
-            string altName;
-
             // no pick
             if (string.IsNullOrEmpty(realName))
                 return null;
 
-            if (AlternativeHeroNameByRealName.TryGetValue(realName, out altName))
+            if (AlternativeHeroNameByRealName.TryGetValue(realName, out string altName))
             {
                 return altName;
             }
@@ -220,13 +210,11 @@ namespace Heroes.Icons.Xml
 
         public string GetRealHeroNameFromAltName(string altName)
         {
-            string realName;
-
             // no pick
             if (string.IsNullOrEmpty(altName))
                 return null;
 
-            if (RealHeroNameByAlternativeName.TryGetValue(altName, out realName))
+            if (RealHeroNameByAlternativeName.TryGetValue(altName, out string realName))
             {
                 return realName;
             }
@@ -260,9 +248,7 @@ namespace Heroes.Icons.Xml
         /// <returns>HeroRole</returns>
         public List<HeroRole> GetHeroRoleList(string realName)
         {
-            List<HeroRole> roleList;
-
-            if (HeroRolesListByRealName.TryGetValue(realName, out roleList))
+            if (HeroRolesListByRealName.TryGetValue(realName, out List<HeroRole> roleList))
                 return roleList;
             else
                 return new List<HeroRole> { HeroRole.Unknown };
@@ -275,9 +261,7 @@ namespace Heroes.Icons.Xml
         /// <returns>HeroRole</returns>
         public HeroFranchise GetHeroFranchise(string realName)
         {
-            HeroFranchise franchise;
-
-            if (HeroFranchiseByRealName.TryGetValue(realName, out franchise))
+            if (HeroFranchiseByRealName.TryGetValue(realName, out HeroFranchise franchise))
                 return franchise;
             else
                 return HeroFranchise.Unknown;

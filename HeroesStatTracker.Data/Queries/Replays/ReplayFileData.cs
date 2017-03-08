@@ -81,8 +81,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
         // returns true if replay already exists in database
         private bool BasicData(string fileName)
         {
-            string mapName;
-            if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
+            if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
                 throw new TranslationException(RetrieveAllMapAndHeroNames());
 
             ReplayMatch replayMatch = new ReplayMatch
@@ -173,8 +172,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                 }
                 else
                 {
-                    string character;
-                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.Character, out character))
+                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
                     {
                         if (!AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
                             throw new TranslationException(RetrieveAllMapAndHeroNames());
@@ -554,8 +552,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
         {
             List<string> names = new List<string>();
 
-            string mapName;
-            if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
+            if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
                 names.Add($"{Replay.Map}: {mapName} [Good]");
             else
                 names.Add($"{Replay.Map}: ??? [Unknown]");
@@ -571,8 +568,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
                     continue;
                 }
 
-                string character;
-                if (HeroesIcons.Heroes().HeroNameTranslation(player.Character, out character))
+                if (HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
                     names.Add($"{player.Character}: {character} [Good]");
                 else if (AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
                     names.Add($"{player.Character}: {character} [Auto]");

@@ -63,8 +63,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
 
             if (columnName.Contains("ReplayLength"))
             {
-                TimeSpan timeSpan;
-                if (TimeSpan.TryParse(input, out timeSpan))
+                if (TimeSpan.TryParse(input, out TimeSpan timeSpan))
                 {
                     input = timeSpan.Ticks.ToString();
                     columnName = string.Concat(columnName, "Ticks");
@@ -76,8 +75,7 @@ namespace HeroesStatTracker.Data.Queries.Replays
             }
             else if (columnName == "GameMode")
             {
-                GameMode gameMode;
-                if (Enum.TryParse(input, true, out gameMode))
+                if (Enum.TryParse(input, true, out GameMode gameMode))
                     input = ((int)gameMode).ToString();
             }
             else if (LikeOperatorInputCheck(operand, input))

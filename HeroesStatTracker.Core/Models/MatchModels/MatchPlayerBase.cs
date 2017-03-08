@@ -148,7 +148,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
         private void SetMVPAward(string awardType)
         {
-            string mvpAwardName = null;
             MVPScoreScreenColor teamColor;
 
             if (Player.Team == 0)
@@ -156,7 +155,7 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             else
                 teamColor = MVPScoreScreenColor.Red;
 
-            MvpAward = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(awardType, teamColor, out mvpAwardName);
+            MvpAward = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(awardType, teamColor, out string mvpAwardName);
             MvpAwardDescription = $"{mvpAwardName}{Environment.NewLine}{HeroesIcons.MatchAwards().GetMatchAwardDescription(awardType)}";
         }
 

@@ -60,8 +60,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public Color GetMapBackgroundFontGlowColor(string mapRealName)
         {
-            Color color;
-            if (MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out color))
+            if (MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out Color color))
                 return color;
             else
                 return Colors.Black;
@@ -145,8 +144,7 @@ namespace Heroes.Icons.Xml
 
                         string custom = reader["custom"] == null ? "false" : reader["custom"];
 
-                        bool isCustomOnly;
-                        if (!bool.TryParse(custom, out isCustomOnly))
+                        if (!bool.TryParse(custom, out bool isCustomOnly))
                             isCustomOnly = false;
 
                         while (reader.Read())

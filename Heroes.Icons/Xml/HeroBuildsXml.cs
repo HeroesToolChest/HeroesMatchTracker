@@ -79,13 +79,11 @@ namespace Heroes.Icons.Xml
         /// <returns>BitmapImage of the talent</returns>
         public BitmapImage GetTalentIcon(string talentReferenceName)
         {
-            Tuple<string, Uri> talent;
-
             // no pick
             if (string.IsNullOrEmpty(talentReferenceName))
                 return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
 
-            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
             {
                 BitmapImage image = new BitmapImage(talent.Item2);
                 image.Freeze();
@@ -108,13 +106,11 @@ namespace Heroes.Icons.Xml
         /// <returns>Talent name</returns>
         public string GetTrueTalentName(string talentReferenceName)
         {
-            Tuple<string, Uri> talent;
-
             // no pick
             if (string.IsNullOrEmpty(talentReferenceName))
                 return "No pick";
 
-            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out talent))
+            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
             {
                 return talent.Item1;
             }
@@ -134,8 +130,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
         {
-            Dictionary<TalentTier, List<string>> talents;
-            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out talents))
+            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<string>> talents))
             {
                 return talents;
             }
@@ -209,10 +204,9 @@ namespace Heroes.Icons.Xml
                             if (reader.IsStartElement())
                             {
                                 var talentTierList = new List<string>();
-                                TalentTier tier;
 
                                 // is tier Level1, Level4, etc...
-                                if (Enum.TryParse(reader.Name, out tier))
+                                if (Enum.TryParse(reader.Name, out TalentTier tier))
                                 {
                                     // read each talent in tier
                                     while (reader.Read() && reader.Name != tier.ToString())
@@ -226,8 +220,7 @@ namespace Heroes.Icons.Xml
 
                                             SetTalentTooltip(refName, desc);
 
-                                            bool isGeneric;
-                                            if (!bool.TryParse(generic, out isGeneric))
+                                            if (!bool.TryParse(generic, out bool isGeneric))
                                                 isGeneric = false;
 
                                             if (reader.Read())
@@ -280,8 +273,7 @@ namespace Heroes.Icons.Xml
 
             foreach (var directory in buildDirectories)
             {
-                int buildNumber;
-                if (int.TryParse(Path.GetFileName(directory), out buildNumber))
+                if (int.TryParse(Path.GetFileName(directory), out int buildNumber))
                     Builds.Add(buildNumber);
             }
 
@@ -325,12 +317,10 @@ namespace Heroes.Icons.Xml
             // checking keys because of generic talents
             if (!HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName) && !string.IsNullOrEmpty(desc))
             {
-                string shortDesc;
-                string longDesc;
-                if (!TalentShortTooltip.TryGetValue(desc, out shortDesc))
+                if (!TalentShortTooltip.TryGetValue(desc, out string shortDesc))
                     shortDesc = string.Empty;
 
-                if (!TalentLongTooltip.TryGetValue(desc, out longDesc))
+                if (!TalentLongTooltip.TryGetValue(desc, out string longDesc))
                     longDesc = string.Empty;
 
                 HeroTalentTooltipsByRealName.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc));

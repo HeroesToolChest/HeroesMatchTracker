@@ -1,8 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:HeroesStatTracker.Resources.CustomTemplates"
-                    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-                    xmlns:coreGraphModels="clr-namespace:HeroesStatTracker.Core.Models.GraphSummaryModels;assembly=HeroesStatTracker.Core">
+                    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
 
     <DataTemplate x:Key="TeamLevelGraph">
         <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}">

@@ -14,9 +14,8 @@ namespace Heroes.Helpers
                 if (string.IsNullOrEmpty(season))
                     throw new ArgumentNullException(nameof(season));
 
-                Season seasonEnum;
                 season = Regex.Replace(season, @"\s+", string.Empty);
-                if (Enum.TryParse(season, true, out seasonEnum))
+                if (Enum.TryParse(season, true, out Season seasonEnum))
                     return seasonEnum;
                 else
                     throw new ArgumentException(nameof(season));
@@ -27,10 +26,9 @@ namespace Heroes.Helpers
                 if (string.IsNullOrEmpty(replayParseResult))
                     throw new ArgumentNullException(nameof(replayParseResult));
 
-                ReplayParseResult replayParseResultEnum;
                 replayParseResult = Regex.Replace(replayParseResult, @"\s+", string.Empty);
 
-                if (Enum.TryParse(replayParseResult, true, out replayParseResultEnum))
+                if (Enum.TryParse(replayParseResult, true, out ReplayParseResult replayParseResultEnum))
                     return replayParseResultEnum;
                 else
                     throw new ArgumentException(nameof(replayParseResult));
@@ -41,10 +39,9 @@ namespace Heroes.Helpers
                 if (string.IsNullOrEmpty(region))
                     throw new ArgumentNullException(nameof(region));
 
-                Region regionEnum;
                 region = Regex.Replace(region, @"\s+", string.Empty);
 
-                if (Enum.TryParse(region, true, out regionEnum))
+                if (Enum.TryParse(region, true, out Region regionEnum))
                     return regionEnum;
                 else
                     throw new ArgumentException(nameof(region));
