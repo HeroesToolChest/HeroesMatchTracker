@@ -20,7 +20,7 @@
             <DockPanel>
                 <Border DockPanel.Dock="Left" BorderThickness="4, 0, 0, 0" CornerRadius="3" Margin="0, 2, 4, 2" Style="{StaticResource MatchRowSideBorder}" />
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
-                    <DockPanel>
+                    <DockPanel Style="{StaticResource UserPlayerRowOverlay}">
                         <ContentPresenter ContentTemplate="{StaticResource PlayerInfo}" />
 
                         <!--Talent 1-->
@@ -275,12 +275,12 @@
         <StackPanel Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
                 <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
-                <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="22 0 0 0" />
-                <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 0 0" />
-                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="27 0 -8 0" />
+                <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="30 0 0 0" />
+                <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="31.5 0 0 0" />
+                <TextBlock Text="10" Width="{StaticResource HeaderTalentSpacing}" Margin="28 0 0 0" />
+                <TextBlock Text="13" Width="{StaticResource HeaderTalentSpacing}" Margin="31 0 0 0" />
+                <TextBlock Text="16" Width="{StaticResource HeaderTalentSpacing}" Margin="31 0 0 0" />
+                <TextBlock Text="20" Width="{StaticResource HeaderTalentSpacing}" Margin="29 0 -4.5 0" />
             </StackPanel>
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding MatchTalentsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1TalentsItemsControl}" Margin="15 8 15 0"/>

@@ -11,13 +11,13 @@
     <system:Double x:Key="PopupHorizontalOffset">-30</system:Double>
     <system:Double x:Key="PopupVerticalOffset">5</system:Double>
 
-    <system:Double x:Key="StatSimpleNumberWidth">60</system:Double>
+    <system:Double x:Key="StatSimpleNumberWidth">55</system:Double>
     <system:Double x:Key="StatLargeNumberWidth">140</system:Double>
     <system:Double x:Key="HeaderStatSpacing">160</system:Double>
-    
-    <Thickness x:Key="TextValueMargin" Left="4" Top="0" Right="4" Bottom="0" />
 
-    <Style x:Key="TableContentText">
+    <Thickness x:Key="TextValueMargin">4 0 4 0</Thickness>
+
+        <Style x:Key="TableContentText">
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}" />
         </Style.Resources>
@@ -28,7 +28,7 @@
             <DockPanel>
                 <Border DockPanel.Dock="Left" BorderThickness="4 0 0 0" CornerRadius="3" Margin="0 2 4 2" Style="{StaticResource MatchRowSideBorder}" />
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
-                    <DockPanel>
+                    <DockPanel Style="{StaticResource UserPlayerRowOverlay}">
                         <ContentPresenter ContentTemplate="{StaticResource PlayerInfo}" />
                         <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TableContentText}">
                             <TextBlock Text="{Binding SoloKills}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
@@ -169,7 +169,7 @@
                 <TextBlock Text="Siege Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                 <TextBlock Text="Hero Damage" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                 <TextBlock Text="Role" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 12 0" />
+                <TextBlock Text="XP Contribution" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 48 0" />
             </StackPanel>
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>

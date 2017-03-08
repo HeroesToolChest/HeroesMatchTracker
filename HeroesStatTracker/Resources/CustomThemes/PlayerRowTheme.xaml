@@ -7,19 +7,26 @@
 
     <system:Double x:Key="StatTalentsWidth">1120</system:Double>
 
-    <!--User Colors (yellow)-->
-    <Color x:Key="RowUserSideColor">#FFE660</Color>
-    <Color x:Key="UserCharacterNameColor">#FFE4C7</Color>
+    <!--User Colors (green)-->
+    <Color x:Key="RowUserSideColor">#8BFD63</Color>
+    <Color x:Key="UserCharacterNameColor">#DDFFCF</Color>
 
     <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" options:Freeze="True" />
-    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#BC9C51" options:Freeze="True" />
+    <SolidColorBrush x:Key="RowUserBorderBrush" Color="#77A137" options:Freeze="True" />
     <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" options:Freeze="True" />
-    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#E1B325" options:Freeze="True" />
-
+    <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#B1E789" options:Freeze="True" />
+    
+    <LinearGradientBrush x:Key="RowUserOverlayBrush"  Opacity="0.5"  StartPoint="0,0" EndPoint="0, 1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0.0" Color="#0077A137" />
+            <GradientStop Offset="2.0" Color="#77A137" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
     <!--Team 1 (Blue)-->
     <ResourceDictionary x:Key="Team1Brushes">
         <Color x:Key="RowSideColor">#64E5FF</Color>
-        <Color x:Key="CharacterNameColor">#CDFDFF</Color>
+        <Color x:Key="CharacterNameColor">#E5F1FF</Color>
         <Color x:Key="PlayerNameColor">#77B8EA</Color>
         <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
         <Color x:Key="TextValueColor">#919FD8</Color>
@@ -42,7 +49,7 @@
     <!--Team 2 (Red)-->
     <ResourceDictionary x:Key="Team2Brushes">
         <Color x:Key="RowSideColor">#F25B5C</Color>
-        <Color x:Key="CharacterNameColor">#FFDAE3</Color>
+        <Color x:Key="CharacterNameColor">#FFE3E7</Color>
         <Color x:Key="PlayerNameColor">#E28E8D</Color>
         <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
         <Color x:Key="TextValueColor">#E49192</Color>

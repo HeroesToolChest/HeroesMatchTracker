@@ -43,7 +43,8 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/BorderStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
-                
+                <ResourceDictionary Source="/Resources/CustomStyles/DockPanelStyle.xaml"/>
+
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>

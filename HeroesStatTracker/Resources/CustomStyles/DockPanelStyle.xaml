@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="UserPlayerRowOverlay" TargetType="DockPanel">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
+                <Setter Property="Background" Value="{DynamicResource RowUserOverlayBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

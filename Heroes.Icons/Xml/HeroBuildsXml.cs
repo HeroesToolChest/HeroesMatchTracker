@@ -81,7 +81,7 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(talentReferenceName))
-                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_no_pick.dds");
+                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_ingame_leader_talent_unselected.png");
 
             if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
             {

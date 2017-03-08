@@ -6,7 +6,7 @@
         <StackPanel>
             <DockPanel>
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
-                    <DockPanel>
+                    <DockPanel Style="{StaticResource UserPlayerRowOverlay}">
                         <ContentPresenter ContentTemplate="{StaticResource PlayerInfo}" />
                     </DockPanel>
                 </Border>

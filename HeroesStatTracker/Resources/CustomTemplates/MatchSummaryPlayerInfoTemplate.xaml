@@ -14,12 +14,13 @@
                 <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                 <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-4 -16 0 0"/>
             </Grid>
-            <StackPanel DockPanel.Dock="Left" Width="180" ContextMenu="{StaticResource PlayerSearchContextMenu}">
-                <TextBlock Text="{Binding CharacterName}" Padding="4 4 0 5">
+            <StackPanel DockPanel.Dock="Left" Width="150" ContextMenu="{StaticResource PlayerSearchContextMenu}">
+                <TextBlock Text="{Binding CharacterName}" Padding="4 2 0 2">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
-                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="FontSize" Value="18" />
                             <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                            <Setter Property="FontWeight" Value="Medium" />
                             <Setter Property="Effect">
                                 <Setter.Value>
                                     <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
