@@ -1,4 +1,6 @@
-﻿using Heroes.Icons;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Heroes.Icons;
+using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchHistoryModels;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Data;
@@ -15,6 +17,7 @@ namespace HeroesStatTracker.Core.ViewModels.Home
         private IUserProfileService UserProfile;
 
         private DateTime? LatestReplayDateTime;
+        private bool UserBattleTagUpdated;
 
         private ObservableCollection<MatchHistoryMatch> _matchCollection = new ObservableCollection<MatchHistoryMatch>();
 
@@ -24,10 +27,13 @@ namespace HeroesStatTracker.Core.ViewModels.Home
             Database = database;
             UserProfile = userProfile;
 
+            UserBattleTagUpdated = false;
             LatestReplayDateTime = DateTime.MinValue;
 
             InitialMatchHistoryLoad();
             InitDynamicMatchLoading();
+
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public ObservableCollection<MatchHistoryMatch> MatchCollection
@@ -84,6 +90,22 @@ namespace HeroesStatTracker.Core.ViewModels.Home
                             }
                         }
 
+                        if (UserBattleTagUpdated)
+                        {
+                            // update the current matches in the match list
+                            for (int i = 0; i < MatchCollection.Count; i++)
+                            {
+                                var updated = new MatchHistoryMatch(Database, HeroesIcons, UserProfile, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(MatchCollection[i].ReplayId));
+
+                                await Application.Current.Dispatcher.InvokeAsync(() =>
+                                {
+                                    MatchCollection[i] = updated;
+                                });
+                            }
+
+                            UserBattleTagUpdated = false;
+                        }
+
                         await Task.Delay(2000);
                     }
                 }
@@ -92,6 +114,14 @@ namespace HeroesStatTracker.Core.ViewModels.Home
                     ExceptionLog.Log(NLog.LogLevel.Error, ex, "Match History Loading error");
                 }
             });
+        }
+
+        private void ReceivedMessage(NotificationMessage message)
+        {
+            if (message.Notification == StaticMessage.UpdateUserBattleTag)
+            {
+                UserBattleTagUpdated = true;
+            }
         }
     }
 }

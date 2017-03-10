@@ -16,7 +16,7 @@ namespace Heroes.Helpers.Tests
         public void NameFromBattleTagNameTest()
         {
             Assert.AreEqual("name", HeroesHelpers.BattleTags.GetNameFromBattleTagName("name#1234"));
-            Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName("name"));
+            Assert.AreEqual("name", HeroesHelpers.BattleTags.GetNameFromBattleTagName("name"));
             Assert.AreEqual("name", HeroesHelpers.BattleTags.GetNameFromBattleTagName("name#"));
             Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName("#456"));
             Assert.AreEqual(null, HeroesHelpers.BattleTags.GetNameFromBattleTagName(string.Empty));

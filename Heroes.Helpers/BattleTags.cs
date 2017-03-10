@@ -16,12 +16,15 @@ namespace Heroes.Helpers
 
             public static string GetNameFromBattleTagName(string battleTagName)
             {
-                if (!battleTagName.Contains("#"))
+                if (string.IsNullOrEmpty(battleTagName))
                     return null;
+
+                if (!battleTagName.Contains("#"))
+                    return battleTagName;
 
                 string name = battleTagName.Substring(0, battleTagName.IndexOf('#'));
 
-                if (string.IsNullOrEmpty(name))
+                if (string.IsNullOrEmpty(name.Trim()))
                     return null;
                 else
                     return name;

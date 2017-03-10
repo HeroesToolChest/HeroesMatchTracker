@@ -50,7 +50,8 @@ namespace HeroesStatTracker.Core.ViewModels
 
         private void SetUser()
         {
-            if (string.IsNullOrEmpty(UserBattleTag) || string.IsNullOrWhiteSpace(UserBattleTag) || string.IsNullOrEmpty(SelectedRegion))
+            UserBattleTag = UserBattleTag.Trim();
+            if (string.IsNullOrEmpty(SelectedRegion))
                 return;
 
             UserProfile.SetProfile(_userBattleTag, _userRegion);

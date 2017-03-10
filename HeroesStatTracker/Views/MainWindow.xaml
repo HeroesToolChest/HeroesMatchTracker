@@ -15,7 +15,8 @@
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1"
                       Title="{Binding AppVersion, StringFormat=Heroes Stat Tracker - {0}}"
-                      MinHeight="768" MinWidth="1024">
+                      MinHeight="768" MinWidth="1024"
+                      d:DesignHeight="1080" d:DesignWidth="1920">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
         <system:Double x:Key="TabControlFontSize">18</system:Double>
@@ -75,19 +76,27 @@
 
             <StatusBarItem />
         </StatusBar>
-        <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}">
-            <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                <home:HomeControl />
-            </TabItem>
-            <TabItem Header="Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                <matches:MatchesControl />
-            </TabItem>
-            <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                <replays:ReplaysControl />
-            </TabItem>
-            <TabItem Header="Raw Data Tables" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                <rawData:RawDataControl />
-            </TabItem>
-        </TabControl>
+        <Grid>
+            <controls:DropDownButton Content="{Binding UserBattleTag}" MinWidth="180" FontSize="16" BorderBrush="Transparent" Padding="0 0 8 0"
+                                     HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" Panel.ZIndex="1000">
+                <controls:DropDownButton.Items>
+                    <MenuItem Header="Profile" Command="{Binding UserDropDownProfileCommand}" />
+                </controls:DropDownButton.Items>
+            </controls:DropDownButton>
+            <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" Panel.ZIndex="999">
+                <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                    <home:HomeControl />
+                </TabItem>
+                <TabItem Header="Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                    <matches:MatchesControl />
+                </TabItem>
+                <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                    <replays:ReplaysControl />
+                </TabItem>
+                <TabItem Header="Raw Data Tables" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                    <rawData:RawDataControl />
+                </TabItem>
+            </TabControl>
+        </Grid>
     </DockPanel>
 </controls:MetroWindow>

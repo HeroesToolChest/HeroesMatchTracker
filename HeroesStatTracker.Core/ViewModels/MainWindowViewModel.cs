@@ -1,4 +1,3 @@
-using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
@@ -46,18 +45,8 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
 
-        public bool MatchSummaryIsOpen
-        {
-            get { return _matchSummaryIsOpen; }
-            set
-            {
-                _matchSummaryIsOpen = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(OpenWhatsNewWindow);
-        public RelayCommand OpenProfileCommand => new RelayCommand(OpenProfile);
+        public RelayCommand UserDropDownProfileCommand => new RelayCommand(UserDropDownProfile);
 
         public IWhatsNewWindowService WhatsNewWindow
         {
@@ -69,9 +58,19 @@ namespace HeroesStatTracker.Core.ViewModels
             get { return ServiceLocator.Current.GetInstance<IProfileWindowService>(); }
         }
 
+        public bool MatchSummaryIsOpen
+        {
+            get => _matchSummaryIsOpen;
+            set
+            {
+                _matchSummaryIsOpen = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string UserBattleTag
         {
-            get { return UserProfile.BattleTagName; }
+            get => UserProfile.BattleTagName;
             set
             {
                 RaisePropertyChanged();
@@ -80,7 +79,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string MatchSummaryHeader
         {
-            get { return _matchSummaryHeader; }
+            get => _matchSummaryHeader;
             set
             {
                 _matchSummaryHeader = value;
@@ -90,7 +89,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string ApplicationStatus
         {
-            get { return _applicationStatus; }
+            get => _applicationStatus;
             set
             {
                 _applicationStatus = value;
@@ -100,7 +99,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public long TotalParsedReplays
         {
-            get { return _totalParsedReplays; }
+            get => _totalParsedReplays;
             set
             {
                 _totalParsedReplays = value;
@@ -110,7 +109,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string ParserStatus
         {
-            get { return _parserStatus; }
+            get => _parserStatus;
             set
             {
                 _parserStatus = value;
@@ -120,7 +119,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string ParserWatchStatus
         {
-            get { return _parserWatchStatus; }
+            get => _parserWatchStatus;
             set
             {
                 _parserWatchStatus = value;
@@ -130,7 +129,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public string HotsLogsStatus
         {
-            get { return _hotsLogsStatus; }
+            get => _hotsLogsStatus;
             set
             {
                 _hotsLogsStatus = value;
@@ -140,7 +139,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public int SelectedMainTab
         {
-            get { return _selectedMainTab; }
+            get => _selectedMainTab;
             set
             {
                 _selectedMainTab = value;
@@ -213,7 +212,7 @@ namespace HeroesStatTracker.Core.ViewModels
             WhatsNewWindow.CreateWhatsNewWindow();
         }
 
-        private void OpenProfile()
+        private void UserDropDownProfile()
         {
             ProfileWindow.CreateProfileWindow();
         }

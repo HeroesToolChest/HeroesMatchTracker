@@ -7,7 +7,8 @@
             <Style TargetType="TextBlock">
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="TextAlignment" Value="Left" />
-                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
             </Style>
         </Style.Resources>
     </Style>
@@ -37,7 +38,7 @@
                                 <TextBlock Text="{Binding GameMode}" Width="140" />
                                 <StackPanel Orientation="Horizontal" Width="160">
                                     <Image Source="{Binding UserHeroImage}" RenderOptions.BitmapScalingMode="HighQuality" Height="40" />
-                                    <TextBlock Text="{Binding UserHero}" FontWeight="SemiBold" Margin="8 0 0 0" />
+                                    <TextBlock Text="{Binding UserHero}" FontWeight="Bold" Margin="8 0 0 0" />
                                 </StackPanel>
                                 <TextBlock Text="{Binding MapName}" TextAlignment="Center" Width="200" />
                                 <TextBlock Text="{Binding WinnerResult}" Width="140">
@@ -45,7 +46,8 @@
                                         <Style TargetType="TextBlock">
                                             <Setter Property="VerticalAlignment" Value="Center" />
                                             <Setter Property="TextAlignment" Value="Center" />
-                                            <Setter Property="FontWeight" Value="SemiBold" />
+                                            <Setter Property="FontWeight" Value="Bold" />
+                                            <Setter Property="FontSize" Value="16" />
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding WinnerResult}" Value="Win">
                                                     <Setter Property="Foreground" Value="{StaticResource DefaultBlueBrush}" />

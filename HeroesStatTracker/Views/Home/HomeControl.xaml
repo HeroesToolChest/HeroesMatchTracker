@@ -21,13 +21,13 @@
     </UserControl.Resources>
     <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="950"></ColumnDefinition>
+            <ColumnDefinition MinWidth="950"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" Grid.ColumnSpan="2" />
-        <DockPanel Margin="12" Background="{StaticResource DefaultBackgroundBrush}" Width="950" HorizontalAlignment="Left">
+        <DockPanel Margin="12" Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                <StackPanel Margin="20">
+                <StackPanel Margin="20" Width="850">
                     <ItemsControl ItemsSource="{Binding MatchCollection}" Style="{StaticResource MatchHistoryMatchItemsControl}" />
                 </StackPanel>
             </ScrollViewer>

@@ -4,30 +4,19 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:validation="clr-namespace:HeroesStatTracker.Core.Validation;assembly=HeroesStatTracker.Core"
                       mc:Ignorable="d"
         DataContext="{Binding ProfileWindowViewModel, Source={StaticResource Locator}}"
         WindowStartupLocation="CenterScreen"
         GlowBrush="{DynamicResource AccentColorBrush}"
         BorderThickness="1"
-        TextElement.FontWeight="Medium"
-        TextElement.FontSize="14"
         Title="Profile" Height="300" Width="560">
     <Grid Margin="8">
         <StackPanel >
             <TextBlock Text="Enter your BattleTag to enable more features" />
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="200" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                    <TextBox.Text>
-                        <Binding Path="UserBattleTag" UpdateSourceTrigger="PropertyChanged">
-                            <Binding.ValidationRules>
-                                <validation:NotEmptyValidation ValidatesOnTargetUpdated="True" />
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
+                <TextBox Width="200" Text="{Binding UserBattleTag}" HorizontalAlignment="Left" controls:TextBoxHelper.Watermark="BattleTag#0000" />
                 <ComboBox ItemsSource="{Binding RegionsList}" SelectedItem="{Binding SelectedRegion}" Margin="8 0 0 0" Width="64" />
-                <Button Command="{Binding SetUserCommand}" Content="SET" Width="100" Margin="16 0 0 0" />
+                <Button Command="{Binding SetUserCommand}" Content="Set" Width="100" Margin="16 0 0 0" />
             </StackPanel>
             <TextBlock Text="{Binding ResultText}" Foreground="Red"/>
         </StackPanel>

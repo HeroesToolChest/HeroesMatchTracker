@@ -247,19 +247,23 @@ namespace HeroesStatTracker.Data.Queries.Replays
             // add known talents
             for (int j = 0; j < talents.Count(); j++)
             {
-                talentArray[j] = new Talent();
-                talentArray[j].TalentID = talents[j].TalentID;
-                talentArray[j].TalentName = talents[j].TalentName;
-                talentArray[j].TimeSpanSelected = talents[j].TimeSpanSelected;
+                talentArray[j] = new Talent()
+                {
+                    TalentID = talents[j].TalentID,
+                    TalentName = talents[j].TalentName,
+                    TimeSpanSelected = talents[j].TimeSpanSelected,
+                };
             }
 
             // make the rest null
             for (int j = talents.Count(); j < 7; j++)
             {
-                talentArray[j] = new Talent();
-                talentArray[j].TalentID = null;
-                talentArray[j].TalentName = null;
-                talentArray[j].TimeSpanSelected = null;
+                talentArray[j] = new Talent()
+                {
+                    TalentID = null,
+                    TalentName = null,
+                    TimeSpanSelected = null,
+                };
             }
 
             ReplayMatchPlayerTalent replayTalent = new ReplayMatchPlayerTalent
