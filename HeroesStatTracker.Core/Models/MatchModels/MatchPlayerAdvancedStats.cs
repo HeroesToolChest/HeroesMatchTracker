@@ -1,7 +1,5 @@
 ﻿using Heroes.Helpers;
-using Heroes.Icons;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Data;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Data.Models.Replays;
 using System;
 
@@ -13,8 +11,8 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             : base(matchPlayerStats)
         { }
 
-        public MatchPlayerAdvancedStats(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatchPlayer player)
-            : base(database, heroesIcons, userProfile, player)
+        public MatchPlayerAdvancedStats(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
+            : base(internalService, website, player)
         { }
 
         public string PlayerNameOnly { get; private set; }

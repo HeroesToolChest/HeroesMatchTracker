@@ -2,6 +2,7 @@
 using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -16,16 +17,21 @@ namespace HeroesStatTracker.Core.Models.MatchHistoryModels
 {
     public class MatchHistoryMatch
     {
+        private IInternalService InternalService;
         private IDatabaseService Database;
         private IHeroesIconsService HeroesIcons;
         private IUserProfileService UserProfile;
+        private IWebsiteService Website;
         private ReplayMatch ReplayMatch;
 
-        public MatchHistoryMatch(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatch replayMatch)
+        public MatchHistoryMatch(IInternalService internalService, IWebsiteService website, ReplayMatch replayMatch)
         {
-            Database = database;
-            HeroesIcons = heroesIcons;
-            UserProfile = userProfile;
+            InternalService = internalService;
+            Database = internalService.Database;
+            HeroesIcons = internalService.HeroesIcons;
+            UserProfile = internalService.UserProfile;
+            Website = website;
+
             ReplayMatch = replayMatch;
 
             SetMatch();
@@ -34,7 +40,6 @@ namespace HeroesStatTracker.Core.Models.MatchHistoryModels
         public List<MatchPlayerBase> MatchOverviewTeam1List { get; private set; } = new List<MatchPlayerBase>();
         public List<MatchPlayerBase> MatchOverviewTeam2List { get; private set; } = new List<MatchPlayerBase>();
 
-        public bool IsExpanded { get; set; }
         public string GameMode { get; private set; }
         public string MapName { get; private set; }
         public BitmapImage UserHeroImage { get; private set; }
@@ -45,15 +50,8 @@ namespace HeroesStatTracker.Core.Models.MatchHistoryModels
         public int? Build { get; private set; }
         public long ReplayId { get; private set; }
 
-        public IMatchSummaryFlyoutService MatchSummaryFlyout
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>(); }
-        }
-
-        public IMatchSummaryReplayService MatchSummaryReplay
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>(); }
-        }
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
+        public IMatchSummaryReplayService MatchSummaryReplay => ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>();
 
         public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
 
@@ -83,7 +81,7 @@ namespace HeroesStatTracker.Core.Models.MatchHistoryModels
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, UserProfile, player);
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 // add to collection

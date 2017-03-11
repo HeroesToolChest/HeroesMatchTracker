@@ -154,6 +154,9 @@
       <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -198,7 +201,9 @@
     <Compile Include="Generic\MatchesTab.cs" />
     <Compile Include="Generic\ReplayParserStatus.cs" />
     <Compile Include="Generic\ReplayParserWatchStatus.cs" />
+    <Compile Include="HotsLogs\HotsLogsSite.cs" />
     <Compile Include="HotsLogs\HotsLogsUploader.cs" />
+    <Compile Include="HotsLogs\IHotsLogsService.cs" />
     <Compile Include="HotsLogs\MaintenanceException.cs" />
     <Compile Include="HotsLogs\ReplayFileHotsLogsStatus.cs" />
     <Compile Include="Generic\LogFileNames.cs" />
@@ -226,6 +231,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Services\IInternalService.cs" />
+    <Compile Include="Services\InternalService.cs" />
+    <Compile Include="Services\IWebsiteService.cs" />
+    <Compile Include="Services\Website.cs" />
     <Compile Include="User\IUserProfileService.cs" />
     <Compile Include="User\UserProfile.cs" />
     <Compile Include="Validation\NotEmptyValidation.cs" />

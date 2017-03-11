@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchHistoryModels;assembly=HeroesStatTracker.Core">
+                    xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchHistoryModels;assembly=HeroesStatTracker.Core"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
 
     <Style x:Key="MatchHeaderTemplate">
         <Style.Resources>
@@ -26,6 +28,11 @@
         <StackPanel Margin="0 0 0 8">
             <Border BorderBrush="{StaticResource DefaultBackgroundBrush}"  BorderThickness="1">
                 <Expander Header="{Binding}" IsExpanded="{Binding IsExpanded}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Expanded">
+                            <mvvm:EventToCommand Command="{Binding PlayerSiteLinksCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <Expander.Background>
                         <SolidColorBrush Color="{StaticResource DefaultBackgroundColor}"/>
                     </Expander.Background>

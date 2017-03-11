@@ -2,10 +2,10 @@
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
-using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.GraphSummaryModels;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -48,14 +48,18 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
+        private IInternalService InternalService;
         private IDatabaseService Database;
         private IUserProfileService UserProfile;
+        private IWebsiteService Website;
 
-        public MatchSummaryViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile)
-            : base(heroesIcons)
+        public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website)
+            : base(internalService.HeroesIcons)
         {
-            Database = database;
-            UserProfile = userProfile;
+            InternalService = internalService;
+            Database = internalService.Database;
+            UserProfile = internalService.UserProfile;
+            Website = website;
 
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
@@ -411,7 +415,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                     MatchPlayerStats matchPlayerStats;
                     MatchPlayerAdvancedStats matchPlayerAdvancedStats;
 
-                    matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, UserProfile, player);
+                    matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
                     matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                     if (player.Character != "None")

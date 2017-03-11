@@ -1,12 +1,13 @@
 using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
+using HeroesStatTracker.Core.HotsLogs;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewModels.Home;
 using HeroesStatTracker.Core.ViewModels.Matches;
 using HeroesStatTracker.Core.ViewModels.RawData;
 using HeroesStatTracker.Core.ViewModels.Replays;
 using HeroesStatTracker.Core.ViewModels.TitleBar;
-using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using HeroesStatTracker.Data.Queries.Replays;
@@ -37,6 +38,9 @@ namespace HeroesStatTracker.Core.ViewModels
             });
 
             SimpleIoc.Default.Register<IUserProfileService, UserProfile>();
+            SimpleIoc.Default.Register<IHotsLogsService, HotsLogsSite>();
+            SimpleIoc.Default.Register<IWebsiteService, Website>();
+            SimpleIoc.Default.Register<IInternalService, InternalService>();
 
             // start ups
             SimpleIoc.Default.Register<MainWindowViewModel>();

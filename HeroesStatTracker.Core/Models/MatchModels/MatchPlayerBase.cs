@@ -3,25 +3,32 @@ using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using HeroesStatTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using static Heroes.Helpers.HeroesHelpers.Regions;
 
 namespace HeroesStatTracker.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {
-        public MatchPlayerBase(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatchPlayer player)
+        private Logger WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
+
+        public MatchPlayerBase(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
         {
-            Database = database;
-            HeroesIcons = heroesIcons;
-            UserProfile = userProfile;
+            Database = internalService.Database;
+            HeroesIcons = internalService.HeroesIcons;
+            UserProfile = internalService.UserProfile;
+            Website = website;
             Player = player;
         }
 
@@ -35,26 +42,28 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             MvpAward = matchPlayerBase.MvpAward;
             PartyIcon = matchPlayerBase.PartyIcon;
             PlayerName = matchPlayerBase.PlayerName;
+            PlayerBattleTagName = matchPlayerBase.PlayerBattleTagName;
             CharacterName = matchPlayerBase.CharacterName;
             CharacterTooltip = matchPlayerBase.CharacterTooltip;
             CharacterLevel = matchPlayerBase.CharacterLevel;
             MvpAwardDescription = matchPlayerBase.MvpAwardDescription;
             Silenced = matchPlayerBase.Silenced;
             IsUserPlayer = matchPlayerBase.IsUserPlayer;
+            PlayerRegion = matchPlayerBase.PlayerRegion;
         }
 
-        public RelayCommand ShowHotsLogsPlayerProfileCommand => new RelayCommand(ShowHotsLogsPlayerProfile);
-
-        public BitmapImage LeaderboardPortrait { get; private set; }
-        public BitmapImage MvpAward { get; private set; }
-        public BitmapImage PartyIcon { get; private set; }
+        public bool Silenced { get; private set; }
+        public bool IsUserPlayer { get; private set; }
         public string PlayerName { get; private set; }
+        public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
         public string CharacterTooltip { get; private set; }
         public string CharacterLevel { get; private set; }
         public string MvpAwardDescription { get; private set; }
-        public bool Silenced { get; private set; }
-        public bool IsUserPlayer { get; private set; }
+        public Region PlayerRegion { get; private set; }
+        public BitmapImage LeaderboardPortrait { get; private set; }
+        public BitmapImage MvpAward { get; private set; }
+        public BitmapImage PartyIcon { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
         public RelayCommand HeroSearchQuickMatchCommand => new RelayCommand(HeroSearchQuickMatch);
@@ -63,7 +72,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public RelayCommand HeroSearchTeamLeagueCommand => new RelayCommand(HeroSearchTeamLeague);
         public RelayCommand HeroSearchBrawlCommand => new RelayCommand(HeroSearchBrawl);
         public RelayCommand HeroSearchCustomGameCommand => new RelayCommand(HeroSearchCustomGame);
-
         public RelayCommand PlayerSearchAllMatchCommand => new RelayCommand(PlayerSearchAllMatch);
         public RelayCommand PlayerSearchQuickMatchCommand => new RelayCommand(PlayerSearchQuickMatch);
         public RelayCommand PlayerSearchUnrankedDraftCommand => new RelayCommand(PlayerSearchUnrankedDraft);
@@ -71,7 +79,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public RelayCommand PlayerSearchTeamLeagueCommand => new RelayCommand(PlayerSearchTeamLeague);
         public RelayCommand PlayerSearchBrawlCommand => new RelayCommand(PlayerSearchBrawl);
         public RelayCommand PlayerSearchCustomGameCommand => new RelayCommand(PlayerSearchCustomGame);
-
         public RelayCommand PlayerAndHeroSearchAllMatchCommand => new RelayCommand(PlayerAndHeroSearchAllMatch);
         public RelayCommand PlayerAndHeroSearchQuickMatchCommand => new RelayCommand(PlayerAndHeroSearchQuickMatch);
         public RelayCommand PlayerAndHeroSearchUnrankedDraftCommand => new RelayCommand(PlayerAndHeroSearchUnrankedDraft);
@@ -79,34 +86,19 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public RelayCommand PlayerAndHeroSearchTeamLeagueCommand => new RelayCommand(PlayerAndHeroSearchTeamLeague);
         public RelayCommand PlayerAndHeroSearchBrawlCommand => new RelayCommand(PlayerAndHeroSearchBrawl);
         public RelayCommand PlayerAndHeroSearchCustomGameCommand => new RelayCommand(PlayerAndHeroSearchCustomGame);
-
         public RelayCommand CopyHeroNameToClipboardCommand => new RelayCommand(CopyHeroNameToClipboard);
         public RelayCommand CopyPlayerNameToClipboardCommand => new RelayCommand(CopyPlayerNameToClipboard);
         public RelayCommand CopyHeroAndPlayerNameToClipboardCommand => new RelayCommand(CopyHeroAndPlayerNameToClipboard);
 
-        public IBrowserWindowService BrowserWindow
-        {
-            get { return ServiceLocator.Current.GetInstance<IBrowserWindowService>(); }
-        }
-
-        public IMainTabService MainTabs
-        {
-            get { return ServiceLocator.Current.GetInstance<IMainTabService>(); }
-        }
-
-        public IMatchesTabService MatchesTab
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchesTabService>(); }
-        }
-
-        public IMatchSummaryFlyoutService MatchSummaryFlyout
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>(); }
-        }
+        public IBrowserWindowService BrowserWindow => ServiceLocator.Current.GetInstance<IBrowserWindowService>();
+        public IMainTabService MainTabs => ServiceLocator.Current.GetInstance<IMainTabService>();
+        public IMatchesTabService MatchesTab => ServiceLocator.Current.GetInstance<IMatchesTabService>();
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
 
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
         protected IUserProfileService UserProfile { get; }
+        protected IWebsiteService Website { get; }
         protected ReplayMatchPlayer Player { get; }
 
         public void SetPlayerInfo(bool isAutoSelect, Dictionary<int, PartyIconColor> playerPartyIcons, Dictionary<long, string> matchAwardDictionary)
@@ -119,6 +111,8 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             CharacterName = Player.Character;
 
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
+            PlayerBattleTagName = playerInfo.BattleTagName;
+            PlayerRegion = (Region)playerInfo.BattleNetRegionId;
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
 
             if (Player.Team == 4)
@@ -157,11 +151,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
 
             MvpAward = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(awardType, teamColor, out string mvpAwardName);
             MvpAwardDescription = $"{mvpAwardName}{Environment.NewLine}{HeroesIcons.MatchAwards().GetMatchAwardDescription(awardType)}";
-        }
-
-        private void ShowHotsLogsPlayerProfile()
-        {
-            BrowserWindow.CreateBrowserWindow();
         }
 
         private void HeroSearchAllMatch()

@@ -3,6 +3,7 @@ using Amazon.S3.Model;
 using Heroes.Helpers;
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using static Heroes.ReplayParser.DataParser;
 
@@ -28,9 +29,9 @@ namespace HeroesStatTracker.Core.HotsLogs
             if (response.HttpStatusCode != HttpStatusCode.OK)
                 throw new Exception("Failed to upload");
 
-            using (WebClient webClient = new WebClient())
+            using (HttpClient httpClient = new HttpClient())
             {
-                string result = webClient.DownloadString("https://www.hotslogs.com/UploadFile?FileName=" + fileGuidName);
+                string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}");
 
                 if (result == "Maintenance")
                     throw new MaintenanceException("Maintenance");

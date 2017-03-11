@@ -1,6 +1,7 @@
 ﻿<controls:MetroWindow x:Class="HeroesStatTracker.Views.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -47,16 +48,19 @@
             </Button>-->
             <Button x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconMaterial Kind="InformationOutline" />
                     <TextBlock Margin="4 0 0 0" Text="About"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
                 <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconMaterial Kind="Settings" />
                     <TextBlock Margin="4 0 0 0" Text="Settings"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenWhatsNewWindowCommand}">
                 <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconMaterial Kind="NoteOutline" />
                     <TextBlock Margin="4 0 0 0" Text="What's New"/>
                 </StackPanel>
             </Button>

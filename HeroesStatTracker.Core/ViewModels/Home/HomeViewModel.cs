@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using Heroes.Icons;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchHistoryModels;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Data;
 using System;
@@ -13,19 +13,23 @@ namespace HeroesStatTracker.Core.ViewModels.Home
 {
     public class HomeViewModel : HstViewModel
     {
+        private IInternalService InternalService;
         private IDatabaseService Database;
         private IUserProfileService UserProfile;
+        private IWebsiteService Website;
 
         private DateTime? LatestReplayDateTime;
         private bool UserBattleTagUpdated;
 
         private ObservableCollection<MatchHistoryMatch> _matchCollection = new ObservableCollection<MatchHistoryMatch>();
 
-        public HomeViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile)
-            : base(heroesIcons)
+        public HomeViewModel(IInternalService internalService, IWebsiteService website)
+            : base(internalService.HeroesIcons)
         {
-            Database = database;
-            UserProfile = userProfile;
+            InternalService = internalService;
+            Database = internalService.Database;
+            UserProfile = internalService.UserProfile;
+            Website = website;
 
             UserBattleTagUpdated = false;
             LatestReplayDateTime = DateTime.MinValue;
@@ -52,7 +56,7 @@ namespace HeroesStatTracker.Core.ViewModels.Home
 
             foreach (var replay in replays)
             {
-                MatchHistoryMatch match = new MatchHistoryMatch(Database, HeroesIcons, UserProfile, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
+                MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
 
                 MatchCollection.Add(match);
             }
@@ -77,7 +81,7 @@ namespace HeroesStatTracker.Core.ViewModels.Home
 
                             foreach (var replay in replays)
                             {
-                                MatchHistoryMatch match = new MatchHistoryMatch(Database, HeroesIcons, UserProfile, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
+                                MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
                                 LatestReplayDateTime = replay.TimeStamp;
 
                                 await Application.Current.Dispatcher.InvokeAsync(() =>
@@ -95,7 +99,7 @@ namespace HeroesStatTracker.Core.ViewModels.Home
                             // update the current matches in the match list
                             for (int i = 0; i < MatchCollection.Count; i++)
                             {
-                                var updated = new MatchHistoryMatch(Database, HeroesIcons, UserProfile, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(MatchCollection[i].ReplayId));
+                                var updated = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(MatchCollection[i].ReplayId));
 
                                 await Application.Current.Dispatcher.InvokeAsync(() =>
                                 {

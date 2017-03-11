@@ -1,10 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
-using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.Models.MatchModels;
+using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Core.User;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
@@ -33,8 +33,10 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
         private string _team2OverviewHeader;
         private ReplayMatch _selectedReplay;
 
+        private IInternalService InternalService;
         private IDatabaseService Database;
         private IUserProfileService UserProfile;
+        private IWebsiteService Website;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
@@ -42,11 +44,13 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
 
         private GameMode MatchGameMode;
 
-        public MatchesBase(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, GameMode matchGameMode)
-            : base(heroesIcons)
+        public MatchesBase(IInternalService internalService, IWebsiteService website, GameMode matchGameMode)
+            : base(internalService.HeroesIcons)
         {
-            Database = database;
-            UserProfile = userProfile;
+            InternalService = internalService;
+            Database = internalService.Database;
+            UserProfile = internalService.UserProfile;
+            Website = website;
 
             MatchGameMode = matchGameMode;
 
@@ -319,7 +323,7 @@ namespace HeroesStatTracker.Core.ViewModels.Matches
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(Database, HeroesIcons, UserProfile, player);
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 // add to collection

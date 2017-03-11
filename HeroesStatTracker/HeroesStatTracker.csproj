@@ -120,6 +120,9 @@
       <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=1.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.1.7.1\lib\net46\MahApps.Metro.IconPacks.Material.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -564,6 +567,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
+      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
+      <Name>Heroes.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
       <Project>{4168D60D-D0EB-40A2-9304-D38F14106A48}</Project>
       <Name>Heroes.Icons</Name>

@@ -10,11 +10,13 @@
     <!--User Colors (green)-->
     <Color x:Key="RowUserSideColor">#8BFD63</Color>
     <Color x:Key="UserCharacterNameColor">#DDFFCF</Color>
-
+    <Color x:Key="UserPlayerNameHighlightColor">#D5F2C0</Color>
+    
     <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" options:Freeze="True" />
     <SolidColorBrush x:Key="RowUserBorderBrush" Color="#77A137" options:Freeze="True" />
     <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" options:Freeze="True" />
     <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#B1E789" options:Freeze="True" />
+    <SolidColorBrush x:Key="UserPlayerNameHighlightBrush" Color="{StaticResource UserPlayerNameHighlightColor}" options:Freeze="True" />
     
     <LinearGradientBrush x:Key="RowUserOverlayBrush"  Opacity="0.5"  StartPoint="0,0" EndPoint="0, 1">
         <LinearGradientBrush.GradientStops>

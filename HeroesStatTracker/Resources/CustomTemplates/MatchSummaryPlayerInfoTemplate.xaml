@@ -46,10 +46,6 @@
                                 <Setter Property="FontSize" Value="12" />
                                 <Setter Property="Foreground" Value="{DynamicResource PlayerNameBrush}" />
                                 <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Cursor" Value="Hand" />
-                                        <Setter Property="Foreground" Value="{DynamicResource PlayerNameHighlightBrush}" />
-                                    </Trigger>
                                     <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
                                         <Setter Property="Foreground" Value="{StaticResource UserPlayerNameBrush}" />
                                     </DataTrigger>
@@ -60,18 +56,6 @@
                             <MouseBinding Command="{Binding ShowHotsLogsPlayerProfileCommand}" MouseAction="LeftClick" />
                         </TextBlock.InputBindings>
                     </TextBlock>
-                    <!--<materialDesign:PackIcon Kind="LinkVariant" Height="14" Width="14" Margin="4 0 0 0">
-                        <materialDesign:PackIcon.Style>
-                            <Style TargetType="materialDesign:PackIcon">
-                                <Setter Property="Foreground" Value="{DynamicResource PlayerNameBrush}" />
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
-                                        <Setter Property="Foreground" Value="{StaticResource UserPlayerNameBrush}" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </materialDesign:PackIcon.Style>
-                    </materialDesign:PackIcon>-->
                 </StackPanel>
             </StackPanel>
             <StackPanel DockPanel.Dock="Left">

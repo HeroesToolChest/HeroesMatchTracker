@@ -1,6 +1,4 @@
-﻿using Heroes.Icons;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Data;
+﻿using HeroesStatTracker.Core.Services;
 using HeroesStatTracker.Data.Models.Replays;
 
 namespace HeroesStatTracker.Core.Models.MatchModels
@@ -11,8 +9,8 @@ namespace HeroesStatTracker.Core.Models.MatchModels
             : base(matchPlayerBase)
         { }
 
-        public MatchObserver(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, ReplayMatchPlayer player)
-            : base(database, heroesIcons, userProfile, player)
+        public MatchObserver(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
+            : base(internalService, website, player)
         { }
     }
 }
