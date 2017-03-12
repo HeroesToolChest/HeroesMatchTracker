@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Rules for HeroesStatTracker" Description="Code analysis rules for HeroesStatTracker" ToolsVersion="14.0">
+<RuleSet Name="Rules for Heroes Match Data" Description="Code analysis rules for Heroes Match Data" ToolsVersion="15.0">
   <IncludeAll Action="Warning" />
   <Rules AnalyzerId="AWSSDK.S3.CodeAnalysis" RuleNamespace="AWSSDK.S3.CodeAnalysis">
     <Rule Id="S31000" Action="None" />

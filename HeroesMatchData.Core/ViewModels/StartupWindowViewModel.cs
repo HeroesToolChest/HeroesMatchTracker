@@ -68,7 +68,7 @@ namespace HeroesMatchData.Core.ViewModels
 
                 await ApplicationUpdater();
 
-                await Message("Initializing Heroes Stat Tracker");
+                await Message("Initializing Heroes Match Data");
                 StartupWindowService.CreateMainWindow(); // create the main application window
             }
             catch (Exception ex)
