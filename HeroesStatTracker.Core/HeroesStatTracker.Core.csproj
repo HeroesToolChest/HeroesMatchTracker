@@ -20,9 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,9 +30,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -51,8 +49,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -75,12 +72,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.3.7.1\lib\net45\AWSSDK.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\AWSSDK.Core.3.3.8.2\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.S3.3.3.5.2\lib\net45\AWSSDK.S3.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\AWSSDK.S3.3.3.5.7\lib\net45\AWSSDK.S3.dll</HintPath>
     </Reference>
     <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
       <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
@@ -111,8 +106,7 @@
       <HintPath>..\HeroesStatTracker.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.3.5, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.3.5\lib\net45\LiveCharts.dll</HintPath>
@@ -158,12 +152,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\NuGet.Squirrel.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\NuGet.Squirrel.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -171,9 +163,8 @@
       <HintPath>..\packages\Splat.2.0.0\lib\Net45\Splat.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Squirrel, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\squirrel.windows.1.4.4\lib\Net45\Squirrel.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Squirrel, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\Squirrel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -235,6 +226,8 @@
     <Compile Include="Services\InternalService.cs" />
     <Compile Include="Services\IWebsiteService.cs" />
     <Compile Include="Services\Website.cs" />
+    <Compile Include="Updater\AutoUpdater.cs" />
+    <Compile Include="Updater\AutoUpdaterException.cs" />
     <Compile Include="User\IUserProfileService.cs" />
     <Compile Include="User\UserProfile.cs" />
     <Compile Include="Validation\NotEmptyValidation.cs" />
@@ -301,7 +294,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="app.config" />
+    <Resource Include="App.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -312,7 +305,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.S3.3.3.5.2\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.S3.3.3.5.7\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />

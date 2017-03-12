@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using HeroesStatTracker.Core.Updater;
 using HeroesStatTracker.Core.ViewServices;
 using HeroesStatTracker.Data;
 using Microsoft.Practices.ServiceLocation;
@@ -17,10 +18,15 @@ namespace HeroesStatTracker.Core.ViewModels
         private string _statusLabel;
         private string _detailedStatusLabel;
 
+        private IDatabaseService Database;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public StartupWindowViewModel() { }
+        public StartupWindowViewModel(IDatabaseService database)
+        {
+            Database = database;
+        }
 
         public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
 
@@ -58,9 +64,9 @@ namespace HeroesStatTracker.Core.ViewModels
                 StatusLabel = "Starting up...";
 
                 await Message("Initializing HeroesStatTracker.Data");
-                Database.Initialize().ExecuteDatabaseMigrations();
+                Data.Database.Initialize().ExecuteDatabaseMigrations();
 
-                // auto update stuff goes here
+                await ApplicationUpdater();
 
                 await Message("Initializing Heroes Stat Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window
@@ -77,6 +83,54 @@ namespace HeroesStatTracker.Core.ViewModels
                 }
 
                 Application.Current.Shutdown();
+            }
+        }
+
+        private async Task ApplicationUpdater()
+        {
+            try
+            {
+                //#if !DEBUG
+                AutoUpdater autoUpdater = new AutoUpdater(Database);
+
+                await Message("Checking for updates...");
+
+                if (!await autoUpdater.CheckForUpdates())
+                {
+                    await Message("Already latest version");
+                    return;
+                }
+
+                if (!Database.SettingsDb().UserSettings.IsAutoUpdates)
+                {
+                    await Message("Update available, auto-update is disabled");
+                    return;
+                }
+
+                await Message("Downloading and applying releases...");
+                if (!await autoUpdater.ApplyReleases())
+                {
+                    await Message("Already latest version");
+                    return;
+                }
+
+                await Message("Retrieving release notes...");
+                // await AutoUpdater.RetrieveReleaseNotes();
+
+                await Message("Copying database to new folder...");
+                // AutoUpdater.CopyDatabaseToLatestRelease();
+
+                await Message("Restarting application...");
+                await Task.Delay(1000);
+
+                autoUpdater.RestartApp();
+                //#endif
+            }
+            catch (AutoUpdaterException ex)
+            {
+                await Message("Could not check for updates or apply releases, check logs");
+                StartupLogFile.Log(LogLevel.Error, ex);
+                await Task.Delay(1000);
             }
         }
 

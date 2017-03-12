@@ -5,5 +5,8 @@
     <Setting Name="HeroesReplayFileType" Type="System.String" Scope="User">
       <Value Profile="(Default)">StormReplay</Value>
     </Setting>
+    <Setting Name="UpdateUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/koliva8245/HeroesParserData</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

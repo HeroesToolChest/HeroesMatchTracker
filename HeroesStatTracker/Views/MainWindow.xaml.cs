@@ -1,7 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using HeroesStatTracker.Browser;
-using HeroesStatTracker.Core;
 using HeroesStatTracker.Core.Messaging;
 using HeroesStatTracker.Core.ViewModels;
 using HeroesStatTracker.Core.ViewServices;
@@ -19,11 +17,10 @@ namespace HeroesStatTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService, IBrowserWindowService
+    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
-        private BrowserWindow BrowserWindow;
 
         public MainWindow()
         {
@@ -36,7 +33,6 @@ namespace HeroesStatTracker.Views
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
             SimpleIoc.Default.Register<IProfileWindowService>(() => this);
-            SimpleIoc.Default.Register<IBrowserWindowService>(() => this);
         }
 
         public void CreateWhatsNewWindow()
@@ -49,14 +45,6 @@ namespace HeroesStatTracker.Views
         {
             ProfileWindow window = new ProfileWindow();
             window.ShowDialog();
-        }
-
-        public void CreateBrowserWindow()
-        {
-            if (BrowserWindow == null)
-                BrowserWindow = new BrowserWindow();
-
-            BrowserWindow.Show();
         }
 
         protected override void OnStateChanged(EventArgs e)

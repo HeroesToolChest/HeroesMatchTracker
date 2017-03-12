@@ -22,8 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,8 +32,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -51,8 +51,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -85,9 +84,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\Heroes.ReplayParser.dll</HintPath>
     </Reference>
-    <Reference Include="SQLite.CodeFirst, Version=1.2.4.16, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.CodeFirst.1.2.4.16\lib\net45\SQLite.CodeFirst.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SQLite.CodeFirst, Version=1.3.0.17, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.CodeFirst.1.3.0.17\lib\net45\SQLite.CodeFirst.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -184,9 +182,9 @@
     <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
+    <Resource Include="App.config">
       <SubType>Designer</SubType>
-    </None>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

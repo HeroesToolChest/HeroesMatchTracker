@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.props')" />
-  <Import Project="..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -20,7 +18,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -29,10 +27,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet />
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,7 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet />
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -65,8 +63,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\HeroesStatTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -127,6 +124,9 @@
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.2.0.0\lib\Net45\Splat.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -167,9 +167,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Browser\BrowserWindow.xaml.cs">
-      <DependentUpon>BrowserWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Home\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
@@ -279,10 +276,6 @@
     <Compile Include="Views\TitleBar\WhatsNewWindow.xaml.cs">
       <DependentUpon>WhatsNewWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Browser\BrowserWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\CustomControls\TabItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -562,9 +555,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
@@ -598,8 +589,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>; Move all assemblies and related files to lib folder
+; http://www.broculos.net/2014/03/visual-studio-build-dlls-to-separate.html#.VyVbn4-cGUk
+ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib logs data ErrorLogs Database Databases Heroes Xml /E /IS /MOVE
+if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -607,17 +600,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2785.1486\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2785.1486\build\cef.redist.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2785.1486\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2785.1486\build\cef.redist.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.targets'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.targets'))" />
   </Target>
-  <Import Project="..\packages\cef.redist.x64.3.2785.1486\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2785.1486\build\cef.redist.x64.targets')" />
-  <Import Project="..\packages\cef.redist.x86.3.2785.1486\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2785.1486\build\cef.redist.x86.targets')" />
-  <Import Project="..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.53.0.1\build\CefSharp.Common.targets')" />
-  <Import Project="..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.53.0.1\build\CefSharp.Wpf.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

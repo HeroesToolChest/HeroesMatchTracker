@@ -1,5 +1,4 @@
-﻿using Heroes.Helpers;
-using System;
+﻿using System;
 using System.IO;
 
 namespace HeroesStatTracker.Data.Queries.Settings
@@ -125,11 +124,13 @@ namespace HeroesStatTracker.Data.Queries.Settings
         }
         #endregion
 
+        #region Auto Updater
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
             set { SetBooleanValue(value); }
         }
+        #endregion Auto Updater
 
         internal void SetDefaultSettings()
         {
@@ -159,7 +160,7 @@ namespace HeroesStatTracker.Data.Queries.Settings
             // Graphs
             IsTeamExperienceRowChartEnabled = true;
 
-            // needs to be organized
+            // AutoUpdater
             IsNewUpdateApplied = false;
         }
     }
