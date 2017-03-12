@@ -41,22 +41,16 @@ namespace HeroesMatchData.Core.ViewModels
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
-        public IDatabaseService GetDatabaseService { get { return Database; } }
+        public IDatabaseService GetDatabaseService => Database;
 
-        public string AppVersion { get { return AssemblyVersions.HeroesMatchDataVersion().ToString(); } }
+        public string AppVersion => AssemblyVersions.HeroesMatchDataVersion().ToString();
 
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(OpenWhatsNewWindow);
         public RelayCommand UserDropDownProfileCommand => new RelayCommand(UserDropDownProfile);
 
-        public IWhatsNewWindowService WhatsNewWindow
-        {
-            get { return ServiceLocator.Current.GetInstance<IWhatsNewWindowService>(); }
-        }
+        public IWhatsNewWindowService WhatsNewWindow => ServiceLocator.Current.GetInstance<IWhatsNewWindowService>();
+        public IProfileWindowService ProfileWindow => ServiceLocator.Current.GetInstance<IProfileWindowService>();
 
-        public IProfileWindowService ProfileWindow
-        {
-            get { return ServiceLocator.Current.GetInstance<IProfileWindowService>(); }
-        }
 
         public bool MatchSummaryIsOpen
         {

@@ -67,7 +67,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public bool IsQueryActive
         {
-            get { return _isQueryActive; }
+            get => _isQueryActive;
             set
             {
                 _isQueryActive = value;
@@ -77,7 +77,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public long RowsReturned
         {
-            get { return _rowsReturned; }
+            get => _rowsReturned;
             set
             {
                 _rowsReturned = value;
@@ -87,7 +87,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string QueryStatus
         {
-            get { return _queryStatus; }
+            get => _queryStatus;
             set
             {
                 _queryStatus = value;
@@ -97,7 +97,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public int SelectedCustomTopCount
         {
-            get { return _selectedCustomTopCount; }
+            get => _selectedCustomTopCount;
             set
             {
                 _selectedCustomTopCount = value;
@@ -107,7 +107,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string SelectedTopColumnName
         {
-            get { return _selectedTopColumnName; }
+            get => _selectedTopColumnName;
             set
             {
                 _selectedTopColumnName = value;
@@ -117,7 +117,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string SelectedTopOrderBy
         {
-            get { return _selectedTopOrderBy; }
+            get => _selectedTopOrderBy;
             set
             {
                 _selectedTopOrderBy = value;
@@ -127,7 +127,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string SelectedWhereColumnName
         {
-            get { return _selectedWhereColumnName; }
+            get => _selectedWhereColumnName;
             set
             {
                 _selectedWhereColumnName = value;
@@ -137,7 +137,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string SelectedWhereOperand
         {
-            get { return _selectedWhereOperand; }
+            get => _selectedWhereOperand;
             set
             {
                 _selectedWhereOperand = value;
@@ -147,7 +147,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public string SelectedWhereTextBoxInput
         {
-            get { return _selectedWhereTextBoxInput; }
+            get => _selectedWhereTextBoxInput;
             set
             {
                 _selectedWhereTextBoxInput = value;
@@ -157,7 +157,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public List<string> ColumnNamesList
         {
-            get { return _columnNamesList; }
+            get => _columnNamesList;
             set
             {
                 _columnNamesList = value;
@@ -167,7 +167,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public List<string> OrderByList
         {
-            get { return _orderByList; }
+            get => _orderByList;
             set
             {
                 _orderByList = value;
@@ -177,7 +177,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public List<string> ConditionalOperandsList
         {
-            get { return _conditionalOperandsList; }
+            get => _conditionalOperandsList;
             set
             {
                 _conditionalOperandsList = value;
@@ -187,7 +187,7 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         public ObservableCollection<T> RawDataCollection
         {
-            get { return _rawDataCollection; }
+            get => _rawDataCollection;
             set
             {
                 _rawDataCollection = value;

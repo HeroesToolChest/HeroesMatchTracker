@@ -34,7 +34,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string StatusLabel
         {
-            get { return _statusLabel; }
+            get => _statusLabel;
             set
             {
                 _statusLabel = value;
@@ -44,7 +44,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string DetailedStatusLabel
         {
-            get { return _detailedStatusLabel; }
+            get => _detailedStatusLabel;
             set
             {
                 _detailedStatusLabel = value;
@@ -52,10 +52,7 @@ namespace HeroesMatchData.Core.ViewModels
             }
         }
 
-        public IMainWindowService StartupWindowService
-        {
-            get { return ServiceLocator.Current.GetInstance<IMainWindowService>(); }
-        }
+        public IMainWindowService StartupWindowService => ServiceLocator.Current.GetInstance<IMainWindowService>();
 
         private async Task ExecuteStartup()
         {

@@ -37,7 +37,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public bool IsTeamExperiencePieChartVisible
         {
-            get { return _isTeamExperiencePieChartVisible; }
+            get => _isTeamExperiencePieChartVisible;
             set
             {
                 _isTeamExperiencePieChartVisible = value;
@@ -47,7 +47,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public bool IsTeamExperienceRowChartVisible
         {
-            get { return _isTeamExperienceRowChartVisible; }
+            get => _isTeamExperienceRowChartVisible;
             set
             {
                 _isTeamExperienceRowChartVisible = value;
@@ -57,7 +57,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public bool ToggleSwitchRowOrPie
         {
-            get { return Database.SettingsDb().UserSettings.IsTeamExperienceRowChartEnabled; }
+            get => Database.SettingsDb().UserSettings.IsTeamExperienceRowChartEnabled;
             set
             {
                 Database.SettingsDb().UserSettings.IsTeamExperienceRowChartEnabled = value;
@@ -78,7 +78,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public double MatchTeamExperienceMaxYValue
         {
-            get { return _matchTeamExperienceMaxYValue; }
+            get => _matchTeamExperienceMaxYValue;
             set
             {
                 _matchTeamExperienceMaxYValue = value;
@@ -88,7 +88,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public SeriesCollection MatchTeam1ExperienceStackedGraphCollection
         {
-            get { return _matchTeam1ExperienceStackedGraphCollection; }
+            get => _matchTeam1ExperienceStackedGraphCollection;
             set
             {
                 _matchTeam1ExperienceStackedGraphCollection = value;
@@ -98,7 +98,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public SeriesCollection MatchTeam2ExperienceStackedGraphCollection
         {
-            get { return _matchTeam2ExperienceStackedGraphCollection; }
+            get => _matchTeam2ExperienceStackedGraphCollection;
             set
             {
                 _matchTeam2ExperienceStackedGraphCollection = value;
@@ -108,7 +108,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public SeriesCollection MatchTeam1ExperiencePieChartCollection
         {
-            get { return _matchTeam1ExperiencePieChartCollection; }
+            get => _matchTeam1ExperiencePieChartCollection;
             set
             {
                 _matchTeam1ExperiencePieChartCollection = value;
@@ -118,7 +118,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public SeriesCollection MatchTeam2ExperiencePieChartCollection
         {
-            get { return _matchTeam2ExperiencePieChartCollection; }
+            get => _matchTeam2ExperiencePieChartCollection;
             set
             {
                 _matchTeam2ExperiencePieChartCollection = value;
@@ -128,7 +128,7 @@ namespace HeroesMatchData.Core.Models.GraphSummaryModels
 
         public SeriesCollection MatchTeamExperienceRowChartCollection
         {
-            get { return _matchTeamExperienceRowChartCollection; }
+            get => _matchTeamExperienceRowChartCollection;
             set
             {
                 _matchTeamExperienceRowChartCollection = value;

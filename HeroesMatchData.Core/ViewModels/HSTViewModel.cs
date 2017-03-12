@@ -25,7 +25,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         public BitmapImage BackgroundImage
         {
-            get { return _backgroundImage; }
+            get => _backgroundImage;
             set
             {
                 _backgroundImage = value;
@@ -40,10 +40,7 @@ namespace HeroesMatchData.Core.ViewModels
         protected Logger TranslationsLog { get; }
         protected Logger HotsLogsLog { get; }
 
-        protected void SetBackgroundImage(string mapRealName)
-        {
-            BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
-        }
+        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
 
         private void SetRandomHomescreenBackgroundImage()
         {

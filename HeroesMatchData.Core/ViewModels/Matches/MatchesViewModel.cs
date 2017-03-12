@@ -16,7 +16,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public int SelectedMatchesTab
         {
-            get { return _selectedMatchesTab; }
+            get => _selectedMatchesTab;
             set
             {
                 _selectedMatchesTab = value;
@@ -24,9 +24,6 @@ namespace HeroesMatchData.Core.ViewModels.Matches
             }
         }
 
-        public void SwitchToTab(MatchesTab selectedMatchesTab)
-        {
-            SelectedMatchesTab = (int)selectedMatchesTab;
-        }
+        public void SwitchToTab(MatchesTab selectedMatchesTab) => SelectedMatchesTab = (int)selectedMatchesTab;
     }
 }

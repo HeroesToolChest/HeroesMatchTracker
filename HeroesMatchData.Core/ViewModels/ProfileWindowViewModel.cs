@@ -25,7 +25,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string UserBattleTag
         {
-            get { return _userBattleTag; }
+            get => _userBattleTag;
             set
             {
                 _userBattleTag = value;
@@ -35,7 +35,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string SelectedRegion
         {
-            get { return ((Region)_userRegion).ToString(); }
+            get => ((Region)_userRegion).ToString();
             set
             {
                 _userRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringtoEnum(value);

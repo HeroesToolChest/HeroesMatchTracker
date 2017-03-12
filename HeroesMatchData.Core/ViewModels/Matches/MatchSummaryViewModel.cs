@@ -85,7 +85,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public int TeamBlueKills
         {
-            get { return _teamBlueKills; }
+            get => _teamBlueKills;
             set
             {
                 _teamBlueKills = value;
@@ -95,7 +95,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public int TeamRedKills
         {
-            get { return _teamRedKills; }
+            get => _teamRedKills;
             set
             {
                 _teamRedKills = value;
@@ -105,7 +105,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public int TeamBlueLevel
         {
-            get { return _teamBlueLevel; }
+            get => _teamBlueLevel;
             set
             {
                 _teamBlueLevel = value;
@@ -115,7 +115,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public int TeamRedLevel
         {
-            get { return _teamRedLevel; }
+            get => _teamRedLevel;
             set
             {
                 _teamRedLevel = value;
@@ -125,7 +125,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool IsLeftChangeButtonVisible
         {
-            get { return _isLeftChangeButtonVisible; }
+            get => _isLeftChangeButtonVisible;
             set
             {
                 _isLeftChangeButtonVisible = value;
@@ -135,7 +135,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool IsRightChangeButtonVisible
         {
-            get { return _isRightChangeButtonVisible; }
+            get => _isRightChangeButtonVisible;
             set
             {
                 _isRightChangeButtonVisible = value;
@@ -145,7 +145,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool IsLeftChangeButtonEnabled
         {
-            get { return _isLeftChangeButtonEnabled; }
+            get => _isLeftChangeButtonEnabled;
             set
             {
                 _isLeftChangeButtonEnabled = value;
@@ -155,7 +155,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool IsRightChangeButtonEnabled
         {
-            get { return _isRightChangeButtonEnabled; }
+            get => _isRightChangeButtonEnabled;
             set
             {
                 _isRightChangeButtonEnabled = value;
@@ -165,7 +165,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool HasBans
         {
-            get { return _hasBans; }
+            get => _hasBans;
             set
             {
                 _hasBans = value;
@@ -175,7 +175,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool HasObservers
         {
-            get { return _hasObservers; }
+            get => _hasObservers;
             set
             {
                 _hasObservers = value;
@@ -185,7 +185,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool HasChat
         {
-            get { return _hasChat; }
+            get => _hasChat;
             set
             {
                 _hasChat = value;
@@ -195,7 +195,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string MatchTitle
         {
-            get { return _matchTitle; }
+            get => _matchTitle;
             set
             {
                 _matchTitle = value;
@@ -205,7 +205,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string TeamBlueName
         {
-            get { return _teamBlueName; }
+            get => _teamBlueName;
             set
             {
                 _teamBlueName = value;
@@ -215,7 +215,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string TeamRedName
         {
-            get { return _teamRedName; }
+            get => _teamRedName;
             set
             {
                 _teamRedName = value;
@@ -225,7 +225,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string TeamBlueIsWinner
         {
-            get { return _teamBlueIsWinner; }
+            get => _teamBlueIsWinner;
             set
             {
                 _teamBlueIsWinner = value;
@@ -235,7 +235,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string TeamRedIsWinner
         {
-            get { return _teamRedIsWinner; }
+            get => _teamRedIsWinner;
             set
             {
                 _teamRedIsWinner = value;
@@ -245,7 +245,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string MatchLength
         {
-            get { return _matchLength; }
+            get => _matchLength;
             set
             {
                 _matchLength = value;
@@ -255,7 +255,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public Color MatchTitleGlowColor
         {
-            get { return _matchTitleGlowColor; }
+            get => _matchTitleGlowColor;
             set
             {
                 _matchTitleGlowColor = value;
@@ -265,7 +265,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerTalents> MatchTalentsTeam1Collection
         {
-            get { return _matchTalentsTeam1Collection; }
+            get => _matchTalentsTeam1Collection;
             set
             {
                 _matchTalentsTeam1Collection = value;
@@ -275,7 +275,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerTalents> MatchTalentsTeam2Collection
         {
-            get { return _matchTalentsTeam2Collection; }
+            get => _matchTalentsTeam2Collection;
             set
             {
                 _matchTalentsTeam2Collection = value;
@@ -285,7 +285,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerStats> MatchStatsTeam1Collection
         {
-            get { return _matchStatsTeam1Collection; }
+            get => _matchStatsTeam1Collection;
             set
             {
                 _matchStatsTeam1Collection = value;
@@ -295,7 +295,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerStats> MatchStatsTeam2Collection
         {
-            get { return _matchStatsTeam2Collection; }
+            get => _matchStatsTeam2Collection;
             set
             {
                 _matchStatsTeam2Collection = value;
@@ -305,7 +305,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerAdvancedStats> MatchAdvancedStatsTeam1Collection
         {
-            get { return _matchAdvancedStatsTeam1Collection; }
+            get => _matchAdvancedStatsTeam1Collection;
             set
             {
                 _matchAdvancedStatsTeam1Collection = value;
@@ -315,7 +315,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerAdvancedStats> MatchAdvancedStatsTeam2Collection
         {
-            get { return _matchAdvancedStatsTeam2Collection; }
+            get => _matchAdvancedStatsTeam2Collection;
             set
             {
                 _matchAdvancedStatsTeam2Collection = value;
@@ -325,7 +325,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchChat> MatchChatCollection
         {
-            get { return _matchChatCollection; }
+            get => _matchChatCollection;
             set
             {
                 _matchChatCollection = value;
@@ -335,7 +335,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchObserver> MatchObserversCollection
         {
-            get { return _matchObserversCollection; }
+            get => _matchObserversCollection;
 
             set
             {

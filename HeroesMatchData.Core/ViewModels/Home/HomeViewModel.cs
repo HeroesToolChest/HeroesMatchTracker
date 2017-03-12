@@ -42,7 +42,7 @@ namespace HeroesMatchData.Core.ViewModels.Home
 
         public ObservableCollection<MatchHistoryMatch> MatchCollection
         {
-            get { return _matchCollection; }
+            get => _matchCollection;
             set
             {
                 _matchCollection = value;

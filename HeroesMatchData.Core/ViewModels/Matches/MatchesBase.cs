@@ -91,7 +91,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool IsGivenBattleTagOnlyChecked
         {
-            get { return _isGivenBattleTagOnlyChecked; }
+            get => _isGivenBattleTagOnlyChecked;
             set
             {
                 _isGivenBattleTagOnlyChecked = value;
@@ -101,7 +101,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public bool ShowMatchSummaryButtonEnabled
         {
-            get { return _showMatchSummaryButtonEnabled; }
+            get => _showMatchSummaryButtonEnabled;
             set
             {
                 _showMatchSummaryButtonEnabled = value;
@@ -111,7 +111,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public long SelectedReplayIdValue
         {
-            get { return _selectedReplayIdValue; }
+            get => _selectedReplayIdValue;
             set
             {
                 _selectedReplayIdValue = value;
@@ -121,7 +121,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedSeasonOption
         {
-            get { return _selectedSeasonOption; }
+            get => _selectedSeasonOption;
             set
             {
                 _selectedSeasonOption = value;
@@ -131,7 +131,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedMapOption
         {
-            get { return _selectedMapOption; }
+            get => _selectedMapOption;
             set
             {
                 _selectedMapOption = value;
@@ -141,7 +141,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedBuildOption
         {
-            get { return _selectedBuildOption; }
+            get => _selectedBuildOption;
             set
             {
                 _selectedBuildOption = value;
@@ -151,7 +151,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedGameTimeOption
         {
-            get { return _selectedGameTimeOption; }
+            get => _selectedGameTimeOption;
             set
             {
                 _selectedGameTimeOption = value;
@@ -161,7 +161,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedGameDateOption
         {
-            get { return _selectedGameDateOption; }
+            get => _selectedGameDateOption;
             set
             {
                 _selectedGameDateOption = value;
@@ -171,7 +171,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedPlayerBattleTag
         {
-            get { return _selectedPlayerBattleTag; }
+            get => _selectedPlayerBattleTag;
             set
             {
                 _selectedPlayerBattleTag = value;
@@ -181,7 +181,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string SelectedCharacter
         {
-            get { return _selectedCharacter; }
+            get => _selectedCharacter;
             set
             {
                 _selectedCharacter = value;
@@ -191,7 +191,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string Team1OverviewHeader
         {
-            get { return _team1OverviewHeader; }
+            get => _team1OverviewHeader;
             set
             {
                 _team1OverviewHeader = value;
@@ -201,7 +201,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public string Team2OverviewHeader
         {
-            get { return _team2OverviewHeader; }
+            get => _team2OverviewHeader;
             set
             {
                 _team2OverviewHeader = value;
@@ -211,7 +211,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ReplayMatch SelectedReplay
         {
-            get { return _selectedReplay; }
+            get => _selectedReplay;
             set
             {
                 _selectedReplay = value;
@@ -221,7 +221,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<ReplayMatch> MatchListCollection
         {
-            get { return _matchListCollection; }
+            get => _matchListCollection;
             set
             {
                 _matchListCollection = value;
@@ -231,7 +231,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerBase> MatchOverviewTeam1Collection
         {
-            get { return _matchOverviewTeam1Collection; }
+            get => _matchOverviewTeam1Collection;
             set
             {
                 _matchOverviewTeam1Collection = value;
@@ -241,7 +241,7 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         public ObservableCollection<MatchPlayerBase> MatchOverviewTeam2Collection
         {
-            get { return _matchOverviewTeam2Collection; }
+            get => _matchOverviewTeam2Collection;
             set
             {
                 _matchOverviewTeam2Collection = value;
@@ -249,15 +249,8 @@ namespace HeroesMatchData.Core.ViewModels.Matches
             }
         }
 
-        public IMatchSummaryFlyoutService MatchSummaryFlyout
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>(); }
-        }
-
-        public IMatchSummaryReplayService MatchSummaryReplay
-        {
-            get { return ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>(); }
-        }
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
+        public IMatchSummaryReplayService MatchSummaryReplay => ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>();
 
         public RelayCommand ClearSearchCommand => new RelayCommand(ClearSearch);
         public RelayCommand LoadMatchListCommand => new RelayCommand(LoadMatchList);

@@ -90,14 +90,11 @@ namespace HeroesMatchData.Core.ViewModels.Replays
         public RelayCommand HotsLogsStartButtonCommand => new RelayCommand(HotsLogsStartButton);
 
         #region public properties
-        public IDatabaseService GetDatabaseService
-        {
-            get { return Database; }
-        }
+        public IDatabaseService GetDatabaseService => Database;
 
         public bool AreProcessButtonsEnabled
         {
-            get { return _areProcessButtonsEnabled; }
+            get => _areProcessButtonsEnabled;
             set
             {
                 _areProcessButtonsEnabled = value;
@@ -107,7 +104,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool AreHotsLogsUploaderButtonsEnabled
         {
-            get { return _areHotsLogsUploaderButtonsEnabled; }
+            get => _areHotsLogsUploaderButtonsEnabled;
             set
             {
                 _areHotsLogsUploaderButtonsEnabled = value;
@@ -117,7 +114,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public string CurrentStatus
         {
-            get { return _currentStatus; }
+            get => _currentStatus;
             set
             {
                 _currentStatus = value;
@@ -127,7 +124,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public string HotsLogsUploaderStatus
         {
-            get { return _hotsLogsUploaderStatus; }
+            get => _hotsLogsUploaderStatus;
             set
             {
                 _hotsLogsUploaderStatus = value;
@@ -137,7 +134,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public string HotsLogsUploaderUploadStatus
         {
-            get { return _hotsLogsUploaderUploadStatus; }
+            get => _hotsLogsUploaderUploadStatus;
             set
             {
                 _hotsLogsUploaderUploadStatus = value;
@@ -147,7 +144,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public long TotalSavedInDatabase
         {
-            get { return _totalSavedInDatabase; }
+            get => _totalSavedInDatabase;
             set
             {
                 _totalSavedInDatabase = value;
@@ -158,7 +155,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public int TotalReplaysGrid
         {
-            get { return _totalReplaysGrid; }
+            get => _totalReplaysGrid;
             set
             {
                 _totalReplaysGrid = value;
@@ -168,7 +165,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public int TotalParsedGrid
         {
-            get { return _totalParsedGrid; }
+            get => _totalParsedGrid;
             set
             {
                 _totalParsedGrid = value;
@@ -178,7 +175,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsReplayWatch
         {
-            get { return Database.SettingsDb().UserSettings.ReplayWatchCheckBox; }
+            get => Database.SettingsDb().UserSettings.ReplayWatchCheckBox;
             set
             {
                 if (value)
@@ -193,7 +190,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsAutoScanStart
         {
-            get { return Database.SettingsDb().UserSettings.ReplayAutoScanCheckBox; }
+            get => Database.SettingsDb().UserSettings.ReplayAutoScanCheckBox;
             set
             {
                 Database.SettingsDb().UserSettings.ReplayAutoScanCheckBox = value;
@@ -203,7 +200,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsAutoStartStartup
         {
-            get { return Database.SettingsDb().UserSettings.ReplayAutoStartStartUp; }
+            get => Database.SettingsDb().UserSettings.ReplayAutoStartStartUp;
             set
             {
                 Database.SettingsDb().UserSettings.ReplayAutoStartStartUp = value;
@@ -213,7 +210,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsIncludeSubDirectories
         {
-            get { return Database.SettingsDb().UserSettings.IsIncludeSubDirectories; }
+            get => Database.SettingsDb().UserSettings.IsIncludeSubDirectories;
             set
             {
                 Database.SettingsDb().UserSettings.IsIncludeSubDirectories = value;
@@ -223,7 +220,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsHotsLogsUploaderEnabled
         {
-            get { return Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled; }
+            get => Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
             set
             {
                 Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled = value;
@@ -252,7 +249,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool LatestParsedChecked
         {
-            get { return ScanDateTimeCheckboxes[0]; }
+            get => ScanDateTimeCheckboxes[0];
             set
             {
                 ScanDateTimeCheckboxes[0] = value;
@@ -270,7 +267,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool LastParsedChecked
         {
-            get { return ScanDateTimeCheckboxes[1]; }
+            get => ScanDateTimeCheckboxes[1];
             set
             {
                 ScanDateTimeCheckboxes[1] = value;
@@ -288,7 +285,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool LatestHotsLogsChecked
         {
-            get { return ScanDateTimeCheckboxes[2]; }
+            get => ScanDateTimeCheckboxes[2];
             set
             {
                 ScanDateTimeCheckboxes[2] = value;
@@ -306,7 +303,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsHotsLogsStartButtonEnabled
         {
-            get { return _isHotsLogsStartButtonEnabled; }
+            get => _isHotsLogsStartButtonEnabled;
             set
             {
                 _isHotsLogsStartButtonEnabled = value;
@@ -316,7 +313,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool LastHotsLogsChecked
         {
-            get { return ScanDateTimeCheckboxes[3]; }
+            get => ScanDateTimeCheckboxes[3];
             set
             {
                 ScanDateTimeCheckboxes[3] = value;
@@ -334,7 +331,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public DateTime ReplaysLatestSaved
         {
-            get { return Database.SettingsDb().UserSettings.ReplaysLatestSaved; }
+            get => Database.SettingsDb().UserSettings.ReplaysLatestSaved;
             set
             {
                 Database.SettingsDb().UserSettings.ReplaysLatestSaved = value;
@@ -344,7 +341,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public DateTime ReplaysLastSaved
         {
-            get { return Database.SettingsDb().UserSettings.ReplaysLastSaved; }
+            get => Database.SettingsDb().UserSettings.ReplaysLastSaved;
             set
             {
                 Database.SettingsDb().UserSettings.ReplaysLastSaved = value;
@@ -354,7 +351,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public DateTime ReplaysLatestHotsLogs
         {
-            get { return Database.SettingsDb().UserSettings.ReplaysLatestHotsLogs; }
+            get => Database.SettingsDb().UserSettings.ReplaysLatestHotsLogs;
             set
             {
                 Database.SettingsDb().UserSettings.ReplaysLatestHotsLogs = value;
@@ -364,7 +361,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public DateTime ReplaysLastHotsLogs
         {
-            get { return Database.SettingsDb().UserSettings.ReplaysLastHotsLogs; }
+            get => Database.SettingsDb().UserSettings.ReplaysLastHotsLogs;
             set
             {
                 Database.SettingsDb().UserSettings.ReplaysLastHotsLogs = value;
@@ -374,7 +371,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public string ReplaysFolderLocation
         {
-            get { return Database.SettingsDb().UserSettings.ReplaysLocation; }
+            get => Database.SettingsDb().UserSettings.ReplaysLocation;
             set
             {
                 Database.SettingsDb().UserSettings.ReplaysLocation = value;
@@ -384,7 +381,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public bool IsParsingReplaysOn
         {
-            get { return _isParsingReplaysOn; }
+            get => _isParsingReplaysOn;
             set
             {
                 if (value)
@@ -401,7 +398,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public string HotsLogsStartButtonText
         {
-            get { return _hotsLogsStartButtonText; }
+            get => _hotsLogsStartButtonText;
             set
             {
                 _hotsLogsStartButtonText = value;
@@ -411,7 +408,7 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         public ObservableCollection<ReplayFile> ReplayFileCollection
         {
-            get { return _replayFileCollection; }
+            get => _replayFileCollection;
             set
             {
                 _replayFileCollection = value;
@@ -422,11 +419,13 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         private void ManualSelectFiles()
         {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm");
-            dialog.DefaultExt = $".{Properties.Settings.Default.HeroesReplayFileType}";
-            dialog.Filter = $"Heroes Replay Files (*.{Properties.Settings.Default.HeroesReplayFileType})|*.{Properties.Settings.Default.HeroesReplayFileType}|All Files (*.*)|*.*";
-            dialog.Multiselect = true;
+            var dialog = new OpenFileDialog()
+            {
+                InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm"),
+                DefaultExt = $".{Properties.Settings.Default.HeroesReplayFileType}",
+                Filter = $"Heroes Replay Files (*.{Properties.Settings.Default.HeroesReplayFileType})|*.{Properties.Settings.Default.HeroesReplayFileType}|All Files (*.*)|*.*",
+                Multiselect = true,
+            };
 
             bool? result = dialog.ShowDialog();
             if (result == true)
@@ -463,9 +462,12 @@ namespace HeroesMatchData.Core.ViewModels.Replays
 
         private void ReplaysLocationBrowse()
         {
-            var dialog = new CommonOpenFileDialog();
-            dialog.IsFolderPicker = true;
-            dialog.InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm");
+            var dialog = new CommonOpenFileDialog()
+            {
+                IsFolderPicker = true,
+                InitialDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm"),
+            };
+
             CommonFileDialogResult result = dialog.ShowDialog();
 
             if (result == CommonFileDialogResult.Ok)
@@ -576,12 +578,13 @@ namespace HeroesMatchData.Core.ViewModels.Replays
         #region file watcher
         private void InitializeReplayWatcher()
         {
-            FileWatcher = new FileSystemWatcher();
-
-            FileWatcher.Path = Database.SettingsDb().UserSettings.ReplaysLocation;
-            FileWatcher.IncludeSubdirectories = true;
-            FileWatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes;
-            FileWatcher.Filter = $"*.{Properties.Settings.Default.HeroesReplayFileType}";
+            FileWatcher = new FileSystemWatcher()
+            {
+                Path = Database.SettingsDb().UserSettings.ReplaysLocation,
+                IncludeSubdirectories = true,
+                NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.Attributes,
+                Filter = $"*.{Properties.Settings.Default.HeroesReplayFileType}",
+            };
 
             FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
             FileWatcher.Deleted += new FileSystemEventHandler(OnDeleted);

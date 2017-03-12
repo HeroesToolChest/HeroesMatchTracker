@@ -17,7 +17,7 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
 
         public bool IsMinimizeToTray
         {
-            get { return Database.SettingsDb().UserSettings.IsMinimizeToTray; }
+            get => Database.SettingsDb().UserSettings.IsMinimizeToTray;
             set
             {
                 Database.SettingsDb().UserSettings.IsMinimizeToTray = value;
@@ -27,7 +27,7 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
 
         public bool IsAutoUpdates
         {
-            get { return Database.SettingsDb().UserSettings.IsAutoUpdates; }
+            get => Database.SettingsDb().UserSettings.IsAutoUpdates;
             set
             {
                 Database.SettingsDb().UserSettings.IsAutoUpdates = value;
@@ -37,7 +37,7 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
 
         public bool IsBattleTagsHidden
         {
-            get { return Database.SettingsDb().UserSettings.IsBattleTagHidden; }
+            get => Database.SettingsDb().UserSettings.IsBattleTagHidden;
             set
             {
                 Database.SettingsDb().UserSettings.IsBattleTagHidden = value;
