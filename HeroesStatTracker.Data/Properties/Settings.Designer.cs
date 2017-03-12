@@ -12,8 +12,8 @@ namespace HeroesStatTracker.Data.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.0.1.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -49,7 +49,7 @@ namespace HeroesStatTracker.Data.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Database")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Databases")]
         public string DatabaseFolderName {
             get {
                 return ((string)(this["DatabaseFolderName"]));
@@ -104,6 +104,42 @@ namespace HeroesStatTracker.Data.Properties {
             }
             set {
                 this["SettingsDatabaseMigrationVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ReleaseNotes")]
+        public string ReleaseNotesConnNameDb {
+            get {
+                return ((string)(this["ReleaseNotesConnNameDb"]));
+            }
+            set {
+                this["ReleaseNotesConnNameDb"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ReleaseNotes.sqlite")]
+        public string ReleaseNotesDbFileName {
+            get {
+                return ((string)(this["ReleaseNotesDbFileName"]));
+            }
+            set {
+                this["ReleaseNotesDbFileName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ReleaseNotesDatabaseMigrationVersion {
+            get {
+                return ((int)(this["ReleaseNotesDatabaseMigrationVersion"]));
+            }
+            set {
+                this["ReleaseNotesDatabaseMigrationVersion"] = value;
             }
         }
     }

@@ -46,5 +46,17 @@ namespace HeroesStatTracker.Core.Properties {
                 this["UpdateUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NewLatestDirectory {
+            get {
+                return ((string)(this["NewLatestDirectory"]));
+            }
+            set {
+                this["NewLatestDirectory"] = value;
+            }
+        }
     }
 }

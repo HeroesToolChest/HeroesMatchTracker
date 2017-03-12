@@ -23,7 +23,6 @@ namespace HeroesStatTracker.Data.Databases
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
         public virtual DbSet<ReplayHotsLogsUpload> ReplayHotsLogsUploads { get; set; }
-        public virtual DbSet<ReleaseNote> ReleaseNotes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

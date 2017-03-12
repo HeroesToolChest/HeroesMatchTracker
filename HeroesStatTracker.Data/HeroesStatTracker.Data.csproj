@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Databases\ReleaseNotesContext.cs" />
     <Compile Include="Generic\ReplaySaveResult.cs" />
     <Compile Include="IDatabaseService.cs" />
     <Compile Include="Migrations\ContextMigrator.cs" />
@@ -119,6 +120,8 @@
     <Compile Include="Migrations\IMigrator.cs" />
     <Compile Include="Migrations\MigratorBase.cs" />
     <Compile Include="Databases\ReplaysContext.cs" />
+    <Compile Include="Migrations\ReleaseNotes\ReleaseNotesContextMigrator.cs" />
+    <Compile Include="Migrations\ReleaseNotes\ReleaseNotesMigrator.cs" />
     <Compile Include="Migrations\Replays\ReplaysContextMigrator.cs" />
     <Compile Include="Migrations\Replays\ReplaysMigrator.cs" />
     <Compile Include="Databases\SettingsContext.cs" />
@@ -131,7 +134,7 @@
     <Compile Include="Migrations\MigrationMethods.cs" />
     <Compile Include="Models\INonContextModels.cs" />
     <Compile Include="Models\IRawDataDisplay.cs" />
-    <Compile Include="Models\Replays\ReleaseNote.cs" />
+    <Compile Include="Models\ReleaseNotes\ReleaseNote.cs" />
     <Compile Include="Models\Replays\ReplayMatch.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayerHero.cs" />
@@ -155,6 +158,8 @@
     </Compile>
     <Compile Include="Queries\QueriesBase.cs" />
     <Compile Include="Queries\QueryException.cs" />
+    <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
+    <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
     <Compile Include="Queries\Replays\HotsLogsUpload.cs" />
     <Compile Include="Queries\Replays\ReplayFilter.cs" />
     <Compile Include="Queries\Replays\ReplaysDb.cs" />
@@ -187,7 +192,7 @@
     </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

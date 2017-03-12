@@ -17,7 +17,7 @@
                       BorderThickness="1"
                       Title="{Binding AppVersion, StringFormat=Heroes Stat Tracker - {0}}"
                       MinHeight="768" MinWidth="1024"
-                      d:DesignHeight="1080" d:DesignWidth="1920">
+                      d:DesignHeight="1080" d:DesignWidth="1920" Loaded="MetroWindow_Loaded">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
         <system:Double x:Key="TabControlFontSize">18</system:Double>

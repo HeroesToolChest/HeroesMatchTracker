@@ -18,11 +18,13 @@ namespace HeroesStatTracker.Views
 
         public void CreateMainWindow()
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.WindowState = WindowState.Maximized;
-            mainWindow.Show();
+            MainWindow mainWindow = new MainWindow()
+            {
+                WindowState = WindowState.Maximized,
+            };
 
             Close();
+            mainWindow.Show();
         }
     }
 }

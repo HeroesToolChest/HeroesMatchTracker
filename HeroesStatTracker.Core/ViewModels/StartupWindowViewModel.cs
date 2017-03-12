@@ -90,7 +90,7 @@ namespace HeroesStatTracker.Core.ViewModels
         {
             try
             {
-                //#if !DEBUG
+#if !DEBUG
                 AutoUpdater autoUpdater = new AutoUpdater(Database);
 
                 await Message("Checking for updates...");
@@ -115,16 +115,16 @@ namespace HeroesStatTracker.Core.ViewModels
                 }
 
                 await Message("Retrieving release notes...");
-                // await AutoUpdater.RetrieveReleaseNotes();
+                await AutoUpdater.RetrieveReleaseNotes(Database);
 
                 await Message("Copying database to new folder...");
-                // AutoUpdater.CopyDatabaseToLatestRelease();
+                AutoUpdater.CopyDatabasesToLatestRelease();
 
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
                 autoUpdater.RestartApp();
-                //#endif
+#endif
             }
             catch (AutoUpdaterException ex)
             {

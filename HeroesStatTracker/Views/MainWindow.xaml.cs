@@ -8,6 +8,7 @@ using HeroesStatTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 using static HeroesStatTracker.App;
@@ -145,6 +146,17 @@ namespace HeroesStatTracker.Views
         private void MatchSummaryFlyout_ClosingFinished(object sender, RoutedEventArgs e)
         {
             Messenger.Default.Send(new NotificationMessage(StaticMessage.MatchSummaryClosed));
+        }
+
+        private async void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(1000);
+
+            if (Database.SettingsDb().UserSettings.IsNewUpdateApplied)
+            {
+                Database.SettingsDb().UserSettings.IsNewUpdateApplied = false;
+                CreateWhatsNewWindow();
+            }
         }
     }
 }

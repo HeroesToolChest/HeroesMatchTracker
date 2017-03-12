@@ -157,6 +157,9 @@
     <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\NuGet.Squirrel.dll</HintPath>
     </Reference>
+    <Reference Include="Octokit, Version=0.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.0.24.0\lib\net45\Octokit.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -186,6 +189,7 @@
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
     <Compile Include="Converters\TalentTooltipTextConverter.cs" />
+    <Compile Include="Converters\TextToFlowDocumentConverter.cs" />
     <Compile Include="Generic\AssemblyVersions.cs" />
     <Compile Include="Generic\AppCore.cs" />
     <Compile Include="Generic\MainPage.cs" />
@@ -222,6 +226,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReleaseNotes\Markdown.cs" />
+    <Compile Include="ReleaseNotes\ReleaseNoteHandler.cs" />
     <Compile Include="Services\IInternalService.cs" />
     <Compile Include="Services\InternalService.cs" />
     <Compile Include="Services\IWebsiteService.cs" />
@@ -266,7 +272,6 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
-    <Compile Include="ViewServices\IBrowserWindowService.cs" />
     <Compile Include="ViewServices\IMatchesTabService.cs" />
     <Compile Include="ViewServices\IMainTabService.cs" />
     <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />

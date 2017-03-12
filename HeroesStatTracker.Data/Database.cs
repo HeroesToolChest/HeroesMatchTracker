@@ -1,5 +1,7 @@
 ﻿using HeroesStatTracker.Data.Migration.Replays;
 using HeroesStatTracker.Data.Migrations;
+using HeroesStatTracker.Data.Migrations.ReleaseNotes;
+using HeroesStatTracker.Data.Properties;
 using HeroesStatTracker.Data.Queries.Settings;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ namespace HeroesStatTracker.Data
     {
         private bool ReplaysDbFileCreated;
         private bool SettingsDbFileCreated;
+        private bool ReleaseNotesDbFileCreated;
 
         private List<IMigrator> MigratorsList = new List<IMigrator>();
 
@@ -28,7 +31,7 @@ namespace HeroesStatTracker.Data
         {
             // check for the database folder
             string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = Path.Combine(applicationPath, Properties.Settings.Default.DatabaseFolderName);
+            string databasePath = Path.Combine(applicationPath, Settings.Default.DatabaseFolderName);
 
             if (!Directory.Exists(databasePath))
                 Directory.CreateDirectory(databasePath);
@@ -49,21 +52,27 @@ namespace HeroesStatTracker.Data
 
         private void SetMigrators()
         {
-            MigratorsList.Add(new ReplaysMigrator(Properties.Settings.Default.ReplaysDbFileName, ReplaysDbFileCreated, Properties.Settings.Default.ReplaysDatabaseMigrationVersion));
-            MigratorsList.Add(new SettingsMigrator(Properties.Settings.Default.SettingsDbFileName, SettingsDbFileCreated, Properties.Settings.Default.SettingsDatabaseMigrationVersion));
+            MigratorsList.Add(new ReplaysMigrator(Settings.Default.ReplaysDbFileName, ReplaysDbFileCreated, Settings.Default.ReplaysDatabaseMigrationVersion));
+            MigratorsList.Add(new SettingsMigrator(Settings.Default.SettingsDbFileName, SettingsDbFileCreated, Settings.Default.SettingsDatabaseMigrationVersion));
+            MigratorsList.Add(new ReleaseNotesMigrator(Settings.Default.ReleaseNotesDbFileName, ReleaseNotesDbFileCreated, Settings.Default.ReleaseNotesDatabaseMigrationVersion));
         }
 
         private void VerifyDatabaseFiles()
         {
-            if (!File.Exists(Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.ReplaysDbFileName)))
+            if (!File.Exists(Path.Combine(Settings.Default.DatabaseFolderName, Settings.Default.ReplaysDbFileName)))
                 ReplaysDbFileCreated = true;
             else
                 ReplaysDbFileCreated = false;
 
-            if (!File.Exists(Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.SettingsDbFileName)))
+            if (!File.Exists(Path.Combine(Settings.Default.DatabaseFolderName, Settings.Default.SettingsDbFileName)))
                 SettingsDbFileCreated = true;
             else
                 SettingsDbFileCreated = false;
+
+            if (!File.Exists(Path.Combine(Settings.Default.DatabaseFolderName, Settings.Default.ReleaseNotesDbFileName)))
+                ReleaseNotesDbFileCreated = true;
+            else
+                ReleaseNotesDbFileCreated = false;
         }
 
         private void InitialDatabaseExecutions()

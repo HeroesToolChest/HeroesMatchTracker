@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Models.Replays
+﻿namespace HeroesStatTracker.Data.Models.ReleaseNotes
 {
     using System;
     using System.ComponentModel.DataAnnotations;

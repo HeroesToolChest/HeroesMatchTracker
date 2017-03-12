@@ -90,7 +90,6 @@ namespace HeroesStatTracker.Core.Models.MatchModels
         public RelayCommand CopyPlayerNameToClipboardCommand => new RelayCommand(CopyPlayerNameToClipboard);
         public RelayCommand CopyHeroAndPlayerNameToClipboardCommand => new RelayCommand(CopyHeroAndPlayerNameToClipboard);
 
-        public IBrowserWindowService BrowserWindow => ServiceLocator.Current.GetInstance<IBrowserWindowService>();
         public IMainTabService MainTabs => ServiceLocator.Current.GetInstance<IMainTabService>();
         public IMatchesTabService MatchesTab => ServiceLocator.Current.GetInstance<IMatchesTabService>();
         public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();

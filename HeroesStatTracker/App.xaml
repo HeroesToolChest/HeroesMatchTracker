@@ -30,7 +30,8 @@
                 <ResourceDictionary Source="/Resources/CustomThemes/PlayerRowTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
-                
+                <ResourceDictionary Source="/Resources/CustomThemes/MarkdownTheme.xaml"/>
+
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
 
