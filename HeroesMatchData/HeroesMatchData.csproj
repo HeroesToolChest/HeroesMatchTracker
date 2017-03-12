@@ -567,19 +567,18 @@
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
-      <Project>{4168D60D-D0EB-40A2-9304-D38F14106A48}</Project>
+      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
       <Name>Heroes.Icons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Core\HeroesMatchData.Core.csproj">
+    <ProjectReference Include="..\HeroesMatchData.Core\HeroesMatchData.Core.csproj">
       <Project>{89afa05a-40d2-4ba0-bf72-6d920177f7ae}</Project>
       <Name>HeroesMatchData.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesMatchData.Data.csproj">
-      <Project>{038BEA71-201F-4C56-9EDD-152FED4D9B41}</Project>
+    <ProjectReference Include="..\HeroesMatchData.Data\HeroesMatchData.Data.csproj">
+      <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>
       <Name>HeroesMatchData.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\HPDStartup.png" />
   </ItemGroup>

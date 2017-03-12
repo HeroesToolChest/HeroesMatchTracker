@@ -9,19 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.Helpers.Tests", "Her
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.Icons", "Heroes.Icons\Heroes.Icons.csproj", "{4168D60D-D0EB-40A2-9304-D38F14106A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData", "HeroesStatTracker\HeroesMatchData.csproj", "{DC051017-C38B-4262-93E3-6930512793E2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4168D60D-D0EB-40A2-9304-D38F14106A48} = {4168D60D-D0EB-40A2-9304-D38F14106A48}
-		{94956C0E-57A6-4357-B53F-A4F8FD7E6D58} = {94956C0E-57A6-4357-B53F-A4F8FD7E6D58}
-		{89AFA05A-40D2-4BA0-BF72-6D920177F7AE} = {89AFA05A-40D2-4BA0-BF72-6D920177F7AE}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData", "HeroesMatchData\HeroesMatchData.csproj", "{DC051017-C38B-4262-93E3-6930512793E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData.Core", "HeroesStatTracker.Core\HeroesMatchData.Core.csproj", "{89AFA05A-40D2-4BA0-BF72-6D920177F7AE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{038BEA71-201F-4C56-9EDD-152FED4D9B41} = {038BEA71-201F-4C56-9EDD-152FED4D9B41}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData.Core", "HeroesMatchData.Core\HeroesMatchData.Core.csproj", "{89AFA05A-40D2-4BA0-BF72-6D920177F7AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData.Data", "HeroesStatTracker.Data\HeroesMatchData.Data.csproj", "{038BEA71-201F-4C56-9EDD-152FED4D9B41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchData.Data", "HeroesMatchData.Data\HeroesMatchData.Data.csproj", "{038BEA71-201F-4C56-9EDD-152FED4D9B41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

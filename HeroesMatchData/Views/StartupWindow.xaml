@@ -10,12 +10,13 @@
         Height="287" Width="490" MaxHeight="291" MaxWidth="505"
         WindowStartupLocation="CenterScreen"
         BorderThickness="0" WindowStyle="None"
-        Title="Heroes Stat Tracker Startup" ResizeMode="NoResize">
+        Title="Heroes Match Data Startup" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="StartupWindowLabelStyle" TargetType="Label">
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
         <DropShadowEffect x:Key="StartupWindowDropShadow" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Orange"/>
     </Window.Resources>
@@ -26,7 +27,7 @@
     </i:Interaction.Triggers>
     <Grid>
         <Image Source="{StaticResource HPDStartup}" Stretch="UniformToFill"/>
-        <Label Content="Heroes Stat Tracker" Margin="10,10,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" FontSize="32" Width="470"/>
+        <Label Content="Heroes Match Data" Margin="10,10,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" FontSize="32" Width="470"/>
         <Label Content="{Binding AppVersion, StringFormat={}{0}}" Margin="416,251,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="64"/>
 
         <Label Content="{Binding StatusLabel}" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Margin="10,182,0,0" FontSize="17" Width="470"/>

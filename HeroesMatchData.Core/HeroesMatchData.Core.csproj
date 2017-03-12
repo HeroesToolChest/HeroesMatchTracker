@@ -281,20 +281,6 @@
     <Compile Include="ViewServices\IMainWindowService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
-      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
-      <Name>Heroes.Helpers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
-      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
-      <Name>Heroes.Icons</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesMatchData.Data.csproj">
-      <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>
-      <Name>HeroesMatchData.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
@@ -315,7 +301,20 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
+      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
+      <Name>Heroes.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
+      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
+      <Name>Heroes.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HeroesMatchData.Data\HeroesMatchData.Data.csproj">
+      <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>
+      <Name>HeroesMatchData.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

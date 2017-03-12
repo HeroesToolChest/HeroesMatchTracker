@@ -57,6 +57,7 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
                     else
                         ReleaseNotesMarkdown += $"##Heroes Parser Data {release.Version} ({release.DateReleased.ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
                 }
+
                 ReleaseNotesMarkdown += release.PatchNote;
                 ReleaseNotesMarkdown += $"{Environment.NewLine} *** {Environment.NewLine}";
             }

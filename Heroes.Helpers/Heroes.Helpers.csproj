@@ -71,7 +71,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Heroes.ReplayParser">
-      <HintPath>..\HeroesStatTracker.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
+      <HintPath>..\HeroesMatchData.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

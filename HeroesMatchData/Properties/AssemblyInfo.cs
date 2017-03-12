@@ -6,11 +6,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Heroes Stat Tracker")]
+[assembly: AssemblyTitle("Heroes Match Data")]
 [assembly: AssemblyDescription("Heroes of the Storm statistical tracker, replay parser, and data viewer")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Heroes Stat Tracker")]
+[assembly: AssemblyProduct("Heroes Match Data")]
 [assembly: AssemblyCopyright("Copyright © 2017 Kevin Oliva")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
