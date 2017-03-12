@@ -1,6 +1,6 @@
-﻿using HeroesStatTracker.Data.Databases;
+﻿using HeroesMatchData.Data.Databases;
 
-namespace HeroesStatTracker.Data.Migrations.Replays
+namespace HeroesMatchData.Data.Migrations.Replays
 {
     internal class MigrationAddon1_v2_0_0_1 : MigrationMethods<ReplaysContext>, IMigrationAddon
     {

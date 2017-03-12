@@ -1,7 +1,7 @@
-﻿using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Data.Models.Replays;
 using System.Collections.Generic;
 
-namespace HeroesStatTracker.Core.ViewServices
+namespace HeroesMatchData.Core.ViewServices
 {
     public interface IMatchSummaryReplayService
     {

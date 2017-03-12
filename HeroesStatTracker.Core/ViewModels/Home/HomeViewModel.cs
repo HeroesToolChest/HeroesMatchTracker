@@ -1,15 +1,15 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Models.MatchHistoryModels;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.Models.MatchHistoryModels;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Data;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace HeroesStatTracker.Core.ViewModels.Home
+namespace HeroesMatchData.Core.ViewModels.Home
 {
     public class HomeViewModel : HstViewModel
     {

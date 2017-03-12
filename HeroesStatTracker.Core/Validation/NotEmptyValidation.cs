@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
 
-namespace HeroesStatTracker.Core.Validation
+namespace HeroesMatchData.Core.Validation
 {
     public class NotEmptyValidation : ValidationRule
     {

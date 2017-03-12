@@ -1,4 +1,4 @@
-namespace HeroesStatTracker.Data.Models.Replays
+namespace HeroesMatchData.Data.Models.Replays
 {
     using Heroes.ReplayParser;
     using System;

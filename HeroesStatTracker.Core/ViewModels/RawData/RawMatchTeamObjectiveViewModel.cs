@@ -1,8 +1,8 @@
 ﻿using Heroes.Icons;
-using HeroesStatTracker.Data.Models.Replays;
-using HeroesStatTracker.Data.Queries.Replays;
+using HeroesMatchData.Data.Models.Replays;
+using HeroesMatchData.Data.Queries.Replays;
 
-namespace HeroesStatTracker.Core.ViewModels.RawData
+namespace HeroesMatchData.Core.ViewModels.RawData
 {
     public class RawMatchTeamObjectiveViewModel : RawDataViewModelBase<ReplayMatchTeamObjective>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace HeroesStatTracker.Data.Queries.Settings
+namespace HeroesMatchData.Data.Queries.Settings
 {
     public partial class UserSettings
     {

@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Migrations;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Migrations;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace HeroesStatTracker.Data.Migrations
+namespace HeroesMatchData.Data.Migrations
 {
     internal class MigratorBase<T, TMigrator>
         where T : StatTrackerDbContext, new()

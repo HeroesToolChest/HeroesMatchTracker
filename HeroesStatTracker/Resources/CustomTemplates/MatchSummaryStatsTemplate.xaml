@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converter="clr-namespace:HeroesStatTracker.Core.Converters;assembly=HeroesStatTracker.Core"
-                    xmlns:coreModels="clr-namespace:HeroesStatTracker.Core.Models.MatchModels;assembly=HeroesStatTracker.Core"
+                    xmlns:converter="clr-namespace:HeroesMatchData.Core.Converters;assembly=HeroesMatchData.Core"
+                    xmlns:coreModels="clr-namespace:HeroesMatchData.Core.Models.MatchModels;assembly=HeroesMatchData.Core"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />

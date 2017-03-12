@@ -2,20 +2,20 @@
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.ReplayParser;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Models.MatchModels;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
-using HeroesStatTracker.Data.Queries.Replays;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.Models.MatchModels;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
+using HeroesMatchData.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace HeroesStatTracker.Core.ViewModels.Matches
+namespace HeroesMatchData.Core.ViewModels.Matches
 {
     public abstract class MatchesBase : HstViewModel
     {

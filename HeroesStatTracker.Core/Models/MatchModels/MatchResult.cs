@@ -1,9 +1,9 @@
-﻿using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HeroesStatTracker.Core.Models.MatchModels
+namespace HeroesMatchData.Core.Models.MatchModels
 {
     public class MatchResult
     {

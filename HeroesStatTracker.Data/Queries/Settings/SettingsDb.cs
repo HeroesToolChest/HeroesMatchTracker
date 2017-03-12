@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Queries.Settings
+﻿namespace HeroesMatchData.Data.Queries.Settings
 {
     public class SettingsDb
     {

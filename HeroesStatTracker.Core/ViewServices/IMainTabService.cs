@@ -1,6 +1,6 @@
-﻿using HeroesStatTracker.Core.HotsLogs;
+﻿using HeroesMatchData.Core.HotsLogs;
 
-namespace HeroesStatTracker.Core.ViewServices
+namespace HeroesMatchData.Core.ViewServices
 {
     public interface IMainTabService
     {

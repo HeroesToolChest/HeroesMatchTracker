@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 
-namespace HeroesStatTracker.Core.Models
+namespace HeroesMatchData.Core.Models
 {
     public class PlayerSearchContextMenu
     {

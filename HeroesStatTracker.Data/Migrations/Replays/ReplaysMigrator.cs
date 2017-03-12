@@ -1,8 +1,8 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Migrations;
-using HeroesStatTracker.Data.Migrations.Replays;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Migrations;
+using HeroesMatchData.Data.Migrations.Replays;
 
-namespace HeroesStatTracker.Data.Migration.Replays
+namespace HeroesMatchData.Data.Migration.Replays
 {
     internal class ReplaysMigrator : MigratorBase<ReplaysContext, ReplaysContextMigrator>, IMigrator
     {

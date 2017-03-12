@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesStatTracker.Data
+namespace HeroesMatchData.Data
 {
     [Flags]
     public enum ReplayResult : uint

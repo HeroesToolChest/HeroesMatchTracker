@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Models.Replays
+﻿namespace HeroesMatchData.Data.Models.Replays
 {
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;

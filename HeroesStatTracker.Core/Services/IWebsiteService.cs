@@ -1,6 +1,6 @@
-﻿using HeroesStatTracker.Core.HotsLogs;
+﻿using HeroesMatchData.Core.HotsLogs;
 
-namespace HeroesStatTracker.Core.Services
+namespace HeroesMatchData.Core.Services
 {
     public interface IWebsiteService
     {

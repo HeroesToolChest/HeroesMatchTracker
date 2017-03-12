@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HeroesStatTracker.Views.Home
+namespace HeroesMatchData.Views.Home
 {
     /// <summary>
     /// Interaction logic for HomeControl.xaml

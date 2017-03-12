@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Controls;
 
-namespace HeroesStatTracker.Views.RawData
+namespace HeroesMatchData.Views.RawData
 {
     /// <summary>
     /// Interaction logic for QueryControl.xaml

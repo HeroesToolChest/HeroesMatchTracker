@@ -1,9 +1,9 @@
-﻿using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Core.Services;
+using HeroesMatchData.Data.Models.Replays;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
-namespace HeroesStatTracker.Core.Models.MatchModels
+namespace HeroesMatchData.Core.Models.MatchModels
 {
     public class MatchPlayerTalents : MatchPlayerBase
     {

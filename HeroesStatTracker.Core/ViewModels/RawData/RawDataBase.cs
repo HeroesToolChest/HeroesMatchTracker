@@ -1,14 +1,14 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Icons;
-using HeroesStatTracker.Data.Models;
-using HeroesStatTracker.Data.Queries.Replays;
+using HeroesMatchData.Data.Models;
+using HeroesMatchData.Data.Queries.Replays;
 using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace HeroesStatTracker.Core.ViewModels.RawData
+namespace HeroesMatchData.Core.ViewModels.RawData
 {
     public abstract class RawDataViewModelBase<T> : HstViewModel
         where T : IRawDataDisplay, new()

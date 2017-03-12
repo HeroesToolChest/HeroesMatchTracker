@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HeroesStatTracker.Views.TitleBar.AboutControl"
+﻿<UserControl x:Class="HeroesMatchData.Views.TitleBar.AboutControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -34,9 +34,9 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Margin="{StaticResource SectionMargin}">
-            <TextBlock Text="{Binding HeroesStatTrackerCoreVersion, StringFormat=HeroesStatTracker.Core {0}}" FontSize="14"/>
-            <TextBlock Text="{Binding HeroesStatTrackerDataVersion, StringFormat=HeroesStatTracker.Data {0}}" FontSize="14"/>
-            <TextBlock Text="{Binding HeroesStatTrackerHelpersVersion, StringFormat=Heroes.Helpers {0}}" FontSize="14"/>
+            <TextBlock Text="{Binding HeroesMatchDataCoreVersion, StringFormat=HeroesMatchData.Core {0}}" FontSize="14"/>
+            <TextBlock Text="{Binding HeroesMatchDataDataVersion, StringFormat=HeroesMatchData.Data {0}}" FontSize="14"/>
+            <TextBlock Text="{Binding HeroesMatchDataHelpersVersion, StringFormat=Heroes.Helpers {0}}" FontSize="14"/>
             <TextBlock Text="{Binding HeroesIconsVersion, StringFormat=Heroes.Icons {0}}" FontSize="14"/>
             <TextBlock Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}" FontSize="14"/>
         </StackPanel>

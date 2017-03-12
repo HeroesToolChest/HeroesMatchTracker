@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Migrations;
+﻿using HeroesMatchData.Migrations;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HeroesStatTracker.Data.Databases
+namespace HeroesMatchData.Data.Databases
 {
     internal class StatTrackerDbContext : DbContext
     {

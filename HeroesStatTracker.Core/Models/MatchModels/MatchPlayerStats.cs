@@ -1,8 +1,8 @@
 ﻿using Heroes.Icons;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Data.Models.Replays;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Data.Models.Replays;
 
-namespace HeroesStatTracker.Core.Models.MatchModels
+namespace HeroesMatchData.Core.Models.MatchModels
 {
     public class MatchPlayerStats : MatchPlayerBase
     {

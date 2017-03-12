@@ -1,6 +1,6 @@
-﻿using HeroesStatTracker.Core.Properties;
-using HeroesStatTracker.Core.ReleaseNotes;
-using HeroesStatTracker.Data;
+﻿using HeroesMatchData.Core.Properties;
+using HeroesMatchData.Core.ReleaseNotes;
+using HeroesMatchData.Data;
 using NLog;
 using Squirrel;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace HeroesStatTracker.Core.Updater
+namespace HeroesMatchData.Core.Updater
 {
     public class AutoUpdater
     {

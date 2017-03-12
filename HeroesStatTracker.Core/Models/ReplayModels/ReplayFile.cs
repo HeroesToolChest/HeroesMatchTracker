@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
-using HeroesStatTracker.Core.HotsLogs;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.HotsLogs;
+using HeroesMatchData.Data;
 using System;
 
-namespace HeroesStatTracker.Core.Models.ReplayModels
+namespace HeroesMatchData.Core.Models.ReplayModels
 {
     public class ReplayFile : ObservableObject
     {

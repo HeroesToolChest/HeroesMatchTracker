@@ -2,12 +2,12 @@
 using GalaSoft.MvvmLight.Command;
 using Heroes.Icons;
 using Heroes.ReplayParser;
-using HeroesStatTracker.Core.HotsLogs;
-using HeroesStatTracker.Core.Models.ReplayModels;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
-using HeroesStatTracker.Data.Queries.Replays;
+using HeroesMatchData.Core.HotsLogs;
+using HeroesMatchData.Core.Models.ReplayModels;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
+using HeroesMatchData.Data.Queries.Replays;
 using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using NLog;
@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using static Heroes.ReplayParser.DataParser;
 
-namespace HeroesStatTracker.Core.ViewModels.Replays
+namespace HeroesMatchData.Core.ViewModels.Replays
 {
     public class ReplaysControlViewModel : HstViewModel, IDisposable
     {

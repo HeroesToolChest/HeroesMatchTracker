@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HeroesStatTracker.Data.Migrations.Replays
+namespace HeroesMatchData.Data.Migrations.Replays
 {
     internal class Migration1_v2_0_0 : IMigrationCommand
     {

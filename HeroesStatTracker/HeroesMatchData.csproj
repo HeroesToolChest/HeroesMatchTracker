@@ -7,8 +7,8 @@
     <ProjectGuid>{DC051017-C38B-4262-93E3-6930512793E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HeroesStatTracker</RootNamespace>
-    <AssemblyName>HeroesStatTracker</AssemblyName>
+    <RootNamespace>HeroesMatchData</RootNamespace>
+    <AssemblyName>HeroesMatchData</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -570,13 +570,13 @@
       <Project>{4168D60D-D0EB-40A2-9304-D38F14106A48}</Project>
       <Name>Heroes.Icons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Core\HeroesStatTracker.Core.csproj">
+    <ProjectReference Include="..\HeroesStatTracker.Core\HeroesMatchData.Core.csproj">
       <Project>{89afa05a-40d2-4ba0-bf72-6d920177f7ae}</Project>
-      <Name>HeroesStatTracker.Core</Name>
+      <Name>HeroesMatchData.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesStatTracker.Data.csproj">
+    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesMatchData.Data.csproj">
       <Project>{038BEA71-201F-4C56-9EDD-152FED4D9B41}</Project>
-      <Name>HeroesStatTracker.Data</Name>
+      <Name>HeroesMatchData.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

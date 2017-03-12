@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Heroes.Icons;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Data;
 
-namespace HeroesStatTracker.Core.User
+namespace HeroesMatchData.Core.User
 {
     public class UserProfile : IUserProfileService
     {

@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Migrations.Settings
+﻿namespace HeroesMatchData.Data.Migrations.Settings
 {
     internal class SettingsContextMigrator : ContextMigrator
     {

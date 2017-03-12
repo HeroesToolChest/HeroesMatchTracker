@@ -1,19 +1,19 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
 using Heroes.Icons;
-using HeroesStatTracker.Core.Models.MatchModels;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
+using HeroesMatchData.Core.Models.MatchModels;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media.Imaging;
 
-namespace HeroesStatTracker.Core.Models.MatchHistoryModels
+namespace HeroesMatchData.Core.Models.MatchHistoryModels
 {
     public class MatchHistoryMatch
     {

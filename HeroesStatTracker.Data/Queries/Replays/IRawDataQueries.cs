@@ -1,7 +1,7 @@
-﻿using HeroesStatTracker.Data.Models;
+﻿using HeroesMatchData.Data.Models;
 using System.Collections.Generic;
 
-namespace HeroesStatTracker.Data.Queries.Replays
+namespace HeroesMatchData.Data.Queries.Replays
 {
     /// <summary>
     /// Raw data queries

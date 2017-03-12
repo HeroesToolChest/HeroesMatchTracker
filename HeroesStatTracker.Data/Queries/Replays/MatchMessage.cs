@@ -1,11 +1,11 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 
-namespace HeroesStatTracker.Data.Queries.Replays
+namespace HeroesMatchData.Data.Queries.Replays
 {
     public class MatchMessage : NonContextQueriesBase<ReplayMatchMessage>, IRawDataQueries<ReplayMatchMessage>
     {

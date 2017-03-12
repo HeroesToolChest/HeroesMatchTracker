@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesStatTracker.Core.Updater
+namespace HeroesMatchData.Core.Updater
 {
     [Serializable]
     public class AutoUpdaterException : Exception

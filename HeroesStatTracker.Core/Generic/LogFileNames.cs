@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Core
+﻿namespace HeroesMatchData.Core
 {
     public static class LogFileNames
     {

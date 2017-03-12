@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Core.User
+﻿namespace HeroesMatchData.Core.User
 {
     public interface IUserProfileService
     {

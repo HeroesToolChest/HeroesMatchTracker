@@ -1,6 +1,6 @@
-﻿namespace HeroesStatTracker.Data.Databases
+﻿namespace HeroesMatchData.Data.Databases
 {
-    using HeroesStatTracker.Data.Models.ReleaseNotes;
+    using HeroesMatchData.Data.Models.ReleaseNotes;
     using SQLite.CodeFirst;
     using System.Data.Entity;
 

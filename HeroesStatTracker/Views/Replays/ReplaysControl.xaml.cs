@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Core.ViewModels.Replays;
-using HeroesStatTracker.Data;
+﻿using HeroesMatchData.Core.ViewModels.Replays;
+using HeroesMatchData.Data;
 using System.Windows.Automation.Peers;
 using System.Windows.Automation.Provider;
 using System.Windows.Controls;
 
-namespace HeroesStatTracker.Views.Replays
+namespace HeroesMatchData.Views.Replays
 {
     /// <summary>
     /// Interaction logic for ReplaysControl.xaml

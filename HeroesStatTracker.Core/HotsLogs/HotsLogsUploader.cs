@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using static Heroes.ReplayParser.DataParser;
 
-namespace HeroesStatTracker.Core.HotsLogs
+namespace HeroesMatchData.Core.HotsLogs
 {
     public static class HotsLogsUploader
     {

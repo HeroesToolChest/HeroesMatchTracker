@@ -3,14 +3,14 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Icons;
-using HeroesStatTracker.Core.HotsLogs;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.HotsLogs;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
 using Microsoft.Practices.ServiceLocation;
 
-namespace HeroesStatTracker.Core.ViewModels
+namespace HeroesMatchData.Core.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabService
     {
@@ -43,7 +43,7 @@ namespace HeroesStatTracker.Core.ViewModels
 
         public IDatabaseService GetDatabaseService { get { return Database; } }
 
-        public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
+        public string AppVersion { get { return AssemblyVersions.HeroesMatchDataVersion().ToString(); } }
 
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(OpenWhatsNewWindow);
         public RelayCommand UserDropDownProfileCommand => new RelayCommand(UserDropDownProfile);

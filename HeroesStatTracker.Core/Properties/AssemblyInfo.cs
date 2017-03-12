@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HeroesStatTracker.Core")]
+[assembly: AssemblyTitle("HeroesMatchData.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HeroesStatTracker.Core")]
+[assembly: AssemblyProduct("HeroesMatchData.Core")]
 [assembly: AssemblyCopyright("Copyright © 2017 Kevin Oliva")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

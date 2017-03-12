@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Core.Messaging
+﻿namespace HeroesMatchData.Core.Messaging
 {
     public static class StaticMessage
     {

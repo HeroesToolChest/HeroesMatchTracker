@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Migrations
+﻿namespace HeroesMatchData.Data.Migrations
 {
     internal interface IMigrator
     {

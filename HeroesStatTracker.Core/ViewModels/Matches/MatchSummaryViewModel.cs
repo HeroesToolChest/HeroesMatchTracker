@@ -2,21 +2,21 @@
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Models.GraphSummaryModels;
-using HeroesStatTracker.Core.Models.MatchModels;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.Models.GraphSummaryModels;
+using HeroesMatchData.Core.Models.MatchModels;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Media;
 
-namespace HeroesStatTracker.Core.ViewModels.Matches
+namespace HeroesMatchData.Core.ViewModels.Matches
 {
     public class MatchSummaryViewModel : HstViewModel, IMatchSummaryReplayService
     {

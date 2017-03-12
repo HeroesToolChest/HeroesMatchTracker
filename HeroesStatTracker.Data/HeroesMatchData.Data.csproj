@@ -7,8 +7,8 @@
     <ProjectGuid>{038BEA71-201F-4C56-9EDD-152FED4D9B41}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HeroesStatTracker.Data</RootNamespace>
-    <AssemblyName>HeroesStatTracker.Data</AssemblyName>
+    <RootNamespace>HeroesMatchData.Data</RootNamespace>
+    <AssemblyName>HeroesMatchData.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

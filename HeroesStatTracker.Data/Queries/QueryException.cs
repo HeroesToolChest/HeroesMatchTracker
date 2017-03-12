@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesStatTracker.Data.Queries
+namespace HeroesMatchData.Data.Queries
 {
     [Serializable]
     public class QueryException : Exception

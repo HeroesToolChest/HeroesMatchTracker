@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace HeroesStatTracker.Core.ReleaseNotes
+namespace HeroesMatchData.Core.ReleaseNotes
 {
     public class Markdown : DependencyObject
     {

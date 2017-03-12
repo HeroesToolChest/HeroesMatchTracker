@@ -1,8 +1,8 @@
-﻿using HeroesStatTracker.Data.Queries.ReleaseNotes;
-using HeroesStatTracker.Data.Queries.Replays;
-using HeroesStatTracker.Data.Queries.Settings;
+﻿using HeroesMatchData.Data.Queries.ReleaseNotes;
+using HeroesMatchData.Data.Queries.Replays;
+using HeroesMatchData.Data.Queries.Settings;
 
-namespace HeroesStatTracker.Data
+namespace HeroesMatchData.Data
 {
     public interface IDatabaseService
     {

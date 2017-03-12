@@ -1,19 +1,19 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.ViewModels;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Views.TitleBar;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.ViewModels;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Views.TitleBar;
 using MahApps.Metro.Controls;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
-using static HeroesStatTracker.App;
+using static HeroesMatchData.App;
 
-namespace HeroesStatTracker.Views
+namespace HeroesMatchData.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

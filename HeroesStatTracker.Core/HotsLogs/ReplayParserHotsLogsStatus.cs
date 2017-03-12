@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Core.HotsLogs
+﻿namespace HeroesMatchData.Core.HotsLogs
 {
     public enum ReplayParserHotsLogsStatus
     {

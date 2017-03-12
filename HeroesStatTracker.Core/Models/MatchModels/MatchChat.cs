@@ -1,7 +1,7 @@
-﻿using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Data.Models.Replays;
 using System;
 
-namespace HeroesStatTracker.Core.Models.MatchModels
+namespace HeroesMatchData.Core.Models.MatchModels
 {
     public class MatchChat
     {

@@ -1,8 +1,8 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Migrations;
-using HeroesStatTracker.Data.Migrations.Settings;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Migrations;
+using HeroesMatchData.Data.Migrations.Settings;
 
-namespace HeroesStatTracker.Data.Migration.Replays
+namespace HeroesMatchData.Data.Migration.Replays
 {
     internal class SettingsMigrator : MigratorBase<SettingsContext, SettingsContextMigrator>, IMigrator
     {

@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Core.ReleaseNotes;
+﻿using HeroesMatchData.Core.ReleaseNotes;
 using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace HeroesStatTracker.Core.Converters
+namespace HeroesMatchData.Core.Converters
 {
     public class TextToFlowDocumentConverter : DependencyObject, IValueConverter
     {

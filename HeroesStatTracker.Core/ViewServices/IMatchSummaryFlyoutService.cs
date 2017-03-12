@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Core.ViewServices
+﻿namespace HeroesMatchData.Core.ViewServices
 {
     public interface IMatchSummaryFlyoutService
     {

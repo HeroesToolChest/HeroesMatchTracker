@@ -1,15 +1,15 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using HeroesStatTracker.Core.Updater;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.Updater;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
 using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace HeroesStatTracker.Core.ViewModels
+namespace HeroesMatchData.Core.ViewModels
 {
     public class StartupWindowViewModel : ViewModelBase
     {
@@ -28,7 +28,7 @@ namespace HeroesStatTracker.Core.ViewModels
             Database = database;
         }
 
-        public string AppVersion { get { return AssemblyVersions.HeroesStatTrackerVersion().ToString(); } }
+        public string AppVersion { get { return AssemblyVersions.HeroesMatchDataVersion().ToString(); } }
 
         public RelayCommand ExecuteStartupCommand => new RelayCommand(async () => await ExecuteStartup());
 
@@ -63,7 +63,7 @@ namespace HeroesStatTracker.Core.ViewModels
             {
                 StatusLabel = "Starting up...";
 
-                await Message("Initializing HeroesStatTracker.Data");
+                await Message("Initializing HeroesMatchData.Data");
                 Data.Database.Initialize().ExecuteDatabaseMigrations();
 
                 await ApplicationUpdater();

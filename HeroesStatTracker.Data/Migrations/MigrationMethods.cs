@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Data.Databases;
+﻿using HeroesMatchData.Data.Databases;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 
-namespace HeroesStatTracker.Data.Migrations
+namespace HeroesMatchData.Data.Migrations
 {
     internal class MigrationMethods<T>
         where T : StatTrackerDbContext, new()

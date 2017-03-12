@@ -2,12 +2,12 @@
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewServices;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewServices;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
@@ -17,7 +17,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
-namespace HeroesStatTracker.Core.Models.MatchModels
+namespace HeroesMatchData.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {

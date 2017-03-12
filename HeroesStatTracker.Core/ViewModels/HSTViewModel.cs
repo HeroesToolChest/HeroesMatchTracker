@@ -4,7 +4,7 @@ using NLog;
 using System;
 using System.Windows.Media.Imaging;
 
-namespace HeroesStatTracker.Core.ViewModels
+namespace HeroesMatchData.Core.ViewModels
 {
     public class HstViewModel : ViewModelBase
     {

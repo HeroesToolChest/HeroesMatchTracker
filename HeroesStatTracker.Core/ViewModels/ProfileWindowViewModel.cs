@@ -1,11 +1,11 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
-using HeroesStatTracker.Core.User;
+using HeroesMatchData.Core.User;
 using System.Collections.Generic;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
-namespace HeroesStatTracker.Core.ViewModels
+namespace HeroesMatchData.Core.ViewModels
 {
     public class ProfileWindowViewModel : ViewModelBase
     {

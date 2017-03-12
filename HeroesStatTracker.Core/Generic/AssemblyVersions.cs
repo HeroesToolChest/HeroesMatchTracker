@@ -3,37 +3,37 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace HeroesStatTracker.Core
+namespace HeroesMatchData.Core
 {
     public static class AssemblyVersions
     {
         /// <summary>
-        /// Returns the version of HeroesStatTracker
+        /// Returns the version of HeroesMatchData
         /// </summary>
         /// <returns></returns>
-        public static SemanticVersion HeroesStatTrackerVersion()
+        public static SemanticVersion HeroesMatchDataVersion()
         {
             Version version = Assembly.GetEntryAssembly().GetName().Version;
             return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
 
         /// <summary>
-        /// Returns the version of HeroesStatTracker.Core
+        /// Returns the version of HeroesMatchData.Core
         /// </summary>
         /// <returns></returns>
-        public static SemanticVersion HeroesStatTrackerCoreVersion()
+        public static SemanticVersion HeroesMatchDataCoreVersion()
         {
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
 
         /// <summary>
-        /// Returns the version of HeroesStatTracker.Data
+        /// Returns the version of HeroesMatchData.Data
         /// </summary>
         /// <returns></returns>
-        public static SemanticVersion HeroesStatTrackerDataVersion()
+        public static SemanticVersion HeroesMatchDataDataVersion()
         {
-            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "HeroesStatTracker.Data").ToList()[0].Version;
+            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "HeroesMatchData.Data").ToList()[0].Version;
             return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
 

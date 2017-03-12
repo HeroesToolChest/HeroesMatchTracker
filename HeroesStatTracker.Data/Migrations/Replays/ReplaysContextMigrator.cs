@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Migrations.Replays
+﻿namespace HeroesMatchData.Data.Migrations.Replays
 {
     internal class ReplaysContextMigrator : ContextMigrator
     {

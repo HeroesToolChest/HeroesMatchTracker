@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
-using HeroesStatTracker.Core.ViewServices;
+using HeroesMatchData.Core.ViewServices;
 
-namespace HeroesStatTracker.Core.ViewModels.Matches
+namespace HeroesMatchData.Core.ViewModels.Matches
 {
     public class MatchesViewModel : HstViewModel, IMatchesTabService
     {

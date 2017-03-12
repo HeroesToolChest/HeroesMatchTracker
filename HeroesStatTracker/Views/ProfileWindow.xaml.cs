@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace HeroesStatTracker.Views
+namespace HeroesMatchData.Views
 {
     /// <summary>
     /// Interaction logic for ProfileWindow.xaml

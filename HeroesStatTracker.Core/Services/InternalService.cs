@@ -1,8 +1,8 @@
 ﻿using Heroes.Icons;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Data;
 
-namespace HeroesStatTracker.Core.Services
+namespace HeroesMatchData.Core.Services
 {
     public class InternalService : IInternalService
     {

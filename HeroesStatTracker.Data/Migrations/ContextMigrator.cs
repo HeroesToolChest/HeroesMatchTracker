@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HeroesStatTracker.Data.Migrations
+namespace HeroesMatchData.Data.Migrations
 {
     internal class ContextMigrator
     {

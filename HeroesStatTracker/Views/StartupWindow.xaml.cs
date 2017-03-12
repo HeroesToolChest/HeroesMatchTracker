@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
-using HeroesStatTracker.Core.ViewServices;
+using HeroesMatchData.Core.ViewServices;
 using System.Windows;
 
-namespace HeroesStatTracker.Views
+namespace HeroesMatchData.Views
 {
     /// <summary>
     /// Interaction logic for StartupWindow.xaml

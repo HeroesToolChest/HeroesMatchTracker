@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 
-namespace HeroesStatTracker.Core.Models.GraphSummaryModels
+namespace HeroesMatchData.Core.Models.GraphSummaryModels
 {
     public class GraphSummaryBase : ObservableObject
     {

@@ -1,8 +1,8 @@
 ﻿using Heroes.Icons;
-using HeroesStatTracker.Data.Models.Replays;
+using HeroesMatchData.Data.Models.Replays;
 using System.Collections.Generic;
 
-namespace HeroesStatTracker.Core
+namespace HeroesMatchData.Core
 {
     public class PlayerParties
     {

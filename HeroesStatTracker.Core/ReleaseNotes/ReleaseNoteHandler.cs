@@ -1,11 +1,11 @@
-﻿using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.ReleaseNotes;
+﻿using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.ReleaseNotes;
 using Octokit;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HeroesStatTracker.Core.ReleaseNotes
+namespace HeroesMatchData.Core.ReleaseNotes
 {
     public class ReleaseNoteHandler
     {
@@ -19,8 +19,8 @@ namespace HeroesStatTracker.Core.ReleaseNotes
 
         public async Task InitializeClient()
         {
-            var client = new GitHubClient(new ProductHeaderValue("HeroesStatTracker", AssemblyVersions.HeroesStatTrackerVersion().ToString()));
-            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesStatTracker");
+            var client = new GitHubClient(new ProductHeaderValue("HeroesMatchData", AssemblyVersions.HeroesMatchDataVersion().ToString()));
+            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesMatchData");
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace HeroesStatTracker.Core.ReleaseNotes
         /// </summary>
         public void AddAllReleasesUpToCurrentVersion()
         {
-            Version versionTemp = AssemblyVersions.HeroesStatTrackerVersion().Version;
+            Version versionTemp = AssemblyVersions.HeroesMatchDataVersion().Version;
             Version currentVersion = new Version(versionTemp.Major, versionTemp.Minor, versionTemp.Build);
 
             foreach (var releaseNote in Releases)

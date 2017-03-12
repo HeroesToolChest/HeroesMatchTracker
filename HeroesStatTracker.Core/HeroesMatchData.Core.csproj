@@ -7,8 +7,8 @@
     <ProjectGuid>{89AFA05A-40D2-4BA0-BF72-6D920177F7AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HeroesStatTracker.Core</RootNamespace>
-    <AssemblyName>HeroesStatTracker.Core</AssemblyName>
+    <RootNamespace>HeroesMatchData.Core</RootNamespace>
+    <AssemblyName>HeroesMatchData.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -289,9 +289,9 @@
       <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
       <Name>Heroes.Icons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesStatTracker.Data.csproj">
+    <ProjectReference Include="..\HeroesStatTracker.Data\HeroesMatchData.Data.csproj">
       <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>
-      <Name>HeroesStatTracker.Data</Name>
+      <Name>HeroesMatchData.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

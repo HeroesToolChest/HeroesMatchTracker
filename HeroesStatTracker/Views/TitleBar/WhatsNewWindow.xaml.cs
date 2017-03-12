@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Views.TitleBar
+﻿namespace HeroesMatchData.Views.TitleBar
 {
     /// <summary>
     /// Interaction logic for WhatsNewWindow.xaml

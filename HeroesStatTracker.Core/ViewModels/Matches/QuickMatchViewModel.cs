@@ -1,8 +1,8 @@
 ﻿using Heroes.ReplayParser;
-using HeroesStatTracker.Core.Messaging;
-using HeroesStatTracker.Core.Services;
+using HeroesMatchData.Core.Messaging;
+using HeroesMatchData.Core.Services;
 
-namespace HeroesStatTracker.Core.ViewModels.Matches
+namespace HeroesMatchData.Core.ViewModels.Matches
 {
     public class QuickMatchViewModel : MatchesBase
     {

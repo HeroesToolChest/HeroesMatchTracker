@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace HeroesStatTracker.Views.Matches
+namespace HeroesMatchData.Views.Matches
 {
     /// <summary>
     /// Interaction logic for MatchListControl.xaml

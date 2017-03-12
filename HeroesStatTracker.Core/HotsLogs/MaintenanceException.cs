@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesStatTracker.Core.HotsLogs
+namespace HeroesMatchData.Core.HotsLogs
 {
     [Serializable]
     public class MaintenanceException : Exception

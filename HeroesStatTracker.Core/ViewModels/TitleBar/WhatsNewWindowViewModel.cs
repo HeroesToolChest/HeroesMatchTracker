@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Data;
 using System;
 using System.Linq;
 
-namespace HeroesStatTracker.Core.ViewModels.TitleBar
+namespace HeroesMatchData.Core.ViewModels.TitleBar
 {
     public class WhatsNewWindowViewModel : ViewModelBase
     {
@@ -25,7 +25,7 @@ namespace HeroesStatTracker.Core.ViewModels.TitleBar
             if (listOfReleases.Count <= 0)
                 return;
 
-            Version versionTemp = AssemblyVersions.HeroesStatTrackerVersion().Version;
+            Version versionTemp = AssemblyVersions.HeroesMatchDataVersion().Version;
             Version currentVersion = new Version(versionTemp.Major, versionTemp.Minor, versionTemp.Build);
 
             if (new Version(listOfReleases[0].Version) < currentVersion)

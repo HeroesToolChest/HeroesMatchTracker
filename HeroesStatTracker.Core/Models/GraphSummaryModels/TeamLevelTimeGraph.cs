@@ -1,4 +1,4 @@
-﻿using HeroesStatTracker.Data.Models.Replays;
+﻿using HeroesMatchData.Data.Models.Replays;
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Media;
 
-namespace HeroesStatTracker.Core.Models.GraphSummaryModels
+namespace HeroesMatchData.Core.Models.GraphSummaryModels
 {
     public class TeamLevelTimeGraph : GraphSummaryBase
     {

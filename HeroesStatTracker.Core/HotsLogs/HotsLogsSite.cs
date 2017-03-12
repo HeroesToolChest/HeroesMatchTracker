@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
-namespace HeroesStatTracker.Core.HotsLogs
+namespace HeroesMatchData.Core.HotsLogs
 {
     public class HotsLogsSite : IHotsLogsService
     {

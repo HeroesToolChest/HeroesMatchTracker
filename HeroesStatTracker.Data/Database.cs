@@ -1,13 +1,13 @@
-﻿using HeroesStatTracker.Data.Migration.Replays;
-using HeroesStatTracker.Data.Migrations;
-using HeroesStatTracker.Data.Migrations.ReleaseNotes;
-using HeroesStatTracker.Data.Properties;
-using HeroesStatTracker.Data.Queries.Settings;
+﻿using HeroesMatchData.Data.Migration.Replays;
+using HeroesMatchData.Data.Migrations;
+using HeroesMatchData.Data.Migrations.ReleaseNotes;
+using HeroesMatchData.Data.Properties;
+using HeroesMatchData.Data.Queries.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace HeroesStatTracker.Data
+namespace HeroesMatchData.Data
 {
     public class Database
     {

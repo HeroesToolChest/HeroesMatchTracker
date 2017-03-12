@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Migrations.ReleaseNotes
+﻿namespace HeroesMatchData.Data.Migrations.ReleaseNotes
 {
     internal class ReleaseNotesContextMigrator : ContextMigrator
     {

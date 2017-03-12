@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using HeroesStatTracker.Data;
+using HeroesMatchData.Data;
 
-namespace HeroesStatTracker.Core.ViewModels.TitleBar
+namespace HeroesMatchData.Core.ViewModels.TitleBar
 {
     public class SettingsControlViewModel : ViewModelBase
     {

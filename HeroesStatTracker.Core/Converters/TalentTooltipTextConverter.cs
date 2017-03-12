@@ -8,7 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace HeroesStatTracker.Core.Converters
+namespace HeroesMatchData.Core.Converters
 {
     public class TalentTooltipTextConverter : IValueConverter
     {

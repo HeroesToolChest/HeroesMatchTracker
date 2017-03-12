@@ -1,6 +1,6 @@
-﻿using HeroesStatTracker.Data.Databases;
+﻿using HeroesMatchData.Data.Databases;
 
-namespace HeroesStatTracker.Data.Migrations.ReleaseNotes
+namespace HeroesMatchData.Data.Migrations.ReleaseNotes
 {
     internal class ReleaseNotesMigrator : MigratorBase<ReleaseNotesContext, ReleaseNotesContextMigrator>, IMigrator
     {

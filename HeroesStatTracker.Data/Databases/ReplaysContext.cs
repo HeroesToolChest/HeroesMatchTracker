@@ -1,4 +1,4 @@
-namespace HeroesStatTracker.Data.Databases
+namespace HeroesMatchData.Data.Databases
 {
     using Models.Replays;
     using SQLite.CodeFirst;

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace HeroesStatTracker.Views.TitleBar
+namespace HeroesMatchData.Views.TitleBar
 {
     /// <summary>
     /// Interaction logic for AboutControl.xaml

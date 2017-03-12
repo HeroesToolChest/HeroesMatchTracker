@@ -1,9 +1,9 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Models.ReleaseNotes;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Models.ReleaseNotes;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HeroesStatTracker.Data.Queries.ReleaseNotes
+namespace HeroesMatchData.Data.Queries.ReleaseNotes
 {
     public class ReleaseNotes
     {

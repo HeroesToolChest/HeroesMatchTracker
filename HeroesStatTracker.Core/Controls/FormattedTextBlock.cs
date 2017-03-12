@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Documents;
 
-namespace HeroesStatTracker.Core.Controls
+namespace HeroesMatchData.Core.Controls
 {
     public static class FormattedTextBlock
     {

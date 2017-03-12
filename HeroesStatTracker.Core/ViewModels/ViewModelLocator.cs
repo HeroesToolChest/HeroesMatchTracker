@@ -1,19 +1,19 @@
 using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
-using HeroesStatTracker.Core.HotsLogs;
-using HeroesStatTracker.Core.Services;
-using HeroesStatTracker.Core.User;
-using HeroesStatTracker.Core.ViewModels.Home;
-using HeroesStatTracker.Core.ViewModels.Matches;
-using HeroesStatTracker.Core.ViewModels.RawData;
-using HeroesStatTracker.Core.ViewModels.Replays;
-using HeroesStatTracker.Core.ViewModels.TitleBar;
-using HeroesStatTracker.Data;
-using HeroesStatTracker.Data.Models.Replays;
-using HeroesStatTracker.Data.Queries.Replays;
+using HeroesMatchData.Core.HotsLogs;
+using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.User;
+using HeroesMatchData.Core.ViewModels.Home;
+using HeroesMatchData.Core.ViewModels.Matches;
+using HeroesMatchData.Core.ViewModels.RawData;
+using HeroesMatchData.Core.ViewModels.Replays;
+using HeroesMatchData.Core.ViewModels.TitleBar;
+using HeroesMatchData.Data;
+using HeroesMatchData.Data.Models.Replays;
+using HeroesMatchData.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
 
-namespace HeroesStatTracker.Core.ViewModels
+namespace HeroesMatchData.Core.ViewModels
 {
     /// <summary>
     /// This class contains static references to all the view models in the

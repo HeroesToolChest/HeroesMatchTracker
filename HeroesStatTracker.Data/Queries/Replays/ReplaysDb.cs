@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Queries.Replays
+﻿namespace HeroesMatchData.Data.Queries.Replays
 {
     public class ReplaysDb
     {

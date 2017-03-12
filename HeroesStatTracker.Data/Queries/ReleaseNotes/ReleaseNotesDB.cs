@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Queries.ReleaseNotes
+﻿namespace HeroesMatchData.Data.Queries.ReleaseNotes
 {
     public class ReleaseNotesDB
     {

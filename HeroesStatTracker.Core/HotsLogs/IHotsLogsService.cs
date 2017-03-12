@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
-namespace HeroesStatTracker.Core.HotsLogs
+namespace HeroesMatchData.Core.HotsLogs
 {
     public interface IHotsLogsService
     {

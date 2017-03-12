@@ -1,7 +1,7 @@
 ﻿using Heroes.Helpers;
 using System.Collections.Generic;
 
-namespace HeroesStatTracker.Data.Queries.Replays
+namespace HeroesMatchData.Data.Queries.Replays
 {
     public class ReplayFilter
     {

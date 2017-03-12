@@ -1,10 +1,10 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Models.Settings;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Models.Settings;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace HeroesStatTracker.Data.Queries.Settings
+namespace HeroesMatchData.Data.Queries.Settings
 {
     public partial class UserSettings
     {

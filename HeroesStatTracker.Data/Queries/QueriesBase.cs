@@ -1,4 +1,4 @@
-﻿namespace HeroesStatTracker.Data.Queries
+﻿namespace HeroesMatchData.Data.Queries
 {
     public class QueriesBase
     {

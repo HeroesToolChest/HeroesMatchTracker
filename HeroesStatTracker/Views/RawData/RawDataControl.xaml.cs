@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HeroesStatTracker.Views.RawData
+namespace HeroesMatchData.Views.RawData
 {
     /// <summary>
     /// Interaction logic for RawDataControl.xaml

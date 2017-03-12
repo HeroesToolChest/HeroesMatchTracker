@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesStatTracker.Data.Queries.Replays
+namespace HeroesMatchData.Data.Queries.Replays
 {
     [Serializable]
     public class TranslationException : Exception

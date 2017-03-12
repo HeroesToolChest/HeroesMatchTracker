@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HeroesStatTracker.Views.Matches
+namespace HeroesMatchData.Views.Matches
 {
     /// <summary>
     /// Interaction logic for AllMatchesControl.xaml

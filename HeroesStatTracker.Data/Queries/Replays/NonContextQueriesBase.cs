@@ -1,7 +1,7 @@
-﻿using HeroesStatTracker.Data.Databases;
-using HeroesStatTracker.Data.Models;
+﻿using HeroesMatchData.Data.Databases;
+using HeroesMatchData.Data.Models;
 
-namespace HeroesStatTracker.Data.Queries.Replays
+namespace HeroesMatchData.Data.Queries.Replays
 {
     public abstract class NonContextQueriesBase<T> : QueriesBase
         where T : INonContextModels
