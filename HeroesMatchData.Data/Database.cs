@@ -6,6 +6,7 @@ using HeroesMatchData.Data.Queries.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace HeroesMatchData.Data
 {
@@ -27,7 +28,7 @@ namespace HeroesMatchData.Data
         /// <summary>
         /// Verifies database all database files and performs migrations if needed
         /// </summary>
-        public void ExecuteDatabaseMigrations()
+        public Task ExecuteDatabaseMigrations()
         {
             // check for the database folder
             string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
@@ -48,6 +49,8 @@ namespace HeroesMatchData.Data
             }
 
             InitialDatabaseExecutions();
+
+            return Task.CompletedTask;
         }
 
         private void SetMigrators()

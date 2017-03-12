@@ -4,7 +4,7 @@
     using SQLite.CodeFirst;
     using System.Data.Entity;
 
-    internal class ReleaseNotesContext : StatTrackerDbContext
+    internal class ReleaseNotesContext : MatchDataDbContext
     {
         public ReleaseNotesContext()
             : base($"name={Properties.Settings.Default.ReleaseNotesConnNameDb}") { }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HeroesMatchData.Data.Databases
 {
-    internal class StatTrackerDbContext : DbContext
+    internal class MatchDataDbContext : DbContext
     {
-        protected StatTrackerDbContext(string nameOrConnectionString)
+        protected MatchDataDbContext(string nameOrConnectionString)
             : base(nameOrConnectionString) { }
 
         public virtual DbSet<SchemaInfo> SchemaInfo { get; set; }

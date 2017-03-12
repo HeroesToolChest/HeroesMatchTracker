@@ -7,7 +7,7 @@ using System.Linq;
 namespace HeroesMatchData.Data.Migrations
 {
     internal class MigratorBase<T, TMigrator>
-        where T : StatTrackerDbContext, new()
+        where T : MatchDataDbContext, new()
         where TMigrator : ContextMigrator, new()
     {
         private readonly string MigrationLogFile = "Logs/DatabasesMigrationLog.txt";
@@ -52,7 +52,9 @@ namespace HeroesMatchData.Data.Migrations
                     if (currentVersion >= RequiredDatabaseVersion)
                     {
                         if (logger)
+                        {
                             MigrationLogger("No migration required");
+                        }
 
                         return;
                     }
@@ -85,9 +87,6 @@ namespace HeroesMatchData.Data.Migrations
                         if (logger)
                             MigrationLogger($"Migration version {currentVersion} completed");
                     }
-
-                    if (logger)
-                        MigrationLogger($"Migration completed");
                 }
             }
             catch (Exception)

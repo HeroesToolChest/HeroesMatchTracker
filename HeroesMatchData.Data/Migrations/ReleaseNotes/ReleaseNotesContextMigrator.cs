@@ -5,7 +5,9 @@
         public ReleaseNotesContextMigrator()
         {
             // add new migration commands here
-            // new Migration1_v2_0_0().Command(Migrations, MigrationAddons);
+            IMigrationList.Add(new Migration1_v1_4_0());
+
+            ExecuteMigrationCommands();
         }
     }
 }

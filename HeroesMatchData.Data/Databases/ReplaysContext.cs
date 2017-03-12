@@ -4,7 +4,7 @@ namespace HeroesMatchData.Data.Databases
     using SQLite.CodeFirst;
     using System.Data.Entity;
 
-    internal class ReplaysContext : StatTrackerDbContext
+    internal class ReplaysContext : MatchDataDbContext
     {
         public ReplaysContext()
             : base($"name={Properties.Settings.Default.ReplaysConnNameDb}") { }

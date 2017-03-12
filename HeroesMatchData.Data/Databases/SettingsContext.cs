@@ -4,7 +4,7 @@ namespace HeroesMatchData.Data.Databases
     using SQLite.CodeFirst;
     using System.Data.Entity;
 
-    internal class SettingsContext : StatTrackerDbContext
+    internal class SettingsContext : MatchDataDbContext
     {
         public SettingsContext()
             : base($"name={Properties.Settings.Default.SettingsConnNameDb}") { }

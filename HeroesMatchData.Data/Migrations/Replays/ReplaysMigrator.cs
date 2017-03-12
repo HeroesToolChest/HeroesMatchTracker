@@ -8,7 +8,6 @@ namespace HeroesMatchData.Data.Migration.Replays
     {
         public ReplaysMigrator(string dbName, bool databaseFileCreated, int requiredDatabaseVersion)
             : base(dbName, databaseFileCreated, requiredDatabaseVersion)
-        {
-        }
+        { }
     }
 }

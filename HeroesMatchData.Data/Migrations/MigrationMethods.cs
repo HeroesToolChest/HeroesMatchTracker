@@ -7,7 +7,7 @@ using System.Linq;
 namespace HeroesMatchData.Data.Migrations
 {
     internal class MigrationMethods<T>
-        where T : StatTrackerDbContext, new()
+        where T : MatchDataDbContext, new()
     {
         private string DbConnectionStringName;
 

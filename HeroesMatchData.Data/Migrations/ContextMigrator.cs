@@ -6,7 +6,7 @@ namespace HeroesMatchData.Data.Migrations
     {
         public Dictionary<int, List<string>> Migrations { get; set; } = new Dictionary<int, List<string>>();
         public Dictionary<int, List<IMigrationAddon>> MigrationAddons { get; set; } = new Dictionary<int, List<IMigrationAddon>>();
-        protected List<IMigrationCommand> IMigrationList { get; private set; }
+        protected List<IMigrationCommand> IMigrationList { get; private set; } = new List<IMigrationCommand>();
 
         protected void ExecuteMigrationCommands()
         {

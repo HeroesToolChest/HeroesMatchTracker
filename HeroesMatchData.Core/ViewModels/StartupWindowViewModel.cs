@@ -64,7 +64,9 @@ namespace HeroesMatchData.Core.ViewModels
                 StatusLabel = "Starting up...";
 
                 await Message("Initializing HeroesMatchData.Data");
-                Data.Database.Initialize().ExecuteDatabaseMigrations();
+                var databaseMigrations = Data.Database.Initialize().ExecuteDatabaseMigrations();
+                await Message("Performing Database migrations...");
+                await databaseMigrations;
 
                 await ApplicationUpdater();
 
