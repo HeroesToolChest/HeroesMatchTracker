@@ -17,11 +17,13 @@ namespace HeroesMatchData.Core.ViewModels
         private int _selectedMainTab;
         private long _totalParsedReplays;
         private bool _matchSummaryIsOpen;
+        private bool _isExtendedAboutTextVisible;
         private string _matchSummaryHeader;
         private string _applicationStatus;
         private string _parserStatus;
         private string _parserWatchStatus;
         private string _hotsLogsStatus;
+        private string _extendedAboutText;
 
         private IDatabaseService Database;
         private IHeroesIconsService HeroesIcons;
@@ -141,6 +143,26 @@ namespace HeroesMatchData.Core.ViewModels
             }
         }
 
+        public bool IsExtendedAboutTextVisible
+        {
+            get => _isExtendedAboutTextVisible;
+            set
+            {
+                _isExtendedAboutTextVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string ExtendedAboutText
+        {
+            get => _extendedAboutText;
+            set
+            {
+                _extendedAboutText = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public void ToggleMatchSummaryFlyout()
         {
             MatchSummaryIsOpen = !MatchSummaryIsOpen;
@@ -199,6 +221,12 @@ namespace HeroesMatchData.Core.ViewModels
         public void SetTotalParsedReplays(long amount)
         {
             TotalParsedReplays = amount;
+        }
+
+        public void SetExtendedAboutText(string message)
+        {
+            ExtendedAboutText = message;
+            IsExtendedAboutTextVisible = true;
         }
 
         private void OpenWhatsNewWindow()

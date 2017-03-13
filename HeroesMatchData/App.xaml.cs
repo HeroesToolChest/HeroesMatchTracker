@@ -1,5 +1,7 @@
-﻿using HeroesMatchData.Views;
+﻿using HeroesMatchData.Core.Updater;
+using HeroesMatchData.Views;
 using System;
+using System.Data.SqlClient;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -54,11 +56,25 @@ namespace HeroesMatchData
 #endif
         }
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Core.Properties.Settings.Default.IsManualUpdateApplied = false;
+
+            base.OnStartup(e);
+        }
+
         protected override void OnExit(ExitEventArgs e)
         {
             if (NotifyIcon != null)
             {
                 NotifyIcon.Visible = false;
+            }
+
+            // this should only trigger if the update is applied through the settings menu
+            if (Core.Properties.Settings.Default.IsManualUpdateApplied)
+            {
+                SqlConnection.ClearAllPools();
+                AutoUpdater.CopyDatabasesToLatestRelease();
             }
 
             base.OnExit(e);

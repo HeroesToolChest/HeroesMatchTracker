@@ -230,13 +230,14 @@
     <Compile Include="Services\InternalService.cs" />
     <Compile Include="Services\IWebsiteService.cs" />
     <Compile Include="Services\Website.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Updater\AutoUpdater.cs" />
     <Compile Include="Updater\AutoUpdaterException.cs" />
     <Compile Include="User\IUserProfileService.cs" />
     <Compile Include="User\UserProfile.cs" />
     <Compile Include="Validation\NotEmptyValidation.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
-    <Compile Include="ViewModels\HstViewModel.cs" />
+    <Compile Include="ViewModels\HmdViewModel.cs" />
     <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />
     <Compile Include="ViewModels\Matches\CustomGameViewModel.cs" />
@@ -289,7 +290,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

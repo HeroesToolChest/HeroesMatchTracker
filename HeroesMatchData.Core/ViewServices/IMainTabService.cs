@@ -19,5 +19,7 @@ namespace HeroesMatchData.Core.ViewServices
         void SetReplayParserHotsLogsStatus(ReplayParserHotsLogsStatus status);
 
         void SetTotalParsedReplays(long amount);
+
+        void SetExtendedAboutText(string message);
     }
 }

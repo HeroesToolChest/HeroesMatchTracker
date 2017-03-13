@@ -12,7 +12,7 @@ namespace HeroesMatchData.Core.Updater
 {
     public class AutoUpdater
     {
-        private static Logger UpdaterLog = LogManager.GetLogger("UpdateLogFile");
+        private static Logger UpdaterLog = LogManager.GetLogger(LogFileNames.UpdateFileName);
 
         private UpdateManager UpdateManager;
         private UpdateInfo UpdateInfo;

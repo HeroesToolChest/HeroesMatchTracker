@@ -40,16 +40,11 @@
     </controls:MetroWindow.WindowButtonCommands>
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
-            <!--<Button x:Name="AboutButton" Click="AboutButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="About"/>
-                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
-                </StackPanel>
-            </Button>-->
             <Button x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="InformationOutline" />
                     <TextBlock Margin="4 0 0 0" Text="About"/>
+                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
