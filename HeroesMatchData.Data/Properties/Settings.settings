@@ -18,7 +18,7 @@
       <Value Profile="(Default)">Settings.sqlite</Value>
     </Setting>
     <Setting Name="ReplaysDatabaseMigrationVersion" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="SettingsDatabaseMigrationVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
@@ -31,6 +31,15 @@
     </Setting>
     <Setting Name="ReleaseNotesDatabaseMigrationVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Version1DatabaseName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HeroesParserData.db</Value>
+    </Setting>
+    <Setting Name="MigrationLogFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DatabasesMigrationLog.txt</Value>
+    </Setting>
+    <Setting Name="OldHeroesParserDatabaseConnName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HeroesParserData</Value>
     </Setting>
   </Settings>
 </SettingsFile>

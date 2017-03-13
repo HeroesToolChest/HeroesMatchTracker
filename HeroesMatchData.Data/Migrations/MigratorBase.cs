@@ -10,7 +10,7 @@ namespace HeroesMatchData.Data.Migrations
         where T : MatchDataDbContext, new()
         where TMigrator : ContextMigrator, new()
     {
-        private readonly string MigrationLogFile = "Logs/DatabasesMigrationLog.txt";
+        private readonly string MigrationLogFile = $"Logs/{Properties.Settings.Default.MigrationLogFile}";
 
         private string DbName;
         private bool DatabaseFileCreated;

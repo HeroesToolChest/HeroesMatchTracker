@@ -112,11 +112,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Databases\HeroesParserDataDbContext.cs" />
     <Compile Include="Databases\ReleaseNotesContext.cs" />
     <Compile Include="Generic\ReplaySaveResult.cs" />
     <Compile Include="IDatabaseService.cs" />
     <Compile Include="Migrations\ContextMigrator.cs" />
     <Compile Include="Databases\MatchDataDbContext.cs" />
+    <Compile Include="Migrations\DatabaseUpgradeMigration.cs" />
     <Compile Include="Migrations\IMigrator.cs" />
     <Compile Include="Migrations\MigratorBase.cs" />
     <Compile Include="Databases\ReplaysContext.cs" />
@@ -127,6 +129,9 @@
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\Migration2_v1_3_0.cs" />
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_2.cs" />
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration3_v1_4_0\Migration3_v1_4_0.cs" />
+    <Compile Include="Migrations\Replays\Migration4_v2_0_0\Migration4_v2_0_0.cs" />
+    <Compile Include="Migrations\Replays\Migration5_v2_0_0\Migration5_v2_0_0.cs" />
     <Compile Include="Migrations\Replays\ReplaysContextMigrator.cs" />
     <Compile Include="Migrations\Replays\ReplaysMigrator.cs" />
     <Compile Include="Databases\SettingsContext.cs" />
@@ -192,6 +197,7 @@
     <Compile Include="Models\Settings\UserSetting.cs" />
     <Compile Include="Queries\Settings\UserSettings.cs" />
     <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App.config">

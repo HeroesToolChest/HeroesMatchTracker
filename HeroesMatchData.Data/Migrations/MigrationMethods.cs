@@ -27,11 +27,10 @@ namespace HeroesMatchData.Data.Migrations
             bool columnExists = false;
             using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings[DbConnectionStringName].ConnectionString))
             {
-                using (var cmd = new SQLiteCommand($"PRAGMA table_info({tableName});"))
+                using (var cmd = new SQLiteCommand($"PRAGMA table_info({tableName});", conn))
                 {
                     var table = new DataTable();
 
-                    cmd.Connection = conn;
                     cmd.Connection.Open();
 
                     SQLiteDataAdapter adp = null;

@@ -5,6 +5,8 @@ namespace HeroesMatchData.Data.Migrations.ReleaseNotes
 {
     internal class Migration1_v1_4_0 : IMigrationCommand
     {
+        private int Version = 1;
+
         internal Migration1_v1_4_0() { }
 
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
@@ -120,10 +122,10 @@ namespace HeroesMatchData.Data.Migrations.ReleaseNotes
                         VALUES ('1.4.0', 0, '2016-12-15T22:07:16Z',
                         '{text}')");
 
-            migrations.Add(1, steps);
+            migrations.Add(Version, steps);
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
-            migrationAddons.Add(1, addonSteps);
+            migrationAddons.Add(Version, addonSteps);
         }
     }
 }

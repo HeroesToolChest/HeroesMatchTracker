@@ -41,8 +41,10 @@ namespace HeroesMatchData.Data
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
 
             VerifyDatabaseFiles();
+            LegacyDatabaseCheck();
             SetMigrators();
 
+            // perform migrations
             foreach (var migrator in MigratorsList)
             {
                 migrator.Initialize(true);
@@ -76,6 +78,20 @@ namespace HeroesMatchData.Data
                 ReleaseNotesDbFileCreated = true;
             else
                 ReleaseNotesDbFileCreated = false;
+        }
+
+        private void LegacyDatabaseCheck()
+        {
+            // checking for v1.x.x of database
+            if (File.Exists(Path.Combine(Settings.Default.DatabaseFolderName, Settings.Default.Version1DatabaseName)))
+            {
+                // check if all three databases were created, if so perform the upgrade migration
+                if (ReleaseNotesDbFileCreated && SettingsDbFileCreated && ReleaseNotesDbFileCreated)
+                {
+                    DatabaseUpgradeMigration.UpgradeDatabaseVersion2();
+                    ReplaysDbFileCreated = false; // don't let it set the current version
+                }
+            }
         }
 
         private void InitialDatabaseExecutions()

@@ -4,6 +4,8 @@ namespace HeroesMatchData.Data.Migrations.Settings
 {
     internal class Migration1_v1_3_0 : IMigrationCommand
     {
+        private int Version = 1;
+
         internal Migration1_v1_3_0() { }
 
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
@@ -15,13 +17,13 @@ namespace HeroesMatchData.Data.Migrations.Settings
                 Name NVARCHAR,
                 Value NVARCHAR)",
             };
-            migrations.Add(1, steps);
+            migrations.Add(Version, steps);
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>
             {
                 new MigrationAddon1_v1_3_0_1(),
             };
-            migrationAddons.Add(1, addonSteps);
+            migrationAddons.Add(Version, addonSteps);
         }
     }
 }

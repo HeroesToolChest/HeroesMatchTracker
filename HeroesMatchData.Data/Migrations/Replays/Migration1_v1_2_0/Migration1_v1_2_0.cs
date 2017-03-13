@@ -4,6 +4,8 @@ namespace HeroesMatchData.Data.Migrations.Replays
 {
     internal class Migration1_v1_2_0 : IMigrationCommand
     {
+        private int Version = 1;
+
         internal Migration1_v1_2_0() { }
 
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
@@ -20,14 +22,14 @@ namespace HeroesMatchData.Data.Migrations.Replays
                 DateAdded DATETIME,
                 FOREIGN KEY (PlayerId) REFERENCES ReplayAllHotsPlayers (PlayerId))",
             };
-            migrations.Add(1, steps);
+            migrations.Add(Version, steps);
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>
             {
                 new MigrationAddon1_v1_2_0_1(),
                 new MigrationAddon1_v1_2_0_2(),
             };
-            migrationAddons.Add(1, addonSteps);
+            migrationAddons.Add(Version, addonSteps);
         }
     }
 }

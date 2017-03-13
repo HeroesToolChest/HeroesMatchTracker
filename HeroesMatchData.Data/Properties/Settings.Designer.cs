@@ -85,7 +85,7 @@ namespace HeroesMatchData.Data.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int ReplaysDatabaseMigrationVersion {
             get {
                 return ((int)(this["ReplaysDatabaseMigrationVersion"]));
@@ -140,6 +140,42 @@ namespace HeroesMatchData.Data.Properties {
             }
             set {
                 this["ReleaseNotesDatabaseMigrationVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HeroesParserData.db")]
+        public string Version1DatabaseName {
+            get {
+                return ((string)(this["Version1DatabaseName"]));
+            }
+            set {
+                this["Version1DatabaseName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DatabasesMigrationLog.txt")]
+        public string MigrationLogFile {
+            get {
+                return ((string)(this["MigrationLogFile"]));
+            }
+            set {
+                this["MigrationLogFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HeroesParserData")]
+        public string OldHeroesParserDatabaseConnName {
+            get {
+                return ((string)(this["OldHeroesParserDatabaseConnName"]));
+            }
+            set {
+                this["OldHeroesParserDatabaseConnName"] = value;
             }
         }
     }
