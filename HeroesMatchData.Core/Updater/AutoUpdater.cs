@@ -102,7 +102,7 @@ namespace HeroesMatchData.Core.Updater
         {
             try
             {
-                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl))
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: true))
                 {
                     UpdaterLog.Log(LogLevel.Info, "Update Check");
 
