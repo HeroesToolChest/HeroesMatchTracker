@@ -32,7 +32,7 @@
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>
-        <StackPanel Margin="12" Grid.Column="1" Background="{StaticResource DefaultBackgroundBrush}" Width="340" Height="200" Style="{StaticResource TotalGamesTextBoxStyle}"
+        <!--<StackPanel Margin="12" Grid.Column="1" Background="{StaticResource DefaultBackgroundBrush}" Width="340" Height="200" Style="{StaticResource TotalGamesTextBoxStyle}"
                     HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel Margin="20">
                 <StackPanel Orientation="Horizontal">
@@ -92,6 +92,6 @@
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </UserControl>
