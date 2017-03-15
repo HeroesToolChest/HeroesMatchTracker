@@ -9,7 +9,6 @@
   <Level4>
     <TyraelMasteryElDruinsMightHoradricReforging name="Horadric Reforging" desc="TyraelElDruinsMightHoradricReforgingTalent">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightHoradricReforging>
     <TyraelMasterySwiftRetribution name="Swift Retribution" desc="TyraelSmiteSwiftRetributionTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasterySwiftRetribution>
-    <GenericTalentAmplifiedHealing name="Amplified Healing" desc="GenericAmplifiedHealingTalent">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
     <GenericVigorousStrikePassive name="Vigorous Strike" desc="GenericVigorousStrikeTalent">storm_ui_icon_talent_autoattack_heal.dds</GenericVigorousStrikePassive>
   </Level4>
   <Level7>
@@ -25,7 +24,6 @@
   <Level13>
     <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
     <TyraelMasteryAngelicAbsorption name="Angelic Absorption" desc="TyraelRighteousnessAngelicAbsorptionTalent">storm_ui_icon_tyrael_righteousness.dds</TyraelMasteryAngelicAbsorption>
-    <TyraelMasteryImposingWillRighteousness name="Imposing Will" desc="TyraelRighteousnessImposingWillTalent">storm_ui_icon_tyrael_righteousness_var1.dds</TyraelMasteryImposingWillRighteousness>
     <TyraelMasteryAngelicMight name="Angelic Might" desc="TyraelSmiteAngelicMightTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasteryAngelicMight>
   </Level13>
   <Level16>
@@ -37,7 +35,7 @@
   <Level20>
     <TyraelMasteryJudgmentAngelofJustice name="Angel of Justice" desc="TyraelJudgmentAngelOfJusticeTalent">storm_ui_icon_tyrael_judgement.dds</TyraelMasteryJudgmentAngelofJustice>
     <TyraelMasterySanctificationHolyArena name="Holy Arena" desc="TyraelSanctificationHolyArenaTalent">storm_ui_icon_tyrael_sanctification.dds</TyraelMasterySanctificationHolyArena>
-    <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+    <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
   </Level20>
 </Tyrael>
