@@ -234,6 +234,12 @@
     <Aliases>НОВА,노바,诺娃,諾娃</Aliases>
   </Nova>
 
+  <Probius available="51375" attributeid="Prob" franchise="Starcraft"
+      portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
+    <Roles>Specialist</Roles>
+    <Aliases>Sondius,Пробиус,普罗比斯,普羅比斯,Probiusz,프로비우스,EDN-OS</Aliases>
+  </Probius>
+  
   <Ragnaros available="48760" attributeid="Ragn" franchise="Warcraft"
             portrait="storm_ui_ingame_heroselect_btn_ragnaros.dds" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.dds" leader="storm_ui_ingame_hero_leaderboard_ragnaros.dds">
     <Roles>Assassin</Roles>
