@@ -6,8 +6,6 @@ namespace HeroesMatchData.Data.Migrations.Replays
     {
         private int Version = 4;
 
-        internal Migration4_v2_0_0() { }
-
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
         {
             // intentionally left emtpy, increasing the version to 4 to match HeroesParserData.db version

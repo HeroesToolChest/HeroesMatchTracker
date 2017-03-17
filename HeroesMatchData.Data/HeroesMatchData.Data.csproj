@@ -114,6 +114,7 @@
     <Compile Include="Database.cs" />
     <Compile Include="Databases\HeroesParserDataDbContext.cs" />
     <Compile Include="Databases\ReleaseNotesContext.cs" />
+    <Compile Include="Generic\ConnectionString.cs" />
     <Compile Include="Generic\ReplaySaveResult.cs" />
     <Compile Include="IDatabaseService.cs" />
     <Compile Include="Migrations\ContextMigrator.cs" />

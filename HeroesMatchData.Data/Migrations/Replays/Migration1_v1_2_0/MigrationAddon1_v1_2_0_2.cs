@@ -6,10 +6,6 @@ namespace HeroesMatchData.Data.Migrations.Replays
 {
     internal class MigrationAddon1_v1_2_0_2 : MigrationMethods<ReplaysContext>, IMigrationAddon
     {
-        public MigrationAddon1_v1_2_0_2()
-            : base(Properties.Settings.Default.ReplaysConnNameDb)
-        { }
-
         public void Execute()
         {
             using (ReplaysContext db = new ReplaysContext())
@@ -39,7 +35,7 @@ namespace HeroesMatchData.Data.Migrations.Replays
                             BattleNetId = player.BattleNetId,
                             BattleNetRegionId = player.BattleNetRegionId,
                             BattleNetSubId = player.BattleNetSubId,
-                            DateAdded = player.LastSeen
+                            DateAdded = player.LastSeen,
                         };
 
                         db.ReplayRenamedPlayers.Add(replayRenamedPlayer);

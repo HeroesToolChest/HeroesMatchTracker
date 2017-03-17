@@ -7,8 +7,6 @@ namespace HeroesMatchData.Data.Migrations.ReleaseNotes
     {
         private int Version = 1;
 
-        internal Migration1_v1_4_0() { }
-
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
         {
             string text = string.Empty;

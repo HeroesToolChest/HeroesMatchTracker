@@ -5,9 +5,6 @@ namespace HeroesMatchData.Data.Migrations.Replays
     internal class Migration3_v1_4_0 : IMigrationCommand
     {
         private int Version = 3;
-
-        internal Migration3_v1_4_0() { }
-
         public void Command(Dictionary<int, List<string>> migrations, Dictionary<int, List<IMigrationAddon>> migrationAddons)
         {
             List<string> steps = new List<string>

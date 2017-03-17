@@ -11,9 +11,9 @@ namespace HeroesMatchData.Data.Migrations
     {
         private string DbConnectionStringName;
 
-        public MigrationMethods(string dbConnectionStringName)
+        public MigrationMethods()
         {
-            DbConnectionStringName = dbConnectionStringName;
+            DbConnectionStringName = ConnectionString.GetConnectionStringByType<T>();
         }
 
         /// <summary>
