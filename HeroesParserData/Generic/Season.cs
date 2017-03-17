@@ -6,6 +6,7 @@
         Preseason = 0,
         Season1,
         Season2,
-        Season3
+        Season3,
+        Season4,
     }
 }

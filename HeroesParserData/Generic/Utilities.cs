@@ -86,6 +86,7 @@ namespace HeroesParserData
             list.Add("Season 1");
             list.Add("Season 2");
             list.Add("Season 3");
+            list.Add("Season 4");
 
             return list;
         }
@@ -127,8 +128,10 @@ namespace HeroesParserData
 
             switch (season)
             {
+                case Season.Season4:
+                    return new Tuple<int?, int?>(51375, 99999);
                 case Season.Season3:
-                    return new Tuple<int?, int?>(48760, 99999);
+                    return new Tuple<int?, int?>(48760, 51375);
                 case Season.Season2:
                     return new Tuple<int?, int?>(45949, 48760);
                 case Season.Season1:
