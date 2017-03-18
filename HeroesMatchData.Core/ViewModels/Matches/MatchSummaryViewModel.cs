@@ -6,9 +6,7 @@ using HeroesMatchData.Core.Messaging;
 using HeroesMatchData.Core.Models.GraphSummaryModels;
 using HeroesMatchData.Core.Models.MatchModels;
 using HeroesMatchData.Core.Services;
-using HeroesMatchData.Core.User;
 using HeroesMatchData.Core.ViewServices;
-using HeroesMatchData.Data;
 using HeroesMatchData.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
@@ -18,7 +16,7 @@ using System.Windows.Media;
 
 namespace HeroesMatchData.Core.ViewModels.Matches
 {
-    public class MatchSummaryViewModel : HstViewModel, IMatchSummaryReplayService
+    public class MatchSummaryViewModel : HmdViewModel, IMatchSummaryReplayService
     {
         private int _teamBlueKills;
         private int _teamRedKills;
@@ -48,17 +46,11 @@ namespace HeroesMatchData.Core.ViewModels.Matches
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
-        private IInternalService InternalService;
-        private IDatabaseService Database;
-        private IUserProfileService UserProfile;
         private IWebsiteService Website;
 
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website)
-            : base(internalService.HeroesIcons)
+            : base(internalService)
         {
-            InternalService = internalService;
-            Database = internalService.Database;
-            UserProfile = internalService.UserProfile;
             Website = website;
 
             IsLeftChangeButtonVisible = true;

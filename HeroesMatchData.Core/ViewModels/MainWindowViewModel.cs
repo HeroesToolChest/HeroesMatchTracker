@@ -53,7 +53,6 @@ namespace HeroesMatchData.Core.ViewModels
         public IWhatsNewWindowService WhatsNewWindow => ServiceLocator.Current.GetInstance<IWhatsNewWindowService>();
         public IProfileWindowService ProfileWindow => ServiceLocator.Current.GetInstance<IProfileWindowService>();
 
-
         public bool MatchSummaryIsOpen
         {
             get => _matchSummaryIsOpen;

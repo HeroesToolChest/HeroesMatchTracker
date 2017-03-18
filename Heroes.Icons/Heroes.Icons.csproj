@@ -3645,73 +3645,207 @@
     <Content Include="Xml\HeroBuilds\50441\_ShortTalentTooltips.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Xml\HeroBuilds\51375\Abathur.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Alarak.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Anubarak.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Artanis.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Arthas.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Auriel.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Azmodan.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Brightwing.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Butcher.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Chen.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Cho.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Chromie.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Dehaka.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Diablo.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\ETC.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Falstad.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Gall.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Gazlowe.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Greymane.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Guldan.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Illidan.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Jaina.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Johanna.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Kaelthas.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Kerrigan.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Kharazim.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Leoric.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\LiLi.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\LiMing.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\LostVikings.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\LtMorales.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Lucio.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Lunara.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Malfurion.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Medivh.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Muradin.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Murky.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Nazeebo.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Nova.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Probius.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Ragnaros.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Raynor.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Rehgar.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Rexxar.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Samuro.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\SgtHammer.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Sonya.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Stitches.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Sylvanas.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Tassadar.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Thrall.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Tracer.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Tychus.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Tyrael.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Tyrande.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Uther.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Valeera.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Valla.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Varian.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Xul.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Zagara.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Zarya.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Zeratul.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\Zuljin.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\_AllHeroes.xml" />
-    <Resource Include="Xml\HeroBuilds\51375\_FullTalentTooltips.txt" />
-    <Resource Include="Xml\HeroBuilds\51375\_ShortTalentTooltips.txt" />
+    <Content Include="Xml\HeroBuilds\51375\Abathur.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Alarak.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Anubarak.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Artanis.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Arthas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Auriel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Azmodan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Brightwing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Butcher.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Chen.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Cho.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Chromie.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Dehaka.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Diablo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\ETC.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Falstad.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Gall.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Gazlowe.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Greymane.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Guldan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Illidan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Jaina.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Johanna.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Kaelthas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Kerrigan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Kharazim.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Leoric.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\LiLi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\LiMing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\LostVikings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\LtMorales.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Lucio.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Lunara.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Malfurion.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Medivh.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Muradin.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Murky.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Nazeebo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Nova.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Probius.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Ragnaros.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Raynor.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Rehgar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Rexxar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Samuro.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\SgtHammer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Sonya.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Stitches.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Sylvanas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Tassadar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Thrall.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Tracer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Tychus.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Tyrael.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Tyrande.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Uther.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Valeera.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Valla.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Varian.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Xul.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Zagara.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Zarya.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Zeratul.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\Zuljin.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\_FullTalentTooltips.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\51375\_ShortTalentTooltips.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Xml\Heroes\Heroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

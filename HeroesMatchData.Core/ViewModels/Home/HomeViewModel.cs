@@ -2,8 +2,6 @@
 using HeroesMatchData.Core.Messaging;
 using HeroesMatchData.Core.Models.MatchHistoryModels;
 using HeroesMatchData.Core.Services;
-using HeroesMatchData.Core.User;
-using HeroesMatchData.Data;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -11,11 +9,8 @@ using System.Windows;
 
 namespace HeroesMatchData.Core.ViewModels.Home
 {
-    public class HomeViewModel : HstViewModel
+    public class HomeViewModel : HmdViewModel
     {
-        private IInternalService InternalService;
-        private IDatabaseService Database;
-        private IUserProfileService UserProfile;
         private IWebsiteService Website;
 
         private DateTime? LatestReplayDateTime;
@@ -24,11 +19,8 @@ namespace HeroesMatchData.Core.ViewModels.Home
         private ObservableCollection<MatchHistoryMatch> _matchCollection = new ObservableCollection<MatchHistoryMatch>();
 
         public HomeViewModel(IInternalService internalService, IWebsiteService website)
-            : base(internalService.HeroesIcons)
+            : base(internalService)
         {
-            InternalService = internalService;
-            Database = internalService.Database;
-            UserProfile = internalService.UserProfile;
             Website = website;
 
             UserBattleTagUpdated = false;

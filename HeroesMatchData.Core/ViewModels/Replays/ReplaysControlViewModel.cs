@@ -1,9 +1,9 @@
 ﻿using Amazon.S3;
 using GalaSoft.MvvmLight.Command;
-using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchData.Core.HotsLogs;
 using HeroesMatchData.Core.Models.ReplayModels;
+using HeroesMatchData.Core.Services;
 using HeroesMatchData.Core.ViewServices;
 using HeroesMatchData.Data;
 using HeroesMatchData.Data.Models.Replays;
@@ -22,7 +22,7 @@ using static Heroes.ReplayParser.DataParser;
 
 namespace HeroesMatchData.Core.ViewModels.Replays
 {
-    public class ReplaysControlViewModel : HstViewModel, IDisposable
+    public class ReplaysControlViewModel : HmdViewModel, IDisposable
     {
         private bool _areProcessButtonsEnabled;
         private bool _areHotsLogsUploaderButtonsEnabled;
@@ -37,7 +37,6 @@ namespace HeroesMatchData.Core.ViewModels.Replays
         private string _hotsLogsUploaderUploadStatus;
 
         private FileSystemWatcher FileWatcher;
-        private IDatabaseService Database;
         private IMainTabService MainTab;
 
         private Dictionary<string, int> ReplayFileLocations = new Dictionary<string, int>();
@@ -55,10 +54,9 @@ namespace HeroesMatchData.Core.ViewModels.Replays
         /// <summary>
         /// Constructor
         /// </summary>
-        public ReplaysControlViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IMainTabService mainTab)
-            : base(heroesIcons)
+        public ReplaysControlViewModel(IInternalService internalService, IMainTabService mainTab)
+            : base(internalService)
         {
-            Database = database;
             MainTab = mainTab;
             HotsLogsStartButtonText = "[Stop]";
 

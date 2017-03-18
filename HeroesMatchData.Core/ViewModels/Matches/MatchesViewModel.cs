@@ -1,15 +1,15 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
-using Heroes.Icons;
+using HeroesMatchData.Core.Services;
 using HeroesMatchData.Core.ViewServices;
 
 namespace HeroesMatchData.Core.ViewModels.Matches
 {
-    public class MatchesViewModel : HstViewModel, IMatchesTabService
+    public class MatchesViewModel : HmdViewModel, IMatchesTabService
     {
         private int _selectedMatchesTab;
 
-        public MatchesViewModel(IHeroesIconsService heroesIcons)
-            : base(heroesIcons)
+        public MatchesViewModel(IInternalService internalService)
+            : base(internalService)
         {
             SimpleIoc.Default.Register<IMatchesTabService>(() => this);
         }

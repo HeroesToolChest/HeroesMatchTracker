@@ -5,9 +5,7 @@ using Heroes.ReplayParser;
 using HeroesMatchData.Core.Messaging;
 using HeroesMatchData.Core.Models.MatchModels;
 using HeroesMatchData.Core.Services;
-using HeroesMatchData.Core.User;
 using HeroesMatchData.Core.ViewServices;
-using HeroesMatchData.Data;
 using HeroesMatchData.Data.Models.Replays;
 using HeroesMatchData.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
@@ -17,7 +15,7 @@ using System.Linq;
 
 namespace HeroesMatchData.Core.ViewModels.Matches
 {
-    public abstract class MatchesBase : HstViewModel
+    public abstract class MatchesBase : HmdViewModel
     {
         private bool _isGivenBattleTagOnlyChecked;
         private bool _showMatchSummaryButtonEnabled;
@@ -33,9 +31,6 @@ namespace HeroesMatchData.Core.ViewModels.Matches
         private string _team2OverviewHeader;
         private ReplayMatch _selectedReplay;
 
-        private IInternalService InternalService;
-        private IDatabaseService Database;
-        private IUserProfileService UserProfile;
         private IWebsiteService Website;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
@@ -45,11 +40,8 @@ namespace HeroesMatchData.Core.ViewModels.Matches
         private GameMode MatchGameMode;
 
         public MatchesBase(IInternalService internalService, IWebsiteService website, GameMode matchGameMode)
-            : base(internalService.HeroesIcons)
+            : base(internalService)
         {
-            InternalService = internalService;
-            Database = internalService.Database;
-            UserProfile = internalService.UserProfile;
             Website = website;
 
             MatchGameMode = matchGameMode;

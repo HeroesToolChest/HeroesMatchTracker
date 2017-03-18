@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HeroesMatchData.Core.ViewModels.RawData
 {
-    public abstract class RawDataViewModelBase<T> : HstViewModel
+    public abstract class RawDataViewModelBase<T> : HmdViewModel
         where T : IRawDataDisplay, new()
     {
         private bool _isQueryActive;
@@ -227,12 +227,14 @@ namespace HeroesMatchData.Core.ViewModels.RawData
 
         private void AddButtonCommandsActions()
         {
-            ButtonCommandActions = new Dictionary<ButtonCommands, Action>();
-            ButtonCommandActions.Add(ButtonCommands.SelectAll, SelectAll);
-            ButtonCommandActions.Add(ButtonCommands.SelectTop100, SelectTop100);
-            ButtonCommandActions.Add(ButtonCommands.SelectBottom100, SelectBottom100);
-            ButtonCommandActions.Add(ButtonCommands.SelectCustomTop, SelectCustomTop);
-            ButtonCommandActions.Add(ButtonCommands.SelectCustomWhere, SelectCustomWhere);
+            ButtonCommandActions = new Dictionary<ButtonCommands, Action>
+            {
+                { ButtonCommands.SelectAll, SelectAll },
+                { ButtonCommands.SelectTop100, SelectTop100 },
+                { ButtonCommands.SelectBottom100, SelectBottom100 },
+                { ButtonCommands.SelectCustomTop, SelectCustomTop },
+                { ButtonCommands.SelectCustomWhere, SelectCustomWhere },
+            };
         }
 
         private void ExecuteQueryCommand(ButtonCommands commands)

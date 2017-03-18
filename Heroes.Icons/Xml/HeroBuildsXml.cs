@@ -42,7 +42,7 @@ namespace Heroes.Icons.Xml
         private Dictionary<string, string> RealHeroNameByTalentReferenceName = new Dictionary<string, string>();
 
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
-            : base(build.HasValue ? build.Value : 0)
+            : base(build ?? 0)
         {
             Logger = logger;
             XmlParentFile = parentFile;
@@ -214,9 +214,9 @@ namespace Heroes.Icons.Xml
                                         if (reader.NodeType == XmlNodeType.Element)
                                         {
                                             string refName = reader.Name; // reference name of talent
-                                            string realName = reader["name"] == null ? string.Empty : reader["name"];  // real ingame name of talent
-                                            string generic = reader["generic"] == null ? "false" : reader["generic"];  // is the icon being used generic
-                                            string desc = reader["desc"] == null ? string.Empty : reader["desc"]; // reference name for talent desciptions
+                                            string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
+                                            string generic = reader["generic"] ?? "false";  // is the icon being used generic
+                                            string desc = reader["desc"] ?? string.Empty; // reference name for talent desciptions
 
                                             SetTalentTooltip(refName, desc);
 

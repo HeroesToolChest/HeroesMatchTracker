@@ -40,6 +40,7 @@ namespace Heroes.Icons.Xml
         /// <param name="heroRealName">The hero name</param>
         /// <returns></returns>
         bool GetHeroNameFromTalentReferenceName(string talentName, out string heroRealName);
+
         List<int> GetListOfHeroesBuilds();
     }
 }
