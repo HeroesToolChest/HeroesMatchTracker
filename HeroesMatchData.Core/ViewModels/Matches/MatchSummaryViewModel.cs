@@ -450,14 +450,19 @@ namespace HeroesMatchData.Core.ViewModels.Matches
                 // match bans
                 if (replayMatch.ReplayMatchTeamBan != null)
                 {
-                    MatchHeroBans.Team0Ban0HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
-                    MatchHeroBans.Team0Ban1HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
-                    MatchHeroBans.Team1Ban0HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
-                    MatchHeroBans.Team1Ban1HeroName = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
-                    MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team0Ban0HeroName);
-                    MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team0Ban1HeroName);
-                    MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team1Ban0HeroName);
-                    MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(MatchHeroBans.Team1Ban1HeroName);
+                    string ban1 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
+                    string ban2 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
+                    string ban3 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
+                    string ban4 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
+
+                    MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban1)[0]}";
+                    MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban2)[0]}";
+                    MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban3)[0]}";
+                    MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban4)[0]}";
+                    MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban1);
+                    MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban2);
+                    MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban3);
+                    MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban4);
 
                     HasBans = true;
                 }

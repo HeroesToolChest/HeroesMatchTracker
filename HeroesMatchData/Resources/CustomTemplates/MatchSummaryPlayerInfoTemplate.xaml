@@ -6,11 +6,7 @@
     <DataTemplate x:Key="PlayerInfo">
         <DockPanel>
             <Grid DockPanel.Dock="Left" ContextMenu="{StaticResource PlayerSearchContextMenu}">
-                <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left">
-                    <Image.ToolTip>
-                        <ToolTip Content="{Binding CharacterTooltip}"/>
-                    </Image.ToolTip>
-                </Image>
+                <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left" ToolTip="{Binding CharacterTooltip}" />
                 <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                 <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-4 -16 0 0"/>
             </Grid>
