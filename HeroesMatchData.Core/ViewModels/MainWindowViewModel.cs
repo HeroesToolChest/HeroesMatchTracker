@@ -65,7 +65,13 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string UserBattleTag
         {
-            get => UserProfile.BattleTagName;
+            get
+            {
+                if (!string.IsNullOrEmpty(UserProfile.BattleTagName))
+                    return UserProfile.BattleTagName;
+                else
+                    return "No BattleTag Set";
+            }
             set
             {
                 RaisePropertyChanged();
