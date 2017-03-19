@@ -33,9 +33,10 @@ namespace HeroesMatchData.Data.Migrations
 
                     cmd.Connection.Open();
 
-                    SQLiteDataAdapter adp = null;
-                    adp = new SQLiteDataAdapter(cmd);
-                    adp.Fill(table);
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
 
                     var columnNames = table.AsEnumerable().Select(x => x["name"].ToString()).ToList();
                     columnExists = columnNames.Contains($"{columnName}");

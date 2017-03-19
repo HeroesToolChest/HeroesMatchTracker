@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HeroesMatchData.Data.Databases;
+using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 
@@ -11,6 +13,7 @@ namespace HeroesMatchData.Data.Migrations
 
         internal static void UpgradeDatabaseVersion2()
         {
+            var releaseNotesTable = new DataTable();
             try
             {
                 MigrationLogger("Executing database upgrade migration...");
@@ -18,23 +21,50 @@ namespace HeroesMatchData.Data.Migrations
                 // delete the Replays.sqlite file
                 string replaysSqlite = Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.ReplaysDbFileName);
                 if (File.Exists(replaysSqlite))
-                {
                     File.Delete(replaysSqlite);
-                }
 
                 MigrationLogger($"Deleted {replaysSqlite}");
 
                 using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings[Properties.Settings.Default.OldHeroesParserDatabaseConnName].ConnectionString))
                 {
-                    using (var cmd = new SQLiteCommand("DROP TABLE ReleaseNotes; DROP TABLE UserSettings;", conn))
+                    conn.Open();
+                    using (var transaction = conn.BeginTransaction())
                     {
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
+                        // get the release notes from HeroesParserData
+                        using (var cmd = new SQLiteCommand("SELECT * FROM ReleaseNotes", conn))
+                        {
+                            using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                            {
+                                adapter.Fill(releaseNotesTable);
+                            }
+                        }
 
-                    MigrationLogger("Dropped table ReleaseNotes and UserSettings");
+                        using (var cmd = new SQLiteCommand("DROP TABLE ReleaseNotes; DROP TABLE UserSettings;", conn))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        MigrationLogger("Dropped table ReleaseNotes and UserSettings");
+                        transaction.Commit();
+                    }
                 }
 
+                using (var db = new ReleaseNotesContext())
+                {
+                    foreach (DataRow row in releaseNotesTable.Rows)
+                    {
+                        db.Database.ExecuteSqlCommand(
+                            "INSERT INTO ReleaseNotes VALUES (@Version, @PreRelease, @DateReleased, @PatchNote);",
+                            new SQLiteParameter("@Version", row["Version"]),
+                            new SQLiteParameter("@PreRelease", row["PreRelease"]),
+                            new SQLiteParameter("@DateReleased", row["DateReleased"]),
+                            new SQLiteParameter("@PatchNote", row["PatchNote"]));
+                    }
+
+                    MigrationLogger("Added ReleaseNotes to ReleaseNotes.sqlite");
+                }
+
+                // rename HeroesParserData.db to Replays.sqlite
                 File.Move(Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.Version1DatabaseName), Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.ReplaysDbFileName));
                 MigrationLogger("HeroesParserData.db renamed to Replays.sqlite");
                 MigrationLogger("Upgrade migration completed");
