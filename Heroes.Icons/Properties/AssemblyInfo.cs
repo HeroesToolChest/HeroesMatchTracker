@@ -17,6 +17,6 @@ using System.Runtime.InteropServices;
 [assembly: Guid("4168d60d-d0eb-40a2-9304-d38f14106a48")]
 
 // revision number will be the latest supported build
-[assembly: AssemblyVersion("2.0.0.49495")]
-[assembly: AssemblyFileVersion("2.0.0.49495")]
+[assembly: AssemblyVersion("2.0.0.51375")]
+[assembly: AssemblyFileVersion("2.0.0.51375")]
 [assembly: NeutralResourcesLanguage("en-US")]
