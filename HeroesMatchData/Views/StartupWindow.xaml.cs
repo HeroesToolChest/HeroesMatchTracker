@@ -23,8 +23,8 @@ namespace HeroesMatchData.Views
                 WindowState = WindowState.Maximized,
             };
 
-            Close();
             mainWindow.Show();
+            Close();
         }
     }
 }
