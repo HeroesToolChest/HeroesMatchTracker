@@ -138,6 +138,7 @@
     <Compile Include="Databases\SettingsContext.cs" />
     <Compile Include="Migrations\Settings\Migration1_v1_3_0\Migration1_v1_3_0.cs" />
     <Compile Include="Migrations\Settings\Migration1_v1_3_0\MigrationAddon1_v1_3_0_1.cs" />
+    <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
     <Compile Include="Migrations\Settings\SettingsMigrator.cs" />
     <Compile Include="Migrations\Settings\SettingsContextMigrator.cs" />
     <Compile Include="Migrations\IMigrationCommand.cs" />

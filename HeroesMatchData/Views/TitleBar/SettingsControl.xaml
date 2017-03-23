@@ -12,8 +12,9 @@
     </UserControl.Resources>
     <StackPanel>
         <StackPanel Margin="{StaticResource BorderMargin}">
-            <CheckBox Content="Automatically Update on Startup" Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsAutoUpdates}"/>
-            <CheckBox Content="Minimize to Tray"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsMinimizeToTray}"/>
+            <CheckBox Content="Automatically Update on Startup" Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsAutoUpdates}" />
+            <CheckBox Content="Run on Windows Startup"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsWindowsStartup}" ToolTip="Auto Enables 'Minimize to Tray'" />
+            <CheckBox Content="Minimize to Tray"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsMinimizeToTray}" IsEnabled="{Binding IsMinimizeToTrayEnabled}"/>
             <CheckBox Content="Hide Battle Tag Numbers"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsBattleTagsHidden}"/>
         </StackPanel>
         <!--<Separator Margin="0 4" />-->

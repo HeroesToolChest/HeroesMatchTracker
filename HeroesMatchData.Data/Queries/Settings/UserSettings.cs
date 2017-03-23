@@ -14,6 +14,12 @@ namespace HeroesMatchData.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
+        public bool IsWindowsStartup
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
         public bool IsMinimizeToTray
         {
             get { return GetBooleanValue(); }
@@ -132,11 +138,19 @@ namespace HeroesMatchData.Data.Queries.Settings
         }
         #endregion Auto Updater
 
+        #region Other
+        public bool IsStartedViaStartup
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+        #endregion Other
         internal void SetDefaultSettings()
         {
             // Settings
             IsAutoUpdates = true;
-            IsMinimizeToTray = false;
+            IsWindowsStartup = false;
+            IsMinimizeToTray = true;
             IsBattleTagHidden = true;
 
             // Replays
@@ -162,6 +176,9 @@ namespace HeroesMatchData.Data.Queries.Settings
 
             // AutoUpdater
             IsNewUpdateApplied = false;
+
+            // Other
+            IsStartedViaStartup = false;
         }
     }
 }

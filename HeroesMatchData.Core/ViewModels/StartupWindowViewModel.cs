@@ -30,6 +30,8 @@ namespace HeroesMatchData.Core.ViewModels
 
         public string AppVersion { get { return AssemblyVersions.HeroesMatchDataVersion().ToString(); } }
 
+        public IDatabaseService GetDatabaseService => Database;
+
         public RelayCommand ExecuteStartupCommand => new RelayCommand(async () => await ExecuteStartup());
 
         public string StatusLabel
