@@ -17,4 +17,4 @@ using System.Runtime.InteropServices;
 
 // revision number will be the latest supported build
 [assembly: AssemblyVersion("1.5.3.51375")]
-[assembly: AssemblyFileVersion("1.5.3.50950")]
+[assembly: AssemblyFileVersion("1.5.3.51375")]
