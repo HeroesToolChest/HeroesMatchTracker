@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Johanna attributeid="Crus" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_johanna.dds" loading="storm_ui_ingame_hero_loadingscreen_crusader.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
+  <Level1>
+    <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+    <CrusaderMasteryIronSkinReinforce name="Reinforce" generic="true" desc="CrusaderIronSkinReinforceTalent">storm_ui_icon_talent_block.dds</CrusaderMasteryIronSkinReinforce>
+    <CrusaderMasteryPunishRighteousSmash name="Righteous Smash" desc="CrusaderPunishRighteousSmashTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishRighteousSmash>
+  </Level1>
+  <Level4>
+    <CrusaderMasteryPunishRoar name="Roar" desc="CrusaderRoarTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishRoar>
+    <CrusaderMasteryCondemnEternalRetaliation name="Eternal Retaliation" desc="CrusaderEternalRetaliationTalent">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnEternalRetaliation>
+    <CrusaderMasteryLawsOfHope name="Laws of Hope" desc="CrusaderLawsOfHope">storm_ui_icon_johanna_lawsofhope.dds</CrusaderMasteryLawsOfHope>
+  </Level4>
+  <Level7>
+    <BattleMomentumCrusader name="Blessed Momentum" desc="JohannaBlessedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumCrusader>
+    <CrusaderMasteryCondemnConviction name="Conviction" desc="CrusaderCondemnConvictionTalent">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnConviction>
+    <CrusaderMasteryIronSkinTheCrusadeMarchesOn name="The Crusade Marches On" desc="CrusaderIronSkinTheCrusadeMarchesOnTalent">storm_ui_icon_johanna_iron_skin.dds</CrusaderMasteryIronSkinTheCrusadeMarchesOn>
+    <CrusaderMasteryShieldGlareSinsExposed name="Sins Exposed" desc="CrusaderShieldGlareSinsExposedTalent">storm_ui_icon_johanna_shield_glare.dds</CrusaderMasteryShieldGlareSinsExposed>
+  </Level7>
+  <Level10>
+    <CrusaderHeroicAbilityFallingSword name="Falling Sword" desc="CrusaderFallingSword">storm_ui_icon_johanna_falling_sword.dds</CrusaderHeroicAbilityFallingSword>
+    <CrusaderHeroicAbilityBlessedShield name="Blessed Shield" desc="CrusaderBlessedShield">storm_ui_icon_johanna_blessed_shield.dds</CrusaderHeroicAbilityBlessedShield>
+  </Level10>
+  <Level13>
+    <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+    <CrusaderMasteryIronSkinHoldYourGround name="Hold Your Ground" desc="CrusaderIronSkinHoldYourGroundTalent">storm_ui_icon_johanna_iron_skin.dds</CrusaderMasteryIronSkinHoldYourGround>
+    <CrusaderMasteryPunishSubdue name="Subdue" desc="CrusaderSubdueTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishSubdue>
+  </Level13>
+  <Level16>
+    <CrusaderMasteryShieldGlareHolyRenewal name="Holy Renewal" desc="CrusaderShieldGlareHolyRenewalTalent">storm_ui_icon_johanna_shield_glare.dds</CrusaderMasteryShieldGlareHolyRenewal>
+    <CrusaderMasteryCondemnBlessedHammer name="Blessed Hammer" desc="CrusaderCondemnBlessedHammerTalent">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnBlessedHammer>
+    <CrusaderMasteryIronSkinFanaticism name="Fanaticism" desc="CrusaderIronSkinFanaticismTalent">storm_ui_icon_johanna_iron_skin.dds</CrusaderMasteryIronSkinFanaticism>
+    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+  </Level16>
+  <Level20>
+    <CrusaderMasteryFallingSwordHeavensFury name="Heaven's Fury" desc="CrusaderFallingSwordHeavensFuryTalent">storm_ui_icon_johanna_falling_sword.dds</CrusaderMasteryFallingSwordHeavensFury>
+    <CrusaderMasteryBlessedShieldRadiatingFaith name="Radiating Faith" desc="CrusaderBlessedShieldRadiatingFaithTalent">storm_ui_icon_johanna_blessed_shield.dds</CrusaderMasteryBlessedShieldRadiatingFaith>
+    <CrusaderHeroicMasteryIndestructable name="Indestructible" desc="CrusaderIndestructableTalent">storm_ui_icon_johanna_indestructible.dds</CrusaderHeroicMasteryIndestructable>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+  </Level20>
+</Johanna>
