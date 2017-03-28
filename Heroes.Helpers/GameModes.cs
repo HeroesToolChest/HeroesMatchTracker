@@ -9,24 +9,28 @@ namespace Heroes.Helpers
         {
             public static List<string> GetAllGameModeList()
             {
-                List<string> list = new List<string>();
-                list.Add("Quick Match");
-                list.Add("Unranked Draft");
-                list.Add("Hero League");
-                list.Add("Team League");
-                list.Add("Brawl");
-                list.Add("Custom Game");
+                List<string> list = new List<string>
+                {
+                    "Quick Match",
+                    "Unranked Draft",
+                    "Hero League",
+                    "Team League",
+                    "Brawl",
+                    "Custom Game",
+                };
 
                 return list;
             }
 
             public static List<string> GetNormalGameModeList()
             {
-                List<string> list = new List<string>();
-                list.Add("Quick Match");
-                list.Add("Unranked Draft");
-                list.Add("Hero League");
-                list.Add("Team League");
+                List<string> list = new List<string>
+                {
+                    "Quick Match",
+                    "Unranked Draft",
+                    "Hero League",
+                    "Team League",
+                };
 
                 return list;
             }

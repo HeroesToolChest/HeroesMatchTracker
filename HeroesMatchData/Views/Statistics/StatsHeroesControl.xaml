@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="HeroesMatchData.Views.Statistics.StatsHeroesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             DataContext="{Binding StatsHeroesViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <system:Double x:Key="TabControlFontSize">14</system:Double>
+        <Thickness x:Key="ExpanderMargin">8 8 8 0</Thickness>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <mvvm:EventToCommand Command="{Binding RefreshStatsCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <mvvm:EventToCommand Command="{Binding RefreshStatsCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal" Margin=" 0 8 0 8">
+            <StackPanel>
+                <Label Content="{Binding HeroName}" />
+                <Image Source="{Binding SelectedHeroPortrait}" Height="62" Width="170" />
+            </StackPanel>
+            <Image Source="{Binding HeroRoleWarrior}" Height="80" Width="80" />
+        </StackPanel>
+        <TabControl controls:TabControlHelper.IsUnderlined="True" Grid.Row="2">
+            <TabItem Header="Quick Match" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
+                            <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding StatsHeroesQuickMatchDataCollection}" />
+                        </Expander>
+                        <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
+
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Unranked Draft" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+            <TabItem Header="Hero League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+            <TabItem Header="Team League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+            <TabItem Header="Custom Game" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+            <TabItem Header="Match Awards" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+            <TabItem Header="Talents" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

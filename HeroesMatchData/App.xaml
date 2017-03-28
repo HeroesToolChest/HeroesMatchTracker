@@ -34,7 +34,8 @@
 
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
-
+                <ResourceDictionary Source="/Resources/CustomControls/DataGridControl.xaml"/>
+                
                 <ResourceDictionary Source="/Resources/CustomStyles/DataGridStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ItemsControlStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ButtonStyle.xaml"/>
@@ -54,6 +55,7 @@
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryAdvancedStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>

@@ -10,6 +10,7 @@
                       xmlns:rawData="clr-namespace:HeroesMatchData.Views.RawData"
                       xmlns:replays="clr-namespace:HeroesMatchData.Views.Replays"
                       xmlns:titleBar="clr-namespace:HeroesMatchData.Views.TitleBar"
+                      xmlns:statistics="clr-namespace:HeroesMatchData.Views.Statistics"
                       xmlns:system="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
@@ -20,7 +21,7 @@
                       d:DesignHeight="1080" d:DesignWidth="1920" Loaded="MetroWindow_Loaded">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
-        <system:Double x:Key="TabControlFontSize">18</system:Double>
+        <system:Double x:Key="TabControlFontSize">16</system:Double>
     </Window.Resources>
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
@@ -88,6 +89,9 @@
                 </TabItem>
                 <TabItem Header="Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                     <matches:MatchesControl />
+                </TabItem>
+                <TabItem Header="Statistics" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                    <statistics:StatisticsControl />
                 </TabItem>
                 <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                     <replays:ReplaysControl />

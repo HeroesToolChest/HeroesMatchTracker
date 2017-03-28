@@ -217,6 +217,7 @@
     <Compile Include="Generic\PlayerParties.cs" />
     <Compile Include="Models\PlayerSearchContextMenu.cs" />
     <Compile Include="Models\ReplayModels\ReplayFile.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesGamesModes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -264,6 +265,8 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModesDataViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />

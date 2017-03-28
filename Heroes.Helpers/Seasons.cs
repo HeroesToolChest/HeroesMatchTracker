@@ -19,11 +19,13 @@ namespace Heroes.Helpers
         {
             public static List<string> GetSeasonList()
             {
-                List<string> list = new List<string>();
-                list.Add("Preseason");
-                list.Add("Season 1");
-                list.Add("Season 2");
-                list.Add("Season 3");
+                List<string> list = new List<string>
+                {
+                    "Preseason",
+                    "Season 1",
+                    "Season 2",
+                    "Season 3",
+                };
 
                 return list;
             }

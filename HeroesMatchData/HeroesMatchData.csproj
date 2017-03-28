@@ -255,6 +255,18 @@
     <Compile Include="Views\Replays\ReplaysControl.xaml.cs">
       <DependentUpon>ReplaysControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Statistics\OverviewControl.xaml.cs">
+      <DependentUpon>OverviewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\StatisticsControl.xaml.cs">
+      <DependentUpon>StatisticsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\StatsGenericControl.xaml.cs">
+      <DependentUpon>StatsGenericControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistics\StatsHeroesControl.xaml.cs">
+      <DependentUpon>StatsHeroesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TitleBar\AboutControl.xaml.cs">
       <DependentUpon>AboutControl.xaml</DependentUpon>
     </Compile>
@@ -274,6 +286,10 @@
     <Compile Include="Views\TitleBar\WhatsNewWindow.xaml.cs">
       <DependentUpon>WhatsNewWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\CustomControls\DataGridControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\CustomControls\TabItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -510,6 +526,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Statistics\OverviewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Statistics\StatisticsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Statistics\StatsGenericControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Statistics\StatsHeroesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TitleBar\AboutControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -588,6 +620,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>; Move all assemblies and related files to lib folder
