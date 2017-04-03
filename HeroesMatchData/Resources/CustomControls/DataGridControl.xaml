@@ -8,14 +8,26 @@
     <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
         <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
+
+    <Style TargetType="DataGrid" x:Key="DefaultStatDataGrid" BasedOn="{StaticResource MetroDataGrid}">
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="CanUserAddRows" Value="False" />
+        <Setter Property="CanUserDeleteRows" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="EnableColumnVirtualization" Value="True" />
+        <Setter Property="EnableRowVirtualization" Value="True" />
+        <Setter Property="CanUserResizeRows" Value="False" />
+        <Setter Property="AlternatingRowBackground" Value="{DynamicResource GrayBrush10}" />
+    </Style>
     
-    <DataGrid x:Key="StatsHeroesGameModesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" x:Shared="False">
+    <DataGrid x:Key="StatsHeroesGameModesDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" x:Shared="False" ColumnHeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"
+              GridLinesVisibility="Vertical" Style="{StaticResource DefaultStatDataGrid}">
         <DataGrid.Columns>
             <DataGridTemplateColumn Width="90">
                 <DataGridTemplateColumn.CellTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Image Source="{Binding MapImage}" Height="37" Width="68" HorizontalAlignment="Left" Margin="10 0 0 0">
+                            <Image Source="{Binding MapImage}" RenderOptions.BitmapScalingMode="HighQuality" Height="37" Width="68" HorizontalAlignment="Left" Margin="10 0 0 0">
                                 <Image.ToolTip>
                                     <ToolTip Content="{Binding MapName}"></ToolTip>
                                 </Image.ToolTip>
@@ -28,16 +40,16 @@
             <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" Width="70"/>
             <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" Width="72"/>
             <DataGridTextColumn Header="Games" Binding="{Binding TotalGames}" Width="72"/>
-            <DataGridTextColumn Header="Win %" Binding="{Binding WinPercentage, StringFormat={}{0}%}" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" Width="70" FontWeight="Bold"/>
+            <DataGridTextColumn Header="Win %" Binding="{Binding WinPercentage, StringFormat={}{0}%}" Width="70" FontWeight="Bold"/>
             <DataGridTextColumn Header="Kills" Binding="{Binding Kills}" Width="70"/>
             <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" Width="76"/>
             <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" Width="76"/>
-            <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, StringFormat=N2}" Width="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-            <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, StringFormat=N2}" Width="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
-            <DataGridTextColumn Header="Role" Binding="{Binding Role, StringFormat=N2}" Width="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}" />
-            <DataGridTextColumn Header="Experience" Binding="{Binding Experience, StringFormat=N2}" Width="130" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+            <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, StringFormat=N0}" Width="130" />
+            <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, StringFormat=N0}" Width="130" />
+            <DataGridTextColumn Header="Role" Binding="{Binding Role, StringFormat=N0}" Width="130" />
+            <DataGridTextColumn Header="Experience" Binding="{Binding Experience, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Mercs Captured" Binding="{Binding MercsCaptured}" Width="136" />
-            <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" HeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"/>
+            <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" />
         </DataGrid.Columns>
     </DataGrid>
 </ResourceDictionary>

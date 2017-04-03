@@ -14,11 +14,23 @@ namespace Heroes.Helpers
                 if (string.IsNullOrEmpty(season))
                     throw new ArgumentNullException(nameof(season));
 
-                season = Regex.Replace(season, @"\s+", string.Empty);
-                if (Enum.TryParse(season, true, out Season seasonEnum))
-                    return seasonEnum;
-                else
-                    throw new ArgumentException(nameof(season));
+                switch (season)
+                {
+                    case "Lifetime":
+                        return Season.Lifetime;
+                    case "Preseason":
+                        return Season.Preseason;
+                    case "2016 Season 1":
+                        return Season.Year2016Season1;
+                    case "2016 Season 2":
+                        return Season.Year2016Season2;
+                    case "2016 Season 3":
+                        return Season.Year2016Season3;
+                    case "2017 Season 1":
+                        return Season.Year2017Season1;
+                    default:
+                        throw new ArgumentException(nameof(season));
+                }
             }
 
             public static ReplayParseResult ConvertReplayParseResultStringToEnum(string replayParseResult)

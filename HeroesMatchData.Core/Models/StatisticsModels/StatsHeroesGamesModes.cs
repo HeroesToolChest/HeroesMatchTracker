@@ -3,7 +3,7 @@ using System.Windows.Media.Imaging;
 
 namespace HeroesMatchData.Core.Models.StatisticsModels
 {
-    public class StatsHeroesGamesModes
+    public class StatsHeroesGameModes
     {
         public BitmapImage MapImage { get; set; }
         public string MapName { get; set; }

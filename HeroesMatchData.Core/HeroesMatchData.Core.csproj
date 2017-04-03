@@ -113,6 +113,15 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.5.0, Culture=neutral, PublicKeyToken=3b585c2a5f1a92c1, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.5\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="LoadingIndicators.WPF, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoadingIndicators.WPF.0.0.1\lib\LoadingIndicators.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.4.3.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.SimpleChildWindow, Version=1.3.0.0, Culture=neutral, PublicKeyToken=bbbfdff7f500a992, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.SimpleChildWindow.1.3.0\lib\net45\MahApps.Metro.SimpleChildWindow.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -169,7 +178,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xaml" />
@@ -193,6 +202,7 @@
     <Compile Include="Generic\MatchesTab.cs" />
     <Compile Include="Generic\ReplayParserStatus.cs" />
     <Compile Include="Generic\ReplayParserWatchStatus.cs" />
+    <Compile Include="Generic\Utilities.cs" />
     <Compile Include="HotsLogs\HotsLogsSite.cs" />
     <Compile Include="HotsLogs\HotsLogsUploader.cs" />
     <Compile Include="HotsLogs\IHotsLogsService.cs" />
@@ -265,7 +275,13 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModesDataViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeBrawlViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeCustomGameViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeTeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeQuickMatchViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeHeroLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeUnrankedDraftViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\HeroesGameModeViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
@@ -273,6 +289,7 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
     <Compile Include="ViewServices\IMatchesTabService.cs" />
     <Compile Include="ViewServices\IMainTabService.cs" />
     <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />

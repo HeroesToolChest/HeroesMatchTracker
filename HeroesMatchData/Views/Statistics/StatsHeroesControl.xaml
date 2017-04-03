@@ -24,14 +24,14 @@
             <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeasonOption}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <mvvm:EventToCommand Command="{Binding RefreshStatsCommand}" />
+                        <mvvm:EventToCommand Command="{Binding LoadHeroStatsCommand}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ComboBox>
             <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <mvvm:EventToCommand Command="{Binding RefreshStatsCommand}" />
+                        <mvvm:EventToCommand Command="{Binding LoadHeroStatsCommand}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ComboBox>
@@ -48,25 +48,102 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                     <StackPanel>
                         <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
-                            <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding StatsHeroesQuickMatchDataCollection}" />
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeQuickMatchViewModel.StatsHeroesDataCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeQuickMatchViewModel.StatsHeroesDataTotalCollection}" />
+                            </StackPanel>
+                            
                         </Expander>
                         <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
-
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeQuickMatchViewModel.StatsHeroesDataAverageCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeQuickMatchViewModel.StatsHeroesDataAverageTotalCollection}" />
+                            </StackPanel>
                         </Expander>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Unranked Draft" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeUnrankedDraftViewModel.StatsHeroesDataCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeUnrankedDraftViewModel.StatsHeroesDataTotalCollection}" />
+                            </StackPanel>
+
+                        </Expander>
+                        <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeUnrankedDraftViewModel.StatsHeroesDataAverageCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeUnrankedDraftViewModel.StatsHeroesDataAverageTotalCollection}" />
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Hero League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeHeroLeagueViewModel.StatsHeroesDataCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeHeroLeagueViewModel.StatsHeroesDataTotalCollection}" />
+                            </StackPanel>
+
+                        </Expander>
+                        <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeHeroLeagueViewModel.StatsHeroesDataAverageCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeHeroLeagueViewModel.StatsHeroesDataAverageTotalCollection}" />
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Team League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeTeamLeagueViewModel.StatsHeroesDataCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeTeamLeagueViewModel.StatsHeroesDataTotalCollection}" />
+                            </StackPanel>
+
+                        </Expander>
+                        <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeTeamLeagueViewModel.StatsHeroesDataAverageCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeTeamLeagueViewModel.StatsHeroesDataAverageTotalCollection}" />
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Custom Game" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Expander Header="Totals" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeCustomGameViewModel.StatsHeroesDataCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeCustomGameViewModel.StatsHeroesDataTotalCollection}" />
+                            </StackPanel>
+
+                        </Expander>
+                        <Expander Header="Averages" Margin="{StaticResource ExpanderMargin}">
+                            <StackPanel>
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeCustomGameViewModel.StatsHeroesDataAverageCollection}" Margin="0 0 0 20" />
+                                <ContentControl Content="{StaticResource StatsHeroesGameModesDataGrid}" DataContext="{Binding HeroesGameModeCustomGameViewModel.StatsHeroesDataAverageTotalCollection}" />
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="Match Awards" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+
             </TabItem>
             <TabItem Header="Talents" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+
             </TabItem>
         </TabControl>
     </Grid>
