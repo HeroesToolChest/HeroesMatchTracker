@@ -29,7 +29,10 @@ namespace HeroesParserData.HotsLogs
 
             using (WebClient webClient = new WebClient())
             {
-                string result = webClient.DownloadString("https://www.hotslogs.com/UploadFile?FileName=" + fileGuidName);
+                webClient.Headers["UserAgent"] = $"HeroesParserData {HPDVersion.GetVersionAsString()}; Replay Parser Uploader";
+                string source = "HeroesParserData";
+                string result = webClient.DownloadString($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source={source}");
+
 
                 if (result == "Maintenance")
                     throw new MaintenanceException("Maintenance");
