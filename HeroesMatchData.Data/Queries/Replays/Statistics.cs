@@ -4,6 +4,7 @@ using Heroes.ReplayParser;
 using HeroesMatchData.Data.Databases;
 using HeroesMatchData.Data.Models.Replays;
 using HeroesMatchData.Data.Queries.Settings;
+using LinqKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,6 @@ namespace HeroesMatchData.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                db.Configuration.AutoDetectChangesEnabled = false;
-
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if (gameMode.HasFlag(value))
@@ -69,8 +68,6 @@ namespace HeroesMatchData.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                db.Configuration.AutoDetectChangesEnabled = false;
-
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
@@ -96,30 +93,30 @@ namespace HeroesMatchData.Data.Queries.Replays
         public TimeSpan ReadTotalMapGameTime(string character, Season season, GameMode gameMode, string mapName)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
-            TimeSpan total = TimeSpan.FromTicks(0);
 
             using (var db = new ReplaysContext())
             {
-                db.Configuration.AutoDetectChangesEnabled = false;
-
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
                     {
-                        var query = from mp in db.ReplayMatchPlayers
-                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
-                                    where mp.PlayerId == UserSettings.UserPlayerId &&
-                                          mp.Character == character &&
-                                          r.GameMode == (GameMode)value &&
-                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
-                                          r.MapName == mapName
-                                    select r.ReplayLengthTicks;
-
-                        total += TimeSpan.FromTicks(query.Count() > 0 ? query.Sum() : 0);
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
                     }
                 }
 
-                return total;
+                var query = from mp in db.ReplayMatchPlayers
+                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                            where mp.PlayerId == UserSettings.UserPlayerId &&
+                                    mp.Character == character &&
+                                    r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                    r.MapName == mapName
+                            select r;
+
+                query = query.AsExpandable().Where(gameModeFilter);
+
+                return TimeSpan.FromTicks(query.Count() > 0 ? query.Sum(x => x.ReplayLengthTicks) : 0);
             }
         }
 
@@ -138,63 +135,117 @@ namespace HeroesMatchData.Data.Queries.Replays
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
             string talentNameColumn = string.Empty;
-            int total = 0;
 
             using (var db = new ReplaysContext())
             {
-                db.Configuration.AutoDetectChangesEnabled = false;
-
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
                     {
-                        foreach (var map in maps)
-                        {
-                            var query = from mpt in db.ReplayMatchPlayerTalents
-                                        join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                        join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
-                                        where mpt.PlayerId == UserSettings.UserPlayerId &&
-                                              mp.IsWinner == isWinner &&
-                                              mpt.Character == character &&
-                                              r.GameMode == (GameMode)value &&
-                                              r.MapName == map &&
-                                              r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
-                                        select mpt;
-
-                            switch (tier)
-                            {
-                                case TalentTier.Level1:
-                                    query = query.Where(x => x.TalentName1 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level4:
-                                    query = query.Where(x => x.TalentName4 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level7:
-                                    query = query.Where(x => x.TalentName7 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level10:
-                                    query = query.Where(x => x.TalentName10 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level13:
-                                    query = query.Where(x => x.TalentName13 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level16:
-                                    query = query.Where(x => x.TalentName16 == talentReferenceName);
-                                    break;
-                                case TalentTier.Level20:
-                                    query = query.Where(x => x.TalentName20 == talentReferenceName);
-                                    break;
-                                default:
-                                    talentNameColumn = null;
-                                    break;
-                            }
-
-                            total += query.Count();
-                        }
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
                     }
                 }
 
-                return total;
+                var mapFilter = PredicateBuilder.New<ReplayMatch>();
+                foreach (var map in maps)
+                {
+                    string temp = map;
+                    mapFilter = mapFilter.Or(x => x.MapName == temp);
+                }
+
+                IQueryable<ReplayMatch> query = null;
+
+                switch (tier)
+                {
+                    case TalentTier.Level1:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                    join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                    join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                    where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                          mp.IsWinner == isWinner &&
+                                          mpt.Character == character &&
+                                          mpt.TalentName1 == talentReferenceName &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                    select r;
+                        break;
+                    case TalentTier.Level4:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName4 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    case TalentTier.Level7:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName7 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    case TalentTier.Level10:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName10 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    case TalentTier.Level13:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName13 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    case TalentTier.Level16:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName16 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    case TalentTier.Level20:
+                        query = from mpt in db.ReplayMatchPlayerTalents
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                      mp.IsWinner == isWinner &&
+                                      mpt.Character == character &&
+                                      mpt.TalentName20 == talentReferenceName &&
+                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
+                        break;
+                    default:
+                        talentNameColumn = null;
+                        break;
+                }
+
+                query = query.AsExpandable()
+                    .Where(gameModeFilter)
+                    .Where(mapFilter);
+
+                return query.Count();
             }
         }
 
