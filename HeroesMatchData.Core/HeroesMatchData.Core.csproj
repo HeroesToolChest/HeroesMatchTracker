@@ -227,7 +227,9 @@
     <Compile Include="Generic\PlayerParties.cs" />
     <Compile Include="Models\PlayerSearchContextMenu.cs" />
     <Compile Include="Models\ReplayModels\ReplayFile.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesAwards.cs" />
     <Compile Include="Models\StatisticsModels\StatsHeroesGamesModes.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesTalents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -275,13 +277,7 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeBrawlViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeCustomGameViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeTeamLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeQuickMatchViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeHeroLeagueViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeUnrankedDraftViewModel.cs" />
-    <Compile Include="ViewModels\Statistics\HeroesGameModeViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />

@@ -40,11 +40,7 @@
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/MarkdownTheme.xaml"/>
-
-                <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomControls/DataGridControl.xaml"/>
-                
+             
                 <ResourceDictionary Source="/Resources/CustomStyles/DataGridStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ItemsControlStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ButtonStyle.xaml"/>
@@ -56,6 +52,10 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DockPanelStyle.xaml"/>
 
+                <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomControls/DataGridControl.xaml"/>
+                
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>

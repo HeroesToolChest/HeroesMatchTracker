@@ -4,7 +4,8 @@
     <Style TargetType="TextBlock" x:Key="TalentPopupTextBlock">
         <Setter Property="Padding" Value="4 0 4 4" />
         <Setter Property="TextWrapping" Value="Wrap" />
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Inline.FontSize" Value="15" />
+        <Setter Property="Inline.FontWeight" Value="SemiBold" />
         <Setter Property="Foreground" Value="{StaticResource TalentTooltipFontBrush}" />
     </Style>
 

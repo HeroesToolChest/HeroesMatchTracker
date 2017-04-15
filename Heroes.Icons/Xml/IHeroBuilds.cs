@@ -24,7 +24,15 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
         /// <returns></returns>
-        Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName);
+        Dictionary<TalentTier, List<string>> GetAllTalentsForHero(string realHeroName);
+
+        /// <summary>
+        /// Returns a list of all the talents of a hero given a talent tier
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <param name="talentTier">talent tier</param>
+        /// <returns></returns>
+        List<string> GetTierTalentsForHero(string realHeroName, TalentTier talentTier);
 
         /// <summary>
         /// Returns a TalentTooltip object which contains the short and full tooltips of the talent

@@ -174,9 +174,6 @@
     <Compile Include="Views\Home\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoadingOverlayWindow.xaml.cs">
-      <DependentUpon>LoadingOverlayWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Matches\AllMatchesControl.xaml.cs">
       <DependentUpon>AllMatchesControl.xaml</DependentUpon>
     </Compile>
@@ -416,10 +413,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Home\HomeControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoadingOverlayWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

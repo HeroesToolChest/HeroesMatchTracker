@@ -38,7 +38,7 @@ namespace HeroesMatchData.Core.ViewModels
             get => ((Region)_userRegion).ToString();
             set
             {
-                _userRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringtoEnum(value);
+                _userRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringToEnum(value);
                 RaisePropertyChanged();
             }
         }

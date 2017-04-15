@@ -9,6 +9,7 @@ namespace Heroes.Helpers
         {
             public static List<string> GameTimeList => SetGameTimeList();
             public static List<string> GameDateList => SetGameDateList();
+            public static List<string> StatGameDateList => SetStatGameDateList();
 
             public static Tuple<string, TimeSpan> GetGameTimeModifiedTime(string value)
             {
@@ -104,43 +105,65 @@ namespace Heroes.Helpers
                 return tuple;
             }
 
+            public static Tuple<string, DateTime?> GetStatGameDateModifiedDate(string value)
+            {
+                return GetGameDateModifiedDate(value);
+            }
+
             private static List<string> SetGameTimeList()
             {
-                List<string> list = new List<string>();
-
-                list.Add("Any");
-                list.Add("less than 10 minutes");
-                list.Add("less than 15 minutes");
-                list.Add("less than 20 minutes");
-                list.Add("less than 25 minutes");
-                list.Add("less than 30 minutes");
-                list.Add("less than 35 minutes");
-                list.Add("less than 40 minutes");
-                list.Add("longer than 10 minutes");
-                list.Add("longer than 15 minutes");
-                list.Add("longer than 20 minutes");
-                list.Add("longer than 25 minutes");
-                list.Add("longer than 30 minutes");
-                list.Add("longer than 35 minutes");
-                list.Add("longer than 40 minutes");
-
+                List<string> list = new List<string>
+                {
+                    "Any",
+                    "less than 10 minutes",
+                    "less than 15 minutes",
+                    "less than 20 minutes",
+                    "less than 25 minutes",
+                    "less than 30 minutes",
+                    "less than 35 minutes",
+                    "less than 40 minutes",
+                    "longer than 10 minutes",
+                    "longer than 15 minutes",
+                    "longer than 20 minutes",
+                    "longer than 25 minutes",
+                    "longer than 30 minutes",
+                    "longer than 35 minutes",
+                    "longer than 40 minutes",
+                };
                 return list;
             }
 
             private static List<string> SetGameDateList()
             {
-                List<string> list = new List<string>();
+                List<string> list = new List<string>
+                {
+                    "Any",
+                    "Last 7 days",
+                    "Last 14 days",
+                    "Last 21 days",
+                    "Last 28 days",
+                    "More than 7 days ago",
+                    "More than 14 days ago",
+                    "More than 21 days ago",
+                    "More than 28 days ago",
+                };
+                return list;
+            }
 
-                list.Add("Any");
-                list.Add("Last 7 days");
-                list.Add("Last 14 days");
-                list.Add("Last 21 days");
-                list.Add("Last 28 days");
-                list.Add("More than 7 days ago");
-                list.Add("More than 14 days ago");
-                list.Add("More than 21 days ago");
-                list.Add("More than 28 days ago");
-
+            private static List<string> SetStatGameDateList()
+            {
+                List<string> list = new List<string>
+                {
+                    "Last build",
+                    "Last 7 days",
+                    "Last 14 days",
+                    "Last 21 days",
+                    "Last 28 days",
+                    "More than 7 days ago",
+                    "More than 14 days ago",
+                    "More than 21 days ago",
+                    "More than 28 days ago",
+                };
                 return list;
             }
         }

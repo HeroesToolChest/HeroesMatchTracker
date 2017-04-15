@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.ReplayParser;
+using System;
 using System.Text.RegularExpressions;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 using static Heroes.ReplayParser.DataParser;
@@ -46,7 +47,7 @@ namespace Heroes.Helpers
                     throw new ArgumentException(nameof(replayParseResult));
             }
 
-            public static Region ConvertRegionStringtoEnum(string region)
+            public static Region ConvertRegionStringToEnum(string region)
             {
                 if (string.IsNullOrEmpty(region))
                     throw new ArgumentNullException(nameof(region));
@@ -57,6 +58,27 @@ namespace Heroes.Helpers
                     return regionEnum;
                 else
                     throw new ArgumentException(nameof(region));
+            }
+
+            public static GameMode ConvertGameModeStringToEnum(string gameMode)
+            {
+                switch (gameMode)
+                {
+                    case "Quick Match":
+                        return GameMode.QuickMatch;
+                    case "Unranked Draft":
+                        return GameMode.UnrankedDraft;
+                    case "Hero League":
+                        return GameMode.HeroLeague;
+                    case "Team League":
+                        return GameMode.TeamLeague;
+                    case "Custom Game":
+                        return GameMode.Custom;
+                    case "Brawl":
+                        return GameMode.Brawl;
+                    default:
+                        throw new ArgumentException(nameof(gameMode));
+                }
             }
         }
     }

@@ -2,58 +2,68 @@
 using Heroes.Helpers;
 using Heroes.ReplayParser;
 using HeroesMatchData.Core.Services;
+using HeroesMatchData.Core.ViewServices;
+using NLog;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace HeroesMatchData.Core.ViewModels.Statistics
 {
     public class StatsHeroesViewModel : HmdViewModel
     {
-        private string _selectedSeasonOption;
+        private readonly string InitialHeroListOption = "- Select Hero -";
+        private readonly string InitialSeasonListOption = "- Select Season -";
+
+        private string _selectedSeason;
         private string _selectedHero;
         private BitmapImage _selectedHeroPortrait;
 
-        private List<string> AllNonCustomMaps;
-        private List<string> AllMaps;
+        private StatsHeroesDataViewModel _statsHeroesDataViewModel;
 
-        private HeroesGameModeQuickMatchViewModel _heroesGameModeQuickMatchViewModel;
-        private HeroesGameModeUnrankedDraftViewModel _heroesGameModeUnrankedDraftViewModel;
-        private HeroesGameModeHeroLeagueViewModel _heroesGameModeHeroLeagueViewModel;
-        private HeroesGameModeTeamLeagueViewModel _heroesGameModeTeamLeagueViewModel;
-        private HeroesGameModeCustomGameViewModel _heroesGameModeCustomGameViewModel;
-        private HeroesGameModeBrawlViewModel _heroesGameModeBrawlViewModel;
+        private ILoadingOverlayWindowService LoadingOverlayWindow;
 
-        public StatsHeroesViewModel(IInternalService internalService)
+        private List<string> SelectedGameModes = new List<string>();
+        private List<string> SelectedMaps = new List<string>();
+        private List<string> SelectedBuilds = new List<string>();
+
+        public StatsHeroesViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
-            HeroesGameModeQuickMatchViewModel = new HeroesGameModeQuickMatchViewModel(internalService);
-            HeroesGameModeUnrankedDraftViewModel = new HeroesGameModeUnrankedDraftViewModel(internalService);
-            HeroesGameModeHeroLeagueViewModel = new HeroesGameModeHeroLeagueViewModel(internalService);
-            HeroesGameModeTeamLeagueViewModel = new HeroesGameModeTeamLeagueViewModel(internalService);
-            HeroesGameModeCustomGameViewModel = new HeroesGameModeCustomGameViewModel(internalService);
-            HeroesGameModeBrawlViewModel = new HeroesGameModeBrawlViewModel(internalService);
+            LoadingOverlayWindow = loadingOverlayWindow;
 
-            AllNonCustomMaps = HeroesIcons.MapBackgrounds().GetMapsListExceptCustomOnly();
-            AllMaps = HeroesIcons.MapBackgrounds().GetMapsList();
-
+            SeasonList.Add(InitialSeasonListOption);
             SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
-            SelectedSeasonOption = SeasonList[0];
+            SelectedSeason = SeasonList[0];
 
-            HeroesList.Add("- Select Hero -");
+            HeroesList.Add(InitialHeroListOption);
             HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
             SelectedHero = HeroesList[0];
+
+            GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModeList());
+            MapList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
+
+            StatsHeroesDataViewModel = new StatsHeroesDataViewModel(internalService, MapList);
         }
 
         public List<string> SeasonList { get; private set; } = new List<string>();
         public List<string> HeroesList { get; private set; } = new List<string>();
+        public List<string> GameModeList { get; private set; } = new List<string>();
+        public List<string> MapList { get; private set; } = new List<string>();
+        public List<string> TimeList { get; private set; } = new List<string>();
+        public List<string> BuildsList { get; private set; } = new List<string>();
 
-        public string SelectedSeasonOption
+        public string SelectedSeason
         {
-            get => _selectedSeasonOption;
+            get => _selectedSeason;
             set
             {
-                _selectedSeasonOption = value;
+                _selectedSeason = value;
                 RaisePropertyChanged();
             }
         }
@@ -78,29 +88,69 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             }
         }
 
-        public RelayCommand LoadHeroStatsCommand => new RelayCommand(LoadHeroStats);
+        public RelayCommand QueryStatsCommand => new RelayCommand(async () => await QueryStatsHeroStatsAsyncCommmand());
+        public RelayCommand<object> SelectedGameModesCommand => new RelayCommand<object>((list) => SetSelectedGameModes(list));
+        public RelayCommand<object> SelectedMapListCommand => new RelayCommand<object>((list) => SetSelectedMaps(list));
 
-        public HeroesGameModeQuickMatchViewModel HeroesGameModeQuickMatchViewModel { get => _heroesGameModeQuickMatchViewModel; set => _heroesGameModeQuickMatchViewModel = value; }
-        public HeroesGameModeUnrankedDraftViewModel HeroesGameModeUnrankedDraftViewModel { get => _heroesGameModeUnrankedDraftViewModel; set => _heroesGameModeUnrankedDraftViewModel = value; }
-        public HeroesGameModeHeroLeagueViewModel HeroesGameModeHeroLeagueViewModel { get => _heroesGameModeHeroLeagueViewModel; set => _heroesGameModeHeroLeagueViewModel = value; }
-        public HeroesGameModeTeamLeagueViewModel HeroesGameModeTeamLeagueViewModel { get => _heroesGameModeTeamLeagueViewModel; set => _heroesGameModeTeamLeagueViewModel = value; }
-        public HeroesGameModeCustomGameViewModel HeroesGameModeCustomGameViewModel { get => _heroesGameModeCustomGameViewModel; set => _heroesGameModeCustomGameViewModel = value; }
-        public HeroesGameModeBrawlViewModel HeroesGameModeBrawlViewModel { get => _heroesGameModeBrawlViewModel; set => _heroesGameModeBrawlViewModel = value; }
+        public StatsHeroesDataViewModel StatsHeroesDataViewModel { get => _statsHeroesDataViewModel; set => _statsHeroesDataViewModel = value; }
 
-        private void LoadHeroStats()
+        private async Task QueryStatsHeroStatsAsyncCommmand()
         {
-            if (SelectedHero == "- Select Hero -" || string.IsNullOrEmpty(SelectedHero) || string.IsNullOrEmpty(SelectedSeasonOption))
+            LoadingOverlayWindow.ShowLoadingOverlay();
+
+            await Task.Run(async () =>
+            {
+                try
+                {
+                    await QueryStatsHeroStatsAsync();
+                }
+                catch (Exception ex)
+                {
+                    ExceptionLog.Log(LogLevel.Error, ex);
+                }
+            });
+
+            LoadingOverlayWindow.CloseLoadingOverlay();
+        }
+
+        private async Task QueryStatsHeroStatsAsync()
+        {
+            if (SelectedHero == InitialHeroListOption || string.IsNullOrEmpty(SelectedHero) ||
+                SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
-            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeasonOption);
-            SelectedHeroPortrait = HeroesIcons.Heroes().GetHeroLoadingPortrait(SelectedHero);
+            SelectedHeroPortrait = HeroesIcons.Heroes().GetHeroPortrait(SelectedHero);
+            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
 
-            HeroesGameModeQuickMatchViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.QuickMatch);
-            HeroesGameModeUnrankedDraftViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.UnrankedDraft);
-            HeroesGameModeHeroLeagueViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.HeroLeague);
-            HeroesGameModeTeamLeagueViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.TeamLeague);
-            HeroesGameModeCustomGameViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.Custom);
-            HeroesGameModeBrawlViewModel.SetData(AllNonCustomMaps, SelectedHero, selectedSeason, GameMode.Brawl);
+            GameMode gameModes = GameMode.Unknown;
+            if (SelectedGameModes.Count <= 0)
+            {
+                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.HeroLeague | GameMode.TeamLeague;
+            }
+            else
+            {
+                foreach (var gameMode in SelectedGameModes)
+                {
+                    gameModes |= HeroesHelpers.EnumParser.ConvertGameModeStringToEnum(gameMode);
+                }
+            }
+
+            if (SelectedMaps.Count <= 0)
+            {
+                SelectedMaps = HeroesIcons.MapBackgrounds().GetMapsListExceptCustomOnly();
+            }
+
+            await StatsHeroesDataViewModel.SetData(SelectedHero, selectedSeason, gameModes, SelectedMaps);
+        }
+
+        private void SetSelectedGameModes(object list)
+        {
+            SelectedGameModes = ((IEnumerable)list).Cast<string>().ToList();
+        }
+
+        private void SetSelectedMaps(object list)
+        {
+            SelectedMaps = ((IEnumerable)list).Cast<string>().ToList();
         }
     }
 }

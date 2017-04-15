@@ -47,6 +47,10 @@ namespace Heroes.Helpers
                         return "Hero League";
                     case GameMode.TeamLeague:
                         return "Team League";
+                    case GameMode.Custom:
+                        return "Custom";
+                    case GameMode.Brawl:
+                        return "Brawl";
                     default:
                         return gameMode.ToString();
                 }
