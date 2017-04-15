@@ -9,7 +9,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace HeroesMatchData.Core.ViewModels.Statistics
@@ -19,6 +18,9 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
         private readonly string InitialHeroListOption = "- Select Hero -";
         private readonly string InitialSeasonListOption = "- Select Season -";
 
+        private bool _isTotalsAveragesChecked;
+        private bool _isTalentsChecked;
+        private bool _isAwardsChecked;
         private string _selectedSeason;
         private string _selectedHero;
         private BitmapImage _selectedHeroPortrait;
@@ -35,6 +37,10 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             : base(internalService)
         {
             LoadingOverlayWindow = loadingOverlayWindow;
+
+            IsTotalsAveragesChecked = true;
+            IsTalentsChecked = true;
+            IsAwardsChecked = true;
 
             SeasonList.Add(InitialSeasonListOption);
             SeasonList.Add("Lifetime");
@@ -88,6 +94,36 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             }
         }
 
+        public bool IsTotalsAveragesChecked
+        {
+            get => _isTotalsAveragesChecked;
+            set
+            {
+                _isTotalsAveragesChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsTalentsChecked
+        {
+            get => _isTalentsChecked;
+            set
+            {
+                _isTalentsChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsAwardsChecked
+        {
+            get => _isAwardsChecked;
+            set
+            {
+                _isAwardsChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public RelayCommand QueryStatsCommand => new RelayCommand(async () => await QueryStatsHeroStatsAsyncCommmand());
         public RelayCommand<object> SelectedGameModesCommand => new RelayCommand<object>((list) => SetSelectedGameModes(list));
         public RelayCommand<object> SelectedMapListCommand => new RelayCommand<object>((list) => SetSelectedMaps(list));
@@ -122,6 +158,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             SelectedHeroPortrait = HeroesIcons.Heroes().GetHeroPortrait(SelectedHero);
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
 
+            // set selected gamemodes
             GameMode gameModes = GameMode.Unknown;
             if (SelectedGameModes.Count <= 0)
             {
@@ -135,11 +172,16 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
                 }
             }
 
+            // set selected maps
             if (SelectedMaps.Count <= 0)
             {
                 SelectedMaps = HeroesIcons.MapBackgrounds().GetMapsListExceptCustomOnly();
             }
 
+            // query the data
+            StatsHeroesDataViewModel.QueryTotalsAndAverages = IsTotalsAveragesChecked;
+            StatsHeroesDataViewModel.QueryTalents = IsTalentsChecked;
+            StatsHeroesDataViewModel.QueryAwards = IsAwardsChecked;
             await StatsHeroesDataViewModel.SetData(SelectedHero, selectedSeason, gameModes, SelectedMaps);
         }
 

@@ -69,10 +69,12 @@
                                        ShowCloseButton="False"
                                        ShowTitleBar="False"
                                        IsOpen="{Binding IsLoadingOverlayVisible}"
-                                       Panel.ZIndex="1000">
-            <Grid>
-                <TextBlock Text="Loading..." />
-            </Grid>
+                                       Panel.ZIndex="1000"
+                                       Background="Transparent">
+            <StackPanel>
+                <controls:ProgressRing IsActive="True" Height="80" Width="80" />
+                <TextBlock Text="Loading..." FontSize="28" HorizontalAlignment="Center" />
+            </StackPanel>
         </simpleChildWindow:ChildWindow>
         <DockPanel>
             <StatusBar DockPanel.Dock="Bottom" Background="{StaticResource DefaultBlueBrush}">

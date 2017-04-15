@@ -22,23 +22,23 @@
     </UserControl.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="126"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 0 8 0">
-                <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 24" />
+                <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 8" />
                 <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" />
             </StackPanel>
-            <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}">
+            <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0,0,8,10">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <mvvm:EventToCommand CommandParameter="{Binding ElementName=GameModeList, Path=SelectedItems}" Command="{Binding SelectedGameModesCommand}" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ListView>
-            <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220">
+            <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220" Height="Auto" Margin="0,0,8,10">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <mvvm:EventToCommand CommandParameter="{Binding ElementName=MapList, Path=SelectedItems}" Command="{Binding SelectedMapListCommand}" />
@@ -52,7 +52,12 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <Button Grid.Row="1" Content="Query Stats" Command="{Binding QueryStatsCommand}" Width="536" HorizontalAlignment="Left" Margin="0 8" />
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <CheckBox Content="Totals/Averages" Margin="8" IsChecked="{Binding IsTotalsAveragesChecked}" />
+            <CheckBox Content="Talents" Margin="8" IsChecked="{Binding IsTalentsChecked}" />
+            <CheckBox Content="Awards" Margin="8" IsChecked="{Binding IsAwardsChecked}" />
+            <Button Content="Query Stats" Command="{Binding QueryStatsCommand}" Width="134" HorizontalAlignment="Left" Margin="16 8 8 8" />
+        </StackPanel>
         <TabControl controls:TabControlHelper.IsUnderlined="True" Grid.Row="2" Margin="0 12 0 0">
             <TabItem Header="Totals" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">

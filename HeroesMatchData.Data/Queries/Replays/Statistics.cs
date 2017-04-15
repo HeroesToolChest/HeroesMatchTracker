@@ -252,29 +252,28 @@ namespace HeroesMatchData.Data.Queries.Replays
         public int ReadMatchAwardCountForHero(string character, Season season, GameMode gameMode, List<string> maps, string mvpAwardType)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
-            int total = 0;
 
             using (var db = new ReplaysContext())
             {
-                db.Configuration.AutoDetectChangesEnabled = false;
-
+                var mapFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (var map in maps)
                 {
-                    var query = from r in db.Replays
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                join ma in db.ReplayMatchAwards on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
-                                where mp.PlayerId == UserSettings.UserPlayerId &&
-                                      mp.Character == character &&
-                                      r.GameMode == gameMode &&
-                                      r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
-                                      r.MapName == map &&
-                                      ma.Award == mvpAwardType
-                                select ma;
-
-                    total += query.Count();
+                    string temp = map;
+                    mapFilter = mapFilter.Or(x => x.MapName == temp);
                 }
 
-                return total;
+                var query = from r in db.Replays
+                            join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                            join ma in db.ReplayMatchAwards on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
+                            where mp.PlayerId == UserSettings.UserPlayerId &&
+                                    mp.Character == character &&
+                                    r.GameMode == gameMode &&
+                                    r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                    ma.Award == mvpAwardType
+                            select r;
+                query = query.AsExpandable().Where(mapFilter);
+
+                return query.Count();
             }
         }
     }

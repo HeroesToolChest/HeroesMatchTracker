@@ -36,6 +36,10 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             MapList = mapList;
         }
 
+        public bool QueryTotalsAndAverages { get; set; } = true;
+        public bool QueryTalents { get; set; } = true;
+        public bool QueryAwards { get; set; } = true;
+
         public ObservableCollection<StatsHeroesGameModes> StatsHeroesDataCollection
         {
             get => _statsHeroesDataCollection;
@@ -188,6 +192,9 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
 
         private Task SetStats(string heroName, Season season, GameMode gameMode)
         {
+            if (QueryTotalsAndAverages == false)
+                return Task.CompletedTask;
+
             foreach (var map in MapList)
             {
                 int wins = Database.ReplaysDb().Statistics.ReadTotalGameResults(heroName, season, gameMode, true, map);
@@ -356,6 +363,9 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
 
         private Task SetTalentPicks(string heroName, Season season, GameMode gameMode, TalentTier tier, List<string> selectedMaps, ObservableCollection<StatsHeroesTalents> collection)
         {
+            if (QueryTalents == false)
+                return Task.CompletedTask;
+
             var tierTalents = HeroesIcons.HeroBuilds().GetTierTalentsForHero(heroName, tier);
             foreach (var talent in tierTalents)
             {
@@ -388,6 +398,9 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
 
         private Task SetAwardsAwarded(string heroName, Season season, List<string> selectedMaps)
         {
+            if (QueryAwards == false)
+                return Task.CompletedTask;
+
             var awardsList = HeroesIcons.MatchAwards().GetMatchAwardsList();
             foreach (var award in awardsList)
             {
