@@ -21,7 +21,8 @@
         <Setter Property="EnableColumnVirtualization" Value="True" />
         <Setter Property="EnableRowVirtualization" Value="True" />
         <Setter Property="CanUserResizeRows" Value="False" />
-        <Setter Property="AlternatingRowBackground" Value="{DynamicResource GrayBrush10}" />
+        <Setter Property="RowBackground" Value="AliceBlue" />
+        <Setter Property="AlternatingRowBackground" Value="Lavender" />
     </Style>
 
     <Style x:Key="TalentTooltip" TargetType="{x:Type ToolTip}">
@@ -42,7 +43,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <DataGrid x:Key="StatsHeroesMapStatsDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" x:Shared="False" ColumnHeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"
               GridLinesVisibility="Vertical" Style="{StaticResource DefaultStatDataGrid}">
         <DataGrid.Columns>
