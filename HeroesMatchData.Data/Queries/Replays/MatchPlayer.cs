@@ -1,5 +1,7 @@
-﻿using HeroesMatchData.Data.Databases;
+﻿using Heroes.Helpers;
+using HeroesMatchData.Data.Databases;
 using HeroesMatchData.Data.Models.Replays;
+using HeroesMatchData.Data.Queries.Settings;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -9,6 +11,8 @@ namespace HeroesMatchData.Data.Queries.Replays
 {
     public class MatchPlayer : NonContextQueriesBase<ReplayMatchPlayer>, IRawDataQueries<ReplayMatchPlayer>
     {
+        private UserSettings UserSettings = new UserSettings();
+
         public List<ReplayMatchPlayer> ReadAllRecords()
         {
             using (var db = new ReplaysContext())
@@ -71,6 +75,24 @@ namespace HeroesMatchData.Data.Queries.Replays
             using (var db = new ReplaysContext())
             {
                 return db.ReplayMatchPlayers.Take(amount).ToList();
+            }
+        }
+
+        public int ReadHighestLevelOfHero(string character, Season season)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+
+            using (var db = new ReplaysContext())
+            {
+                var query = from mp in db.ReplayMatchPlayers
+                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                            where mp.Character == character &&
+                                  mp.PlayerId == UserSettings.UserPlayerId &&
+                                  r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                            orderby mp.CharacterLevel descending
+                            select mp.CharacterLevel;
+
+                return query.FirstOrDefault();
             }
         }
 

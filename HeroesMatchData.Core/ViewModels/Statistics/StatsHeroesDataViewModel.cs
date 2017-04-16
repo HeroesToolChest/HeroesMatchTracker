@@ -39,6 +39,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
         public bool QueryTotalsAndAverages { get; set; } = true;
         public bool QueryTalents { get; set; } = true;
         public bool QueryAwards { get; set; } = true;
+        public int MVPCount { get; private set; }
 
         public ObservableCollection<StatsHeroesGameModes> StatsHeroesDataCollection
         {
@@ -411,8 +412,8 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
 
                 int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
-                //if (award == "MVP")
-                //    TotalMVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
+                if (award == "MVP")
+                    MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 var awardImage = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(award.ToString(), MVPScoreScreenColor.Blue, out string awardName);
                 awardImage.Freeze();

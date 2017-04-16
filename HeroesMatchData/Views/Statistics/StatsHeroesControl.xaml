@@ -7,6 +7,7 @@
              xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
              xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
              DataContext="{Binding StatsHeroesViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="1080" d:DesignWidth="1920">
@@ -19,39 +20,107 @@
             <Setter Property="Height" Value="140" />
             <Setter Property="Margin" Value="0 0 8 0" />
         </Style>
+        <Style x:Key="HeroStatSummary">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="Margin" Value="0 8" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="HeroStatSummary2">
+            <Style.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="Margin" Value="0 1" />
+                </Style>
+            </Style.Resources>
+        </Style>
     </UserControl.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="126"></RowDefinition>
+            <RowDefinition Height="132"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 0 8 0">
-                <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 8" />
-                <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" />
-            </StackPanel>
-            <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0,0,8,10">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <mvvm:EventToCommand CommandParameter="{Binding ElementName=GameModeList, Path=SelectedItems}" Command="{Binding SelectedGameModesCommand}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </ListView>
-            <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220" Height="Auto" Margin="0,0,8,10">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <mvvm:EventToCommand CommandParameter="{Binding ElementName=MapList, Path=SelectedItems}" Command="{Binding SelectedMapListCommand}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </ListView>
-            <StackPanel Orientation="Horizontal" Margin="8">
-                <StackPanel Orientation="Vertical">
-                    <Label Content="{Binding HeroName}" />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 0 8 0">
+                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 8" />
+                    <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" />
+                </StackPanel>
+                <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0,0,8,10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand CommandParameter="{Binding ElementName=GameModeList, Path=SelectedItems}" Command="{Binding SelectedGameModesCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListView>
+                <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220" Height="Auto" Margin="0,0,8,10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand CommandParameter="{Binding ElementName=MapList, Path=SelectedItems}" Command="{Binding SelectedMapListCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListView>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 8">
                     <Image Source="{Binding SelectedHeroPortrait}" Height="100" Width="100" />
+                    <StackPanel Orientation="Vertical" Margin="8 0 0 0">
+                        <TextBlock Text="{Binding HeroName}" FontSize="20" FontWeight="SemiBold" Margin="0 14 0 4" />
+                        <TextBlock Text="{Binding HeroRole}" FontSize="16"/>
+                        <TextBlock Text="{Binding HeroLevel, StringFormat=Level {0}}" FontSize="16" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="24 0 0 0" Style="{StaticResource HeroStatSummary}">
+                        <TextBlock Text="Wins:" HorizontalAlignment="Right" />
+                        <TextBlock Text="Losses:" HorizontalAlignment="Right" />
+                        <TextBlock Text="Games:" HorizontalAlignment="Right" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="12 0 0 0" Style="{StaticResource HeroStatSummary}">
+                        <TextBlock Text="{Binding HeroWins}" />
+                        <TextBlock Text="{Binding HeroLosses}" />
+                        <TextBlock Text="{Binding HeroGames}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10 0 0 0" Width="200">
+                        <lvc:Gauge From="0" To="100" Value="{Binding HeroWinrate}" Height="85" />
+                        <TextBlock Text="Winrate" HorizontalAlignment="Center" FontSize="16" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="24 0 0 0" Style="{StaticResource HeroStatSummary2}">
+                        <TextBlock Text="Kills:" HorizontalAlignment="Right" />
+                        <TextBlock Text="Assists:" HorizontalAlignment="Right" />
+                        <TextBlock Text="Deaths:" HorizontalAlignment="Right" />
+                        <TextBlock Text="KA / D:" HorizontalAlignment="Right" />
+                        <TextBlock Text="K / D:" HorizontalAlignment="Right" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="12 0 0 0" Style="{StaticResource HeroStatSummary2}">
+                        <TextBlock Text="{Binding HeroKills}" />
+                        <TextBlock Text="{Binding HeroAssists}" />
+                        <TextBlock Text="{Binding HeroDeaths}" />
+                        <TextBlock Text="{Binding HeroKAD}" />
+                        <TextBlock Text="{Binding HeroKD}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10 0 0 0" Width="200">
+                        <lvc:Gauge From="0" To="100" Value="{Binding HeroKADRatio}" Height="85" />
+                        <TextBlock Text="KA / KAD" HorizontalAlignment="Center" FontSize="16" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="24 0 0 0" Style="{StaticResource HeroStatSummary}">
+                        <TextBlock Text="Awards:" HorizontalAlignment="Right" />
+                        <TextBlock Text="MVP:" HorizontalAlignment="Right" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="12 0 0 0" Style="{StaticResource HeroStatSummary}">
+                        <TextBlock Text="{Binding HeroAwards}" />
+                        <TextBlock Text="{Binding HeroMVP}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10 0 0 0" Width="200">
+                        <lvc:Gauge From="0" To="100" Value="{Binding HeroAwardsRatio}" Height="85" />
+                        <TextBlock Text="Awards Ratio" HorizontalAlignment="Center" FontSize="16" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="200" Margin="-60 0 0 0">
+                        <lvc:Gauge From="0" To="100" Value="{Binding HeroMVPRatio}" Height="85" />
+                        <TextBlock Text="MVP Ratio" HorizontalAlignment="Center" FontSize="16" />
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <CheckBox Content="Totals/Averages" Margin="8" IsChecked="{Binding IsTotalsAveragesChecked}" />
             <CheckBox Content="Talents" Margin="8" IsChecked="{Binding IsTalentsChecked}" />
