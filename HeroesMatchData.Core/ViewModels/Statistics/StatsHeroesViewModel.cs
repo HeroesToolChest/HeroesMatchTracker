@@ -286,6 +286,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
                 RaisePropertyChanged();
             }
         }
+
         public int HeroMVPRatio
         {
             get => _heroMVPRatio;
@@ -372,7 +373,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             StatsHeroesDataViewModel.QueryTotalsAndAverages = IsTotalsAveragesChecked;
             StatsHeroesDataViewModel.QueryTalents = IsTalentsChecked;
             StatsHeroesDataViewModel.QueryAwards = IsAwardsChecked;
-            await StatsHeroesDataViewModel.SetData(SelectedHero, selectedSeason, gameModes, SelectedMaps);
+            await StatsHeroesDataViewModel.SetDataAsync(SelectedHero, selectedSeason, gameModes, SelectedMaps);
 
             HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
             HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;

@@ -15,6 +15,9 @@
         <TabItem Header="Individual Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:StatsHeroesControl />
         </TabItem>
+        <TabItem Header="All Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:StatsAllHeroesControl />
+        </TabItem>
 
     </TabControl>   
 </UserControl>

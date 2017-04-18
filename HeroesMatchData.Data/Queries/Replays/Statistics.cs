@@ -20,11 +20,11 @@ namespace HeroesMatchData.Data.Queries.Replays
         /// </summary>
         /// <param name="character">Hero name</param>
         /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode</param>
+        /// <param name="gameMode">Selected GameMode (multiple)</param>
         /// <param name="isWins">Return wins if true otherwise return losses</param>
         /// <param name="mapName">Selected map</param>
         /// <returns></returns>
-        public int ReadTotalGameResults(string character, Season season, GameMode gameMode, bool isWins, string mapName = null)
+        public int ReadTotalGameResults(string character, Season season, GameMode gameMode, bool isWins, string mapName)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
             int total = 0;
@@ -50,6 +50,33 @@ namespace HeroesMatchData.Data.Queries.Replays
                 }
 
                 return total;
+            }
+        }
+
+        /// <summary>
+        /// Gets the total count of wins or losses for given hero
+        /// </summary>
+        /// <param name="character">Hero name</param>
+        /// <param name="season">Selected season</param>
+        /// <param name="gameMode">Selected GameMode (only one)</param>
+        /// <param name="isWins">Return wins if true otherwise return losses</param>
+        /// <returns></returns>
+        public int ReadGameResults(string character, Season season, GameMode gameMode, bool isWins)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+
+            using (var db = new ReplaysContext())
+            {
+                var query = from mp in db.ReplayMatchPlayers
+                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                            where mp.PlayerId == UserSettings.UserPlayerId &&
+                                    mp.Character == character &&
+                                    mp.IsWinner == isWins &&
+                                    r.GameMode == gameMode &&
+                                    r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                            select mp.IsWinner;
+
+                return query.Count();
             }
         }
 

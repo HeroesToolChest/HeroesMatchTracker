@@ -3,11 +3,11 @@
 namespace HeroesMatchData.Views.Statistics
 {
     /// <summary>
-    /// Interaction logic for StatisticsControl.xaml
+    /// Interaction logic for StatsAllHeroesControl.xaml
     /// </summary>
-    public partial class StatisticsControl : UserControl
+    public partial class StatsAllHeroesControl : UserControl
     {
-        public StatisticsControl()
+        public StatsAllHeroesControl()
         {
             InitializeComponent();
         }

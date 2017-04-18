@@ -267,8 +267,8 @@
     <Compile Include="Views\Statistics\StatisticsControl.xaml.cs">
       <DependentUpon>StatisticsControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Statistics\StatsGenericControl.xaml.cs">
-      <DependentUpon>StatsGenericControl.xaml</DependentUpon>
+    <Compile Include="Views\Statistics\StatsAllHeroesControl.xaml.cs">
+      <DependentUpon>StatsAllHeroesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Statistics\StatsHeroesControl.xaml.cs">
       <DependentUpon>StatsHeroesControl.xaml</DependentUpon>
@@ -540,7 +540,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Statistics\StatsGenericControl.xaml">
+    <Page Include="Views\Statistics\StatsAllHeroesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

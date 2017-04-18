@@ -104,6 +104,7 @@ namespace HeroesMatchData.Core.ViewModels
 
             // Statistics
             SimpleIoc.Default.Register<StatsHeroesViewModel>();
+            SimpleIoc.Default.Register<StatsAllHeroesViewModel>();
         }
 
         // start ups
@@ -151,6 +152,7 @@ namespace HeroesMatchData.Core.ViewModels
 
         // Statistics
         public static StatsHeroesViewModel StatsHeroesViewModel => ServiceLocator.Current.GetInstance<StatsHeroesViewModel>();
+        public static StatsAllHeroesViewModel StatsAllHeroesViewModel => ServiceLocator.Current.GetInstance<StatsAllHeroesViewModel>();
 
         public static void Cleanup()
         {

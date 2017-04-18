@@ -171,7 +171,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
             }
         }
 
-        public async Task SetData(string selectedHero, Season selectedSeason, GameMode selectedGameModes, List<string> selectedMaps)
+        public async Task SetDataAsync(string selectedHero, Season selectedSeason, GameMode selectedGameModes, List<string> selectedMaps)
         {
             await Application.Current.Dispatcher.InvokeAsync(() => ClearData());
 

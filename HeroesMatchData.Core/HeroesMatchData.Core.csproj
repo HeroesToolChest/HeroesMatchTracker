@@ -188,6 +188,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DataGridColumnExtension.cs" />
     <Compile Include="Controls\FormattedTextBlock.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
@@ -274,6 +275,7 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsAllHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
