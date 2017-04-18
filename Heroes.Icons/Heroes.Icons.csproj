@@ -3914,8 +3914,8 @@
     <Content Include="Xml\HeroBuilds\51779\Zeratul.xml" />
     <Content Include="Xml\HeroBuilds\51779\Zuljin.xml" />
     <Content Include="Xml\HeroBuilds\51779\_AllHeroes.xml" />
-    <Content Include="Xml\HeroBuilds\51779\_FullTalentDescriptions.txt" />
-    <Content Include="Xml\HeroBuilds\51779\_ShortTalentDescriptions.txt" />
+    <Content Include="Xml\HeroBuilds\51779\_FullTalentTooltips.txt" />
+    <Content Include="Xml\HeroBuilds\51779\_ShortTalentTooltips.txt" />
     <Content Include="Xml\HeroBuilds\52008\Abathur.xml" />
     <Content Include="Xml\HeroBuilds\52008\Alarak.xml" />
     <Content Include="Xml\HeroBuilds\52008\Anubarak.xml" />
@@ -3981,8 +3981,8 @@
     <Content Include="Xml\HeroBuilds\52008\Zeratul.xml" />
     <Content Include="Xml\HeroBuilds\52008\Zuljin.xml" />
     <Content Include="Xml\HeroBuilds\52008\_AllHeroes.xml" />
-    <Content Include="Xml\HeroBuilds\52008\_FullTalentDescriptions.txt" />
-    <Content Include="Xml\HeroBuilds\52008\_ShortTalentDescriptions.txt" />
+    <Content Include="Xml\HeroBuilds\52008\_FullTalentTooltips.txt" />
+    <Content Include="Xml\HeroBuilds\52008\_ShortTalentTooltips.txt" />
     <Content Include="Xml\HeroBuilds\51923\Abathur.xml" />
     <Content Include="Xml\HeroBuilds\51923\Alarak.xml" />
     <Content Include="Xml\HeroBuilds\51923\Anubarak.xml" />
@@ -4048,8 +4048,8 @@
     <Content Include="Xml\HeroBuilds\51923\Zeratul.xml" />
     <Content Include="Xml\HeroBuilds\51923\Zuljin.xml" />
     <Content Include="Xml\HeroBuilds\51923\_AllHeroes.xml" />
-    <Content Include="Xml\HeroBuilds\51923\_FullTalentDescriptions.txt" />
-    <Content Include="Xml\HeroBuilds\51923\_ShortTalentDescriptions.txt" />
+    <Content Include="Xml\HeroBuilds\51923\_FullTalentTooltips.txt" />
+    <Content Include="Xml\HeroBuilds\51923\_ShortTalentTooltips.txt" />
     <Content Include="Xml\HeroBuilds\52124\Abathur.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4248,10 +4248,10 @@
     <Content Include="Xml\HeroBuilds\52124\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Xml\HeroBuilds\52124\_FullTalentDescriptions.txt">
+    <Content Include="Xml\HeroBuilds\52124\_FullTalentTooltips.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Xml\HeroBuilds\52124\_ShortTalentDescriptions.txt">
+    <Content Include="Xml\HeroBuilds\52124\_ShortTalentTooltips.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\Heroes\Heroes.xml">
