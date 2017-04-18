@@ -17,11 +17,13 @@ namespace Heroes.Helpers
 
             public static List<string> GetRegionsList()
             {
-                List<string> regions = new List<string>();
-                regions.Add("US");
-                regions.Add("EU");
-                regions.Add("KR");
-                regions.Add("CN");
+                List<string> regions = new List<string>
+                {
+                    "US",
+                    "EU",
+                    "KR",
+                    "CN",
+                };
 
                 return regions;
             }

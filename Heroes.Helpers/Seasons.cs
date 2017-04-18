@@ -8,9 +8,10 @@ namespace Heroes.Helpers
     {
         Lifetime = 0,
         Preseason = 1 << 0,
-        Season1 = 1 << 1,
-        Season2 = 1 << 2,
-        Season3 = 1 << 3,
+        Year2016Season1 = 1 << 1,
+        Year2016Season2 = 1 << 2,
+        Year2016Season3 = 1 << 3,
+        Year2017Season1 = 1 << 4,
     }
 
     public static partial class HeroesHelpers
@@ -19,11 +20,14 @@ namespace Heroes.Helpers
         {
             public static List<string> GetSeasonList()
             {
-                List<string> list = new List<string>();
-                list.Add("Preseason");
-                list.Add("Season 1");
-                list.Add("Season 2");
-                list.Add("Season 3");
+                List<string> list = new List<string>
+                {
+                    "Preseason",
+                    "2016 Season 1",
+                    "2016 Season 2",
+                    "2016 Season 3",
+                    "2017 Season 1",
+                };
 
                 return list;
             }

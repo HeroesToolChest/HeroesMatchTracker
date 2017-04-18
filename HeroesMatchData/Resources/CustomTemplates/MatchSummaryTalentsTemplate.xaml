@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:hst="clr-namespace:HeroesMatchData.Core.Controls;assembly=HeroesMatchData.Core"
+                    xmlns:coreControls="clr-namespace:HeroesMatchData.Core.Controls;assembly=HeroesMatchData.Core"
                     xmlns:converter="clr-namespace:HeroesMatchData.Core.Converters;assembly=HeroesMatchData.Core"
                     xmlns:coreModels="clr-namespace:HeroesMatchData.Core.Models.MatchModels;assembly=HeroesMatchData.Core"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
@@ -35,7 +35,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -49,7 +49,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -67,7 +67,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -81,7 +81,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -99,7 +99,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -113,7 +113,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -131,7 +131,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -145,7 +145,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -163,7 +163,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -177,7 +177,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -195,7 +195,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -209,7 +209,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>
@@ -227,7 +227,7 @@
                                                     <Image.ToolTip>
                                                         <ToolTip Style="{StaticResource TalentTooltip}">
                                                             <ToolTip.Content>
-                                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
+                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentShortTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" />
                                                             </ToolTip.Content>
                                                         </ToolTip>
                                                     </Image.ToolTip>
@@ -241,7 +241,7 @@
                                         <StackPanel Style="{StaticResource TalentPopupStackPanel}">
                                             <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
                                             <Label>
-                                                <TextBlock hst:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                             </Label>
                                         </StackPanel>
                                     </Border>

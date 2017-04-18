@@ -12,12 +12,13 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace HeroesMatchData.Core.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabService
+    public class MainWindowViewModel : ViewModelBase, IMatchSummaryFlyoutService, IMainTabService, ILoadingOverlayWindowService
     {
         private int _selectedMainTab;
         private long _totalParsedReplays;
         private bool _matchSummaryIsOpen;
         private bool _isExtendedAboutTextVisible;
+        private bool _isLoadingOverlayVisible;
         private string _matchSummaryHeader;
         private string _applicationStatus;
         private string _parserStatus;
@@ -37,8 +38,10 @@ namespace HeroesMatchData.Core.ViewModels
 
             MatchSummaryIsOpen = false;
             MatchSummaryHeader = "Match Summary";
+            IsLoadingOverlayVisible = false;
 
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
+            SimpleIoc.Default.Register<ILoadingOverlayWindowService>(() => this);
             SimpleIoc.Default.Register<IMainTabService>(() => this);
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
@@ -59,6 +62,16 @@ namespace HeroesMatchData.Core.ViewModels
             set
             {
                 _matchSummaryIsOpen = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsLoadingOverlayVisible
+        {
+            get => _isLoadingOverlayVisible;
+            set
+            {
+                _isLoadingOverlayVisible = value;
                 RaisePropertyChanged();
             }
         }
@@ -232,6 +245,16 @@ namespace HeroesMatchData.Core.ViewModels
         {
             ExtendedAboutText = message;
             IsExtendedAboutTextVisible = true;
+        }
+
+        public void CloseLoadingOverlay()
+        {
+            IsLoadingOverlayVisible = false;
+        }
+
+        public void ShowLoadingOverlay()
+        {
+            IsLoadingOverlayVisible = true;
         }
 
         private void OpenWhatsNewWindow()

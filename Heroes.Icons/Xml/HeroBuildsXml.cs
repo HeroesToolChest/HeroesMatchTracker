@@ -128,7 +128,7 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
         /// <returns></returns>
-        public Dictionary<TalentTier, List<string>> GetTalentsForHero(string realHeroName)
+        public Dictionary<TalentTier, List<string>> GetAllTalentsForHero(string realHeroName)
         {
             if (HeroTalentsListByRealName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<string>> talents))
             {
@@ -137,7 +137,28 @@ namespace Heroes.Icons.Xml
             else
             {
                 if (Logger)
-                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetTalentsForHero)}]: {realHeroName}");
+                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns a list of all the talents of a hero given a talent tier
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <param name="talentTier">talent tier</param>
+        /// <returns></returns>
+        public List<string> GetTierTalentsForHero(string realHeroName, TalentTier talentTier)
+        {
+            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<string>> talents))
+            {
+                return talents[talentTier];
+            }
+            else
+            {
+                if (Logger)
+                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
 
                 return null;
             }

@@ -17,11 +17,13 @@ namespace Heroes.Helpers
             {
                 switch (season)
                 {
-                    case Season.Season3:
-                        return new Tuple<int?, int?>(48760, 99999);
-                    case Season.Season2:
+                    case Season.Year2017Season1:
+                        return new Tuple<int?, int?>(51375, 99999);
+                    case Season.Year2016Season3:
+                        return new Tuple<int?, int?>(48760, 51375);
+                    case Season.Year2016Season2:
                         return new Tuple<int?, int?>(45949, 48760);
-                    case Season.Season1:
+                    case Season.Year2016Season1:
                         return new Tuple<int?, int?>(43571, 45949);
                     case Season.Preseason:
                         return new Tuple<int?, int?>(0, 43571);

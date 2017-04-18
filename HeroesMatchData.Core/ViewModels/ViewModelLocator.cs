@@ -7,6 +7,7 @@ using HeroesMatchData.Core.ViewModels.Home;
 using HeroesMatchData.Core.ViewModels.Matches;
 using HeroesMatchData.Core.ViewModels.RawData;
 using HeroesMatchData.Core.ViewModels.Replays;
+using HeroesMatchData.Core.ViewModels.Statistics;
 using HeroesMatchData.Core.ViewModels.TitleBar;
 using HeroesMatchData.Data;
 using HeroesMatchData.Data.Models.Replays;
@@ -100,6 +101,10 @@ namespace HeroesMatchData.Core.ViewModels
             SimpleIoc.Default.Register<TeamLeagueViewModel>();
             SimpleIoc.Default.Register<UnrankedDraftViewModel>();
             SimpleIoc.Default.Register<MatchSummaryViewModel>();
+
+            // Statistics
+            SimpleIoc.Default.Register<StatsHeroesViewModel>();
+            SimpleIoc.Default.Register<StatsAllHeroesViewModel>();
         }
 
         // start ups
@@ -145,9 +150,12 @@ namespace HeroesMatchData.Core.ViewModels
         public static UnrankedDraftViewModel UnrankedDraftViewModel => ServiceLocator.Current.GetInstance<UnrankedDraftViewModel>();
         public static MatchSummaryViewModel MatchSummaryViewModel => ServiceLocator.Current.GetInstance<MatchSummaryViewModel>();
 
+        // Statistics
+        public static StatsHeroesViewModel StatsHeroesViewModel => ServiceLocator.Current.GetInstance<StatsHeroesViewModel>();
+        public static StatsAllHeroesViewModel StatsAllHeroesViewModel => ServiceLocator.Current.GetInstance<StatsAllHeroesViewModel>();
+
         public static void Cleanup()
         {
-            // TODO Clear the ViewModels
         }
     }
 }

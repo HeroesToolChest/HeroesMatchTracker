@@ -9,7 +9,9 @@
                       xmlns:matches="clr-namespace:HeroesMatchData.Views.Matches"
                       xmlns:rawData="clr-namespace:HeroesMatchData.Views.RawData"
                       xmlns:replays="clr-namespace:HeroesMatchData.Views.Replays"
+                      xmlns:statistics="clr-namespace:HeroesMatchData.Views.Statistics"
                       xmlns:titleBar="clr-namespace:HeroesMatchData.Views.TitleBar"
+                      xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
                       xmlns:system="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
@@ -20,7 +22,7 @@
                       d:DesignHeight="1080" d:DesignWidth="1920" Loaded="MetroWindow_Loaded">
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
-        <system:Double x:Key="TabControlFontSize">18</system:Double>
+        <system:Double x:Key="TabControlFontSize">16</system:Double>
     </Window.Resources>
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
@@ -61,41 +63,58 @@
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
-    <DockPanel>
-        <StatusBar DockPanel.Dock="Bottom" Background="{StaticResource DefaultBlueBrush}">
-            <StatusBarItem Content="{Binding ApplicationStatus}" />
-            <StatusBarItem Content="replays in database" DockPanel.Dock="Right" />
-            <StatusBarItem Content="{Binding TotalParsedReplays}" DockPanel.Dock="Right" />
-            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
-            <StatusBarItem Content="{Binding HotsLogsStatus}" DockPanel.Dock="Right" />
-            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
-            <StatusBarItem Content="{Binding ParserWatchStatus}" DockPanel.Dock="Right" />
-            <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
-            <StatusBarItem Content="{Binding ParserStatus}" DockPanel.Dock="Right" />
+    <Grid>
+        <simpleChildWindow:ChildWindow x:Name="LoadingOverlay"
+									   EnableDropShadow="False"
+                                       ShowCloseButton="False"
+                                       ShowTitleBar="False"
+                                       IsOpen="{Binding IsLoadingOverlayVisible}"
+                                       Panel.ZIndex="1000"
+                                       Background="Transparent">
+            <StackPanel>
+                <controls:ProgressRing IsActive="True" Height="80" Width="80" />
+                <TextBlock Text="Loading..." FontSize="28" HorizontalAlignment="Center" />
+            </StackPanel>
+        </simpleChildWindow:ChildWindow>
+        <DockPanel>
+            <StatusBar DockPanel.Dock="Bottom" Background="{StaticResource DefaultBlueBrush}">
+                <StatusBarItem Content="{Binding ApplicationStatus}" />
+                <StatusBarItem Content="replays in database" DockPanel.Dock="Right" />
+                <StatusBarItem Content="{Binding TotalParsedReplays}" DockPanel.Dock="Right" />
+                <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+                <StatusBarItem Content="{Binding HotsLogsStatus}" DockPanel.Dock="Right" />
+                <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+                <StatusBarItem Content="{Binding ParserWatchStatus}" DockPanel.Dock="Right" />
+                <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+                <StatusBarItem Content="{Binding ParserStatus}" DockPanel.Dock="Right" />
 
-            <StatusBarItem />
-        </StatusBar>
-        <Grid>
-            <controls:DropDownButton Content="{Binding UserBattleTag}" MinWidth="180" FontSize="16" BorderBrush="Transparent" Padding="0 0 8 0"
+                <StatusBarItem />
+            </StatusBar>
+            <Grid>
+                <controls:DropDownButton Content="{Binding UserBattleTag}" MinWidth="180" FontSize="16" BorderBrush="Transparent" Padding="0 0 8 0"
                                      HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" Panel.ZIndex="1000">
-                <controls:DropDownButton.Items>
-                    <MenuItem Header="Profile" Command="{Binding UserDropDownProfileCommand}" />
-                </controls:DropDownButton.Items>
-            </controls:DropDownButton>
-            <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" Panel.ZIndex="999">
-                <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                    <home:HomeControl />
-                </TabItem>
-                <TabItem Header="Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                    <matches:MatchesControl />
-                </TabItem>
-                <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                    <replays:ReplaysControl />
-                </TabItem>
-                <TabItem Header="Raw Data Tables" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-                    <rawData:RawDataControl />
-                </TabItem>
-            </TabControl>
-        </Grid>
-    </DockPanel>
+                    <controls:DropDownButton.Items>
+                        <MenuItem Header="Profile" Command="{Binding UserDropDownProfileCommand}" />
+                    </controls:DropDownButton.Items>
+                </controls:DropDownButton>
+                <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" Panel.ZIndex="999">
+                    <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                        <home:HomeControl />
+                    </TabItem>
+                    <TabItem Header="Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                        <matches:MatchesControl />
+                    </TabItem>
+                    <TabItem Header="Statistics" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                        <statistics:StatisticsControl />
+                    </TabItem>
+                    <TabItem Header="Replay Parser" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                        <replays:ReplaysControl />
+                    </TabItem>
+                    <TabItem Header="Raw Data Tables" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+                        <rawData:RawDataControl />
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </DockPanel>
+    </Grid>
 </controls:MetroWindow>

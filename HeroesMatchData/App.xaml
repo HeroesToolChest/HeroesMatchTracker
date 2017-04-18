@@ -22,6 +22,15 @@
                 <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/Size/l.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/Weight/normal.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/LiveCharts.Wpf;component/Themes/base.xaml" />
+
+                <!--Loading Indicators-->
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Colors.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles/LoadingWave.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles/LoadingThreeDots.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles/LoadingFlipPlane.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles/LoadingPulse.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles/LoadingDoubleBounce.xaml"/>
                 
                 <!--This app-->
                 <ResourceDictionary Source="/Resources/ImageResources.xaml"/>
@@ -31,10 +40,7 @@
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/MarkdownTheme.xaml"/>
-
-                <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
-
+             
                 <ResourceDictionary Source="/Resources/CustomStyles/DataGridStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ItemsControlStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/ButtonStyle.xaml"/>
@@ -46,6 +52,10 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DockPanelStyle.xaml"/>
 
+                <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomControls/DataGridControl.xaml"/>
+                
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>
@@ -54,6 +64,7 @@
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryAdvancedStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>

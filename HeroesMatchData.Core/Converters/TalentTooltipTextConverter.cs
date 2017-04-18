@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -61,7 +62,7 @@ namespace HeroesMatchData.Core.Converters
                             string closingCTag = text.Substring(closingCTagIndex, offset);
 
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
-                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue) });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
 
                             // remove, this part of the string is not needed anymore
                             text = text.Remove(0, closingCTagIndex + offset);
@@ -71,7 +72,7 @@ namespace HeroesMatchData.Core.Converters
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                             // add the rest of the text
-                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue) });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
 
                             // none left
                             text = string.Empty;
@@ -84,12 +85,15 @@ namespace HeroesMatchData.Core.Converters
                         span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                         BitmapImage bitmapImage = new BitmapImage(QuestIcon);
-                        Image image = new Image();
-                        image.Source = bitmapImage;
-                        image.Height = 15;
-                        image.Width = 15;
-                        image.Margin = new System.Windows.Thickness(0, 0, 4, -2);
-                        image.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+                        Image image = new Image()
+                        {
+                            Source = bitmapImage,
+                            Height = 15,
+                            Width = 15,
+                            Margin = new Thickness(0, 0, 4, -2),
+                            VerticalAlignment = VerticalAlignment.Center,
+                        };
+
                         InlineUIContainer container = new InlineUIContainer(image);
 
                         span.Inlines.Add(container);
