@@ -330,6 +330,7 @@ namespace HeroesMatchData.Core.ViewModels.Statistics
                 catch (Exception ex)
                 {
                     ExceptionLog.Log(LogLevel.Error, ex);
+                    throw;
                 }
             });
 

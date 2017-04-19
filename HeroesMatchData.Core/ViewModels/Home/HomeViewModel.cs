@@ -61,53 +61,46 @@ namespace HeroesMatchData.Core.ViewModels.Home
         {
             Task.Run(async () =>
             {
-                try
-                {
-                    await Task.Delay(2000);
+                await Task.Delay(2000);
 
-                    while (true)
+                while (true)
+                {
+                    if (LatestReplayDateTime < Database.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime())
                     {
-                        if (LatestReplayDateTime < Database.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime())
+                        var replays = Database.ReplaysDb().MatchReplay.ReadNewestLatestReplayByDateTimeList(LatestReplayDateTime);
+
+                        foreach (var replay in replays)
                         {
-                            var replays = Database.ReplaysDb().MatchReplay.ReadNewestLatestReplayByDateTimeList(LatestReplayDateTime);
+                            MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
+                            LatestReplayDateTime = replay.TimeStamp;
 
-                            foreach (var replay in replays)
+                            await Application.Current.Dispatcher.InvokeAsync(() =>
                             {
-                                MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
-                                LatestReplayDateTime = replay.TimeStamp;
+                                MatchCollection.Insert(0, match);
 
-                                await Application.Current.Dispatcher.InvokeAsync(() =>
-                                {
-                                    MatchCollection.Insert(0, match);
-
-                                    if (MatchCollection.Count > 20)
-                                        MatchCollection.RemoveAt(MatchCollection.Count - 1);
-                                });
-                            }
+                                if (MatchCollection.Count > 20)
+                                    MatchCollection.RemoveAt(MatchCollection.Count - 1);
+                            });
                         }
-
-                        if (UserBattleTagUpdated)
-                        {
-                            // update the current matches in the match list
-                            for (int i = 0; i < MatchCollection.Count; i++)
-                            {
-                                var updated = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(MatchCollection[i].ReplayId));
-
-                                await Application.Current.Dispatcher.InvokeAsync(() =>
-                                {
-                                    MatchCollection[i] = updated;
-                                });
-                            }
-
-                            UserBattleTagUpdated = false;
-                        }
-
-                        await Task.Delay(2000);
                     }
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(NLog.LogLevel.Error, ex, "Match History Loading error");
+
+                    if (UserBattleTagUpdated)
+                    {
+                        // update the current matches in the match list
+                        for (int i = 0; i < MatchCollection.Count; i++)
+                        {
+                            var updated = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(MatchCollection[i].ReplayId));
+
+                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            {
+                                MatchCollection[i] = updated;
+                            });
+                        }
+
+                        UserBattleTagUpdated = false;
+                    }
+
+                    await Task.Delay(2000);
                 }
             });
         }

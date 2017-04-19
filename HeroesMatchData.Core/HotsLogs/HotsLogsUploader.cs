@@ -27,7 +27,7 @@ namespace HeroesMatchData.Core.HotsLogs
             PutObjectResponse response = await client.PutObjectAsync(request);
 
             if (response.HttpStatusCode != HttpStatusCode.OK)
-                throw new Exception("Failed to upload");
+                return ReplayParseResult.Exception;
 
             using (HttpClient httpClient = new HttpClient())
             {

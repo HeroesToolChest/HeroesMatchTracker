@@ -31,18 +31,11 @@ namespace HeroesMatchData.Core.Updater
 
         public static async Task RetrieveReleaseNotes(IDatabaseService database)
         {
-            try
-            {
-                ReleaseNoteHandler releaseNoteHandler = new ReleaseNoteHandler(database);
-                await releaseNoteHandler.InitializeClient();
+            ReleaseNoteHandler releaseNoteHandler = new ReleaseNoteHandler(database);
+            await releaseNoteHandler.InitializeClient();
 
-                // save the needed release notes
-                releaseNoteHandler.AddApplyReleasesReleaseNotes();
-            }
-            catch (Exception ex)
-            {
-                UpdaterLog.Log(LogLevel.Info, ex);
-            }
+            // save the needed release notes
+            releaseNoteHandler.AddApplyReleasesReleaseNotes();
         }
 
         public static void CopyDatabasesToLatestRelease()

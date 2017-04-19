@@ -85,10 +85,20 @@ namespace Heroes.Icons.Xml
 
             if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
             {
-                BitmapImage image = new BitmapImage(talent.Item2);
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(talent.Item2);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (IOException)
+                {
+                    if (Logger)
+                        LogMissingImage($"Missing image: {talent.Item2}");
+
+                    return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
+                }
             }
             else
             {

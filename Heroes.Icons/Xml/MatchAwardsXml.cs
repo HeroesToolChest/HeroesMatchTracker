@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media.Imaging;
 using System.Xml;
 
@@ -35,19 +36,28 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public BitmapImage GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
         {
-            try
+            if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
             {
                 var award = MVPScreenAwardByAwardType[mvpAwardType];
                 var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
                 awardName = award.Item1;
 
-                BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (FileNotFoundException)
+                {
+                    LogMissingImage($"Missing image: {uriString}");
+                    awardName = "Unknown";
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
                 LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
                 awardName = "Unknown";
@@ -64,19 +74,28 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public BitmapImage GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
         {
-            try
+            if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
             {
                 var award = MVPScoreScreenAwardByAwardType[mvpAwardType];
                 var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
                 awardName = award.Item1;
 
-                BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (FileNotFoundException)
+                {
+                    LogMissingImage($"Missing image: {uriString}");
+                    awardName = "Unknown";
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
                 LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
                 awardName = "Unknown";

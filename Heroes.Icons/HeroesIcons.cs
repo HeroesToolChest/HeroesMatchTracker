@@ -102,30 +102,46 @@ namespace Heroes.Icons
 
         public BitmapImage GetPartyIcon(PartyIconColor partyIconColor)
         {
-            try
+            if (PartyIcons.ContainsKey(partyIconColor))
             {
-                BitmapImage image = new BitmapImage(PartyIcons[partyIconColor]);
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(PartyIcons[partyIconColor]);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (IOException)
+                {
+                    LogMissingImage($"Missing image: {PartyIcons[partyIconColor]}");
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
-                LogReferenceNameNotFound($"Party Icons: {partyIconColor}");
+                LogReferenceNameNotFound($"Other Icons: {partyIconColor}");
                 return null;
             }
         }
 
         public BitmapImage GetOtherIcon(OtherIcon otherIcon)
         {
-            try
+            if (OtherIcons.ContainsKey(otherIcon))
             {
-                BitmapImage image = new BitmapImage(OtherIcons[otherIcon]);
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(OtherIcons[otherIcon]);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (IOException)
+                {
+                    LogMissingImage($"Missing image: {OtherIcons[otherIcon]}");
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
                 LogReferenceNameNotFound($"Other Icons: {otherIcon}");
                 return null;
@@ -134,32 +150,48 @@ namespace Heroes.Icons
 
         public BitmapImage GetRoleIcon(HeroRole heroRole)
         {
-            try
+            if (RoleIcons.ContainsKey(heroRole))
             {
-                BitmapImage image = new BitmapImage(RoleIcons[heroRole]);
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(RoleIcons[heroRole]);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (IOException)
+                {
+                    LogMissingImage($"Missing image: {RoleIcons[heroRole]}");
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
-                LogReferenceNameNotFound($"Hero role icon: {heroRole}");
+                LogReferenceNameNotFound($"Other Icons: {heroRole}");
                 return null;
             }
         }
 
         public BitmapImage GetFranchiseIcon(HeroFranchise heroFranchise)
         {
-            try
+            if (FranchiseIcons.ContainsKey(heroFranchise))
             {
-                BitmapImage image = new BitmapImage(FranchiseIcons[heroFranchise]);
-                image.Freeze();
+                try
+                {
+                    BitmapImage image = new BitmapImage(FranchiseIcons[heroFranchise]);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                catch (IOException)
+                {
+                    LogMissingImage($"Missing image: {FranchiseIcons[heroFranchise]}");
+                    return null;
+                }
             }
-            catch (Exception)
+            else
             {
-                LogReferenceNameNotFound($"Franchise icons: {heroFranchise}");
+                LogReferenceNameNotFound($"Other Icons: {heroFranchise}");
                 return null;
             }
         }

@@ -372,128 +372,121 @@ namespace HeroesMatchData.Core.ViewModels.Matches
 
         private void LoadMatchSummaryData(ReplayMatch replayMatch)
         {
-            try
+            if (BackgroundImage != null)
+                DisposeMatchSummary();
+
+            replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
+
+            HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
+            SetBackgroundImage(replayMatch.MapName);
+            MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
+            MatchTitle = $"{replayMatch.MapName} - {HeroesHelpers.GameModes.GetStringFromGameMode(replayMatch.GameMode)} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
+            MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
+
+            // get players info
+            var playersList = replayMatch.ReplayMatchPlayers.ToList();
+            var playerTalentsList = replayMatch.ReplayMatchPlayerTalents.ToList();
+            var playerScoresList = replayMatch.ReplayMatchPlayerScoreResults.ToList();
+            var matchMessagesList = replayMatch.ReplayMatchMessage.ToList();
+            var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
+            var matchTeamLevelsList = replayMatch.ReplayMatchTeamLevels.ToList();
+            var matchTeamExperienceList = replayMatch.ReplayMatchTeamExperiences.ToList();
+
+            // graphs
+            TeamLevelTimeGraph.SetTeamLevelGraphs(matchTeamLevelsList, playersList[0].IsWinner);
+            TeamExperienceGraph.SetTeamExperienceGraphs(matchTeamExperienceList, playersList[0].IsWinner);
+
+            var playerParties = PlayerParties.FindPlayerParties(playersList);
+
+            foreach (var player in playersList)
             {
-                if (BackgroundImage != null)
-                    DisposeMatchSummary();
+                MatchPlayerBase matchPlayerBase;
+                MatchPlayerTalents matchPlayerTalents;
+                MatchPlayerStats matchPlayerStats;
+                MatchPlayerAdvancedStats matchPlayerAdvancedStats;
 
-                replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
+                matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
+                matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
-                HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
-                SetBackgroundImage(replayMatch.MapName);
-                MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
-                MatchTitle = $"{replayMatch.MapName} - {HeroesHelpers.GameModes.GetStringFromGameMode(replayMatch.GameMode)} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
-                MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
-
-                // get players info
-                var playersList = replayMatch.ReplayMatchPlayers.ToList();
-                var playerTalentsList = replayMatch.ReplayMatchPlayerTalents.ToList();
-                var playerScoresList = replayMatch.ReplayMatchPlayerScoreResults.ToList();
-                var matchMessagesList = replayMatch.ReplayMatchMessage.ToList();
-                var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
-                var matchTeamLevelsList = replayMatch.ReplayMatchTeamLevels.ToList();
-                var matchTeamExperienceList = replayMatch.ReplayMatchTeamExperiences.ToList();
-
-                // graphs
-                TeamLevelTimeGraph.SetTeamLevelGraphs(matchTeamLevelsList, playersList[0].IsWinner);
-                TeamExperienceGraph.SetTeamExperienceGraphs(matchTeamExperienceList, playersList[0].IsWinner);
-
-                var playerParties = PlayerParties.FindPlayerParties(playersList);
-
-                foreach (var player in playersList)
+                if (player.Character != "None")
                 {
-                    MatchPlayerBase matchPlayerBase;
-                    MatchPlayerTalents matchPlayerTalents;
-                    MatchPlayerStats matchPlayerStats;
-                    MatchPlayerAdvancedStats matchPlayerAdvancedStats;
+                    matchPlayerTalents = new MatchPlayerTalents(matchPlayerBase);
+                    matchPlayerTalents.SetTalents(playerTalentsList[player.PlayerNumber]);
 
-                    matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
-                    matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
+                    matchPlayerStats = new MatchPlayerStats(matchPlayerBase);
+                    matchPlayerStats.SetStats(playerScoresList[player.PlayerNumber], player);
 
-                    if (player.Character != "None")
+                    matchPlayerAdvancedStats = new MatchPlayerAdvancedStats(matchPlayerStats);
+                    matchPlayerAdvancedStats.SetAdvancedStats(playerScoresList[player.PlayerNumber], player);
+
+                    if (player.Team == 0 || player.Team == 1)
                     {
-                        matchPlayerTalents = new MatchPlayerTalents(matchPlayerBase);
-                        matchPlayerTalents.SetTalents(playerTalentsList[player.PlayerNumber]);
-
-                        matchPlayerStats = new MatchPlayerStats(matchPlayerBase);
-                        matchPlayerStats.SetStats(playerScoresList[player.PlayerNumber], player);
-
-                        matchPlayerAdvancedStats = new MatchPlayerAdvancedStats(matchPlayerStats);
-                        matchPlayerAdvancedStats.SetAdvancedStats(playerScoresList[player.PlayerNumber], player);
-
-                        if (player.Team == 0 || player.Team == 1)
+                        if (player.Team == 0)
                         {
-                            if (player.Team == 0)
-                            {
-                                MatchTalentsTeam1Collection.Add(matchPlayerTalents);
-                                MatchStatsTeam1Collection.Add(matchPlayerStats);
-                                MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
-                            }
-                            else
-                            {
-                                MatchTalentsTeam2Collection.Add(matchPlayerTalents);
-                                MatchStatsTeam2Collection.Add(matchPlayerStats);
-                                MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
-                            }
+                            MatchTalentsTeam1Collection.Add(matchPlayerTalents);
+                            MatchStatsTeam1Collection.Add(matchPlayerStats);
+                            MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
+                        }
+                        else
+                        {
+                            MatchTalentsTeam2Collection.Add(matchPlayerTalents);
+                            MatchStatsTeam2Collection.Add(matchPlayerStats);
+                            MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
                         }
                     }
-
-                    if (player.Team == 4)
-                    {
-                        MatchObserversCollection.Add(new MatchObserver(matchPlayerBase));
-                        HasObservers = true;
-                    }
                 }
 
-                SetHighestTeamStatValues();
-
-                // match bans
-                if (replayMatch.ReplayMatchTeamBan != null)
+                if (player.Team == 4)
                 {
-                    string ban1 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
-                    string ban2 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
-                    string ban3 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
-                    string ban4 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
-
-                    MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban1)[0]}";
-                    MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban2)[0]}";
-                    MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban3)[0]}";
-                    MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban4)[0]}";
-                    MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban1);
-                    MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban2);
-                    MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban3);
-                    MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban4);
-
-                    HasBans = true;
+                    MatchObserversCollection.Add(new MatchObserver(matchPlayerBase));
+                    HasObservers = true;
                 }
-
-                // match chat
-                if (matchMessagesList != null && matchMessagesList.Count > 0)
-                {
-                    foreach (var message in matchMessagesList)
-                    {
-                        if (message.MessageEventType == "SChatMessage")
-                        {
-                            MatchChat matchChat = new MatchChat();
-                            matchChat.SetChatMessages(message);
-
-                            MatchChatCollection.Add(matchChat);
-                        }
-                    }
-
-                    if (MatchChatCollection.Count > 0)
-                        HasChat = true;
-                }
-
-                // Set the match results: total kills, team levels, game time
-                MatchResult matchResult = new MatchResult(Database);
-                matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
-                SetMatchResults(matchResult);
             }
-            catch (Exception ex)
+
+            SetHighestTeamStatValues();
+
+            // match bans
+            if (replayMatch.ReplayMatchTeamBan != null)
             {
-                ExceptionLog.Log(NLog.LogLevel.Error, ex);
+                string ban1 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
+                string ban2 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
+                string ban3 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
+                string ban4 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
+
+                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban1)[0]}";
+                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban2)[0]}";
+                MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban3)[0]}";
+                MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban4)[0]}";
+                MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban1);
+                MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban2);
+                MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban3);
+                MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban4);
+
+                HasBans = true;
             }
+
+            // match chat
+            if (matchMessagesList != null && matchMessagesList.Count > 0)
+            {
+                foreach (var message in matchMessagesList)
+                {
+                    if (message.MessageEventType == "SChatMessage")
+                    {
+                        MatchChat matchChat = new MatchChat();
+                        matchChat.SetChatMessages(message);
+
+                        MatchChatCollection.Add(matchChat);
+                    }
+                }
+
+                if (MatchChatCollection.Count > 0)
+                    HasChat = true;
+            }
+
+            // Set the match results: total kills, team levels, game time
+            MatchResult matchResult = new MatchResult(Database);
+            matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
+            SetMatchResults(matchResult);
         }
 
         private void SetMatchResults(MatchResult matchResult)
