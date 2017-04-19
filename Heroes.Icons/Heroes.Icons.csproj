@@ -581,6 +581,30 @@
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_d2amazonf.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_d2amazonf.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_d2amazonf.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_avoidance.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_avoidance_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_avoidance_b.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_balllightning.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_balllightning_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_balllightning_b.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_blindinglight.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_blindinglight_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_blindinglight_b.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_blindinglight_c.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_chargedstrikes.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_fend.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_fend_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_fend_b.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_fend_c.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_innerlight.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_lightningfury.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_lightningfury_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_lightningfury_b.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_lightningfury_c.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_ringoftheleech.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_valkrie.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_valkrie_a.dds" />
+    <Resource Include="Icons\Talents\Cassia\storm_ui_icon_cassia_valkrie_b.dds" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
