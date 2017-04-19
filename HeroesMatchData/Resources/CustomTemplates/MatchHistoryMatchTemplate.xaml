@@ -57,7 +57,7 @@
                                             <Setter Property="FontSize" Value="16" />
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding WinnerResult}" Value="Win">
-                                                    <Setter Property="Foreground" Value="{StaticResource DefaultBlueBrush}" />
+                                                    <Setter Property="Foreground" Value="{StaticResource DefaultGreenBrush}" />
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding WinnerResult}" Value="Loss">
                                                     <Setter Property="Foreground" Value="{StaticResource DefaultRedBrush}" />

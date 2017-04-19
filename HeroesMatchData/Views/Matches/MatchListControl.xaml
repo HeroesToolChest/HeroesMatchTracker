@@ -99,7 +99,7 @@
             <GroupBox Header="{Binding Team1OverviewHeader}">
                 <ItemsControl ItemsSource="{Binding MatchOverviewTeam1Collection}" Style="{StaticResource MatchPlayerTeam1OverviewItemsControl}" />
             </GroupBox>
-            <GroupBox Header="{Binding Team2OverviewHeader}" Margin="0 8 0 0">
+            <GroupBox Header="{Binding Team2OverviewHeader}">
                 <ItemsControl ItemsSource="{Binding MatchOverviewTeam2Collection}" Style="{StaticResource MatchPlayerTeam2OverviewItemsControl}" />
             </GroupBox>
             <Button Content="View Match Summary" Command="{Binding ShowMatchSummaryCommand}" IsEnabled="{Binding ShowMatchSummaryButtonEnabled}" Margin="0 8 0 0" />
