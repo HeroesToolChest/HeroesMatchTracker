@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <system:Double x:Key="TabControlFontSize">16</system:Double>
     </UserControl.Resources>
-    <TabControl SelectedIndex="{Binding SelectedMatchesTab}" controls:TabControlHelper.IsUnderlined="True">
+    <TabControl SelectedIndex="{Binding SelectedMatchesTab}" controls:TabControlHelper.Underlined="SelectedTabItem">
         <TabItem Header="All Matches" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:AllMatchesControl />
         </TabItem>

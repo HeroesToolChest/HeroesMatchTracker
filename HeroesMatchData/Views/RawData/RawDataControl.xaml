@@ -12,7 +12,7 @@
         <Thickness x:Key="Spacing">0 12 0 0</Thickness>
         <system:Double x:Key="TabControlFontSize">16</system:Double>
     </UserControl.Resources>
-    <TabControl controls:TabControlHelper.IsUnderlined="True">
+    <TabControl controls:TabControlHelper.Underlined="SelectedTabItem">
         <TabItem Header="Replays" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchReplaysControl Margin="{StaticResource Spacing}"/>
         </TabItem>

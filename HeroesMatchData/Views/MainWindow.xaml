@@ -97,7 +97,7 @@
                         <MenuItem Header="Profile" Command="{Binding UserDropDownProfileCommand}" />
                     </controls:DropDownButton.Items>
                 </controls:DropDownButton>
-                <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" Panel.ZIndex="999">
+                <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" controls:TabControlHelper.Underlined="TabPanel" Panel.ZIndex="999">
                     <TabItem Header="Home" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
                         <home:HomeControl />
                     </TabItem>
