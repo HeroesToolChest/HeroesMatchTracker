@@ -43,7 +43,8 @@ namespace HeroesMatchData.Core
         /// <returns></returns>
         public static SemanticVersion HeroesIconsVersion()
         {
-            return SemanticVersion.Parse(Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.Icons").ToList()[0].Version.ToString());
+            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.Icons").ToList()[0].Version;
+            return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
 
         /// <summary>
@@ -62,7 +63,8 @@ namespace HeroesMatchData.Core
         /// <returns></returns>
         public static SemanticVersion HeroesReplayParserVersion()
         {
-            return SemanticVersion.Parse(Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.ReplayParser").ToList()[0].Version.ToString());
+            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.ReplayParser").ToList()[0].Version;
+            return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
     }
 }

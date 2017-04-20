@@ -16,7 +16,6 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("4168d60d-d0eb-40a2-9304-d38f14106a48")]
 
-// revision number will be the latest supported build
-[assembly: AssemblyVersion("2.0.0.51375")]
-[assembly: AssemblyFileVersion("2.0.0.51375")]
+[assembly: AssemblyVersion("2.0.0")]
+[assembly: AssemblyFileVersion("2.0.0")]
 [assembly: NeutralResourcesLanguage("en-US")]

@@ -5,6 +5,8 @@ namespace Heroes.Icons
 {
     public interface IHeroesIconsService
     {
+        int LatestSupportedBuild();
+
         /// <summary>
         /// Load a specific build, other than the latest one
         /// </summary>

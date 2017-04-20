@@ -49,6 +49,8 @@ namespace Heroes.Icons
             SetOtherIcons();
         }
 
+        public int LatestSupportedBuild() => LatestHeroesBuild;
+
         /// <summary>
         /// Load a specific build, other than the latest one
         /// </summary>
@@ -253,6 +255,7 @@ namespace Heroes.Icons
                 writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
             }
         }
+
         #endregion private methods
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using Heroes.Icons;
 using HeroesMatchData.Core.Updater;
 using HeroesMatchData.Core.ViewServices;
 using HeroesMatchData.Data;
@@ -21,11 +22,13 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
         private AutoUpdater AutoUpdater;
         private IDatabaseService Database;
         private IMainTabService MainTab;
+        private IHeroesIconsService HeroesIcons;
 
-        public AboutControlViewModel(IDatabaseService database, IMainTabService mainTab)
+        public AboutControlViewModel(IDatabaseService database, IMainTabService mainTab, IHeroesIconsService heroesIcons)
         {
             Database = database;
             MainTab = mainTab;
+            HeroesIcons = heroesIcons;
 
             IsCheckForUpdatesButtonEnabled = true;
             PeriodicallyCheckUpdates();
@@ -34,8 +37,8 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
         public string HeroesMatchDataCoreVersion => AssemblyVersions.HeroesMatchDataCoreVersion().ToString();
         public string HeroesMatchDataDataVersion => AssemblyVersions.HeroesMatchDataDataVersion().ToString();
         public string HeroesMatchDataHelpersVersion => AssemblyVersions.HeroesHelpersVersion().ToString();
-        public string HeroesIconsVersion => AssemblyVersions.HeroesIconsVersion().ToString();
-        public string HeroesReplayParserVersion => AssemblyVersions.HeroesReplayParserVersion().ToString();
+        public string HeroesIconsVersion => $"{AssemblyVersions.HeroesIconsVersion().ToString()} ({HeroesIcons.LatestSupportedBuild()})";
+        public string HeroesReplayParserVersion => $"{AssemblyVersions.HeroesReplayParserVersion().ToString()} ({Heroes.ReplayParser.Replay.LatestSupportedBuild})";
 
         public RelayCommand CheckForUpdatesCommand => new RelayCommand(CheckForUpdates);
         public RelayCommand ApplyUpdateCommand => new RelayCommand(ApplyUpdates);
