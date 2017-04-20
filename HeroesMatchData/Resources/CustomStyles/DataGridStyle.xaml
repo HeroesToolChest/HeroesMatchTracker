@@ -12,7 +12,21 @@
         <Setter Property="AlternatingRowBackground" Value="{DynamicResource GrayBrush10}" />
     </Style>
 
+
+    <Style TargetType="DataGrid" x:Key="DefaultStatDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
+        <Setter Property="RowBackground" Value="AliceBlue" />
+        <Setter Property="AlternatingRowBackground" Value="Lavender" />
+    </Style>
+    
     <Style TargetType="DataGrid" x:Key="RawDataDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
         <Setter Property="GridLinesVisibility" Value="Vertical" />
+    </Style>
+
+    <Style TargetType="DataGridCell" x:Key="DataGridCenterCell" BasedOn="{StaticResource MetroDataGridCell}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader" x:Key="DataGridCenterHeader" BasedOn="{StaticResource MetroDataGridColumnHeader}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
     </Style>
 </ResourceDictionary>
