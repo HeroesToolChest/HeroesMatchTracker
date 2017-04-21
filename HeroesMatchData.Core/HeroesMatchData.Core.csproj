@@ -196,6 +196,7 @@
     <Compile Include="Converters\TextToFlowDocumentConverter.cs" />
     <Compile Include="Generic\AssemblyVersions.cs" />
     <Compile Include="Generic\AppCore.cs" />
+    <Compile Include="Generic\ExternalLinkedSites.cs" />
     <Compile Include="Generic\MainPage.cs" />
     <Compile Include="Generic\MatchesTab.cs" />
     <Compile Include="Generic\ReplayParserStatus.cs" />

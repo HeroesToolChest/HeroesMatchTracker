@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using HeroesMatchData.Core;
+using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
@@ -18,8 +19,11 @@ namespace HeroesMatchData.Views.TitleBar
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
+            if (ExternalLinkedSites.IsApprovedSite(e.Uri))
+            {
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+                e.Handled = true;
+            }
         }
     }
 }

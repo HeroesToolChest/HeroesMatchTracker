@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using HeroesMatchData.Core;
+using System;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace HeroesMatchData.Views.TitleBar
@@ -12,7 +14,13 @@ namespace HeroesMatchData.Views.TitleBar
         {
             InitializeComponent();
 
-            CommandBindings.Add(new CommandBinding(NavigationCommands.GoToPage, (sender, e) => Process.Start((string)e.Parameter)));
+            CommandBindings.Add(new CommandBinding(NavigationCommands.GoToPage, (sender, e) =>
+            {
+                if (ExternalLinkedSites.IsApprovedSite(new Uri(e.Parameter.ToString())))
+                {
+                    Process.Start((string)e.Parameter);
+                }
+            }));
         }
     }
 }

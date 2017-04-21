@@ -44,7 +44,7 @@ namespace HeroesMatchData.Core.ViewModels.TitleBar
                 else
                     ReleaseNotesMarkdownText += $"## Heroes Match Data {currentVersion} (Unknown) {Environment.NewLine}";
 
-                ReleaseNotesMarkdownText += "WARNING - Could not download the latest releases logs. Visit the [releases](https://www.github.com/koliva8245/HeroesParserData/releases) page for release notes.";
+                ReleaseNotesMarkdownText += "WARNING - Could not download the latest releases logs. Visit the [releases](https://github.com/koliva8245/HeroesParserData/releases) page for release notes.";
                 ReleaseNotesMarkdownText += $"{Environment.NewLine} *** {Environment.NewLine}";
             }
 
