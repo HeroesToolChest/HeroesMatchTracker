@@ -203,7 +203,6 @@
     <Compile Include="Models\Settings\UserSetting.cs" />
     <Compile Include="Queries\Settings\UserSettings.cs" />
     <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
-    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App.config">

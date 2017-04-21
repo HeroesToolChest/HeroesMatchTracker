@@ -241,7 +241,6 @@
     <Compile Include="Services\InternalService.cs" />
     <Compile Include="Services\IWebsiteService.cs" />
     <Compile Include="Services\Website.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="Updater\AutoUpdater.cs" />
     <Compile Include="Updater\AutoUpdaterException.cs" />
     <Compile Include="User\IUserProfileService.cs" />
