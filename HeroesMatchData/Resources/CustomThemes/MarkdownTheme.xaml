@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="FlowDocument" x:Key="DocumentStyle">
-        <Setter Property="FontFamily" Value="Calibri" />
+        <Setter Property="FontFamily" Value="Segoe UI, Lucida Sans Unicode, Verdana" />
         <Setter Property="TextAlignment" Value="Left" />
     </Style>
 
@@ -31,6 +31,7 @@
     </Style>
 
     <Style x:Key="LinkStyle" TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="Blue" />
         <Setter Property="TextDecorations" Value="None" />
     </Style>
 
@@ -47,5 +48,6 @@
         <Setter Property="X2" Value="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=FlowDocumentScrollViewer}}" />
         <Setter Property="Stroke" Value="#99000000" />
         <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Margin" Value="0 24 0 -24" />
     </Style>
 </ResourceDictionary>

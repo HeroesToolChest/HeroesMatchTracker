@@ -1,4 +1,7 @@
-﻿namespace HeroesMatchData.Views.TitleBar
+﻿using System.Diagnostics;
+using System.Windows.Input;
+
+namespace HeroesMatchData.Views.TitleBar
 {
     /// <summary>
     /// Interaction logic for WhatsNewWindow.xaml
@@ -8,6 +11,8 @@
         public WhatsNewWindow()
         {
             InitializeComponent();
+
+            CommandBindings.Add(new CommandBinding(NavigationCommands.GoToPage, (sender, e) => Process.Start((string)e.Parameter)));
         }
     }
 }

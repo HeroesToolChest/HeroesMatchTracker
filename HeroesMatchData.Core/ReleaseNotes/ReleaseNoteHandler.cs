@@ -3,6 +3,7 @@ using HeroesMatchData.Data.Models.ReleaseNotes;
 using Octokit;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace HeroesMatchData.Core.ReleaseNotes
@@ -77,7 +78,7 @@ namespace HeroesMatchData.Core.ReleaseNotes
             ReleaseNote releaseNote = new ReleaseNote
             {
                 DateReleased = release.PublishedAt.Value.DateTime,
-                PatchNote = release.Body.Replace("\r\n", Environment.NewLine),
+                PatchNote = ModifiyReleaseBody(release.Body),
                 PreRelease = release.Prerelease,
                 Version = version,
             };
@@ -86,6 +87,17 @@ namespace HeroesMatchData.Core.ReleaseNotes
                 Database.ReleaseNotesDb().ReleaseNotes.UpdateReleaseNote(releaseNote);
             else
                 Database.ReleaseNotesDb().ReleaseNotes.CreateRecord(releaseNote);
+        }
+
+        private string ModifiyReleaseBody(string releaseBody)
+        {
+            releaseBody = releaseBody.Replace("\r\n", Environment.NewLine);
+
+            string pattern = @"#\d+";
+            string replacement = "[$&](https://github.com/name/project/issues/$&)";
+
+            releaseBody = Regex.Replace(releaseBody, pattern, replacement);
+            return releaseBody.Replace(@"/issues/#", @"/issues/");
         }
     }
 }
