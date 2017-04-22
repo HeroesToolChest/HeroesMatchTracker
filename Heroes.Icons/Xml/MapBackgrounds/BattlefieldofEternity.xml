@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <BattlefieldofEternity name="Battlefield of Eternity">
   <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_battlefieldofeternity.jpg</Normal>
-  <Small>ui_ingame_mapmechanic_loadscreen_battlefieldofeternity_small.jpg</Small>
   <Aliases>Campo de Batalha da Eternidade,Campo de batalla de la Eternidad,永恆戰場,永恒战场,영원의 전쟁터,Campos de Batalla de la Eternidad,Schlachtfeld der Ewigkeit,Champs de l’Éternité,Вечная битва,Campi di Battaglia Eterni,Pole Bitewne Wieczności</Aliases>
 </BattlefieldofEternity>

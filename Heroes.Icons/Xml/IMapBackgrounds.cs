@@ -6,7 +6,7 @@ namespace Heroes.Icons.Xml
 {
     public interface IMapBackgrounds
     {
-        BitmapImage GetMapBackground(string mapRealName, bool useSmallImage = false);
+        BitmapImage GetMapBackground(string mapRealName);
 
         /// <summary>
         /// Returns the color associated with the map, returns black if map not found

@@ -10,7 +10,6 @@ namespace Heroes.Icons.Xml
     {
         private Dictionary<string, Uri> MapUriByMapRealName = new Dictionary<string, Uri>();
         private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
-        private Dictionary<string, Uri> MapSmallUriByMapRealName = new Dictionary<string, Uri>();
         private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
         private List<string> CustomOnlyMaps = new List<string>();
 
@@ -29,22 +28,13 @@ namespace Heroes.Icons.Xml
             return xml;
         }
 
-        public BitmapImage GetMapBackground(string mapRealName, bool useSmallImage = false)
+        public BitmapImage GetMapBackground(string mapRealName)
         {
             try
             {
-                if (useSmallImage == false)
-                {
-                    BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
-                    image.Freeze();
-                    return image;
-                }
-                else
-                {
-                    BitmapImage image = new BitmapImage(MapSmallUriByMapRealName[mapRealName]);
-                    image.Freeze();
-                    return image;
-                }
+                BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
+                image.Freeze();
+                return image;
             }
             catch (Exception)
             {
@@ -142,7 +132,7 @@ namespace Heroes.Icons.Xml
                         if (string.IsNullOrEmpty(realMapBackgroundName))
                             realMapBackgroundName = mapBackground; // default
 
-                        string custom = reader["custom"] == null ? "false" : reader["custom"];
+                        string custom = reader["custom"] ?? "false";
 
                         if (!bool.TryParse(custom, out bool isCustomOnly))
                             isCustomOnly = false;
@@ -163,10 +153,6 @@ namespace Heroes.Icons.Xml
                                     {
                                         MapUriByMapRealName.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
                                         MapFontGlowColorByMapRealName.Add(realMapBackgroundName, (Color)ColorConverter.ConvertFromString(fontGlow));
-                                    }
-                                    else if (element == "Small")
-                                    {
-                                        MapSmallUriByMapRealName.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
                                     }
                                     else if (element == "Aliases")
                                     {
