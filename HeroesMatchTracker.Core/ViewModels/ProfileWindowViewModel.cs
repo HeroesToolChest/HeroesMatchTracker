@@ -11,6 +11,7 @@ namespace HeroesMatchTracker.Core.ViewModels
     {
         private IUserProfileService UserProfile;
         private string _userBattleTag;
+        private string _resultText;
         private int _userRegion;
 
         public ProfileWindowViewModel(IUserProfileService userProfile)
@@ -48,11 +49,30 @@ namespace HeroesMatchTracker.Core.ViewModels
             get { return GetRegionsList(); }
         }
 
+        public string ResultText
+        {
+            get => _resultText;
+            set
+            {
+                _resultText = value;
+                RaisePropertyChanged();
+            }
+        }
+
         private void SetUser()
         {
+            ResultText = string.Empty;
             UserBattleTag = UserBattleTag.Trim();
-            if (string.IsNullOrEmpty(SelectedRegion))
+
+            if (!string.IsNullOrEmpty(UserBattleTag) && string.IsNullOrEmpty(SelectedRegion))
+            {
+                ResultText = "Region required";
                 return;
+            }
+            else if (string.IsNullOrEmpty(UserBattleTag))
+            {
+                ResultText = "BattleTag cleared";
+            }
 
             UserProfile.SetProfile(_userBattleTag, _userRegion);
         }
