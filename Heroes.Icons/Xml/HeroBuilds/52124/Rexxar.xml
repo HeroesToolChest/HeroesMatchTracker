@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Rexxar attributeid="Rexx" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_rexxar.dds" loading="storm_ui_ingame_hero_loadingscreen_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
+<Rexxar>
   <Level1>
     <RexxarSpiritBondEasyPrey name="Easy Prey" desc="RexxarSpiritBondEasyPreyTalent">storm_ui_icon_rexxar_heremishaactive.dds</RexxarSpiritBondEasyPrey>
     <RexxarSpiritSwoopBirdOfPrey name="Bird of Prey" desc="RexxarSpiritSwoopBirdOfPreyTalent">storm_ui_icon_rexxar_spiritswoop.dds</RexxarSpiritSwoopBirdOfPrey>

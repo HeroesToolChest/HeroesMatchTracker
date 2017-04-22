@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tassadar attributeid="Tass" role="Support" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_tassadar.dds" loading="storm_ui_ingame_hero_loadingscreen_tassadar.dds" leader="storm_ui_ingame_hero_leaderboard_tassadar.dds">
+<Tassadar>
   <Level1>
     <TassadarPsionicStormPsiInfusion name="Psi Infusion" desc="TassadarPsionicStormPsiInfusionTalent">storm_ui_icon_tassadar_psionicstorm_var1.dds</TassadarPsionicStormPsiInfusion>
     <TassadarTemplarsWill name="Templar's Will" generic="true" desc="TassadarOracleTemplarsWillTalent">storm_ui_icon_talent_autoattack_mana.dds</TassadarTemplarsWill>

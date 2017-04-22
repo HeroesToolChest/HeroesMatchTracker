@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Stitches attributeid="Stit" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
+<Stitches>
   <Level1>
     <StitchesMasteryChewYourFood name="Chew Your Food" desc="StitchesDevourChewYourFoodTalent">storm_ui_icon_stitches_devour.dds</StitchesMasteryChewYourFood>
     <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>

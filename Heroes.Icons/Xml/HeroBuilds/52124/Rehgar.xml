@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Rehgar attributeid="Rehg" role="Support" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_rehgar.dds" loading="storm_ui_ingame_hero_loadingscreen_rehgar.dds" leader="storm_ui_ingame_hero_leaderboard_rehgar.dds">
+<Rehgar>
   <Level1>
     <RehgarMasteryColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotemTalent">storm_ui_icon_rehgar_earthbindtotem.dds</RehgarMasteryColossalTotem>
     <RehgarMasteryElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricChargeTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryElectricCharge>

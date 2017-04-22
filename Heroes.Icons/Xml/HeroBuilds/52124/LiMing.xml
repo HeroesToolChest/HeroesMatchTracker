@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LiMing name="Li-Ming" attributeid="Wiza" role="Assassin" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_wizard.dds" loading="storm_ui_ingame_hero_loadingscreen_wizard.dds" leader="storm_ui_ingame_hero_leaderboard_wizard.dds">
+<LiMing>
   <Level1>
     <WizardAstralPresence name="Astral Presence" desc="WizardAstralPresence">storm_btn_d3_traits_wizard_astralpresence.dds</WizardAstralPresence>
     <WizardPowerHungry name="Power Hungry" desc="WizardPowerHungryTalent">storm_ui_icon_talent_powerhungry.dds</WizardPowerHungry>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chromie attributeid="Chro" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_chromie.dds" loading="storm_ui_ingame_hero_loadingscreen_chromie.dds" leader="storm_ui_ingame_hero_leaderboard_chromie.dds">
+<Chromie>
   <Level1>
     <ChromieSandBlastCompoundingAether name="Compounding Aether" desc="ChromieSandBlastCompoundingAether">storm_ui_icon_Chromie_AetherCannon.dds</ChromieSandBlastCompoundingAether>
     <ChromieDragonsBreathDeepBreathing name="Deep Breathing" desc="ChromieDragonsBreathDeepBreathing">storm_ui_icon_Chromie_SandStrike.dds</ChromieDragonsBreathDeepBreathing>

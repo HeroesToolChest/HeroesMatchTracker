@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Diablo attributeid="Diab" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_diablo.dds" loading="storm_ui_ingame_hero_loadingscreen_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
+<Diablo>
   <Level1>
     <DiabloBulwark name="Bulwark" desc="DiabloBulwark">storm_ui_icon_diablo_shadowcharge_var1.dds</DiabloBulwark>
     <DiabloMasteryDevilsDueBlackSoulstone name="Devil's Due" desc="DiabloBlackSoulstoneDevilsDueTalent">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloMasteryDevilsDueBlackSoulstone>

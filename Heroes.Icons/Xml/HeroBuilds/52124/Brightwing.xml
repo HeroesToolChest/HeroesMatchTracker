@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Brightwing attributeid="Faer" role="Support" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_faeriedragon.dds" loading="storm_ui_ingame_hero_loadingscreen_faeriedragon.dds" leader="storm_ui_ingame_hero_leaderboard_faeriedragon.dds">
+<Brightwing>
   <Level1>
     <BrightwingDreamShotArcaneFlare name="Dream Shot" desc="BrightwingDreamShotTalent">storm_ui_icon_brightwing_arcaneflare.dds</BrightwingDreamShotArcaneFlare>
     <BrightwingUnfurlingSpraySoothingMist name="Unfurling Spray" desc="BrightwingUnfurlingSprayTalent">storm_ui_icon_brightwing_soothingmist.dds</BrightwingUnfurlingSpraySoothingMist>

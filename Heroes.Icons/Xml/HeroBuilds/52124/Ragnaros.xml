@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Ragnaros attributeid="Ragn" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_ragnaros.dds" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.dds" leader="storm_ui_ingame_hero_leaderboard_ragnaros.dds">
+<Ragnaros>
   <Level1>
     <RagnarosEmpowerSulfurasSulfurasHungers name="Sulfuras Hungers" desc="RagnarosEmpowerSulfurasSulfurasHungers">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasSulfurasHungers>
     <RagnarosLivingMeteorShiftingMeteor name="Shifting Meteor" desc="RagnarosLivingMeteorShiftingMeteor">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorShiftingMeteor>

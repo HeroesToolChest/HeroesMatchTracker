@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Murky attributeid="Murk" role="Specialist" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_murky.dds" loading="storm_ui_ingame_hero_loadingscreen_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
+<Murky>
   <Level1>
     <MurkyFishEye name="Fish Eye" desc="MurkyFishEye">storm_ui_icon_murky_trait_spawnegg.dds</MurkyFishEye>
     <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent">storm_ui_icon_murky_egghunt.dds</MurkyEggHunt>

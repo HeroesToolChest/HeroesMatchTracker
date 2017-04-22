@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kharazim attributeid="Monk" role="Support" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_monk.dds" loading="storm_ui_ingame_hero_loadingscreen_monk.dds" leader="storm_ui_ingame_hero_leaderboard_monk.dds">
+<Kharazim>
   <Level1>
     <MonkTranscendence name="Transcendence" desc="MonkTranscendenceTalent">storm_ui_icon_monk_trait_transcendence.dds</MonkTranscendence>
     <MonkIronFists name="Iron Fists" desc="MonkIronFistsTalent">storm_ui_icon_monk_trait_ironfist.dds</MonkIronFists>

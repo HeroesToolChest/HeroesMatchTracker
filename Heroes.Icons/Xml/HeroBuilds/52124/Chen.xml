@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chen attributeid="Chen" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_chen.dds" loading="storm_ui_ingame_hero_loadingscreen_chen.dds" leader="storm_ui_ingame_hero_leaderboard_chen.dds">
+<Chen>
   <Level1>
     <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">storm_ui_icon_chen_breathoffire.dds</ChenAccumulatingFlame>
     <ChenGroundingBrew name="Grounding Brew" desc="ChenFortifyingBrewGroundingBrewTalent">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenGroundingBrew>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Xul attributeid="Necr" role="Specialist" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_necromancer.dds" loading="storm_ui_ingame_hero_loadingscreen_necromancer.dds" leader="storm_ui_ingame_hero_leaderboard_necromancer.dds">
+<Xul>
   <Level1>
     <NecromancerTalentBoneArmorBacklash name="Backlash" desc="NecromancerBoneArmorBacklash">storm_ui_icon_Necromancer_BoneArmor_B.dds</NecromancerTalentBoneArmorBacklash>
     <NecromancerTalentBoneArmorShackler name="Shackler" desc="NecromancerBoneArmorShackler">storm_ui_icon_Necromancer_BoneArmor_C.dds</NecromancerTalentBoneArmorShackler>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Probius attributeid="Prob" role="Specialist" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
+<Probius>
   <Level1>
     <ProbiusEchoPulseDisruptionPulse name="Echo Pulse" desc="ProbiusEchoPulseDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusEchoPulseDisruptionPulse>
     <ProbiusWarpResonanceWarpRiftQuest name="Warp Resonance" desc="ProbiusWarpRiftWarpResonanceQuestTalent">storm_ui_icon_probius_warprift.dds</ProbiusWarpResonanceWarpRiftQuest>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Thrall attributeid="Thra" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_thrall.dds" loading="storm_ui_ingame_hero_loadingscreen_thrall.dds" leader="storm_ui_ingame_hero_leaderboard_thrall.dds">
+<Thrall>
   <Level1>
     <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <ThrallMasteryRollingThunder name="Rolling Thunder" desc="ThrallRollingThunderTalent">storm_ui_icon_thrall_chainlightning.dds</ThrallMasteryRollingThunder>

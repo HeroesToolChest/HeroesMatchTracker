@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Leoric attributeid="Leor" role="Warrior" franchise="Diablo" portrait="storm_ui_ingame_heroselect_btn_leoric.dds" loading="storm_ui_ingame_hero_loadingscreen_leoric.dds" leader="storm_ui_ingame_hero_leaderboard_leoric.dds">
+<Leoric>
   <Level1>
     <LeoricMasteryManaThirstSkeletalSwing name="Mana Thirst" desc="LeoricManaThirstTalent">storm_ui_icon_leoric_SkeletalSwing.dds</LeoricMasteryManaThirstSkeletalSwing>
     <LeoricMasteryHopelessnessDrainHope name="Hopelessness" desc="LeoricHopelessnessTalent">storm_ui_icon_leoric_DrainHope.dds</LeoricMasteryHopelessnessDrainHope>

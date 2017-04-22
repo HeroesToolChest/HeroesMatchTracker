@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Zagara attributeid="Zaga" role="Specialist" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_zagara.dds" loading="storm_ui_ingame_hero_loadingscreen_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
+<Zagara>
   <Level1>
     <ZagaraMasteryVolatileAcid name="Volatile Acid" desc="ZagaraBanelingBarrageVolatileAcidTalent">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraMasteryVolatileAcid>
     <ZagaraMasteryCorpseFeeders name="Corpse Feeders" desc="ZagaraInfestedDropCorpseFeedersTalent">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryCorpseFeeders>

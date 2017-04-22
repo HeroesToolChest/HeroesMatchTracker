@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Alarak attributeid="Alar" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
+<Alarak>
   <Level1>
     <AlarakWithoutEffort name="Without Effort" desc="AlarakWithoutEffort">storm_ui_icon_alarak_telekinesis.dds</AlarakWithoutEffort>
     <AlarakAppliedForce name="Applied Force" desc="AlarakAppliedForce">storm_ui_icon_alarak_telekinesis_a.dds</AlarakAppliedForce>

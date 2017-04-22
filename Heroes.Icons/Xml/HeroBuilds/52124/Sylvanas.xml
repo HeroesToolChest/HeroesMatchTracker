@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Sylvanas attributeid="Sylv" role="Specialist" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_sylvanas.dds" loading="storm_ui_ingame_hero_loadingscreen_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
+<Sylvanas>
   <Level1>
     <SylvanasTalentOverflowingQuiver name="Overflowing Quiver" desc="SylvanasWitheringFireOverflowingQuiverTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
     <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasBlackArrowsParalysisTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasDreadfulWake>

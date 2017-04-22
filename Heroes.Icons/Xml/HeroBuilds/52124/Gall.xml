@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Gall attributeid="Gall" role="Assassin" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_gall.dds" loading="storm_ui_ingame_hero_loadingscreen_gall.dds" leader="storm_ui_ingame_hero_leaderboard_gall.dds">
+<Gall>
   <Level1>
     <GallKeepMoving name="Keep Moving!" desc="GallKeepMoving">storm_ui_icon_gall_shove.dds</GallKeepMoving>
     <GallTaskmaster name="Taskmaster" desc="GallTaskmaster">storm_ui_icon_gall_shove_a.dds</GallTaskmaster>

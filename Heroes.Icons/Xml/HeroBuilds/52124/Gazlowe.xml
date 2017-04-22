@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Gazlowe attributeid="Tink" role="Specialist" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_gazlowe.dds" loading="storm_ui_ingame_hero_loadingscreen_tinker.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
+<Gazlowe>
   <Level1>
     <TinkerMasteryExtraTNT name="Extra TNT" desc="TinkerXplodiumChargeExtraTNTTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryExtraTNT>
     <TinkerCombatStyleScrapoMaticSmelter name="Scrap-o-Matic Smelter" desc="TinkerSalvagerScrapOMaticSmelterTalent">storm_ui_icon_gazlowe_salvager.dds</TinkerCombatStyleScrapoMaticSmelter>

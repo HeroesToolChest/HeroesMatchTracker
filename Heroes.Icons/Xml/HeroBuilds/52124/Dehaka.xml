@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Dehaka attributeid="Deha" role="Warrior" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_dehaka.dds" loading="storm_ui_ingame_hero_loadingscreen_dehaka.dds" leader="storm_ui_ingame_hero_leaderboard_dehaka.dds">
+<Dehaka>
   <Level1>
     <DehakaDarkSwarmTalentEnduringSwarm name="Enduring Swarm" desc="DehakaDarkSwarmTalentEnduringSwarm">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmTalentEnduringSwarm>
     <DehakaDarkSwarmTalentPrimalAggression name="Primal Aggression" desc="DehakaDarkSwarmTalentPrimalAggression">storm_ui_icon_Dehaka_Trample_A.dds</DehakaDarkSwarmTalentPrimalAggression>

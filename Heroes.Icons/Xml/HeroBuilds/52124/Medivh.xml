@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Medivh attributeid="Mdvh" role="Specialist" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_medivh.dds" loading="storm_ui_ingame_hero_loadingscreen_medivh.dds" leader="storm_ui_ingame_hero_leaderboard_medivh.dds">
+<Medivh>
   <Level1>
     <MedivhPortalStablePortal name="Stable Portal" desc="MedivhPortalStablePortal">storm_ui_icon_medivh_portal.dds</MedivhPortalStablePortal>
     <MedivhPortalPortalMastery name="Portal Mastery" desc="MedivhPortalPortalMastery">storm_ui_icon_medivh_portal_a.dds</MedivhPortalPortalMastery>

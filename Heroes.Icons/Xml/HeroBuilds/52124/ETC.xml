@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ETC name="E.T.C." attributeid="L90E" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_etc.dds" loading="storm_ui_ingame_hero_loadingscreen_l90etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
+<ETC>
   <Level1>
     <ETCMasteryGuitarHero name="Guitar Hero" desc="L90ETCGuitarSoloGuitarHeroTalent">storm_ui_icon_etc_guitarsolo.dds</ETCMasteryGuitarHero>
     <ETCMasteryProgRock name="Prog Rock" desc="ETCProgRockTalent">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryProgRock>

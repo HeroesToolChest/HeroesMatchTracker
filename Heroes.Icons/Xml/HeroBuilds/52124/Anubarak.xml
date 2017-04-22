@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Anubarak name="Anub'arak" attributeid="Anub" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_anubarak.dds" loading="storm_ui_ingame_hero_loadingscreen_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
+<Anubarak>
   <Level1>
     <AnubarakResilientScarabs name="Resilient Scarabs" desc="AnubarakResilientScarabs">storm_ui_icon_anubarak_scarabhost.dds</AnubarakResilientScarabs>
     <AnubarakNerubianArmor name="Nerubian Armor" generic="true" desc="AnubarakNerubianArmor">storm_ui_icon_talent_dampenmagic.dds</AnubarakNerubianArmor>

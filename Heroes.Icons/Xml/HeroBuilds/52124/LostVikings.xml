@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LostVikings name="The Lost Vikings" attributeid="Lost" role="Specialist" franchise="Classic" portrait="storm_ui_ingame_heroselect_btn_lostvikings.dds" loading="storm_ui_ingame_hero_loadingscreen_lostvikings.dds" leader="storm_ui_ingame_hero_leaderboard_lostvikings.dds">
+<LostVikings>
   <Level1>
     <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryOlafTheStout>
     <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasterySpyGames>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Arthas attributeid="Arth" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_btn_arthas.dds" loading="storm_ui_ingame_hero_loadingscreen_arthas.dds" leader="storm_ui_ingame_hero_leaderboard_arthas.dds">
+<Arthas>
   <Level1>
     <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger" desc="ArthasEternalHungerFrostmourneHungersTalent">storm_ui_icon_arthas_frostmournehungers_off.dds</ArthasMasteryEternalHungerFrostmourneHungers>
     <ArthasMasteryFrostPresenceHowlingBlast name="Frost Presence" desc="ArthasFrostPresenceHowlingBlastTalent">storm_ui_icon_arthas_howlingblast.dds</ArthasMasteryFrostPresenceHowlingBlast>
