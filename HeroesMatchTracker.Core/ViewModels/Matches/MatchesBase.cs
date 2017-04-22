@@ -32,7 +32,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private string _team1OverviewHeader;
         private string _team2OverviewHeader;
         private ReplayMatch _selectedReplay;
-
+        private MatchesTab CurrentTab;
         private IWebsiteService Website;
         private GameMode MatchGameMode;
 
@@ -40,12 +40,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam2Collection = new ObservableCollection<MatchPlayerBase>();
 
-        public MatchesBase(IInternalService internalService, IWebsiteService website, GameMode matchGameMode)
+        public MatchesBase(IInternalService internalService, IWebsiteService website, IMatchesTabService matchesTab, GameMode matchGameMode, MatchesTab currentTab)
             : base(internalService)
         {
             Website = website;
-
+            MatchesTabService = matchesTab;
             MatchGameMode = matchGameMode;
+            CurrentTab = currentTab;
 
             ShowMatchSummaryButtonEnabled = true;
 
@@ -250,6 +251,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public RelayCommand ShowMatchOverviewCommand => new RelayCommand(LoadMatchOverview);
         public RelayCommand ShowMatchSummaryCommand => new RelayCommand(async () => await ShowMatchSummaryAsync());
 
+        protected IMatchesTabService MatchesTabService { get; private set; }
+
         protected virtual void ReceivedMatchSearchData(MatchesDataMessage message)
         {
             if (!string.IsNullOrEmpty(message.SelectedCharacter))
@@ -356,26 +359,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchOverviewTeam2Collection.Clear();
         }
 
-        private async Task ShowMatchSummaryAsync()
-        {
-            if (SelectedReplay == null)
-                return;
-
-            //MatchSummaryFlyout.CloseMatchSummaryFlyout();
-
-            ShowMatchSummaryButtonEnabled = false;
-            await MatchSummaryReplay.LoadMatchSummaryAsync(SelectedReplay, MatchListCollection.ToList());
-
-            MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
-            MatchSummaryFlyout.OpenMatchSummaryFlyout();
-        }
-
         private async Task ReceivedMessageAsync(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.ReEnableMatchSummaryButton)
                 ShowMatchSummaryButtonEnabled = true;
 
-            if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft || message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
+            if (CurrentTab == MatchesTabService.GetCurrentlySelectedTab() && (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft || message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight))
             {
                 if (MatchListCollection.Count < 1 || SelectedReplay == null)
                     return;
@@ -396,6 +385,20 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 await ShowMatchSummaryAsync();
             }
+        }
+
+        private async Task ShowMatchSummaryAsync()
+        {
+            if (SelectedReplay == null)
+                return;
+
+            // MatchSummaryFlyout.CloseMatchSummaryFlyout();
+
+            ShowMatchSummaryButtonEnabled = false;
+            await MatchSummaryReplay.LoadMatchSummaryAsync(SelectedReplay, MatchListCollection.ToList());
+
+            MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
+            MatchSummaryFlyout.OpenMatchSummaryFlyout();
         }
     }
 }

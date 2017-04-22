@@ -24,6 +24,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
+        public MatchesTab GetCurrentlySelectedTab() => (MatchesTab)SelectedMatchesTab;
+
         public void SwitchToTab(MatchesTab selectedMatchesTab) => SelectedMatchesTab = (int)selectedMatchesTab;
     }
 }

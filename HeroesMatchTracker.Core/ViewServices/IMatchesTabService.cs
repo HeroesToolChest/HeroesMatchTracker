@@ -7,5 +7,11 @@
         /// </summary>
         /// <param name="selectedMatchesTab"></param>
         void SwitchToTab(MatchesTab selectedMatchesTab);
+
+        /// <summary>
+        /// Gets the currently selected matches tab
+        /// </summary>
+        /// <returns></returns>
+        MatchesTab GetCurrentlySelectedTab();
     }
 }
