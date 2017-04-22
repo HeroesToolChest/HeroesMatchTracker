@@ -9,6 +9,7 @@ using HeroesMatchData.Core.User;
 using HeroesMatchData.Core.ViewServices;
 using HeroesMatchData.Data;
 using Microsoft.Practices.ServiceLocation;
+using System;
 
 namespace HeroesMatchData.Core.ViewModels
 {
@@ -48,8 +49,11 @@ namespace HeroesMatchData.Core.ViewModels
 
         public IDatabaseService GetDatabaseService => Database;
 
-        public string AppVersion => AssemblyVersions.HeroesMatchDataVersion().ToString();
-
+#if DEBUG
+        public string ApplicationTitle => $"[DEBUG] Heroes Match Data {AssemblyVersions.HeroesMatchDataVersion().ToString()}";
+#else
+        public string ApplicationTitle => $"Heroes Match Data {AssemblyVersions.HeroesMatchDataVersion().ToString()}";
+#endif
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(OpenWhatsNewWindow);
         public RelayCommand UserDropDownProfileCommand => new RelayCommand(UserDropDownProfile);
 
