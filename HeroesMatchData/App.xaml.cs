@@ -74,7 +74,6 @@ namespace HeroesMatchData
             if (Core.Properties.Settings.Default.IsManualUpdateApplied)
             {
                 SqlConnection.ClearAllPools();
-                AutoUpdater.CopyDatabasesToLatestRelease();
             }
 
             base.OnExit(e);

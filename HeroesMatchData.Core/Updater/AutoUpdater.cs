@@ -38,55 +38,6 @@ namespace HeroesMatchData.Core.Updater
             releaseNoteHandler.AddApplyReleasesReleaseNotes();
         }
 
-        public static void CopyDatabasesToLatestRelease()
-        {
-            string newAppDirectory = Path.Combine(Settings.Default.NewLatestDirectory, Data.Properties.Settings.Default.DatabaseFolderName);
-            string rootDirectory = Directory.GetParent(Settings.Default.NewLatestDirectory).FullName;
-            string backupDirectory = Path.Combine(rootDirectory, "BackupDatabases");
-
-            List<string> databaseFiles = new List<string>
-            {
-                Data.Properties.Settings.Default.ReplaysDbFileName,
-                Data.Properties.Settings.Default.SettingsDbFileName,
-                Data.Properties.Settings.Default.ReleaseNotesDbFileName,
-            };
-
-            foreach (var dbFile in databaseFiles)
-            {
-                string dbFilePath = $@"{Data.Properties.Settings.Default.DatabaseFolderName}\{dbFile}";
-
-                try
-                {
-                    if (!File.Exists(dbFilePath))
-                    {
-                        UpdaterLog.Log(LogLevel.Info, $"[{dbFile}] Database file not found: {dbFilePath}");
-                        UpdaterLog.Log(LogLevel.Info, $"[{dbFile}] Nothing to copy");
-
-                        continue;
-                    }
-
-                    Directory.CreateDirectory(newAppDirectory);
-
-                    File.Copy(dbFilePath, Path.Combine(newAppDirectory, dbFile));
-
-                    UpdaterLog.Log(LogLevel.Info, $"[{dbFile}] Database file copied to: {Path.Combine(newAppDirectory, dbFile)}");
-
-                    // backup database
-                    if (!Directory.Exists(backupDirectory))
-                        Directory.CreateDirectory(backupDirectory);
-
-                    File.Copy(dbFilePath, Path.Combine(backupDirectory, dbFile), true);
-                    UpdaterLog.Log(LogLevel.Info, $"[{dbFile}] Database file backup copied to: {Path.Combine(backupDirectory, dbFile)}");
-                    UpdaterLog.Log(LogLevel.Info, "==============================================================");
-                }
-                catch (Exception ex)
-                {
-                    UpdaterLog.Log(LogLevel.Info, ex);
-                    throw;
-                }
-            }
-        }
-
         /// <summary>
         /// Checks for updates, sets property UpdateInfo to null if no updates found. Returns true is update is available.
         /// </summary>
