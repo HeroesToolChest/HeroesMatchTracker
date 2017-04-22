@@ -16,6 +16,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
@@ -32,6 +33,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private bool _hasBans;
         private bool _hasObservers;
         private bool _hasChat;
+        private bool _isFlyoutLoadingOverlayVisible;
         private string _teamBlueIsWinner;
         private string _teamRedIsWinner;
         private string _matchTitle;
@@ -58,6 +60,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             Website = website;
             LoadingOverlayWindow = loadingOverlayWindow;
 
+            IsFlyoutLoadingOverlayVisible = false;
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
             IsLeftChangeButtonEnabled = false;
@@ -186,6 +189,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             set
             {
                 _hasChat = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsFlyoutLoadingOverlayVisible
+        {
+            get => _isFlyoutLoadingOverlayVisible;
+            set
+            {
+                _isFlyoutLoadingOverlayVisible = value;
                 RaisePropertyChanged();
             }
         }
@@ -341,8 +354,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
-        public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
+        public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(-1));
+        public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(1));
 
         public async Task LoadMatchSummaryAsync(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
@@ -353,6 +366,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             await Task.Run(async () =>
             {
+                await Task.Delay(100);
+
                 try
                 {
                     await LoadMatchSummaryDataAsync(replayMatch);
@@ -362,32 +377,34 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     ExceptionLog.Log(LogLevel.Error, ex);
                     throw;
                 }
+
+                if (matchList == null)
+                {
+                    IsLeftChangeButtonEnabled = false;
+                    IsLeftChangeButtonVisible = false;
+                    IsRightChangeButtonEnabled = false;
+                    IsRightChangeButtonVisible = false;
+                }
+                else if (matchList.Count <= 0)
+                {
+                    IsLeftChangeButtonEnabled = false;
+                    IsLeftChangeButtonVisible = true;
+                    IsRightChangeButtonEnabled = false;
+                    IsRightChangeButtonVisible = true;
+                }
+                else
+                {
+                    IsLeftChangeButtonVisible = true;
+                    IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
+
+                    IsRightChangeButtonVisible = true;
+                    IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
+                }
+
+                await Task.Delay(100);
+                IsFlyoutLoadingOverlayVisible = false;
+                LoadingOverlayWindow.CloseLoadingOverlay();
             });
-
-            if (matchList == null)
-            {
-                IsLeftChangeButtonEnabled = false;
-                IsLeftChangeButtonVisible = false;
-                IsRightChangeButtonEnabled = false;
-                IsRightChangeButtonVisible = false;
-            }
-            else if (matchList.Count <= 0)
-            {
-                IsLeftChangeButtonEnabled = false;
-                IsLeftChangeButtonVisible = true;
-                IsRightChangeButtonEnabled = false;
-                IsRightChangeButtonVisible = true;
-            }
-            else
-            {
-                IsLeftChangeButtonVisible = true;
-                IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
-
-                IsRightChangeButtonVisible = true;
-                IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
-            }
-
-            LoadingOverlayWindow.CloseLoadingOverlay();
         }
 
         private async Task LoadMatchSummaryDataAsync(ReplayMatch replayMatch)
@@ -442,21 +459,23 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     {
                         if (player.Team == 0)
                         {
-                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            await Application.Current.Dispatcher.InvokeAsync(
+                                () =>
                             {
                                 MatchTalentsTeam1Collection.Add(matchPlayerTalents);
                                 MatchStatsTeam1Collection.Add(matchPlayerStats);
                                 MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
-                            });
+                            }, DispatcherPriority.Render);
                         }
                         else
                         {
-                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            await Application.Current.Dispatcher.InvokeAsync(
+                                () =>
                             {
                                 MatchTalentsTeam2Collection.Add(matchPlayerTalents);
                                 MatchStatsTeam2Collection.Add(matchPlayerStats);
                                 MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
-                            });
+                            }, DispatcherPriority.Render);
                         }
                     }
                 }
@@ -593,8 +612,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        private void ChangeCurrentMatchSummary(int value)
+        private async Task ChangeCurrentMatchSummaryAsync(int value)
         {
+            await Application.Current.Dispatcher.InvokeAsync(() => { IsFlyoutLoadingOverlayVisible = true; });
+
             if (value < 0)
                 Messenger.Default.Send(new NotificationMessage(StaticMessage.ChangeCurrentSelectedReplayMatchLeft));
             else

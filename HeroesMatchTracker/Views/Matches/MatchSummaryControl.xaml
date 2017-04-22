@@ -4,10 +4,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
              DataContext="{Binding MatchSummaryViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
     <Grid>
+        <simpleChildWindow:ChildWindow x:Name="LoadingOverlay"
+									   EnableDropShadow="False"
+                                       ShowCloseButton="False"
+                                       ShowTitleBar="False"
+                                       IsOpen="{Binding IsFlyoutLoadingOverlayVisible}"
+                                       Panel.ZIndex="1000"
+                                       Background="Transparent">
+            <StackPanel>
+                <controls:ProgressRing IsActive="True" Height="80" Width="80" />
+                <TextBlock Text="Loading" FontSize="28" HorizontalAlignment="Center" />
+            </StackPanel>
+        </simpleChildWindow:ChildWindow>
         <Image Source="{Binding BackgroundImage}" Stretch="UniformToFill" />
         <Grid>
             <Grid.ColumnDefinitions>

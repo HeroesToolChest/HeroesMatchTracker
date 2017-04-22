@@ -369,19 +369,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (MatchListCollection.Count < 1 || SelectedReplay == null)
                     return;
 
-                try
-                {
-                    int index = MatchListCollection.ToList().FindIndex(x => x.ReplayId == SelectedReplay.ReplayId);
+                int index = MatchListCollection.ToList().FindIndex(x => x.ReplayId == SelectedReplay.ReplayId);
 
-                    if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft)
-                        SelectedReplay = MatchListCollection[index - 1];
-                    else if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
-                        SelectedReplay = MatchListCollection[index + 1];
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    return;
-                }
+                if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft)
+                    SelectedReplay = MatchListCollection[index - 1];
+                else if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
+                    SelectedReplay = MatchListCollection[index + 1];
 
                 await ShowMatchSummaryAsync();
             }
@@ -391,8 +384,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         {
             if (SelectedReplay == null)
                 return;
-
-            // MatchSummaryFlyout.CloseMatchSummaryFlyout();
 
             ShowMatchSummaryButtonEnabled = false;
             await MatchSummaryReplay.LoadMatchSummaryAsync(SelectedReplay, MatchListCollection.ToList());

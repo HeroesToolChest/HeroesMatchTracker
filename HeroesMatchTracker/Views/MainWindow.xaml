@@ -73,7 +73,7 @@
                                        Background="Transparent">
             <StackPanel>
                 <controls:ProgressRing IsActive="True" Height="80" Width="80" />
-                <TextBlock Text="Loading..." FontSize="28" HorizontalAlignment="Center" />
+                <TextBlock Text="Loading" FontSize="28" HorizontalAlignment="Center" />
             </StackPanel>
         </simpleChildWindow:ChildWindow>
         <DockPanel>
