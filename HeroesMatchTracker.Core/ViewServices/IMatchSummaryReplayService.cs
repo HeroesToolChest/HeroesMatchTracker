@@ -1,10 +1,11 @@
 ﻿using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.ViewServices
 {
     public interface IMatchSummaryReplayService
     {
-        void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList);
+        Task LoadMatchSummaryAsync(ReplayMatch replayMatch, List<ReplayMatch> matchList);
     }
 }

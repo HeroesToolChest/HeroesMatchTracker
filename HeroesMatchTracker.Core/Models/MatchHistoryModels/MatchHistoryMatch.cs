@@ -11,6 +11,7 @@ using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
@@ -53,14 +54,14 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
         public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
         public IMatchSummaryReplayService MatchSummaryReplay => ServiceLocator.Current.GetInstance<IMatchSummaryReplayService>();
 
-        public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
+        public RelayCommand ShowMatchSummaryCommand => new RelayCommand(async () => await ShowMatchSummaryAsync());
 
-        private void ShowMatchSummary()
+        private async Task ShowMatchSummaryAsync()
         {
             if (ReplayMatch == null)
                 return;
 
-            MatchSummaryReplay.LoadMatchSummary(ReplayMatch, null);
+            await MatchSummaryReplay.LoadMatchSummaryAsync(ReplayMatch, null);
 
             MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{ReplayMatch.ReplayId}] [Build:{ReplayMatch.ReplayBuild}]");
             MatchSummaryFlyout.OpenMatchSummaryFlyout();

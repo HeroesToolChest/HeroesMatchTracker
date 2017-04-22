@@ -9,9 +9,11 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
@@ -32,12 +34,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private ReplayMatch _selectedReplay;
 
         private IWebsiteService Website;
+        private GameMode MatchGameMode;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam2Collection = new ObservableCollection<MatchPlayerBase>();
-
-        private GameMode MatchGameMode;
 
         public MatchesBase(IInternalService internalService, IWebsiteService website, GameMode matchGameMode)
             : base(internalService)
@@ -71,7 +72,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedCharacter = HeroesList[0];
 
             Messenger.Default.Register<MatchesDataMessage>(this, (message) => ReceivedMatchSearchData(message));
-            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
+            Messenger.Default.Register<NotificationMessage>(this, async (message) => await ReceivedMessageAsync(message));
         }
 
         public List<string> SeasonList { get; private set; } = new List<string>();
@@ -247,7 +248,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public RelayCommand ClearSearchCommand => new RelayCommand(ClearSearch);
         public RelayCommand LoadMatchListCommand => new RelayCommand(LoadMatchList);
         public RelayCommand ShowMatchOverviewCommand => new RelayCommand(LoadMatchOverview);
-        public RelayCommand ShowMatchSummaryCommand => new RelayCommand(ShowMatchSummary);
+        public RelayCommand ShowMatchSummaryCommand => new RelayCommand(async () => await ShowMatchSummaryAsync());
 
         protected virtual void ReceivedMatchSearchData(MatchesDataMessage message)
         {
@@ -355,33 +356,45 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchOverviewTeam2Collection.Clear();
         }
 
-        private void ShowMatchSummary()
+        private async Task ShowMatchSummaryAsync()
         {
             if (SelectedReplay == null)
                 return;
 
+            //MatchSummaryFlyout.CloseMatchSummaryFlyout();
+
             ShowMatchSummaryButtonEnabled = false;
-            MatchSummaryReplay.LoadMatchSummary(SelectedReplay, MatchListCollection.ToList());
+            await MatchSummaryReplay.LoadMatchSummaryAsync(SelectedReplay, MatchListCollection.ToList());
 
             MatchSummaryFlyout.SetMatchSummaryHeader($"Match Summary [Id:{SelectedReplay.ReplayId}] [Build:{SelectedReplay.ReplayBuild}]");
             MatchSummaryFlyout.OpenMatchSummaryFlyout();
         }
 
-        private void ReceivedMessage(NotificationMessage message)
+        private async Task ReceivedMessageAsync(NotificationMessage message)
         {
             if (message.Notification == StaticMessage.ReEnableMatchSummaryButton)
                 ShowMatchSummaryButtonEnabled = true;
 
             if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft || message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
             {
-                int index = MatchListCollection.ToList().FindIndex(x => x.ReplayId == SelectedReplay.ReplayId);
+                if (MatchListCollection.Count < 1 || SelectedReplay == null)
+                    return;
 
-                if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft)
-                    SelectedReplay = MatchListCollection[index - 1];
-                else if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
-                    SelectedReplay = MatchListCollection[index + 1];
+                try
+                {
+                    int index = MatchListCollection.ToList().FindIndex(x => x.ReplayId == SelectedReplay.ReplayId);
 
-                ShowMatchSummary();
+                    if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchLeft)
+                        SelectedReplay = MatchListCollection[index - 1];
+                    else if (message.Notification == StaticMessage.ChangeCurrentSelectedReplayMatchRight)
+                        SelectedReplay = MatchListCollection[index + 1];
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    return;
+                }
+
+                await ShowMatchSummaryAsync();
             }
         }
     }

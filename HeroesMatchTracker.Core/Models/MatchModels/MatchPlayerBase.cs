@@ -12,7 +12,6 @@ using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using static Heroes.Helpers.HeroesHelpers.Regions;

@@ -4,6 +4,8 @@ using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
@@ -24,7 +26,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             }
         }
 
-        public void SetTeamLevelGraphs(List<ReplayMatchTeamLevel> matchTeamLevels, bool isTeam1Winner)
+        public async Task SetTeamLevelGraphsAsync(List<ReplayMatchTeamLevel> matchTeamLevels, bool isTeam1Winner)
         {
             SetWinner(isTeam1Winner);
 
@@ -56,21 +58,24 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                 }
             }
 
-            MatchTeamLevelsLineChartCollection = new SeriesCollection()
+            await Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                new LineSeries
+                MatchTeamLevelsLineChartCollection = new SeriesCollection()
                 {
-                    Title = GraphTeam1Title,
-                    Values = chartValuesTeam0,
-                    Fill = Brushes.Transparent,
-                },
-                new LineSeries
-                {
-                    Title = GraphTeam2Title,
-                    Values = chartValuesTeam1,
-                    Fill = Brushes.Transparent,
-                },
-            };
+                    new LineSeries
+                    {
+                        Title = GraphTeam1Title,
+                        Values = chartValuesTeam0,
+                        Fill = Brushes.Transparent,
+                    },
+                    new LineSeries
+                    {
+                        Title = GraphTeam2Title,
+                        Values = chartValuesTeam1,
+                        Fill = Brushes.Transparent,
+                    },
+                };
+            });
         }
     }
 }

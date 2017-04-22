@@ -8,10 +8,13 @@ using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data.Models.Replays;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
@@ -47,11 +50,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
         private IWebsiteService Website;
+        private ILoadingOverlayWindowService LoadingOverlayWindow;
 
-        public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website)
+        public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
             Website = website;
+            LoadingOverlayWindow = loadingOverlayWindow;
 
             IsLeftChangeButtonVisible = true;
             IsRightChangeButtonVisible = true;
@@ -339,12 +344,25 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(() => ChangeCurrentMatchSummary(1));
 
-        public void LoadMatchSummary(ReplayMatch replayMatch, List<ReplayMatch> matchList)
+        public async Task LoadMatchSummaryAsync(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
             if (replayMatch == null)
                 return;
 
-            LoadMatchSummaryData(replayMatch);
+            LoadingOverlayWindow.ShowLoadingOverlay();
+
+            await Task.Run(async () =>
+            {
+                try
+                {
+                    await LoadMatchSummaryDataAsync(replayMatch);
+                }
+                catch (Exception ex)
+                {
+                    ExceptionLog.Log(LogLevel.Error, ex);
+                    throw;
+                }
+            });
 
             if (matchList == null)
             {
@@ -368,12 +386,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 IsRightChangeButtonVisible = true;
                 IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
             }
+
+            LoadingOverlayWindow.CloseLoadingOverlay();
         }
 
-        private void LoadMatchSummaryData(ReplayMatch replayMatch)
+        private async Task LoadMatchSummaryDataAsync(ReplayMatch replayMatch)
         {
-            if (BackgroundImage != null)
-                DisposeMatchSummary();
+            DisposeMatchSummary();
 
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
 
@@ -393,8 +412,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             var matchTeamExperienceList = replayMatch.ReplayMatchTeamExperiences.ToList();
 
             // graphs
-            TeamLevelTimeGraph.SetTeamLevelGraphs(matchTeamLevelsList, playersList[0].IsWinner);
-            TeamExperienceGraph.SetTeamExperienceGraphs(matchTeamExperienceList, playersList[0].IsWinner);
+            await TeamLevelTimeGraph.SetTeamLevelGraphsAsync(matchTeamLevelsList, playersList[0].IsWinner);
+            await TeamExperienceGraph.SetTeamExperienceGraphsAsync(matchTeamExperienceList, playersList[0].IsWinner);
 
             var playerParties = PlayerParties.FindPlayerParties(playersList);
 
@@ -423,15 +442,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     {
                         if (player.Team == 0)
                         {
-                            MatchTalentsTeam1Collection.Add(matchPlayerTalents);
-                            MatchStatsTeam1Collection.Add(matchPlayerStats);
-                            MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
+                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            {
+                                MatchTalentsTeam1Collection.Add(matchPlayerTalents);
+                                MatchStatsTeam1Collection.Add(matchPlayerStats);
+                                MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
+                            });
                         }
                         else
                         {
-                            MatchTalentsTeam2Collection.Add(matchPlayerTalents);
-                            MatchStatsTeam2Collection.Add(matchPlayerStats);
-                            MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
+                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            {
+                                MatchTalentsTeam2Collection.Add(matchPlayerTalents);
+                                MatchStatsTeam2Collection.Add(matchPlayerStats);
+                                MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
+                            });
                         }
                     }
                 }
@@ -475,7 +500,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                         MatchChat matchChat = new MatchChat();
                         matchChat.SetChatMessages(message);
 
-                        MatchChatCollection.Add(matchChat);
+                        await Application.Current.Dispatcher.InvokeAsync(() => MatchChatCollection.Add(matchChat));
                     }
                 }
 
@@ -487,6 +512,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchResult matchResult = new MatchResult(Database);
             matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
             SetMatchResults(matchResult);
+
+            await Task.CompletedTask;
         }
 
         private void SetMatchResults(MatchResult matchResult)

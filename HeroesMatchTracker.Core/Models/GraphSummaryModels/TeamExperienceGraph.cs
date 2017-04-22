@@ -6,6 +6,8 @@ using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 {
@@ -136,7 +138,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             }
         }
 
-        public void SetTeamExperienceGraphs(List<ReplayMatchTeamExperience> matchTeamExperience, bool isTeam1Winner)
+        public async Task SetTeamExperienceGraphsAsync(List<ReplayMatchTeamExperience> matchTeamExperience, bool isTeam1Winner)
         {
             SetWinner(isTeam1Winner);
 
@@ -188,168 +190,171 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             totalTeam1 += (double)(lastExpTime.Team0HeroXP + lastExpTime.Team0CreepXP + lastExpTime.Team0MinionXP + lastExpTime.Team0TrickleXP + lastExpTime.Team0StructureXP);
             totalTeam2 += (double)(lastExpTime.Team1HeroXP + lastExpTime.Team1CreepXP + lastExpTime.Team1MinionXP + lastExpTime.Team1TrickleXP + lastExpTime.Team1StructureXP);
 
-            MatchTeam1ExperienceStackedGraphCollection = new SeriesCollection()
+            await Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                new StackedAreaSeries
+                MatchTeam1ExperienceStackedGraphCollection = new SeriesCollection()
                 {
-                    Title = "Heroes",
-                    Values = chartValuesTeam1Heroes,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Mercenaries",
-                    Values = chartValuesTeam1Mercs,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Minions",
-                    Values = chartValuesTeam1Minions,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Passive",
-                    Values = chartValuesTeam1Passive,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Structures",
-                    Values = chartValuesTeam1Structures,
-                    LineSmoothness = 0,
-                },
-            };
+                    new StackedAreaSeries
+                    {
+                        Title = "Heroes",
+                        Values = chartValuesTeam1Heroes,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Mercenaries",
+                        Values = chartValuesTeam1Mercs,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Minions",
+                        Values = chartValuesTeam1Minions,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Passive",
+                        Values = chartValuesTeam1Passive,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Structures",
+                        Values = chartValuesTeam1Structures,
+                        LineSmoothness = 0,
+                    },
+                };
 
-            MatchTeam2ExperienceStackedGraphCollection = new SeriesCollection()
-            {
-                new StackedAreaSeries
+                MatchTeam2ExperienceStackedGraphCollection = new SeriesCollection()
                 {
-                    Title = "Heroes",
-                    Values = chartValuesTeam2Heroes,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Mercenaries",
-                    Values = chartValuesTeam2Mercs,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Minions",
-                    Values = chartValuesTeam2Minions,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Passive",
-                    Values = chartValuesTeam2Passive,
-                    LineSmoothness = 0,
-                },
-                new StackedAreaSeries
-                {
-                    Title = "Structures",
-                    Values = chartValuesTeam2Structures,
-                    LineSmoothness = 0,
-                },
-            };
+                    new StackedAreaSeries
+                    {
+                        Title = "Heroes",
+                        Values = chartValuesTeam2Heroes,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Mercenaries",
+                        Values = chartValuesTeam2Mercs,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Minions",
+                        Values = chartValuesTeam2Minions,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Passive",
+                        Values = chartValuesTeam2Passive,
+                        LineSmoothness = 0,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Structures",
+                        Values = chartValuesTeam2Structures,
+                        LineSmoothness = 0,
+                    },
+                };
 
-            MatchTeamExperienceMaxYValue = totalTeam1 > totalTeam2 ? totalTeam1 : totalTeam2;
+                MatchTeamExperienceMaxYValue = totalTeam1 > totalTeam2 ? totalTeam1 : totalTeam2;
 
-            MatchTeam1ExperiencePieChartCollection = new SeriesCollection()
-            {
-                new PieSeries
+                MatchTeam1ExperiencePieChartCollection = new SeriesCollection()
                 {
-                     Title = "Heroes",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0HeroXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
+                    new PieSeries
+                    {
+                         Title = "Heroes",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0HeroXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Mercenaries",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0CreepXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Minions",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0MinionXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Passive",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0TrickleXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Structures",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0StructureXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                };
+                MatchTeam2ExperiencePieChartCollection = new SeriesCollection()
                 {
-                     Title = "Mercenaries",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0CreepXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Minions",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0MinionXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Passive",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0TrickleXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Structures",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team0StructureXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-            };
-            MatchTeam2ExperiencePieChartCollection = new SeriesCollection()
-            {
-                new PieSeries
-                {
-                     Title = "Heroes",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1HeroXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Mercenaries",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1CreepXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Minions",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1MinionXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Passive",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1TrickleXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-                new PieSeries
-                {
-                     Title = "Structures",
-                     Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1StructureXP) },
-                     DataLabels = true,
-                     LabelPoint = MatchTeamExperiencePiePointLabel,
-                },
-            };
+                    new PieSeries
+                    {
+                         Title = "Heroes",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1HeroXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Mercenaries",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1CreepXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Minions",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1MinionXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Passive",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1TrickleXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                    new PieSeries
+                    {
+                         Title = "Structures",
+                         Values = new ChartValues<ObservableValue> { new ObservableValue((double)lastExpTime.Team1StructureXP) },
+                         DataLabels = true,
+                         LabelPoint = MatchTeamExperiencePiePointLabel,
+                    },
+                };
 
-            MatchTeamExperienceRowChartCollection = new SeriesCollection()
-            {
-                new RowSeries
+                MatchTeamExperienceRowChartCollection = new SeriesCollection()
                 {
-                    Title = GraphTeam1Title,
-                    Values = new ChartValues<double> { (double)lastExpTime.Team0StructureXP, (double)lastExpTime.Team0TrickleXP, (double)lastExpTime.Team0MinionXP, (double)lastExpTime.Team0CreepXP, (double)lastExpTime.Team0HeroXP },
-                    DataLabels = false,
-                },
-                new RowSeries
-                {
-                    Title = GraphTeam2Title,
-                    Values = new ChartValues<double> { (double)lastExpTime.Team1StructureXP, (double)lastExpTime.Team1TrickleXP, (double)lastExpTime.Team1MinionXP, (double)lastExpTime.Team1CreepXP, (double)lastExpTime.Team1HeroXP },
-                    DataLabels = false,
-                },
-            };
+                    new RowSeries
+                    {
+                        Title = GraphTeam1Title,
+                        Values = new ChartValues<double> { (double)lastExpTime.Team0StructureXP, (double)lastExpTime.Team0TrickleXP, (double)lastExpTime.Team0MinionXP, (double)lastExpTime.Team0CreepXP, (double)lastExpTime.Team0HeroXP },
+                        DataLabels = false,
+                    },
+                    new RowSeries
+                    {
+                        Title = GraphTeam2Title,
+                        Values = new ChartValues<double> { (double)lastExpTime.Team1StructureXP, (double)lastExpTime.Team1TrickleXP, (double)lastExpTime.Team1MinionXP, (double)lastExpTime.Team1CreepXP, (double)lastExpTime.Team1HeroXP },
+                        DataLabels = false,
+                    },
+                };
+            });
         }
     }
 }
