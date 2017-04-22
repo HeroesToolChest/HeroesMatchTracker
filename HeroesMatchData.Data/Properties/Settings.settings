@@ -41,5 +41,8 @@
     <Setting Name="OldHeroesParserDatabaseConnName" Type="System.String" Scope="User">
       <Value Profile="(Default)">HeroesParserData</Value>
     </Setting>
+    <Setting Name="OldDatabaseFolderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Database</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

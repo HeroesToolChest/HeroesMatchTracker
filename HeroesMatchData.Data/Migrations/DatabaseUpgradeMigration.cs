@@ -11,7 +11,7 @@ namespace HeroesMatchData.Data.Migrations
     {
         private static readonly string MigrationLogFile = $"Logs/{Properties.Settings.Default.MigrationLogFile}";
 
-        internal static void UpgradeDatabaseVersion2()
+        internal static void UpgradeDatabaseVersion2(string newDatabaseDirectory, string applicationPath)
         {
             var releaseNotesTable = new DataTable();
             try
@@ -19,12 +19,13 @@ namespace HeroesMatchData.Data.Migrations
                 MigrationLogger("Executing database upgrade migration...");
 
                 // delete the Replays.sqlite file
-                string replaysSqlite = Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.ReplaysDbFileName);
+                string replaysSqlite = Path.Combine(newDatabaseDirectory, Properties.Settings.Default.ReplaysDbFileName);
                 if (File.Exists(replaysSqlite))
                     File.Delete(replaysSqlite);
 
                 MigrationLogger($"Deleted {replaysSqlite}");
 
+                AppDomain.CurrentDomain.SetData("DataDirectory", applicationPath); // set to legacy
                 using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings[Properties.Settings.Default.OldHeroesParserDatabaseConnName].ConnectionString))
                 {
                     conn.Open();
@@ -49,6 +50,7 @@ namespace HeroesMatchData.Data.Migrations
                     }
                 }
 
+                AppDomain.CurrentDomain.SetData("DataDirectory", newDatabaseDirectory); // set to new
                 using (var db = new ReleaseNotesContext())
                 {
                     foreach (DataRow row in releaseNotesTable.Rows)
@@ -65,8 +67,8 @@ namespace HeroesMatchData.Data.Migrations
                 }
 
                 // rename HeroesParserData.db to Replays.sqlite
-                File.Move(Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.Version1DatabaseName), Path.Combine(Properties.Settings.Default.DatabaseFolderName, Properties.Settings.Default.ReplaysDbFileName));
-                MigrationLogger("HeroesParserData.db renamed to Replays.sqlite");
+                File.Move(Path.Combine(Properties.Settings.Default.OldDatabaseFolderName, Properties.Settings.Default.Version1DatabaseName), Path.Combine(newDatabaseDirectory, Properties.Settings.Default.ReplaysDbFileName));
+                MigrationLogger("HeroesParserData.db moved/renamed to Replays.sqlite");
                 MigrationLogger("Upgrade migration completed");
             }
             catch (Exception)
