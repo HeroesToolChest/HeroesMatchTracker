@@ -376,22 +376,28 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             StatsHeroesDataViewModel.QueryAwards = IsAwardsChecked;
             await StatsHeroesDataViewModel.SetDataAsync(SelectedHero, selectedSeason, gameModes, SelectedMaps);
 
-            HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
-            HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
-            HeroGames = HeroWins + HeroLosses;
-            HeroWinrate = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage.Value;
+            if (IsTotalsAveragesChecked)
+            {
+                HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
+                HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
+                HeroGames = HeroWins + HeroLosses;
+                HeroWinrate = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage ?? 0;
 
-            HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
-            HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
-            HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths;
-            HeroKD = Math.Round((double)HeroKills / HeroDeaths, 2);
-            HeroKAD = Math.Round((double)(HeroKills + HeroAssists) / HeroDeaths, 2);
-            HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
+                HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
+                HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
+                HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths;
+                HeroKD = Math.Round((double)HeroKills / HeroDeaths, 2);
+                HeroKAD = Math.Round((double)(HeroKills + HeroAssists) / HeroDeaths, 2);
+                HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
+            }
 
-            HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total;
-            HeroMVP = StatsHeroesDataViewModel.MVPCount;
-            HeroAwardsRatio = Utilities.CalculateWinPercentage(HeroAwards, HeroGames);
-            HeroMVPRatio = Utilities.CalculateWinPercentage(HeroMVP, HeroGames);
+            if (IsAwardsChecked)
+            {
+                HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total;
+                HeroMVP = StatsHeroesDataViewModel.MVPCount;
+                HeroAwardsRatio = Utilities.CalculateWinPercentage(HeroAwards, HeroGames);
+                HeroMVPRatio = Utilities.CalculateWinPercentage(HeroMVP, HeroGames);
+            }
         }
 
         private void SetSelectedGameModes(object list)

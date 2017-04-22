@@ -222,7 +222,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 else if (HeroesIcons.Heroes().GetHeroRoleList(heroName)[0] == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(heroName))
                     role = (double)scoreResultsList.Sum(x => x.Healing);
 
-                var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map, false);
+                var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
                 mapImage.Freeze();
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
