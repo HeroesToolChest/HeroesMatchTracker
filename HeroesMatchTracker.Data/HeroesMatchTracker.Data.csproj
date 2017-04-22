@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{038BEA71-201F-4C56-9EDD-152FED4D9B41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeroesMatchTracker.Data</RootNamespace>
+    <AssemblyName>HeroesMatchTracker.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesMatchTracker.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Heroes.ReplayParser, Version=1.0.0.48760, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Heroes.ReplayParser.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.9.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.CodeFirst, Version=1.3.0.17, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLite.CodeFirst.1.3.0.17\lib\net45\SQLite.CodeFirst.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.104.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.104.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.104.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database.cs" />
+    <Compile Include="Databases\HeroesParserDataDbContext.cs" />
+    <Compile Include="Databases\ReleaseNotesContext.cs" />
+    <Compile Include="Generic\ConnectionString.cs" />
+    <Compile Include="Generic\ReplaySaveResult.cs" />
+    <Compile Include="IDatabaseService.cs" />
+    <Compile Include="Migrations\ContextMigrator.cs" />
+    <Compile Include="Databases\MatchDataDbContext.cs" />
+    <Compile Include="Migrations\DatabaseUpgradeMigration.cs" />
+    <Compile Include="Migrations\IMigrator.cs" />
+    <Compile Include="Migrations\MigratorBase.cs" />
+    <Compile Include="Databases\ReplaysContext.cs" />
+    <Compile Include="Migrations\ReleaseNotes\Migration1_v1_4_0\Migration1_v1_4_0.cs" />
+    <Compile Include="Migrations\ReleaseNotes\ReleaseNotesContextMigrator.cs" />
+    <Compile Include="Migrations\ReleaseNotes\ReleaseNotesMigrator.cs" />
+    <Compile Include="Migrations\Replays\Migration1_v1_2_0\MigrationAddon1_v1_2_0_2.cs" />
+    <Compile Include="Migrations\Replays\Migration2_v1_3_0\Migration2_v1_3_0.cs" />
+    <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_2.cs" />
+    <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration3_v1_4_0\Migration3_v1_4_0.cs" />
+    <Compile Include="Migrations\Replays\Migration4_v2_0_0\Migration4_v2_0_0.cs" />
+    <Compile Include="Migrations\Replays\Migration5_v2_0_0\Migration5_v2_0_0.cs" />
+    <Compile Include="Migrations\Replays\ReplaysContextMigrator.cs" />
+    <Compile Include="Migrations\Replays\ReplaysMigrator.cs" />
+    <Compile Include="Databases\SettingsContext.cs" />
+    <Compile Include="Migrations\Settings\Migration1_v1_3_0\Migration1_v1_3_0.cs" />
+    <Compile Include="Migrations\Settings\Migration1_v1_3_0\MigrationAddon1_v1_3_0_1.cs" />
+    <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
+    <Compile Include="Migrations\Settings\SettingsMigrator.cs" />
+    <Compile Include="Migrations\Settings\SettingsContextMigrator.cs" />
+    <Compile Include="Migrations\IMigrationCommand.cs" />
+    <Compile Include="Migrations\IMigrationAddon.cs" />
+    <Compile Include="Migrations\Replays\Migration1_v1_2_0\MigrationAddon1_v1_2_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration1_v1_2_0\Migration1_v1_2_0.cs" />
+    <Compile Include="Migrations\MigrationMethods.cs" />
+    <Compile Include="Models\INonContextModels.cs" />
+    <Compile Include="Models\IRawDataDisplay.cs" />
+    <Compile Include="Models\ReleaseNotes\ReleaseNote.cs" />
+    <Compile Include="Models\Replays\ReplayMatch.cs" />
+    <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
+    <Compile Include="Models\Replays\ReplayAllHotsPlayerHero.cs" />
+    <Compile Include="Models\Replays\ReplayHotsLogsUpload.cs" />
+    <Compile Include="Models\Replays\ReplayMatchAward.cs" />
+    <Compile Include="Models\Replays\ReplayMatchMessage.cs" />
+    <Compile Include="Models\Replays\ReplayMatchPlayer.cs" />
+    <Compile Include="Models\Replays\ReplayMatchPlayerScoreResult.cs" />
+    <Compile Include="Models\Replays\ReplayMatchPlayerTalent.cs" />
+    <Compile Include="Models\Replays\ReplayMatchTeamBan.cs" />
+    <Compile Include="Models\Replays\ReplayMatchTeamExperience.cs" />
+    <Compile Include="Models\Replays\ReplayMatchTeamLevel.cs" />
+    <Compile Include="Models\Replays\ReplayMatchTeamObjective.cs" />
+    <Compile Include="Models\Replays\ReplayRenamedPlayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Migrations\SchemaInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\QueriesBase.cs" />
+    <Compile Include="Queries\QueryException.cs" />
+    <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
+    <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
+    <Compile Include="Queries\Replays\HotsLogsUpload.cs" />
+    <Compile Include="Queries\Replays\ReplayFilter.cs" />
+    <Compile Include="Queries\Replays\ReplaysDb.cs" />
+    <Compile Include="Queries\Replays\Statistics.cs" />
+    <Compile Include="Queries\Replays\TranslationException.cs" />
+    <Compile Include="Queries\Settings\SettingsDb.cs" />
+    <Compile Include="DatabaseService.cs" />
+    <Compile Include="Queries\Replays\HotsPlayer.cs" />
+    <Compile Include="Queries\Replays\HotsPlayerHero.cs" />
+    <Compile Include="Queries\Replays\IRawDataQueries.cs" />
+    <Compile Include="Queries\Replays\MatchAward.cs" />
+    <Compile Include="Queries\Replays\MatchMessage.cs" />
+    <Compile Include="Queries\Replays\MatchTeamBan.cs" />
+    <Compile Include="Queries\Replays\MatchPlayer.cs" />
+    <Compile Include="Queries\Replays\MatchPlayerScoreResult.cs" />
+    <Compile Include="Queries\Replays\MatchPlayerTalent.cs" />
+    <Compile Include="Queries\Replays\MatchReplay.cs" />
+    <Compile Include="Queries\Replays\MatchTeamExperience.cs" />
+    <Compile Include="Queries\Replays\MatchTeamLevel.cs" />
+    <Compile Include="Queries\Replays\MatchTeamObjective.cs" />
+    <Compile Include="Queries\Replays\RenamedPlayer.cs" />
+    <Compile Include="Queries\Replays\NonContextQueriesBase.cs" />
+    <Compile Include="Queries\Replays\ReplayFileData.cs" />
+    <Compile Include="Models\Settings\UserSetting.cs" />
+    <Compile Include="Queries\Settings\UserSettings.cs" />
+    <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App.config">
+      <SubType>Designer</SubType>
+    </Resource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLLs\Heroes.ReplayParser.dll" />
+    <Content Include="DLLs\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="DLLs\MpqTool.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
+      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
+      <Name>Heroes.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
+      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
+      <Name>Heroes.Icons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.104.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

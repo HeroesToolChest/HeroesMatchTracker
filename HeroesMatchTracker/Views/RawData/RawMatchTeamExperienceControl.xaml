@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="HeroesMatchTracker.Views.RawData.RawMatchTeamExperienceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:HeroesMatchTracker.Views.RawData"
+             DataContext="{Binding RawMatchTeamExperienceViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl/>
+            <DataGrid Style="{StaticResource RawDataDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="MatchTeamExperienceId" Binding="{Binding MatchTeamExperienceId}" />
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="Time" Binding="{Binding Time}" />
+                    <DataGridTextColumn Header="Team0CreepXP" Binding="{Binding Team0CreepXP}" />
+                    <DataGridTextColumn Header="Team0HeroXP" Binding="{Binding Team0HeroXP}" />
+                    <DataGridTextColumn Header="Team0MinionXP" Binding="{Binding Team0MinionXP}" />
+                    <DataGridTextColumn Header="Team0StructureXP" Binding="{Binding Team0StructureXP}" />
+                    <DataGridTextColumn Header="Team0TeamLevel" Binding="{Binding Team0TeamLevel}" />
+                    <DataGridTextColumn Header="Team0TrickleXP" Binding="{Binding Team0TrickleXP}" />
+                    <DataGridTextColumn Header="Team1CreepXP" Binding="{Binding Team1CreepXP}" />
+                    <DataGridTextColumn Header="Team1HeroXP" Binding="{Binding Team1HeroXP}" />
+                    <DataGridTextColumn Header="Team1MinionXP" Binding="{Binding Team1MinionXP}" />
+                    <DataGridTextColumn Header="Team1StructureXP" Binding="{Binding Team1StructureXP}" />
+                    <DataGridTextColumn Header="Team1TeamLevel" Binding="{Binding Team1TeamLevel}" />
+                    <DataGridTextColumn Header="Team1TrickleXP" Binding="{Binding Team1TrickleXP}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

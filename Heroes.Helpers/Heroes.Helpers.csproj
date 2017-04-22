@@ -21,7 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\HeroesMatchTracker.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -71,7 +71,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Heroes.ReplayParser">
-      <HintPath>..\HeroesMatchData.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
+      <HintPath>..\HeroesMatchTracker.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
