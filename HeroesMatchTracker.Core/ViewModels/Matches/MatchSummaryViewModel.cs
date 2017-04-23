@@ -362,49 +362,47 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             if (replayMatch == null)
                 return;
 
-            LoadingOverlayWindow.ShowLoadingOverlay();
-
             await Task.Run(async () =>
             {
-                await Task.Delay(100);
-
                 try
                 {
-                    await LoadMatchSummaryDataAsync(replayMatch);
+                    var loadMatchTask = LoadMatchSummaryDataAsync(replayMatch);
+                    LoadingOverlayWindow.ShowLoadingOverlay();
+
+                    if (matchList == null)
+                    {
+                        IsLeftChangeButtonEnabled = false;
+                        IsLeftChangeButtonVisible = false;
+                        IsRightChangeButtonEnabled = false;
+                        IsRightChangeButtonVisible = false;
+                    }
+                    else if (matchList.Count <= 0)
+                    {
+                        IsLeftChangeButtonEnabled = false;
+                        IsLeftChangeButtonVisible = true;
+                        IsRightChangeButtonEnabled = false;
+                        IsRightChangeButtonVisible = true;
+                    }
+                    else
+                    {
+                        IsLeftChangeButtonVisible = true;
+                        IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
+
+                        IsRightChangeButtonVisible = true;
+                        IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
+                    }
+
+                    await loadMatchTask;
                 }
                 catch (Exception ex)
                 {
                     ExceptionLog.Log(LogLevel.Error, ex);
                     throw;
                 }
-
-                if (matchList == null)
-                {
-                    IsLeftChangeButtonEnabled = false;
-                    IsLeftChangeButtonVisible = false;
-                    IsRightChangeButtonEnabled = false;
-                    IsRightChangeButtonVisible = false;
-                }
-                else if (matchList.Count <= 0)
-                {
-                    IsLeftChangeButtonEnabled = false;
-                    IsLeftChangeButtonVisible = true;
-                    IsRightChangeButtonEnabled = false;
-                    IsRightChangeButtonVisible = true;
-                }
-                else
-                {
-                    IsLeftChangeButtonVisible = true;
-                    IsLeftChangeButtonEnabled = replayMatch.ReplayId == matchList[0].ReplayId ? false : true;
-
-                    IsRightChangeButtonVisible = true;
-                    IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
-                }
-
-                await Task.Delay(100);
-                IsFlyoutLoadingOverlayVisible = false;
-                LoadingOverlayWindow.CloseLoadingOverlay();
             });
+
+            IsFlyoutLoadingOverlayVisible = false;
+            LoadingOverlayWindow.CloseLoadingOverlay();
         }
 
         private async Task LoadMatchSummaryDataAsync(ReplayMatch replayMatch)

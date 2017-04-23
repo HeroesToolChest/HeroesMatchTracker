@@ -319,13 +319,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task QueryStatsHeroStatsAsyncCommmand()
         {
-            LoadingOverlayWindow.ShowLoadingOverlay();
-
             await Task.Run(async () =>
             {
                 try
                 {
-                    await QueryStatsHeroStatsAsync();
+                    var query = QueryStatsHeroStatsAsync();
+                    LoadingOverlayWindow.ShowLoadingOverlay();
+
+                    await query;
                 }
                 catch (Exception ex)
                 {
