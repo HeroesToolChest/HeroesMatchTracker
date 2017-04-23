@@ -215,7 +215,8 @@ namespace Heroes.Icons
         #region private methods
         private void SetNonSupportHeroesWithSupportStat()
         {
-            HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Support);
+            HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Specialist);
+            HeroesNonSupportHealingStat.Add("Abathur", HeroRole.Specialist);
         }
 
         private void SetPartyIcons()
