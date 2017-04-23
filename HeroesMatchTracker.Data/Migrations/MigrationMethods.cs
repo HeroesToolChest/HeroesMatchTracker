@@ -22,6 +22,7 @@ namespace HeroesMatchTracker.Data.Migrations
         /// <param name="tableName">The existing table name</param>
         /// <param name="columnName">The new column to be added</param>
         /// <param name="dataType">The data type (INTEGER), may allow other parameters (DEFAULT 0)</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities", Justification = "Not user input")]
         protected void AddColumnToTable(string tableName, string columnName, string dataType)
         {
             bool columnExists = false;

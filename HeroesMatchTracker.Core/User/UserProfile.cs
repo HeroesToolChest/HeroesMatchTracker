@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using Heroes.Icons;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Data;
 
@@ -8,11 +7,9 @@ namespace HeroesMatchTracker.Core.User
     public class UserProfile : IUserProfileService
     {
         private IDatabaseService Database;
-        private IHeroesIconsService HeroesIcons;
 
-        public UserProfile(IDatabaseService database, IHeroesIconsService heroesIcons)
+        public UserProfile(IDatabaseService database)
         {
-            HeroesIcons = heroesIcons;
             Database = database;
         }
 

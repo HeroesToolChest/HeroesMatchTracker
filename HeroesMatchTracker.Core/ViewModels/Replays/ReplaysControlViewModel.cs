@@ -1096,6 +1096,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     ((IDisposable)FileWatcher).Dispose();
                 }
 
+                FileWatcher = null;
                 disposedValue = true;
             }
         }

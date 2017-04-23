@@ -32,8 +32,8 @@ namespace Heroes.Icons
         {
             Logger = logger;
 
-            HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", true, -1);
-            HeroBuildsXmlLatest = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, true);
+            HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
+            HeroBuildsXmlLatest = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger);
 
             EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
             LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
@@ -73,7 +73,7 @@ namespace Heroes.Icons
             }
             else
             {
-                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, true, build);
+                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
             }
         }
 

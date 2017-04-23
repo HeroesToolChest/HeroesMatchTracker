@@ -30,7 +30,7 @@ namespace Heroes.Helpers
                     case "2017 Season 1":
                         return Season.Year2017Season1;
                     default:
-                        throw new ArgumentException(nameof(season));
+                        throw new ArgumentException($"paramter {season} not found", nameof(season));
                 }
             }
 
@@ -44,7 +44,7 @@ namespace Heroes.Helpers
                 if (Enum.TryParse(replayParseResult, true, out ReplayParseResult replayParseResultEnum))
                     return replayParseResultEnum;
                 else
-                    throw new ArgumentException(nameof(replayParseResult));
+                    throw new ArgumentException($"paramter {replayParseResult} not found", nameof(replayParseResult));
             }
 
             public static Region ConvertRegionStringToEnum(string region)
@@ -57,7 +57,7 @@ namespace Heroes.Helpers
                 if (Enum.TryParse(region, true, out Region regionEnum))
                     return regionEnum;
                 else
-                    throw new ArgumentException(nameof(region));
+                    throw new ArgumentException($"parameter {region} not found", nameof(region));
             }
 
             public static GameMode ConvertGameModeStringToEnum(string gameMode)
@@ -77,7 +77,7 @@ namespace Heroes.Helpers
                     case "Brawl":
                         return GameMode.Brawl;
                     default:
-                        throw new ArgumentException(nameof(gameMode));
+                        throw new ArgumentException($"parameter {gameMode} not found", nameof(gameMode));
                 }
             }
         }

@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.ViewModels.Statistics
 {
-    public class StatsAllHeroesViewModel : HmtViewModel
+    public class StatsAllHeroesViewModel : HmtViewModel, IDisposable
     {
         private readonly string InitialSeasonListOption = "- Select Season -";
 
@@ -430,5 +430,33 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             GameModesColumnCollection.Clear();
         }
+
+        #region IDisposable Support
+#pragma warning disable SA1201 // Elements must appear in the correct order
+        private bool disposedValue = false; // To detect redundant calls
+#pragma warning restore SA1201 // Elements must appear in the correct order
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    ((IDisposable)_statsAllHeroesDataTable).Dispose();
+                }
+
+                _statsAllHeroesDataTable = null;
+                disposedValue = true;
+            }
+        }
+
+#pragma warning disable SA1202 // Elements must be ordered by access
+        public void Dispose()
+#pragma warning restore SA1202 // Elements must be ordered by access
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }

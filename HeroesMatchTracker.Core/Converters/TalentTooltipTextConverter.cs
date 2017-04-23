@@ -58,9 +58,6 @@ namespace HeroesMatchTracker.Core.Converters
                         // check if an ending tag exists
                         if (closingCTagIndex > 0)
                         {
-                            // </c>
-                            string closingCTag = text.Substring(closingCTagIndex, offset);
-
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
                             span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
 

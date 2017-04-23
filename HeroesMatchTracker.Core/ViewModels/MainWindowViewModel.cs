@@ -2,7 +2,6 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
-using Heroes.Icons;
 using HeroesMatchTracker.Core.HotsLogs;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.User;
@@ -27,14 +26,12 @@ namespace HeroesMatchTracker.Core.ViewModels
         private string _extendedAboutText;
 
         private IDatabaseService Database;
-        private IHeroesIconsService HeroesIcons;
         private IUserProfileService UserProfile;
 
-        public MainWindowViewModel(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile)
+        public MainWindowViewModel(IDatabaseService database, IUserProfileService userProfile)
         {
             Database = database;
             UserProfile = userProfile;
-            HeroesIcons = heroesIcons;
 
             MatchSummaryIsOpen = false;
             MatchSummaryHeader = "Match Summary";

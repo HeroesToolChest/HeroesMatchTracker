@@ -9,7 +9,6 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;

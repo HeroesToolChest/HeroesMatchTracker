@@ -5,7 +5,6 @@ using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewServices;
-using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
@@ -19,7 +18,6 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
     public class MatchHistoryMatch
     {
         private IInternalService InternalService;
-        private IDatabaseService Database;
         private IHeroesIconsService HeroesIcons;
         private IUserProfileService UserProfile;
         private IWebsiteService Website;
@@ -28,7 +26,6 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
         public MatchHistoryMatch(IInternalService internalService, IWebsiteService website, ReplayMatch replayMatch)
         {
             InternalService = internalService;
-            Database = internalService.Database;
             HeroesIcons = internalService.HeroesIcons;
             UserProfile = internalService.UserProfile;
             Website = website;

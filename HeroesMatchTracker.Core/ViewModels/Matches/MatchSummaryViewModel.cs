@@ -451,7 +451,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     matchPlayerStats.SetStats(playerScoresList[player.PlayerNumber], player);
 
                     matchPlayerAdvancedStats = new MatchPlayerAdvancedStats(matchPlayerStats);
-                    matchPlayerAdvancedStats.SetAdvancedStats(playerScoresList[player.PlayerNumber], player);
+                    matchPlayerAdvancedStats.SetAdvancedStats(playerScoresList[player.PlayerNumber]);
 
                     if (player.Team == 0 || player.Team == 1)
                     {

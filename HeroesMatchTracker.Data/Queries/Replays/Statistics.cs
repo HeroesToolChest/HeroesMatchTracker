@@ -161,7 +161,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, string talentReferenceName, TalentTier tier, bool isWinner)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
-            string talentNameColumn = string.Empty;
 
             using (var db = new ReplaysContext())
             {
@@ -264,7 +263,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     default:
-                        talentNameColumn = null;
                         break;
                 }
 

@@ -47,8 +47,6 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
 
         private static Regex _newlinesLeadingTrailing = new Regex(@"^\n+|\n+\z", RegexOptions.Compiled);
         private static Regex _newlinesMultiple = new Regex(@"\n{2,}", RegexOptions.Compiled);
-        private static Regex _leadingWhitespace = new Regex(@"^[ ]*", RegexOptions.Compiled);
-
         private static Regex _imageInline = new Regex(
                 $@"
                 (                           # wrap whole match in $1
@@ -600,7 +598,6 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
 
             string linkText = match.Groups[2].Value;
             string url = match.Groups[3].Value;
-            string title = match.Groups[6].Value;
 
             var result = Create<Hyperlink, Inline>(RunSpanGamut(linkText));
             result.Command = HyperlinkCommand;

@@ -9,7 +9,6 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
-using NLog;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -20,8 +19,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {
-        private Logger WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
-
         public MatchPlayerBase(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
         {
             Database = internalService.Database;

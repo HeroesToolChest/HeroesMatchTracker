@@ -49,7 +49,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private List<string> SelectedGameModes = new List<string>();
         private List<string> SelectedMaps = new List<string>();
-        private List<string> SelectedBuilds = new List<string>();
 
         public StatsHeroesViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)

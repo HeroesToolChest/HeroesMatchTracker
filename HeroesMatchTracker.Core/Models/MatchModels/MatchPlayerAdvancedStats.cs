@@ -26,7 +26,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public int? WatchTowerCaptures { get; private set; }
         public TimeSpan? TimeSpentDead { get; private set; }
 
-        public void SetAdvancedStats(ReplayMatchPlayerScoreResult playerScore, ReplayMatchPlayer player)
+        public void SetAdvancedStats(ReplayMatchPlayerScoreResult playerScore)
         {
             PlayerNameOnly = HeroesHelpers.BattleTags.GetNameFromBattleTagName(PlayerName);
             TakeDowns = playerScore.TakeDowns;
