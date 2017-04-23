@@ -14,6 +14,10 @@ namespace Heroes.Icons
         /// <returns></returns>
         void LoadHeroesBuild(int? build);
 
+        /// <summary>
+        /// Load the latest build
+        /// </summary>
+        void LoadLatestHeroesBuild();
         IHeroes Heroes();
         IHeroBuilds HeroBuilds();
         IMatchAwards MatchAwards();

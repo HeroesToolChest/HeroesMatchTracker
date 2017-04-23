@@ -8,12 +8,14 @@ namespace Heroes.Icons
 {
     public class HeroesIcons : HeroesBase, IHeroesIconsService
     {
+        private readonly HeroBuildsXml HeroBuildsXmlLatest; // holds the latest build info
+
         private bool Logger;
         private int EarliestHeroesBuild;
         private int LatestHeroesBuild;
         private HeroesXml HeroesXml;
-        private HeroBuildsXml HeroBuildsXml;
-        private HeroBuildsXml HeroBuildsXmlLatest;
+        private HeroBuildsXml HeroBuildsXml; // the one that is in use
+        private HeroBuildsXml HeroBuildsXmlHolder; // used for swapping between the one that is in use and latest
         private MatchAwardsXml MatchAwardsXml;
         private MapBackgroundsXml MapBackgroundsXml;
         private HomeScreensXml HomeScreensXml;
@@ -33,7 +35,7 @@ namespace Heroes.Icons
             Logger = logger;
 
             HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
-            HeroBuildsXmlLatest = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger);
+            HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
 
             EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
             LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
@@ -65,15 +67,22 @@ namespace Heroes.Icons
             else if (build > LatestHeroesBuild)
                 build = LatestHeroesBuild;
 
-            if (build == LatestHeroesBuild)
+            // only load the build if it's not in memory already or in the in xmlHolder
+            if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
             {
-                // if the build is already loaded into memory then don't reload
-                if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
-                    HeroBuildsXml = HeroBuildsXmlLatest;
+                if (build != HeroBuildsXmlHolder.CurrentLoadedHeroesBuild)
+                    HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
+                else
+                    HeroBuildsXml = HeroBuildsXmlHolder;
             }
-            else
+        }
+
+        public void LoadLatestHeroesBuild()
+        {
+            if (HeroBuildsXml.CurrentLoadedHeroesBuild != HeroBuildsXmlLatest.CurrentLoadedHeroesBuild)
             {
-                HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
+                HeroBuildsXmlHolder = HeroBuildsXml; // hold the current
+                HeroBuildsXml = HeroBuildsXmlLatest; // switch to latest
             }
         }
 

@@ -368,6 +368,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 return Task.CompletedTask;
 
             var tierTalents = HeroesIcons.HeroBuilds().GetTierTalentsForHero(heroName, tier);
+
+            if (tierTalents == null)
+                return Task.CompletedTask;
+
             foreach (var talent in tierTalents)
             {
                 var talentImage = HeroesIcons.HeroBuilds().GetTalentIcon(talent);

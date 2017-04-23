@@ -343,6 +343,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
+            HeroesIcons.LoadLatestHeroesBuild();
+
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
 
             SelectedHeroPortrait = HeroesIcons.Heroes().GetHeroPortrait(SelectedHero);
