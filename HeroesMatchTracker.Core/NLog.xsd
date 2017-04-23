@@ -326,12 +326,18 @@
       <xs:extension base="WrapperTargetBase">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="xs:string" />
+          <xs:element name="asyncFlush" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="condition" minOccurs="0" maxOccurs="1" type="Condition" />
           <xs:element name="optimizeBufferReuse" minOccurs="0" maxOccurs="1" type="xs:boolean" />
         </xs:choice>
         <xs:attribute name="name" type="xs:string">
           <xs:annotation>
             <xs:documentation>Name of the target.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="asyncFlush" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation>Delay the flush until the LogEvent has been confirmed as written</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="condition" type="Condition">
@@ -1587,6 +1593,7 @@
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="layout" minOccurs="0" maxOccurs="1" type="Layout" />
       <xs:element name="name" minOccurs="0" maxOccurs="1" type="xs:string" />
+      <xs:element name="parameterType" minOccurs="0" maxOccurs="1" type="xs:string" />
       <xs:element name="type" minOccurs="0" maxOccurs="1" type="xs:string" />
     </xs:choice>
     <xs:attribute name="layout" type="SimpleLayoutAttribute">
@@ -1599,9 +1606,14 @@
         <xs:documentation>Name of the parameter.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="type" type="xs:string">
+    <xs:attribute name="parameterType" type="xs:string">
       <xs:annotation>
         <xs:documentation>Type of the parameter.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Type of the parameter. Obsolete alias for </xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
