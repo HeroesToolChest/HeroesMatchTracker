@@ -27,7 +27,7 @@ namespace Heroes.Icons.Xml
         Dictionary<TalentTier, List<string>> GetAllTalentsForHero(string realHeroName);
 
         /// <summary>
-        /// Returns a list of all the talents of a hero given a talent tier
+        /// Returns a list of all the talents (reference names) of a hero given a talent tier
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
         /// <param name="talentTier">talent tier</param>
