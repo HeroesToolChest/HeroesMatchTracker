@@ -4,8 +4,6 @@ using HeroesMatchTracker.Data;
 using NLog;
 using Squirrel;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.Updater
