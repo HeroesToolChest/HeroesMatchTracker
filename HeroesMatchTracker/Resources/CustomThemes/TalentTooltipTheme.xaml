@@ -4,8 +4,8 @@
 
     <Color x:Key="TalentTooltipTitleFontColor">#E3F2FF</Color>
     <Color x:Key="TalentTooltipTitleFontColor2">#8C94BD</Color>
-    <SolidColorBrush x:Key="TalentTooltipBackgroundBrush" Color="#190A42" />
-    <SolidColorBrush x:Key="TalentTooltipBorderBrush" Color="#7561B0" />
-    <SolidColorBrush x:Key="TalentTooltipFontBrush" Color="#8877BB" />
+    <SolidColorBrush x:Key="TalentTooltipBackgroundBrush" Color="#130937" />
+    <SolidColorBrush x:Key="TalentTooltipBorderBrush" Color="#756EC4" />
+    <SolidColorBrush x:Key="TalentTooltipFontBrush" Color="#8783E6" />
     <SolidColorBrush x:Key="TalentTooltipTitleFontBrush" Color="{StaticResource TalentTooltipTitleFontColor}" options:Freeze="True" />
 </ResourceDictionary>
