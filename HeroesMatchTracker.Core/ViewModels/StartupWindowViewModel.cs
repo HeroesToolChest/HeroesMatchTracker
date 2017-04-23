@@ -118,9 +118,6 @@ namespace HeroesMatchTracker.Core.ViewModels
                 await Message("Retrieving release notes...");
                 await AutoUpdater.RetrieveReleaseNotes(Database);
 
-                await Message("Copying database to new folder...");
-                AutoUpdater.CopyDatabasesToLatestRelease();
-
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
