@@ -6,7 +6,7 @@
       <Value Profile="(Default)">StormReplay</Value>
     </Setting>
     <Setting Name="UpdateUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://github.com/koliva8245/HeroesParserData</Value>
+      <Value Profile="(Default)">https://github.com/koliva8245/HeroesMatchTracker</Value>
     </Setting>
     <Setting Name="NewLatestDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

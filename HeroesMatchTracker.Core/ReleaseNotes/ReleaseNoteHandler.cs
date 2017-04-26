@@ -21,7 +21,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
         public async Task InitializeClient()
         {
             var client = new GitHubClient(new ProductHeaderValue("HeroesMatchTracker", AssemblyVersions.HeroesMatchTrackerVersion().ToString()));
-            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesParserData");
+            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesMatchTracker");
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
             releaseBody = releaseBody.Replace("\r\n", Environment.NewLine);
 
             string pattern = @"#\d+";
-            string replacement = "[$&](https://github.com/name/project/issues/$&)";
+            string replacement = "[$&](https://github.com/koliva8245/HeroesMatchTracker/issues/$&)";
 
             releaseBody = Regex.Replace(releaseBody, pattern, replacement);
             return releaseBody.Replace(@"/issues/#", @"/issues/");

@@ -37,7 +37,7 @@ namespace HeroesMatchTracker.Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/koliva8245/HeroesParserData")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/koliva8245/HeroesMatchTracker")]
         public string UpdateUrl {
             get {
                 return ((string)(this["UpdateUrl"]));

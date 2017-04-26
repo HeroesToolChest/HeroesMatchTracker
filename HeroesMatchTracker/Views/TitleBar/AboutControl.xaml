@@ -20,15 +20,15 @@
         <Separator Margin="0 4" />
         <StackPanel Margin="{StaticResource SectionMargin}">
             <TextBlock>
-                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesMatchTracker" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
                     Project Website
                 </Hyperlink>
                 <LineBreak />
-                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData/wiki" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesMatchTracker/wiki" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
                     Project Wiki
                 </Hyperlink>
                 <LineBreak />
-                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesParserData/releases" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
+                <Hyperlink NavigateUri="https://github.com/koliva8245/HeroesMatchTracker/releases" RequestNavigate="Hyperlink_RequestNavigate" FontSize="14">
                     Project Releases
                 </Hyperlink>
             </TextBlock>
