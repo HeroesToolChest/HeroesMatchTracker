@@ -88,10 +88,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
         {
             if (set)
             {
-                string assemblyPath = Assembly.GetEntryAssembly().Location;
-                string parentDirectory = Directory.GetParent(assemblyPath).FullName;
-
-                RegistryKey.SetValue("Heroes Match Tracker", $"{Path.Combine(parentDirectory, "Update.exe")} --processStart \"HeroesMatchTracker.exe\" --process-start-args /noshow");
+                RegistryKey.SetValue("Heroes Match Tracker", $"{Path.Combine(Directory.GetParent(Data.Database.DatabasePath).FullName, "Update.exe")} --processStart \"HeroesMatchTracker.exe\" --process-start-args /noshow");
             }
             else
             {

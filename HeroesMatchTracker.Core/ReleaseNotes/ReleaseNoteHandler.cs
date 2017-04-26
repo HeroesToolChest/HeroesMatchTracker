@@ -21,7 +21,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
         public async Task InitializeClient()
         {
             var client = new GitHubClient(new ProductHeaderValue("HeroesMatchTracker", AssemblyVersions.HeroesMatchTrackerVersion().ToString()));
-            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesMatchTracker");
+            Releases = await client.Repository.Release.GetAll("koliva8245", "HeroesParserData");
         }
 
         /// <summary>

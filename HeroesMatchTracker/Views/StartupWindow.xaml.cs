@@ -3,6 +3,8 @@ using HeroesMatchTracker.Core.ViewModels;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using System;
+using System.IO;
+using System.Linq;
 using System.Windows;
 
 namespace HeroesMatchTracker.Views
@@ -22,6 +24,8 @@ namespace HeroesMatchTracker.Views
             StartupWindowViewModel = (StartupWindowViewModel)DataContext;
             Database = StartupWindowViewModel.GetDatabaseService;
 
+            SetCommandLineArgs();
+
             SimpleIoc.Default.Register<IMainWindowService>(() => this);
         }
 
@@ -30,21 +34,33 @@ namespace HeroesMatchTracker.Views
             MainWindow mainWindow = new MainWindow();
 
             if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
+            {
                 mainWindow.WindowState = WindowState.Minimized;
+                mainWindow.ShowInTaskbar = false;
+                mainWindow.Hide();
+                App.NotifyIcon.Visible = true;
+            }
             else
+            {
                 mainWindow.WindowState = WindowState.Maximized;
+                mainWindow.Show();
+            }
 
-            mainWindow.Show();
             Close();
         }
 
         private void SetCommandLineArgs()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Data.Database.DatabasePath);
+
+            if (!File.Exists(Path.Combine(Data.Database.DatabasePath, Data.Database.ReleaseNotesDbFileName)))
+                return;
+
             string[] args = Environment.GetCommandLineArgs();
 
             if (args != null && args.Length > 0)
             {
-                if (args[0] == "/noshow")
+                if (args.ToList().Contains("/noshow"))
                 {
                     ShowInTaskbar = false;
                     Visibility = Visibility.Hidden;

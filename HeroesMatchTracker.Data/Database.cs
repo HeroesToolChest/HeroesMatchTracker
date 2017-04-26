@@ -20,6 +20,10 @@ namespace HeroesMatchTracker.Data
 
         private Database() { }
 
+        public static string ApplicationPath => AppDomain.CurrentDomain.BaseDirectory;
+        public static string DatabasePath => Path.Combine(Directory.GetParent(ApplicationPath.TrimEnd('\\')).FullName, Settings.Default.DatabaseFolderName);
+        public static string ReleaseNotesDbFileName => Settings.Default.ReleaseNotesDbFileName;
+
         public static Database Initialize()
         {
             return new Database();
@@ -31,18 +35,15 @@ namespace HeroesMatchTracker.Data
         public Task ExecuteDatabaseMigrations()
         {
             // check for the database folder
-            string applicationPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = Path.Combine(Directory.GetParent(applicationPath.TrimEnd('\\')).FullName, Settings.Default.DatabaseFolderName);
+            if (!Directory.Exists(DatabasePath))
+                Directory.CreateDirectory(DatabasePath);
 
-            if (!Directory.Exists(databasePath))
-                Directory.CreateDirectory(databasePath);
-
-            VerifyDatabaseFiles(databasePath);
-            LegacyDatabaseCheck(databasePath, applicationPath);
+            VerifyDatabaseFiles();
+            LegacyDatabaseCheck();
             SetMigrators();
 
             // set domain
-            AppDomain.CurrentDomain.SetData("DataDirectory", databasePath);
+            AppDomain.CurrentDomain.SetData("DataDirectory", DatabasePath);
 
             // perform migrations
             foreach (var migrator in MigratorsList)
@@ -62,33 +63,33 @@ namespace HeroesMatchTracker.Data
             MigratorsList.Add(new ReleaseNotesMigrator(Settings.Default.ReleaseNotesDbFileName, ReleaseNotesDbFileCreated, Settings.Default.ReleaseNotesDatabaseMigrationVersion));
         }
 
-        private void VerifyDatabaseFiles(string databasePath)
+        private void VerifyDatabaseFiles()
         {
-            if (!File.Exists(Path.Combine(databasePath, Settings.Default.ReplaysDbFileName)))
+            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.ReplaysDbFileName)))
                 ReplaysDbFileCreated = true;
             else
                 ReplaysDbFileCreated = false;
 
-            if (!File.Exists(Path.Combine(databasePath, Settings.Default.SettingsDbFileName)))
+            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.SettingsDbFileName)))
                 SettingsDbFileCreated = true;
             else
                 SettingsDbFileCreated = false;
 
-            if (!File.Exists(Path.Combine(databasePath, Settings.Default.ReleaseNotesDbFileName)))
+            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.ReleaseNotesDbFileName)))
                 ReleaseNotesDbFileCreated = true;
             else
                 ReleaseNotesDbFileCreated = false;
         }
 
-        private void LegacyDatabaseCheck(string databasePath, string applicationPath)
+        private void LegacyDatabaseCheck()
         {
             // checking for v1.x.x of database
-            if (File.Exists(Path.Combine(applicationPath, Settings.Default.OldDatabaseFolderName, Settings.Default.Version1DatabaseName)))
+            if (File.Exists(Path.Combine(ApplicationPath, Settings.Default.OldDatabaseFolderName, Settings.Default.Version1DatabaseName)))
             {
                 // check if all three databases were created, if so perform the upgrade migration
                 if (ReleaseNotesDbFileCreated && SettingsDbFileCreated && ReleaseNotesDbFileCreated)
                 {
-                    DatabaseUpgradeMigration.UpgradeDatabaseVersion2(databasePath, applicationPath);
+                    DatabaseUpgradeMigration.UpgradeDatabaseVersion2(DatabasePath, ApplicationPath);
                     ReplaysDbFileCreated = false; // don't let it set the current version
                 }
             }
