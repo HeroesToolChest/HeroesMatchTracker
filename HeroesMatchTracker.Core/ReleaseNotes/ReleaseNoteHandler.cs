@@ -27,7 +27,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
         /// <summary>
         /// Adds the newest release notes to the database and also updates the latest release note
         /// </summary>
-        public void AddApplyReleasesReleaseNotes()
+        public void AddReleaseNotes()
         {
             var latestVersion = new Version(Database.ReleaseNotesDb().ReleaseNotes.ReadLastReleaseNote().Version);
 

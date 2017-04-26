@@ -99,6 +99,10 @@ namespace HeroesMatchTracker.Core.ViewModels
                 if (!await autoUpdater.CheckForUpdates())
                 {
                     await Message("Already latest version");
+
+                    // make sure we have up to date release notes
+                    await Message("Retrieving release notes...");
+                    await AutoUpdater.RetrieveReleaseNotes(Database);
                     return;
                 }
 

@@ -4,6 +4,7 @@ using HeroesMatchTracker.Data;
 using NLog;
 using Squirrel;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.Updater
@@ -33,7 +34,7 @@ namespace HeroesMatchTracker.Core.Updater
             await releaseNoteHandler.InitializeClient();
 
             // save the needed release notes
-            releaseNoteHandler.AddApplyReleasesReleaseNotes();
+            releaseNoteHandler.AddReleaseNotes();
         }
 
         /// <summary>
@@ -68,14 +69,14 @@ namespace HeroesMatchTracker.Core.Updater
                     }
                 }
             }
+            catch (HttpRequestException)
+            {
+                throw new AutoUpdaterException("Unable to connect to api.github.com");
+            }
             catch (Exception ex)
             {
                 throw new AutoUpdaterException("Error checking for updates", ex);
             }
-
-            // these two lines of code are for debugging/testing the update process
-            // using (UpdateManager = new UpdateManager(@"C:\Users\koliva\Documents\Visual Studio 2015\Projects\GitHub\UpdateTest\UpdateTestRelease"))
-            // CurrentVersion = new Version("1.3.0");
         }
 
         /// <summary>
