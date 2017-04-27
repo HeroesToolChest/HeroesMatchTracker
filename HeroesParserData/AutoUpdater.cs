@@ -40,6 +40,15 @@ namespace HeroesParserData
 
                     if (CurrentVersion != null && CurrentVersion < LatestVersion)
                     {
+                        // prevent updating to version 2
+                        if (LatestVersion.Major >= 2 || (LatestVersion.Major == 1 && LatestVersion.Minor >= 100))
+                        {
+                            UpdaterLog.Log(LogLevel.Info, "The current version cannot auto update to version 2");
+                            UpdaterLog.Log(LogLevel.Info, "Please download version 2 at https://github.com/koliva8245/HeroesMatchTracker");
+                            UpdateInfo = null;
+                            return false;
+                        }
+
                         UpdateInfo = update;
                         return true;
                     }
