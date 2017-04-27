@@ -92,7 +92,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                     }
                     else
                     {
-                        CheckForUpdatesResponse = "Heroes Parser Data is up to date";
+                        CheckForUpdatesResponse = "Heroes Match Tracker is up to date";
                     }
                 }
                 catch (Exception ex)
