@@ -625,6 +625,11 @@
     <Resource Include="Icons\Talents\Genji\storm_ui_icon_genji_swiftstrike_b.dds" />
     <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_hanamura.jpg" />
     <Resource Include="Icons\Talents\Uther\storm_ui_icon_uther_eternaldevotion_a.dds" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_pusher_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_pusher_gold.png" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_pusher_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_pusher_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_pusher_red.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -5440,6 +5445,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\Painbringer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\Pusher.xml">
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\Protector.xml">
