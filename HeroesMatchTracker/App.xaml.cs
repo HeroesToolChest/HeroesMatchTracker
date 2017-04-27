@@ -1,7 +1,7 @@
-﻿using HeroesMatchTracker.Core.Updater;
-using HeroesMatchTracker.Views;
+﻿using HeroesMatchTracker.Views;
 using System;
 using System.Data.SqlClient;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -20,6 +20,8 @@ namespace HeroesMatchTracker
         internal App()
         {
             InitializeComponent();
+
+            Current.DispatcherUnhandledException += DispatcherUnhandledException;
         }
 
         public static System.Windows.Forms.NotifyIcon NotifyIcon { get; set; }
@@ -77,6 +79,19 @@ namespace HeroesMatchTracker
             }
 
             base.OnExit(e);
+        }
+
+        private new void DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"An unhandled exception occurred: {e.Exception.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            e.Handled = true;
+
+            using (StreamWriter writer = new StreamWriter($"Logs/{DateTime.Now.ToString("yyyy-MM-dd HH_mm_ss")}_app_crashed.txt"))
+            {
+                writer.Write(e.Exception);
+            }
+
+            Environment.Exit(0);
         }
 
         internal class NativeMethods
