@@ -69,7 +69,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
 
             InitializeReplaySaveDataQueue();
-            InitializeReplayHotsLogsUploadQueue();
         }
 
         public RelayCommand ScanCommand => new RelayCommand(Scan);

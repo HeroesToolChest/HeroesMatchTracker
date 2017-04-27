@@ -31,7 +31,8 @@ namespace HeroesMatchTracker.Core.HotsLogs
 
             using (HttpClient httpClient = new HttpClient())
             {
-                string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}");
+                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd($"HeroesMatchTracker/{AssemblyVersions.HeroesMatchTrackerVersion()}");
+                string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source=HeroesMatchTracker");
 
                 if (result == "Maintenance")
                     throw new MaintenanceException("Maintenance");
