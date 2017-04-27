@@ -10,8 +10,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.Icons", "Heroes.Icons\Heroes.Icons.csproj", "{4168D60D-D0EB-40A2-9304-D38F14106A48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchTracker", "HeroesMatchTracker\HeroesMatchTracker.csproj", "{DC051017-C38B-4262-93E3-6930512793E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{89AFA05A-40D2-4BA0-BF72-6D920177F7AE} = {89AFA05A-40D2-4BA0-BF72-6D920177F7AE}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchTracker.Core", "HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj", "{89AFA05A-40D2-4BA0-BF72-6D920177F7AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{038BEA71-201F-4C56-9EDD-152FED4D9B41} = {038BEA71-201F-4C56-9EDD-152FED4D9B41}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchTracker.Data", "HeroesMatchTracker.Data\HeroesMatchTracker.Data.csproj", "{038BEA71-201F-4C56-9EDD-152FED4D9B41}"
 EndProject
