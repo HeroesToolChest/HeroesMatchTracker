@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using Heroes.Helpers;
 using HeroesMatchTracker.Core.HotsLogs;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.User;
@@ -81,7 +82,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             get
             {
                 if (!string.IsNullOrEmpty(UserProfile.BattleTagName))
-                    return UserProfile.BattleTagName;
+                    return HeroesHelpers.BattleTags.GetNameFromBattleTagName(UserProfile.BattleTagName);
                 else
                     return "No BattleTag Set";
             }
