@@ -45,7 +45,7 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>HMD.ico</ApplicationIcon>
+    <ApplicationIcon>HMT.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -608,7 +608,7 @@
     <Resource Include="Resources\Images\HMDStartup.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HMD.ico" />
+    <Content Include="HMT.ico" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
