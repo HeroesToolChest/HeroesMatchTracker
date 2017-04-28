@@ -26,7 +26,7 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
-        <Image Source="{StaticResource HMDStartup}" Stretch="UniformToFill"/>
+        <Image Source="{StaticResource HMTStartup}" Stretch="UniformToFill"/>
         <Label Content="Heroes Match Tracker" Margin="10,10,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" FontSize="32" Width="470"/>
         <Label Content="{Binding AppVersion, StringFormat={}{0}}" Margin="416,251,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="64"/>
 
