@@ -117,7 +117,7 @@
   <Genji available="99999" attributeid="Genj" franchise="Overwatch"
          portrait="storm_ui_ingame_heroselect_btn_genji.dds" loading="storm_ui_ingame_hero_loadingscreen_genji.dds" leader="storm_ui_ingame_hero_leaderboard_genji.dds">
     <Roles>Assassin</Roles>
-    <Aliases></Aliases>
+    <Aliases>Гэндзи,源氏,겐지</Aliases>
   </Genji>
   
   <Greymane available="47479" attributeid="Genn" franchise="Warcraft"
