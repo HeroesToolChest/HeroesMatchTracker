@@ -147,6 +147,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         #endregion Other
         internal void SetDefaultSettings()
         {
+            DateTime lastWeek = DateTime.Now.AddDays(-7);
             // Settings
             IsAutoUpdates = true;
             IsWindowsStartup = false;
@@ -159,10 +160,10 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             IsIncludeSubDirectories = true;
             ReplayAutoStartStartUp = false;
             IsHotsLogsUploaderEnabled = false;
-            ReplaysLatestSaved = DateTime.Now;
-            ReplaysLastSaved = DateTime.Now;
-            ReplaysLatestHotsLogs = DateTime.Now;
-            ReplaysLastHotsLogs = DateTime.Now;
+            ReplaysLatestSaved = lastWeek;
+            ReplaysLastSaved = lastWeek;
+            ReplaysLatestHotsLogs = lastWeek;
+            ReplaysLastHotsLogs = lastWeek;
             SelectedScanDateTimeIndex = 0;
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
 
