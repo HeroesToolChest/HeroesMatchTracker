@@ -148,6 +148,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         internal void SetDefaultSettings()
         {
             DateTime lastWeek = DateTime.Now.AddDays(-7);
+
             // Settings
             IsAutoUpdates = true;
             IsWindowsStartup = false;
