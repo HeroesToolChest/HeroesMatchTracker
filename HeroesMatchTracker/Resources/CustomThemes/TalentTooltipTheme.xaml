@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <Color x:Key="TalentTooltipTitleFontColor">#E3F2FF</Color>
+    <Color x:Key="TalentTooltipTitleFontColor2">#8C94BD</Color>
+    <SolidColorBrush x:Key="TalentTooltipBackgroundBrush" Color="#130937" />
+    <SolidColorBrush x:Key="TalentTooltipBorderBrush" Color="#756EC4" />
+    <SolidColorBrush x:Key="TalentTooltipFontBrush" Color="#8783E6" />
+    <SolidColorBrush x:Key="TalentTooltipTitleFontBrush" Color="{StaticResource TalentTooltipTitleFontColor}" options:Freeze="True" />
+</ResourceDictionary>

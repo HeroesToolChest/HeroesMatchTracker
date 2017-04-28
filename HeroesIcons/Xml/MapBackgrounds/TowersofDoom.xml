@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<TowersofDoom name="Towers of Doom">
-  <Normal fontglow="#FFFFA500">ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg</Normal>
-  <Small>ui_ingame_mapmechanic_loadscreen_towersofdoom_small.jpg</Small>
-</TowersofDoom>

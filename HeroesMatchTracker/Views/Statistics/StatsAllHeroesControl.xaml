@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="HeroesMatchTracker.Views.Statistics.StatsAllHeroesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:coreControls="clr-namespace:HeroesMatchTracker.Core.Controls;assembly=HeroesMatchTracker.Core"
+             mc:Ignorable="d" 
+             DataContext="{Binding StatsAllHeroesViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="8">
+            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0" />
+            <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="Total" IsChecked="{Binding IsTotalSelected}" Margin="0 0 8 0" />
+            <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryAllHeroesGameModeCommand}" />
+        </StackPanel>
+        <DataGrid Grid.Row="1" Margin="8" BorderThickness="1" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" ColumnHeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"
+                  ItemsSource="{Binding StatsAllHeroesDataTable}" coreControls:DataGridColumnExtension.BindableColumns="{Binding GameModesColumnCollection}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+    </Grid>
+</UserControl>

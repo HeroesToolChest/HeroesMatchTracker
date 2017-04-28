@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Dominator>
-  <HighestKillStreak>
-    <MVPScreen>storm_ui_mvp_skull_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_skull_{mvpColor}.png</ScoreScreen>
-    <Description>Highest killing spree</Description>
-  </HighestKillStreak>
-</Dominator>

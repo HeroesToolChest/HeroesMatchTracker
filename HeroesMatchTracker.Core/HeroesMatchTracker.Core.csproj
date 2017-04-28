@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89AFA05A-40D2-4BA0-BF72-6D920177F7AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeroesMatchTracker.Core</RootNamespace>
+    <AssemblyName>HeroesMatchTracker.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesMatchTracker.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\HeroesMatchTracker.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\HeroesMatchData.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.3.13\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.3.5.13\lib\net45\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1d14d6e5194e7f4a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.MsDelta, Version=1.1.0.0, Culture=neutral, PublicKeyToken=46b2138a390abf55, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DeltaCompressionDotNet.PatchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e8888ee913ed789, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Heroes.ReplayParser, Version=2.0.0.51779, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HeroesMatchTracker.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.5.0, Culture=neutral, PublicKeyToken=c5935629d38af058, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.5\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.5.0, Culture=neutral, PublicKeyToken=3b585c2a5f1a92c1, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.5\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.SimpleChildWindow, Version=1.3.0.0, Culture=neutral, PublicKeyToken=bbbfdff7f500a992, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.SimpleChildWindow.1.3.0\lib\net45\MahApps.Metro.SimpleChildWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Cecil.0.9.6.4\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Squirrel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\NuGet.Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="Octokit, Version=0.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Octokit.0.24.0\lib\net45\Octokit.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.2.0.0\lib\Net45\Splat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Squirrel, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\squirrel.windows.1.5.2\lib\Net45\Squirrel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\DataGridColumnExtension.cs" />
+    <Compile Include="Controls\FormattedTextBlock.cs" />
+    <Compile Include="Converters\BoolInverterConverter.cs" />
+    <Compile Include="Converters\BoolToOffOnConverter.cs" />
+    <Compile Include="Converters\TalentTooltipTextConverter.cs" />
+    <Compile Include="Converters\TextToFlowDocumentConverter.cs" />
+    <Compile Include="Generic\AssemblyVersions.cs" />
+    <Compile Include="Generic\AppCore.cs" />
+    <Compile Include="Generic\ExternalLinkedSites.cs" />
+    <Compile Include="Generic\MainPage.cs" />
+    <Compile Include="Generic\MatchesTab.cs" />
+    <Compile Include="Generic\ReplayParserStatus.cs" />
+    <Compile Include="Generic\ReplayParserWatchStatus.cs" />
+    <Compile Include="Generic\Utilities.cs" />
+    <Compile Include="HotsLogs\HotsLogsSite.cs" />
+    <Compile Include="HotsLogs\HotsLogsUploader.cs" />
+    <Compile Include="HotsLogs\IHotsLogsService.cs" />
+    <Compile Include="HotsLogs\MaintenanceException.cs" />
+    <Compile Include="HotsLogs\ReplayFileHotsLogsStatus.cs" />
+    <Compile Include="Generic\LogFileNames.cs" />
+    <Compile Include="HotsLogs\ReplayParserHotsLogsStatus.cs" />
+    <Compile Include="Messaging\MatchesDataMessage.cs" />
+    <Compile Include="Messaging\StaticMessage.cs" />
+    <Compile Include="Models\GraphSummaryModels\GraphSummaryBase.cs" />
+    <Compile Include="Models\GraphSummaryModels\TeamExperienceGraph.cs" />
+    <Compile Include="Models\GraphSummaryModels\TeamLevelTimeGraph.cs" />
+    <Compile Include="Models\MatchHistoryModels\MatchHistoryMatch.cs" />
+    <Compile Include="Models\MatchModels\MatchBans.cs" />
+    <Compile Include="Models\MatchModels\MatchChat.cs" />
+    <Compile Include="Models\MatchModels\MatchObserver.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerAdvancedStats.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerBase.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerTalents.cs" />
+    <Compile Include="Models\MatchModels\MatchResult.cs" />
+    <Compile Include="Generic\PlayerParties.cs" />
+    <Compile Include="Models\PlayerSearchContextMenu.cs" />
+    <Compile Include="Models\ReplayModels\ReplayFile.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesAwards.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesGamesModes.cs" />
+    <Compile Include="Models\StatisticsModels\StatsHeroesTalents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseNotes\Markdown.cs" />
+    <Compile Include="ReleaseNotes\ReleaseNoteHandler.cs" />
+    <Compile Include="Services\IInternalService.cs" />
+    <Compile Include="Services\InternalService.cs" />
+    <Compile Include="Services\IWebsiteService.cs" />
+    <Compile Include="Services\Website.cs" />
+    <Compile Include="Updater\AutoUpdater.cs" />
+    <Compile Include="Updater\AutoUpdaterException.cs" />
+    <Compile Include="User\IUserProfileService.cs" />
+    <Compile Include="User\UserProfile.cs" />
+    <Compile Include="Validation\NotEmptyValidation.cs" />
+    <Compile Include="ViewModels\Home\HomeViewModel.cs" />
+    <Compile Include="ViewModels\HmtViewModel.cs" />
+    <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
+    <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />
+    <Compile Include="ViewModels\Matches\CustomGameViewModel.cs" />
+    <Compile Include="ViewModels\Matches\HeroLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Matches\MatchesBase.cs" />
+    <Compile Include="ViewModels\Matches\MatchesViewModel.cs" />
+    <Compile Include="ViewModels\Matches\MatchSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
+    <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
+    <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
+    <Compile Include="ViewModels\ProfileWindowViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawDataBase.cs" />
+    <Compile Include="ViewModels\RawData\RawHotsLogsUploadViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchMessageViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerScoreResultViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerTalentViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchPlayerViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchReplayViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamBanViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamExperienceViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamLevelViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
+    <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsAllHeroesViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
+    <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
+    <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
+    <Compile Include="ViewModels\StartupWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
+    <Compile Include="ViewServices\IMatchesTabService.cs" />
+    <Compile Include="ViewServices\IMainTabService.cs" />
+    <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />
+    <Compile Include="ViewServices\IMatchSummaryReplayService.cs" />
+    <Compile Include="ViewServices\IProfileWindowService.cs" />
+    <Compile Include="ViewServices\IWhatsNewWindowService.cs" />
+    <Compile Include="ViewServices\IMainWindowService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="App.config" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.3.5.13\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
+      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
+      <Name>Heroes.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
+      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
+      <Name>Heroes.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HeroesMatchTracker.Data\HeroesMatchTracker.Data.csproj">
+      <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>
+      <Name>HeroesMatchTracker.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

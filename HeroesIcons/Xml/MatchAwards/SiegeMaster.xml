@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<SiegeMaster name="Siege Master">
-  <MostSiegeDamageDone>
-    <MVPScreen>storm_ui_mvp_siegemaster_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_siegemaster_{mvpColor}.png</ScoreScreen>
-    <Description>Most siege damage done</Description>
-  </MostSiegeDamageDone>
-</SiegeMaster>

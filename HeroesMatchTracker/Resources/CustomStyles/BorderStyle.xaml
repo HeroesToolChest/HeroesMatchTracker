@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Border" x:Key="TalentPopupBorder">
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="{StaticResource TalentTooltipBorderBrush}" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="MatchRowSideBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource RowSideBrush}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowSideColor}" Opacity="1" BlurRadius="8" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource RowUserSideBrush}" />
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="8" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Border" x:Key="MatchRowBackgroundBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource RowBorderBrush}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsUserPlayer}" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource RowUserBorderBrush}" />
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource RowUserSideColor}" Opacity="1" BlurRadius="4" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

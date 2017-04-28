@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Zeratul>
+  <Level1>
+    <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryGreaterCleaveCleave>
+    <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulVorpalBlade>
+    <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">storm_ui_icon_zeratul_blink.dds</ZeratulShadowHunter>
+  </Level1>
+  <Level4>
+    <ZeratulGrimTask name="Grim Task" generic="true" desc="ZeratulGrimTask">storm_ui_icon_talent_gatheringpower.dds</ZeratulGrimTask>
+    <ZeratulRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulRendingCleave>
+    <ZeratulComboSlash name="Combo Slash" generic="true" desc="ZeratulComboSlash">storm_ui_icon_talent_autoattack_damage.dds</ZeratulComboSlash>
+  </Level4>
+  <Level7>
+    <ZeratulWormhole name="Wormhole" desc="ZeratulBlinkWormholeTalent">storm_ui_icon_zeratul_blink.dds</ZeratulWormhole>
+    <ZeratulSlipintoShadow name="Slip into Shadow" desc="ZeratulSlipintoShadow">storm_ui_icon_zeratul_blink_a.dds</ZeratulSlipintoShadow>
+    <ZeratulSeekerintheDark name="Seeker in the Dark" desc="ZeratulSeekerintheDark">storm_ui_icon_zeratul_singularityspike.dds</ZeratulSeekerintheDark>
+  </Level7>
+  <Level10>
+    <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
+    <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
+  </Level10>
+  <Level13>
+    <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">storm_ui_icon_zeratul_cloak.dds</ZeratulShroudofAdun>
+    <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+    <ZeratulMendingStrikes name="Mending Strikes" generic="true" desc="ZeratulMendingStrikes">storm_ui_icon_talent_autoattack_heal.dds</ZeratulMendingStrikes>
+  </Level13>
+  <Level16>
+    <ZeratulMasterWarpBlade name="Master Warp-Blade" generic="true" desc="ZeratulMasterWarpBlade">storm_ui_icon_talent_autoattack_damage.dds</ZeratulMasterWarpBlade>
+    <ZeratulVoidSlash name="Void Slash" desc="ZeratulVoidSlashTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulVoidSlash>
+    <ZeratulSentencedtoDeath name="Sentenced to Death" desc="ZeratulSentencedtoDeath">storm_ui_icon_zeratul_singularityspike.dds</ZeratulSentencedtoDeath>
+  </Level16>
+  <Level20>
+    <ZeratulNerazimFury name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">storm_ui_icon_zeratul_shadowassault.dds</ZeratulNerazimFury>
+    <ZeratulGiftoftheXelNaga name="Gift of the Xel'Naga" desc="ZeratulGiftoftheXelNaga">storm_ui_icon_zeratul_voidprison.dds</ZeratulGiftoftheXelNaga>
+    <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+  </Level20>
+</Zeratul>

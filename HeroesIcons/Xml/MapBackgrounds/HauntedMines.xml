@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<HauntedMines name="Haunted Mines">
-  <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_hauntedmines.jpg</Normal>
-  <Small>ui_ingame_mapmechanic_loadscreen_hauntedmines_small.jpg</Small>
-</HauntedMines>

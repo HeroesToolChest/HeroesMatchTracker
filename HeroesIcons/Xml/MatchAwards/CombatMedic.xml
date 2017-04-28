@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<CombatMedic>
-  <MostTeamfightHealingDone>
-    <MVPScreen>storm_ui_mvp_combatmedic_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_combatmedic_{mvpColor}.png</ScoreScreen>
-    <Description>Most team fight damage healed</Description>
-  </MostTeamfightHealingDone>
-</CombatMedic>

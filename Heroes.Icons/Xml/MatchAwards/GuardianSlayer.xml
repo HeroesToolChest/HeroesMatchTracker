@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<GuardianSlayer name="Guardian Slayer">
+  <MostDamageToMinions>
+    <MVPScreen>storm_ui_mvp_guardianslayer_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_guardianslayer_{mvpColor}.png</ScoreScreen>
+    <Description>High Damage Done to Shrine Guardians</Description>
+  </MostDamageToMinions>
+</GuardianSlayer>

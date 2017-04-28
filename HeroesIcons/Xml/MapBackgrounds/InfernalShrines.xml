@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<InfernalShrines name="Infernal Shrines">
-  <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_shrines.jpg</Normal>
-  <Small>ui_ingame_mapmechanic_loadscreen_shrines_small.jpg</Small>
-</InfernalShrines>

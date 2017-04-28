@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Finisher>
+  <MostKills>
+    <MVPScreen>storm_ui_mvp_finisher_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_finisher_{mvpColor}.png</ScoreScreen>
+    <Description>High Kills</Description>
+  </MostKills>
+</Finisher>

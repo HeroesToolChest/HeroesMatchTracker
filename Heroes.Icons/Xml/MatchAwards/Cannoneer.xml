@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Cannoneer>
+  <MostAltarDamage>
+    <MVPScreen>storm_ui_mvp_cannoneer_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_cannoneer_{mvpColor}.png</ScoreScreen>
+    <Description>High Core Damage Done</Description>
+  </MostAltarDamage>
+</Cannoneer>

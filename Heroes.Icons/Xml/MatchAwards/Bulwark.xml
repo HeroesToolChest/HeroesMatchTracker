@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bulwark>
+  <MostDamageTaken>
+    <MVPScreen>storm_ui_mvp_bulwark_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_bulwark_{mvpColor}.png</ScoreScreen>
+    <Description>High Efficient Damage Soaked</Description>
+  </MostDamageTaken>
+</Bulwark>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tassadar attributeid="Tass" role="Support" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_tassadar.dds" loading="storm_ui_ingame_hero_loadingscreen_tassadar.dds" leader="storm_ui_ingame_hero_leaderboard_tassadar.dds">
+  <Level1>
+    <TassadarPsionicStormPsiInfusion name="Psi Infusion" desc="TassadarPsionicStormPsiInfusionTalent">storm_ui_icon_tassadar_psionicstorm_var1.dds</TassadarPsionicStormPsiInfusion>
+    <TassadarTemplarsWill name="Templar's Will" generic="true" desc="TassadarOracleTemplarsWillTalent">storm_ui_icon_talent_autoattack_mana.dds</TassadarTemplarsWill>
+    <TassadarKhaydarinResonance name="Khaydarin Resonance" generic="true" desc="TassadarKhaydarinResonance">storm_ui_icon_talent_conjurerspursuit.dds</TassadarKhaydarinResonance>
+  </Level1>
+  <Level4>
+    <TassadarKhalasCelerityPlasmaShield name="Khala's Celerity" desc="TassadarKhalasCelerity">storm_ui_icon_tassadar_plasmashield.dds</TassadarKhalasCelerityPlasmaShield>
+    <TassadarKhalasEmbrace name="Khala's Embrace" desc="TassadarKhalasEmbrace">storm_ui_icon_tassadar_plasmashield_a.dds</TassadarKhalasEmbrace>
+    <TassadarKhalasLight name="Khala's Light" desc="TassadarKhalasLight">storm_ui_icon_tassadar_plasmashield_b.dds</TassadarKhalasLight>
+  </Level4>
+  <Level7>
+    <TassadarPsionicProjection name="Psionic Projection" generic="true" desc="TassadarPsionicProjection">storm_ui_icon_talent_elunesgrace.dds</TassadarPsionicProjection>
+    <TassadarResonation name="Resonation" desc="TassadarPsionicStormResonationTalent">storm_ui_icon_tassadar_psionicstorm.dds</TassadarResonation>
+    <TassadarMasteryMentalAcuity name="Mental Acuity" desc="TassadarOracleMentalAcuityTalent">storm_ui_icon_tassadar_oracle.dds</TassadarMasteryMentalAcuity>
+  </Level7>
+  <Level10>
+    <TassadarHeroicAbilityArchon name="Archon" desc="TassadarArchon">storm_ui_icon_tassadar_archon.dds</TassadarHeroicAbilityArchon>
+    <TassadarHeroicAbilityForceWall name="ForceWall" desc="TassadarForceWall">storm_ui_icon_tassadar_forcewall.dds</TassadarHeroicAbilityForceWall>
+  </Level10>
+  <Level13>
+    <TassadarDeepShift name="Deep Shift" desc="TassadarDimensionalShiftDeepShiftTalent">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarDeepShift>
+    <TassadarAdunsWisdom name="Adun's Wisdom" desc="TassadarAdunsWisdom">storm_ui_icon_tassadar_oracle.dds</TassadarAdunsWisdom>
+    <TassadarNullification name="Nullification" generic="true" desc="TassadarNullification">storm_ui_icon_talent_shrinkray.dds</TassadarNullification>
+  </Level13>
+  <Level16>
+    <TassadarPhaseDisruption name="Phase Disruption" desc="TassadarPhaseDisruption">storm_ui_icon_tassadar_psionicstorm.dds</TassadarPhaseDisruption>
+    <TassadarPsionicEcho name="Psionic Echo" desc="TassadarPsionicEcho">storm_ui_icon_tassadar_psionicstorm_var1.dds</TassadarPsionicEcho>
+    <TassadarFocusedBeam name="Focused Beam" desc="TassadarFocusedBeam">storm_ui_icon_tassadar_oracle.dds</TassadarFocusedBeam>
+  </Level16>
+  <Level20>
+    <TassadarMasteryTwilightArchon name="Twilight Archon" desc="TassadarArchonTwilightArchonTalent">storm_ui_icon_tassadar_archon.dds</TassadarMasteryTwilightArchon>
+    <TassadarMasteryForceBarrier name="Force Barrier" desc="TassadarForceWallForceBarrierTalent">storm_ui_icon_tassadar_forcewall.dds</TassadarMasteryForceBarrier>
+    <TassadarPrismaticLink name="Prismatic Link" generic="true" desc="TassadarPrismaticLink">storm_ui_icon_talent_autoattack_aoe.dds</TassadarPrismaticLink>
+    <TassadarShieldBattery name="Shield Battery" generic="true" desc="TassadarShieldBattery">storm_ui_icon_talent_stormshield.dds</TassadarShieldBattery>
+  </Level20>
+</Tassadar>

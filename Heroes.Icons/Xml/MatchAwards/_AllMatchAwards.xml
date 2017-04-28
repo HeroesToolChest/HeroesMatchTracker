@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MatchAwards>
+  <Avenger />
+  <Bulwark />
+  <Cannoneer />
+  <ClutchHealer />
+  <CombatMedic />
+  <DaBomb />
+  <Daredevil />
+  <Dominator />
+  <EscapeArtist />
+  <Experienced />
+  <Finisher />
+  <GardenTerror />
+  <Guardian />
+  <GuardianSlayer />
+  <HatTrick />
+  <Headhunter />
+  <ImmortalSlayer />
+  <Jeweler />
+  <MainHealer />
+  <MasteroftheCurse />
+  <Moneybags />
+  <MVP />
+  <Painbringer />
+  <Protector />
+  <Pusher />
+  <Scrapper />
+  <Shriner />
+  <SiegeMaster />
+  <Silencer />
+  <SoleSurvivor />
+  <Stunner />
+  <TeamPlayer />
+  <TempleMaster />
+  <Trapper />
+  <ZergCrusher />
+</MatchAwards>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EscapeArtist name="Escape Artist">
+  <MostEscapes>
+    <MVPScreen>storm_ui_mvp_escapeartist_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_escapeartist_{mvpColor}.png</ScoreScreen>
+    <Description>Escaped Death Many Times</Description>
+  </MostEscapes>
+</EscapeArtist>

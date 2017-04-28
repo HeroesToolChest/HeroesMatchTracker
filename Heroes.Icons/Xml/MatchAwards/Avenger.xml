@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Avenger>
+  <MostVengeancesPerformed>
+    <MVPScreen>storm_ui_mvp_avenger_{mvpColor}.png</MVPScreen>
+    <ScoreScreen>storm_ui_scorescreen_mvp_avenger_{mvpColor}.png</ScoreScreen>
+    <Description>Avenged Many Deaths</Description>
+  </MostVengeancesPerformed>
+</Avenger>

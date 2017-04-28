@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ImmortalSlayer name="Immortal Slayer">
-  <MostImmortalDamage>
-    <MVPScreen>storm_ui_mvp_immortalslayer_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_immortalslayer_{mvpColor}.png</ScoreScreen>
-    <Description>Most damage done to Immortal</Description>
-  </MostImmortalDamage>
-</ImmortalSlayer>

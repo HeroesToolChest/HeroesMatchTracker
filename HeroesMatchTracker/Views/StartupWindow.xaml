@@ -1,0 +1,36 @@
+﻿<Window x:Class="HeroesMatchTracker.Views.StartupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d"
+        DataContext="{Binding StartupWindowViewModel, Source={StaticResource Locator}}"
+        Height="287" Width="490" MaxHeight="291" MaxWidth="505"
+        WindowStartupLocation="CenterScreen"
+        BorderThickness="0" WindowStyle="None"
+        Title="Heroes Match Tracker Startup" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="StartupWindowLabelStyle" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <DropShadowEffect x:Key="StartupWindowDropShadow" BlurRadius="15" ShadowDepth="2" Opacity="0.8" Color="Orange"/>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="ContentRendered">
+            <mvvm:EventToCommand Command="{Binding ExecuteStartupCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Image Source="{StaticResource HMDStartup}" Stretch="UniformToFill"/>
+        <Label Content="Heroes Match Tracker" Margin="10,10,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" FontSize="32" Width="470"/>
+        <Label Content="{Binding AppVersion, StringFormat={}{0}}" Margin="416,251,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="64"/>
+
+        <Label Content="{Binding StatusLabel}" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Margin="10,182,0,0" FontSize="17" Width="470"/>
+        <Label Content="{Binding DetailedStatusLabel}" Margin="10,215,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="470" FontSize="16"/>
+    </Grid>
+</Window>

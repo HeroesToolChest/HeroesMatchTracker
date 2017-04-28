@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<MainHealer name="Main Healer">
-  <MostHealing>
-    <MVPScreen>storm_ui_mvp_mainhealer_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_mainhealer_{mvpColor}.png</ScoreScreen>
-    <Description>Most healing done</Description>
-  </MostHealing>
-</MainHealer>
