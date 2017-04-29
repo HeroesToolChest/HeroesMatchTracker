@@ -26,6 +26,11 @@ Please visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki).
 
 For Non-English clients, you may want to check out the wiki page [Non-English Clients](https://github.com/koliva8245/HeroesMatchTracker/wiki/Non-English-Clients)
 
+## Donations
+Want to donate? I recommend you buy yourself some Gems instead, but if you really want to donate...
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=NSU3A249LKG4C&lc=US&item_name=Heroes%20Match%20Tracker&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
 ## License
 [MIT license](/LICENSE.txt)
 
