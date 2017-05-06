@@ -114,7 +114,7 @@
     <Aliases>Gazleu,Gazol,Sparachiodi,ГАЗЛОУ,Gasganete,가즈로,加兹鲁维,加茲魯維</Aliases>
   </Gazlowe>
 
-  <Genji available="99999" attributeid="Genj" franchise="Overwatch"
+  <Genji available="52860" attributeid="Genj" franchise="Overwatch"
          portrait="storm_ui_ingame_heroselect_btn_genji.dds" loading="storm_ui_ingame_hero_loadingscreen_genji.dds" leader="storm_ui_ingame_hero_leaderboard_genji.dds">
     <Roles>Assassin</Roles>
     <Aliases>Гэндзи,源氏,겐지</Aliases>
