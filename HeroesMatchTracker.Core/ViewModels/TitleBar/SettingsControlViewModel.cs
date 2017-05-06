@@ -86,6 +86,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
 
         private void SetRegistryStartup(bool set)
         {
+#if !DEBUG
             if (set)
             {
                 RegistryKey.SetValue("Heroes Match Tracker", $"{Path.Combine(Directory.GetParent(Data.Database.DatabasePath).FullName, "Update.exe")} --processStart \"HeroesMatchTracker.exe\" --process-start-args /noshow");
@@ -95,6 +96,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                 if (RegistryKey.GetValue("Heroes Match Tracker") != null)
                     RegistryKey.DeleteValue("Heroes Match Tracker");
             }
+#endif
         }
     }
 }
