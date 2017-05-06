@@ -487,6 +487,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             // set the highest stat values
             SetHighestTeamStatValues();
+            SetHighestTeamAdvancedStatValues();
 
             // match bans
             if (replayMatch.ReplayMatchTeamBan != null)
@@ -612,6 +613,168 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 if (item.HealingRole == highestHealing2)
                     item.HighestHealing = true;
+            }
+        }
+
+        private void SetHighestTeamAdvancedStatValues()
+        {
+            int? highestSiege1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.SiegeDamage);
+            int? highestSiege2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.SiegeDamage);
+
+            int? highestHero1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.HeroDamage);
+            int? highestHero2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.HeroDamage);
+
+            int? highestExp1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.ExperienceContribution);
+            int? highestExp2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.ExperienceContribution);
+
+            int? highestDamageTaken1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.DamageTakenRole);
+
+            int? highestHealing1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.HealingRole);
+            int? highestHealing2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.HealingRole);
+
+            int? highestMinion1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.MinionDamage);
+            int? highestMinion2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.MinionDamage);
+
+            int? highestSummon1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.SummonDamage);
+            int? highestSummon2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.SummonDamage);
+
+            int? highestStructure1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.StrutureDamage);
+            int? highestStructure2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.StrutureDamage);
+
+            TimeSpan? highestLive1 = MatchPlayerAdvancedStatsTeam1List.Min(x => x.TimeSpentDead);
+            TimeSpan? highestLive2 = MatchPlayerAdvancedStatsTeam2List.Min(x => x.TimeSpentDead);
+
+            int? highestSelfHealing1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.SelfHealing);
+            int? highestSelfHealing2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.SelfHealing);
+
+            int? highestMercDamage1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.CreepDamage);
+            int? highestMercDamage2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.CreepDamage);
+
+            int? highestMercCaptures1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.MercCampCaptures);
+            int? highestMercCaptures2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.MercCampCaptures);
+
+            int? highestWatchTowers1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.WatchTowerCaptures);
+            int? highestWatchTowers2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.WatchTowerCaptures);
+
+            int? highestKills1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.SoloKills);
+            int? highestKills2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.SoloKills);
+
+            int? highestTakedowns1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.TakeDowns);
+            int? highestTakedowns2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.TakeDowns);
+
+            int? highestAssists1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.Assists);
+            int? highestAssists2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.Assists);
+
+            int? highestNonDeaths1 = MatchPlayerAdvancedStatsTeam1List.Min(x => x.Deaths);
+            int? highestNonDeaths2 = MatchPlayerAdvancedStatsTeam2List.Min(x => x.Deaths);
+
+            foreach (var item in MatchPlayerAdvancedStatsTeam1List)
+            {
+                if (item.SiegeDamage == highestSiege1)
+                    item.HighestSiegeDamage = true;
+
+                if (item.HeroDamage == highestHero1)
+                    item.HighestHeroDamage = true;
+
+                if (item.ExperienceContribution == highestExp1)
+                    item.HighestExperience = true;
+
+                if (item.DamageTakenRole == highestDamageTaken1)
+                    item.HighestDamageTaken = true;
+
+                if (item.HealingRole == highestHealing1)
+                    item.HighestHealing = true;
+
+                if (item.MinionDamage == highestMinion1)
+                    item.HighestMinionDamage = true;
+
+                if (item.SummonDamage == highestSummon1)
+                    item.HighestSummonDamage = true;
+
+                if (item.StrutureDamage == highestStructure1)
+                    item.HighestStructureDamage = true;
+
+                if (item.TimeSpentDead == highestLive1)
+                    item.HighestLiveTime = true;
+
+                if (item.SelfHealing == highestSelfHealing1)
+                    item.HighestSelfHealing = true;
+
+                if (item.CreepDamage == highestMercDamage1)
+                    item.HighestMercDamage = true;
+
+                if (item.MercCampCaptures == highestMercCaptures1)
+                    item.HighestMercCaptures = true;
+
+                if (item.WatchTowerCaptures == highestWatchTowers1)
+                    item.HighestWatchTowerCaptures = true;
+
+                if (item.SoloKills == highestKills1)
+                    item.HighestKills = true;
+
+                if (item.TakeDowns == highestTakedowns1)
+                    item.HighestTakedowns = true;
+
+                if (item.Assists == highestAssists1)
+                    item.HighestAssists = true;
+
+                if (item.Deaths == highestNonDeaths1)
+                    item.HighestNonDeaths = true;
+            }
+
+            foreach (var item in MatchPlayerAdvancedStatsTeam2List)
+            {
+                if (item.SiegeDamage == highestSiege2)
+                    item.HighestSiegeDamage = true;
+
+                if (item.HeroDamage == highestHero2)
+                    item.HighestHeroDamage = true;
+
+                if (item.ExperienceContribution == highestExp2)
+                    item.HighestExperience = true;
+
+                if (item.DamageTakenRole == highestDamageTaken2)
+                    item.HighestDamageTaken = true;
+
+                if (item.HealingRole == highestHealing2)
+                    item.HighestHealing = true;
+
+                if (item.MinionDamage == highestMinion2)
+                    item.HighestMinionDamage = true;
+
+                if (item.SummonDamage == highestSummon2)
+                    item.HighestSummonDamage = true;
+
+                if (item.StrutureDamage == highestStructure2)
+                    item.HighestStructureDamage = true;
+
+                if (item.TimeSpentDead == highestLive2)
+                    item.HighestLiveTime = true;
+
+                if (item.SelfHealing == highestSelfHealing2)
+                    item.HighestSelfHealing = true;
+
+                if (item.CreepDamage == highestMercDamage2)
+                    item.HighestMercDamage = true;
+
+                if (item.MercCampCaptures == highestMercCaptures2)
+                    item.HighestMercCaptures = true;
+
+                if (item.WatchTowerCaptures == highestWatchTowers2)
+                    item.HighestWatchTowerCaptures = true;
+
+                if (item.SoloKills == highestKills2)
+                    item.HighestKills = true;
+
+                if (item.TakeDowns == highestTakedowns2)
+                    item.HighestTakedowns = true;
+
+                if (item.Assists == highestAssists2)
+                    item.HighestAssists = true;
+
+                if (item.Deaths == highestNonDeaths2)
+                    item.HighestNonDeaths = true;
             }
         }
 
