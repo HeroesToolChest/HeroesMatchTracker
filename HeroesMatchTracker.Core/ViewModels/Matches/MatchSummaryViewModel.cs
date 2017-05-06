@@ -53,8 +53,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         private IWebsiteService Website;
         private ILoadingOverlayWindowService LoadingOverlayWindow;
-        private Collection<MatchPlayerStats> MatchPlayerStatsTeam1Temp = new Collection<MatchPlayerStats>();
-        private Collection<MatchPlayerStats> MatchPlayerStatsTeam2Temp = new Collection<MatchPlayerStats>();
+        private List<MatchPlayerTalents> MatchPlayerTalentsTeam1List;
+        private List<MatchPlayerTalents> MatchPlayerTalentsTeam2List;
+        private List<MatchPlayerStats> MatchPlayerStatsTeam1List;
+        private List<MatchPlayerStats> MatchPlayerStatsTeam2List;
+        private List<MatchPlayerAdvancedStats> MatchPlayerAdvancedStatsTeam1List;
+        private List<MatchPlayerAdvancedStats> MatchPlayerAdvancedStatsTeam2List;
+        private List<MatchChat> MatchPlayerChatList;
+        private List<MatchObserver> MatchPlayerObserversList;
 
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
@@ -459,46 +465,28 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     {
                         if (player.Team == 0)
                         {
-                            await Application.Current.Dispatcher.InvokeAsync(
-                                () =>
-                            {
-                                MatchPlayerStatsTeam1Temp.Add(matchPlayerStats);
-                                MatchTalentsTeam1Collection.Add(matchPlayerTalents);
-                                MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
-                            }, DispatcherPriority.Render);
+                            MatchPlayerTalentsTeam1List.Add(matchPlayerTalents);
+                            MatchPlayerStatsTeam1List.Add(matchPlayerStats);
+                            MatchPlayerAdvancedStatsTeam1List.Add(matchPlayerAdvancedStats);
                         }
                         else
                         {
-                            await Application.Current.Dispatcher.InvokeAsync(
-                                () =>
-                            {
-                                MatchPlayerStatsTeam2Temp.Add(matchPlayerStats);
-                                MatchTalentsTeam2Collection.Add(matchPlayerTalents);
-                                MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
-                            }, DispatcherPriority.Render);
+                            MatchPlayerTalentsTeam2List.Add(matchPlayerTalents);
+                            MatchPlayerStatsTeam2List.Add(matchPlayerStats);
+                            MatchPlayerAdvancedStatsTeam2List.Add(matchPlayerAdvancedStats);
                         }
                     }
                 }
 
                 if (player.Team == 4)
-                {
-                    MatchObserversCollection.Add(new MatchObserver(matchPlayerBase));
-                    HasObservers = true;
-                }
+                    MatchPlayerObserversList.Add(new MatchObserver(matchPlayerBase));
             }
 
-            // set the highest values and then add it to the ObservableCollection
+            if (MatchPlayerObserversList.Count > 0)
+                HasObservers = true;
+
+            // set the highest stat values
             SetHighestTeamStatValues();
-
-            await Application.Current.Dispatcher.InvokeAsync(
-                () =>
-            {
-                foreach (var item in MatchPlayerStatsTeam1Temp)
-                    MatchStatsTeam1Collection.Add(item);
-
-                foreach (var item in MatchPlayerStatsTeam2Temp)
-                    MatchStatsTeam2Collection.Add(item);
-            }, DispatcherPriority.Render);
 
             // match bans
             if (replayMatch.ReplayMatchTeamBan != null)
@@ -530,7 +518,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                         MatchChat matchChat = new MatchChat();
                         matchChat.SetChatMessages(message);
 
-                        await Application.Current.Dispatcher.InvokeAsync(() => MatchChatCollection.Add(matchChat));
+                        MatchPlayerChatList.Add(matchChat);
                     }
                 }
 
@@ -543,7 +531,19 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
             SetMatchResults(matchResult);
 
-            await Task.CompletedTask;
+            // add to collections
+            await Application.Current.Dispatcher.InvokeAsync(
+                () =>
+                {
+                    MatchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam1List);
+                    MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam2List);
+                    MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam1List);
+                    MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam2List);
+                    MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam1List);
+                    MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam2List);
+                    MatchChatCollection = new ObservableCollection<MatchChat>(MatchPlayerChatList);
+                    MatchObserversCollection = new ObservableCollection<MatchObserver>(MatchPlayerObserversList);
+                }, DispatcherPriority.Render);
         }
 
         private void SetMatchResults(MatchResult matchResult)
@@ -563,22 +563,22 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         private void SetHighestTeamStatValues()
         {
-            int? highestSiege1 = MatchPlayerStatsTeam1Temp.Max(x => x.SiegeDamage);
-            int? highestSiege2 = MatchPlayerStatsTeam2Temp.Max(x => x.SiegeDamage);
+            int? highestSiege1 = MatchPlayerStatsTeam1List.Max(x => x.SiegeDamage);
+            int? highestSiege2 = MatchPlayerStatsTeam2List.Max(x => x.SiegeDamage);
 
-            int? highestHero1 = MatchPlayerStatsTeam1Temp.Max(x => x.HeroDamage);
-            int? highestHero2 = MatchPlayerStatsTeam2Temp.Max(x => x.HeroDamage);
+            int? highestHero1 = MatchPlayerStatsTeam1List.Max(x => x.HeroDamage);
+            int? highestHero2 = MatchPlayerStatsTeam2List.Max(x => x.HeroDamage);
 
-            int? highestExp1 = MatchPlayerStatsTeam1Temp.Max(x => x.ExperienceContribution);
-            int? highestExp2 = MatchPlayerStatsTeam2Temp.Max(x => x.ExperienceContribution);
+            int? highestExp1 = MatchPlayerStatsTeam1List.Max(x => x.ExperienceContribution);
+            int? highestExp2 = MatchPlayerStatsTeam2List.Max(x => x.ExperienceContribution);
 
-            int? highestDamageTaken1 = MatchPlayerStatsTeam1Temp.Max(x => x.DamageTakenRole);
-            int? highestDamageTaken2 = MatchPlayerStatsTeam2Temp.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken1 = MatchPlayerStatsTeam1List.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken2 = MatchPlayerStatsTeam2List.Max(x => x.DamageTakenRole);
 
-            int? highestHealing1 = MatchPlayerStatsTeam1Temp.Max(x => x.HealingRole);
-            int? highestHealing2 = MatchPlayerStatsTeam2Temp.Max(x => x.HealingRole);
+            int? highestHealing1 = MatchPlayerStatsTeam1List.Max(x => x.HealingRole);
+            int? highestHealing2 = MatchPlayerStatsTeam2List.Max(x => x.HealingRole);
 
-            foreach (var item in MatchPlayerStatsTeam1Temp)
+            foreach (var item in MatchPlayerStatsTeam1List)
             {
                 if (item.SiegeDamage == highestSiege1)
                     item.HighestSiegeDamage = true;
@@ -596,7 +596,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     item.HighestHealing = true;
             }
 
-            foreach (var item in MatchPlayerStatsTeam2Temp)
+            foreach (var item in MatchPlayerStatsTeam2List)
             {
                 if (item.SiegeDamage == highestSiege2)
                     item.HighestSiegeDamage = true;
@@ -647,12 +647,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             foreach (var player in MatchStatsTeam2Collection)
                 player.Dispose();
 
-            foreach (var player in MatchPlayerStatsTeam1Temp)
-                player.Dispose();
-
-            foreach (var player in MatchPlayerStatsTeam2Temp)
-                player.Dispose();
-
             foreach (var player in MatchAdvancedStatsTeam1Collection)
                 player.Dispose();
 
@@ -672,25 +666,20 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
 
-            // chat
-            MatchChatCollection = null;
-
             BackgroundImage = null;
 
             HasBans = false;
             HasChat = false;
             HasObservers = false;
 
-            MatchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
-            MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
-            MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
-            MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
-            MatchPlayerStatsTeam1Temp = new Collection<MatchPlayerStats>();
-            MatchPlayerStatsTeam2Temp = new Collection<MatchPlayerStats>();
-            MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
-            MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
-            MatchChatCollection = new ObservableCollection<MatchChat>();
-            MatchObserversCollection = new ObservableCollection<MatchObserver>();
+            MatchPlayerTalentsTeam1List = new List<MatchPlayerTalents>();
+            MatchPlayerTalentsTeam2List = new List<MatchPlayerTalents>();
+            MatchPlayerStatsTeam1List = new List<MatchPlayerStats>();
+            MatchPlayerStatsTeam2List = new List<MatchPlayerStats>();
+            MatchPlayerAdvancedStatsTeam1List = new List<MatchPlayerAdvancedStats>();
+            MatchPlayerAdvancedStatsTeam2List = new List<MatchPlayerAdvancedStats>();
+            MatchPlayerChatList = new List<MatchChat>();
+            MatchPlayerObserversList = new List<MatchObserver>();
         }
     }
 }
