@@ -54,11 +54,11 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBlock Text="{Binding TakeDowns}" ToolTip="Takedowns">
+                            <TextBlock Text="{Binding Assists}" ToolTip="Assists">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding HighestTakedowns}" Value="True">
+                                            <DataTrigger Binding="{Binding HighestAssists}" Value="True">
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
@@ -70,11 +70,11 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBlock Text="{Binding Assists}" ToolTip="Assists">
+                            <TextBlock Text="{Binding TakeDowns}" ToolTip="Takedowns">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding HighestAssists}" Value="True">
+                                            <DataTrigger Binding="{Binding HighestTakedowns}" Value="True">
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
@@ -337,8 +337,8 @@
                 <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
                 <TextBlock Text="Kills" />
-                <TextBlock Text="Takedowns" />
                 <TextBlock Text="Assists" />
+                <TextBlock Text="Takedowns" />
                 <TextBlock Text="Deaths" />
                 <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
