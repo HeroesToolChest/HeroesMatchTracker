@@ -22,10 +22,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
     public class MatchSummaryViewModel : HmtViewModel, IMatchSummaryReplayService
     {
-        private int _teamBlueKills;
-        private int _teamRedKills;
-        private int _teamBlueLevel;
-        private int _teamRedLevel;
+        private int? _teamBlueKills;
+        private int? _teamRedKills;
+        private int? _teamBlueLevel;
+        private int? _teamRedLevel;
         private bool _isLeftChangeButtonVisible;
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
@@ -85,7 +85,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public TeamLevelTimeGraph TeamLevelTimeGraph { get; private set; }
         public TeamExperienceGraph TeamExperienceGraph { get; private set; }
 
-        public int TeamBlueKills
+        public int? TeamBlueKills
         {
             get => _teamBlueKills;
             set
@@ -95,7 +95,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamRedKills
+        public int? TeamRedKills
         {
             get => _teamRedKills;
             set
@@ -105,7 +105,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamBlueLevel
+        public int? TeamBlueLevel
         {
             get => _teamBlueLevel;
             set
@@ -115,7 +115,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamRedLevel
+        public int? TeamRedLevel
         {
             get => _teamRedLevel;
             set

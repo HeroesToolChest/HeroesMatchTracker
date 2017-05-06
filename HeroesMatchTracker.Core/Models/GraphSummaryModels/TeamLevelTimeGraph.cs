@@ -28,6 +28,9 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
         public async Task SetTeamLevelGraphsAsync(List<ReplayMatchTeamLevel> matchTeamLevels, bool isTeam1Winner)
         {
+            if (matchTeamLevels.Count > 1)
+                return;
+
             SetWinner(isTeam1Winner);
 
             MatchTeamLevelsLineChartCollection = null;
