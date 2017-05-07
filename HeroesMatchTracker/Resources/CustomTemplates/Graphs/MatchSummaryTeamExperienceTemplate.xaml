@@ -6,56 +6,107 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
     
     <DataTemplate x:Key="TeamExperienceOverTimeGraph">
-        <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="40"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam1Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="0"  />
-            <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam2Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="2" />
-            <TextBlock Text="Experience Over Time" Style="{StaticResource GraphHeader}" Grid.Row="0" Grid.ColumnSpan="3" />
-            <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="2">
-                <lvc:CartesianChart.ChartLegend>
-                    <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
-                </lvc:CartesianChart.ChartLegend>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Experience" MaxValue="{Binding TeamExperienceGraph.MatchTeamExperienceMaxYValue}" Foreground="{StaticResource DefaultTextBrush}">
-                        <lvc:Axis.Separator>
-                            <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
-                        </lvc:Axis.Separator>
-                    </lvc:Axis>
-                </lvc:CartesianChart.AxisY>
-                <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.DataTooltip>
-                    <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
-                </lvc:CartesianChart.DataTooltip>
-            </lvc:CartesianChart>
-            <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam2ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="2">
-                <lvc:CartesianChart.ChartLegend >
-                    <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
-                </lvc:CartesianChart.ChartLegend>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Experience" MaxValue="{Binding TeamExperienceGraph.MatchTeamExperienceMaxYValue}" Foreground="{StaticResource DefaultTextBrush}">
-                        <lvc:Axis.Separator>
-                            <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
-                        </lvc:Axis.Separator>
-                    </lvc:Axis>
-                </lvc:CartesianChart.AxisY>
-                <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.DataTooltip>
-                    <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
-                </lvc:CartesianChart.DataTooltip>
-            </lvc:CartesianChart>
+        <Grid>
+            <StackPanel Panel.ZIndex="999" Margin="8">
+                <TextBlock Text="Show as Stacked Area Non-Percentage" FontSize="18" Foreground="{StaticResource DefaultTextBrush}" />
+                <StackPanel Orientation="Horizontal" Margin="4">
+                    <controls:ToggleSwitch IsChecked="{Binding TeamExperienceGraph.ToggleSwitchOverTimeStackArea}" OffLabel="No" OnLabel="Yes" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" />
+                </StackPanel>
+            </StackPanel>
+            <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding TeamExperienceGraph.IsTeamExpOverTimeStackAreaVisible, Converter={StaticResource BooleanToVisibility}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam1Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="0"  />
+                <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam2Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="2" />
+                <TextBlock Text="Experience Over Time" Style="{StaticResource GraphHeader}" Grid.Row="0" Grid.ColumnSpan="3" />
+                <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam1ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="2">
+                    <lvc:CartesianChart.ChartLegend>
+                        <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.ChartLegend>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Experience" MaxValue="{Binding TeamExperienceGraph.MatchTeamExperienceMaxYValue}" Foreground="{StaticResource DefaultTextBrush}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+                <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam2ExperienceStackedGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="2">
+                    <lvc:CartesianChart.ChartLegend >
+                        <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.ChartLegend>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Experience" MaxValue="{Binding TeamExperienceGraph.MatchTeamExperienceMaxYValue}" Foreground="{StaticResource DefaultTextBrush}">
+                            <lvc:Axis.Separator>
+                                <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
+                            </lvc:Axis.Separator>
+                        </lvc:Axis>
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+            </Grid>
+            <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}" Visibility="{Binding TeamExperienceGraph.IsTeamExpOverTimeStackAreaPercentageVisible, Converter={StaticResource BooleanToVisibility}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam1Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="0"  />
+                <TextBlock Text="{Binding TeamExperienceGraph.GraphTeam2Title}" Style="{StaticResource GraphSubHeader}" Grid.Row="1" Grid.Column="2" />
+                <TextBlock Text="Experience Over Time" Style="{StaticResource GraphHeader}" Grid.Row="0" Grid.ColumnSpan="3" />
+                <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam1ExperienceStackedPercentageGraphCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="2">
+                    <lvc:CartesianChart.ChartLegend>
+                        <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.ChartLegend>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Experience" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamOverTimeStackPecentageFormatter}" Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+                <lvc:CartesianChart Series="{Binding TeamExperienceGraph.MatchTeam2ExperienceStackedPercentageGraphCollection}" LegendLocation="Right" Grid.Column="2" Grid.Row="2">
+                    <lvc:CartesianChart.ChartLegend >
+                        <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.ChartLegend>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Experience" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamOverTimeStackPecentageFormatter}" Foreground="{StaticResource DefaultTextBrush}" />
+                    </lvc:CartesianChart.AxisY>
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Time" LabelFormatter="{Binding TeamExperienceGraph.MatchTeamExperienceFormatter}" Foreground="{StaticResource DefaultTextBrush}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.DataTooltip>
+                        <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
+                    </lvc:CartesianChart.DataTooltip>
+                </lvc:CartesianChart>
+            </Grid>
         </Grid>
     </DataTemplate>
 

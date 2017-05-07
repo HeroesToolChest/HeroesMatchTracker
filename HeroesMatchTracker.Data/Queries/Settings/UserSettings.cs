@@ -128,6 +128,12 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             get { return GetBooleanValue(nameof(IsTeamExperienceRowChartEnabled)); }
             set { SetBooleanValue(value); }
         }
+
+        public bool IsTeamExpOverTimeStackedAreaEnabled
+        {
+            get { return GetBooleanValue(nameof(IsTeamExpOverTimeStackedAreaEnabled)); }
+            set { SetBooleanValue(value); }
+        }
         #endregion
 
         #region Auto Updater
@@ -175,6 +181,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
 
             // Graphs
             IsTeamExperienceRowChartEnabled = true;
+            IsTeamExpOverTimeStackedAreaEnabled = true;
 
             // AutoUpdater
             IsNewUpdateApplied = false;
