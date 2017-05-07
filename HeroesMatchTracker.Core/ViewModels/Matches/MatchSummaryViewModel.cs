@@ -80,6 +80,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             TeamLevelTimeGraph = new TeamLevelTimeGraph();
             TeamExperienceGraph = new TeamExperienceGraph(Database);
+            StatGraphs = new StatGraphs(Database);
 
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
 
@@ -90,6 +91,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         public TeamLevelTimeGraph TeamLevelTimeGraph { get; private set; }
         public TeamExperienceGraph TeamExperienceGraph { get; private set; }
+        public StatGraphs StatGraphs { get; private set; }
 
         public int TeamBlueKills
         {
@@ -434,11 +436,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             var matchTeamLevelsList = replayMatch.ReplayMatchTeamLevels.ToList();
             var matchTeamExperienceList = replayMatch.ReplayMatchTeamExperiences.ToList();
 
-            // graphs
-            await TeamLevelTimeGraph.SetTeamLevelGraphsAsync(matchTeamLevelsList, playersList[0].IsWinner);
-            await TeamExperienceGraph.SetTeamExperienceGraphsAsync(matchTeamExperienceList, playersList[0].IsWinner);
-
             var playerParties = PlayerParties.FindPlayerParties(playersList);
+            var playerHeroes = CreateListOfCharacterHeroes(playersList);
 
             foreach (var player in playersList)
             {
@@ -531,6 +530,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchResult matchResult = new MatchResult(Database);
             matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
             SetMatchResults(matchResult);
+
+                        // graphs
+            await TeamLevelTimeGraph.SetTeamLevelGraphsAsync(matchTeamLevelsList, playersList[0].IsWinner);
+            await TeamExperienceGraph.SetTeamExperienceGraphsAsync(matchTeamExperienceList, playersList[0].IsWinner);
+            await StatGraphs.SetStatGraphsAsync(playerHeroes, playerScoresList);
 
             // add to collections
             await Application.Current.Dispatcher.InvokeAsync(
@@ -794,6 +798,20 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 Messenger.Default.Send(new NotificationMessage(StaticMessage.ChangeCurrentSelectedReplayMatchLeft));
             else
                 Messenger.Default.Send(new NotificationMessage(StaticMessage.ChangeCurrentSelectedReplayMatchRight));
+        }
+
+        private List<Tuple<string, string>> CreateListOfCharacterHeroes(List<ReplayMatchPlayer> players)
+        {
+            var list = new List<Tuple<string, string>>();
+            foreach (var player in players)
+            {
+                var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(player.PlayerId);
+                var playerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
+
+                list.Add(new Tuple<string, string>(player.Character, playerName));
+            }
+
+            return list;
         }
 
         private void DisposeMatchSummary()

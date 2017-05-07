@@ -213,6 +213,7 @@
     <Compile Include="Messaging\MatchesDataMessage.cs" />
     <Compile Include="Messaging\StaticMessage.cs" />
     <Compile Include="Models\GraphSummaryModels\GraphSummaryBase.cs" />
+    <Compile Include="Models\GraphSummaryModels\StatGraphs.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamExperienceGraph.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamLevelTimeGraph.cs" />
     <Compile Include="Models\MatchHistoryModels\MatchHistoryMatch.cs" />
