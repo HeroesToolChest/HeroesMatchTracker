@@ -16,6 +16,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
         private string[] _playerLabels;
         private SeriesCollection _siegeDamageChartCollection;
         private SeriesCollection _heroDamageChartCollection;
+        private SeriesCollection _experienceChartCollection;
 
         private IDatabaseService Database;
 
@@ -44,6 +45,16 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             }
         }
 
+        public SeriesCollection ExperienceChartCollection
+        {
+            get => _experienceChartCollection;
+            set
+            {
+                _experienceChartCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string[] PlayerLabels
         {
             get => _playerLabels;
@@ -56,7 +67,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
         public Func<int, string> NormalValueFormatter { get; set; }
 
-
         public async Task SetStatGraphsAsync(List<Tuple<string, string>> players, List<ReplayMatchPlayerScoreResult> playerScoreResult)
         {
             if (playerScoreResult.Count < 1)
@@ -67,9 +77,11 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
             var chartValuesSiegeDamage = new ChartValues<int>();
             var chartValuesHeroDamage = new ChartValues<int>();
+            var chartValuesExperience = new ChartValues<int>();
 
             chartValuesSiegeDamage.AddRange(playerScoreResult.Select(x => x.SiegeDamage.Value));
             chartValuesHeroDamage.AddRange(playerScoreResult.Select(x => x.HeroDamage.Value));
+            chartValuesExperience.AddRange(playerScoreResult.Select(x => x.ExperienceContribution.Value));
 
             await Application.Current.Dispatcher.InvokeAsync(() =>
             {
@@ -92,6 +104,16 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                         Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                     },
                 };
+
+                ExperienceChartCollection = new SeriesCollection()
+                {
+                    new ColumnSeries
+                    {
+                        Values = chartValuesExperience,
+                        Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                        Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                    },
+                };
             });
         }
 
@@ -109,6 +131,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
         {
             SiegeDamageColumnCollection = null;
             HeroDamageChartCollection = null;
+            ExperienceChartCollection = null;
             PlayerLabels = null;
         }
     }

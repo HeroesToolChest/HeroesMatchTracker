@@ -128,6 +128,9 @@
                                 <TabItem Header="Hero Damage" Style="{StaticResource CustomInner2MetroTabItem}">
                                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource HeroDamageGraph}" />
                                 </TabItem>
+                                <TabItem Header="Experience" Style="{StaticResource CustomInner2MetroTabItem}">
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ExperienceGraph}" />
+                                </TabItem>
                             </TabControl>
                         </TabItem>
                     </TabControl>
