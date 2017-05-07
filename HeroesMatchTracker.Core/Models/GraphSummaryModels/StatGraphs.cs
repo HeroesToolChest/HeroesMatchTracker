@@ -14,7 +14,8 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
     public class StatGraphs : GraphSummaryBase
     {
         private string[] _playerLabels;
-        private SeriesCollection _siegeDamageRowChartCollection;
+        private SeriesCollection _siegeDamageChartCollection;
+        private SeriesCollection _heroDamageChartCollection;
 
         private IDatabaseService Database;
 
@@ -23,12 +24,22 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             Database = database;
         }
 
-        public SeriesCollection SiegeDamageRowColumnCollection
+        public SeriesCollection SiegeDamageColumnCollection
         {
-            get => _siegeDamageRowChartCollection;
+            get => _siegeDamageChartCollection;
             set
             {
-                _siegeDamageRowChartCollection = value;
+                _siegeDamageChartCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public SeriesCollection HeroDamageChartCollection
+        {
+            get => _heroDamageChartCollection;
+            set
+            {
+                _heroDamageChartCollection = value;
                 RaisePropertyChanged();
             }
         }
@@ -43,22 +54,26 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             }
         }
 
-        public Func<int, string> SiegeDamageFormatter { get; set; }
+        public Func<int, string> NormalValueFormatter { get; set; }
+
 
         public async Task SetStatGraphsAsync(List<Tuple<string, string>> players, List<ReplayMatchPlayerScoreResult> playerScoreResult)
         {
             if (playerScoreResult.Count < 1)
                 return;
 
-            SiegeDamageFormatter = value => value.ToString();
+            NormalValueFormatter = value => value.ToString();
             SetPlayerLabels(players);
 
             var chartValuesSiegeDamage = new ChartValues<int>();
+            var chartValuesHeroDamage = new ChartValues<int>();
 
             chartValuesSiegeDamage.AddRange(playerScoreResult.Select(x => x.SiegeDamage.Value));
+            chartValuesHeroDamage.AddRange(playerScoreResult.Select(x => x.HeroDamage.Value));
+
             await Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                SiegeDamageRowColumnCollection = new SeriesCollection()
+                SiegeDamageColumnCollection = new SeriesCollection()
                 {
                     new ColumnSeries
                     {
@@ -66,7 +81,16 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                         Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                         Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                     },
+                };
 
+                HeroDamageChartCollection = new SeriesCollection()
+                {
+                    new ColumnSeries
+                    {
+                        Values = chartValuesHeroDamage,
+                        Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                        Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                    },
                 };
             });
         }
@@ -83,7 +107,8 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
         public override void Dispose()
         {
-            SiegeDamageRowColumnCollection = null;
+            SiegeDamageColumnCollection = null;
+            HeroDamageChartCollection = null;
             PlayerLabels = null;
         }
     }

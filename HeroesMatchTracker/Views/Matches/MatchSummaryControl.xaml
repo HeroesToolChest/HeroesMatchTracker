@@ -125,8 +125,10 @@
                                 <TabItem Header="Siege Damage" Style="{StaticResource CustomInner2MetroTabItem}">
                                     <ContentControl Content="{Binding}" ContentTemplate="{StaticResource SiegeDamageGraph}" />
                                 </TabItem>
+                                <TabItem Header="Hero Damage" Style="{StaticResource CustomInner2MetroTabItem}">
+                                    <ContentControl Content="{Binding}" ContentTemplate="{StaticResource HeroDamageGraph}" />
+                                </TabItem>
                             </TabControl>
-
                         </TabItem>
                     </TabControl>
                 </TabItem>

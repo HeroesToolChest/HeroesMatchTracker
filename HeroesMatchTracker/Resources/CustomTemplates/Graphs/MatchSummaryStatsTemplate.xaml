@@ -9,7 +9,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <TextBlock Text="Siege Damage" Style="{StaticResource GraphHeader}" />
-            <lvc:CartesianChart Series="{Binding StatGraphs.SiegeDamageRowColumnCollection}" LegendLocation="Right" Grid.Row="1">
+            <lvc:CartesianChart Series="{Binding StatGraphs.SiegeDamageColumnCollection}" LegendLocation="Right" Grid.Row="1">
                 <lvc:CartesianChart.ChartLegend >
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
@@ -21,7 +21,39 @@
                     </lvc:Axis>
                 </lvc:CartesianChart.AxisX>
                 <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.SiegeDamageFormatter}">
+                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" StrokeThickness="1" StrokeDashArray="4" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+                <lvc:CartesianChart.DataTooltip>
+                    <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
+                </lvc:CartesianChart.DataTooltip>
+            </lvc:CartesianChart>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HeroDamageGraph">
+        <Grid Background="{StaticResource DefaultBackgroundBrush}" VerticalAlignment="Stretch" MaxHeight="{StaticResource MaxGraphHeight}" MaxWidth="{StaticResource MaxGraphWidth}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Hero Damage" Style="{StaticResource GraphHeader}" />
+            <lvc:CartesianChart Series="{Binding StatGraphs.HeroDamageChartCollection}" LegendLocation="Right" Grid.Row="1">
+                <lvc:CartesianChart.ChartLegend >
+                    <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
+                </lvc:CartesianChart.ChartLegend>
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Players" LabelsRotation="30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
+                        <lvc:Axis.Separator>
+                            <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
+                        </lvc:Axis.Separator>
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" StrokeThickness="1" StrokeDashArray="4" />
                         </lvc:Axis.Separator>
