@@ -17,10 +17,10 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             TeamRed = "Team Red";
         }
 
-        public int TeamBlueKills { get; private set; }
-        public int TeamRedKills { get; private set; }
-        public int TeamBlueLevel { get; private set; }
-        public int TeamRedLevel { get; private set; }
+        public int? TeamBlueKills { get; private set; }
+        public int? TeamRedKills { get; private set; }
+        public int? TeamBlueLevel { get; private set; }
+        public int? TeamRedLevel { get; private set; }
         public string TeamBlue { get; private set; }
         public string TeamRed { get; private set; }
         public string TeamBlueIsWinner { get; private set; }
@@ -52,11 +52,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 }
             }
 
-            TeamBlueKills = team1PlayerStats.Sum(x => x.SoloKills).Value;
-            TeamRedKills = team2PlayerStats.Sum(x => x.SoloKills).Value;
+            TeamBlueKills = team1PlayerStats.Sum(x => x.SoloKills);
+            TeamRedKills = team2PlayerStats.Sum(x => x.SoloKills);
 
-            TeamBlueLevel = matchTeamLevelList.Max(x => x.Team0Level).Value;
-            TeamRedLevel = matchTeamLevelList.Max(x => x.Team1Level).Value;
+            TeamBlueLevel = matchTeamLevelList.Max(x => x.Team0Level);
+            TeamRedLevel = matchTeamLevelList.Max(x => x.Team1Level);
 
             if (matchPlayerList[0].IsWinner)
             {
