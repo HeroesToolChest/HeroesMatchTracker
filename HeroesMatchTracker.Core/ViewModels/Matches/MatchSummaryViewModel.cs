@@ -853,6 +853,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             HasChat = false;
             HasObservers = false;
 
+            // graphs
+            TeamLevelTimeGraph.Dispose();
+            TeamExperienceGraph.Dispose();
+            StatGraphs.Dispose();
+
             MatchPlayerTalentsTeam1List = new List<MatchPlayerTalents>();
             MatchPlayerTalentsTeam2List = new List<MatchPlayerTalents>();
             MatchPlayerStatsTeam1List = new List<MatchPlayerStats>();

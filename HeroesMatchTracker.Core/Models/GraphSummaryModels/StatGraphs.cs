@@ -47,9 +47,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
         public async Task SetStatGraphsAsync(List<Tuple<string, string>> players, List<ReplayMatchPlayerScoreResult> playerScoreResult)
         {
-            SiegeDamageRowColumnCollection = null;
-            PlayerLabels = null;
-
             if (playerScoreResult.Count < 1)
                 return;
 
@@ -82,6 +79,12 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             {
                 PlayerLabels[i] = $"{players[i].Item1} ({players[i].Item2})";
             }
+        }
+
+        public override void Dispose()
+        {
+            SiegeDamageRowColumnCollection = null;
+            PlayerLabels = null;
         }
     }
 }

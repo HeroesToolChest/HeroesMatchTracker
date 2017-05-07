@@ -145,10 +145,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
             SetWinner(isTeam1Winner);
 
-            MatchTeam1ExperienceStackedGraphCollection = null;
-            MatchTeam2ExperienceStackedGraphCollection = null;
-            MatchTeamExperienceRowChartCollection = null;
-
             MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
             MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
             ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
@@ -358,6 +354,15 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                     },
                 };
             });
+        }
+
+        public override void Dispose()
+        {
+            MatchTeam1ExperienceStackedGraphCollection = null;
+            MatchTeam2ExperienceStackedGraphCollection = null;
+            MatchTeam1ExperiencePieChartCollection = null;
+            MatchTeam2ExperiencePieChartCollection = null;
+            MatchTeamExperienceRowChartCollection = null;
         }
     }
 }
