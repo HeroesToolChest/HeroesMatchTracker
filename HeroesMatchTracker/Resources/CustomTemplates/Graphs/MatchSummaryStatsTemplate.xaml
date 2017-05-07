@@ -14,7 +14,7 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" LabelsRotation="30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
+                    <lvc:Axis Title="Players" LabelsRotation="-30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
@@ -46,7 +46,7 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" LabelsRotation="30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
+                    <lvc:Axis Title="Players" LabelsRotation="-30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
@@ -78,7 +78,7 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" LabelsRotation="30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
+                    <lvc:Axis Title="Players" LabelsRotation="-30" Labels="{Binding StatGraphs.PlayerLabels}" Foreground="{StaticResource DefaultTextBrush}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
