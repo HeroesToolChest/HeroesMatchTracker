@@ -22,10 +22,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
     public class MatchSummaryViewModel : HmtViewModel, IMatchSummaryReplayService
     {
-        private int _teamBlueKills;
-        private int _teamRedKills;
-        private int _teamBlueLevel;
-        private int _teamRedLevel;
+        private int? _teamBlueKills;
+        private int? _teamRedKills;
+        private int? _teamBlueLevel;
+        private int? _teamRedLevel;
         private bool _isLeftChangeButtonVisible;
         private bool _isRightChangeButtonVisible;
         private bool _isLeftChangeButtonEnabled;
@@ -53,6 +53,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         private IWebsiteService Website;
         private ILoadingOverlayWindowService LoadingOverlayWindow;
+        private Collection<MatchPlayerStats> MatchPlayerStatsTeam1Temp = new Collection<MatchPlayerStats>();
+        private Collection<MatchPlayerStats> MatchPlayerStatsTeam2Temp = new Collection<MatchPlayerStats>();
 
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
@@ -83,7 +85,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public TeamLevelTimeGraph TeamLevelTimeGraph { get; private set; }
         public TeamExperienceGraph TeamExperienceGraph { get; private set; }
 
-        public int TeamBlueKills
+        public int? TeamBlueKills
         {
             get => _teamBlueKills;
             set
@@ -93,7 +95,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamRedKills
+        public int? TeamRedKills
         {
             get => _teamRedKills;
             set
@@ -103,7 +105,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamBlueLevel
+        public int? TeamBlueLevel
         {
             get => _teamBlueLevel;
             set
@@ -113,7 +115,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
-        public int TeamRedLevel
+        public int? TeamRedLevel
         {
             get => _teamRedLevel;
             set
@@ -460,8 +462,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                             await Application.Current.Dispatcher.InvokeAsync(
                                 () =>
                             {
+                                MatchPlayerStatsTeam1Temp.Add(matchPlayerStats);
                                 MatchTalentsTeam1Collection.Add(matchPlayerTalents);
-                                MatchStatsTeam1Collection.Add(matchPlayerStats);
                                 MatchAdvancedStatsTeam1Collection.Add(matchPlayerAdvancedStats);
                             }, DispatcherPriority.Render);
                         }
@@ -470,8 +472,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                             await Application.Current.Dispatcher.InvokeAsync(
                                 () =>
                             {
+                                MatchPlayerStatsTeam2Temp.Add(matchPlayerStats);
                                 MatchTalentsTeam2Collection.Add(matchPlayerTalents);
-                                MatchStatsTeam2Collection.Add(matchPlayerStats);
                                 MatchAdvancedStatsTeam2Collection.Add(matchPlayerAdvancedStats);
                             }, DispatcherPriority.Render);
                         }
@@ -485,7 +487,18 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 }
             }
 
+            // set the highest values and then add it to the ObservableCollection
             SetHighestTeamStatValues();
+
+            await Application.Current.Dispatcher.InvokeAsync(
+                () =>
+            {
+                foreach (var item in MatchPlayerStatsTeam1Temp)
+                    MatchStatsTeam1Collection.Add(item);
+
+                foreach (var item in MatchPlayerStatsTeam2Temp)
+                    MatchStatsTeam2Collection.Add(item);
+            }, DispatcherPriority.Render);
 
             // match bans
             if (replayMatch.ReplayMatchTeamBan != null)
@@ -550,22 +563,22 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         private void SetHighestTeamStatValues()
         {
-            int? highestSiege1 = MatchStatsTeam1Collection.Max(x => x.SiegeDamage);
-            int? highestSiege2 = MatchStatsTeam2Collection.Max(x => x.SiegeDamage);
+            int? highestSiege1 = MatchPlayerStatsTeam1Temp.Max(x => x.SiegeDamage);
+            int? highestSiege2 = MatchPlayerStatsTeam2Temp.Max(x => x.SiegeDamage);
 
-            int? highestHero1 = MatchStatsTeam1Collection.Max(x => x.HeroDamage);
-            int? highestHero2 = MatchStatsTeam2Collection.Max(x => x.HeroDamage);
+            int? highestHero1 = MatchPlayerStatsTeam1Temp.Max(x => x.HeroDamage);
+            int? highestHero2 = MatchPlayerStatsTeam2Temp.Max(x => x.HeroDamage);
 
-            int? highestExp1 = MatchStatsTeam1Collection.Max(x => x.ExperienceContribution);
-            int? highestExp2 = MatchStatsTeam2Collection.Max(x => x.ExperienceContribution);
+            int? highestExp1 = MatchPlayerStatsTeam1Temp.Max(x => x.ExperienceContribution);
+            int? highestExp2 = MatchPlayerStatsTeam2Temp.Max(x => x.ExperienceContribution);
 
-            int? highestDamageTaken1 = MatchStatsTeam1Collection.Max(x => x.DamageTakenRole);
-            int? highestDamageTaken2 = MatchStatsTeam2Collection.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken1 = MatchPlayerStatsTeam1Temp.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken2 = MatchPlayerStatsTeam2Temp.Max(x => x.DamageTakenRole);
 
-            int? highestHealing1 = MatchStatsTeam1Collection.Max(x => x.HealingRole);
-            int? highestHealing2 = MatchStatsTeam2Collection.Max(x => x.HealingRole);
+            int? highestHealing1 = MatchPlayerStatsTeam1Temp.Max(x => x.HealingRole);
+            int? highestHealing2 = MatchPlayerStatsTeam2Temp.Max(x => x.HealingRole);
 
-            foreach (var item in MatchStatsTeam1Collection)
+            foreach (var item in MatchPlayerStatsTeam1Temp)
             {
                 if (item.SiegeDamage == highestSiege1)
                     item.HighestSiegeDamage = true;
@@ -583,7 +596,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     item.HighestHealing = true;
             }
 
-            foreach (var item in MatchStatsTeam2Collection)
+            foreach (var item in MatchPlayerStatsTeam2Temp)
             {
                 if (item.SiegeDamage == highestSiege2)
                     item.HighestSiegeDamage = true;
@@ -634,6 +647,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             foreach (var player in MatchStatsTeam2Collection)
                 player.Dispose();
 
+            foreach (var player in MatchPlayerStatsTeam1Temp)
+                player.Dispose();
+
+            foreach (var player in MatchPlayerStatsTeam2Temp)
+                player.Dispose();
+
             foreach (var player in MatchAdvancedStatsTeam1Collection)
                 player.Dispose();
 
@@ -666,6 +685,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
             MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
             MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
+            MatchPlayerStatsTeam1Temp = new Collection<MatchPlayerStats>();
+            MatchPlayerStatsTeam2Temp = new Collection<MatchPlayerStats>();
             MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
             MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
             MatchChatCollection = new ObservableCollection<MatchChat>();

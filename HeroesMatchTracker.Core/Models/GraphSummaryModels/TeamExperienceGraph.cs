@@ -140,6 +140,9 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
         public async Task SetTeamExperienceGraphsAsync(List<ReplayMatchTeamExperience> matchTeamExperience, bool isTeam1Winner)
         {
+            if (matchTeamExperience.Count < 1)
+                return;
+
             SetWinner(isTeam1Winner);
 
             MatchTeam1ExperienceStackedGraphCollection = null;

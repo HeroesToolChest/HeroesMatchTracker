@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Kerrigan>
+  <Level1>
+    <KerriganMasteryRavageSiphoningImpact name="Siphoning Impact" desc="KerriganRavageSiphoningImpactTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageSiphoningImpact>
+    <KerriganMasteryImpalingBladesSharpenedBlades name="Sharpened Blades" desc="KerriganImpalingBladesSharpenedBladesTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesSharpenedBlades>
+    <KerriganMasteryPrimalGraspEnergizingGrasp name="Energizing Grasp" desc="KerriganPrimalGraspEnergizingGraspTalent">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganMasteryPrimalGraspEnergizingGrasp>
+    <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+  </Level1>
+  <Level4>
+    <KerriganMasteryRavageCleanKill name="Clean Kill" desc="KerriganRavageCleanKillTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageCleanKill>
+    <KerriganMasteryPrimalGraspPsionicPulse name="Psionic Pulse" desc="KerriganPrimalGraspPsionicPulseTalent">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganMasteryPrimalGraspPsionicPulse>
+    <KerriganCombatStyleFuryoftheSwarm name="Fury of the Swarm" generic="true" desc="KerriganAssimilationFuryOfTheSwarmTalent">storm_ui_icon_talent_autoattack_aoe.dds</KerriganCombatStyleFuryoftheSwarm>
+    <GenericTalentEnvenom name="Envenom" desc="GenericEnvenomTalent">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
+  </Level4>
+  <Level7>
+    <KerriganMasteryAdaptation name="Adaptation" desc="KerriganAdaptationTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryAdaptation>
+    <KerriganMasteryImpalingBladesBladeTorrent name="Blade Torrent" desc="KerriganImpalingBladesBladeTorrentTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesBladeTorrent>
+    <KerriganAssimilationMastery name="Assimilation Mastery" desc="KerriganAssimilationMasteryTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganAssimilationMastery>
+    <BattleMomentumKerrigan name="Bladed Momentum" desc="KerriganBladedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumKerrigan>
+  </Level7>
+  <Level10>
+    <KerriganHeroicAbilityMaelstrom name="Maelstrom" desc="KerriganMaelstrom">storm_ui_icon_kerrigan_maelstrom.dds</KerriganHeroicAbilityMaelstrom>
+    <KerriganHeroicAbilitySummonUltralisk name="Summon Ultralisk" desc="KerriganSummonUltralisk">storm_ui_icon_kerrigan_ultralisk.dds</KerriganHeroicAbilitySummonUltralisk>
+  </Level10>
+  <Level13>
+    <KerriganMasteryEviscerate name="Eviscerate" desc="KerriganRavageEviscerateTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryEviscerate>
+    <KerriganCombatStyleDoubleStrike name="Double Strike" desc="KerriganAssimilationDoubleStrikeTalent">storm_ui_icon_kerrigan_ravage_a.dds</KerriganCombatStyleDoubleStrike>
+    <KerriganQueensRush name="Queen's Rush" desc="KerriganQueensRushHotbar">storm_ui_icon_kerrigan_queensrush.dds</KerriganQueensRush>
+  </Level13>
+  <Level16>
+    <KerriganMasteryAggressiveDefense name="Aggressive Defense" desc="KerriganAggressiveDefenseTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganMasteryAggressiveDefense>
+    <KerriganEssenceForEssence name="Essence for Essence" desc="KerriganEssenceForEssenceHotbar">storm_ui_icon_kerrigan_assimilation_a.dds</KerriganEssenceForEssence>
+    <GenericTalentOverdrive name="Overdrive" desc="GenericOverdriveTalent">storm_ui_icon_talent_overdrive.dds</GenericTalentOverdrive>
+  </Level16>
+  <Level20>
+    <KerriganMasteryMaelstromOmegastorm name="Omegastorm" desc="KerriganMaelstromOmegastormTalent">storm_ui_icon_kerrigan_maelstrom.dds</KerriganMasteryMaelstromOmegastorm>
+    <KerriganMasteryTorrasqueSummonUltralisk name="Torrasque" desc="KerriganSummonUltraliskTorrasqueTalent">storm_ui_icon_kerrigan_ultralisk.dds</KerriganMasteryTorrasqueSummonUltralisk>
+    <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+  </Level20>
+</Kerrigan>
