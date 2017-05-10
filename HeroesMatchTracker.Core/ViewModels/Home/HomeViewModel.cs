@@ -30,7 +30,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
             InitialMatchHistoryLoad();
             InitDynamicMatchLoading();
-
         }
 
         public ObservableCollection<MatchHistoryMatch> MatchCollection
