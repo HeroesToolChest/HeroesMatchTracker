@@ -78,8 +78,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         public List<string> HeroesList { get; private set; } = new List<string>();
         public List<string> GameModeList { get; private set; } = new List<string>();
         public List<string> MapList { get; private set; } = new List<string>();
-        public List<string> TimeList { get; private set; } = new List<string>();
-        public List<string> BuildsList { get; private set; } = new List<string>();
 
         public string SelectedSeason
         {

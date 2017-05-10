@@ -10,10 +10,11 @@
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Margin="8">
-            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0" />
+            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" Width="140" Margin="0 0 8 0" />
             <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="0 0 8 0" />
@@ -21,9 +22,12 @@
             <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Total" IsChecked="{Binding IsTotalSelected}" Margin="0 0 8 0" />
-            <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryAllHeroesGameModeCommand}" />
+            <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryOverviewStatsCommand}" />
         </StackPanel>
-        <DataGrid Grid.Row="1" Margin="8" BorderThickness="1" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" ColumnHeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"
-                  ItemsSource="{Binding StatsAllHeroesDataTable}" coreControls:DataGridColumnExtension.BindableColumns="{Binding GameModesColumnCollection}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <ComboBox Grid.Row="1"  ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="200" Margin="0 0 0 8" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <DataGrid ItemsSource="{Binding HeroStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" />
+            <DataGrid ItemsSource="{Binding MapsStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" Margin="16 0 16 0" />
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -230,6 +230,8 @@
     <Compile Include="Models\StatisticsModels\StatsHeroesAwards.cs" />
     <Compile Include="Models\StatisticsModels\StatsHeroesGamesModes.cs" />
     <Compile Include="Models\StatisticsModels\StatsHeroesTalents.cs" />
+    <Compile Include="Models\StatisticsModels\StatsOverviewHeroes.cs" />
+    <Compile Include="Models\StatisticsModels\StatsOverviewMaps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -279,6 +281,7 @@
     <Compile Include="ViewModels\Statistics\StatsAllHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsOverviewViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />

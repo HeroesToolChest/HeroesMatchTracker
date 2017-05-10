@@ -80,6 +80,25 @@ namespace Heroes.Helpers
                         throw new ArgumentException($"parameter {gameMode} not found", nameof(gameMode));
                 }
             }
+
+            public static OverviewHeroStatOption ConvertHeroStatOptionToEnum(string overviewHeroStatOption)
+            {
+                switch (overviewHeroStatOption)
+                {
+                    case "Highest Win Rate As":
+                        return OverviewHeroStatOption.HighestWinRate;
+                    case "Most Wins as":
+                        return OverviewHeroStatOption.MostWins;
+                    case "Most Deaths as":
+                        return OverviewHeroStatOption.MostDeaths;
+                    case "Most Kills as":
+                        return OverviewHeroStatOption.MostKills;
+                    case "Most Assists as":
+                        return OverviewHeroStatOption.MostAssists;
+                    default:
+                        throw new ArgumentException($"parameter {overviewHeroStatOption} not found", nameof(overviewHeroStatOption));
+                }
+            }
         }
     }
 }

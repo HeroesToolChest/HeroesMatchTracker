@@ -103,6 +103,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<MatchSummaryViewModel>();
 
             // Statistics
+            SimpleIoc.Default.Register<StatsOverviewViewModel>();
             SimpleIoc.Default.Register<StatsHeroesViewModel>();
             SimpleIoc.Default.Register<StatsAllHeroesViewModel>();
         }
@@ -151,6 +152,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static MatchSummaryViewModel MatchSummaryViewModel => ServiceLocator.Current.GetInstance<MatchSummaryViewModel>();
 
         // Statistics
+        public static StatsOverviewViewModel StatsOverviewViewModel => ServiceLocator.Current.GetInstance<StatsOverviewViewModel>();
         public static StatsHeroesViewModel StatsHeroesViewModel => ServiceLocator.Current.GetInstance<StatsHeroesViewModel>();
         public static StatsAllHeroesViewModel StatsAllHeroesViewModel => ServiceLocator.Current.GetInstance<StatsAllHeroesViewModel>();
 
