@@ -26,10 +26,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             UserBattleTagUpdated = false;
             LatestReplayDateTime = DateTime.MinValue;
 
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
+
             InitialMatchHistoryLoad();
             InitDynamicMatchLoading();
 
-            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public ObservableCollection<MatchHistoryMatch> MatchCollection
@@ -61,8 +62,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
         {
             Task.Run(async () =>
             {
-                await Task.Delay(2000);
-
                 while (true)
                 {
                     if (LatestReplayDateTime < Database.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime())
@@ -74,13 +73,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                             MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
                             LatestReplayDateTime = replay.TimeStamp;
 
-                            await Application.Current.Dispatcher.InvokeAsync(() =>
+                            if (!MatchCollection.Contains(match))
                             {
-                                MatchCollection.Insert(0, match);
+                                await Application.Current.Dispatcher.InvokeAsync(() =>
+                                {
+                                    MatchCollection.Insert(0, match);
 
-                                if (MatchCollection.Count > 20)
-                                    MatchCollection.RemoveAt(MatchCollection.Count - 1);
-                            });
+                                    if (MatchCollection.Count > 20)
+                                        MatchCollection.RemoveAt(MatchCollection.Count - 1);
+                                });
+                            }
                         }
                     }
 
