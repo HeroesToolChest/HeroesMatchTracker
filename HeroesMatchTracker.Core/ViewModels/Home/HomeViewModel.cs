@@ -4,6 +4,7 @@ using HeroesMatchTracker.Core.Models.MatchHistoryModels;
 using HeroesMatchTracker.Core.Services;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -72,7 +73,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                             MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
                             LatestReplayDateTime = replay.TimeStamp;
 
-                            if (!MatchCollection.Contains(match))
+                            if (!MatchCollection.Any(x => x.ReplayId == match.ReplayId))
                             {
                                 await Application.Current.Dispatcher.InvokeAsync(() =>
                                 {
