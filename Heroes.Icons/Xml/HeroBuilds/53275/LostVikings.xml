@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LostVikings>
+  <Level1>
+    <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryOlafTheStout>
+    <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasterySpyGames>
+    <LostVikingsMasteryExplosiveAttacks name="Explosive Attacks" desc="LostVikingsExplosiveAttacksTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryExplosiveAttacks>
+    <LostVikingsMasteryVikingBribery name="Viking Bribery" generic="true" desc="LostVikingsVikingBribery">storm_ui_icon_talent_bribe.dds</LostVikingsMasteryVikingBribery>
+  </Level1>
+  <Level4>
+    <LostVikingsMasteryPainDontHurt name="Pain Don't Hurt" desc="LostVikingsPainDontHurtTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryPainDontHurt>
+    <LostVikingsMasteryErikTheSwift name="Erik the Swift" desc="LostVikingsErikTheSwiftTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasteryErikTheSwift>
+    <LostVikingsMasteryItsASabotage name="It's a Sabotage!" desc="LostVikingsItsASabotageTalent">storm_ui_icon_lostvikings_selecterik_var1.dds</LostVikingsMasteryItsASabotage>
+    <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.dds</GenericTalentMercenaryLord>
+  </Level4>
+  <Level7>
+    <LostVikingsMasteryBaleogTheFierce name="Baleog the Fierce" desc="LostVikingsBaleogTheFierceTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryBaleogTheFierce>
+    <LostVikingsMasterySpinToWin name="Spin To Win!" desc="LostVikingsSpinToWin">storm_ui_icon_lostvikings_spintowin.dds</LostVikingsMasterySpinToWin>
+    <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce">storm_ui_icon_lostvikings_norseforce.dds</LostVikingsMasteryNorseForce>
+  </Level7>
+  <Level10>
+    <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsHeroicAbilityLongboatRaid>
+    <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain">storm_ui_icon_lostvikings_playagain.dds</LostVikingsHeroicAbilityPlayAgain>
+  </Level10>
+  <Level13>
+    <LostVikingsMasteryHunkaBurningOlaf name="Hunka' Burning Olaf" desc="LostVikingsHunkaBurningOlafTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryHunkaBurningOlaf>
+    <LostVikingsMasteryJump name="Jump!" desc="LostVikingsJump">storm_ui_icon_lostvikings_jump.dds</LostVikingsMasteryJump>
+    <LostVikingsMasteryNordicAttackSquad name="Nordic Attack Squad" generic="true" desc="LostVikingsNordicAttackSquad">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsMasteryNordicAttackSquad>
+  </Level13>
+  <Level16>
+    <LostVikingsMasteryLargeAndInCharge name="Large and In Charge" desc="LostVikingsLargeAndInChargeTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryLargeAndInCharge>
+    <LostVikingsMasteryImpatienceIsAVirtue name="Impatience Is a Virtue" generic="true" desc="LostVikingsImpatienceIsAVirtueTalent">storm_ui_icon_talent_autoattack_cooldown.dds</LostVikingsMasteryImpatienceIsAVirtue>
+    <LostVikingsGoGoGo64KBMarathon name="64 KB Marathon" desc="LostVikingsGoGoGo64KBMarathonTalent">storm_ui_icon_lostvikings_64kbmarathon.dds</LostVikingsGoGoGo64KBMarathon>
+    <HeroGenericExecutionerPassive name="Executioner" generic="true" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+  </Level16>
+  <Level20>
+    <LostVikingsMasteryWereOnABoat name="Ragnarok 'n' Roll!" desc="LostVikingsWereOnABoatTalent">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsMasteryWereOnABoat>
+    <LostVikingsMasteryCheckpointReached name="Checkpoint Reached" desc="LostVikingsCheckpointReachedTalent">storm_ui_icon_lostvikings_playagain.dds</LostVikingsMasteryCheckpointReached>
+    <LostVikingsMasteryTheSequel name="The Sequel!" desc="LostVikingsTheSequelTalent">storm_ui_icon_lostvikings_fastrestart.dds</LostVikingsMasteryTheSequel>
+    <LostVikingsTalentFuryoftheStorm name="Fury of the Storm" generic="true" desc="LostVikingsFuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsTalentFuryoftheStorm>
+  </Level20>
+</LostVikings>
