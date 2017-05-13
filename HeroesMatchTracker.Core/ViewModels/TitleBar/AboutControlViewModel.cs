@@ -87,7 +87,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                     if (await AutoUpdater.CheckForUpdates())
                     {
                         CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
-                        MainTab.SetExtendedAboutText("(Update Available)");
+                        MainTab.SetExtendedAboutText(" (Update Available)");
                         IsApplyUpdateButtonEnabled = true;
                     }
                     else
