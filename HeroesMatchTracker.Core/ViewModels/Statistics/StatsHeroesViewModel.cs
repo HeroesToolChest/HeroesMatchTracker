@@ -3,6 +3,7 @@ using Heroes.Helpers;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections;
@@ -138,6 +139,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 RaisePropertyChanged();
             }
         }
+
+        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
 
         public RelayCommand QueryStatsCommand => new RelayCommand(async () => await QueryStatsHeroStatsAsyncCommmand());
         public RelayCommand<object> SelectedGameModesCommand => new RelayCommand<object>((list) => SetSelectedGameModes(list));
@@ -316,6 +319,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task QueryStatsHeroStatsAsyncCommmand()
         {
+            if (await MainWindowDialog.ShowNoStatsWarning())
+                return;
+
             await Task.Run(async () =>
             {
                 try

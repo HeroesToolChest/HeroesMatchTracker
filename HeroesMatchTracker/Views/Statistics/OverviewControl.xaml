@@ -3,11 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              DataContext="{Binding StatsOverviewViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="1080" d:DesignWidth="1920">

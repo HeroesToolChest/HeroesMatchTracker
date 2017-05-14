@@ -5,6 +5,7 @@ using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsHeroStatPercentageDataGridVisible = true;
             IsHeroStatDataGridVisible = false;
         }
+
+        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
 
         public RelayCommand QueryOverviewStatsCommand => new RelayCommand(async () => await QueryOverviewStatsAsyncCommand());
         public RelayCommand QuerySelectedHeroStatCommand => new RelayCommand(QuerySelectedHeroStat);
@@ -275,6 +278,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         // for query button
         private async Task QueryOverviewStatsAsyncCommand()
         {
+            if (await MainWindowDialog.ShowNoStatsWarning())
+                return;
+
             await Task.Run(async () =>
             {
                 try

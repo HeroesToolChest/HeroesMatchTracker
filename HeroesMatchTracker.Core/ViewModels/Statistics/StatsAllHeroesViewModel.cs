@@ -3,6 +3,7 @@ using Heroes.Helpers;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeason = SeasonList[0];
         }
+
+        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
 
         public RelayCommand QueryAllHeroesGameModeCommand => new RelayCommand(async () => await QueryAllHeroesGameModeAsyncCommand());
 
@@ -160,6 +163,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task QueryAllHeroesGameModeAsyncCommand()
         {
+            if (await MainWindowDialog.ShowNoStatsWarning())
+                return;
+
             LoadingOverlayWindow.ShowLoadingOverlay();
             DataGridTextColumnsList = new List<DataGridColumn>();
 

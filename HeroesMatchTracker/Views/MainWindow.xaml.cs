@@ -6,6 +6,7 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService
+    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService, IMainWindowDialogsService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -34,6 +35,7 @@ namespace HeroesMatchTracker.Views
 
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
             SimpleIoc.Default.Register<IProfileWindowService>(() => this);
+            SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
         }
 
         public void CreateWhatsNewWindow()
@@ -46,6 +48,19 @@ namespace HeroesMatchTracker.Views
         {
             ProfileWindow window = new ProfileWindow();
             window.ShowDialog();
+        }
+
+        public async Task<bool> ShowNoStatsWarning()
+        {
+            if (Database.SettingsDb().UserSettings.UserPlayerId < 1)
+            {
+                await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Profile menu.");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         protected override void OnStateChanged(EventArgs e)
