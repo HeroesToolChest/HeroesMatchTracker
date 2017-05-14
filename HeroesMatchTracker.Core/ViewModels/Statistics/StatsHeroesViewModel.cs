@@ -21,20 +21,20 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private int _heroWins;
         private int _heroLosses;
         private int _heroGames;
-        private int _heroWinrate;
         private int _heroKills;
         private int _heroAssists;
         private int _heroDeaths;
-        private int _heroKADRatio;
         private int _heroAwards;
         private int _heroMVP;
-        private int _heroAwardsRatio;
-        private int _heroMVPRatio;
         private bool _isTotalsAveragesChecked;
         private bool _isTalentsChecked;
         private bool _isAwardsChecked;
+        private double _heroKADRatio;
+        private double _heroWinrate;
         private double _heroKAD;
         private double _heroKD;
+        private double _heroAwardsRatio;
+        private double _heroMVPRatio;
         private string _selectedSeason;
         private string _selectedHero;
         private string _heroName;
@@ -206,7 +206,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public int HeroWinrate
+        public double HeroWinrate
         {
             get => _heroWinrate;
             set
@@ -246,7 +246,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public int HeroKADRatio
+        public double HeroKADRatio
         {
             get => _heroKADRatio;
             set
@@ -276,7 +276,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public int HeroAwardsRatio
+        public double HeroAwardsRatio
         {
             get => _heroAwardsRatio;
             set
@@ -286,7 +286,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public int HeroMVPRatio
+        public double HeroMVPRatio
         {
             get => _heroMVPRatio;
             set
@@ -381,13 +381,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
                 HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
                 HeroGames = HeroWins + HeroLosses;
-                HeroWinrate = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage ?? 0;
+                HeroWinrate = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage;
 
                 HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
                 HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
                 HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths;
-                HeroKD = Math.Round((double)HeroKills / HeroDeaths, 2);
-                HeroKAD = Math.Round((double)(HeroKills + HeroAssists) / HeroDeaths, 2);
+                HeroKD = Utilities.CalculateWinPercentage(HeroKills, HeroDeaths);
+                HeroKAD = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroDeaths);
                 HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
             }
 
