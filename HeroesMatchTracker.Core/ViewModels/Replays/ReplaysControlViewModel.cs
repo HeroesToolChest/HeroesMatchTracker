@@ -388,7 +388,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
                 _isParsingReplaysOn = value;
 
-                AppCore.IsParsingReplaysOn = value;
                 RaisePropertyChanged();
             }
         }
