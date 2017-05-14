@@ -19,6 +19,10 @@
             <Setter Property="Margin" Value="0 0 8 0" />
         </Style>
         <Thickness x:Key="GameModeMargin">0 0 8 0</Thickness>
+        <Style x:Key="OverallStats" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="0 0 0 6" />
+        </Style>
     </UserControl.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
@@ -40,7 +44,7 @@
             </StackPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <ComboBox ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="180" Margin="0 0 0 8" HorizontalAlignment="Right">
+            <ComboBox ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="300" Margin="0 0 0 8" HorizontalAlignment="Right">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <mvvm:EventToCommand CommandParameter="{Binding ElementName=SelectedHeroStat}" Command="{Binding QuerySelectedHeroStatCommand}" />
@@ -54,14 +58,14 @@
                       Visibility="{Binding IsHeroStatPercentageDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" Width="*" />
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" 
                       Visibility="{Binding IsHeroStatDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Value}" Width="*" />
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Value}" FontWeight="Bold" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>
@@ -72,10 +76,37 @@
                         <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="80" />
                         <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="80" />
-                        <DataGridTextColumn Header="Win %" Binding="{Binding Winrate, StringFormat={}{0:P1}}" Width="*" />
+                        <DataGridTextColumn Header="Win %" Binding="{Binding Winrate, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
             </DockPanel>
+            <StackPanel Margin="16 0 0 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Games Played" FontSize="16" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Win Rate" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="KDA Ratio" Style="{StaticResource OverallStats}"  />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Total Takedowns" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Average Takedowns" Style="{StaticResource OverallStats}" />
+
+                    <TextBlock Grid.Column="1" Text="{Binding OverallGamesPlayed}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding OverallWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding OverallKDARatio}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding OverallTotalTakedowns}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding OverallAverageTakedowns}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                </Grid>
+
+            </StackPanel>
         </StackPanel>
 
         <!--<DataGrid ItemsSource="{Binding HeroStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" />

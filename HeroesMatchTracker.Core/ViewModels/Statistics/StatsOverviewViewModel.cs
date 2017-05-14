@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HeroesMatchTracker.Core.Services;
-using GalaSoft.MvvmLight.CommandWpf;
+﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
-using System.Collections.ObjectModel;
+using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
+using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using NLog;
-using Heroes.ReplayParser;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace HeroesMatchTracker.Core.ViewModels.Statistics
@@ -19,6 +18,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
     {
         private readonly string InitialSeasonListOption = "- Select Season -";
 
+        private int _overallGamesPlayed;
+        private int _overallTotalTakedowns;
         private bool _isQuickMatchSelected;
         private bool _isUnrankedDraftSelected;
         private bool _isHeroLeagueSelected;
@@ -27,6 +28,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private bool _isBrawlSelected;
         private bool _isHeroStatPercentageDataGridVisible;
         private bool _isHeroStatDataGridVisible;
+        private double _overallWinrate;
+        private double _overallKDARatio;
+        private double _overallAverageTakedowns;
         private string _selectedSeason;
         private string _selectedHeroStat;
 
@@ -49,7 +53,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             HeroStatsList.AddRange(HeroesHelpers.OverviewHeroStatOptions.GetOverviewHeroStatOptionList());
             SelectedHeroStat = HeroStatsList[0];
 
-            IsHeroStatPercentageDataGridVisible = false;
+            IsHeroStatPercentageDataGridVisible = true;
             IsHeroStatDataGridVisible = false;
         }
 
@@ -189,6 +193,56 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public int OverallGamesPlayed
+        {
+            get => _overallGamesPlayed;
+            set
+            {
+                _overallGamesPlayed = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public int OverallTotalTakedowns
+        {
+            get => _overallTotalTakedowns;
+            set
+            {
+                _overallTotalTakedowns = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public double OverallWinrate
+        {
+            get => _overallWinrate;
+            set
+            {
+                _overallWinrate = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public double OverallKDARatio
+        {
+            get => _overallKDARatio;
+            set
+            {
+                _overallKDARatio = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public double OverallAverageTakedowns
+        {
+            get => _overallAverageTakedowns;
+            set
+            {
+                _overallAverageTakedowns = value;
+                RaisePropertyChanged();
+            }
+        }
+
         // for query button
         private async Task QueryOverviewStatsAsyncCommand()
         {
@@ -245,6 +299,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
             await SetMapStats(selectedSeason, selectedGameModes);
+            SetOverallStats(MapsStatsCollection.ToList());
         }
 
         // for hero stats only when changed the combobox
@@ -282,7 +337,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = total != 0 ? wins / (double)total : 0,
+                        Value = Utilities.CalculateWinValue(wins, total),
                     };
 
                     IsHeroStatPercentageDataGridVisible = true;
@@ -340,13 +395,19 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     MapName = map,
                     Wins = wins,
                     Losses = losses,
-                    Winrate = total != 0 ? wins / (double)total : 0,
+                    Winrate = Utilities.CalculateWinValue(wins, total),
                 };
 
                 mapStatTempCollection.Add(statsOverviewMaps);
             }
 
             await Application.Current.Dispatcher.InvokeAsync(() => { MapsStatsCollection = new ObservableCollection<StatsOverviewMaps>(mapStatTempCollection.OrderByDescending(x => x.Winrate)); });
+        }
+
+        private void SetOverallStats(List<StatsOverviewMaps> stats)
+        {
+            OverallGamesPlayed = stats.Sum(x => x.Wins + x.Losses);
+            OverallWinrate = Utilities.CalculateWinValue(stats.Sum(x => x.Wins), OverallGamesPlayed);
         }
 
         private GameMode SetSelectedGameModes()
@@ -380,7 +441,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             ClearHeroStatGridOnly();
 
-            MapsStatsCollection = null;
             MapsStatsCollection = null;
         }
 
