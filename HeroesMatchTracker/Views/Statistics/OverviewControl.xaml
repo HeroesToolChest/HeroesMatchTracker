@@ -18,41 +18,52 @@
             <Setter Property="Height" Value="140" />
             <Setter Property="Margin" Value="0 0 8 0" />
         </Style>
+        <Thickness x:Key="GameModeMargin">0 0 8 0</Thickness>
     </UserControl.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Horizontal" Margin="8">
-                <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0" />
-                <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="0 0 8 0" />
-                <CheckBox Content="Total" IsChecked="{Binding IsTotalSelected}" Margin="0 0 8 0" />
-                <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryAllHeroesGameModeCommand}" />
+                <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" Width="140" Margin="0 0 8 0" />
+                <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Total" IsChecked="{Binding IsTotalSelected}" Margin="{StaticResource GameModeMargin}" />
+                <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryOverviewStatsCommand}" />
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Margin="15,127,0,0" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ComboBox ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="180" Margin="0 0 0 8" HorizontalAlignment="Right">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <mvvm:EventToCommand CommandParameter="{Binding ElementName=SelectedHeroStat}" Command="{Binding QuerySelectedHeroStatCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+        <DockPanel Grid.Row="2">
+            <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsPercentageCollection}" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding IsHeroStatPercentageDataGridVisible, Converter={StaticResource BooleanToVisibility}}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" MinWidth="120" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" MinWidth="120" />
                 </DataGrid.Columns>
             </DataGrid>
-
-            <!--<DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding StatsMapPercentagesCollection}" Margin="10,127,0,0" Width="540" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" Visibility="{Binding IsHeroStatDataGridVisible, Converter={StaticResource BooleanToVisibility}}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
-                    <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="120" />
-                    <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="120" />
-                    <DataGridTextColumn Header="Win Percentage" Binding="{Binding WinPercentage, StringFormat={}{0}%}" MinWidth="130" SortDirection="Descending" />
+                    <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Value}"  MinWidth="120" />
                 </DataGrid.Columns>
-            </DataGrid>-->
-        </StackPanel>
+            </DataGrid>
+        </DockPanel>
+
+        <!--<DataGrid ItemsSource="{Binding HeroStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" />
+            <DataGrid ItemsSource="{Binding MapsStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" Margin="16 0 16 0" />-->
     </Grid>
 </UserControl>
