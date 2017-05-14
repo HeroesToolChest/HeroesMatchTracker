@@ -339,6 +339,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                           r.GameMode == (GameMode)value &&
                                           r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                     select mpsr;
+
                         if (statOption == OverviewHeroStatOption.MostDeaths)
                             total += query.Count(x => x.Deaths > 0);
                         else if (statOption == OverviewHeroStatOption.MostKills)
@@ -385,6 +386,32 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 }
 
                 return total;
+            }
+        }
+
+        public List<ReplayMatchPlayer> ReadListOfMatchPlayerHeroes(Season season, GameMode gameMode)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+            var list = new List<ReplayMatchPlayer>();
+
+            using (var db = new ReplaysContext())
+            {
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if (gameMode.HasFlag(value))
+                    {
+                        var query = from mp in db.ReplayMatchPlayers
+                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                                    where mp.PlayerId == UserSettings.UserPlayerId &&
+                                          r.GameMode == (GameMode)value &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                    select mp;
+
+                        list.AddRange(query.ToList());
+                    }
+                }
+
+                return list;
             }
         }
     }

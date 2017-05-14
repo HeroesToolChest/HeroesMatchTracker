@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
+using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
@@ -39,6 +40,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private ObservableCollection<StatsOverviewHeroes> _heroStatsCollection = new ObservableCollection<StatsOverviewHeroes>();
         private ObservableCollection<StatsOverviewHeroes> _heroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>();
         private ObservableCollection<StatsOverviewMaps> _mapsStatsCollection = new ObservableCollection<StatsOverviewMaps>();
+        private ObservableCollection<int> _roleGamesCollection = new ObservableCollection<int>();
+        private ObservableCollection<double> _roleWinrateCollection = new ObservableCollection<double>();
 
         // used to hold the stats for dynamic switching instead of requerying each time
         private Collection<StatsOverviewHeroes> HeroStatsWinsCollection = new Collection<StatsOverviewHeroes>();
@@ -199,6 +202,26 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public ObservableCollection<int> RoleGamesCollection
+        {
+            get => _roleGamesCollection;
+            set
+            {
+                _roleGamesCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<double> RoleWinrateCollection
+        {
+            get => _roleWinrateCollection;
+            set
+            {
+                _roleWinrateCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public int OverallGamesPlayed
         {
             get => _overallGamesPlayed;
@@ -320,6 +343,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
             await SetMapStats(selectedSeason, selectedGameModes);
+            await SetRoleStats(selectedSeason, selectedGameModes);
             SetOverallStats();
         }
 
@@ -467,9 +491,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int totalDeaths = (int)HeroStatsDeathsCollection.Sum(x => x.Value);
             int totalAssists = (int)HeroStatsAssistsCollection.Sum(x => x.Value);
 
-            OverallKDARatio = Math.Round((totalKills + totalAssists) / (double)totalDeaths, 1);
+            OverallKDARatio = totalDeaths != 0 ? Math.Round((totalKills + totalAssists) / (double)totalDeaths, 1) : 0.0;
             OverallTotalTakedowns = totalKills + totalAssists;
-            OverallAverageTakedowns = Math.Round((totalKills + totalAssists) / (double)OverallGamesPlayed, 1);
+            OverallAverageTakedowns = OverallGamesPlayed != 0 ? Math.Round((totalKills + totalAssists) / (double)OverallGamesPlayed, 1) : 0.0;
         }
 
         private GameMode SetSelectedGameModes()
@@ -479,6 +503,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected)
             {
                 gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.HeroLeague | GameMode.TeamLeague;
+                IsQuickMatchSelected = true;
+                IsUnrankedDraftSelected = true;
+                IsHeroLeagueSelected = true;
+                IsTeamLeagueSelected = true;
             }
             else
             {
@@ -499,6 +527,95 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             return gameModes;
         }
 
+        private async Task SetRoleStats(Season season, GameMode gameModes)
+        {
+            int warriorTotal = 0;
+            int assassinTotal = 0;
+            int supportTotal = 0;
+            int specialistTotal = 0;
+            int multiclassTotal = 0;
+            int warriorWin = 0;
+            int assassinWin = 0;
+            int supportWin = 0;
+            int specialistWin = 0;
+            int multiclassWin = 0;
+
+            var listHeroesPlayed = Database.ReplaysDb().Statistics.ReadListOfMatchPlayerHeroes(season, gameModes);
+
+            foreach (var hero in listHeroesPlayed)
+            {
+                var heroRoles = HeroesIcons.Heroes().GetHeroRoleList(hero.Character);
+
+                switch (heroRoles[0])
+                {
+                    case HeroRole.Warrior:
+                        {
+                            warriorTotal++;
+                            if (hero.IsWinner)
+                                warriorWin++;
+                            break;
+                        }
+
+                    case HeroRole.Assassin:
+                        {
+                            assassinTotal++;
+                            if (hero.IsWinner)
+                                assassinWin++;
+                            break;
+                        }
+
+                    case HeroRole.Support:
+                        {
+                            supportTotal++;
+                            if (hero.IsWinner)
+                                supportWin++;
+                            break;
+                        }
+
+                    case HeroRole.Specialist:
+                        {
+                            specialistTotal++;
+                            if (hero.IsWinner)
+                                specialistWin++;
+                            break;
+                        }
+
+                    case HeroRole.Multiclass:
+                        {
+                            multiclassTotal++;
+                            if (hero.IsWinner)
+                                multiclassWin++;
+                            break;
+                        }
+
+                    default:
+                        ExceptionLog.Log(LogLevel.Info, $"SetRoleStats(): Hero: {hero.Character}, could not find role for hero or unknown hero name");
+                        break;
+                }
+            }
+
+            double warriorWinRate = Utilities.CalculateWinValue(warriorWin, warriorTotal);
+            double assassinWinRate = Utilities.CalculateWinValue(assassinWin, assassinTotal);
+            double supportWinRate = Utilities.CalculateWinValue(supportWin, supportTotal);
+            double specialistWinRate = Utilities.CalculateWinValue(specialistWin, specialistTotal);
+            double multiclassWinRate = Utilities.CalculateWinValue(multiclassWin, multiclassTotal);
+
+            await Application.Current.Dispatcher.InvokeAsync(() =>
+            {
+                RoleGamesCollection.Add(warriorTotal);
+                RoleGamesCollection.Add(assassinTotal);
+                RoleGamesCollection.Add(supportTotal);
+                RoleGamesCollection.Add(specialistTotal);
+                RoleGamesCollection.Add(multiclassTotal);
+
+                RoleWinrateCollection.Add(warriorWinRate);
+                RoleWinrateCollection.Add(assassinWinRate);
+                RoleWinrateCollection.Add(supportWinRate);
+                RoleWinrateCollection.Add(specialistWinRate);
+                RoleWinrateCollection.Add(multiclassWinRate);
+            });
+        }
+
         private void Clear()
         {
             ClearHeroStatGridOnly();
@@ -510,6 +627,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             OverallKDARatio = 0.0;
             OverallTotalTakedowns = 0;
             OverallAverageTakedowns = 0;
+
+            RoleGamesCollection = new ObservableCollection<int>();
+            RoleWinrateCollection = new ObservableCollection<double>();
         }
 
         private void ClearHeroStatGridOnly()
