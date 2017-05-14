@@ -33,8 +33,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
 
             SetWinner(isTeam1Winner);
 
-            MatchTeamLevelsLineChartCollection = null;
-
             MatchTeamLevelsFormatter = value => new DateTime((long)value).ToString("mm:ss");
 
             var chartValuesTeam0 = new ChartValues<DateTimePoint>();
@@ -79,6 +77,11 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                     },
                 };
             });
+        }
+
+        public override void Dispose()
+        {
+            MatchTeamLevelsLineChartCollection = null;
         }
     }
 }

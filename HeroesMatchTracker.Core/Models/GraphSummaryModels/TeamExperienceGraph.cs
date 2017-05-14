@@ -15,10 +15,14 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
     {
         private bool _isTeamExperiencePieChartVisible;
         private bool _isTeamExperienceRowChartVisible;
+        private bool _isTeamExpOverTimeStackAreaVisible;
+        private bool _isTeamExpOverTimeStackAreaPercentageVisible;
         private double _matchTeamExperienceMaxYValue;
 
         private SeriesCollection _matchTeam1ExperienceStackedGraphCollection;
         private SeriesCollection _matchTeam2ExperienceStackedGraphCollection;
+        private SeriesCollection _matchTeam1ExperienceStackedPercentageGraphCollection;
+        private SeriesCollection _matchTeam2ExperienceStackedPercentageGraphCollection;
         private SeriesCollection _matchTeam1ExperiencePieChartCollection;
         private SeriesCollection _matchTeam2ExperiencePieChartCollection;
         private SeriesCollection _matchTeamExperienceRowChartCollection;
@@ -30,10 +34,11 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             Database = database;
 
             ToggleSwitchRowOrPie = Database.SettingsDb().UserSettings.IsTeamExperienceRowChartEnabled;
+            ToggleSwitchOverTimeStackArea = Database.SettingsDb().UserSettings.IsTeamExpOverTimeStackedAreaEnabled;
         }
 
-        public Func<double, string> MatchTeamLevelsFormatter { get; set; }
         public Func<double, string> MatchTeamExperienceFormatter { get; set; }
+        public Func<double, string> MatchTeamOverTimeStackPecentageFormatter { get; set; }
         public Func<ChartPoint, string> MatchTeamExperiencePiePointLabel { get; set; }
         public string[] ExperienceTypesLabels { get; set; }
 
@@ -57,6 +62,26 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             }
         }
 
+        public bool IsTeamExpOverTimeStackAreaVisible
+        {
+            get => _isTeamExpOverTimeStackAreaVisible;
+            set
+            {
+                _isTeamExpOverTimeStackAreaVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsTeamExpOverTimeStackAreaPercentageVisible
+        {
+            get => _isTeamExpOverTimeStackAreaPercentageVisible;
+            set
+            {
+                _isTeamExpOverTimeStackAreaPercentageVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public bool ToggleSwitchRowOrPie
         {
             get => Database.SettingsDb().UserSettings.IsTeamExperienceRowChartEnabled;
@@ -72,6 +97,27 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                 {
                     IsTeamExperienceRowChartVisible = false;
                     IsTeamExperiencePieChartVisible = true;
+                }
+
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool ToggleSwitchOverTimeStackArea
+        {
+            get => Database.SettingsDb().UserSettings.IsTeamExpOverTimeStackedAreaEnabled;
+            set
+            {
+                Database.SettingsDb().UserSettings.IsTeamExpOverTimeStackedAreaEnabled = value;
+                if (value)
+                {
+                    IsTeamExpOverTimeStackAreaVisible = true;
+                    IsTeamExpOverTimeStackAreaPercentageVisible = false;
+                }
+                else
+                {
+                    IsTeamExpOverTimeStackAreaVisible = false;
+                    IsTeamExpOverTimeStackAreaPercentageVisible = true;
                 }
 
                 RaisePropertyChanged();
@@ -104,6 +150,26 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             set
             {
                 _matchTeam2ExperienceStackedGraphCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public SeriesCollection MatchTeam1ExperienceStackedPercentageGraphCollection
+        {
+            get => _matchTeam1ExperienceStackedPercentageGraphCollection;
+            set
+            {
+                _matchTeam1ExperienceStackedPercentageGraphCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public SeriesCollection MatchTeam2ExperienceStackedPercentageGraphCollection
+        {
+            get => _matchTeam2ExperienceStackedPercentageGraphCollection;
+            set
+            {
+                _matchTeam2ExperienceStackedPercentageGraphCollection = value;
                 RaisePropertyChanged();
             }
         }
@@ -144,14 +210,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                 return;
 
             SetWinner(isTeam1Winner);
-
-            MatchTeam1ExperienceStackedGraphCollection = null;
-            MatchTeam2ExperienceStackedGraphCollection = null;
-            MatchTeamExperienceRowChartCollection = null;
-
-            MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
-            MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
-            ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
 
             var chartValuesTeam1Mercs = new ChartValues<DateTimePoint>();
             var chartValuesTeam1Minions = new ChartValues<DateTimePoint>();
@@ -228,7 +286,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                         LineSmoothness = 0,
                     },
                 };
-
                 MatchTeam2ExperienceStackedGraphCollection = new SeriesCollection()
                 {
                     new StackedAreaSeries
@@ -260,6 +317,83 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                         Title = "Structures",
                         Values = chartValuesTeam2Structures,
                         LineSmoothness = 0,
+                    },
+                };
+
+                MatchTeam1ExperienceStackedPercentageGraphCollection = new SeriesCollection()
+                {
+                    new StackedAreaSeries
+                    {
+                        Title = "Heroes",
+                        Values = chartValuesTeam1Heroes,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Mercenaries",
+                        Values = chartValuesTeam1Mercs,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Minions",
+                        Values = chartValuesTeam1Minions,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Passive",
+                        Values = chartValuesTeam1Passive,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Structures",
+                        Values = chartValuesTeam1Structures,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                };
+                MatchTeam2ExperienceStackedPercentageGraphCollection = new SeriesCollection()
+                {
+                    new StackedAreaSeries
+                    {
+                        Title = "Heroes",
+                        Values = chartValuesTeam2Heroes,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Mercenaries",
+                        Values = chartValuesTeam2Mercs,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Minions",
+                        Values = chartValuesTeam2Minions,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Passive",
+                        Values = chartValuesTeam2Passive,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
+                    },
+                    new StackedAreaSeries
+                    {
+                        Title = "Structures",
+                        Values = chartValuesTeam2Structures,
+                        LineSmoothness = 0,
+                        StackMode = StackMode.Percentage,
                     },
                 };
 
@@ -357,7 +491,24 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                         DataLabels = false,
                     },
                 };
+
+                // set formatters and labels
+                MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
+                MatchTeamOverTimeStackPecentageFormatter = value => value.ToString("P");
+                MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
+                ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
             });
+        }
+
+        public override void Dispose()
+        {
+            MatchTeam1ExperienceStackedGraphCollection = null;
+            MatchTeam2ExperienceStackedGraphCollection = null;
+            MatchTeam1ExperienceStackedPercentageGraphCollection = null;
+            MatchTeam2ExperienceStackedPercentageGraphCollection = null;
+            MatchTeam1ExperiencePieChartCollection = null;
+            MatchTeam2ExperiencePieChartCollection = null;
+            MatchTeamExperienceRowChartCollection = null;
         }
     }
 }

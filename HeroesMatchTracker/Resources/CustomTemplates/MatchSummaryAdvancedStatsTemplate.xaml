@@ -38,32 +38,271 @@
 
                             <TextBlock />
                             <Border />
-                            <TextBlock Text="{Binding SoloKills}" ToolTip="Kills" />
-                            <TextBlock Text="{Binding TakeDowns}" ToolTip="Takedowns" />
-                            <TextBlock Text="{Binding Assists}" ToolTip="Assists" />
-                            <TextBlock Text="{Binding Deaths}" ToolTip="Deaths" />
+                            <TextBlock Text="{Binding SoloKills}" ToolTip="Kills">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestKills}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Assists}" ToolTip="Assists">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestAssists}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding TakeDowns}" ToolTip="Takedowns">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestTakedowns}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Deaths}" ToolTip="Deaths">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestNonDeaths}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
 
                             <TextBlock />
                             <Border />
-                            <TextBlock Text="{Binding MinionDamage, StringFormat={}{0:N0}}" ToolTip="Minion Damage" />
-                            <TextBlock Text="{Binding SummonDamage, StringFormat={}{0:N0}}" ToolTip="Summon Damage" />
-                            <TextBlock Text="{Binding StrutureDamage, StringFormat={}{0:N0}}" ToolTip="Structure Damage" />
-                            <TextBlock Text="{Binding SiegeDamage, StringFormat={}{0:N0}}" ToolTip="Total Siege Damage" />
-
+                            <TextBlock Text="{Binding MinionDamage, StringFormat={}{0:N0}}" ToolTip="Minion Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestMinionDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding SummonDamage, StringFormat={}{0:N0}}" ToolTip="Summon Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestSummonDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding StrutureDamage, StringFormat={}{0:N0}}" ToolTip="Structure Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestStructureDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding SiegeDamage, StringFormat={}{0:N0}}" ToolTip="Total Siege Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestSiegeDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                             <TextBlock />
                             <Border />
-                            <TextBlock Text="{Binding HeroDamage, StringFormat={}{0:N0}}" ToolTip="Hero Damage" />
-                            <TextBlock Text="{Binding DamageTakenRole, StringFormat={}{0:N0}}" ToolTip="Damage Taken" />
-                            <TextBlock Text="{Binding HealingRole, StringFormat={}{0:N0}}" ToolTip="Healing" />
+                            <TextBlock Text="{Binding HeroDamage, StringFormat={}{0:N0}}" ToolTip="Hero Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestHeroDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding DamageTakenRole, StringFormat={}{0:N0}}" ToolTip="Damage Taken">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestDamageTaken}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding HealingRole, StringFormat={}{0:N0}}" ToolTip="Healing">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestHealing}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                             <TextBlock Text="{Binding SelfHealing, StringFormat={}{0:N0}}" ToolTip="Self Healing" />
-                            <TextBlock Text="{Binding TimeSpentDead}" ToolTip="Time Spent Dead" />
-                            <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" ToolTip="Experience" />
+                            <TextBlock Text="{Binding TimeSpentDead}" ToolTip="Time Spent Dead">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestLiveTime}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" ToolTip="Experience">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestExperience}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
 
                             <TextBlock />
                             <Border />
-                            <TextBlock Text="{Binding CreepDamage, StringFormat={}{0:N0}}" ToolTip="Merc Damage" />
-                            <TextBlock Text="{Binding MercCampCaptures}" ToolTip="Merc Camp Captures" />
-                            <TextBlock Text="{Binding WatchTowerCaptures}" ToolTip="Watchtower Captures"/>
+                            <TextBlock Text="{Binding CreepDamage, StringFormat={}{0:N0}}" ToolTip="Merc Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestMercDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding MercCampCaptures}" ToolTip="Merc Camp Captures">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestMercCaptures}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding WatchTowerCaptures}" ToolTip="Watchtower Captures">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestWatchTowerCaptures}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </StackPanel>
                     </DockPanel>
                 </Border>
@@ -98,8 +337,8 @@
                 <TextBlock Text="COMBAT" HorizontalAlignment="Left" />
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
                 <TextBlock Text="Kills" />
-                <TextBlock Text="Takedowns" />
                 <TextBlock Text="Assists" />
+                <TextBlock Text="Takedowns" />
                 <TextBlock Text="Deaths" />
                 <TextBlock Text="SIEGE" HorizontalAlignment="Left" />
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
