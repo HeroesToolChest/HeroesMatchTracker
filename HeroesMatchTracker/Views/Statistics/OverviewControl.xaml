@@ -74,7 +74,7 @@
             </DockPanel>
             <DockPanel>
                 <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding MapsStatsCollection}" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
-                          GridLinesVisibility="Vertical" Margin="16 0 0 0" BorderThickness="1" BorderBrush="AliceBlue">
+                          GridLinesVisibility="Vertical" Margin="16 0 0 0">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
                         <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="80" />
