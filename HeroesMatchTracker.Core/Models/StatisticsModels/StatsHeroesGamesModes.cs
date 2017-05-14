@@ -10,7 +10,7 @@ namespace HeroesMatchTracker.Core.Models.StatisticsModels
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int TotalGames { get; set; }
-        public int? WinPercentage { get; set; }
+        public double WinPercentage { get; set; }
         public int Kills { get; set; }
         public int Assists { get; set; }
         public int Deaths { get; set; }

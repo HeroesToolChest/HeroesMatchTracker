@@ -25,7 +25,7 @@
             <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" Width="70"/>
             <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" Width="72"/>
             <DataGridTextColumn Header="Games" Binding="{Binding TotalGames}" Width="72"/>
-            <DataGridTextColumn Header="Win %" Binding="{Binding WinPercentage, StringFormat={}{0}%}" Width="70" FontWeight="Bold"/>
+            <DataGridTextColumn Header="Win %" Binding="{Binding WinPercentage, StringFormat={}{0:P1}}" Width="70" FontWeight="Bold"/>
             <DataGridTextColumn Header="Kills" Binding="{Binding Kills}" Width="70"/>
             <DataGridTextColumn Header="Assists" Binding="{Binding Assists}" Width="76"/>
             <DataGridTextColumn Header="Deaths" Binding="{Binding Deaths}" Width="76"/>
@@ -99,7 +99,7 @@
             <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" Width="120"/>
             <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" Width="140"/>
             <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="120"/>
-            <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0}%}" Width="120" FontWeight="Bold"/>
+            <DataGridTextColumn Header="Winrate" Binding="{Binding Winrate, StringFormat={}{0:P1}}" Width="120" FontWeight="Bold"/>
         </DataGrid.Columns>
     </DataGrid>
 

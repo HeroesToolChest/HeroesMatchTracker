@@ -201,7 +201,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int wins = Database.ReplaysDb().Statistics.ReadTotalGameResults(heroName, season, gameMode, true, map);
                 int losses = Database.ReplaysDb().Statistics.ReadTotalGameResults(heroName, season, gameMode, false, map);
                 int total = wins + losses;
-                int winPercentage = Utilities.CalculateWinPercentage(wins, total);
+                double winPercentage = Utilities.CalculateWinValue(wins, total);
 
                 var scoreResultsList = Database.ReplaysDb().Statistics.ReadScoreResult(heroName, season, gameMode, map);
 
@@ -231,7 +231,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     Wins = wins,
                     Losses = losses,
                     TotalGames = total,
-                    WinPercentage = total != 0 ? winPercentage : (int?)null,
+                    WinPercentage = winPercentage,
                     Kills = kills,
                     Assists = assists,
                     Deaths = deaths,
@@ -258,7 +258,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int totalWins = StatsHeroesDataCollection.Sum(x => x.Wins);
             int totalLosses = StatsHeroesDataCollection.Sum(x => x.Losses);
             int totalTotal = StatsHeroesDataCollection.Sum(x => x.TotalGames);
-            int totalWinPercentage = Utilities.CalculateWinPercentage(totalWins, totalTotal);
+            double totalWinPercentage = Utilities.CalculateWinPercentage(totalWins, totalTotal);
 
             int totalKills = StatsHeroesDataCollection.Sum(x => x.Kills);
             int totalAssists = StatsHeroesDataCollection.Sum(x => x.Assists);
@@ -277,7 +277,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 Wins = totalWins,
                 Losses = totalLosses,
                 TotalGames = totalTotal,
-                WinPercentage = totalTotal != 0 ? totalWinPercentage : (int?)null,
+                WinPercentage = totalWinPercentage,
                 Kills = totalKills,
                 Assists = totalAssists,
                 Deaths = totalDeaths,
@@ -380,7 +380,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int talentWin = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, tier, true);
                 int talentLoss = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, tier, false);
                 int talentTotal = talentWin + talentLoss;
-                int talentWinPercentage = Utilities.CalculateWinPercentage(talentWin, talentTotal);
+                double talentWinPercentage = Utilities.CalculateWinValue(talentWin, talentTotal);
                 TalentTooltip talentTooltip = HeroesIcons.HeroBuilds().GetTalentTooltips(talent);
 
                 StatsHeroesTalents talentPicks = new StatsHeroesTalents

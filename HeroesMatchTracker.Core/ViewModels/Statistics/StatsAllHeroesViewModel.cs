@@ -332,7 +332,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             Binding winPercentage = new Binding($"{gm}WinPercentage")
             {
-                StringFormat = "{0}%",
+                StringFormat = "{0:P1}",
             };
             DataGridTextColumn winPercentageColumn = new DataGridTextColumn()
             {
@@ -346,7 +346,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             StatsAllHeroesDataTable.Columns.Add($"{gm}Wins", typeof(int));
             StatsAllHeroesDataTable.Columns.Add($"{gm}Losses", typeof(int));
             StatsAllHeroesDataTable.Columns.Add($"{gm}Games", typeof(int));
-            StatsAllHeroesDataTable.Columns.Add($"{gm}WinPercentage", typeof(string));
+            StatsAllHeroesDataTable.Columns.Add($"{gm}WinPercentage", typeof(double));
         }
 
         private void SetNumberOfColumns()
@@ -392,7 +392,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int wins = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameMode, true);
             int losses = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameMode, false);
             int total = wins + losses;
-            int percentage = Utilities.CalculateWinPercentage(wins, total);
+            double percentage = Utilities.CalculateWinValue(wins, total);
 
             return new List<object>() { wins, losses, total, percentage };
         }
@@ -412,7 +412,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
 
             totalTotal = totalWins + totalLosses;
-            int percentage = Utilities.CalculateWinPercentage(totalWins, totalTotal);
+            double percentage = Utilities.CalculateWinValue(totalWins, totalTotal);
 
             return new List<object>() { totalWins, totalLosses, totalTotal, percentage };
         }
