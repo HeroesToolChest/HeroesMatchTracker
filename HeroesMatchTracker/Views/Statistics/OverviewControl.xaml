@@ -48,20 +48,35 @@
                 </i:Interaction.Triggers>
             </ComboBox>
         </StackPanel>
-        <DockPanel Grid.Row="2">
-            <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsPercentageCollection}" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" Visibility="{Binding IsHeroStatPercentageDataGridVisible, Converter={StaticResource BooleanToVisibility}}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" MinWidth="120" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="376" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" Visibility="{Binding IsHeroStatDataGridVisible, Converter={StaticResource BooleanToVisibility}}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="240"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Value}"  MinWidth="120" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </DockPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <DockPanel>
+                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsPercentageCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
+                      Visibility="{Binding IsHeroStatPercentageDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" 
+                      Visibility="{Binding IsHeroStatDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Value}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+            <DockPanel>
+                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding MapsStatsCollection}" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
+                          GridLinesVisibility="Vertical" Margin="16 0 0 0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
+                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="80" />
+                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="80" />
+                        <DataGridTextColumn Header="Win %" Binding="{Binding Winrate, StringFormat={}{0:P1}}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </StackPanel>
 
         <!--<DataGrid ItemsSource="{Binding HeroStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" />
             <DataGrid ItemsSource="{Binding MapsStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" Margin="16 0 16 0" />-->

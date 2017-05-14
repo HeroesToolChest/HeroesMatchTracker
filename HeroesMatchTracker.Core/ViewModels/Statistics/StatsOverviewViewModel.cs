@@ -196,10 +196,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 try
                 {
-                    var query = QueryOverviewStatsAsync();
                     LoadingOverlayWindow.ShowLoadingOverlay();
-
-                    await query;
+                    await QueryOverviewStatsAsync();
                 }
                 catch (Exception ex)
                 {
@@ -218,10 +216,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 try
                 {
-                    var query = QuerySelectedHeroStatAsync();
                     LoadingOverlayWindow.ShowLoadingOverlay();
-
-                    await query;
+                    await QuerySelectedHeroStatAsync();
                 }
                 catch (Exception ex)
                 {
@@ -248,8 +244,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             GameMode selectedGameModes = SetSelectedGameModes();
 
             await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
+            await SetMapStats(selectedSeason, selectedGameModes);
         }
 
+        // for hero stats only when changed the combobox
         private async Task QuerySelectedHeroStatAsync()
         {
             ClearHeroStatGridOnly();
@@ -284,7 +282,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = wins / (double)total,
+                        Value = total != 0 ? wins / (double)total : 0,
                     };
 
                     IsHeroStatPercentageDataGridVisible = true;
@@ -305,7 +303,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 }
                 else if (statOption == OverviewHeroStatOption.MostDeaths || statOption == OverviewHeroStatOption.MostKills || statOption == OverviewHeroStatOption.MostAssists)
                 {
-                    int value = Database.ReplaysDb().Statistics.ReadStatResult(hero, season, gameModes, statOption);
+                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, statOption);
 
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
@@ -324,6 +322,31 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsHeroStatDataGridVisible)
                 await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(heroStatCollection.OrderByDescending(x => x.Value)); });
+        }
+
+        private async Task SetMapStats(Season season, GameMode gameModes)
+        {
+            var mapList = HeroesIcons.MapBackgrounds().GetMapsList();
+            var mapStatTempCollection = new Collection<StatsOverviewMaps>();
+
+            foreach (var map in mapList)
+            {
+                int wins = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, true, map);
+                int losses = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, false, map);
+                int total = wins + losses;
+
+                StatsOverviewMaps statsOverviewMaps = new StatsOverviewMaps()
+                {
+                    MapName = map,
+                    Wins = wins,
+                    Losses = losses,
+                    Winrate = total != 0 ? wins / (double)total : 0,
+                };
+
+                mapStatTempCollection.Add(statsOverviewMaps);
+            }
+
+            await Application.Current.Dispatcher.InvokeAsync(() => { MapsStatsCollection = new ObservableCollection<StatsOverviewMaps>(mapStatTempCollection.OrderByDescending(x => x.Winrate)); });
         }
 
         private GameMode SetSelectedGameModes()
@@ -356,6 +379,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private void Clear()
         {
             ClearHeroStatGridOnly();
+
+            MapsStatsCollection = null;
+            MapsStatsCollection = null;
         }
 
         private void ClearHeroStatGridOnly()
