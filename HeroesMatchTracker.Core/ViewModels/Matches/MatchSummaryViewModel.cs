@@ -368,8 +368,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             {
                 try
                 {
-                    var loadMatchTask = LoadMatchSummaryDataAsync(replayMatch);
                     LoadingOverlayWindow.ShowLoadingOverlay();
+                    await LoadMatchSummaryDataAsync(replayMatch);
 
                     if (matchList == null)
                     {
@@ -393,8 +393,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                         IsRightChangeButtonVisible = true;
                         IsRightChangeButtonEnabled = replayMatch.ReplayId == matchList[matchList.Count - 1].ReplayId ? false : true;
                     }
-
-                    await loadMatchTask;
                 }
                 catch (Exception ex)
                 {

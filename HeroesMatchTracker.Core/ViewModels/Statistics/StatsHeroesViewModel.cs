@@ -322,10 +322,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 try
                 {
-                    var query = QueryStatsHeroStatsAsync();
                     LoadingOverlayWindow.ShowLoadingOverlay();
-
-                    await query;
+                    await QueryStatsHeroStatsAsync();
                 }
                 catch (Exception ex)
                 {
