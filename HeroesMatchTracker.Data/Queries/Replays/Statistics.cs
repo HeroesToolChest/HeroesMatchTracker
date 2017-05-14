@@ -67,14 +67,25 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
+                    {
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
+                    }
+                }
+
                 var query = from mp in db.ReplayMatchPlayers
                             join r in db.Replays on mp.ReplayId equals r.ReplayId
                             where mp.PlayerId == UserSettings.UserPlayerId &&
-                                    mp.Character == character &&
-                                    mp.IsWinner == isWins &&
-                                    r.GameMode == gameMode &&
-                                    r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
-                            select mp.IsWinner;
+                                  mp.Character == character &&
+                                  mp.IsWinner == isWins &&
+                                  r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                            select r;
+
+                query = query.AsExpandable().Where(gameModeFilter);
 
                 return query.Count();
             }
@@ -187,14 +198,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     case TalentTier.Level1:
                         query = from mpt in db.ReplayMatchPlayerTalents
-                                    join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                    join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
-                                    where mpt.PlayerId == UserSettings.UserPlayerId &&
-                                          mp.IsWinner == isWinner &&
-                                          mpt.Character == character &&
-                                          mpt.TalentName1 == talentReferenceName &&
-                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
-                                    select r;
+                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                                where mpt.PlayerId == UserSettings.UserPlayerId &&
+                                        mp.IsWinner == isWinner &&
+                                        mpt.Character == character &&
+                                        mpt.TalentName1 == talentReferenceName &&
+                                        r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                select r;
                         break;
                     case TalentTier.Level4:
                         query = from mpt in db.ReplayMatchPlayerTalents
@@ -299,6 +310,108 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 query = query.AsExpandable().Where(mapFilter);
 
                 return query.Count();
+            }
+        }
+
+        /// <summary>
+        /// Gets the total sum of a specific OverviewHeroStatOption
+        /// </summary>
+        /// <param name="character">Hero name</param>
+        /// <param name="season">Selected season</param>
+        /// <param name="gameMode">Selected GameMode (only one)</param>
+        /// <param name="isWins">Return wins if true otherwise return losses</param>
+        /// <returns></returns>
+        public int ReadStatValue(string character, Season season, GameMode gameMode, OverviewHeroStatOption statOption)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+            int total = 0;
+            using (var db = new ReplaysContext())
+            {
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
+                    {
+                        var query = from mp in db.ReplayMatchPlayers
+                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                                    join mpsr in db.ReplayMatchPlayerScoreResults on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
+                                    where mp.PlayerId == UserSettings.UserPlayerId &&
+                                          mp.Character == character &&
+                                          r.GameMode == (GameMode)value &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                    select mpsr;
+
+                        if (statOption == OverviewHeroStatOption.MostDeaths)
+                            total += query.Count(x => x.Deaths > 0);
+                        else if (statOption == OverviewHeroStatOption.MostKills)
+                            total += query.Count(x => x.SoloKills > 0);
+                        else if (statOption == OverviewHeroStatOption.MostAssists)
+                            total += query.Count(x => x.Assists > 0);
+                    }
+                }
+
+                return total;
+            }
+        }
+
+        /// <summary>
+        /// Gets the total count of wins or losses for a map
+        /// </summary>
+        /// <param name="season">Selected season</param>
+        /// <param name="gameMode">Selected GameMode (multiple)</param>
+        /// <param name="isWins">Return wins if true otherwise return losses</param>
+        /// <param name="mapName">Selected map</param>
+        /// <returns></returns>
+        public int ReadMapResults(Season season, GameMode gameMode, bool isWins, string mapName)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+            int total = 0;
+
+            using (var db = new ReplaysContext())
+            {
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if (gameMode.HasFlag(value))
+                    {
+                        var query = from mp in db.ReplayMatchPlayers
+                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                                    where mp.PlayerId == UserSettings.UserPlayerId &&
+                                          mp.IsWinner == isWins &&
+                                          r.GameMode == (GameMode)value &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                          r.MapName == mapName
+                                    select mp.IsWinner;
+
+                        total += query.Count();
+                    }
+                }
+
+                return total;
+            }
+        }
+
+        public List<ReplayMatchPlayer> ReadListOfMatchPlayerHeroes(Season season, GameMode gameMode)
+        {
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+            var list = new List<ReplayMatchPlayer>();
+
+            using (var db = new ReplaysContext())
+            {
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if (gameMode.HasFlag(value))
+                    {
+                        var query = from mp in db.ReplayMatchPlayers
+                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                                    where mp.PlayerId == UserSettings.UserPlayerId &&
+                                          r.GameMode == (GameMode)value &&
+                                          r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
+                                    select mp;
+
+                        list.AddRange(query.ToList());
+                    }
+                }
+
+                return list;
             }
         }
     }

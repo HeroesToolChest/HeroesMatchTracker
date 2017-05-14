@@ -49,14 +49,14 @@
                     <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 8" />
                     <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" />
                 </StackPanel>
-                <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0,0,8,10">
+                <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0 0 8 10">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <mvvm:EventToCommand CommandParameter="{Binding ElementName=GameModeList, Path=SelectedItems}" Command="{Binding SelectedGameModesCommand}" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ListView>
-                <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220" Height="Auto" Margin="0,0,8,10">
+                <ListView x:Name="MapList" ItemsSource="{Binding MapList}" Style="{StaticResource ListView}" Width="220" Height="Auto" Margin="0 0 8 10">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <mvvm:EventToCommand CommandParameter="{Binding ElementName=MapList, Path=SelectedItems}" Command="{Binding SelectedMapListCommand}" />

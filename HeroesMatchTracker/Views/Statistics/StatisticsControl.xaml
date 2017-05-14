@@ -12,6 +12,9 @@
         <system:Double x:Key="TabControlFontSize">16</system:Double>
     </UserControl.Resources>
     <TabControl controls:TabControlHelper.Underlined="SelectedTabItem">
+        <TabItem Header="Overview" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:OverviewControl />
+        </TabItem>
         <TabItem Header="Individual Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:StatsHeroesControl />
         </TabItem>
