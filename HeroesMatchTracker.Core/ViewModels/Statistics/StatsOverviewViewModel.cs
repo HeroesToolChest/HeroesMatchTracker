@@ -40,6 +40,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private ObservableCollection<StatsOverviewHeroes> _heroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>();
         private ObservableCollection<StatsOverviewMaps> _mapsStatsCollection = new ObservableCollection<StatsOverviewMaps>();
 
+        // used to hold the stats for dynamic switching instead of requerying each time
+        private Collection<StatsOverviewHeroes> HeroStatsWinsCollection = new Collection<StatsOverviewHeroes>();
+        private Collection<StatsOverviewHeroes> HeroStatsDeathsCollection = new Collection<StatsOverviewHeroes>();
+        private Collection<StatsOverviewHeroes> HeroStatsKillsCollection = new Collection<StatsOverviewHeroes>();
+        private Collection<StatsOverviewHeroes> HeroStatsAssistsCollection = new Collection<StatsOverviewHeroes>();
+
         public StatsOverviewViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
@@ -58,7 +64,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         }
 
         public RelayCommand QueryOverviewStatsCommand => new RelayCommand(async () => await QueryOverviewStatsAsyncCommand());
-        public RelayCommand QuerySelectedHeroStatCommand => new RelayCommand(async () => await QuerySelectedHeroStatAsyncCommand());
+        public RelayCommand QuerySelectedHeroStatCommand => new RelayCommand(QuerySelectedHeroStat);
 
         public List<string> SeasonList { get; private set; } = new List<string>();
         public List<string> HeroStatsList { get; private set; } = new List<string>();
@@ -251,6 +257,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 try
                 {
                     LoadingOverlayWindow.ShowLoadingOverlay();
+                    await Task.Delay(1);
                     await QueryOverviewStatsAsync();
                 }
                 catch (Exception ex)
@@ -263,24 +270,38 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             LoadingOverlayWindow.CloseLoadingOverlay();
         }
 
-        // just for the Hero Stats datagrid
-        private async Task QuerySelectedHeroStatAsyncCommand()
+        // just for the Hero Stats datagrid, switch data according to selected hero stat
+        private void QuerySelectedHeroStat()
         {
-            await Task.Run(async () =>
-            {
-                try
-                {
-                    LoadingOverlayWindow.ShowLoadingOverlay();
-                    await QuerySelectedHeroStatAsync();
-                }
-                catch (Exception ex)
-                {
-                    ExceptionLog.Log(LogLevel.Error, ex);
-                    throw;
-                }
-            });
+            OverviewHeroStatOption selectedStatOption = HeroesHelpers.EnumParser.ConvertHeroStatOptionToEnum(SelectedHeroStat);
 
-            LoadingOverlayWindow.CloseLoadingOverlay();
+            IsHeroStatPercentageDataGridVisible = false;
+            IsHeroStatDataGridVisible = false;
+
+            if (selectedStatOption == OverviewHeroStatOption.HighestWinRate)
+            {
+                IsHeroStatPercentageDataGridVisible = true;
+            }
+            else if (selectedStatOption == OverviewHeroStatOption.MostWins)
+            {
+                IsHeroStatDataGridVisible = true;
+                HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsWinsCollection.OrderByDescending(x => x.Value));
+            }
+            else if (selectedStatOption == OverviewHeroStatOption.MostDeaths)
+            {
+                IsHeroStatDataGridVisible = true;
+                HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsDeathsCollection.OrderByDescending(x => x.Value));
+            }
+            else if (selectedStatOption == OverviewHeroStatOption.MostKills)
+            {
+                IsHeroStatDataGridVisible = true;
+                HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsKillsCollection.OrderByDescending(x => x.Value));
+            }
+            else if (selectedStatOption == OverviewHeroStatOption.MostAssists)
+            {
+                IsHeroStatDataGridVisible = true;
+                HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsAssistsCollection.OrderByDescending(x => x.Value));
+            }
         }
 
         private async Task QueryOverviewStatsAsync()
@@ -299,25 +320,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
             await SetMapStats(selectedSeason, selectedGameModes);
-            SetOverallStats(MapsStatsCollection.ToList());
-        }
-
-        // for hero stats only when changed the combobox
-        private async Task QuerySelectedHeroStatAsync()
-        {
-            ClearHeroStatGridOnly();
-
-            if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
-                return;
-
-            HeroesIcons.LoadLatestHeroesBuild();
-
-            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
-            OverviewHeroStatOption selectedStatOption = HeroesHelpers.EnumParser.ConvertHeroStatOptionToEnum(SelectedHeroStat);
-
-            GameMode selectedGameModes = SetSelectedGameModes();
-
-            await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
+            SetOverallStats();
         }
 
         private async Task SetHeroStats(Season season, GameMode gameModes, OverviewHeroStatOption statOption)
@@ -328,7 +331,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             foreach (var hero in heroesList)
             {
-                if (statOption == OverviewHeroStatOption.HighestWinRate)
+                // highest win rate
                 {
                     int wins = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameModes, true);
                     int losses = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameModes, false);
@@ -340,10 +343,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                         Value = Utilities.CalculateWinValue(wins, total),
                     };
 
-                    IsHeroStatPercentageDataGridVisible = true;
                     heroStatPercentageCollection.Add(statsOverviewHeroes);
                 }
-                else if (statOption == OverviewHeroStatOption.MostWins)
+
+                // most wins
                 {
                     int wins = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameModes, true);
 
@@ -353,12 +356,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                         Value = wins,
                     };
 
-                    IsHeroStatDataGridVisible = true;
-                    heroStatCollection.Add(statsOverviewHeroes);
+                    HeroStatsWinsCollection.Add(statsOverviewHeroes);
                 }
-                else if (statOption == OverviewHeroStatOption.MostDeaths || statOption == OverviewHeroStatOption.MostKills || statOption == OverviewHeroStatOption.MostAssists)
+
+                // most deaths
                 {
-                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, statOption);
+                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostDeaths);
 
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
@@ -366,17 +369,65 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                         Value = value,
                     };
 
-                    IsHeroStatDataGridVisible = true;
-                    heroStatCollection.Add(statsOverviewHeroes);
+                    HeroStatsDeathsCollection.Add(statsOverviewHeroes);
+                }
+
+                // most kills
+                {
+                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostKills);
+
+                    StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
+                    {
+                        HeroName = hero,
+                        Value = value,
+                    };
+
+                    HeroStatsKillsCollection.Add(statsOverviewHeroes);
+                }
+
+                // most assists
+                {
+                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostAssists);
+
+                    StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
+                    {
+                        HeroName = hero,
+                        Value = value,
+                    };
+
+                    HeroStatsAssistsCollection.Add(statsOverviewHeroes);
                 }
             }
 
-            // sort it, then add to ObservableCollection
-            if (IsHeroStatPercentageDataGridVisible)
-                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>(heroStatPercentageCollection.OrderByDescending(x => x.Value)); });
+            IsHeroStatPercentageDataGridVisible = false;
+            IsHeroStatDataGridVisible = false;
 
-            if (IsHeroStatDataGridVisible)
-                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(heroStatCollection.OrderByDescending(x => x.Value)); });
+            // set according to selected hero stat
+            if (statOption == OverviewHeroStatOption.HighestWinRate)
+            {
+                IsHeroStatPercentageDataGridVisible = true;
+                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>(heroStatPercentageCollection.OrderByDescending(x => x.Value)); });
+            }
+            else if (statOption == OverviewHeroStatOption.MostWins)
+            {
+                IsHeroStatDataGridVisible = true;
+                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsWinsCollection.OrderByDescending(x => x.Value)); });
+            }
+            else if (statOption == OverviewHeroStatOption.MostDeaths)
+            {
+                IsHeroStatDataGridVisible = true;
+                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsDeathsCollection.OrderByDescending(x => x.Value)); });
+            }
+            else if (statOption == OverviewHeroStatOption.MostKills)
+            {
+                IsHeroStatDataGridVisible = true;
+                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsKillsCollection.OrderByDescending(x => x.Value)); });
+            }
+            else if (statOption == OverviewHeroStatOption.MostAssists)
+            {
+                IsHeroStatDataGridVisible = true;
+                await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsCollection = new ObservableCollection<StatsOverviewHeroes>(HeroStatsAssistsCollection.OrderByDescending(x => x.Value)); });
+            }
         }
 
         private async Task SetMapStats(Season season, GameMode gameModes)
@@ -404,10 +455,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             await Application.Current.Dispatcher.InvokeAsync(() => { MapsStatsCollection = new ObservableCollection<StatsOverviewMaps>(mapStatTempCollection.OrderByDescending(x => x.Winrate)); });
         }
 
-        private void SetOverallStats(List<StatsOverviewMaps> stats)
+        /// <summary>
+        /// Call after all the Observable collections / Collections have been set
+        /// </summary>
+        private void SetOverallStats()
         {
-            OverallGamesPlayed = stats.Sum(x => x.Wins + x.Losses);
-            OverallWinrate = Utilities.CalculateWinValue(stats.Sum(x => x.Wins), OverallGamesPlayed);
+            OverallGamesPlayed = MapsStatsCollection.Sum(x => x.Wins + x.Losses);
+            OverallWinrate = Utilities.CalculateWinValue(MapsStatsCollection.Sum(x => x.Wins), OverallGamesPlayed);
+
+            int totalKills = (int)HeroStatsKillsCollection.Sum(x => x.Value);
+            int totalDeaths = (int)HeroStatsDeathsCollection.Sum(x => x.Value);
+            int totalAssists = (int)HeroStatsAssistsCollection.Sum(x => x.Value);
+
+            OverallKDARatio = Math.Round((totalKills + totalAssists) / (double)totalDeaths, 1);
+            OverallTotalTakedowns = totalKills + totalAssists;
+            OverallAverageTakedowns = Math.Round((totalKills + totalAssists) / (double)OverallGamesPlayed, 1);
         }
 
         private GameMode SetSelectedGameModes()
@@ -442,15 +504,26 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             ClearHeroStatGridOnly();
 
             MapsStatsCollection = null;
+
+            OverallGamesPlayed = 0;
+            OverallWinrate = 0.0;
+            OverallKDARatio = 0.0;
+            OverallTotalTakedowns = 0;
+            OverallAverageTakedowns = 0;
         }
 
         private void ClearHeroStatGridOnly()
         {
-            IsHeroStatPercentageDataGridVisible = false;
+            IsHeroStatPercentageDataGridVisible = true;
             IsHeroStatDataGridVisible = false;
 
             HeroStatsCollection = null;
             HeroStatsPercentageCollection = null;
+
+            HeroStatsWinsCollection = new Collection<StatsOverviewHeroes>();
+            HeroStatsDeathsCollection = new Collection<StatsOverviewHeroes>();
+            HeroStatsKillsCollection = new Collection<StatsOverviewHeroes>();
+            HeroStatsAssistsCollection = new Collection<StatsOverviewHeroes>();
         }
     }
 }
