@@ -163,6 +163,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             LoadingOverlayWindow.ShowLoadingOverlay();
             DataGridTextColumnsList = new List<DataGridColumn>();
 
+            if ((!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && IsTotalSelected) ||
+                (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsTotalSelected))
+            {
+                IsQuickMatchSelected = true;
+                IsUnrankedDraftSelected = true;
+                IsHeroLeagueSelected = true;
+                IsTeamLeagueSelected = true;
+            }
+
             // these CANNOT be in a background thread
             EmptyTable();
             CreateHeroBasicColumns();
@@ -186,9 +195,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task QueryAllHeroesGameModeAsync()
         {
-            if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason) ||
-               (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && IsTotalSelected) ||
-               (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsTotalSelected))
+            if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
