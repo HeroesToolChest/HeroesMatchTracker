@@ -32,13 +32,15 @@
         <Color x:Key="PlayerNameColor">#77B8EA</Color>
         <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
         <Color x:Key="TextValueColor">#919FD8</Color>
-
+        <Color x:Key="TeamLevelColor">#3391A8</Color>
+        
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#3E53A8" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
+        <SolidColorBrush x:Key="TeamLevelBrush" Color="{StaticResource TeamLevelColor}" options:Freeze="True" />
 
         <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1" options:Freeze="True">
             <LinearGradientBrush.GradientStops>
@@ -55,14 +57,16 @@
         <Color x:Key="PlayerNameColor">#E28E8D</Color>
         <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
         <Color x:Key="TextValueColor">#E49192</Color>
-
+        <Color x:Key="TeamLevelColor">#A7516A</Color>
+        
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#733F63" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
-
+        <SolidColorBrush x:Key="TeamLevelBrush" Color="{StaticResource TeamLevelColor}" options:Freeze="True" />
+        
         <LinearGradientBrush x:Key="RowBackgroundBrush" StartPoint="0,0" EndPoint="0, 1" options:Freeze="True">
             <LinearGradientBrush.GradientStops>
                 <GradientStop Offset="0.0" Color="#34182E" />

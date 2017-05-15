@@ -21,9 +21,9 @@
                             <DropShadowEffect ShadowDepth="0" Color="{StaticResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
                         </TextBlock.Effect>
                     </TextBlock>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="{Binding TeamBlueIsWinner}" FontSize="18" Foreground="{StaticResource PlayerNameBrush}" TextAlignment="Right" Margin="0 0 10 0" />
-                        <TextBlock Text="{Binding TeamBlueLevel, StringFormat=Level {0}}" FontSize="18" Foreground="{StaticResource PlayerNameBrush}" TextAlignment="Right"/>
+                        <TextBlock Text="{Binding TeamBlueLevel, StringFormat=Level {0}}" FontSize="18" Foreground="{StaticResource TeamLevelBrush}" />
                     </StackPanel>
                 </StackPanel>
             </DockPanel>
@@ -40,9 +40,9 @@
                             <DropShadowEffect ShadowDepth="0" Color="{StaticResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
                         </TextBlock.Effect>
                     </TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding TeamRedLevel, StringFormat=Level {0}}" FontSize="18" Foreground="{StaticResource PlayerNameBrush}" TextAlignment="Left"/>
-                        <TextBlock Text="{Binding TeamRedIsWinner}" FontSize="18" Foreground="{StaticResource PlayerNameBrush}" TextAlignment="Left" Margin="10 0 0 0" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding TeamRedLevel, StringFormat=Level {0}}" FontSize="18" Foreground="{StaticResource TeamLevelBrush}" TextAlignment="Left"/>
+                        <TextBlock Text="{Binding TeamRedIsWinner}" FontSize="18" Foreground="{StaticResource PlayerNameBrush}" Margin="10 0 0 0" />
                     </StackPanel>
                 </StackPanel>
             </DockPanel>
