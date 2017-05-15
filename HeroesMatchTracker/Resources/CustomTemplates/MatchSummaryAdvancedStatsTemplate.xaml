@@ -350,7 +350,7 @@
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
                 <TextBlock Text="Hero Damage" />
                 <TextBlock Text="Damage Taken" />
-                <TextBlock Text="Healing" />
+                <TextBlock Text="Healing/Shielding" />
                 <TextBlock Text="Self Healing" />
                 <TextBlock Text="Time Spent Dead" />
                 <TextBlock Text="Experience " />
