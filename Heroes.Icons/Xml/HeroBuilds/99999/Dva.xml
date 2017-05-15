@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DVa>
+  <Level1>
+    <DVaBoostersRushdown name="" desc=""></DVaBoostersRushdown>
+    <DVaBoostersHitTheNitrous name="" desc=""></DVaBoostersHitTheNitrous>
+    <DVaBoostersCrashCourse name="" desc=""></DVaBoostersCrashCourse>
+    <DVaMechProMoves name="" desc=""></DVaMechProMoves>
+  </Level1>
+  <Level4>
+    <DVaDefenseMatrixDivertingPower name="" desc=""></DVaDefenseMatrixDivertingPower>
+    <DVaDefenseMatrixGetThroughThis name="" desc=""></DVaDefenseMatrixGetThroughThis>
+    <DVaDefenseMatrixFusionGenerator name="" desc=""></DVaDefenseMatrixFusionGenerator>
+    <DVaSelfDestructBringItOn name="" desc=""></DVaSelfDestructBringItOn>
+  </Level4>
+  <Level7>
+    <DVaBoostersComingThrough name="" desc=""></DVaBoostersComingThrough>
+    <DVaDefenseMatrixDazerZone name="" desc=""></DVaDefenseMatrixDazerZone>
+    <DVaDefenseMatrixAggressionMatrix name="" desc=""></DVaDefenseMatrixAggressionMatrix>
+    <DVaSelfDestructNuclearOption name="" desc=""></DVaSelfDestructNuclearOption>
+  </Level7>
+  <Level10>
+    <DVaBunnyHop name="" desc=""></DVaBunnyHop>
+    <DVaBigShot name="" desc=""></DVaBigShot>
+  </Level10>
+  <Level13>
+    <DVaMechExpensivePlating name="" desc=""></DVaMechExpensivePlating>
+    <DVaMechEmergencyShielding name="" desc=""></DVaMechEmergencyShielding>
+    <DVaMechAblativeArmor name="" desc=""></DVaMechAblativeArmor>
+  </Level13>
+  <Level16>
+    <DVaPilotTorpedoDash name="" desc=""></DVaPilotTorpedoDash>
+    <DVaPilotGGWP name="" desc=""></DVaPilotGGWP>
+    <DVaPilotNanoweaveSuit name="" desc=""></DVaPilotNanoweaveSuit>
+    <DVaPilotSuppressingFire name="" desc=""></DVaPilotSuppressingFire>
+  </Level16>
+  <Level20>
+    <DVaBunnyHopStopAndPop name="" desc=""></DVaBunnyHopStopAndPop>
+    <DVaBigShotPewPewPew name="" desc=""></DVaBigShotPewPewPew>
+    <DVaPilotConcussivePulse name="" desc=""></DVaPilotConcussivePulse>
+    <DVaPilotCallMechMEKAfall name="" desc=""></DVaPilotCallMechMEKAfall>
+  </Level20>
+</DVa>

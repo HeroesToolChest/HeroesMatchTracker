@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tyrande>
+  <Level1>
+    <TyrandeRanger name="" desc=""></TyrandeRanger>
+    <TyrandeMasteryLunarBlaze name="" desc=""></TyrandeMasteryLunarBlaze>
+    <TyrandeRangersMark name="" desc=""></TyrandeRangersMark>
+  </Level1>
+  <Level4>
+    <TyrandeMoonlitArrows name="" desc=""></TyrandeMoonlitArrows>
+    <TyrandeCelestialAttunement name="" desc=""></TyrandeCelestialAttunement>
+    <TyrandeKaldoreiResistance name="" desc=""></TyrandeKaldoreiResistance>
+  </Level4>
+  <Level7>
+    <TyrandeHuntressFury name="" desc=""></TyrandeHuntressFury>
+    <TyrandeDarnassianArchery name="" desc=""></TyrandeDarnassianArchery>
+    <TyrandeTrueshotAura name="" desc=""></TyrandeTrueshotAura>
+  </Level7>
+  <Level10>
+    <TyrandeHeroicAbilityShadowstalk name="Shadowstalk" desc="TyrandeShadowstalk">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeHeroicAbilityShadowstalk>
+    <TyrandeHeroicAbilityStarfall name="Starfall" desc="TyrandeStarfall">storm_ui_icon_tyrande_starfall.dds</TyrandeHeroicAbilityStarfall>
+  </Level10>
+  <Level13>
+    <TyrandeMasteryLightofEluneQuickeningBlessing name="" desc=""></TyrandeMasteryLightofEluneQuickeningBlessing>
+    <TyrandeEmpower name="" desc=""></TyrandeEmpower>
+    <TyrandeHarshMoonlight name="" desc=""></TyrandeHarshMoonlight>
+  </Level13>
+  <Level16>
+    <TyrandeOverflowingLight name="" desc=""></TyrandeOverflowingLight>
+    <TyrandeMarkofMending name="" desc=""></TyrandeMarkofMending>
+    <TyrandeElunesChosen name="" desc=""></TyrandeElunesChosen>
+  </Level16>
+  <Level20>
+    <TyrandeEyesOfTheHuntress name="Hunter's Swiftness" desc="TyrandeShadowstalkHuntersSwiftnessTalent">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeEyesOfTheHuntress>
+    <TyrandeMasteryStarfallCelestialWrath name="Celestial Wrath" desc="TyrandeStarfallCelestialWrathTalent">storm_ui_icon_tyrande_starfall.dds</TyrandeMasteryStarfallCelestialWrath>
+    <TyrandeShootingStar name="" desc=""></TyrandeShootingStar>
+    <TyrandeIcebladeArrows name="" desc=""></TyrandeIcebladeArrows>
+  </Level20>
+</Tyrande>
