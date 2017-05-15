@@ -14,7 +14,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Deaths = matchPlayerStats.Deaths;
             SiegeDamage = matchPlayerStats.SiegeDamage;
             HeroDamage = matchPlayerStats.HeroDamage;
-            DamageTakenRole = matchPlayerStats.DamageTakenRole;
+            DamageTaken = matchPlayerStats.DamageTaken;
             HealingRole = matchPlayerStats.HealingRole;
             ExperienceContribution = matchPlayerStats.ExperienceContribution;
             RoleWarrior = matchPlayerStats.RoleWarrior;
@@ -51,7 +51,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public int? Deaths { get; private set; }
         public int? SiegeDamage { get; private set; }
         public int? HeroDamage { get; private set; }
-        public int? DamageTakenRole { get; private set; }
+        public int? DamageTaken { get; private set; }
         public int? HealingRole { get; private set; }
         public int? ExperienceContribution { get; private set; }
         public bool RoleWarrior { get; private set; }
@@ -81,21 +81,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Deaths = playerScore.Deaths;
             SiegeDamage = playerScore.SiegeDamage;
             HeroDamage = playerScore.HeroDamage;
+            HealingRole = IsHealingStatCharacter(player.Character) ? playerScore.Healing : null;
+            DamageTaken = playerScore.DamageTaken;
             ExperienceContribution = playerScore.ExperienceContribution;
-
-            RoleWarrior = false;
-            RoleSupport = false;
-
-            if (playerScore.DamageTaken != null)
-            {
-                DamageTakenRole = playerScore.DamageTaken;
-                RoleWarrior = true;
-            }
-            else if (IsHealingStatCharacter(player.Character))
-            {
-                HealingRole = playerScore.Healing;
-                RoleSupport = true;
-            }
         }
 
         private bool IsHealingStatCharacter(string realHeroName)

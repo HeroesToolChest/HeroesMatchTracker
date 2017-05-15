@@ -575,8 +575,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             int? highestExp1 = MatchPlayerStatsTeam1List.Max(x => x.ExperienceContribution);
             int? highestExp2 = MatchPlayerStatsTeam2List.Max(x => x.ExperienceContribution);
 
-            int? highestDamageTaken1 = MatchPlayerStatsTeam1List.Max(x => x.DamageTakenRole);
-            int? highestDamageTaken2 = MatchPlayerStatsTeam2List.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken1 = MatchPlayerStatsTeam1List.Max(x => x.DamageTaken);
+            int? highestDamageTaken2 = MatchPlayerStatsTeam2List.Max(x => x.DamageTaken);
 
             int? highestHealing1 = MatchPlayerStatsTeam1List.Max(x => x.HealingRole);
             int? highestHealing2 = MatchPlayerStatsTeam2List.Max(x => x.HealingRole);
@@ -592,7 +592,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (item.ExperienceContribution == highestExp1)
                     item.HighestExperience = true;
 
-                if (item.DamageTakenRole == highestDamageTaken1)
+                if (item.DamageTaken == highestDamageTaken1)
                     item.HighestDamageTaken = true;
 
                 if (item.HealingRole == highestHealing1)
@@ -610,7 +610,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (item.ExperienceContribution == highestExp2)
                     item.HighestExperience = true;
 
-                if (item.DamageTakenRole == highestDamageTaken2)
+                if (item.DamageTaken == highestDamageTaken2)
                     item.HighestDamageTaken = true;
 
                 if (item.HealingRole == highestHealing2)
@@ -629,8 +629,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             int? highestExp1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.ExperienceContribution);
             int? highestExp2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.ExperienceContribution);
 
-            int? highestDamageTaken1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.DamageTakenRole);
-            int? highestDamageTaken2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.DamageTakenRole);
+            int? highestDamageTaken1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.DamageTaken);
+            int? highestDamageTaken2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.DamageTaken);
 
             int? highestHealing1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.HealingRole);
             int? highestHealing2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.HealingRole);
@@ -682,7 +682,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (item.ExperienceContribution == highestExp1)
                     item.HighestExperience = true;
 
-                if (item.DamageTakenRole == highestDamageTaken1)
+                if (item.DamageTaken == highestDamageTaken1)
                     item.HighestDamageTaken = true;
 
                 if (item.HealingRole == highestHealing1)
@@ -736,7 +736,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (item.ExperienceContribution == highestExp2)
                     item.HighestExperience = true;
 
-                if (item.DamageTakenRole == highestDamageTaken2)
+                if (item.DamageTaken == highestDamageTaken2)
                     item.HighestDamageTaken = true;
 
                 if (item.HealingRole == highestHealing2)
