@@ -203,7 +203,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBlock Text="{Binding HealingRole, StringFormat={}{0:N0}}" ToolTip="Healing">
+                            <TextBlock Text="{Binding HealingRole, StringFormat={}{0:N0}}" ToolTip="Healing/Shielding">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
                                         <Style.Triggers>
