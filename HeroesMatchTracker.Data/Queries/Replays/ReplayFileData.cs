@@ -82,7 +82,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         private bool BasicData(string fileName)
         {
             if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
-                throw new TranslationException(RetrieveAllMapAndHeroNames());
+            {
+                if (!AutoTranslateMapNameByMapObjectives(out mapName))
+                    throw new TranslationException(RetrieveAllMapAndHeroNames());
+            }
 
             ReplayMatch replayMatch = new ReplayMatch
             {
@@ -174,7 +177,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     if (!HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
                     {
-                        if (!AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
+                        if (!AutoTranslateHeroNameByTalent(player.Talents, out character))
                             throw new TranslationException(RetrieveAllMapAndHeroNames());
                     }
 
@@ -503,40 +506,40 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             var objTeam0 = Replay.TeamObjectives[0];
             var objTeam1 = Replay.TeamObjectives[1];
 
-            if (objTeam0.Count > 0 && objTeam0 != null)
+            if (objTeam0 != null && objTeam0.Count > 0)
             {
-                foreach (var objCount in objTeam0)
+                foreach (var objective in objTeam0)
                 {
-                    var player = objCount.Player;
+                    var player = objective.Player;
 
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 0,
                         PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, player.BattleNetId, player.BattleNetRegionId, player.BattleNetSubId) : (long?)null,
                         ReplayId = ReplayId,
-                        TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
-                        TimeStamp = objCount.TimeSpan,
-                        Value = objCount.Value,
+                        TeamObjectiveType = objective.TeamObjectiveType.ToString(),
+                        TimeStamp = objective.TimeSpan,
+                        Value = objective.Value,
                     };
 
                     ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
                 }
             }
 
-            if (objTeam1.Count > 0 && objTeam1 != null)
+            if (objTeam1 != null && objTeam1.Count > 0)
             {
-                foreach (var objCount in objTeam1)
+                foreach (var objective in objTeam1)
                 {
-                    var player = objCount.Player;
+                    var player = objective.Player;
 
                     ReplayMatchTeamObjective obj = new ReplayMatchTeamObjective
                     {
                         Team = 1,
                         PlayerId = player != null ? ReplaysDb.HotsPlayer.ReadPlayerIdFromBattleNetId(ReplaysContext, player.BattleNetId, player.BattleNetRegionId, player.BattleNetSubId) : (long?)null,
                         ReplayId = ReplayId,
-                        TeamObjectiveType = objCount.TeamObjectiveType.ToString(),
-                        TimeStamp = objCount.TimeSpan,
-                        Value = objCount.Value,
+                        TeamObjectiveType = objective.TeamObjectiveType.ToString(),
+                        TimeStamp = objective.TimeSpan,
+                        Value = objective.Value,
                     };
 
                     ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
@@ -558,6 +561,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
                 names.Add($"{Replay.Map}: {mapName} [Good]");
+            else if (AutoTranslateMapNameByMapObjectives(out mapName))
+                names.Add($"{Replay.Map}: {mapName} [Auto]");
             else
                 names.Add($"{Replay.Map}: ??? [Unknown]");
 
@@ -574,7 +579,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                 if (HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
                     names.Add($"{player.Character}: {character} [Good]");
-                else if (AttemptAutoTranslateHeroNameByTalent(player.Talents, out character))
+                else if (AutoTranslateHeroNameByTalent(player.Talents, out character))
                     names.Add($"{player.Character}: {character} [Auto]");
                 else
                     names.Add($"{player.Character}: ??? [Unknown]");
@@ -589,10 +594,18 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 output += Environment.NewLine;
             }
 
+            output += "================================";
+            output += Environment.NewLine;
             return output;
         }
 
-        private bool AttemptAutoTranslateHeroNameByTalent(Talent[] talents, out string character)
+        /// <summary>
+        /// Attempt to auto translate Hero name using talents, returns true if succeeded
+        /// </summary>
+        /// <param name="talents"></param>
+        /// <param name="character">Translated hero name</param>
+        /// <returns></returns>
+        private bool AutoTranslateHeroNameByTalent(Talent[] talents, out string character)
         {
             int talentCount = talents.Count();
             character = string.Empty;
@@ -610,6 +623,75 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             {
                 if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
                     return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Attempt to auto translate the Map name using the objectives, returns true if succeeded
+        /// </summary>
+        /// <param name="mapName"></param>
+        /// <returns></returns>
+        private bool AutoTranslateMapNameByMapObjectives(out string mapName)
+        {
+            mapName = string.Empty;
+
+            var objTeam0 = Replay.TeamObjectives[0];
+            var objTeam1 = Replay.TeamObjectives[1];
+
+            var mapsList = HeroesIcons.MapBackgrounds().GetMapsList();
+            var mapsListStripped = new List<string>();
+
+            // remove all the spaces from the map names
+            foreach (var map in mapsList)
+            {
+                mapsListStripped.Add(new string(map.Where(x => !char.IsWhiteSpace(x) && !char.IsPunctuation(x)).ToArray()).ToLower());
+            }
+
+            // known list of objectives that do not contain a map name
+            var nonMapObjectives = new List<string>
+            {
+                "FirstCatapultSpawn",
+                "BossCampCaptureWithCampID",
+            };
+
+            if (objTeam0 != null && objTeam0.Count > 0)
+            {
+                foreach (var objective in objTeam0)
+                {
+                    if (nonMapObjectives.Contains(objective.TeamObjectiveType.ToString()))
+                        continue;
+
+                    for (int i = 0; i < mapsListStripped.Count; i++)
+                    {
+                        // find the map
+                        if (objective.TeamObjectiveType.ToString().ToLower().Contains(mapsListStripped[i]))
+                        {
+                            mapName = mapsList[i];
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            if (objTeam1 != null && objTeam1.Count > 0)
+            {
+                foreach (var objective in objTeam1)
+                {
+                    if (nonMapObjectives.Contains(objective.TeamObjectiveType.ToString()))
+                        continue;
+
+                    for (int i = 0; i < mapsListStripped.Count; i++)
+                    {
+                        // find the map
+                        if (objective.TeamObjectiveType.ToString().ToLower().Contains(mapsListStripped[i]))
+                        {
+                            mapName = mapsList[i];
+                            return true;
+                        }
+                    }
+                }
             }
 
             return false;
