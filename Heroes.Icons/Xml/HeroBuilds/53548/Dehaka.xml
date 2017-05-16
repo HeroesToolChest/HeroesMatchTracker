@@ -20,7 +20,7 @@
     <DehakaHeroicAbilityAdaptation name="Adaptation" desc="DehakaAdaptation">storm_ui_icon_dehaka_adaptation.dds</DehakaHeroicAbilityAdaptation>
   </Level10>
   <Level13>
-    <DehakaPrimalRage name="" desc=""></DehakaPrimalRage>
+    <DehakaPrimalRage name="Primal Rage" desc="DehakaPrimalRage">storm_ui_icon_dehaka_essencecollection.dds</DehakaPrimalRage>
     <DehakaBrushstalkerFerociousStalker name="Ferocious Stalker" desc="DehakaBrushstalkerFerociousStalkerTalent">storm_ui_icon_dehaka_brushstalker_a.dds</DehakaBrushstalkerFerociousStalker>
     <DehakaPrimalSwarm name="Primal Swarm" desc="DehakaPrimalSwarm">storm_ui_icon_dehaka_trample.dds</DehakaPrimalSwarm>
   </Level13>

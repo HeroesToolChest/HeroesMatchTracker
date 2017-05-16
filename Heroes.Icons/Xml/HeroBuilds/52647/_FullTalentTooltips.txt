@@ -847,10 +847,10 @@ LeoricBuriedAliveTalent=Enemies inside Entomb take <c val="#TooltipNumbers">90</
 LeoricConsumeVitalityTalent=Skeletal Swing heals Leoric for <c val="#TooltipNumbers">2%</c> of his maximum Health per target hit, up to <c val="#TooltipNumbers">10%</c>. Half as effective while Undying.
 LeoricCrushingHopeTalent=If Drain Hope lasts its full duration, it deals bonus damage equal to <c val="#TooltipNumbers">10%</c> of the victim's Maximum Health. This damage does not heal Leoric.
 LeoricDeathMarchTalent=The final swing of March of the Black King also applies an untalented Drain Hope to all enemy Heroes in a large area.
-LeoricDrainHope=Grab an enemy Hero's soul, dealing up to <c val="#TooltipNumbers">25%</c> of their maximum Health as damage and healing Leoric for up to <c val="#TooltipNumbers">25%</c> of his maximum Health while you are nearby, over <c val="#TooltipNumbers"><VALUE></c> seconds. You are slowed by <c val="#TooltipNumbers"><VALUE>%</c> while this is active.
+LeoricDrainHope=Grab an enemy Hero's soul, dealing up to <c val="#TooltipNumbers">25%</c> of their maximum Health as damage and healing Leoric for up to <c val="#TooltipNumbers">25%</c> of his maximum Health while he is nearby, over <c val="#TooltipNumbers"><VALUE></c> seconds. Leoric is slowed by <c val="#TooltipNumbers"><VALUE>%</c> while this is active.
 LeoricDrainMomentumTalent=Drain Hope now increases Leoric's Movement Speed by <c val="#TooltipNumbers">10%</c> instead of reducing it.
-LeoricEntomb=Create an unpathable tomb in front of you for <c val="#TooltipNumbers">4</c> seconds.
-LeoricFealtyUntoDeathTalent=When a nearby Minion dies, you restore <c val="#TooltipNumbers">1%</c> of his maximum Health and <c val="#TooltipNumbers">5</c> Mana. Half as effective while Undying.
+LeoricEntomb=Create an unpathable tomb for <c val="#TooltipNumbers">4</c> seconds.
+LeoricFealtyUntoDeathTalent=When a nearby Minion dies, Leoric restores <c val="#TooltipNumbers">1%</c> of his maximum Health and <c val="#TooltipNumbers">5</c> Mana. Half as effective while Undying.
 LeoricGhastlyReachTalent=Increases the range of Skeletal Swing by <c val="#TooltipNumbers">25%</c>.
 LeoricHardenedBonesTalent=During Wraith Walk, gain <c val="#TooltipNumbers">25</c> Armor, taking <c val="#TooltipNumbers">25%</c> less damage.
 LeoricHopelessnessTalent=Increases the range of Drain Hope by <c val="#TooltipNumbers">25%</c>.
