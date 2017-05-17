@@ -21,7 +21,7 @@ This application uses [Heroes.ReplayParser](https://github.com/koliva8245/Heroes
 ## Installation
 - Download and run HeroesMatchTrackerSetup.exe from the [releases](https://github.com/koliva8245/HeroesMatchTracker/releases) page
   - NOTE: Windows will complain that the EXE is unsafe do to an unknown publisher
-- .NET Framework 4.6.2 is recommended
+- .NET Framework 4.6.2 is required
 - Recommended to have at least 2GB of memory (for the replay parsing)
 
 ## How to use
