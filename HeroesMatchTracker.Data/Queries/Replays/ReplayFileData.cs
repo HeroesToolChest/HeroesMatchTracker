@@ -637,8 +637,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             mapName = string.Empty;
 
-            var objTeam0 = Replay.TeamObjectives[0];
-            var objTeam1 = Replay.TeamObjectives[1];
+            var objTeam0 = Replay.TeamObjectives[0].Select(x => x.TeamObjectiveType.ToString().ToUpperInvariant()).ToList();
+            var objTeam1 = Replay.TeamObjectives[1].Select(x => x.TeamObjectiveType.ToString().ToUpperInvariant()).ToList();
 
             var mapsList = HeroesIcons.MapBackgrounds().GetMapsList();
             var mapsListStripped = new List<string>();
@@ -646,7 +646,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             // remove all the spaces from the map names
             foreach (var map in mapsList)
             {
-                mapsListStripped.Add(new string(map.Where(x => !char.IsWhiteSpace(x) && !char.IsPunctuation(x)).ToArray()).ToLower());
+                mapsListStripped.Add(new string(map.Where(x => !char.IsWhiteSpace(x) && !char.IsPunctuation(x)).ToArray()).ToUpperInvariant());
             }
 
             // known list of objectives that do not contain a map name
@@ -656,36 +656,23 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 "BossCampCaptureWithCampID",
             };
 
+            if (objTeam0 == null && objTeam1 == null)
+                return false;
+
+            objTeam0.AddRange(objTeam1); // add all to first
+            objTeam0 = objTeam0.Distinct().ToList(); // remove duplicates
+
             if (objTeam0 != null && objTeam0.Count > 0)
             {
                 foreach (var objective in objTeam0)
                 {
-                    if (nonMapObjectives.Contains(objective.TeamObjectiveType.ToString()))
+                    if (nonMapObjectives.Contains(objective))
                         continue;
 
                     for (int i = 0; i < mapsListStripped.Count; i++)
                     {
                         // find the map
-                        if (objective.TeamObjectiveType.ToString().ToLower().Contains(mapsListStripped[i]))
-                        {
-                            mapName = mapsList[i];
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            if (objTeam1 != null && objTeam1.Count > 0)
-            {
-                foreach (var objective in objTeam1)
-                {
-                    if (nonMapObjectives.Contains(objective.TeamObjectiveType.ToString()))
-                        continue;
-
-                    for (int i = 0; i < mapsListStripped.Count; i++)
-                    {
-                        // find the map
-                        if (objective.TeamObjectiveType.ToString().ToLower().Contains(mapsListStripped[i]))
+                        if (objective.Contains(mapsListStripped[i]))
                         {
                             mapName = mapsList[i];
                             return true;
