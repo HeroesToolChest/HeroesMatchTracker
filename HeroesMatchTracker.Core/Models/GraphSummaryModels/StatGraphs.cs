@@ -87,31 +87,37 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             {
                 SiegeDamageColumnCollection = new SeriesCollection()
                 {
-                    new ColumnSeries
+                    new RowSeries
                     {
                         Values = chartValuesSiegeDamage,
                         Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                         Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                        DataLabels = true,
+                        LabelsPosition = BarLabelPosition.Parallel,
                     },
                 };
 
                 HeroDamageChartCollection = new SeriesCollection()
                 {
-                    new ColumnSeries
+                    new RowSeries
                     {
                         Values = chartValuesHeroDamage,
                         Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                         Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                        DataLabels = true,
+                        LabelsPosition = BarLabelPosition.Parallel,
                     },
                 };
 
                 ExperienceChartCollection = new SeriesCollection()
                 {
-                    new ColumnSeries
+                    new RowSeries
                     {
                         Values = chartValuesExperience,
                         Fill = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
                         Stroke = new SolidColorBrush(Color.FromArgb(255, 0, 171, 169)),
+                        DataLabels = true,
+                        LabelsPosition = BarLabelPosition.Parallel,
                     },
                 };
             });
