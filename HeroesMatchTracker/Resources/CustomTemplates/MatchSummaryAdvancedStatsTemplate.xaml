@@ -187,7 +187,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBlock Text="{Binding DamageTakenRole, StringFormat={}{0:N0}}" ToolTip="Damage Taken">
+                            <TextBlock Text="{Binding DamageTaken, StringFormat={}{0:N0}}" ToolTip="Damage Taken">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
                                         <Style.Triggers>

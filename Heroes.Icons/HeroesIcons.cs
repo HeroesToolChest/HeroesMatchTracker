@@ -217,6 +217,10 @@ namespace Heroes.Icons
         {
             HeroesNonSupportHealingStat.Add("Medivh", HeroRole.Specialist);
             HeroesNonSupportHealingStat.Add("Abathur", HeroRole.Specialist);
+            HeroesNonSupportHealingStat.Add("Zarya", HeroRole.Warrior);
+            HeroesNonSupportHealingStat.Add("Tyrael", HeroRole.Warrior);
+            HeroesNonSupportHealingStat.Add("E.T.C", HeroRole.Warrior);
+            HeroesNonSupportHealingStat.Add("Chen", HeroRole.Warrior);
         }
 
         private void SetPartyIcons()
