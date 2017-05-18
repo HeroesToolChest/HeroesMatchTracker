@@ -23,7 +23,7 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
   - NOTE: Windows will complain that the EXE is unsafe do to an unknown publisher
 ### Requirements
 - Windows 7 SP1 or higher (32* or 64 bit)
-- .NET Framework 4.6.2 (will be installed during setup)
+- .NET Framework 4.6.2 or higher (4.6.2 will be installed during setup if not already installed)
 - Recommended to have at least 2GB of free memory (for the replay parsing)
 
 `* 32 bit OS will work but not recommended as the application might crash due to limited memory`
