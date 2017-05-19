@@ -82,6 +82,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
         public override void Dispose()
         {
             MatchTeamLevelsLineChartCollection = null;
+            ClearWinner();
         }
     }
 }

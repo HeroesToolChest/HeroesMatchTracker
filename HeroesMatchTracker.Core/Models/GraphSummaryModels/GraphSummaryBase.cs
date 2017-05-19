@@ -16,5 +16,11 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             else
                 GraphTeam2Title = "Team 2 (WINNER)";
         }
+
+        protected void ClearWinner()
+        {
+            GraphTeam1Title = "Team 1";
+            GraphTeam2Title = "Team 2";
+        }
     }
 }

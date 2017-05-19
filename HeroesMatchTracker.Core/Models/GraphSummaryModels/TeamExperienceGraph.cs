@@ -509,6 +509,8 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
             MatchTeam1ExperiencePieChartCollection = null;
             MatchTeam2ExperiencePieChartCollection = null;
             MatchTeamExperienceRowChartCollection = null;
+
+            ClearWinner();
         }
     }
 }
