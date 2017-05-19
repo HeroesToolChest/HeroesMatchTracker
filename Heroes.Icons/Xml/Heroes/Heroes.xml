@@ -90,7 +90,7 @@
     <Aliases>ДИАБЛО,Диабло,디아블로,迪亚波罗,迪亞布羅</Aliases>
   </Diablo>
 
-  <DVa available="99999" name="D.Va" attributeid="DVA0" franchise="Overwatch"
+  <DVa available="53548" name="D.Va" attributeid="DVA0" franchise="Overwatch"
         portrait="storm_ui_ingame_heroselect_btn_dva.dds" loading="storm_ui_ingame_hero_loadingscreen_dva.dds" leader="storm_ui_ingame_hero_leaderboard_dva.dds">
     <Roles>Warrior</Roles>
     <Aliases></Aliases>
@@ -117,7 +117,7 @@
   <Gazlowe available="47479" attributeid="Tink" franchise="Warcraft"
            portrait="storm_ui_ingame_heroselect_btn_gazlowe.dds" loading="storm_ui_ingame_hero_loadingscreen_tinker.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
     <Roles>Specialist</Roles>
-    <Aliases>Gazleu,Gazol,Sparachiodi,ГАЗЛОУ,Gasganete,가즈로,加兹鲁维,加茲魯維</Aliases>
+    <Aliases>Gazleu,Gazol,Sparachiodi,ГАЗЛОУ,Gasganete,가즈로,加兹鲁维,加茲魯維,Газлоу</Aliases>
   </Gazlowe>
 
   <Genji available="52860" attributeid="Genj" franchise="Overwatch"
@@ -219,7 +219,7 @@
   <Malfurion available="47479" attributeid="Malf" franchise="Warcraft"
              portrait="storm_ui_ingame_heroselect_btn_malfurion.dds" loading="storm_ui_ingame_hero_loadingscreen_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
     <Roles>Support</Roles>
-    <Aliases>МАЛФУРИОН,말퓨리온,玛法里奥,瑪法里恩</Aliases>
+    <Aliases>МАЛФУРИОН,말퓨리온,玛法里奥,瑪法里恩,Малфурион</Aliases>
   </Malfurion>
 
   <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft"
@@ -231,7 +231,7 @@
   <Muradin available="47479" attributeid="Mura" franchise="Warcraft"
            portrait="storm_ui_ingame_heroselect_btn_muradin.dds" loading="storm_ui_ingame_hero_loadingscreen_muradin.dds" leader="storm_ui_ingame_hero_leaderboard_muradin.dds">
     <Roles>Warrior</Roles>
-    <Aliases>МУРАДИН,무라딘,穆拉丁</Aliases>
+    <Aliases>МУРАДИН,무라딘,穆拉丁,Мурадин</Aliases>
   </Muradin>
 
   <Murky available="47479" attributeid="Murk" franchise="Warcraft"
@@ -249,7 +249,7 @@
   <Nova available="47479" attributeid="Nova" franchise="Starcraft"
         portrait="storm_ui_ingame_heroselect_btn_nova.dds" loading="storm_ui_ingame_hero_loadingscreen_nova.dds" leader="storm_ui_ingame_hero_leaderboard_nova.dds">
     <Roles>Assassin</Roles>
-    <Aliases>НОВА,노바,诺娃,諾娃</Aliases>
+    <Aliases>НОВА,노바,诺娃,諾娃,Нова</Aliases>
   </Nova>
 
   <Probius available="51375" attributeid="Prob" franchise="Starcraft"
@@ -273,7 +273,7 @@
   <Rehgar available="47479" attributeid="Rehg" franchise="Warcraft"
           portrait="storm_ui_ingame_heroselect_btn_rehgar.dds" loading="storm_ui_ingame_hero_loadingscreen_rehgar.dds" leader="storm_ui_ingame_hero_leaderboard_rehgar.dds">
     <Roles>Support</Roles>
-    <Aliases>РЕГАР,레가르,雷加尔,雷加</Aliases>
+    <Aliases>РЕГАР,레가르,雷加尔,雷加,Регар</Aliases>
   </Rehgar>
 
   <Rexxar available="47479" attributeid="Rexx" franchise="Warcraft"
@@ -303,7 +303,7 @@
   <Stitches available="47479" attributeid="Stit" franchise="Warcraft"
             portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
     <Roles>Warrior</Roles>
-    <Aliases>Kleiner,Puntos,Zszywaniec,Tritacarne,Balafré,СТЕЖОК,Suturino,누더기,缝合怪,縫合怪</Aliases>
+    <Aliases>Kleiner,Puntos,Zszywaniec,Tritacarne,Balafré,СТЕЖОК,Suturino,누더기,缝合怪,縫合怪,Стежок</Aliases>
   </Stitches>
 
   <Sylvanas available="47479" attributeid="Sylv" franchise="Warcraft"
@@ -333,7 +333,7 @@
   <Tychus available="47479" attributeid="Tych" franchise="Starcraft"
           portrait="storm_ui_ingame_heroselect_btn_tychus.dds" loading="storm_ui_ingame_hero_loadingscreen_tychus.dds" leader="storm_ui_ingame_hero_leaderboard_tychus.dds">
     <Roles>Assassin</Roles>
-    <Aliases>ТАЙКУС,타이커스,泰凯斯,泰科斯</Aliases>
+    <Aliases>ТАЙКУС,타이커스,泰凯斯,泰科斯,Тайкус</Aliases>
   </Tychus>
 
   <Tyrael available="47479" attributeid="Tyrl" franchise="Diablo"
@@ -345,7 +345,7 @@
   <Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft"
            portrait="storm_ui_ingame_heroselect_btn_tyrande.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrande.dds" leader="storm_ui_ingame_hero_leaderboard_tyrande.dds">
     <Roles>Support</Roles>
-    <Aliases>ТИРАНДА,티란데,泰兰德,泰蘭妲</Aliases>
+    <Aliases>ТИРАНДА,티란데,泰兰德,泰蘭妲,Тиранда</Aliases>
   </Tyrande>
 
   <Uther available="47479" attributeid="Uthe" franchise="Warcraft"
