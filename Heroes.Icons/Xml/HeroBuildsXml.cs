@@ -256,15 +256,20 @@ namespace Heroes.Icons.Xml
 
                                             if (reader.Read())
                                             {
+                                                bool isGenericTalent = false;
+
                                                 if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
+                                                {
                                                     isGeneric = true;
+                                                    isGenericTalent = true;
+                                                }
 
                                                 if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
                                                     RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
 
                                                 talentTierList.Add(refName);
 
-                                                if (!isGeneric)
+                                                if (!isGenericTalent)
                                                 {
                                                     if (!HeroesXml.HeroExists(heroAltName, false))
                                                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");

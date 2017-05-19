@@ -611,18 +611,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             character = string.Empty;
 
             if (talentCount == 0)
-            {
                 return false;
-            }
-            else if (talentCount >= 4)
-            {
-                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[3].TalentName, out character))
-                    return true;
-            }
-            else if (talentCount <= 3)
+
+            while (talentCount > 0)
             {
                 if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
                     return true;
+                else
+                    talentCount--;
             }
 
             return false;
