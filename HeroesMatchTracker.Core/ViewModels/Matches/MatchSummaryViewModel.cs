@@ -16,7 +16,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Threading;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
@@ -526,10 +525,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             // Set the match results: total kills, team levels, game time
             MatchResult matchResult = new MatchResult(Database);
-            matchResult.SetResult(MatchStatsTeam1Collection.ToList(), MatchStatsTeam2Collection.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
+            matchResult.SetResult(MatchPlayerStatsTeam1List.ToList(), MatchPlayerStatsTeam2List.ToList(), matchTeamLevelsList.ToList(), playersList.ToList());
             SetMatchResults(matchResult);
 
-                        // graphs
+            // graphs
             await TeamLevelTimeGraph.SetTeamLevelGraphsAsync(matchTeamLevelsList, playersList[0].IsWinner);
             await TeamExperienceGraph.SetTeamExperienceGraphsAsync(matchTeamExperienceList, playersList[0].IsWinner);
             await StatGraphs.SetStatGraphsAsync(playerHeroes, playerScoresList);
@@ -537,16 +536,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             // add to collections
             await Application.Current.Dispatcher.InvokeAsync(
                 () =>
-                {
-                    MatchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam1List);
-                    MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam2List);
-                    MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam1List);
-                    MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam2List);
-                    MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam1List);
-                    MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam2List);
-                    MatchChatCollection = new ObservableCollection<MatchChat>(MatchPlayerChatList);
-                    MatchObserversCollection = new ObservableCollection<MatchObserver>(MatchPlayerObserversList);
-                }, DispatcherPriority.Render);
+            {
+                MatchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam1List);
+                MatchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>(MatchPlayerTalentsTeam2List);
+                MatchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam1List);
+                MatchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>(MatchPlayerStatsTeam2List);
+                MatchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam1List);
+                MatchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>(MatchPlayerAdvancedStatsTeam2List);
+                MatchChatCollection = new ObservableCollection<MatchChat>(MatchPlayerChatList);
+                MatchObserversCollection = new ObservableCollection<MatchObserver>(MatchPlayerObserversList);
+            });
         }
 
         private void SetMatchResults(MatchResult matchResult)
