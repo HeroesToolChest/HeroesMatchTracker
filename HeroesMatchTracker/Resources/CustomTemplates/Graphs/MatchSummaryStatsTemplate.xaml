@@ -14,14 +14,14 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}">
+                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}" />
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
                     </lvc:Axis>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}" />
                 </lvc:CartesianChart.AxisY>
                 <lvc:CartesianChart.DataTooltip>
                     <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
@@ -42,14 +42,14 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}">
+                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}" />
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
                     </lvc:Axis>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}" />
                 </lvc:CartesianChart.AxisY>
                 <lvc:CartesianChart.DataTooltip>
                     <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
@@ -70,14 +70,14 @@
                     <lvc:DefaultLegend Foreground="{StaticResource DefaultTextBrush}" />
                 </lvc:CartesianChart.ChartLegend>
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}">
+                    <lvc:Axis Title="Players" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" LabelFormatter="{Binding StatGraphs.NormalValueFormatter}" />
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}">
                         <lvc:Axis.Separator>
                             <lvc:Separator Stroke="{StaticResource DefaultBorderBrush}" />
                         </lvc:Axis.Separator>
                     </lvc:Axis>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Value" MinValue="0" Foreground="{StaticResource DefaultTextBrush}" Labels="{Binding StatGraphs.PlayerLabels}" />
                 </lvc:CartesianChart.AxisY>
                 <lvc:CartesianChart.DataTooltip>
                     <lvc:DefaultTooltip Style="{StaticResource DefaultDataTooltip}" />
