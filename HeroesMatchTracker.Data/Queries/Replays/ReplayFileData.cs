@@ -22,6 +22,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplaysContext = new ReplaysContext();
             Replay = replay;
             HeroesIcons = heroesIcons;
+            HeroesIcons.LoadHeroesBuild(Replay.ReplayBuild);
             ReplaysDb = new ReplaysDb();
         }
 

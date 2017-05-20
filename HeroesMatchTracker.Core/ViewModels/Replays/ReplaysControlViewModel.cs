@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using GalaSoft.MvvmLight.Command;
+using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.HotsLogs;
 using HeroesMatchTracker.Core.Models.ReplayModels;
@@ -48,6 +49,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
         private Queue<ReplayFile> ReplayHotsLogsUploadQueue = new Queue<ReplayFile>();
+        private IHeroesIconsService HeroesIconsService;
 
         private ObservableCollection<ReplayFile> _replayFileCollection = new ObservableCollection<ReplayFile>();
 
@@ -59,6 +61,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         {
             MainTab = mainTab;
             HotsLogsStartButtonText = "[Stop]";
+            HeroesIconsService = new HeroesIcons(true); // must create a new object just for parsing
 
             ScanDateTimeCheckboxes[Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
@@ -872,7 +875,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         currentReplayFile = ReplayFileCollection[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
 
                         // save parsed data to database
-                        replayFileData = new ReplayFileData(dequeuedItem.Item1, HeroesIcons);
+                        replayFileData = new ReplayFileData(dequeuedItem.Item1, HeroesIconsService);
                         currentReplayFile.Status = replayFileData.SaveAllData(dequeuedItem.Item2.FileName);
 
                         currentReplayFile.ReplayId = replayFileData.ReplayId;
