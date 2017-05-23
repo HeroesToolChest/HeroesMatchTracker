@@ -163,7 +163,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task QueryAllHeroesGameModeAsyncCommand()
         {
-            if (await MainWindowDialog.ShowNoStatsWarning())
+            if (await MainWindowDialog.CheckBattleTagSetDialog())
                 return;
 
             LoadingOverlayWindow.ShowLoadingOverlay();

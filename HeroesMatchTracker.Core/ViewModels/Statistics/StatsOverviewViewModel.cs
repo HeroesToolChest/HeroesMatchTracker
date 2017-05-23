@@ -278,7 +278,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         // for query button
         private async Task QueryOverviewStatsAsyncCommand()
         {
-            if (await MainWindowDialog.ShowNoStatsWarning())
+            if (await MainWindowDialog.CheckBattleTagSetDialog())
                 return;
 
             await Task.Run(async () =>

@@ -50,7 +50,7 @@ namespace HeroesMatchTracker.Views
             window.ShowDialog();
         }
 
-        public async Task<bool> ShowNoStatsWarning()
+        public async Task<bool> CheckBattleTagSetDialog()
         {
             if (Database.SettingsDb().UserSettings.UserPlayerId < 1)
             {
