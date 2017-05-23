@@ -4,6 +4,7 @@ using Heroes.Icons;
 using HeroesMatchTracker.Core.Updater;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Threading.Tasks;
@@ -42,6 +43,8 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
 
         public RelayCommand CheckForUpdatesCommand => new RelayCommand(CheckForUpdates);
         public RelayCommand ApplyUpdateCommand => new RelayCommand(ApplyUpdates);
+
+        public IToasterUpdateWindowService ToasterUpdateWindow => ServiceLocator.Current.GetInstance<IToasterUpdateWindowService>();
 
         public string CheckForUpdatesResponse
         {
@@ -159,15 +162,17 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                             CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                             MainTab.SetExtendedAboutText("(Update Available)");
                             IsApplyUpdateButtonEnabled = true;
+
+                            ToasterUpdateWindow.ShowToaster(AssemblyVersions.HeroesMatchTrackerVersion().ToString(), AutoUpdater.LatestVersionString);
                         }
                         else
                         {
                             CheckForUpdatesResponse = string.Empty;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        WarningLog.Log(LogLevel.Warn, $"Unable to periodically check for update: {ex.Message}");
+                        WarningLog.Log(LogLevel.Warn, $"Unable to periodically check for an update");
                     }
 
                     IsCheckForUpdatesButtonEnabled = true;

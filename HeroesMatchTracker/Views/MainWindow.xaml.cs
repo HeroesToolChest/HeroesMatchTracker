@@ -50,6 +50,12 @@ namespace HeroesMatchTracker.Views
             window.ShowDialog();
         }
 
+        public void ShowToaster(string currentVersion, string newVersion)
+        {
+            ToasterUpdateWindow window = new ToasterUpdateWindow(currentVersion, newVersion);
+            window.Show();
+        }
+
         public async Task<bool> CheckBattleTagSetDialog()
         {
             if (Database.SettingsDb().UserSettings.UserPlayerId < 1)
