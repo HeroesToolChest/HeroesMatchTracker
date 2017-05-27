@@ -19,7 +19,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService, IMainWindowDialogsService
+    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService, IMainWindowDialogsService, IToasterUpdateWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -36,6 +36,7 @@ namespace HeroesMatchTracker.Views
             SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
             SimpleIoc.Default.Register<IProfileWindowService>(() => this);
             SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
+            SimpleIoc.Default.Register<IToasterUpdateWindowService>(() => this);
         }
 
         public void CreateWhatsNewWindow()
@@ -52,8 +53,11 @@ namespace HeroesMatchTracker.Views
 
         public void ShowToaster(string currentVersion, string newVersion)
         {
-            ToasterUpdateWindow window = new ToasterUpdateWindow(currentVersion, newVersion);
-            window.Show();
+            if (Database.SettingsDb().UserSettings.ShowToasterUpdateNotification && !Database.SettingsDb().UserSettings.IsUpdateAvailableKnown)
+            {
+                ToasterUpdateWindow window = new ToasterUpdateWindow(currentVersion, newVersion);
+                window.Show();
+            }
         }
 
         public async Task<bool> CheckBattleTagSetDialog()

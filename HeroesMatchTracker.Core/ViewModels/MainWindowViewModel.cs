@@ -38,6 +38,8 @@ namespace HeroesMatchTracker.Core.ViewModels
             MatchSummaryHeader = "Match Summary";
             IsLoadingOverlayVisible = false;
 
+            Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = false;
+
             SimpleIoc.Default.Register<IMatchSummaryFlyoutService>(() => this);
             SimpleIoc.Default.Register<ILoadingOverlayWindowService>(() => this);
             SimpleIoc.Default.Register<IMainTabService>(() => this);

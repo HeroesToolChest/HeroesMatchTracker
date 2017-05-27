@@ -5,8 +5,9 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       mc:Ignorable="d"
+                      DataContext="{Binding ToasterUpdateWindowViewModel, Source={StaticResource Locator}}"
                       Title="Heroes Match Tracker Toaster" Width="360" Height="120" ShowTitleBar="False" WindowTransitionsEnabled="False"
-                      WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent">
+                      WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent" Closed="MetroWindow_Closed">
     <Grid>
         <Image Source="{StaticResource HMTStartup}" Stretch="UniformToFill" />
         <Border BorderThickness="1" Background="Transparent" BorderBrush="Black">

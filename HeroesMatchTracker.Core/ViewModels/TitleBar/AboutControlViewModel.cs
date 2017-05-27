@@ -8,6 +8,7 @@ using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HeroesMatchTracker.Core.ViewModels.TitleBar
 {
@@ -92,6 +93,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                         CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                         MainTab.SetExtendedAboutText(" (Update Available)");
                         IsApplyUpdateButtonEnabled = true;
+                        Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = true;
                     }
                     else
                     {
@@ -114,6 +116,8 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
             {
                 try
                 {
+                    Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = true;
+
                     // set both buttons to false and keep them false as a restart is required
                     IsCheckForUpdatesButtonEnabled = false;
                     IsApplyUpdateButtonEnabled = false;
@@ -163,7 +167,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                             MainTab.SetExtendedAboutText("(Update Available)");
                             IsApplyUpdateButtonEnabled = true;
 
-                            ToasterUpdateWindow.ShowToaster(AssemblyVersions.HeroesMatchTrackerVersion().ToString(), AutoUpdater.LatestVersionString);
+                            await Application.Current.Dispatcher.InvokeAsync(() => ToasterUpdateWindow.ShowToaster(AssemblyVersions.HeroesMatchTrackerVersion().ToString(), AutoUpdater.LatestVersionString));
                         }
                         else
                         {

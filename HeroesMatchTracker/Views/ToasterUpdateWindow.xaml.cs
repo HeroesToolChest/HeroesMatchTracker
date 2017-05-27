@@ -1,4 +1,6 @@
 ﻿using HeroesMatchTracker.Core;
+using HeroesMatchTracker.Core.ViewModels;
+using HeroesMatchTracker.Data;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -12,16 +14,18 @@ namespace HeroesMatchTracker.Views
     /// </summary>
     public partial class ToasterUpdateWindow
     {
+        private ToasterUpdateWindowViewModel ToasterUpdateWindowViewModel;
+        private IDatabaseService Database;
+
         public ToasterUpdateWindow(string currentVersion, string newVersion)
         {
-            InitializeComponent();
             ShowInTaskbar = false;
-
-            CurrentVersion.Text = currentVersion;
-            NewVersion.Text = newVersion;
 
             Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(() =>
             {
+                CurrentVersion.Text = currentVersion;
+                NewVersion.Text = newVersion;
+
                 var workingArea = SystemParameters.WorkArea;
                 var transform = PresentationSource.FromVisual(this).CompositionTarget.TransformFromDevice;
                 var corner = transform.Transform(new Point(workingArea.Right, workingArea.Bottom));
@@ -29,6 +33,11 @@ namespace HeroesMatchTracker.Views
                 Left = corner.X - ActualWidth - 20;
                 Top = corner.Y - ActualHeight - 20;
             }));
+
+            InitializeComponent();
+
+            ToasterUpdateWindowViewModel = (ToasterUpdateWindowViewModel)DataContext;
+            Database = ToasterUpdateWindowViewModel.GetDatabaseService;
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -38,6 +47,11 @@ namespace HeroesMatchTracker.Views
                 Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
                 e.Handled = true;
             }
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = true;
         }
     }
 }

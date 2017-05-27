@@ -287,6 +287,7 @@
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
+    <Compile Include="ViewModels\ToasterUpdateWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowDialogsService.cs" />
