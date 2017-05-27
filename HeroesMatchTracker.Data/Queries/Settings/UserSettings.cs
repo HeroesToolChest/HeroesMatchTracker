@@ -32,6 +32,11 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
+        public bool ShowToasterUpdateNotification
+        {
+            get { return GetBooleanValue(nameof(ShowToasterUpdateNotification)); }
+            set { SetBooleanValue(value); }
+        }
         #endregion Settings
 
         #region Replays
@@ -140,6 +145,15 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }
+            set { SetBooleanValue(value); }
+        }
+
+        /// <summary>
+        /// User is already notified about the update
+        /// </summary>
+        public bool IsUpdateAvailableKnown
+        {
+            get { return GetBooleanValue(nameof(IsUpdateAvailableKnown)); }
             set { SetBooleanValue(value); }
         }
         #endregion Auto Updater

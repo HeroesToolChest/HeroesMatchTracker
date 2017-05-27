@@ -247,7 +247,7 @@ namespace Heroes.Icons.Xml
                                             string refName = reader.Name; // reference name of talent
                                             string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
                                             string generic = reader["generic"] ?? "false";  // is the icon being used generic
-                                            string desc = reader["desc"] ?? string.Empty; // reference name for talent desciptions
+                                            string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
 
                                             SetTalentTooltip(refName, desc);
 
