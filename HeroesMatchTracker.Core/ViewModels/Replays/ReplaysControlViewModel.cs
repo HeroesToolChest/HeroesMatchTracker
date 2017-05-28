@@ -88,6 +88,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         public RelayCommand LastHotsLogsDateTimeDefaultCommand => new RelayCommand(LastHotsLogsDateTimeDefault);
         public RelayCommand LastHotsLogsDateTimeSetCommand => new RelayCommand(LastHotsLogsDateTimeSet);
         public RelayCommand HotsLogsStartButtonCommand => new RelayCommand(HotsLogsStartButton);
+        public RelayCommand ViewUnParsedReplaysCommand => new RelayCommand(ViewUnParsedReplays);
 
         #region public properties
         public IDatabaseService GetDatabaseService => Database;
@@ -1081,6 +1082,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
                 HotsLogsUploaderStatus = "Off";
             });
+        }
+
+        private void ViewUnParsedReplays()
+        {
+
         }
 
         #region IDisposable Support
