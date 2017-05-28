@@ -19,7 +19,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, IWhatsNewWindowService, IProfileWindowService, IMainWindowDialogsService
+    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -33,18 +33,17 @@ namespace HeroesMatchTracker.Views
 
             SetTrayIcon();
 
-            SimpleIoc.Default.Register<IWhatsNewWindowService>(() => this);
-            SimpleIoc.Default.Register<IProfileWindowService>(() => this);
+            SimpleIoc.Default.Register<ICreateWindowService>(() => this);
             SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
         }
 
-        public void CreateWhatsNewWindow()
+        public void ShowWhatsNewWindow()
         {
             WhatsNewWindow window = new WhatsNewWindow();
             window.ShowDialog();
         }
 
-        public void CreateProfileWindow()
+        public void ShowProfileWindow()
         {
             ProfileWindow window = new ProfileWindow();
             window.ShowDialog();
@@ -170,7 +169,7 @@ namespace HeroesMatchTracker.Views
             if (Database.SettingsDb().UserSettings.IsNewUpdateApplied)
             {
                 Database.SettingsDb().UserSettings.IsNewUpdateApplied = false;
-                CreateWhatsNewWindow();
+                ShowWhatsNewWindow();
             }
         }
     }

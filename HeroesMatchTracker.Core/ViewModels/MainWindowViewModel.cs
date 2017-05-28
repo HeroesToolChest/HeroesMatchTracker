@@ -54,8 +54,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public RelayCommand OpenWhatsNewWindowCommand => new RelayCommand(OpenWhatsNewWindow);
         public RelayCommand UserDropDownProfileCommand => new RelayCommand(UserDropDownProfile);
 
-        public IWhatsNewWindowService WhatsNewWindow => ServiceLocator.Current.GetInstance<IWhatsNewWindowService>();
-        public IProfileWindowService ProfileWindow => ServiceLocator.Current.GetInstance<IProfileWindowService>();
+        public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
         public bool MatchSummaryIsOpen
         {
@@ -260,12 +259,12 @@ namespace HeroesMatchTracker.Core.ViewModels
 
         private void OpenWhatsNewWindow()
         {
-            WhatsNewWindow.CreateWhatsNewWindow();
+            CreateWindow.ShowWhatsNewWindow();
         }
 
         private void UserDropDownProfile()
         {
-            ProfileWindow.CreateProfileWindow();
+            CreateWindow.ShowProfileWindow();
         }
 
         private void ReceivedMessage(NotificationMessage message)
