@@ -294,8 +294,7 @@
     <Compile Include="ViewServices\IMainTabService.cs" />
     <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />
     <Compile Include="ViewServices\IMatchSummaryReplayService.cs" />
-    <Compile Include="ViewServices\IProfileWindowService.cs" />
-    <Compile Include="ViewServices\IWhatsNewWindowService.cs" />
+    <Compile Include="ViewServices\ICreateWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowService.cs" />
   </ItemGroup>
   <ItemGroup>

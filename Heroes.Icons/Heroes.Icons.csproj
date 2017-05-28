@@ -100,7 +100,7 @@
     <Compile Include="Xml\ParseXmlException.cs" />
     <Compile Include="PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TalentDescription.cs" />
+    <Compile Include="TalentTooltip.cs" />
     <Compile Include="TalentTier.cs" />
     <Compile Include="Xml\HeroBuildsXml.cs" />
     <Compile Include="Xml\HomeScreensXml.cs" />
