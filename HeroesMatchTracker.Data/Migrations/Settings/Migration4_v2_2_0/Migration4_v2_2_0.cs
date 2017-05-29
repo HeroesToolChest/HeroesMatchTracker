@@ -10,7 +10,7 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
         {
             List<string> steps = new List<string>
             {
-                @"CREATE TABLE IF NOT EXISTS UnParsedReplays(                
+                @"CREATE TABLE IF NOT EXISTS UnParsedReplay(                
                 UnParsedReplaysId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 TimeStamp DATETIME,
                 Build INTEGER,
