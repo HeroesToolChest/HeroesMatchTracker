@@ -1,4 +1,5 @@
 ﻿using HeroesMatchTracker.Data.Databases;
+using HeroesMatchTracker.Data.Models.Settings;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
 {
     public class UnParsedReplays
     {
-        public void CreateUnParsedReplay(Models.Settings.UnParsedReplays replay)
+        public void CreateUnParsedReplay(UnParsedReplay replay)
         {
             using (var db = new SettingsContext())
             {
@@ -15,7 +16,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             }
         }
 
-        public List<Models.Settings.UnParsedReplays> ReadAllReplays()
+        public List<UnParsedReplay> ReadAllReplays()
         {
             using (var db = new SettingsContext())
             {
