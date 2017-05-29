@@ -8,13 +8,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 {
     public class UnParsedReplaysWindowViewModel : ViewModelBase
     {
-        private IDatabaseService DatabaseService;
+        private IDatabaseService Database;
 
         private ObservableCollection<UnParsedReplay> _unParsedReplaysCollection = new ObservableCollection<UnParsedReplay>();
 
-        public UnParsedReplaysWindowViewModel(IDatabaseService databaseService)
+        public UnParsedReplaysWindowViewModel(IDatabaseService database)
         {
-            DatabaseService = databaseService;
+            Database = database;
         }
 
         public RelayCommand RequeueCommand => new RelayCommand(Requeue);

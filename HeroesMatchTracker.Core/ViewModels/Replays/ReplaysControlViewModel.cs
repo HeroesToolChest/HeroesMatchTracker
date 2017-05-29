@@ -8,6 +8,7 @@ using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
+using HeroesMatchTracker.Data.Models.Settings;
 using HeroesMatchTracker.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
@@ -32,6 +33,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private bool _isHotsLogsStartButtonEnabled;
         private int _totalReplaysGrid;
         private int _totalParsedGrid;
+        private int _totalUnParsedReplays;
         private long _totalSavedInDatabase;
         private string _currentStatus;
         private string _hotsLogsStartButtonText;
@@ -71,6 +73,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             IsReplayWatch = Database.SettingsDb().UserSettings.ReplayWatchCheckBox;
             IsHotsLogsUploaderEnabled = Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
             TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
+            TotalUnParsedReplays = Database.SettingsDb().UnParsedReplays.GetTotalReplaysCount();
 
             InitializeReplaySaveDataQueue();
         }
@@ -414,6 +417,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             set
             {
                 _replayFileCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public int TotalUnParsedReplays
+        {
+            get => _totalUnParsedReplays;
+            set
+            {
+                _totalUnParsedReplays = value;
                 RaisePropertyChanged();
             }
         }
@@ -796,19 +809,19 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                             else
                                 originalfile.Status = ReplayResult.ParserException;
 
-                            WarningLog.Log(LogLevel.Warn, $"Could not parse replay {originalfile.FilePath}: {originalfile.Status}");
+                            Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
                         }
                         else
                         {
                             originalfile.Status = (ReplayResult)Enum.Parse(typeof(ReplayResult), replayParsed.Item1.ToString());
-                            UnParsedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
+                            Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
                         }
                     }
                     catch (Exception ex)
                     {
                         originalfile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        UnParsedReplaysLog.Log(LogLevel.Info, $"{originalfile.FileName}: {originalfile.Status}");
+                        Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
                     }
                     finally
                     {
@@ -1089,6 +1102,18 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private void ViewUnParsedReplays()
         {
             CreateWindow.ShowUnParsedReplaysWindow();
+        }
+
+        private UnParsedReplay ConvertToUnParsedReplay(ReplayFile replayFile)
+        {
+            UnParsedReplay replay = new UnParsedReplay()
+            {
+                Build = replayFile.Build ?? 0,
+                FilePath = replayFile.FilePath,
+                TimeStamp = DateTime.Now,
+            };
+
+            return replay;
         }
 
         #region IDisposable Support

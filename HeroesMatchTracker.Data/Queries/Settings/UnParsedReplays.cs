@@ -24,6 +24,14 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             }
         }
 
+        public int GetTotalReplaysCount()
+        {
+            using (var db = new SettingsContext())
+            {
+                return db.UnParsedReplays.Count();
+            }
+        }
+
         public void DeleteAllUnParsedReplays()
         {
             using (var db = new SettingsContext())
@@ -32,7 +40,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             }
         }
 
-        public void DeleteUnParsedReplay(long id)
+        public void DeleteUnParsedReplay(int id)
         {
             using (var db = new SettingsContext())
             {
