@@ -141,6 +141,7 @@
     <Compile Include="Migrations\Settings\Migration1_v1_3_0\MigrationAddon1_v1_3_0_1.cs" />
     <Compile Include="Migrations\Settings\Migration3_v2_1_0\Migration3_v2_1_0.cs" />
     <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
+    <Compile Include="Migrations\Settings\Migration4_v2_2_0\Migration4_v2_2_0.cs" />
     <Compile Include="Migrations\Settings\SettingsMigrator.cs" />
     <Compile Include="Migrations\Settings\SettingsContextMigrator.cs" />
     <Compile Include="Migrations\IMigrationCommand.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Models\Replays\ReplayMatchTeamLevel.cs" />
     <Compile Include="Models\Replays\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\Replays\ReplayRenamedPlayer.cs" />
+    <Compile Include="Models\Settings\UnParsedReplays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migrations\SchemaInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
