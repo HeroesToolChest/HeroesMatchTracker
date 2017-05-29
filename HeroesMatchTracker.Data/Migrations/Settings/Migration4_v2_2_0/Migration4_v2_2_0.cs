@@ -10,8 +10,16 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
         {
             List<string> steps = new List<string>
             {
-                @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True')",
-                @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False')",
+                @"CREATE TABLE IF NOT EXISTS UnParsedReplays(                
+                UnParsedReplaysId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                TimeStamp DATETIME,
+                Build INTEGER,
+                FilePath TEXT);",
+
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('IsStartedViaUpdateRestart', 'False');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('IsAutoRequeueOnUpdate', 'True');",
             };
             migrations.Add(Version, steps);
 

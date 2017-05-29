@@ -105,6 +105,12 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             get { return GetStringValue(); }
             set { SetStringValue(value); }
         }
+
+        public bool IsAutoRequeueOnUpdate
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
         #endregion Replays
 
         #region User Profile
@@ -164,7 +170,14 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
         }
+
+        public bool IsStartedViaUpdateRestart
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
         #endregion Other
+
         internal void SetDefaultSettings()
         {
             DateTime lastWeek = DateTime.Now.AddDays(-7);

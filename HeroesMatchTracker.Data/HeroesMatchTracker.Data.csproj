@@ -166,6 +166,7 @@
     <Compile Include="Models\Replays\ReplayMatchTeamLevel.cs" />
     <Compile Include="Models\Replays\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\Replays\ReplayRenamedPlayer.cs" />
+    <Compile Include="Models\Settings\UnParsedReplays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migrations\SchemaInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
