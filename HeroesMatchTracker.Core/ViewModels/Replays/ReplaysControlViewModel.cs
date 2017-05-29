@@ -9,6 +9,7 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Replays;
+using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using NLog;
@@ -92,6 +93,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         #region public properties
         public IDatabaseService GetDatabaseService => Database;
+        public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
         public bool AreProcessButtonsEnabled
         {
@@ -1086,7 +1088,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private void ViewUnParsedReplays()
         {
-
+            CreateWindow.ShowUnParsedReplaysWindow();
         }
 
         #region IDisposable Support

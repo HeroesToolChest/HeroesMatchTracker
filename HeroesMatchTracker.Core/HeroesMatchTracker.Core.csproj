@@ -278,6 +278,7 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
+    <Compile Include="ViewModels\Replays\UnParsedReplaysWindowViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsAllHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />

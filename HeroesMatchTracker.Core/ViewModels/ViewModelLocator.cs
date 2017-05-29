@@ -58,6 +58,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
             // Replays
             SimpleIoc.Default.Register<ReplaysControlViewModel>();
+            SimpleIoc.Default.Register<UnParsedReplaysWindowViewModel>();
 
             // RawData
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatch>, MatchReplay>();
@@ -123,6 +124,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
         // Replays
         public static ReplaysControlViewModel ReplaysControlViewModel => ServiceLocator.Current.GetInstance<ReplaysControlViewModel>();
+        public static UnParsedReplaysWindowViewModel UnParsedReplaysWindowViewModel => ServiceLocator.Current.GetInstance<UnParsedReplaysWindowViewModel>();
 
         // RawData
         public static RawMatchReplayViewModel RawMatchReplayViewModel => ServiceLocator.Current.GetInstance<RawMatchReplayViewModel>();

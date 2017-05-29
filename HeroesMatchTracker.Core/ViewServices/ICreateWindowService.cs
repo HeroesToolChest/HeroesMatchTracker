@@ -4,5 +4,6 @@
     {
         void ShowWhatsNewWindow();
         void ShowProfileWindow();
+        void ShowUnParsedReplaysWindow();
     }
 }
