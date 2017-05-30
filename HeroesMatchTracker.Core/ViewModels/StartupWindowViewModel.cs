@@ -125,7 +125,10 @@ namespace HeroesMatchTracker.Core.ViewModels
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
-                autoUpdater.RestartApp();
+                if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
+                    autoUpdater.RestartApp(arguments: "/noshow");
+                else
+                    autoUpdater.RestartApp();
 #endif
             }
             catch (AutoUpdaterException ex)

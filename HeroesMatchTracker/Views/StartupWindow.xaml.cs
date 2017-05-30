@@ -60,17 +60,20 @@ namespace HeroesMatchTracker.Views
 
             if (args != null && args.Length > 0)
             {
-                if (args.ToList().Contains("/noshow"))
+                var argsList = args.ToList();
+
+                if (argsList.Contains("/noshow"))
                 {
                     ShowInTaskbar = false;
                     Visibility = Visibility.Hidden;
 
                     Database.SettingsDb().UserSettings.IsStartedViaStartup = true;
-                    return;
+                }
+                else
+                {
+                    Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
                 }
             }
-
-            Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
         }
     }
 }
