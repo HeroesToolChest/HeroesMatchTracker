@@ -52,8 +52,8 @@ namespace HeroesMatchTracker.Views
 
         public void ShowUnParsedReplaysWindow()
         {
-            UnParsedReplaysWindow window = new UnParsedReplaysWindow();
-            window.Show();
+            UnparsedReplaysWindow window = new UnparsedReplaysWindow();
+            window.ShowDialog();
         }
 
         public async Task<bool> CheckBattleTagSetDialog()

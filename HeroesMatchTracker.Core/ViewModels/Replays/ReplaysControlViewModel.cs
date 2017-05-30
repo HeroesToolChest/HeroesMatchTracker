@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.HotsLogs;
@@ -33,7 +34,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private bool _isHotsLogsStartButtonEnabled;
         private int _totalReplaysGrid;
         private int _totalParsedGrid;
-        private int _totalUnParsedReplays;
+        private int _totalUnparsedReplays;
         private long _totalSavedInDatabase;
         private string _currentStatus;
         private string _hotsLogsStartButtonText;
@@ -73,7 +74,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             IsReplayWatch = Database.SettingsDb().UserSettings.ReplayWatchCheckBox;
             IsHotsLogsUploaderEnabled = Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
             TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
-            TotalUnParsedReplays = Database.SettingsDb().UnParsedReplays.GetTotalReplaysCount();
+            TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+
+            Messenger.Default.Register<List<UnParsedReplay>>(this, (replays) => ReceiveUnparsedReplays(replays));
 
             InitializeReplaySaveDataQueue();
         }
@@ -421,12 +424,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             }
         }
 
-        public int TotalUnParsedReplays
+        public int TotalUnparsedReplays
         {
-            get => _totalUnParsedReplays;
+            get => _totalUnparsedReplays;
             set
             {
-                _totalUnParsedReplays = value;
+                _totalUnparsedReplays = value;
                 RaisePropertyChanged();
             }
         }
@@ -809,19 +812,19 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                             else
                                 originalfile.Status = ReplayResult.ParserException;
 
-                            Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
+                            AddToUnparsedReplay(originalfile);
                         }
                         else
                         {
                             originalfile.Status = (ReplayResult)Enum.Parse(typeof(ReplayResult), replayParsed.Item1.ToString());
-                            Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
+                            AddToUnparsedReplay(originalfile);
                         }
                     }
                     catch (Exception ex)
                     {
                         originalfile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        Database.SettingsDb().UnParsedReplays.CreateUnParsedReplay(ConvertToUnParsedReplay(originalfile));
+                        AddToUnparsedReplay(originalfile);
                     }
                     finally
                     {
@@ -1104,16 +1107,46 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             CreateWindow.ShowUnParsedReplaysWindow();
         }
 
-        private UnParsedReplay ConvertToUnParsedReplay(ReplayFile replayFile)
+        private void AddToUnparsedReplay(ReplayFile replayFile)
         {
             UnParsedReplay replay = new UnParsedReplay()
             {
                 Build = replayFile.Build ?? 0,
                 FilePath = replayFile.FilePath,
-                TimeStamp = DateTime.Now,
+                TimeStamp = replayFile.LastWriteTime,
             };
 
-            return replay;
+            if (!Database.SettingsDb().UnparsedReplays.IsExistingReplay(replay))
+            {
+                Database.SettingsDb().UnparsedReplays.CreateUnParsedReplay(replay);
+                TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+            }
+        }
+
+        private void ReceiveUnparsedReplays(List<UnParsedReplay> replays)
+        {
+            TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+
+            if (replays != null)
+            {
+                foreach (var replay in replays)
+                {
+                    ReplayFile file = new ReplayFile()
+                    {
+                        FileName = Path.GetFileName(replay.FilePath),
+                        Build = replay.Build,
+                        FilePath = replay.FilePath,
+                        LastWriteTime = replay.TimeStamp,
+                    };
+
+                    ReplayFileCollection.Add(file);
+                }
+            }
+        }
+
+        private void ReceiveUpdatedUnparsedCount(int count)
+        {
+            TotalUnparsedReplays = count;
         }
 
         #region IDisposable Support

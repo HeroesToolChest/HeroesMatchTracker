@@ -1,25 +1,33 @@
-﻿<controls:MetroWindow x:Class="HeroesMatchTracker.Views.Replays.UnParsedReplaysWindow"
+﻿<controls:MetroWindow x:Class="HeroesMatchTracker.Views.Replays.UnparsedReplaysWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+                      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                       xmlns:system="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
-                      DataContext="{Binding UnParsedReplaysWindowViewModel, Source={StaticResource Locator}}"
+                      DataContext="{Binding UnparsedReplaysWindowViewModel, Source={StaticResource Locator}}"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1"
-                      Title="UnParsed Replays" Height="300" Width="530">
+                      HorizontalAlignment="Left"
+                      Title="Unparsed Replays" Height="380" Width="720">
     <Window.Resources>
         <Thickness x:Key="ButtonMargin">4</Thickness>
         <system:Double x:Key="ButtonWidth">120</system:Double>
     </Window.Resources>
     <Grid Margin="4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DataGrid Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding UnParsedReplaysCollection}" Width="380">
+        <DataGrid x:Name="Replays" Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding UnparsedReplaysCollection}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <mvvm:EventToCommand CommandParameter="{Binding ElementName=Replays, Path=SelectedItems}" Command="{Binding SelectedUnparsedReplaysCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                 <DataGridTextColumn Header="Date" Binding="{Binding TimeStamp}" />
@@ -27,11 +35,18 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 24 0 0">
-            <Button Content="Requeue" Command="{Binding RequeueCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
-            <Button Content="Remove" Command="{Binding RemoveCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
-            <Button Content="Requeue All" Command="{Binding RequeueAllCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
-            <Button Content="Remove All" Command="{Binding RemoveAllCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8 4 8 0">
+            <TextBlock Text="{Binding TotalUnparsedReplays, StringFormat=Total Unparsed: {0}}" Margin="0 0 0 8" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14" />
+            <Button Content="Refresh" Command="{Binding RefreshCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" HorizontalAlignment="Left" />
+            <StackPanel Margin="0 8 0 0" HorizontalAlignment="Left">
+                <Button Content="Requeue Selected" Command="{Binding RequeueCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
+                <Button Content="Remove Selected" Command="{Binding RemoveCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
+            </StackPanel>
+            <StackPanel Margin="0 30 0 0" HorizontalAlignment="Left">
+                <Button Content="Requeue All" Command="{Binding RequeueAllCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
+                <Button Content="Remove All" Command="{Binding RemoveAllCommand}" Width="{StaticResource ButtonWidth}" Margin="{StaticResource ButtonMargin}" />
+            </StackPanel>
+            <CheckBox Content="Auto Requeue All on Update" IsChecked="{Binding IsAutoRequeueOnUpdate}" Margin="4 8 4 0"/>
         </StackPanel>
     </Grid>
 </controls:MetroWindow>

@@ -42,7 +42,7 @@
                             <Button Content="(RE)SCAN" Command="{Binding ScanCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="120" />
                             <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="8 0" Width="120" />
                             <Button Content="STOP" Command="{Binding StopCommand}" IsEnabled="{Binding IsParsingReplaysOn}" Width="120" />
-                            <controls:Badged Badge="{Binding TotalUnParsedReplays}" Width="180" DockPanel.Dock="Right" HorizontalAlignment="Right">
+                            <controls:Badged Badge="{Binding TotalUnparsedReplays}" Width="180" DockPanel.Dock="Right" HorizontalAlignment="Right">
                                 <Button Content="View UnParsed Replays" Command="{Binding ViewUnParsedReplaysCommand}"/>
                             </controls:Badged>
                         </DockPanel>

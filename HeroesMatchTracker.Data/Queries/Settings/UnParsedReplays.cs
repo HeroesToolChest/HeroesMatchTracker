@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace HeroesMatchTracker.Data.Queries.Settings
 {
-    public class UnParsedReplays
+    public class UnparsedReplays
     {
         public void CreateUnParsedReplay(UnParsedReplay replay)
         {
@@ -36,7 +36,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         {
             using (var db = new SettingsContext())
             {
-                db.Database.ExecuteSqlCommand("TRUNCATE TABLE UnParasedReplays");
+                db.Database.ExecuteSqlCommand("DELETE FROM UnParsedReplays");
             }
         }
 
@@ -50,6 +50,18 @@ namespace HeroesMatchTracker.Data.Queries.Settings
                     db.UnParsedReplays.Remove(replay);
                     db.SaveChanges();
                 }
+            }
+        }
+
+        public bool IsExistingReplay(UnParsedReplay unParsedReplay)
+        {
+            using (var db = new SettingsContext())
+            {
+                var replay = db.UnParsedReplays.FirstOrDefault(x => x.Build == unParsedReplay.Build && x.FilePath == unParsedReplay.FilePath);
+                if (replay != null)
+                    return true;
+                else
+                    return false;
             }
         }
     }
