@@ -493,14 +493,24 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 string ban3 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
                 string ban4 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
 
+                await Application.Current.Dispatcher.InvokeAsync(
+                    () =>
+                {
+                    MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban1);
+                    MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban2);
+                    MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban3);
+                    MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban4);
+                });
+
+                if (string.IsNullOrEmpty(ban1)) ban1 = "No pick";
+                if (string.IsNullOrEmpty(ban2)) ban2 = "No pick";
+                if (string.IsNullOrEmpty(ban3)) ban3 = "No pick";
+                if (string.IsNullOrEmpty(ban4)) ban4 = "No pick";
+
                 MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban1)[0]}";
                 MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban2)[0]}";
                 MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban3)[0]}";
                 MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(ban4)[0]}";
-                MatchHeroBans.Team0Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban1);
-                MatchHeroBans.Team0Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban2);
-                MatchHeroBans.Team1Ban0 = HeroesIcons.Heroes().GetHeroPortrait(ban3);
-                MatchHeroBans.Team1Ban1 = HeroesIcons.Heroes().GetHeroPortrait(ban4);
 
                 HasBans = true;
             }
