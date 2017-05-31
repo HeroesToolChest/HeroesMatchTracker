@@ -16,18 +16,18 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private IDatabaseService Database;
 
-        private ObservableCollection<UnParsedReplay> _unParsedReplaysCollection = new ObservableCollection<UnParsedReplay>();
+        private ObservableCollection<UnparsedReplay> _unParsedReplaysCollection = new ObservableCollection<UnparsedReplay>();
 
         public UnparsedReplaysWindowViewModel(IDatabaseService database)
         {
             Database = database;
 
             IsAutoRequeueOnUpdate = Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate;
-            UnparsedReplaysCollection = new ObservableCollection<UnParsedReplay>(Database.SettingsDb().UnparsedReplays.ReadAllReplays());
+            UnparsedReplaysCollection = new ObservableCollection<UnparsedReplay>(Database.SettingsDb().UnparsedReplays.ReadAllReplays());
             TotalUnparsedReplays = UnparsedReplaysCollection.Count;
         }
 
-        public List<UnParsedReplay> SelectedReplays { get; private set; } = new List<UnParsedReplay>();
+        public List<UnparsedReplay> SelectedReplays { get; private set; } = new List<UnparsedReplay>();
 
         public RelayCommand<object> SelectedUnparsedReplaysCommand => new RelayCommand<object>((list) => SetSelectedUnparsedReplays(list));
         public RelayCommand RefreshCommand => new RelayCommand(Refresh);
@@ -56,7 +56,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             }
         }
 
-        public ObservableCollection<UnParsedReplay> UnparsedReplaysCollection
+        public ObservableCollection<UnparsedReplay> UnparsedReplaysCollection
         {
             get => _unParsedReplaysCollection;
             set
@@ -68,22 +68,22 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private void SetSelectedUnparsedReplays(object list)
         {
-            SelectedReplays = ((IEnumerable)list).Cast<UnParsedReplay>().ToList();
+            SelectedReplays = ((IEnumerable)list).Cast<UnparsedReplay>().ToList();
         }
 
         private void Refresh()
         {
-            UnparsedReplaysCollection = new ObservableCollection<UnParsedReplay>(Database.SettingsDb().UnparsedReplays.ReadAllReplays());
+            UnparsedReplaysCollection = new ObservableCollection<UnparsedReplay>(Database.SettingsDb().UnparsedReplays.ReadAllReplays());
             TotalUnparsedReplays = UnparsedReplaysCollection.Count;
         }
 
         private void Requeue()
         {
-            var selectedReplays = new List<UnParsedReplay>(SelectedReplays);
+            var selectedReplays = new List<UnparsedReplay>(SelectedReplays);
 
             foreach (var replay in SelectedReplays)
             {
-                Database.SettingsDb().UnparsedReplays.DeleteUnParsedReplay(replay.UnParsedReplaysId);
+                Database.SettingsDb().UnparsedReplays.DeleteUnParsedReplay(replay.UnparsedReplaysId);
                 UnparsedReplaysCollection.Remove(replay);
             }
 
@@ -96,13 +96,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         {
             foreach (var replay in SelectedReplays)
             {
-                Database.SettingsDb().UnparsedReplays.DeleteUnParsedReplay(replay.UnParsedReplaysId);
+                Database.SettingsDb().UnparsedReplays.DeleteUnParsedReplay(replay.UnparsedReplaysId);
                 UnparsedReplaysCollection.Remove(replay);
             }
 
             TotalUnparsedReplays = UnparsedReplaysCollection.Count;
 
-            Messenger.Default.Send<List<UnParsedReplay>>(null);
+            Messenger.Default.Send<List<UnparsedReplay>>(null);
         }
 
         private void RequeueAll()
@@ -121,7 +121,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             UnparsedReplaysCollection = null;
             TotalUnparsedReplays = 0;
 
-            Messenger.Default.Send<List<UnParsedReplay>>(null);
+            Messenger.Default.Send<List<UnparsedReplay>>(null);
         }
     }
 }

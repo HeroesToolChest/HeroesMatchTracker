@@ -7,20 +7,20 @@ namespace HeroesMatchTracker.Data.Queries.Settings
 {
     public class UnparsedReplays
     {
-        public void CreateUnParsedReplay(UnParsedReplay replay)
+        public void CreateUnParsedReplay(UnparsedReplay replay)
         {
             using (var db = new SettingsContext())
             {
-                db.UnParsedReplays.Add(replay);
+                db.UnparsedReplays.Add(replay);
                 db.SaveChanges();
             }
         }
 
-        public List<UnParsedReplay> ReadAllReplays()
+        public List<UnparsedReplay> ReadAllReplays()
         {
             using (var db = new SettingsContext())
             {
-                return db.UnParsedReplays.ToList();
+                return db.UnparsedReplays.ToList();
             }
         }
 
@@ -28,7 +28,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         {
             using (var db = new SettingsContext())
             {
-                return db.UnParsedReplays.Count();
+                return db.UnparsedReplays.Count();
             }
         }
 
@@ -44,20 +44,20 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         {
             using (var db = new SettingsContext())
             {
-                var replay = db.UnParsedReplays.FirstOrDefault(x => x.UnParsedReplaysId == id);
+                var replay = db.UnparsedReplays.FirstOrDefault(x => x.UnparsedReplaysId == id);
                 if (replay != null)
                 {
-                    db.UnParsedReplays.Remove(replay);
+                    db.UnparsedReplays.Remove(replay);
                     db.SaveChanges();
                 }
             }
         }
 
-        public bool IsExistingReplay(UnParsedReplay unParsedReplay)
+        public bool IsExistingReplay(UnparsedReplay unParsedReplay)
         {
             using (var db = new SettingsContext())
             {
-                var replay = db.UnParsedReplays.FirstOrDefault(x => x.Build == unParsedReplay.Build && x.FilePath == unParsedReplay.FilePath);
+                var replay = db.UnparsedReplays.FirstOrDefault(x => x.Build == unParsedReplay.Build && x.FilePath == unParsedReplay.FilePath);
                 if (replay != null)
                     return true;
                 else

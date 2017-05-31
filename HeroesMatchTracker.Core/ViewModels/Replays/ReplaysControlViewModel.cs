@@ -76,7 +76,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
             TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
 
-            Messenger.Default.Register<List<UnParsedReplay>>(this, (replays) => ReceiveUnparsedReplays(replays));
+            Messenger.Default.Register<List<UnparsedReplay>>(this, (replays) => ReceiveUnparsedReplays(replays));
 
             InitializeReplaySaveDataQueue();
         }
@@ -1109,7 +1109,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private void AddToUnparsedReplay(ReplayFile replayFile)
         {
-            UnParsedReplay replay = new UnParsedReplay()
+            UnparsedReplay replay = new UnparsedReplay()
             {
                 Build = replayFile.Build ?? 0,
                 FilePath = replayFile.FilePath,
@@ -1123,7 +1123,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             }
         }
 
-        private void ReceiveUnparsedReplays(List<UnParsedReplay> replays)
+        private void ReceiveUnparsedReplays(List<UnparsedReplay> replays)
         {
             TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
 
