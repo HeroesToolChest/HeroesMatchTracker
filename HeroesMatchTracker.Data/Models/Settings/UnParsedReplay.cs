@@ -4,15 +4,17 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class UnParsedReplay
+    public class UnparsedReplay
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UnParsedReplaysId { get; set; }
+        public int UnparsedReplaysId { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
         public int Build { get; set; }
+
+        public string Status { get; set; }
 
         public string FilePath { get; set; }
     }

@@ -10,10 +10,11 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
         {
             List<string> steps = new List<string>
             {
-                @"CREATE TABLE IF NOT EXISTS UnParsedReplays(                
-                UnParsedReplaysId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                @"CREATE TABLE IF NOT EXISTS UnparsedReplays(                
+                UnparsedReplaysId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 TimeStamp DATETIME,
                 Build INTEGER,
+                Status NVARCHAR(20),
                 FilePath TEXT);",
 
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True');",
