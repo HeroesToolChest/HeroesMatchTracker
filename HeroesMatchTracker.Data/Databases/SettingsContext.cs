@@ -10,7 +10,7 @@ namespace HeroesMatchTracker.Data.Databases
             : base($"name={Properties.Settings.Default.SettingsConnNameDb}") { }
 
         public virtual DbSet<UserSetting> UserSettings { get; set; }
-        public virtual DbSet<UnParsedReplay> UnParsedReplays { get; set; }
+        public virtual DbSet<UnparsedReplay> UnparsedReplays { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
