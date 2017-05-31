@@ -623,7 +623,6 @@
     <Resource Include="Icons\Talents\Genji\storm_ui_icon_genji_swiftstrike.dds" />
     <Resource Include="Icons\Talents\Genji\storm_ui_icon_genji_swiftstrike_a.dds" />
     <Resource Include="Icons\Talents\Genji\storm_ui_icon_genji_swiftstrike_b.dds" />
-    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_hanamura.jpg" />
     <Resource Include="Icons\Talents\Uther\storm_ui_icon_uther_eternaldevotion_a.dds" />
     <Resource Include="Icons\Awards\storm_ui_mvp_pusher_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_mvp_pusher_gold.png" />
@@ -658,6 +657,7 @@
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_dva.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_dva.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_dva.dds" />
+    <Resource Include="Icons\MapBackgrounds\ui_ingame_mapmechanic_loadscreen_hanamura_b.jpg" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
