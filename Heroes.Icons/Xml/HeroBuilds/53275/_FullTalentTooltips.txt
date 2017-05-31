@@ -1890,8 +1890,8 @@ ZeratulSingularitySpike=Flings a Singularity Spike that sticks to the first enem
 ZeratulSlipintoShadow=Blink gains an additional charge, but its cooldown is increased by <c val="#TooltipNumbers">8</c> seconds.
 ZeratulVoidPrison=Slows time in an area to a near standstill, placing allies and enemies in Time Stop for <c val="#TooltipNumbers">5</c> seconds. Zeratul is not affected.
 ZeratulVoidSlashTalent=If Cleave hits more than one enemy Hero, it deals <c val="#TooltipNumbers">50%</c> increased damage and its cooldown is reduced by <c val="#TooltipNumbers">3</c> seconds.
-ZeratulVorpalBladeHotbar=Activate to teleport to Zeratul's last non-structure Basic Attack target within <c val="#TooltipNumbers"><VALUE></c> seconds. The target is revealed during these <c val="#TooltipNumbers"><VALUE></c> seconds.
-ZeratulWormholeTalent=For <c val="#TooltipNumbers"><VALUE></c> seconds, reactivate Blink to return to the point where it was cast from.
+ZeratulVorpalBladeHotbar=Activate to teleport to Zeratul's last non-structure Basic Attack target within <c val="#TooltipNumbers">3</c> seconds. The target is revealed during these <c val="#TooltipNumbers">3</c> seconds.
+ZeratulWormholeTalent=For <c val="#TooltipNumbers">2</c> seconds, reactivate Blink to return to the point where it was cast from.
 ZuljinAmaniResilience=When Taz'dingo ends, Zul'jin heals for <c val="#TooltipNumbers">50%</c> of the damage he dealt during Taz'dingo.
 ZuljinArcaniteAxes=Lower the cooldown of Twin Cleave by <c val="#TooltipNumbers">0.75</c> seconds for every Hero hit.<n/><n/><c val="#AbilityPassive">Passive:</c> When below <c val="#TooltipNumbers">50%</c> Health, Spell Power is increased by <c val="#TooltipNumbers">25%</c>.
 ZuljinBerserker=Activate to increase Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> but consume <c val="#TooltipNumbers"><VALUE>%</c> maximum Health per attack.<n/><n/><c val="#AbilityPassive">Passive:</c> Zul'jin attacks <c val="#TooltipNumbers"><VALUE>%</c> faster for every <c val="#TooltipNumbers"><VALUE>%</c> of maximum Health missing.
