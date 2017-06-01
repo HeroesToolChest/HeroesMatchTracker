@@ -8,7 +8,7 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - Also view personal statistics about your heroes: wins, losses, winrates, talent winrates and much more for different maps and gamemodes
 - Includes a built-in HOTS Logs uploader
-- For more information, visit the [wiki](https://github.com/koliva8245/HeroesParserData/wiki)
+- For more information, visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki)
 
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Homescreen.jpg)
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Summary_Talent.jpg)
