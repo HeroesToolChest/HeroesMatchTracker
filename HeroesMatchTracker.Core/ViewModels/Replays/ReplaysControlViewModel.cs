@@ -824,7 +824,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     {
                         originalfile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        AddToUnparsedReplay(originalfile);
                     }
                     finally
                     {
@@ -1109,11 +1108,18 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private void AddToUnparsedReplay(ReplayFile replayFile)
         {
+            if (replayFile.Status.HasValue && (replayFile.Status.Value == ReplayResult.ComputerPlayerFound ||
+                replayFile.Status.Value == ReplayResult.PreAlphaWipe ||
+                replayFile.Status.Value == ReplayResult.PTRRegion ||
+                replayFile.Status.Value == ReplayResult.TryMeMode))
+                return;
+
             UnparsedReplay replay = new UnparsedReplay()
             {
                 Build = replayFile.Build ?? 0,
                 FilePath = replayFile.FilePath,
                 TimeStamp = replayFile.LastWriteTime,
+                Status = replayFile.Status.ToString(),
             };
 
             if (!Database.SettingsDb().UnparsedReplays.IsExistingReplay(replay))

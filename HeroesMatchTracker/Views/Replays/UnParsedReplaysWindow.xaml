@@ -12,7 +12,7 @@
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       BorderThickness="1"
                       HorizontalAlignment="Left"
-                      Title="Unparsed Replays" Height="380" Width="720">
+                      Title="Unparsed Replays" Height="480" Width="920">
     <Window.Resources>
         <Thickness x:Key="ButtonMargin">4</Thickness>
         <system:Double x:Key="ButtonWidth">120</system:Double>
@@ -32,6 +32,7 @@
                 <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                 <DataGridTextColumn Header="Date" Binding="{Binding TimeStamp}" />
                 <DataGridTextColumn Header="File Path" Binding="{Binding FilePath}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
             </DataGrid.Columns>
         </DataGrid>
 
