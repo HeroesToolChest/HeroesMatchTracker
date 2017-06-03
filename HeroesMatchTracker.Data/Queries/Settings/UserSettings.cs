@@ -165,6 +165,10 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         #endregion Auto Updater
 
         #region Other
+
+        /// <summary>
+        /// Application was auto-started on windows startup
+        /// </summary>
         public bool IsStartedViaStartup
         {
             get { return GetBooleanValue(); }

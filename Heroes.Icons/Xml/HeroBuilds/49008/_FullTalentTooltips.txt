@@ -1741,4 +1741,4 @@ ZeratulSlipintoShadow=Blink gains an additional charge, but its cooldown is incr
 ZeratulVoidPrison=Slows time in an area to a near standstill, making allies and enemies invulnerable and unable to act for <c val="#TooltipNumbers">5</c> seconds. Zeratul is not affected.
 ZeratulVoidSlashTalent=If Cleave hits more than one enemy Hero, it deals <c val="#TooltipNumbers">50%</c> increased damage and its cooldown is reduced by <c val="#TooltipNumbers">3</c> seconds.
 ZeratulVorpalBladeHotbar=Activate to teleport to the last non-structure target attacked within <c val="#TooltipNumbers">3</c> seconds.
-ZeratulWormholeTalent=For <c val="#TooltipNumbers"><VALUE></c> seconds, reactivate Blink to return to the point where it was cast from.
+ZeratulWormholeTalent=For <c val="#TooltipNumbers">2</c> seconds, reactivate Blink to return to the point where it was cast from.

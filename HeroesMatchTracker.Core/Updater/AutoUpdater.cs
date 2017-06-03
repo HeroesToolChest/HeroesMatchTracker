@@ -116,9 +116,9 @@ namespace HeroesMatchTracker.Core.Updater
             }
         }
 
-        public void RestartApp()
+        public void RestartApp(string exeToStart = null, string arguments = null)
         {
-            UpdateManager.RestartApp();
+            UpdateManager.RestartApp(exeToStart, arguments);
         }
     }
 }
