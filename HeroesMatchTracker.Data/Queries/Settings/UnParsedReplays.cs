@@ -53,11 +53,11 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             }
         }
 
-        public bool IsExistingReplay(UnparsedReplay unParsedReplay)
+        public bool IsExistingReplay(UnparsedReplay unparsedReplay)
         {
             using (var db = new SettingsContext())
             {
-                var replay = db.UnparsedReplays.FirstOrDefault(x => x.Build == unParsedReplay.Build && x.FilePath == unParsedReplay.FilePath);
+                var replay = db.UnparsedReplays.FirstOrDefault(x => x.Build == unparsedReplay.Build && x.FilePath == unparsedReplay.FilePath);
                 if (replay != null)
                     return true;
                 else

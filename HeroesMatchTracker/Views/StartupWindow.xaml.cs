@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using HeroesMatchTracker.Core.ViewModels;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
@@ -32,6 +33,13 @@ namespace HeroesMatchTracker.Views
         public void CreateMainWindow()
         {
             MainWindow mainWindow = new MainWindow();
+
+            if (Database.SettingsDb().UserSettings.IsStartedViaUpdateRestart && Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate)
+            {
+                var unparsedReplaysList = Database.SettingsDb().UnparsedReplays.ReadAllReplays();
+                Database.SettingsDb().UnparsedReplays.DeleteAllUnParsedReplays();
+                Messenger.Default.Send(unparsedReplaysList);
+            }
 
             if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
             {
