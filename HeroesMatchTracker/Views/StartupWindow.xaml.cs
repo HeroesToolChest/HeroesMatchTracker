@@ -34,11 +34,13 @@ namespace HeroesMatchTracker.Views
         {
             MainWindow mainWindow = new MainWindow();
 
-            if (Database.SettingsDb().UserSettings.IsStartedViaUpdateRestart && Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate)
+            if (Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays && Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate)
             {
                 var unparsedReplaysList = Database.SettingsDb().UnparsedReplays.ReadAllReplays();
                 Database.SettingsDb().UnparsedReplays.DeleteAllUnParsedReplays();
                 Messenger.Default.Send(unparsedReplaysList);
+
+                Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays = false;
             }
 
             if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
