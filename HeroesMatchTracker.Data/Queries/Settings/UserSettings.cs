@@ -175,11 +175,18 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
-        public bool IsStartedViaUpdateRestart
+        public bool ShowWhatsNewWindow
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
         }
+
+        public bool RequeueAllUnparsedReplays
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
         #endregion Other
 
         internal void SetDefaultSettings()

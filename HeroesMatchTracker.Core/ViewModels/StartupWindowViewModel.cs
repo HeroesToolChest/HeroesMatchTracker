@@ -67,7 +67,9 @@ namespace HeroesMatchTracker.Core.ViewModels
                 await Message("Performing Database migrations...");
                 await databaseMigrations;
 
+#if !DEBUG
                 await ApplicationUpdater();
+#endif
 
                 await Message("Initializing Heroes Match Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window
@@ -91,7 +93,6 @@ namespace HeroesMatchTracker.Core.ViewModels
         {
             try
             {
-#if !DEBUG
                 AutoUpdater autoUpdater = new AutoUpdater(Database);
 
                 await Message("Checking for updates...");
@@ -125,11 +126,10 @@ namespace HeroesMatchTracker.Core.ViewModels
                 await Message("Restarting application...");
                 await Task.Delay(1000);
 
-                if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
-                    autoUpdater.RestartApp(arguments: "/noshow");
+                if (Database.SettingsDb().UserSettings.IsWindowsStartup && Database.SettingsDb().UserSettings.IsStartedViaStartup)
+                    autoUpdater.RestartApp(arguments: "/noshow /updated");
                 else
-                    autoUpdater.RestartApp();
-#endif
+                    autoUpdater.RestartApp(arguments: "/updated");
             }
             catch (AutoUpdaterException ex)
             {

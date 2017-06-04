@@ -166,9 +166,9 @@ namespace HeroesMatchTracker.Views
         {
             await Task.Delay(1000);
 
-            if (Database.SettingsDb().UserSettings.IsNewUpdateApplied)
+            if (Database.SettingsDb().UserSettings.ShowWhatsNewWindow)
             {
-                Database.SettingsDb().UserSettings.IsNewUpdateApplied = false;
+                Database.SettingsDb().UserSettings.ShowWhatsNewWindow = false;
                 ShowWhatsNewWindow();
             }
         }
