@@ -37,7 +37,7 @@ namespace Heroes.Icons.Xml
 
         protected abstract void ParseChildFiles();
 
-        protected void ParseParentFile()
+        protected virtual void ParseParentFile()
         {
             try
             {
