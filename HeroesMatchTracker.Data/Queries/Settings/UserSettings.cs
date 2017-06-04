@@ -165,17 +165,28 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         #endregion Auto Updater
 
         #region Other
+
+        /// <summary>
+        /// Application was auto-started on windows startup
+        /// </summary>
         public bool IsStartedViaStartup
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
         }
 
-        public bool IsStartedViaUpdateRestart
+        public bool ShowWhatsNewWindow
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
         }
+
+        public bool RequeueAllUnparsedReplays
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
         #endregion Other
 
         internal void SetDefaultSettings()

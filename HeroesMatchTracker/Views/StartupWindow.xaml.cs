@@ -68,17 +68,31 @@ namespace HeroesMatchTracker.Views
 
             if (args != null && args.Length > 0)
             {
-                if (args.ToList().Contains("/noshow"))
+                var argsList = args.ToList();
+
+                if (argsList.Contains("/noshow"))
                 {
                     ShowInTaskbar = false;
                     Visibility = Visibility.Hidden;
 
                     Database.SettingsDb().UserSettings.IsStartedViaStartup = true;
-                    return;
+                }
+                else
+                {
+                    Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
+                }
+
+                if (argsList.Contains("/updated"))
+                {
+                    Database.SettingsDb().UserSettings.ShowWhatsNewWindow = true;
+                    Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays = true;
+                }
+                else
+                {
+                    Database.SettingsDb().UserSettings.ShowWhatsNewWindow = false;
+                    Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays = false;
                 }
             }
-
-            Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
         }
     }
 }

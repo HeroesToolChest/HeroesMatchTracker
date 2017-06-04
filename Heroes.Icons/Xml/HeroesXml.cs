@@ -174,7 +174,7 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(attributeId))
-                return null;
+                return string.Empty;
 
             if (RealHeroNameByAttributeId.TryGetValue(attributeId, out string heroName))
             {
@@ -193,7 +193,7 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realName))
-                return null;
+                return string.Empty;
 
             if (AlternativeHeroNameByRealName.TryGetValue(realName, out string altName))
             {
@@ -212,7 +212,7 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(altName))
-                return null;
+                return string.Empty;
 
             if (RealHeroNameByAlternativeName.TryGetValue(altName, out string realName))
             {
@@ -248,10 +248,10 @@ namespace Heroes.Icons.Xml
         /// <returns>HeroRole</returns>
         public List<HeroRole> GetHeroRoleList(string realName)
         {
-            if (HeroRolesListByRealName.TryGetValue(realName, out List<HeroRole> roleList))
-                return roleList;
-            else
+            if (string.IsNullOrEmpty(realName) || !HeroRolesListByRealName.TryGetValue(realName, out List<HeroRole> roleList))
                 return new List<HeroRole> { HeroRole.Unknown };
+            else
+                return roleList;
         }
 
         /// <summary>
