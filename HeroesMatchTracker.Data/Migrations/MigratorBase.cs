@@ -70,7 +70,10 @@ namespace HeroesMatchTracker.Data.Migrations
 
                         foreach (string migration in contextMigrator.Migrations[currentVersion])
                         {
-                            db.Database.ExecuteSqlCommand(migration);
+                            if (!string.IsNullOrEmpty(migration))
+                            {
+                                db.Database.ExecuteSqlCommand(migration);
+                            }
                         }
 
                         if (contextMigrator.MigrationAddons.ContainsKey(currentVersion))
