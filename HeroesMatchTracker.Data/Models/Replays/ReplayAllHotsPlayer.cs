@@ -35,6 +35,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public string BattleNetTId { get; set; }
 
+        public int? AccountLevel { get; set; }
+
         public DateTime LastSeen { get; set; }
 
         public int Seen { get; set; }

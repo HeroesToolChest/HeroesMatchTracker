@@ -73,6 +73,17 @@ namespace HeroesMatchTracker.Views
                 {
                     Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
                 }
+
+                if (argsList.Contains("/updated"))
+                {
+                    Database.SettingsDb().UserSettings.ShowWhatsNewWindow = true;
+                    Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays = true;
+                }
+                else
+                {
+                    Database.SettingsDb().UserSettings.ShowWhatsNewWindow = false;
+                    Database.SettingsDb().UserSettings.RequeueAllUnparsedReplays = false;
+                }
             }
         }
     }

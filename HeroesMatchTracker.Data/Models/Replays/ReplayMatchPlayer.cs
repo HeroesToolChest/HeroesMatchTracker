@@ -23,6 +23,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public int CharacterLevel { get; set; }
 
+        public int? AccountLevel { get; set; }
+
         public long PartyValue { get; set; }
 
         [StringLength(25)]
