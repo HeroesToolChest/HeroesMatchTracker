@@ -139,6 +139,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     BattleNetTId = player.BattleNetTId,
                     LastSeen = Replay.Timestamp,
                     Seen = 1,
+                    AccountLevel = player.AccountLevel,
                 };
 
                 long playerId;

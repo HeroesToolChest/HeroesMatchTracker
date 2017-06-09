@@ -43,6 +43,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             CharacterTooltip = matchPlayerBase.CharacterTooltip;
             CharacterLevel = matchPlayerBase.CharacterLevel;
             MvpAwardDescription = matchPlayerBase.MvpAwardDescription;
+            AccountLevel = matchPlayerBase.AccountLevel;
             Silenced = matchPlayerBase.Silenced;
             IsUserPlayer = matchPlayerBase.IsUserPlayer;
             PlayerRegion = matchPlayerBase.PlayerRegion;
@@ -56,6 +57,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public string CharacterTooltip { get; private set; }
         public string CharacterLevel { get; private set; }
         public string MvpAwardDescription { get; private set; }
+        public string AccountLevel { get; private set; }
         public Region PlayerRegion { get; private set; }
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
@@ -114,6 +116,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 CharacterLevel = "Observer";
             else
                 CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
+
+            if (Player.AccountLevel.HasValue && Player.AccountLevel.Value > 0)
+                AccountLevel = Player.AccountLevel.Value.ToString();
+            else
+                AccountLevel = "N/A";
 
             if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
                 SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);

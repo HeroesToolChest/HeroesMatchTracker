@@ -93,63 +93,63 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
         internal override long UpdateRecord(ReplaysContext db, ReplayAllHotsPlayer model)
         {
-            ReplayAllHotsPlayer record;
+            ReplayAllHotsPlayer currentRecord;
 
             if (model.BattleNetId > 0)
             {
-                record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == model.BattleNetId &&
+                currentRecord = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetId == model.BattleNetId &&
                                                                       x.BattleNetRegionId == model.BattleNetRegionId &&
                                                                       x.BattleNetSubId == model.BattleNetSubId);
             }
             else // if its an observer with no battlenetid
             {
                 if (!string.IsNullOrEmpty(model.BattleNetTId))
-                    record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetTId == model.BattleNetTId);
+                    currentRecord = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleNetTId == model.BattleNetTId);
                 else
-                    record = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == model.BattleTagName && x.BattleNetRegionId == model.BattleNetRegionId);
+                    currentRecord = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == model.BattleTagName && x.BattleNetRegionId == model.BattleNetRegionId);
             }
 
-            if (record != null)
+            if (currentRecord != null)
             {
                 // existing observer record, update the info
-                if (record.BattleNetId < 1)
+                if (currentRecord.BattleNetId < 1)
                 {
-                    record.BattleNetId = model.BattleNetId;
-                    record.BattleNetRegionId = model.BattleNetRegionId;
-                    record.BattleNetSubId = model.BattleNetSubId;
-                    record.BattleNetTId = model.BattleNetTId;
-                    record.LastSeen = model.LastSeen;
+                    currentRecord.BattleNetId = model.BattleNetId;
+                    currentRecord.BattleNetRegionId = model.BattleNetRegionId;
+                    currentRecord.BattleNetSubId = model.BattleNetSubId;
+                    currentRecord.BattleNetTId = model.BattleNetTId;
+                    currentRecord.LastSeen = model.LastSeen;
                 }
 
-                if (model.LastSeen > record.LastSeen)
+                if (model.LastSeen > currentRecord.LastSeen)
                 {
-                    if (model.BattleTagName != record.BattleTagName)
+                    if (model.BattleTagName != currentRecord.BattleTagName)
                     {
                         ReplayRenamedPlayer samePlayer = new ReplayRenamedPlayer
                         {
-                            PlayerId = record.PlayerId,
-                            BattleNetId = record.BattleNetId,
-                            BattleTagName = record.BattleTagName,
-                            BattleNetRegionId = record.BattleNetRegionId,
-                            BattleNetSubId = record.BattleNetSubId,
-                            BattleNetTId = record.BattleNetTId,
+                            PlayerId = currentRecord.PlayerId,
+                            BattleNetId = currentRecord.BattleNetId,
+                            BattleTagName = currentRecord.BattleTagName,
+                            BattleNetRegionId = currentRecord.BattleNetRegionId,
+                            BattleNetSubId = currentRecord.BattleNetSubId,
+                            BattleNetTId = currentRecord.BattleNetTId,
                             DateAdded = model.LastSeen,
                         };
 
                         new RenamedPlayer().CreateRecord(db, samePlayer);
                     }
 
-                    record.BattleTagName = model.BattleTagName; // update the player's battletag, it may have changed
-                    record.BattleNetTId = model.BattleNetTId;
-                    record.LastSeen = model.LastSeen;
+                    currentRecord.BattleTagName = model.BattleTagName; // update the player's battletag, it may have changed
+                    currentRecord.BattleNetTId = model.BattleNetTId;
+                    currentRecord.LastSeen = model.LastSeen;
                 }
 
-                record.Seen += 1;
+                currentRecord.Seen += 1;
 
                 db.SaveChanges();
             }
 
-            return record.PlayerId;
+            return currentRecord.PlayerId;
         }
 
         internal override bool IsExistingRecord(ReplaysContext db, ReplayAllHotsPlayer model)
