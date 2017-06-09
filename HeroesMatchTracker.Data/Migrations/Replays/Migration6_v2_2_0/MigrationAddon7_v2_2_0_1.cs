@@ -6,8 +6,8 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
     {
         public void Execute()
         {
-            AddColumnToTable("ReplayMatchPlayers", "AccountLevel", "int");
-            AddColumnToTable("ReplayAllHotsPlayers", "AccountLevel", "int");
+            AddColumnToTable("ReplayMatchPlayers", "AccountLevel", "INTEGER NOT NULL DEFAULT 0");
+            AddColumnToTable("ReplayAllHotsPlayers", "AccountLevel", "INTEGER NOT NULL DEFAULT 0");
         }
     }
 }

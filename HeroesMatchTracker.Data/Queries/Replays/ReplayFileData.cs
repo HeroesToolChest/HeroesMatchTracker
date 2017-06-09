@@ -137,6 +137,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     BattleNetRegionId = player.BattleNetRegionId,
                     BattleNetSubId = player.BattleNetSubId,
                     BattleNetTId = player.BattleNetTId,
+                    AccountLevel = player.AccountLevel,
                     LastSeen = Replay.Timestamp,
                     Seen = 1,
                 };
@@ -170,6 +171,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         PlayerNumber = -1,
                         SkinAndSkinTint = player.SkinAndSkinTint,
                         Team = player.Team,
+                        AccountLevel = player.AccountLevel,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
@@ -198,6 +200,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         PlayerNumber = playerNum,
                         SkinAndSkinTint = player.SkinAndSkinTint,
                         Team = player.Team,
+                        AccountLevel = player.AccountLevel,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
