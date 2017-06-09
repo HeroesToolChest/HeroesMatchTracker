@@ -209,7 +209,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     playerNum++;
                 }
 
-                AddPlayerHeroes(player.SkinsDictionary, playerId);
+                AddPlayerHeroes(player.PlayerCollectionDictionary, playerId);
             } // end foreach loop for players
         }
 
