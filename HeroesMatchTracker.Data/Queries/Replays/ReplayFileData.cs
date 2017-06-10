@@ -140,7 +140,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     AccountLevel = player.AccountLevel,
                     LastSeen = Replay.Timestamp,
                     Seen = 1,
-                    AccountLevel = player.AccountLevel,
                 };
 
                 long playerId;

@@ -117,8 +117,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
-            if (Player.AccountLevel.HasValue && Player.AccountLevel.Value > 0)
-                AccountLevel = Player.AccountLevel.Value.ToString();
+            if (Player.AccountLevel > 0)
+                AccountLevel = Player.AccountLevel.ToString();
             else
                 AccountLevel = "N/A";
 
