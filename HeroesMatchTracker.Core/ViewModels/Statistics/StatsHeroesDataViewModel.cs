@@ -258,7 +258,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int totalWins = StatsHeroesDataCollection.Sum(x => x.Wins);
             int totalLosses = StatsHeroesDataCollection.Sum(x => x.Losses);
             int totalTotal = StatsHeroesDataCollection.Sum(x => x.TotalGames);
-            double totalWinPercentage = Utilities.CalculateWinPercentage(totalWins, totalTotal);
+            double totalWinPercentage = Utilities.CalculateWinValue(totalWins, totalTotal);
 
             int totalKills = StatsHeroesDataCollection.Sum(x => x.Kills);
             int totalAssists = StatsHeroesDataCollection.Sum(x => x.Assists);

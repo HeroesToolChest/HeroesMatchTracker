@@ -385,7 +385,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
                 HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
                 HeroGames = HeroWins + HeroLosses;
-                HeroWinrate = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage;
+                HeroWinrate = Math.Round(StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage * 100, 1);
 
                 HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
                 HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
