@@ -181,7 +181,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
-        public bool RequeueAllUnparsedReplays
+        public bool RequeueAllFailedReplays
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }

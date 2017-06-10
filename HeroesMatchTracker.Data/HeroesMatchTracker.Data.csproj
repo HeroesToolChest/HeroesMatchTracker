@@ -168,7 +168,7 @@
     <Compile Include="Models\Replays\ReplayMatchTeamLevel.cs" />
     <Compile Include="Models\Replays\ReplayMatchTeamObjective.cs" />
     <Compile Include="Models\Replays\ReplayRenamedPlayer.cs" />
-    <Compile Include="Models\Settings\UnparsedReplay.cs" />
+    <Compile Include="Models\Settings\FailedReplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migrations\SchemaInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -204,7 +204,7 @@
     <Compile Include="Queries\Replays\NonContextQueriesBase.cs" />
     <Compile Include="Queries\Replays\ReplayFileData.cs" />
     <Compile Include="Models\Settings\UserSetting.cs" />
-    <Compile Include="Queries\Settings\UnparsedReplays.cs" />
+    <Compile Include="Queries\Settings\FailedReplays.cs" />
     <Compile Include="Queries\Settings\UserSettings.cs" />
     <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
   </ItemGroup>

@@ -1,11 +1,11 @@
 ﻿namespace HeroesMatchTracker.Views.Replays
 {
     /// <summary>
-    /// Interaction logic for UnparsedReplaysWindow.xaml
+    /// Interaction logic for FailedReplaysWindow.xaml
     /// </summary>
-    public partial class UnparsedReplaysWindow
+    public partial class FailedReplaysWindow
     {
-        public UnparsedReplaysWindow()
+        public FailedReplaysWindow()
         {
             InitializeComponent();
         }

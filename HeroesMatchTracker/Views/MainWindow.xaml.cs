@@ -59,9 +59,9 @@ namespace HeroesMatchTracker.Views
             }
         }
 
-        public void ShowUnParsedReplaysWindow()
+        public void ShowFailedReplaysWindow()
         {
-            UnparsedReplaysWindow window = new UnparsedReplaysWindow();
+            FailedReplaysWindow window = new FailedReplaysWindow();
             window.ShowDialog();
         }
 

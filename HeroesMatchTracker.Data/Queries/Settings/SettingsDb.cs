@@ -3,6 +3,6 @@
     public class SettingsDb
     {
         public UserSettings UserSettings => new UserSettings();
-        public UnparsedReplays UnparsedReplays => new UnparsedReplays();
+        public FailedReplays FailedReplays => new FailedReplays();
     }
 }

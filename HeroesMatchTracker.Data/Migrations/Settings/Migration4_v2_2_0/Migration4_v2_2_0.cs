@@ -10,8 +10,8 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
         {
             List<string> steps = new List<string>
             {
-                @"CREATE TABLE IF NOT EXISTS UnparsedReplays(                
-                UnparsedReplaysId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                @"CREATE TABLE IF NOT EXISTS FailedReplays(                
+                FailedReplayId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 TimeStamp DATETIME,
                 Build INTEGER,
                 Status NVARCHAR(20),
@@ -21,7 +21,7 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsAutoRequeueOnUpdate', 'True');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowWhatsNewWindow', 'False');",
-                @"INSERT INTO UserSettings(Name, Value) VALUES ('RequeueAllUnparsedReplays', 'False');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('RequeueAllFailedReplays', 'False');",
             };
             migrations.Add(Version, steps);
 

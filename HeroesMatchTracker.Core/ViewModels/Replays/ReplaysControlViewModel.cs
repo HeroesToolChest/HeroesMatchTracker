@@ -34,7 +34,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private bool _isHotsLogsStartButtonEnabled;
         private int _totalReplaysGrid;
         private int _totalParsedGrid;
-        private int _totalUnparsedReplays;
+        private int _totalFailedReplays;
         private long _totalSavedInDatabase;
         private string _currentStatus;
         private string _hotsLogsStartButtonText;
@@ -74,9 +74,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             IsReplayWatch = Database.SettingsDb().UserSettings.ReplayWatchCheckBox;
             IsHotsLogsUploaderEnabled = Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
             TotalSavedInDatabase = Database.ReplaysDb().MatchReplay.GetTotalReplayCount();
-            TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+            TotalFailedReplays = Database.SettingsDb().FailedReplays.GetTotalReplaysCount();
 
-            Messenger.Default.Register<List<UnparsedReplay>>(this, (replays) => ReceiveUnparsedReplays(replays));
+            Messenger.Default.Register<List<FailedReplay>>(this, (replays) => ReceiveFailedReplays(replays));
 
             InitializeReplaySaveDataQueue();
         }
@@ -95,7 +95,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         public RelayCommand LastHotsLogsDateTimeDefaultCommand => new RelayCommand(LastHotsLogsDateTimeDefault);
         public RelayCommand LastHotsLogsDateTimeSetCommand => new RelayCommand(LastHotsLogsDateTimeSet);
         public RelayCommand HotsLogsStartButtonCommand => new RelayCommand(HotsLogsStartButton);
-        public RelayCommand ViewUnParsedReplaysCommand => new RelayCommand(ViewUnParsedReplays);
+        public RelayCommand ViewFailedReplaysCommand => new RelayCommand(ViewFailedReplays);
 
         #region public properties
         public IDatabaseService GetDatabaseService => Database;
@@ -424,12 +424,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             }
         }
 
-        public int TotalUnparsedReplays
+        public int TotalFailedReplays
         {
-            get => _totalUnparsedReplays;
+            get => _totalFailedReplays;
             set
             {
-                _totalUnparsedReplays = value;
+                _totalFailedReplays = value;
                 RaisePropertyChanged();
             }
         }
@@ -812,12 +812,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                             else
                                 originalfile.Status = ReplayResult.ParserException;
 
-                            AddToUnparsedReplay(originalfile);
+                            AddToFailedReplaysQueue(originalfile);
                         }
                         else
                         {
                             originalfile.Status = (ReplayResult)Enum.Parse(typeof(ReplayResult), replayParsed.Item1.ToString());
-                            AddToUnparsedReplay(originalfile);
+                            AddToFailedReplaysQueue(originalfile);
                         }
                     }
                     catch (Exception ex)
@@ -913,13 +913,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     {
                         currentReplayFile.Status = ReplayResult.TranslationException;
                         TranslationsLog.Log(LogLevel.Error, ex.Message);
-                        UnParsedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
+                        AddToFailedReplaysQueue(currentReplayFile);
                     }
                     catch (Exception ex)
                     {
                         currentReplayFile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
-                        UnParsedReplaysLog.Log(LogLevel.Info, $"{currentReplayFile.FileName}: {currentReplayFile.Status}");
+                        AddToFailedReplaysQueue(currentReplayFile);
                     }
                     finally
                     {
@@ -1101,12 +1101,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             });
         }
 
-        private void ViewUnParsedReplays()
+        private void ViewFailedReplays()
         {
-            CreateWindow.ShowUnParsedReplaysWindow();
+            CreateWindow.ShowFailedReplaysWindow();
         }
 
-        private void AddToUnparsedReplay(ReplayFile replayFile)
+        private void AddToFailedReplaysQueue(ReplayFile replayFile)
         {
             if (replayFile.Status.HasValue && (replayFile.Status.Value == ReplayResult.ComputerPlayerFound ||
                 replayFile.Status.Value == ReplayResult.PreAlphaWipe ||
@@ -1114,7 +1114,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                 replayFile.Status.Value == ReplayResult.TryMeMode))
                 return;
 
-            UnparsedReplay replay = new UnparsedReplay()
+            FailedReplay replay = new FailedReplay()
             {
                 Build = replayFile.Build ?? 0,
                 FilePath = replayFile.FilePath,
@@ -1122,16 +1122,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                 Status = replayFile.Status.ToString(),
             };
 
-            if (!Database.SettingsDb().UnparsedReplays.IsExistingReplay(replay))
+            if (!Database.SettingsDb().FailedReplays.IsExistingReplay(replay))
             {
-                Database.SettingsDb().UnparsedReplays.CreateUnParsedReplay(replay);
-                TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+                Database.SettingsDb().FailedReplays.CreateFailedReplay(replay);
+                TotalFailedReplays = Database.SettingsDb().FailedReplays.GetTotalReplaysCount();
             }
         }
 
-        private void ReceiveUnparsedReplays(List<UnparsedReplay> replays)
+        private void ReceiveFailedReplays(List<FailedReplay> replays)
         {
-            TotalUnparsedReplays = Database.SettingsDb().UnparsedReplays.GetTotalReplaysCount();
+            TotalFailedReplays = Database.SettingsDb().FailedReplays.GetTotalReplaysCount();
 
             if (replays != null)
             {
@@ -1148,11 +1148,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     ReplayFileCollection.Add(file);
                 }
             }
-        }
-
-        private void ReceiveUpdatedUnparsedCount(int count)
-        {
-            TotalUnparsedReplays = count;
         }
 
         #region IDisposable Support

@@ -4,11 +4,11 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class UnparsedReplay
+    public class FailedReplay
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UnparsedReplaysId { get; set; }
+        public int FailedReplayId { get; set; }
 
         public DateTime TimeStamp { get; set; }
 
