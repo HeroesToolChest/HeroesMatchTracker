@@ -151,6 +151,9 @@ namespace HeroesMatchTracker.Core.Converters
                     case "#COLORCREAMYELLOW":
                         color = (Color)ColorConverter.ConvertFromString("#CED077");
                         break;
+                    case "#MALTHAELTRAIT":
+                        color = (Color)ColorConverter.ConvertFromString("#23CFD1");
+                        break;
                     default:
                         WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");
                         color = Colors.Gray;

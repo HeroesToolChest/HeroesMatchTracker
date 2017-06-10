@@ -412,6 +412,9 @@ namespace Heroes.Icons.Xml
                                         // add all the other aliases
                                         foreach (var alias in aliases)
                                         {
+                                            if (string.IsNullOrEmpty(alias))
+                                                continue;
+
                                             if (HeroRealNameByHeroAliasName.ContainsKey(alias))
                                                 throw new ArgumentException($"Alias already added to {realHeroName}: {alias}");
 
