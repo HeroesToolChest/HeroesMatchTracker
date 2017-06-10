@@ -257,6 +257,9 @@
     <Compile Include="Views\Replays\ReplaysControl.xaml.cs">
       <DependentUpon>ReplaysControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Replays\UnparsedReplaysWindow.xaml.cs">
+      <DependentUpon>UnparsedReplaysWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Statistics\OverviewControl.xaml.cs">
       <DependentUpon>OverviewControl.xaml</DependentUpon>
     </Compile>
@@ -529,6 +532,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Replays\ReplaysControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Replays\UnparsedReplaysWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

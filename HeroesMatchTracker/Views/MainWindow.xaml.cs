@@ -4,6 +4,7 @@ using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.ViewModels;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using HeroesMatchTracker.Views.Replays;
 using HeroesMatchTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
@@ -46,6 +47,12 @@ namespace HeroesMatchTracker.Views
         public void ShowProfileWindow()
         {
             ProfileWindow window = new ProfileWindow();
+            window.ShowDialog();
+        }
+
+        public void ShowUnParsedReplaysWindow()
+        {
+            UnparsedReplaysWindow window = new UnparsedReplaysWindow();
             window.ShowDialog();
         }
 

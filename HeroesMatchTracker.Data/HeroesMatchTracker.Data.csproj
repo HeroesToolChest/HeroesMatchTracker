@@ -204,6 +204,7 @@
     <Compile Include="Queries\Replays\NonContextQueriesBase.cs" />
     <Compile Include="Queries\Replays\ReplayFileData.cs" />
     <Compile Include="Models\Settings\UserSetting.cs" />
+    <Compile Include="Queries\Settings\UnparsedReplays.cs" />
     <Compile Include="Queries\Settings\UserSettings.cs" />
     <Compile Include="Queries\Settings\UserSettingsTypes.cs" />
   </ItemGroup>
