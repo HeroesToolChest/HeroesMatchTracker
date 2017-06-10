@@ -209,8 +209,10 @@ namespace Heroes.Icons.Xml
 
         protected override void Parse()
         {
+            DuplicateBuildCheck();
+            ParseParentFile();
             LoadTalentTooltipStrings();
-            base.Parse();
+            ParseChildFiles();
         }
 
         protected override void ParseChildFiles()
@@ -396,6 +398,27 @@ namespace Heroes.Icons.Xml
             catch (Exception ex)
             {
                 throw new ParseXmlException("Error on loading talent tooltips", ex);
+            }
+        }
+
+        private void DuplicateBuildCheck()
+        {
+            while (CurrentBuild != 47479)
+            {
+                using (XmlTextReader reader = new XmlTextReader($@"Xml\{XmlFolder}\{XmlParentFile}"))
+                {
+                    reader.MoveToContent();
+                    string previousBuild = reader["pre"]; // check to see if we should load up a previous build
+
+                    if (string.IsNullOrEmpty(previousBuild))
+                        return;
+
+                    if (int.TryParse(previousBuild, out int build))
+                    {
+                        XmlFolder = $@"{XmlBaseFolder}/{build}";
+                        SelectedBuild = build;
+                    }
+                }
             }
         }
     }
