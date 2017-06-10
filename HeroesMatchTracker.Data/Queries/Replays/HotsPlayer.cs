@@ -144,6 +144,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     currentRecord.LastSeen = model.LastSeen;
                 }
 
+                if (model.AccountLevel > currentRecord.AccountLevel)
+                {
+                    currentRecord.AccountLevel = model.AccountLevel;
+                }
+
                 currentRecord.Seen += 1;
 
                 db.SaveChanges();
