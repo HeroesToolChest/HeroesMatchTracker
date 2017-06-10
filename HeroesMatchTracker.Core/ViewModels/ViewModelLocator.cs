@@ -47,6 +47,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
             SimpleIoc.Default.Register<ProfileWindowViewModel>();
+            SimpleIoc.Default.Register<ToasterUpdateWindowViewModel>();
 
             // Home
             SimpleIoc.Default.Register<HomeViewModel>();
@@ -113,6 +114,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public static StartupWindowViewModel StartupWindowViewModel => ServiceLocator.Current.GetInstance<StartupWindowViewModel>();
         public static ProfileWindowViewModel ProfileWindowViewModel => ServiceLocator.Current.GetInstance<ProfileWindowViewModel>();
+        public static ToasterUpdateWindowViewModel ToasterUpdateWindowViewModel => ServiceLocator.Current.GetInstance<ToasterUpdateWindowViewModel>();
 
         // Home
         public static HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();

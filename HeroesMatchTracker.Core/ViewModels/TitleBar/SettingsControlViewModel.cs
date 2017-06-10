@@ -85,6 +85,16 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
             }
         }
 
+        public bool ShowToasterUpdateNotification
+        {
+            get => Database.SettingsDb().UserSettings.ShowToasterUpdateNotification;
+            set
+            {
+                Database.SettingsDb().UserSettings.ShowToasterUpdateNotification = value;
+                RaisePropertyChanged();
+            }
+        }
+
         private void SetRegistryStartup(bool set)
         {
             if (set)

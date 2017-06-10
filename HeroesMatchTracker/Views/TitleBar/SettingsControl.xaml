@@ -13,6 +13,7 @@
     <StackPanel>
         <StackPanel Margin="{StaticResource BorderMargin}">
             <CheckBox Content="Automatically Update on Startup" Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsAutoUpdates}" />
+            <CheckBox Content="Show Update Notification" Margin="{StaticResource ControlMargin}" IsChecked="{Binding ShowToasterUpdateNotification}" />
             <CheckBox Content="Run on Windows Startup"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsWindowsStartup}" ToolTip="Auto Enables 'Minimize to Tray'" />
             <CheckBox Content="Minimize to Tray"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsMinimizeToTray}" IsEnabled="{Binding IsMinimizeToTrayEnabled}"/>
             <CheckBox Content="Hide Battle Tag Numbers"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsBattleTagsHidden}"/>

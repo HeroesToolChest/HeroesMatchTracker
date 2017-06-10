@@ -50,6 +50,15 @@ namespace HeroesMatchTracker.Views
             window.ShowDialog();
         }
 
+        public void ShowToaster(string currentVersion, string newVersion)
+        {
+            if (Database.SettingsDb().UserSettings.ShowToasterUpdateNotification && !Database.SettingsDb().UserSettings.IsUpdateAvailableKnown)
+            {
+                ToasterUpdateWindow window = new ToasterUpdateWindow(currentVersion, newVersion);
+                window.Show();
+            }
+        }
+
         public void ShowUnParsedReplaysWindow()
         {
             UnparsedReplaysWindow window = new UnparsedReplaysWindow();

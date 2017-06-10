@@ -4,9 +4,11 @@ using Heroes.Icons;
 using HeroesMatchTracker.Core.Updater;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HeroesMatchTracker.Core.ViewModels.TitleBar
 {
@@ -42,6 +44,8 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
 
         public RelayCommand CheckForUpdatesCommand => new RelayCommand(CheckForUpdates);
         public RelayCommand ApplyUpdateCommand => new RelayCommand(ApplyUpdates);
+
+        public IToasterUpdateWindowService ToasterUpdateWindow => ServiceLocator.Current.GetInstance<IToasterUpdateWindowService>();
 
         public string CheckForUpdatesResponse
         {
@@ -89,6 +93,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                         CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                         MainTab.SetExtendedAboutText(" (Update Available)");
                         IsApplyUpdateButtonEnabled = true;
+                        Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = true;
                     }
                     else
                     {
@@ -111,6 +116,8 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
             {
                 try
                 {
+                    Database.SettingsDb().UserSettings.IsUpdateAvailableKnown = true;
+
                     // set both buttons to false and keep them false as a restart is required
                     IsCheckForUpdatesButtonEnabled = false;
                     IsApplyUpdateButtonEnabled = false;
@@ -159,15 +166,17 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                             CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
                             MainTab.SetExtendedAboutText("(Update Available)");
                             IsApplyUpdateButtonEnabled = true;
+
+                            await Application.Current.Dispatcher.InvokeAsync(() => ToasterUpdateWindow.ShowToaster(AssemblyVersions.HeroesMatchTrackerVersion().ToString(), AutoUpdater.LatestVersionString));
                         }
                         else
                         {
                             CheckForUpdatesResponse = string.Empty;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        WarningLog.Log(LogLevel.Warn, $"Unable to periodically check for update: {ex.Message}");
+                        WarningLog.Log(LogLevel.Warn, $"Unable to periodically check for an update");
                     }
 
                     IsCheckForUpdatesButtonEnabled = true;

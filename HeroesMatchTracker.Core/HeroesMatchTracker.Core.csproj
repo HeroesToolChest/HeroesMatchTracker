@@ -288,6 +288,7 @@
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
+    <Compile Include="ViewModels\ToasterUpdateWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowDialogsService.cs" />
@@ -297,6 +298,7 @@
     <Compile Include="ViewServices\IMatchSummaryReplayService.cs" />
     <Compile Include="ViewServices\ICreateWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowService.cs" />
+    <Compile Include="ViewServices\IToasterUpdateWindowService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">
