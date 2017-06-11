@@ -11,6 +11,7 @@ namespace HeroesMatchTracker.Data.Databases
 
         public virtual DbSet<UserSetting> UserSettings { get; set; }
         public virtual DbSet<FailedReplay> FailedReplays { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -17,6 +17,12 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
                 Status NVARCHAR(20),
                 FilePath TEXT);",
 
+                @"CREATE TABLE IF NOT EXISTS UserProfiles(
+                UserProfileId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                UserBattleTagName NVARCHAR(40),
+                UserRegion INTEGER,
+                UserPlayerId INTEGER);",
+
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsAutoRequeueOnUpdate', 'True');",
