@@ -36,7 +36,7 @@
                     </TextBlock.Style>
                 </TextBlock>
                 <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource PlayerSearchContextMenu}">
-                    <TextBlock Text="{Binding PlayerName}" Padding="4 0 0 0">
+                    <TextBlock Text="{Binding PlayerName}" Padding="4 0 0 0" ToolTip="{Binding PlayerNameTooltip}" ToolTipService.ShowDuration="60000">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="FontSize" Value="12" />
@@ -52,7 +52,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel DockPanel.Dock="Left">
-                <Image Source="{Binding MvpAward}" Height="64" Width="64" Margin="0 -8 0 0">
+                <Image Source="{Binding MvpAward}" Height="64" Width="64" Margin="0 -8 0 0" ToolTipService.ShowDuration="60000">
                     <Image.ToolTip>
                         <ToolTip Content="{Binding MvpAwardDescription}" />
                     </Image.ToolTip>

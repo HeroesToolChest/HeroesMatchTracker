@@ -38,6 +38,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             MvpAward = matchPlayerBase.MvpAward;
             PartyIcon = matchPlayerBase.PartyIcon;
             PlayerName = matchPlayerBase.PlayerName;
+            PlayerNameTooltip = matchPlayerBase.PlayerNameTooltip;
             PlayerBattleTagName = matchPlayerBase.PlayerBattleTagName;
             CharacterName = matchPlayerBase.CharacterName;
             CharacterTooltip = matchPlayerBase.CharacterTooltip;
@@ -52,6 +53,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
         public string PlayerName { get; private set; }
+        public string PlayerNameTooltip { get; private set; }
         public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
         public string CharacterTooltip { get; private set; }
@@ -110,6 +112,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
+            PlayerNameTooltip = $"{playerInfo.BattleTagName}{Environment.NewLine}Account Level: {playerInfo.AccountLevel}{Environment.NewLine}Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen: {playerInfo.LastSeen.ToLocalTime()}";
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
 
             if (Player.Team == 4)
