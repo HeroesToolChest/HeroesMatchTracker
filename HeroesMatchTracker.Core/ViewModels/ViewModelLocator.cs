@@ -39,7 +39,6 @@ namespace HeroesMatchTracker.Core.ViewModels
             });
 
             SimpleIoc.Default.Register<ISelectedUserProfileService, SelectedUserProfile>();
-            SimpleIoc.Default.Register<IHotsLogsService, HotsLogsSite>();
             SimpleIoc.Default.Register<IWebsiteService, Website>();
             SimpleIoc.Default.Register<IInternalService, InternalService>();
 

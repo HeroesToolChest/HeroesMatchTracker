@@ -48,9 +48,6 @@
                                 </Style.Triggers>
                             </Style>
                         </TextBlock.Style>
-                        <TextBlock.InputBindings>
-                            <MouseBinding Command="{Binding ShowHotsLogsPlayerProfileCommand}" MouseAction="LeftClick" />
-                        </TextBlock.InputBindings>
                     </TextBlock>
                 </StackPanel>
             </StackPanel>

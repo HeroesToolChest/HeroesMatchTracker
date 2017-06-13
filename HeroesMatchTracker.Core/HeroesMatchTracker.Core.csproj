@@ -202,9 +202,7 @@
     <Compile Include="Generic\ReplayParserStatus.cs" />
     <Compile Include="Generic\ReplayParserWatchStatus.cs" />
     <Compile Include="Generic\Utilities.cs" />
-    <Compile Include="HotsLogs\HotsLogsSite.cs" />
     <Compile Include="HotsLogs\HotsLogsUploader.cs" />
-    <Compile Include="HotsLogs\IHotsLogsService.cs" />
     <Compile Include="HotsLogs\MaintenanceException.cs" />
     <Compile Include="HotsLogs\ReplayFileHotsLogsStatus.cs" />
     <Compile Include="Generic\LogFileNames.cs" />
