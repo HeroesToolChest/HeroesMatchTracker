@@ -144,6 +144,7 @@
     <Compile Include="Migrations\Settings\Migration3_v2_1_0\Migration3_v2_1_0.cs" />
     <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
     <Compile Include="Migrations\Settings\Migration4_v2_2_0\Migration4_v2_2_0.cs" />
+    <Compile Include="Migrations\Settings\Migration4_v2_2_0\MigrationAddon4_v2_2_0_1.cs" />
     <Compile Include="Migrations\Settings\SettingsMigrator.cs" />
     <Compile Include="Migrations\Settings\SettingsContextMigrator.cs" />
     <Compile Include="Migrations\IMigrationCommand.cs" />

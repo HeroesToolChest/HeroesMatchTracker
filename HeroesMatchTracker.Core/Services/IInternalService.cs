@@ -8,6 +8,6 @@ namespace HeroesMatchTracker.Core.Services
     {
         IDatabaseService Database { get; }
         IHeroesIconsService HeroesIcons { get; }
-        IUserProfileService UserProfile { get; }
+        ISelectedUserProfileService UserProfile { get; }
     }
 }

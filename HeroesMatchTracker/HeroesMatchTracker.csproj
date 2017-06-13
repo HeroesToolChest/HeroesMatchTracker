@@ -203,8 +203,8 @@
     <Compile Include="Views\Matches\UnrankedDraftControl.xaml.cs">
       <DependentUpon>UnrankedDraftControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProfileWindow.xaml.cs">
-      <DependentUpon>ProfileWindow.xaml</DependentUpon>
+    <Compile Include="Views\UserProfileWindow.xaml.cs">
+      <DependentUpon>UserProfileWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RawData\QueryControl.xaml.cs">
       <DependentUpon>QueryControl.xaml</DependentUpon>
@@ -462,7 +462,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfileWindow.xaml">
+    <Page Include="Views\UserProfileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

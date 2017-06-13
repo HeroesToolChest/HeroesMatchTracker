@@ -3,7 +3,7 @@
     public interface ICreateWindowService
     {
         void ShowWhatsNewWindow();
-        void ShowProfileWindow();
+        void ShowUserProfileWindow();
         void ShowFailedReplaysWindow();
     }
 }

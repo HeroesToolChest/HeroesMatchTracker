@@ -12,7 +12,5 @@
         public string UserBattleTagName { get; set; }
 
         public int UserRegion { get; set; }
-
-        public int UserPlayerId { get; set; }
     }
 }

@@ -246,8 +246,8 @@
     <Compile Include="Services\Website.cs" />
     <Compile Include="Updater\AutoUpdater.cs" />
     <Compile Include="Updater\AutoUpdaterException.cs" />
-    <Compile Include="User\IUserProfileService.cs" />
-    <Compile Include="User\UserProfile.cs" />
+    <Compile Include="User\ISelectedUserProfileService.cs" />
+    <Compile Include="User\SelectedUserProfile.cs" />
     <Compile Include="Validation\NotEmptyValidation.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\HmtViewModel.cs" />
@@ -261,7 +261,7 @@
     <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
-    <Compile Include="ViewModels\ProfileWindowViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileWindowViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />

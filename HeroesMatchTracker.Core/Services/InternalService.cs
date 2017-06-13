@@ -6,7 +6,7 @@ namespace HeroesMatchTracker.Core.Services
 {
     public class InternalService : IInternalService
     {
-        public InternalService(IDatabaseService database, IHeroesIconsService heroesIcons, IUserProfileService userProfile, IWebsiteService website)
+        public InternalService(IDatabaseService database, IHeroesIconsService heroesIcons, ISelectedUserProfileService userProfile, IWebsiteService website)
         {
             Database = database;
             HeroesIcons = heroesIcons;
@@ -18,7 +18,7 @@ namespace HeroesMatchTracker.Core.Services
 
         public IHeroesIconsService HeroesIcons { get; }
 
-        public IUserProfileService UserProfile { get; }
+        public ISelectedUserProfileService UserProfile { get; }
 
         public IWebsiteService Website { get; }
     }

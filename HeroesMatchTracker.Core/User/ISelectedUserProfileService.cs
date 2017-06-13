@@ -1,6 +1,6 @@
 ﻿namespace HeroesMatchTracker.Core.User
 {
-    public interface IUserProfileService
+    public interface ISelectedUserProfileService
     {
         string BattleTagName { get; }
         long PlayerId { get; }

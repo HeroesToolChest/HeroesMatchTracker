@@ -94,7 +94,7 @@
                 <controls:DropDownButton Content="{Binding UserBattleTag}" MinWidth="180" FontSize="15" BorderBrush="Transparent" Padding="0 0 8 0"
                                      HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" Panel.ZIndex="1000">
                     <controls:DropDownButton.Items>
-                        <MenuItem Header="Profile" Command="{Binding UserDropDownProfileCommand}" />
+                        <MenuItem Header="Profiles" Command="{Binding UserDropDownProfileCommand}" />
                     </controls:DropDownButton.Items>
                 </controls:DropDownButton>
                 <TabControl TabStripPlacement="Top" SelectedIndex="{Binding SelectedMainTab}" controls:TabControlHelper.Underlined="TabPanel" Panel.ZIndex="999">

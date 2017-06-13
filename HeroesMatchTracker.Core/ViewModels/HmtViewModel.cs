@@ -45,7 +45,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected IInternalService InternalService { get;  }
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
-        protected IUserProfileService UserProfile { get; }
+        protected ISelectedUserProfileService UserProfile { get; }
 
         protected Logger ExceptionLog { get; private set; }
         protected Logger WarningLog { get; private set; }

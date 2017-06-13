@@ -20,8 +20,7 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
                 @"CREATE TABLE IF NOT EXISTS UserProfiles(
                 UserProfileId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 UserBattleTagName NVARCHAR(40),
-                UserRegion INTEGER,
-                UserPlayerId INTEGER);",
+                UserRegion INTEGER);",
 
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False');",
@@ -31,7 +30,10 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
             };
             migrations.Add(Version, steps);
 
-            List<IMigrationAddon> addonSteps = new List<IMigrationAddon>();
+            List<IMigrationAddon> addonSteps = new List<IMigrationAddon>
+            {
+                new MigrationAddon4_v2_2_0_1(),
+            };
             migrationAddons.Add(Version, addonSteps);
         }
     }

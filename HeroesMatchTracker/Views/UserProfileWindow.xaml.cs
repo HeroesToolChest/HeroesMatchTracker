@@ -3,11 +3,11 @@
 namespace HeroesMatchTracker.Views
 {
     /// <summary>
-    /// Interaction logic for ProfileWindow.xaml
+    /// Interaction logic for UserProfileWindow.xaml
     /// </summary>
-    public partial class ProfileWindow : MetroWindow
+    public partial class UserProfileWindow : MetroWindow
     {
-        public ProfileWindow()
+        public UserProfileWindow()
         {
             InitializeComponent();
         }

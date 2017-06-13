@@ -19,7 +19,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
     {
         private IInternalService InternalService;
         private IHeroesIconsService HeroesIcons;
-        private IUserProfileService UserProfile;
+        private ISelectedUserProfileService UserProfile;
         private IWebsiteService Website;
         private ReplayMatch ReplayMatch;
 

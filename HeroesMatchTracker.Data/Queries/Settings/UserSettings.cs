@@ -113,7 +113,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         }
         #endregion Replays
 
-        #region User Profile
+        #region Selected User Profile
         public string UserBattleTagName
         {
             get { return GetStringValue(); }

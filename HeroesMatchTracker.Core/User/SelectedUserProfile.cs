@@ -4,11 +4,11 @@ using HeroesMatchTracker.Data;
 
 namespace HeroesMatchTracker.Core.User
 {
-    public class UserProfile : IUserProfileService
+    public class SelectedUserProfile : ISelectedUserProfileService
     {
         private IDatabaseService Database;
 
-        public UserProfile(IDatabaseService database)
+        public SelectedUserProfile(IDatabaseService database)
         {
             Database = database;
         }
@@ -21,8 +21,8 @@ namespace HeroesMatchTracker.Core.User
         {
             Database.SettingsDb().UserSettings.UserBattleTagName = battleTag;
             Database.SettingsDb().UserSettings.UserRegion = regionId;
-
             Database.SettingsDb().UserSettings.UserPlayerId = Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(battleTag, regionId);
+
             Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateUserBattleTag));
         }
     }

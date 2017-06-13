@@ -27,9 +27,9 @@ namespace HeroesMatchTracker.Core.ViewModels
         private string _extendedAboutText;
 
         private IDatabaseService Database;
-        private IUserProfileService UserProfile;
+        private ISelectedUserProfileService UserProfile;
 
-        public MainWindowViewModel(IDatabaseService database, IUserProfileService userProfile)
+        public MainWindowViewModel(IDatabaseService database, ISelectedUserProfileService userProfile)
         {
             Database = database;
             UserProfile = userProfile;
@@ -266,7 +266,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
         private void UserDropDownProfile()
         {
-            CreateWindow.ShowProfileWindow();
+            CreateWindow.ShowUserProfileWindow();
         }
 
         private void ReceivedMessage(NotificationMessage message)

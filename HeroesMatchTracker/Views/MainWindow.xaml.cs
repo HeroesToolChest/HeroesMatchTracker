@@ -44,9 +44,9 @@ namespace HeroesMatchTracker.Views
             window.ShowDialog();
         }
 
-        public void ShowProfileWindow()
+        public void ShowUserProfileWindow()
         {
-            ProfileWindow window = new ProfileWindow();
+            UserProfileWindow window = new UserProfileWindow();
             window.ShowDialog();
         }
 

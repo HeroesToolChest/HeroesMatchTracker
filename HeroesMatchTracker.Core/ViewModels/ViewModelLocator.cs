@@ -38,7 +38,7 @@ namespace HeroesMatchTracker.Core.ViewModels
                 return SimpleIoc.Default.GetInstance<HeroesIcons>();
             });
 
-            SimpleIoc.Default.Register<IUserProfileService, UserProfile>();
+            SimpleIoc.Default.Register<ISelectedUserProfileService, SelectedUserProfile>();
             SimpleIoc.Default.Register<IHotsLogsService, HotsLogsSite>();
             SimpleIoc.Default.Register<IWebsiteService, Website>();
             SimpleIoc.Default.Register<IInternalService, InternalService>();
@@ -46,11 +46,11 @@ namespace HeroesMatchTracker.Core.ViewModels
             // start ups
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartupWindowViewModel>();
-            SimpleIoc.Default.Register<ProfileWindowViewModel>();
-            SimpleIoc.Default.Register<ToasterUpdateWindowViewModel>();
 
             // Home
             SimpleIoc.Default.Register<HomeViewModel>();
+            SimpleIoc.Default.Register<UserProfileWindowViewModel>();
+            SimpleIoc.Default.Register<ToasterUpdateWindowViewModel>();
 
             // TitleBar
             SimpleIoc.Default.Register<SettingsControlViewModel>();
@@ -113,11 +113,11 @@ namespace HeroesMatchTracker.Core.ViewModels
         // start ups
         public static MainWindowViewModel MainWindowViewModel => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
         public static StartupWindowViewModel StartupWindowViewModel => ServiceLocator.Current.GetInstance<StartupWindowViewModel>();
-        public static ProfileWindowViewModel ProfileWindowViewModel => ServiceLocator.Current.GetInstance<ProfileWindowViewModel>();
-        public static ToasterUpdateWindowViewModel ToasterUpdateWindowViewModel => ServiceLocator.Current.GetInstance<ToasterUpdateWindowViewModel>();
 
         // Home
         public static HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();
+        public static UserProfileWindowViewModel UserProfileWindowViewModel => ServiceLocator.Current.GetInstance<UserProfileWindowViewModel>();
+        public static ToasterUpdateWindowViewModel ToasterUpdateWindowViewModel => ServiceLocator.Current.GetInstance<ToasterUpdateWindowViewModel>();
 
         // TitleBar
         public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();

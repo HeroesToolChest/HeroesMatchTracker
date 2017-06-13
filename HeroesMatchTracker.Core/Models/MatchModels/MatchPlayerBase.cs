@@ -94,7 +94,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
-        protected IUserProfileService UserProfile { get; }
+        protected ISelectedUserProfileService UserProfile { get; }
         protected IWebsiteService Website { get; }
         protected ReplayMatchPlayer Player { get; }
 
