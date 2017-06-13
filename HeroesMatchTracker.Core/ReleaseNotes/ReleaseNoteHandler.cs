@@ -78,7 +78,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
             ReleaseNote releaseNote = new ReleaseNote
             {
                 DateReleased = release.PublishedAt.Value.DateTime,
-                PatchNote = ModifiyReleaseBody(release.Body),
+                PatchNote = ModifyReleaseBody(release.Body),
                 PreRelease = release.Prerelease,
                 Version = version,
             };
@@ -89,7 +89,7 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
                 Database.ReleaseNotesDb().ReleaseNotes.CreateRecord(releaseNote);
         }
 
-        private string ModifiyReleaseBody(string releaseBody)
+        private string ModifyReleaseBody(string releaseBody)
         {
             releaseBody = releaseBody.Replace("\r\n", Environment.NewLine);
 
