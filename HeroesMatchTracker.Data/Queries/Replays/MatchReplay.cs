@@ -1,12 +1,15 @@
 ﻿using Heroes.Helpers;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
+using HeroesMatchTracker.Data.Generic;
 using HeroesMatchTracker.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace HeroesMatchTracker.Data.Queries.Replays
 {
@@ -113,7 +116,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.SingleOrDefault(x => x.RandomValue == model.RandomValue).ReplayId;
+                return db.Replays.SingleOrDefault(x => x.Hash == model.Hash).ReplayId;
             }
         }
 
@@ -279,7 +282,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         /// <returns>The date (UTC) of the last replay</returns>
         internal override bool IsExistingRecord(ReplaysContext db, ReplayMatch model)
         {
-            return db.Replays.Any(x => x.RandomValue == model.RandomValue);
+            return db.Replays.Any(x => x.Hash == model.Hash);
         }
     }
 }

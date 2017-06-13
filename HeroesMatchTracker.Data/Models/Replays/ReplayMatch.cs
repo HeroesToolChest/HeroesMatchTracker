@@ -28,6 +28,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public long? RandomValue { get; set; }
 
+        public string Hash { get; set; }
+
         [StringLength(50)]
         public string MapName { get; set; }
 

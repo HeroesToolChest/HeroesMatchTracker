@@ -2,6 +2,7 @@
 using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
+using HeroesMatchTracker.Data.Generic;
 using HeroesMatchTracker.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
@@ -104,6 +105,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 FileName = fileName,
             };
 
+            replayMatch.Hash = ReplayHasher.HashReplay(replayMatch);
             ReplayTimeStamp = replayMatch.TimeStamp.Value;
 
             // check if replay was added to database already
