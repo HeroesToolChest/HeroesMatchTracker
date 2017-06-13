@@ -175,12 +175,18 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
+        /// <summary>
+        /// Has the What's New Window been shown yet
+        /// </summary>
         public bool ShowWhatsNewWindow
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
         }
 
+        /// <summary>
+        /// Has the failed replays been requeued yet
+        /// </summary>
         public bool RequeueAllFailedReplays
         {
             get { return GetBooleanValue(); }
@@ -198,6 +204,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             IsWindowsStartup = false;
             IsMinimizeToTray = true;
             IsBattleTagHidden = true;
+            ShowToasterUpdateNotification = true;
 
             // Replays
             ReplayWatchCheckBox = false;
@@ -211,6 +218,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             ReplaysLastHotsLogs = lastWeek;
             SelectedScanDateTimeIndex = 0;
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
+            IsAutoRequeueOnUpdate = true;
 
             // User Profile
             UserBattleTagName = string.Empty;
@@ -226,6 +234,9 @@ namespace HeroesMatchTracker.Data.Queries.Settings
 
             // Other
             IsStartedViaStartup = false;
+            IsUpdateAvailableKnown = false;
+            ShowWhatsNewWindow = false;
+            RequeueAllFailedReplays = false;
         }
     }
 }
