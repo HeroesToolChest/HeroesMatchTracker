@@ -55,16 +55,16 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                 if (Convert.ToInt32(versionNums[0]) > 1 || Convert.ToInt32(versionNums[1]) > 99) // version 2.x.x. or 1.100.x (beta for 2.x.x)
                 {
                     if (release.PreRelease)
-                        ReleaseNotesMarkdownText += $"## [Pre-release] Heroes Match Tracker {release.Version} ({release.DateReleased.ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
+                        ReleaseNotesMarkdownText += $"## [Pre-release] Heroes Match Tracker {release.Version} ({release.DateReleased.ToLocalTime().ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
                     else
-                        ReleaseNotesMarkdownText += $"## Heroes Match Tracker {release.Version} ({release.DateReleased.ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
+                        ReleaseNotesMarkdownText += $"## Heroes Match Tracker {release.Version} ({release.DateReleased.ToLocalTime().ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
                 }
                 else // legacy
                 {
                     if (release.PreRelease)
-                        ReleaseNotesMarkdownText += $"## [Pre-release] Heroes Parser Data {release.Version} ({release.DateReleased.ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
+                        ReleaseNotesMarkdownText += $"## [Pre-release] Heroes Parser Data {release.Version} ({release.DateReleased.ToLocalTime().ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
                     else
-                        ReleaseNotesMarkdownText += $"## Heroes Parser Data {release.Version} ({release.DateReleased.ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
+                        ReleaseNotesMarkdownText += $"## Heroes Parser Data {release.Version} ({release.DateReleased.ToLocalTime().ToString("MMMM dd, yyyy")}) {Environment.NewLine}";
                 }
 
                 ReleaseNotesMarkdownText += release.PatchNote;
