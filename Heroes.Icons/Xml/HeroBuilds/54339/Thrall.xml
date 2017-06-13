@@ -6,7 +6,7 @@
     <ThrallMasteryRollingThunder name="Mastery Rolling Thunder" desc="ThrallRollingThunderTalent">storm_ui_icon_thrall_chainlightning_var2.dds</ThrallMasteryRollingThunder>
   </Level1>
   <Level4>
-    <ThrallFeralResilience name="Feral Resilience" desc="ThrallFrostwolfResilience">storm_ui_icon_thrall_feralspirit.dds</ThrallFeralResilience>
+    <ThrallFeralResilience name="Feral Resilience" desc="ThrallFeralResilience">storm_ui_icon_thrall_feralspirit.dds</ThrallFeralResilience>
     <ThrallFrostwolfPack name="Frostwolf Pack" desc="ThrallFrostwolfPack">storm_ui_icon_thrall_feralspirit_var1.dds</ThrallFrostwolfPack>
     <ThrallMasteryManaTide name="Mana Tide" desc="ThrallManaTideTalent">storm_ui_icon_thrall_frostwolfresilience.dds</ThrallMasteryManaTide>
   </Level4>
