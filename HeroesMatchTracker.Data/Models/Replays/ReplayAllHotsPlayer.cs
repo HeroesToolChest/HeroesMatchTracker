@@ -37,7 +37,15 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public int AccountLevel { get; set; }
 
+        /// <summary>
+        /// This is local datetime.
+        /// </summary>
         public DateTime LastSeen { get; set; }
+
+        /// <summary>
+        /// The datetime that the player was seen before LastSeen. This is local datetime.
+        /// </summary>
+        public DateTime? LastSeenBefore { get; set; }
 
         public int Seen { get; set; }
 

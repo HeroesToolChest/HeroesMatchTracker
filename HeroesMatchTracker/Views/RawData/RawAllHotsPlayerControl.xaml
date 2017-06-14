@@ -24,6 +24,7 @@
                     <DataGridTextColumn Header="BattleNetSubId" Binding="{Binding BattleNetSubId}" />
                     <DataGridTextColumn Header="BattleNetTId" Binding="{Binding BattleNetTId}" />
                     <DataGridTextColumn Header="LastSeen" Binding="{Binding LastSeen}" />
+                    <DataGridTextColumn Header="LastSeenBefore" Binding="{Binding LastSeenBefore}" />
                     <DataGridTextColumn Header="Seen" Binding="{Binding Seen}" />
                 </DataGrid.Columns>
             </DataGrid>

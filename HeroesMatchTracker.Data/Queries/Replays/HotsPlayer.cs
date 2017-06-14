@@ -119,6 +119,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     currentRecord.BattleNetSubId = model.BattleNetSubId;
                     currentRecord.BattleNetTId = model.BattleNetTId;
                     currentRecord.LastSeen = model.LastSeen;
+                    currentRecord.LastSeenBefore = model.LastSeenBefore;
                 }
 
                 if (model.LastSeen > currentRecord.LastSeen)
@@ -141,6 +142,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                     currentRecord.BattleTagName = model.BattleTagName; // update the player's battletag, it may have changed
                     currentRecord.BattleNetTId = model.BattleNetTId;
+                    currentRecord.LastSeenBefore = currentRecord.LastSeen; // important
                     currentRecord.LastSeen = model.LastSeen;
                 }
 

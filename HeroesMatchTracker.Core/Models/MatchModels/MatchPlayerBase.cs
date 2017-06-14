@@ -112,7 +112,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
-            PlayerNameTooltip = $"{playerInfo.BattleTagName}{Environment.NewLine}Account Level: {playerInfo.AccountLevel}{Environment.NewLine}Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen: {playerInfo.LastSeen.ToLocalTime()}";
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
 
             if (Player.Team == 4)
@@ -130,6 +129,14 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
             if (matchAwardDictionary.ContainsKey(Player.PlayerId))
                 SetMVPAward(matchAwardDictionary[Player.PlayerId]);
+
+            string lastSeenBefore;
+            if (playerInfo.LastSeenBefore.HasValue)
+                lastSeenBefore = playerInfo.LastSeenBefore.Value.ToString();
+            else
+                lastSeenBefore = "Never";
+
+            PlayerNameTooltip = $"{PlayerBattleTagName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
         }
 
         public virtual void Dispose()
