@@ -12,6 +12,7 @@ namespace Heroes.Helpers
         Year2016Season2 = 1 << 2,
         Year2016Season3 = 1 << 3,
         Year2017Season1 = 1 << 4,
+        Year2017Season2 = 1 << 5,
     }
 
     public static partial class HeroesHelpers
@@ -27,6 +28,7 @@ namespace Heroes.Helpers
                     "2016 Season 2",
                     "2016 Season 3",
                     "2017 Season 1",
+                    "2017 Season 2",
                 };
 
                 return list;
