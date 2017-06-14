@@ -25,7 +25,7 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowToasterUpdateNotification', 'True');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsUpdateAvailableKnown', 'False');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsAutoRequeueOnUpdate', 'True');",
-                @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowWhatsNewWindow', 'False');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('ShowWhatsNewWindow', 'True');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('RequeueAllFailedReplays', 'False');",
             };
             migrations.Add(Version, steps);
