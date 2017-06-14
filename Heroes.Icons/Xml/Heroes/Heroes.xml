@@ -9,7 +9,7 @@
   <Alarak available="47479" attributeid="Alar" franchise="Starcraft"
           portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
     <Roles>Assassin</Roles>
-    <Aliases>A亞拉瑞克,阿拉纳克,알라라크,Аларак</Aliases>
+    <Aliases>亞拉瑞克,阿拉纳克,알라라크,Аларак</Aliases>
   </Alarak>
   
   <Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" 
@@ -222,10 +222,10 @@
     <Aliases>МАЛФУРИОН,말퓨리온,玛法里奥,瑪法里恩,Малфурион</Aliases>
   </Malfurion>
 
-  <Malthael available="99999" attributeid="MALT" franchise="Diablo"
+  <Malthael available="54339" attributeid="MALT" franchise="Diablo"
            portrait="storm_ui_ingame_heroselect_btn_malthael.dds" loading="storm_ui_ingame_hero_loadingscreen_malthael.dds" leader="storm_ui_ingame_hero_leaderboard_malthael.dds">
     <Roles>Assassin</Roles>
-    <Aliases></Aliases>
+    <Aliases>Maltael,Malthaël,Малтаэль,马萨伊尔,말티엘</Aliases>
   </Malthael>
   
   <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft"
