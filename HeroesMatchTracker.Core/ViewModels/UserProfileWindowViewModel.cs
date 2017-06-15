@@ -138,7 +138,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
             if (Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(profile.UserBattleTagName, profile.UserRegion) < 1)
             {
-                AddProfileResultText = "BattleTag/Region player must exist before it can be added";
+                AddProfileResultText = "BattleTag/Region not found";
                 return;
             }
 
