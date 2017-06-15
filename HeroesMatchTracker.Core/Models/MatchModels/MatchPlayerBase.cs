@@ -136,7 +136,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 lastSeenBefore = "Never";
 
-            PlayerNameTooltip = $"{PlayerBattleTagName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
+            PlayerNameTooltip = $"{PlayerBattleTagName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Total Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
         }
 
         public virtual void Dispose()
