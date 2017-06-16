@@ -112,7 +112,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             }
         }
 
-        public long ReadReplayIdByRandomValue(ReplayMatch model)
+        public long ReadReplayIdByHash(ReplayMatch model)
         {
             using (var db = new ReplaysContext())
             {

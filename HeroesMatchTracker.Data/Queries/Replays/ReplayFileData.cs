@@ -111,7 +111,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             // check if replay was added to database already
             if (ReplaysDb.MatchReplay.IsExistingRecord(ReplaysContext, replayMatch))
             {
-                ReplayId = ReplaysDb.MatchReplay.ReadReplayIdByRandomValue(replayMatch);
+                ReplayId = ReplaysDb.MatchReplay.ReadReplayIdByHash(replayMatch);
                 return true;
             }
             else
