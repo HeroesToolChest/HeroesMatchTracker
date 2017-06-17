@@ -617,9 +617,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             int talentCount = talents.Count();
             character = string.Empty;
 
-            if (talentCount == 0)
-                return false;
-
             while (talentCount > 0)
             {
                 if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
