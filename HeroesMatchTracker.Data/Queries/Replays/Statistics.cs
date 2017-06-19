@@ -31,12 +31,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if (gameMode.HasFlag(value))
                     {
-                        var query = from mp in db.ReplayMatchPlayers
-                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                        var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                     where mp.PlayerId == UserSettings.UserPlayerId &&
                                           mp.Character == character &&
                                           mp.IsWinner == isWins &&
@@ -67,6 +69,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
@@ -77,8 +81,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                 }
 
-                var query = from mp in db.ReplayMatchPlayers
-                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                            join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                             where mp.PlayerId == UserSettings.UserPlayerId &&
                                   mp.Character == character &&
                                   mp.IsWinner == isWins &&
@@ -106,13 +110,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
                     {
-                        var query = from r in db.Replays
-                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                    join mpsr in db.ReplayMatchPlayerScoreResults on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
+                        var query = from r in db.Replays.AsNoTracking()
+                                    join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
+                                    join mpsr in db.ReplayMatchPlayerScoreResults.AsNoTracking() on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
                                     where mp.PlayerId == UserSettings.UserPlayerId &&
                                           mp.Character == character &&
                                           r.GameMode == (GameMode)value &&
@@ -134,6 +140,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
@@ -144,8 +152,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                 }
 
-                var query = from mp in db.ReplayMatchPlayers
-                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                            join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                             where mp.PlayerId == UserSettings.UserPlayerId &&
                                     mp.Character == character &&
                                     r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
@@ -175,6 +183,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
@@ -197,9 +207,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 switch (tier)
                 {
                     case TalentTier.Level1:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                         mp.IsWinner == isWinner &&
                                         mpt.Character == character &&
@@ -208,9 +218,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level4:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -219,9 +229,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level7:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -230,9 +240,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level10:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -241,9 +251,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level13:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -252,9 +262,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level16:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -263,9 +273,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 select r;
                         break;
                     case TalentTier.Level20:
-                        query = from mpt in db.ReplayMatchPlayerTalents
-                                join r in db.Replays on mpt.ReplayId equals r.ReplayId
-                                join mp in db.ReplayMatchPlayers on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
+                        query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
+                                join r in db.Replays.AsNoTracking() on mpt.ReplayId equals r.ReplayId
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on new { mpt.ReplayId, mpt.PlayerId } equals new { mp.ReplayId, mp.PlayerId }
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
@@ -291,6 +301,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 var mapFilter = PredicateBuilder.New<ReplayMatch>();
                 foreach (var map in maps)
                 {
@@ -298,9 +310,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     mapFilter = mapFilter.Or(x => x.MapName == temp);
                 }
 
-                var query = from r in db.Replays
-                            join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                            join ma in db.ReplayMatchAwards on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
+                var query = from r in db.Replays.AsNoTracking()
+                            join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
+                            join ma in db.ReplayMatchAwards.AsNoTracking() on new { mp.ReplayId, mp.PlayerId } equals new { ma.ReplayId, ma.PlayerId }
                             where mp.PlayerId == UserSettings.UserPlayerId &&
                                     mp.Character == character &&
                                     r.GameMode == gameMode &&
@@ -327,13 +339,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             int total = 0;
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
                     {
-                        var query = from mp in db.ReplayMatchPlayers
-                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
-                                    join mpsr in db.ReplayMatchPlayerScoreResults on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
+                        var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                    join mpsr in db.ReplayMatchPlayerScoreResults.AsNoTracking() on new { mp.ReplayId, mp.PlayerId } equals new { mpsr.ReplayId, mpsr.PlayerId }
                                     where mp.PlayerId == UserSettings.UserPlayerId &&
                                           mp.Character == character &&
                                           r.GameMode == (GameMode)value &&
@@ -368,12 +382,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if (gameMode.HasFlag(value))
                     {
-                        var query = from mp in db.ReplayMatchPlayers
-                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                        var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                     where mp.PlayerId == UserSettings.UserPlayerId &&
                                           mp.IsWinner == isWins &&
                                           r.GameMode == (GameMode)value &&
@@ -396,12 +412,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
                 foreach (Enum value in Enum.GetValues(gameMode.GetType()))
                 {
                     if (gameMode.HasFlag(value))
                     {
-                        var query = from mp in db.ReplayMatchPlayers
-                                    join r in db.Replays on mp.ReplayId equals r.ReplayId
+                        var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                     where mp.PlayerId == UserSettings.UserPlayerId &&
                                           r.GameMode == (GameMode)value &&
                                           r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2

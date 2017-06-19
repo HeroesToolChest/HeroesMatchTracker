@@ -5,7 +5,7 @@ using HeroesMatchTracker.Data.Queries.Replays;
 using NLog;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.ViewModels.RawData
@@ -22,6 +22,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
         private string _selectedWhereColumnName;
         private string _selectedWhereOperand;
         private string _selectedWhereTextBoxInput;
+        private IEnumerable<T> _rawDataCollection;
 
         private List<string> _columnNamesList = new List<string>();
         private List<string> _orderByList = new List<string>();
@@ -29,8 +30,6 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
 
         private IRawDataQueries<T> IRawDataQueries;
         private Dictionary<ButtonCommands, Action> ButtonCommandActions;
-
-        private ObservableCollection<T> _rawDataCollection = new ObservableCollection<T>();
 
         /// <summary>
         /// Contstructor
@@ -185,7 +184,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
             }
         }
 
-        public ObservableCollection<T> RawDataCollection
+        public IEnumerable<T> RawDataCollection
         {
             get => _rawDataCollection;
             set
@@ -202,7 +201,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
                 if (prop.IsVirtual == false && prop.ReturnType.Name == "Void")
                 {
                     string columnName = prop.Name.Split('_')[1];
-                    if (!columnName.Contains("Ticks"))
+                    if (!columnName.Contains("Ticks") || columnName != "RandomValue")
                         ColumnNamesList.Add(columnName);
                 }
             }
@@ -241,7 +240,6 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
         {
             IsQueryActive = false;
             QueryStatus = "Executing query...";
-            RawDataCollection.Clear();
 
             Task.Run(() =>
             {
@@ -262,32 +260,32 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
 
         private void SelectAll()
         {
-            RawDataCollection = new ObservableCollection<T>(IRawDataQueries.ReadAllRecords());
-            RowsReturned = RawDataCollection.Count;
+            RawDataCollection = IRawDataQueries.ReadAllRecords();
+            RowsReturned = RawDataCollection.Count();
         }
 
         private void SelectTop100()
         {
-            RawDataCollection = new ObservableCollection<T>(IRawDataQueries.ReadTopRecords(100));
-            RowsReturned = RawDataCollection.Count;
+            RawDataCollection = IRawDataQueries.ReadTopRecords(100);
+            RowsReturned = RawDataCollection.Count();
         }
 
         private void SelectBottom100()
         {
-            RawDataCollection = new ObservableCollection<T>(IRawDataQueries.ReadLastRecords(100));
-            RowsReturned = RawDataCollection.Count;
+            RawDataCollection = IRawDataQueries.ReadLastRecords(100);
+            RowsReturned = RawDataCollection.Count();
         }
 
         private void SelectCustomTop()
         {
-           RawDataCollection = new ObservableCollection<T>(IRawDataQueries.ReadRecordsCustomTop(SelectedCustomTopCount, SelectedTopColumnName, SelectedTopOrderBy));
-           RowsReturned = RawDataCollection.Count;
+           RawDataCollection = IRawDataQueries.ReadRecordsCustomTop(SelectedCustomTopCount, SelectedTopColumnName, SelectedTopOrderBy);
+           RowsReturned = RawDataCollection.Count();
         }
 
         private void SelectCustomWhere()
         {
-           RawDataCollection = new ObservableCollection<T>(IRawDataQueries.ReadRecordsWhere(SelectedWhereColumnName, SelectedWhereOperand, SelectedWhereTextBoxInput));
-           RowsReturned = RawDataCollection.Count;
+           RawDataCollection = IRawDataQueries.ReadRecordsWhere(SelectedWhereColumnName, SelectedWhereOperand, SelectedWhereTextBoxInput);
+           RowsReturned = RawDataCollection.Count();
         }
     }
 }

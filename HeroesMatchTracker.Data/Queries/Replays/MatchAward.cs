@@ -9,23 +9,23 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 {
     public class MatchAward : NonContextQueriesBase<ReplayMatchAward>, IRawDataQueries<ReplayMatchAward>
     {
-        public List<ReplayMatchAward> ReadAllRecords()
+        public IEnumerable<ReplayMatchAward> ReadAllRecords()
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchAwards.ToList();
+                return db.ReplayMatchAwards.AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchAward> ReadLastRecords(int amount)
+        public IEnumerable<ReplayMatchAward> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchAwards.OrderByDescending(x => x.ReplayId).Take(amount).ToList();
+                return db.ReplayMatchAwards.AsNoTracking().OrderByDescending(x => x.ReplayId).Take(amount).ToList();
             }
         }
 
-        public List<ReplayMatchAward> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
+        public IEnumerable<ReplayMatchAward> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                 return new List<ReplayMatchAward>();
@@ -35,11 +35,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards ORDER BY {columnName} {orderBy} LIMIT {amount}").ToList();
+                return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards ORDER BY {columnName} {orderBy} LIMIT {amount}").AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchAward> ReadRecordsWhere(string columnName, string operand, string input)
+        public IEnumerable<ReplayMatchAward> ReadRecordsWhere(string columnName, string operand, string input)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                 return new List<ReplayMatchAward>();
@@ -51,15 +51,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
+                return db.ReplayMatchAwards.SqlQuery($"SELECT * FROM ReplayMatchAwards WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchAward> ReadTopRecords(int amount)
+        public IEnumerable<ReplayMatchAward> ReadTopRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchAwards.Take(amount).ToList();
+                return db.ReplayMatchAwards.AsNoTracking().Take(amount).ToList();
             }
         }
 

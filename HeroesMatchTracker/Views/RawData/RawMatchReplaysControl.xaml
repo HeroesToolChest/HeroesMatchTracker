@@ -18,6 +18,7 @@
             <DataGrid Style="{StaticResource RawDataDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="Hash" Binding="{Binding Hash}" />
                     <DataGridTextColumn Header="MapName" Binding="{Binding MapName}" />
                     <DataGridTextColumn Header="ReplayBuild" Binding="{Binding ReplayBuild}" />
                     <DataGridTextColumn Header="ReplayVersion" Binding="{Binding ReplayVersion}" />

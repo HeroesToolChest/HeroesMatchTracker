@@ -1,48 +1,45 @@
 ﻿using Heroes.Helpers;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
-using HeroesMatchTracker.Data.Generic;
 using HeroesMatchTracker.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace HeroesMatchTracker.Data.Queries.Replays
 {
     public class MatchReplay : NonContextQueriesBase<ReplayMatch>, IRawDataQueries<ReplayMatch>
     {
-        public List<ReplayMatch> ReadAllRecords()
+        public IEnumerable<ReplayMatch> ReadAllRecords()
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.ToList();
+                return db.Replays.AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatch> ReadTopRecords(int amount)
+        public IEnumerable<ReplayMatch> ReadTopRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.OrderByDescending(x => x.ReplayId).Take(amount).ToList();
+                return db.Replays.OrderByDescending(x => x.ReplayId).Take(amount).AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatch> ReadLastRecords(int amount)
+        public IEnumerable<ReplayMatch> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
                 if (db.Replays.Count() > 0)
-                    return db.Replays.OrderByDescending(x => x.ReplayId).Take(amount).ToList();
+                    return db.Replays.AsNoTracking().OrderByDescending(x => x.ReplayId).Take(amount).ToList();
                 else
                     return new List<ReplayMatch>();
             }
         }
 
-        public List<ReplayMatch> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
+        public IEnumerable<ReplayMatch> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                 return new List<ReplayMatch>();
@@ -55,11 +52,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.Replays.SqlQuery($"SELECT * FROM Replays ORDER BY {columnName} {orderBy} LIMIT {amount}").ToList();
+                return db.Replays.SqlQuery($"SELECT * FROM Replays ORDER BY {columnName} {orderBy} LIMIT {amount}").AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatch> ReadRecordsWhere(string columnName, string operand, string input)
+        public IEnumerable<ReplayMatch> ReadRecordsWhere(string columnName, string operand, string input)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                 return new List<ReplayMatch>();
@@ -92,7 +89,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.Replays.SqlQuery($"SELECT * FROM Replays WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
+                return db.Replays.SqlQuery($"SELECT * FROM Replays WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).AsNoTracking().ToList();
             }
         }
 
@@ -100,7 +97,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.OrderByDescending(x => x.TimeStamp).Take(amount).ToList();
+                return db.Replays.AsNoTracking().OrderByDescending(x => x.TimeStamp).Take(amount).ToList();
             }
         }
 
@@ -108,7 +105,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.OrderBy(x => x.TimeStamp).Where(x => x.TimeStamp > dateTime).ToList();
+                return db.Replays.AsNoTracking().OrderBy(x => x.TimeStamp).Where(x => x.TimeStamp > dateTime).ToList();
             }
         }
 
@@ -132,7 +129,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                var record = db.Replays.OrderByDescending(x => x.TimeStamp).FirstOrDefault();
+                var record = db.Replays.AsNoTracking().OrderByDescending(x => x.TimeStamp).FirstOrDefault();
 
                 if (record != null)
                     return record.TimeStamp.Value;
@@ -145,7 +142,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                var record = db.Replays.OrderByDescending(x => x.ReplayId).FirstOrDefault();
+                var record = db.Replays.AsNoTracking().OrderByDescending(x => x.ReplayId).FirstOrDefault();
 
                 if (record != null)
                     return record.TimeStamp.Value;
@@ -160,7 +157,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                IQueryable<ReplayMatch> query = db.Set<ReplayMatch>();
+                IQueryable<ReplayMatch> query = db.Set<ReplayMatch>().AsNoTracking();
 
                 if (gameMode == (GameMode.Brawl ^ GameMode.Custom ^ GameMode.HeroLeague ^ GameMode.QuickMatch ^ GameMode.TeamLeague ^ GameMode.UnrankedDraft))
                     query = query.Where(x => x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
@@ -243,7 +240,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                replayMatch = db.Replays.Where(x => x.ReplayId == replayId)
+                replayMatch = db.Replays.AsNoTracking().Where(x => x.ReplayId == replayId)
                     .Include(x => x.ReplayMatchPlayers)
                     .Include(x => x.ReplayMatchPlayerTalents)
                     .Include(x => x.ReplayMatchTeamBan)

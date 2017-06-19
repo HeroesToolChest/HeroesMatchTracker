@@ -9,23 +9,23 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 {
     public class MatchTeamExperience : NonContextQueriesBase<ReplayMatchTeamExperience>, IRawDataQueries<ReplayMatchTeamExperience>
     {
-        public List<ReplayMatchTeamExperience> ReadAllRecords()
+        public IEnumerable<ReplayMatchTeamExperience> ReadAllRecords()
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchTeamExperiences.ToList();
+                return db.ReplayMatchTeamExperiences.AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchTeamExperience> ReadLastRecords(int amount)
+        public IEnumerable<ReplayMatchTeamExperience> ReadLastRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchTeamExperiences.OrderByDescending(x => x.ReplayId).Take(amount).ToList();
+                return db.ReplayMatchTeamExperiences.AsNoTracking().OrderByDescending(x => x.ReplayId).Take(amount).ToList();
             }
         }
 
-        public List<ReplayMatchTeamExperience> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
+        public IEnumerable<ReplayMatchTeamExperience> ReadRecordsCustomTop(int amount, string columnName, string orderBy)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(orderBy))
                 return new List<ReplayMatchTeamExperience>();
@@ -38,11 +38,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences ORDER BY {columnName} {orderBy} LIMIT {amount}").ToList();
+                return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences ORDER BY {columnName} {orderBy} LIMIT {amount}").AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchTeamExperience> ReadRecordsWhere(string columnName, string operand, string input)
+        public IEnumerable<ReplayMatchTeamExperience> ReadRecordsWhere(string columnName, string operand, string input)
         {
             if (string.IsNullOrEmpty(columnName) || string.IsNullOrEmpty(operand))
                 return new List<ReplayMatchTeamExperience>();
@@ -70,15 +70,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).ToList();
+                return db.ReplayMatchTeamExperiences.SqlQuery($"SELECT * FROM ReplayMatchTeamExperiences WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).AsNoTracking().ToList();
             }
         }
 
-        public List<ReplayMatchTeamExperience> ReadTopRecords(int amount)
+        public IEnumerable<ReplayMatchTeamExperience> ReadTopRecords(int amount)
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchTeamExperiences.Take(amount).ToList();
+                return db.ReplayMatchTeamExperiences.AsNoTracking().Take(amount).ToList();
             }
         }
 

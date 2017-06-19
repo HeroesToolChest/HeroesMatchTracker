@@ -10,10 +10,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
     public interface IRawDataQueries<T>
         where T : IRawDataDisplay
     {
-        List<T> ReadAllRecords();
-        List<T> ReadTopRecords(int amount);
-        List<T> ReadLastRecords(int amount);
-        List<T> ReadRecordsCustomTop(int amount, string columnName, string orderBy);
-        List<T> ReadRecordsWhere(string columnName, string operand, string input);
+        IEnumerable<T> ReadAllRecords();
+        IEnumerable<T> ReadTopRecords(int amount);
+        IEnumerable<T> ReadLastRecords(int amount);
+        IEnumerable<T> ReadRecordsCustomTop(int amount, string columnName, string orderBy);
+        IEnumerable<T> ReadRecordsWhere(string columnName, string operand, string input);
     }
 }
