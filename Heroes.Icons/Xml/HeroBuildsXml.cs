@@ -202,11 +202,6 @@ namespace Heroes.Icons.Xml
             return RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
         }
 
-        public List<int> GetListOfHeroesBuilds()
-        {
-            return Builds;
-        }
-
         protected override void Parse()
         {
             DuplicateBuildCheck();

@@ -19,6 +19,7 @@ namespace Heroes.Icons
         private MatchAwardsXml MatchAwardsXml;
         private MapBackgroundsXml MapBackgroundsXml;
         private HomeScreensXml HomeScreensXml;
+        private List<int> ListHeroBuilds;
 
         /// <summary>
         /// key is real hero name
@@ -39,6 +40,7 @@ namespace Heroes.Icons
 
             EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
             LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
+            ListHeroBuilds = HeroBuildsXml.Builds;
 
             MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild);
             MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild);
@@ -210,6 +212,11 @@ namespace Heroes.Icons
         public bool IsNonSupportHeroWithHealingStat(string realHeroName)
         {
             return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
+        }
+
+        public List<int> GetListOfHeroesBuilds()
+        {
+            return ListHeroBuilds;
         }
 
         #region private methods
