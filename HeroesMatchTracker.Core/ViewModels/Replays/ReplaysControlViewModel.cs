@@ -793,6 +793,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
                         if (replayParsed.Item1 == ReplayParseResult.Success)
                         {
+                            replayParsed.Item2.Units = null;
+                            replayParsed.Item2.TrackerEvents = null;
+
                             originalfile.Status = ReplayResult.Success;
 
                             // give it a chance to dequeue some replays as the replay object takes quite a bit of memory
