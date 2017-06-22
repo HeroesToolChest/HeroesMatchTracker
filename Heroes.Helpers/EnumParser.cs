@@ -29,6 +29,8 @@ namespace Heroes.Helpers
                         return Season.Year2016Season3;
                     case Seasons.Year2017Season1:
                         return Season.Year2017Season1;
+                    case Seasons.Year2017Season2:
+                        return Season.Year2017Season2;
                     default:
                         throw new ArgumentException($"paramter {season} not found", nameof(season));
                 }
