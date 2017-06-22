@@ -17,7 +17,7 @@ namespace Heroes.Helpers
 
                 switch (season)
                 {
-                    case Seasons.LifeTime:
+                    case Seasons.Lifetime:
                         return Season.Lifetime;
                     case Seasons.Preseason:
                         return Season.Preseason;

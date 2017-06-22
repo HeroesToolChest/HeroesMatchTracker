@@ -19,7 +19,7 @@ namespace Heroes.Helpers
     {
         public static class Seasons
         {
-            public const string LifeTime = "LifeTime";
+            public const string Lifetime = "Lifetime";
             public const string Preseason = "Preseason";
             public const string Year2016Season1 = "2016 Season 1";
             public const string Year2016Season2 = "2016 Season 2";
@@ -47,7 +47,7 @@ namespace Heroes.Helpers
                 switch (season)
                 {
                     case Season.Lifetime:
-                        return LifeTime;
+                        return Lifetime;
                     case Season.Preseason:
                         return Preseason;
                     case Season.Year2016Season1:
