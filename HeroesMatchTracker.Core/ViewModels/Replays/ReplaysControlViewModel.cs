@@ -53,7 +53,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
         private Queue<ReplayFile> ReplayHotsLogsUploadQueue = new Queue<ReplayFile>();
-        private IHeroesIconsService HeroesIconsService;
 
         private ObservableCollection<ReplayFile> _replayFileCollection = new ObservableCollection<ReplayFile>();
 
@@ -65,7 +64,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         {
             MainTab = mainTab;
             HotsLogsStartButtonText = "[Stop]";
-            HeroesIconsService = new HeroesIcons(true); // must create a new object just for parsing
 
             ScanDateTimeCheckboxes[Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex] = true;
             AreProcessButtonsEnabled = true;
@@ -862,6 +860,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                 ReplayFile currentReplayFile;
                 Tuple<Replay, ReplayFile> dequeuedItem;
                 ReplayFileData replayFileData = null;
+                HeroesIcons heroesIcons = new HeroesIcons(true);
 
                 while (true)
                 {
@@ -896,7 +895,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         currentReplayFile = ReplayFileCollection[ReplayFileLocations[dequeuedItem.Item2.FilePath]];
 
                         // save parsed data to database
-                        replayFileData = new ReplayFileData(dequeuedItem.Item1, HeroesIconsService);
+                        replayFileData = new ReplayFileData(dequeuedItem.Item1, heroesIcons);
                         currentReplayFile.Status = replayFileData.SaveAllData(dequeuedItem.Item2.FileName);
 
                         currentReplayFile.ReplayId = replayFileData.ReplayId;

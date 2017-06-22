@@ -23,7 +23,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplaysContext = new ReplaysContext();
             Replay = replay;
             HeroesIcons = heroesIcons;
-            HeroesIcons.LoadHeroesBuild(Replay.ReplayBuild);
+            HeroesIcons.LoadHeroesBuild(Replay.ReplayBuild); // needed for auto translations
             ReplaysDb = new ReplaysDb();
         }
 
@@ -123,23 +123,21 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
         private void PlayerRelatedData()
         {
-            int playerNum = 0;
-
             Player[] players = GetPlayers();
 
-            foreach (var player in players)
+            foreach (var player in players.Select((value, index) => new { value, index }))
             {
-                if (player == null)
+                if (player.value == null)
                     continue;
 
                 ReplayAllHotsPlayer hotsPlayer = new ReplayAllHotsPlayer
                 {
-                    BattleTagName = HeroesHelpers.BattleTags.GetBattleTagName(player.Name, player.BattleTag),
-                    BattleNetId = player.BattleNetId,
-                    BattleNetRegionId = player.BattleNetRegionId,
-                    BattleNetSubId = player.BattleNetSubId,
-                    BattleNetTId = player.BattleNetTId,
-                    AccountLevel = player.AccountLevel,
+                    BattleTagName = HeroesHelpers.BattleTags.GetBattleTagName(player.value.Name, player.value.BattleTag),
+                    BattleNetId = player.value.BattleNetId,
+                    BattleNetRegionId = player.value.BattleNetRegionId,
+                    BattleNetSubId = player.value.BattleNetSubId,
+                    BattleNetTId = player.value.BattleNetTId,
+                    AccountLevel = player.value.AccountLevel,
                     LastSeen = Replay.Timestamp,
                     LastSeenBefore = null,
                     Seen = 1,
@@ -153,37 +151,37 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 else
                     playerId = ReplaysDb.HotsPlayer.CreateRecord(ReplaysContext, hotsPlayer);
 
-                if (player.Character == null && Replay.GameMode == GameMode.Custom)
+                if (player.value.Character == null && Replay.GameMode == GameMode.Custom)
                 {
-                    player.Team = 4;
-                    player.Character = "None";
+                    player.value.Team = 4;
+                    player.value.Character = "None";
 
                     ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
                     {
                         ReplayId = ReplayId,
                         PlayerId = playerId,
-                        Character = player.Character,
-                        CharacterLevel = player.CharacterLevel,
-                        Difficulty = player.Difficulty.ToString(),
-                        Handicap = player.Handicap,
-                        IsAutoSelect = player.IsAutoSelect,
-                        IsSilenced = player.IsSilenced,
-                        IsWinner = player.IsWinner,
-                        MountAndMountTint = player.MountAndMountTint,
-                        PartyValue = player.PartyValue,
+                        Character = player.value.Character,
+                        CharacterLevel = player.value.CharacterLevel,
+                        Difficulty = player.value.Difficulty.ToString(),
+                        Handicap = player.value.Handicap,
+                        IsAutoSelect = player.value.IsAutoSelect,
+                        IsSilenced = player.value.IsSilenced,
+                        IsWinner = player.value.IsWinner,
+                        MountAndMountTint = player.value.MountAndMountTint,
+                        PartyValue = player.value.PartyValue,
                         PlayerNumber = -1,
-                        SkinAndSkinTint = player.SkinAndSkinTint,
-                        Team = player.Team,
-                        AccountLevel = player.AccountLevel,
+                        SkinAndSkinTint = player.value.SkinAndSkinTint,
+                        Team = player.value.Team,
+                        AccountLevel = player.value.AccountLevel,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
                 }
                 else
                 {
-                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
+                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.value.Character, out string character))
                     {
-                        if (!AutoTranslateHeroNameByTalent(player.Talents, out character))
+                        if (!AutoTranslateHeroNameByTalent(player.value.Talents, out character))
                             throw new TranslationException(RetrieveAllMapAndHeroNames());
                     }
 
@@ -192,30 +190,28 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         ReplayId = ReplayId,
                         PlayerId = playerId,
                         Character = character,
-                        CharacterLevel = player.CharacterLevel,
-                        Difficulty = player.Difficulty.ToString(),
-                        Handicap = player.Handicap,
-                        IsAutoSelect = player.IsAutoSelect,
-                        IsSilenced = player.IsSilenced,
-                        IsWinner = player.IsWinner,
-                        MountAndMountTint = player.MountAndMountTint,
-                        PartyValue = player.PartyValue,
-                        PlayerNumber = playerNum,
-                        SkinAndSkinTint = player.SkinAndSkinTint,
-                        Team = player.Team,
-                        AccountLevel = player.AccountLevel,
+                        CharacterLevel = player.value.CharacterLevel,
+                        Difficulty = player.value.Difficulty.ToString(),
+                        Handicap = player.value.Handicap,
+                        IsAutoSelect = player.value.IsAutoSelect,
+                        IsSilenced = player.value.IsSilenced,
+                        IsWinner = player.value.IsWinner,
+                        MountAndMountTint = player.value.MountAndMountTint,
+                        PartyValue = player.value.PartyValue,
+                        PlayerNumber = player.index,
+                        SkinAndSkinTint = player.value.SkinAndSkinTint,
+                        Team = player.value.Team,
+                        AccountLevel = player.value.AccountLevel,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
 
-                    AddScoreResults(player.ScoreResult, playerId);
-                    AddPlayerTalents(player.Talents, playerId, character);
-                    AddMatchAwards(player.ScoreResult.MatchAwards, playerId);
-
-                    playerNum++;
+                    AddScoreResults(player.value.ScoreResult, playerId);
+                    AddPlayerTalents(player.value.Talents, playerId, character);
+                    AddMatchAwards(player.value.ScoreResult.MatchAwards, playerId);
                 }
 
-                AddPlayerHeroes(player.PlayerCollectionDictionary, playerId);
+                AddPlayerHeroes(player.value.PlayerCollectionDictionary, playerId);
             } // end foreach loop for players
         }
 
