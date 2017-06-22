@@ -20,7 +20,7 @@ namespace HeroesMatchTracker.Data.Queries.ReleaseNotes
         {
             using (var db = new ReleaseNotesContext())
             {
-                return db.ReleaseNotes.ToList();
+                return db.ReleaseNotes.AsNoTracking().ToList();
             }
         }
 
@@ -28,7 +28,7 @@ namespace HeroesMatchTracker.Data.Queries.ReleaseNotes
         {
             using (var db = new ReleaseNotesContext())
             {
-                var list = db.ReleaseNotes.OrderByDescending(x => x.DateReleased).Take(1).ToList();
+                var list = db.ReleaseNotes.AsNoTracking().OrderByDescending(x => x.DateReleased).Take(1).ToList();
 
                 if (list.Count > 0)
                     return list[0];
