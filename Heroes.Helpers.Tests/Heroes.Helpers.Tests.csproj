@@ -91,6 +91,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BattleTagsTests.cs" />
+    <Compile Include="EnumParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

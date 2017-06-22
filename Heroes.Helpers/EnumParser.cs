@@ -17,17 +17,17 @@ namespace Heroes.Helpers
 
                 switch (season)
                 {
-                    case "Lifetime":
+                    case Seasons.LifeTime:
                         return Season.Lifetime;
-                    case "Preseason":
+                    case Seasons.Preseason:
                         return Season.Preseason;
-                    case "2016 Season 1":
+                    case Seasons.Year2016Season1:
                         return Season.Year2016Season1;
-                    case "2016 Season 2":
+                    case Seasons.Year2016Season2:
                         return Season.Year2016Season2;
-                    case "2016 Season 3":
+                    case Seasons.Year2016Season3:
                         return Season.Year2016Season3;
-                    case "2017 Season 1":
+                    case Seasons.Year2017Season1:
                         return Season.Year2017Season1;
                     default:
                         throw new ArgumentException($"paramter {season} not found", nameof(season));

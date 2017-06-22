@@ -19,19 +19,50 @@ namespace Heroes.Helpers
     {
         public static class Seasons
         {
+            public const string LifeTime = "LifeTime";
+            public const string Preseason = "Preseason";
+            public const string Year2016Season1 = "2016 Season 1";
+            public const string Year2016Season2 = "2016 Season 2";
+            public const string Year2016Season3 = "2016 Season 3";
+            public const string Year2017Season1 = "2017 Season 1";
+            public const string Year2017Season2 = "2017 Season 2";
+
             public static List<string> GetSeasonList()
             {
                 List<string> list = new List<string>
                 {
-                    "Preseason",
-                    "2016 Season 1",
-                    "2016 Season 2",
-                    "2016 Season 3",
-                    "2017 Season 1",
-                    "2017 Season 2",
+                    Preseason,
+                    Year2016Season1,
+                    Year2016Season2,
+                    Year2016Season3,
+                    Year2017Season1,
+                    Year2017Season2,
                 };
 
                 return list;
+            }
+
+            public static string GetStringFromSeason(Season season)
+            {
+                switch (season)
+                {
+                    case Season.Lifetime:
+                        return LifeTime;
+                    case Season.Preseason:
+                        return Preseason;
+                    case Season.Year2016Season1:
+                        return Year2016Season1;
+                    case Season.Year2016Season2:
+                        return Year2016Season2;
+                    case Season.Year2016Season3:
+                        return Year2016Season3;
+                    case Season.Year2017Season1:
+                        return Year2017Season1;
+                    case Season.Year2017Season2:
+                        return Year2017Season2;
+                    default:
+                        throw new ArgumentException($"paramter {season} not found", nameof(season));
+                }
             }
         }
     }
