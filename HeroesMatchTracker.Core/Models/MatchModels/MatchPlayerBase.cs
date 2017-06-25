@@ -124,12 +124,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 AccountLevel = "N/A";
 
-            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
-                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
-
-            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
-                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
-
             string lastSeenBefore;
             if (playerInfo.LastSeenBefore.HasValue)
                 lastSeenBefore = playerInfo.LastSeenBefore.Value.ToString();
@@ -137,6 +131,20 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 lastSeenBefore = "Never";
 
             PlayerNameTooltip = $"{PlayerBattleTagName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Total Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
+
+            var battleTags = Database.ReplaysDb().RenamedPlayer.ReadPlayersFromPlayerId(playerInfo.PlayerId);
+            if (battleTags.Count > 0)
+                PlayerNameTooltip += $"{Environment.NewLine}{Environment.NewLine}Former Names:";
+            foreach (var tag in battleTags)
+            {
+                PlayerNameTooltip += $"{Environment.NewLine}{tag}";
+            }
+
+            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
+                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
+
+            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
+                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
         }
 
         public virtual void Dispose()

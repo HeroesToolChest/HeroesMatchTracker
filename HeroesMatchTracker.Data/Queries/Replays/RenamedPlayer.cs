@@ -82,6 +82,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             }
         }
 
+        public List<string> ReadPlayersFromPlayerId(long playerId)
+        {
+            using (var db = new ReplaysContext())
+            {
+                return db.ReplayRenamedPlayers.AsNoTracking().Where(x => x.PlayerId == playerId).Select(x => x.BattleTagName).ToList();
+            }
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayRenamedPlayer model)
         {
             db.ReplayRenamedPlayers.Add(model);
