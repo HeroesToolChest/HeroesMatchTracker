@@ -4,6 +4,7 @@ using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.ViewModels;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using HeroesMatchTracker.Views.Home;
 using HeroesMatchTracker.Views.Replays;
 using HeroesMatchTracker.Views.TitleBar;
 using MahApps.Metro.Controls;

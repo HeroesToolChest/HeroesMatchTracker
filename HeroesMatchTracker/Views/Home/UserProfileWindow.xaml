@@ -1,4 +1,4 @@
-﻿<controls:MetroWindow x:Class="HeroesMatchTracker.Views.UserProfileWindow"
+﻿<controls:MetroWindow x:Class="HeroesMatchTracker.Views.Home.UserProfileWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"

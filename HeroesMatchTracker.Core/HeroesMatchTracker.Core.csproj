@@ -259,7 +259,7 @@
     <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
-    <Compile Include="ViewModels\UserProfileWindowViewModel.cs" />
+    <Compile Include="ViewModels\Home\UserProfileWindowViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />

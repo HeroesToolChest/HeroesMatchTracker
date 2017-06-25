@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
-namespace HeroesMatchTracker.Core.ViewModels
+namespace HeroesMatchTracker.Core.ViewModels.Home
 {
     public class UserProfileWindowViewModel : ViewModelBase
     {
