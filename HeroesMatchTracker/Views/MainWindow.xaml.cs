@@ -4,6 +4,8 @@ using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.ViewModels;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using HeroesMatchTracker.Data.Models.Replays;
+using HeroesMatchTracker.Views.Matches;
 using HeroesMatchTracker.Views.Replays;
 using HeroesMatchTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
@@ -62,6 +64,12 @@ namespace HeroesMatchTracker.Views
         public void ShowFailedReplaysWindow()
         {
             FailedReplaysWindow window = new FailedReplaysWindow();
+            window.ShowDialog();
+        }
+
+        public void ShowPlayerNotesWindow(ReplayMatchPlayer player)
+        {
+            PlayerNotesWindow window = new PlayerNotesWindow(player);
             window.ShowDialog();
         }
 

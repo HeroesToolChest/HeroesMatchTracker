@@ -256,6 +256,7 @@
     <Compile Include="ViewModels\Matches\MatchesBase.cs" />
     <Compile Include="ViewModels\Matches\MatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\MatchSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Matches\PlayerNotesWindowViewModel.cs" />
     <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />

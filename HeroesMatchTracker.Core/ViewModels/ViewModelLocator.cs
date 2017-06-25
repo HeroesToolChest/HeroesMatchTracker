@@ -102,6 +102,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<TeamLeagueViewModel>();
             SimpleIoc.Default.Register<UnrankedDraftViewModel>();
             SimpleIoc.Default.Register<MatchSummaryViewModel>();
+            SimpleIoc.Default.Register<PlayerNotesWindowViewModel>();
 
             // Statistics
             SimpleIoc.Default.Register<StatsOverviewViewModel>();
@@ -153,6 +154,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static TeamLeagueViewModel TeamLeagueViewModel => ServiceLocator.Current.GetInstance<TeamLeagueViewModel>();
         public static UnrankedDraftViewModel UnrankedDraftViewModel => ServiceLocator.Current.GetInstance<UnrankedDraftViewModel>();
         public static MatchSummaryViewModel MatchSummaryViewModel => ServiceLocator.Current.GetInstance<MatchSummaryViewModel>();
+        public static PlayerNotesWindowViewModel PlayerNotesWindowViewModel => ServiceLocator.Current.GetInstance<PlayerNotesWindowViewModel>();
 
         // Statistics
         public static StatsOverviewViewModel StatsOverviewViewModel => ServiceLocator.Current.GetInstance<StatsOverviewViewModel>();

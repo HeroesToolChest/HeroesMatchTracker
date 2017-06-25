@@ -89,10 +89,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public RelayCommand CopyHeroNameToClipboardCommand => new RelayCommand(CopyHeroNameToClipboard);
         public RelayCommand CopyPlayerNameToClipboardCommand => new RelayCommand(CopyPlayerNameToClipboard);
         public RelayCommand CopyHeroAndPlayerNameToClipboardCommand => new RelayCommand(CopyHeroAndPlayerNameToClipboard);
+        public RelayCommand PlayerNotesCommand => new RelayCommand(PlayerNotes);
 
         public IMainTabService MainTabs => ServiceLocator.Current.GetInstance<IMainTabService>();
         public IMatchesTabService MatchesTab => ServiceLocator.Current.GetInstance<IMatchesTabService>();
         public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
+        public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
@@ -291,6 +293,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         private void CopyHeroAndPlayerNameToClipboard()
         {
             Clipboard.SetText($"{CharacterName} - {PlayerName}");
+        }
+
+        private void PlayerNotes()
+        {
+            CreateWindow.ShowPlayerNotesWindow(Player);
         }
 
         private void HeroSearch(MatchesTab matchTab)

@@ -163,6 +163,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Matches\PlayerNotesWindow.xaml.cs">
+      <DependentUpon>PlayerNotesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ToasterUpdateWindow.xaml.cs">
       <DependentUpon>ToasterUpdateWindow.xaml</DependentUpon>
     </Compile>
@@ -447,6 +450,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Matches\MatchSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\PlayerNotesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
