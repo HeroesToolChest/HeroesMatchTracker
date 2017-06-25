@@ -133,10 +133,12 @@
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration3_v1_4_0\Migration3_v1_4_0.cs" />
     <Compile Include="Migrations\Replays\Migration4_v2_0_0\Migration4_v2_0_0.cs" />
-    <Compile Include="Migrations\Replays\Migration6_v2_2_0\Migration7_v2_2_0.cs" />
+    <Compile Include="Migrations\Replays\Migration8_v2_3_0\Migration8_v2_3_0.cs" />
+    <Compile Include="Migrations\Replays\Migration8_v2_3_0\MigrationAddon8_v2_3_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration7_v2_2_0\Migration7_v2_2_0.cs" />
     <Compile Include="Migrations\Replays\Migration6_v2_1_0\Migration6_v2_1_0.cs" />
     <Compile Include="Migrations\Replays\Migration5_v2_0_0\Migration5_v2_0_0.cs" />
-    <Compile Include="Migrations\Replays\Migration6_v2_2_0\MigrationAddon7_v2_2_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration7_v2_2_0\MigrationAddon7_v2_2_0_1.cs" />
     <Compile Include="Migrations\Replays\ReplaysContextMigrator.cs" />
     <Compile Include="Migrations\Replays\ReplaysMigrator.cs" />
     <Compile Include="Databases\SettingsContext.cs" />
