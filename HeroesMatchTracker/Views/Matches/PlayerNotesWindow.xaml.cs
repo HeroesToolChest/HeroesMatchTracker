@@ -29,8 +29,9 @@ namespace HeroesMatchTracker.Views.Matches
         {
             var player = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(ReplayMatchPlayer.PlayerId);
 
-            PlayerNotesHeader.Text = player.BattleTagName;
-            PlayerNotes.Text = player.Notes;
+            PlayerNotesWindowViewModel.PlayerNotesHeader = player.BattleTagName;
+            PlayerNotesWindowViewModel.PlayerNotesPlayerId = player.PlayerId.ToString();
+            PlayerNotesWindowViewModel.PlayerNotes = player.Notes;
         }
     }
 }

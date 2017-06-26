@@ -8,6 +8,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
     {
         private string _playerNotes;
         private string _playerNotesHeader;
+        private string _playerNotesPlayerId;
 
         private IDatabaseService Database;
 
@@ -40,13 +41,23 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
+        public string PlayerNotesPlayerId
+        {
+            get => _playerNotesPlayerId;
+            set
+            {
+                _playerNotesPlayerId = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public RelayCommand SaveCommand => new RelayCommand(Save);
         public RelayCommand SaveCloseCommand => new RelayCommand(SaveClose);
         public RelayCommand CloseCommand => new RelayCommand(Close);
 
         private void Save()
         {
-            //Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId
+            Database.ReplaysDb().HotsPlayer.UpdatePlayerNotesRecord(long.Parse(PlayerNotesPlayerId), PlayerNotes);
         }
 
         private void SaveClose()

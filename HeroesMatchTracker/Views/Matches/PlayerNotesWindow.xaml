@@ -15,7 +15,10 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="PlayerNotesHeader" Text="{Binding PlayerNotesHeader}" FontSize="18" Margin="8" />
+        <StackPanel Orientation="Horizontal" Margin="8">
+            <TextBlock Text="{Binding PlayerNotesHeader}" FontSize="18" />
+            <TextBlock Text="{Binding PlayerNotesPlayerId}" Visibility="Collapsed" />
+        </StackPanel>
         <TextBox x:Name="PlayerNotes" Text="{Binding PlayerNotes}" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" />
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="8">
             <Button Content="Save" Command="{Binding SaveCommand}" Width="100" Margin="0 0 8 0" />

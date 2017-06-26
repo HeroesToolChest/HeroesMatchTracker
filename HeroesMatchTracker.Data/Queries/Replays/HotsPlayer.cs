@@ -87,7 +87,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                var currentRecord = db.ReplayAllHotsPlayers.AsNoTracking().Where(x => x.PlayerId == playerId).FirstOrDefault();
+                var currentRecord = db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefault();
 
                 if (currentRecord != null)
                 {
