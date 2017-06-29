@@ -70,7 +70,7 @@ namespace HeroesMatchTracker.Views
         {
             if (Database.SettingsDb().UserSettings.UserPlayerId < 1)
             {
-                await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Profile menu.");
+                await this.ShowMessageAsync("Statistics", "To view your stats, set your BattleTag in the Profile menu.");
                 return true;
             }
             else
