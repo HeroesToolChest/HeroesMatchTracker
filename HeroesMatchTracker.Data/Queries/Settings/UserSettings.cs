@@ -148,6 +148,9 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         #endregion
 
         #region Auto Updater
+        /// <summary>
+        /// Used for manually updating the application to determine if an update was applied
+        /// </summary>
         public bool IsNewUpdateApplied
         {
             get { return GetBooleanValue(nameof(IsNewUpdateApplied)); }

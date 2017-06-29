@@ -84,10 +84,11 @@ namespace HeroesMatchTracker.Views
                     Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
                 }
 
-                if (argsList.Contains("/updated"))
+                if (argsList.Contains("/updated") || Database.SettingsDb().UserSettings.IsNewUpdateApplied)
                 {
                     Database.SettingsDb().UserSettings.ShowWhatsNewWindow = true;
                     Database.SettingsDb().UserSettings.RequeueAllFailedReplays = true;
+                    Database.SettingsDb().UserSettings.IsNewUpdateApplied = false;
                 }
                 else
                 {
