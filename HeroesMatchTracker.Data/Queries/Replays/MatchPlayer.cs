@@ -84,8 +84,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                var query = from mp in db.ReplayMatchPlayers
-                            join r in db.Replays on mp.ReplayId equals r.ReplayId
+                var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                            join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                             where mp.Character == character &&
                                   mp.PlayerId == UserSettings.UserPlayerId &&
                                   r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2

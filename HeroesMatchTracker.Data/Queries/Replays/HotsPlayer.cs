@@ -75,7 +75,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             using (var db = new ReplaysContext())
             {
                 // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-                var result = db.ReplayAllHotsPlayers.SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetRegionId == battleNetRegionId);
+                var result = db.ReplayAllHotsPlayers.AsNoTracking().SingleOrDefault(x => x.BattleTagName == battleTagName && x.BattleNetRegionId == battleNetRegionId);
                 if (result != null)
                     return result.PlayerId;
                 else
@@ -164,26 +164,26 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             if (model.BattleNetId > 0)
             {
                 // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleNetId == model.BattleNetId &&
-                                                        x.BattleNetRegionId == model.BattleNetRegionId &&
-                                                        x.BattleNetSubId == model.BattleNetSubId);
+                return db.ReplayAllHotsPlayers.AsNoTracking().Any(x => x.BattleNetId == model.BattleNetId &&
+                                                                       x.BattleNetRegionId == model.BattleNetRegionId &&
+                                                                       x.BattleNetSubId == model.BattleNetSubId);
             }
             else if (!string.IsNullOrEmpty(model.BattleNetTId))
             {
                 // has tag but no BattleNetId - observer
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleNetTId == model.BattleNetTId);
+                return db.ReplayAllHotsPlayers.AsNoTracking().Any(x => x.BattleNetTId == model.BattleNetTId);
             }
             else
             {
                 // only choice left is to search by BattleTagName
-                return db.ReplayAllHotsPlayers.Any(x => x.BattleTagName == model.BattleTagName && x.BattleNetRegionId == model.BattleNetRegionId);
+                return db.ReplayAllHotsPlayers.AsNoTracking().Any(x => x.BattleTagName == model.BattleTagName && x.BattleNetRegionId == model.BattleNetRegionId);
             }
         }
 
         internal long ReadPlayerIdFromBattleNetId(ReplaysContext db, int battleNetId, int battleNetRegionId, int battleNetSubId)
         {
             // battleNetId is not unique, player can change their battletag and their battleNetId stays the same
-            return db.ReplayAllHotsPlayers.FirstOrDefault(x => x.BattleNetId == battleNetId &&
+            return db.ReplayAllHotsPlayers.AsNoTracking().FirstOrDefault(x => x.BattleNetId == battleNetId &&
                                                                x.BattleNetRegionId == battleNetRegionId &&
                                                                x.BattleNetSubId == battleNetSubId).PlayerId;
         }

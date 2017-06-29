@@ -78,7 +78,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayHotsLogsUploads.Any(x => x.ReplayId == replayHotsLogsUpload.ReplayId);
+                return db.ReplayHotsLogsUploads.AsNoTracking().Any(x => x.ReplayId == replayHotsLogsUpload.ReplayId);
             }
         }
 
@@ -91,7 +91,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayHotsLogsUploads.SingleOrDefault(x => x.ReplayId == replayHotsLogsUpload.ReplayId).Status;
+                return db.ReplayHotsLogsUploads.AsNoTracking().SingleOrDefault(x => x.ReplayId == replayHotsLogsUpload.ReplayId).Status;
             }
         }
 
@@ -116,7 +116,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                var record = db.ReplayHotsLogsUploads.OrderByDescending(x => x.ReplayFileTimeStamp).FirstOrDefault();
+                var record = db.ReplayHotsLogsUploads.AsNoTracking().OrderByDescending(x => x.ReplayFileTimeStamp).FirstOrDefault();
 
                 if (record != null && record.ReplayFileTimeStamp.HasValue)
                     return record.ReplayFileTimeStamp.Value;
