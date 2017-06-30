@@ -33,7 +33,7 @@
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
-                            <TextBlock Text="{Binding PlayerNameOnly}" />
+                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTip="{Binding PlayerNameTooltip}" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center"/>
                             <TextBlock Text="{Binding CharacterLevel}" ToolTip="Hero Level" />
                             <TextBlock Text="{Binding AccountLevel}" ToolTip="Account Level" />
                             <TextBlock />
