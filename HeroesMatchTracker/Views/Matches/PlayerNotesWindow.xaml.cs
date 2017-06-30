@@ -1,4 +1,5 @@
 ﻿using HeroesMatchTracker.Core.ViewModels.Matches;
+using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using MahApps.Metro.Controls;
@@ -8,7 +9,7 @@ namespace HeroesMatchTracker.Views.Matches
     /// <summary>
     /// Interaction logic for PlayerNotesWindow.xaml
     /// </summary>
-    public partial class PlayerNotesWindow : MetroWindow
+    public partial class PlayerNotesWindow : MetroWindow, ICloseable
     {
         private PlayerNotesWindowViewModel PlayerNotesWindowViewModel;
         private IDatabaseService Database;

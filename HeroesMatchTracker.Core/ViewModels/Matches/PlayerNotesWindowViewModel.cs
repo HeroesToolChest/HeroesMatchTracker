@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
@@ -52,22 +53,26 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         }
 
         public RelayCommand SaveCommand => new RelayCommand(Save);
-        public RelayCommand SaveCloseCommand => new RelayCommand(SaveClose);
-        public RelayCommand CloseCommand => new RelayCommand(Close);
+        public RelayCommand<ICloseable> SaveCloseCommand => new RelayCommand<ICloseable>(SaveClose);
+        public RelayCommand<ICloseable> CloseCommand => new RelayCommand<ICloseable>(Close);
 
         private void Save()
         {
             Database.ReplaysDb().HotsPlayer.UpdatePlayerNotesRecord(long.Parse(PlayerNotesPlayerId), PlayerNotes);
         }
 
-        private void SaveClose()
+        private void SaveClose(ICloseable window)
         {
-
+            Save();
+            Close(window);
         }
 
-        private void Close()
+        private void Close(ICloseable window)
         {
-
+            if (window != null)
+            {
+                window.Close();
+            }
         }
     }
 }
