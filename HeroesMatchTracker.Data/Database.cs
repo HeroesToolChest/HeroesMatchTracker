@@ -65,20 +65,9 @@ namespace HeroesMatchTracker.Data
 
         private void VerifyDatabaseFiles()
         {
-            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.ReplaysDbFileName)))
-                ReplaysDbFileCreated = true;
-            else
-                ReplaysDbFileCreated = false;
-
-            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.SettingsDbFileName)))
-                SettingsDbFileCreated = true;
-            else
-                SettingsDbFileCreated = false;
-
-            if (!File.Exists(Path.Combine(DatabasePath, Settings.Default.ReleaseNotesDbFileName)))
-                ReleaseNotesDbFileCreated = true;
-            else
-                ReleaseNotesDbFileCreated = false;
+            ReplaysDbFileCreated = !File.Exists(Path.Combine(DatabasePath, Settings.Default.ReplaysDbFileName));
+            SettingsDbFileCreated = !File.Exists(Path.Combine(DatabasePath, Settings.Default.SettingsDbFileName));
+            ReleaseNotesDbFileCreated = !File.Exists(Path.Combine(DatabasePath, Settings.Default.ReleaseNotesDbFileName));
         }
 
         private void LegacyDatabaseCheck()

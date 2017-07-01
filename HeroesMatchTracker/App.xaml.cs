@@ -50,8 +50,7 @@ namespace HeroesMatchTracker
                 // send message to maximize existing window
                 NativeMethods.PostMessage((IntPtr)NativeMethods.HWND_BROADCAST, NativeMethods.WM_SHOWME, IntPtr.Zero, IntPtr.Zero);
             }
-#endif
-#if DEBUG
+#else
             App app = new App();
             StartupWindow startupWindow = new StartupWindow();
             app.Run(startupWindow);
