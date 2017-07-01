@@ -661,59 +661,64 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             else
                 searchOption = SearchOption.TopDirectoryOnly;
 
-            try
+            DateTime dateTime;
+            int selectedScanDateTime = Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex;
+
+            if (selectedScanDateTime == 1)
+                dateTime = ReplaysLastSaved;
+            else if (selectedScanDateTime == 2)
+                dateTime = ReplaysLatestHotsLogs;
+            else if (selectedScanDateTime == 3)
+                dateTime = ReplaysLastHotsLogs;
+            else // default
+                dateTime = ReplaysLatestSaved;
+
+            List<FileInfo> listFiles = new DirectoryInfo(Database.SettingsDb().UserSettings.ReplaysLocation)
+                .GetFiles($"*.{Properties.Settings.Default.HeroesReplayFileType}", searchOption)
+                .OrderBy(x => x.LastWriteTime)
+                .Where(x => x.LastWriteTime > dateTime)
+                .ToList();
+
+            TotalReplaysGrid = listFiles.Count;
+
+            await Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                DateTime dateTime;
-                int selectedScanDateTime = Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex;
+                ReplayFileCollection = new ObservableCollection<ReplayFile>();
+                ReplayFileLocations = new Dictionary<string, int>();
+                TotalParsedGrid = 0;
 
-                if (selectedScanDateTime == 1)
-                    dateTime = ReplaysLastSaved;
-                else if (selectedScanDateTime == 2)
-                    dateTime = ReplaysLatestHotsLogs;
-                else if (selectedScanDateTime == 3)
-                    dateTime = ReplaysLastHotsLogs;
-                else // default
-                    dateTime = ReplaysLatestSaved;
-
-                List<FileInfo> listFiles = new DirectoryInfo(Database.SettingsDb().UserSettings.ReplaysLocation)
-                    .GetFiles($"*.{Properties.Settings.Default.HeroesReplayFileType}", searchOption)
-                    .OrderBy(x => x.LastWriteTime)
-                    .Where(x => x.LastWriteTime > dateTime)
-                    .ToList();
-
-                TotalReplaysGrid = listFiles.Count;
-
-                await Application.Current.Dispatcher.InvokeAsync(() =>
+                int index = 0;
+                foreach (var file in listFiles)
                 {
-                    ReplayFileCollection = new ObservableCollection<ReplayFile>();
-                    ReplayFileLocations = new Dictionary<string, int>();
-                    TotalParsedGrid = 0;
-
-                    int index = 0;
-                    foreach (var file in listFiles)
+                    ReplayFileCollection.Add(new ReplayFile
                     {
-                        ReplayFileCollection.Add(new ReplayFile
-                        {
-                            FileName = file.Name,
-                            LastWriteTime = file.LastWriteTime,
-                            FilePath = file.FullName,
-                            Status = null,
-                        });
+                        FileName = file.Name,
+                        LastWriteTime = file.LastWriteTime,
+                        FilePath = file.FullName,
+                        Status = null,
+                    });
 
-                        ReplayFileLocations.Add(file.FullName, index);
-                        index++;
-                    }
+                    ReplayFileLocations.Add(file.FullName, index);
+                    index++;
+                }
 
-                    TotalSavedInDatabase = GetTotalReplayDbCount();
-                });
+                // add failed replays
+                if (Database.SettingsDb().UserSettings.RequeueAllFailedReplays && Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate)
+                {
+                    var failedReplaysList = Database.SettingsDb().FailedReplays.ReadAllReplays();
+                    Database.SettingsDb().FailedReplays.DeleteAllFailedReplays();
 
-                CurrentStatus = "Scan completed";
-            }
-            catch (Exception ex)
-            {
-                CurrentStatus = "Error scanning folder";
-                ExceptionLog.Log(LogLevel.Error, ex);
-            }
+                    TotalFailedReplays = Database.SettingsDb().FailedReplays.GetTotalReplaysCount();
+
+                    ReceiveFailedReplays(failedReplaysList);
+
+                    Database.SettingsDb().UserSettings.RequeueAllFailedReplays = false;
+                }
+
+                TotalSavedInDatabase = GetTotalReplayDbCount();
+            });
+
+            CurrentStatus = "Scan completed";
         }
 
         private long GetTotalReplayDbCount()
@@ -915,12 +920,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     {
                         currentReplayFile.Status = ReplayResult.TranslationException;
                         TranslationsLog.Log(LogLevel.Error, ex.Message);
+                        ReAddReplayFileCollectionKey(dequeuedItem.Item2.FilePath, Guid.NewGuid().ToString());
                         AddToFailedReplaysQueue(currentReplayFile);
                     }
                     catch (Exception ex)
                     {
                         currentReplayFile.Status = ReplayResult.Exception;
                         ExceptionLog.Log(LogLevel.Error, ex);
+                        ReAddReplayFileCollectionKey(dequeuedItem.Item2.FilePath, Guid.NewGuid().ToString());
                         AddToFailedReplaysQueue(currentReplayFile);
                     }
                     finally
@@ -1131,25 +1138,39 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             }
         }
 
-        private void ReceiveFailedReplays(List<FailedReplay> replays)
+        private void ReceiveFailedReplays(List<FailedReplay> failedReplays)
         {
             TotalFailedReplays = Database.SettingsDb().FailedReplays.GetTotalReplaysCount();
 
-            if (replays != null)
+            if (failedReplays != null)
             {
-                foreach (var replay in replays)
+                int index = ReplayFileLocations.Count;
+
+                foreach (var failedReplay in failedReplays)
                 {
-                    ReplayFile file = new ReplayFile()
+                    var replay = new ReplayFile()
                     {
-                        FileName = Path.GetFileName(replay.FilePath),
-                        Build = replay.Build,
-                        FilePath = replay.FilePath,
-                        LastWriteTime = replay.TimeStamp,
+                        FileName = Path.GetFileName(failedReplay.FilePath),
+                        Build = failedReplay.Build,
+                        FilePath = failedReplay.FilePath,
+                        LastWriteTime = failedReplay.TimeStamp,
                     };
 
-                    ReplayFileCollection.Add(file);
+                    if (!ReplayFileLocations.ContainsKey(failedReplay.FilePath))
+                    {
+                        ReplayFileCollection.Add(replay);
+                        ReplayFileLocations.Add(failedReplay.FilePath, index);
+                        index++;
+                    }
                 }
             }
+        }
+
+        private void ReAddReplayFileCollectionKey(string oldKey, string newKey)
+        {
+            var value = ReplayFileLocations[oldKey];
+            ReplayFileLocations.Remove(oldKey);
+            ReplayFileLocations.Add(newKey, value);
         }
 
         #region IDisposable Support

@@ -37,13 +37,13 @@
                 </DataGrid>
 
                 <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="10">
+                    <StackPanel Margin="10 10 18 10">
                         <DockPanel Margin="0 16 0 0">
                             <Button Content="(RE)SCAN" Command="{Binding ScanCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Width="120" />
                             <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" IsEnabled="{Binding AreProcessButtonsEnabled}" Margin="8 0" Width="120" />
                             <Button Content="STOP" Command="{Binding StopCommand}" IsEnabled="{Binding IsParsingReplaysOn}" Width="120" />
                             <controls:Badged Badge="{Binding TotalFailedReplays}" Width="180" DockPanel.Dock="Right" HorizontalAlignment="Right">
-                                <Button Content="View Failed Replays" Command="{Binding ViewFailedReplaysCommand}"/>
+                                <Button Content="View Failed Replays" Command="{Binding ViewFailedReplaysCommand}" />
                             </controls:Badged>
                         </DockPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 8 0 0"> 
