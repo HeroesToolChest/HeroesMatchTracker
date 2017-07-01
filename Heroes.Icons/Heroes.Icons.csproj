@@ -680,6 +680,7 @@
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_malthael.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_malthael.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_malthael.dds" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_pullparty.jpg" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -5117,6 +5118,9 @@
     <Content Include="Xml\MapBackgrounds\InfernalShrines.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\PullParty.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\SilverCity.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
