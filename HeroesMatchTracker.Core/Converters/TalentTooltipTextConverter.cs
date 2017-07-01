@@ -59,7 +59,7 @@ namespace HeroesMatchTracker.Core.Converters
                         if (closingCTagIndex > 0)
                         {
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
-                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.Bold });
 
                             // remove, this part of the string is not needed anymore
                             text = text.Remove(0, closingCTagIndex + offset);
@@ -69,7 +69,7 @@ namespace HeroesMatchTracker.Core.Converters
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                             // add the rest of the text
-                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.Bold });
 
                             // none left
                             text = string.Empty;
