@@ -30,6 +30,7 @@
                 <Border BorderThickness="2" Height="52" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel Style="{StaticResource UserPlayerRowOverlay}">
                         <ContentPresenter ContentTemplate="{StaticResource PlayerInfo}" />
+                        
                         <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TableContentText}">
                             <TextBlock Text="{Binding SoloKills}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                             <TextBlock Text="{Binding Assists}" Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" />
@@ -42,7 +43,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="1" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -58,7 +59,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="1" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -74,7 +75,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="1" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -90,7 +91,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="1" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -98,54 +99,6 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <!--<TextBlock Margin="{StaticResource TextValueMargin}" Width="{StaticResource StatLargeNumberWidth}">
-                                <InlineUIContainer BaselineAlignment="Center">
-                                    <Image Height="22">
-                                        <Image.Style>
-                                            <Style TargetType="Image">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding RoleWarrior}" Value="True">
-                                                        <Setter Property="Source" Value="{StaticResource FilterWarrior}" />
-                                                    </DataTrigger>
-                                                    <DataTrigger Binding="{Binding RoleSupport}" Value="True">
-                                                        <Setter Property="Source" Value="{StaticResource FilterSupport}" />
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </Image.Style>
-                                    </Image>
-                                </InlineUIContainer>
-                                <TextBlock>
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RoleWarrior}" Value="True">
-                                                    <Setter Property="Text" Value="{Binding DamageTakenRole, Mode=OneWay, StringFormat={}{0:N0}}" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding RoleSupport}" Value="True">
-                                                    <Setter Property="Text" Value="{Binding HealingRole, Mode=OneWay, StringFormat={}{0:N0}}" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding HighestDamageTaken}" Value="True">
-                                                    <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
-                                                    <Setter Property="Effect">
-                                                        <Setter.Value>
-                                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding HighestHealing}" Value="True">
-                                                    <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
-                                                    <Setter Property="Effect">
-                                                        <Setter.Value>
-                                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </TextBlock>-->
                             <TextBlock Text="{Binding ExperienceContribution, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
@@ -154,7 +107,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="1" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>

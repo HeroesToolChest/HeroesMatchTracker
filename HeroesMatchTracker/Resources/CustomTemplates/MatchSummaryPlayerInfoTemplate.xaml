@@ -19,7 +19,7 @@
                             <Setter Property="FontWeight" Value="Medium" />
                             <Setter Property="Effect">
                                 <Setter.Value>
-                                    <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                    <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="6" />
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
@@ -27,7 +27,7 @@
                                     <Setter Property="Foreground" Value="{StaticResource UserCharacterNameBrush}" />
                                     <Setter Property="Effect">
                                         <Setter.Value>
-                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource UserCharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                            <DropShadowEffect ShadowDepth="0" Color="{DynamicResource UserCharacterNameColor}" Opacity="1" BlurRadius="6" />
                                         </Setter.Value>
                                     </Setter>
                                 </DataTrigger>

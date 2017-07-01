@@ -16,10 +16,22 @@
                       mc:Ignorable="d"
                       DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
                       GlowBrush="{DynamicResource AccentColorBrush}"
+                      TextOptions.TextFormattingMode="Display"
                       BorderThickness="1"
                       Title="{Binding ApplicationTitle}"
                       MinHeight="768" MinWidth="1024"
                       d:DesignHeight="1080" d:DesignWidth="1920" Loaded="MetroWindow_Loaded">
+    <controls:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock Text="{TemplateBinding Content}"
+                   TextTrimming="CharacterEllipsis"
+                   VerticalAlignment="Center"
+                   Margin="8 -1 8 0"
+                   TextOptions.TextFormattingMode="Ideal"
+                   FontSize="{DynamicResource WindowTitleFontSize}"
+                   FontFamily="{DynamicResource HeaderFontFamily}" />
+        </DataTemplate>
+    </controls:MetroWindow.TitleTemplate>
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
         <system:Double x:Key="TabControlFontSize">16</system:Double>
