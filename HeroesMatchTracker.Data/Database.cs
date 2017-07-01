@@ -90,6 +90,14 @@ namespace HeroesMatchTracker.Data
             {
                 new SettingsDb().UserSettings.SetDefaultSettings();
             }
+
+            if (ReplaysDbFileCreated && !SettingsDbFileCreated)
+            {
+                var settingsDb = new SettingsDb();
+                settingsDb.UserSettings.UserPlayerId = 0;
+                settingsDb.UserSettings.UserBattleTagName = string.Empty;
+                settingsDb.UserSettings.UserRegion = 0;
+            }
         }
     }
 }
