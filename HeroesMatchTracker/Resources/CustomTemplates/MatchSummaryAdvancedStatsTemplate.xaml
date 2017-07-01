@@ -331,7 +331,7 @@
 
     <DataTemplate x:Key="MatchAdvancedStats">
         <StackPanel Orientation="Horizontal" Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
+            <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 79 0 0">
                 <TextBlock Text="Player" />
                 <TextBlock Text="Level" />
                 <TextBlock Text="Account Level" />

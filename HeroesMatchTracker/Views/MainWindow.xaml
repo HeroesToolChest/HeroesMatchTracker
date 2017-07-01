@@ -17,6 +17,7 @@
                       DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       TextOptions.TextFormattingMode="Display"
+                      TextOptions.TextRenderingMode="ClearType"
                       BorderThickness="1"
                       Title="{Binding ApplicationTitle}"
                       MinHeight="768" MinWidth="1024"
