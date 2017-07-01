@@ -58,20 +58,20 @@
             <Button x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="InformationOutline" />
-                    <TextBlock Margin="4 0 0 0" Text="About"/>
-                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
+                    <TextBlock Margin="4 0 0 0" Text="About" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" VerticalAlignment="Center" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <iconPacks:PackIconMaterial Kind="Settings" />
-                    <TextBlock Margin="4 0 0 0" Text="Settings"/>
+                    <TextBlock Margin="4 0 0 0" Text="Settings" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenWhatsNewWindowCommand}">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="NoteOutline" />
-                    <TextBlock Margin="4 0 0 0" Text="What's New"/>
+                    <TextBlock Margin="4 0 0 0" Text="What's New" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </controls:WindowCommands>
