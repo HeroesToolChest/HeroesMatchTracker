@@ -130,7 +130,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                     await AutoUpdater.RetrieveReleaseNotes(Database);
 
                     CheckForUpdatesResponse = $"Finished applying update ({AutoUpdater.LatestVersion.Major}.{AutoUpdater.LatestVersion.Minor}.{AutoUpdater.LatestVersion.Build}). A restart is required for changes to apply.";
-                    MainTab.SetExtendedAboutText("(Restart Required)");
+                    MainTab.SetExtendedAboutText(" (Restart Required)");
                     Properties.Settings.Default.IsManualUpdateApplied = true;
                 }
                 catch (Exception ex)
@@ -164,7 +164,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                         if (await AutoUpdater.CheckForUpdates())
                         {
                             CheckForUpdatesResponse = $"Update is available ({AutoUpdater.LatestVersionString})";
-                            MainTab.SetExtendedAboutText("(Update Available)");
+                            MainTab.SetExtendedAboutText(" (Update Available)");
                             IsApplyUpdateButtonEnabled = true;
 
                             await Application.Current.Dispatcher.InvokeAsync(() => ToasterUpdateWindow.ShowToaster(AssemblyVersions.HeroesMatchTrackerVersion().ToString(), AutoUpdater.LatestVersionString));

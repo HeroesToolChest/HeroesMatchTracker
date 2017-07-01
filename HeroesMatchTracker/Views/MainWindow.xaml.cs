@@ -21,7 +21,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService
+    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService, IToasterUpdateWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
