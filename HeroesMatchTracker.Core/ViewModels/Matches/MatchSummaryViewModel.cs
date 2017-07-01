@@ -529,7 +529,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     }
                 }
 
-                if (MatchChatCollection.Count > 0)
+                if (MatchPlayerChatList.Count > 0)
                     HasChat = true;
             }
 
