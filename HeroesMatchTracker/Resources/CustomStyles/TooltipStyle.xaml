@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:coreControls="clr-namespace:HeroesMatchTracker.Core.Controls;assembly=HeroesMatchTracker.Core">
 
-    <Style TargetType="ToolTip" x:Key="TalentTooltip">
+    <Style TargetType="ToolTip" x:Key="BorderedTooltip">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{StaticResource TalentTooltipBorderBrush}" />
         <Setter Property="Background" Value="{StaticResource TalentTooltipBackgroundBrush}" />
