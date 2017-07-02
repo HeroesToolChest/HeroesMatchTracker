@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
+             TextOptions.TextFormattingMode="Ideal"
              DataContext="{Binding AboutControlViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="1000" d:DesignWidth="400">
     <UserControl.Resources>
