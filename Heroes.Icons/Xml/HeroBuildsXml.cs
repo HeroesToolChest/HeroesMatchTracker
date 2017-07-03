@@ -9,6 +9,10 @@ namespace Heroes.Icons.Xml
 {
     internal class HeroBuildsXml : XmlBase, IHeroBuilds
     {
+        private const int TotalOfficialBuilds = 32;
+        private const int EarliestOfficalBuild = 47479;
+        private const int LatestOfficialBuild = 55010;
+
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
 
@@ -61,6 +65,7 @@ namespace Heroes.Icons.Xml
         public int EarliestHeroesBuild { get; private set; } // cleared once initialized
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
         public List<int> Builds { get; private set; } = new List<int>();
+        public bool BuildsVerifyStatus { get; private set; } = false;
 
         public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
         {
@@ -317,6 +322,8 @@ namespace Heroes.Icons.Xml
 
             EarliestHeroesBuild = Builds[Builds.Count - 1];
             LatestHeroesBuild = SelectedBuild = Builds[0];
+
+            BuildsVerifyStatus = BuildVerification(buildDirectories);
         }
 
         private Uri SetHeroPortraitUri(string fileName)
@@ -415,6 +422,102 @@ namespace Heroes.Icons.Xml
                     }
                 }
             }
+        }
+
+        private bool BuildVerification(List<string> buildDirectoryList)
+        {
+            bool verificationPassed = false;
+
+            string message = $"Directories found in Xml\\{XmlBaseFolder}{Environment.NewLine}";
+            message += $"------------------------------------------------{Environment.NewLine}";
+
+            // list all build directories
+            foreach (string buildDirectory in buildDirectoryList)
+            {
+                message += $"{buildDirectory} [{Path.GetFileName(buildDirectory)}]{Environment.NewLine}";
+            }
+
+            // list the builds
+            message += $"{Environment.NewLine}Builds{Environment.NewLine}";
+            message += $"------------------------------------------------{Environment.NewLine}";
+            foreach (int build in Builds)
+            {
+                message += $"{build}{Environment.NewLine}";
+            }
+
+            // compare the build directories to the builds and do a diff
+            message += $"{Environment.NewLine}Results{Environment.NewLine}";
+            message += $"------------------------------------------------{Environment.NewLine}";
+            message += $"      Total directories: {buildDirectoryList.Count}{Environment.NewLine}";
+            message += $"           Total builds: {Builds.Count}{Environment.NewLine}";
+            message += $"  Total Official builds: {TotalOfficialBuilds}{Environment.NewLine}";
+            message += $"         Earliest build: {EarliestHeroesBuild}{Environment.NewLine}";
+            message += $"Earliest Official build: {EarliestHeroesBuild}{Environment.NewLine}";
+            message += $"           Latest build: {LatestHeroesBuild}{Environment.NewLine}";
+            message += $"  Latest Official build: {LatestOfficialBuild}{Environment.NewLine}";
+            message += Environment.NewLine;
+
+            if (Builds.Count >= TotalOfficialBuilds && EarliestHeroesBuild <= EarliestOfficalBuild && LatestHeroesBuild >= LatestOfficialBuild)
+            {
+                message += "** Build Verification PASSED **";
+                verificationPassed = true;
+            }
+            else
+            {
+                bool reVerificationPassed = false;
+
+                message += "** Build Verification FAILED **";
+                message += Environment.NewLine;
+                message += $"{Environment.NewLine}Checking build directories...{Environment.NewLine}";
+
+                foreach (string buildDirectory in buildDirectoryList)
+                {
+                    if (!int.TryParse(Path.GetFileName(buildDirectory), out int buildNumber))
+                        message += $"Failed Parsed: {buildDirectory}{Environment.NewLine}";
+                }
+
+                message += Environment.NewLine;
+
+                if (LatestHeroesBuild < LatestOfficialBuild)
+                {
+                    // see if it exists
+                    if (Directory.Exists($@"Xml\{LatestOfficialBuild}"))
+                    {
+                        message += $"Latest official build directory ({LatestOfficialBuild}): FOUND{Environment.NewLine}";
+
+                        // is the parent xml file in it?
+                        if (File.Exists($@"Xml\{LatestOfficialBuild}\{XmlParentFile}"))
+                        {
+                            message += $"{LatestOfficialBuild} {XmlParentFile}: FOUND{Environment.NewLine}";
+
+                            // set the latest to the official
+                            LatestHeroesBuild = LatestOfficialBuild;
+
+                            message += $"Latest build set to {LatestOfficialBuild}{Environment.NewLine}";
+
+                            verificationPassed = true;
+                            reVerificationPassed = true;
+                        }
+                        else
+                        {
+                            message += $"{LatestOfficialBuild} {XmlParentFile}: NOT FOUND{Environment.NewLine}";
+                        }
+                    }
+                    else
+                    {
+                        message += $"Latest official build directory ({LatestOfficialBuild}): NOT FOUND{Environment.NewLine}";
+                    }
+                }
+
+                message += Environment.NewLine;
+                message += reVerificationPassed ? "** Build Re-Verification PASSED **" : "** Build Re-Verification FAILED **";
+                message += Environment.NewLine;
+            }
+
+            message += Environment.NewLine;
+            BuildVerificationLog(message);
+
+            return verificationPassed;
         }
     }
 }

@@ -105,5 +105,13 @@ namespace Heroes.Icons.Xml
                 writer.WriteLine($"[{CurrentBuild}] {message}");
             }
         }
+
+        protected void BuildVerificationLog(string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{BuildVerificationLogName}", false))
+            {
+                writer.WriteLine(message);
+            }
+        }
     }
 }

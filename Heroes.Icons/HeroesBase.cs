@@ -7,6 +7,7 @@ namespace Heroes.Icons
     {
         protected static string ImageMissingLogName => "_ImageMissingLog.txt";
         protected static string ReferenceLogName => "_ReferenceNameLog.txt";
+        protected static string BuildVerificationLogName => "_BuildVerificationLog.txt";
         protected static string LogFileName => "Logs";
         protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
 
