@@ -45,6 +45,11 @@ namespace Heroes.Icons.Xml
         /// </summary>
         private Dictionary<string, string> RealHeroNameByTalentReferenceName = new Dictionary<string, string>();
 
+        /// <summary>
+        /// key is the build number
+        /// </summary>
+        private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
+
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
             : base(build ?? 0)
         {
@@ -207,6 +212,19 @@ namespace Heroes.Icons.Xml
             return RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
         }
 
+        /// <summary>
+        /// Get the patch notes link from the given build number. Returns null if not found
+        /// </summary>
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        public Tuple<string, string> GetPatchNotes(int build)
+        {
+            if (BuildPatchNotesByBuildNumber.TryGetValue(build, out Tuple<string, string> notes))
+                return notes;
+            else
+                return null;
+        }
+
         protected override void Parse()
         {
             DuplicateBuildCheck();
@@ -217,113 +235,141 @@ namespace Heroes.Icons.Xml
 
         protected override void ParseChildFiles()
         {
-            try
+            foreach (var hero in XmlChildFiles)
             {
-                foreach (var hero in XmlChildFiles)
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
+                    reader.MoveToContent();
+
+                    string heroAltName = reader.Name;
+                    if (heroAltName != hero)
+                        continue;
+
+                    var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
+
+                    // add talents, read each tier
+                    while (reader.Read())
                     {
-                        reader.MoveToContent();
-
-                        string heroAltName = reader.Name;
-                        if (heroAltName != hero)
-                            continue;
-
-                        var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
-
-                        // add talents, read each tier
-                        while (reader.Read())
+                        if (reader.IsStartElement())
                         {
-                            if (reader.IsStartElement())
+                            var talentTierList = new List<string>();
+
+                            // is tier Level1, Level4, etc...
+                            if (Enum.TryParse(reader.Name, out TalentTier tier))
                             {
-                                var talentTierList = new List<string>();
-
-                                // is tier Level1, Level4, etc...
-                                if (Enum.TryParse(reader.Name, out TalentTier tier))
+                                // read each talent in tier
+                                while (reader.Read() && reader.Name != tier.ToString())
                                 {
-                                    // read each talent in tier
-                                    while (reader.Read() && reader.Name != tier.ToString())
+                                    if (reader.NodeType == XmlNodeType.Element)
                                     {
-                                        if (reader.NodeType == XmlNodeType.Element)
+                                        string refName = reader.Name; // reference name of talent
+                                        string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
+                                        string generic = reader["generic"] ?? "false";  // is the icon being used generic
+                                        string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+
+                                        SetTalentTooltip(refName, desc);
+
+                                        if (!bool.TryParse(generic, out bool isGeneric))
+                                            isGeneric = false;
+
+                                        if (reader.Read())
                                         {
-                                            string refName = reader.Name; // reference name of talent
-                                            string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
-                                            string generic = reader["generic"] ?? "false";  // is the icon being used generic
-                                            string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+                                            bool isGenericTalent = false;
 
-                                            SetTalentTooltip(refName, desc);
-
-                                            if (!bool.TryParse(generic, out bool isGeneric))
-                                                isGeneric = false;
-
-                                            if (reader.Read())
+                                            if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
                                             {
-                                                bool isGenericTalent = false;
+                                                isGeneric = true;
+                                                isGenericTalent = true;
+                                            }
 
-                                                if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
-                                                {
-                                                    isGeneric = true;
-                                                    isGenericTalent = true;
-                                                }
+                                            if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
+                                                RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
 
-                                                if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
-                                                    RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            talentTierList.Add(refName);
 
-                                                talentTierList.Add(refName);
+                                            if (!isGenericTalent)
+                                            {
+                                                if (!HeroesXml.HeroExists(heroAltName, false))
+                                                    throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                                                if (!isGenericTalent)
-                                                {
-                                                    if (!HeroesXml.HeroExists(heroAltName, false))
-                                                        throw new ArgumentException($"Hero alt name not found: {heroAltName}");
+                                                if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
+                                                    throw new ArgumentException($"Same key {refName}");
 
-                                                    if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
-                                                        throw new ArgumentException($"Same key {refName}");
-
-                                                    if (tier != TalentTier.Old)
-                                                        RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
-                                                }
+                                                if (tier != TalentTier.Old)
+                                                    RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
                                             }
                                         }
                                     }
-
-                                    talentTiersForHero.Add(tier, talentTierList);
                                 }
+
+                                talentTiersForHero.Add(tier, talentTierList);
                             }
-                        } // end while
+                        }
+                    } // end while
 
-                        if (!HeroesXml.HeroExists(heroAltName, false))
-                            throw new ArgumentException($"Hero alt name not found: {heroAltName}");
+                    if (!HeroesXml.HeroExists(heroAltName, false))
+                        throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                        HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
-                    }
+                    HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new ParseXmlException("Error on parsing of hero xml files", ex);
             }
         }
 
         // this should only run once on startup
         private void SetDefaultBuildDirectory()
         {
-            List<string> buildDirectories = Directory.GetDirectories($@"Xml\{XmlBaseFolder}").ToList();
-
-            foreach (var directory in buildDirectories)
+            // load up the builds from Builds.xml
+            using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\Builds.xml"))
             {
-                if (int.TryParse(Path.GetFileName(directory), out int buildNumber))
-                    Builds.Add(buildNumber);
+                reader.MoveToContent();
+                if (reader.Name != "Builds")
+                    return;
+
+                while (reader.Read())
+                {
+                    if (reader.IsStartElement())
+                    {
+                        string type = reader["type"];
+                        string link = reader["link"];
+                        string pre = reader["pre"];
+
+                        try
+                        {
+                            if (reader.Read())
+                            {
+                                if (string.IsNullOrEmpty(pre))
+                                {
+                                    BuildPatchNotesByBuildNumber.Add(Convert.ToInt32(reader.Value), new Tuple<string, string>(type, link));
+                                }
+                                else
+                                {
+                                    var previousBuild = BuildPatchNotesByBuildNumber[Convert.ToInt32(pre)];
+                                    BuildPatchNotesByBuildNumber.Add(Convert.ToInt32(reader.Value), new Tuple<string, string>(previousBuild.Item1, previousBuild.Item2));
+                                }
+                            }
+                        }
+                        catch (FormatException ex)
+                        {
+                            throw new ParseXmlException($"Could not convert to Int32: {pre} | {reader.Value}", ex);
+                        }
+                    }
+                }
             }
 
-            if (buildDirectories.Count < 1 || Builds.Count < 1)
-                throw new ParseXmlException("No HeroBuilds folders found!");
+            foreach (var build in BuildPatchNotesByBuildNumber)
+            {
+                int buildNumber = build.Key;
+
+                if (!Directory.Exists($@"Xml\{XmlBaseFolder}\{buildNumber}"))
+                    throw new ParseXmlException($"Could not find required Build Folder: Xml\\{XmlBaseFolder}\\{buildNumber}");
+                else
+                    Builds.Add(buildNumber);
+            }
 
             Builds = Builds.OrderByDescending(x => x).ToList();
 
             EarliestHeroesBuild = Builds[Builds.Count - 1];
             LatestHeroesBuild = SelectedBuild = Builds[0];
-
-            BuildsVerifyStatus = BuildVerification(buildDirectories);
         }
 
         private Uri SetHeroPortraitUri(string fileName)
@@ -422,102 +468,6 @@ namespace Heroes.Icons.Xml
                     }
                 }
             }
-        }
-
-        private bool BuildVerification(List<string> buildDirectoryList)
-        {
-            bool verificationPassed = false;
-
-            string message = $"Directories found in Xml\\{XmlBaseFolder}{Environment.NewLine}";
-            message += $"------------------------------------------------{Environment.NewLine}";
-
-            // list all build directories
-            foreach (string buildDirectory in buildDirectoryList)
-            {
-                message += $"{buildDirectory} [{Path.GetFileName(buildDirectory)}]{Environment.NewLine}";
-            }
-
-            // list the builds
-            message += $"{Environment.NewLine}Builds{Environment.NewLine}";
-            message += $"------------------------------------------------{Environment.NewLine}";
-            foreach (int build in Builds)
-            {
-                message += $"{build}{Environment.NewLine}";
-            }
-
-            // compare the build directories to the builds and do a diff
-            message += $"{Environment.NewLine}Results{Environment.NewLine}";
-            message += $"------------------------------------------------{Environment.NewLine}";
-            message += $"      Total directories: {buildDirectoryList.Count}{Environment.NewLine}";
-            message += $"           Total builds: {Builds.Count}{Environment.NewLine}";
-            message += $"  Total Official builds: {TotalOfficialBuilds}{Environment.NewLine}";
-            message += $"         Earliest build: {EarliestHeroesBuild}{Environment.NewLine}";
-            message += $"Earliest Official build: {EarliestHeroesBuild}{Environment.NewLine}";
-            message += $"           Latest build: {LatestHeroesBuild}{Environment.NewLine}";
-            message += $"  Latest Official build: {LatestOfficialBuild}{Environment.NewLine}";
-            message += Environment.NewLine;
-
-            if (Builds.Count >= TotalOfficialBuilds && EarliestHeroesBuild <= EarliestOfficalBuild && LatestHeroesBuild >= LatestOfficialBuild)
-            {
-                message += "** Build Verification PASSED **";
-                verificationPassed = true;
-            }
-            else
-            {
-                bool reVerificationPassed = false;
-
-                message += "** Build Verification FAILED **";
-                message += Environment.NewLine;
-                message += $"{Environment.NewLine}Checking build directories...{Environment.NewLine}";
-
-                foreach (string buildDirectory in buildDirectoryList)
-                {
-                    if (!int.TryParse(Path.GetFileName(buildDirectory), out int buildNumber))
-                        message += $"Failed Parsed: {buildDirectory}{Environment.NewLine}";
-                }
-
-                message += Environment.NewLine;
-
-                if (LatestHeroesBuild < LatestOfficialBuild)
-                {
-                    // see if it exists
-                    if (Directory.Exists($@"Xml\{LatestOfficialBuild}"))
-                    {
-                        message += $"Latest official build directory ({LatestOfficialBuild}): FOUND{Environment.NewLine}";
-
-                        // is the parent xml file in it?
-                        if (File.Exists($@"Xml\{LatestOfficialBuild}\{XmlParentFile}"))
-                        {
-                            message += $"{LatestOfficialBuild} {XmlParentFile}: FOUND{Environment.NewLine}";
-
-                            // set the latest to the official
-                            LatestHeroesBuild = LatestOfficialBuild;
-
-                            message += $"Latest build set to {LatestOfficialBuild}{Environment.NewLine}";
-
-                            verificationPassed = true;
-                            reVerificationPassed = true;
-                        }
-                        else
-                        {
-                            message += $"{LatestOfficialBuild} {XmlParentFile}: NOT FOUND{Environment.NewLine}";
-                        }
-                    }
-                    else
-                    {
-                        message += $"Latest official build directory ({LatestOfficialBuild}): NOT FOUND{Environment.NewLine}";
-                    }
-                }
-
-                message += Environment.NewLine;
-                message += reVerificationPassed ? "** Build Re-Verification PASSED **" : "** Build Re-Verification FAILED **";
-                message += Environment.NewLine;
-            }
-
-            message += Environment.NewLine;
-            BuildVerificationLog(message);
-
-            return verificationPassed;
         }
     }
 }
