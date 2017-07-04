@@ -35,16 +35,24 @@ namespace Heroes.Icons
         {
             Logger = logger;
 
-            HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
-            HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
+            try
+            {
+                HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
+                HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
 
-            EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
-            LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
-            ListHeroBuilds = HeroBuildsXml.Builds;
+                EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
+                LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
+                ListHeroBuilds = HeroBuildsXml.Builds;
 
-            MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild);
-            MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild);
-            HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild);
+                MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild);
+                MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild);
+                HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild);
+            }
+            catch (Exception ex)
+            {
+                LogErrors($"Error on HeroIcons initializing{Environment.NewLine}{ex}");
+                throw;
+            }
 
             SetNonSupportHeroesWithSupportStat();
             SetPartyIcons();
@@ -277,6 +285,13 @@ namespace Heroes.Icons
             }
         }
 
+        private void LogErrors(string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{XmlErrorsLogName}", true))
+            {
+                writer.WriteLine(message);
+            }
+        }
         #endregion private methods
     }
 }
