@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media.Imaging;
 using System.Xml;
 
@@ -93,21 +94,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
+                return HeroesBitmapImage($@"HeroPortraits\{NoPortraitPick}");
 
-            if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds");
+                return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
             }
         }
 
@@ -120,21 +131,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenPick}");
 
-            if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Loading hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Loading hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
             }
         }
 
@@ -147,21 +168,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
+                return HeroesBitmapImage($@"HeroLeaderboardPortraits\{NoLeaderboardPick}");
 
-            if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Leader hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Leader hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
             }
         }
 

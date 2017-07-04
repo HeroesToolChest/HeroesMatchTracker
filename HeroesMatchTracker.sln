@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchTracker.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeroesMatchTracker.Data", "HeroesMatchTracker.Data\HeroesMatchTracker.Data.csproj", "{038BEA71-201F-4C56-9EDD-152FED4D9B41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroes.Icons.Tests", "Heroes.Icons.Tests\Heroes.Icons.Tests.csproj", "{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,18 @@ Global
 		{038BEA71-201F-4C56-9EDD-152FED4D9B41}.Release|x64.Build.0 = Release|x64
 		{038BEA71-201F-4C56-9EDD-152FED4D9B41}.Release|x86.ActiveCfg = Release|x86
 		{038BEA71-201F-4C56-9EDD-152FED4D9B41}.Release|x86.Build.0 = Release|x86
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|x64.Build.0 = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Debug|x86.Build.0 = Debug|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|x64.ActiveCfg = Release|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|x64.Build.0 = Release|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|x86.ActiveCfg = Release|Any CPU
+		{80047EC1-68F5-4A71-A0F2-2A8CE86EB643}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

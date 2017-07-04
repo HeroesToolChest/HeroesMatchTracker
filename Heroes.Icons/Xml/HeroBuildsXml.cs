@@ -91,7 +91,7 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(talentReferenceName))
-                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_ingame_leader_talent_unselected.png");
+                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconPick}");
 
             if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
             {
@@ -107,7 +107,7 @@ namespace Heroes.Icons.Xml
                     if (Logger)
                         LogMissingImage($"Missing image: {talent.Item2}");
 
-                    return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
+                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
                 }
             }
             else
@@ -115,7 +115,7 @@ namespace Heroes.Icons.Xml
                 if (Logger)
                     LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
 
-                return HeroesBitmapImage(@"Talents\_Generic\storm_ui_icon_default.dds");
+                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
             }
         }
 

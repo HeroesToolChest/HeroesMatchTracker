@@ -982,7 +982,7 @@ MonkCleansingTouch=Radiant Dashing to an ally makes them Unstoppable for <c val=
 MonkDashofLight=Radiant Dashing to an ally increases the healing they receive from Breath of Heaven by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
 MonkDeadlyReach=Kharazim's next Basic Attack increases his Attack Speed and Attack Range by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MonkDivinePalm=Protect an allied Hero from death, causing them to be healed for <c val="#TooltipNumbers">1141</c> if they take fatal damage in the next <c val="#TooltipNumbers">3</c> seconds.
-MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50>%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
+MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
 MonkEchoofHeavenTalent=Breath of Heaven heals <c val="#TooltipNumbers">75%</c> of its normal amount, but heals a second time <c val="#TooltipNumbers">3</c> seconds later.
 MonkElevenSidedStrikeTalent=Seven-Sided Strike hits <c val="#TooltipNumbers">4</c> additional times.
 MonkEpiphany=Activate to restore <c val="#TooltipNumbers">33%</c> of Kharazim's maximum Mana and refill <c val="#TooltipNumbers">2</c> charges of Radiant Dash. 
@@ -1345,7 +1345,7 @@ SylvanasWitheringFireSplinterShotTalent=Withering Fire hits a second target for 
 SylvanasWitheringFireWithTheWindTalent=Increases Withering Fire's range by <c val="#TooltipNumbers">25%</c>.
 SylvanasWitheringFireWitheringBarrage=Increase Withering Fire charges by <c val="#TooltipNumbers">1</c>. Charges can be fired <c val="#TooltipNumbers">33%</c> faster.
 TalentBribeToken=<c val="#TooltipQuest">Nearby Minions Killed:</c> <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
-TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50>%</c>.
+TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50%</c>.
 TassadarArchon=Transform into an Archon, gaining a <c val="#TooltipNumbers">456</c> point Shield, causing Basic Attacks to deal <c val="#TooltipNumbers">111</c> damage and splash for <c val="#TooltipNumbers">55</c> additional damage. Lasts for <c val="#TooltipNumbers">12</c> seconds.
 TassadarArchonTwilightArchonTalent=Increases Archon's initial Shield and Attack Damage by <c val="#TooltipNumbers">50%</c>, and increases Basic Attack range in Archon form by <c val="#TooltipNumbers">35%</c>.
 TassadarDimensionalShift=Become invulnerable and Unrevealable for <c val="#TooltipNumbers"><VALUE></c> seconds.

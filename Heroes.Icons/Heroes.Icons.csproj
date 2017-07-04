@@ -304,32 +304,31 @@
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_teamplayer_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_teamplayer_red.png" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_abathur.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_alarak.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_anubarak.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_artanis.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_arthas.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_auriel.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_azmodan.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_barbarian.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_femalebarbarian.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_butcher.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_chen.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_cho.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_chromie.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_crusader.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_johanna.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_dehaka.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_demonhunter.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_diablo.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_dryad.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_lunara.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_faeriedragon.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_falstad.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_gall.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_greymane.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_genngreymane.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_guldan.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_illidan.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_jaina.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_kaelthas.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_kerrigan.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_l90etc.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_etc.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_leoric.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_lili.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_lostvikings.dds" />
@@ -350,7 +349,7 @@
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_sylvanas.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_tassadar.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_thrall.dds" />
-    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_tinker.dds" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_gazlowe.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_tracer.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_tychus.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_tyrael.dds" />
@@ -379,10 +378,10 @@
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_gall.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_gazlowe.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_genngreymane.dds" />
-    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_gryphon_rider.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_falstad.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_guldan.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_illidan.dds" />
-    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_infestor.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_abathur.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_jaina.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_johanna.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_kaelthas.dds" />
@@ -418,7 +417,7 @@
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_zagara.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_zarya.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_zeratul.dds" />
-    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_cho.dds" />
+    <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_cho.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds" />
@@ -681,6 +680,8 @@
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_malthael.dds" />
     <Resource Include="Icons\HeroPortraits\storm_ui_ingame_heroselect_btn_malthael.dds" />
     <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_pullparty.jpg" />
+    <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_alarak.dds" />
+    <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_abathur.dds" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -5479,7 +5480,6 @@
     <Resource Include="Icons\Talents\Alarak\storm_ui_icon_alarak_telekinesis_a.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_notfound.dds" />
-    <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_abathur.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_anubarak.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_artanis.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_arthas.dds" />

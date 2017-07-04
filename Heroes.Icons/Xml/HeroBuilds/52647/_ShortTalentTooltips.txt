@@ -694,7 +694,7 @@ GuldanConsumeSoul=Instantly kill an enemy Minion to heal
 GuldanCorruption=Deals damage over time to enemies in the area
 GuldanCorruptionCurseOfExhaustion=Corruption slows enemy Movement Speed
 GuldanCorruptionDemonicSight=Corruption reveals enemies
-GuldanCorruptionEchoedCorruption=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,GuldanCorruptionEchoedCorruptionQuestToken,Max"/></c> Heroes with Corruption to increase strikes
+GuldanCorruptionEchoedCorruption=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">40</c> Heroes with Corruption to increase strikes
 GuldanCorruptionRuinousAffliction=Corruption deals bonus damage
 GuldanDarkBargain=Increases Health, Death Respawn timer
 GuldanDemonicCircle=Summon a Demonic Circle that Gul'dan can teleport to
@@ -1017,7 +1017,7 @@ MedivhArcaneRift=Launch an arcane bolt that damages enemies in a line
 MedivhArcaneRiftArcaneCharge=Arcane Rift deals more damage after hitting a Hero
 MedivhArcaneRiftGuardianOfTirisfal=Arcane Rift kills Minions instantly
 MedivhArcaneRiftManaAdept=Increases Arcane Rift Mana refund
-MedivhArcaneRiftTheMastersTouch=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,MedivhArcaneRiftTheMastersTouchQuestToken,Max"/></c> Heroes to increase damage
+MedivhArcaneRiftTheMastersTouch=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">30</c> Heroes to increase damage
 MedivhDustOfAppearance=Reveal Heroes in the surrounding area
 MedivhForceOfWill=Protect an allied Hero from damage
 MedivhForceOfWillArcaneExplosion=Force of Will deals area damage
@@ -1833,7 +1833,7 @@ ZagaraNydusNetwork=Empowers Creep and can create Nydus Worms
 ZagaraNydusNetworkBroodlingNestTalent=Spawn broodlings when exiting a Nydus Worm
 ZagaraSerratedSpines=<c val="#TooltipQuest">Quest:</c> Basic Attacks against Heroes increase damage
 ZagaraViscousAcid=Banelings also slow enemies
-aryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
+MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">TracerLockedandLoaded=Reactivate Reload within the last <c val="#TooltipNumbers">50%</c> of its cast time to increase Tracer's Basic Attack damage ZaryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
 ZaryaEnergy=Damage absorbed by Zarya's Shields increase her damage.
 ZaryaEnergyBornInBattleTalent=Reduces cooldowns at high Energy
 ZaryaEnergyEnduranceTrainingTalent=Gain Armor at high Energy

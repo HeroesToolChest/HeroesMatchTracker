@@ -52,7 +52,8 @@ namespace Heroes.Icons
             }
             catch (Exception ex)
             {
-                LogErrors($"Error on HeroIcons initializing{Environment.NewLine}{ex}");
+                if (logger)
+                    LogErrors($"Error on HeroIcons initializing{Environment.NewLine}{ex}");
                 throw;
             }
 
