@@ -10,9 +10,11 @@ namespace Heroes.Icons
     {
         private readonly HeroBuildsXml HeroBuildsXmlLatest; // holds the latest build info
 
-        private bool Logger;
         private int EarliestHeroesBuild;
         private int LatestHeroesBuild;
+        private bool BuildsVerifyStatus;
+        private bool Logger;
+
         private HeroesXml HeroesXml;
         private HeroBuildsXml HeroBuildsXml; // the one that is in use
         private HeroBuildsXml HeroBuildsXmlHolder; // used for swapping between the one that is in use and latest
@@ -61,7 +63,8 @@ namespace Heroes.Icons
             SetOtherIcons();
         }
 
-        public int LatestSupportedBuild() => LatestHeroesBuild;
+        public int GetLatestHeroesBuild() => LatestHeroesBuild;
+        public bool GetBuildsVerifyStatus() => BuildsVerifyStatus;
 
         /// <summary>
         /// Load a specific build, other than the latest one

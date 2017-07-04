@@ -39,7 +39,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
         public string HeroesMatchTrackerCoreVersion => AssemblyVersions.HeroesMatchTrackerCoreVersion().ToString();
         public string HeroesMatchTrackerDataVersion => AssemblyVersions.HeroesMatchTrackerDataVersion().ToString();
         public string HeroesMatchTrackerHelpersVersion => AssemblyVersions.HeroesHelpersVersion().ToString();
-        public string HeroesIconsVersion => $"{AssemblyVersions.HeroesIconsVersion().ToString()} ({HeroesIcons.LatestSupportedBuild()})";
+        public string HeroesIconsVersion => $"{AssemblyVersions.HeroesIconsVersion().ToString()} ({HeroesIcons.GetLatestHeroesBuild()})";
         public string HeroesReplayParserVersion => $"{AssemblyVersions.HeroesReplayParserVersion().ToString()} ({Heroes.ReplayParser.Replay.LatestSupportedBuild})";
 
         public RelayCommand CheckForUpdatesCommand => new RelayCommand(CheckForUpdates);

@@ -9,6 +9,10 @@ namespace Heroes.Icons.Xml
 {
     internal class HeroBuildsXml : XmlBase, IHeroBuilds
     {
+        private const int TotalOfficialBuilds = 32;
+        private const int EarliestOfficalBuild = 47479;
+        private const int LatestOfficialBuild = 55010;
+
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
 
@@ -41,6 +45,11 @@ namespace Heroes.Icons.Xml
         /// </summary>
         private Dictionary<string, string> RealHeroNameByTalentReferenceName = new Dictionary<string, string>();
 
+        /// <summary>
+        /// key is the build number
+        /// </summary>
+        private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
+
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
             : base(build ?? 0)
         {
@@ -61,6 +70,7 @@ namespace Heroes.Icons.Xml
         public int EarliestHeroesBuild { get; private set; } // cleared once initialized
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
         public List<int> Builds { get; private set; } = new List<int>();
+        public bool BuildsVerifyStatus { get; private set; } = false;
 
         public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
         {
@@ -202,6 +212,19 @@ namespace Heroes.Icons.Xml
             return RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
         }
 
+        /// <summary>
+        /// Get the patch notes link from the given build number. Returns null if not found
+        /// </summary>
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        public Tuple<string, string> GetPatchNotes(int build)
+        {
+            if (BuildPatchNotesByBuildNumber.TryGetValue(build, out Tuple<string, string> notes))
+                return notes;
+            else
+                return null;
+        }
+
         protected override void Parse()
         {
             DuplicateBuildCheck();
@@ -212,106 +235,136 @@ namespace Heroes.Icons.Xml
 
         protected override void ParseChildFiles()
         {
-            try
+            foreach (var hero in XmlChildFiles)
             {
-                foreach (var hero in XmlChildFiles)
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
+                    reader.MoveToContent();
+
+                    string heroAltName = reader.Name;
+                    if (heroAltName != hero)
+                        continue;
+
+                    var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
+
+                    // add talents, read each tier
+                    while (reader.Read())
                     {
-                        reader.MoveToContent();
-
-                        string heroAltName = reader.Name;
-                        if (heroAltName != hero)
-                            continue;
-
-                        var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
-
-                        // add talents, read each tier
-                        while (reader.Read())
+                        if (reader.IsStartElement())
                         {
-                            if (reader.IsStartElement())
+                            var talentTierList = new List<string>();
+
+                            // is tier Level1, Level4, etc...
+                            if (Enum.TryParse(reader.Name, out TalentTier tier))
                             {
-                                var talentTierList = new List<string>();
-
-                                // is tier Level1, Level4, etc...
-                                if (Enum.TryParse(reader.Name, out TalentTier tier))
+                                // read each talent in tier
+                                while (reader.Read() && reader.Name != tier.ToString())
                                 {
-                                    // read each talent in tier
-                                    while (reader.Read() && reader.Name != tier.ToString())
+                                    if (reader.NodeType == XmlNodeType.Element)
                                     {
-                                        if (reader.NodeType == XmlNodeType.Element)
+                                        string refName = reader.Name; // reference name of talent
+                                        string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
+                                        string generic = reader["generic"] ?? "false";  // is the icon being used generic
+                                        string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+
+                                        SetTalentTooltip(refName, desc);
+
+                                        if (!bool.TryParse(generic, out bool isGeneric))
+                                            isGeneric = false;
+
+                                        if (reader.Read())
                                         {
-                                            string refName = reader.Name; // reference name of talent
-                                            string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
-                                            string generic = reader["generic"] ?? "false";  // is the icon being used generic
-                                            string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+                                            bool isGenericTalent = false;
 
-                                            SetTalentTooltip(refName, desc);
-
-                                            if (!bool.TryParse(generic, out bool isGeneric))
-                                                isGeneric = false;
-
-                                            if (reader.Read())
+                                            if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
                                             {
-                                                bool isGenericTalent = false;
+                                                isGeneric = true;
+                                                isGenericTalent = true;
+                                            }
 
-                                                if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
-                                                {
-                                                    isGeneric = true;
-                                                    isGenericTalent = true;
-                                                }
+                                            if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
+                                                RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
 
-                                                if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
-                                                    RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            talentTierList.Add(refName);
 
-                                                talentTierList.Add(refName);
+                                            if (!isGenericTalent)
+                                            {
+                                                if (!HeroesXml.HeroExists(heroAltName, false))
+                                                    throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                                                if (!isGenericTalent)
-                                                {
-                                                    if (!HeroesXml.HeroExists(heroAltName, false))
-                                                        throw new ArgumentException($"Hero alt name not found: {heroAltName}");
+                                                if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
+                                                    throw new ArgumentException($"Same key {refName}");
 
-                                                    if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
-                                                        throw new ArgumentException($"Same key {refName}");
-
-                                                    if (tier != TalentTier.Old)
-                                                        RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
-                                                }
+                                                if (tier != TalentTier.Old)
+                                                    RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
                                             }
                                         }
                                     }
-
-                                    talentTiersForHero.Add(tier, talentTierList);
                                 }
+
+                                talentTiersForHero.Add(tier, talentTierList);
                             }
-                        } // end while
+                        }
+                    } // end while
 
-                        if (!HeroesXml.HeroExists(heroAltName, false))
-                            throw new ArgumentException($"Hero alt name not found: {heroAltName}");
+                    if (!HeroesXml.HeroExists(heroAltName, false))
+                        throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                        HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
-                    }
+                    HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new ParseXmlException("Error on parsing of hero xml files", ex);
             }
         }
 
         // this should only run once on startup
         private void SetDefaultBuildDirectory()
         {
-            List<string> buildDirectories = Directory.GetDirectories($@"Xml\{XmlBaseFolder}").ToList();
-
-            foreach (var directory in buildDirectories)
+            // load up the builds from Builds.xml
+            using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\Builds.xml"))
             {
-                if (int.TryParse(Path.GetFileName(directory), out int buildNumber))
-                    Builds.Add(buildNumber);
+                reader.MoveToContent();
+                if (reader.Name != "Builds")
+                    return;
+
+                while (reader.Read())
+                {
+                    if (reader.IsStartElement())
+                    {
+                        string type = reader["type"];
+                        string link = reader["link"];
+                        string pre = reader["pre"];
+
+                        try
+                        {
+                            if (reader.Read())
+                            {
+                                if (string.IsNullOrEmpty(pre))
+                                {
+                                    BuildPatchNotesByBuildNumber.Add(Convert.ToInt32(reader.Value), new Tuple<string, string>(type, link));
+                                }
+                                else
+                                {
+                                    var previousBuild = BuildPatchNotesByBuildNumber[Convert.ToInt32(pre)];
+                                    BuildPatchNotesByBuildNumber.Add(Convert.ToInt32(reader.Value), new Tuple<string, string>(previousBuild.Item1, previousBuild.Item2));
+                                }
+                            }
+                        }
+                        catch (FormatException ex)
+                        {
+                            throw new ParseXmlException($"Could not convert to Int32: {pre} | {reader.Value}", ex);
+                        }
+                    }
+                }
             }
 
-            if (buildDirectories.Count < 1 || Builds.Count < 1)
-                throw new ParseXmlException("No HeroBuilds folders found!");
+            foreach (var build in BuildPatchNotesByBuildNumber)
+            {
+                int buildNumber = build.Key;
+
+                if (!Directory.Exists($@"Xml\{XmlBaseFolder}\{buildNumber}"))
+                    throw new ParseXmlException($"Could not find required Build Folder: Xml\\{XmlBaseFolder}\\{buildNumber}");
+                else
+                    Builds.Add(buildNumber);
+            }
 
             Builds = Builds.OrderByDescending(x => x).ToList();
 

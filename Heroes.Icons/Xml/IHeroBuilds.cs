@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Xml
@@ -48,5 +49,12 @@ namespace Heroes.Icons.Xml
         /// <param name="heroRealName">The hero name</param>
         /// <returns></returns>
         bool GetHeroNameFromTalentReferenceName(string talentName, out string heroRealName);
+
+        /// <summary>
+        /// Get the patch notes link from the given build number. Returns null if not found
+        /// </summary>
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        Tuple<string, string> GetPatchNotes(int build);
     }
 }
