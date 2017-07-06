@@ -81,13 +81,20 @@ namespace Heroes.Icons
             else if (build > LatestHeroesBuild)
                 build = LatestHeroesBuild;
 
-            // only load the build if it's not in memory already or in the in xmlHolder
-            if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
+            try
             {
-                if (build != HeroBuildsXmlHolder.CurrentLoadedHeroesBuild)
-                    HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
-                else
-                    HeroBuildsXml = HeroBuildsXmlHolder;
+                // only load the build if it's not in memory already or in the in xmlHolder
+                if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
+                {
+                    if (build != HeroBuildsXmlHolder.CurrentLoadedHeroesBuild)
+                        HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
+                    else
+                        HeroBuildsXml = HeroBuildsXmlHolder;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ParseXmlException($"Error on loading heroes build {build}{Environment.NewLine}{ex}");
             }
         }
 

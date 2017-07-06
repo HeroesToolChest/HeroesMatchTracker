@@ -868,7 +868,7 @@ KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast radius and lowers cool
 KaelthasSunfireEnchantmentTalent=Special attack on Verdant Spheres activation
 KaelthasVerdantSpheres=Make Kael'thas's next Basic Ability more powerful
 KaelthasVerdantSpheresFelInfusionTalent=Increases Spell Power, Verdant Spheres heals
---KaelthasVerdantSpheresMasterOfFlameTalent=Living Bomb spreads indefinitely
+--KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasVerdantSpheresTwinSpheresTalent=Verdant Spheres gains a second charge
 KerriganAdaptationTalent=Ravage can jump to allies
@@ -1908,7 +1908,7 @@ ZagaraNydusNetwork=Empowers Creep and can create Nydus Worms
 ZagaraNydusNetworkBroodlingNestTalent=Spawn broodlings when exiting a Nydus Worm
 ZagaraSerratedSpines=<c val="#TooltipQuest">Quest:</c> Basic Attacks against Heroes increase damage
 ZagaraViscousAcid=Banelings also slow enemies
-ZMonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">TracerLockedandLoaded=Reactivate Reload within the last <c val="#TooltipNumbers">50%</c> of its cast time to increase Tracer's Basic Attack damage ZaryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
+ZaryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
 ZaryaEnergy=Damage absorbed by Zarya's Shields increase her damage.
 ZaryaEnergyBornInBattleTalent=Reduces cooldowns at high Energy
 ZaryaEnergyEnduranceTrainingTalent=Gain Armor at high Energy
@@ -1948,8 +1948,7 @@ ZeratulCleaveGreaterCleaveTalent=Increases radius of Cleave
 ZeratulCleaveRendingCleaveTalent=Cleave deals additional damage over time
 ZeratulComboSlash=Abilities increase Basic Attack damage
 ZeratulGiftoftheXelNaga=Allies unaffected by Void Prison, enemies slowed
---ZeratulGrimTaskTalent=<c val="#TooltipQuest">Quest:</c> Takedowns grant Spell Power
-ZeratulGrimTask=<c val="#TooltipQuest">Quest:</c> Takedowns grant Spell Power
+ZeratulGrimTaskTalent=<c val="#TooltipQuest">Quest:</c> Takedowns grant Spell Power
 ZeratulMasterWarpBlade=Bonus damage every third Basic Attack
 ZeratulMendingStrikes=Basic Attacks heal
 ZeratulPermanentCloak=Become Stealthed while not attacking, using Abilities, or taking damage

@@ -206,7 +206,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
 
-            var heroesList = HeroesIcons.Heroes().GetListOfHeroes();
+            var heroesList = HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
             foreach (var hero in heroesList)
             {
                 List<object> rowStats = new List<object>();

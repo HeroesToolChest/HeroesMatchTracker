@@ -7,53 +7,57 @@ using System.Windows.Media.Imaging;
 namespace Heroes.Icons.Tests
 {
     [TestClass]
-    // these test will normally check the latest build only
     public class HeroIconsTests
     {
-        private HeroesIcons HeroesIcons;
-
         public HeroIconsTests()
         {
             FrameworkElement frameworkElement = new FrameworkElement(); // needed to load up the framework
-            HeroesIcons = new HeroesIcons(false);
+
         }
 
         [TestMethod]
         public void HeroesTest()
         {
+            HeroesIcons heroesIcons = new HeroesIcons(false);
             List<string> assertMessages = new List<string>();
             int segment = 4;
-            var heroes = HeroesIcons.Heroes().GetListOfHeroes();
 
-            foreach (var hero in heroes)
+            foreach (int build in heroesIcons.GetListOfHeroesBuilds())
             {
-                string altName = HeroesIcons.Heroes().GetAltNameFromRealHeroName(hero);
+                heroesIcons.LoadHeroesBuild(build);
 
-                if (string.IsNullOrEmpty(altName))
-                    Assert.Fail($"alt name is null or emtpy for {hero}");
+                var heroes = heroesIcons.Heroes().GetListOfHeroes(build);
 
-                BitmapImage heroLeaderBoardPortrait = HeroesIcons.Heroes().GetHeroLeaderboardPortrait(hero);
-                BitmapImage heroLoadingPortrait = HeroesIcons.Heroes().GetHeroLoadingPortrait(hero);
-                BitmapImage heroPortrait = HeroesIcons.Heroes().GetHeroPortrait(hero);
+                foreach (var hero in heroes)
+                {
+                    string altName = heroesIcons.Heroes().GetAltNameFromRealHeroName(hero);
+
+                    if (string.IsNullOrEmpty(altName))
+                        Assert.Fail($"[{build}] alt name is null or emtpy for {hero}");
+
+                    BitmapImage heroLeaderBoardPortrait = heroesIcons.Heroes().GetHeroLeaderboardPortrait(hero);
+                    BitmapImage heroLoadingPortrait = heroesIcons.Heroes().GetHeroLoadingPortrait(hero);
+                    BitmapImage heroPortrait = heroesIcons.Heroes().GetHeroPortrait(hero);
 
 
-                if (heroLeaderBoardPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_leaderboard_{GetUniqueHeroName(altName.ToLower())}.dds")
-                    assertMessages.Add($"Leaderboard portrait not found for {hero}");
+                    if (heroLeaderBoardPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_leaderboard_{GetUniqueHeroName(altName.ToLower())}.dds")
+                        assertMessages.Add($"[{build}] Leaderboard portrait not found for {hero}");
 
-                if (heroLoadingPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_loadingscreen_{GetUniqueHeroName(altName.ToLower())}.dds")
-                    assertMessages.Add($"Loading portrait not found for {hero}");
+                    if (heroLoadingPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_loadingscreen_{GetUniqueHeroName(altName.ToLower())}.dds")
+                        assertMessages.Add($"[{build}] Loading portrait not found for {hero}");
 
-                if (heroPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_heroselect_btn_{GetUniqueHeroName(altName.ToLower())}.dds")
-                    assertMessages.Add($"Hero portrait not found for {hero}");
+                    if (heroPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_heroselect_btn_{GetUniqueHeroName(altName.ToLower())}.dds")
+                        assertMessages.Add($"[{build}] Hero portrait not found for {hero}");
 
-                if (HeroesIcons.Heroes().GetHeroFranchise(hero) == HeroFranchise.Unknown)
-                    assertMessages.Add($"Unknown franchise for {hero}");
+                    if (heroesIcons.Heroes().GetHeroFranchise(hero) == HeroFranchise.Unknown)
+                        assertMessages.Add($"[{build}] Unknown franchise for {hero}");
 
-                var heroRoles = HeroesIcons.Heroes().GetHeroRoleList(hero);
-                if (heroRoles[0] == HeroRole.Unknown)
-                    assertMessages.Add($"Unknown hero role for {hero}");
-                if (heroRoles.Count > 1 && heroRoles[0] != HeroRole.Multiclass)
-                    assertMessages.Add($"Hero {hero} has multiple roles but first role is NOT Multiclass");          
+                    var heroRoles = heroesIcons.Heroes().GetHeroRoleList(hero);
+                    if (heroRoles[0] == HeroRole.Unknown)
+                        assertMessages.Add($"[{build}] Unknown hero role for {hero}");
+                    if (heroRoles.Count > 1 && heroRoles[0] != HeroRole.Multiclass)
+                        assertMessages.Add($"[{build}] Hero {hero} has multiple roles but first role is NOT Multiclass");
+                }
             }
 
             AssertFailMessage(assertMessages);
@@ -62,71 +66,84 @@ namespace Heroes.Icons.Tests
         [TestMethod]
         public void HeroesBuildTest()
         {
+            HeroesIcons heroesIcons = new HeroesIcons(false);
             List<string> assertMessages = new List<string>();
             int segment = 5;
-            var heroes = HeroesIcons.Heroes().GetListOfHeroes();
 
-            foreach (var hero in heroes)
+            foreach (int build in heroesIcons.GetListOfHeroesBuilds())
             {
-                var talents = HeroesIcons.HeroBuilds().GetAllTalentsForHero(hero);
-                if (talents[TalentTier.Level1].Count < 1)
-                    Assert.Fail($"No Level 1 talents for {hero}");
-                if (talents[TalentTier.Level4].Count < 1)
-                    Assert.Fail($"No Level 4 talents for {hero}");
-                if (talents[TalentTier.Level7].Count < 1)
-                    Assert.Fail($"No Level 7 talents for {hero}");
-                if (talents[TalentTier.Level10].Count < 1)
-                    Assert.Fail($"No Level 10 talents for {hero}");
-                if (talents[TalentTier.Level13].Count < 1)
-                    Assert.Fail($"No Level 13 talents for {hero}");
-                if (talents[TalentTier.Level16].Count < 1)
-                    Assert.Fail($"No Level 16 talents for {hero}");
-                if (talents[TalentTier.Level20].Count < 1)
-                    Assert.Fail($"No Level 20 talents for {hero}");
+                heroesIcons.LoadHeroesBuild(build);
 
-                // loop through each talent tier
-                foreach (var talentTier in talents)
+                var heroes = heroesIcons.Heroes().GetListOfHeroes(build);
+
+                foreach (var hero in heroes)
                 {
-                    if (talentTier.Key == TalentTier.Old)
-                        continue;
+                    var talents = heroesIcons.HeroBuilds().GetAllTalentsForHero(hero);
 
-                    // loop through each talent
-                    foreach (var talent in talentTier.Value)
+                    if (talents == null)
                     {
-                        BitmapImage talentImage = HeroesIcons.HeroBuilds().GetTalentIcon(talent);
-
-                        if (talentImage.UriSource.Segments[segment].ToString() == HeroesBase.NoTalentIconPick || talentImage.UriSource.Segments[segment].ToString() == HeroesBase.NoTalentIconFound)
-                            assertMessages.Add($"Talent image not found for {talent} [{talentTier.Key.ToString()}]");
-
-                        TalentTooltip talentTooltip = HeroesIcons.HeroBuilds().GetTalentTooltips(talent);
-                        if (string.IsNullOrEmpty(talentTooltip.Full))
-                        {
-                            assertMessages.Add($"Full tooltip not found for {talent} [{talentTier.Key.ToString()}]");
-                        }
-                        else
-                        {
-                            string strippedText = TalentTooltipStripNonText(talentTooltip.Full);
-
-                            if (NonValidCharsCheck(strippedText))
-                                assertMessages.Add($"Invalid chars in FULL tooltip {talent} [{talentTier.Key.ToString()}]{Environment.NewLine}{strippedText}{Environment.NewLine}");
-                        }
-
-                        if (string.IsNullOrEmpty(talentTooltip.Short))
-                        {
-                            assertMessages.Add($"Short tooltip not found for {talent} [{talentTier.Key.ToString()}]");
-                        }
-                        else
-                        {
-                            string strippedText = TalentTooltipStripNonText(talentTooltip.Short);
-
-                            if (NonValidCharsCheck(strippedText))
-                                assertMessages.Add($"Invalid chars in SHORT tooltip {talent} [{talentTier.Key.ToString()}]{Environment.NewLine}{strippedText}{Environment.NewLine}");
-                        }
-
-                        if (string.IsNullOrEmpty(HeroesIcons.HeroBuilds().GetTrueTalentName(talent.Trim())))
-                            assertMessages.Add($"No true talent name for {talent} [{talentTier.Key.ToString()}]");
+                        assertMessages.Add($"[{build}] No talents found for {hero}");
+                        continue;
                     }
-                }             
+                    if (talents[TalentTier.Level1] == null || talents[TalentTier.Level1].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 1 talents for {hero}");
+                    if (talents[TalentTier.Level4] == null || talents[TalentTier.Level4].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 4 talents for {hero}");
+                    if (talents[TalentTier.Level7] == null || talents[TalentTier.Level7].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 7 talents for {hero}");
+                    if (talents[TalentTier.Level10] == null || talents[TalentTier.Level10].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 10 talents for {hero}");
+                    if (talents[TalentTier.Level13] == null || talents[TalentTier.Level13].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 13 talents for {hero}");
+                    if (talents[TalentTier.Level16] == null || talents[TalentTier.Level16].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 16 talents for {hero}");
+                    if (talents[TalentTier.Level20] == null || talents[TalentTier.Level20].Count < 1)
+                        assertMessages.Add($"[{build}] No Level 20 talents for {hero}");
+
+                    // loop through each talent tier
+                    foreach (var talentTier in talents)
+                    {
+                        if (talentTier.Key == TalentTier.Old)
+                            continue;
+
+                        // loop through each talent
+                        foreach (var talent in talentTier.Value)
+                        {
+                            BitmapImage talentImage = heroesIcons.HeroBuilds().GetTalentIcon(talent);
+
+                            if (talentImage.UriSource.Segments[segment].ToString() == HeroesBase.NoTalentIconPick || talentImage.UriSource.Segments[segment].ToString() == HeroesBase.NoTalentIconFound)
+                                assertMessages.Add($"[{build}] Talent image not found for {talent} [{talentTier.Key.ToString()}]");
+
+                            TalentTooltip talentTooltip = heroesIcons.HeroBuilds().GetTalentTooltips(talent);
+                            if (string.IsNullOrEmpty(talentTooltip.Full))
+                            {
+                                assertMessages.Add($"[{build}] Full tooltip not found for {talent} [{talentTier.Key.ToString()}]");
+                            }
+                            else
+                            {
+                                string strippedText = TalentTooltipStripNonText(talentTooltip.Full);
+
+                                if (NonValidCharsCheck(strippedText))
+                                    assertMessages.Add($"[{build}] Invalid chars in FULL tooltip {talent} [{talentTier.Key.ToString()}]{Environment.NewLine}{strippedText}{Environment.NewLine}");
+                            }
+
+                            if (string.IsNullOrEmpty(talentTooltip.Short))
+                            {
+                                assertMessages.Add($"[{build}] Short tooltip not found for {talent} [{talentTier.Key.ToString()}]");
+                            }
+                            else
+                            {
+                                string strippedText = TalentTooltipStripNonText(talentTooltip.Short);
+
+                                if (NonValidCharsCheck(strippedText))
+                                    assertMessages.Add($"[{build}] Invalid chars in SHORT tooltip {talent} [{talentTier.Key.ToString()}]{Environment.NewLine}{strippedText}{Environment.NewLine}");
+                            }
+
+                            if (string.IsNullOrEmpty(heroesIcons.HeroBuilds().GetTrueTalentName(talent.Trim())))
+                                assertMessages.Add($"[{build}] No true talent name for {talent} [{talentTier.Key.ToString()}]");
+                        }
+                    }
+                }
             }
 
             AssertFailMessage(assertMessages);
@@ -162,7 +179,7 @@ namespace Heroes.Icons.Tests
             }
         }
 
-        // if this algorithm is changed then TalentTooltipTextConverter.cs in Core needs to be chagned as well
+        // if this algorithm is changed then TalentTooltipTextConverter.cs in Core needs to be changed as well
         private string TalentTooltipStripNonText(string text)
         {
             string strippedText = string.Empty;

@@ -6,7 +6,7 @@
     <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">storm_ui_icon_zeratul_blink.dds</ZeratulShadowHunter>
   </Level1>
   <Level4>
-    <ZeratulGrimTask name="Grim Task" generic="true" desc="ZeratulGrimTask">storm_ui_icon_talent_gatheringpower.dds</ZeratulGrimTask>
+    <ZeratulGrimTask name="Grim Task" generic="true" desc="ZeratulGrimTaskTalent">storm_ui_icon_talent_gatheringpower.dds</ZeratulGrimTask>
     <ZeratulMasteryRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryRendingCleave>
     <ZeratulComboSlash name="Combo Slash" generic="true" desc="ZeratulComboSlash">storm_ui_icon_talent_autoattack_damage.dds</ZeratulComboSlash>
   </Level4>

@@ -777,7 +777,6 @@ KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast radius and lowers cool
 KaelthasSunfireEnchantmentTalent=Special attack on Verdant Spheres activation
 KaelthasVerdantSpheres=Make Kael'thas's next Basic Ability more powerful
 KaelthasVerdantSpheresFelInfusionTalent=Increases Ability Power, Verdant Spheres heals
-KaelthasVerdantSpheresMasterOfFlameTalent=Living Bomb spreads indefinitely
 KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasVerdantSpheresTwinSpheresTalent=Verdant Spheres gains a second charge
 KerriganAdaptationTalent=Ravage can jump to allies
@@ -1731,7 +1730,7 @@ ZagaraNydusNetworkBroodlingNestTalent=Spawn broodlings when exiting a Nydus Worm
 ZagaraRapidIncubation=Channel to regenerate Health and Mana
 ZagaraSerratedSpines=<c val="#TooltipQuest">Quest:</c> Basic Attacks against Heroes increase damage
 ZagaraViscousAcid=Banelings also slow enemies
-ZMonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">TracerLockedandLoaded=Reactivate Reload within the last <c val="#TooltipNumbers">50%</c> of its cast time to increase Tracer's Basic Attack damage ZaryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
+ZaryaDefensiveShieldingTalent=Personal Barrier, Shield Ally grant Physical Armor
 ZaryaEnergy=Damage absorbed by Zarya's Shields increase her damage.
 ZaryaEnergyBornInBattleTalent=Reduces cooldowns at high Energy
 ZaryaEnergyEnduranceTrainingTalent=Gain Armor at high Energy

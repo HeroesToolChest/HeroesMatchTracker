@@ -493,7 +493,7 @@ DryadTimelostWispTalent=Wisp costs no Mana and its cooldown recharges <c val="#T
 DryadUnfairAdvantageTalent=Nature's Toxin deals <c val="#TooltipNumbers">50%</c> more damage to Heroes that are slowed.
 DryadWildVigorTalent=Using Crippling Spores increases the damage of Lunara's next <c val="#TooltipNumbers">4</c> Basic Attacks by <c val="#TooltipNumbers">50%</c>.
 DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-ETCBlockParty=Rockstar gives allies a stack of Block, granting <c val="#TooltipNumbers">50</c> Physical Armor against the next Hero Basic Attack for <c val="#TooltipNumbers">8</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50>%</c>. Maximum <c val="#TooltipNumbers">2</c> stacks of Block.
+ETCBlockParty=Rockstar gives allies a stack of Block, granting <c val="#TooltipNumbers">50</c> Physical Armor against the next Hero Basic Attack for <c val="#TooltipNumbers">8</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50%</c>. Maximum <c val="#TooltipNumbers">2</c> stacks of Block.
 ETCBlockPartyToken=Reducing the damage you take from the next Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.
 ETCCrowdSurfer=Allows Powerslide to travel over walls and terrain.
 ETCDoubleNeckedGuitarTalent=Increases Powerslide's width by <c val="#TooltipNumbers">100%</c> and you slide <c val="#TooltipNumbers">30% </c>faster.
@@ -684,7 +684,7 @@ GuldanLifeTapHungerforPower=Increases Ability Power by <c val="#TooltipNumbers">
 GuldanLifeTapImprovedLifeTap=Life Tap now restores <c val="#TooltipNumbers">35%</c> Mana
 GuldanRainOfDestruction=Summon a rain of meteors in an area for <c val="#TooltipNumbers">7</c> seconds. Each meteor deals <c val="#TooltipNumbers">165</c> damage in a small area.
 GuldanRainOfDestructionDeepImpact=Rain of Destruction slows enemies Movement Speed by <c val="#TooltipNumbers">90%</c> for <c val="#TooltipNumbers">0.5</c> seconds.
-HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75>%</c> less damage.
+HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75%</c> less damage.
 HeroGenericBribeToken=<c val="#TooltipQuest">Bribe Stacks: </c><VALUE>/<VALUE>
 IllidanBetrayersThirst=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of damage dealt and reduce Ability cooldowns by <c val="#TooltipNumbers">1</c> second.
 IllidanBetrayersThirstHuntersOnslaughtTalent=Basic Abilities heal for <c val="#TooltipNumbers">25%</c> of the damage they deal. This bonus is doubled versus Heroes.
@@ -896,7 +896,7 @@ MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#Too
 MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers">64</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Cannot be used on Heroes that do not use Mana</c>
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">25%</c>.
---MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
+MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervateVersatileTalent=Increases the Mana return of Innervate to <c val="#TooltipNumbers">30%</c>.
 MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">60%</c> and reduces its Mana cost by <c val="#TooltipNumbers">10</c>.
@@ -1753,7 +1753,7 @@ ZeratulCleaveGreaterCleaveTalent=Increases the radius of Cleave by <c val="#Tool
 ZeratulCleaveRendingCleaveTalent=Cleave deals an additional <c val="#TooltipNumbers">40%</c> damage over <c val="#TooltipNumbers">3</c> seconds.
 ZeratulComboSlash=After using an Ability, Zeratul's next Basic Attack within <c val="#TooltipNumbers">6 </c>seconds deals<c val="#TooltipNumbers"> 40%</c> additional damage.
 ZeratulGiftoftheXelNaga=Allies are no longer affected by Void Prison, and enemies are slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds once Void Prison ends.
-ZeratulGrimTask=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
+ZeratulGrimTaskTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
 ZeratulMasterWarpBlade=Every third consecutive Basic Attack against the same target deals <c val="#TooltipNumbers">125%</c> bonus damage.
 ZeratulMendingStrikes=Basic Attacks heal for <c val="#TooltipNumbers">35%</c> of the damage dealt.
 ZeratulPermanentCloak=Gain Stealth when out of combat for <c val="#TooltipNumbers"><VALUE> </c>seconds. <n/><n/>Taking damage, attacking, using Abilities, or channeling ends Permanent Cloak.

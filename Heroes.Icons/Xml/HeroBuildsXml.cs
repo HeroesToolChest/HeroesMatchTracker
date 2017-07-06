@@ -425,6 +425,10 @@ namespace Heroes.Icons.Xml
                         if (!line.StartsWith("--"))
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
+
+                            if (TalentShortTooltip.ContainsKey(talent[0]))
+                                throw new ArgumentException($"An item with the same key has already been added in Short Tooltips: {talent[0]}");
+
                             TalentShortTooltip.Add(talent[0], talent[1]);
                         }
                     }
@@ -438,6 +442,10 @@ namespace Heroes.Icons.Xml
                         if (!line.StartsWith("--"))
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
+
+                            if (TalentLongTooltip.ContainsKey(talent[0]))
+                                throw new ArgumentException($"An item with the same key has already been added in Full Tooltips: {talent[0]}");
+
                             TalentLongTooltip.Add(talent[0], talent[1]);
                         }
                     }
