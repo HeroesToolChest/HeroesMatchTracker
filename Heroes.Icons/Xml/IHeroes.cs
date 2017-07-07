@@ -74,6 +74,10 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         List<string> GetListOfHeroes(int build);
 
+        /// <summary>
+        /// Returns the total amount of heroes (latest build)
+        /// </summary>
+        /// <returns></returns>
         int TotalAmountOfHeroes();
     }
 }

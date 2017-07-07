@@ -62,14 +62,14 @@ namespace Heroes.Icons.Xml
         /// </summary>
         private Dictionary<string, int> BuildAvailableByRealName = new Dictionary<string, int>();
 
-        private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
-            : base(currentBuild, logger)
+        private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int? currentBuild)
+            : base(currentBuild ?? 0, logger)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
         }
 
-        public static HeroesXml Initialize(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
+        public static HeroesXml Initialize(string parentFile, string xmlBaseFolder, bool logger, int? currentBuild)
         {
             HeroesXml heroesXml = new HeroesXml(parentFile, xmlBaseFolder, logger, currentBuild);
             heroesXml.Parse();
@@ -300,6 +300,10 @@ namespace Heroes.Icons.Xml
             return heroes;
         }
 
+        /// <summary>
+        /// Returns the total amount of heroes (latest build)
+        /// </summary>
+        /// <returns></returns>
         public int TotalAmountOfHeroes()
         {
             return AlternativeHeroNameByRealName.Count;

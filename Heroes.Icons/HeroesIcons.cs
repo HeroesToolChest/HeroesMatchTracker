@@ -38,7 +38,7 @@ namespace Heroes.Icons
 
             try
             {
-                HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
+                HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, null);
                 HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
 
                 EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;

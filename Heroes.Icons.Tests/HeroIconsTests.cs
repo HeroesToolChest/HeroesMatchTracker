@@ -38,7 +38,6 @@ namespace Heroes.Icons.Tests
                     BitmapImage heroLoadingPortrait = heroesIcons.Heroes().GetHeroLoadingPortrait(hero);
                     BitmapImage heroPortrait = heroesIcons.Heroes().GetHeroPortrait(hero);
 
-
                     if (heroLeaderBoardPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_leaderboard_{GetUniqueHeroName(altName.ToLower())}.dds")
                         assertMessages.Add($"[{build}] Leaderboard portrait not found for {hero}");
 
