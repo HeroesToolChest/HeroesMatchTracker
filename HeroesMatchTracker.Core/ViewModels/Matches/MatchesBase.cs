@@ -68,7 +68,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedBuildOption = ReplayBuildsList[0];
 
             HeroesList.Add("Any");
-            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
+            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedCharacter = HeroesList[0];
 
             Messenger.Default.Register<MatchesDataMessage>(this, (message) => ReceivedMatchSearchData(message));

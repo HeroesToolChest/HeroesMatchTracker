@@ -66,7 +66,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
+            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedHero = HeroesList[0];
 
             GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModeList());

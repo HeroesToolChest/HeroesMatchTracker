@@ -17,6 +17,7 @@ namespace HeroesMatchTracker.Core.Converters
 
         private readonly Uri QuestIcon = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute);
 
+        // if this algorithm is changed then TalentTooltipStripNonText method in HeroIconsTest.cs needs to be changed as well
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string text = value as string;

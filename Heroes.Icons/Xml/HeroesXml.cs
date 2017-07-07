@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media.Imaging;
 using System.Xml;
 
@@ -58,6 +59,11 @@ namespace Heroes.Icons.Xml
         /// </summary>
         private Dictionary<string, string> HeroRealNameByHeroAliasName = new Dictionary<string, string>();
 
+        /// <summary>
+        /// key is real hero name
+        /// </summary>
+        private Dictionary<string, int> BuildAvailableByRealName = new Dictionary<string, int>();
+
         private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
             : base(currentBuild)
         {
@@ -93,21 +99,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_nopick.dds");
+                return HeroesBitmapImage($@"HeroPortraits\{NoPortraitPick}");
 
-            if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroPortraits\storm_ui_ingame_heroselect_btn_notfound.dds");
+                return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
             }
         }
 
@@ -120,21 +136,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_nopick.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenPick}");
 
-            if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Loading hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Loading hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
             }
         }
 
@@ -147,21 +173,31 @@ namespace Heroes.Icons.Xml
         {
             // no pick
             if (string.IsNullOrEmpty(realHeroName))
-                return HeroesBitmapImage(@"HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_nopick.dds");
+                return HeroesBitmapImage($@"HeroLeaderboardPortraits\{NoLeaderboardPick}");
 
-            if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+            try
             {
-                BitmapImage image = new BitmapImage(uri);
-                image.Freeze();
+                if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
+                {
+                    BitmapImage image = new BitmapImage(uri);
+                    image.Freeze();
 
-                return image;
+                    return image;
+                }
+                else
+                {
+                    if (Logger)
+                        LogMissingImage($"Leader hero portrait: {realHeroName}");
+
+                    return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
+                }
             }
-            else
+            catch (IOException)
             {
                 if (Logger)
                     LogMissingImage($"Leader hero portrait: {realHeroName}");
 
-                return HeroesBitmapImage(@"HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_notfound.dds");
+                return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
             }
         }
 
@@ -267,12 +303,18 @@ namespace Heroes.Icons.Xml
                 return HeroFranchise.Unknown;
         }
 
-        public List<string> GetListOfHeroes()
+        /// <summary>
+        /// Returns a list of (real) hero names for the given build
+        /// </summary>
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        public List<string> GetListOfHeroes(int build)
         {
             List<string> heroes = new List<string>();
             foreach (var hero in AlternativeHeroNameByRealName)
             {
-                heroes.Add(hero.Key);
+                if (BuildAvailableByRealName[hero.Key] <= build)
+                    heroes.Add(hero.Key);
             }
 
             heroes.Sort();
@@ -310,6 +352,9 @@ namespace Heroes.Icons.Xml
                             if (string.IsNullOrEmpty(realHeroName))
                                 realHeroName = hero; // default to hero name
 
+                            // get the build that the hero is added
+                            string available = reader["available"];
+
                             // get attributeid from hero name
                             // example: Anub
                             string attributeId = reader["attributeid"];
@@ -326,17 +371,30 @@ namespace Heroes.Icons.Xml
                             // get leaderboard portrait
                             string lbPortrait = reader["leader"];
 
+                            if (!string.IsNullOrEmpty(available))
+                                BuildAvailableByRealName.Add(realHeroName, Convert.ToInt32(available));
+                            else
+                                throw new ParseXmlException($"available must not be null or empty [{realHeroName}]");
+
                             if (!string.IsNullOrEmpty(attributeId))
                                 RealHeroNameByAttributeId.Add(attributeId, realHeroName);
+                            else
+                                throw new ParseXmlException($"attributeid must not be null or empty [{realHeroName}]");
 
                             if (!string.IsNullOrEmpty(portraitName))
                                 HeroPortraitUriByRealName.Add(realHeroName, SetHeroPortraitUri(portraitName));
+                            else
+                                throw new ParseXmlException($"portrait must not be null or empty [{realHeroName}]");
 
                             if (!string.IsNullOrEmpty(loadingPortrait))
                                 HeroLoadingPortraitUriByRealName.Add(realHeroName, SetLoadingPortraitUri(loadingPortrait));
+                            else
+                                throw new ParseXmlException($"loading portrait must not be null or empty [{realHeroName}]");
 
                             if (!string.IsNullOrEmpty(lbPortrait))
                                 HeroLeaderboardPortraitUriByRealName.Add(realHeroName, SetLeaderboardPortraitUri(lbPortrait));
+                            else
+                                throw new ParseXmlException($"leaderboard portrait must not be null or empty [{realHeroName}]");
 
                             AlternativeHeroNameByRealName.Add(realHeroName, hero);
                             RealHeroNameByAlternativeName.Add(hero, realHeroName);

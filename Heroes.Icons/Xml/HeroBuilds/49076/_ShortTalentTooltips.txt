@@ -783,7 +783,7 @@ KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast radius and lowers cool
 KaelthasSunfireEnchantmentTalent=Special attack on Verdant Spheres activation
 KaelthasVerdantSpheres=Make your next Basic Ability more powerful
 KaelthasVerdantSpheresFelInfusionTalent=Increases Ability Power and Verdant Spheres heal
---KaelthasVerdantSpheresMasterOfFlameTalent=Living Bomb spreads indefinitely
+--KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasVerdantSpheresTwinSpheresTalent=Verdant Spheres gains a second charge
 KerriganAdaptationTalent=Ravage can jump to allies
@@ -957,7 +957,7 @@ MedivhArcaneRift=Launch an arcane bolt that damages enemies in a line
 MedivhArcaneRiftArcaneCharge=Arcane Rift deals more damage after hitting a Hero
 MedivhArcaneRiftGuardianOfTirisfal=Arcane Rift kills Minions instantly
 MedivhArcaneRiftManaAdept=Increases Arcane Rift Mana refund
-MedivhArcaneRiftTheMastersTouch=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers"><d ref="Behavior,MedivhArcaneRiftTheMastersTouchQuestToken,Max"/></c> Heroes to increase damage
+MedivhArcaneRiftTheMastersTouch=<c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">30</c> Heroes to increase damage
 MedivhDustOfAppearance=Reveal Heroes in the surrounding area
 MedivhForceOfWill=Protect an allied Hero from damage
 MedivhForceOfWillArcaneExplosion=Force of Will deals area damage

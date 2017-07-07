@@ -904,7 +904,7 @@ MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#Too
 MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers">64</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">25%</c>.
---MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
+MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervateVersatileTalent=Increases the Mana return of Innervate to <c val="#TooltipNumbers">30%</c>.
 MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">60%</c> and reduces its Mana cost by <c val="#TooltipNumbers">50%</c>.
@@ -1698,7 +1698,7 @@ ZeratulCleaveGreaterCleaveTalent=Increases the radius of Cleave by <c val="#Tool
 ZeratulCleaveRendingCleaveTalent=Cleave deals an additional <c val="#TooltipNumbers">40%</c> damage over <c val="#TooltipNumbers">3</c> seconds.
 ZeratulComboSlash=After using an Ability, Zeratul's next Basic Attack within <c val="#TooltipNumbers">6 </c>seconds deals<c val="#TooltipNumbers"> 40%</c> additional damage.
 ZeratulGiftoftheXelNaga=Allies are no longer affected by Void Prison, and enemies are slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds once Void Prison ends.
-ZeratulGrimTask=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">4% </c>up to <c val="#TooltipNumbers">40%</c> . This bonus Ability Power is lost on death.
+ZeratulGrimTaskTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">4% </c>up to <c val="#TooltipNumbers">40%</c> . This bonus Ability Power is lost on death.
 ZeratulMasterWarpBlade=Every third consecutive Basic Attack against the same target deals <c val="#TooltipNumbers">125%</c> bonus damage.
 ZeratulMendingStrikes=Basic Attacks heal for <c val="#TooltipNumbers">40%</c> of the damage dealt.
 ZeratulPermanentCloak=Gain Stealth when out of combat for <c val="#TooltipNumbers"><VALUE> </c>seconds. <n/><n/>Taking damage, attacking, using Abilities, or channeling ends Permanent Cloak.

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Builds>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20324866">47479</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20352063">47903</Patch>
+  <Patch type="Varian" link="http://us.battle.net/heroes/en/blog/20372990">48027</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20379409">48297</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20379599">48548</Patch>
+  <Patch type="Ragnaros" link="http://us.battle.net/heroes/en/blog/20405715">48760</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20407399">49008</Patch>
+  <Patch type="Zuljin" link="http://us.battle.net/heroes/en/blog/20407400">49076</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20462409">49278</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20474696">49495</Patch>
+  <Patch type="Valeera" link="http://us.battle.net/heroes/en/blog/20481262">49747</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20506310">49907</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20532382">50286</Patch>
+  <Patch type="Lucio" link="http://us.battle.net/heroes/en/blog/20554028">50441</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20564325">50673</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20581815">50950</Patch>
+  <Patch type="Probius" link="http://us.battle.net/heroes/en/blog/20581822">51375</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20649609">51923</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20638784">52008</Patch>
+  <Patch type="Cassia" link="http://us.battle.net/heroes/en/blog/20673818">52124</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20696567">52351</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20696243">52647</Patch>
+  <Patch type="Genji" link="http://us.battle.net/heroes/en/blog/20721900">52860</Patch>
+  <Patch type="Hotfix" link="">52986</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20726730">53174</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20720245">53275</Patch>
+  <Patch type="D.Va" link="http://us.battle.net/heroes/en/blog/20783378">53548</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20749068">53965</Patch>
+  <Patch type="Malthael" link="http://us.battle.net/heroes/en/blog/20838723">54339</Patch>
+  <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20861968">54968</Patch>
+  <Patch pre="54968">55010</Patch>
+</Builds>

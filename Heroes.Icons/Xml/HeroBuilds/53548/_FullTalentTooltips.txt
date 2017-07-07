@@ -774,7 +774,7 @@ GuldanLifeTapHungerforPower=Increases Spell Power by <c val="#TooltipNumbers">15
 GuldanLifeTapImprovedLifeTap=Life Tap now restores <c val="#TooltipNumbers">35%</c> Mana
 GuldanRainOfDestruction=Channel to summon a rain of meteors in an area for <c val="#TooltipNumbers">7</c> seconds. Each meteor deals <c val="#TooltipNumbers">165</c> damage in a small area.
 GuldanRainOfDestructionDeepImpact=Rain of Destruction slows enemies Movement Speed by <c val="#TooltipNumbers">90%</c> for <c val="#TooltipNumbers">0.5</c> seconds.
-HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75>%</c> less damage.
+HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75%</c> less damage.
 HeroGenericBribeToken=<c val="#TooltipQuest">Bribe Stacks: </c><VALUE>/<VALUE>
 IllidanBetrayersThirst=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of damage dealt and reduce Ability cooldowns by <c val="#TooltipNumbers">1</c> second.
 IllidanBetrayersThirstHuntersOnslaughtTalent=Basic Abilities heal for <c val="#TooltipNumbers">25%</c> of the damage they deal. This bonus is doubled versus Heroes.
@@ -1016,7 +1016,7 @@ MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#Too
 MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers">64</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Cannot be used on Heroes that do not use Mana</c>
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">25%</c>.
---MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
+MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervateVersatileTalent=Increases the Mana return of Innervate to <c val="#TooltipNumbers">30%</c>.
 MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">60%</c> and reduces its Mana cost by <c val="#TooltipNumbers">10</c>.
@@ -1096,7 +1096,7 @@ MonkCleansingTouch=Radiant Dashing to an ally makes them Unstoppable for <c val=
 MonkDashofLight=Radiant Dashing to an ally increases the healing they receive from Breath of Heaven by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
 MonkDeadlyReach=Kharazim's next Basic Attack increases his Attack Speed and Attack Range by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MonkDivinePalm=Protect an allied Hero from death, causing them to be healed for <c val="#TooltipNumbers">1141</c> if they take fatal damage in the next <c val="#TooltipNumbers">3</c> seconds.
-MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50>%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
+MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
 MonkEchoofHeavenTalent=Breath of Heaven heals <c val="#TooltipNumbers">75%</c> of its normal amount, but heals a second time <c val="#TooltipNumbers">3</c> seconds later.
 MonkElevenSidedStrikeTalent=Seven-Sided Strike hits <c val="#TooltipNumbers">4</c> additional times.
 MonkEpiphany=Activate to restore <c val="#TooltipNumbers">33%</c> of Kharazim's maximum Mana and refill <c val="#TooltipNumbers">2</c> charges of Radiant Dash. 
@@ -1351,7 +1351,7 @@ RexxarDireBeast=Rexxar and Misha's Basic Attacks increase the damage of the next
 RexxarFeignDeath=Rexxar fakes his death, becoming Invulnerable and untargetable for <c val="#TooltipNumbers">5</c> seconds. During this time you control Misha.
 RexxarFlare=Fire a flare at an area, revealing it for <c val="#TooltipNumbers">5</c> seconds.
 RexxarFrenzyofKalimdorTalent=Rexxar's Basic Attacks deal <c val="#TooltipNumbers">10%</c> more damage, and Misha's Basic Attacks slow the target by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">1.25</c> seconds.
-RexxarHardenedSkinRexxarHardenedSkin=Rexxar and Misha gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, reducing damage taken by <c val="#TooltipNumbers">75%</c>.
+RexxarHardenedSkin=Rexxar and Misha gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, reducing damage taken by <c val="#TooltipNumbers">75%</c>.
 RexxarHungryBearTalent=Misha's Basic Attacks heal her for <c val="#TooltipNumbers">4.5%</c> of her maximum Health.
 RexxarHunterGathererTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering a Regeneration Globe increases Rexxar's Health Regeneration by <c val="#TooltipNumbers">1.25</c> per second, up to <c val="#TooltipNumbers">25</c> per second. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After gathering <c val="#TooltipNumbers">20</c> Globes, Rexxar and Misha gain <c val="#TooltipNumbers">10</c> Armor.
 RexxarHunterGathererToken=<c val="#TooltipQuest">Bonus Health Regeneration: <c val="#TooltipNumbers"><VALUE></c>
@@ -1491,7 +1491,7 @@ SylvanasWitheringFireSplinterShotTalent=Withering Fire hits a second target for 
 SylvanasWitheringFireWithTheWindTalent=Increases Withering Fire's range by <c val="#TooltipNumbers">25%</c>.
 SylvanasWitheringFireWitheringBarrage=Increase Withering Fire charges by <c val="#TooltipNumbers">1</c>. Charges can be fired <c val="#TooltipNumbers">33%</c> faster.
 TalentBribeToken=<c val="#TooltipQuest">Nearby Minions Killed:</c> <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
-TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50>%</c>.
+TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50%</c>.
 TassadarAdunsWisdom=While Oracle is active, Basic Abilities cooldown <c val="#TooltipNumbers">50%</c> faster.
 TassadarArchon=Tassadar transforms into an Archon and gains a Plasma Shield. His Basic Attacks deal <c val="#TooltipNumbers">166</c> damage, slow the target by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers">1</c> second and splash for <c val="#TooltipNumbers">83</c> damage to enemies within <c val="#TooltipNumbers">2.5</c> range. Lasts for <c val="#TooltipNumbers">10</c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Archon refreshes the cooldown of Dimensional Shift.
 TassadarArchonTwilightArchonTalent=Basic Attacks while in Archon form increase its duration by <c val="#TooltipNumbers">2</c> seconds.
@@ -1503,7 +1503,7 @@ TassadarForceWallForceBarrierTalent=Force Wall's Range is increased by <c val="#
 TassadarKhalasCelerity=Plasma Shield also grants <c val="#TooltipNumbers">20%</c> Movement Speed for <c val="#TooltipNumbers">4</c> seconds.
 TassadarKhalasEmbrace=Increase the Life Steal of Plasma Shield to <c val="#TooltipNumbers">60%</c>.
 TassadarKhalasLight=Upon expiration or breaking, the target of Plasma Shield gains <c val="#TooltipNumbers">15</c> Armor for <c val="#TooltipNumbers">3</c> seconds, causing them to take <c val="#TooltipNumbers">15%</c> less damage.
-TassadarKhaydarinResonance=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Regeneration Globes grant an additional <c val="#TooltipNumbers">50%</c> Mana. <n/></c><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">15</c> Regeneration Globes, Plasma Shield's value is increased by <c val="#TooltipNumbers">15%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">30</c> Regeneration Globes, Plasma Shield's value is increased by <c val="#TooltipNumbers">15%</c>.
+TassadarKhaydarinResonance=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Regeneration Globes grant an additional <c val="#TooltipNumbers">50%</c> Mana. <n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">15</c> Regeneration Globes, Plasma Shield's value is increased by <c val="#TooltipNumbers">15%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">30</c> Regeneration Globes, Plasma Shield's value is increased by <c val="#TooltipNumbers">15%</c>.
 TassadarKhaydarinResonanceToken=<c val="#TooltipQuest">Globes gathered: <c val="#TooltipNumbers"><VALUE>/<VALUE></c>
 TassadarNullification=Activate to reduce the damage the target enemy Hero deals by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">4</c> seconds.
 TassadarOracle=Activate to greatly increase Tassadar's vision radius, allow him to see over obstacles, and detect stealthed units. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Tassadar's Basic Attack is a Distortion Beam that slows enemy units by <c val="#TooltipNumbers"><VALUE>%</c>.
@@ -1580,7 +1580,7 @@ TracerGetStuffedMelee=Reduces Melee's cooldown by <c val="#TooltipNumbers">3</c>
 TracerIsthataHealthPack=Increases Regeneration Globe and Healing Fountain healing by <c val="#TooltipNumbers">100%</c>.
 TracerJumper=Increases Blink's charges by <c val="#TooltipNumbers">1</c>.
 TracerLeechingRounds=Your Basic Attacks against Heroes heal Tracer for <c val="#TooltipNumbers">20%</c> of their damage dealt.
-TracerLockedandLoaded=Reactivate Reload within the last <c val="#TooltipNumbers">50%</c> of its cast time to increase Tracer's Basic Attack damage by <c val="#TooltipNumbers"><VALUE>%</c> for that magazine.
+TracerLockedandLoaded=Reactivate Reload within the last <c val="#TooltipNumbers">50%</c> of its cast time to increase Tracer's Basic Attack damage by <c val="#TooltipNumbers">40%</c> for that magazine.
 TracerMelee=Deal <c val="#TooltipNumbers"><VALUE></c> damage to a nearby enemy, prioritizing Heroes. Gain <c val="#TooltipNumbers"><VALUE>%</c> Pulse Bomb charge when using Melee against an enemy, and <c val="#TooltipNumbers"><VALUE>%</c> against Heroes.
 TracerPartingGift=Recall leaves behind <c val="#TooltipNumbers">3</c> bombs that deal <c val="#TooltipNumbers">240</c> damage each to different targets.
 TracerPulseBomb=Fire a short range bomb that can attach to an enemy if it hits them. The bomb explodes after <c val="#TooltipNumbers"><VALUE></c> seconds dealing <c val="#TooltipNumbers"><VALUE></c> damage to them and <c val="#TooltipNumbers"><VALUE></c> damage to other nearby enemies.<n/><n/>This Ability is slowly charged over time by dealing damage to enemies with Basic Attacks and Melee.
@@ -1620,7 +1620,7 @@ TychusOverkill=Deal <c val="#TooltipNumbers"><VALUE></c> damage to the target an
 TychusOverkillArmorPiercingRoundsTalent=Increases Overkill's damage to the primary target by <c val="#TooltipNumbers">50%</c>.
 TychusOverkillLeadRainTalent=Overkill also slows enemy movement speed by <c val="#TooltipNumbers">20%</c>.
 TychusOverkillSprayNPrayTalent=Increases Overkill's range by <c val="#TooltipNumbers">25%</c>.
-TychusPressTheAdvantage=Run and Gun increases Tychus's Basic Attack range by <c val="#TooltipNumbers">1.5</c> for <c val="#TooltipNumbers">3<c> seconds.
+TychusPressTheAdvantage=Run and Gun increases Tychus's Basic Attack range by <c val="#TooltipNumbers">1.5</c> for <c val="#TooltipNumbers">3</c> seconds.
 TychusProblemSolverTalent=Basic Attacks against enemy Heroes deal bonus damage equal to <c val="#TooltipNumbers"><VALUE>%</c> of the Hero's maximum Health.
 TychusRelentlessSoldierTalent=Being Stunned or Rooted grants <c val="#TooltipNumbers">25</c> Armor for <c val="#TooltipNumbers">3</c> seconds, reducing damage taken by <c val="#TooltipNumbers">25%</c>.
 TychusRunAndGunBobAndWeaveTalent=Run and Gun and Odin's Thrusters gain <c val="#TooltipNumbers">2</c> additional charges and reduces Run and Gun's Mana cost from <c val="#TooltipNumbers">50</c> to <c val="#TooltipNumbers">25</c>.
@@ -1924,7 +1924,7 @@ ZeratulCleaveGreaterCleaveTalent=Increases the radius of Cleave by <c val="#Tool
 ZeratulCleaveRendingCleaveTalent=Cleave deals an additional <c val="#TooltipNumbers">40%</c> damage over <c val="#TooltipNumbers">3</c> seconds.
 ZeratulComboSlash=After using an Ability, Zeratul's next Basic Attack within <c val="#TooltipNumbers">6 </c>seconds deals<c val="#TooltipNumbers"> 40%</c> additional damage.
 ZeratulGiftoftheXelNaga=Allies are no longer affected by Void Prison, and enemies are slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds once Void Prison ends.
-ZeratulGrimTask=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
+ZeratulGrimTaskTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
 ZeratulMasterWarpBlade=Every third consecutive Basic Attack against the same target deals <c val="#TooltipNumbers">125%</c> bonus damage.
 ZeratulMendingStrikes=Basic Attacks heal for <c val="#TooltipNumbers">35%</c> of the damage dealt.
 ZeratulPermanentCloak=Gain Stealth when out of combat for <c val="#TooltipNumbers"><VALUE> </c>seconds. <n/><n/>Taking damage, attacking, using Abilities, or channeling ends Permanent Cloak.

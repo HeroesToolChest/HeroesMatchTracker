@@ -269,7 +269,7 @@ ButcherRuthlessOnslaught=Charge at an enemy, becoming Unstoppable and gaining Mo
 ButcherRuthlessOnslaughtFinalAssaultTalent=Increases Ruthless Onslaught's range by <c val="#TooltipNumbers"><VALUE>%</c>, and causes you to lunge at the enemy when close to impact.
 ButcherRuthlessOnslaughtSavageChargeTalent=Ruthless Onslaught deals bonus damage to Heroes equal to <c val="#TooltipNumbers">10%</c> of their maximum Health.
 ButcherRuthlessOnslaughtUnrelentingPursuitTalent=Reduces the cooldown of Ruthless Onslaught by <c val="#TooltipNumbers">33%</c> upon impact.
-ChenAccumulatingFlame=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time a Hero is set on fire with Breath of Fire, increase its damage over time by <c val="#TooltipNumbers">2%</c>, up to <c val="#TooltipNumbers">60%</c>.<n/><n/><img  path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After igniting <c val="#TooltipNumbers"30</c> Heroes, gain <c val="#TooltipNumbers">25</c> Armor for <c val="#TooltipNumbers">1</c> second per Hero set on fire, reducing damage taken by <c val="#TooltipNumbers">25%</c>.
+ChenAccumulatingFlame=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time a Hero is set on fire with Breath of Fire, increase its damage over time by <c val="#TooltipNumbers">2%</c>, up to <c val="#TooltipNumbers">60%</c>.<n/><n/><img  path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After igniting <c val="#TooltipNumbers">30</c> Heroes, gain <c val="#TooltipNumbers">25</c> Armor for <c val="#TooltipNumbers">1</c> second per Hero set on fire, reducing damage taken by <c val="#TooltipNumbers">25%</c>.
 ChenAccumulatingFlameToken=<c val="#TooltipQuest">Heroes set on fire: <c val="#TooltipNumbers"><VALUE>/<VALUE><n/><c val="#TooltipQuest">Bonus Damage:</c> <VALUE>%
 ChenAccumulatingFlameTokenComplete=<c val="#TooltipQuest">QUEST COMPLETE!<n/>Bonus Damage:</c> <c val="#TooltipNumbers"><VALUE>%</c>
 ChenAnotherRound=Increases the radius of Keg Smash by <c val="#TooltipNumbers">50%</c>. After hitting an enemy Hero with Keg Smash, the cooldown of the next Basic Ability used will be reduced by <c val="#TooltipNumbers">3</c> seconds.
@@ -499,7 +499,7 @@ DryadTimelostWispTalent=Wisp costs no Mana and its cooldown recharges <c val="#T
 DryadUnfairAdvantageTalent=Nature's Toxin deals <c val="#TooltipNumbers">50%</c> more damage to Heroes that are slowed.
 DryadWildVigorTalent=Using Crippling Spores increases the damage of Lunara's next <c val="#TooltipNumbers">4</c> Basic Attacks by <c val="#TooltipNumbers">50%</c>.
 DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
-ETCBlockParty=Rockstar gives allies a stack of Block, granting <c val="#TooltipNumbers">50</c> Physical Armor against the next Hero Basic Attack for <c val="#TooltipNumbers">8</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50>%</c>. Maximum <c val="#TooltipNumbers">2</c> stacks of Block.
+ETCBlockParty=Rockstar gives allies a stack of Block, granting <c val="#TooltipNumbers">50</c> Physical Armor against the next Hero Basic Attack for <c val="#TooltipNumbers">8</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50%</c>. Maximum <c val="#TooltipNumbers">2</c> stacks of Block.
 ETCBlockPartyToken=Reducing the damage you take from the next Basic Attack by <c val="#TooltipNumbers"><VALUE>%</c>.
 ETCCrowdSurfer=Allows Powerslide to travel over walls and terrain.
 ETCDoubleNeckedGuitarTalent=Increases Powerslide's width by <c val="#TooltipNumbers">100%</c> and you slide <c val="#TooltipNumbers">30% </c>faster.
@@ -690,7 +690,7 @@ GuldanLifeTapHungerforPower=Increases Ability Power by <c val="#TooltipNumbers">
 GuldanLifeTapImprovedLifeTap=Life Tap now restores <c val="#TooltipNumbers">35%</c> Mana
 GuldanRainOfDestruction=Summon a rain of meteors in an area for <c val="#TooltipNumbers">7</c> seconds. Each meteor deals <c val="#TooltipNumbers">165</c> damage in a small area.
 GuldanRainOfDestructionDeepImpact=Rain of Destruction slows enemies Movement Speed by <c val="#TooltipNumbers">90%</c> for <c val="#TooltipNumbers">0.5</c> seconds.
-HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75>%</c> less damage.
+HardenedShieldTalent=Activate to gain <c val="#TooltipNumbers">75</c> Armor for <c val="#TooltipNumbers">4</c> seconds, taking <c val="#TooltipNumbers">75%</c> less damage.
 HeroGenericBribeToken=<c val="#TooltipQuest">Bribe Stacks: </c><VALUE>/<VALUE>
 IllidanBetrayersThirst=Basic Attacks heal for <c val="#TooltipNumbers"><VALUE>%</c> of damage dealt and reduce your Ability cooldowns by <c val="#TooltipNumbers">1</c> second.
 IllidanBetrayersThirstHuntersOnslaughtTalent=Basic Abilities heal for <c val="#TooltipNumbers">25%</c> of the damage they deal. Double this bonus versus Heroes.
@@ -901,7 +901,7 @@ MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#Too
 MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots also spawns a Treant that does <c val="#TooltipNumbers">64</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Cannot be used on Heroes that do not use Mana</c>
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">25%</c>.
---MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
+MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">10</c> seconds.
 MalfurionInnervateVersatileTalent=Increases the Mana return of Innervate to <c val="#TooltipNumbers">30%</c>.
 MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">60%</c> and reduces its Mana cost by <c val="#TooltipNumbers">10</c>.
@@ -982,7 +982,7 @@ MonkCleansingTouch=Radiant Dashing to an ally makes them Unstoppable for <c val=
 MonkDashofLight=Radiant Dashing to an ally increases the healing they receive from Breath of Heaven by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
 MonkDeadlyReach=Kharazim's next Basic Attack increases his Attack Speed and Attack Range by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
 MonkDivinePalm=Protect an allied Hero from death, causing them to be healed for <c val="#TooltipNumbers">1141</c> if they take fatal damage in the next <c val="#TooltipNumbers">3</c> seconds.
-MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50>%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
+MonkEarthAlly=Place an Earth Ally that grants nearby allied Heroes <c val="#TooltipNumbers">50</c> Physical Armor against Heroic Basic Attacks, reducing damage taken by <c val="#TooltipNumbers">50%</c>. Has <c val="#TooltipNumbers">400</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds.  Kharazim can Radiant Dash to Earth Allies.
 MonkEchoofHeavenTalent=Breath of Heaven heals <c val="#TooltipNumbers">75%</c> of its normal amount, but heals a second time <c val="#TooltipNumbers">3</c> seconds later.
 MonkElevenSidedStrikeTalent=Seven-Sided Strike hits <c val="#TooltipNumbers">4</c> additional times.
 MonkEpiphany=Activate to restore <c val="#TooltipNumbers">33%</c> of Kharazim's maximum Mana and refill <c val="#TooltipNumbers">2</c> charges of Radiant Dash. 
@@ -1213,7 +1213,7 @@ RexxarMendPet=Heal Misha for <c val="#TooltipNumbers"><VALUE></c> Health over <c
 RexxarMishaChargeRedirect=Misha charges in a line, dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning enemies for <c val="#TooltipNumbers"><VALUE></c> seconds.
 RexxarMishaFollowHeroSelect=Misha attacks your enemies.
 RexxarSpiritBondEasyPreyTalent=Increases Misha's damage to Minions and Mercenaries by <c val="#TooltipNumbers">150%</c>, and Misha gains <c val="#TooltipNumbers">50</c> Armor against Minions and Mercenaries, reducing damage taken by <c val="#TooltipNumbers">50%</c>.
-RexxarSpiritBondGrizzledBearTalent=Every <c val="#TooltipNumbers">5</c> seconds, Misha gains <c val="#TooltipNumbers">75</c> Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by <c val="#TooltipNumbers">75>%</c>. Stores up to <c val="#TooltipNumbers">2</c> charges.
+RexxarSpiritBondGrizzledBearTalent=Every <c val="#TooltipNumbers">5</c> seconds, Misha gains <c val="#TooltipNumbers">75</c> Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by <c val="#TooltipNumbers">75%</c>. Stores up to <c val="#TooltipNumbers">2</c> charges.
 RexxarSpiritBondPrimalIntimidationTalent=Heroes and Summons that attack you or Misha have their Attack Speed slowed by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2.5 </c>seconds.<n/><n/>Activate to slow the Attack Speed by <c val="#TooltipNumbers">50%</c> and Movement Speed by <c val="#TooltipNumbers">20%</c> of nearby Heroes and Summons near Rexxar and Misha for <c val="#TooltipNumbers">2.5</c> seconds.
 RexxarSpiritBondTalent=Increases the duration of Bestial Wrath by<c val="#TooltipNumbers"> 50%</c> and Misha's Basic Attacks heal Rexxar for <c val="#TooltipNumbers">50%</c> of her damage dealt during Bestial Wrath.
 RexxarSpiritBondWildfireBearTalent=Misha deals <c val="#TooltipNumbers">28</c> damage per second to nearby enemies.
@@ -1345,7 +1345,7 @@ SylvanasWitheringFireSplinterShotTalent=Withering Fire hits a second target for 
 SylvanasWitheringFireWithTheWindTalent=Increases Withering Fire's range by <c val="#TooltipNumbers">25%</c>.
 SylvanasWitheringFireWitheringBarrage=Increase Withering Fire charges by <c val="#TooltipNumbers">1</c>. Charges can be fired <c val="#TooltipNumbers">33%</c> faster.
 TalentBribeToken=<c val="#TooltipQuest">Nearby Minions Killed:</c> <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
-TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50>%</c>.
+TalentDampenMagic=Every <c val="#TooltipNumbers">8</c> seconds, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability and subsequent Abilities for <c val="#TooltipNumbers">1.5</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">50%</c>.
 TassadarArchon=Transform into an Archon, gaining a <c val="#TooltipNumbers">456</c> point Shield, causing Basic Attacks to deal <c val="#TooltipNumbers">111</c> damage and splash for <c val="#TooltipNumbers">55</c> additional damage. Lasts for <c val="#TooltipNumbers">12</c> seconds.
 TassadarArchonTwilightArchonTalent=Increases Archon's initial Shield and Attack Damage by <c val="#TooltipNumbers">50%</c>, and increases Basic Attack range in Archon form by <c val="#TooltipNumbers">35%</c>.
 TassadarDimensionalShift=Become invulnerable and Unrevealable for <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -1372,7 +1372,7 @@ TassadarPsionicStormSecondStrikeTalent=After casting Psionic Storm, you may cast
 TassadarPsionicStormStaticChargeTalent=Enemies damaged by Psionic Storm are marked with Static Charge. Your Basic Attacks consume the Static Charge to deal <c val="#TooltipNumbers">52</c> damage.
 ThrallChainLightning=Deal <c val="#TooltipNumbers"><VALUE></c> damage to an enemy and half that amount to <c val="#TooltipNumbers">2</c> nearby enemies.
 ThrallEarthenShieldsTalent=You and your allies within the Earthquake area gain a Shield equal to <c val="#TooltipNumbers">15%</c> of max Health each pulse. This shield lasts <c val="#TooltipNumbers">4</c> seconds.
-ThrallEarthquake=Summon a massive Earthquake that pulses every <c val="#TooltipNumbers">4</c> seconds. Each pulse lasts <c val="#TooltipNumbers">2</c> seconds, slowing all enemies in the area by <c val="#TooltipNumbers">70>%</c>, and deals <c val="#TooltipNumbers">50</c> damage to enemy Heroes . Does <c val="#TooltipNumbers">3 </c>pulses.
+ThrallEarthquake=Summon a massive Earthquake that pulses every <c val="#TooltipNumbers">4</c> seconds. Each pulse lasts <c val="#TooltipNumbers">2</c> seconds, slowing all enemies in the area by <c val="#TooltipNumbers">70%</c>, and deals <c val="#TooltipNumbers">50</c> damage to enemy Heroes . Does <c val="#TooltipNumbers">3 </c>pulses.
 ThrallFeralSpirit=Send out a Feral Spirit that deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies in its path. Upon hitting an enemy Hero, the wolf stops and roots that Hero in place for <c val="#TooltipNumbers">1</c> second.
 ThrallForkedLightningTalent=Allows Chain Lightning to hold <c val="#TooltipNumbers">2</c> charges that can be used in quick succession.
 ThrallFrostwolfResilience=Dealing damage with Abilities grants <c val="#TooltipNumbers">1</c> stack of Frostwolf Resilience. At <c val="#TooltipNumbers"><VALUE></c> stacks, you are instantly healed for <c val="#TooltipNumbers"><VALUE></c> Health. 
@@ -1725,7 +1725,7 @@ ZeratulCleaveGreaterCleaveTalent=Increases the radius of Cleave by <c val="#Tool
 ZeratulCleaveRendingCleaveTalent=Cleave deals an additional <c val="#TooltipNumbers">40%</c> damage over <c val="#TooltipNumbers">3</c> seconds.
 ZeratulComboSlash=After using an Ability, Zeratul's next Basic Attack within <c val="#TooltipNumbers">6 </c>seconds deals<c val="#TooltipNumbers"> 40%</c> additional damage.
 ZeratulGiftoftheXelNaga=Allies are no longer affected by Void Prison, and enemies are slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds once Void Prison ends.
-ZeratulGrimTask=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
+ZeratulGrimTaskTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hero Takedowns increase Ability Power by <c val="#TooltipNumbers">5% </c>up to <c val="#TooltipNumbers">50%</c> . This bonus Ability Power is lost on death.
 ZeratulMasterWarpBlade=Every third consecutive Basic Attack against the same target deals <c val="#TooltipNumbers">125%</c> bonus damage.
 ZeratulMendingStrikes=Basic Attacks heal for <c val="#TooltipNumbers">35%</c> of the damage dealt.
 ZeratulPermanentCloak=Gain Stealth when out of combat for <c val="#TooltipNumbers"><VALUE> </c>seconds. <n/><n/>Taking damage, attacking, using Abilities, or channeling ends Permanent Cloak.

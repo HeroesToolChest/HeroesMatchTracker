@@ -67,7 +67,12 @@ namespace Heroes.Icons.Xml
         /// <returns>HeroRole</returns>
         HeroFranchise GetHeroFranchise(string realName);
 
-        List<string> GetListOfHeroes();
+        /// <summary>
+        /// Returns a list of (real) hero names for the given build
+        /// </summary>
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        List<string> GetListOfHeroes(int build);
 
         int TotalAmountOfHeroes();
     }
