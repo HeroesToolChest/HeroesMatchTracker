@@ -8,8 +8,6 @@ namespace Heroes.Icons.Xml
 {
     internal class HeroesXml : XmlBase, IHeroes
     {
-        private bool Logger;
-
         /// <summary>
         /// key is attributeid, value is hero name
         /// </summary>
@@ -65,9 +63,8 @@ namespace Heroes.Icons.Xml
         private Dictionary<string, int> BuildAvailableByRealName = new Dictionary<string, int>();
 
         private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int currentBuild)
-            : base(currentBuild)
+            : base(currentBuild, logger)
         {
-            Logger = logger;
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
         }
@@ -112,17 +109,13 @@ namespace Heroes.Icons.Xml
                 }
                 else
                 {
-                    if (Logger)
-                        LogMissingImage($"Hero portrait: {realHeroName}");
-
+                    LogMissingImage($"Hero portrait: {realHeroName}");
                     return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
                 }
             }
             catch (IOException)
             {
-                if (Logger)
-                    LogMissingImage($"Hero portrait: {realHeroName}");
-
+                LogMissingImage($"Hero portrait: {realHeroName}");
                 return HeroesBitmapImage($@"HeroPortraits\{NoPortraitFound}");
             }
         }
@@ -149,17 +142,13 @@ namespace Heroes.Icons.Xml
                 }
                 else
                 {
-                    if (Logger)
-                        LogMissingImage($"Loading hero portrait: {realHeroName}");
-
+                    LogMissingImage($"Loading hero portrait: {realHeroName}");
                     return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
                 }
             }
             catch (IOException)
             {
-                if (Logger)
-                    LogMissingImage($"Loading hero portrait: {realHeroName}");
-
+                LogMissingImage($"Loading hero portrait: {realHeroName}");
                 return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLoadingScreenFound}");
             }
         }
@@ -186,17 +175,13 @@ namespace Heroes.Icons.Xml
                 }
                 else
                 {
-                    if (Logger)
-                        LogMissingImage($"Leader hero portrait: {realHeroName}");
-
+                    LogMissingImage($"Leader hero portrait: {realHeroName}");
                     return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
                 }
             }
             catch (IOException)
             {
-                if (Logger)
-                    LogMissingImage($"Leader hero portrait: {realHeroName}");
-
+                LogMissingImage($"Leader hero portrait: {realHeroName}");
                 return HeroesBitmapImage($@"HeroLoadingScreenPortraits\{NoLeaderboardFound}");
             }
         }
@@ -218,9 +203,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero name for attribute: {attributeId}");
-
+                LogReferenceNameNotFound($"No hero name for attribute: {attributeId}");
                 return "Hero not found";
             }
         }
@@ -237,9 +220,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero alt name for reference: {realName}");
-
+                LogReferenceNameNotFound($"No hero alt name for reference: {realName}");
                 return "Hero alt name not found";
             }
         }
@@ -256,9 +237,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero real name for reference: {altName}");
-
+                LogReferenceNameNotFound($"No hero real name for reference: {altName}");
                 return "Hero real name not found";
             }
         }

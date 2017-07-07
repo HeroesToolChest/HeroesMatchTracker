@@ -9,16 +9,11 @@ namespace Heroes.Icons.Xml
 {
     internal class HeroBuildsXml : XmlBase, IHeroBuilds
     {
-        private const int TotalOfficialBuilds = 32;
-        private const int EarliestOfficalBuild = 47479;
-        private const int LatestOfficialBuild = 55010;
-
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
 
         private int SelectedBuild;
         private HeroesXml HeroesXml;
-        private bool Logger;
 
         private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
         private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
@@ -51,9 +46,8 @@ namespace Heroes.Icons.Xml
         private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
 
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
-            : base(build ?? 0)
+            : base(build ?? 0, logger)
         {
-            Logger = logger;
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
             HeroesXml = heroesXml;
@@ -104,17 +98,13 @@ namespace Heroes.Icons.Xml
                 }
                 catch (IOException)
                 {
-                    if (Logger)
-                        LogMissingImage($"Missing image: {talent.Item2}");
-
+                    LogMissingImage($"Missing image: {talent.Item2}");
                     return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
                 }
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
-
+                LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
                 return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
             }
         }
@@ -136,9 +126,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
-
+                LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
                 return talentReferenceName;
             }
         }
@@ -156,9 +144,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
-
+                LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
                 return null;
             }
         }
@@ -177,9 +163,7 @@ namespace Heroes.Icons.Xml
             }
             else
             {
-                if (Logger)
-                    LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
-
+                LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
                 return null;
             }
         }

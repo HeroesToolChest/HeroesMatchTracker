@@ -7,10 +7,9 @@ namespace Heroes.Icons
     public interface IHeroesIconsService
     {
         int GetLatestHeroesBuild();
-        bool GetBuildsVerifyStatus();
 
         /// <summary>
-        /// Load a specific build, other than the latest one
+        /// Load a specific build, other than the latest one. Use LoadLatestHeroesBuild to load latest build.
         /// </summary>
         /// <param name="replayBuild">The replay build to load</param>
         /// <returns></returns>

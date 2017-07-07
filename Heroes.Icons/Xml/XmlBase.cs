@@ -8,9 +8,12 @@ namespace Heroes.Icons.Xml
 {
     internal abstract class XmlBase : HeroesBase
     {
-        protected XmlBase(int currentBuild)
+        private bool Logger;
+
+        protected XmlBase(int currentBuild, bool logger)
         {
             CurrentBuild = currentBuild;
+            Logger = logger;
         }
 
         protected int CurrentBuild { get; }
@@ -92,17 +95,23 @@ namespace Heroes.Icons.Xml
 
         protected void LogMissingImage(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
+            if (Logger)
             {
-                writer.WriteLine($"[{CurrentBuild}] {message}");
+                using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
+                {
+                    writer.WriteLine($"[{CurrentBuild}] {message}");
+                }
             }
         }
 
         protected void LogReferenceNameNotFound(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
+            if (Logger)
             {
-                writer.WriteLine($"[{CurrentBuild}] {message}");
+                using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
+                {
+                    writer.WriteLine($"[{CurrentBuild}] {message}");
+                }
             }
         }
     }

@@ -12,7 +12,6 @@ namespace Heroes.Icons
 
         private int EarliestHeroesBuild;
         private int LatestHeroesBuild;
-        private bool BuildsVerifyStatus;
         private bool Logger;
 
         private HeroesXml HeroesXml;
@@ -46,9 +45,9 @@ namespace Heroes.Icons
                 LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
                 ListHeroBuilds = HeroBuildsXml.Builds;
 
-                MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild);
-                MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild);
-                HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild);
+                MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild, logger);
+                MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild, logger);
+                HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild, logger);
             }
             catch (Exception ex)
             {
@@ -65,10 +64,9 @@ namespace Heroes.Icons
         }
 
         public int GetLatestHeroesBuild() => LatestHeroesBuild;
-        public bool GetBuildsVerifyStatus() => BuildsVerifyStatus;
 
         /// <summary>
-        /// Load a specific build, other than the latest one
+        /// Load a specific build, other than the latest one. Use LoadLatestHeroesBuild to load latest build.
         /// </summary>
         /// <param name="replayBuild">The replay build to load</param>
         /// <returns></returns>

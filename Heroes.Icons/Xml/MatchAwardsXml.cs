@@ -8,8 +8,8 @@ namespace Heroes.Icons.Xml
 {
     internal class MatchAwardsXml : XmlBase, IMatchAwards
     {
-        private MatchAwardsXml(string parentFile, string xmlBaseFolder, int currentBuild)
-            : base(currentBuild)
+        private MatchAwardsXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
+            : base(currentBuild, logger)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
@@ -20,9 +20,9 @@ namespace Heroes.Icons.Xml
         public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
         public Dictionary<string, string> MVPAwardDescriptionByAwardType { get; private set; } = new Dictionary<string, string>();
 
-        public static MatchAwardsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild)
+        public static MatchAwardsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
         {
-            MatchAwardsXml xml = new MatchAwardsXml(parentFile, xmlBaseFolder, currentBuild);
+            MatchAwardsXml xml = new MatchAwardsXml(parentFile, xmlBaseFolder, currentBuild, logger);
             xml.Parse();
             return xml;
         }
@@ -50,7 +50,7 @@ namespace Heroes.Icons.Xml
 
                     return image;
                 }
-                catch (FileNotFoundException)
+                catch (IOException)
                 {
                     LogMissingImage($"Missing image: {uriString}");
                     awardName = "Unknown";
@@ -88,7 +88,7 @@ namespace Heroes.Icons.Xml
 
                     return image;
                 }
-                catch (FileNotFoundException)
+                catch (IOException)
                 {
                     LogMissingImage($"Missing image: {uriString}");
                     awardName = "Unknown";

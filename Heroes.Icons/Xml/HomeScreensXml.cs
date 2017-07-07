@@ -8,8 +8,8 @@ namespace Heroes.Icons.Xml
 {
     internal class HomeScreensXml : XmlBase, IHomeScreens
     {
-        private HomeScreensXml(string parentFile, string xmlBaseFolder, int currentBuild)
-            : base(currentBuild)
+        private HomeScreensXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
+            : base(currentBuild, logger)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
@@ -18,9 +18,9 @@ namespace Heroes.Icons.Xml
 
         public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
 
-        public static HomeScreensXml Initialize(string parentFile, string xmlFolder, int currentBuild)
+        public static HomeScreensXml Initialize(string parentFile, string xmlFolder, int currentBuild, bool logger)
         {
-            HomeScreensXml xml = new HomeScreensXml(parentFile, xmlFolder, currentBuild);
+            HomeScreensXml xml = new HomeScreensXml(parentFile, xmlFolder, currentBuild, logger);
             xml.Parse();
             return xml;
         }
