@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Resources;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Heroes.Icons")]
@@ -18,4 +17,3 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyVersion("2.2.3")]
 [assembly: AssemblyFileVersion("2.2.3")]
-[assembly: NeutralResourcesLanguage("en-US")]
