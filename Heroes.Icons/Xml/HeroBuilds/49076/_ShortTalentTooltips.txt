@@ -783,7 +783,6 @@ KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast radius and lowers cool
 KaelthasSunfireEnchantmentTalent=Special attack on Verdant Spheres activation
 KaelthasVerdantSpheres=Make your next Basic Ability more powerful
 KaelthasVerdantSpheresFelInfusionTalent=Increases Ability Power and Verdant Spheres heal
---KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasMasterOfFlamesLivingBomb=Living Bomb spreads indefinitely
 KaelthasVerdantSpheresTwinSpheresTalent=Verdant Spheres gains a second charge
 KerriganAdaptationTalent=Ravage can jump to allies

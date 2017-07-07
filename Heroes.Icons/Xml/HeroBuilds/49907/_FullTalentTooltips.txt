@@ -1420,7 +1420,7 @@ TinkerXplodiumChargeKwikReleaseChargeTalent=Xplodium Charge gains a second charg
 TinkerXplodiumChargeXtraLargeBombsTalent=Increases Xplodium Charge range and radius by <c val="#TooltipNumbers">30%</c>.
 TracerBlink=Dash towards an area.<n/><n/>Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
 TracerBlinkHeroSelect=Dash towards an area. Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
-TracerBulletSprayMelee=Increases Melee's radius by <c val="#TooltipNumbers">40%</c>, and causes it to damage all enemies in range.
+TracerBulletSprayMelee=Increases Melee's radius by <c val="#TooltipNumbers">30%</c>, and causes it to damage all enemies in range.
 TracerBulletTime=Basic Attacks lower the cooldown of Blink by <c val="#TooltipNumbers">0.1</c> seconds.
 TracerCompositionBPulseBomb=If you successfully stick a Pulse Bomb to an enemy Hero, you also drop another one at their feet that deals <c val="#TooltipNumbers">50%</c> damage and explodes slightly earlier.
 TracerFocusFire=If an entire ammo magazine is unloaded on an enemy, the last bullet will deal <c val="#TooltipNumbers">94</c> bonus damage.  This is equal to <c val="#TooltipNumbers">35%</c> of the total magazine.
