@@ -63,7 +63,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         {
             try
             {
-                await Message("Starting up...");
+                StatusLabel = "Starting up...";
 
                 GetSystemInformation();
 

@@ -7,7 +7,7 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         DataContext="{Binding StartupWindowViewModel, Source={StaticResource Locator}}"
-        Height="287" Width="490" MaxHeight="291" MaxWidth="505"
+        Height="291" Width="505" MaxHeight="291" MaxWidth="505"
         WindowStartupLocation="CenterScreen"
         BorderThickness="0" WindowStyle="None"
         Title="Heroes Match Tracker Startup" ResizeMode="NoResize">
