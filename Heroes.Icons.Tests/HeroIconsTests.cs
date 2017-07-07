@@ -220,8 +220,6 @@ namespace Heroes.Icons.Tests
                     }
                     else if (startTag.ToLower().StartsWith("<c val="))
                     {
-                        string colorValue = startTag.Substring(8, startTag.Length - 10);
-
                         int offset = 4;
                         int closingCTagIndex = text.ToLower().IndexOf("</c>", endIndex);
 
