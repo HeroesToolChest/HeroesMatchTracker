@@ -12,7 +12,6 @@ namespace Heroes.Icons.Tests
         public HeroIconsTests()
         {
             FrameworkElement frameworkElement = new FrameworkElement(); // needed to load up the framework
-
         }
 
         [TestMethod]
@@ -147,6 +146,21 @@ namespace Heroes.Icons.Tests
             }
 
             AssertFailMessage(assertMessages);
+        }
+
+        [TestMethod]
+        public void HeroesMapBackgroundsTest()
+        {
+            HeroesIcons heroesIcons = new HeroesIcons(false);
+            List<string> assertMessages = new List<string>();
+
+            Assert.AreEqual(heroesIcons.MapBackgrounds().TotalCountOfMaps(), heroesIcons.MapBackgrounds().GetMapsList().Count);
+
+            foreach (var map in heroesIcons.MapBackgrounds().GetMapsList())
+            {
+                if (heroesIcons.MapBackgrounds().GetMapBackground(map) == null)
+                    assertMessages.Add($"No image found for {map}");
+            }
         }
 
         private string GetUniqueHeroName(string altName)

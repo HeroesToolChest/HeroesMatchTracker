@@ -16,7 +16,7 @@ namespace Heroes.Icons.Xml
         Color GetMapBackgroundFontGlowColor(string mapRealName);
 
         /// <summary>
-        /// Returns a list of all maps
+        /// Returns a list of all maps (real names)
         /// </summary>
         /// <returns></returns>
         List<string> GetMapsList();
@@ -47,5 +47,7 @@ namespace Heroes.Icons.Xml
         /// <param name="mapNameEnglish">English name</param>
         /// <returns></returns>
         bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish);
+
+        int TotalCountOfMaps();
     }
 }

@@ -32,9 +32,17 @@ namespace Heroes.Icons.Xml
         {
             try
             {
-                BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
-                image.Freeze();
-                return image;
+                if (MapUriByMapRealName.ContainsKey(mapRealName))
+                {
+                    BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
+                    image.Freeze();
+                    return image;
+                }
+                else
+                {
+                    LogReferenceNameNotFound($"Map background: {mapRealName}");
+                    return null;
+                }
             }
             catch (Exception)
             {
@@ -57,7 +65,7 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns a list of all maps
+        /// Returns a list of all maps (real names)
         /// </summary>
         /// <returns></returns>
         public List<string> GetMapsList()
@@ -111,6 +119,11 @@ namespace Heroes.Icons.Xml
         public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
         {
             return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
+        }
+
+        public int TotalCountOfMaps()
+        {
+            return XmlChildFiles.Count;
         }
 
         protected override void ParseChildFiles()
