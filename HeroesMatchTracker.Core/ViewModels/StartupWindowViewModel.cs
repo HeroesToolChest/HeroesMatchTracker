@@ -16,6 +16,7 @@ namespace HeroesMatchTracker.Core.ViewModels
     {
         private const string DotNetSubKey = @"SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\";
 
+        private bool ValidDotNetFramework = false;
         private Logger StartupLogFile = LogManager.GetLogger(LogFileNames.StartupLogFileName);
 
         private string _statusLabel;
@@ -66,6 +67,7 @@ namespace HeroesMatchTracker.Core.ViewModels
                 StatusLabel = "Starting up...";
 
                 GetSystemInformation();
+                await SystemRequirementsCheck();
 
                 await Message("Initializing HeroesMatchTracker.Data");
                 var databaseMigrations = Data.Database.Initialize().ExecuteDatabaseMigrations();
@@ -160,6 +162,23 @@ namespace HeroesMatchTracker.Core.ViewModels
             StartupLogFile.Log(LogLevel.Info, string.Empty);
         }
 
+        private async Task SystemRequirementsCheck()
+        {
+            if (!ValidDotNetFramework)
+            {
+                StatusLabel = ".NET Framework 4.6.2 or higher is required";
+                StartupLogFile.Log(LogLevel.Error, ".NET Framework 4.6.2 or higher is required");
+
+                for (int i = 4; i >= 0; i--)
+                {
+                    DetailedStatusLabel = $"Shutting down in ({i})...";
+                    await Task.Delay(1000);
+                }
+
+                Application.Current.Shutdown();
+            }
+        }
+
         private void GetOperatingSystemInfo()
         {
             StartupLogFile.Log(LogLevel.Info, $"            OS Version: {Environment.OSVersion}");
@@ -248,6 +267,9 @@ namespace HeroesMatchTracker.Core.ViewModels
                         dotNetFrameWorkVersion += "4.5";
                     else
                         dotNetFrameWorkVersion += "No 4.5 or later version detected";
+
+                    if (releaseKey >= 394802)
+                        ValidDotNetFramework = true;
                 }
                 else
                 {
