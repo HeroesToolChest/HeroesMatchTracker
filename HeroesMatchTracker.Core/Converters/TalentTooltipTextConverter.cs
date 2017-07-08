@@ -60,7 +60,7 @@ namespace HeroesMatchTracker.Core.Converters
                         if (closingCTagIndex > 0)
                         {
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
-                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.Bold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
 
                             // remove, this part of the string is not needed anymore
                             text = text.Remove(0, closingCTagIndex + offset);
@@ -70,7 +70,7 @@ namespace HeroesMatchTracker.Core.Converters
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                             // add the rest of the text
-                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.Bold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
 
                             // none left
                             text = string.Empty;
@@ -141,7 +141,7 @@ namespace HeroesMatchTracker.Core.Converters
                         color = Colors.WhiteSmoke;
                         break;
                     case "#TOOLTIPQUEST": // yellow-gold
-                        color = (Color)ColorConverter.ConvertFromString("#B48E4C");
+                        color = (Color)ColorConverter.ConvertFromString("#E4B800");
                         break;
                     case "#ABILITYPASSIVE":
                         color = (Color)ColorConverter.ConvertFromString("#16D486");
