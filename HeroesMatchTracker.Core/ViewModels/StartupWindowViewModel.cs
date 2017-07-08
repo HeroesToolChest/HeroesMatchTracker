@@ -80,6 +80,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
                 await Message("Initializing Heroes Match Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window
+                StartupLogFile.Log(LogLevel.Info, "Main window sucessfully created");
             }
             catch (Exception ex)
             {
@@ -158,6 +159,12 @@ namespace HeroesMatchTracker.Core.ViewModels
             StartupLogFile.Log(LogLevel.Info, "----------------------------------------------------------------");
             GetOperatingSystemInfo();
             GetDotNetRuntimeVersion();
+            StartupLogFile.Log(LogLevel.Info, $"           HMT Version: {AppVersion}");
+            StartupLogFile.Log(LogLevel.Info, $"      HMT.Core Version: {AssemblyVersions.HeroesMatchTrackerCoreVersion()}");
+            StartupLogFile.Log(LogLevel.Info, $"      HMT.Data Version: {AssemblyVersions.HeroesMatchTrackerDataVersion()}");
+            StartupLogFile.Log(LogLevel.Info, $"Heroes.Helpers Version: {AssemblyVersions.HeroesHelpersVersion()}");
+            StartupLogFile.Log(LogLevel.Info, $"          Heroes.Icons: {AssemblyVersions.HeroesIconsVersion()}");
+            StartupLogFile.Log(LogLevel.Info, $"   Heroes.ReplayParser: {AssemblyVersions.HeroesReplayParserVersion()}");
             StartupLogFile.Log(LogLevel.Info, "----------------------------------------------------------------");
             StartupLogFile.Log(LogLevel.Info, string.Empty);
         }
