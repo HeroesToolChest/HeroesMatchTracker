@@ -35,5 +35,7 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <returns></returns>
         List<string> GetMatchAwardsList();
+
+        int TotalCountOfAwards();
     }
 }

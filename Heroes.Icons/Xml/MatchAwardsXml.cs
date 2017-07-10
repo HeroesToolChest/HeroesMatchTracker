@@ -125,6 +125,11 @@ namespace Heroes.Icons.Xml
             return new List<string>(MVPScoreScreenAwardByAwardType.Keys);
         }
 
+        public int TotalCountOfAwards()
+        {
+            return XmlChildFiles.Count;
+        }
+
         protected override void ParseChildFiles()
         {
             try

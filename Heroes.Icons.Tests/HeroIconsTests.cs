@@ -162,6 +162,38 @@ namespace Heroes.Icons.Tests
             }
         }
 
+        [TestMethod]
+        public void HeroesMatchAwardsTest()
+        {
+            HeroesIcons heroesIcons = new HeroesIcons(false);
+            List<string> assertMessages = new List<string>();
+
+            Assert.AreEqual(heroesIcons.MatchAwards().TotalCountOfAwards(), heroesIcons.MatchAwards().GetMatchAwardsList().Count);
+
+            foreach (var award in heroesIcons.MatchAwards().GetMatchAwardsList())
+            {
+                if (heroesIcons.MatchAwards().GetMVPScoreScreenAward(award, MVPScoreScreenColor.Blue, out string awardBlueName) == null)
+                    assertMessages.Add($"No blue MVP score screen award image found for {award}");
+
+                if (heroesIcons.MatchAwards().GetMVPScoreScreenAward(award, MVPScoreScreenColor.Red, out string awardRedName) == null)
+                    assertMessages.Add($"No red MVP score screen award image found for {award}");
+
+                if (heroesIcons.MatchAwards().GetMVPScreenAward(award, MVPScreenColor.Blue, out string awardBlueName2) == null)
+                    assertMessages.Add($"No blue MVP screen award image found for {award}");
+
+                if (heroesIcons.MatchAwards().GetMVPScreenAward(award, MVPScreenColor.Red, out string awardRedName2) == null)
+                    assertMessages.Add($"No red MVP screen award image found for {award}");
+
+                if (heroesIcons.MatchAwards().GetMVPScreenAward(award, MVPScreenColor.Gold, out string awardGoldName2) == null)
+                    assertMessages.Add($"No gold MVP screen award image found for {award}");
+
+                if (string.IsNullOrEmpty(heroesIcons.MatchAwards().GetMatchAwardDescription(award)))
+                {
+                    assertMessages.Add($"No description found for {award}");
+                }
+            }
+        }
+
         private string GetUniqueHeroName(string altName)
         {
             // all lowercase
