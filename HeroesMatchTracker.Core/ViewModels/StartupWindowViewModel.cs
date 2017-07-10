@@ -80,7 +80,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
                 await Message("Initializing Heroes Match Tracker");
                 StartupWindowService.CreateMainWindow(); // create the main application window
-                StartupLogFile.Log(LogLevel.Info, "Main window sucessfully created");
+                StartupLogFile.Log(LogLevel.Info, "Main window successfully created");
             }
             catch (Exception ex)
             {
