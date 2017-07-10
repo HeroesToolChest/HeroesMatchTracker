@@ -99,7 +99,7 @@ namespace Heroes.Icons.Xml
             {
                 LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
                 awardName = "Unknown";
-                return new BitmapImage(null);
+                return null;
             }
         }
 
