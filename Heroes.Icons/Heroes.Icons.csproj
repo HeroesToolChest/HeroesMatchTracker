@@ -682,6 +682,11 @@
     <Resource Include="Icons\MapBackgrounds\storm_ui_homescreenbackground_pullparty.jpg" />
     <Resource Include="Icons\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_alarak.dds" />
     <Resource Include="Icons\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_abathur.dds" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_skullcollector_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_skullcollector_gold.png" />
+    <Resource Include="Icons\Awards\storm_ui_mvp_skullcollector_red.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skullcollector_blue.png" />
+    <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skullcollector_red.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -5231,6 +5236,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\SiegeMaster.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MatchAwards\SkullCollector.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MatchAwards\Silencer.xml">
