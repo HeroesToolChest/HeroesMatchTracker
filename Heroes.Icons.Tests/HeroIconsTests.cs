@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -153,7 +155,8 @@ namespace Heroes.Icons.Tests
             HeroesIcons heroesIcons = new HeroesIcons(false);
             List<string> assertMessages = new List<string>();
 
-            Assert.AreEqual(heroesIcons.MapBackgrounds().TotalCountOfMaps(), heroesIcons.MapBackgrounds().GetMapsList().Count);
+            Assert.AreEqual(heroesIcons.MapBackgrounds().TotalCountOfMaps(), heroesIcons.MapBackgrounds().GetMapsList().Count, "Number of awards in _AllMapBackgrounds.xml is not equal to number of MapBackgrounds");
+            Assert.AreEqual(heroesIcons.MapBackgrounds().TotalCountOfMaps(), Directory.GetFiles($@"Xml\MapBackgrounds").Count() - 1, "Number of maps in _AllMapBackgrounds.xml is not equal to number of files in Xml\\MapBackgrounds");
 
             foreach (var map in heroesIcons.MapBackgrounds().GetMapsList())
             {
@@ -168,7 +171,8 @@ namespace Heroes.Icons.Tests
             HeroesIcons heroesIcons = new HeroesIcons(false);
             List<string> assertMessages = new List<string>();
 
-            Assert.AreEqual(heroesIcons.MatchAwards().TotalCountOfAwards(), heroesIcons.MatchAwards().GetMatchAwardsList().Count);
+            Assert.AreEqual(heroesIcons.MatchAwards().TotalCountOfAwards(), heroesIcons.MatchAwards().GetMatchAwardsList().Count, "Number of awards in _AllMatchAwards.xml is not equal to number of MatchAwards");
+            Assert.AreEqual(heroesIcons.MatchAwards().TotalCountOfAwards(), Directory.GetFiles($@"Xml\MatchAwards").Count() - 1, "Number of awards in _AllMatchAwards.xml is not equal to number of files in Xml\\MatchAwards");
 
             foreach (var award in heroesIcons.MatchAwards().GetMatchAwardsList())
             {
