@@ -226,7 +226,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 mapImage.Freeze();
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes();
-                if (total != 0)
+                if (total > 0)
                 {
                     statsHeroesGameModes = new StatsHeroesGameModes
                     {
@@ -277,7 +277,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             StatsHeroesGameModes totalMatch = new StatsHeroesGameModes();
 
-            if (totalTotal != 0)
+            if (totalTotal > 0)
             {
                 totalMatch = new StatsHeroesGameModes
                 {
