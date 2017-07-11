@@ -225,23 +225,27 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
                 mapImage.Freeze();
 
-                StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
+                StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes();
+                if (total != 0)
                 {
-                    MapName = map,
-                    Wins = wins,
-                    Losses = losses,
-                    TotalGames = total,
-                    WinPercentage = winPercentage,
-                    Kills = kills,
-                    Assists = assists,
-                    Deaths = deaths,
-                    SiegeDamage = siegeDamage,
-                    HeroDamage = heroDamage,
-                    Role = role,
-                    Experience = experience,
-                    MercsCaptured = mercsCaptured,
-                    GameTime = gameTime,
-                };
+                    statsHeroesGameModes = new StatsHeroesGameModes
+                    {
+                        MapName = map,
+                        Wins = wins,
+                        Losses = losses,
+                        TotalGames = total,
+                        WinPercentage = winPercentage,
+                        Kills = kills,
+                        Assists = assists,
+                        Deaths = deaths,
+                        SiegeDamage = siegeDamage,
+                        HeroDamage = heroDamage,
+                        Role = role,
+                        Experience = experience,
+                        MercsCaptured = mercsCaptured,
+                        GameTime = gameTime,
+                    };
+                }
 
                 statsHeroesGameModes.MapImage = mapImage;
                 Application.Current.Dispatcher.Invoke(() => StatsHeroesDataCollection.Add(statsHeroesGameModes));
@@ -255,39 +259,44 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private Task SetStatTotals()
         {
-            int totalWins = StatsHeroesDataCollection.Sum(x => x.Wins);
-            int totalLosses = StatsHeroesDataCollection.Sum(x => x.Losses);
-            int totalTotal = StatsHeroesDataCollection.Sum(x => x.TotalGames);
+            int totalWins = StatsHeroesDataCollection.Sum(x => x.Wins ?? 0);
+            int totalLosses = StatsHeroesDataCollection.Sum(x => x.Losses ?? 0);
+            int totalTotal = StatsHeroesDataCollection.Sum(x => x.TotalGames ?? 0);
             double totalWinPercentage = Utilities.CalculateWinValue(totalWins, totalTotal);
 
-            int totalKills = StatsHeroesDataCollection.Sum(x => x.Kills);
-            int totalAssists = StatsHeroesDataCollection.Sum(x => x.Assists);
-            int totalDeaths = StatsHeroesDataCollection.Sum(x => x.Deaths);
+            int totalKills = StatsHeroesDataCollection.Sum(x => x.Kills ?? 0);
+            int totalAssists = StatsHeroesDataCollection.Sum(x => x.Assists ?? 0);
+            int totalDeaths = StatsHeroesDataCollection.Sum(x => x.Deaths ?? 0);
 
-            double totalSiegeDamage = StatsHeroesDataCollection.Sum(x => x.SiegeDamage);
-            double totalHeroDamage = StatsHeroesDataCollection.Sum(x => x.HeroDamage);
-            double totalrole = StatsHeroesDataCollection.Sum(x => x.Role);
-            double totalExperience = StatsHeroesDataCollection.Sum(x => x.Experience);
-            int totalMercsCaptured = StatsHeroesDataCollection.Sum(x => x.MercsCaptured);
-            TimeSpan totalGameTime = TimeSpan.FromSeconds(StatsHeroesDataCollection.Sum(x => x.GameTime.TotalSeconds));
+            double totalSiegeDamage = StatsHeroesDataCollection.Sum(x => x.SiegeDamage ?? 0);
+            double totalHeroDamage = StatsHeroesDataCollection.Sum(x => x.HeroDamage ?? 0);
+            double totalrole = StatsHeroesDataCollection.Sum(x => x.Role ?? 0);
+            double totalExperience = StatsHeroesDataCollection.Sum(x => x.Experience ?? 0);
+            int totalMercsCaptured = StatsHeroesDataCollection.Sum(x => x.MercsCaptured ?? 0);
+            TimeSpan totalGameTime = TimeSpan.FromSeconds(StatsHeroesDataCollection.Sum(x => x.GameTime.HasValue ? x.GameTime.Value.Seconds : 0));
 
-            StatsHeroesGameModes totalMatch = new StatsHeroesGameModes
+            StatsHeroesGameModes totalMatch = new StatsHeroesGameModes();
+
+            if (totalTotal != 0)
             {
-                MapName = "Total",
-                Wins = totalWins,
-                Losses = totalLosses,
-                TotalGames = totalTotal,
-                WinPercentage = totalWinPercentage,
-                Kills = totalKills,
-                Assists = totalAssists,
-                Deaths = totalDeaths,
-                SiegeDamage = totalSiegeDamage,
-                HeroDamage = totalHeroDamage,
-                Role = totalrole,
-                Experience = totalExperience,
-                MercsCaptured = totalMercsCaptured,
-                GameTime = totalGameTime,
-            };
+                totalMatch = new StatsHeroesGameModes
+                {
+                    MapName = "Total",
+                    Wins = totalWins,
+                    Losses = totalLosses,
+                    TotalGames = totalTotal,
+                    WinPercentage = totalWinPercentage,
+                    Kills = totalKills,
+                    Assists = totalAssists,
+                    Deaths = totalDeaths,
+                    SiegeDamage = totalSiegeDamage,
+                    HeroDamage = totalHeroDamage,
+                    Role = totalrole,
+                    Experience = totalExperience,
+                    MercsCaptured = totalMercsCaptured,
+                    GameTime = totalGameTime,
+                };
+            }
 
             Application.Current.Dispatcher.Invoke(() => StatsHeroesDataTotalCollection.Add(totalMatch));
             SetAverageTotals();
@@ -299,17 +308,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             foreach (var map in StatsHeroesDataCollection)
             {
-                int totalGames = map.TotalGames > 0 ? map.TotalGames : 1;
+                int? totalGames = map.TotalGames > 0 ? map.TotalGames : 1;
 
-                int killsAverage = map.Kills / totalGames;
-                int assistsAverage = map.Assists / totalGames;
-                int deathsAverage = map.Deaths / totalGames;
-                double siegeDamageAverage = map.SiegeDamage / totalGames;
-                double heroDamageAverage = map.HeroDamage / totalGames;
-                double roleAverage = map.Role / totalGames;
-                double experienceAverage = map.Experience / totalGames;
-                int mercsCapturedAverage = map.MercsCaptured / totalGames;
-                TimeSpan gameTimeAverage = TimeSpan.FromSeconds(Math.Round(map.GameTime.TotalSeconds / totalGames, 0));
+                int? killsAverage = map.Kills / totalGames;
+                int? assistsAverage = map.Assists / totalGames;
+                int? deathsAverage = map.Deaths / totalGames;
+                double? siegeDamageAverage = map.SiegeDamage / totalGames;
+                double? heroDamageAverage = map.HeroDamage / totalGames;
+                double? roleAverage = map.Role / totalGames;
+                double? experienceAverage = map.Experience / totalGames;
+                int? mercsCapturedAverage = map.MercsCaptured / totalGames;
+                TimeSpan? gameTimeAverage = null;
+                if (map.GameTime.HasValue)
+                {
+                    gameTimeAverage = TimeSpan.FromSeconds(Math.Round(map.GameTime.Value.TotalSeconds / totalGames.Value, 0));
+                }
 
                 var mapImage = map.MapImage;
                 mapImage.Freeze();
@@ -340,7 +353,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             var dataTotal = StatsHeroesDataTotalCollection[0];
 
-            int totalAverageTotal = dataTotal.TotalGames > 0 ? dataTotal.TotalGames : 1;
+            int? totalAverageTotal = dataTotal.TotalGames > 0 ? dataTotal.TotalGames : 1;
 
             StatsHeroesGameModes totalAverageMatch = new StatsHeroesGameModes
             {
@@ -354,7 +367,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 Role = dataTotal.Role / totalAverageTotal,
                 Experience = dataTotal.Experience / totalAverageTotal,
                 MercsCaptured = dataTotal.MercsCaptured / totalAverageTotal,
-                GameTime = TimeSpan.FromSeconds(Math.Round(dataTotal.GameTime.TotalSeconds / totalAverageTotal, 0)),
+                GameTime = dataTotal.GameTime.HasValue ? TimeSpan.FromSeconds(Math.Round(dataTotal.GameTime.Value.TotalSeconds / totalAverageTotal.Value, 0)) : (TimeSpan?)null,
             };
 
             Application.Current.Dispatcher.Invoke(() => StatsHeroesDataAverageTotalCollection.Add(totalAverageMatch));

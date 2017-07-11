@@ -382,14 +382,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsTotalsAveragesChecked)
             {
-                HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
-                HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
+                HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins ?? 0;
+                HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses ?? 0;
                 HeroGames = HeroWins + HeroLosses;
-                HeroWinrate = Math.Round(StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage * 100, 1);
+                HeroWinrate = Math.Round(StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage ?? 0 * 100, 1);
 
-                HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
-                HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
-                HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths;
+                HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills ?? 0;
+                HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists ?? 0;
+                HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths ?? 0;
                 HeroKD = Utilities.CalculateWinPercentage(HeroKills, HeroDeaths);
                 HeroKAD = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroDeaths);
                 HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
