@@ -370,7 +370,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = Utilities.CalculateWinValue(wins, total),
+                        Value = total > 0 ? Utilities.CalculateWinValue(wins, total) : (double?)null,
                     };
 
                     heroStatPercentageCollection.Add(statsOverviewHeroes);
@@ -383,7 +383,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = wins,
+                        Value = wins > 0 ? wins : (double?)null,
                     };
 
                     HeroStatsWinsCollection.Add(statsOverviewHeroes);
@@ -391,12 +391,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 // most deaths
                 {
-                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostDeaths);
+                    int deaths = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostDeaths);
 
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = value,
+                        Value = deaths > 0 ? deaths : (double?)null,
                     };
 
                     HeroStatsDeathsCollection.Add(statsOverviewHeroes);
@@ -404,12 +404,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 // most kills
                 {
-                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostKills);
+                    int kills = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostKills);
 
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = value,
+                        Value = kills > 0 ? kills : (double?)null,
                     };
 
                     HeroStatsKillsCollection.Add(statsOverviewHeroes);
@@ -417,12 +417,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 // most assists
                 {
-                    int value = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostAssists);
+                    int assists = Database.ReplaysDb().Statistics.ReadStatValue(hero, season, gameModes, OverviewHeroStatOption.MostAssists);
 
                     StatsOverviewHeroes statsOverviewHeroes = new StatsOverviewHeroes()
                     {
                         HeroName = hero,
-                        Value = value,
+                        Value = assists > 0 ? assists : (double?)null,
                     };
 
                     HeroStatsAssistsCollection.Add(statsOverviewHeroes);
@@ -474,9 +474,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsOverviewMaps statsOverviewMaps = new StatsOverviewMaps()
                 {
                     MapName = map,
-                    Wins = wins,
-                    Losses = losses,
-                    Winrate = Utilities.CalculateWinValue(wins, total),
+                    Wins = total > 0 ? wins : (int?)null,
+                    Losses = total > 0 ? losses : (int ?)null,
+                    Winrate = total > 0 ? Utilities.CalculateWinValue(wins, total) : (double?)null,
                 };
 
                 mapStatTempCollection.Add(statsOverviewMaps);
@@ -490,8 +490,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         /// </summary>
         private void SetOverallStats()
         {
-            OverallGamesPlayed = MapsStatsCollection.Sum(x => x.Wins + x.Losses);
-            OverallWinrate = Utilities.CalculateWinValue(MapsStatsCollection.Sum(x => x.Wins), OverallGamesPlayed);
+            OverallGamesPlayed = MapsStatsCollection.Sum(x => x.Wins ?? 0 + x.Losses ?? 0);
+            OverallWinrate = Utilities.CalculateWinValue(MapsStatsCollection.Sum(x => x.Wins ?? 0), OverallGamesPlayed);
 
             int totalKills = (int)HeroStatsKillsCollection.Sum(x => x.Value);
             int totalDeaths = (int)HeroStatsDeathsCollection.Sum(x => x.Value);

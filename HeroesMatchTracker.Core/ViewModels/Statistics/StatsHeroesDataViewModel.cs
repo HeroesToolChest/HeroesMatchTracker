@@ -401,10 +401,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     TalentName = HeroesIcons.HeroBuilds().GetTrueTalentName(talent),
                     TalentShortTooltip = talentTooltip.Short,
                     TalentFullTooltip = talentTooltip.Full,
-                    Wins = talentTotal != 0 ? talentWin : (int?)null,
-                    Losses = talentTotal != 0 ? talentLoss : (int?)null,
-                    Total = talentTotal != 0 ? talentTotal : (int?)null,
-                    Winrate = talentTotal != 0 ? talentWinPercentage : (double?)null,
+                    Wins = talentTotal > 0 ? talentWin : (int?)null,
+                    Losses = talentTotal > 0 ? talentLoss : (int?)null,
+                    Total = talentTotal > 0 ? talentTotal : (int?)null,
+                    Winrate = talentTotal > 0 ? talentWinPercentage : (double?)null,
                 };
 
                 talentPicks.TalentImage = talentImage;
@@ -439,11 +439,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 {
                     AwardName = awardName,
                     AwardDescription = HeroesIcons.MatchAwards().GetMatchAwardDescription(award.ToString()),
-                    QuickMatch = rowTotal != 0 ? quickmatchAwards : (int?)null,
-                    UnrankedDraft = rowTotal != 0 ? unrankedDraftAwards : (int?)null,
-                    HeroLeague = rowTotal != 0 ? heroLeagueAwards : (int?)null,
-                    TeamLeague = rowTotal != 0 ? teamLeagueAwards : (int?)null,
-                    Total = rowTotal != 0 ? rowTotal : (int?)null,
+                    QuickMatch = rowTotal > 0 ? quickmatchAwards : (int?)null,
+                    UnrankedDraft = rowTotal > 0 ? unrankedDraftAwards : (int?)null,
+                    HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,
+                    TeamLeague = rowTotal > 0 ? teamLeagueAwards : (int?)null,
+                    Total = rowTotal > 0 ? rowTotal : (int?)null,
                 };
 
                 matchAwards.AwardImage = awardImage;
