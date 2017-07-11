@@ -388,10 +388,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     TalentName = HeroesIcons.HeroBuilds().GetTrueTalentName(talent),
                     TalentShortTooltip = talentTooltip.Short,
                     TalentFullTooltip = talentTooltip.Full,
-                    Wins = talentWin,
-                    Losses = talentLoss,
-                    Total = talentTotal,
-                    Winrate = talentWinPercentage,
+                    Wins = talentTotal != 0 ? talentWin : (int?)null,
+                    Losses = talentTotal != 0 ? talentLoss : (int?)null,
+                    Total = talentTotal != 0 ? talentTotal : (int?)null,
+                    Winrate = talentTotal != 0 ? talentWinPercentage : (double?)null,
                 };
 
                 talentPicks.TalentImage = talentImage;
