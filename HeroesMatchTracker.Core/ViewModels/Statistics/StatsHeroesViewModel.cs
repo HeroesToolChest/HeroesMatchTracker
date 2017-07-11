@@ -397,7 +397,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsAwardsChecked)
             {
-                HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total;
+                HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total ?? 0;
                 HeroMVP = StatsHeroesDataViewModel.MVPCount;
                 HeroAwardsRatio = Utilities.CalculateWinPercentage(HeroAwards, HeroGames);
                 HeroMVPRatio = Utilities.CalculateWinPercentage(HeroMVP, HeroGames);

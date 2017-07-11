@@ -426,11 +426,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 {
                     AwardName = awardName,
                     AwardDescription = HeroesIcons.MatchAwards().GetMatchAwardDescription(award.ToString()),
-                    QuickMatch = quickmatchAwards,
-                    UnrankedDraft = unrankedDraftAwards,
-                    HeroLeague = heroLeagueAwards,
-                    TeamLeague = teamLeagueAwards,
-                    Total = rowTotal,
+                    QuickMatch = rowTotal != 0 ? quickmatchAwards : (int?)null,
+                    UnrankedDraft = rowTotal != 0 ? unrankedDraftAwards : (int?)null,
+                    HeroLeague = rowTotal != 0 ? heroLeagueAwards : (int?)null,
+                    TeamLeague = rowTotal != 0 ? teamLeagueAwards : (int?)null,
+                    Total = rowTotal != 0 ? rowTotal : (int?)null,
                 };
 
                 matchAwards.AwardImage = awardImage;
@@ -438,11 +438,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
 
             // get totals
-            int totalQuickMatch = StatsHeroesAwardsCollection.Sum(x => x.QuickMatch);
-            int totalUnrankedDraft = StatsHeroesAwardsCollection.Sum(x => x.UnrankedDraft);
-            int totalHeroLeague = StatsHeroesAwardsCollection.Sum(x => x.HeroLeague);
-            int totalTeamLeague = StatsHeroesAwardsCollection.Sum(x => x.TeamLeague);
-            int totalTotal = StatsHeroesAwardsCollection.Sum(x => x.Total);
+            int totalQuickMatch = StatsHeroesAwardsCollection.Sum(x => x.QuickMatch ?? 0);
+            int totalUnrankedDraft = StatsHeroesAwardsCollection.Sum(x => x.UnrankedDraft ?? 0);
+            int totalHeroLeague = StatsHeroesAwardsCollection.Sum(x => x.HeroLeague ?? 0);
+            int totalTeamLeague = StatsHeroesAwardsCollection.Sum(x => x.TeamLeague ?? 0);
+            int totalTotal = StatsHeroesAwardsCollection.Sum(x => x.Total ?? 0);
 
             StatsHeroesAwards totalAwards = new StatsHeroesAwards
             {
