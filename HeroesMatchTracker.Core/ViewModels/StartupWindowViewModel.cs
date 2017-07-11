@@ -142,7 +142,10 @@ namespace HeroesMatchTracker.Core.ViewModels
             catch (AutoUpdaterException ex)
             {
                 await Message("Could not check for updates or apply releases, check logs");
-                StartupLogFile.Log(LogLevel.Error, ex);
+                if (ex.Message == "Unable to connect to api.github.com")
+                    StartupLogFile.Log(LogLevel.Error, "Unable to connect to api.github.com");
+                else
+                    StartupLogFile.Log(LogLevel.Error, ex);
                 await Task.Delay(1000);
             }
         }
