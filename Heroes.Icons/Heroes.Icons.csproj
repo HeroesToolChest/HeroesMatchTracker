@@ -458,8 +458,6 @@
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_chromie.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_diablo.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_diablotristram.jpg" />
-    <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_eternalconflict.jpg" />
-    <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_eternalconflict_dark.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_greymane.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_guldan.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_lunara.jpg" />
@@ -467,8 +465,6 @@
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_medivh.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_nexus.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_overwatchhangar.jpg" />
-    <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_samuro.jpg" />
-    <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_shrines.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_shrines_dusk.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_starcraft.jpg" />
     <Resource Include="Icons\Homescreens\storm_ui_homescreenbackground_starcraft_protoss.jpg" />
