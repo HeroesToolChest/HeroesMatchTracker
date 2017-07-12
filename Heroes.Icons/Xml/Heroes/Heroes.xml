@@ -312,10 +312,10 @@
     <Aliases>Kleiner,Puntos,Zszywaniec,Tritacarne,Balafré,СТЕЖОК,Suturino,누더기,缝合怪,縫合怪,Стежок</Aliases>
   </Stitches>
 
-  <Stukov available="99999" attributeid="STUK" franchise="Starcraft"
+  <Stukov available="55288" attributeid="STUK" franchise="Starcraft"
           portrait="storm_ui_ingame_heroselect_btn_stukov.dds" loading="storm_ui_ingame_hero_loadingscreen_stukov.dds" leader="storm_ui_ingame_hero_leaderboard_stukov.dds">
     <Roles>Support</Roles>
-    <Aliases></Aliases>
+    <Aliases>斯杜科夫,스투코프,Stiukow,Стуков,斯托科夫</Aliases>
   </Stukov>
   
   <Sylvanas available="47479" attributeid="Sylv" franchise="Warcraft"
