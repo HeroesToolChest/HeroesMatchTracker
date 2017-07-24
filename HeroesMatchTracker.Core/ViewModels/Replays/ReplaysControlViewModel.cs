@@ -813,7 +813,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         }
                         else if (replayParsed.Item1 == ReplayParseResult.ParserException)
                         {
-                            if (replayParsed.Item2.ReplayBuild > AssemblyVersions.HeroesReplayParserVersion().Version.Revision)
+                            if (replayParsed.Item2.ReplayBuild > Replay.LatestSupportedBuild)
                                 originalfile.Status = ReplayResult.NotYetSupported;
                             else
                                 originalfile.Status = ReplayResult.ParserException;
