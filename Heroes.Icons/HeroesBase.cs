@@ -28,7 +28,10 @@ namespace Heroes.Icons
             if (iconPath[0] != '\\')
                 iconPath = '\\' + iconPath;
 
-            return new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
+            BitmapImage image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
+            image.Freeze();
+
+            return image;
         }
     }
 }

@@ -53,15 +53,15 @@ namespace Heroes.Icons.Xml
                 catch (IOException)
                 {
                     LogMissingImage($"Missing image: {uriString}");
-                    awardName = "Unknown";
-                    return null;
+                    awardName = mvpAwardType;
+                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
                 }
             }
             else
             {
                 LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
-                awardName = "Unknown";
-                return null;
+                awardName = mvpAwardType;
+                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
             }
         }
 
@@ -91,15 +91,15 @@ namespace Heroes.Icons.Xml
                 catch (IOException)
                 {
                     LogMissingImage($"Missing image: {uriString}");
-                    awardName = "Unknown";
-                    return null;
+                    awardName = mvpAwardType;
+                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
                 }
             }
             else
             {
                 LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
-                awardName = "Unknown";
-                return null;
+                awardName = mvpAwardType;
+                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
             }
         }
 
