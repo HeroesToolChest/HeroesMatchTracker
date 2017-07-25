@@ -475,7 +475,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 {
                     MapName = map,
                     Wins = total > 0 ? wins : (int?)null,
-                    Losses = total > 0 ? losses : (int ?)null,
+                    Losses = total > 0 ? losses : (int?)null,
                     Winrate = total > 0 ? Utilities.CalculateWinValue(wins, total) : (double?)null,
                 };
 
