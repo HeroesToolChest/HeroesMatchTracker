@@ -25,10 +25,32 @@ namespace Heroes.Icons
             if (string.IsNullOrEmpty(iconPath))
                 throw new ArgumentNullException(nameof(iconPath));
 
-            if (iconPath[0] != '\\')
-                iconPath = '\\' + iconPath;
+            BitmapImage image;
 
-            BitmapImage image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
+            if (iconPath.StartsWith(ApplicationIconsPath))
+            {
+                image = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
+                image.Freeze();
+
+                return image;
+            }
+            else if (iconPath[0] != '\\')
+            {
+                iconPath = '\\' + iconPath;
+            }
+
+            image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
+            image.Freeze();
+
+            return image;
+        }
+
+        protected BitmapImage HeroesBitmapImage(Uri iconPath)
+        {
+            if (string.IsNullOrEmpty(iconPath.AbsoluteUri))
+                throw new ArgumentNullException(nameof(iconPath));
+
+            BitmapImage image = new BitmapImage(iconPath);
             image.Freeze();
 
             return image;

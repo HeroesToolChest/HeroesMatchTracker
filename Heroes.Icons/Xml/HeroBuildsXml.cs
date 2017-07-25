@@ -91,10 +91,7 @@ namespace Heroes.Icons.Xml
             {
                 try
                 {
-                    BitmapImage image = new BitmapImage(talent.Item2);
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(talent.Item2);
                 }
                 catch (IOException)
                 {

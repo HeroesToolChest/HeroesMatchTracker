@@ -45,10 +45,7 @@ namespace Heroes.Icons.Xml
 
                 try
                 {
-                    BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(uriString);
                 }
                 catch (IOException)
                 {
@@ -83,10 +80,7 @@ namespace Heroes.Icons.Xml
 
                 try
                 {
-                    BitmapImage image = new BitmapImage(new Uri(uriString, UriKind.Absolute));
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(uriString);
                 }
                 catch (IOException)
                 {

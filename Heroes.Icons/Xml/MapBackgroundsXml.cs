@@ -35,9 +35,7 @@ namespace Heroes.Icons.Xml
             {
                 if (MapUriByMapRealName.ContainsKey(mapRealName))
                 {
-                    BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
-                    image.Freeze();
-                    return image;
+                    return HeroesBitmapImage(MapUriByMapRealName[mapRealName]);
                 }
                 else
                 {

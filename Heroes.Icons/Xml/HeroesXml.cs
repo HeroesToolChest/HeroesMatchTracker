@@ -102,10 +102,7 @@ namespace Heroes.Icons.Xml
             {
                 if (HeroPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
                 {
-                    BitmapImage image = new BitmapImage(uri);
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(uri);
                 }
                 else
                 {
@@ -135,10 +132,7 @@ namespace Heroes.Icons.Xml
             {
                 if (HeroLoadingPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
                 {
-                    BitmapImage image = new BitmapImage(uri);
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(uri);
                 }
                 else
                 {
@@ -168,10 +162,7 @@ namespace Heroes.Icons.Xml
             {
                 if (HeroLeaderboardPortraitUriByRealName.TryGetValue(realHeroName, out Uri uri))
                 {
-                    BitmapImage image = new BitmapImage(uri);
-                    image.Freeze();
-
-                    return image;
+                    return HeroesBitmapImage(uri);
                 }
                 else
                 {
