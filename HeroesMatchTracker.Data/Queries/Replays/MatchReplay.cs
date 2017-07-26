@@ -24,7 +24,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.Replays.OrderByDescending(x => x.ReplayId).Take(amount).AsNoTracking().ToList();
+                return db.Replays.AsNoTracking().Take(amount).ToList();
             }
         }
 
