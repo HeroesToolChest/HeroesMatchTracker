@@ -26,14 +26,18 @@
                         <Grid DockPanel.Dock="Top" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86">
                                 <Image.ToolTip>
-                                    <ToolTip Content="{Binding CharacterTooltip}"/>
+                                    <ToolTip Content="{Binding CharacterTooltip}" Style="{StaticResource EnhancedToolTip}" />
                                 </Image.ToolTip>
                             </Image>
                             <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
-                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTip="{Binding PlayerNameTooltip}" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center">
+                                <TextBlock.ToolTip>
+                                    <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
+                                </TextBlock.ToolTip>
+                            </TextBlock>
                             <TextBlock Text="{Binding CharacterLevel}" ToolTip="Hero Level" />
                             <TextBlock Text="{Binding AccountLevel}" ToolTip="Account Level" />
                             <TextBlock />

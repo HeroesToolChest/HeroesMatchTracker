@@ -8,17 +8,7 @@
             <Grid DockPanel.Dock="Left" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                 <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                     <Image.ToolTip>
-                        <ToolTip Background="Transparent" BorderBrush="Transparent">
-                            <Border Style="{StaticResource TalentPopupBorder}">
-                                <StackPanel Style="{StaticResource TooltipDefaultStackPanel}">
-                                    <StackPanel Background="Transparent" Margin="12 10">
-                                        <Label>
-                                            <TextBlock Text="{Binding CharacterTooltip}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                        </ToolTip>
+                        <ToolTip Content="{Binding CharacterTooltip}" Style="{StaticResource EnhancedToolTip}" />
                     </Image.ToolTip>
                 </Image>
                 <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
@@ -63,17 +53,7 @@
                             </Style>
                         </TextBlock.Style>
                         <TextBlock.ToolTip>
-                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                <Border Style="{StaticResource TalentPopupBorder}">
-                                    <StackPanel Style="{StaticResource TooltipFixedStackPanel}">
-                                        <StackPanel Background="Transparent" Margin="12 10">
-                                            <Label>
-                                                <TextBlock Text="{Binding PlayerNameTooltip}" Style="{StaticResource TalentPopupTextBlock}" />
-                                            </Label>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Border>
-                            </ToolTip>
+                            <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
                         </TextBlock.ToolTip>
                     </TextBlock>
                 </StackPanel>
@@ -81,17 +61,7 @@
             <StackPanel DockPanel.Dock="Left">
                 <Image Source="{Binding MvpAward}" Height="64" Width="64" Margin="0 -8 0 0" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                     <Image.ToolTip>
-                        <ToolTip Background="Transparent" BorderBrush="Transparent">
-                            <Border Style="{StaticResource TalentPopupBorder}">
-                                <StackPanel Style="{StaticResource TooltipDefaultStackPanel}">
-                                    <StackPanel Background="Transparent" Margin="12 10">
-                                        <Label>
-                                            <TextBlock Text="{Binding MvpAwardDescription}" Style="{StaticResource TalentPopupTextBlock}" />
-                                        </Label>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                        </ToolTip>
+                        <ToolTip Content="{Binding MvpAwardDescription}" Style="{StaticResource EnhancedToolTip}" />
                     </Image.ToolTip>
                 </Image>
             </StackPanel>

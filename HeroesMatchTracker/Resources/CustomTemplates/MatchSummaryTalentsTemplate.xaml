@@ -29,17 +29,13 @@
                                 <Image Source="{Binding Talents[0]}" Height="40" />
                                 <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                     <Image.ToolTip>
-                                        <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                            <Border Style="{StaticResource TalentPopupBorder}">
-                                                <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                    <StackPanel Background="Transparent" Margin="12 10">
-                                                        <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
-                                                        <Label>
-                                                            <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                        </Label>
-                                                    </StackPanel>
-                                                </StackPanel>
-                                            </Border>
+                                        <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                            <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
+                                                <Label>
+                                                    <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                </Label>
+                                            </StackPanel>
                                         </ToolTip>
                                     </Image.ToolTip>
                                 </Image>
@@ -51,17 +47,13 @@
                                     <Image Source="{Binding Talents[1]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>
@@ -74,17 +66,13 @@
                                     <Image Source="{Binding Talents[2]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>
@@ -97,17 +85,13 @@
                                     <Image Source="{Binding Talents[3]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>
@@ -120,17 +104,13 @@
                                     <Image Source="{Binding Talents[4]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>
@@ -143,17 +123,13 @@
                                     <Image Source="{Binding Talents[5]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>
@@ -166,17 +142,13 @@
                                     <Image Source="{Binding Talents[6]}" Height="40" />
                                     <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
-                                            <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                                <Border Style="{StaticResource TalentPopupBorder}">
-                                                    <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                        <StackPanel Background="Transparent" Margin="12 10">
-                                                            <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
-                                                            <Label>
-                                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                            </Label>
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </Border>
+                                            <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                                <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                                    <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label>
+                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                                    </Label>
+                                                </StackPanel>
                                             </ToolTip>
                                         </Image.ToolTip>
                                     </Image>

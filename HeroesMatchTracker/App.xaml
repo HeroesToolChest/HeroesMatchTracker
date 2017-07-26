@@ -47,10 +47,10 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/LabelStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/StackPanelStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/TextBlockStyle.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/BorderStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DockPanelStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
