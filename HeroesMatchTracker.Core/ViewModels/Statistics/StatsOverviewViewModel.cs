@@ -490,7 +490,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         /// </summary>
         private void SetOverallStats()
         {
-            OverallGamesPlayed = MapsStatsCollection.Sum(x => x.Wins ?? 0 + x.Losses ?? 0);
+            OverallGamesPlayed = MapsStatsCollection.Sum(x => (x.Wins ?? 0) + (x.Losses ?? 0));
             OverallWinrate = Utilities.CalculateWinValue(MapsStatsCollection.Sum(x => x.Wins ?? 0), OverallGamesPlayed);
 
             int totalKills = (int)HeroStatsKillsCollection.Sum(x => x.Value);

@@ -101,9 +101,9 @@
 
                     <TextBlock Grid.Column="1" Text="{Binding OverallGamesPlayed}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
                     <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding OverallWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding OverallKDARatio}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding OverallKDARatio, StringFormat={}{0:N1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
                     <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding OverallTotalTakedowns}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding OverallAverageTakedowns}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
+                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding OverallAverageTakedowns, StringFormat={}{0:N1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
                 </Grid>
             </StackPanel>
             <StackPanel Margin="16 0 0 0" Width="200">

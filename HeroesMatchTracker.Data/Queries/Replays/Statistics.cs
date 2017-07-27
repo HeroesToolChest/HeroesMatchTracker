@@ -355,11 +355,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                     select mpsr;
 
                         if (statOption == OverviewHeroStatOption.MostDeaths)
-                            total += query.Count(x => x.Deaths > 0);
+                            total += query.Sum(x => x.Deaths) ?? 0;
                         else if (statOption == OverviewHeroStatOption.MostKills)
-                            total += query.Count(x => x.SoloKills > 0);
+                            total += query.Sum(x => x.SoloKills) ?? 0;
                         else if (statOption == OverviewHeroStatOption.MostAssists)
-                            total += query.Count(x => x.Assists > 0);
+                            total += query.Sum(x => x.Assists) ?? 0;
                     }
                 }
 
