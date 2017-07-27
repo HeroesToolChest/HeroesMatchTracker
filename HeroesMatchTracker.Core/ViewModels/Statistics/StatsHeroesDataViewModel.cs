@@ -226,27 +226,25 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 mapImage.Freeze();
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes();
+
                 if (total > 0)
                 {
-                    statsHeroesGameModes = new StatsHeroesGameModes
-                    {
-                        MapName = map,
-                        Wins = wins,
-                        Losses = losses,
-                        TotalGames = total,
-                        WinPercentage = winPercentage,
-                        Kills = kills,
-                        Assists = assists,
-                        Deaths = deaths,
-                        SiegeDamage = siegeDamage,
-                        HeroDamage = heroDamage,
-                        Role = role,
-                        Experience = experience,
-                        MercsCaptured = mercsCaptured,
-                        GameTime = gameTime,
-                    };
+                    statsHeroesGameModes.Wins = wins;
+                    statsHeroesGameModes.Losses = losses;
+                    statsHeroesGameModes.TotalGames = total;
+                    statsHeroesGameModes.WinPercentage = winPercentage;
+                    statsHeroesGameModes.Kills = kills;
+                    statsHeroesGameModes.Assists = assists;
+                    statsHeroesGameModes.Deaths = deaths;
+                    statsHeroesGameModes.SiegeDamage = siegeDamage;
+                    statsHeroesGameModes.HeroDamage = heroDamage;
+                    statsHeroesGameModes.Role = role;
+                    statsHeroesGameModes.Experience = experience;
+                    statsHeroesGameModes.MercsCaptured = mercsCaptured;
+                    statsHeroesGameModes.GameTime = gameTime;
                 }
 
+                statsHeroesGameModes.MapName = map;
                 statsHeroesGameModes.MapImage = mapImage;
                 Application.Current.Dispatcher.Invoke(() => StatsHeroesDataCollection.Add(statsHeroesGameModes));
             }
@@ -279,25 +277,22 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (totalTotal > 0)
             {
-                totalMatch = new StatsHeroesGameModes
-                {
-                    MapName = "Total",
-                    Wins = totalWins,
-                    Losses = totalLosses,
-                    TotalGames = totalTotal,
-                    WinPercentage = totalWinPercentage,
-                    Kills = totalKills,
-                    Assists = totalAssists,
-                    Deaths = totalDeaths,
-                    SiegeDamage = totalSiegeDamage,
-                    HeroDamage = totalHeroDamage,
-                    Role = totalrole,
-                    Experience = totalExperience,
-                    MercsCaptured = totalMercsCaptured,
-                    GameTime = totalGameTime,
-                };
+                totalMatch.Wins = totalWins;
+                totalMatch.Losses = totalLosses;
+                totalMatch.TotalGames = totalTotal;
+                totalMatch.WinPercentage = totalWinPercentage;
+                totalMatch.Kills = totalKills;
+                totalMatch.Assists = totalAssists;
+                totalMatch.Deaths = totalDeaths;
+                totalMatch.SiegeDamage = totalSiegeDamage;
+                totalMatch.HeroDamage = totalHeroDamage;
+                totalMatch.Role = totalrole;
+                totalMatch.Experience = totalExperience;
+                totalMatch.MercsCaptured = totalMercsCaptured;
+                totalMatch.GameTime = totalGameTime;
             }
 
+            totalMatch.MapName = "Total";
             Application.Current.Dispatcher.Invoke(() => StatsHeroesDataTotalCollection.Add(totalMatch));
             SetAverageTotals();
 
