@@ -45,9 +45,13 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
 
             foreach (var release in Releases)
             {
-                if (new Version(release.TagName.TrimStart('v')) >= versionInDatabase)
+                Version versionRelease = new Version(release.TagName.TrimStart('v'));
+
+                if (versionRelease >= versionInDatabase)
                 {
-                    AddReleaseNote(release);
+                    // don't add newer release notes newer than the current version the app is on
+                    if (versionRelease <= AssemblyVersions.HeroesMatchTrackerVersion().Version)
+                        AddReleaseNote(release);
                 }
                 else
                 {
