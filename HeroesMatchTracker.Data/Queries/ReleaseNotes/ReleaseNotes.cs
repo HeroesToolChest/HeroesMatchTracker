@@ -1,6 +1,7 @@
 ﻿using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Models.ReleaseNotes;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace HeroesMatchTracker.Data.Queries.ReleaseNotes
@@ -70,6 +71,16 @@ namespace HeroesMatchTracker.Data.Queries.ReleaseNotes
 
                     db.SaveChanges();
                 }
+            }
+        }
+
+        public void DeleteReleaseNote(ReleaseNote releaseNote)
+        {
+            using (var db = new ReleaseNotesContext())
+            {
+                db.Entry(new ReleaseNote { Version = releaseNote.Version }).State = EntityState.Deleted;
+
+                db.SaveChanges();
             }
         }
     }
