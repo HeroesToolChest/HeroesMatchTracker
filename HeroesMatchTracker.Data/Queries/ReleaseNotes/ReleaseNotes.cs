@@ -67,6 +67,7 @@ namespace HeroesMatchTracker.Data.Queries.ReleaseNotes
                 if (record != null)
                 {
                     record.PreRelease = releaseNote.PreRelease;
+                    record.DateReleased = releaseNote.DateReleased;
                     record.PatchNote = releaseNote.PatchNote;
 
                     db.SaveChanges();
