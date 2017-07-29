@@ -227,8 +227,8 @@ namespace Heroes.Icons.Xml
                         continue;
 
                     HeroMana heroEnergy = HeroMana.Mana;
-                    string energy = reader["energy"] ?? string.Empty;
-                    switch (energy)
+                    string manaType = reader["mana"] ?? string.Empty;
+                    switch (manaType)
                     {
                         case "Brew":
                             heroEnergy = HeroMana.Brew;
