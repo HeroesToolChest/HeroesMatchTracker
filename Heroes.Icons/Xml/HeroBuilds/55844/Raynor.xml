@@ -3,7 +3,7 @@
   <Level1>
     <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!" desc="RaynorAdrenalineRushGiveMeMoreTalent">storm_ui_icon_raynor_adrenalinrush.dds</RaynorMasteryGiveMeMoreAdrenalineRush>
     <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
-    <GenericTalentScoutingDrone name="Scouting Drone" desc="GenericScoutingDrone">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
+    <GenericTalentScoutingDrone name="Scouting Drone" desc="GenericScoutingDrone" cooldown="45" ch-cooldown="true">storm_ui_icon_talent_scoutingdrone.dds</GenericTalentScoutingDrone>
   </Level1>
   <Level4>
     <GenericTalentFocusedAttack name="Focused Attack" desc="GenericFocusedAttackTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFocusedAttack>
@@ -18,8 +18,8 @@
     <RaynorLeadFromTheFrontPuttinOnAClinic name="Puttin' On a Clinic" desc="RaynorLeadFromTheFrontPuttinOnAClinicTalent">storm_ui_icon_raynor_puttinonaclinic.dds</RaynorLeadFromTheFrontPuttinOnAClinic>
   </Level7>
   <Level10>
-    <RaynorHeroicAbilityHyperion name="Hyperion" desc="RaynorHyperion">storm_ui_icon_raynor_hyperion.dds</RaynorHeroicAbilityHyperion>
-    <RaynorHeroicAbilityRaynorsRaiders name="Raynor's Raiders" desc="RaynorRaynorsRaiders">storm_ui_icon_raynor_raynorsraiders.dds</RaynorHeroicAbilityRaynorsRaiders>
+    <RaynorHeroicAbilityHyperion name="Hyperion" desc="RaynorHyperion" mana="100" cooldown="100">storm_ui_icon_raynor_hyperion.dds</RaynorHeroicAbilityHyperion>
+    <RaynorHeroicAbilityRaynorsRaiders name="Raynor's Raiders" desc="RaynorRaynorsRaiders" mana="100" cooldown="80">storm_ui_icon_raynor_raynorsraiders.dds</RaynorHeroicAbilityRaynorsRaiders>
   </Level10>
   <Level13>
     <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>

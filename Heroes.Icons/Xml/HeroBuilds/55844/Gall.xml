@@ -16,8 +16,8 @@
     <GallOgreRampage name="Ogre Rampage" desc="GallOgreRampage">storm_ui_icon_gall_ogrerage.dds</GallOgreRampage>
   </Level7>
   <Level10>
-    <GallHeroicAbilityShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallHeroicAbilityShadowboltVolley>
-    <GallHeroicAbilityTwistingNether name="Twisting Nether" desc="GallTwistingNether">storm_ui_icon_Gall_TwistingNether_A.dds</GallHeroicAbilityTwistingNether>
+    <GallHeroicAbilityShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley" cooldown="60">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallHeroicAbilityShadowboltVolley>
+    <GallHeroicAbilityTwistingNether name="Twisting Nether" desc="GallTwistingNether" cooldown="80">storm_ui_icon_Gall_TwistingNether_A.dds</GallHeroicAbilityTwistingNether>
   </Level10>
   <Level13>
     <GallSearingShadows name="Searing Shadows" desc="GallSearingShadows">storm_ui_icon_gall_shadowflame.dds</GallSearingShadows>

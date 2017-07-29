@@ -9,7 +9,7 @@
   <Level4>
     <GuldanDrainLifeHealthFunnel name="Health Funnel" desc="GuldanDrainLifeHealthFunnel">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeHealthFunnel>
     <GuldanLifeTapImprovedLifeTap name="Improved Life Tap" desc="GuldanLifeTapImprovedLifeTap">storm_ui_icon_guldan_lifetap.dds</GuldanLifeTapImprovedLifeTap>
-    <GuldanConsumeSoul name="Consume Soul" desc="GuldanConsumeSoul">storm_ui_icon_guldan_darkpact.dds</GuldanConsumeSoul>
+    <GuldanConsumeSoul name="Consume Soul" desc="GuldanConsumeSoul" cooldown="30" ch-cooldown="true">storm_ui_icon_guldan_darkpact.dds</GuldanConsumeSoul>
   </Level4>
   <Level7>
     <GuldanFelFlameBoundByShadow name="Bound by Shadow" desc="GuldanFelFlameBoundByShadow">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameBoundByShadow>
@@ -18,14 +18,14 @@
     <GuldanLifeTapHungerforPower name="Hunger for Power" desc="GuldanLifeTapHungerforPower">storm_ui_icon_guldan_hungerforpower.dds</GuldanLifeTapHungerforPower>
   </Level7>
   <Level10>
-    <GuldanHorrify name="Horrify" desc="GuldanHorrify">storm_ui_icon_guldan_horrify.dds</GuldanHorrify>
-    <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestruction>
+    <GuldanHorrify name="Horrify" desc="GuldanHorrify" mana="90" cooldown="80">storm_ui_icon_guldan_horrify.dds</GuldanHorrify>
+    <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction" mana="90" cooldown="100">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestruction>
   </Level10>
   <Level13>
     <GuldanFelFlameFelArmor name="Fel Armor" desc="GuldanFelFlameFelArmor">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameFelArmor>
     <GuldanDrainLifeHarvestLife name="Harvest Life" desc="GuldanDrainLifeHarvestLife">storm_ui_icon_guldan_healthfunnel.dds</GuldanDrainLifeHarvestLife>
     <GuldanDarkBargain name="Dark Bargain" desc="GuldanDarkBargain">storm_ui_icon_guldan_darkbargain.dds</GuldanDarkBargain>
-    <GuldanHealthstone name="Healthstone" desc="GuldanHealthstone">storm_ui_icon_guldan_healthstone.dds</GuldanHealthstone>
+    <GuldanHealthstone name="Healthstone" desc="GuldanHealthstone" cooldown="60">storm_ui_icon_guldan_healthstone.dds</GuldanHealthstone>
   </Level13>
   <Level16>
     <GuldanFelFlameRampantHellfire name="Rampant Hellfire" desc="GuldanFelFlameRampantHellfire">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameRampantHellfire>
@@ -35,6 +35,6 @@
   <Level20>
     <GuldanHorrifyHaunt name="Haunt" desc="GuldanHorrifyHaunt">storm_ui_icon_guldan_horrify.dds</GuldanHorrifyHaunt>
     <GuldanRainOfDestructionDeepImpact name="Deep Impact" desc="GuldanRainOfDestructionDeepImpact">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestructionDeepImpact>
-    <GuldanDemonicCircle name="Demonic Circle" desc="GuldanDemonicCircle">storm_ui_icon_guldan_demoniccircle.dds</GuldanDemonicCircle>
+    <GuldanDemonicCircle name="Demonic Circle" desc="GuldanDemonicCircle" cooldown="60">storm_ui_icon_guldan_demoniccircle.dds</GuldanDemonicCircle>
   </Level20>
 </Guldan>

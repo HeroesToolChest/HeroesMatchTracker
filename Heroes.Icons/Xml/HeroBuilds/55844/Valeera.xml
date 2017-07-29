@@ -4,13 +4,13 @@
     <ValeeraVigor name="Vigor" generic="true" desc="ValeeraVigor">storm_ui_icon_talent_conjurerspursuit.dds</ValeeraVigor>
     <ValeeraVanishSubtlety name="Subtlety" desc="ValeeraSubtlety">storm_ui_icon_valeera_vanish.dds</ValeeraVanishSubtlety>
     <ValeeraCombatReadiness name="Combat Readiness" generic="true" desc="ValeeraCombatReadiness">storm_ui_icon_talent_block.dds</ValeeraCombatReadiness>
-    <ValeeraCripplingPoison name="Crippling Poison" desc="ValeeraCripplingPoison">storm_ui_icon_valeera_cripplingpoison.dds</ValeeraCripplingPoison>
+    <ValeeraCripplingPoison name="Crippling Poison" desc="ValeeraCripplingPoison" cooldown="15">storm_ui_icon_valeera_cripplingpoison.dds</ValeeraCripplingPoison>
   </Level1>
   <Level4>
     <ValeeraSinisterStrikeRelentlessStrikes name="Relentless Strikes" desc="ValeeraRelentlessStrikes">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeRelentlessStrikes>
     <ValeeraGarroteHemorrhage name="Hemorrhage" desc="ValeeraHemorrhage">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteHemorrhage>
     <ValeeraVanishInitiative name="Initiative" desc="ValeeraInitiative">storm_ui_icon_valeera_vanish.dds</ValeeraVanishInitiative>
-    <ValeeraWoundPoison name="Wound Poison" desc="ValeeraWoundPoison">storm_ui_icon_valeera_woundpoison.dds</ValeeraWoundPoison>
+    <ValeeraWoundPoison name="Wound Poison" desc="ValeeraWoundPoison" cooldown="15">storm_ui_icon_valeera_woundpoison.dds</ValeeraWoundPoison>
   </Level4>
   <Level7>
     <ValeeraSinisterStrikeMutilate name="Mutilate" desc="ValeeraMutilate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeMutilate>
@@ -19,8 +19,8 @@
     <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushAssassinate>
   </Level7>
   <Level10>
-    <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
-    <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
+    <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
+    <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows" cooldown="15">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
   </Level10>
   <Level13>
     <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">storm_ui_icon_valeera_vanish.dds</ValeeraVanishElusiveness>
@@ -32,7 +32,7 @@
     <ValeeraSinisterStrikeSealFate name="Seal Fate" desc="ValeeraSealFate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeSealFate>
     <ValeeraGarroteRupture name="Rupture" desc="ValeeraRupture">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteRupture>
     <ValeeraEviscerateExposeArmor name="Expose Armor" desc="ValeeraExposeArmor">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerateExposeArmor>
-    <ValeeraThistleTea name="Thistle Tea" desc="ValeeraThistleTea">storm_ui_icon_valeera_thistletea.dds</ValeeraThistleTea>
+    <ValeeraThistleTea name="Thistle Tea" desc="ValeeraThistleTea" cooldown="60">storm_ui_icon_valeera_thistletea.dds</ValeeraThistleTea>
   </Level16>
   <Level20>
     <ValeeraSmokeBombAdrenalineRush name="Adrenaline Rush" desc="ValeeraAdrenalineRush">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBombAdrenalineRush>

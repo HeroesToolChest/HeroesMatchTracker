@@ -18,8 +18,8 @@
     <BattleMomentumMuradin name="Iron-forged Momentum" desc="MuradinIronforgedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumMuradin>
   </Level7>
   <Level10>
-    <MuradinHeroicAbilityAvatar name="Avatar" desc="MuradinAvatar">storm_ui_icon_Muradin_Avatar.dds</MuradinHeroicAbilityAvatar>
-    <MuradinHeroicAbilityHaymaker name="Haymaker" desc="MuradinHaymaker">storm_ui_icon_Muradin_Haymaker.dds</MuradinHeroicAbilityHaymaker>
+    <MuradinHeroicAbilityAvatar name="Avatar" desc="MuradinAvatar" mana="100" cooldown="90">storm_ui_icon_Muradin_Avatar.dds</MuradinHeroicAbilityAvatar>
+    <MuradinHeroicAbilityHaymaker name="Haymaker" desc="MuradinHaymaker" mana="80" cooldown="40">storm_ui_icon_Muradin_Haymaker.dds</MuradinHeroicAbilityHaymaker>
   </Level10>
   <Level13>
     <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
@@ -31,13 +31,13 @@
     <MuradinMasteryDwarfLaunch name="Dwarf Launch" desc="MuradinDwarfTossDwarfLaunchTalent">storm_ui_icon_Muradin_Dwarftoss.dds</MuradinMasteryDwarfLaunch>
     <MuradinMasteryDwarfTossHeavyImpact name="Heavy Impact" desc="MuradinDwarfTossHeavyImpactTalent">storm_ui_icon_Muradin_Dwarftoss_A.dds</MuradinMasteryDwarfTossHeavyImpact>
     <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!" generic="true" desc="MuradinGiveEmTheAxeTalent">storm_ui_icon_talent_autoattack_damage.dds</MuradinGiveEmTheAxeExecutioner60DamageBonus>
-    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
     <MuradinMasteryPassiveStoneform name="Stoneform" desc="MuradinSecondWindStoneformTalent">storm_ui_icon_Muradin_SecondWind.dds</MuradinMasteryPassiveStoneform>
   </Level16>
   <Level20>
     <MuradinMasteryAvatarUnstoppableForce name="Unstoppable Force" desc="MuradinAvatarUnstoppableForceTalent">storm_ui_icon_Muradin_Avatar.dds</MuradinMasteryAvatarUnstoppableForce>
     <MuradinMasteryHaymakerGrandSlam name="Grand Slam" desc="MuradinHaymakerGrandSlamTalent">storm_ui_icon_Muradin_Haymaker.dds</MuradinMasteryHaymakerGrandSlam>
-    <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent" cooldown="60">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
 </Muradin>

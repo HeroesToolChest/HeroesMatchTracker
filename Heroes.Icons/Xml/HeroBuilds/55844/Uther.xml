@@ -13,11 +13,11 @@
   <Level7>
     <UtherEternalDevotionArmorOfFaith name="Armor of Faith" desc="UtherEternalDevotionArmorOfFaithTalent">storm_ui_icon_uther_holylight.dds</UtherEternalDevotionArmorOfFaith>
     <UtherEternalDevotionGuardianOfAncientKings name="Guardian of Ancient Kings" desc="UtherEternalDevotionGuardianOfAncientKingsTalent">storm_ui_icon_uther_eternaldevotion.dds</UtherEternalDevotionGuardianOfAncientKings>
-    <UtherHandOfProtection name="Hand of Protection" generic="true" desc="UtherHandOfProtection">storm_ui_icon_talent_cleanse.dds</UtherHandOfProtection>
+    <UtherHandOfProtection name="Hand of Protection" generic="true" desc="UtherHandOfProtection" cooldown="90">storm_ui_icon_talent_cleanse.dds</UtherHandOfProtection>
   </Level7>
   <Level10>
-    <UtherHeroicAbilityDivineShield name="Divine Shield" desc="UtherDivineShield">storm_ui_icon_uther_divineshield.dds</UtherHeroicAbilityDivineShield>
-    <UtherHeroicAbilityDivineStorm name="Divine Storm" desc="UtherDivineStorm">storm_ui_icon_uther_divinestorm.dds</UtherHeroicAbilityDivineStorm>
+    <UtherHeroicAbilityDivineShield name="Divine Shield" desc="UtherDivineShield" mana="80" cooldown="90">storm_ui_icon_uther_divineshield.dds</UtherHeroicAbilityDivineShield>
+    <UtherHeroicAbilityDivineStorm name="Divine Storm" desc="UtherDivineStorm" mana="80" cooldown="80">storm_ui_icon_uther_divinestorm.dds</UtherHeroicAbilityDivineStorm>
   </Level10>
   <Level13>
     <UtherMasteryBlessedChampion name="Blessed Champion" desc="UtherEternalDevotionBlessedChampionTalent">storm_ui_icon_uther_holylight.dds</UtherMasteryBlessedChampion>
@@ -27,7 +27,7 @@
   <Level16>
     <UtherBeaconOfLight name="Beacon of Light" desc="UtherBeaconOfLight">storm_ui_icon_uther_beaconoflight.dds</UtherBeaconOfLight>
     <UtherHolyRadianceTyrsDeliverance name="Tyr's Deliverance" desc="UtherHolyRadianceTyrsDeliveranceTalent">storm_ui_icon_uther_holyradiance.dds</UtherHolyRadianceTyrsDeliverance>
-    <UtherMasteryBenediction name="Benediction" desc="UtherBenedictionHotbar">storm_ui_icon_uther_benediction.dds</UtherMasteryBenediction>
+    <UtherMasteryBenediction name="Benediction" desc="UtherBenedictionHotbar" cooldown="60">storm_ui_icon_uther_benediction.dds</UtherMasteryBenediction>
   </Level16>
   <Level20>
     <UtherMasteryBulwarkOfLightDivineShield name="Bulwark of Light" desc="UtherDivineShieldBulwarkOfLightTalent">storm_ui_icon_uther_divineshield.dds</UtherMasteryBulwarkOfLightDivineShield>

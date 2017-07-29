@@ -16,8 +16,8 @@
     <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
   </Level7>
   <Level10>
-    <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering">storm_ui_icon_thrall_sundering.dds</ThrallHeroicAbilitySundering>
-    <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake">storm_ui_icon_thrall_earthquake.dds</ThrallHeroicAbilityEarthquake>
+    <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering" mana="75" cooldown="70">storm_ui_icon_thrall_sundering.dds</ThrallHeroicAbilitySundering>
+    <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake" mana="90" cooldown="100">storm_ui_icon_thrall_earthquake.dds</ThrallHeroicAbilityEarthquake>
   </Level10>
   <Level13>
     <ThrallMasteryGraceOfAir name="Grace Of Air" desc="ThrallGraceOfAirTalent">storm_ui_icon_thrall_windfury.dds</ThrallMasteryGraceOfAir>
@@ -26,13 +26,13 @@
   </Level13>
   <Level16>
     <ThrallMasteryTempestFury name="Tempest Fury" desc="ThrallTempestFuryTalent">storm_ui_icon_thrall_windfury.dds</ThrallMasteryTempestFury>
-    <ThrallThunderstorm name="Thunderstorm" desc="ThrallThunderstorm">storm_ui_icon_thrall_chainlightning.dds</ThrallThunderstorm>
-    <ThrallAlphaWolf name="Alpha Wolf" desc="ThrallAlphaWolf">storm_ui_icon_thrall_feralspirit.dds</ThrallAlphaWolf>
+    <ThrallThunderstorm name="Thunderstorm" desc="ThrallThunderstorm" cooldown="15">storm_ui_icon_thrall_chainlightning.dds</ThrallThunderstorm>
+    <ThrallAlphaWolf name="Alpha Wolf" desc="ThrallAlphaWolf" cooldown="45">storm_ui_icon_thrall_feralspirit.dds</ThrallAlphaWolf>
   </Level16>
   <Level20>
     <ThrallMasteryWorldbreaker name="World breaker" desc="ThrallWorldbreakerTalent">storm_ui_icon_thrall_sundering.dds</ThrallMasteryWorldbreaker>
     <ThrallMasteryEarthenShields name="Earthen Shields" desc="ThrallEarthenShieldsTalent">storm_ui_icon_thrall_earthquake.dds</ThrallMasteryEarthenShields>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-    <ThrallWindRush name="Wind Rush" generic="true" desc="ThrallWindRush">storm_ui_icon_talent_boltofthestorm.dds</ThrallWindRush>
+    <ThrallWindRush name="Wind Rush" generic="true" desc="ThrallWindRush" cooldown="80">storm_ui_icon_talent_boltofthestorm.dds</ThrallWindRush>
   </Level20>
 </Thrall>

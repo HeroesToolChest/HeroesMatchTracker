@@ -14,11 +14,11 @@
   <Level7>
     <LucioCrossfadePartyMixQuest name="Party Mix" desc="LucioCrossfadePartyMix">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadePartyMixQuest>
     <LucioAmpItUpSonicAmplifier name="Sonic Amplifier" desc="LucioAmpItUpSonicAmplifier">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpSonicAmplifier>
-    <LucioBoombox name="Boombox" desc="LucioBoomboxBoombox">storm_ui_icon_lucio_fineshrine.dds</LucioBoombox>
+    <LucioBoombox name="Boombox" desc="LucioBoomboxBoombox" cooldowno="20">storm_ui_icon_lucio_fineshrine.dds</LucioBoombox>
   </Level7>
   <Level10>
-    <LucioSoundBarrier name="Sound Barrier" desc="LucioSoundBarrier">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrier>
-    <LucioReverseAmp name="Reverse Amp" desc="LucioReverseAmp">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmp>
+    <LucioSoundBarrier name="Sound Barrier" desc="LucioSoundBarrier" mana="100" cooldown="80">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrier>
+    <LucioReverseAmp name="Reverse Amp" desc="LucioReverseAmp" mana="55" cooldown="45">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmp>
   </Level10>
   <Level13>
     <LucioCrossfadeBeatMixing name="Beat Mixing" desc="LucioCrossfadeBeatMixing">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadeBeatMixing>

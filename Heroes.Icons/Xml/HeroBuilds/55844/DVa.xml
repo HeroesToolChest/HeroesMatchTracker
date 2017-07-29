@@ -19,8 +19,8 @@
     <DVaSelfDestructNuclearOption name="Nuclear Option" desc="DVaSelfDestructNuclearOption">storm_ui_icon_dva_selfdestruct.dds</DVaSelfDestructNuclearOption>
   </Level7>
   <Level10>
-    <DVaBunnyHop name="Bunny Hop" desc="DVaBunnyHopOn">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHop>
-    <DVaBigShot name="Big Shot" desc="DVaPilotBigShot">storm_ui_icon_dva_bigshot.dds</DVaBigShot>
+    <DVaBunnyHop name="Bunny Hop" desc="DVaBunnyHopOn" cooldown="100">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHop>
+    <DVaBigShot name="Big Shot" desc="DVaPilotBigShot" cooldown="4">storm_ui_icon_dva_bigshot.dds</DVaBigShot>
   </Level10>
   <Level13>
     <DVaMechExpensivePlating name="Expensive Plating" desc="DVaMechExpensivePlating">storm_ui_icon_dva_callmech.dds</DVaMechExpensivePlating>
@@ -28,7 +28,7 @@
     <DVaMechAblativeArmor name="Ablative Armor" desc="DVaMechAblativeArmor">storm_ui_icon_dva_mechmode_a.dds</DVaMechAblativeArmor>
   </Level13>
   <Level16>
-    <DVaPilotTorpedoDash name="Torpedo Dash" desc="DVaPilotTorpedoDashTalent">storm_ui_icon_dva_jetpackattack.dds</DVaPilotTorpedoDash>
+    <DVaPilotTorpedoDash name="Torpedo Dash" desc="DVaPilotTorpedoDashTalent" cooldown="12">storm_ui_icon_dva_jetpackattack.dds</DVaPilotTorpedoDash>
     <DVaPilotGGWP name="GG, WP" desc="DVaPilotGGWP">storm_ui_icon_dva_pilotmode.dds</DVaPilotGGWP>
     <DVaPilotNanoweaveSuit name="Nanoweave Suit" desc="DVaPilotNanoweaveSuit">storm_ui_icon_dva_pilotmode_a.dds</DVaPilotNanoweaveSuit>
     <DVaPilotSuppressingFire name="Suppressing Fire" desc="DVaPilotSuppressingFire">storm_ui_icon_dva_pilotmode_b.dds</DVaPilotSuppressingFire>
@@ -36,7 +36,7 @@
   <Level20>
     <DVaBunnyHopStopAndPop name="Stop and Pop" desc="DVaBunnyHopStopAndPop">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHopStopAndPop>
     <DVaBigShotPewPewPew name="Pew! Pew! Pew!" desc="DVaBigShotPewPewPew">storm_ui_icon_dva_bigshot.dds</DVaBigShotPewPewPew>
-    <DVaPilotConcussivePulse name="Concussive Pulse" desc="DVaPilotConcussivePulseTalent">storm_ui_icon_dva_concussivecharge.dds</DVaPilotConcussivePulse>
-    <DVaPilotCallMechMEKAfall name="MEKAfall" desc="DVaPilotCallMechMEKAfallTalent">storm_ui_icon_dva_callmech.dds</DVaPilotCallMechMEKAfall>
+    <DVaPilotConcussivePulse name="Concussive Pulse" desc="DVaPilotConcussivePulseTalent" cooldown="8">storm_ui_icon_dva_concussivecharge.dds</DVaPilotConcussivePulse>
+    <DVaPilotCallMechMEKAfall name="MEKAfall" desc="DVaPilotCallMechMEKAfallTalent" cooldown="45">storm_ui_icon_dva_callmech.dds</DVaPilotCallMechMEKAfall>
   </Level20>
 </DVa>
