@@ -37,6 +37,7 @@ namespace HeroesMatchTracker.Views
 
             SimpleIoc.Default.Register<ICreateWindowService>(() => this);
             SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
+            SimpleIoc.Default.Register<IToasterUpdateWindowService>(() => this);
         }
 
         public void ShowWhatsNewWindow()
