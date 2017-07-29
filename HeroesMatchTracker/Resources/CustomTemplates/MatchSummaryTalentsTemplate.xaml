@@ -8,7 +8,8 @@
     <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
     <converter:BoolInverterConverter x:Key="BoolInverterConverter" />
     <converter:TalentTooltipTextConverter x:Key="TalentTooltipTextConverter" />
-
+    <converter:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+    
     <system:Double x:Key="PopupHorizontalOffset">-30</system:Double>
     <system:Double x:Key="PopupVerticalOffset">5</system:Double>
     <system:Double x:Key="HeaderTalentSpacing">85</system:Double>
@@ -32,6 +33,7 @@
                                         <ToolTip Style="{StaticResource EnhancedToolTip}">
                                             <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                 <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
+                                                <Label Content="{Binding TalentSubInfo[0]}" Visibility="{Binding TalentSubInfo[0], Converter={StaticResource StringToVisibilityConverter}}" />
                                                 <Label>
                                                     <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                 </Label>
@@ -50,6 +52,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[1]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[1]}" Visibility="{Binding TalentSubInfo[1], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[1], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>
@@ -69,6 +72,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[2]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[2]}" Visibility="{Binding TalentSubInfo[2], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[2], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>
@@ -88,6 +92,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[3]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[3]}" Visibility="{Binding TalentSubInfo[3], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[3], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>
@@ -107,6 +112,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[4]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[4]}" Visibility="{Binding TalentSubInfo[4], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[4], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>
@@ -126,6 +132,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[5]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[5]}" Visibility="{Binding TalentSubInfo[5], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[5], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>
@@ -145,6 +152,7 @@
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                     <Label Content="{Binding TalentNames[6]}" Style="{StaticResource TalentPopupLabel}" />
+                                                    <Label Content="{Binding TalentSubInfo[6]}" Visibility="{Binding TalentSubInfo[6], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                     <Label>
                                                         <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[6], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                     </Label>

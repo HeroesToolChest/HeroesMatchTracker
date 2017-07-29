@@ -172,7 +172,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public TalentTooltip GetTalentTooltips(string talentReferenceName)
         {
-            TalentTooltip talentTooltip = new TalentTooltip(string.Empty, string.Empty);
+            TalentTooltip talentTooltip = new TalentTooltip();
 
             if (string.IsNullOrEmpty(talentReferenceName) || !HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName))
                 return talentTooltip;
@@ -226,6 +226,21 @@ namespace Heroes.Icons.Xml
                     if (heroAltName != hero)
                         continue;
 
+                    HeroMana heroEnergy = HeroMana.Mana;
+                    string energy = reader["energy"] ?? string.Empty;
+                    switch (energy)
+                    {
+                        case "Brew":
+                            heroEnergy = HeroMana.Brew;
+                            break;
+                        case "Fury":
+                            heroEnergy = HeroMana.Fury;
+                            break;
+                        default:
+                            heroEnergy = HeroMana.Mana;
+                            break;
+                    }
+
                     var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
 
                     // add talents, read each tier
@@ -247,8 +262,18 @@ namespace Heroes.Icons.Xml
                                         string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
                                         string generic = reader["generic"] ?? "false";  // is the icon being used generic
                                         string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+                                        int? mana = ConvertToNullableInt(reader["mana"]); // mana/brew/fury/etc... of the talent
+                                        string perManaCost = reader["per-mana"] ?? "false"; // the time cost for mana
+                                        int? cooldown = ConvertToNullableInt(reader["cooldown"]); // cooldown of the talent
+                                        string charge = reader["ch-cooldown"] ?? "false"; // is the cooldown a charge cooldown
 
-                                        SetTalentTooltip(refName, desc);
+                                        if (!bool.TryParse(perManaCost, out bool isPerManaCost))
+                                            isPerManaCost = false;
+
+                                        if (!bool.TryParse(charge, out bool isCharge))
+                                            isCharge = false;
+
+                                        SetTalentTooltip(refName, desc, mana, isPerManaCost, cooldown, isCharge, heroEnergy);
 
                                         if (!bool.TryParse(generic, out bool isGeneric))
                                             isGeneric = false;
@@ -379,7 +404,7 @@ namespace Heroes.Icons.Xml
                 return new Uri($@"{ApplicationIconsPath}\Talents\_Generic\{fileName}", UriKind.Absolute);
         }
 
-        private void SetTalentTooltip(string talentReferenceName, string desc)
+        private void SetTalentTooltip(string talentReferenceName, string desc, int? mana, bool isPerManaCost, int? cooldown, bool isChargeCooldown, HeroMana manaType)
         {
             // checking keys because of generic talents
             if (!HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName) && !string.IsNullOrEmpty(desc))
@@ -390,7 +415,7 @@ namespace Heroes.Icons.Xml
                 if (!TalentLongTooltip.TryGetValue(desc, out string longDesc))
                     longDesc = string.Empty;
 
-                HeroTalentTooltipsByRealName.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc));
+                HeroTalentTooltipsByRealName.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc, mana, isPerManaCost, cooldown, isChargeCooldown, manaType));
             }
         }
 

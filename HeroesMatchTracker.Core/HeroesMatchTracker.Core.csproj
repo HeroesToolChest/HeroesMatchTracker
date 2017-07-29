@@ -194,6 +194,7 @@
     <Compile Include="Controls\FormattedTextBlock.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\BoolToOffOnConverter.cs" />
+    <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Converters\TalentTooltipTextConverter.cs" />
     <Compile Include="Converters\TextToFlowDocumentConverter.cs" />
     <Compile Include="Generic\AssemblyVersions.cs" />
