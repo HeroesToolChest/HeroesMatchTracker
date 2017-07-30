@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Zarya>
+<Zarya mana="None">
   <Level1>
     <ZaryaParticleGrenadeDemolitionsExpertQuest name="Demolitions Expert" desc="ZaryaParticleGrenadeDemolitionsExpertTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeDemolitionsExpertQuest>
     <ZaryaShieldAllyTogetherWeAreStrong name="Together We Are Strong" desc="ZaryaShieldAllyTogetherWeAreStrongTalent">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyTogetherWeAreStrong>

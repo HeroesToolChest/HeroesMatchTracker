@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Murky>
+<Murky mana="None">
   <Level1>
     <MurkyFishEye name="Fish Eye" desc="MurkyFishEye">storm_ui_icon_murky_trait_spawnegg.dds</MurkyFishEye>
     <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent" cooldown="3">storm_ui_icon_murky_egghunt.dds</MurkyEggHunt>

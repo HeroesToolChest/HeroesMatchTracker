@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Illidan>
+<Illidan mana="None">
   <Level1>
     <IllidanMasteryImmolationSweepingStrike name="Immolation" desc="IllidanSweepingStrikeImmolationTalent">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasteryImmolationSweepingStrike>
     <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault" desc="IllidanSweepingStrikeBatteredAssaultTalent">storm_ui_icon_illidan_sweepingstrike_a.dds</IllidanMasteryBatteredAssaultSweepingStrike>

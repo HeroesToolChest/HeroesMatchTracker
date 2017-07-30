@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Abathur>
+<Abathur mana="None">
   <Level1>
     <AbathurMasteryPressurizedGlands name="Pressurized Glands" desc="AbathurSymbiotePressurizedGlandsTalent">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
     <AbathurCombatStyleSurvivalInstincts name="Survival Instincts" desc="AbathurLocustStrainSurvivalInstinctsTalent">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleSurvivalInstincts>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DVa>
+<DVa mana="None">
   <Level1>
     <DVaBoostersRushdown name="Rush-down" desc="DVaBoostersRushdown">storm_ui_icon_dva_boosters.dds</DVaBoostersRushdown>
     <DVaBoostersHitTheNitrous name="Hit the Nitrous" desc="DVaBoostersHitTheNitrous">storm_ui_icon_dva_boosters_a.dds</DVaBoostersHitTheNitrous>

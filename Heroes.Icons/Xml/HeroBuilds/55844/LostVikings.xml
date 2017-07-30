@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LostVikings>
+<LostVikings mana="None">
   <Level1>
     <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryOlafTheStout>
     <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasterySpyGames>

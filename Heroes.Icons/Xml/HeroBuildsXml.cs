@@ -226,18 +226,24 @@ namespace Heroes.Icons.Xml
                     if (heroAltName != hero)
                         continue;
 
-                    HeroMana heroEnergy = HeroMana.Mana;
+                    HeroMana heroManaType = HeroMana.Mana;
                     string manaType = reader["mana"] ?? string.Empty;
                     switch (manaType)
                     {
                         case "Brew":
-                            heroEnergy = HeroMana.Brew;
+                            heroManaType = HeroMana.Brew;
                             break;
                         case "Fury":
-                            heroEnergy = HeroMana.Fury;
+                            heroManaType = HeroMana.Fury;
+                            break;
+                        case "None":
+                            heroManaType = HeroMana.None;
+                            break;
+                        case "Energy":
+                            heroManaType = HeroMana.Energy;
                             break;
                         default:
-                            heroEnergy = HeroMana.Mana;
+                            heroManaType = HeroMana.Mana;
                             break;
                     }
 
@@ -273,7 +279,7 @@ namespace Heroes.Icons.Xml
                                         if (!bool.TryParse(charge, out bool isCharge))
                                             isCharge = false;
 
-                                        SetTalentTooltip(refName, desc, mana, isPerManaCost, cooldown, isCharge, heroEnergy);
+                                        SetTalentTooltip(refName, desc, mana, isPerManaCost, cooldown, isCharge, heroManaType);
 
                                         if (!bool.TryParse(generic, out bool isGeneric))
                                             isGeneric = false;

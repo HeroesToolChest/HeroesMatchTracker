@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Auriel>
+<Auriel mana="Energy">
   <Level1>
     <AurielSwiftSweepSacredSweepTalent name="Swift Sweep" desc="AurielSwiftSweepSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielSwiftSweepSacredSweepTalent>
     <AurielIncreasingClaritySacredSweepTalent name="Increasing Clarity" desc="AurielIncreasingClaritySacredSweepTalent">storm_ui_icon_auriel_angelicsweep_a.dds</AurielIncreasingClaritySacredSweepTalent>

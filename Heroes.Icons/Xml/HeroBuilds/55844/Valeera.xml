@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Valeera>
+<Valeera mana="None">
   <Level1>
     <ValeeraVigor name="Vigor" generic="true" desc="ValeeraVigor">storm_ui_icon_talent_conjurerspursuit.dds</ValeeraVigor>
     <ValeeraVanishSubtlety name="Subtlety" desc="ValeeraSubtlety">storm_ui_icon_valeera_vanish.dds</ValeeraVanishSubtlety>

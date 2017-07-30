@@ -6,5 +6,6 @@
         None,
         Brew,
         Fury,
+        Energy,
     }
 }

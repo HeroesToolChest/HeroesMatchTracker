@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Samuro>
+<Samuro mana="None">
   <Level1>
     <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">storm_ui_icon_samuro_mirrorimage.dds</SamuroWayOfIllusion>
     <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroMirrorImageWayOfTheBlade>

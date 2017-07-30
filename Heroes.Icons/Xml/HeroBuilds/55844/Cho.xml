@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Cho>
+<Cho mana="None">
   <Level1>
     <ChoConsumingFire name="Consuming Fire" desc="ChoConsumingFire">storm_ui_icon_cho_consumingflame.dds</ChoConsumingFire>
     <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.dds</ChoFuelForTheFlame>
