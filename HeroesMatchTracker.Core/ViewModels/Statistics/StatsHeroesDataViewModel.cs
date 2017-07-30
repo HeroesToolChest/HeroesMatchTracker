@@ -392,6 +392,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesTalents talentPicks = new StatsHeroesTalents
                 {
                     TalentName = HeroesIcons.HeroBuilds().GetTrueTalentName(talent),
+                    TalentSubInfo = talentTooltip.GetTalentSubInfo(),
                     TalentShortTooltip = talentTooltip.Short,
                     TalentFullTooltip = talentTooltip.Full,
                     Wins = talentTotal > 0 ? talentWin : (int?)null,
