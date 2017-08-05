@@ -177,7 +177,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         /// <param name="tier">The tier that the talent is on</param>
         /// <param name="isWinner">Get wins if true otherwise losses</param>
         /// <returns></returns>
-        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, string talentReferenceName, TalentTier tier, bool isWinner)
+        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Heroes.Icons.Talent talent, bool isWinner)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
 
@@ -204,7 +204,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                 IQueryable<ReplayMatch> query = null;
 
-                switch (tier)
+                switch (talent.Tier)
                 {
                     case TalentTier.Level1:
                         query = from mpt in db.ReplayMatchPlayerTalents.AsNoTracking()
@@ -213,7 +213,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                         mp.IsWinner == isWinner &&
                                         mpt.Character == character &&
-                                        mpt.TalentName1 == talentReferenceName &&
+                                        mpt.TalentName1 == talent.ReferenceName &&
                                         r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -224,7 +224,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName4 == talentReferenceName &&
+                                      mpt.TalentName4 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -235,7 +235,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName7 == talentReferenceName &&
+                                      mpt.TalentName7 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -246,7 +246,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName10 == talentReferenceName &&
+                                      mpt.TalentName10 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -257,7 +257,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName13 == talentReferenceName &&
+                                      mpt.TalentName13 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -268,7 +268,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName16 == talentReferenceName &&
+                                      mpt.TalentName16 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -279,7 +279,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName20 == talentReferenceName &&
+                                      mpt.TalentName20 == talent.ReferenceName &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
