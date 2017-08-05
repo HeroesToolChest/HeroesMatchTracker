@@ -14,9 +14,6 @@ namespace Heroes.Icons.Xml
         private int SelectedBuild;
         private HeroesXml HeroesXml;
 
-        private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
-        private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
-
         /// <summary>
         /// Inner dictionary key is talent reference name and values are real hero names
         /// </summary>
@@ -152,12 +149,18 @@ namespace Heroes.Icons.Xml
         {
             DuplicateBuildCheck();
             ParseParentFile();
-            LoadTalentTooltipStrings();
             ParseChildFiles();
         }
 
         protected override void ParseChildFiles()
         {
+            // create local variables for tooltips, not needed as properties
+            Dictionary<string, string> talentShortTooltip = new Dictionary<string, string>();
+            Dictionary<string, string> talentLongTooltip = new Dictionary<string, string>();
+
+            // load up all the talents
+            LoadTalentTooltipStrings(talentShortTooltip, talentLongTooltip);
+
             foreach (var hero in XmlChildFiles)
             {
                 using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
@@ -235,10 +238,10 @@ namespace Heroes.Icons.Xml
                                             }
 
                                             // create the tooltip
-                                            if (!TalentShortTooltip.TryGetValue(desc, out string shortDesc))
+                                            if (!talentShortTooltip.TryGetValue(desc, out string shortDesc))
                                                 shortDesc = string.Empty;
 
-                                            if (!TalentLongTooltip.TryGetValue(desc, out string longDesc))
+                                            if (!talentLongTooltip.TryGetValue(desc, out string longDesc))
                                                 longDesc = string.Empty;
 
                                             // create the talent
@@ -380,7 +383,7 @@ namespace Heroes.Icons.Xml
                 return new Uri($@"{ApplicationIconsPath}\Talents\_Generic\{fileName}", UriKind.Absolute);
         }
 
-        private void LoadTalentTooltipStrings()
+        private void LoadTalentTooltipStrings(Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentFullTooltip)
         {
             try
             {
@@ -393,10 +396,10 @@ namespace Heroes.Icons.Xml
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
 
-                            if (TalentShortTooltip.ContainsKey(talent[0]))
+                            if (talentShortTooltip.ContainsKey(talent[0]))
                                 throw new ArgumentException($"An item with the same key has already been added in Short Tooltips: {talent[0]}");
 
-                            TalentShortTooltip.Add(talent[0], talent[1]);
+                            talentShortTooltip.Add(talent[0], talent[1]);
                         }
                     }
                 }
@@ -410,10 +413,10 @@ namespace Heroes.Icons.Xml
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
 
-                            if (TalentLongTooltip.ContainsKey(talent[0]))
+                            if (talentFullTooltip.ContainsKey(talent[0]))
                                 throw new ArgumentException($"An item with the same key has already been added in Full Tooltips: {talent[0]}");
 
-                            TalentLongTooltip.Add(talent[0], talent[1]);
+                            talentFullTooltip.Add(talent[0], talent[1]);
                         }
                     }
                 }
