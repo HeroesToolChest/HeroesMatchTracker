@@ -13,7 +13,7 @@
   <Level7>
     <RagnarosEmpowerSulfurasHandOfRagnaros name="Hand of Ragnaros" desc="RagnarosEmpowerSulfurasHandOfRagnaros">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasHandOfRagnaros>
     <RagnarosLivingMeteorMoltenPower name="Molten Power" desc="RagnarosLivingMeteorMoltenPower">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorMoltenPower>
-    <RagnarosBlastWaveSuperheated name="Superheated" desc="RagnarosBlastWaveSuperheated">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveSuperheated>
+    <RagnarosBlisteringAttacks name="Blistering Attacks" desc="RagnarosBlisteringAttacks" generic="true">storm_ui_icon_talent_autoattack_damage.dds</RagnarosBlisteringAttacks>
   </Level7>
   <Level10>
     <RagnarosSulfurasSmash name="Sulfuras Smash" desc="RagnarosSulfurasSmash">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmash>
