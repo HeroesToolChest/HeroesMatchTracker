@@ -324,7 +324,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                 foreach (var hero in playersHeroes)
                 {
-                    if (HeroesIcons.Heroes().HeroExists(hero.Key, false))
+                    if (HeroesIcons.Heroes().HeroExists(hero.Key))
                     {
                         playersHero.PlayerId = playerId;
                         playersHero.HeroName = hero.Key;

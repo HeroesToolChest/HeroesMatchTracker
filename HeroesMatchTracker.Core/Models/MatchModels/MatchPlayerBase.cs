@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
@@ -104,10 +105,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         {
             var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(Player.PlayerId);
 
-            LeaderboardPortrait = Player.Character != "None" ? HeroesIcons.Heroes().GetHeroLeaderboardPortrait(Player.Character) : null;
-            CharacterTooltip = $"{Player.Character}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(Player.Character)[0]}";
+            Hero hero = HeroesIcons.Heroes().GetHeroInfo(Player.Character);
+
+            LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
+            CharacterTooltip = $"{Player.Character}{Environment.NewLine}{hero.Roles[0]}";
             Silenced = Player.IsSilenced;
-            CharacterName = Player.Character;
+            CharacterName = hero.Name;
 
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;

@@ -268,7 +268,7 @@ namespace Heroes.Icons.Xml
 
                                             if (!isGenericTalent && tier != TalentTier.Old)
                                             {
-                                                if (!HeroesXml.HeroExists(heroAltName, false))
+                                                if (!HeroesXml.HeroExists(heroAltName))
                                                     throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
                                                 if (RealHeroNameByTalentTierReferenceName.ContainsKey(tier))
@@ -292,7 +292,7 @@ namespace Heroes.Icons.Xml
                         }
                     } // end while
 
-                    if (!HeroesXml.HeroExists(heroAltName, false))
+                    if (!HeroesXml.HeroExists(heroAltName))
                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
                     HeroTalentsByHeroName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
