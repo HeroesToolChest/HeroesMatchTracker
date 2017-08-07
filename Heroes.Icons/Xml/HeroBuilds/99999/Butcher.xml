@@ -4,7 +4,6 @@
     <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringInvigoration>
     <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
     <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringChopMeat>
-    <ButcherMasteryFreshMeatAbattoir name="Abattoir" desc="ButcherFreshMeatAbattoirTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatAbattoir>
   </Level1>
   <Level4>
     <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringFlailAxe>
