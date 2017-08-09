@@ -114,10 +114,10 @@
     <Aliases>Галл,갈,加尔,Gal,加利</Aliases>
   </Gall>
 
-  <Garrosh available="99999" attributeid="Garr" franchise="Warcraft"
+  <Garrosh available="56175" attributeid="Garr" franchise="Warcraft"
       portrait="storm_ui_ingame_heroselect_btn_garrosh.dds" loading="storm_ui_ingame_hero_loadingscreen_garrosh.dds" leader="storm_ui_ingame_hero_leaderboard_garrosh.dds">
     <Roles>Warrior</Roles>
-    <Aliases></Aliases>
+    <Aliases>加尔鲁什</Aliases>
   </Garrosh>
   
   <Gazlowe available="47479" attributeid="Tink" franchise="Warcraft"
