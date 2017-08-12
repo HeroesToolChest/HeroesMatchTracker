@@ -23,6 +23,9 @@ namespace Heroes.Icons.Xml
         /// </summary>
         private Dictionary<string, string> HeroRealNameByHeroAliasName = new Dictionary<string, string>();
 
+        /// <summary>
+        /// key is real hero name
+        /// </summary>
         private Dictionary<string, Hero> HeroByHeroName = new Dictionary<string, Hero>();
 
         private HeroesXml(string parentFile, string xmlBaseFolder, bool logger, int? currentBuild)
@@ -184,74 +187,33 @@ namespace Heroes.Icons.Xml
                             if (string.IsNullOrEmpty(hero.Name))
                                 hero.Name = hero.AltName; // default to hero name
 
-                            // get the build that the hero is added
-                            string available = reader["available"];
+                            // set the build that the hero is added
+                            hero.BuildAvailable = int.TryParse(reader["available"], out int buildAvailable) ? buildAvailable : 0;
 
-                            // get attributeid from hero name
+                            // set attributeid from hero name
                             // example: Anub
-                            string attributeId = reader["attributeid"];
+                            hero.AttributeId = reader["attributeid"];
 
-                            // get the franchise: classic, diablo, overwatch, starcraft, warcraft
-                            string franchise = reader["franchise"];
+                            // set the franchise: classic, diablo, overwatch, starcraft, warcraft
+                            hero.Franchise = Enum.TryParse(reader["franchise"], out HeroFranchise heroFranchise) ? heroFranchise : HeroFranchise.Unknown;
 
-                            // get portrait
-                            string portraitName = reader["portrait"];
+                            // set the hero type - melee or ranged
+                            hero.Type = Enum.TryParse(reader["type"], out HeroType heroType) ? heroType : HeroType.Unknown;
 
-                            // get loading portrait
-                            string loadingPortrait = reader["loading"];
+                            // set the difficulty of the hero - easy/medium/hard/etc...
+                            hero.Difficulty = Enum.TryParse(reader["difficulty"], out HeroDifficulty heroDifficulty) ? heroDifficulty : HeroDifficulty.Unknown;
 
-                            // get leaderboard portrait
-                            string lbPortrait = reader["leader"];
+                            // set portrait
+                            hero.HeroPortrait = SetHeroPortraitUri(reader["portrait"]);
 
-                            if (!string.IsNullOrEmpty(available))
-                                hero.BuildAvailable = Convert.ToInt32(available);
-                            else
-                                throw new ParseXmlException($"available must not be null or empty [{hero.Name}]");
+                            // set loading portrait
+                            hero.LoadingPortrait = SetLoadingPortraitUri(reader["loading"]);
 
-                            if (!string.IsNullOrEmpty(attributeId))
-                                hero.AttributeId = attributeId;
-                            else
-                                throw new ParseXmlException($"attributeid must not be null or empty [{hero.Name}]");
-
-                            if (!string.IsNullOrEmpty(portraitName))
-                                hero.HeroPortrait = SetHeroPortraitUri(portraitName);
-                            else
-                                throw new ParseXmlException($"portrait must not be null or empty [{hero.Name}]");
-
-                            if (!string.IsNullOrEmpty(loadingPortrait))
-                                hero.LoadingPortrait = SetLoadingPortraitUri(loadingPortrait);
-                            else
-                                throw new ParseXmlException($"loading portrait must not be null or empty [{hero.Name}]");
-
-                            if (!string.IsNullOrEmpty(lbPortrait))
-                                hero.LeaderboardPortrait = SetLeaderboardPortraitUri(lbPortrait);
-                            else
-                                throw new ParseXmlException($"leaderboard portrait must not be null or empty [{hero.Name}]");
+                            // set leaderboard portrait
+                            hero.LeaderboardPortrait = SetLeaderboardPortraitUri(reader["leader"]);
 
                             RealHeroNameByAttributeId.Add(hero.AttributeId, hero.Name);
                             RealHeroNameByAlternativeName.Add(hero.AltName, hero.Name);
-
-                            switch (franchise)
-                            {
-                                case "Classic":
-                                    hero.Franchise = HeroFranchise.Classic;
-                                    break;
-                                case "Diablo":
-                                    hero.Franchise = HeroFranchise.Diablo;
-                                    break;
-                                case "Overwatch":
-                                    hero.Franchise = HeroFranchise.Overwatch;
-                                    break;
-                                case "Starcraft":
-                                    hero.Franchise = HeroFranchise.Starcraft;
-                                    break;
-                                case "Warcraft":
-                                    hero.Franchise = HeroFranchise.Warcraft;
-                                    break;
-                                default:
-                                    hero.Franchise = HeroFranchise.Unknown;
-                                    break;
-                            }
 
                             while (reader.Read() && reader.Name != hero.AltName)
                             {
@@ -266,27 +228,7 @@ namespace Heroes.Icons.Xml
 
                                         foreach (var role in roles)
                                         {
-                                            switch (role)
-                                            {
-                                                case "Multiclass":
-                                                    rolesList.Add(HeroRole.Multiclass);
-                                                    break;
-                                                case "Warrior":
-                                                    rolesList.Add(HeroRole.Warrior);
-                                                    break;
-                                                case "Assassin":
-                                                    rolesList.Add(HeroRole.Assassin);
-                                                    break;
-                                                case "Support":
-                                                    rolesList.Add(HeroRole.Support);
-                                                    break;
-                                                case "Specialist":
-                                                    rolesList.Add(HeroRole.Specialist);
-                                                    break;
-                                                default:
-                                                    rolesList.Add(HeroRole.Unknown);
-                                                    break;
-                                            }
+                                            rolesList.Add(Enum.TryParse(role, out HeroRole heroRole) ? heroRole : HeroRole.Unknown);
                                         }
 
                                         hero.Roles = rolesList;
@@ -332,18 +274,32 @@ namespace Heroes.Icons.Xml
             }
         }
 
+        private string GetHeroDescription(string realHeroName)
+        {
+            return null;
+        }
+
         private Uri SetHeroPortraitUri(string fileName)
         {
+            if (string.IsNullOrEmpty(fileName))
+                return null;
+
             return new Uri($@"{ApplicationIconsPath}\HeroPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLoadingPortraitUri(string fileName)
         {
+            if (string.IsNullOrEmpty(fileName))
+                return null;
+
             return new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLeaderboardPortraitUri(string fileName)
         {
+            if (string.IsNullOrEmpty(fileName))
+                return null;
+
             return new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
         }
     }

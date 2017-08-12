@@ -12,6 +12,12 @@ namespace Heroes.Icons.Models
 
         public string AttributeId { get; set; }
 
+        public string Description { get; set; }
+
+        public HeroType Type { get; set; }
+
+        public HeroDifficulty Difficulty { get; set; }
+
         /// <summary>
         /// Build that the hero is added in, in terms of this application not HOTS
         /// </summary>

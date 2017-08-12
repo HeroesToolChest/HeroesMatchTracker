@@ -73,6 +73,7 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -84,10 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Hero.cs" />
+    <Compile Include="Models\HeroDifficulty.cs" />
     <Compile Include="Models\HeroMana.cs" />
     <Compile Include="HeroesBase.cs" />
     <Compile Include="Models\HeroFranchise.cs" />
     <Compile Include="IHeroesIconsService.cs" />
+    <Compile Include="Models\HeroType.cs" />
     <Compile Include="Models\IconBase.cs" />
     <Compile Include="Models\MVPAwardColor.cs" />
     <Compile Include="HeroesIcons.cs" />
@@ -3629,6 +3632,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\HeroBuilds\55844\_FullTalentTooltips.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\HeroBuilds\55844\_HeroDescriptions.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\HeroBuilds\55844\_ShortTalentTooltips.txt">
