@@ -28,9 +28,9 @@ namespace Heroes.Icons.Xml
 
         /// <summary>
         /// key is the real hero name
-        /// value is a dictionary of Talent(s) for each talent tier
+        /// value is a dictionary of Talent(s), where key is the reference name of the talent
         /// </summary>
-        private Dictionary<string, Dictionary<TalentTier, List<Talent>>> HeroTalentsByHeroName = new Dictionary<string, Dictionary<TalentTier, List<Talent>>>();
+        private Dictionary<string, Dictionary<string, Talent>> HeroTalentsByHeroName = new Dictionary<string, Dictionary<string, Talent>>();
 
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
             : base(build ?? 0, logger)
@@ -63,14 +63,33 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns a dictionary of all the talents of the given hero in talent tiers
+        /// Returns a dictionary of all the talents of the given hero
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
-        public Dictionary<TalentTier, List<Talent>> GetHeroTalents(string realHeroName)
+        public Dictionary<string, Talent> GetHeroTalents(string realHeroName)
         {
-            if (HeroTalentsByHeroName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<Talent>> talents))
+            if (HeroTalentsByHeroName.TryGetValue(realHeroName, out Dictionary<string, Talent> talents))
             {
                 return talents;
+            }
+            else
+            {
+                LogReferenceNameNotFound($"No hero talents found for [{nameof(realHeroName)}]: {realHeroName}");
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Returns a dictionary of all the talents of the given tier
+        /// </summary>
+        /// <param name="realHeroName">real hero name</param>
+        /// <param name="tier">the talent tier</param>
+        /// <returns></returns>
+        public Dictionary<string, Talent> GetHeroTalentsInTier(string realHeroName, TalentTier tier)
+        {
+            if (HeroTalentsByHeroName.TryGetValue(realHeroName, out Dictionary<string, Talent> talents))
+            {
+                return talents.Where(x => x.Value.Tier == tier).ToDictionary(x => x.Key, y => y.Value);
             }
             else
             {
@@ -110,12 +129,8 @@ namespace Heroes.Icons.Xml
                 };
             }
 
-            var talents = allTalents[tier];
-            foreach (var talent in talents)
-            {
-                if (talent.ReferenceName == talentReferenceName)
-                    return talent;
-            }
+            if (allTalents.TryGetValue(talentReferenceName, out Talent talent))
+                return talent;
 
             // we couldn't find a talent
             LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
@@ -193,15 +208,13 @@ namespace Heroes.Icons.Xml
                         HeroesXml.GetHeroInfo(heroName).Description = heroDescriptionByHeroName[heroName];
                     }
 
-                    var talentTiersForHero = new Dictionary<TalentTier, List<Talent>>();
+                    var talents = new Dictionary<string, Talent>();
 
                     // add talents, read each tier
                     while (reader.Read())
                     {
                         if (reader.IsStartElement())
                         {
-                            var talentTierList = new List<Talent>();
-
                             // is tier Level1, Level4, etc...
                             if (Enum.TryParse(reader.Name, out TalentTier tier))
                             {
@@ -245,8 +258,11 @@ namespace Heroes.Icons.Xml
                                             if (!talentLongTooltip.TryGetValue(desc, out string longDesc))
                                                 longDesc = string.Empty;
 
+                                            if (talents.ContainsKey(refTalentName))
+                                                throw new ParseXmlException($"[{SelectedBuild}] [{heroName}] {refTalentName} already exists");
+
                                             // create the talent
-                                            talentTierList.Add(new Talent
+                                            talents.Add(refTalentName, new Talent
                                             {
                                                 Name = realName,
                                                 ReferenceName = refTalentName,
@@ -287,8 +303,6 @@ namespace Heroes.Icons.Xml
                                         }
                                     }
                                 }
-
-                                talentTiersForHero.Add(tier, talentTierList);
                             }
                         }
                     } // end while
@@ -296,7 +310,7 @@ namespace Heroes.Icons.Xml
                     if (!HeroesXml.HeroExists(heroAltName))
                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                    HeroTalentsByHeroName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
+                    HeroTalentsByHeroName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talents);
                 }
             }
         }

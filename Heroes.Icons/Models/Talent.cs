@@ -50,5 +50,10 @@ namespace Heroes.Icons.Models
 
             return image;
         }
+
+        public override string ToString()
+        {
+            return $"{Tier.GetFriendlyName()} | {ReferenceName}";
+        }
     }
 }

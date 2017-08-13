@@ -33,7 +33,7 @@
                                         <ToolTip Style="{StaticResource EnhancedToolTip}">
                                             <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
                                                 <Label Content="{Binding TalentNames[0]}" Style="{StaticResource TalentPopupLabel}" />
-                                                <Label Content="{Binding TalentSubInfo[0]}" Visibility="{Binding TalentSubInfo[0], Converter={StaticResource StringToVisibilityConverter}}" />
+                                                <Label Content="{Binding TalentSubInfo[0]}" Visibility="{Binding TalentSubInfo[0], Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
                                                 <Label>
                                                     <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltips[0], Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
                                                 </Label>

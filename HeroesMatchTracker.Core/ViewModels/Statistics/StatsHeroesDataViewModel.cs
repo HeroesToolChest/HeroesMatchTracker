@@ -374,14 +374,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (QueryTalents == false)
                 return Task.CompletedTask;
 
-            var allTalents = HeroesIcons.HeroBuilds().GetHeroTalents(heroName);
+            var allTalents = HeroesIcons.HeroBuilds().GetHeroTalentsInTier(heroName, tier);
 
             if (allTalents == null)
                 return Task.CompletedTask;
 
-            var talentTier = allTalents[tier];
-
-            foreach (var talent in talentTier)
+            foreach (var talent in allTalents.Values)
             {
                 int talentWin = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, true);
                 int talentLoss = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, false);
