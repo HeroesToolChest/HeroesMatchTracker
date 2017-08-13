@@ -19,7 +19,7 @@ namespace Heroes.Icons.Models
         public HeroDifficulty Difficulty { get; set; }
 
         /// <summary>
-        /// Build that the hero is added in, in terms of this application not HOTS
+        /// Build that the hero is added in, in terms of this application, not HOTS
         /// </summary>
         public int BuildAvailable { get; set; }
 
@@ -51,7 +51,7 @@ namespace Heroes.Icons.Models
 
         public BitmapImage GetLoadingPortrait()
         {
-            if (HeroPortrait == null)
+            if (LoadingPortrait == null)
                 return null;
 
             return CreateBitmapImage(LoadingPortrait);
@@ -59,7 +59,7 @@ namespace Heroes.Icons.Models
 
         public BitmapImage GetLeaderboardPortrait()
         {
-            if (HeroPortrait == null)
+            if (LeaderboardPortrait == null)
                 return null;
 
             return CreateBitmapImage(LeaderboardPortrait);

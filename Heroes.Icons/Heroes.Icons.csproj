@@ -84,6 +84,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\EnumerationExtensions.cs" />
     <Compile Include="Models\Hero.cs" />
     <Compile Include="Models\HeroDifficulty.cs" />
     <Compile Include="Models\HeroMana.cs" />
@@ -237,7 +238,6 @@
     <Resource Include="Icons\Talents\_Generic\storm_ui_icon_talent_stormshield.dds" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Other\storm_ui_ingame_talentpanel_upgrade_quest_icon.dds" />
     <Resource Include="Icons\Talents\Uther\storm_ui_icon_uther_beaconoflight.dds" />
     <Resource Include="Icons\Talents\Varian\storm_ui_icon_varian_bannerofdalaran.dds" />
     <Resource Include="Icons\Talents\Varian\storm_ui_icon_varian_bannerofironforge.dds" />
@@ -706,6 +706,13 @@
     <Resource Include="Icons\Awards\storm_ui_mvp_skullcollector_red.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skullcollector_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_skullcollector_red.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_status_resistshieldc3.png" />
+    <Resource Include="Icons\Other\storm_ui_taskbar_buttonicon_quests.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_talentpanel_upgrade_quest_icon.png" />
+    <Resource Include="Icons\Other\storm_ui_silencepenalty.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_status_resistshieldc3_default.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_status_resistshieldc3_physical.png" />
+    <Resource Include="Icons\Other\storm_ui_ingame_status_resistshieldc3_spell.png" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -5911,7 +5918,6 @@
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_stunner_red.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_blue.png" />
     <Resource Include="Icons\Awards\storm_ui_scorescreen_mvp_templemaster_red.png" />
-    <Resource Include="Icons\Other\storm_ui_silencepenalty.dds" />
     <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_a.dds" />
     <Resource Include="Icons\Talents\Valla\storm_ui_icon_valla_vault_b.dds" />
     <Resource Include="Icons\Talents\Butcher\storm_ui_icon_talent_autoattack_speed.dds" />

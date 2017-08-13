@@ -10,7 +10,7 @@ namespace Heroes.Icons
         public const string NoLoadingScreenPick = "storm_ui_ingame_hero_loadingscreen_nopick.dds";
         public const string NoLoadingScreenFound = "storm_ui_ingame_hero_loadingscreen_notfound.dds";
         public const string NoLeaderboardPick = "storm_ui_ingame_hero_leaderboard_nopick.dds";
-        public const string NoLeaderboardFound = "storm_ui_ingame_hero_loadingscreen_notfound.dds";
+        public const string NoLeaderboardFound = "storm_ui_ingame_hero_leaderboard_notfound.dds";
         public const string NoTalentIconPick = "storm_ui_ingame_leader_talent_unselected.png";
         public const string NoTalentIconFound = "storm_ui_icon_default.dds";
 

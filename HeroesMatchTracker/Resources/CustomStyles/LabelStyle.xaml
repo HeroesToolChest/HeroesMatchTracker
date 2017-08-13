@@ -19,4 +19,21 @@
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="Foreground" Value="{StaticResource TalentTooltipSubLabelFontBrush}" />
     </Style>
+
+    <Style TargetType="Label" x:Key="HeroDescriptorPopupLabel">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="{StaticResource HeroDescriptorTooltipTitleFontBrush}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="0" Color="{DynamicResource HeroDescriptorTooltipTitleFontColor}" Opacity="1" BlurRadius="4" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="HeroDescriptorPopupSubLabel">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource HeroDescriptorTooltipSubFontBrush}" />
+    </Style>
 </ResourceDictionary>

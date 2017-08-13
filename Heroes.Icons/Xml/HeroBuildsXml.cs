@@ -101,8 +101,14 @@ namespace Heroes.Icons.Xml
 
             var allTalents = GetHeroTalents(realHeroName);
 
-            if (allTalents == null)
-                return null;
+            if (allTalents == null) // no talents loaded, new hero
+            {
+                return new Talent
+                {
+                    Name = talentReferenceName,
+                    IconUri = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
+                };
+            }
 
             var talents = allTalents[tier];
             foreach (var talent in talents)
@@ -182,8 +188,10 @@ namespace Heroes.Icons.Xml
                     HeroMana heroManaType = Enum.TryParse(reader["mana"], out HeroMana heroMana) ? heroMana : HeroMana.Mana;
 
                     // set hero description
-                    Hero hero = HeroesXml.GetHeroInfo(heroName);
-                    hero.Description = heroDescriptionByHeroName[heroName];
+                    if (SelectedBuild >= 55844)
+                    {
+                        HeroesXml.GetHeroInfo(heroName).Description = heroDescriptionByHeroName[heroName];
+                    }
 
                     var talentTiersForHero = new Dictionary<TalentTier, List<Talent>>();
 
@@ -443,6 +451,9 @@ namespace Heroes.Icons.Xml
 
         private void LoadHeroDescriptions(Dictionary<string, string> heroDescriptions)
         {
+            if (SelectedBuild < 55844)
+                return;
+
             try
             {
                 using (StreamReader reader = new StreamReader($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{HeroDescriptionsFileName}"))

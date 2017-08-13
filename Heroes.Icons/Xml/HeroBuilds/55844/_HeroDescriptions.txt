@@ -1,8 +1,8 @@
 ﻿Abathur=A unique Hero that can manipulate the battle from anywhere on the map.
 Alarak=A combo Assassin that can move enemies around and punish mistakes.
-Anubarak=A Tank who specializes against Mages thanks in part to his innate Spell Armor.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers"><VALUE> Spell Armor</c>
+Anubarak=A Tank who specializes against Mages thanks in part to his innate Spell Armor.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers">20 Spell Armor</c>
 Artanis=A tough Bruiser that deals high damage if the enemy team is unable to shut him down.
-Arthas=A Tank who is proficient against melee Physical Attackers, slowing them.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers"><VALUE> Physical Armor</c>
+Arthas=A Tank who is proficient against melee Physical Attackers, slowing them.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers">10 Physical Armor</c>
 Auriel=A Healer that excels when paired with a high-octane damage dealer.
 Azmodan=A Summoner that can also deal high damage from far away.
 Butcher=An Assassin who starts slow, but deals extreme damage after collecting enough Meat.
@@ -19,11 +19,11 @@ Falstad=An Assassin that can fly large distances, excelling on large battlegroun
 Gall=Head 2 of a 2 Headed Hero, Gall is a powerful Mage stuck to Cho.
 Gazlowe=A Summoner that specializes in controlling key areas of the battleground.
 Genji=An opportunistic, mobile Assassin who can tear apart a weak backline.
-Greymane=A high damage Assassin that wears down enemies from afar and dives in for the kill.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="BBBBBB" width="20" height="22"/><c val="#TooltipNumbers"><VALUE> Armor (in Worgen Form)</c>
+Greymane=A high damage Assassin that wears down enemies from afar and dives in for the kill.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="BBBBBB" width="20" height="22"/><c val="#TooltipNumbers">10 Armor (in Worgen Form)</c>
 Guldan=A sustained damage Mage who uses his health as fuel but can steal life from his enemies.
 Illidan=A mobile, sustained damage Assassin who pairs well with Heroes that can enable him.
 Jaina=A frost Mage that can slow the entire enemy team.
-Johanna=A Tank who shines against Physical Attackers and can effectively clear groups of minions.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers"><VALUE> Physical Armor</c>
+Johanna=A Tank who shines against Physical Attackers and can effectively clear groups of minions.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers">25 Physical Armor</c>
 Kaelthas=A fire Mage that punishes enemies that stay close together.
 Kerrigan=A combo Assassin who goes all in, diving into the enemy team.
 Kharazim=A flexible Healer that pairs well with Melee allies who like to dive into the enemy team.
@@ -58,7 +58,7 @@ TestHero=Test
 Thrall=A Bruiser who can hold his own in a lane of battle.
 Tracer=A mobile Assassin who picks off straggling enemies, finishing them off.
 Tychus=An Assassin who shreds High Health enemies.
-Tyrael=A Tank who pairs well with allies that like to dive into the enemy team.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers"><VALUE> Spell Armor</c>
+Tyrael=A Tank who pairs well with allies that like to dive into the enemy team.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers">15 Spell Armor</c>
 Tyrande=A Support who helps her allies lockdown and finish off enemies.
 Uther=A Healer that can negate high bursts of damage.
 Valeera=A stealthed Assassin who specializes in shutting down her opponents.

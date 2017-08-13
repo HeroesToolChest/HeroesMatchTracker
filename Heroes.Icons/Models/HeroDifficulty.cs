@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
 
 namespace Heroes.Icons.Models
 {
@@ -8,7 +8,7 @@ namespace Heroes.Icons.Models
         Easy,
         Medium,
         Hard,
-        [Display(Name = "Very Hard")]
+        [Description("Very Hard")]
         VeryHard,
     }
 }

@@ -38,6 +38,7 @@
                 <ResourceDictionary Source="/Resources/CustomThemes/DefaultTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/PlayerRowTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomThemes/HeroDescriptorTooltipTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/MarkdownTheme.xaml"/>
              

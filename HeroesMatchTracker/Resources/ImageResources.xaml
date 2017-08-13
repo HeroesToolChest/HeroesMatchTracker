@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <BitmapImage x:Key="HMTStartup" UriSource="pack://application:,,,/Resources/Images/HMT_Startup.png"/>
-    <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_silencepenalty.dds"/>
+    <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_silencepenalty.png"/>
     <BitmapImage x:Key="QuestIcon" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds"/>
     <BitmapImage x:Key="LeftArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_normal.png"/>
     <BitmapImage x:Key="LeftArrowHover" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_hover.png"/>
