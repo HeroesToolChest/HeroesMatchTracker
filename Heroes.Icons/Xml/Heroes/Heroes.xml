@@ -1,114 +1,114 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Heroes>
-  <Abathur available="47479" attributeid="Abat" franchise="Warcraft"
+  <Abathur available="47479" attributeid="Abat" franchise="Starcraft" type="Melee" difficulty="VeryHard"
            portrait="storm_ui_ingame_heroselect_btn_abathur.dds" loading="storm_ui_ingame_hero_loadingscreen_abathur.dds" leader="storm_ui_ingame_hero_leaderboard_abathur.dds">
     <Roles>Specialist</Roles>
     <Aliases>Abatur,АБАТУР,아바투르,阿巴瑟</Aliases>
   </Abathur>
   
-  <Alarak available="47479" attributeid="Alar" franchise="Starcraft"
+  <Alarak available="47479" attributeid="Alar" franchise="Starcraft" type="Melee" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
     <Roles>Assassin</Roles>
     <Aliases>亞拉瑞克,阿拉纳克,알라라크,Аларак</Aliases>
   </Alarak>
   
-  <Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" 
+  <Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_anubarak.dds" loading="storm_ui_ingame_hero_loadingscreen_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
     <Roles>Warrior</Roles>
     <Aliases>Anub’arak,Ануб'арак,아눕아락,阿努巴拉克</Aliases>
   </Anubarak>
 
-  <Artanis available="47479" attributeid="Arts" franchise="Starcraft"
+  <Artanis available="47479" attributeid="Arts" franchise="Starcraft" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_artanis.dds" loading="storm_ui_ingame_hero_loadingscreen_artanis.dds" leader="storm_ui_ingame_hero_leaderboard_artanis.dds">
     <Roles>Warrior</Roles>
     <Aliases>아르타니스,亞坦尼斯,阿塔尼斯,Артанис</Aliases>
   </Artanis>
 
-  <Arthas available="47479" attributeid="Arth" franchise="Warcraft"
+  <Arthas available="47479" attributeid="Arth" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_arthas.dds" loading="storm_ui_ingame_hero_loadingscreen_arthas.dds" leader="storm_ui_ingame_hero_leaderboard_arthas.dds">
     <Roles>Warrior</Roles>
     <Aliases>АРТАС,아서스,阿尔萨斯,阿薩斯,Артас</Aliases>
   </Arthas>
 
-  <Auriel available="47479" attributeid="Auri" franchise="Diablo"
+  <Auriel available="47479" attributeid="Auri" franchise="Diablo" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_auriel.dds" loading="storm_ui_ingame_hero_loadingscreen_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
     <Roles>Support</Roles>
     <Aliases>Ауриэль,奥莉尔,奧莉爾,아우리엘</Aliases>
   </Auriel>
 
-  <Azmodan available="47479" attributeid="Azmo" franchise="Diablo"
+  <Azmodan available="47479" attributeid="Azmo" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_azmodan.dds" loading="storm_ui_ingame_hero_loadingscreen_azmodan.dds" leader="storm_ui_ingame_hero_leaderboard_azmodan.dds">
     <Roles>Specialist</Roles>
     <Aliases>Asmodan,Азмодан,Azmodán,Azmadan,아즈모단,阿兹莫丹,阿茲莫丹</Aliases>
   </Azmodan>
 
-  <Brightwing available="47479" attributeid="Faer" franchise="Warcraft"
+  <Brightwing available="47479" attributeid="Faer" franchise="Warcraft" type="Ranged" difficulty="Hard"
               portrait="storm_ui_ingame_heroselect_btn_faeriedragon.dds" loading="storm_ui_ingame_hero_loadingscreen_faeriedragon.dds" leader="storm_ui_ingame_hero_leaderboard_faeriedragon.dds">
     <Roles>Support</Roles>
     <Aliases>Luisaile,Funkelchen,Alafeliz,Jasnoskrzydła,Alachiara,СВЕТИК,Alasol,Asaluz,빛나래,光明之翼,亮翼</Aliases>
   </Brightwing>
 
-  <Butcher available="47479" name="The Butcher" attributeid="Butc" franchise="Diablo"
+  <Butcher available="47479" name="The Butcher" attributeid="Butc" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_butcher.dds" loading="storm_ui_ingame_hero_loadingscreen_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
     <Roles>Assassin</Roles>
     <Aliases>El Carnicero,O Açougueiro,屠夫,도살자,Der Schlächter,Мясник,Le Boucher,Macellaio,Rzeźnik</Aliases>
   </Butcher>
 
-  <Cassia available="52124" attributeid="Amaz" franchise="Diablo"
+  <Cassia available="52124" attributeid="Amaz" franchise="Diablo" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_d2amazonf.dds" loading="storm_ui_ingame_hero_loadingscreen_d2amazonf.dds" leader="storm_ui_ingame_hero_leaderboard_d2amazonf.dds">
     <Roles>Assassin</Roles>
     <Aliases>Cássia,Kasja,Кассия,카시아,卡西娅,卡西雅</Aliases>>
   </Cassia>
 
-  <Chen available="47479" attributeid="Chen" franchise="Warcraft"
+  <Chen available="47479" attributeid="Chen" franchise="Warcraft" type="Melee" difficulty="Hard"
         portrait="storm_ui_ingame_heroselect_btn_chen.dds" loading="storm_ui_ingame_hero_loadingscreen_chen.dds" leader="storm_ui_ingame_hero_leaderboard_chen.dds">
     <Roles>Warrior</Roles>
     <Aliases>Чэнь,Czen,첸,老陳,陈</Aliases>
   </Chen>
 
-  <Cho available="47479" attributeid="CCho" franchise="Warcraft"
+  <Cho available="47479" attributeid="CCho" franchise="Warcraft" type="Melee" difficulty="Medium"
        portrait="storm_ui_ingame_heroselect_btn_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
     <Roles>Warrior</Roles>
     <Aliases>Чо,초,古,Czo,丘,Cha,Che</Aliases>
   </Cho>
 
-  <Chromie available="47479" attributeid="Chro" franchise="Warcraft"
+  <Chromie available="47479" attributeid="Chro" franchise="Warcraft" type="Ranged" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_chromie.dds" loading="storm_ui_ingame_hero_loadingscreen_chromie.dds" leader="storm_ui_ingame_hero_leaderboard_chromie.dds">
     <Roles>Assassin</Roles>
     <Aliases>Crona,Cromi,克罗米,克羅米,Chronia,Cromie,Хроми,크로미</Aliases>
   </Chromie>
 
-  <Dehaka available="47479" attributeid="Deha" franchise="Warcraft"
+  <Dehaka available="47479" attributeid="Deha" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_dehaka.dds" loading="storm_ui_ingame_hero_loadingscreen_dehaka.dds" leader="storm_ui_ingame_hero_leaderboard_dehaka.dds">
     <Roles>Warrior</Roles>
     <Aliases>Дехака,데하카,德哈卡</Aliases>
   </Dehaka>
 
-  <Diablo available="47479" attributeid="Diab" franchise="Diablo"
+  <Diablo available="47479" attributeid="Diab" franchise="Diablo" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_diablo.dds" loading="storm_ui_ingame_hero_loadingscreen_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
     <Roles>Warrior</Roles>
     <Aliases>ДИАБЛО,Диабло,디아블로,迪亚波罗,迪亞布羅</Aliases>
   </Diablo>
 
-  <DVa available="53548" name="D.Va" attributeid="DVA0" franchise="Overwatch"
+  <DVa available="53548" name="D.Va" attributeid="DVA0" franchise="Overwatch" type="Ranged" difficulty="Medium"
         portrait="storm_ui_ingame_heroselect_btn_dva.dds" loading="storm_ui_ingame_hero_loadingscreen_dva.dds" leader="storm_ui_ingame_hero_leaderboard_dva.dds">
     <Roles>Warrior</Roles>
     <Aliases></Aliases>
   </DVa>
 
-  <ETC available="47479" name="E.T.C." attributeid="L90E" franchise="Warcraft"
+  <ETC available="47479" name="E.T.C." attributeid="L90E" franchise="Warcraft" type="Melee" difficulty="Easy"
        portrait="storm_ui_ingame_heroselect_btn_etc.dds" loading="storm_ui_ingame_hero_loadingscreen_etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
     <Roles>Warrior</Roles>
     <Aliases>ETC,C.T.E.,정예 타우렌 족장,精英牛头人酋长,精英牛頭大佬</Aliases>
   </ETC>
 
-  <Falstad available="47479" attributeid="Fals" franchise="Warcraft"
+  <Falstad available="47479" attributeid="Fals" franchise="Warcraft" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_falstad.dds" loading="storm_ui_ingame_hero_loadingscreen_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
     <Roles>Assassin</Roles>
     <Aliases>ФАЛСТАД,폴스타트,弗斯塔德</Aliases>
   </Falstad>
 
-  <Gall available="47479" attributeid="Gall" franchise="Warcraft"
+  <Gall available="47479" attributeid="Gall" franchise="Warcraft" type="Ranged" difficulty="Easy"
         portrait="storm_ui_ingame_heroselect_btn_gall.dds" loading="storm_ui_ingame_hero_loadingscreen_gall.dds" leader="storm_ui_ingame_hero_leaderboard_gall.dds">
     <Roles>Assassin</Roles>
     <Aliases>Галл,갈,加尔,Gal,加利</Aliases>
@@ -120,301 +120,301 @@
     <Aliases>加尔鲁什</Aliases>
   </Garrosh>
   
-  <Gazlowe available="47479" attributeid="Tink" franchise="Warcraft"
+  <Gazlowe available="47479" attributeid="Tink" franchise="Warcraft" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_gazlowe.dds" loading="storm_ui_ingame_hero_loadingscreen_gazlowe.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
     <Roles>Specialist</Roles>
     <Aliases>Gazleu,Gazol,Sparachiodi,ГАЗЛОУ,Gasganete,가즈로,加兹鲁维,加茲魯維,Газлоу</Aliases>
   </Gazlowe>
 
-  <Genji available="52860" attributeid="Genj" franchise="Overwatch"
+  <Genji available="52860" attributeid="Genj" franchise="Overwatch" type="Ranged" difficulty="Hard"
          portrait="storm_ui_ingame_heroselect_btn_genji.dds" loading="storm_ui_ingame_hero_loadingscreen_genji.dds" leader="storm_ui_ingame_hero_leaderboard_genji.dds">
     <Roles>Assassin</Roles>
     <Aliases>Гэндзи,源氏,겐지</Aliases>
   </Genji>
   
-  <Greymane available="47479" attributeid="Genn" franchise="Warcraft"
+  <Greymane available="47479" attributeid="Genn" franchise="Warcraft" type="Ranged" difficulty="Hard"
             portrait="storm_ui_ingame_heroselect_btn_genngreymane.dds" loading="storm_ui_ingame_hero_loadingscreen_genngreymane.dds" leader="storm_ui_ingame_hero_leaderboard_genngreymane.dds">
     <Roles>Assassin</Roles>
     <Aliases>Cringris,Graumähne,Grisetête,Mantogrigio,Szarogrzywy,Седогрив,格雷迈恩,葛雷邁恩,그레이메인</Aliases>
   </Greymane>
 
-  <Guldan available="47479" name="Gul'dan" attributeid="Guld" franchise="Warcraft"
+  <Guldan available="47479" name="Gul'dan" attributeid="Guld" franchise="Warcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_guldan.dds" loading="storm_ui_ingame_hero_loadingscreen_guldan.dds" leader="storm_ui_ingame_hero_leaderboard_guldan.dds">
     <Roles>Assassin</Roles>
     <Aliases>古爾丹,古尔丹,Gul’dan,굴단,Гул'дан</Aliases>
   </Guldan>
 
-  <Illidan available="47479" attributeid="Illi" franchise="Warcraft"
+  <Illidan available="47479" attributeid="Illi" franchise="Warcraft" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_illidan.dds" loading="storm_ui_ingame_hero_loadingscreen_illidan.dds" leader="storm_ui_ingame_hero_leaderboard_illidan.dds">
     <Roles>Assassin</Roles>
     <Aliases>ИЛЛИДАН,일리단,伊利丹</Aliases>
   </Illidan>
 
-  <Jaina available="47479" attributeid="Jain" franchise="Warcraft"
+  <Jaina available="47479" attributeid="Jain" franchise="Warcraft" type="Ranged" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_jaina.dds" loading="storm_ui_ingame_hero_loadingscreen_jaina.dds" leader="storm_ui_ingame_hero_leaderboard_jaina.dds">
     <Roles>Assassin</Roles>
     <Aliases>Джайна,제이나,珍娜,吉安娜</Aliases>
   </Jaina>
 
-  <Johanna available="47479" attributeid="Crus" franchise="Diablo"
+  <Johanna available="47479" attributeid="Crus" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_johanna.dds" loading="storm_ui_ingame_hero_loadingscreen_johanna.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
     <Roles>Warrior</Roles>
     <Aliases>요한나,Джоанна,乔汉娜,喬安娜</Aliases>
   </Johanna>
 
-  <Kaelthas available="47479" name="Kael'thas" attributeid="Kael" franchise="Warcraft"
+  <Kaelthas available="47479" name="Kael'thas" attributeid="Kael" franchise="Warcraft" type="Ranged" difficulty="Hard"
             portrait="storm_ui_ingame_heroselect_btn_kaelthas.dds" loading="storm_ui_ingame_hero_loadingscreen_kaelthas.dds" leader="storm_ui_ingame_hero_leaderboard_kaelthas.dds">
     <Roles>Assassin</Roles>
     <Aliases>Kael’thas,캘타스,凱爾薩斯,凯尔萨斯,Кель'тас</Aliases>
   </Kaelthas>
 
-  <Kerrigan available="47479" attributeid="Kerr" franchise="Starcraft"
+  <Kerrigan available="47479" attributeid="Kerr" franchise="Starcraft" type="Melee" difficulty="Hard"
             portrait="storm_ui_ingame_heroselect_btn_kerrigan.dds" loading="storm_ui_ingame_hero_loadingscreen_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
     <Roles>Assassin</Roles>
     <Aliases>КЕРРИГАН,케리건,凯瑞甘,凱莉根</Aliases>
   </Kerrigan>
 
-  <Kharazim available="47479" attributeid="Monk" franchise="Diablo"
+  <Kharazim available="47479" attributeid="Monk" franchise="Diablo" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_monk.dds" loading="storm_ui_ingame_hero_loadingscreen_monk.dds" leader="storm_ui_ingame_hero_leaderboard_monk.dds">
     <Roles>Support</Roles>
     <Aliases>克拉辛,卡拉辛姆,카라짐,Каразим</Aliases>
   </Kharazim>
 
-  <Leoric available="47479" attributeid="Leor" franchise="Diablo"
+  <Leoric available="47479" attributeid="Leor" franchise="Diablo" type="Melee" difficulty="Easy"
           portrait="storm_ui_ingame_heroselect_btn_leoric.dds" loading="storm_ui_ingame_hero_loadingscreen_leoric.dds" leader="storm_ui_ingame_hero_leaderboard_leoric.dds">
     <Roles>Warrior</Roles>
     <Aliases>Leoryk,Леорик,李奥瑞克,李奧瑞克,레오릭,Léoric</Aliases>
   </Leoric>
 
-  <LiLi available="47479" name="Li Li" attributeid="LiLi" franchise="Warcraft"
+  <LiLi available="47479" name="Li Li" attributeid="LiLi" franchise="Warcraft" type="Ranged" difficulty="Easy"
         portrait="storm_ui_ingame_heroselect_btn_lili.dds" loading="storm_ui_ingame_hero_loadingscreen_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
     <Roles>Support</Roles>
     <Aliases>ЛИ ЛИ,리 리,丽丽,莉莉</Aliases>
   </LiLi>
 
-  <LiMing available="47479" name="Li-Ming" attributeid="Wiza" franchise="Diablo"
+  <LiMing available="47479" name="Li-Ming" attributeid="Wiza" franchise="Diablo" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_wizard.dds" loading="storm_ui_ingame_hero_loadingscreen_wizard.dds" leader="storm_ui_ingame_hero_leaderboard_wizard.dds">
     <Roles>Assassin</Roles>
     <Aliases>李敏,리밍,Ли-Мин</Aliases>
   </LiMing>
 
-  <LostVikings available="47479" name="The Lost Vikings" attributeid="Lost" franchise="Classic"
+  <LostVikings available="47479" name="The Lost Vikings" attributeid="Lost" franchise="Classic" type="Melee" difficulty="VeryHard"
                portrait="storm_ui_ingame_heroselect_btn_lostvikings.dds" loading="storm_ui_ingame_hero_loadingscreen_lostvikings.dds" leader="storm_ui_ingame_hero_leaderboard_lostvikings.dds">
     <Roles>Specialist</Roles>
     <Aliases>Os Vikings Perdidos,Потерявшиеся викинги,Los Vikingos perdidos,Les Vikings perdus,Vichinghi Sperduti,Zaginieni Wikingowie,Lost Vikings,失落的維京人,失落的维京人,길 잃은 바이킹</Aliases>
   </LostVikings>
 
-  <LtMorales available="47479" name="Lt. Morales" attributeid="Medi" franchise="Starcraft"
+  <LtMorales available="47479" name="Lt. Morales" attributeid="Medi" franchise="Starcraft" type="Ranged" difficulty="Medium"
              portrait="storm_ui_ingame_heroselect_btn_medic.dds" loading="storm_ui_ingame_hero_loadingscreen_medic.dds" leader="storm_ui_ingame_hero_leaderboard_medic.dds">
     <Roles>Support</Roles>
     <Aliases>Lt Morales,Ten. Morales,Teniente Morales,Tte. Morales,莫拉莉斯中尉,모랄레스 중위,Лейтенант Моралес,莫拉萊斯中尉,Por. Morales</Aliases>
   </LtMorales>
 
-  <Lucio available="50441" name="Lúcio" attributeid="Luci" franchise="Overwatch"
+  <Lucio available="50441" name="Lúcio" attributeid="Luci" franchise="Overwatch" type="Ranged" difficulty="Medium"
          portrait="storm_ui_ingame_heroselect_btn_lucio.dds" loading="storm_ui_ingame_hero_loadingscreen_lucio.dds" leader="storm_ui_ingame_hero_leaderboard_lucio.dds">
     <Roles>Support</Roles>
     <Aliases>Lucio,Лусио,루시우,卢西奥,路西歐</Aliases>
   </Lucio>
   
-  <Lunara available="47479" attributeid="Drya" franchise="Warcraft"
+  <Lunara available="47479" attributeid="Drya" franchise="Warcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_lunara.dds" loading="storm_ui_ingame_hero_loadingscreen_lunara.dds" leader="storm_ui_ingame_hero_leaderboard_lunara.dds">
     <Roles>Assassin</Roles>
     <Aliases>露娜拉,루나라,Лунара,AyHapa</Aliases>
   </Lunara>
 
-  <Malfurion available="47479" attributeid="Malf" franchise="Warcraft"
+  <Malfurion available="47479" attributeid="Malf" franchise="Warcraft" type="Range" difficulty="Easy"
              portrait="storm_ui_ingame_heroselect_btn_malfurion.dds" loading="storm_ui_ingame_hero_loadingscreen_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
     <Roles>Support</Roles>
     <Aliases>МАЛФУРИОН,말퓨리온,玛法里奥,瑪法里恩,Малфурион</Aliases>
   </Malfurion>
 
-  <Malthael available="54339" attributeid="MALT" franchise="Diablo"
+  <Malthael available="54339" attributeid="MALT" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_malthael.dds" loading="storm_ui_ingame_hero_loadingscreen_malthael.dds" leader="storm_ui_ingame_hero_leaderboard_malthael.dds">
     <Roles>Assassin</Roles>
     <Aliases>Maltael,Malthaël,Малтаэль,马萨伊尔,말티엘</Aliases>
   </Malthael>
   
-  <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft"
+  <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft" type="Ranged" difficulty="VeryHard"
           portrait="storm_ui_ingame_heroselect_btn_medivh.dds" loading="storm_ui_ingame_hero_loadingscreen_medivh.dds" leader="storm_ui_ingame_hero_leaderboard_medivh.dds">
     <Roles>Specialist</Roles>
     <Aliases>麥迪文,麦迪文,메디브,Медив</Aliases>
   </Medivh>
 
-  <Muradin available="47479" attributeid="Mura" franchise="Warcraft"
+  <Muradin available="47479" attributeid="Mura" franchise="Warcraft" type="Melee" difficulty="Easy"
            portrait="storm_ui_ingame_heroselect_btn_muradin.dds" loading="storm_ui_ingame_hero_loadingscreen_muradin.dds" leader="storm_ui_ingame_hero_leaderboard_muradin.dds">
     <Roles>Warrior</Roles>
     <Aliases>МУРАДИН,무라딘,穆拉丁,Мурадин</Aliases>
   </Muradin>
 
-  <Murky available="47479" attributeid="Murk" franchise="Warcraft"
+  <Murky available="47479" attributeid="Murk" franchise="Warcraft" type="Melee" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_murky.dds" loading="storm_ui_ingame_hero_loadingscreen_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
     <Roles>Specialist</Roles>
     <Aliases>Bourbie,Męcik,Fosky,МУРЧАЛЬ,Murquinho,머키,鱼人,奔波尔霸,莫奇</Aliases>
   </Murky>
 
-  <Nazeebo available="47479" attributeid="Witc" franchise="Diablo"
+  <Nazeebo available="47479" attributeid="Witc" franchise="Diablo" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_witchdoctor.dds" loading="storm_ui_ingame_hero_loadingscreen_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
     <Roles>Specialist</Roles>
     <Aliases>Witch Doctor,Féticheur,Hexendoktor,Medico Brujo,Szaman,Sciamano,Nasibo,Nazebo,Назибо,Nazibo,나지보,纳兹波,納奇班</Aliases>
   </Nazeebo>
 
-  <Nova available="47479" attributeid="Nova" franchise="Starcraft"
+  <Nova available="47479" attributeid="Nova" franchise="Starcraft" type="Ranged" difficulty="Medium"
         portrait="storm_ui_ingame_heroselect_btn_nova.dds" loading="storm_ui_ingame_hero_loadingscreen_nova.dds" leader="storm_ui_ingame_hero_leaderboard_nova.dds">
     <Roles>Assassin</Roles>
     <Aliases>НОВА,노바,诺娃,諾娃,Нова</Aliases>
   </Nova>
 
-  <Probius available="51375" attributeid="Prob" franchise="Starcraft"
+  <Probius available="51375" attributeid="Prob" franchise="Starcraft" type="Ranged" difficulty="Hard"
       portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
     <Roles>Specialist</Roles>
     <Aliases>Sondius,Пробиус,普罗比斯,普羅比斯,Probiusz,프로비우스,EDN-OS</Aliases>
   </Probius>
   
-  <Ragnaros available="48760" attributeid="Ragn" franchise="Warcraft"
+  <Ragnaros available="48760" attributeid="Ragn" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_ragnaros.dds" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.dds" leader="storm_ui_ingame_hero_leaderboard_ragnaros.dds">
     <Roles>Assassin</Roles>
     <Aliases>拉格納羅斯,拉格纳罗斯,라그나로스,Рагнарос</Aliases>
   </Ragnaros>
 
-  <Raynor available="47479" attributeid="Rayn" franchise="Starcraft"
+  <Raynor available="47479" attributeid="Rayn" franchise="Starcraft" type="Ranged" difficulty="Easy"
           portrait="storm_ui_ingame_heroselect_btn_raynor.dds" loading="storm_ui_ingame_hero_loadingscreen_raynor.dds" leader="storm_ui_ingame_hero_leaderboard_raynor.dds">
     <Roles>Assassin</Roles>
     <Aliases>РЕЙНОР,레이너,雷诺,雷諾</Aliases>
   </Raynor>
 
-  <Rehgar available="47479" attributeid="Rehg" franchise="Warcraft"
+  <Rehgar available="47479" attributeid="Rehg" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_rehgar.dds" loading="storm_ui_ingame_hero_loadingscreen_rehgar.dds" leader="storm_ui_ingame_hero_leaderboard_rehgar.dds">
     <Roles>Support</Roles>
     <Aliases>РЕГАР,레가르,雷加尔,雷加,Регар</Aliases>
   </Rehgar>
 
-  <Rexxar available="47479" attributeid="Rexx" franchise="Warcraft"
+  <Rexxar available="47479" attributeid="Rexx" franchise="Warcraft" type="Ranged" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_rexxar.dds" loading="storm_ui_ingame_hero_loadingscreen_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
     <Roles>Warrior</Roles>
     <Aliases>Рексар,雷克萨,雷克薩,렉사르</Aliases>
   </Rexxar>
 
-  <Samuro available="47479" attributeid="Samu" franchise="Warcraft"
+  <Samuro available="47479" attributeid="Samu" franchise="Warcraft" type="Melee" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_samuro.dds" loading="storm_ui_ingame_hero_loadingscreen_samuro.dds" leader="storm_ui_ingame_hero_leaderboard_samuro.dds">
     <Roles>Assassin</Roles>
     <Aliases>萨穆罗,薩姆羅,Самуро,사무로,Samura</Aliases>
   </Samuro>
 
-  <SgtHammer available="47479" name="Sgt. Hammer" attributeid="Sgth" franchise="Starcraft"
+  <SgtHammer available="47479" name="Sgt. Hammer" attributeid="Sgth" franchise="Starcraft" type="Ranged" difficulty="Hard"
              portrait="storm_ui_ingame_heroselect_btn_sgthammer.dds" loading="storm_ui_ingame_hero_loadingscreen_sgthammer.dds" leader="storm_ui_ingame_hero_leaderboard_sgthammer.dds">
     <Roles>Specialist</Roles>
     <Aliases>Sgt Marteau,Sergeant Hammer,Sgto. Hammer,Sierżant Petarda,Sergente Hammer,Sgto. Martillo,Сержант Кувалда,Sargento Maza,Sgt. Marreta,해머 상사,重锤军士,榔頭中士,Sierż. Petarda</Aliases>
   </SgtHammer>
 
-  <Sonya available="47479" attributeid="Barb" franchise="Diablo"
+  <Sonya available="47479" attributeid="Barb" franchise="Diablo" type="Melee" difficulty="Medium"
          portrait="storm_ui_ingame_heroselect_btn_femalebarbarian.dds" loading="storm_ui_ingame_hero_loadingscreen_femalebarbarian.dds" leader="storm_ui_ingame_hero_leaderboard_femalebarbarian.dds">
     <Roles>Warrior</Roles>
     <Aliases>Sonia,Barbare,Barbarian,Barbarin,Bárbara,Соня,야만용사,野蛮人,소냐,野蠻人,桑娅,桑雅</Aliases>
   </Sonya>
 
-  <Stitches available="47479" attributeid="Stit" franchise="Warcraft"
+  <Stitches available="47479" attributeid="Stit" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
     <Roles>Warrior</Roles>
     <Aliases>Kleiner,Puntos,Zszywaniec,Tritacarne,Balafré,СТЕЖОК,Suturino,누더기,缝合怪,縫合怪,Стежок</Aliases>
   </Stitches>
 
-  <Stukov available="55288" attributeid="STUK" franchise="Starcraft"
+  <Stukov available="55288" attributeid="STUK" franchise="Starcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_stukov.dds" loading="storm_ui_ingame_hero_loadingscreen_stukov.dds" leader="storm_ui_ingame_hero_leaderboard_stukov.dds">
     <Roles>Support</Roles>
     <Aliases>斯杜科夫,스투코프,Stiukow,Стуков,斯托科夫</Aliases>
   </Stukov>
   
-  <Sylvanas available="47479" attributeid="Sylv" franchise="Warcraft"
+  <Sylvanas available="47479" attributeid="Sylv" franchise="Warcraft" type="Ranged" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_sylvanas.dds" loading="storm_ui_ingame_hero_loadingscreen_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
     <Roles>Specialist</Roles>
     <Aliases>Sylvana,希尔瓦娜斯,希瓦娜斯,실바나스,Sylwana,Сильвана</Aliases>
   </Sylvanas>
 
-  <Tassadar available="47479" attributeid="Tass" franchise="Starcraft"
+  <Tassadar available="47479" attributeid="Tass" franchise="Starcraft" type="Ranged" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_tassadar.dds" loading="storm_ui_ingame_hero_loadingscreen_tassadar.dds" leader="storm_ui_ingame_hero_leaderboard_tassadar.dds">
     <Roles>Support</Roles>
     <Aliases>ТАССАДАР,태사다르,塔萨达尔,塔薩達,Тассадар</Aliases>
   </Tassadar>
 
-  <Thrall available="47479" attributeid="Thra" franchise="Warcraft"
+  <Thrall available="47479" attributeid="Thra" franchise="Warcraft" type="Melee" difficulty="Easy"
           portrait="storm_ui_ingame_heroselect_btn_thrall.dds" loading="storm_ui_ingame_hero_loadingscreen_thrall.dds" leader="storm_ui_ingame_hero_leaderboard_thrall.dds">
     <Roles>Assassin</Roles>
     <Aliases>Тралл,萨尔,스랄,索爾</Aliases>
   </Thrall>
 
-  <Tracer available="47479" attributeid="Tra0" franchise="Overwatch"
+  <Tracer available="47479" attributeid="Tra0" franchise="Overwatch" type="Ranged" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_tracer.dds" loading="storm_ui_ingame_hero_loadingscreen_tracer.dds" leader="storm_ui_ingame_hero_leaderboard_tracer.dds">
     <Roles>Assassin</Roles>
     <Aliases>Трейсер,Smuga,猎空,트레이서,閃光</Aliases>
   </Tracer>
 
-  <Tychus available="47479" attributeid="Tych" franchise="Starcraft"
+  <Tychus available="47479" attributeid="Tych" franchise="Starcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_tychus.dds" loading="storm_ui_ingame_hero_loadingscreen_tychus.dds" leader="storm_ui_ingame_hero_leaderboard_tychus.dds">
     <Roles>Assassin</Roles>
     <Aliases>ТАЙКУС,타이커스,泰凯斯,泰科斯,Тайкус</Aliases>
   </Tychus>
 
-  <Tyrael available="47479" attributeid="Tyrl" franchise="Diablo"
+  <Tyrael available="47479" attributeid="Tyrl" franchise="Diablo" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_tyrael.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrael.dds" leader="storm_ui_ingame_hero_leaderboard_tyrael.dds">
     <Roles>Warrior</Roles>
     <Aliases>ТИРАЭЛЬ,Tyraël,티리엘,泰瑞尔,泰瑞爾</Aliases>
   </Tyrael>
 
-  <Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft"
+  <Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_tyrande.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrande.dds" leader="storm_ui_ingame_hero_leaderboard_tyrande.dds">
     <Roles>Support</Roles>
     <Aliases>ТИРАНДА,티란데,泰兰德,泰蘭妲,Тиранда</Aliases>
   </Tyrande>
 
-  <Uther available="47479" attributeid="Uthe" franchise="Warcraft"
+  <Uther available="47479" attributeid="Uthe" franchise="Warcraft" type="Melee" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_uther.dds" loading="storm_ui_ingame_hero_loadingscreen_uther.dds" leader="storm_ui_ingame_hero_leaderboard_uther.dds">
     <Roles>Support</Roles>
     <Aliases>УТЕР,우서,乌瑟尔,烏瑟</Aliases>
   </Uther>
 
-  <Valeera available="49747" attributeid="VALE" franchise="Warcraft"
+  <Valeera available="49747" attributeid="VALE" franchise="Warcraft" type="Melee" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_valeera.dds" loading="storm_ui_ingame_hero_loadingscreen_valeera.dds" leader="storm_ui_ingame_hero_leaderboard_valeera.dds">
     <Roles>Assassin</Roles>
     <Aliases>Valira,Валира,瓦莉拉,瓦麗拉,발리라</Aliases>
   </Valeera>
   
-  <Valla available="47479" attributeid="Demo" franchise="Diablo"
+  <Valla available="47479" attributeid="Demo" franchise="Diablo" type="Ranged" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_demonhunter.dds" loading="storm_ui_ingame_hero_loadingscreen_demonhunter.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
     <Roles>Assassin</Roles>
     <Aliases>Vala,Demon Hunter,Chasseuse De Demons,Dämonenjägerin,Cazadora de demonios,Łowczyni Demonów,Cacciatrice di Demoni,Валла,Tyla,Caçadora de Demônios,악마사냥꾼,발라,猎魔人,狩魔獵人,维拉,維拉</Aliases>
   </Valla>
 
-  <Varian available="48027" attributeid="Vari" franchise="Warcraft"
+  <Varian available="48027" attributeid="Vari" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_varian.dds" loading="storm_ui_ingame_hero_loadingscreen_varian.dds" leader="storm_ui_ingame_hero_leaderboard_varian.dds">
     <Roles>Multiclass,Warrior,Assassin</Roles>
     <Aliases>瓦里安,바리안,Вариан,바리인</Aliases>
   </Varian>
  
-  <Xul available="47479" attributeid="Necr" franchise="Diablo"
+  <Xul available="47479" attributeid="Necr" franchise="Diablo" type="Melee" difficulty="Medium"
        portrait="storm_ui_ingame_heroselect_btn_necromancer.dds" loading="storm_ui_ingame_hero_loadingscreen_necromancer.dds" leader="storm_ui_ingame_hero_leaderboard_necromancer.dds">
     <Roles>Specialist</Roles>
     <Aliases>蘇爾,祖尔,줄,Зул</Aliases>
   </Xul>
 
-  <Zagara available="47479" attributeid="Zaga" franchise="Starcraft"
+  <Zagara available="47479" attributeid="Zaga" franchise="Starcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_zagara.dds" loading="storm_ui_ingame_hero_loadingscreen_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
     <Roles>Specialist</Roles>
     <Aliases>ЗАГАРА,자가라,扎加拉,札迦拉</Aliases>
   </Zagara>
 
-  <Zarya available="47479" attributeid="Zary" franchise="Overwatch"
+  <Zarya available="47479" attributeid="Zary" franchise="Overwatch" type="Ranged" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_zarya.dds" loading="storm_ui_ingame_hero_loadingscreen_zarya.dds" leader="storm_ui_ingame_hero_leaderboard_zarya.dds">
     <Roles>Warrior</Roles>
     <Aliases>札莉雅,查莉娅,자리야,Zaria,Заря,자라야</Aliases>
   </Zarya>
-
-  <Zeratul available="47479" attributeid="Zera" franchise="Starcraft"
+ 
+  <Zeratul available="47479" attributeid="Zera" franchise="Starcraft" type="Melee" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_zeratul.dds" loading="storm_ui_ingame_hero_loadingscreen_zeratul.dds" leader="storm_ui_ingame_hero_leaderboard_zeratul.dds">
     <Roles>Assassin</Roles>
     <Aliases>ЗЕРАТУЛ,제라툴,泽拉图,澤拉圖</Aliases>
   </Zeratul>
 
-  <Zuljin available="49076" name="Zul'jin" attributeid="ZULJ" franchise="Warcraft"
+  <Zuljin available="49076" name="Zul'jin" attributeid="ZULJ" franchise="Warcraft" type="Ranged" difficulty="Medium"
          portrait="storm_ui_ingame_heroselect_btn_zuljin.dds" loading="storm_ui_ingame_hero_loadingscreen_zuljin.dds" leader="storm_ui_ingame_hero_leaderboard_zuljin.dds">
     <Roles>Assassin</Roles>
     <Aliases>Zul’jin,祖爾金,祖尔金,줄진,Зул'джин</Aliases>

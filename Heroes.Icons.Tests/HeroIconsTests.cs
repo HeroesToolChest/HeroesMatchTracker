@@ -31,28 +31,24 @@ namespace Heroes.Icons.Tests
 
                 foreach (var hero in heroes)
                 {
-                    string altName = heroesIcons.Heroes().GetAltNameFromRealHeroName(hero);
+                    var heroInfo = heroesIcons.Heroes().GetHeroInfo(hero);
 
-                    if (string.IsNullOrEmpty(altName))
+                    if (string.IsNullOrEmpty(heroInfo.AltName))
                         Assert.Fail($"[{build}] alt name is null or emtpy for {hero}");
 
-                    BitmapImage heroLeaderBoardPortrait = heroesIcons.Heroes().GetHeroLeaderboardPortrait(hero);
-                    BitmapImage heroLoadingPortrait = heroesIcons.Heroes().GetHeroLoadingPortrait(hero);
-                    BitmapImage heroPortrait = heroesIcons.Heroes().GetHeroPortrait(hero);
-
-                    if (heroLeaderBoardPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_leaderboard_{GetUniqueHeroName(altName.ToLower())}.dds")
+                    if (heroInfo.GetLeaderboardPortrait().UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_leaderboard_{GetUniqueHeroName(heroInfo.AltName.ToLower())}.dds")
                         assertMessages.Add($"[{build}] Leaderboard portrait not found for {hero}");
 
-                    if (heroLoadingPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_loadingscreen_{GetUniqueHeroName(altName.ToLower())}.dds")
+                    if (heroInfo.GetLoadingPortrait().UriSource.Segments[segment].ToString() != $"storm_ui_ingame_hero_loadingscreen_{GetUniqueHeroName(heroInfo.AltName.ToLower())}.dds")
                         assertMessages.Add($"[{build}] Loading portrait not found for {hero}");
 
-                    if (heroPortrait.UriSource.Segments[segment].ToString() != $"storm_ui_ingame_heroselect_btn_{GetUniqueHeroName(altName.ToLower())}.dds")
+                    if (heroInfo.GetPortrait().UriSource.Segments[segment].ToString() != $"storm_ui_ingame_heroselect_btn_{GetUniqueHeroName(heroInfo.AltName.ToLower())}.dds")
                         assertMessages.Add($"[{build}] Hero portrait not found for {hero}");
 
-                    if (heroesIcons.Heroes().GetHeroFranchise(hero) == HeroFranchise.Unknown)
+                    if (heroInfo.Franchise == HeroFranchise.Unknown)
                         assertMessages.Add($"[{build}] Unknown franchise for {hero}");
 
-                    var heroRoles = heroesIcons.Heroes().GetHeroRoleList(hero);
+                    var heroRoles = heroInfo.Roles;
                     if (heroRoles[0] == HeroRole.Unknown)
                         assertMessages.Add($"[{build}] Unknown hero role for {hero}");
                     if (heroRoles.Count > 1 && heroRoles[0] != HeroRole.Multiclass)

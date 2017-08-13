@@ -211,7 +211,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 List<object> rowStats = new List<object>();
 
-                BitmapImage leaderboardPortrait = HeroesIcons.Heroes().GetHeroLeaderboardPortrait(hero);
+                BitmapImage leaderboardPortrait = HeroesIcons.Heroes().GetHeroInfo(hero).GetLeaderboardPortrait();
                 int heroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(hero, selectedSeason);
 
                 rowStats.Add(leaderboardPortrait);

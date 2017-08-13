@@ -33,7 +33,7 @@
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
-                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center">
                                 <TextBlock.ToolTip>
                                     <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
                                 </TextBlock.ToolTip>

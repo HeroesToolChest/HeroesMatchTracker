@@ -550,7 +550,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             foreach (var hero in listHeroesPlayed)
             {
-                var heroRoles = HeroesIcons.Heroes().GetHeroRoleList(hero.Character);
+                var heroRoles = HeroesIcons.Heroes().GetHeroInfo(hero.Character).Roles;
 
                 switch (heroRoles[0])
                 {

@@ -265,17 +265,17 @@ namespace Heroes.Icons
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_classic.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_diablo.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_overwatch.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_starcraft.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_warcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_classic.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_diablo.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_overwatch.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_starcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_warcraft.png", UriKind.Absolute));
         }
 
         private void SetOtherIcons()
         {
-            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute));
-            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.dds", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_taskbar_buttonicon_quests.png", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.png", UriKind.Absolute));
         }
 
         private void LogMissingImage(string message)

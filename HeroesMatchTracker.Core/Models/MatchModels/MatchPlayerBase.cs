@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
@@ -11,6 +12,7 @@ using HeroesMatchTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using static Heroes.Helpers.HeroesHelpers.Regions;
@@ -41,13 +43,15 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerNameTooltip = matchPlayerBase.PlayerNameTooltip;
             PlayerBattleTagName = matchPlayerBase.PlayerBattleTagName;
             CharacterName = matchPlayerBase.CharacterName;
-            CharacterTooltip = matchPlayerBase.CharacterTooltip;
             CharacterLevel = matchPlayerBase.CharacterLevel;
             MvpAwardDescription = matchPlayerBase.MvpAwardDescription;
             AccountLevel = matchPlayerBase.AccountLevel;
             Silenced = matchPlayerBase.Silenced;
             IsUserPlayer = matchPlayerBase.IsUserPlayer;
             PlayerRegion = matchPlayerBase.PlayerRegion;
+            HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
+            HeroDescription = matchPlayerBase.HeroDescription;
+            Franchise = matchPlayerBase.Franchise;
         }
 
         public bool Silenced { get; private set; }
@@ -56,14 +60,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public string PlayerNameTooltip { get; private set; }
         public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
-        public string CharacterTooltip { get; private set; }
         public string CharacterLevel { get; private set; }
         public string MvpAwardDescription { get; private set; }
         public string AccountLevel { get; private set; }
+        public string HeroDescriptionSubInfo { get; private set; }
+        public string HeroDescription { get; private set; }
         public Region PlayerRegion { get; private set; }
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
         public BitmapImage PartyIcon { get; private set; }
+        public BitmapImage Franchise { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
         public RelayCommand HeroSearchQuickMatchCommand => new RelayCommand(HeroSearchQuickMatch);
@@ -104,15 +110,18 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         {
             var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(Player.PlayerId);
 
-            LeaderboardPortrait = Player.Character != "None" ? HeroesIcons.Heroes().GetHeroLeaderboardPortrait(Player.Character) : null;
-            CharacterTooltip = $"{Player.Character}{Environment.NewLine}{HeroesIcons.Heroes().GetHeroRoleList(Player.Character)[0]}";
-            Silenced = Player.IsSilenced;
-            CharacterName = Player.Character;
+            Hero hero = HeroesIcons.Heroes().GetHeroInfo(Player.Character);
 
+            LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
+            Franchise = HeroesIcons.GetFranchiseIcon(hero.Franchise);
+            Silenced = Player.IsSilenced;
+            CharacterName = hero.Name;
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
+            HeroDescription = hero.Description;
+            HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles.FirstOrDefault()} | Difficulty: {hero.Difficulty.GetFriendlyName()}";
 
             if (Player.Team == 4)
                 CharacterLevel = "Observer";

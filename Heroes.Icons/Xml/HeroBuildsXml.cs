@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.Icons.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Heroes.Icons.Xml
     {
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
+        private const string HeroDescriptionsFileName = "_HeroDescriptions.txt";
 
         private int SelectedBuild;
         private HeroesXml HeroesXml;
@@ -25,7 +27,7 @@ namespace Heroes.Icons.Xml
         private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
 
         /// <summary>
-        /// key the real hero name
+        /// key is the real hero name
         /// value is a dictionary of Talent(s) for each talent tier
         /// </summary>
         private Dictionary<string, Dictionary<TalentTier, List<Talent>>> HeroTalentsByHeroName = new Dictionary<string, Dictionary<TalentTier, List<Talent>>>();
@@ -49,7 +51,6 @@ namespace Heroes.Icons.Xml
         public int EarliestHeroesBuild { get; private set; } // cleared once initialized
         public int LatestHeroesBuild { get; private set; } // cleared once initialized
         public List<int> Builds { get; private set; } = new List<int>();
-        public bool BuildsVerifyStatus { get; private set; } = false;
 
         public static HeroBuildsXml Initialize(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
         {
@@ -100,8 +101,14 @@ namespace Heroes.Icons.Xml
 
             var allTalents = GetHeroTalents(realHeroName);
 
-            if (allTalents == null)
-                return null;
+            if (allTalents == null) // no talents loaded, new hero
+            {
+                return new Talent
+                {
+                    Name = talentReferenceName,
+                    IconUri = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
+                };
+            }
 
             var talents = allTalents[tier];
             foreach (var talent in talents)
@@ -154,42 +161,36 @@ namespace Heroes.Icons.Xml
 
         protected override void ParseChildFiles()
         {
-            // create local variables for tooltips, not needed as properties
+            // create local variables for tooltips
             Dictionary<string, string> talentShortTooltip = new Dictionary<string, string>();
             Dictionary<string, string> talentLongTooltip = new Dictionary<string, string>();
+
+            // key is the real hero name, value is the description of the hero
+            Dictionary<string, string> heroDescriptionByHeroName = new Dictionary<string, string>();
 
             // load up all the talents
             LoadTalentTooltipStrings(talentShortTooltip, talentLongTooltip);
 
-            foreach (var hero in XmlChildFiles)
+            // load up hero descriptions
+            LoadHeroDescriptions(heroDescriptionByHeroName);
+
+            foreach (var heroName in XmlChildFiles)
             {
-                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
+                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{heroName}.xml"))
                 {
                     reader.MoveToContent();
 
                     string heroAltName = reader.Name;
-                    if (heroAltName != hero)
+                    if (heroAltName != heroName)
                         continue;
 
-                    HeroMana heroManaType = HeroMana.Mana;
-                    string manaType = reader["mana"] ?? string.Empty;
-                    switch (manaType)
+                    // set hero mana type
+                    HeroMana heroManaType = Enum.TryParse(reader["mana"], out HeroMana heroMana) ? heroMana : HeroMana.Mana;
+
+                    // set hero description
+                    if (SelectedBuild >= 55844)
                     {
-                        case "Brew":
-                            heroManaType = HeroMana.Brew;
-                            break;
-                        case "Fury":
-                            heroManaType = HeroMana.Fury;
-                            break;
-                        case "None":
-                            heroManaType = HeroMana.None;
-                            break;
-                        case "Energy":
-                            heroManaType = HeroMana.Energy;
-                            break;
-                        default:
-                            heroManaType = HeroMana.Mana;
-                            break;
+                        HeroesXml.GetHeroInfo(heroName).Description = heroDescriptionByHeroName[heroName];
                     }
 
                     var talentTiersForHero = new Dictionary<TalentTier, List<Talent>>();
@@ -252,7 +253,7 @@ namespace Heroes.Icons.Xml
                                                 IsIconGeneric = isGeneric,
                                                 IsGeneric = isGenericTalent,
                                                 TooltipDescriptionName = desc,
-                                                IconUri = SetHeroTalentUri(hero, reader.Value, isGeneric),
+                                                IconUri = SetHeroTalentUri(heroName, reader.Value, isGeneric),
                                                 Tier = tier,
                                                 Tooltip = new TalentTooltip
                                                 {
@@ -268,13 +269,13 @@ namespace Heroes.Icons.Xml
 
                                             if (!isGenericTalent && tier != TalentTier.Old)
                                             {
-                                                if (!HeroesXml.HeroExists(heroAltName, false))
+                                                if (!HeroesXml.HeroExists(heroAltName))
                                                     throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
                                                 if (RealHeroNameByTalentTierReferenceName.ContainsKey(tier))
                                                 {
                                                     if (RealHeroNameByTalentTierReferenceName[tier].ContainsKey(refTalentName))
-                                                        throw new ArgumentException($"Same key {refTalentName} [{hero}]");
+                                                        throw new ArgumentException($"Same key {refTalentName} [{heroName}]");
 
                                                     RealHeroNameByTalentTierReferenceName[tier].Add(refTalentName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
                                                 }
@@ -292,7 +293,7 @@ namespace Heroes.Icons.Xml
                         }
                     } // end while
 
-                    if (!HeroesXml.HeroExists(heroAltName, false))
+                    if (!HeroesXml.HeroExists(heroAltName))
                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
                     HeroTalentsByHeroName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
@@ -445,6 +446,36 @@ namespace Heroes.Icons.Xml
                         SelectedBuild = build;
                     }
                 }
+            }
+        }
+
+        private void LoadHeroDescriptions(Dictionary<string, string> heroDescriptions)
+        {
+            if (SelectedBuild < 55844)
+                return;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{HeroDescriptionsFileName}"))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (!line.StartsWith("--"))
+                        {
+                            string[] description = line.Split(new char[] { '=' }, 2);
+
+                            if (heroDescriptions.ContainsKey(description[0]))
+                                throw new ArgumentException($"An item with the same key has already been added in hero descriptions: {description[0]}");
+
+                            heroDescriptions.Add(description[0], description[1]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ParseXmlException("Error on loading hero desciptions", ex);
             }
         }
     }

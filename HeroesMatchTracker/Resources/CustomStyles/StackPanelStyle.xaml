@@ -13,6 +13,12 @@
         <Setter Property="Margin" Value="-4" />
         <Setter Property="Background" Value="{StaticResource TalentTooltipBackgroundBrush}" />
     </Style>
+
+    <Style TargetType="StackPanel" x:Key="HeroInfoStackPanel">
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Width" Value="360" />
+        <Setter Property="Background" Value="{StaticResource TalentTooltipBackgroundBrush}" />
+    </Style>
     
     <Style TargetType="StackPanel" x:Key="TalentPopupStackPanel">
         <Setter Property="Height" Value="Auto" />

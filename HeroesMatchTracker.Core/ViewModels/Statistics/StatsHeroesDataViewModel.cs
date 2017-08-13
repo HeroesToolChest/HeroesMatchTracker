@@ -1,5 +1,6 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
@@ -215,11 +216,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int mercsCaptured = (int)scoreResultsList.Sum(x => x.MercCampCaptures);
 
                 TimeSpan gameTime = Database.ReplaysDb().Statistics.ReadTotalMapGameTime(heroName, season, gameMode, map);
+                Hero heroInfo = HeroesIcons.Heroes().GetHeroInfo(heroName);
 
                 double role = 0;
-                if (HeroesIcons.Heroes().GetHeroRoleList(heroName)[0] == HeroRole.Warrior)
+                if (heroInfo.Roles[0] == HeroRole.Warrior)
                     role = (double)scoreResultsList.Sum(x => x.DamageTaken);
-                else if (HeroesIcons.Heroes().GetHeroRoleList(heroName)[0] == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(heroName))
+                else if (heroInfo.Roles[0] == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(heroName))
                     role = (double)scoreResultsList.Sum(x => x.Healing);
 
                 var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
