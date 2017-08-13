@@ -121,7 +121,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
             HeroDescription = hero.Description;
-            HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles.FirstOrDefault()} | Difficulty: {hero.Difficulty.GetFriendlyName()}";
+
+            if (hero.Roles.Count > 1)
+                HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles[0]} ({hero.Roles[1]} | {hero.Roles[2]}) | Difficulty: {hero.Difficulty.GetFriendlyName()}";
+            else
+                HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles.FirstOrDefault()} | Difficulty: {hero.Difficulty.GetFriendlyName()}";
 
             if (Player.Team == 4)
                 CharacterLevel = "Observer";

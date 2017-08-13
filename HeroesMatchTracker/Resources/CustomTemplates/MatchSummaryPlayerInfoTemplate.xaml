@@ -23,7 +23,7 @@
                                     </StackPanel>
                                 </StackPanel>
                                 <Separator BorderThickness="2" BorderBrush="#3B2D74" Margin="-16 0" />
-                                <StackPanel Margin="0 6 0 0">
+                                <StackPanel Margin="0 6 0 0" Width="360" HorizontalAlignment="Left">
                                     <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding HeroDescription, Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource HeroDescriptorPopupTextBlock}" />
                                 </StackPanel>
                             </StackPanel>

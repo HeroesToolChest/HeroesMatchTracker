@@ -16,7 +16,7 @@
 
     <Style TargetType="StackPanel" x:Key="HeroInfoStackPanel">
         <Setter Property="Height" Value="Auto" />
-        <Setter Property="Width" Value="360" />
+        <Setter Property="MinWidth" Value="360" />
         <Setter Property="Background" Value="{StaticResource TalentTooltipBackgroundBrush}" />
     </Style>
     
