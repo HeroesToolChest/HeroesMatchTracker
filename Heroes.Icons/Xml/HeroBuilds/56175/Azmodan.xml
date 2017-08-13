@@ -9,17 +9,17 @@
     <AzmodanMasteryGluttony name="Gluttony" desc="AzmodanAllShallBurnGluttonyTalent">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryGluttony>
     <AzmodanMasteryArmyOfHell name="Army of Hell" desc="AzmodanSummonDemonWarriorArmyOfHellTalent">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanMasteryArmyOfHell>
     <AzmodanHellishHirelings name="Hellish Hirelings" desc="AzmodanHellishHirelings">storm_ui_icon_azmodan_generalofhell.dds</AzmodanHellishHirelings>
-    <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">storm_ui_icon_azmodan_sinsgrasp.dds</AzmodanSinsGrasp>
+    <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar" cooldown="120">storm_ui_icon_azmodan_sinsgrasp.dds</AzmodanSinsGrasp>
   </Level4>
   <Level7>
     <AzmodanMasteryInfernalGlobe name="Infernal Globe" desc="AzmodanGlobeOfAnnihilationInfernalGlobeTalent">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryInfernalGlobe>
     <AzmodanMasteryBoundMinion name="Bound Minion" desc="AzmodanGeneralOfHellBoundMinionTalent">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryBoundMinion>
-    <AzmodanGluttonousWard name="Gluttonous Ward" desc="AzmodanGluttonousWardHotbar">storm_ui_icon_azmodan_gluttonousward.dds</AzmodanGluttonousWard>
+    <AzmodanGluttonousWard name="Gluttonous Ward" desc="AzmodanGluttonousWardHotbar" cooldown="45">storm_ui_icon_azmodan_gluttonousward.dds</AzmodanGluttonousWard>
     <AzmodanMasteryMarchOfSin name="March of Sin" desc="AzmodanAllShallBurnMarchOfSinTalent">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryMarchOfSin>
   </Level7>
   <Level10>
-    <AzmodanHeroicAbilityDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion">storm_ui_icon_azmodan_demonicinvasion.dds</AzmodanHeroicAbilityDemonicInvasion>
-    <AzmodanHeroicAbilityBlackPool name="Black Pool" desc="AzmodanBlackPool">storm_ui_icon_azmodan_blackpool.dds</AzmodanHeroicAbilityBlackPool>
+    <AzmodanHeroicAbilityDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion" mana="100" cooldown="100">storm_ui_icon_azmodan_demonicinvasion.dds</AzmodanHeroicAbilityDemonicInvasion>
+    <AzmodanHeroicAbilityBlackPool name="Black Pool" desc="AzmodanBlackPool" mana="60" cooldown="20" ch-cooldown="true">storm_ui_icon_azmodan_blackpool.dds</AzmodanHeroicAbilityBlackPool>
   </Level10>
   <Level13>
     <AzmodanMasteryHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanMasteryHellforgedArmor>
@@ -29,12 +29,12 @@
   <Level16>
     <AzmodanMasteryBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanMasteryBattleborn>
     <AzmodanMasteryDemonicSmite name="Demonic Smite" desc="AzmodanGeneralOfHellDemonicSmiteTalent">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryDemonicSmite>
-    <AzmodanSinforSin name="Sin for Sin" generic="true" desc="AzmodanSinforSin">storm_ui_icon_talent_bloodforblood.dds</AzmodanSinforSin>
+    <AzmodanSinforSin name="Sin for Sin" generic="true" desc="AzmodanSinforSin" cooldown="45">storm_ui_icon_talent_bloodforblood.dds</AzmodanSinforSin>
   </Level16>
   <Level20>
     <AzmodanMasteryPerishingFlame name="Perishing Flame" desc="AzmodanDemonicInvasionPerishingFlameTalent">storm_ui_icon_azmodan_demonicinvasion.dds</AzmodanMasteryPerishingFlame>
     <AzmodanMasteryBlackPoolFifthCircle name="Fifth Circle" desc="AzmodanBlackPoolFifthCircleTalent">storm_ui_icon_azmodan_blackpool.dds</AzmodanMasteryBlackPoolFifthCircle>
-    <AzmodanBoltoftheStorms name="Bolt of the Storm" generic="true" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</AzmodanBoltoftheStorms>
+    <AzmodanBoltoftheStorms name="Bolt of the Storm" generic="true" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</AzmodanBoltoftheStorms>
     <AzmodanMasteryForcedRecruitment name="Forced Recruitment" desc="AzmodanGeneralOfHellForcedRecruitmentTalent">storm_ui_icon_azmodan_generalofhell.dds</AzmodanMasteryForcedRecruitment>
   </Level20>
 </Azmodan>

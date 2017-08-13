@@ -17,8 +17,8 @@
     <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
   </Level7>
   <Level10>
-    <ArtanisHeroicAbilitySpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse">storm_ui_icon_artanis_disruptionweb.dds</ArtanisHeroicAbilitySpearofAdunSuppressionPulse>
-    <ArtanisHeroicAbilitySpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam">storm_ui_icon_artanis_purifierbeam.dds</ArtanisHeroicAbilitySpearofAdunPurifierBeam>
+    <ArtanisHeroicAbilitySpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse" mana="40" cooldown="50">storm_ui_icon_artanis_disruptionweb.dds</ArtanisHeroicAbilitySpearofAdunSuppressionPulse>
+    <ArtanisHeroicAbilitySpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam" mana="80" cooldown="80">storm_ui_icon_artanis_purifierbeam.dds</ArtanisHeroicAbilitySpearofAdunPurifierBeam>
   </Level10>
   <Level13>
     <ArtanisBladeDashTemplarsZeal name="Templar's Zeal" desc="ArtanisBladeDashTemplarsZealTalent">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDashTemplarsZeal>

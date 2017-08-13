@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Cho>
+<Cho mana="None">
   <Level1>
     <ChoConsumingFire name="Consuming Fire" desc="ChoConsumingFire">storm_ui_icon_cho_consumingflame.dds</ChoConsumingFire>
     <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.dds</ChoFuelForTheFlame>
@@ -16,8 +16,8 @@
     <ChoEnragedRegeneration name="Enraged Regeneration" desc="ChoEnragedRegeneration">storm_ui_icon_cho_ogrehide.dds</ChoEnragedRegeneration>
   </Level7>
   <Level10>
-    <ChoHeroicAbilityHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHeroicAbilityHammerOfTwilight>
-    <ChoHeroicAbilityUpheaval name="Upheaval" desc="ChoUpheaval">storm_ui_icon_Cho_Upheaval.dds</ChoHeroicAbilityUpheaval>
+    <ChoHeroicAbilityHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight" cooldown="15">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHeroicAbilityHammerOfTwilight>
+    <ChoHeroicAbilityUpheaval name="Upheaval" desc="ChoUpheaval" cooldown="60">storm_ui_icon_Cho_Upheaval.dds</ChoHeroicAbilityUpheaval>
   </Level10>
   <Level13>
     <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoFrenziedFists>
@@ -26,7 +26,7 @@
   </Level13>
   <Level16>
     <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoSurgingDash>
-    <ChoTwilightVeil name="Twilight Veil" generic="true" desc="ChoTwilightVeilTalent">storm_ui_icon_talent_hardenedshield.dds</ChoTwilightVeil>
+    <ChoTwilightVeil name="Twilight Veil" generic="true" desc="ChoTwilightVeilTalent" cooldown="30">storm_ui_icon_talent_hardenedshield.dds</ChoTwilightVeil>
     <ChoTalentMoltenBlock name="Molten Block" desc="ChoTalentMoltenBlock">storm_ui_icon_cho_moltenblock.dds</ChoTalentMoltenBlock>
   </Level16>
   <Level20>

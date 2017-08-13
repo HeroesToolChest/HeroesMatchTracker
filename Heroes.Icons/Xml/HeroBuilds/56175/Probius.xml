@@ -16,8 +16,8 @@
     <ProbiusTowerDefensePhotonCannon name="Tower Defense" desc="ProbiusTowerDefensePhotonCannonTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusTowerDefensePhotonCannon>
   </Level7>
   <Level10>
-    <ProbiusPylonOverchargeHeroic name="Pylon Overcharge" desc="ProbiusPylonOvercharge">storm_ui_icon_probius_pylonovercharge.dds</ProbiusPylonOverchargeHeroic>
-    <ProbiusNullGateHeroic name="Null Gate" desc="ProbiusNullGate">storm_ui_icon_probius_voidgate.dds</ProbiusNullGateHeroic>
+    <ProbiusPylonOverchargeHeroic name="Pylon Overcharge" desc="ProbiusPylonOvercharge" mana="100" cooldown="80">storm_ui_icon_probius_pylonovercharge.dds</ProbiusPylonOverchargeHeroic>
+    <ProbiusNullGateHeroic name="Null Gate" desc="ProbiusNullGate" mana="100" cooldown="30">storm_ui_icon_probius_voidgate.dds</ProbiusNullGateHeroic>
   </Level10>
   <Level13>
     <ProbiusAggressiveMatrixWarpInPylon name="Aggressive Matrix" desc="ProbiusPylonAggressiveMatrixWarpInPylonTalent">storm_ui_icon_probius_warpinpylon.dds</ProbiusAggressiveMatrixWarpInPylon>

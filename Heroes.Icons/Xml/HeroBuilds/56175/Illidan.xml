@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Illidan>
+<Illidan mana="None">
   <Level1>
     <IllidanMasteryImmolationSweepingStrike name="Immolation" desc="IllidanSweepingStrikeImmolationTalent">storm_ui_icon_illidan_sweepingstrike.dds</IllidanMasteryImmolationSweepingStrike>
     <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault" desc="IllidanSweepingStrikeBatteredAssaultTalent">storm_ui_icon_illidan_sweepingstrike_a.dds</IllidanMasteryBatteredAssaultSweepingStrike>
@@ -16,8 +16,8 @@
     <IllidanCombatStyleHuntersOnslaught name="Hunter's Onslaught" desc="IllidanBetrayersThirstHuntersOnslaughtTalent">storm_ui_icon_illidan_betrayersthirst_a.dds</IllidanCombatStyleHuntersOnslaught>
   </Level7>
   <Level10>
-    <IllidanHeroicAbilityMetamorphosis name="Metamorphosis" desc="IllidanMetamorphosis">storm_ui_icon_illidan_metamorphosis.dds</IllidanHeroicAbilityMetamorphosis>
-    <IllidanHeroicAbilityTheHunt name="The Hunt" desc="IllidanTheHunt">storm_ui_icon_illidan_thehunt.dds</IllidanHeroicAbilityTheHunt>
+    <IllidanHeroicAbilityMetamorphosis name="Metamorphosis" desc="IllidanMetamorphosis" cooldown="120">storm_ui_icon_illidan_metamorphosis.dds</IllidanHeroicAbilityMetamorphosis>
+    <IllidanHeroicAbilityTheHunt name="The Hunt" desc="IllidanTheHunt" cooldown="60">storm_ui_icon_illidan_thehunt.dds</IllidanHeroicAbilityTheHunt>
   </Level10>
   <Level13>
     <IllidanNimbleDefender name="Nimble Defender" desc="IllidanNimbleDefender">storm_ui_icon_illidan_sweepingstrike.dds</IllidanNimbleDefender>
@@ -33,6 +33,6 @@
     <IllidanMasteryDemonicFormMetamorphosis name="Demonic Form" desc="IllidanMetamorphosisDemonicFormTalent">storm_ui_icon_illidan_metamorphosis.dds</IllidanMasteryDemonicFormMetamorphosis>
     <IllidanMasteryNowhereToHideTheHunt name="Nowhere to Hide" desc="IllidanTheHuntNowhereToHideTalent">storm_ui_icon_illidan_thehunt.dds</IllidanMasteryNowhereToHideTheHunt>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
 </Illidan>

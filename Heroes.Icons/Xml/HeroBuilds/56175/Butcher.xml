@@ -16,8 +16,8 @@
     <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
   </Level7>
   <Level10>
-    <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
-    <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
+    <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
+    <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
   </Level10>
   <Level13>
     <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>
@@ -33,6 +33,6 @@
     <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherMasteryFiresofHell>
     <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherMasterySlaughterhouse>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
 </Butcher>

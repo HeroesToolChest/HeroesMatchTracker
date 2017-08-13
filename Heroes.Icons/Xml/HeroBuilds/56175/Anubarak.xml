@@ -17,8 +17,8 @@
     <AnubarakMasteryLeechingScarabs name="Leeching Scarabs" desc="AnubarakLeechingMandiblesTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryLeechingScarabs>
   </Level7>
   <Level10>
-    <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakHeroicAbilityCarrionSwarm>
-    <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakHeroicAbilityCocoon>
+    <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm" mana="75" cooldown="100">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakHeroicAbilityCarrionSwarm>
+    <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon" mana="70" cooldown="60">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakHeroicAbilityCocoon>
   </Level10>
   <Level13>
     <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
@@ -33,7 +33,7 @@
   <Level20>
     <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master" desc="AnubarakCarrionSwarmHiveMasterTalent">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakMasteryHiveMasterCarrionSwarm>
     <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCocoonCryptweave>
-    <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent" cooldown="40">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
 </Anubarak>

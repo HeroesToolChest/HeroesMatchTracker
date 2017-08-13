@@ -14,11 +14,11 @@
   <Level7>
     <SgtHammerMasterySlowingMinesSpiderMines name="Slowing Mines" desc="SgtHammerSpiderMinesSlowingMinesTalent">storm_ui_icon_sgthammer_spidermines.dds</SgtHammerMasterySlowingMinesSpiderMines>
     <SgtHammerHyperCoolingEngines name="Hyper-Cooling Engines" desc="SgtHammerThrustersHyperCoolingEnginesTalent">storm_ui_icon_sgthammer_hypercoolingengines.dds</SgtHammerHyperCoolingEngines>
-    <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
+    <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid" cooldown="60">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
   </Level7>
   <Level10>
-    <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerHeroicAbilityBluntForceGun>
-    <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerHeroicAbilityNapalmStrike>
+    <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun" mana="100" cooldown="60">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerHeroicAbilityBluntForceGun>
+    <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike" mana="35" cooldown="6">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerHeroicAbilityNapalmStrike>
   </Level10>
   <Level13>
     <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
@@ -31,7 +31,7 @@
     <SgtHammerMasteryMineField name="Mine Field" desc="SgtHammerSpiderMinesMineFieldTalent">storm_ui_icon_sgthammer_spidermines.dds</SgtHammerMasteryMineField>
     <SgtHammerMasteryHoverSiegeMode name="Hover Siege Mode" desc="SgtHammerSiegeModeHoverSiegeModeTalent">storm_ui_icon_sgthammer_siegemode.dds</SgtHammerMasteryHoverSiegeMode>
     <SgtHammerGraduatingRange name="Graduating Range" desc="SgtHammerSiegeModeGraduatingRangeTalent">storm_ui_icon_sgthammer_siegemode_var1.dds</SgtHammerGraduatingRange>
-    <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+    <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin" cooldown="60">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
   </Level16>
   <Level20>
     <SgtHammerMasteryOrbitalBFGBluntForceGun name="Orbital BFG" desc="SgtHammerBluntForceGunOrbitalBFGTalent">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerMasteryOrbitalBFGBluntForceGun>

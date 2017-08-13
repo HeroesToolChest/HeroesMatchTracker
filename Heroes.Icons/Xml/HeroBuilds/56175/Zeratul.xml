@@ -2,7 +2,7 @@
 <Zeratul>
   <Level1>
     <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryGreaterCleaveCleave>
-    <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulVorpalBlade>
+    <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar" cooldown="15">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulVorpalBlade>
     <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">storm_ui_icon_zeratul_blink.dds</ZeratulShadowHunter>
   </Level1>
   <Level4>
@@ -16,8 +16,8 @@
     <ZeratulSeekerintheDark name="Seeker in the Dark" desc="ZeratulSeekerintheDark">storm_ui_icon_zeratul_singularityspike.dds</ZeratulSeekerintheDark>
   </Level7>
   <Level10>
-    <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
-    <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
+    <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault" mana="50" cooldown="45">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
+    <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison" mana="100" cooldown="100">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
   </Level10>
   <Level13>
     <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">storm_ui_icon_zeratul_cloak.dds</ZeratulShroudofAdun>
@@ -33,6 +33,6 @@
     <ZeratulNerazimFury name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">storm_ui_icon_zeratul_shadowassault.dds</ZeratulNerazimFury>
     <ZeratulGiftoftheXelNaga name="Gift of the Xel'Naga" desc="ZeratulGiftoftheXelNaga">storm_ui_icon_zeratul_voidprison.dds</ZeratulGiftoftheXelNaga>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
   </Level20>
 </Zeratul>

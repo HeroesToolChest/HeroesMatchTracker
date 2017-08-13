@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LostVikings>
+<LostVikings mana="None">
   <Level1>
     <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryOlafTheStout>
     <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasterySpyGames>
@@ -14,17 +14,17 @@
   </Level4>
   <Level7>
     <LostVikingsMasteryBaleogTheFierce name="Baleog the Fierce" desc="LostVikingsBaleogTheFierceTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryBaleogTheFierce>
-    <LostVikingsMasterySpinToWin name="Spin To Win!" desc="LostVikingsSpinToWin">storm_ui_icon_lostvikings_spintowin.dds</LostVikingsMasterySpinToWin>
-    <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce">storm_ui_icon_lostvikings_norseforce.dds</LostVikingsMasteryNorseForce>
+    <LostVikingsMasterySpinToWin name="Spin To Win!" desc="LostVikingsSpinToWin" cooldown="10">storm_ui_icon_lostvikings_spintowin.dds</LostVikingsMasterySpinToWin>
+    <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce" cooldown="30">storm_ui_icon_lostvikings_norseforce.dds</LostVikingsMasteryNorseForce>
   </Level7>
   <Level10>
-    <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsHeroicAbilityLongboatRaid>
-    <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain">storm_ui_icon_lostvikings_playagain.dds</LostVikingsHeroicAbilityPlayAgain>
+    <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid" cooldown="90">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsHeroicAbilityLongboatRaid>
+    <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain" cooldown="80">storm_ui_icon_lostvikings_playagain.dds</LostVikingsHeroicAbilityPlayAgain>
   </Level10>
   <Level13>
     <LostVikingsMasteryHunkaBurningOlaf name="Hunka' Burning Olaf" desc="LostVikingsHunkaBurningOlafTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryHunkaBurningOlaf>
-    <LostVikingsMasteryJump name="Jump!" desc="LostVikingsJump">storm_ui_icon_lostvikings_jump.dds</LostVikingsMasteryJump>
-    <LostVikingsMasteryNordicAttackSquad name="Nordic Attack Squad" generic="true" desc="LostVikingsNordicAttackSquad">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsMasteryNordicAttackSquad>
+    <LostVikingsMasteryJump name="Jump!" desc="LostVikingsJump" cooldown="30">storm_ui_icon_lostvikings_jump.dds</LostVikingsMasteryJump>
+    <LostVikingsMasteryNordicAttackSquad name="Nordic Attack Squad" generic="true" desc="LostVikingsNordicAttackSquad" cooldown="30">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsMasteryNordicAttackSquad>
   </Level13>
   <Level16>
     <LostVikingsMasteryLargeAndInCharge name="Large and In Charge" desc="LostVikingsLargeAndInChargeTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryLargeAndInCharge>

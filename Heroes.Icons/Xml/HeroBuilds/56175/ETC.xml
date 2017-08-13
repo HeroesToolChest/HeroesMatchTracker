@@ -16,8 +16,8 @@
     <ETCMasteryHammeron name="Hammer-on" generic="true" desc="ETCHammeronTalent">storm_ui_icon_talent_autoattack_damage.dds</ETCMasteryHammeron>
   </Level7>
   <Level10>
-    <ETCHeroicAbilityMoshPit name="Mosh Pit" desc="L90ETCMoshPit">storm_ui_icon_ETC_MoshPit.dds</ETCHeroicAbilityMoshPit>
-    <ETCHeroicAbilityStageDive name="Stage Dive" desc="L90ETCStageDive">storm_ui_icon_ETC_StageDive.dds</ETCHeroicAbilityStageDive>
+    <ETCHeroicAbilityMoshPit name="Mosh Pit" desc="L90ETCMoshPit" mana="100" cooldown="120">storm_ui_icon_ETC_MoshPit.dds</ETCHeroicAbilityMoshPit>
+    <ETCHeroicAbilityStageDive name="Stage Dive" desc="L90ETCStageDive" mana="100" cooldown="75">storm_ui_icon_ETC_StageDive.dds</ETCHeroicAbilityStageDive>
   </Level10>
   <Level13>
     <ETCMasteryMicCheck name="Mic Check" desc="ETCMicCheckTalent">storm_ui_icon_etc_facemelt.dds</ETCMasteryMicCheck>
@@ -27,13 +27,13 @@
   <Level16>
     <ETCMasteryShowStopper name="Show Stopper" desc="ETCShowStopperTalent">storm_ui_icon_etc_powerslide.dds</ETCMasteryShowStopper>
     <ETCMasteryGuitarSoloAggressiveShredding name="Aggressive Shredding" desc="ETCGuitarSoloAggressiveShreddingTalent">storm_ui_icon_etc_guitarsolo.dds</ETCMasteryGuitarSoloAggressiveShredding>
-    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+    <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
   </Level16>
   <Level20>
     <L90ETCMasteryMoshPitTourBus name="Tour Bus" desc="L90ETCMoshPitTourBusTalent">storm_ui_icon_ETC_MoshPit.dds</L90ETCMasteryMoshPitTourBus>
     <L90ETCMasteryStageDiveCrowdPleaser name="Crowd Pleaser" desc="ETCStageDiveCrowdPleaserTalent">storm_ui_icon_ETC_StageDive.dds</L90ETCMasteryStageDiveCrowdPleaser>
     <L90ETCMasteryDeathMetal name="Death Metal" desc="L90ETCDeathMetalTalent">storm_ui_icon_etc_moshpit_a.dds</L90ETCMasteryDeathMetal>
-    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
   </Level20>
 </ETC>

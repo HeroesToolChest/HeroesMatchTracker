@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Auriel>
+<Auriel mana="Energy">
   <Level1>
     <AurielSwiftSweepSacredSweepTalent name="Swift Sweep" desc="AurielSwiftSweepSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielSwiftSweepSacredSweepTalent>
     <AurielIncreasingClaritySacredSweepTalent name="Increasing Clarity" desc="AurielIncreasingClaritySacredSweepTalent">storm_ui_icon_auriel_angelicsweep_a.dds</AurielIncreasingClaritySacredSweepTalent>
@@ -18,8 +18,8 @@
     <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord" desc="AurielEnergizedCordRayOfHeavenTalent">storm_ui_icon_auriel_bestowhope_a.dds</AurielEnergizedCordRayOfHeavenTalent>
   </Level7>
   <Level10>
-    <AurielHeroicResurrect name="Resurrect" desc="AurielResurrect">storm_ui_icon_auriel_resurrect.dds</AurielHeroicResurrect>
-    <AurielHeroicCrystalAegis name="Crystal Aegis" desc="AurielCrystalAegis">storm_ui_icon_auriel_ribboncocoon.dds</AurielHeroicCrystalAegis>
+    <AurielHeroicResurrect name="Resurrect" desc="AurielResurrect" cooldown="120">storm_ui_icon_auriel_resurrect.dds</AurielHeroicResurrect>
+    <AurielHeroicCrystalAegis name="Crystal Aegis" desc="AurielCrystalAegis" cooldown="60">storm_ui_icon_auriel_ribboncocoon.dds</AurielHeroicCrystalAegis>
   </Level10>
   <Level13>
     <AurielBlindingFlashSacredSweepTalent name="Blinding Flash" desc="AurielBlindingFlashSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielBlindingFlashSacredSweepTalent>
@@ -35,7 +35,7 @@
   <Level20>
     <AurielLightSpeedResurrectTalent name="Light Speed" desc="AurielLightSpeedResurrectTalent">storm_ui_icon_auriel_resurrect.dds</AurielLightSpeedResurrectTalent>
     <AurielDiamondResolveCrystalAegisTalent name="Diamond Resolve" desc="AurielDiamondResolveCrystalAegisTalent">storm_ui_icon_auriel_ribboncocoon.dds</AurielDiamondResolveCrystalAegisTalent>
-    <AurielAngelicFlightTalent name="Angelic Flight" desc="AurielAngelicFlightTalent">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
-    <AurielShieldOfHopeTalent name="Shield of Hope" desc="AurielShieldOfHopeTalent">storm_ui_icon_auriel_shieldofhope.dds</AurielShieldOfHopeTalent>
+    <AurielAngelicFlightTalent name="Angelic Flight" desc="AurielAngelicFlightTalent" cooldown="45">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
+    <AurielShieldOfHopeTalent name="Shield of Hope" desc="AurielShieldOfHopeTalent" cooldown="60">storm_ui_icon_auriel_shieldofhope.dds</AurielShieldOfHopeTalent>
   </Level20>
 </Auriel>

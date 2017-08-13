@@ -17,12 +17,12 @@
     <TychusRelentlessSoldier name="Relentless Soldier" generic="true" desc="TychusRelentlessSoldierTalent">storm_ui_icon_Talent_Relentless.dds</TychusRelentlessSoldier>
   </Level7>
   <Level10>
-    <TychusHeroicAbilityCommandeerOdin name="Commandeer Odin" desc="TychusCommandeerOdin">storm_ui_icon_tychus_commandeerodin.dds</TychusHeroicAbilityCommandeerOdin>
-    <TychusHeroicAbilityDrakkenLaserDrill name="Drakken Laser Drill" desc="TychusDrakkenLaserDrill">storm_ui_icon_tychus_drakkinlaserdrill.dds</TychusHeroicAbilityDrakkenLaserDrill>
+    <TychusHeroicAbilityCommandeerOdin name="Commandeer Odin" desc="TychusCommandeerOdin" mana="100" cooldown="100">storm_ui_icon_tychus_commandeerodin.dds</TychusHeroicAbilityCommandeerOdin>
+    <TychusHeroicAbilityDrakkenLaserDrill name="Drakken Laser Drill" desc="TychusDrakkenLaserDrill" mana="100" cooldown="100">storm_ui_icon_tychus_drakkinlaserdrill.dds</TychusHeroicAbilityDrakkenLaserDrill>
   </Level10>
   <Level13>
     <TychusThatsTheStuff name="That's the Stuff!" desc="TychusThatsTheStuff">storm_ui_icon_tychus_minigun.dds</TychusThatsTheStuff>
-    <TychusNeosteelCoating name="Neosteel Coating" desc="TychusNeosteelCoatingTalent">storm_temp_btn-upgrade-terran-neosteelframe.dds</TychusNeosteelCoating>
+    <TychusNeosteelCoating name="Neosteel Coating" desc="TychusNeosteelCoatingTalent" cooldown="30">storm_temp_btn-upgrade-terran-neosteelframe.dds</TychusNeosteelCoating>
     <TychusMasterySprayNPray name="Spray 'n' Pray" desc="TychusOverkillSprayNPrayTalent">storm_ui_icon_tychus_overkill.dds</TychusMasterySprayNPray>
   </Level13>
   <Level16>

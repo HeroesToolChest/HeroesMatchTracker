@@ -16,8 +16,8 @@
     <RagnarosBlisteringAttacks name="Blistering Attacks" desc="RagnarosBlisteringAttacks" generic="true">storm_ui_icon_talent_autoattack_damage.dds</RagnarosBlisteringAttacks>
   </Level7>
   <Level10>
-    <RagnarosSulfurasSmash name="Sulfuras Smash" desc="RagnarosSulfurasSmash">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmash>
-    <RagnarosLavaWave name="Lava Wave" desc="RagnarosLavaWaveTargetPoint">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWave>
+    <RagnarosSulfurasSmash name="Sulfuras Smash" desc="RagnarosSulfurasSmash" mana="75" cooldown="80">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmash>
+    <RagnarosLavaWave name="Lava Wave" desc="RagnarosLavaWaveTargetPoint" mana="80" cooldown="120">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWave>
   </Level10>
   <Level13>
     <RagnarosEmpowerSulfurasCauterizeWounds name="Cauterize Wounds" desc="RagnarosEmpowerSulfurasCauterizeWounds">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasCauterizeWounds>
@@ -33,6 +33,6 @@
     <RagnarosSulfurasSmashFlamesOfSulfuron name="Flames of Sulfuron" desc="RagnarosSulfurasSmashFlamesOfSulfuron">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmashFlamesOfSulfuron>
     <RagnarosLavaWaveLavaSurge name="Lava Surge" desc="RagnarosLavaWaveLavaSurge">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWaveLavaSurge>
     <RagnarosMoltenCoreHeroicDifficulty name="Heroic Difficulty" desc="RagnarosMoltenCoreHeroicDifficulty">storm_ui_icon_ragnaros_moltencore.dds</RagnarosMoltenCoreHeroicDifficulty>
-    <RagnarosSubmerge name="Submerge" desc="RagnarosSubmerge">storm_ui_icon_ragnaros_submerge.dds</RagnarosSubmerge>
+    <RagnarosSubmerge name="Submerge" desc="RagnarosSubmerge" cooldown="90">storm_ui_icon_ragnaros_submerge.dds</RagnarosSubmerge>
   </Level20>
 </Ragnaros>

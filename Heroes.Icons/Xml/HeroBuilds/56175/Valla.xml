@@ -16,13 +16,13 @@
     <DemonHunterMasteryRepeatingArrowVault name="Repeating Arrow" desc="DemonHunterVaultRepeatingArrowTalent">storm_ui_icon_valla_vault_a.dds</DemonHunterMasteryRepeatingArrowVault>
   </Level7>
   <Level10>
-    <DemonHunterHeroicAbilityStrafe name="Strafe" desc="DemonHunterStrafe">storm_ui_icon_valla_strafe.dds</DemonHunterHeroicAbilityStrafe>
-    <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterHeroicAbilityRainofVengeance>
+    <DemonHunterHeroicAbilityStrafe name="Strafe" desc="DemonHunterStrafe" mana="80" cooldown="60">storm_ui_icon_valla_strafe.dds</DemonHunterHeroicAbilityStrafe>
+    <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance" mana="50" cooldown="50" ch-cooldown="true">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterHeroicAbilityRainofVengeance>
   </Level10>
   <Level13>
     <DemonHunterMasterySiphoningArrow name="Siphoning Arrow" desc="DemonHunterHungeringArrowSiphoningArrowTalent">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasterySiphoningArrow>
     <DemonHunterCombatStyleTemperedByDiscipline name="Tempered by Discipline" desc="DemonHunterHatredTemperedByDisciplineTalent">storm_ui_icon_valla_hatred.dds</DemonHunterCombatStyleTemperedByDiscipline>
-    <DemonHunterGloom name="Gloom" desc="DemonHunterGloom">storm_ui_icon_valla_hatred_var1.dds</DemonHunterGloom>
+    <DemonHunterGloom name="Gloom" desc="DemonHunterGloom" cooldown="5">storm_ui_icon_valla_hatred_var1.dds</DemonHunterGloom>
   </Level13>
   <Level16>
     <DemonHunterMasteryFrostShot name="Frost Shot" desc="DemonHunterMultishotFrostShotTalent">storm_ui_icon_valla_multishot.dds</DemonHunterMasteryFrostShot>

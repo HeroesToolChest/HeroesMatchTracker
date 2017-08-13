@@ -3,7 +3,7 @@
   <Level1>
     <AmazonThunderstroke name="Thunderstroke" desc="AmazonLightningFuryThunderstroke">storm_ui_icon_cassia_lightningfury.dds</AmazonThunderstroke>
     <AmazonTrueSight name="True Sight" desc="AmazonBlindingLightTrueSight">storm_ui_icon_cassia_blindinglight.dds</AmazonTrueSight>
-    <AmazonChargedStrikes name="Charged Strikes" desc="AmazonAvoidanceChargedStrikes">storm_ui_icon_cassia_chargedstrikes.dds</AmazonChargedStrikes>
+    <AmazonChargedStrikes name="Charged Strikes" desc="AmazonAvoidanceChargedStrikes" cooldown="20">storm_ui_icon_cassia_chargedstrikes.dds</AmazonChargedStrikes>
   </Level1>
   <Level4>
     <AmazonInnerLight name="Inner Light" desc="AmazonBlindingLightInnerLight">storm_ui_icon_cassia_innerlight.dds</AmazonInnerLight>
@@ -16,8 +16,8 @@
     <AmazonSurgeOfLight name="Surge Of Light" desc="AmazonAvoidanceSurgeOfLight">storm_ui_icon_cassia_avoidance_a.dds</AmazonSurgeOfLight>
   </Level7>
   <Level10>
-    <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning">storm_ui_icon_cassia_balllightning.dds</AmazonBallLightning>
-    <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie">storm_ui_icon_cassia_valkrie.dds</AmazonValkyrie>
+    <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning" mana="60" cooldown="60">storm_ui_icon_cassia_balllightning.dds</AmazonBallLightning>
+    <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie" mana="60" cooldown="60">storm_ui_icon_cassia_valkrie.dds</AmazonValkyrie>
   </Level10>
   <Level13>
     <AmazonGroundingBolt name="Grounding Bolt" desc="AmazonLightningFuryGroundingBolt">storm_ui_icon_cassia_lightningfury.dds</AmazonGroundingBolt>
