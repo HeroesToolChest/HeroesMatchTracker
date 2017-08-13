@@ -16,8 +16,8 @@
     <KaelthasMasterySunfireEnchantment name="Sunfire Enchantment" desc="KaelthasSunfireEnchantmentTalent">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasMasterySunfireEnchantment>
   </Level7>
   <Level10>
-    <KaelthasHeroicAbilityPhoenix name="Phoenix" desc="KaelthasPhoenix">storm_ui_icon_kaelthas_phoenix.dds</KaelthasHeroicAbilityPhoenix>
-    <KaelthasHeroicAbilityPyroblast name="Pyroblast" desc="KaelthasPyroblast">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasHeroicAbilityPyroblast>
+    <KaelthasHeroicAbilityPhoenix name="Phoenix" desc="KaelthasPhoenix" mana="80" cooldown="60">storm_ui_icon_kaelthas_phoenix.dds</KaelthasHeroicAbilityPhoenix>
+    <KaelthasHeroicAbilityPyroblast name="Pyroblast" desc="KaelthasPyroblast" mana="80" cooldown="100">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasHeroicAbilityPyroblast>
   </Level10>
   <Level13>
     <KaelthasLivingBombPyromaniac name="Pyromaniac" desc="KaelthasLivingBombPyromaniacTalent">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombPyromaniac>

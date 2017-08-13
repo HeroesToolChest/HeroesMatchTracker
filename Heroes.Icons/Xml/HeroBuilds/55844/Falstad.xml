@@ -16,8 +16,8 @@
     <FalstadMasteryLightningRodChargedUp name="Charged Up" desc="FalstadChargedUpTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodChargedUp>
   </Level7>
   <Level10>
-    <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast" desc="FalstadHinterlandBlast">storm_ui_icon_falstad_hinterlandblast.dds</FalstadHeroicAbilityHinterlandBlast>
-    <FalstadHeroicAbilityMightyGust name="Mighty Gust" desc="FalstadMightyGust">storm_ui_icon_falstad_mightygust.dds</FalstadHeroicAbilityMightyGust>
+    <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast" desc="FalstadHinterlandBlast" mana="100" cooldown="120">storm_ui_icon_falstad_hinterlandblast.dds</FalstadHeroicAbilityHinterlandBlast>
+    <FalstadHeroicAbilityMightyGust name="Mighty Gust" desc="FalstadMightyGust" mana="70" cooldown="60">storm_ui_icon_falstad_mightygust.dds</FalstadHeroicAbilityMightyGust>
   </Level10>
   <Level13>
     <FalstadMasteryLightningRodThunderstrikes name="Thunderstrikes" desc="FalstadThunderstrikesTalent">storm_ui_icon_falstad_lightningrod.dds</FalstadMasteryLightningRodThunderstrikes>

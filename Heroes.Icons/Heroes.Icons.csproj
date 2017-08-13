@@ -83,14 +83,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\HeroMana.cs" />
     <Compile Include="HeroesBase.cs" />
-    <Compile Include="HeroFranchise.cs" />
+    <Compile Include="Models\HeroFranchise.cs" />
     <Compile Include="IHeroesIconsService.cs" />
-    <Compile Include="MVPAwardColor.cs" />
-    <Compile Include="HeroesIcons.cs" />
-    <Compile Include="HeroRole.cs" />
+    <Compile Include="Models\MVPAwardColor.cs" />
+    <Compile Include="Models\HeroesIcons.cs" />
+    <Compile Include="Models\HeroRole.cs" />
     <Compile Include="HeroesIconException.cs" />
-    <Compile Include="OtherIcon.cs" />
+    <Compile Include="Models\OtherIcon.cs" />
+    <Compile Include="Models\Talent.cs" />
     <Compile Include="Xml\HeroesXml.cs" />
     <Compile Include="Xml\IHeroBuilds.cs" />
     <Compile Include="Xml\IHeroes.cs" />
@@ -98,10 +100,10 @@
     <Compile Include="Xml\IMapBackgrounds.cs" />
     <Compile Include="Xml\IMatchAwards.cs" />
     <Compile Include="Xml\ParseXmlException.cs" />
-    <Compile Include="PartyIconColor.cs" />
+    <Compile Include="Models\PartyIconColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TalentTooltip.cs" />
-    <Compile Include="TalentTier.cs" />
+    <Compile Include="Models\TalentTooltip.cs" />
+    <Compile Include="Models\TalentTier.cs" />
     <Compile Include="Xml\HeroBuildsXml.cs" />
     <Compile Include="Xml\HomeScreensXml.cs" />
     <Compile Include="Xml\MapBackgroundsXml.cs" />

@@ -17,8 +17,8 @@
     <NovaSnipeMaster name="Snipe Master" desc="NovaSnipeMasterTalent">storm_ui_icon_nova_snipe.dds</NovaSnipeMaster>
   </Level7>
   <Level10>
-    <NovaHeroicAbilityTripleTap name="Triple Tap" desc="NovaTripleTap">storm_ui_icon_nova_tripletap.dds</NovaHeroicAbilityTripleTap>
-    <NovaHeroicAbilityPrecisionStrike name="Precision Strike" desc="NovaPrecisionStrike">storm_ui_icon_nova_orbitalstrike.dds</NovaHeroicAbilityPrecisionStrike>
+    <NovaHeroicAbilityTripleTap name="Triple Tap" desc="NovaTripleTap" mana="100" cooldown="100">storm_ui_icon_nova_tripletap.dds</NovaHeroicAbilityTripleTap>
+    <NovaHeroicAbilityPrecisionStrike name="Precision Strike" desc="NovaPrecisionStrike" mana="100" cooldown="60">storm_ui_icon_nova_orbitalstrike.dds</NovaHeroicAbilityPrecisionStrike>
   </Level10>
   <Level13>
     <NovaMasteryDoubleTap name="Double Tap" desc="NovaPinningShotDoubleTapTalent">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryDoubleTap>
@@ -33,7 +33,7 @@
   <Level20>
     <NovaMasteryFastReload name="Fast Reload" desc="NovaTripleTapFastReloadTalent">storm_ui_icon_nova_tripletap.dds</NovaMasteryFastReload>
     <NovaMasteryPrecisionBarrage name="Precision Barrage" desc="NovaPrecisionStrikePrecisionBarrageTalent">storm_ui_icon_nova_orbitalstrike.dds</NovaMasteryPrecisionBarrage>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
-    <NovaGhostProtocol name="Ghost Protocol" desc="NovaGhostProtocol">storm_ui_icon_nova_personalcloaking.dds</NovaGhostProtocol>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <NovaGhostProtocol name="Ghost Protocol" desc="NovaGhostProtocol" cooldown="60">storm_ui_icon_nova_personalcloaking.dds</NovaGhostProtocol>
   </Level20>
 </Nova>

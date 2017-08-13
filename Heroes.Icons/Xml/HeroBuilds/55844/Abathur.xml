@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Abathur>
+<Abathur mana="None">
   <Level1>
     <AbathurMasteryPressurizedGlands name="Pressurized Glands" desc="AbathurSymbiotePressurizedGlandsTalent">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
     <AbathurCombatStyleSurvivalInstincts name="Survival Instincts" desc="AbathurLocustStrainSurvivalInstinctsTalent">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleSurvivalInstincts>
@@ -16,11 +16,11 @@
     <AbathurMasteryNeedlespine name="Needlespine" desc="AbathurSymbioteNeedlespineTalent">storm_ui_icon_abathur_stab.dds</AbathurMasteryNeedlespine>
     <AbathurMasteryVileNestsToxicNest name="Vile Nest" desc="AbathurToxicNestVileNestTalent">storm_ui_icon_abathur_toxicnest.dds</AbathurMasteryVileNestsToxicNest>
     <AbathurSymbioteCarapaceNetworkedCarapace name="Networked Carapace" desc="AbathurSymbioteCarapaceNetworkedCarapaceTalent">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapaceNetworkedCarapace>
-    <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
+    <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule" cooldown="60">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
   </Level7>
   <Level10>
-    <AbathurHeroicAbilityUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution">storm_ui_icon_abathur_ultimateevolution.dds</AbathurHeroicAbilityUltimateEvolution>
-    <AbathurHeroicAbilityEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurHeroicAbilityEvolveMonstrosity>
+    <AbathurHeroicAbilityUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution" cooldown="50">storm_ui_icon_abathur_ultimateevolution.dds</AbathurHeroicAbilityUltimateEvolution>
+    <AbathurHeroicAbilityEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar" cooldown="90">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurHeroicAbilityEvolveMonstrosity>
   </Level10>
   <Level13>
     <AbathurCombatStyleAssaultStrain name="Assault Strain" desc="AbathurLocustStrainAssaultStrainTalent">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleAssaultStrain>
@@ -31,13 +31,13 @@
   <Level16>
     <AbathurMasteryEnvenomedSpikes name="Envenomed Spikes" desc="AbathurSymbioteEnvenomedSpikesTalent">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryEnvenomedSpikes>
     <AbathurMasteryAdrenalineBoost name="Adrenaline Boost" desc="AbathurSymbioteAdrenalineBoostTalent">storm_ui_icon_abathur_carapace.dds</AbathurMasteryAdrenalineBoost>
-    <AbathurCombatStyleLocustBrood name="Locust Brood" desc="AbathurLocustSwarm">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustBrood>
+    <AbathurCombatStyleLocustBrood name="Locust Brood" desc="AbathurLocustSwarm" cooldown="45">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleLocustBrood>
     <AbathurVolatileMutation name="Volatile Mutation" desc="AbathurVolatileMutationTalent">storm_ui_icon_abathur_volatilemutation.dds</AbathurVolatileMutation>
   </Level16>
   <Level20>
     <AbathurUltimateEvolutionEvolutionaryLink name="Evolutionary Link" desc="AbathurUltimateEvolutionEvolutionaryLinkTalent">storm_ui_icon_abathur_ultimateevolution.dds</AbathurUltimateEvolutionEvolutionaryLink>
     <AbathurMasteryEvolutionComplete name="Evolution Complete" desc="AbathurMonstrosityEvolutionCompleteTalent">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurMasteryEvolutionComplete>
     <AbathurSymbioteHivemind name="Hivemind" desc="AbathurSymbioteHivemindTalent">storm_ui_icon_abathur_symbiote.dds</AbathurSymbioteHivemind>
-    <AbathurMasteryLocustMaster name="Locust Nest" desc="AbathurLocustMasterHotbar">storm_ui_icon_abathur_locustnest.dds</AbathurMasteryLocustMaster>
+    <AbathurMasteryLocustMaster name="Locust Nest" desc="AbathurLocustMasterHotbar" cooldown="45">storm_ui_icon_abathur_locustnest.dds</AbathurMasteryLocustMaster>
   </Level20>
 </Abathur>

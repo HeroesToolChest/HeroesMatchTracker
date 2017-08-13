@@ -18,8 +18,8 @@
     <TinkerMasteryHyperfocusCoils name="Hyperfocus Coils" desc="TinkerDethLazorHyperfocusCoilsTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryHyperfocusCoils>
   </Level7>
   <Level10>
-    <TinkerHeroicAbilityRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive">storm_ui_icon_gazlowe_robogoblin.dds</TinkerHeroicAbilityRoboGoblin>
-    <TinkerHeroicAbilityGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000">storm_ui_icon_gazlowe_gravobomb.dds</TinkerHeroicAbilityGravOBomb3000>
+    <TinkerHeroicAbilityRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive" cooldown="60">storm_ui_icon_gazlowe_robogoblin.dds</TinkerHeroicAbilityRoboGoblin>
+    <TinkerHeroicAbilityGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000" mana="100" cooldown="110">storm_ui_icon_gazlowe_gravobomb.dds</TinkerHeroicAbilityGravOBomb3000>
   </Level10>
   <Level13>
     <TinkerMasteryEZPZDimensionalRipper name="EZ-PZ Dimensional Ripper" desc="TinkerDethLazorEZPZDimensionalRipperTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryEZPZDimensionalRipper>
@@ -35,6 +35,6 @@
     <TinkerMasteryMechaLord name="Mecha-Lord" desc="TinkerRoboGoblinMechaLordTalent">storm_ui_icon_gazlowe_robogoblin.dds</TinkerMasteryMechaLord>
     <TinkerMasteryMiniatureBlackHole name="Miniature Black Hole" desc="TinkerGravOBombMiniatureBlackHoleTalent">storm_ui_icon_gazlowe_gravobomb.dds</TinkerMasteryMiniatureBlackHole>
     <TinkerTalentFirinMahLazorz name="Firin' Mah Lazorz" desc="TinkerFirinMahLazorz">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerTalentFirinMahLazorz>
-    <TinkerItsRainingScrap name="It's Raining Scrap" desc="TinkerItsRainingScrap">storm_ui_icon_gazlowe_itsrainingscrap.dds</TinkerItsRainingScrap>
+    <TinkerItsRainingScrap name="It's Raining Scrap" desc="TinkerItsRainingScrap" cooldown="60">storm_ui_icon_gazlowe_itsrainingscrap.dds</TinkerItsRainingScrap>
   </Level20>
 </Gazlowe>

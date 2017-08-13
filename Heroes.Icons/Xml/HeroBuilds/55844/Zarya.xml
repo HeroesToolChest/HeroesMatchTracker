@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Zarya>
+<Zarya mana="None">
   <Level1>
     <ZaryaParticleGrenadeDemolitionsExpertQuest name="Demolitions Expert" desc="ZaryaParticleGrenadeDemolitionsExpertTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeDemolitionsExpertQuest>
     <ZaryaShieldAllyTogetherWeAreStrong name="Together We Are Strong" desc="ZaryaShieldAllyTogetherWeAreStrongTalent">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAllyTogetherWeAreStrong>
@@ -19,14 +19,14 @@
     <ZaryaEnergyHitMe name="Hit Me" desc="ZaryaEnergyHitMeTalent">storm_ui_icon_zarya_energy.dds</ZaryaEnergyHitMe>
   </Level7>
   <Level10>
-    <ZaryaHeroicAbilityGravitonSurge name="Graviton Surge" desc="ZaryaGravitonSurge">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaHeroicAbilityGravitonSurge>
-    <ZaryaHeroicAbilityExpulsionZone name="Expulsion Zone" desc="ZaryaExpulsionZone">storm_ui_icon_zarya_expulsionzone.dds</ZaryaHeroicAbilityExpulsionZone>
+    <ZaryaHeroicAbilityGravitonSurge name="Graviton Surge" desc="ZaryaGravitonSurge" cooldown="80">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaHeroicAbilityGravitonSurge>
+    <ZaryaHeroicAbilityExpulsionZone name="Expulsion Zone" desc="ZaryaExpulsionZone" cooldown="45">storm_ui_icon_zarya_expulsionzone.dds</ZaryaHeroicAbilityExpulsionZone>
   </Level10>
   <Level13>
     <ZaryaPersonalBarrierUnstoppableCompetitor name="Unstoppable Competitor" desc="ZaryaPersonalBarrierUnstoppableCompetitorTalent">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierUnstoppableCompetitor>
     <ZaryaPersonalBarrierSpellBarrier name="Spell Barrier" desc="ZaryaPersonalBarrierSpellBarrierTalent">storm_ui_icon_zarya_personalbarrier_a.dds</ZaryaPersonalBarrierSpellBarrier>
     <ZaryaEnergyEnduranceTraining name="Endurance Training" desc="ZaryaEnergyEnduranceTrainingTalent">storm_ui_icon_zarya_energy.dds</ZaryaEnergyEnduranceTraining>
-    <ZaryaPainIsTemporary name="Pain is Temporary" desc="ZaryaPainIsTemporaryTalent">storm_ui_icon_zarya_painistemporary.dds</ZaryaPainIsTemporary>
+    <ZaryaPainIsTemporary name="Pain is Temporary" desc="ZaryaPainIsTemporaryTalent" cooldown="30">storm_ui_icon_zarya_painistemporary.dds</ZaryaPainIsTemporary>
   </Level13>
   <Level16>
     <ZaryaParticleGrenadePlasmaShock name="Plasma Shock" desc="ZaryaParticleGrenadePlasmaShockTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadePlasmaShock>
@@ -38,6 +38,6 @@
     <ZaryaGravitonSurgeGravityKills name="Gravity Kills" desc="ZaryaGravitonSurgeGravityKillsTalent">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaGravitonSurgeGravityKills>
     <ZaryaExpulsionZoneClearOut name="Clear Out" desc="ZaryaExpulsionZoneClearOutTalent">storm_ui_icon_zarya_expulsionzone.dds</ZaryaExpulsionZoneClearOut>
     <ZaryaParticleGrenadeGrenadier name="Grenadier" desc="ZaryaParticleGrenadeGrenadierTalent">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenadeGrenadier>
-    <ZaryaUnyieldingDefender name="Unyielding Defender" desc="ZaryaUnyieldingDefenderTalent">storm_ui_icon_zarya_unyieldingdefender.dds</ZaryaUnyieldingDefender>
+    <ZaryaUnyieldingDefender name="Unyielding Defender" desc="ZaryaUnyieldingDefenderTalent" cooldown="60">storm_ui_icon_zarya_unyieldingdefender.dds</ZaryaUnyieldingDefender>
   </Level20>
 </Zarya>

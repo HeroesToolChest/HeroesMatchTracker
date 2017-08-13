@@ -16,8 +16,8 @@
     <ZagaraMasteryBileDrop name="Bile Drop" desc="ZagaraInfestedDropBileDropTalent">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryBileDrop>
   </Level7>
   <Level10>
-    <ZagaraHeroicAbilityDevouringMaw name="Devouring Maw" desc="ZagaraDevouringMaw">storm_ui_icon_zagara_devouringmaw.dds</ZagaraHeroicAbilityDevouringMaw>
-    <ZagaraHeroicAbilityNydusAssault name="Nydus Network" desc="ZagaraNydusNetwork">storm_ui_icon_zagara_nydusworm.dds</ZagaraHeroicAbilityNydusAssault>
+    <ZagaraHeroicAbilityDevouringMaw name="Devouring Maw" desc="ZagaraDevouringMaw" mana="100" cooldown="100">storm_ui_icon_zagara_devouringmaw.dds</ZagaraHeroicAbilityDevouringMaw>
+    <ZagaraHeroicAbilityNydusAssault name="Nydus Network" desc="ZagaraNydusNetwork" mana="50" cooldown="60" ch-cooldown="true">storm_ui_icon_zagara_nydusworm.dds</ZagaraHeroicAbilityNydusAssault>
   </Level10>
   <Level13>
     <ZagaraMasteryHydraliskTransfusion name="Hydralisk Transfusion" desc="ZagaraHydraliskTransfusionTalent">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryHydraliskTransfusion>

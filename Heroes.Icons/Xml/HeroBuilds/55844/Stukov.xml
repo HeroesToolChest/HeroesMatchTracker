@@ -19,8 +19,8 @@
     <StukovTargetedExcision name="Targeted Excision" desc="StukovTargetedExcisionTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovTargetedExcision>
   </Level7>
   <Level10>
-    <StukovHeroicAbilityFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe">storm_ui_icon_stukov_flailingswipe.dds</StukovHeroicAbilityFlailingSwipe>
-    <StukovHeroicAbilityMassiveShove name="Massive Shove" desc="StukovMassiveShove">storm_ui_icon_stukov_massiveshove.dds</StukovHeroicAbilityMassiveShove>
+    <StukovHeroicAbilityFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe" mana="100" cooldown="80">storm_ui_icon_stukov_flailingswipe.dds</StukovHeroicAbilityFlailingSwipe>
+    <StukovHeroicAbilityMassiveShove name="Massive Shove" desc="StukovMassiveShove" mana="50" cooldown="20">storm_ui_icon_stukov_massiveshove.dds</StukovHeroicAbilityMassiveShove>
   </Level10>
   <Level13>
     <StukovWeightedPustuleReactiveBallistospores name="Reactive Ballistospores" desc="StukovReactiveBallistosporesTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovWeightedPustuleReactiveBallistospores>

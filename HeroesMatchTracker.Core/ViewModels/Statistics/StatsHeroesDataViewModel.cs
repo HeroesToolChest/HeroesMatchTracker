@@ -373,35 +373,34 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (QueryTalents == false)
                 return Task.CompletedTask;
 
-            var tierTalents = HeroesIcons.HeroBuilds().GetTierTalentsForHero(heroName, tier);
+            var allTalents = HeroesIcons.HeroBuilds().GetHeroTalents(heroName);
 
-            if (tierTalents == null)
+            if (allTalents == null)
                 return Task.CompletedTask;
 
-            foreach (var talent in tierTalents)
-            {
-                var talentImage = HeroesIcons.HeroBuilds().GetTalentIcon(talent);
-                talentImage.Freeze();
+            var talentTier = allTalents[tier];
 
-                int talentWin = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, tier, true);
-                int talentLoss = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, tier, false);
+            foreach (var talent in talentTier)
+            {
+                int talentWin = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, true);
+                int talentLoss = Database.ReplaysDb().Statistics.ReadTalentsCountForHero(heroName, season, gameMode, selectedMaps, talent, false);
                 int talentTotal = talentWin + talentLoss;
                 double talentWinPercentage = Utilities.CalculateWinValue(talentWin, talentTotal);
-                TalentTooltip talentTooltip = HeroesIcons.HeroBuilds().GetTalentTooltips(talent);
 
-                StatsHeroesTalents talentPicks = new StatsHeroesTalents
+                StatsHeroesTalents talentPick = new StatsHeroesTalents
                 {
-                    TalentName = HeroesIcons.HeroBuilds().GetTrueTalentName(talent),
-                    TalentShortTooltip = talentTooltip.Short,
-                    TalentFullTooltip = talentTooltip.Full,
+                    TalentName = talent.Name,
+                    TalentImage = talent.GetIcon(),
+                    TalentSubInfo = talent.Tooltip.GetTalentSubInfo(),
+                    TalentShortTooltip = talent.Tooltip.Short,
+                    TalentFullTooltip = talent.Tooltip.Full,
                     Wins = talentTotal > 0 ? talentWin : (int?)null,
                     Losses = talentTotal > 0 ? talentLoss : (int?)null,
                     Total = talentTotal > 0 ? talentTotal : (int?)null,
                     Winrate = talentTotal > 0 ? talentWinPercentage : (double?)null,
                 };
 
-                talentPicks.TalentImage = talentImage;
-                Application.Current.Dispatcher.Invoke(() => collection.Add(talentPicks));
+                Application.Current.Dispatcher.Invoke(() => collection.Add(talentPick));
             }
 
             return Task.CompletedTask;

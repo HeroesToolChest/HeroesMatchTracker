@@ -6,6 +6,7 @@ namespace HeroesMatchTracker.Core.Models.StatisticsModels
     {
         public BitmapImage TalentImage { get; set; }
         public string TalentName { get; set; }
+        public string TalentSubInfo { get; set; }
         public string TalentShortTooltip { get; set; }
         public string TalentFullTooltip { get; set; }
         public int? Wins { get; set; }

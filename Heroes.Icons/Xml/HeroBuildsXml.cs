@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
@@ -15,35 +14,21 @@ namespace Heroes.Icons.Xml
         private int SelectedBuild;
         private HeroesXml HeroesXml;
 
-        private Dictionary<string, string> TalentShortTooltip = new Dictionary<string, string>();
-        private Dictionary<string, string> TalentLongTooltip = new Dictionary<string, string>();
-
         /// <summary>
-        /// key is reference name of talent
-        /// Tuple: key is real name of talent
+        /// Inner dictionary key is talent reference name and values are real hero names
         /// </summary>
-        private Dictionary<string, Tuple<string, Uri>> RealTalentNameUriByReferenceName = new Dictionary<string, Tuple<string, Uri>>();
-
-        /// <summary>
-        /// key is real hero name
-        /// value is a string of all talent reference names for that tier
-        /// </summary>
-        private Dictionary<string, Dictionary<TalentTier, List<string>>> HeroTalentsListByRealName = new Dictionary<string, Dictionary<TalentTier, List<string>>>();
-
-        /// <summary>
-        /// key is the talent reference name
-        /// </summary>
-        private Dictionary<string, TalentTooltip> HeroTalentTooltipsByRealName = new Dictionary<string, TalentTooltip>();
-
-        /// <summary>
-        /// key is the talent reference name
-        /// </summary>
-        private Dictionary<string, string> RealHeroNameByTalentReferenceName = new Dictionary<string, string>();
+        private Dictionary<TalentTier, Dictionary<string, string>> RealHeroNameByTalentTierReferenceName = new Dictionary<TalentTier, Dictionary<string, string>>();
 
         /// <summary>
         /// key is the build number
         /// </summary>
         private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
+
+        /// <summary>
+        /// key the real hero name
+        /// value is a dictionary of Talent(s) for each talent tier
+        /// </summary>
+        private Dictionary<string, Dictionary<TalentTier, List<Talent>>> HeroTalentsByHeroName = new Dictionary<string, Dictionary<TalentTier, List<Talent>>>();
 
         private HeroBuildsXml(string parentFile, string xmlBaseFolder, HeroesXml heroesXml, bool logger, int? build = null)
             : base(build ?? 0, logger)
@@ -77,120 +62,74 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns a BitmapImage of the talent
-        /// </summary>
-        /// <param name="talentReferenceName">Reference talent name</param>
-        /// <returns>BitmapImage of the talent</returns>
-        public BitmapImage GetTalentIcon(string talentReferenceName)
-        {
-            // no pick
-            if (string.IsNullOrEmpty(talentReferenceName))
-                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconPick}");
-
-            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
-            {
-                try
-                {
-                    return HeroesBitmapImage(talent.Item2);
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {talent.Item2}");
-                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-                }
-            }
-            else
-            {
-                LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
-                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-            }
-        }
-
-        /// <summary>
-        /// Returns the talent name from the talent reference name
-        /// </summary>
-        /// <param name="talentReferenceName">Reference talent name</param>
-        /// <returns>Talent name</returns>
-        public string GetTrueTalentName(string talentReferenceName)
-        {
-            // no pick
-            if (string.IsNullOrEmpty(talentReferenceName))
-                return "No pick";
-
-            if (RealTalentNameUriByReferenceName.TryGetValue(talentReferenceName, out Tuple<string, Uri> talent))
-            {
-                return talent.Item1;
-            }
-            else
-            {
-                LogReferenceNameNotFound($"No name for reference: {talentReferenceName}");
-                return talentReferenceName;
-            }
-        }
-
-        /// <summary>
-        /// Returns a dictionary of all the talents of a hero
+        /// Returns a dictionary of all the talents of the given hero in talent tiers
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
-        /// <returns></returns>
-        public Dictionary<TalentTier, List<string>> GetAllTalentsForHero(string realHeroName)
+        public Dictionary<TalentTier, List<Talent>> GetHeroTalents(string realHeroName)
         {
-            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<string>> talents))
+            if (HeroTalentsByHeroName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<Talent>> talents))
             {
                 return talents;
             }
             else
             {
-                LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
+                LogReferenceNameNotFound($"No hero talents found for [{nameof(realHeroName)}]: {realHeroName}");
                 return null;
             }
         }
 
         /// <summary>
-        /// Returns a list of all the talents of a hero given a talent tier
+        /// Returns a Talent object from the hero name, tier, and reference name of talent
         /// </summary>
         /// <param name="realHeroName">real hero name</param>
-        /// <param name="talentTier">talent tier</param>
+        /// <param name="tier">The tier that the talent exists in</param>
+        /// <param name="talentReferenceName">reference name of talent</param>
         /// <returns></returns>
-        public List<string> GetTierTalentsForHero(string realHeroName, TalentTier talentTier)
+        public Talent GetHeroTalent(string realHeroName, TalentTier tier, string talentReferenceName)
         {
-            if (HeroTalentsListByRealName.TryGetValue(realHeroName, out Dictionary<TalentTier, List<string>> talents))
+            if (string.IsNullOrEmpty(talentReferenceName))
             {
-                return talents[talentTier];
+                return new Talent // no pick talent
+                {
+                    Name = "No pick",
+                    IsIconGeneric = true,
+                    IsGeneric = true,
+                    IconUri = SetHeroTalentUri(string.Empty, NoTalentIconPick, true),
+                };
             }
-            else
-            {
-                LogReferenceNameNotFound($"No hero real name found [{nameof(GetAllTalentsForHero)}]: {realHeroName}");
+
+            var allTalents = GetHeroTalents(realHeroName);
+
+            if (allTalents == null)
                 return null;
+
+            var talents = allTalents[tier];
+            foreach (var talent in talents)
+            {
+                if (talent.ReferenceName == talentReferenceName)
+                    return talent;
             }
-        }
 
-        /// <summary>
-        /// Returns a TalentTooltip object which contains the short and full tooltips of the talent
-        /// </summary>
-        /// <param name="talentReferenceName">Talent reference name</param>
-        /// <returns></returns>
-        public TalentTooltip GetTalentTooltips(string talentReferenceName)
-        {
-            TalentTooltip talentTooltip = new TalentTooltip(string.Empty, string.Empty);
+            // we couldn't find a talent
+            LogReferenceNameNotFound($"Talent icon: {talentReferenceName}");
 
-            if (string.IsNullOrEmpty(talentReferenceName) || !HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName))
-                return talentTooltip;
-
-            HeroTalentTooltipsByRealName.TryGetValue(talentReferenceName, out talentTooltip);
-
-            return talentTooltip;
+            return new Talent
+            {
+                Name = talentReferenceName,
+                IconUri = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
+            };
         }
 
         /// <summary>
         /// Gets the hero name associated with the given talent. Returns true is found, otherwise returns false
         /// </summary>
+        /// <param name="tier">The tier that the talent resides in</param>
         /// <param name="talentName">The talent reference name</param>
         /// <param name="heroRealName">The hero name</param>
         /// <returns></returns>
-        public bool GetHeroNameFromTalentReferenceName(string talentName, out string heroRealName)
+        public bool GetHeroNameFromTalentReferenceName(TalentTier tier, string talentName, out string heroRealName)
         {
-            return RealHeroNameByTalentReferenceName.TryGetValue(talentName, out heroRealName);
+            return RealHeroNameByTalentTierReferenceName[tier].TryGetValue(talentName, out heroRealName);
         }
 
         /// <summary>
@@ -210,12 +149,18 @@ namespace Heroes.Icons.Xml
         {
             DuplicateBuildCheck();
             ParseParentFile();
-            LoadTalentTooltipStrings();
             ParseChildFiles();
         }
 
         protected override void ParseChildFiles()
         {
+            // create local variables for tooltips, not needed as properties
+            Dictionary<string, string> talentShortTooltip = new Dictionary<string, string>();
+            Dictionary<string, string> talentLongTooltip = new Dictionary<string, string>();
+
+            // load up all the talents
+            LoadTalentTooltipStrings(talentShortTooltip, talentLongTooltip);
+
             foreach (var hero in XmlChildFiles)
             {
                 using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{SelectedBuild}\{hero}.xml"))
@@ -226,14 +171,35 @@ namespace Heroes.Icons.Xml
                     if (heroAltName != hero)
                         continue;
 
-                    var talentTiersForHero = new Dictionary<TalentTier, List<string>>();
+                    HeroMana heroManaType = HeroMana.Mana;
+                    string manaType = reader["mana"] ?? string.Empty;
+                    switch (manaType)
+                    {
+                        case "Brew":
+                            heroManaType = HeroMana.Brew;
+                            break;
+                        case "Fury":
+                            heroManaType = HeroMana.Fury;
+                            break;
+                        case "None":
+                            heroManaType = HeroMana.None;
+                            break;
+                        case "Energy":
+                            heroManaType = HeroMana.Energy;
+                            break;
+                        default:
+                            heroManaType = HeroMana.Mana;
+                            break;
+                    }
+
+                    var talentTiersForHero = new Dictionary<TalentTier, List<Talent>>();
 
                     // add talents, read each tier
                     while (reader.Read())
                     {
                         if (reader.IsStartElement())
                         {
-                            var talentTierList = new List<string>();
+                            var talentTierList = new List<Talent>();
 
                             // is tier Level1, Level4, etc...
                             if (Enum.TryParse(reader.Name, out TalentTier tier))
@@ -243,12 +209,20 @@ namespace Heroes.Icons.Xml
                                 {
                                     if (reader.NodeType == XmlNodeType.Element)
                                     {
-                                        string refName = reader.Name; // reference name of talent
+                                        string refTalentName = reader.Name; // reference name of talent
                                         string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
                                         string generic = reader["generic"] ?? "false";  // is the icon being used generic
                                         string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+                                        int? mana = ConvertToNullableInt(reader["mana"]); // mana/brew/fury/etc... of the talent
+                                        string perManaCost = reader["per-mana"] ?? "false"; // the time cost for mana
+                                        int? cooldown = ConvertToNullableInt(reader["cooldown"]); // cooldown of the talent
+                                        string charge = reader["ch-cooldown"] ?? "false"; // is the cooldown a charge cooldown
 
-                                        SetTalentTooltip(refName, desc);
+                                        if (!bool.TryParse(perManaCost, out bool isPerManaCost))
+                                            isPerManaCost = false;
+
+                                        if (!bool.TryParse(charge, out bool isCharge))
+                                            isCharge = false;
 
                                         if (!bool.TryParse(generic, out bool isGeneric))
                                             isGeneric = false;
@@ -257,27 +231,57 @@ namespace Heroes.Icons.Xml
                                         {
                                             bool isGenericTalent = false;
 
-                                            if (refName.StartsWith("Generic") || refName.StartsWith("HeroGeneric") || refName.StartsWith("BattleMomentum"))
+                                            if (refTalentName.StartsWith("Generic") || refTalentName.StartsWith("HeroGeneric") || refTalentName.StartsWith("BattleMomentum"))
                                             {
                                                 isGeneric = true;
                                                 isGenericTalent = true;
                                             }
 
-                                            if (!RealTalentNameUriByReferenceName.ContainsKey(refName))
-                                                RealTalentNameUriByReferenceName.Add(refName, new Tuple<string, Uri>(realName, SetHeroTalentUri(hero, reader.Value, isGeneric)));
+                                            // create the tooltip
+                                            if (!talentShortTooltip.TryGetValue(desc, out string shortDesc))
+                                                shortDesc = string.Empty;
 
-                                            talentTierList.Add(refName);
+                                            if (!talentLongTooltip.TryGetValue(desc, out string longDesc))
+                                                longDesc = string.Empty;
 
-                                            if (!isGenericTalent)
+                                            // create the talent
+                                            talentTierList.Add(new Talent
+                                            {
+                                                Name = realName,
+                                                ReferenceName = refTalentName,
+                                                IsIconGeneric = isGeneric,
+                                                IsGeneric = isGenericTalent,
+                                                TooltipDescriptionName = desc,
+                                                IconUri = SetHeroTalentUri(hero, reader.Value, isGeneric),
+                                                Tier = tier,
+                                                Tooltip = new TalentTooltip
+                                                {
+                                                    Short = shortDesc,
+                                                    Full = longDesc,
+                                                    ManaType = heroManaType,
+                                                    Mana = mana,
+                                                    IsPerManaCost = isPerManaCost,
+                                                    Cooldown = cooldown,
+                                                    IsChargeCooldown = isCharge,
+                                                },
+                                            });
+
+                                            if (!isGenericTalent && tier != TalentTier.Old)
                                             {
                                                 if (!HeroesXml.HeroExists(heroAltName, false))
                                                     throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                                                if (RealHeroNameByTalentReferenceName.ContainsKey(refName) && tier != TalentTier.Old)
-                                                    throw new ArgumentException($"Same key {refName}");
+                                                if (RealHeroNameByTalentTierReferenceName.ContainsKey(tier))
+                                                {
+                                                    if (RealHeroNameByTalentTierReferenceName[tier].ContainsKey(refTalentName))
+                                                        throw new ArgumentException($"Same key {refTalentName} [{hero}]");
 
-                                                if (tier != TalentTier.Old)
-                                                    RealHeroNameByTalentReferenceName.Add(refName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
+                                                    RealHeroNameByTalentTierReferenceName[tier].Add(refTalentName, HeroesXml.GetRealHeroNameFromAltName(heroAltName));
+                                                }
+                                                else
+                                                {
+                                                    RealHeroNameByTalentTierReferenceName.Add(tier, new Dictionary<string, string>() { { refTalentName, HeroesXml.GetRealHeroNameFromAltName(heroAltName) } });
+                                                }
                                             }
                                         }
                                     }
@@ -291,7 +295,7 @@ namespace Heroes.Icons.Xml
                     if (!HeroesXml.HeroExists(heroAltName, false))
                         throw new ArgumentException($"Hero alt name not found: {heroAltName}");
 
-                    HeroTalentsListByRealName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
+                    HeroTalentsByHeroName.Add(HeroesXml.GetRealHeroNameFromAltName(heroAltName), talentTiersForHero);
                 }
             }
         }
@@ -379,22 +383,7 @@ namespace Heroes.Icons.Xml
                 return new Uri($@"{ApplicationIconsPath}\Talents\_Generic\{fileName}", UriKind.Absolute);
         }
 
-        private void SetTalentTooltip(string talentReferenceName, string desc)
-        {
-            // checking keys because of generic talents
-            if (!HeroTalentTooltipsByRealName.ContainsKey(talentReferenceName) && !string.IsNullOrEmpty(desc))
-            {
-                if (!TalentShortTooltip.TryGetValue(desc, out string shortDesc))
-                    shortDesc = string.Empty;
-
-                if (!TalentLongTooltip.TryGetValue(desc, out string longDesc))
-                    longDesc = string.Empty;
-
-                HeroTalentTooltipsByRealName.Add(talentReferenceName, new TalentTooltip(shortDesc, longDesc));
-            }
-        }
-
-        private void LoadTalentTooltipStrings()
+        private void LoadTalentTooltipStrings(Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentFullTooltip)
         {
             try
             {
@@ -407,10 +396,10 @@ namespace Heroes.Icons.Xml
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
 
-                            if (TalentShortTooltip.ContainsKey(talent[0]))
+                            if (talentShortTooltip.ContainsKey(talent[0]))
                                 throw new ArgumentException($"An item with the same key has already been added in Short Tooltips: {talent[0]}");
 
-                            TalentShortTooltip.Add(talent[0], talent[1]);
+                            talentShortTooltip.Add(talent[0], talent[1]);
                         }
                     }
                 }
@@ -424,10 +413,10 @@ namespace Heroes.Icons.Xml
                         {
                             string[] talent = line.Split(new char[] { '=' }, 2);
 
-                            if (TalentLongTooltip.ContainsKey(talent[0]))
+                            if (talentFullTooltip.ContainsKey(talent[0]))
                                 throw new ArgumentException($"An item with the same key has already been added in Full Tooltips: {talent[0]}");
 
-                            TalentLongTooltip.Add(talent[0], talent[1]);
+                            talentFullTooltip.Add(talent[0], talent[1]);
                         }
                     }
                 }

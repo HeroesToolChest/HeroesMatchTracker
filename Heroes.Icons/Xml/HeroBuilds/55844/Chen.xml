@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chen>
+<Chen mana="Brew">
   <Level1>
     <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">storm_ui_icon_chen_breathoffire.dds</ChenAccumulatingFlame>
     <ChenGroundingBrew name="Grounding Brew" desc="ChenFortifyingBrewGroundingBrewTalent">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenGroundingBrew>
     <ChenFreshestIngredients name="Freshest Ingredients" desc="ChenFreshestIngredients">storm_ui_icon_chen_fortifyingbrew.dds</ChenFreshestIngredients>
-    <ChenElusiveBrawler name="Elusive Brawler" desc="ChenElusiveBrawler">storm_ui_icon_chen_elusivebrew.dds</ChenElusiveBrawler>
+    <ChenElusiveBrawler name="Elusive Brawler" desc="ChenElusiveBrawler" cooldown="25">storm_ui_icon_chen_elusivebrew.dds</ChenElusiveBrawler>
   </Level1>
   <Level4>
     <ChenDeadlyStrike name="Deadly Strike" desc="ChenFlyingKickDeadlyStrikeTalent">storm_ui_icon_chen_flyingkick.dds</ChenDeadlyStrike>
@@ -17,8 +17,8 @@
     <ChenRefreshingElixir name="Refreshing Elixir" generic="true" desc="ChenRefreshingElixir">storm_ui_icon_talent_amplifiedhealing.dds</ChenRefreshingElixir>
   </Level7>
   <Level10>
-    <ChenHeroicAbilityWanderingKeg name="Wandering Keg" desc="ChenWanderingKeg">storm_ui_icon_chen_wanderingkeg.dds</ChenHeroicAbilityWanderingKeg>
-    <ChenHeroicAbilityStormEarthFire name="Storm, Earth, Fire" desc="ChenStormEarthFire">storm_ui_icon_chen_stormearthfire.dds</ChenHeroicAbilityStormEarthFire>
+    <ChenHeroicAbilityWanderingKeg name="Wandering Keg" desc="ChenWanderingKeg" cooldown="70">storm_ui_icon_chen_wanderingkeg.dds</ChenHeroicAbilityWanderingKeg>
+    <ChenHeroicAbilityStormEarthFire name="Storm, Earth, Fire" desc="ChenStormEarthFire" cooldown="100">storm_ui_icon_chen_stormearthfire.dds</ChenHeroicAbilityStormEarthFire>
   </Level10>
   <Level13>
     <ChenPressurePoint name="Pressure Point" desc="ChenFlyingKickPressurePointTalent">storm_ui_icon_chen_flyingkick.dds</ChenPressurePoint>

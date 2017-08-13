@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tracer>
+<Tracer mana="None">
   <Level1>
     <TracerPulseStrikeMelee name="Pulse Strike" desc="TracerPulseStrikeMelee">storm_ui_icon_tracer_melee.dds</TracerPulseStrikeMelee>
     <TracerSlipstreamRecall name="Slipstream" desc="TracerSlipstreamRecall">storm_ui_icon_tracer_recall.dds</TracerSlipstreamRecall>

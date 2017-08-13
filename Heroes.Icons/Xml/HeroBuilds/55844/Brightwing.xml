@@ -15,17 +15,17 @@
   <Level7>
     <BrightwingMistifiedSoothingMist name="Mistified" desc="BrightwingMistifiedTalent">storm_ui_icon_brightwing_soothingmist.dds</BrightwingMistifiedSoothingMist>
     <FaerieDragonMasteryPhaseShield name="Phase Shield" desc="BrightwingPhaseShiftPhaseShieldTalent">storm_ui_icon_brightwing_hypershift.dds</FaerieDragonMasteryPhaseShield>
-    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
   </Level7>
   <Level10>
-    <FaerieDragonHeroicAbilityBlinkHeal name="Blink Heal" desc="BrightwingBlinkHealAllyDash">storm_ui_icon_brightwing_blinkheal.dds</FaerieDragonHeroicAbilityBlinkHeal>
-    <FaerieDragonHeroicAbilityEmeraldWind name="Emerald Wind" desc="BrightwingEmeraldWind">storm_ui_icon_brightwing_emeraldwind.dds</FaerieDragonHeroicAbilityEmeraldWind>
+    <FaerieDragonHeroicAbilityBlinkHeal name="Blink Heal" desc="BrightwingBlinkHealAllyDash" mana="40" cooldown="10" ch-cooldown="true">storm_ui_icon_brightwing_blinkheal.dds</FaerieDragonHeroicAbilityBlinkHeal>
+    <FaerieDragonHeroicAbilityEmeraldWind name="Emerald Wind" desc="BrightwingEmeraldWind" mana="90" cooldown="60">storm_ui_icon_brightwing_emeraldwind.dds</FaerieDragonHeroicAbilityEmeraldWind>
   </Level10>
   <Level13>
     <FaerieDragonMasteryStickyFlare name="Sticky Flare" desc="BrightwingArcaneFlareStickyFlareTalent">storm_ui_icon_brightwing_arcaneflare.dds</FaerieDragonMasteryStickyFlare>
     <BrightwingPixieBoostPixieDust name="Pixie Boost" desc="BrightwingPixieBoostTalent">storm_ui_icon_brightwing_pixiedust.dds</BrightwingPixieBoostPixieDust>
     <FaerieDragonMasteryShieldDust name="Shield Dust" desc="BrightwingPixieDustShieldDustTalent">storm_ui_icon_brightwing_pixiedust_var1.dds</FaerieDragonMasteryShieldDust>
-    <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
+    <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent" cooldown="60">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
   </Level13>
   <Level16>
     <BrightwingGreaterPolymorphPolymorph name="Greater Polymorph" desc="BrightwingGreaterPolymorphTalent">storm_ui_icon_brightwing_polymorph.dds</BrightwingGreaterPolymorphPolymorph>
@@ -37,6 +37,6 @@
     <BrightwingDoubleWyrmholeBlinkHeal name="Double Wyrmhole" desc="BrightwingDoubleWyrmholeTalent">storm_ui_icon_brightwing_blinkheal.dds</BrightwingDoubleWyrmholeBlinkHeal>
     <FaerieDragonMasteryContinuousWinds name="Continuous Winds" desc="BrightwingEmeraldWindContinuousWindsTalent">storm_ui_icon_brightwing_emeraldwind.dds</FaerieDragonMasteryContinuousWinds>
     <BrightwingRevitalizingMistSoothingMist name="Revitalizing Mist" desc="BrightwingRevitalizingMistTalent">storm_ui_icon_brightwing_soothingmist.dds</BrightwingRevitalizingMistSoothingMist>
-    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
 </Brightwing>

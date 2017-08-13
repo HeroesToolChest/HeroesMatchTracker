@@ -17,8 +17,8 @@
     <GenjiDodge name="Dodge" desc="GenjiDodge">storm_ui_icon_genji_dodge.dds</GenjiDodge>
   </Level7>
   <Level10>
-    <GenjiHeroicDragonblade name="Dragonblade" desc="GenjiDragonblade">storm_ui_icon_genji_dragonblade.dds</GenjiHeroicDragonblade>
-    <GenjiHeroicXStrike name="X-Strike" desc="GenjiXStrike">storm_ui_icon_genji_shurikens_xblade.dds</GenjiHeroicXStrike>
+    <GenjiHeroicDragonblade name="Dragonblade" desc="GenjiDragonblade" mana="75" cooldown="100">storm_ui_icon_genji_dragonblade.dds</GenjiHeroicDragonblade>
+    <GenjiHeroicXStrike name="X-Strike" desc="GenjiXStrike" mana="90" cooldown="80">storm_ui_icon_genji_shurikens_xblade.dds</GenjiHeroicXStrike>
   </Level10>
   <Level13>
     <GenjiShurikenShingan name="Shingan" desc="GenjiShurikenShingan">storm_ui_icon_genji_shurikens.dds</GenjiShurikenShingan>

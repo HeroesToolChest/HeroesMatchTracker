@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Murky>
+<Murky mana="None">
   <Level1>
     <MurkyFishEye name="Fish Eye" desc="MurkyFishEye">storm_ui_icon_murky_trait_spawnegg.dds</MurkyFishEye>
-    <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent">storm_ui_icon_murky_egghunt.dds</MurkyEggHunt>
+    <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent" cooldown="3">storm_ui_icon_murky_egghunt.dds</MurkyEggHunt>
     <MurkyAFishyDeal name="A Fishy Deal" generic="true" desc="MurkyAFishyDeal">storm_ui_icon_talent_bribe.dds</MurkyAFishyDeal>
   </Level1>
   <Level4>
@@ -16,8 +16,8 @@
     <MurkyTimetoKrill name="Time to Krill" generic="true" desc="MurkyTimetoKrill">storm_ui_icon_talent_autoattack_slow.dds</MurkyTimetoKrill>
   </Level7>
   <Level10>
-    <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyHeroicAbilityMarchoftheMurlocs>
-    <MurkyHeroicAbilityOctoGrab name="Octo Grab" desc="MurkyOctoGrab">storm_ui_icon_murky_octograb.dds</MurkyHeroicAbilityOctoGrab>
+    <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs" cooldown="110">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyHeroicAbilityMarchoftheMurlocs>
+    <MurkyHeroicAbilityOctoGrab name="Octo Grab" desc="MurkyOctoGrab" cooldown="50">storm_ui_icon_murky_octograb.dds</MurkyHeroicAbilityOctoGrab>
   </Level10>
   <Level13>
     <MurkyMasteryRejuvenatingBubble name="Rejuvenating Bubble" desc="MurkyRejuvenatingBubbleTalent">storm_ui_icon_murky_safetybubble.dds</MurkyMasteryRejuvenatingBubble>

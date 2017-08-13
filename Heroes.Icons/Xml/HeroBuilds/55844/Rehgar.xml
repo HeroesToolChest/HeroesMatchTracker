@@ -10,17 +10,17 @@
     <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace" desc="RehgarChainHealSpiritwalkersGraceTalent">storm_ui_icon_rehgar_chainheal.dds</RehgarMasterySpiritwalkersGrace>
     <RehgarMasteryFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarMasteryFeralHeart>
     <RehgarMasteryStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcallerTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryStormcaller>
-    <RehgarMasteryShamanHealingWard name="Healing Totem" generic="true" desc="RehgarHealingTotem">storm_ui_icon_talent_healingward.dds</RehgarMasteryShamanHealingWard>
+    <RehgarMasteryShamanHealingWard name="Healing Totem" generic="true" desc="RehgarHealingTotem" cooldown="30">storm_ui_icon_talent_healingward.dds</RehgarMasteryShamanHealingWard>
   </Level4>
   <Level7>
     <RehgarGhostWolfBloodAndThunder name="Blood and Thunder" desc="GenericForwardMomentumTalent">storm_ui_icon_rehgar_ghostwolf.dds</RehgarGhostWolfBloodAndThunder>
-    <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight">storm_ui_icon_rehgar_farsight.dds</RehgarMasteryFarsight>
-    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+    <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight" cooldown="30">storm_ui_icon_rehgar_farsight.dds</RehgarMasteryFarsight>
+    <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
     <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">storm_ui_icon_rehgar_earthbindtotem_a.dds</RehgarTotemicProjection>
   </Level7>
   <Level10>
-    <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarHeroicAbilityAncestralHealing>
-    <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust">storm_ui_icon_rehgar_bloodlust.dds</RehgarHeroicAbilityBloodlust>
+    <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing" mana="80" cooldown="100">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarHeroicAbilityAncestralHealing>
+    <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust" mana="70" cooldown="90">storm_ui_icon_rehgar_bloodlust.dds</RehgarHeroicAbilityBloodlust>
   </Level10>
   <Level13>
     <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryEarthShield>
@@ -35,7 +35,7 @@
   <Level20>
     <RehgarMasteryFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessingTalent">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarMasteryFarseersBlessing>
     <RehgarMasteryGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShoutTalent">storm_ui_icon_rehgar_bloodlust.dds</RehgarMasteryGladiatorsWarShout>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
-    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
+    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+    <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
   </Level20>
 </Rehgar>

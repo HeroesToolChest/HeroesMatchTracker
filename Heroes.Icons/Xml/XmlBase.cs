@@ -114,5 +114,25 @@ namespace Heroes.Icons.Xml
                 }
             }
         }
+
+        /// <summary>
+        /// Convert the string to an integer. If string is empty or null return null.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        protected int? ConvertToNullableInt(string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (int.TryParse(value, out int result))
+                    return result;
+                else
+                    return 0;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

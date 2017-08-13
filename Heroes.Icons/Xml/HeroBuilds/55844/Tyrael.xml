@@ -18,8 +18,8 @@
     <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
   </Level7>
   <Level10>
-    <TyraelHeroicAbilityJudgement name="Judgment" desc="TyraelJudgment">storm_ui_icon_tyrael_judgement.dds</TyraelHeroicAbilityJudgement>
-    <TyraelHeroicAbilitySanctification name="Sanctification" desc="TyraelSanctificationStationary">storm_ui_icon_tyrael_sanctification.dds</TyraelHeroicAbilitySanctification>
+    <TyraelHeroicAbilityJudgement name="Judgment" desc="TyraelJudgment" mana="80" cooldown="70">storm_ui_icon_tyrael_judgement.dds</TyraelHeroicAbilityJudgement>
+    <TyraelHeroicAbilitySanctification name="Sanctification" desc="TyraelSanctificationStationary" mana="75" cooldown="100">storm_ui_icon_tyrael_sanctification.dds</TyraelHeroicAbilitySanctification>
   </Level10>
   <Level13>
     <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
@@ -30,12 +30,12 @@
     <TyraelMasteryElDruinsMightBladeOfJustice name="Blade of Justice" desc="TyraelElDruinsMightBladeOfJusticeTalent">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightBladeOfJustice>
     <TyraelMasteryHolyGround name="Holy Ground" desc="TyraelElDruinsMightHolyGroundTalent">storm_ui_icon_tyrael_eldruinsmight_b.dds</TyraelMasteryHolyGround>
     <TyraelMasterySalvation name="Salvation" desc="TyraelRighteousnessSalvationTalent">storm_ui_icon_tyrael_righteousness.dds</TyraelMasterySalvation>
-    <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
+    <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar" cooldown="60">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
   </Level16>
   <Level20>
     <TyraelMasteryJudgmentAngelofJustice name="Angel of Justice" desc="TyraelJudgmentAngelOfJusticeTalent">storm_ui_icon_tyrael_judgement.dds</TyraelMasteryJudgmentAngelofJustice>
     <TyraelMasterySanctificationHolyArena name="Holy Arena" desc="TyraelSanctificationHolyArenaTalent">storm_ui_icon_tyrael_sanctification.dds</TyraelMasterySanctificationHolyArena>
-    <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
+    <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent" cooldown="40">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
     <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
   </Level20>
 </Tyrael>

@@ -80,6 +80,7 @@
             <converter:BoolToOffOnConverter x:Key="BooleanToOffOn" />
             <converter:BoolInverterConverter x:Key="BoolInverterConverter"/>
             <converter:TalentTooltipTextConverter x:Key="TalentTooltipTextConverter" />
+            <converter:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

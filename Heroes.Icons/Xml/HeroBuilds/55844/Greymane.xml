@@ -17,8 +17,8 @@
     <GreymaneWizenedDuelist name="Wizened Duelist" desc="GreymaneWizenedDuelistTalent">storm_ui_icon_greymane_curseoftheworgen_var1.dds</GreymaneWizenedDuelist>
   </Level7>
   <Level10>
-    <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat" desc="GreymaneGoForTheThroat">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
-    <GreymaneHeroicAbilityCursedBullet name="Cursed Bullet" desc="GreymaneCursedBullet">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityCursedBullet>
+    <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat" desc="GreymaneGoForTheThroat" mana="90" cooldown="80">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
+    <GreymaneHeroicAbilityCursedBullet name="Cursed Bullet" desc="GreymaneCursedBullet" mana="50" cooldown="30">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityCursedBullet>
   </Level10>
   <Level13>
     <GreymaneDarkflightDisengageRunningWild name="Running Wild" desc="GreymaneDarkflightRunningWildTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightDisengageRunningWild>

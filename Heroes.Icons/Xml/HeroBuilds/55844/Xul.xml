@@ -16,8 +16,8 @@
     <NecromancerTalentTragOulsEssence name="Trag'Oul's Essence" desc="NecromancerTragOulsEssence">storm_ui_icon_necromancer_raiseskeleton.dds</NecromancerTalentTragOulsEssence>
   </Level7>
   <Level10>
-    <NecromancerHeroicAbilityPoisonNova name="Poison Nova" desc="NecromancerPoisonNova">storm_ui_icon_necromancer_poisonnova.dds</NecromancerHeroicAbilityPoisonNova>
-    <NecromancerHeroicAbilitySkeletalMages name="Skeletal Mages" desc="NecromancerSkeletalMages">storm_ui_icon_necromancer_skeletalmages.dds</NecromancerHeroicAbilitySkeletalMages>
+    <NecromancerHeroicAbilityPoisonNova name="Poison Nova" desc="NecromancerPoisonNova" mana="100" cooldown="90">storm_ui_icon_necromancer_poisonnova.dds</NecromancerHeroicAbilityPoisonNova>
+    <NecromancerHeroicAbilitySkeletalMages name="Skeletal Mages" desc="NecromancerSkeletalMages" mana="80" cooldown="70">storm_ui_icon_necromancer_skeletalmages.dds</NecromancerHeroicAbilitySkeletalMages>
   </Level10>
   <Level13>
     <NecromancerTalentEchoesOfDeath name="Echoes of Death" desc="NecromancerEchoesOfDeathTalent">storm_ui_icon_necromancer_reap.dds</NecromancerTalentEchoesOfDeath>
@@ -27,7 +27,7 @@
   <Level16>
     <NecromancerTalentAmplifyDamage name="Amplify Damage" desc="NecromancerAmplifyDamage">storm_ui_icon_necromancer_boneprison.dds</NecromancerTalentAmplifyDamage>
     <NecromancerTalentCorpseExplosion name="Corpse Explosion" desc="NecromancerTalentCorpseExplosion">storm_ui_icon_necromancer_raiseskeleton.dds</NecromancerTalentCorpseExplosion>
-    <NecromancerTalentBoneSpear name="Bone Spear" desc="NecromancerBoneSpear">storm_ui_icon_necromancer_bonespear.dds</NecromancerTalentBoneSpear>
+    <NecromancerTalentBoneSpear name="Bone Spear" desc="NecromancerBoneSpear" cooldown="12">storm_ui_icon_necromancer_bonespear.dds</NecromancerTalentBoneSpear>
   </Level16>
   <Level20>
     <NecromancerTalentAndarielsVisage name="Andariel's Visage" desc="NecromancerAndarielsVisage">storm_ui_icon_necromancer_poisonnova.dds</NecromancerTalentAndarielsVisage>
