@@ -274,11 +274,6 @@ namespace Heroes.Icons.Xml
             }
         }
 
-        private string GetHeroDescription(string realHeroName)
-        {
-            return null;
-        }
-
         private Uri SetHeroPortraitUri(string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
