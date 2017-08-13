@@ -154,7 +154,11 @@ namespace HeroesMatchTracker.Views
                 Icon = System.Drawing.Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Visible = false,
                 ContextMenu = contextMenu,
+#if !DEBUG
                 Text = $"Heroes Stat Tracker {VersionAsString()}",
+#else
+                Text = $"[DEBUG] Heroes Stat Tracker {VersionAsString()}",
+#endif
             };
             NotifyIcon.DoubleClick += (sender, e) =>
             {
