@@ -1,5 +1,5 @@
 ﻿using Heroes.Helpers;
-using Heroes.Icons;
+using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Models.Replays;
@@ -177,7 +177,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         /// <param name="tier">The tier that the talent is on</param>
         /// <param name="isWinner">Get wins if true otherwise losses</param>
         /// <returns></returns>
-        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Heroes.Icons.Talent talent, bool isWinner)
+        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Heroes.Icons.Models.Talent talent, bool isWinner)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
 

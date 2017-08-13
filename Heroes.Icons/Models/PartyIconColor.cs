@@ -1,4 +1,4 @@
-﻿namespace Heroes.Icons
+﻿namespace Heroes.Icons.Models
 {
     public enum PartyIconColor : uint
     {

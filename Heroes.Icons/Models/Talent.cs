@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Media.Imaging;
 
-namespace Heroes.Icons
+namespace Heroes.Icons.Models
 {
     public class Talent
     {

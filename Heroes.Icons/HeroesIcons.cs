@@ -1,4 +1,5 @@
-﻿using Heroes.Icons.Xml;
+﻿using Heroes.Icons.Models;
+using Heroes.Icons.Xml;
 using System;
 using System.Collections.Generic;
 using System.IO;

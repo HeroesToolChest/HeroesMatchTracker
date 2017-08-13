@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Heroes.Icons
+namespace Heroes.Icons.Models
 {
     [Flags]
     public enum MVPScreenColor : uint
