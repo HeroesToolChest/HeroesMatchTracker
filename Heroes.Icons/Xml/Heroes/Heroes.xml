@@ -222,7 +222,7 @@
     <Aliases>露娜拉,루나라,Лунара,AyHapa</Aliases>
   </Lunara>
 
-  <Malfurion available="47479" attributeid="Malf" franchise="Warcraft" type="Range" difficulty="Easy"
+  <Malfurion available="47479" attributeid="Malf" franchise="Warcraft" type="Ranged" difficulty="Easy"
              portrait="storm_ui_ingame_heroselect_btn_malfurion.dds" loading="storm_ui_ingame_hero_loadingscreen_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
     <Roles>Support</Roles>
     <Aliases>МАЛФУРИОН,말퓨리온,玛法里奥,瑪法里恩,Малфурион</Aliases>
