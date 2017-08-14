@@ -8,7 +8,7 @@
         <Setter Property="Foreground" Value="{StaticResource TalentTooltipTitleFontBrush}" />
         <Setter Property="Effect">
             <Setter.Value>
-                <DropShadowEffect ShadowDepth="0" Color="{DynamicResource TalentTooltipTitleFontColor2}" Opacity="1" BlurRadius="8" />
+                <DropShadowEffect ShadowDepth="0" Color="{DynamicResource TalentTooltipTitleGlowColor}" Opacity="1" BlurRadius="6" />
             </Setter.Value>
         </Setter>
     </Style> 
