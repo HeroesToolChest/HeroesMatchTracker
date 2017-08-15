@@ -139,6 +139,7 @@ namespace HeroesMatchTracker.Views
             menuItem1.Click += (sender, e) =>
             {
                 Show();
+                Activate();
                 WindowState = WindowState.Maximized;
             };
 
