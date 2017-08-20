@@ -4,6 +4,7 @@
                     xmlns:converter="clr-namespace:HeroesMatchTracker.Core.Converters;assembly=HeroesMatchTracker.Core">
 
     <converter:TalentTooltipTextConverter x:Key="TalentTooltipTextConverter" />
+    <converter:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
     
     <DataGrid x:Key="StatsHeroesMapStatsDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" x:Shared="False" ColumnHeaderStyle="{StaticResource DataGridCenterHeader}" CellStyle="{StaticResource DataGridCenterCell}"
               GridLinesVisibility="Vertical" Style="{StaticResource DefaultStatDataGrid}">
@@ -77,17 +78,14 @@
                         <Grid>
                             <Image Source="{Binding TalentImage}" Height="44" Width="44" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                 <Image.ToolTip>
-                                    <ToolTip Background="Transparent" BorderBrush="Transparent">
-                                        <Border Style="{StaticResource TalentPopupBorder}">
-                                            <StackPanel Style="{StaticResource TalentPopupStackPanel}">
-                                                <StackPanel Background="Transparent" Margin="12 10">
-                                                    <Label Content="{Binding TalentName}" Style="{StaticResource TalentPopupLabel}" />
-                                                    <Label>
-                                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltip, Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
-                                                    </Label>
-                                                </StackPanel>
-                                            </StackPanel>
-                                        </Border>
+                                    <ToolTip Style="{StaticResource EnhancedToolTip}">
+                                        <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
+                                            <Label Content="{Binding TalentName}" Style="{StaticResource TalentPopupLabel}" />
+                                            <Label Content="{Binding TalentSubInfo}" Visibility="{Binding TalentSubInfo, Converter={StaticResource StringToVisibilityConverter}}" Style="{StaticResource TalentPopupSubLabel}" />
+                                            <Label>
+                                                <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding TalentFullTooltip, Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource TalentPopupTextBlock}" />
+                                            </Label>
+                                        </StackPanel>
                                     </ToolTip>
                                 </Image.ToolTip>
                             </Image>

@@ -1,4 +1,5 @@
 ﻿using Heroes.Icons;
+using Heroes.Icons.Models;
 using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
 

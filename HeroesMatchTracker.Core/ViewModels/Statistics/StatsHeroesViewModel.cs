@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
+using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -66,7 +67,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes());
+            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedHero = HeroesList[0];
 
             GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModeList());
@@ -348,10 +349,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             HeroesIcons.LoadLatestHeroesBuild();
 
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
+            Hero hero = HeroesIcons.Heroes().GetHeroInfo(SelectedHero);
 
-            SelectedHeroPortrait = HeroesIcons.Heroes().GetHeroPortrait(SelectedHero);
+            SelectedHeroPortrait = hero.GetPortrait();
             HeroName = SelectedHero;
-            HeroRole = HeroesIcons.Heroes().GetHeroRoleList(SelectedHero)[0].ToString();
+            HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, selectedSeason).ToString();
 
             // set selected gamemodes
@@ -382,14 +384,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsTotalsAveragesChecked)
             {
-                HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins;
-                HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses;
+                HeroWins = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Wins ?? 0;
+                HeroLosses = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Losses ?? 0;
                 HeroGames = HeroWins + HeroLosses;
-                HeroWinrate = Math.Round(StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage * 100, 1);
+                HeroWinrate = Math.Round((StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].WinPercentage ?? 0) * 100, 1);
 
-                HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills;
-                HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists;
-                HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths;
+                HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills ?? 0;
+                HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists ?? 0;
+                HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths ?? 0;
                 HeroKD = Utilities.CalculateWinPercentage(HeroKills, HeroDeaths);
                 HeroKAD = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroDeaths);
                 HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
@@ -397,7 +399,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsAwardsChecked)
             {
-                HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total;
+                HeroAwards = StatsHeroesDataViewModel.StatsHeroesAwardsTotalCollection[0].Total ?? 0;
                 HeroMVP = StatsHeroesDataViewModel.MVPCount;
                 HeroAwardsRatio = Utilities.CalculateWinPercentage(HeroAwards, HeroGames);
                 HeroMVPRatio = Utilities.CalculateWinPercentage(HeroMVP, HeroGames);

@@ -26,14 +26,18 @@
                         <Grid DockPanel.Dock="Top" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86">
                                 <Image.ToolTip>
-                                    <ToolTip Content="{Binding CharacterTooltip}"/>
+                                    <ToolTip Content="{Binding CharacterTooltip}" Style="{StaticResource EnhancedToolTip}" />
                                 </Image.ToolTip>
                             </Image>
                             <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
-                            <TextBlock Text="{Binding PlayerNameOnly}" />
+                            <TextBlock Text="{Binding PlayerNameOnly}" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center">
+                                <TextBlock.ToolTip>
+                                    <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
+                                </TextBlock.ToolTip>
+                            </TextBlock>
                             <TextBlock Text="{Binding CharacterLevel}" ToolTip="Hero Level" />
                             <TextBlock Text="{Binding AccountLevel}" ToolTip="Account Level" />
                             <TextBlock />
@@ -46,7 +50,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -62,7 +66,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -78,7 +82,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -94,7 +98,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -113,7 +117,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -129,7 +133,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -145,7 +149,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -161,7 +165,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -179,7 +183,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -195,7 +199,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -211,7 +215,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -228,7 +232,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -244,7 +248,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -263,7 +267,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -279,7 +283,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -295,7 +299,7 @@
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
-                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="8" />
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
                                                     </Setter.Value>
                                                 </Setter>
                                             </DataTrigger>
@@ -331,7 +335,7 @@
 
     <DataTemplate x:Key="MatchAdvancedStats">
         <StackPanel Orientation="Horizontal" Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 75 0 0">
+            <StackPanel Style="{StaticResource TableHeaderAdvancedStats}" Margin="24 79 0 0">
                 <TextBlock Text="Player" />
                 <TextBlock Text="Level" />
                 <TextBlock Text="Account Level" />

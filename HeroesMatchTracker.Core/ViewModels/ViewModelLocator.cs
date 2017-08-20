@@ -1,6 +1,5 @@
 using GalaSoft.MvvmLight.Ioc;
 using Heroes.Icons;
-using HeroesMatchTracker.Core.HotsLogs;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewModels.Home;

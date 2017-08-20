@@ -2,10 +2,70 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:coreControls="clr-namespace:HeroesMatchTracker.Core.Controls;assembly=HeroesMatchTracker.Core">
 
-    <Style TargetType="ToolTip" x:Key="TalentTooltip">
+    <Style TargetType="ToolTip" x:Key="BorderedTooltip">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{StaticResource TalentTooltipBorderBrush}" />
         <Setter Property="Background" Value="{StaticResource TalentTooltipBackgroundBrush}" />
         <Setter Property="Foreground" Value="{StaticResource TalentTooltipFontBrush}" />
+    </Style>
+
+    <Style TargetType="ToolTip" x:Key="EnhancedToolTip">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToolTip}">
+                    <Border Style="{StaticResource TalentPopupBorder}">
+                        <StackPanel Style="{StaticResource TooltipDefaultStackPanel}">
+                            <StackPanel Background="Transparent" Margin="12 10">
+                                <Label Foreground="{StaticResource TalentTooltipFontBrush}">
+                                    <ContentPresenter x:Name="ContentPresenter"  
+                                          Margin="{TemplateBinding Padding}"
+                                          Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}">
+                                        <ContentPresenter.Style>
+                                            <Style>
+                                                <Setter Property="Inline.FontSize" Value="15" />
+                                                <Setter Property="Inline.FontWeight" Value="SemiBold" />
+                                                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                                            </Style>
+                                        </ContentPresenter.Style>
+                                    </ContentPresenter>
+                                </Label>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ToolTip" x:Key="HeroDescriptorToolTip">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToolTip}">
+                    <Border Style="{StaticResource TalentPopupBorder}">
+                        <StackPanel Style="{StaticResource TooltipDefaultStackPanel}">
+                            <StackPanel Background="Transparent" Margin="4 2">
+                                <Label Foreground="{StaticResource TalentTooltipFontBrush}">
+                                    <ContentPresenter x:Name="ContentPresenter"  
+                                          Margin="{TemplateBinding Padding}"
+                                          Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}">
+                                        <ContentPresenter.Style>
+                                            <Style>
+                                                <Setter Property="Inline.FontSize" Value="15" />
+                                                <Setter Property="Inline.FontWeight" Value="SemiBold" />
+                                                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                                            </Style>
+                                        </ContentPresenter.Style>
+                                    </ContentPresenter>
+                                </Label>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

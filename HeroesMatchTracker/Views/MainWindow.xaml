@@ -16,10 +16,23 @@
                       mc:Ignorable="d"
                       DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
                       GlowBrush="{DynamicResource AccentColorBrush}"
+                      TextOptions.TextFormattingMode="Display"
+                      TextOptions.TextRenderingMode="ClearType"
                       BorderThickness="1"
                       Title="{Binding ApplicationTitle}"
                       MinHeight="768" MinWidth="1024"
                       d:DesignHeight="1080" d:DesignWidth="1920" Loaded="MetroWindow_Loaded">
+    <controls:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock Text="{TemplateBinding Content}"
+                   TextTrimming="CharacterEllipsis"
+                   VerticalAlignment="Center"
+                   Margin="8 -1 8 0"
+                   TextOptions.TextFormattingMode="Ideal"
+                   FontSize="{DynamicResource WindowTitleFontSize}"
+                   FontFamily="{DynamicResource HeaderFontFamily}" />
+        </DataTemplate>
+    </controls:MetroWindow.TitleTemplate>
     <Window.Resources>
         <system:Double x:Key="RightFlyoutWidth">400</system:Double>
         <system:Double x:Key="TabControlFontSize">16</system:Double>
@@ -45,20 +58,20 @@
             <Button x:Name="AboutButton" Click="AboutButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="InformationOutline" />
-                    <TextBlock Margin="4 0 0 0" Text="About"/>
-                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
+                    <TextBlock Margin="4 0 0 0" Text="About" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" VerticalAlignment="Center" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <iconPacks:PackIconMaterial Kind="Settings" />
-                    <TextBlock Margin="4 0 0 0" Text="Settings"/>
+                    <TextBlock Margin="4 0 0 0" Text="Settings" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenWhatsNewWindowCommand}">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="NoteOutline" />
-                    <TextBlock Margin="4 0 0 0" Text="What's New"/>
+                    <TextBlock Margin="4 0 0 0" Text="What's New" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </controls:WindowCommands>
@@ -70,9 +83,12 @@
                                        ShowTitleBar="False"
                                        IsOpen="{Binding IsLoadingOverlayVisible}"
                                        Panel.ZIndex="1000"
-                                       Background="Transparent">
+                                       Background="Transparent"
+                                       OverlayBrush="Black"
+                                       Foreground="#389AC4"
+                                       Opacity="0.6">
             <StackPanel>
-                <controls:ProgressRing IsActive="True" Height="80" Width="80" />
+                <controls:ProgressRing IsActive="True" Height="80" Width="80" Foreground="#41B1E1" />
                 <TextBlock Text="Loading" FontSize="28" HorizontalAlignment="Center" />
             </StackPanel>
         </simpleChildWindow:ChildWindow>

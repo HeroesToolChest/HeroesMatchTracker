@@ -38,6 +38,7 @@
                 <ResourceDictionary Source="/Resources/CustomThemes/DefaultTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/PlayerRowTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/TalentTooltipTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomThemes/HeroDescriptorTooltipTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/GraphTheme.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomThemes/MarkdownTheme.xaml"/>
              
@@ -47,10 +48,10 @@
                 <ResourceDictionary Source="/Resources/CustomStyles/LabelStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/StackPanelStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/TextBlockStyle.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/BorderStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DataTooltipStyle.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomStyles/DockPanelStyle.xaml"/>
+                <ResourceDictionary Source="/Resources/CustomStyles/TooltipStyle.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
@@ -80,6 +81,7 @@
             <converter:BoolToOffOnConverter x:Key="BooleanToOffOn" />
             <converter:BoolInverterConverter x:Key="BoolInverterConverter"/>
             <converter:TalentTooltipTextConverter x:Key="TalentTooltipTextConverter" />
+            <converter:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -4,19 +4,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
+             TextOptions.TextFormattingMode="Ideal"
              DataContext="{Binding AboutControlViewModel, Source={StaticResource Locator}}"
              d:DesignHeight="1000" d:DesignWidth="400">
     <UserControl.Resources>
-        <Thickness x:Key="SectionMargin" Left="12" Top="6" Right="12" Bottom="6"/>
+        <Thickness x:Key="SectionMargin" Left="12" Top="6" Right="12" Bottom="6" />
     </UserControl.Resources>
     <StackPanel>
-        <TextBlock Text="Heroes Match Tracker" FontSize="24" Margin="12 12 12 0"/>
+        <TextBlock Text="Heroes Match Tracker" FontSize="24" Margin="12 12 12 0" />
         <TextBlock x:Name="AppVersion" Text="Version: 0.0.0" Margin="12 4 "/>
         <StackPanel Orientation="Horizontal" Margin="12 0">
             <Button Content="Check for Updates" Command="{Binding CheckForUpdatesCommand}" IsEnabled="{Binding IsCheckForUpdatesButtonEnabled}" Width="150" Margin="0 0 8 0" />
-            <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateButtonEnabled}" Width="110"  Margin="0 0 8 0"/>
+            <Button Content="Apply Update" Command="{Binding ApplyUpdateCommand}" IsEnabled="{Binding IsApplyUpdateButtonEnabled}" Width="110"  Margin="0 0 8 0" />
         </StackPanel>
-        <TextBlock Text="{Binding CheckForUpdatesResponse}" Margin="12 4" TextWrapping="Wrap"/>
+        <TextBlock Text="{Binding CheckForUpdatesResponse}" Margin="12 4" TextWrapping="Wrap" />
         <Separator Margin="0 4" />
         <StackPanel Margin="{StaticResource SectionMargin}">
             <TextBlock>
@@ -34,11 +35,11 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Margin="{StaticResource SectionMargin}">
-            <TextBlock Text="{Binding HeroesMatchTrackerCoreVersion, StringFormat=HeroesMatchTracker.Core {0}}" FontSize="14"/>
-            <TextBlock Text="{Binding HeroesMatchTrackerDataVersion, StringFormat=HeroesMatchTracker.Data {0}}" FontSize="14"/>
-            <TextBlock Text="{Binding HeroesMatchTrackerHelpersVersion, StringFormat=Heroes.Helpers {0}}" FontSize="14"/>
+            <TextBlock Text="{Binding HeroesMatchTrackerCoreVersion, StringFormat=HeroesMatchTracker.Core {0}}" FontSize="14" />
+            <TextBlock Text="{Binding HeroesMatchTrackerDataVersion, StringFormat=HeroesMatchTracker.Data {0}}" FontSize="14" />
+            <TextBlock Text="{Binding HeroesMatchTrackerHelpersVersion, StringFormat=Heroes.Helpers {0}}" FontSize="14" />
             <TextBlock Text="{Binding HeroesIconsVersion, StringFormat=Heroes.Icons {0}}" FontSize="14"/>
-            <TextBlock Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}" FontSize="14"/>
+            <TextBlock Text="{Binding HeroesReplayParserVersion, StringFormat=Heroes.ReplayParser {0}}" FontSize="14" />
         </StackPanel>
     </StackPanel>
 </UserControl>

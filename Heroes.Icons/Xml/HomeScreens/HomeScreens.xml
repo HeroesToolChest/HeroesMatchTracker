@@ -4,8 +4,6 @@
   <Chromie fontglow="#FFFFD700">storm_ui_homescreenbackground_chromie.jpg</Chromie>
   <Diablo fontglow="#FFFF0000">storm_ui_homescreenbackground_diablo.jpg</Diablo>
   <DiabloTristram fontglow="#FF808080">storm_ui_homescreenbackground_diablotristram.jpg</DiabloTristram>
-  <EternalConflict fontglow="#FF8B0000">storm_ui_homescreenbackground_eternalconflict.jpg</EternalConflict>
-  <EternalConflictDark fontglow="#FF8B0000">storm_ui_homescreenbackground_eternalconflict_dark.jpg</EternalConflictDark>
   <Greymane fontglow="#FFADD8E6">storm_ui_homescreenbackground_greymane.jpg</Greymane>
   <Guldan fontglow="#FF008000">storm_ui_homescreenbackground_guldan.jpg</Guldan>
   <Lucio fontglow="#FF008000">storm_ui_homescreenbackground_lucio.jpg</Lucio>
@@ -16,8 +14,6 @@
   <Nexus fontglow="#FF800080">storm_ui_homescreenbackground_nexus.jpg</Nexus>
   <OverwatchHanger fontglow="#FF808080">storm_ui_homescreenbackground_overwatchhangar.jpg</OverwatchHanger>
   <Ragnaros fontglow="#FFFF6A00">homescreen_ragnaros.jpg</Ragnaros>
-  <Samuro fontglow="#FFFFA500">storm_ui_homescreenbackground_samuro.jpg</Samuro>
-  <Shrines fontglow="#FFFF0000">storm_ui_homescreenbackground_shrines.jpg</Shrines>
   <ShrinesDusk fontglow="#FFFF0000">storm_ui_homescreenbackground_shrines_dusk.jpg</ShrinesDusk>
   <Starcraft fontglow="#FF00008B">storm_ui_homescreenbackground_starcraft.jpg</Starcraft>
   <StarcraftProtoss fontglow="#FF00FFFF">storm_ui_homescreenbackground_starcraft_protoss.jpg</StarcraftProtoss>

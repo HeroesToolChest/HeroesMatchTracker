@@ -107,12 +107,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private void RequeueAll()
         {
-            var unparsedReplaysList = Database.SettingsDb().FailedReplays.ReadAllReplays();
+            var failedReplaysList = Database.SettingsDb().FailedReplays.ReadAllReplays();
             Database.SettingsDb().FailedReplays.DeleteAllFailedReplays();
             FailedReplaysCollection = null;
             TotalFailedReplays = 0;
 
-            Messenger.Default.Send(unparsedReplaysList);
+            Messenger.Default.Send(failedReplaysList);
         }
 
         private void RemoveAll()

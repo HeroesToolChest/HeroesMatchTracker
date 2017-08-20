@@ -7,7 +7,7 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         DataContext="{Binding StartupWindowViewModel, Source={StaticResource Locator}}"
-        Height="287" Width="490" MaxHeight="291" MaxWidth="505"
+        Height="291" Width="505" MaxHeight="291" MaxWidth="505"
         WindowStartupLocation="CenterScreen"
         BorderThickness="0" WindowStyle="None"
         Title="Heroes Match Tracker Startup" ResizeMode="NoResize">
@@ -28,9 +28,9 @@
     <Grid>
         <Image Source="{StaticResource HMTStartup}" Stretch="UniformToFill"/>
         <Label Content="Heroes Match Tracker" Margin="10,10,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" FontSize="32" Width="470"/>
-        <Label Content="{Binding AppVersion, StringFormat={}{0}}" Margin="416,251,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="64"/>
+        <Label Content="{Binding AppVersion, StringFormat={}{0}}" Margin="431,255,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="64"/>
 
-        <Label Content="{Binding StatusLabel}" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Margin="10,182,0,0" FontSize="17" Width="470"/>
-        <Label Content="{Binding DetailedStatusLabel}" Margin="10,215,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="470" FontSize="16"/>
+        <Label Content="{Binding StatusLabel}" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Margin="10,181,0,0" FontSize="17" Width="470"/>
+        <Label Content="{Binding DetailedStatusLabel}" Margin="10,219,0,0" Style="{StaticResource StartupWindowLabelStyle}" Effect="{StaticResource StartupWindowDropShadow}" Width="470" FontSize="16"/>
     </Grid>
 </Window>

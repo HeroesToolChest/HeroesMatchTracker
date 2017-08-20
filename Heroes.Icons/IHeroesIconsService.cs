@@ -1,4 +1,5 @@
-﻿using Heroes.Icons.Xml;
+﻿using Heroes.Icons.Models;
+using Heroes.Icons.Xml;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
@@ -6,10 +7,10 @@ namespace Heroes.Icons
 {
     public interface IHeroesIconsService
     {
-        int LatestSupportedBuild();
+        int GetLatestHeroesBuild();
 
         /// <summary>
-        /// Load a specific build, other than the latest one
+        /// Load a specific build, other than the latest one. Use LoadLatestHeroesBuild to load latest build.
         /// </summary>
         /// <param name="replayBuild">The replay build to load</param>
         /// <returns></returns>

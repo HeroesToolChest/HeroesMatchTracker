@@ -6,6 +6,7 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Views.Matches;
+using HeroesMatchTracker.Views.Home;
 using HeroesMatchTracker.Views.Replays;
 using HeroesMatchTracker.Views.TitleBar;
 using MahApps.Metro.Controls;
@@ -22,7 +23,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService
+    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService, IToasterUpdateWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -38,6 +39,7 @@ namespace HeroesMatchTracker.Views
 
             SimpleIoc.Default.Register<ICreateWindowService>(() => this);
             SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
+            SimpleIoc.Default.Register<IToasterUpdateWindowService>(() => this);
         }
 
         public void ShowWhatsNewWindow()
@@ -77,7 +79,7 @@ namespace HeroesMatchTracker.Views
         {
             if (Database.SettingsDb().UserSettings.UserPlayerId < 1)
             {
-                await this.ShowMessageAsync("Statistics", "To view your stats, enter your BattleTag in the Profile menu.");
+                await this.ShowMessageAsync("Statistics", "To view your stats, set your BattleTag in the Profile menu.");
                 return true;
             }
             else
@@ -145,6 +147,7 @@ namespace HeroesMatchTracker.Views
             menuItem1.Click += (sender, e) =>
             {
                 Show();
+                Activate();
                 WindowState = WindowState.Maximized;
             };
 
@@ -160,7 +163,11 @@ namespace HeroesMatchTracker.Views
                 Icon = System.Drawing.Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Visible = false,
                 ContextMenu = contextMenu,
+#if !DEBUG
                 Text = $"Heroes Stat Tracker {VersionAsString()}",
+#else
+                Text = $"[DEBUG] Heroes Stat Tracker {VersionAsString()}",
+#endif
             };
             NotifyIcon.DoubleClick += (sender, e) =>
             {

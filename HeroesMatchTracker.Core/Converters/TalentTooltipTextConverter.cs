@@ -15,8 +15,12 @@ namespace HeroesMatchTracker.Core.Converters
     {
         private static Logger WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
 
-        private readonly Uri QuestIcon = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute);
+        private readonly Uri QuestIcon = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_taskbar_buttonicon_quests.png", UriKind.Absolute);
+        private readonly Uri Armor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_default.png", UriKind.Absolute);
+        private readonly Uri PhysicalArmor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_physical.png", UriKind.Absolute);
+        private readonly Uri SpellArmor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_spell.png", UriKind.Absolute);
 
+        // if this algorithm is changed then TalentTooltipStripNonText method in HeroIconsTest.cs needs to be changed as well
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string text = value as string;
@@ -59,7 +63,7 @@ namespace HeroesMatchTracker.Core.Converters
                         if (closingCTagIndex > 0)
                         {
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
-                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
 
                             // remove, this part of the string is not needed anymore
                             text = text.Remove(0, closingCTagIndex + offset);
@@ -69,7 +73,7 @@ namespace HeroesMatchTracker.Core.Converters
                             span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                             // add the rest of the text
-                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.DemiBold });
+                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
 
                             // none left
                             text = string.Empty;
@@ -82,11 +86,46 @@ namespace HeroesMatchTracker.Core.Converters
                         span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
                         BitmapImage bitmapImage = new BitmapImage(QuestIcon);
+                        bitmapImage.Freeze();
+
                         Image image = new Image()
                         {
                             Source = bitmapImage,
-                            Height = 15,
-                            Width = 15,
+                            Height = 22,
+                            Width = 20,
+                            Margin = new Thickness(0, 0, 4, -2),
+                            VerticalAlignment = VerticalAlignment.Center,
+                        };
+
+                        InlineUIContainer container = new InlineUIContainer(image);
+
+                        span.Inlines.Add(container);
+
+                        // remove, this part of the string is not needed anymore
+                        text = text.Remove(0, closingTag + 2);
+                    }
+                    else if (startTag.StartsWith("<img path=\"@UI/StormTalentInTextArmorIcon\" alignment=\"uppermiddle\""))
+                    {
+                        int closingTag = text.IndexOf("/>");
+
+                        span.Inlines.Add(new Run(text.Substring(0, startIndex)));
+
+                        BitmapImage bitmapImage = null;
+
+                        if (startTag.Contains("color=\"e12bfc\""))
+                            bitmapImage = new BitmapImage(SpellArmor);
+                        else if (startTag.Contains("color=\"ff6600\""))
+                            bitmapImage = new BitmapImage(PhysicalArmor);
+                        else // if (startTag.Contains("color=\"BBBBBB\""))
+                            bitmapImage = new BitmapImage(Armor);
+
+                        bitmapImage.Freeze();
+
+                        Image image = new Image()
+                        {
+                            Source = bitmapImage,
+                            Height = 20,
+                            Width = 18,
                             Margin = new Thickness(0, 0, 4, -2),
                             VerticalAlignment = VerticalAlignment.Center,
                         };
@@ -137,22 +176,22 @@ namespace HeroesMatchTracker.Core.Converters
                 switch (colorValue.ToUpper())
                 {
                     case "#TOOLTIPNUMBERS":
-                        color = Colors.WhiteSmoke;
+                        color = (Color)ColorConverter.ConvertFromString("#bfd4fd");
                         break;
                     case "#TOOLTIPQUEST": // yellow-gold
-                        color = (Color)ColorConverter.ConvertFromString("#B48E4C");
+                        color = (Color)ColorConverter.ConvertFromString("#e4b800");
                         break;
                     case "#ABILITYPASSIVE":
-                        color = (Color)ColorConverter.ConvertFromString("#16D486");
+                        color = (Color)ColorConverter.ConvertFromString("#00ff90");
                         break;
                     case "#COLORVIOLET":
-                        color = (Color)ColorConverter.ConvertFromString("#A85EC6");
+                        color = (Color)ColorConverter.ConvertFromString("#D65CFF");
                         break;
                     case "#COLORCREAMYELLOW":
-                        color = (Color)ColorConverter.ConvertFromString("#CED077");
+                        color = (Color)ColorConverter.ConvertFromString("#ffff80");
                         break;
                     case "#MALTHAELTRAIT":
-                        color = (Color)ColorConverter.ConvertFromString("#23CFD1");
+                        color = (Color)ColorConverter.ConvertFromString("#00DFDF");
                         break;
                     default:
                         WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");

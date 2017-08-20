@@ -10,13 +10,12 @@
     <!--User Colors (green)-->
     <Color x:Key="RowUserSideColor">#8BFD63</Color>
     <Color x:Key="UserCharacterNameColor">#DDFFCF</Color>
-    <Color x:Key="UserPlayerNameHighlightColor">#D5F2C0</Color>
+    <Color x:Key="UserPlayerNameHighlightColor">#8EF047</Color>
     
     <SolidColorBrush x:Key="RowUserSideBrush" Color="{StaticResource RowUserSideColor}" options:Freeze="True" />
     <SolidColorBrush x:Key="RowUserBorderBrush" Color="#77A137" options:Freeze="True" />
     <SolidColorBrush x:Key="UserCharacterNameBrush" Color="{StaticResource UserCharacterNameColor}" options:Freeze="True" />
     <SolidColorBrush x:Key="UserPlayerNameBrush" Color="#B1E789" options:Freeze="True" />
-    <SolidColorBrush x:Key="UserPlayerNameHighlightBrush" Color="{StaticResource UserPlayerNameHighlightColor}" options:Freeze="True" />
     
     <LinearGradientBrush x:Key="RowUserOverlayBrush"  Opacity="0.5"  StartPoint="0,0" EndPoint="0, 1">
         <LinearGradientBrush.GradientStops>
@@ -29,16 +28,14 @@
     <ResourceDictionary x:Key="Team1Brushes">
         <Color x:Key="RowSideColor">#64E5FF</Color>
         <Color x:Key="CharacterNameColor">#E5F1FF</Color>
-        <Color x:Key="PlayerNameColor">#77B8EA</Color>
-        <Color x:Key="PlayerNameHighlightColor">#BDDCF5</Color>
-        <Color x:Key="TextValueColor">#919FD8</Color>
+        <Color x:Key="PlayerNameColor">#7FACFF</Color>
+        <Color x:Key="TextValueColor">#7FACFF</Color>
         <Color x:Key="TeamLevelColor">#3391A8</Color>
         
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#3E53A8" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TeamLevelBrush" Color="{StaticResource TeamLevelColor}" options:Freeze="True" />
 
@@ -54,16 +51,14 @@
     <ResourceDictionary x:Key="Team2Brushes">
         <Color x:Key="RowSideColor">#F25B5C</Color>
         <Color x:Key="CharacterNameColor">#FFE3E7</Color>
-        <Color x:Key="PlayerNameColor">#E28E8D</Color>
-        <Color x:Key="PlayerNameHighlightColor">#FECDD7</Color>
-        <Color x:Key="TextValueColor">#E49192</Color>
+        <Color x:Key="PlayerNameColor">#F49D9D</Color>
+        <Color x:Key="TextValueColor">#F49D9D</Color>
         <Color x:Key="TeamLevelColor">#A7516A</Color>
         
         <SolidColorBrush x:Key="RowSideBrush" Color="{StaticResource RowSideColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBorderBrush" Color="#733F63" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TeamLevelBrush" Color="{StaticResource TeamLevelColor}" options:Freeze="True" />
         
@@ -87,7 +82,6 @@
         <SolidColorBrush x:Key="RowBorderBrush" Color="#292767" options:Freeze="True" />
         <SolidColorBrush x:Key="CharacterNameBrush" Color="{StaticResource CharacterNameColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="PlayerNameBrush" Color="{StaticResource PlayerNameColor}" options:Freeze="True" />
-        <SolidColorBrush x:Key="PlayerNameHighlightBrush" Color="{StaticResource PlayerNameHighlightColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="TextValueBrush" Color="{StaticResource TextValueColor}" options:Freeze="True" />
         <SolidColorBrush x:Key="RowBackgroundBrush" Color="#11112C" options:Freeze="True" />
     </ResourceDictionary>

@@ -91,7 +91,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 if (player.PlayerId == UserProfile.PlayerId)
                 {
                     UserHero = player.Character;
-                    UserHeroImage = HeroesIcons.Heroes().GetHeroPortrait(player.Character);
+                    UserHeroImage = HeroesIcons.Heroes().GetHeroInfo(player.Character).GetPortrait();
                     WinnerResult = player.IsWinner ? "Win" : "Loss";
                 }
             }

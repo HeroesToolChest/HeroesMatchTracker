@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Xml;
@@ -13,17 +14,17 @@ namespace Heroes.Icons.Xml
         private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
         private List<string> CustomOnlyMaps = new List<string>();
 
-        private MapBackgroundsXml(string parentFile, string xmlBaseFolder, int currentBuild)
-            : base(currentBuild)
+        private MapBackgroundsXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
+            : base(currentBuild, logger)
         {
             XmlParentFile = parentFile;
             XmlBaseFolder = xmlBaseFolder;
             XmlFolder = xmlBaseFolder;
         }
 
-        public static MapBackgroundsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild)
+        public static MapBackgroundsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
         {
-            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlBaseFolder, currentBuild);
+            MapBackgroundsXml xml = new MapBackgroundsXml(parentFile, xmlBaseFolder, currentBuild, logger);
             xml.Parse();
             return xml;
         }
@@ -32,11 +33,17 @@ namespace Heroes.Icons.Xml
         {
             try
             {
-                BitmapImage image = new BitmapImage(MapUriByMapRealName[mapRealName]);
-                image.Freeze();
-                return image;
+                if (MapUriByMapRealName.ContainsKey(mapRealName))
+                {
+                    return HeroesBitmapImage(MapUriByMapRealName[mapRealName]);
+                }
+                else
+                {
+                    LogReferenceNameNotFound($"Map background: {mapRealName}");
+                    return null;
+                }
             }
-            catch (Exception)
+            catch (IOException)
             {
                 LogReferenceNameNotFound($"Map background: {mapRealName}");
                 return null;
@@ -57,7 +64,7 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns a list of all maps
+        /// Returns a list of all maps (real names)
         /// </summary>
         /// <returns></returns>
         public List<string> GetMapsList()
@@ -111,6 +118,11 @@ namespace Heroes.Icons.Xml
         public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
         {
             return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
+        }
+
+        public int TotalCountOfMaps()
+        {
+            return XmlChildFiles.Count;
         }
 
         protected override void ParseChildFiles()

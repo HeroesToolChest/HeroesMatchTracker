@@ -6,6 +6,7 @@
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Inline.FontSize" Value="15" />
         <Setter Property="Inline.FontWeight" Value="SemiBold" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="Foreground" Value="{StaticResource TalentTooltipFontBrush}" />
     </Style>
 
@@ -14,6 +15,7 @@
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Foreground" Value="{DynamicResource TextValueBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
     <Style TargetType="TextBlock" x:Key="AdvancedStatTableTextBlock">
@@ -22,6 +24,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextValueBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0 4 0 4" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
     <Style TargetType="TextBlock" x:Key="GraphHeader">
@@ -38,5 +41,14 @@
         <Setter Property="FontSize" Value="24" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeroDescriptorPopupTextBlock">
+        <Setter Property="Padding" Value="4 0 4 4" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Inline.FontSize" Value="15" />
+        <Setter Property="Inline.FontWeight" Value="SemiBold" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="Foreground" Value="{StaticResource HeroDescriptorTooltipSubFontBrush}" />
     </Style>
 </ResourceDictionary>

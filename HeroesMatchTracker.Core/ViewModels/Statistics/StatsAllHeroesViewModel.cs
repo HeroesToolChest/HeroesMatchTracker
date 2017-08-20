@@ -206,12 +206,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
 
-            var heroesList = HeroesIcons.Heroes().GetListOfHeroes();
+            var heroesList = HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
             foreach (var hero in heroesList)
             {
                 List<object> rowStats = new List<object>();
 
-                BitmapImage leaderboardPortrait = HeroesIcons.Heroes().GetHeroLeaderboardPortrait(hero);
+                BitmapImage leaderboardPortrait = HeroesIcons.Heroes().GetHeroInfo(hero).GetLeaderboardPortrait();
                 int heroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(hero, selectedSeason);
 
                 rowStats.Add(leaderboardPortrait);
@@ -331,7 +331,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 Header = $"{gmShort} Losses",
                 Binding = new Binding($"{gm}Losses"),
-                Width = width,
+                Width = width + 6,
             };
             GameModesColumnCollection.Add(lossesColumn);
 
@@ -405,9 +405,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int wins = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameMode, true);
             int losses = Database.ReplaysDb().Statistics.ReadGameResults(hero, season, gameMode, false);
             int total = wins + losses;
-            double percentage = Utilities.CalculateWinValue(wins, total);
+            double? percentage = Utilities.CalculateWinValue(wins, total);
 
-            return new List<object>() { wins, losses, total, percentage };
+            if (total != 0)
+                return new List<object>() { wins, losses, total, percentage };
+            else
+                return new List<object>() { null, null, null, null };
         }
 
         private List<object> SetRowTotals(List<object> rowStats)
@@ -420,14 +423,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             for (int i = 0; i < modes; i++)
             {
-                totalWins += (int)rowStats[(i * 4) + 3];
-                totalLosses += (int)rowStats[(i * 4) + 4];
+                totalWins += (int?)rowStats[(i * 4) + 3] ?? 0;
+                totalLosses += (int?)rowStats[(i * 4) + 4] ?? 0;
             }
 
             totalTotal = totalWins + totalLosses;
-            double percentage = Utilities.CalculateWinValue(totalWins, totalTotal);
 
-            return new List<object>() { totalWins, totalLosses, totalTotal, percentage };
+            if (totalTotal > 0)
+            {
+                double percentage = Utilities.CalculateWinValue(totalWins, totalTotal);
+                return new List<object>() { totalWins, totalLosses, totalTotal, percentage };
+            }
+            else
+            {
+                return new List<object>() { null, null, null, null };
+            }
         }
 
         private void AddDataGridColumns()

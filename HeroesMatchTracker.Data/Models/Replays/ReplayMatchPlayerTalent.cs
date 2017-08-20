@@ -14,6 +14,9 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public long PlayerId { get; set; }
 
+        /// <summary>
+        /// Real hero name
+        /// </summary>
         [StringLength(50)]
         public string Character { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Generic;
@@ -246,14 +247,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplaysDb.MatchPlayerScoreResult.CreateRecord(ReplaysContext, playerScore);
         }
 
-        private void AddPlayerTalents(Talent[] talents, long playerId, string playerCharacter)
+        private void AddPlayerTalents(Heroes.ReplayParser.Talent[] talents, long playerId, string playerCharacter)
         {
-            Talent[] talentArray = new Talent[7]; // hold all 7 talents
+            var talentArray = new Heroes.ReplayParser.Talent[7]; // hold all 7 talents
 
             // add known talents
             for (int j = 0; j < talents.Count(); j++)
             {
-                talentArray[j] = new Talent()
+                talentArray[j] = new Heroes.ReplayParser.Talent()
                 {
                     TalentID = talents[j].TalentID,
                     TalentName = talents[j].TalentName,
@@ -264,7 +265,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             // make the rest null
             for (int j = talents.Count(); j < 7; j++)
             {
-                talentArray[j] = new Talent()
+                talentArray[j] = new Heroes.ReplayParser.Talent()
                 {
                     TalentID = null,
                     TalentName = null,
@@ -324,7 +325,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                 foreach (var hero in playersHeroes)
                 {
-                    if (HeroesIcons.Heroes().HeroExists(hero.Key, false))
+                    if (HeroesIcons.Heroes().HeroExists(hero.Key))
                     {
                         playersHero.PlayerId = playerId;
                         playersHero.HeroName = hero.Key;
@@ -608,14 +609,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         /// <param name="talents"></param>
         /// <param name="character">Translated hero name</param>
         /// <returns></returns>
-        private bool AutoTranslateHeroNameByTalent(Talent[] talents, out string character)
+        private bool AutoTranslateHeroNameByTalent(Heroes.ReplayParser.Talent[] talents, out string character)
         {
             int talentCount = talents.Count();
             character = string.Empty;
 
             while (talentCount > 0)
             {
-                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName(talents[talentCount - 1].TalentName, out character))
+                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName((TalentTier)(1 << (talentCount - 1)), talents[talentCount - 1].TalentName, out character))
                     return true;
                 else
                     talentCount--;

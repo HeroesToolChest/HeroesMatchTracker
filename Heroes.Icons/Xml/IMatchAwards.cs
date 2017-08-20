@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Heroes.Icons.Models;
+using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Xml
@@ -35,5 +36,7 @@ namespace Heroes.Icons.Xml
         /// </summary>
         /// <returns></returns>
         List<string> GetMatchAwardsList();
+
+        int TotalCountOfAwards();
     }
 }

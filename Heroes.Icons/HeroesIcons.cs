@@ -1,4 +1,5 @@
-﻿using Heroes.Icons.Xml;
+﻿using Heroes.Icons.Models;
+using Heroes.Icons.Xml;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,9 +11,10 @@ namespace Heroes.Icons
     {
         private readonly HeroBuildsXml HeroBuildsXmlLatest; // holds the latest build info
 
-        private bool Logger;
         private int EarliestHeroesBuild;
         private int LatestHeroesBuild;
+        private bool Logger;
+
         private HeroesXml HeroesXml;
         private HeroBuildsXml HeroBuildsXml; // the one that is in use
         private HeroBuildsXml HeroBuildsXmlHolder; // used for swapping between the one that is in use and latest
@@ -35,16 +37,25 @@ namespace Heroes.Icons
         {
             Logger = logger;
 
-            HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, -1);
-            HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
+            try
+            {
+                HeroesXml = HeroesXml.Initialize("Heroes.xml", "Heroes", Logger, null);
+                HeroBuildsXmlLatest = HeroBuildsXmlHolder = HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger); // load in all three
 
-            EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
-            LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
-            ListHeroBuilds = HeroBuildsXml.Builds;
+                EarliestHeroesBuild = HeroBuildsXml.EarliestHeroesBuild;
+                LatestHeroesBuild = HeroBuildsXml.LatestHeroesBuild;
+                ListHeroBuilds = HeroBuildsXml.Builds;
 
-            MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild);
-            MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild);
-            HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild);
+                MatchAwardsXml = MatchAwardsXml.Initialize("_AllMatchAwards.xml", "MatchAwards", LatestHeroesBuild, logger);
+                MapBackgroundsXml = MapBackgroundsXml.Initialize("_AllMapBackgrounds.xml", "MapBackgrounds", LatestHeroesBuild, logger);
+                HomeScreensXml = HomeScreensXml.Initialize("HomeScreens.xml", "HomeScreens", LatestHeroesBuild, logger);
+            }
+            catch (Exception ex)
+            {
+                if (logger)
+                    LogErrors($"Error on HeroIcons initializing{Environment.NewLine}{ex}");
+                throw;
+            }
 
             SetNonSupportHeroesWithSupportStat();
             SetPartyIcons();
@@ -53,10 +64,10 @@ namespace Heroes.Icons
             SetOtherIcons();
         }
 
-        public int LatestSupportedBuild() => LatestHeroesBuild;
+        public int GetLatestHeroesBuild() => LatestHeroesBuild;
 
         /// <summary>
-        /// Load a specific build, other than the latest one
+        /// Load a specific build, other than the latest one. Use LoadLatestHeroesBuild to load latest build.
         /// </summary>
         /// <param name="replayBuild">The replay build to load</param>
         /// <returns></returns>
@@ -69,13 +80,20 @@ namespace Heroes.Icons
             else if (build > LatestHeroesBuild)
                 build = LatestHeroesBuild;
 
-            // only load the build if it's not in memory already or in the in xmlHolder
-            if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
+            try
             {
-                if (build != HeroBuildsXmlHolder.CurrentLoadedHeroesBuild)
-                    HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
-                else
-                    HeroBuildsXml = HeroBuildsXmlHolder;
+                // only load the build if it's not in memory already or in the in xmlHolder
+                if (build != HeroBuildsXml.CurrentLoadedHeroesBuild)
+                {
+                    if (build != HeroBuildsXmlHolder.CurrentLoadedHeroesBuild)
+                        HeroBuildsXml = HeroBuildsXml.Initialize("_AllHeroes.xml", "HeroBuilds", HeroesXml, Logger, build);
+                    else
+                        HeroBuildsXml = HeroBuildsXmlHolder;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ParseXmlException($"Error on loading heroes build {build}{Environment.NewLine}{ex}");
             }
         }
 
@@ -248,17 +266,17 @@ namespace Heroes.Icons
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_classic.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_diablo.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_overwatch.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_starcraft.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Roles/hero_franchise_warcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_classic.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_diablo.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_overwatch.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_starcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_warcraft.png", UriKind.Absolute));
         }
 
         private void SetOtherIcons()
         {
-            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds", UriKind.Absolute));
-            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.dds", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_taskbar_buttonicon_quests.png", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.png", UriKind.Absolute));
         }
 
         private void LogMissingImage(string message)
@@ -277,6 +295,13 @@ namespace Heroes.Icons
             }
         }
 
+        private void LogErrors(string message)
+        {
+            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{XmlErrorsLogName}", true))
+            {
+                writer.WriteLine(message);
+            }
+        }
         #endregion private methods
     }
 }

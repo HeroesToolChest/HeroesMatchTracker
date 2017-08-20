@@ -1,6 +1,8 @@
 ﻿using Heroes.Icons;
+using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
+using System.Linq;
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
 {
@@ -88,7 +90,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         private bool IsHealingStatCharacter(string realHeroName)
         {
-            if (HeroesIcons.Heroes().GetHeroRoleList(realHeroName)[0] == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(realHeroName))
+            if (HeroesIcons.Heroes().GetHeroInfo(realHeroName).Roles.FirstOrDefault() == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(realHeroName))
                 return true;
             else
                 return false;

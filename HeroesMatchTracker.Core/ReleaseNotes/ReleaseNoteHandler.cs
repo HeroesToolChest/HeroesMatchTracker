@@ -29,13 +29,29 @@ namespace HeroesMatchTracker.Core.ReleaseNotes
         /// </summary>
         public void AddReleaseNotes()
         {
-            var latestVersion = new Version(Database.ReleaseNotesDb().ReleaseNotes.ReadLastReleaseNote().Version);
+            Version versionInDatabase = new Version(Database.ReleaseNotesDb().ReleaseNotes.ReadLastReleaseNote().Version);
+
+            if (Releases.Count > 0)
+            {
+                // check to see if the release note version we have in the database is newer than the one available on github
+                // this happens because of a test release that has since been removed
+                while (versionInDatabase > new Version(Releases[0].TagName.TrimStart('v')))
+                {
+                    // remove the release that no longer exists
+                    Database.ReleaseNotesDb().ReleaseNotes.DeleteReleaseNote(new ReleaseNote { Version = versionInDatabase.ToString() });
+                    versionInDatabase = new Version(Database.ReleaseNotesDb().ReleaseNotes.ReadLastReleaseNote().Version);
+                }
+            }
 
             foreach (var release in Releases)
             {
-                if (new Version(release.TagName.TrimStart('v')) >= latestVersion)
+                Version versionRelease = new Version(release.TagName.TrimStart('v'));
+
+                if (versionRelease >= versionInDatabase)
                 {
-                    AddReleaseNote(release);
+                    // don't add newer release notes newer than the current version the app is on
+                    if (versionRelease <= AssemblyVersions.HeroesMatchTrackerVersion().Version)
+                        AddReleaseNote(release);
                 }
                 else
                 {

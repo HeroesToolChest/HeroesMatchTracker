@@ -1,10 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Windows.Media.Imaging;
+﻿using Heroes.Icons.Models;
+using System.Collections.Generic;
 
 namespace Heroes.Icons.Xml
 {
     public interface IHeroes
     {
+        /// <summary>
+        /// Returns a Hero object
+        /// </summary>
+        /// <param name="heroName">Can be the real hero name or alt name</param>
+        /// <returns></returns>
+        Hero GetHeroInfo(string heroName);
+
         /// <summary>
         /// Gets the english name of the given alias. Returns true if found, otherwise false
         /// </summary>
@@ -14,61 +21,37 @@ namespace Heroes.Icons.Xml
         bool HeroNameTranslation(string heroNameAlias, out string heroNameEnglish);
 
         /// <summary>
-        /// Returns a BitmapImage of the hero
-        /// </summary>
-        /// <param name="realHeroName">Real hero name</param>
-        /// <returns>BitmpImage of the hero</returns>
-        BitmapImage GetHeroPortrait(string realHeroName);
-
-        /// <summary>
-        /// Returns a loading portrait BitmapImage of the hero
-        /// </summary>
-        /// <param name="realHeroName">Real hero name</param>
-        /// <returns>BitmpImage of the hero</returns>
-        BitmapImage GetHeroLoadingPortrait(string realHeroName);
-
-        /// <summary>
-        /// Returns a leaderboard portrait BitmapImage of the hero
-        /// </summary>
-        /// <param name="realHeroName">Real hero name</param>
-        /// <returns>BitmpImage of the hero</returns>
-        BitmapImage GetHeroLeaderboardPortrait(string realHeroName);
-
-        /// <summary>
         /// Returns the real hero name from the hero's attribute id
         /// </summary>
         /// <param name="attributeId">Four character hero id</param>
         /// <returns>Full hero name</returns>
         string GetRealHeroNameFromAttributeId(string attributeId);
 
-        string GetAltNameFromRealHeroName(string realName);
-
+        /// <summary>
+        /// Returns the real hero name from the alt name
+        /// </summary>
+        /// <param name="altName">Alt name of hero</param>
+        /// <returns></returns>
         string GetRealHeroNameFromAltName(string altName);
 
         /// <summary>
         /// Checks to see if the hero name exists
         /// </summary>
-        /// <param name="heroName">Hero name</param>
-        /// <param name="realName">Is the name a real name or alt name</param>
+        /// <param name="heroName">Real name of hero or alt name</param>
         /// <returns>True if found</returns>
-        bool HeroExists(string heroName, bool realName = true);
+        bool HeroExists(string heroName);
 
         /// <summary>
-        /// Returns the hero's list of roles. Multiclass will be first if hero has multiple roles. Will return a role of Unknown if hero name not found.
+        /// Returns a list of (real) hero names for the given build
         /// </summary>
-        /// <param name="realName">Hero real name</param>
-        /// <returns>HeroRole</returns>
-        List<HeroRole> GetHeroRoleList(string realName);
+        /// <param name="build">The build number</param>
+        /// <returns></returns>
+        List<string> GetListOfHeroes(int build);
 
         /// <summary>
-        /// Returns the hero's franchise. Will return Unknown if hero not found
+        /// Returns the total amount of heroes (latest build)
         /// </summary>
-        /// <param name="realName">Heroes real name</param>
-        /// <returns>HeroRole</returns>
-        HeroFranchise GetHeroFranchise(string realName);
-
-        List<string> GetListOfHeroes();
-
+        /// <returns></returns>
         int TotalAmountOfHeroes();
     }
 }

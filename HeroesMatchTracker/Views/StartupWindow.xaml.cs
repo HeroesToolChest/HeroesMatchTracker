@@ -34,15 +34,6 @@ namespace HeroesMatchTracker.Views
         {
             MainWindow mainWindow = new MainWindow();
 
-            if (Database.SettingsDb().UserSettings.RequeueAllFailedReplays && Database.SettingsDb().UserSettings.IsAutoRequeueOnUpdate)
-            {
-                var unparsedReplaysList = Database.SettingsDb().FailedReplays.ReadAllReplays();
-                Database.SettingsDb().FailedReplays.DeleteAllFailedReplays();
-                Messenger.Default.Send(unparsedReplaysList);
-
-                Database.SettingsDb().UserSettings.RequeueAllFailedReplays = false;
-            }
-
             if (Database.SettingsDb().UserSettings.IsStartedViaStartup)
             {
                 mainWindow.WindowState = WindowState.Minimized;
@@ -84,10 +75,11 @@ namespace HeroesMatchTracker.Views
                     Database.SettingsDb().UserSettings.IsStartedViaStartup = false;
                 }
 
-                if (argsList.Contains("/updated"))
+                if (argsList.Contains("/updated") || Database.SettingsDb().UserSettings.IsNewUpdateApplied)
                 {
                     Database.SettingsDb().UserSettings.ShowWhatsNewWindow = true;
                     Database.SettingsDb().UserSettings.RequeueAllFailedReplays = true;
+                    Database.SettingsDb().UserSettings.IsNewUpdateApplied = false;
                 }
                 else
                 {
