@@ -2,7 +2,7 @@
 
 namespace HeroesMatchTracker.Data.Migrations.Replays
 {
-    internal class MigrationAddon8_v2_3_0_1 : MigrationMethods<ReplaysContext>, IMigrationAddon
+    internal class MigrationAddon8_v2_4_0_1 : MigrationMethods<ReplaysContext>, IMigrationAddon
     {
         public void Execute()
         {
