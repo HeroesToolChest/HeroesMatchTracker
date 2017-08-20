@@ -72,7 +72,23 @@
                             </Style>
                         </TextBlock.Style>
                         <TextBlock.ToolTip>
-                            <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
+                            <ToolTip Style="{StaticResource HeroDescriptorToolTip}">
+                                <ContentPresenter Content="{Binding PlayerTag}" ContentTemplate="{StaticResource MatchPlayerTag}" />
+                            </ToolTip>
+
+                            <!--<ToolTip Style="{StaticResource HeroDescriptorToolTip}">
+                                <StackPanel Style="{StaticResource HeroInfoStackPanel}">
+                                    <StackPanel>
+                                        <Label Content="{Binding CharacterName}" Style="{StaticResource HeroDescriptorPopupLabel}" Padding="8 6 0 0" />
+                                        <Label Content="{Binding HeroDescriptionSubInfo}" Style="{StaticResource HeroDescriptorPopupSubLabel}" Padding="8 0 0 0" />
+                                    </StackPanel>
+                                    <Separator BorderThickness="2" BorderBrush="#3B2D74" Margin="-15 0" />
+                                    <StackPanel Margin="0 6 0 0" Width="360" HorizontalAlignment="Left">
+                                        <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding HeroDescription, Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource HeroDescriptorPopupTextBlock}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </ToolTip>-->
+                            <!--<ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />-->
                         </TextBlock.ToolTip>
                     </TextBlock>
                 </StackPanel>

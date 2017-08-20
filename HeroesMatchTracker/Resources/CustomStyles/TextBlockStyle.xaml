@@ -51,4 +51,13 @@
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="Foreground" Value="{StaticResource HeroDescriptorTooltipSubFontBrush}" />
     </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockDefault" BasedOn="{StaticResource HeroDescriptorPopupTextBlock}">
+        <Setter Property="Padding" Value="4 0 4 4" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Inline.FontSize" Value="15" />
+        <Setter Property="Inline.FontWeight" Value="SemiBold" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="Foreground" Value="{StaticResource HeroDescriptorTooltipSubFontBrush}" />
+    </Style>
 </ResourceDictionary>

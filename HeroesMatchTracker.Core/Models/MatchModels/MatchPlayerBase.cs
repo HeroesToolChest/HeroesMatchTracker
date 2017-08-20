@@ -40,7 +40,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             MvpAward = matchPlayerBase.MvpAward;
             PartyIcon = matchPlayerBase.PartyIcon;
             PlayerName = matchPlayerBase.PlayerName;
-            PlayerNameTooltip = matchPlayerBase.PlayerNameTooltip;
+            //PlayerNameTooltip = matchPlayerBase.PlayerNameTooltip;
             PlayerBattleTagName = matchPlayerBase.PlayerBattleTagName;
             CharacterName = matchPlayerBase.CharacterName;
             CharacterLevel = matchPlayerBase.CharacterLevel;
@@ -52,12 +52,13 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
             HeroDescription = matchPlayerBase.HeroDescription;
             Franchise = matchPlayerBase.Franchise;
+            PlayerTag = matchPlayerBase.PlayerTag;
         }
 
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
         public string PlayerName { get; private set; }
-        public string PlayerNameTooltip { get; private set; }
+        //public string PlayerNameTooltip { get; private set; }
         public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
         public string CharacterLevel { get; private set; }
@@ -70,6 +71,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public BitmapImage MvpAward { get; private set; }
         public BitmapImage PartyIcon { get; private set; }
         public BitmapImage Franchise { get; private set; }
+        public MatchPlayerTag PlayerTag { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
         public RelayCommand HeroSearchQuickMatchCommand => new RelayCommand(HeroSearchQuickMatch);
@@ -134,32 +136,15 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
-            if (Player.AccountLevel > 0)
-                AccountLevel = Player.AccountLevel.ToString();
-            else
-                AccountLevel = "N/A";
-
-            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
-                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
-
-            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
-                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
-
-            string lastSeenBefore;
-            if (playerInfo.LastSeenBefore.HasValue)
-                lastSeenBefore = playerInfo.LastSeenBefore.Value.ToString();
-            else
-                lastSeenBefore = "Never";
-
-            PlayerNameTooltip = $"{PlayerName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Total Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
-
-            var battleTags = Database.ReplaysDb().RenamedPlayer.ReadPlayersFromPlayerId(playerInfo.PlayerId);
-            if (battleTags.Count > 0)
-                PlayerNameTooltip += $"{Environment.NewLine}{Environment.NewLine}Former Names:";
-            foreach (var tag in battleTags)
+            PlayerTag = new MatchPlayerTag
             {
-                PlayerNameTooltip += $"{Environment.NewLine}{tag}";
-            }
+                PlayerName = PlayerName,
+                AccountLevel = Player.AccountLevel > 0 ? Player.AccountLevel.ToString() : "N/A",
+                TotalSeen = playerInfo.Seen,
+                LastSeenBefore = playerInfo.LastSeenBefore.HasValue ? playerInfo.LastSeenBefore.Value.ToString() : "Never",
+                FormerPlayerNames = Database.ReplaysDb().RenamedPlayer.ReadPlayersFromPlayerId(playerInfo.PlayerId),
+                Notes = playerInfo.Notes ?? string.Empty,
+            };
 
             if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
                 SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
