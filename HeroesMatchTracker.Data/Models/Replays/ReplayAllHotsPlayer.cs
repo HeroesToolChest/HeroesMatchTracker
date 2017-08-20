@@ -49,6 +49,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public int Seen { get; set; }
 
+        public string Notes { get; set; }
+
         public virtual ICollection<ReplayMatchPlayer> ReplayMatchPlayers { get; set; }
 
         public virtual ICollection<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; }
