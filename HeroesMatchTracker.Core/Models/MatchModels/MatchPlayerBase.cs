@@ -4,6 +4,7 @@ using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Messaging;
+using HeroesMatchTracker.Core.Models.HeroModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewServices;
@@ -51,7 +52,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerRegion = matchPlayerBase.PlayerRegion;
             HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
             HeroDescription = matchPlayerBase.HeroDescription;
-            Franchise = matchPlayerBase.Franchise;
         }
 
         public bool Silenced { get; private set; }
@@ -64,12 +64,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public string MvpAwardDescription { get; private set; }
         public string AccountLevel { get; private set; }
         public string HeroDescriptionSubInfo { get; private set; }
-        public string HeroDescription { get; private set; }
         public Region PlayerRegion { get; private set; }
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
         public BitmapImage PartyIcon { get; private set; }
-        public BitmapImage Franchise { get; private set; }
+        public HeroDescription HeroDescription { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
         public RelayCommand HeroSearchQuickMatchCommand => new RelayCommand(HeroSearchQuickMatch);
@@ -113,19 +112,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Hero hero = HeroesIcons.Heroes().GetHeroInfo(Player.Character);
 
             LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
-            Franchise = HeroesIcons.GetFranchiseIcon(hero.Franchise);
             Silenced = Player.IsSilenced;
             CharacterName = hero.Name;
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
-            HeroDescription = hero.Description;
-
-            if (hero.Roles.Count > 1)
-                HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles[0]} ({hero.Roles[1]} | {hero.Roles[2]}) | Difficulty: {hero.Difficulty.GetFriendlyName()}";
-            else
-                HeroDescriptionSubInfo = $"{hero.Type} {hero.Roles.FirstOrDefault()} | Difficulty: {hero.Difficulty.GetFriendlyName()}";
 
             if (Player.Team == 4)
                 CharacterLevel = "Observer";
@@ -150,6 +142,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 lastSeenBefore = "Never";
 
             PlayerNameTooltip = $"{PlayerName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Total Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
+
+            HeroDescription = new HeroDescription
+            {
+                HeroName = hero.Name,
+                Description = hero.Description,
+                Franchise = HeroesIcons.GetFranchiseIcon(hero.Franchise),
+                Type = hero.Type,
+                Difficulty = hero.Difficulty,
+                Roles = hero.Roles,
+            };
         }
 
         public virtual void Dispose()
@@ -158,6 +160,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PartyIcon = null;
             MvpAward = null;
             MvpAwardDescription = null;
+            HeroDescription.Franchise = null;
         }
 
         private void SetPartyIcon(PartyIconColor icon)

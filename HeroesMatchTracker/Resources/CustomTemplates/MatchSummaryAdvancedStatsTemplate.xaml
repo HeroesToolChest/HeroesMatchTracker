@@ -24,9 +24,11 @@
                 <Border BorderThickness="2" Height="779" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel>
                         <Grid DockPanel.Dock="Top" ContextMenu="{StaticResource PlayerSearchContextMenu}">
-                            <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86">
+                            <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                 <Image.ToolTip>
-                                    <ToolTip Content="{Binding CharacterTooltip}" Style="{StaticResource EnhancedToolTip}" />
+                                    <ToolTip Style="{StaticResource HeroDescriptorToolTip}">
+                                        <ContentPresenter Content="{Binding HeroDescription}" ContentTemplate="{StaticResource HeroDescription}"  />
+                                    </ToolTip>
                                 </Image.ToolTip>
                             </Image>
                             <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>

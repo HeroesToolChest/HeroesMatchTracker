@@ -56,7 +56,8 @@
                 <ResourceDictionary Source="/Resources/CustomControls/ContextMenuSearchControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/TabItemControl.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomControls/DataGridControl.xaml"/>
-                
+
+                <ResourceDictionary Source="/Resources/CustomTemplates/HeroDescription.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryPlayerInfoTemplate.xaml"/>
@@ -65,7 +66,6 @@
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryAdvancedStatsTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchSummaryObserversTemplate.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/MatchHistoryMatchTemplate.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>

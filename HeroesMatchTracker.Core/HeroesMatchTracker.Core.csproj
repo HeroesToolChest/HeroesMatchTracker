@@ -215,6 +215,7 @@
     <Compile Include="Models\GraphSummaryModels\StatGraphs.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamExperienceGraph.cs" />
     <Compile Include="Models\GraphSummaryModels\TeamLevelTimeGraph.cs" />
+    <Compile Include="Models\HeroModels\HeroDescription.cs" />
     <Compile Include="Models\MatchHistoryModels\MatchHistoryMatch.cs" />
     <Compile Include="Models\MatchModels\MatchBans.cs" />
     <Compile Include="Models\MatchModels\MatchChat.cs" />

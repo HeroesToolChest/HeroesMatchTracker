@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:coreControls="clr-namespace:HeroesMatchTracker.Core.Controls;assembly=HeroesMatchTracker.Core"
                     xmlns:converter="clr-namespace:HeroesMatchTracker.Core.Converters;assembly=HeroesMatchTracker.Core">
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
@@ -12,21 +11,7 @@
                 <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" HorizontalAlignment="Left" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                     <Image.ToolTip>
                         <ToolTip Style="{StaticResource HeroDescriptorToolTip}">
-                            <StackPanel Style="{StaticResource HeroInfoStackPanel}">
-                                <StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="{Binding Franchise}" Height="80" Margin="-8" />
-                                        <StackPanel>
-                                            <Label Content="{Binding CharacterName}" Style="{StaticResource HeroDescriptorPopupLabel}" Padding="8 6 0 0" />
-                                            <Label Content="{Binding HeroDescriptionSubInfo}" Style="{StaticResource HeroDescriptorPopupSubLabel}" Padding="8 0 0 0" />
-                                        </StackPanel>
-                                    </StackPanel>
-                                </StackPanel>
-                                <Separator BorderThickness="2" BorderBrush="#3B2D74" Margin="-16 0" />
-                                <StackPanel Margin="0 6 0 0" Width="360" HorizontalAlignment="Left">
-                                    <TextBlock coreControls:FormattedTextBlock.FormattedText="{Binding HeroDescription, Converter={StaticResource TalentTooltipTextConverter}}" Style="{StaticResource HeroDescriptorPopupTextBlock}" />
-                                </StackPanel>
-                            </StackPanel>
+                            <ContentPresenter Content="{Binding HeroDescription}" ContentTemplate="{StaticResource HeroDescription}"  />
                         </ToolTip>
                     </Image.ToolTip>
                 </Image>
