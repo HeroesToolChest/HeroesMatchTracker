@@ -17,7 +17,8 @@ namespace HeroesMatchTracker.Core.Models.StatisticsModels
         public double? SiegeDamage { get; set; }
         public double? HeroDamage { get; set; }
         public double? Experience { get; set; }
-        public double? Role { get; set; }
+        public double? HealingShielding { get; set; }
+        public double? DamageTaken { get; set; }
         public int? MercsCaptured { get; set; }
         public TimeSpan? GameTime { get; set; }
     }

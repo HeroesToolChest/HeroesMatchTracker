@@ -217,11 +217,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 TimeSpan gameTime = Database.ReplaysDb().Statistics.ReadTotalMapGameTime(heroName, season, gameMode, map);
                 Hero heroInfo = HeroesIcons.Heroes().GetHeroInfo(heroName);
 
-                double role = 0;
-                if (heroInfo.Roles[0] == HeroRole.Warrior)
-                    role = (double)scoreResultsList.Sum(x => x.DamageTaken);
-                else if (heroInfo.Roles[0] == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(heroName))
-                    role = (double)scoreResultsList.Sum(x => x.Healing);
+                double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
+                double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
 
                 var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
                 mapImage.Freeze();
@@ -239,7 +236,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     statsHeroesGameModes.Deaths = deaths;
                     statsHeroesGameModes.SiegeDamage = siegeDamage;
                     statsHeroesGameModes.HeroDamage = heroDamage;
-                    statsHeroesGameModes.Role = role;
+                    statsHeroesGameModes.HealingShielding = healingShielding;
+                    statsHeroesGameModes.DamageTaken = damageTaken;
                     statsHeroesGameModes.Experience = experience;
                     statsHeroesGameModes.MercsCaptured = mercsCaptured;
                     statsHeroesGameModes.GameTime = gameTime;
@@ -269,7 +267,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             double totalSiegeDamage = StatsHeroesDataCollection.Sum(x => x.SiegeDamage ?? 0);
             double totalHeroDamage = StatsHeroesDataCollection.Sum(x => x.HeroDamage ?? 0);
-            double totalrole = StatsHeroesDataCollection.Sum(x => x.Role ?? 0);
+            double totalHealingShielding = StatsHeroesDataCollection.Sum(x => x.HealingShielding ?? 0);
+            double totalDamageTaken = StatsHeroesDataCollection.Sum(x => x.DamageTaken ?? 0);
             double totalExperience = StatsHeroesDataCollection.Sum(x => x.Experience ?? 0);
             int totalMercsCaptured = StatsHeroesDataCollection.Sum(x => x.MercsCaptured ?? 0);
             TimeSpan totalGameTime = TimeSpan.FromSeconds(StatsHeroesDataCollection.Sum(x => x.GameTime.HasValue ? x.GameTime.Value.Seconds : 0));
@@ -286,7 +285,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 Deaths = totalDeaths,
                 SiegeDamage = totalSiegeDamage,
                 HeroDamage = totalHeroDamage,
-                Role = totalrole,
+                HealingShielding = totalHealingShielding,
+                DamageTaken = totalDamageTaken,
                 Experience = totalExperience,
                 MercsCaptured = totalMercsCaptured,
                 GameTime = totalGameTime,
@@ -309,7 +309,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int? deathsAverage = map.Deaths / totalGames;
                 double? siegeDamageAverage = map.SiegeDamage / totalGames;
                 double? heroDamageAverage = map.HeroDamage / totalGames;
-                double? roleAverage = map.Role / totalGames;
+                double? healingShieldingAverage = map.HealingShielding / totalGames;
+                double? damageTakenAverage = map.DamageTaken / totalGames;
                 double? experienceAverage = map.Experience / totalGames;
                 int? mercsCapturedAverage = map.MercsCaptured / totalGames;
                 TimeSpan? gameTimeAverage = null;
@@ -330,7 +331,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     Deaths = deathsAverage,
                     SiegeDamage = siegeDamageAverage,
                     HeroDamage = heroDamageAverage,
-                    Role = roleAverage,
+                    HealingShielding = healingShieldingAverage,
+                    DamageTaken = damageTakenAverage,
                     Experience = experienceAverage,
                     MercsCaptured = mercsCapturedAverage,
                     GameTime = gameTimeAverage,
@@ -358,7 +360,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 Deaths = dataTotal.Deaths / totalAverageTotal,
                 SiegeDamage = dataTotal.SiegeDamage / totalAverageTotal,
                 HeroDamage = dataTotal.HeroDamage / totalAverageTotal,
-                Role = dataTotal.Role / totalAverageTotal,
+                HealingShielding = dataTotal.HealingShielding / totalAverageTotal,
+                DamageTaken = dataTotal.DamageTaken / totalAverageTotal,
                 Experience = dataTotal.Experience / totalAverageTotal,
                 MercsCaptured = dataTotal.MercsCaptured / totalAverageTotal,
                 GameTime = dataTotal.GameTime.HasValue ? TimeSpan.FromSeconds(Math.Round(dataTotal.GameTime.Value.TotalSeconds / totalAverageTotal.Value, 0)) : (TimeSpan?)null,
