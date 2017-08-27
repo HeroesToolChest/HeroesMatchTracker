@@ -37,7 +37,9 @@
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">
                             <TextBlock Text="{Binding PlayerNameOnly}" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000" TextAlignment="Left" HorizontalAlignment="Center">
                                 <TextBlock.ToolTip>
-                                    <ToolTip Content="{Binding PlayerNameTooltip}" Style="{StaticResource EnhancedToolTip}" />
+                                    <ToolTip Style="{StaticResource HeroDescriptorToolTip}">
+                                        <ContentPresenter Content="{Binding PlayerTag}" ContentTemplate="{StaticResource MatchPlayerTag}" />
+                                    </ToolTip>
                                 </TextBlock.ToolTip>
                             </TextBlock>
                             <TextBlock Text="{Binding CharacterLevel}" ToolTip="Hero Level" />
