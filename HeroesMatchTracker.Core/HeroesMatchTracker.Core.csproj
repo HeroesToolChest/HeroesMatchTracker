@@ -223,7 +223,7 @@
     <Compile Include="Models\MatchModels\MatchPlayerAdvancedStats.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerBase.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />
-    <Compile Include="Models\MatchModels\MatchPlayerTag.cs" />
+    <Compile Include="Models\PlayerModels\PlayerTag.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerTalents.cs" />
     <Compile Include="Models\MatchModels\MatchResult.cs" />
     <Compile Include="Generic\PlayerParties.cs" />

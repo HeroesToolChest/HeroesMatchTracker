@@ -360,15 +360,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchHistoryMatchTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchHistoryMatchTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchOverviewTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchOverviewTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchPlayerTag.xaml">
+    <Page Include="Resources\CustomTemplates\PlayerTag.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -376,27 +376,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryAdvancedStatsTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryAdvancedStatsTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryMatchResultTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryMatchResultTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryObserversTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryObserversTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryPlayerInfoTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryPlayerInfoTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryStatsTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryStatsTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\CustomTemplates\MatchSummaryTalentsTemplate.xaml">
+    <Page Include="Resources\CustomTemplates\Match\MatchSummaryTalentsTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

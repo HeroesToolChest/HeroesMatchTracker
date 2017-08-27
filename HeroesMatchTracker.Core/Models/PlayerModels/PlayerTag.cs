@@ -2,7 +2,7 @@
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
 {
-    public class MatchPlayerTag
+    public class PlayerTag
     {
         public string PlayerName { get; set; }
         public string AccountLevel { get; set; }

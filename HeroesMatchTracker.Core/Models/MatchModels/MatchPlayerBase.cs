@@ -66,7 +66,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
         public BitmapImage PartyIcon { get; private set; }
-        public MatchPlayerTag PlayerTag { get; private set; }
+        public PlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
@@ -125,7 +125,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
-            PlayerTag = new MatchPlayerTag
+            PlayerTag = new PlayerTag
             {
                 PlayerName = PlayerName,
                 AccountLevel = Player.AccountLevel > 0 ? Player.AccountLevel.ToString() : "N/A",
