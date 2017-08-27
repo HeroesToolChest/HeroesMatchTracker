@@ -31,6 +31,6 @@ namespace Heroes.Icons
         BitmapImage GetRoleIcon(HeroRole heroRole);
         BitmapImage GetFranchiseIcon(HeroFranchise heroFranchise);
         bool IsNonSupportHeroWithHealingStat(string realHeroName);
-        List<int> GetListOfHeroesBuilds();
+        List<string> GetListOfHeroesBuilds();
     }
 }

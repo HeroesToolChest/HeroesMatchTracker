@@ -232,9 +232,9 @@ namespace Heroes.Icons
             return HeroesNonSupportHealingStat.ContainsKey(realHeroName);
         }
 
-        public List<int> GetListOfHeroesBuilds()
+        public List<string> GetListOfHeroesBuilds()
         {
-            return ListHeroBuilds;
+            return ListHeroBuilds.ConvertAll(x => x.ToString());
         }
 
         #region private methods

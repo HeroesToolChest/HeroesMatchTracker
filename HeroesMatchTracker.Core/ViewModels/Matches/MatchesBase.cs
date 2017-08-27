@@ -64,7 +64,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedMapOption = MapsList[0];
 
             ReplayBuildsList.Add("Any");
-            ReplayBuildsList.AddRange(HeroesHelpers.Builds.GetBuildsList(HeroesIcons));
+            ReplayBuildsList.AddRange(HeroesIcons.GetListOfHeroesBuilds());
             SelectedBuildOption = ReplayBuildsList[0];
 
             HeroesList.Add("Any");

@@ -12,6 +12,7 @@ namespace Heroes.Icons.Xml
         private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
         private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
         private const string HeroDescriptionsFileName = "_HeroDescriptions.txt";
+        private const int MinimumBuild = 47479;
 
         private int SelectedBuild;
         private HeroesXml HeroesXml;
@@ -352,6 +353,10 @@ namespace Heroes.Icons.Xml
                         {
                             throw new ParseXmlException($"Could not convert to Int32: {pre} | {reader.Value}", ex);
                         }
+                        catch (Exception ex)
+                        {
+                            throw new ParseXmlException($"Error on reading HeroBuilds.xml: {pre} | {reader.Value}", ex);
+                        }
                     }
                 }
             }
@@ -360,7 +365,7 @@ namespace Heroes.Icons.Xml
             {
                 int buildNumber = build.Key;
 
-                if (!Directory.Exists($@"Xml\{XmlBaseFolder}\{buildNumber}"))
+                if (buildNumber >= MinimumBuild && !Directory.Exists($@"Xml\{XmlBaseFolder}\{buildNumber}"))
                     throw new ParseXmlException($"Could not find required Build Folder: Xml\\{XmlBaseFolder}\\{buildNumber}");
                 else
                     Builds.Add(buildNumber);
@@ -368,7 +373,7 @@ namespace Heroes.Icons.Xml
 
             Builds = Builds.OrderByDescending(x => x).ToList();
 
-            EarliestHeroesBuild = Builds[Builds.Count - 1];
+            EarliestHeroesBuild = Builds[Builds.Count - 1] < MinimumBuild ? MinimumBuild : Builds[Builds.Count - 1];
             LatestHeroesBuild = SelectedBuild = Builds[0];
         }
 

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Heroes.Icons.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
-using Heroes.Icons.Models;
 using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Tests
@@ -15,7 +15,7 @@ namespace Heroes.Icons.Tests
             List<string> assertMessages = new List<string>();
             int segment = 5;
 
-            foreach (int build in HeroesIcons.GetListOfHeroesBuilds())
+            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => Int32.Parse(x)))
             {
                 HeroesIcons.LoadHeroesBuild(build);
 

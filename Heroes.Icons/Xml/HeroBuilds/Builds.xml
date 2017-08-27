@@ -1,5 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Builds>
+  <Patch type="" link="">39445</Patch>
+  <Patch type="" link="">39595</Patch>
+  <Patch type="" link="">39709</Patch>
+  <Patch type="" link="">39951</Patch>
+  <Patch type="" link="">40087</Patch>
+  <Patch type="" link="">40322</Patch>
+  <Patch type="" link="">40431</Patch>
+  <Patch type="" link="">40697</Patch>
+  <Patch type="" link="">40798</Patch>
+  <Patch type="" link="">41150</Patch>
+  <Patch type="" link="">41393</Patch>
+  <Patch type="" link="">41504</Patch>
+  <Patch type="" link="">41810</Patch>
+  <Patch type="" link="">42178</Patch>
+  <Patch type="" link="">42273</Patch>
+  <Patch type="" link="">42406</Patch>
+  <Patch type="" link="">42506</Patch>
+  <Patch type="" link="">42590</Patch>
+  <Patch type="" link="">42958</Patch>
+  <Patch type="" link="">43051</Patch>
+  <Patch type="" link="">43170</Patch>
+  <Patch type="" link="">43259</Patch>
+  <Patch type="" link="">43571</Patch>
+  <Patch type="" link="">43905</Patch>
+  <Patch type="" link="">44124</Patch>
+  <Patch type="" link="">44468</Patch>
+  <Patch type="" link="">44797</Patch>
+  <Patch type="" link="">44941</Patch>
+  <Patch type="" link="">45228</Patch>
+  <Patch type="" link="">45635</Patch>
+  <Patch type="" link="">46158</Patch>
+  <Patch type="" link="">46446</Patch>
+  <Patch type="" link="">46690</Patch>
+  <Patch type="" link="">46787</Patch>
+  <Patch type="" link="">46869</Patch>
+  <Patch type="" link="">46889</Patch>
+  <Patch type="" link="">47133</Patch>
+  <Patch type="" link="">47219</Patch>
   <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20324866">47479</Patch>
   <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20352063">47903</Patch>
   <Patch type="Varian" link="http://us.battle.net/heroes/en/blog/20372990">48027</Patch>
@@ -22,7 +60,7 @@
   <Patch type="Cassia" link="http://us.battle.net/heroes/en/blog/20673818">52124</Patch>
   <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20696567">52351</Patch>
   <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20696243">52647</Patch>
-  <Patch type="Genji" link="http://us.battle.net/heroes/en/blog/20721900">52860</Patch>
+  <Patch type="Genji/2.0" link="http://us.battle.net/heroes/en/blog/20721900">52860</Patch>
   <Patch type="Hotfix" link="">52986</Patch>
   <Patch type="Hotfix" link="http://us.battle.net/heroes/en/blog/20726730">53174</Patch>
   <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/20720245">53275</Patch>

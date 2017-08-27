@@ -14,7 +14,7 @@ namespace Heroes.Icons.Tests
             List<string> assertMessages = new List<string>();
             int segment = 4;
 
-            foreach (int build in HeroesIcons.GetListOfHeroesBuilds())
+            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => Int32.Parse(x)))
             {
                 HeroesIcons.LoadHeroesBuild(build);
 
