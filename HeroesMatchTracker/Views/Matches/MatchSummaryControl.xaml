@@ -8,6 +8,9 @@
              DataContext="{Binding MatchSummaryViewModel, Source={StaticResource Locator}}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding KeyEscCommand}" />
+    </UserControl.InputBindings>
     <Grid>
         <simpleChildWindow:ChildWindow x:Name="LoadingOverlay"
 									   EnableDropShadow="False"

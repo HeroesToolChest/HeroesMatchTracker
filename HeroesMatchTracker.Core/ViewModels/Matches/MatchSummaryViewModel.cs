@@ -8,6 +8,7 @@ using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data.Models.Replays;
+using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections.Generic;
@@ -41,15 +42,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private string _matchLength;
         private Color _matchTitleGlowColor;
 
-        private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
-        private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
-        private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
-        private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
-        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
-        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
-        private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
-        private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
-
         private IWebsiteService Website;
         private ILoadingOverlayWindowService LoadingOverlayWindow;
         private List<MatchPlayerTalents> MatchPlayerTalentsTeam1List;
@@ -60,6 +52,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private List<MatchPlayerAdvancedStats> MatchPlayerAdvancedStatsTeam2List;
         private List<MatchChat> MatchPlayerChatList;
         private List<MatchObserver> MatchPlayerObserversList;
+
+        private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam1Collection = new ObservableCollection<MatchPlayerTalents>();
+        private ObservableCollection<MatchPlayerTalents> _matchTalentsTeam2Collection = new ObservableCollection<MatchPlayerTalents>();
+        private ObservableCollection<MatchPlayerStats> _matchStatsTeam1Collection = new ObservableCollection<MatchPlayerStats>();
+        private ObservableCollection<MatchPlayerStats> _matchStatsTeam2Collection = new ObservableCollection<MatchPlayerStats>();
+        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam1Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
+        private ObservableCollection<MatchPlayerAdvancedStats> _matchAdvancedStatsTeam2Collection = new ObservableCollection<MatchPlayerAdvancedStats>();
+        private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
+        private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
+
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
 
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
@@ -365,6 +368,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(1));
+        public RelayCommand KeyEscCommand => new RelayCommand(KeyEscPressed);
 
         public async Task LoadMatchSummaryAsync(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {
@@ -824,6 +828,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
 
             return list;
+        }
+
+        private void KeyEscPressed()
+        {
+            MatchSummaryFlyout.CloseMatchSummaryFlyout();
         }
 
         private void DisposeMatchSummary()
