@@ -13,7 +13,6 @@ using HeroesMatchTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using static Heroes.Helpers.HeroesHelpers.Regions;
@@ -41,7 +40,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             MvpAward = matchPlayerBase.MvpAward;
             PartyIcon = matchPlayerBase.PartyIcon;
             PlayerName = matchPlayerBase.PlayerName;
-            PlayerNameTooltip = matchPlayerBase.PlayerNameTooltip;
             PlayerBattleTagName = matchPlayerBase.PlayerBattleTagName;
             CharacterName = matchPlayerBase.CharacterName;
             CharacterLevel = matchPlayerBase.CharacterLevel;
@@ -52,12 +50,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerRegion = matchPlayerBase.PlayerRegion;
             HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
             HeroDescription = matchPlayerBase.HeroDescription;
+            PlayerTag = matchPlayerBase.PlayerTag;
         }
 
         public bool Silenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
         public string PlayerName { get; private set; }
-        public string PlayerNameTooltip { get; private set; }
         public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
         public string CharacterLevel { get; private set; }
@@ -68,6 +66,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public BitmapImage LeaderboardPortrait { get; private set; }
         public BitmapImage MvpAward { get; private set; }
         public BitmapImage PartyIcon { get; private set; }
+        public MatchPlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
 
         public RelayCommand HeroSearchAllMatchCommand => new RelayCommand(HeroSearchAllMatch);
@@ -94,10 +93,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public RelayCommand CopyHeroNameToClipboardCommand => new RelayCommand(CopyHeroNameToClipboard);
         public RelayCommand CopyPlayerNameToClipboardCommand => new RelayCommand(CopyPlayerNameToClipboard);
         public RelayCommand CopyHeroAndPlayerNameToClipboardCommand => new RelayCommand(CopyHeroAndPlayerNameToClipboard);
+        public RelayCommand PlayerNotesCommand => new RelayCommand(PlayerNotes);
 
         public IMainTabService MainTabs => ServiceLocator.Current.GetInstance<IMainTabService>();
         public IMatchesTabService MatchesTab => ServiceLocator.Current.GetInstance<IMatchesTabService>();
         public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
+        public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
         protected IDatabaseService Database { get; }
         protected IHeroesIconsService HeroesIcons { get; }
@@ -124,24 +125,15 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             else
                 CharacterLevel = isAutoSelect ? "Auto Select" : Player.CharacterLevel.ToString();
 
-            if (Player.AccountLevel > 0)
-                AccountLevel = Player.AccountLevel.ToString();
-            else
-                AccountLevel = "N/A";
-
-            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
-                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
-
-            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
-                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
-
-            string lastSeenBefore;
-            if (playerInfo.LastSeenBefore.HasValue)
-                lastSeenBefore = playerInfo.LastSeenBefore.Value.ToString();
-            else
-                lastSeenBefore = "Never";
-
-            PlayerNameTooltip = $"{PlayerName}{Environment.NewLine}Account Level: {AccountLevel}{Environment.NewLine}Total Seen: {playerInfo.Seen}{Environment.NewLine}Last Seen Before: {lastSeenBefore}";
+            PlayerTag = new MatchPlayerTag
+            {
+                PlayerName = PlayerName,
+                AccountLevel = Player.AccountLevel > 0 ? Player.AccountLevel.ToString() : "N/A",
+                TotalSeen = playerInfo.Seen,
+                LastSeenBefore = playerInfo.LastSeenBefore.HasValue ? playerInfo.LastSeenBefore.Value.ToString() : "Never",
+                FormerPlayerNames = Database.ReplaysDb().RenamedPlayer.ReadPlayersFromPlayerId(playerInfo.PlayerId),
+                Notes = playerInfo.Notes ?? string.Empty,
+            };
 
             HeroDescription = new HeroDescription
             {
@@ -152,6 +144,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 Difficulty = hero.Difficulty,
                 Roles = hero.Roles,
             };
+
+            if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
+                SetPartyIcon(playerPartyIcons[Player.PlayerNumber]);
+
+            if (matchAwardDictionary.ContainsKey(Player.PlayerId))
+                SetMVPAward(matchAwardDictionary[Player.PlayerId]);
         }
 
         public virtual void Dispose()
@@ -299,6 +297,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         private void CopyHeroAndPlayerNameToClipboard()
         {
             Clipboard.SetText($"{CharacterName} - {PlayerName}");
+        }
+
+        private void PlayerNotes()
+        {
+            CreateWindow.ShowPlayerNotesWindow(Player);
         }
 
         private void HeroSearch(MatchesTab matchTab)

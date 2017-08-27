@@ -223,6 +223,7 @@
     <Compile Include="Models\MatchModels\MatchPlayerAdvancedStats.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerBase.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerStats.cs" />
+    <Compile Include="Models\MatchModels\MatchPlayerTag.cs" />
     <Compile Include="Models\MatchModels\MatchPlayerTalents.cs" />
     <Compile Include="Models\MatchModels\MatchResult.cs" />
     <Compile Include="Generic\PlayerParties.cs" />
@@ -259,6 +260,7 @@
     <Compile Include="ViewModels\Matches\MatchesBase.cs" />
     <Compile Include="ViewModels\Matches\MatchesViewModel.cs" />
     <Compile Include="ViewModels\Matches\MatchSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Matches\PlayerNotesWindowViewModel.cs" />
     <Compile Include="ViewModels\Matches\QuickMatchViewModel.cs" />
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
@@ -291,6 +293,7 @@
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
     <Compile Include="ViewModels\ToasterUpdateWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewServices\ICloseable.cs" />
     <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
     <Compile Include="ViewServices\IMainWindowDialogsService.cs" />
     <Compile Include="ViewServices\IMatchesTabService.cs" />

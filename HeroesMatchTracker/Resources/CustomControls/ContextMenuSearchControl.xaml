@@ -32,5 +32,6 @@
         <MenuItem Header="Copy Hero" Command="{Binding CopyHeroNameToClipboardCommand}" />
         <MenuItem Header="Copy Player name" Command="{Binding CopyPlayerNameToClipboardCommand}" />
         <MenuItem Header="Copy Hero/Player name" Command="{Binding CopyHeroAndPlayerNameToClipboardCommand}" />
+        <MenuItem Header="Player Notes..." Command="{Binding PlayerNotesCommand}" />
     </ContextMenu>
 </ResourceDictionary>

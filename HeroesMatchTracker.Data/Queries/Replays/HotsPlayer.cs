@@ -83,6 +83,20 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             }
         }
 
+        public void UpdatePlayerNotesRecord(long playerId, string notes)
+        {
+            using (var db = new ReplaysContext())
+            {
+                var currentRecord = db.ReplayAllHotsPlayers.Where(x => x.PlayerId == playerId).FirstOrDefault();
+
+                if (currentRecord != null)
+                {
+                    currentRecord.Notes = notes;
+                    db.SaveChanges();
+                }
+            }
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayAllHotsPlayer model)
         {
             db.ReplayAllHotsPlayers.Add(model);
