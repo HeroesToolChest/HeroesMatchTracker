@@ -21,8 +21,14 @@ namespace HeroesMatchTracker.Data
         private Database() { }
 
         public static string ApplicationPath => AppDomain.CurrentDomain.BaseDirectory;
-        public static string DatabasePath => Path.Combine(Directory.GetParent(ApplicationPath.TrimEnd('\\')).FullName, Settings.Default.DatabaseFolderName);
         public static string ReleaseNotesDbFileName => Settings.Default.ReleaseNotesDbFileName;
+        public static string DatabasePath => Path.Combine(DefaultDataLocation, Settings.Default.DatabaseFolderName);
+
+#if !DEBUG
+        public static string DefaultDataLocation => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Settings.Default.DefaultHMTDataFolderName);
+#else
+        public static string DefaultDataLocation => Path.Combine(Path.Combine(Directory.GetParent(ApplicationPath.TrimEnd('\\')).FullName, Settings.Default.DefaultHMTDataFolderName));
+#endif
 
         public static Database Initialize()
         {
@@ -34,9 +40,7 @@ namespace HeroesMatchTracker.Data
         /// </summary>
         public Task ExecuteDatabaseMigrations()
         {
-            // check for the database folder
-            if (!Directory.Exists(DatabasePath))
-                Directory.CreateDirectory(DatabasePath);
+            SetHMTDataPath();
 
             VerifyDatabaseFiles();
             LegacyDatabaseCheck();
@@ -97,6 +101,21 @@ namespace HeroesMatchTracker.Data
                 settingsDb.UserSettings.UserPlayerId = 0;
                 settingsDb.UserSettings.UserBattleTagName = string.Empty;
                 settingsDb.UserSettings.UserRegion = 0;
+            }
+        }
+
+        private void SetHMTDataPath()
+        {
+            // check for data folder path
+            if (!Directory.Exists(DefaultDataLocation))
+            {
+                Directory.CreateDirectory(DefaultDataLocation);
+                Directory.CreateDirectory(DatabasePath);
+            }
+            else // if it exists then check if the database folder path exists
+            {
+                if (!Directory.Exists(DatabasePath))
+                    Directory.CreateDirectory(DatabasePath);
             }
         }
     }

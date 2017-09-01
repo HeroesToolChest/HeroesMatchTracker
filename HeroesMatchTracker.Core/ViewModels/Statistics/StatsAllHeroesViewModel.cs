@@ -55,7 +55,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
         }
 
-        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
+        public IMainWindowDialogService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogService>();
 
         public RelayCommand QueryAllHeroesGameModeCommand => new RelayCommand(async () => await QueryAllHeroesGameModeAsyncCommand());
 

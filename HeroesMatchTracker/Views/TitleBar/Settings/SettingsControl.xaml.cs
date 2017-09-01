@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace HeroesMatchTracker.Views.TitleBar
+namespace HeroesMatchTracker.Views.TitleBar.Settings
 {
     /// <summary>
     /// Interaction logic for SettingsControl.xaml

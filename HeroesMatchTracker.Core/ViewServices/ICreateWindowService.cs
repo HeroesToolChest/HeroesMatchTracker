@@ -8,5 +8,6 @@ namespace HeroesMatchTracker.Core.ViewServices
         void ShowUserProfileWindow();
         void ShowFailedReplaysWindow();
         void ShowPlayerNotesWindow(ReplayMatchPlayer player);
+        void ShowDataFolderWindow();
     }
 }

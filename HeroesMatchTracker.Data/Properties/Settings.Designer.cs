@@ -190,5 +190,17 @@ namespace HeroesMatchTracker.Data.Properties {
                 this["OldDatabaseFolderName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HeroesMatchTrackerData")]
+        public string DefaultHMTDataFolderName {
+            get {
+                return ((string)(this["DefaultHMTDataFolderName"]));
+            }
+            set {
+                this["DefaultHMTDataFolderName"] = value;
+            }
+        }
     }
 }

@@ -67,7 +67,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsHeroStatDataGridVisible = false;
         }
 
-        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
+        public IMainWindowDialogService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogService>();
 
         public RelayCommand QueryOverviewStatsCommand => new RelayCommand(async () => await QueryOverviewStatsAsyncCommand());
         public RelayCommand QuerySelectedHeroStatCommand => new RelayCommand(QuerySelectedHeroStat);

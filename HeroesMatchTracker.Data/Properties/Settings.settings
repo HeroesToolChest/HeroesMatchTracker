@@ -44,5 +44,8 @@
     <Setting Name="OldDatabaseFolderName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Database</Value>
     </Setting>
+    <Setting Name="DefaultHMTDataFolderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HeroesMatchTrackerData</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

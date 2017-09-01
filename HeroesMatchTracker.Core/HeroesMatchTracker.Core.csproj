@@ -287,7 +287,8 @@
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsOverviewViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
-    <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
+    <Compile Include="ViewModels\TitleBar\Settings\DataFolderWindowViewModel.cs" />
+    <Compile Include="ViewModels\TitleBar\Settings\SettingsControlViewModel.cs" />
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\WhatsNewWindowViewModel.cs" />
@@ -295,7 +296,7 @@
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewServices\ICloseable.cs" />
     <Compile Include="ViewServices\ILoadingOverlayWindowService.cs" />
-    <Compile Include="ViewServices\IMainWindowDialogsService.cs" />
+    <Compile Include="ViewServices\IMainWindowDialogService.cs" />
     <Compile Include="ViewServices\IMatchesTabService.cs" />
     <Compile Include="ViewServices\IMainTabService.cs" />
     <Compile Include="ViewServices\IMatchSummaryFlyoutService.cs" />

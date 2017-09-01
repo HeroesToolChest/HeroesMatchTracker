@@ -62,8 +62,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
-        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
-
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
@@ -369,6 +367,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public RelayCommand MatchSummaryLeftChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(-1));
         public RelayCommand MatchSummaryRightChangeButtonCommand => new RelayCommand(async () => await ChangeCurrentMatchSummaryAsync(1));
         public RelayCommand KeyEscCommand => new RelayCommand(KeyEscPressed);
+
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
 
         public async Task LoadMatchSummaryAsync(ReplayMatch replayMatch, List<ReplayMatch> matchList)
         {

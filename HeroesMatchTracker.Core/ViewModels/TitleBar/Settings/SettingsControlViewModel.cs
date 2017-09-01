@@ -1,25 +1,33 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
+using Microsoft.Practices.ServiceLocation;
 using Microsoft.Win32;
 using System.IO;
 
-namespace HeroesMatchTracker.Core.ViewModels.TitleBar
+namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 {
     public class SettingsControlViewModel : ViewModelBase
     {
         private bool _isMinimizeToTrayEnabled;
+
         private IDatabaseService Database;
+
         private RegistryKey RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
         public SettingsControlViewModel(IDatabaseService database)
         {
             Database = database;
 
             IsWindowsStartup = Database.SettingsDb().UserSettings.IsWindowsStartup;
         }
+
+        public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
+
+        public RelayCommand UpdateDataFolderLocationCommand => new RelayCommand(UpdateDataFolderLocation);
+
+        public IMainWindowDialogService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogService>();
 
         public bool IsWindowsStartup
         {
@@ -95,6 +103,16 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
             }
         }
 
+        public string DataFolderLocation
+        {
+            get => Database.SettingsDb().UserSettings.DataFolderLocation;
+            set
+            {
+                Database.SettingsDb().UserSettings.DataFolderLocation = value;
+                RaisePropertyChanged();
+            }
+        }
+
         private void SetRegistryStartup(bool set)
         {
             if (set)
@@ -106,6 +124,11 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
                 if (RegistryKey.GetValue("Heroes Match Tracker") != null)
                     RegistryKey.DeleteValue("Heroes Match Tracker");
             }
+        }
+
+        private void UpdateDataFolderLocation()
+        {
+            CreateWindow.ShowDataFolderWindow();
         }
     }
 }

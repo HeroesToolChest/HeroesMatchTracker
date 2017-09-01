@@ -141,7 +141,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
+        public IMainWindowDialogService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogService>();
 
         public RelayCommand QueryStatsCommand => new RelayCommand(async () => await QueryStatsHeroStatsAsyncCommmand());
         public RelayCommand<object> SelectedGameModesCommand => new RelayCommand<object>((list) => SetSelectedGameModes(list));

@@ -8,9 +8,11 @@ using HeroesMatchTracker.Core.ViewModels.RawData;
 using HeroesMatchTracker.Core.ViewModels.Replays;
 using HeroesMatchTracker.Core.ViewModels.Statistics;
 using HeroesMatchTracker.Core.ViewModels.TitleBar;
+using HeroesMatchTracker.Core.ViewModels.TitleBar.Settings;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Replays;
+using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Practices.ServiceLocation;
 
 namespace HeroesMatchTracker.Core.ViewModels
@@ -30,6 +32,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
             // Services
             SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
+            SimpleIoc.Default.Register<IDialogCoordinator, DialogCoordinator>();
 
             SimpleIoc.Default.Register(() => { return new HeroesIcons(true); });
             SimpleIoc.Default.Register<IHeroesIconsService>(() =>
@@ -51,9 +54,11 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<ToasterUpdateWindowViewModel>();
 
             // TitleBar
-            SimpleIoc.Default.Register<SettingsControlViewModel>();
             SimpleIoc.Default.Register<AboutControlViewModel>();
             SimpleIoc.Default.Register<WhatsNewWindowViewModel>();
+
+            SimpleIoc.Default.Register<SettingsControlViewModel>();
+            SimpleIoc.Default.Register<DataFolderWindowViewModel>();
 
             // Replays
             SimpleIoc.Default.Register<ReplaysControlViewModel>();
@@ -119,9 +124,11 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static ToasterUpdateWindowViewModel ToasterUpdateWindowViewModel => ServiceLocator.Current.GetInstance<ToasterUpdateWindowViewModel>();
 
         // TitleBar
-        public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();
         public static AboutControlViewModel AboutControlViewModel => ServiceLocator.Current.GetInstance<AboutControlViewModel>();
         public static WhatsNewWindowViewModel WhatsNewWindowViewModel => ServiceLocator.Current.GetInstance<WhatsNewWindowViewModel>();
+
+        public static SettingsControlViewModel SettingsControlViewModel => ServiceLocator.Current.GetInstance<SettingsControlViewModel>();
+        public static DataFolderWindowViewModel DataFolderWindowViewModel => ServiceLocator.Current.GetInstance<DataFolderWindowViewModel>();
 
         // Replays
         public static ReplaysControlViewModel ReplaysControlViewModel => ServiceLocator.Current.GetInstance<ReplaysControlViewModel>();

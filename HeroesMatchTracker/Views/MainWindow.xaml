@@ -11,6 +11,7 @@
                       xmlns:replays="clr-namespace:HeroesMatchTracker.Views.Replays"
                       xmlns:statistics="clr-namespace:HeroesMatchTracker.Views.Statistics"
                       xmlns:titleBar="clr-namespace:HeroesMatchTracker.Views.TitleBar"
+                      xmlns:settings="clr-namespace:HeroesMatchTracker.Views.TitleBar.Settings"
                       xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
                       xmlns:system="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
@@ -40,7 +41,7 @@
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <controls:Flyout x:Name="SettingsFlyout" Position="Right" Header="Settings" Width="{StaticResource RightFlyoutWidth}">
-                <titleBar:SettingsControl />
+                <settings:SettingsControl />
             </controls:Flyout>
             <controls:Flyout x:Name="AboutFlyout" Position="Right" Header="About" Width="{StaticResource RightFlyoutWidth}">
                 <titleBar:AboutControl />

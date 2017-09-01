@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="HeroesMatchTracker.Views.TitleBar.SettingsControl"
+﻿<UserControl x:Class="HeroesMatchTracker.Views.TitleBar.Settings.SettingsControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -14,11 +14,16 @@
     <StackPanel>
         <StackPanel Margin="{StaticResource BorderMargin}">
             <CheckBox Content="Automatically Update on Startup" Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsAutoUpdates}" />
-            <CheckBox Content="Show Update Notification" Margin="{StaticResource ControlMargin}" IsChecked="{Binding ShowToasterUpdateNotification}" />
+            <CheckBox Content="Show Update Notification" Margin="{StaticResource ControlMargin}" IsChecked="{Binding ShowToasterUpdateNotification}" ToolTip="Show a toaster notification that appears in the bottom right of the screen when an update is available" />
             <CheckBox Content="Run on Windows Startup"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsWindowsStartup}" ToolTip="Auto Enables 'Minimize to Tray'" />
             <CheckBox Content="Minimize to Tray"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsMinimizeToTray}" IsEnabled="{Binding IsMinimizeToTrayEnabled}"/>
             <CheckBox Content="Hide Battle Tag Numbers"  Margin="{StaticResource ControlMargin}" IsChecked="{Binding IsBattleTagsHidden}"/>
         </StackPanel>
-        <!--<Separator Margin="0 4" />-->
+        <Separator Margin="0 4" />
+        <StackPanel Margin="{StaticResource BorderMargin}">
+            <Label Content="Location of HMT Data folder" />
+            <TextBox Width="Auto" Text="{Binding DataFolderLocation}" IsEnabled="False" />
+            <Button Content="Update ..." Command="{Binding UpdateDataFolderLocationCommand}" Width="100" HorizontalAlignment="Right" Margin="0 8 0 0" />
+        </StackPanel>
     </StackPanel>
 </UserControl>

@@ -34,8 +34,14 @@ namespace HeroesMatchTracker.Data.Queries.Settings
 
         public bool ShowToasterUpdateNotification
         {
-            get { return GetBooleanValue(nameof(ShowToasterUpdateNotification)); }
+            get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
+        }
+
+        public string DataFolderLocation
+        {
+            get { return GetStringValue(); }
+            set { SetStringValue(value); }
         }
         #endregion Settings
 
@@ -209,6 +215,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             IsMinimizeToTray = true;
             IsBattleTagHidden = true;
             ShowToasterUpdateNotification = true;
+            DataFolderLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Properties.Settings.Default.DefaultHMTDataFolderName);
 
             // Replays
             ReplayWatchCheckBox = false;

@@ -9,6 +9,7 @@ using HeroesMatchTracker.Views.Home;
 using HeroesMatchTracker.Views.Matches;
 using HeroesMatchTracker.Views.Replays;
 using HeroesMatchTracker.Views.TitleBar;
+using HeroesMatchTracker.Views.TitleBar.Settings;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System;
@@ -23,7 +24,7 @@ namespace HeroesMatchTracker.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogsService, IToasterUpdateWindowService
+    public partial class MainWindow : MetroWindow, ICreateWindowService, IMainWindowDialogService, IToasterUpdateWindowService
     {
         private MainWindowViewModel MainWindowViewModel;
         private IDatabaseService Database;
@@ -38,7 +39,7 @@ namespace HeroesMatchTracker.Views
             SetTrayIcon();
 
             SimpleIoc.Default.Register<ICreateWindowService>(() => this);
-            SimpleIoc.Default.Register<IMainWindowDialogsService>(() => this);
+            SimpleIoc.Default.Register<IMainWindowDialogService>(() => this);
             SimpleIoc.Default.Register<IToasterUpdateWindowService>(() => this);
         }
 
@@ -63,6 +64,12 @@ namespace HeroesMatchTracker.Views
             }
         }
 
+        public void ShowDataFolderWindow()
+        {
+            DataFolderWindow window = new DataFolderWindow();
+            window.ShowDialog();
+        }
+
         public void ShowFailedReplaysWindow()
         {
             FailedReplaysWindow window = new FailedReplaysWindow();
@@ -73,6 +80,11 @@ namespace HeroesMatchTracker.Views
         {
             PlayerNotesWindow window = new PlayerNotesWindow(player);
             window.ShowDialog();
+        }
+
+        public async Task ShowSimpleMessageAsync(string title, string message)
+        {
+            await this.ShowMessageAsync(title, message);
         }
 
         public async Task<bool> CheckBattleTagSetDialog()
