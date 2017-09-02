@@ -21,5 +21,7 @@ namespace HeroesMatchTracker.Core.ViewServices
         void SetTotalParsedReplays(long amount);
 
         void SetExtendedAboutText(string message);
+
+        void SetExtendedSettingsText(string message);
     }
 }

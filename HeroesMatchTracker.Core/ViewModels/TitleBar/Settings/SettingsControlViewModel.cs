@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using Microsoft.Practices.ServiceLocation;
@@ -11,6 +13,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
     public class SettingsControlViewModel : ViewModelBase
     {
         private bool _isMinimizeToTrayEnabled;
+        private string _dataFolderLocation;
 
         private IDatabaseService Database;
 
@@ -21,6 +24,9 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
             Database = database;
 
             IsWindowsStartup = Database.SettingsDb().UserSettings.IsWindowsStartup;
+            DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
+
+            Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
         }
 
         public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
@@ -105,10 +111,10 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 
         public string DataFolderLocation
         {
-            get => Database.SettingsDb().UserSettings.DataFolderLocation;
+            get => _dataFolderLocation;
             set
             {
-                Database.SettingsDb().UserSettings.DataFolderLocation = value;
+                _dataFolderLocation = value;
                 RaisePropertyChanged();
             }
         }
@@ -129,6 +135,12 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
         private void UpdateDataFolderLocation()
         {
             CreateWindow.ShowDataFolderWindow();
+        }
+
+        private void ReceivedMessage(NotificationMessage message)
+        {
+            if (message.Notification == StaticMessage.UpdateDataFolderLocation)
+                DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
         }
     }
 }

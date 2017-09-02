@@ -18,6 +18,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         private long _totalParsedReplays;
         private bool _matchSummaryIsOpen;
         private bool _isExtendedAboutTextVisible;
+        private bool _isExtendedSettingsTextVisible;
         private bool _isLoadingOverlayVisible;
         private string _matchSummaryHeader;
         private string _applicationStatus;
@@ -25,6 +26,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         private string _parserWatchStatus;
         private string _hotsLogsStatus;
         private string _extendedAboutText;
+        private string _extendedSettingsText;
 
         private IDatabaseService Database;
         private ISelectedUserProfileService UserProfile;
@@ -183,6 +185,26 @@ namespace HeroesMatchTracker.Core.ViewModels
             }
         }
 
+        public string ExtendedSettingsText
+        {
+            get => _extendedSettingsText;
+            set
+            {
+                _extendedSettingsText = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsExtendedSettingsTextVisible
+        {
+            get => _isExtendedSettingsTextVisible;
+            set
+            {
+                _isExtendedSettingsTextVisible = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public void ToggleMatchSummaryFlyout()
         {
             MatchSummaryIsOpen = !MatchSummaryIsOpen;
@@ -247,6 +269,12 @@ namespace HeroesMatchTracker.Core.ViewModels
         {
             ExtendedAboutText = message;
             IsExtendedAboutTextVisible = true;
+        }
+
+        public void SetExtendedSettingsText(string message)
+        {
+            ExtendedSettingsText = message;
+            IsExtendedSettingsTextVisible = true;
         }
 
         public void CloseLoadingOverlay()

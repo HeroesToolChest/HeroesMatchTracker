@@ -7,5 +7,6 @@
         public static string ReEnableMatchSummaryButton => "ReEnableMatchSummaryButton";
         public static string ChangeCurrentSelectedReplayMatchLeft => "ChangeCurrentSelectedReplayMatchLeft";
         public static string ChangeCurrentSelectedReplayMatchRight => "ChangeCurrentSelectedReplayMatchRight";
+        public static string UpdateDataFolderLocation => "UpdateDataFolderLocation";
     }
 }

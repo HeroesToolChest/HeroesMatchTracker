@@ -60,13 +60,14 @@
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconMaterial Kind="InformationOutline" />
                     <TextBlock Margin="4 0 0 0" Text="About" VerticalAlignment="Center"/>
-                    <TextBlock Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" VerticalAlignment="Center" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
+                    <TextBlock Margin="4 0 0 0" Text="{Binding ExtendedAboutText}" Foreground="Yellow" FontWeight="Bold" VerticalAlignment="Center" Visibility="{Binding IsExtendedAboutTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </Button>
             <Button x:Name="SettingsButton" Click="SettingsButton_Click">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <iconPacks:PackIconMaterial Kind="Settings" />
                     <TextBlock Margin="4 0 0 0" Text="Settings" VerticalAlignment="Center"/>
+                    <TextBlock Margin="4 0 0 0" Text="{Binding ExtendedSettingsText}" Foreground="Yellow" FontWeight="Bold" VerticalAlignment="Center" Visibility="{Binding IsExtendedSettingsTextVisible, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </Button>
             <Button Command="{Binding OpenWhatsNewWindowCommand}">

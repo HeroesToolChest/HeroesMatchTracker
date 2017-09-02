@@ -22,7 +22,7 @@
         <Separator Margin="0 4" />
         <StackPanel Margin="{StaticResource BorderMargin}">
             <Label Content="Location of HMT Data folder" />
-            <TextBox Width="Auto" Text="{Binding DataFolderLocation}" IsEnabled="False" />
+            <TextBox Width="Auto" Text="{Binding DataFolderLocation}" IsReadOnly="True" />
             <Button Content="Update ..." Command="{Binding UpdateDataFolderLocationCommand}" Width="100" HorizontalAlignment="Right" Margin="0 8 0 0" />
         </StackPanel>
     </StackPanel>

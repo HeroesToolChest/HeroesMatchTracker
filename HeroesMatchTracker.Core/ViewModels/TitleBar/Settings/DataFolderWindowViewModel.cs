@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -15,11 +17,13 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 
         private IDatabaseService Database;
         private IMainWindowDialogService WindowDialog;
+        private IMainTabService MainTab;
 
-        public DataFolderWindowViewModel(IDatabaseService database, IMainWindowDialogService windowDialog)
+        public DataFolderWindowViewModel(IDatabaseService database, IMainWindowDialogService windowDialog, IMainTabService mainTab)
         {
             Database = database;
             WindowDialog = windowDialog;
+            MainTab = mainTab;
 
             DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
         }
@@ -101,9 +105,12 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
             }
 
             Database.SettingsDb().UserSettings.DataFolderLocation = DataFolderLocation;
+            Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateDataFolderLocation));
+            MainTab.SetExtendedSettingsText("(Restart Required)");
+
             CancelLocation(window);
 
-            WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data location path to be used, the application needs to be restarted.");
+            WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data path location to be applied, the application needs to be restarted.");
         }
 
         private void CancelLocation(ICloseable window)
