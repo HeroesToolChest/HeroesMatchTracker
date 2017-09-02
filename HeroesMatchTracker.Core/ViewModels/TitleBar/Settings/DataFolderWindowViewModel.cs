@@ -12,12 +12,14 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 {
     public class DataFolderWindowViewModel : ViewModelBase
     {
+        private bool _isSaveButtonEnabled;
         private string _message;
         private string _dataFolderLocation;
 
         private IDatabaseService Database;
         private IMainWindowDialogService WindowDialog;
         private IMainTabService MainTab;
+        private string CurrentDataFolderLocation;
 
         public DataFolderWindowViewModel(IDatabaseService database, IMainWindowDialogService windowDialog, IMainTabService mainTab)
         {
@@ -25,7 +27,18 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
             WindowDialog = windowDialog;
             MainTab = mainTab;
 
-            DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
+            IsSaveButtonEnabled = false;
+            CurrentDataFolderLocation = DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
+        }
+
+        public bool IsSaveButtonEnabled
+        {
+            get => _isSaveButtonEnabled;
+            set
+            {
+                _isSaveButtonEnabled = value;
+                RaisePropertyChanged();
+            }
         }
 
         public string Message
@@ -76,6 +89,11 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
                 Directory.CreateDirectory(Data.Database.DefaultDataLocation);
 
             DataFolderLocation = Data.Database.DefaultDataLocation;
+
+            if (CurrentDataFolderLocation != DataFolderLocation)
+                IsSaveButtonEnabled = true;
+            else
+                IsSaveButtonEnabled = false;
         }
 
         private void BrowseLocation()
@@ -93,6 +111,11 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
             if (result == CommonFileDialogResult.Ok)
             {
                 DataFolderLocation = dialog.FileName;
+
+                if (CurrentDataFolderLocation != dialog.FileName)
+                    IsSaveButtonEnabled = true;
+                else
+                    IsSaveButtonEnabled = false;
             }
         }
 
@@ -104,17 +127,24 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
                 return;
             }
 
-            Database.SettingsDb().UserSettings.DataFolderLocation = DataFolderLocation;
-            Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateDataFolderLocation));
-            MainTab.SetExtendedSettingsText("(Restart Required)");
+            if (CurrentDataFolderLocation != DataFolderLocation)
+            {
+                Database.SettingsDb().UserSettings.DataFolderLocation = DataFolderLocation;
+                CurrentDataFolderLocation = DataFolderLocation;
+                Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateDataFolderLocation));
+                MainTab.SetExtendedSettingsText("(Restart Required)");
 
-            CancelLocation(window);
+                IsSaveButtonEnabled = false;
+                CancelLocation(window);
 
-            WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data path location to be applied, the application needs to be restarted.");
+                WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data path location to be applied, the application needs to be restarted.");
+            }
         }
 
         private void CancelLocation(ICloseable window)
         {
+            DataFolderLocation = CurrentDataFolderLocation;
+
             if (window != null)
             {
                 window.Close();

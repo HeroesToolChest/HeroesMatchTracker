@@ -5,7 +5,9 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
                       xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                       mc:Ignorable="d"
                       Dialog:DialogParticipation.Register="{Binding}"              
                       DataContext="{Binding DataFolderWindowViewModel, Source={StaticResource Locator}}"
@@ -14,6 +16,11 @@
                       BorderThickness="1" ResizeMode="NoResize"
                       Title="Data Folder" Height="200" Width="590">
     <Grid Margin="8">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Closed">
+                <mvvm:EventToCommand Command="{Binding CancelLocationCommand}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
         <StackPanel>
             <Label Content="Location of HMT Data folder" />
             <TextBox Width="Auto" Text="{Binding DataFolderLocation}" IsReadOnly="True" />
@@ -29,7 +36,7 @@
             <Label Content="{Binding Message}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button Width="100" Content="Save" Command="{Binding SaveLocationCommand}" CommandParameter="{Binding ElementName=DataFolderMetroWindow}" Style="{DynamicResource SquareButtonStyle}" controls:ControlsHelper.ContentCharacterCasing="Normal" />
+            <Button Width="100" Content="Save" Command="{Binding SaveLocationCommand}" CommandParameter="{Binding ElementName=DataFolderMetroWindow}" IsEnabled="{Binding IsSaveButtonEnabled}" Style="{DynamicResource SquareButtonStyle}" controls:ControlsHelper.ContentCharacterCasing="Normal" />
             <Button Width="100" Content="Cancel" Command="{Binding CancelLocationCommand}" CommandParameter="{Binding ElementName=DataFolderMetroWindow}" Style="{StaticResource AccentedSquareButtonStyle}" controls:ControlsHelper.ContentCharacterCasing="Normal" Margin="8 0 0 0" />
         </StackPanel>
     </Grid>
