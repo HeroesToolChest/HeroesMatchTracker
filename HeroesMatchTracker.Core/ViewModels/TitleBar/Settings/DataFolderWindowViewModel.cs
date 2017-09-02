@@ -20,6 +20,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
         private IMainWindowDialogService WindowDialog;
         private IMainTabService MainTab;
         private string CurrentDataFolderLocation;
+        private string OldDataFolderLocation; // Keep track of the in use path in case we revert back to this
 
         public DataFolderWindowViewModel(IDatabaseService database, IMainWindowDialogService windowDialog, IMainTabService mainTab)
         {
@@ -28,7 +29,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
             MainTab = mainTab;
 
             IsSaveButtonEnabled = false;
-            CurrentDataFolderLocation = DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
+            OldDataFolderLocation = CurrentDataFolderLocation = DataFolderLocation = Database.SettingsDb().UserSettings.DataFolderLocation;
         }
 
         public bool IsSaveButtonEnabled
@@ -133,12 +134,24 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
                 Database.SettingsDb().UserSettings.DataFolderLocation = DataFolderLocation;
                 CurrentDataFolderLocation = DataFolderLocation;
                 Messenger.Default.Send(new NotificationMessage(StaticMessage.UpdateDataFolderLocation));
-                MainTab.SetExtendedSettingsText("(Restart Required)");
-
                 IsSaveButtonEnabled = false;
-                CancelLocation(window);
 
-                WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data path location to be applied, the application needs to be restarted.");
+                if (OldDataFolderLocation != DataFolderLocation)
+                {
+                    MainTab.SetExtendedSettingsText("(Restart Required)");
+
+                    CancelLocation(window);
+
+                    WindowDialog.ShowSimpleMessageAsync("Restart Required", "In order for the new data path location to be applied, the application needs to be restarted.");
+                }
+                else
+                {
+                    MainTab.SetExtendedSettingsText(string.Empty);
+
+                    CancelLocation(window);
+
+                    WindowDialog.ShowSimpleMessageAsync("Restart No Longer Required", "The data path location was set to the currently in use path. A restart is NO longer required.");
+                }
             }
         }
 

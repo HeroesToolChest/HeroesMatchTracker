@@ -268,13 +268,21 @@ namespace HeroesMatchTracker.Core.ViewModels
         public void SetExtendedAboutText(string message)
         {
             ExtendedAboutText = message;
-            IsExtendedAboutTextVisible = true;
+
+            if (string.IsNullOrEmpty(message))
+                IsExtendedAboutTextVisible = false;
+            else
+                IsExtendedAboutTextVisible = true;
         }
 
         public void SetExtendedSettingsText(string message)
         {
             ExtendedSettingsText = message;
-            IsExtendedSettingsTextVisible = true;
+
+            if (string.IsNullOrEmpty(message))
+                IsExtendedSettingsTextVisible = false;
+            else
+                IsExtendedSettingsTextVisible = true;
         }
 
         public void CloseLoadingOverlay()
