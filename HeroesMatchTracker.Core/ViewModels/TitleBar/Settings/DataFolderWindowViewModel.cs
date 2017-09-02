@@ -85,6 +85,8 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 
         private void DefaultLocation()
         {
+            Message = string.Empty;
+
             if (!Directory.Exists(Data.Database.DefaultDataLocation))
                 Directory.CreateDirectory(Data.Database.DefaultDataLocation);
 
@@ -98,8 +100,6 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 
         private void BrowseLocation()
         {
-            Message = string.Empty;
-
             var dialog = new CommonOpenFileDialog()
             {
                 IsFolderPicker = true,
@@ -110,6 +110,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar.Settings
 
             if (result == CommonFileDialogResult.Ok)
             {
+                Message = string.Empty;
                 DataFolderLocation = dialog.FileName;
 
                 if (CurrentDataFolderLocation != dialog.FileName)
