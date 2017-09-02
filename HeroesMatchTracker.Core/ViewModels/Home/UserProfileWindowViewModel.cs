@@ -55,7 +55,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
         public string ProfileBattleTag
         {
-            get => _profileBattleTag;
+            get => _profileBattleTag ?? string.Empty;
             set
             {
                 _profileBattleTag = value;
