@@ -1498,7 +1498,7 @@ TassadarArchonTwilightArchonTalent=Basic Attacks while in Archon form increase i
 TassadarDimensionalShift=Tassadar becomes invulnerable and Unrevealable for <c val="#TooltipNumbers"><VALUE></c> seconds. While shifted, he has <c val="#TooltipNumbers"><VALUE>%</c> increased Movement Speed.
 TassadarDimensionalShiftDeepShiftTalent=Dimensional Shift's duration and Movement Speed bonuses are increased by <c val="#TooltipNumbers">50%</c>.
 TassadarFocusedBeam=While Oracle is active, Basic Attacks against Heroes deal an additional <c val="#TooltipNumbers">1%</c> of the target's maximum Health as damage.
-TassadarForceWall=Create a wall that blocks all units from moving through it for <c val="#TooltipNumbers">2.5</c> seconds. <n/><n/><c val="#AbilityPassive">Passive:</c> Increases the slow amount of Distortion Beam to <c val="#TooltipNumbers">30%</c>.
+TassadarForceWall=Create a wall that blocks all units from moving through it for <c val="#TooltipNumbers">2</c> seconds. <n/><n/><c val="#AbilityPassive">Passive:</c> Increases the slow amount of Distortion Beam to <c val="#TooltipNumbers">30%</c>.
 TassadarForceWallForceBarrierTalent=Force Wall's Range is increased by <c val="#TooltipNumbers">100%</c> and its cooldown is reduced by <c val="#TooltipNumbers">5</c> seconds.
 TassadarKhalasCelerity=Plasma Shield also grants <c val="#TooltipNumbers">20%</c> Movement Speed for <c val="#TooltipNumbers">4</c> seconds.
 TassadarKhalasEmbrace=Increase the Life Steal of Plasma Shield to <c val="#TooltipNumbers">90%</c>.
