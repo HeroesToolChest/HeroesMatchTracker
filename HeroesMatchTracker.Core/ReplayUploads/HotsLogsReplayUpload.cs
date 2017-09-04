@@ -3,7 +3,6 @@ using Amazon.S3.Model;
 using Heroes.Helpers;
 using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using static Heroes.ReplayParser.DataParser;
 
@@ -29,9 +28,13 @@ namespace HeroesMatchTracker.Core.ReplayUploads
             if (response.HttpStatusCode != HttpStatusCode.OK)
                 return ReplayParseResult.Exception;
 
-            HttpClient httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(Uploader.AppUserAgent);
-            string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source=HeroesMatchTracker");
+            string result = string.Empty;
+
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add("user-agent", Uploader.AppUserAgent);
+                result = await webClient.DownloadStringTaskAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source=HeroesMatchTracker");
+            }
 
             if (result == "Maintenance")
                 throw new MaintenanceException("Maintenance");
