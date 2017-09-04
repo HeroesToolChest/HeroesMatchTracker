@@ -15,10 +15,10 @@ namespace HeroesMatchTracker.Core.ReplayUploads
 
             try
             {
-                using (var client = new WebClient())
+                using (var webClient = new WebClient())
                 {
-                    client.Headers.Add("user-agent", Uploader.AppUserAgent);
-                    var bytes = await client.UploadFileTaskAsync($"http://hotsapi.net/api/v1/upload", filePath);
+                    webClient.Headers.Add("user-agent", Uploader.AppUserAgent);
+                    var bytes = await webClient.UploadFileTaskAsync($"http://hotsapi.net/api/v1/upload", filePath);
                     response = Encoding.UTF8.GetString(bytes);
                 }
             }
@@ -57,6 +57,9 @@ namespace HeroesMatchTracker.Core.ReplayUploads
 
                         case HotsApiUploadStatus.UploadError:
                             return ReplayParseResult.Exception;
+
+                        case HotsApiUploadStatus.TooOld:
+                            return ReplayParseResult.PreAlphaWipe;
 
                         default:
                             return ReplayParseResult.UnexpectedResult;
