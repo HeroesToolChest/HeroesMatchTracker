@@ -35,6 +35,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsLogs
                 {
                     MainTab.SetHotsLogsUploaderStatus(HotsLogsUploaderStatus.Disabled);
                     ButtonsEnabled = false;
+                    IsIdleMode = true;
                     Messenger.Default.Send(new NotificationMessage(StaticMessage.HotsLogsUploaderDisabled));
                 }
 

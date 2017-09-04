@@ -34,6 +34,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi
                 {
                     MainTab.SetHotsApiUploaderStatus(HotsApiUploaderStatus.Disabled);
                     ButtonsEnabled = false;
+                    IsIdleMode = true;
                     Messenger.Default.Send(new NotificationMessage(StaticMessage.HotsApiUploaderDisabled));
                 }
 

@@ -673,6 +673,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             } // end while
 
             CurrentStatus = "Processing stopped";
+            await WaitForUploaders();
+            CurrentStatus = string.Empty;
         }
 
         private async Task InitializeReplaySaveDataQueueAsync()
@@ -836,6 +838,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         private async Task WaitForUploaders()
         {
+            CurrentStatus = "Waiting for uploaders to finish...";
             while (true)
             {
                 if (HotsLogsUploader.IsIdleMode && HotsApiUploader.IsIdleMode)

@@ -27,7 +27,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders
             MainTab = mainTab;
 
             IsParsingReplaysOn = false;
-            IsIdleMode = false;
+            IsIdleMode = true;
             StartButtonText = StartButtonState.START;
             IsUploaderEnabled = InternalService.Database.SettingsDb().UserSettings.IsHotsLogsUploaderEnabled;
             UploaderStatus = "Disabled";
