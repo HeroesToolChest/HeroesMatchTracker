@@ -21,7 +21,7 @@
       <Value Profile="(Default)">8</Value>
     </Setting>
     <Setting Name="SettingsDatabaseMigrationVersion" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">4</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="ReleaseNotesConnNameDb" Type="System.String" Scope="User">
       <Value Profile="(Default)">ReleaseNotes</Value>

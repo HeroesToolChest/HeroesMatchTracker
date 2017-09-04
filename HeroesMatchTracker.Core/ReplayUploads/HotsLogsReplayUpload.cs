@@ -29,16 +29,14 @@ namespace HeroesMatchTracker.Core.ReplayUploads
             if (response.HttpStatusCode != HttpStatusCode.OK)
                 return ReplayParseResult.Exception;
 
-            using (HttpClient httpClient = new HttpClient())
-            {
-                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd($"HeroesMatchTracker/{AssemblyVersions.HeroesMatchTrackerVersion()}");
-                string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source=HeroesMatchTracker");
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(Uploader.AppUserAgent);
+            string result = await httpClient.GetStringAsync($"https://www.hotslogs.com/UploadFile?FileName={fileGuidName}&Source=HeroesMatchTracker");
 
-                if (result == "Maintenance")
-                    throw new MaintenanceException("Maintenance");
+            if (result == "Maintenance")
+                throw new MaintenanceException("Maintenance");
 
-                return HeroesHelpers.EnumParser.ConvertReplayParseResultStringToEnum(result);
-            }
+            return HeroesHelpers.EnumParser.ConvertReplayParseResultStringToEnum(result);
         }
     }
 }

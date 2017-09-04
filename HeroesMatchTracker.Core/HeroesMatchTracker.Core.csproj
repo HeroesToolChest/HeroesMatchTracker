@@ -242,9 +242,12 @@
     <Compile Include="ReleaseNotes\Markdown.cs" />
     <Compile Include="ReleaseNotes\ReleaseNoteHandler.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\HotsApi\HotsApiUploaderStatus.cs" />
+    <Compile Include="ReplayUploads\HotsApiReplayUpload.cs" />
+    <Compile Include="ReplayUploads\HotsApiUploadStatus.cs" />
     <Compile Include="ReplayUploads\HotsLogsReplayUpload.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\HotsLogs\HotsLogsUploaderStatus.cs" />
     <Compile Include="ReplayUploads\MaintenanceException.cs" />
+    <Compile Include="ReplayUploads\Uploader.cs" />
     <Compile Include="Services\IInternalService.cs" />
     <Compile Include="Services\InternalService.cs" />
     <Compile Include="Services\IWebsiteService.cs" />
@@ -271,6 +274,7 @@
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />
+    <Compile Include="ViewModels\RawData\RawHotsApiUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawHotsLogsUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchMessageViewModel.cs" />
@@ -283,7 +287,6 @@
     <Compile Include="ViewModels\RawData\RawMatchTeamLevelViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchTeamObjectiveViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawRenamedPlayerViewModel.cs" />
-    <Compile Include="ViewModels\Replays\IReplayParser.cs" />
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
     <Compile Include="ViewModels\Replays\FailedReplaysWindowViewModel.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\HotsApi\HotsApiUploader.cs" />

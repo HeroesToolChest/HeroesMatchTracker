@@ -172,6 +172,9 @@
     <Compile Include="Views\Home\UserProfileWindow.xaml.cs">
       <DependentUpon>UserProfileWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RawData\RawHotsApiUploadControl.xaml.cs">
+      <DependentUpon>RawHotsApiUploadControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ToasterUpdateWindow.xaml.cs">
       <DependentUpon>ToasterUpdateWindow.xaml</DependentUpon>
     </Compile>
@@ -408,6 +411,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\CustomTemplates\ReplayUploaders\Uploaders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\CustomThemes\DefaultTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -507,6 +514,10 @@
     <Page Include="Views\RawData\RawDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawHotsApiUploadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\RawData\RawHotsLogsUploadControl.xaml">
       <SubType>Designer</SubType>

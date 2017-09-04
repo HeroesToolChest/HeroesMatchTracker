@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="HeroesMatchTracker.Views.RawData.RawHotsApiUploadControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:HeroesMatchTracker.Views.RawData"
+             DataContext="{Binding RawHotsApiUploadViewModel, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <DockPanel>
+        <local:QueryStatusBarControl DockPanel.Dock="Bottom" />
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <local:QueryControl/>
+            <DataGrid Style="{StaticResource RawDataDataGrid}" Grid.Row="1" ItemsSource="{Binding RawDataCollection}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ReplaysHotsApiUploadId" Binding="{Binding ReplaysHotsApiUploadId}" />
+                    <DataGridTextColumn Header="ReplayId" Binding="{Binding ReplayId}" />
+                    <DataGridTextColumn Header="ReplayFileTimeStamp" Binding="{Binding ReplayFileTimeStamp}" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

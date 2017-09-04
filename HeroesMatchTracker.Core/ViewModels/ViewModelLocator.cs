@@ -65,6 +65,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
             SimpleIoc.Default.Register<IRawDataQueries<ReplayAllHotsPlayerHero>, HotsPlayerHero>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayHotsLogsUpload>, HotsLogsUpload>();
+            SimpleIoc.Default.Register<IRawDataQueries<ReplayHotsApiUpload>, HotsApiUpload>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchAward>, MatchAward>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchMessage>, MatchMessage>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchPlayer>, MatchPlayer>();
@@ -132,6 +133,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static RawAllHotsPlayerViewModel RawAllHotsPlayerViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerViewModel>();
         public static RawAllHotsPlayerHeroesViewModel RawAllHotsPlayerHeroesViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerHeroesViewModel>();
         public static RawHotsLogsUploadViewModel RawHotsLogsUploadViewModel => ServiceLocator.Current.GetInstance<RawHotsLogsUploadViewModel>();
+        public static RawHotsApiUploadViewModel RawHotsApiUploadViewModel => ServiceLocator.Current.GetInstance<RawHotsApiUploadViewModel>();
         public static RawMatchAwardViewModel RawMatchAwardViewModel => ServiceLocator.Current.GetInstance<RawMatchAwardViewModel>();
         public static RawMatchMessageViewModel RawMatchMessageViewModel => ServiceLocator.Current.GetInstance<RawMatchMessageViewModel>();
         public static RawMatchPlayerScoreResultViewModel RawMatchPlayerScoreResultViewModel => ServiceLocator.Current.GetInstance<RawMatchPlayerScoreResultViewModel>();

@@ -23,6 +23,7 @@ namespace HeroesMatchTracker.Data.Databases
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
         public virtual DbSet<ReplayHotsLogsUpload> ReplayHotsLogsUploads { get; set; }
+        public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -72,6 +73,11 @@ namespace HeroesMatchTracker.Data.Databases
 
             modelBuilder.Entity<ReplayMatch>()
                 .HasMany(e => e.ReplayHotsLogsUpload)
+                .WithRequired(e => e.Replay)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ReplayMatch>()
+                .HasMany(e => e.ReplayHotsApiUpload)
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
 

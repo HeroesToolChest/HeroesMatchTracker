@@ -10,7 +10,12 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
         {
             List<string> steps = new List<string>
             {
-                string.Empty,
+                @"CREATE TABLE IF NOT EXISTS ReplayHotsApiUploads(
+                ReplaysHotsApiUploadId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                ReplayId INTEGER UNIQUE,
+                ReplayFileTimeStamp DATETIME,
+                Status INTEGER,
+                FOREIGN KEY (ReplayId) REFERENCES Replays (ReplayId))",
             };
             migrations.Add(Version, steps);
 

@@ -73,6 +73,8 @@
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamLevelTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryTeamExperienceTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/Graphs/MatchSummaryStatsTemplate.xaml"/>
+
+                <ResourceDictionary Source="/Resources/CustomTemplates/ReplayUploaders/Uploaders.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <!-- this app -->

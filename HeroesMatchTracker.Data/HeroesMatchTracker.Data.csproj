@@ -146,6 +146,7 @@
     <Compile Include="Migrations\Settings\Migration1_v1_3_0\MigrationAddon1_v1_3_0_1.cs" />
     <Compile Include="Migrations\Settings\Migration3_v2_1_0\Migration3_v2_1_0.cs" />
     <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
+    <Compile Include="Migrations\Settings\Migration5_v2_4_0\Migration5_v2_4_0.cs" />
     <Compile Include="Migrations\Settings\Migration4_v2_2_0\Migration4_v2_2_0.cs" />
     <Compile Include="Migrations\Settings\Migration4_v2_2_0\MigrationAddon4_v2_2_0_1.cs" />
     <Compile Include="Migrations\Settings\SettingsMigrator.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Models\INonContextModels.cs" />
     <Compile Include="Models\IRawDataDisplay.cs" />
     <Compile Include="Models\ReleaseNotes\ReleaseNote.cs" />
+    <Compile Include="Models\Replays\ReplayHotsApiUpload.cs" />
     <Compile Include="Models\Replays\ReplayMatch.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayerHero.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Queries\QueryException.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
+    <Compile Include="Queries\Replays\HotsApiUpload.cs" />
     <Compile Include="Queries\Replays\HotsLogsUpload.cs" />
     <Compile Include="Queries\Replays\ReplayFilter.cs" />
     <Compile Include="Queries\Replays\ReplaysDb.cs" />

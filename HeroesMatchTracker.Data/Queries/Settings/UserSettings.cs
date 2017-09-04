@@ -88,7 +88,25 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetDateTimeValue(value); }
         }
 
+        public DateTime ReplaysLatestHotsApi
+        {
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
+        }
+
+        public DateTime ReplaysLastHotsApi
+        {
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
+        }
+
         public bool IsHotsLogsUploaderEnabled
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
+        public bool IsHotsApiUploaderEnabled
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
@@ -220,6 +238,8 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             ReplaysLastSaved = lastWeek;
             ReplaysLatestHotsLogs = lastWeek;
             ReplaysLastHotsLogs = lastWeek;
+            ReplaysLatestHotsApi = lastWeek;
+            ReplaysLastHotsApi = lastWeek;
             SelectedScanDateTimeIndex = 0;
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
             IsAutoRequeueOnUpdate = true;

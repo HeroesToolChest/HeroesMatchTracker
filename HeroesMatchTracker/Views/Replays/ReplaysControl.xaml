@@ -79,45 +79,7 @@
                                 <Button Content="DEFAULT" Command="{Binding LastDateTimeDefaultCommand}" IsEnabled="{Binding AreParserButtonsEnabled}" Width="100" Margin="8 0 0 0" />
                             </StackPanel>
 
-                            <GroupBox Header="HOTS Logs Uploader" Margin="0 20 0 0" HorizontalAlignment="Stretch">
-                                <StackPanel>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"></ColumnDefinition>
-                                            <ColumnDefinition></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <StackPanel>
-                                            <CheckBox Content="Enable Uploader" IsChecked="{Binding HotsLogsUploader.IsUploaderEnabled}" IsEnabled="{Binding AreParserButtonsEnabled}"/>
-                                            <Button Content="{Binding HotsLogsUploader.StartButtonText}" Command="{Binding HotsLogsUploader.StartButtonCommand}" IsEnabled="{Binding HotsLogsUploader.StartButtonEnabled}" Width="120" HorizontalAlignment="Left" Margin="0 5 0 0" />
-                                        </StackPanel>
-                                        <StackPanel Grid.Column="1" Margin="12">
-                                            <StackPanel Orientation="Horizontal">
-                                                <StackPanel Margin="0 0 8 0">
-                                                    <TextBlock Text="Uploader Status:" FontSize="14" HorizontalAlignment="Right" />
-                                                    <TextBlock Text="File Status:" FontSize="14" HorizontalAlignment="Right" />
-                                                </StackPanel>
-                                                <StackPanel>
-                                                    <TextBlock Text="{Binding HotsLogsUploader.UploaderStatus}" FontSize="14"/>
-                                                    <TextBlock Text="{Binding HotsLogsUploader.UploadFileStatus }" TextWrapping="Wrap" FontSize="14"/>
-                                                </StackPanel>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Grid>
-                                    <Label Content="Scan Date/Time Options" FontSize="16" Margin="0 8 0 0" />
-                                    <CheckBox Content="Latest Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LatestHotsLogsUploaderChecked}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" />
-                                    <StackPanel Orientation="Horizontal">
-                                        <controls:DateTimePicker SelectedDate="{Binding HotsLogsUploader.ReplaysLatestUploaded}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                        <Button Content="SET" Command="{Binding HotsLogsUploader.LatestDateTimeSetCommand}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}"  Width="100" Margin="8 0 0 0" />
-                                        <Button Content="DEFAULT" Command="{Binding HotsLogsUploader.LatestDateTimeDefaultCommand}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" Width="100" Margin="8 0 0 0" />
-                                    </StackPanel>
-                                    <CheckBox Content="Last Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LastHotsLogsUploaderChecked}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" />
-                                    <StackPanel Orientation="Horizontal">
-                                        <controls:DateTimePicker SelectedDate="{Binding HotsLogsUploader.ReplaysLastUploaded}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" Width="208" IsClockVisible="True" IsTodayHighlighted="True"/>
-                                        <Button Content="SET" Command="{Binding HotsLogsUploader.LastDateTimeSetCommand}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" Width="100" Margin="8 0 0 0" />
-                                        <Button Content="DEFAULT" Command="{Binding HotsLogsUploader.LastDateTimeDefaultCommand}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" Width="100" Margin="8 0 0 0" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </GroupBox>
+                            <ContentControl Content="{Binding}" ContentTemplate="{StaticResource ReplayUploaders}" />
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>

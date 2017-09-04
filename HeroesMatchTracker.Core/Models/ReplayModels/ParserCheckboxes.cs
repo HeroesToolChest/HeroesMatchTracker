@@ -11,10 +11,12 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
         public const int LastParsedIndex = 1;
         public const int LatestHotsLogsUploaderIndex = 2;
         public const int LastHotsLogsUploaderIndex = 3;
+        public const int LatestHotsApiUploaderIndex = 4;
+        public const int LastHotsApiUploaderIndex = 5;
 
         private IDatabaseService Database;
 
-        private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
+        private bool[] ScanDateTimeCheckboxes = new bool[6] { false, false, false, false, false, false };
 
         public ParserCheckboxes(IDatabaseService database)
         {
@@ -39,6 +41,8 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         LastParsedChecked = false;
                         LatestHotsLogsUploaderChecked = false;
                         LastHotsLogsUploaderChecked = false;
+                        LatestHotsApiUploaderChecked = false;
+                        LastHotsApiUploaderChecked = false;
                     }
                 }
 
@@ -60,6 +64,8 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         LatestParsedChecked = false;
                         LatestHotsLogsUploaderChecked = false;
                         LastHotsLogsUploaderChecked = false;
+                        LatestHotsApiUploaderChecked = false;
+                        LastHotsApiUploaderChecked = false;
                     }
                 }
 
@@ -81,6 +87,8 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         LatestParsedChecked = false;
                         LastParsedChecked = false;
                         LastHotsLogsUploaderChecked = false;
+                        LatestHotsApiUploaderChecked = false;
+                        LastHotsApiUploaderChecked = false;
                     }
                 }
 
@@ -102,6 +110,54 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         LatestParsedChecked = false;
                         LastParsedChecked = false;
                         LatestHotsLogsUploaderChecked = false;
+                        LatestHotsApiUploaderChecked = false;
+                        LastHotsApiUploaderChecked = false;
+                    }
+                }
+
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool LatestHotsApiUploaderChecked
+        {
+            get => ScanDateTimeCheckboxes[LatestHotsApiUploaderIndex];
+            set
+            {
+                if (Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex != LatestHotsApiUploaderIndex)
+                {
+                    ScanDateTimeCheckboxes[LatestHotsApiUploaderIndex] = value;
+                    if (value)
+                    {
+                        Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LatestHotsApiUploaderIndex;
+                        LatestParsedChecked = false;
+                        LastParsedChecked = false;
+                        LatestHotsLogsUploaderChecked = false;
+                        LastHotsLogsUploaderChecked = false;
+                        LastHotsApiUploaderChecked = false;
+                    }
+                }
+
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool LastHotsApiUploaderChecked
+        {
+            get => ScanDateTimeCheckboxes[LastHotsApiUploaderIndex];
+            set
+            {
+                if (Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex != LastHotsApiUploaderIndex)
+                {
+                    ScanDateTimeCheckboxes[LastHotsApiUploaderIndex] = value;
+                    if (value)
+                    {
+                        Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LastHotsApiUploaderIndex;
+                        LatestParsedChecked = false;
+                        LastParsedChecked = false;
+                        LatestHotsLogsUploaderChecked = false;
+                        LastHotsLogsUploaderChecked = false;
+                        LatestHotsApiUploaderChecked = false;
                     }
                 }
 
@@ -118,6 +174,15 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
 
                 LatestHotsLogsUploaderChecked = false;
                 LastHotsLogsUploaderChecked = false;
+            }
+
+            if (message.Notification == StaticMessage.HotsApiUploaderDisabled)
+            {
+                if (LatestHotsApiUploaderChecked || LastHotsApiUploaderChecked)
+                    LatestParsedChecked = true;
+
+                LatestHotsApiUploaderChecked = false;
+                LastHotsApiUploaderChecked = false;
             }
         }
     }

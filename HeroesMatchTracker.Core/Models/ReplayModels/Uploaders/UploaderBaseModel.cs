@@ -45,7 +45,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders
         public bool IsParsingReplaysOn { get; set; }
 
         public bool IsIdleMode { get; set; }
-
+        public ParserCheckboxes ParserCheckboxes { get; set; }
         public Queue<ReplayFile> ReplayUploadQueue { get; } = new Queue<ReplayFile>();
 
         public string UploaderStatus

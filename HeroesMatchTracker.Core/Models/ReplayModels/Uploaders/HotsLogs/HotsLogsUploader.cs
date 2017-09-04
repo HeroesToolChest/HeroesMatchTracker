@@ -62,14 +62,14 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsLogs
             }
         }
 
-        protected override void LatestDateTimeDefault()
-        {
-            ReplaysLatestUploaded = InternalService.Database.ReplaysDb().MatchReplay.ReadLatestReplayByDateTime();
-        }
-
         protected override void LastDateTimeDefault()
         {
-            ReplaysLastUploaded = InternalService.Database.ReplaysDb().MatchReplay.ReadLastReplayByDateTime();
+            ReplaysLastUploaded = InternalService.Database.ReplaysDb().HotsLogsUpload.ReadLastReplayHotsLogsUploaded();
+        }
+
+        protected override void LatestDateTimeDefault()
+        {
+            ReplaysLatestUploaded = InternalService.Database.ReplaysDb().HotsLogsUpload.ReadLatestReplayHotsLogsUploadedByDateTime();
         }
 
         protected override void UpdateUploadStatus(ReplayFileUploaderStatus status)

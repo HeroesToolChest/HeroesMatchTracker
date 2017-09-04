@@ -245,9 +245,9 @@ namespace HeroesMatchTracker.Core.ViewModels
         public void SetHotsLogsUploaderStatus(HotsLogsUploaderStatus status)
         {
             if (status == HotsLogsUploaderStatus.Enabled)
-                HotsLogsUploaderCurrentStatus = "HotsLogs Uploader [ENABLED]";
+                HotsLogsUploaderCurrentStatus = "HOTS Logs Uploader [ENABLED]";
             else if (status == HotsLogsUploaderStatus.Disabled)
-                HotsLogsUploaderCurrentStatus = "HotsLogs Uploader [DISABLED]";
+                HotsLogsUploaderCurrentStatus = "HOTS Logs Uploader [DISABLED]";
         }
 
         public void SetHotsApiUploaderStatus(HotsApiUploaderStatus status)

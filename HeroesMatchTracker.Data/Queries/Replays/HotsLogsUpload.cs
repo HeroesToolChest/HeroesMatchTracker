@@ -2,6 +2,7 @@
 using HeroesMatchTracker.Data.Models.Replays;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
 
@@ -91,6 +92,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
+                // check to see if a duplicate record got inserted
+                if (db.ReplayHotsLogsUploads.AsNoTracking().Count(x => x.ReplayId == replayHotsLogsUpload.ReplayId) > 1)
+                {
+                    var record = db.ReplayHotsLogsUploads.AsNoTracking().First(x => x.ReplayId == replayHotsLogsUpload.ReplayId);
+                    db.Entry(record).State = EntityState.Deleted; // delete the duplicate record
+
+                    db.SaveChanges();
+                }
+
                 return db.ReplayHotsLogsUploads.AsNoTracking().SingleOrDefault(x => x.ReplayId == replayHotsLogsUpload.ReplayId).Status;
             }
         }
@@ -117,6 +127,19 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             using (var db = new ReplaysContext())
             {
                 var record = db.ReplayHotsLogsUploads.AsNoTracking().OrderByDescending(x => x.ReplayFileTimeStamp).FirstOrDefault();
+
+                if (record != null && record.ReplayFileTimeStamp.HasValue)
+                    return record.ReplayFileTimeStamp.Value;
+                else
+                    return DateTime.Today;
+            }
+        }
+
+        public DateTime ReadLastReplayHotsLogsUploaded()
+        {
+            using (var db = new ReplaysContext())
+            {
+                var record = db.ReplayHotsLogsUploads.AsNoTracking().OrderByDescending(x => x.ReplaysHotsLogsUploadId).FirstOrDefault();
 
                 if (record != null && record.ReplayFileTimeStamp.HasValue)
                     return record.ReplayFileTimeStamp.Value;

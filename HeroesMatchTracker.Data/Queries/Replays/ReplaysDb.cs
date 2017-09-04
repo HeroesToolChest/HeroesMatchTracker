@@ -16,6 +16,7 @@
         public MatchTeamObjective MatchTeamObjective => new MatchTeamObjective();
         public RenamedPlayer RenamedPlayer => new RenamedPlayer();
         public HotsLogsUpload HotsLogsUpload => new HotsLogsUpload();
+        public HotsApiUpload HotsApiUpload => new HotsApiUpload();
         public Statistics Statistics => new Statistics();
     }
 }

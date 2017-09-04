@@ -62,8 +62,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private ObservableCollection<MatchChat> _matchChatCollection = new ObservableCollection<MatchChat>();
         private ObservableCollection<MatchObserver> _matchObserversCollection = new ObservableCollection<MatchObserver>();
 
-        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
-
         public MatchSummaryViewModel(IInternalService internalService, IWebsiteService website, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
@@ -88,6 +86,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             SimpleIoc.Default.Register<IMatchSummaryReplayService>(() => this);
         }
+
+        public IMatchSummaryFlyoutService MatchSummaryFlyout => ServiceLocator.Current.GetInstance<IMatchSummaryFlyoutService>();
 
         public MatchBans MatchHeroBans { get; private set; } = new MatchBans();
 
