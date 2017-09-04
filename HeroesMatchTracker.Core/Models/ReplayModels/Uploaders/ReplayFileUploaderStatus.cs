@@ -1,9 +1,6 @@
-﻿using System;
-
-namespace HeroesMatchTracker.Core.HotsLogs
+﻿namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders
 {
-    [Flags]
-    public enum ReplayFileHotsLogsStatus
+    public enum ReplayFileUploaderStatus
     {
         Success = 0,
         Duplicate = 1 << 0,

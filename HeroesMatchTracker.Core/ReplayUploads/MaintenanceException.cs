@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeroesMatchTracker.Core.HotsLogs
+namespace HeroesMatchTracker.Core.ReplayUploads
 {
     [Serializable]
     public class MaintenanceException : Exception

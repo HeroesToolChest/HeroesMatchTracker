@@ -7,9 +7,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using static Heroes.ReplayParser.DataParser;
 
-namespace HeroesMatchTracker.Core.HotsLogs
+namespace HeroesMatchTracker.Core.ReplayUploads
 {
-    public static class HotsLogsUploader
+    public static class HotsLogsReplayUpload
     {
         public static async Task<ReplayParseResult> UploadReplay(string filePath)
         {

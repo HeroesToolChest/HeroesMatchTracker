@@ -51,7 +51,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger WarningLog { get; private set; }
         protected Logger UnParsedReplaysLog { get; private set; }
         protected Logger TranslationsLog { get; private set; }
-        protected Logger HotsLogsLog { get; private set; }
+        protected Logger ReplayUploaderLog { get; private set; }
 
         protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
 
@@ -61,7 +61,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
             UnParsedReplaysLog = LogManager.GetLogger(LogFileNames.UnParsedReplaysLogFileName);
             TranslationsLog = LogManager.GetLogger(LogFileNames.TranslationLogFileName);
-            HotsLogsLog = LogManager.GetLogger(LogFileNames.HotsLogsLogFileName);
+            ReplayUploaderLog = LogManager.GetLogger(LogFileNames.ReplayUploaderLogFileName);
         }
 
         private void SetRandomHomescreenBackgroundImage()

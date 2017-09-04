@@ -7,5 +7,7 @@
         public static string ReEnableMatchSummaryButton => "ReEnableMatchSummaryButton";
         public static string ChangeCurrentSelectedReplayMatchLeft => "ChangeCurrentSelectedReplayMatchLeft";
         public static string ChangeCurrentSelectedReplayMatchRight => "ChangeCurrentSelectedReplayMatchRight";
+        public static string HotsLogsUploaderDisabled => "HotsLogsUploaderDisabled";
+        public static string HotsApiUploaderDisabled => "HotsApiUploaderDisabled";
     }
 }

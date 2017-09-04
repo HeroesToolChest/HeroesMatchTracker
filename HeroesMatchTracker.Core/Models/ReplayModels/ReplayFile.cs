@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
-using HeroesMatchTracker.Core.HotsLogs;
+using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders;
 using HeroesMatchTracker.Data;
 using System;
 
@@ -9,7 +9,8 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
     {
         private int? _build;
         private ReplayResult? _status;
-        private ReplayFileHotsLogsStatus? _replayFileHotsLogsStatus;
+        private ReplayFileUploaderStatus? _hotsLogsUploadStatus;
+        private ReplayFileUploaderStatus? _hotsApiUploadStatus;
 
         public string FileName { get; set; }
         public DateTime LastWriteTime { get; set; }
@@ -36,12 +37,22 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
             }
         }
 
-        public ReplayFileHotsLogsStatus? ReplayFileHotsLogsStatus
+        public ReplayFileUploaderStatus? HotsLogsUploadStatus
         {
-            get { return _replayFileHotsLogsStatus; }
+            get { return _hotsLogsUploadStatus; }
             set
             {
-                _replayFileHotsLogsStatus = value;
+                _hotsLogsUploadStatus = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ReplayFileUploaderStatus? HotsApiUploadStatus
+        {
+            get => _hotsApiUploadStatus;
+            set
+            {
+                _hotsApiUploadStatus = value;
                 RaisePropertyChanged();
             }
         }

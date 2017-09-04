@@ -7,7 +7,7 @@
         public static string WarningLogFileName => "WarningLogFile";
         public static string UnParsedReplaysLogFileName => "UnParsedReplaysLogFile";
         public static string TranslationLogFileName => "TranslationLogFile";
-        public static string HotsLogsLogFileName => "HotsLogsLogFile";
+        public static string ReplayUploaderLogFileName => "ReplayUploaderLogFile";
         public static string UpdateFileName => "UpdateLogFile";
     }
 }

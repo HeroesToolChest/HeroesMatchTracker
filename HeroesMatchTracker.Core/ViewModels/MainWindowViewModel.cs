@@ -3,8 +3,9 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
-using HeroesMatchTracker.Core.HotsLogs;
 using HeroesMatchTracker.Core.Messaging;
+using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
+using HeroesMatchTracker.Core.ReplayModels.Uploaders.HotsLogs;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
@@ -24,6 +25,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         private string _parserStatus;
         private string _parserWatchStatus;
         private string _hotsLogsStatus;
+        private string _hotsApiStatus;
         private string _extendedAboutText;
 
         private IDatabaseService Database;
@@ -143,12 +145,22 @@ namespace HeroesMatchTracker.Core.ViewModels
             }
         }
 
-        public string HotsLogsStatus
+        public string HotsLogsUploaderCurrentStatus
         {
             get => _hotsLogsStatus;
             set
             {
                 _hotsLogsStatus = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string HotsApiUploaderCurrentStatus
+        {
+            get => _hotsApiStatus;
+            set
+            {
+                _hotsApiStatus = value;
                 RaisePropertyChanged();
             }
         }
@@ -230,12 +242,20 @@ namespace HeroesMatchTracker.Core.ViewModels
                 ParserWatchStatus = "Watch [DISABLED]";
         }
 
-        public void SetReplayParserHotsLogsStatus(ReplayParserHotsLogsStatus status)
+        public void SetHotsLogsUploaderStatus(HotsLogsUploaderStatus status)
         {
-            if (status == ReplayParserHotsLogsStatus.Enabled)
-                HotsLogsStatus = "HotsLogs Uploader [ENABLED]";
-            else if (status == ReplayParserHotsLogsStatus.Disabled)
-                HotsLogsStatus = "HotsLogs Uploader [DISABLED]";
+            if (status == HotsLogsUploaderStatus.Enabled)
+                HotsLogsUploaderCurrentStatus = "HotsLogs Uploader [ENABLED]";
+            else if (status == HotsLogsUploaderStatus.Disabled)
+                HotsLogsUploaderCurrentStatus = "HotsLogs Uploader [DISABLED]";
+        }
+
+        public void SetHotsApiUploaderStatus(HotsApiUploaderStatus status)
+        {
+            if (status == HotsApiUploaderStatus.Enabled)
+                HotsApiUploaderCurrentStatus = "HotsApi Uploader [ENABLED]";
+            else if (status == HotsApiUploaderStatus.Disabled)
+                HotsApiUploaderCurrentStatus = "HotsApi Uploader [DISABLED]";
         }
 
         public void SetTotalParsedReplays(long amount)

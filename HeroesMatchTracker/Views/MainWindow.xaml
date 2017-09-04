@@ -98,7 +98,9 @@
                 <StatusBarItem Content="replays in database" DockPanel.Dock="Right" />
                 <StatusBarItem Content="{Binding TotalParsedReplays}" DockPanel.Dock="Right" />
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
-                <StatusBarItem Content="{Binding HotsLogsStatus}" DockPanel.Dock="Right" />
+                <StatusBarItem Content="{Binding HotsApiUploaderCurrentStatus}" DockPanel.Dock="Right" />
+                <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
+                <StatusBarItem Content="{Binding HotsLogsUploaderCurrentStatus}" DockPanel.Dock="Right" />
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
                 <StatusBarItem Content="{Binding ParserWatchStatus}" DockPanel.Dock="Right" />
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
