@@ -13,6 +13,7 @@ namespace Heroes.Helpers
         Year2016Season3 = 1 << 3,
         Year2017Season1 = 1 << 4,
         Year2017Season2 = 1 << 5,
+        Year2017Season3 = 1 << 6,
     }
 
     public static partial class HeroesHelpers
@@ -26,6 +27,7 @@ namespace Heroes.Helpers
             public const string Year2016Season3 = "2016 Season 3";
             public const string Year2017Season1 = "2017 Season 1";
             public const string Year2017Season2 = "2017 Season 2";
+            public const string Year2017Season3 = "2017 Season 3";
 
             public static List<string> GetSeasonList()
             {
@@ -37,6 +39,7 @@ namespace Heroes.Helpers
                     Year2016Season3,
                     Year2017Season1,
                     Year2017Season2,
+                    Year2017Season3,
                 };
 
                 return list;
@@ -60,6 +63,8 @@ namespace Heroes.Helpers
                         return Year2017Season1;
                     case Season.Year2017Season2:
                         return Year2017Season2;
+                    case Season.Year2017Season3:
+                        return Year2017Season3;
                     default:
                         throw new ArgumentException($"paramter {season} not found", nameof(season));
                 }
