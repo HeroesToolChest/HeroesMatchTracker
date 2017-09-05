@@ -86,6 +86,11 @@ namespace HeroesMatchTracker.Views
                     Database.SettingsDb().UserSettings.ShowWhatsNewWindow = false;
                     Database.SettingsDb().UserSettings.RequeueAllFailedReplays = false;
                 }
+
+                if (argsList.Contains("/pre-release"))
+                {
+                    Database.SettingsDb().UserSettings.PreReleaseCheck = true;
+                }
             }
         }
     }

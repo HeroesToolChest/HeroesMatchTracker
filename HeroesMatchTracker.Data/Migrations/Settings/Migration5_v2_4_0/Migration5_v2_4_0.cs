@@ -13,6 +13,7 @@ namespace HeroesMatchTracker.Data.Migrations.Settings
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('IsHotsApiUploaderEnabled', 'False');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ReplaysLatestHotsApi', '2010-01-01 12:00:00');",
                 @"INSERT INTO UserSettings(Name, Value) VALUES ('ReplaysLastHotsApi', '2010-01-01 12:00:00');",
+                @"INSERT INTO UserSettings(Name, Value) VALUES ('PreReleaseCheck', 'False');",
             };
             migrations.Add(Version, steps);
 

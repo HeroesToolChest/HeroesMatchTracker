@@ -45,7 +45,7 @@ namespace HeroesMatchTracker.Core.Updater
         {
             try
             {
-                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: false))
+                using (UpdateManager = await UpdateManager.GitHubUpdateManager(Settings.Default.UpdateUrl, prerelease: Database.SettingsDb().UserSettings.PreReleaseCheck))
                 {
                     UpdaterLog.Log(LogLevel.Info, "Update Check");
 

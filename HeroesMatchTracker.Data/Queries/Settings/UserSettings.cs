@@ -215,6 +215,12 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetBooleanValue(value); }
         }
 
+        public bool PreReleaseCheck
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
         #endregion Other
 
         internal void SetDefaultSettings()
@@ -261,6 +267,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             IsUpdateAvailableKnown = false;
             ShowWhatsNewWindow = false;
             RequeueAllFailedReplays = false;
+            PreReleaseCheck = false;
         }
     }
 }
