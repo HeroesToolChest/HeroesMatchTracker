@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Chen mana="Brew">
+  <Level1>
+    <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">storm_ui_icon_chen_breathoffire.dds</ChenAccumulatingFlame>
+    <ChenGroundingBrew name="Grounding Brew" desc="ChenFortifyingBrewGroundingBrewTalent">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenGroundingBrew>
+    <ChenFreshestIngredients name="Freshest Ingredients" desc="ChenFreshestIngredients">storm_ui_icon_chen_fortifyingbrew.dds</ChenFreshestIngredients>
+    <ChenElusiveBrawler name="Elusive Brawler" desc="ChenElusiveBrawler" cooldown="25">storm_ui_icon_chen_elusivebrew.dds</ChenElusiveBrawler>
+  </Level1>
+  <Level4>
+    <ChenDeadlyStrike name="Deadly Strike" desc="ChenFlyingKickDeadlyStrikeTalent">storm_ui_icon_chen_flyingkick.dds</ChenDeadlyStrike>
+    <ChenKegToss name="Keg Toss" desc="ChenKegSmashKegTossTalent">storm_ui_icon_chen_kegsmash.dds</ChenKegToss>
+    <ChenRingofFire name="Ring of Fire" desc="ChenBreathOfFireRingOfFireTalent">storm_ui_icon_chen_breathoffire.dds</ChenRingofFire>
+  </Level4>
+  <Level7>
+    <ChenBrewmastersBalance name="Brewmaster's Balance" desc="ChenFortifyingBrewBrewmastersBalanceTalent">storm_ui_icon_chen_fortifyingbrew.dds</ChenBrewmastersBalance>
+    <ChenBolderFlavor name="Bolder Flavor" desc="ChenFortifyingBrewBolderFlavorTalent">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenBolderFlavor>
+    <ChenPurifyingBrew name="Purifying Brew" desc="ChenPurifyingBrew">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenPurifyingBrew>
+  </Level7>
+  <Level10>
+    <ChenHeroicAbilityWanderingKeg name="Wandering Keg" desc="ChenWanderingKeg" cooldown="70">storm_ui_icon_chen_wanderingkeg.dds</ChenHeroicAbilityWanderingKeg>
+    <ChenHeroicAbilityStormEarthFire name="Storm, Earth, Fire" desc="ChenStormEarthFire" cooldown="100">storm_ui_icon_chen_stormearthfire.dds</ChenHeroicAbilityStormEarthFire>
+  </Level10>
+  <Level13>
+    <ChenPressurePoint name="Pressure Point" desc="ChenFlyingKickPressurePointTalent">storm_ui_icon_chen_flyingkick.dds</ChenPressurePoint>
+    <ChenMasteryKegSmashATouchOfHoney name="A Touch of Honey" desc="ChenKegSmashATouchOfHoneyTalent">storm_ui_icon_chen_kegsmash.dds</ChenMasteryKegSmashATouchOfHoney>
+    <ChenWitheringFlames name="Withering Flames" desc="ChenWitheringFlames">storm_ui_icon_chen_breathoffire.dds</ChenWitheringFlames>
+  </Level13>
+  <Level16>
+    <ChenFlyingLeap name="Flying Leap" desc="ChenFlyingLeap">storm_ui_icon_chen_flyingkick.dds</ChenFlyingLeap>
+    <ChenAnotherRound name="Another Round" desc="ChenAnotherRound">storm_ui_icon_chen_kegsmash.dds</ChenAnotherRound>
+    <ChenMasteryFortifyingBrewEnoughToShare name="Enough to Share" desc="ChenFortifyingBrewEnoughToShareTalent">storm_ui_icon_chen_fortifyingbrew.dds</ChenMasteryFortifyingBrewEnoughToShare>
+  </Level16>
+  <Level20>
+    <ChenMasteryWanderingKegUntappedPotential name="Untapped Potential" desc="ChenWanderingKegUntappedPotentialTalent">storm_ui_icon_chen_wanderingkeg.dds</ChenMasteryWanderingKegUntappedPotential>
+    <ChenElementalConduit name="Elemental Conduit" desc="ChenStormEarthFireElementalConduitTalent">storm_ui_icon_chen_stormearthfire.dds</ChenElementalConduit>
+    <ChenStormstoutSecretRecipe name="Stormstout Secret Recipe" desc="ChenStormstoutSecretRecipe">storm_ui_icon_chen_stormstoutsecretrecipe.dds</ChenStormstoutSecretRecipe>
+  </Level20>
+</Chen>
