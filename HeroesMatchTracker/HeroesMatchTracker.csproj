@@ -663,13 +663,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HMT.ico" />
-    <None Include="Resources\Images\HMT_2_0_0_Homescreen.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Stats_AllHero.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Stats_Hero.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Summary_AdvStats.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Summary_Graph_TeamLevels.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Summary_Stats.jpg" />
-    <None Include="Resources\Images\HMT_2_0_0_Summary_Talent.jpg" />
+    <None Include="Resources\Images\HMT_Homescreen.jpg" />
+    <None Include="Resources\Images\HMT_Stats_AllHero.jpg" />
+    <None Include="Resources\Images\HMT_Stats_Hero.jpg" />
+    <None Include="Resources\Images\HMT_Summary_AdvStats.jpg" />
+    <None Include="Resources\Images\HMT_Summary_Graph_TeamLevels.jpg" />
+    <None Include="Resources\Images\HMT_Summary_Stats.jpg" />
+    <None Include="Resources\Images\HMT_Summary_Talent.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
