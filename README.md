@@ -7,16 +7,16 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 - Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, Non-Arena Brawls, and Custom Games
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - Also view personal statistics about your heroes: wins, losses, winrates, talent winrates and much more for different maps and gamemodes
-- Includes a built-in HOTS Logs uploader
+- Includes a built-in [HOTS Logs](https://www.hotslogs.com/Default) uploader and [HotsApi](http://hotsapi.net/) uploader
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki)
 
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Homescreen.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Summary_Talent.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Summary_Stats.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Summary_AdvStats.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Summary_Graph_TeamLevels.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Stats_Hero.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_2_0_0_Stats_AllHero.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Homescreen.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_Talent.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_Stats.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_AdvStats.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_Graph_TeamLevels.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Stats_Hero.jpg)
+![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Stats_AllHero.jpg)
 
 ## Installation
 - Download and run HeroesMatchTrackerSetup.exe from the [releases](https://github.com/koliva8245/HeroesMatchTracker/releases) page
