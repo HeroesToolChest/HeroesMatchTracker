@@ -168,6 +168,12 @@
     <Aliases>Kael’thas,캘타스,凱爾薩斯,凯尔萨斯,Кель'тас</Aliases>
   </Kaelthas>
 
+  <KelThuzad available="57062" name="Kel'Thuzad" attributeid="KelT" franchise="Warcraft" type="Ranged" difficulty="Hard"
+          portrait="storm_ui_ingame_heroselect_btn_kelthuzad.dds" loading="storm_ui_ingame_hero_loadingscreen_kelthuzad.dds" leader="storm_ui_ingame_hero_leaderboard_kelthuzad.dds">
+    <Roles>Assassin</Roles>
+    <Aliases>Kel’Thuzad,克尔苏加德,科爾蘇加德</Aliases>
+  </KelThuzad>
+  
   <Kerrigan available="47479" attributeid="Kerr" franchise="Starcraft" type="Melee" difficulty="Hard"
             portrait="storm_ui_ingame_heroselect_btn_kerrigan.dds" loading="storm_ui_ingame_hero_loadingscreen_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
     <Roles>Assassin</Roles>

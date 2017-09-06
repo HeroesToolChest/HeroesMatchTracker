@@ -10,7 +10,7 @@ namespace Heroes.Icons.Tests
     public class HeroBuildsTests : HeroesIconsBase
     {
         [TestMethod]
-        public void HeroeTalentsTest()
+        public void HeroesTalentsTest()
         {
             List<string> assertMessages = new List<string>();
             int segment = 5;
