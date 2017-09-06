@@ -43,7 +43,7 @@
                                 </TextBlock.ToolTip>
                             </TextBlock>
                             <TextBlock Text="{Binding CharacterLevel}" ToolTip="Hero Level" />
-                            <TextBlock Text="{Binding AccountLevel}" ToolTip="Account Level" />
+                            <TextBlock Text="{Binding PlayerTag.AccountLevel}" ToolTip="Account Level" />
                             <TextBlock />
                             <Border />
                             <TextBlock Text="{Binding SoloKills}" ToolTip="Kills">
