@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Kaelthas>
+<KelThuzad>
   <Level1>
     <KelThuzadThePlaguelands name="The Plaguelands" desc="KelThuzadThePlaguelands">storm_ui_icon_kel'thuzad_deathanddecay.dds</KelThuzadThePlaguelands>
     <KelThuzadBlightedFrost name="Blighted Frost" desc="KelThuzadBlightedFrost">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadBlightedFrost>
@@ -35,4 +35,4 @@
     <KelThuzadShiftingMalice name="Shifting Malice" desc="KelThuzadShiftingMalice" cooldown="240">storm_ui_icon_kel'thuzad_shiftingmalice.dds</KelThuzadShiftingMalice>
     <KelThuzadTheDamnedReturn name="The Damned Return" desc="KelThuzadTheDamnedReturn" cooldown="15">storm_ui_icon_kel'thuzad_cultofthedamned.dds</KelThuzadTheDamnedReturn>
   </Level20>
-</Kaelthas>
+</KelThuzad>

@@ -3,7 +3,7 @@
   <Level1>
     <MedicCaduceusFeedback name="Caduceus Feedback" desc="MedicCaduceusFeedbackTalent" generic="true">storm_ui_icon_talent_autoattack_mana.dds</MedicCaduceusFeedback>
     <MedicLifeSupport name="Life Support" desc="MedicLifeSupport">storm_ui_icon_medic_deployshield.dds</MedicLifeSupport>
-    <MedicClear name="Clear!" desc="MedicClear">storm_ui_icon_medic_displacementgrenade.dds</MedicClear>
+    <MedicClear name="Clear!" desc="MedicClearTalent">storm_ui_icon_medic_displacementgrenade.dds</MedicClear>
   </Level1>
   <Level4>
     <MedicCellularReactor name="Cellular Reactor" desc="MedicCellularReactorTalent" cooldown="45">storm_temp_btn-upgrade-terran-moebiusreactor.dds</MedicCellularReactor>
