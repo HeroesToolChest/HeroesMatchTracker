@@ -81,6 +81,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<RawAllHotsPlayerViewModel>();
             SimpleIoc.Default.Register<RawAllHotsPlayerHeroesViewModel>();
             SimpleIoc.Default.Register<RawHotsLogsUploadViewModel>();
+            SimpleIoc.Default.Register<RawHotsApiUploadViewModel>();
             SimpleIoc.Default.Register<RawMatchAwardViewModel>();
             SimpleIoc.Default.Register<RawMatchMessageViewModel>();
             SimpleIoc.Default.Register<RawMatchPlayerScoreResultViewModel>();

@@ -55,5 +55,8 @@
         <TabItem Header="HOTS Logs Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawHotsLogsUploadControl Margin="{StaticResource Spacing}"/>
         </TabItem>
+        <TabItem Header="HotsApi Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:RawHotsApiUploadControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
     </TabControl>
 </UserControl>
