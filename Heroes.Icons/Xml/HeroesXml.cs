@@ -54,6 +54,18 @@ namespace Heroes.Icons.Xml
             if (string.IsNullOrEmpty(realName))
                 realName = heroName;
 
+            if (heroName == "No pick")
+            {
+                return new Hero
+                {
+                    Name = heroName,
+                    Franchise = HeroFranchise.Unknown,
+                    HeroPortrait = new Uri($@"{ApplicationIconsPath}\HeroPortraits\{NoPortraitPick}", UriKind.Absolute),
+                    LoadingPortrait = new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{NoLoadingScreenPick}", UriKind.Absolute),
+                    LeaderboardPortrait = new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{NoLeaderboardPick}", UriKind.Absolute),
+                };
+            }
+
             if (HeroByHeroName.TryGetValue(realName, out Hero hero))
             {
                 return hero;

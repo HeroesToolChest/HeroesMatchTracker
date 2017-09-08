@@ -497,6 +497,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 string ban3 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
                 string ban4 = HeroesIcons.Heroes().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
 
+                if (string.IsNullOrEmpty(ban1)) ban1 = "No pick";
+                if (string.IsNullOrEmpty(ban2)) ban2 = "No pick";
+                if (string.IsNullOrEmpty(ban3)) ban3 = "No pick";
+                if (string.IsNullOrEmpty(ban4)) ban4 = "No pick";
+
                 var bannedHero1 = HeroesIcons.Heroes().GetHeroInfo(ban1);
                 var bannedHero2 = HeroesIcons.Heroes().GetHeroInfo(ban2);
                 var bannedHero3 = HeroesIcons.Heroes().GetHeroInfo(ban3);
@@ -511,15 +516,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     MatchHeroBans.Team1Ban1 = bannedHero4.GetPortrait();
                 });
 
-                if (string.IsNullOrEmpty(ban1)) ban1 = "No pick";
-                if (string.IsNullOrEmpty(ban2)) ban2 = "No pick";
-                if (string.IsNullOrEmpty(ban3)) ban3 = "No pick";
-                if (string.IsNullOrEmpty(ban4)) ban4 = "No pick";
-
-                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1.Roles[0]}";
-                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2.Roles[0]}";
-                MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{bannedHero3.Roles[0]}";
-                MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{bannedHero4.Roles[0]}";
+                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1.Roles.FirstOrDefault()}";
+                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2.Roles.FirstOrDefault()}";
+                MatchHeroBans.Team1Ban0HeroName = $"{ban3}{Environment.NewLine}{bannedHero3.Roles.FirstOrDefault()}";
+                MatchHeroBans.Team1Ban1HeroName = $"{ban4}{Environment.NewLine}{bannedHero4.Roles.FirstOrDefault()}";
 
                 HasBans = true;
             }
