@@ -398,6 +398,7 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                 };
 
                 MatchTeamExperienceMaxYValue = totalTeam1 > totalTeam2 ? totalTeam1 : totalTeam2;
+                MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
 
                 MatchTeam1ExperiencePieChartCollection = new SeriesCollection()
                 {
@@ -495,7 +496,6 @@ namespace HeroesMatchTracker.Core.Models.GraphSummaryModels
                 // set formatters and labels
                 MatchTeamExperienceFormatter = value => new DateTime((long)value).ToString("mm:ss");
                 MatchTeamOverTimeStackPecentageFormatter = value => value.ToString("P");
-                MatchTeamExperiencePiePointLabel = value => string.Format("{0} ({1:P})", value.Y, value.Participation);
                 ExperienceTypesLabels = new[] { "Structures", "Passive", "Minions", "Mercenaries", "Heroes" };
             });
         }
