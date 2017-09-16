@@ -748,6 +748,7 @@
     <Resource Include="Icons\Talents\Leoric\storm_ui_icon_leoric_drainhope_var2.dds" />
     <Resource Include="Icons\Talents\Leoric\storm_ui_icon_leoric_skeletalswing_var2.dds" />
     <Resource Include="Icons\Talents\LtMorales\storm_temp_btn-upgrade-terran-moebiusreactor.dds" />
+    <Resource Include="Icons\Talents\Garrosh\storm_ui_icon_garrosh_intothefray.dds" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
