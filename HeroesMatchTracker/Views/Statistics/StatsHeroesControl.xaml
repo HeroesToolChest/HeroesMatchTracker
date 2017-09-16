@@ -95,8 +95,8 @@
                         <TextBlock Text="{Binding HeroKills}" />
                         <TextBlock Text="{Binding HeroAssists}" />
                         <TextBlock Text="{Binding HeroDeaths}" />
-                        <TextBlock Text="{Binding HeroKAD}" />
-                        <TextBlock Text="{Binding HeroKD}" />
+                        <TextBlock Text="{Binding HeroKAD, StringFormat=N1}" />
+                        <TextBlock Text="{Binding HeroKD, StringFormat=N1}" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="10 0 0 0" Width="200">
                         <lvc:Gauge From="0" To="100" Value="{Binding HeroKADRatio}" Height="85" />

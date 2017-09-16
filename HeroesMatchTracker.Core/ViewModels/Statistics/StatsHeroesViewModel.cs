@@ -392,8 +392,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 HeroKills = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Kills ?? 0;
                 HeroAssists = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Assists ?? 0;
                 HeroDeaths = StatsHeroesDataViewModel.StatsHeroesDataTotalCollection[0].Deaths ?? 0;
-                HeroKD = Utilities.CalculateWinPercentage(HeroKills, HeroDeaths);
-                HeroKAD = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroDeaths);
+                HeroKD = Utilities.CalculateWinPercentage(HeroKills, HeroDeaths) / 100;
+                HeroKAD = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroDeaths) / 100;
                 HeroKADRatio = Utilities.CalculateWinPercentage(HeroKills + HeroAssists, HeroKills + HeroAssists + HeroDeaths);
             }
 
