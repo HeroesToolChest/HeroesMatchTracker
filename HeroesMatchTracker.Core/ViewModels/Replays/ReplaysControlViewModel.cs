@@ -663,6 +663,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                 {
                     CurrentStatus = "Processing completed";
                     IsParsingReplaysOn = false;
+                    AreParserButtonsEnabled = true;
                     return;
                 }
                 else if (IsReplayWatch && currentCount == ReplayFileCollection.Count)
