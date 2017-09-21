@@ -2,6 +2,7 @@
 <Chen mana="Brew">
   <Level1>
     <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">storm_ui_icon_chen_breathoffire.dds</ChenAccumulatingFlame>
+    <ChenGroundingBrew name="Grounding Brew" desc="ChenFortifyingBrewGroundingBrewTalent">storm_ui_icon_chen_fortifyingbrew_a.dds</ChenGroundingBrew>
     <ChenFreshestIngredients name="Freshest Ingredients" desc="ChenFreshestIngredients">storm_ui_icon_chen_fortifyingbrew.dds</ChenFreshestIngredients>
     <ChenElusiveBrawler name="Elusive Brawler" desc="ChenElusiveBrawler" cooldown="25">storm_ui_icon_chen_elusivebrew.dds</ChenElusiveBrawler>
   </Level1>
