@@ -20,7 +20,7 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 
 ## Installation
 - Download and run HeroesMatchTrackerSetup.exe from the [releases](https://github.com/koliva8245/HeroesMatchTracker/releases) page
-  - NOTE: Windows will complain that the EXE is unsafe do to an unknown publisher
+
 ### Requirements
 - Windows 7 SP1 or higher (32* or 64 bit)
 - .NET Framework 4.6.2 or higher (4.6.2 will be installed during setup if not already installed)
