@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<GardenofTerror name="Garden of Terror">
+<GardenofTerror name="Garden of Terror" short="HauntedWoods">
   <Normal fontglow="#FFADD8E6">ui_ingame_mapmechanic_loadscreen_gardenofterror.jpg</Normal>
   <Aliases>Jardín del Terror,Ogród Grozy,Jardins de terreur,Garten der Ängste,Сад Ужасов,Giardino del Terrore,Jardim do Terror,PLACEHOLDER,공포의 정원,恐魔园,恐怖花園</Aliases>
 </GardenofTerror>

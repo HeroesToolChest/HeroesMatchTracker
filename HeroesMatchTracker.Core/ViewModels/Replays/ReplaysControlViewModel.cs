@@ -608,7 +608,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         // copy the contents of the replay file to the tempReplayFile file
                         File.Copy(originalfile.FilePath, tempReplayFile, overwrite: true);
 
-                        var replayParsed = ParseReplay(tempReplayFile, ignoreErrors: false, deleteFile: false);
+                        var replayParsed = ParseReplay(tempReplayFile, ignoreErrors: false, deleteFile: false, detailedBattleLobbyParsing: true);
                         originalfile.Build = replayParsed.Item2.ReplayBuild;
 
                         if (replayParsed.Item1 == ReplayParseResult.Success)

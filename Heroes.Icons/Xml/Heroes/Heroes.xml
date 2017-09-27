@@ -11,6 +11,12 @@
     <Roles>Assassin</Roles>
     <Aliases>亞拉瑞克,阿拉纳克,알라라크,Аларак</Aliases>
   </Alarak>
+
+  <Ana available="57797" attributeid="HANA" franchise="Overwatch" type="Ranged" difficulty="Hard"
+        portrait="storm_ui_ingame_heroselect_btn_ana.dds" loading="storm_ui_ingame_hero_loadingscreen_ana.dds" leader="storm_ui_ingame_hero_leaderboard_ana.dds">
+    <Roles>Support</Roles>
+    <Aliases>安娜</Aliases>
+  </Ana>
   
   <Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_anubarak.dds" loading="storm_ui_ingame_hero_loadingscreen_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">

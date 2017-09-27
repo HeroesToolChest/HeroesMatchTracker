@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CheckpointHanamura name="Checkpoint: Hanamura">
+<CheckpointHanamura name="Checkpoint: Hanamura" short="HanamuraPayloadPush">
   <Normal fontglow="#FFFF0000">ui_ingame_mapmechanic_loadscreen_hanamurapayload.jpg</Normal>
   <Aliases>Point de contrôle : Hanamura,Ponto de Controle: Hanamura,Punkt Kontrolny: Hanamura,Punto de control: Hanamura,Контрольная точка: Ханамура,检查点：花村,경유지: 하나무라</Aliases>
 </CheckpointHanamura>
