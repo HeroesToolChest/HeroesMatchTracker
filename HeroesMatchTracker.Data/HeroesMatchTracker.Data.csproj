@@ -233,11 +233,6 @@
     <Content Include="DLLs\MpqTool.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
       <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
       <Name>Heroes.Helpers</Name>
