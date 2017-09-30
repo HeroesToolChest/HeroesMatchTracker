@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Heroes.Helpers
 {
     public enum OverviewHeroStatOption
     {
-        HighestWinRate,
+        [Description("Highest Winrate")]
+        HighestWinrate,
+        [Description("Most Wins")]
         MostWins,
+        [Description("Most Deaths")]
         MostDeaths,
+        [Description("Most Kills")]
         MostKills,
+        [Description("Most Assists")]
         MostAssists,
     }
 
