@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Heroes.Helpers
 {
@@ -17,14 +18,12 @@ namespace Heroes.Helpers
         {
             public static List<string> GetOverviewHeroStatOptionList()
             {
-                List<string> list = new List<string>
+                List<string> list = new List<string>();
+
+                foreach (OverviewHeroStatOption option in Enum.GetValues(typeof(OverviewHeroStatOption)))
                 {
-                    "Highest Win Rate As",
-                    "Most Wins as",
-                    "Most Deaths as",
-                    "Most Kills as",
-                    "Most Assists as",
-                };
+                    list.Add(option.GetFriendlyName());
+                }
 
                 return list;
             }

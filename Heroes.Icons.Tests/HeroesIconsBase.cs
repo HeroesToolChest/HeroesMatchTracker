@@ -16,22 +16,22 @@ namespace Heroes.Icons.Tests
         public const string NoTalentIconPick = "storm_ui_ingame_leader_talent_unselected.png";
         public const string NoTalentIconFound = "storm_ui_icon_default.dds";
 
-        protected static string ImageMissingLogName => "_ImageMissingLog.txt";
-        protected static string ReferenceLogName => "_ReferenceNameLog.txt";
-        protected static string XmlErrorsLogName => "_XmlErrorsLog.txt";
-        protected static string LogFileName => "Logs";
-        protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
-        protected HeroesIcons HeroesIcons;
-
         public HeroesIconsBase()
         {
             FrameworkElement frameworkElement = new FrameworkElement(); // needed to load up the framework
             HeroesIcons = new HeroesIcons(false);
         }
 
+        protected static string ImageMissingLogName => "_ImageMissingLog.txt";
+        protected static string ReferenceLogName => "_ReferenceNameLog.txt";
+        protected static string XmlErrorsLogName => "_XmlErrorsLog.txt";
+        protected static string LogFileName => "Logs";
+        protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
+        protected HeroesIcons HeroesIcons { get; set; }
+
         protected bool NonValidCharsCheck(string text)
         {
-            if ((text.IndexOfAny("<>".ToCharArray()) != -1))
+            if (text.IndexOfAny("<>".ToCharArray()) != -1)
                 return true;
             else
                 return false;

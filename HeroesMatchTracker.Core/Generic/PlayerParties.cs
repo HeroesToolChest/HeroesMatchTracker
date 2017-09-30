@@ -1,5 +1,4 @@
-﻿using Heroes.Icons;
-using Heroes.Icons.Models;
+﻿using Heroes.Icons.Models;
 using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
 
@@ -17,8 +16,10 @@ namespace HeroesMatchTracker.Core
                 {
                     if (!parties.ContainsKey(player.PartyValue))
                     {
-                        var listOfMembers = new List<int>();
-                        listOfMembers.Add(player.PlayerNumber);
+                        var listOfMembers = new List<int>
+                        {
+                            player.PlayerNumber,
+                        };
                         parties.Add(player.PartyValue, listOfMembers);
                     }
                     else

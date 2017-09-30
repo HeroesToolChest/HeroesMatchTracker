@@ -14,7 +14,7 @@ namespace Heroes.Icons.Tests
             List<string> assertMessages = new List<string>();
             int segment = 4;
 
-            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => Int32.Parse(x)))
+            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => int.Parse(x)))
             {
                 HeroesIcons.LoadHeroesBuild(build);
 
@@ -84,10 +84,10 @@ namespace Heroes.Icons.Tests
         public void HeroNameTranslationTest()
         {
             HeroesIcons.Heroes().HeroNameTranslation("АБАТУР", out string heroEnglish);
-            Assert.IsTrue("Abathur" == heroEnglish);
+            Assert.IsTrue(heroEnglish == "Abathur");
 
             Assert.IsTrue(HeroesIcons.Heroes().HeroNameTranslation("Abathur", out heroEnglish));
-            Assert.IsTrue("Abathur" == heroEnglish);
+            Assert.IsTrue(heroEnglish == "Abathur");
         }
 
         [TestMethod]

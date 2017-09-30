@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.Helpers;
+using System;
 using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Models

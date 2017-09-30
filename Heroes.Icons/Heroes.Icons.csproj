@@ -84,7 +84,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\EnumerationExtensions.cs" />
     <Compile Include="Models\Hero.cs" />
     <Compile Include="Models\HeroDifficulty.cs" />
     <Compile Include="Models\HeroMana.cs" />
@@ -7787,6 +7786,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
+      <Project>{de184dee-a3fe-438c-a016-bc0f31235df9}</Project>
+      <Name>Heroes.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

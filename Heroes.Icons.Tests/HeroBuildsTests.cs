@@ -15,7 +15,7 @@ namespace Heroes.Icons.Tests
             List<string> assertMessages = new List<string>();
             int segment = 5;
 
-            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => Int32.Parse(x)))
+            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => int.Parse(x)))
             {
                 HeroesIcons.LoadHeroesBuild(build);
 
@@ -48,15 +48,15 @@ namespace Heroes.Icons.Tests
                             talent1++;
                         else if (talent.Tier == TalentTier.Level4)
                             talent4++;
-                        else if(talent.Tier == TalentTier.Level7)
+                        else if (talent.Tier == TalentTier.Level7)
                             talent7++;
-                        else if(talent.Tier == TalentTier.Level10)
+                        else if (talent.Tier == TalentTier.Level10)
                             talent10++;
-                        else if(talent.Tier == TalentTier.Level13)
+                        else if (talent.Tier == TalentTier.Level13)
                             talent13++;
-                        else if(talent.Tier == TalentTier.Level16)
+                        else if (talent.Tier == TalentTier.Level16)
                             talent16++;
-                        else if(talent.Tier == TalentTier.Level20)
+                        else if (talent.Tier == TalentTier.Level20)
                             talent20++;
 
                         BitmapImage talentImage = talent.GetIcon();

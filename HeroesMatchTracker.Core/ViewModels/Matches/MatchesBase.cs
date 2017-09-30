@@ -49,7 +49,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             ShowMatchSummaryButtonEnabled = true;
 
-            SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeasonOption = SeasonList[0];
 

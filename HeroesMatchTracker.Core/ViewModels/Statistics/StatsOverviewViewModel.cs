@@ -55,7 +55,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             LoadingOverlayWindow = loadingOverlayWindow;
 
             SeasonList.Add(InitialSeasonListOption);
-            SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeason = SeasonList[0];
 
