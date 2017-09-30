@@ -364,8 +364,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 foreach (var gameMode in SelectedGameModes)
                 {
-                    if (Enum.TryParse(gameMode, out GameMode selectedGameMode))
-                        gameModes |= selectedGameMode;
+                    gameModes |= gameMode.ConvertToEnum<GameMode>();
                 }
             }
 

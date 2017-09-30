@@ -340,12 +340,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             HeroesIcons.LoadLatestHeroesBuild();
 
-            Enum.TryParse(SelectedSeason, out Season selectedSeason);
-            Enum.TryParse(SelectedHeroStat, out OverviewHeroStatOption selectedStatOption);
+            Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
 
             GameMode selectedGameModes = SetSelectedGameModes();
 
-            await SetHeroStats(selectedSeason, selectedGameModes, selectedStatOption);
+            await SetHeroStats(selectedSeason, selectedGameModes, SelectedHeroStat.ConvertToEnum<OverviewHeroStatOption>());
             await SetMapStats(selectedSeason, selectedGameModes);
             await SetRoleStats(selectedSeason, selectedGameModes);
             SetOverallStats();

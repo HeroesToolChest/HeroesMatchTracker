@@ -202,7 +202,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
-            Enum.TryParse(SelectedSeason, out Season selectedSeason);
+            Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
 
             var heroesList = HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
             foreach (var hero in heroesList)
