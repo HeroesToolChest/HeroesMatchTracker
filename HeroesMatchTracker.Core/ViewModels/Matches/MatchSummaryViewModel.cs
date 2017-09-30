@@ -425,7 +425,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
             SetBackgroundImage(replayMatch.MapName);
             MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
-            MatchTitle = $"{replayMatch.MapName} - {HeroesHelpers.GameModes.GetStringFromGameMode(replayMatch.GameMode)} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
+            MatchTitle = $"{replayMatch.MapName} - {replayMatch.GameMode.GetFriendlyName()} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
             MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
 
             // get players info

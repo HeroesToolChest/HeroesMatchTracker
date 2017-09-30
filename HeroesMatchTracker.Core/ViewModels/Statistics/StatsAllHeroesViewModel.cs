@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
-using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using Microsoft.Practices.ServiceLocation;
@@ -204,7 +203,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
-            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
+            Enum.TryParse(SelectedSeason, out Season selectedSeason);
 
             var heroesList = HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
             foreach (var hero in heroesList)
@@ -290,27 +289,27 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             string gm = gameMode.ToString();
             string gmShort = string.Empty;
 
-            switch (gm)
+            switch (gameMode)
             {
-                case "QuickMatch":
+                case GameMode.QuickMatch:
                     gmShort = "QM";
                     break;
-                case "UnrankedDraft":
+                case GameMode.UnrankedDraft:
                     gmShort = "UD";
                     break;
-                case "HeroLeague":
+                case GameMode.HeroLeague:
                     gmShort = "HL";
                     break;
-                case "TeamLeague":
+                case GameMode.TeamLeague:
                     gmShort = "TL";
                     break;
-                case "Custom":
+                case GameMode.Custom:
                     gmShort = "C";
                     break;
-                case "Brawl":
+                case GameMode.Brawl:
                     gmShort = "B";
                     break;
-                case "TryMe":
+                case GameMode.AllGameMode:
                     gmShort = "Total";
                     break;
             }
@@ -396,7 +395,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsTotalSelected)
             {
-                CreateGameModeColumns(GameMode.TryMe);
+                CreateGameModeColumns(GameMode.AllGameMode);
             }
         }
 

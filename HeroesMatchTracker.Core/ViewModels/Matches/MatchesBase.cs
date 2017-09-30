@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
-using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
@@ -9,6 +8,7 @@ using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Replays;
 using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -266,6 +266,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
         private void LoadMatchList()
         {
+            Enum.TryParse(SelectedSeasonOption, out Season selectedSeason);
+
             ReplayFilter filter = new ReplayFilter
             {
                 IsGivenBattleTagOnlyChecked = IsGivenBattleTagOnlyChecked,
@@ -276,7 +278,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 SelectedGameTimeOption = SelectedGameTimeOption,
                 SelectedMapOption = SelectedMapOption,
                 SelectedReplayId = SelectedReplayIdValue,
-                SelectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeasonOption),
+                SelectedSeason = selectedSeason,
                 BuildOptionsList = ReplayBuildsList,
                 GameDateOptionList = GameDateList,
                 GameTimeOptionList = GameTimeList,

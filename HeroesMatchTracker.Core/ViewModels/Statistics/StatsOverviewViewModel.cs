@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
 using Heroes.Icons.Models;
-using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -302,7 +301,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         // just for the Hero Stats datagrid, switch data according to selected hero stat
         private void QuerySelectedHeroStat()
         {
-            OverviewHeroStatOption selectedStatOption = HeroesHelpers.EnumParser.ConvertHeroStatOptionToEnum(SelectedHeroStat);
+            Enum.TryParse(SelectedHeroStat, out OverviewHeroStatOption selectedStatOption);
 
             IsHeroStatPercentageDataGridVisible = false;
             IsHeroStatDataGridVisible = false;
@@ -342,8 +341,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             HeroesIcons.LoadLatestHeroesBuild();
 
-            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
-            OverviewHeroStatOption selectedStatOption = HeroesHelpers.EnumParser.ConvertHeroStatOptionToEnum(SelectedHeroStat);
+            Enum.TryParse(SelectedSeason, out Season selectedSeason);
+            Enum.TryParse(SelectedHeroStat, out OverviewHeroStatOption selectedStatOption);
 
             GameMode selectedGameModes = SetSelectedGameModes();
 

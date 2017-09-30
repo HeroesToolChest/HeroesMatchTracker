@@ -1,9 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using Heroes.Helpers;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Data;
 using HeroesMatchTracker.Data.Models.Settings;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -48,7 +48,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             get => ((Region)_selectedProfileRegion).ToString();
             set
             {
-                _selectedProfileRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringToEnum(value);
+                Enum.TryParse(value, out Region region);
+                _selectedProfileRegion = (int)region;
                 RaisePropertyChanged();
             }
         }
@@ -124,10 +125,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                 return;
             }
 
+            Enum.TryParse(SelectedProfileRegion, out Region region);
+
             UserProfile profile = new UserProfile()
             {
                 UserBattleTagName = ProfileBattleTag.Trim(),
-                UserRegion = (int)HeroesHelpers.EnumParser.ConvertRegionStringToEnum(SelectedProfileRegion),
+                UserRegion = (int)region,
             };
 
             if (Database.SettingsDb().UserProfiles.IsExistingUserProfile(profile))
@@ -176,9 +179,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             var items = SelectedUserBattleTag.Split('|');
 
             if (items.Length == 2)
-                SelectedUserProfile.SetProfile(items[0].Trim(), (int)HeroesHelpers.EnumParser.ConvertRegionStringToEnum(items[1].Trim()));
+            {
+                Enum.TryParse(items[1].Trim(), out Region region);
+                SelectedUserProfile.SetProfile(items[0].Trim(), (int)region);
+            }
             else
+            {
                 SelectedUserProfile.SetProfile(string.Empty, 0);
+            }
         }
 
         private void SetUserProfileList()

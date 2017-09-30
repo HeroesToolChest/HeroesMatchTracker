@@ -1,6 +1,5 @@
 ﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Heroes.Helpers;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -39,7 +38,8 @@ namespace HeroesMatchTracker.Core.ReplayUploads
             if (result == "Maintenance")
                 throw new MaintenanceException("Maintenance");
 
-            return HeroesHelpers.EnumParser.ConvertReplayParseResultStringToEnum(result);
+            Enum.TryParse(result, out ReplayParseResult returnResult);
+            return returnResult;
         }
     }
 }

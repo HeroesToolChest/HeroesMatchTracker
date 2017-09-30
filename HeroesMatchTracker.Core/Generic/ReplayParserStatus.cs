@@ -3,6 +3,6 @@
     public enum ReplayParserStatus
     {
         Parsing,
-        Stopped
+        Stopped,
     }
 }

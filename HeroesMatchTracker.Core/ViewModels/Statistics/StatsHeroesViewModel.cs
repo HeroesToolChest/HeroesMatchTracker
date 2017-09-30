@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
 using Heroes.Icons.Models;
-using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using Microsoft.Practices.ServiceLocation;
@@ -62,7 +61,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsAwardsChecked = true;
 
             SeasonList.Add(InitialSeasonListOption);
-            SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeason = SeasonList[0];
 
@@ -348,7 +346,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             HeroesIcons.LoadLatestHeroesBuild();
 
-            Season selectedSeason = HeroesHelpers.EnumParser.ConvertSeasonStringToEnum(SelectedSeason);
+            Enum.TryParse(SelectedSeason, out Season selectedSeason);
             Hero hero = HeroesIcons.Heroes().GetHeroInfo(SelectedHero);
 
             SelectedHeroPortrait = hero.GetPortrait();
@@ -360,13 +358,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             GameMode gameModes = GameMode.Unknown;
             if (SelectedGameModes.Count <= 0)
             {
-                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.HeroLeague | GameMode.TeamLeague;
+                gameModes = GameMode.AllGameMode;
             }
             else
             {
                 foreach (var gameMode in SelectedGameModes)
                 {
-                    gameModes |= HeroesHelpers.EnumParser.ConvertGameModeStringToEnum(gameMode);
+                    if (Enum.TryParse(gameMode, out GameMode selectedGameMode))
+                        gameModes |= selectedGameMode;
                 }
             }
 

@@ -1,5 +1,4 @@
 ﻿using Heroes.Helpers;
-using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Models.Replays;
 using System;

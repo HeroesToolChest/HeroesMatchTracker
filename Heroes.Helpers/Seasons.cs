@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Heroes.Helpers
 {
     [Flags]
     public enum Season
     {
+        [Description("Lifetime")]
         Lifetime = 0,
+        [Description("Preseason")]
         Preseason = 1 << 0,
+        [Description("2016 Season 1")]
         Year2016Season1 = 1 << 1,
+        [Description("2016 Season 2")]
         Year2016Season2 = 1 << 2,
+        [Description("2016 Season 3")]
         Year2016Season3 = 1 << 3,
+        [Description("2017 Season 1")]
         Year2017Season1 = 1 << 4,
+        [Description("2017 Season 2")]
         Year2017Season2 = 1 << 5,
+        [Description("2017 Season 3")]
         Year2017Season3 = 1 << 6,
     }
 
@@ -20,54 +29,16 @@ namespace Heroes.Helpers
     {
         public static class Seasons
         {
-            public const string Lifetime = "Lifetime";
-            public const string Preseason = "Preseason";
-            public const string Year2016Season1 = "2016 Season 1";
-            public const string Year2016Season2 = "2016 Season 2";
-            public const string Year2016Season3 = "2016 Season 3";
-            public const string Year2017Season1 = "2017 Season 1";
-            public const string Year2017Season2 = "2017 Season 2";
-            public const string Year2017Season3 = "2017 Season 3";
-
             public static List<string> GetSeasonList()
             {
-                List<string> list = new List<string>
+                List<string> list = new List<string>();
+
+                foreach (Season season in Enum.GetValues(typeof(Season)))
                 {
-                    Preseason,
-                    Year2016Season1,
-                    Year2016Season2,
-                    Year2016Season3,
-                    Year2017Season1,
-                    Year2017Season2,
-                    Year2017Season3,
-                };
+                    list.Add(season.GetFriendlyName());
+                }
 
                 return list;
-            }
-
-            public static string GetStringFromSeason(Season season)
-            {
-                switch (season)
-                {
-                    case Season.Lifetime:
-                        return Lifetime;
-                    case Season.Preseason:
-                        return Preseason;
-                    case Season.Year2016Season1:
-                        return Year2016Season1;
-                    case Season.Year2016Season2:
-                        return Year2016Season2;
-                    case Season.Year2016Season3:
-                        return Year2016Season3;
-                    case Season.Year2017Season1:
-                        return Year2017Season1;
-                    case Season.Year2017Season2:
-                        return Year2017Season2;
-                    case Season.Year2017Season3:
-                        return Year2017Season3;
-                    default:
-                        throw new ArgumentException($"paramter {season} not found", nameof(season));
-                }
             }
         }
     }

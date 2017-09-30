@@ -1,4 +1,4 @@
-﻿using Heroes.ReplayParser;
+﻿using Heroes.Helpers;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -8,7 +8,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
     public class AllMatchesViewModel : MatchesBase
     {
         public AllMatchesViewModel(IInternalService internalService, IWebsiteService website, IMatchesTabService matchesTab)
-            : base(internalService, website, matchesTab, GameMode.Brawl | GameMode.Custom | GameMode.HeroLeague | GameMode.QuickMatch | GameMode.TeamLeague | GameMode.UnrankedDraft, MatchesTab.AllMatches)
+            : base(internalService, website, matchesTab, GameMode.AllGameMode, MatchesTab.AllMatches)
         { }
 
         public void SendSearchData(MatchesDataMessage matchesDataMessage)

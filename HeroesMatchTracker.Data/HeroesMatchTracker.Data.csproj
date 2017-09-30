@@ -107,7 +107,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -234,7 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
-      <Project>{94956c0e-57a6-4357-b53f-a4f8fd7e6d58}</Project>
+      <Project>{de184dee-a3fe-438c-a016-bc0f31235df9}</Project>
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">

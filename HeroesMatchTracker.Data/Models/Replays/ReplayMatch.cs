@@ -1,6 +1,6 @@
 namespace HeroesMatchTracker.Data.Models.Replays
 {
-    using Heroes.ReplayParser;
+    using Heroes.Helpers;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

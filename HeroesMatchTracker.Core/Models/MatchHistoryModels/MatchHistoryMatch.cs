@@ -96,7 +96,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 }
             }
 
-            GameMode = HeroesHelpers.GameModes.GetStringFromGameMode(ReplayMatch.GameMode);
+            GameMode = ReplayMatch.GameMode.GetFriendlyName();
             MapName = ReplayMatch.MapName;
             TimeStamp = ReplayMatch.TimeStamp.Value;
             GameLength = ReplayMatch.ReplayLength;

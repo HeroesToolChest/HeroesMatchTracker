@@ -1,4 +1,4 @@
-﻿using Heroes.ReplayParser;
+﻿using Heroes.Helpers;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;

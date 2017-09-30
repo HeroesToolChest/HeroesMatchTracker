@@ -93,7 +93,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplayMatch replayMatch = new ReplayMatch
             {
                 Frames = Replay.Frames,
-                GameMode = Replay.GameMode,
+                GameMode = (Heroes.Helpers.GameMode)Replay.GameMode,
                 GameSpeed = Replay.GameSpeed.ToString(),
                 IsGameEventsParsed = Replay.IsGameEventsParsedSuccessfully,
                 MapName = mapName,
@@ -152,7 +152,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 else
                     playerId = ReplaysDb.HotsPlayer.CreateRecord(ReplaysContext, hotsPlayer);
 
-                if (player.value.Character == null && Replay.GameMode == GameMode.Custom)
+                if (player.value.Character == null && Replay.GameMode == Heroes.ReplayParser.GameMode.Custom)
                 {
                     player.value.Team = 4;
                     player.value.Character = "None";
@@ -343,7 +343,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
         private void MatchTeamBans()
         {
-            if (Replay.GameMode == GameMode.UnrankedDraft || Replay.GameMode == GameMode.HeroLeague || Replay.GameMode == GameMode.TeamLeague || Replay.GameMode == GameMode.Custom)
+            if (Replay.GameMode == Heroes.ReplayParser.GameMode.UnrankedDraft || Replay.GameMode == Heroes.ReplayParser.GameMode.HeroLeague ||
+                Replay.GameMode == Heroes.ReplayParser.GameMode.TeamLeague || Replay.GameMode == Heroes.ReplayParser.GameMode.Custom)
             {
                 if (Replay.TeamHeroBans != null)
                 {
