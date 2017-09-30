@@ -49,7 +49,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsBrawlSelected = false;
 
             SeasonList.Add(InitialSeasonListOption);
-            SeasonList.Add("Lifetime");
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeason = SeasonList[0];
         }

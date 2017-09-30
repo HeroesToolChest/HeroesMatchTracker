@@ -175,9 +175,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     query = query.Where(x => x.ReplayBuild == build);
                 }
 
-                if (replayFilter.SelectedGameTimeOption != replayFilter.GameTimeOptionList[0])
+                if (replayFilter.SelectedGameTimeOption != FilterGameTimeOption.Any)
                 {
-                    var value = HeroesHelpers.GameDates.GetGameTimeModifiedTime(replayFilter.SelectedGameTimeOption);
+                    var value = HeroesHelpers.GameDateFilters.GetGameTimeModifiedTime(replayFilter.SelectedGameTimeOption);
 
                     if (value.Item1 == "less than")
                         query = query.Where(x => x.ReplayLengthTicks < value.Item2.Ticks);
@@ -185,9 +185,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         query = query.Where(x => x.ReplayLengthTicks > value.Item2.Ticks);
                 }
 
-                if (replayFilter.SelectedGameDateOption != replayFilter.GameDateOptionList[0])
+                if (replayFilter.SelectedGameDateOption != FilterGameDateOption.Any)
                 {
-                    var value = HeroesHelpers.GameDates.GetGameDateModifiedDate(replayFilter.SelectedGameDateOption);
+                    var value = HeroesHelpers.GameDateFilters.GetGameDateModifiedDate(replayFilter.SelectedGameDateOption);
 
                     if (value.Item1 == "last")
                         query = query.Where(x => x.TimeStamp >= value.Item2);

@@ -305,7 +305,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsHeroStatPercentageDataGridVisible = false;
             IsHeroStatDataGridVisible = false;
 
-            if (selectedStatOption == OverviewHeroStatOption.HighestWinRate)
+            if (selectedStatOption == OverviewHeroStatOption.HighestWinrate)
             {
                 IsHeroStatPercentageDataGridVisible = true;
             }
@@ -431,7 +431,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsHeroStatDataGridVisible = false;
 
             // set according to selected hero stat
-            if (statOption == OverviewHeroStatOption.HighestWinRate)
+            if (statOption == OverviewHeroStatOption.HighestWinrate)
             {
                 IsHeroStatPercentageDataGridVisible = true;
                 await Application.Current.Dispatcher.InvokeAsync(() => { HeroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>(heroStatPercentageCollection.OrderByDescending(x => x.Value)); });

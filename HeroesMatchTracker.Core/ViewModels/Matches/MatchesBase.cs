@@ -52,11 +52,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SeasonList.AddRange(HeroesHelpers.Seasons.GetSeasonList());
             SelectedSeasonOption = SeasonList[0];
 
-            GameTimeList = HeroesHelpers.GameDates.GameTimeList;
-            SelectedGameTimeOption = GameTimeList[0];
+            GameTimeList = HeroesHelpers.GameDateFilters.GameTimeList;
+            SelectedGameTimeOption = FilterGameTimeOption.Any.GetFriendlyName();
 
-            GameDateList = HeroesHelpers.GameDates.GameDateList;
-            SelectedGameDateOption = GameDateList[0];
+            GameDateList = HeroesHelpers.GameDateFilters.GameDateList;
+            SelectedGameDateOption = FilterGameDateOption.Any.GetFriendlyName();
 
             MapsList.Add("Any");
             MapsList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
@@ -273,14 +273,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 SelectedBattleTag = SelectedPlayerBattleTag,
                 SelectedBuildOption = SelectedBuildOption,
                 SelectedCharacter = SelectedCharacter,
-                SelectedGameDateOption = SelectedGameDateOption,
-                SelectedGameTimeOption = SelectedGameTimeOption,
+                SelectedGameDateOption = SelectedGameDateOption.ConvertToEnum<FilterGameDateOption>(),
+                SelectedGameTimeOption = SelectedGameTimeOption.ConvertToEnum<FilterGameTimeOption>(),
                 SelectedMapOption = SelectedMapOption,
                 SelectedReplayId = SelectedReplayIdValue,
                 SelectedSeason = selectedSeason,
                 BuildOptionsList = ReplayBuildsList,
-                GameDateOptionList = GameDateList,
-                GameTimeOptionList = GameTimeList,
                 HeroesList = HeroesList,
                 MapOptionsList = MapsList,
             };
@@ -340,8 +338,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedReplayIdValue = 0;
             SelectedMapOption = MapsList[0];
             SelectedBuildOption = ReplayBuildsList[0];
-            SelectedGameTimeOption = GameTimeList[0];
-            SelectedGameDateOption = GameDateList[0];
+            SelectedGameTimeOption = FilterGameTimeOption.Any.GetFriendlyName();
+            SelectedGameDateOption = FilterGameDateOption.Any.GetFriendlyName();
             SelectedPlayerBattleTag = string.Empty;
             SelectedCharacter = HeroesList[0];
             IsGivenBattleTagOnlyChecked = false;

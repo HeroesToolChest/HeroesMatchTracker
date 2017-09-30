@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Heroes.Helpers
 {
@@ -25,15 +26,35 @@ namespace Heroes.Helpers
             MemberInfo[] memberInfo = type.GetMember(enumerationValue.ToString());
             if (memberInfo != null && memberInfo.Length > 0)
             {
-                object[] attrs = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                object[] attributes = memberInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-                if (attrs != null && attrs.Length > 0)
+                if (attributes != null && attributes.Length > 0)
                 {
-                    return ((DescriptionAttribute)attrs[0]).Description;
+                    return ((DescriptionAttribute)attributes[0]).Description;
                 }
             }
 
             return enumerationValue.ToString();
+        }
+
+        /// <summary>
+        /// Convert the string to an Enumeration type
+        /// </summary>
+        /// <typeparam name="T">The Enumeration type to be converted to</typeparam>
+        /// <param name="value">The stirng to be converted</param>
+        /// <returns></returns>
+        public static T ConvertToEnum<T>(this string value)
+            where T : struct
+        {
+            if (string.IsNullOrEmpty(value))
+                throw new ArgumentNullException(nameof(value));
+
+            value = Regex.Replace(value, @"\s+", string.Empty);
+
+            if (Enum.TryParse(value, true, out T replayParseResultEnum))
+                return replayParseResultEnum;
+            else
+                throw new ArgumentException($"paramter {value} not found", nameof(value));
         }
     }
 }
