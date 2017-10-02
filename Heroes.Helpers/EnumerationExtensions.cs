@@ -17,7 +17,7 @@ namespace Heroes.Helpers
             where T : struct
         {
             Type type = enumerationValue.GetType();
-            if (!type.IsEnum)
+            if (!type.GetTypeInfo().IsEnum)
             {
                 throw new ArgumentException("EnumerationValue must be of Enum type", "enumerationValue");
             }

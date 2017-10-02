@@ -1,6 +1,6 @@
 ﻿namespace Heroes.Icons.Models
 {
-    public enum PartyIconColor : uint
+    public enum PartyIconColor
     {
         Purple = 0,
         Yellow = 1,

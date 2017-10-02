@@ -219,8 +219,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
                 double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
 
-                var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
-                mapImage.Freeze();
+                //var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes();
 
@@ -240,10 +239,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     statsHeroesGameModes.Experience = experience;
                     statsHeroesGameModes.MercsCaptured = mercsCaptured;
                     statsHeroesGameModes.GameTime = gameTime;
+                    statsHeroesGameModes.MapName = map;
+                    statsHeroesGameModes.MapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
                 }
 
-                statsHeroesGameModes.MapName = map;
-                statsHeroesGameModes.MapImage = mapImage;
                 Application.Current.Dispatcher.Invoke(() => StatsHeroesDataCollection.Add(statsHeroesGameModes));
             }
 
@@ -318,8 +317,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     gameTimeAverage = TimeSpan.FromSeconds(Math.Round(map.GameTime.Value.TotalSeconds / totalGames.Value, 0));
                 }
 
-                var mapImage = map.MapImage;
-                mapImage.Freeze();
+                //var mapImage = map.MapImage;
+                //mapImage.Freeze();
 
                 StatsHeroesGameModes averageMatch = new StatsHeroesGameModes
                 {
@@ -335,9 +334,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     Experience = experienceAverage,
                     MercsCaptured = mercsCapturedAverage,
                     GameTime = gameTimeAverage,
-                };
+                    MapImage = map.MapImage,
+            };
 
-                averageMatch.MapImage = mapImage;
                 Application.Current.Dispatcher.Invoke(() => StatsHeroesDataAverageCollection.Add(averageMatch));
             }
 
@@ -391,7 +390,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesTalents talentPick = new StatsHeroesTalents
                 {
                     TalentName = talent.Name,
-                    TalentImage = talent.GetIcon(),
+                    TalentImage = talent.Icon,
                     TalentSubInfo = talent.Tooltip.GetTalentSubInfo(),
                     TalentShortTooltip = talent.Tooltip.Short,
                     TalentFullTooltip = talent.Tooltip.Full,
@@ -426,7 +425,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 var awardImage = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(award.ToString(), MVPScoreScreenColor.Blue, out string awardName);
-                awardImage.Freeze();
+                //awardImage.Freeze();
 
                 StatsHeroesAwards matchAwards = new StatsHeroesAwards
                 {
@@ -437,9 +436,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,
                     TeamLeague = rowTotal > 0 ? teamLeagueAwards : (int?)null,
                     Total = rowTotal > 0 ? rowTotal : (int?)null,
-                };
+                    AwardImage = awardImage,
+            };
 
-                matchAwards.AwardImage = awardImage;
                 Application.Current.Dispatcher.Invoke(() => StatsHeroesAwardsCollection.Add(matchAwards));
             }
 

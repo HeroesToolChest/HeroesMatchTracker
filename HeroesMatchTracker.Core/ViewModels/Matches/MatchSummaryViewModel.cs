@@ -13,10 +13,10 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 
 namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
@@ -510,10 +510,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 await Application.Current.Dispatcher.InvokeAsync(
                     () =>
                 {
-                    MatchHeroBans.Team0Ban0 = bannedHero1.GetPortrait();
-                    MatchHeroBans.Team0Ban1 = bannedHero2.GetPortrait();
-                    MatchHeroBans.Team1Ban0 = bannedHero3.GetPortrait();
-                    MatchHeroBans.Team1Ban1 = bannedHero4.GetPortrait();
+                    MatchHeroBans.Team0Ban0 = bannedHero1.HeroPortrait;
+                    MatchHeroBans.Team0Ban1 = bannedHero2.HeroPortrait;
+                    MatchHeroBans.Team1Ban0 = bannedHero3.HeroPortrait;
+                    MatchHeroBans.Team1Ban1 = bannedHero4.HeroPortrait;
                 });
 
                 MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1.Roles.FirstOrDefault()}";

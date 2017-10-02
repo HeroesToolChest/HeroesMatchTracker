@@ -1,6 +1,5 @@
 ﻿using Heroes.Helpers;
 using System;
-using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Models
 {
@@ -33,24 +32,9 @@ namespace Heroes.Icons.Models
 
         public TalentTier Tier { get; set; }
 
-        public Uri IconUri { get; set; }
+        public Uri Icon { get; set; }
 
         public TalentTooltip Tooltip { get; set; } = new TalentTooltip();
-
-        /// <summary>
-        /// Returns the BitmapImage of the icon uri
-        /// </summary>
-        /// <returns></returns>
-        public BitmapImage GetIcon()
-        {
-            if (IconUri == null)
-                return null;
-
-            BitmapImage image = new BitmapImage(IconUri);
-            image.Freeze();
-
-            return image;
-        }
 
         public override string ToString()
         {

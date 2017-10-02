@@ -237,7 +237,7 @@
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
-      <Project>{4168d60d-d0eb-40a2-9304-d38f14106a48}</Project>
+      <Project>{5a3636a4-d771-4c7e-9897-0ef94c208a78}</Project>
       <Name>Heroes.Icons</Name>
     </ProjectReference>
   </ItemGroup>

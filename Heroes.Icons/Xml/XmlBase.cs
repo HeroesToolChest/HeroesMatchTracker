@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
@@ -47,7 +49,7 @@ namespace Heroes.Icons.Xml
                 if (!ValidateRequiredFiles())
                     return;
 
-                using (XmlTextReader reader = new XmlTextReader($@"Xml\{XmlFolder}\{XmlParentFile}"))
+                using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlFolder, XmlParentFile), GetXmlReaderSettings()))
                 {
                     reader.ReadStartElement();
 
@@ -97,7 +99,7 @@ namespace Heroes.Icons.Xml
         {
             if (Logger)
             {
-                using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
+                using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ImageMissingLogName), FileMode.Append)))
                 {
                     writer.WriteLine($"[{CurrentBuild}] {message}");
                 }
@@ -108,7 +110,7 @@ namespace Heroes.Icons.Xml
         {
             if (Logger)
             {
-                using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
+                using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ReferenceLogName), FileMode.Append)))
                 {
                     writer.WriteLine($"[{CurrentBuild}] {message}");
                 }
@@ -133,6 +135,22 @@ namespace Heroes.Icons.Xml
             {
                 return null;
             }
+        }
+
+        protected XmlReaderSettings GetXmlReaderSettings()
+        {
+            XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
+            {
+                IgnoreComments = true,
+                IgnoreWhitespace = true
+            };
+
+            return xmlReaderSettings;
+        }
+
+        protected Color ConvertHexToColor(string hex)
+        {
+            return Color.FromArgb(int.Parse(hex.TrimStart('#'), NumberStyles.AllowHexSpecifier));
         }
     }
 }

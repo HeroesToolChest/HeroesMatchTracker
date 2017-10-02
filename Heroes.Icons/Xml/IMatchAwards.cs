@@ -1,6 +1,6 @@
 ﻿using Heroes.Icons.Models;
+using System;
 using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Xml
 {
@@ -13,7 +13,7 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        BitmapImage GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName);
+        Uri GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName);
 
         /// <summary>
         /// Returns the ScoreScreen award BitmapImage of the given mvpAwardType and color
@@ -22,7 +22,7 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        BitmapImage GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName);
+        Uri GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName);
 
         /// <summary>
         /// Returns the description of the award

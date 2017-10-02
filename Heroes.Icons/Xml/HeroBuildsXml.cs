@@ -115,7 +115,7 @@ namespace Heroes.Icons.Xml
                     Name = "No pick",
                     IsIconGeneric = true,
                     IsGeneric = true,
-                    IconUri = SetHeroTalentUri(string.Empty, NoTalentIconPick, true),
+                    Icon = SetHeroTalentUri(string.Empty, NoTalentIconPick, true),
                 };
             }
 
@@ -126,7 +126,7 @@ namespace Heroes.Icons.Xml
                 return new Talent
                 {
                     Name = talentReferenceName,
-                    IconUri = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
+                    Icon = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
                 };
             }
 
@@ -139,7 +139,7 @@ namespace Heroes.Icons.Xml
             return new Talent
             {
                 Name = talentReferenceName,
-                IconUri = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
+                Icon = SetHeroTalentUri(string.Empty, NoTalentIconFound, true),
             };
         }
 
@@ -270,7 +270,7 @@ namespace Heroes.Icons.Xml
                                                 IsIconGeneric = isGeneric,
                                                 IsGeneric = isGenericTalent,
                                                 TooltipDescriptionName = desc,
-                                                IconUri = SetHeroTalentUri(heroName, reader.Value, isGeneric),
+                                                Icon = SetHeroTalentUri(heroName, reader.Value, isGeneric),
                                                 Tier = tier,
                                                 Tooltip = new TalentTooltip
                                                 {

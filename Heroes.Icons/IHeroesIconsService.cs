@@ -1,7 +1,7 @@
 ﻿using Heroes.Icons.Models;
 using Heroes.Icons.Xml;
+using System;
 using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons
 {
@@ -26,10 +26,10 @@ namespace Heroes.Icons
         IMapBackgrounds MapBackgrounds();
         IHomeScreens HomeScreens();
 
-        BitmapImage GetPartyIcon(PartyIconColor partyIconColor);
-        BitmapImage GetOtherIcon(OtherIcon otherIcon);
-        BitmapImage GetRoleIcon(HeroRole heroRole);
-        BitmapImage GetFranchiseIcon(HeroFranchise heroFranchise);
+        Uri GetPartyIcon(PartyIconColor partyIconColor);
+        Uri GetOtherIcon(OtherIcon otherIcon);
+        Uri GetRoleIcon(HeroRole heroRole);
+        Uri GetFranchiseIcon(HeroFranchise heroFranchise);
         bool IsNonSupportHeroWithHealingStat(string realHeroName);
         List<string> GetListOfHeroesBuilds();
     }

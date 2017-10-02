@@ -63,9 +63,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public string AccountLevel { get; private set; }
         public string HeroDescriptionSubInfo { get; private set; }
         public Region PlayerRegion { get; private set; }
-        public BitmapImage LeaderboardPortrait { get; private set; }
-        public BitmapImage MvpAward { get; private set; }
-        public BitmapImage PartyIcon { get; private set; }
+        public Uri LeaderboardPortrait { get; private set; }
+        public Uri MvpAward { get; private set; }
+        public Uri PartyIcon { get; private set; }
         public PlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
 
@@ -112,7 +112,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
             Hero hero = HeroesIcons.Heroes().GetHeroInfo(Player.Character);
 
-            LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
+            LeaderboardPortrait = Player.Character != "None" ? hero.LeaderboardPortrait : null;
             Silenced = Player.IsSilenced;
             CharacterName = hero.Name;
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;

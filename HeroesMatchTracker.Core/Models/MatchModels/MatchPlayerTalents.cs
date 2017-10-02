@@ -1,9 +1,8 @@
-﻿using Heroes.Icons;
-using Heroes.Icons.Models;
+﻿using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
+using System;
 using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
 {
@@ -17,7 +16,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             : base(internalService, website, player)
         { }
 
-        public List<BitmapImage> Talents { get; private set; } = new List<BitmapImage>();
+        public List<Uri> Talents { get; private set; } = new List<Uri>();
         public List<string> TalentNames { get; private set; } = new List<string>();
         public List<string> TalentShortTooltips { get; private set; } = new List<string>();
         public List<string> TalentFullTooltips { get; private set; } = new List<string>();
@@ -33,13 +32,13 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             var talent16 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level16, playerTalentList.TalentName16);
             var talent20 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level20, playerTalentList.TalentName20);
 
-            Talents.Add(talent1.GetIcon());
-            Talents.Add(talent4.GetIcon());
-            Talents.Add(talent7.GetIcon());
-            Talents.Add(talent10.GetIcon());
-            Talents.Add(talent13.GetIcon());
-            Talents.Add(talent16.GetIcon());
-            Talents.Add(talent20.GetIcon());
+            Talents.Add(talent1.Icon);
+            Talents.Add(talent4.Icon);
+            Talents.Add(talent7.Icon);
+            Talents.Add(talent10.Icon);
+            Talents.Add(talent13.Icon);
+            Talents.Add(talent16.Icon);
+            Talents.Add(talent20.Icon);
 
             TalentNames.Add(talent1.Name);
             TalentNames.Add(talent4.Name);

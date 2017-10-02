@@ -3,7 +3,7 @@
 namespace Heroes.Icons.Models
 {
     [Flags]
-    public enum MVPScreenColor : uint
+    public enum MVPScreenColor
     {
         Blue = 0,
         Red = 1 << 0,
@@ -11,7 +11,7 @@ namespace Heroes.Icons.Models
     }
 
     [Flags]
-    public enum MVPScoreScreenColor : uint
+    public enum MVPScoreScreenColor
     {
         Blue = 0,
         Red = 1 << 0,

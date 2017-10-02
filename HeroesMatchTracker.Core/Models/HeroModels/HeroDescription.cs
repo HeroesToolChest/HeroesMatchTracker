@@ -1,8 +1,8 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.Models.HeroModels
 {
@@ -12,7 +12,7 @@ namespace HeroesMatchTracker.Core.Models.HeroModels
 
         public string Description { get; set; }
 
-        public BitmapImage Franchise { get; set; }
+        public Uri Franchise { get; set; }
 
         public HeroType Type { get; set; }
 

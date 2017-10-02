@@ -53,7 +53,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger TranslationsLog { get; private set; }
         protected Logger ReplayUploaderLog { get; private set; }
 
-        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
+        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = new BitmapImage(HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName));
 
         private void SetLoggers()
         {
@@ -70,7 +70,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             var listOfBackgroundImages = HeroesIcons.HomeScreens().GetListOfHomeScreens();
 
             int num = random.Next(0, listOfBackgroundImages.Count);
-            BackgroundImage = listOfBackgroundImages[num].Item1;
+            BackgroundImage = new BitmapImage(listOfBackgroundImages[num].Item1);
         }
     }
 }

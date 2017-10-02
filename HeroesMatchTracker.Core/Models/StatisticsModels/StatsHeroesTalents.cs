@@ -1,10 +1,10 @@
-﻿using System.Windows.Media.Imaging;
+﻿using System;
 
 namespace HeroesMatchTracker.Core.Models.StatisticsModels
 {
     public class StatsHeroesTalents
     {
-        public BitmapImage TalentImage { get; set; }
+        public Uri TalentImage { get; set; }
         public string TalentName { get; set; }
         public string TalentSubInfo { get; set; }
         public string TalentShortTooltip { get; set; }

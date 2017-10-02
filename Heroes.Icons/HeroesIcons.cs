@@ -3,12 +3,15 @@ using Heroes.Icons.Xml;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons
 {
     public class HeroesIcons : HeroesBase, IHeroesIconsService
     {
+        private readonly string PartyIconFolderName = "PartyIcons";
+        private readonly string RoleIconFolderName = "Roles";
+        private readonly string FranchiseIconFolderName = "Franchises";
+
         private readonly HeroBuildsXml HeroBuildsXmlLatest; // holds the latest build info
 
         private int EarliestHeroesBuild;
@@ -131,22 +134,11 @@ namespace Heroes.Icons
             return HomeScreensXml;
         }
 
-        public BitmapImage GetPartyIcon(PartyIconColor partyIconColor)
+        public Uri GetPartyIcon(PartyIconColor partyIconColor)
         {
             if (PartyIcons.ContainsKey(partyIconColor))
             {
-                try
-                {
-                    BitmapImage image = new BitmapImage(PartyIcons[partyIconColor]);
-                    image.Freeze();
-
-                    return image;
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {PartyIcons[partyIconColor]}");
-                    return null;
-                }
+                return PartyIcons[partyIconColor];
             }
             else
             {
@@ -155,22 +147,11 @@ namespace Heroes.Icons
             }
         }
 
-        public BitmapImage GetOtherIcon(OtherIcon otherIcon)
+        public Uri GetOtherIcon(OtherIcon otherIcon)
         {
             if (OtherIcons.ContainsKey(otherIcon))
             {
-                try
-                {
-                    BitmapImage image = new BitmapImage(OtherIcons[otherIcon]);
-                    image.Freeze();
-
-                    return image;
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {OtherIcons[otherIcon]}");
-                    return null;
-                }
+                return OtherIcons[otherIcon];
             }
             else
             {
@@ -179,22 +160,11 @@ namespace Heroes.Icons
             }
         }
 
-        public BitmapImage GetRoleIcon(HeroRole heroRole)
+        public Uri GetRoleIcon(HeroRole heroRole)
         {
             if (RoleIcons.ContainsKey(heroRole))
             {
-                try
-                {
-                    BitmapImage image = new BitmapImage(RoleIcons[heroRole]);
-                    image.Freeze();
-
-                    return image;
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {RoleIcons[heroRole]}");
-                    return null;
-                }
+                return RoleIcons[heroRole];
             }
             else
             {
@@ -203,22 +173,12 @@ namespace Heroes.Icons
             }
         }
 
-        public BitmapImage GetFranchiseIcon(HeroFranchise heroFranchise)
+        public Uri GetFranchiseIcon(HeroFranchise heroFranchise)
         {
             if (FranchiseIcons.ContainsKey(heroFranchise))
             {
-                try
-                {
-                    BitmapImage image = new BitmapImage(FranchiseIcons[heroFranchise]);
-                    image.Freeze();
+                return FranchiseIcons[heroFranchise];
 
-                    return image;
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {FranchiseIcons[heroFranchise]}");
-                    return null;
-                }
             }
             else
             {
@@ -250,38 +210,38 @@ namespace Heroes.Icons
 
         private void SetPartyIcons()
         {
-            PartyIcons.Add(PartyIconColor.Purple, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_purple.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Yellow, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_yellow.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Brown, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_brown.png", UriKind.Absolute));
-            PartyIcons.Add(PartyIconColor.Teal, new Uri($"{ApplicationIconsPath}/PartyIcons/ui_ingame_loadscreen_partylink_teal.png", UriKind.Absolute));
+            PartyIcons.Add(PartyIconColor.Purple, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_purple.png"));
+            PartyIcons.Add(PartyIconColor.Yellow, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_yellow.png"));
+            PartyIcons.Add(PartyIconColor.Brown, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_brown.png"));
+            PartyIcons.Add(PartyIconColor.Teal, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_teal.png"));
         }
 
         private void SetRoleIcons()
         {
-            RoleIcons.Add(HeroRole.Warrior, new Uri($"{ApplicationIconsPath}/Roles/hero_role_warrior.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Assassin, new Uri($"{ApplicationIconsPath}/Roles/hero_role_assassin.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Support, new Uri($"{ApplicationIconsPath}/Roles/hero_role_support.png", UriKind.Absolute));
-            RoleIcons.Add(HeroRole.Specialist, new Uri($"{ApplicationIconsPath}/Roles/hero_role_specialist.png", UriKind.Absolute));
+            RoleIcons.Add(HeroRole.Warrior, GetImageUri(RoleIconFolderName, "hero_role_warrior.png"));
+            RoleIcons.Add(HeroRole.Assassin, GetImageUri(RoleIconFolderName, "hero_role_assassin.png"));
+            RoleIcons.Add(HeroRole.Support, GetImageUri(RoleIconFolderName, "hero_role_support.png"));
+            RoleIcons.Add(HeroRole.Specialist, GetImageUri(RoleIconFolderName, "hero_role_specialist.png"));
         }
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Classic, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_classic.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Diablo, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_diablo.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Overwatch, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_overwatch.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Starcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_starcraft.png", UriKind.Absolute));
-            FranchiseIcons.Add(HeroFranchise.Warcraft, new Uri($"{ApplicationIconsPath}/Franchises/hero_franchise_warcraft.png", UriKind.Absolute));
+            FranchiseIcons.Add(HeroFranchise.Classic, GetImageUri(FranchiseIconFolderName, "hero_franchise_classic.png"));
+            FranchiseIcons.Add(HeroFranchise.Diablo, GetImageUri(FranchiseIconFolderName, "hero_franchise_diablo.png"));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, GetImageUri(FranchiseIconFolderName, "hero_franchise_overwatch.png"));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, GetImageUri(FranchiseIconFolderName, "hero_franchise_starcraft.png"));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, GetImageUri(FranchiseIconFolderName, "hero_franchise_warcraft.png"));
         }
 
         private void SetOtherIcons()
         {
-            OtherIcons.Add(OtherIcon.Quest, new Uri($"{ApplicationIconsPath}/storm_ui_taskbar_buttonicon_quests.png", UriKind.Absolute));
-            OtherIcons.Add(OtherIcon.Silence, new Uri($"{ApplicationIconsPath}/storm_ui_silencepenalty.png", UriKind.Absolute));
+            OtherIcons.Add(OtherIcon.Quest, GetImageUri(string.Empty, "storm_ui_taskbar_buttonicon_quests.png"));
+            OtherIcons.Add(OtherIcon.Silence, GetImageUri(string.Empty, "storm_ui_silencepenalty.png"));
         }
 
         private void LogMissingImage(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ImageMissingLogName}", true))
+            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ImageMissingLogName), FileMode.Append)))
             {
                 writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
             }
@@ -289,7 +249,7 @@ namespace Heroes.Icons
 
         private void LogReferenceNameNotFound(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{ReferenceLogName}", true))
+            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ReferenceLogName), FileMode.Append)))
             {
                 writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
             }
@@ -297,7 +257,7 @@ namespace Heroes.Icons
 
         private void LogErrors(string message)
         {
-            using (StreamWriter writer = new StreamWriter($"{LogFileName}/{XmlErrorsLogName}", true))
+            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, XmlErrorsLogName), FileMode.Append)))
             {
                 writer.WriteLine(message);
             }

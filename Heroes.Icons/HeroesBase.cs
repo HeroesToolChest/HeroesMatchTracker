@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace Heroes.Icons
 {
@@ -14,46 +14,53 @@ namespace Heroes.Icons
         public const string NoTalentIconPick = "storm_ui_ingame_leader_talent_unselected.png";
         public const string NoTalentIconFound = "storm_ui_icon_default.dds";
 
-        protected static string ImageMissingLogName => "_ImageMissingLog.txt";
-        protected static string ReferenceLogName => "_ReferenceNameLog.txt";
-        protected static string XmlErrorsLogName => "_XmlErrorsLog.txt";
-        protected static string LogFileName => "Logs";
-        protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
+        protected string XmlMainFolderName => "Xml";
+        protected string DefaultFileExtension => ".xml";
+        protected string ImageMissingLogName => "_ImageMissingLog.txt";
+        protected string ReferenceLogName => "_ReferenceNameLog.txt";
+        protected string XmlErrorsLogName => "_XmlErrorsLog.txt";
+        protected string LogFileName => "Logs";
+        protected string ApplicationIconsPath => Path.GetFullPath("Icons");
 
-        protected BitmapImage HeroesBitmapImage(string iconPath)
+        protected Uri GetImageUri(string iconFolderName, string fileName)
         {
-            if (string.IsNullOrEmpty(iconPath))
-                throw new ArgumentNullException(nameof(iconPath));
-
-            BitmapImage image;
-
-            if (iconPath.StartsWith(ApplicationIconsPath))
-            {
-                image = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
-                image.Freeze();
-
-                return image;
-            }
-            else if (iconPath[0] != '\\')
-            {
-                iconPath = '\\' + iconPath;
-            }
-
-            image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
-            image.Freeze();
-
-            return image;
+            return new Uri(Path.Combine(ApplicationIconsPath, iconFolderName, fileName), UriKind.Absolute);
         }
 
-        protected BitmapImage HeroesBitmapImage(Uri iconPath)
-        {
-            if (string.IsNullOrEmpty(iconPath.AbsoluteUri))
-                throw new ArgumentNullException(nameof(iconPath));
+        //protected BitmapImage HeroesBitmapImage(string iconPath)
+        //{
+        //    if (string.IsNullOrEmpty(iconPath))
+        //        throw new ArgumentNullException(nameof(iconPath));
 
-            BitmapImage image = new BitmapImage(iconPath);
-            image.Freeze();
+        //    BitmapImage image;
 
-            return image;
-        }
+        //    if (iconPath.StartsWith(ApplicationIconsPath))
+        //    {
+        //        image = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
+        //        image.Freeze();
+
+        //        return image;
+        //    }
+        //    else if (iconPath[0] != '\\')
+        //    {
+        //        iconPath = '\\' + iconPath;
+        //    }
+
+        //    image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
+        //    image.Freeze();
+
+        //    return image;
+        //}
+
+        //protected BitmapImage HeroesBitmapImage(Uri iconPath)
+        //{
+        //    if (string.IsNullOrEmpty(iconPath.AbsoluteUri))
+        //        throw new ArgumentNullException(nameof(iconPath));
+
+        //    BitmapImage image = new BitmapImage(iconPath);
+        //    image.Freeze();
+
+        //    return image;
+        //}
     }
 }

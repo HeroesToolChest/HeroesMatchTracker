@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Drawing;
 
 namespace Heroes.Icons.Xml
 {
     public interface IHomeScreens
     {
-        List<Tuple<BitmapImage, Color>> GetListOfHomeScreens();
+        List<Tuple<Uri, Color>> GetListOfHomeScreens();
     }
 }

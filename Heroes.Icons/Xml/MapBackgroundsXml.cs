@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
     internal class MapBackgroundsXml : XmlBase, IMapBackgrounds
     {
+        private readonly string IconFolderName = "MapBackgrounds";
+
         private Dictionary<string, Uri> MapUriByMapRealName = new Dictionary<string, Uri>();
         private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
         private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
@@ -29,13 +30,13 @@ namespace Heroes.Icons.Xml
             return xml;
         }
 
-        public BitmapImage GetMapBackground(string mapRealName)
+        public Uri GetMapBackground(string mapRealName)
         {
             try
             {
                 if (MapUriByMapRealName.ContainsKey(mapRealName))
                 {
-                    return HeroesBitmapImage(MapUriByMapRealName[mapRealName]);
+                    return MapUriByMapRealName[mapRealName];
                 }
                 else
                 {
@@ -60,7 +61,7 @@ namespace Heroes.Icons.Xml
             if (MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out Color color))
                 return color;
             else
-                return Colors.Black;
+                return Color.Black;
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Heroes.Icons.Xml
             {
                 foreach (var mapBackground in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{mapBackground}.xml"))
+                    using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlBaseFolder, $"{mapBackground}{DefaultFileExtension}")))
                     {
                         reader.MoveToContent();
 
@@ -163,8 +164,8 @@ namespace Heroes.Icons.Xml
 
                                     if (element == "Normal")
                                     {
-                                        MapUriByMapRealName.Add(realMapBackgroundName, SetMapBackgroundUri(reader.Value));
-                                        MapFontGlowColorByMapRealName.Add(realMapBackgroundName, (Color)ColorConverter.ConvertFromString(fontGlow));
+                                        MapUriByMapRealName.Add(realMapBackgroundName, GetImageUri(IconFolderName, reader.Value));
+                                        MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
                                     }
                                     else if (element == "Aliases")
                                     {
@@ -190,13 +191,8 @@ namespace Heroes.Icons.Xml
             }
             catch (Exception ex)
             {
-                throw new ParseXmlException("Error on parsing of xml files", ex);
+                throw new ParseXmlException($"Error on xml parsing on {XmlParentFile}", ex);
             }
-        }
-
-        private Uri SetMapBackgroundUri(string fileName)
-        {
-            return new Uri($@"{ApplicationIconsPath}\MapBackgrounds\{fileName}", UriKind.Absolute);
         }
     }
 }

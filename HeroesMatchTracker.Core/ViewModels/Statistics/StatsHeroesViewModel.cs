@@ -42,8 +42,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private string _heroRole;
         private string _heroLevel;
 
-        private BitmapImage _selectedHeroPortrait;
-
+        private Uri _selectedHeroPortrait;
         private StatsHeroesDataViewModel _statsHeroesDataViewModel;
 
         private ILoadingOverlayWindowService LoadingOverlayWindow;
@@ -99,7 +98,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public BitmapImage SelectedHeroPortrait
+        public Uri SelectedHeroPortrait
         {
             get => _selectedHeroPortrait;
             set
@@ -349,7 +348,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             Enum.TryParse(SelectedSeason, out Season selectedSeason);
             Hero hero = HeroesIcons.Heroes().GetHeroInfo(SelectedHero);
 
-            SelectedHeroPortrait = hero.GetPortrait();
+            SelectedHeroPortrait = hero.HeroPortrait;
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, selectedSeason).ToString();

@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
-using System.Windows.Media.Imaging;
+using System;
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
 {
@@ -9,12 +9,12 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         private string _team0Ban1HeroName;
         private string _team1Ban0HeroName;
         private string _team1Ban1HeroName;
-        private BitmapImage _team0Ban0;
-        private BitmapImage _team0Ban1;
-        private BitmapImage _team1Ban0;
-        private BitmapImage _team1Ban1;
+        private Uri _team0Ban0;
+        private Uri _team0Ban1;
+        private Uri _team1Ban0;
+        private Uri _team1Ban1;
 
-        public BitmapImage Team0Ban0
+        public Uri Team0Ban0
         {
             get { return _team0Ban0; }
             set
@@ -24,7 +24,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             }
         }
 
-        public BitmapImage Team0Ban1
+        public Uri Team0Ban1
         {
             get { return _team0Ban1; }
             set
@@ -34,7 +34,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             }
         }
 
-        public BitmapImage Team1Ban0
+        public Uri Team1Ban0
         {
             get { return _team1Ban0; }
             set
@@ -44,7 +44,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             }
         }
 
-        public BitmapImage Team1Ban1
+        public Uri Team1Ban1
         {
             get { return _team1Ban1; }
             set

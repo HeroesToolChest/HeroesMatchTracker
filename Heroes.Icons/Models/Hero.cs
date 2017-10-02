@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 
 namespace Heroes.Icons.Models
 {
-    public class Hero : IconBase
+    public class Hero
     {
         public string Name { get; set; }
 
@@ -40,29 +39,5 @@ namespace Heroes.Icons.Models
         /// Roles of the hero, multiclass will be first if hero has multiple roles
         /// </summary>
         public List<HeroRole> Roles { get; set; } = new List<HeroRole>();
-
-        public BitmapImage GetPortrait()
-        {
-            if (HeroPortrait == null)
-                return null;
-
-            return CreateBitmapImage(HeroPortrait);
-        }
-
-        public BitmapImage GetLoadingPortrait()
-        {
-            if (LoadingPortrait == null)
-                return null;
-
-            return CreateBitmapImage(LoadingPortrait);
-        }
-
-        public BitmapImage GetLeaderboardPortrait()
-        {
-            if (LeaderboardPortrait == null)
-                return null;
-
-            return CreateBitmapImage(LeaderboardPortrait);
-        }
     }
 }

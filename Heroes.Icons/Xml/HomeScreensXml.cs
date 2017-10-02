@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Drawing;
+using System.IO;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
     internal class HomeScreensXml : XmlBase, IHomeScreens
     {
+        private readonly string IconFolderName = "Homescreens";
+
         private HomeScreensXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
             : base(currentBuild, logger)
         {
@@ -16,7 +18,7 @@ namespace Heroes.Icons.Xml
             XmlFolder = xmlBaseFolder;
         }
 
-        public List<Tuple<BitmapImage, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<BitmapImage, Color>>();
+        public List<Tuple<Uri, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<Uri, Color>>();
 
         public static HomeScreensXml Initialize(string parentFile, string xmlFolder, int currentBuild, bool logger)
         {
@@ -25,7 +27,7 @@ namespace Heroes.Icons.Xml
             return xml;
         }
 
-        public List<Tuple<BitmapImage, Color>> GetListOfHomeScreens()
+        public List<Tuple<Uri, Color>> GetListOfHomeScreens()
         {
             return HomeScreenBackgrounds;
         }
@@ -42,7 +44,7 @@ namespace Heroes.Icons.Xml
                 if (!ValidateRequiredFiles())
                     return;
 
-                using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{XmlParentFile}"))
+                using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlBaseFolder, XmlParentFile), GetXmlReaderSettings()))
                 {
                     reader.MoveToContent();
                     if (reader.Name != XmlBaseFolder)
@@ -56,7 +58,7 @@ namespace Heroes.Icons.Xml
 
                             if (reader.Read())
                             {
-                                HomeScreenBackgrounds.Add(new Tuple<BitmapImage, Color>(SetHomeScreenBitmapImage(reader.Value), (Color)ColorConverter.ConvertFromString(fontGlow)));
+                                HomeScreenBackgrounds.Add(new Tuple<Uri, Color>(GetImageUri(IconFolderName, reader.Value), ConvertHexToColor(fontGlow)));
                             }
                         }
                     }
@@ -64,13 +66,8 @@ namespace Heroes.Icons.Xml
             }
             catch (Exception ex)
             {
-                throw new ParseXmlException("Error on parsing of xml files", ex);
+                throw new ParseXmlException($"Error on xml parsing of {XmlParentFile}", ex);
             }
-        }
-
-        private BitmapImage SetHomeScreenBitmapImage(string fileName)
-        {
-            return HeroesBitmapImage($@"Homescreens\{fileName}");
         }
     }
 }

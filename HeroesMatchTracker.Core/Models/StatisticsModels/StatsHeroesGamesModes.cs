@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.Models.StatisticsModels
 {
     public class StatsHeroesGameModes
     {
-        public BitmapImage MapImage { get; set; }
+        public Uri MapImage { get; set; }
         public string MapName { get; set; }
         public int? Wins { get; set; }
         public int? Losses { get; set; }

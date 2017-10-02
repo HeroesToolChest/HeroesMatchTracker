@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows.Media.Imaging;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
 {
     internal class MatchAwardsXml : XmlBase, IMatchAwards
     {
+        private readonly string IconFolderName = "Awards";
+
         private MatchAwardsXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
             : base(currentBuild, logger)
         {
@@ -35,7 +36,7 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        public BitmapImage GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
+        public Uri GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
         {
             if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
             {
@@ -44,22 +45,20 @@ namespace Heroes.Icons.Xml
 
                 awardName = award.Item1;
 
-                try
-                {
-                    return HeroesBitmapImage(uriString);
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {uriString}");
-                    awardName = mvpAwardType;
-                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-                }
+                return new Uri(uriString, UriKind.Absolute);
+
+                //catch (IOException)
+                //{
+                //    LogMissingImage($"Missing image: {uriString}");
+                //    awardName = mvpAwardType;
+                //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+                //}
             }
             else
             {
                 LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
                 awardName = mvpAwardType;
-                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+                return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound)); // ($@"Talents\_Generic\{NoTalentIconFound}");
             }
         }
 
@@ -70,7 +69,7 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        public BitmapImage GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
+        public Uri GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
         {
             if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
             {
@@ -79,22 +78,19 @@ namespace Heroes.Icons.Xml
 
                 awardName = award.Item1;
 
-                try
-                {
-                    return HeroesBitmapImage(uriString);
-                }
-                catch (IOException)
-                {
-                    LogMissingImage($"Missing image: {uriString}");
-                    awardName = mvpAwardType;
-                    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-                }
+                return new Uri(uriString, UriKind.Absolute);
+                //catch (IOException)
+                //{
+                //    LogMissingImage($"Missing image: {uriString}");
+                //    awardName = mvpAwardType;
+                //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+                //}
             }
             else
             {
                 LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
                 awardName = mvpAwardType;
-                return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+                return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound));
             }
         }
 
@@ -131,7 +127,7 @@ namespace Heroes.Icons.Xml
             {
                 foreach (var award in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create($@"Xml\{XmlBaseFolder}\{award}.xml"))
+                    using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlBaseFolder, $"{award}{DefaultFileExtension}"), GetXmlReaderSettings()))
                     {
                         reader.MoveToContent();
 
@@ -164,7 +160,7 @@ namespace Heroes.Icons.Xml
                                             }
                                             else
                                             {
-                                                var awardTuple = new Tuple<string, Uri>(realAwardName, SetMVPAwardUri(reader.Value));
+                                                var awardTuple = new Tuple<string, Uri>(realAwardName, GetImageUri(IconFolderName, reader.Value));
 
                                                 if (elementName == "MVPScreen")
                                                     MVPScreenAwardByAwardType.Add(awardType, awardTuple);
@@ -181,13 +177,13 @@ namespace Heroes.Icons.Xml
             }
             catch (Exception ex)
             {
-                throw new ParseXmlException("Error on parsing of xml files", ex);
+                throw new ParseXmlException($"Error on xml parsing of {XmlParentFile}", ex);
             }
         }
 
         private Uri SetMVPAwardUri(string fileName)
         {
-            return new Uri($@"{ApplicationIconsPath}\Awards\{fileName}", UriKind.Absolute);
+            return new Uri(Path.Combine(ApplicationIconsPath, "Awards", fileName), UriKind.Absolute);
         }
     }
 }
