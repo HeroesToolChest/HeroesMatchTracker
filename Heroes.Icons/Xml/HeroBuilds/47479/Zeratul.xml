@@ -1,50 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Zeratul attributeid="Zera" role="Assassin" franchise="Starcraft" portrait="storm_ui_ingame_heroselect_btn_zeratul.dds" loading="storm_ui_ingame_hero_loadingscreen_zeratul.dds" leader="storm_ui_ingame_hero_leaderboard_zeratul.dds">
-  <Level1>
-    <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
-    <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryGreaterCleaveCleave>
-    <ZeratulMasteryRapidDisplacementBlink name="Rapid Displacement" desc="ZeratulBlinkRapidDisplacementTalent">storm_ui_icon_zeratul_blink.dds</ZeratulMasteryRapidDisplacementBlink>
-    <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
-    <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
-  </Level1>
-  <Level4>
-    <ZeratulMasterWarpBlade name="Master Warp-Blade" desc="ZeratulMasterWarpBlade">storm_ui_icon_zeratul_cloak.dds</ZeratulMasterWarpBlade>
-    <GenericVigorousStrikePassive name="Vigorous Strike" desc="GenericVigorousStrikeTalent">storm_ui_icon_talent_autoattack_heal.dds</GenericVigorousStrikePassive>
-    <GenericTalentGatheringPower name="Gathering Power" desc="GenericGatheringPowerTalent">storm_ui_icon_Talent_GatheringPower.dds</GenericTalentGatheringPower>
-    <ZeratulMasterySustainedAnomalySingularitySpike name="Sustained Anomaly" desc="ZeratulSingularitySpikeSustainedAnomalyTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasterySustainedAnomalySingularitySpike>
-    <ZeratulCombatStyleVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulCombatStyleVorpalBlade>
-  </Level4>
-  <Level7>
-    <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
-    <ZeratulMasteryVoidSlash name="Void Slash" desc="ZeratulVoidSlashTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryVoidSlash>
-    <ZeratulMasteryShadowSpikeSingularitySpike name="Shadow Spike" desc="ZeratulSingularitySpikeShadowSpikeTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryShadowSpikeSingularitySpike>
-    <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
-    <GenericTalentSearingAttacks name="Searing Attacks" desc="GenericSearingAttacks">storm_ui_icon_talent_autoattack_searing.dds</GenericTalentSearingAttacks>
-  </Level7>
-  <Level10>
-    <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
-    <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
-  </Level10>
-  <Level13>
-    <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
-    <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
-    <ZeratulMasteryWormhole name="Wormhole" desc="ZeratulBlinkWormholeTalent">storm_ui_icon_zeratul_blink.dds</ZeratulMasteryWormhole>
-    <ZeratulCombatStyleAssassinsBlade name="Assassin's Blade" desc="ZeratulPermanentCloakAssassinsBladeTalent">storm_ui_icon_zeratul_cloak.dds</ZeratulCombatStyleAssassinsBlade>
-    <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
-  </Level13>
-  <Level16>
-    <ZeratulMasteryRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryRendingCleave>
-    <ZeratulMasteryDoubleBombsSingularitySpike name="Double Bombs" desc="ZeratulSingularitySpikeDoubleBombsTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryDoubleBombsSingularitySpike>
-    <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
-  </Level16>
-  <Level20>
-    <ZeratulMasteryNerazimFuryShadowAssault name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">storm_ui_icon_zeratul_shadowassault.dds</ZeratulMasteryNerazimFuryShadowAssault>
-    <ZeratulMasteryProtectivePrisonVoidPrison name="Protective Prison" desc="ZeratulVoidPrisonProtectivePrisonTalent">storm_ui_icon_zeratul_voidprison.dds</ZeratulMasteryProtectivePrisonVoidPrison>
-    <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-    <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
-  </Level20>
-  <Old>
-    <GenericVampiricStrikePassive name="VampiricStrike">storm_ui_icon_talent_autoattack_heal.dds</GenericVampiricStrikePassive>
-    <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
-  </Old>
+  <Zeratul available="47479" attributeid="Zera" franchise="Starcraft" type="Melee" difficulty="Hard"
+           portrait="storm_ui_ingame_heroselect_btn_zeratul.dds" loading="storm_ui_ingame_hero_loadingscreen_zeratul.dds" leader="storm_ui_ingame_hero_leaderboard_zeratul.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+        <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryGreaterCleaveCleave>
+        <ZeratulMasteryRapidDisplacementBlink name="Rapid Displacement" desc="ZeratulBlinkRapidDisplacementTalent">storm_ui_icon_zeratul_blink.dds</ZeratulMasteryRapidDisplacementBlink>
+        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+        <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
+      </Level1>
+      <Level4>
+        <ZeratulMasterWarpBlade name="Master Warp-Blade" desc="ZeratulMasterWarpBlade">storm_ui_icon_zeratul_cloak.dds</ZeratulMasterWarpBlade>
+        <GenericVigorousStrikePassive name="Vigorous Strike" desc="GenericVigorousStrikeTalent">storm_ui_icon_talent_autoattack_heal.dds</GenericVigorousStrikePassive>
+        <GenericTalentGatheringPower name="Gathering Power" desc="GenericGatheringPowerTalent">storm_ui_icon_Talent_GatheringPower.dds</GenericTalentGatheringPower>
+        <ZeratulMasterySustainedAnomalySingularitySpike name="Sustained Anomaly" desc="ZeratulSingularitySpikeSustainedAnomalyTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasterySustainedAnomalySingularitySpike>
+        <ZeratulCombatStyleVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">storm_ui_icon_zeratul_vorpalblade.dds</ZeratulCombatStyleVorpalBlade>
+      </Level4>
+      <Level7>
+        <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
+        <ZeratulMasteryVoidSlash name="Void Slash" desc="ZeratulVoidSlashTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryVoidSlash>
+        <ZeratulMasteryShadowSpikeSingularitySpike name="Shadow Spike" desc="ZeratulSingularitySpikeShadowSpikeTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryShadowSpikeSingularitySpike>
+        <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
+        <GenericTalentSearingAttacks name="Searing Attacks" desc="GenericSearingAttacks">storm_ui_icon_talent_autoattack_searing.dds</GenericTalentSearingAttacks>
+      </Level7>
+      <Level10>
+        <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
+        <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
+      </Level10>
+      <Level13>
+        <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+        <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+        <ZeratulMasteryWormhole name="Wormhole" desc="ZeratulBlinkWormholeTalent">storm_ui_icon_zeratul_blink.dds</ZeratulMasteryWormhole>
+        <ZeratulCombatStyleAssassinsBlade name="Assassin's Blade" desc="ZeratulPermanentCloakAssassinsBladeTalent">storm_ui_icon_zeratul_cloak.dds</ZeratulCombatStyleAssassinsBlade>
+        <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+      </Level13>
+      <Level16>
+        <ZeratulMasteryRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">storm_ui_icon_zeratul_cleave.dds</ZeratulMasteryRendingCleave>
+        <ZeratulMasteryDoubleBombsSingularitySpike name="Double Bombs" desc="ZeratulSingularitySpikeDoubleBombsTalent">storm_ui_icon_zeratul_singularityspike.dds</ZeratulMasteryDoubleBombsSingularitySpike>
+        <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+      </Level16>
+      <Level20>
+        <ZeratulMasteryNerazimFuryShadowAssault name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">storm_ui_icon_zeratul_shadowassault.dds</ZeratulMasteryNerazimFuryShadowAssault>
+        <ZeratulMasteryProtectivePrisonVoidPrison name="Protective Prison" desc="ZeratulVoidPrisonProtectivePrisonTalent">storm_ui_icon_zeratul_voidprison.dds</ZeratulMasteryProtectivePrisonVoidPrison>
+        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+        <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.dds</GenericTalentRewind>
+      </Level20>
+      <Old>
+        <GenericVampiricStrikePassive name="VampiricStrike">storm_ui_icon_talent_autoattack_heal.dds</GenericVampiricStrikePassive>
+        <GenericTalentBerserk name="Berserk">storm_ui_icon_talent_autoattack_speed.dds</GenericTalentBerserk>
+      </Old>
+  </Talents>
 </Zeratul>

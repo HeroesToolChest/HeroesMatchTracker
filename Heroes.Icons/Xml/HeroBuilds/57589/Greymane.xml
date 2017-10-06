@@ -1,40 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Greymane>
-  <Level1>
-    <GreymaneInnerBeastWolfheart name="Wolfheart" desc="GreymaneInnerBeastWolfheartTalent">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeastWolfheart>
-    <GreymaneGilneanCocktailPerfectAim name="Perfect Aim" desc="GreymaneGilneanCocktailPerfectAimTalent">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailPerfectAim>
-    <GreymaneInnerBeastViciousness name="Viciousness" desc="GreymaneInnerBeastViciousnessTalent">storm_ui_icon_greymane_beastfocus_var1.dds</GreymaneInnerBeastViciousness>
-  </Level1>
-  <Level4>
-    <GreymaneDarkflightThickSkin name="Thick Skin" desc="GreymaneDarkflightThickSkinTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightThickSkin>
-    <GreymaneDisengageEyesInTheDark name="Eyes in the Dark" desc="GreymaneDisengageEyesInTheDarkTalent">storm_ui_icon_Greymane_Disengage.dds</GreymaneDisengageEyesInTheDark>
-    <GreymaneInnerBeastInsatiable name="Insatiable" desc="GreymaneInnerBeastInsatiableTalent">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastInsatiable>
-    <GreymaneGilneanCocktailDraughtOverflow name="Draught Overflow" desc="GreymaneGilneanCocktailDraughtOverflowTalent">storm_ui_icon_greymane_qattack.dds</GreymaneGilneanCocktailDraughtOverflow>
-  </Level4>
-  <Level7>
-    <GreymaneWorgenFormQuicksilverBullets name="Quicksilver Bullets" desc="GreymaneQuicksilverBulletsTalent">storm_ui_icon_greymane_curseoftheworgen.dds</GreymaneWorgenFormQuicksilverBullets>
-    <GreymaneGilneanCocktailIncendiaryElixir name="Incendiary Elixir" desc="GreymaneGilneanCocktailIncendiaryElixirTalent">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailIncendiaryElixir>
-    <GreymaneWizenedDuelist name="Wizened Duelist" desc="GreymaneWizenedDuelistTalent">storm_ui_icon_greymane_curseoftheworgen_var1.dds</GreymaneWizenedDuelist>
-  </Level7>
-  <Level10>
-    <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat" desc="GreymaneGoForTheThroat" mana="90" cooldown="80">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
-    <GreymaneHeroicAbilityCursedBullet name="Cursed Bullet" desc="GreymaneCursedBullet" mana="50" cooldown="30">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityCursedBullet>
-  </Level10>
-  <Level13>
-    <GreymaneDarkflightDisengageRunningWild name="Running Wild" desc="GreymaneDarkflightRunningWildTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightDisengageRunningWild>
-    <GreymaneRazorSwipeVisceralAttacks name="Visceral Attacks" desc="GreymaneRazorSwipeVisceralAttacksTalent">storm_ui_icon_Greymane_Swipe.dds</GreymaneRazorSwipeVisceralAttacks>
-    <GreymaneInnerBeastOnTheProwl name="On the Prowl" desc="GreymaneInnerBeastOnTheProwlTalent">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastOnTheProwl>
-    <GreymaneRazorSwipeUnfetteredAssault name="Unfettered Assault" desc="GreymaneRazorSwipeUnfetteredAssaultTalent">storm_ui_icon_Greymane_Swipe_Var1.dds</GreymaneRazorSwipeUnfetteredAssault>
-  </Level13>
-  <Level16>
-    <GreymaneEagerWolf name="Eager Wolf" desc="GreymaneEagerWolf">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneEagerWolf>
-    <HeroGenericExecutionerPassive name="Executioner" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
-    <GreymaneWorgenFormAlphaKiller name="Alpha Killer" desc="GreymaneAlphaKillerTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneWorgenFormAlphaKiller>
-  </Level16>
-  <Level20>
-    <GreymaneGoForTheThroatUnleashed name="Unleashed" desc="GreymaneUnleashed">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneGoForTheThroatUnleashed>
-    <GreymaneCursedBulletGilneanRoulette name="Gilnean Roulette" desc="GreymaneCursedBulletGilneanRouletteTalent">storm_ui_icon_Greymane_Snapshot.dds</GreymaneCursedBulletGilneanRoulette>
-    <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss" desc="GreymaneHuntersBlunderbussTalent">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
-    <GreymaneToothAndClaw name="Tooth and Claw" desc="GreymaneToothAndClawTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
-  </Level20>
+  <Greymane available="47479" attributeid="Genn" franchise="Warcraft" type="Ranged" difficulty="Hard"
+            portrait="storm_ui_ingame_heroselect_btn_genngreymane.dds" loading="storm_ui_ingame_hero_loadingscreen_genngreymane.dds" leader="storm_ui_ingame_hero_leaderboard_genngreymane.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <GreymaneInnerBeastWolfheart name="Wolfheart" desc="GreymaneInnerBeastWolfheartTalent">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeastWolfheart>
+        <GreymaneGilneanCocktailPerfectAim name="Perfect Aim" desc="GreymaneGilneanCocktailPerfectAimTalent">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailPerfectAim>
+        <GreymaneInnerBeastViciousness name="Viciousness" desc="GreymaneInnerBeastViciousnessTalent">storm_ui_icon_greymane_beastfocus_var1.dds</GreymaneInnerBeastViciousness>
+      </Level1>
+      <Level4>
+        <GreymaneDarkflightThickSkin name="Thick Skin" desc="GreymaneDarkflightThickSkinTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightThickSkin>
+        <GreymaneDisengageEyesInTheDark name="Eyes in the Dark" desc="GreymaneDisengageEyesInTheDarkTalent">storm_ui_icon_Greymane_Disengage.dds</GreymaneDisengageEyesInTheDark>
+        <GreymaneInnerBeastInsatiable name="Insatiable" desc="GreymaneInnerBeastInsatiableTalent">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastInsatiable>
+        <GreymaneGilneanCocktailDraughtOverflow name="Draught Overflow" desc="GreymaneGilneanCocktailDraughtOverflowTalent">storm_ui_icon_greymane_qattack.dds</GreymaneGilneanCocktailDraughtOverflow>
+      </Level4>
+      <Level7>
+        <GreymaneWorgenFormQuicksilverBullets name="Quicksilver Bullets" desc="GreymaneQuicksilverBulletsTalent">storm_ui_icon_greymane_curseoftheworgen.dds</GreymaneWorgenFormQuicksilverBullets>
+        <GreymaneGilneanCocktailIncendiaryElixir name="Incendiary Elixir" desc="GreymaneGilneanCocktailIncendiaryElixirTalent">storm_ui_icon_Greymane_QAttack.dds</GreymaneGilneanCocktailIncendiaryElixir>
+        <GreymaneWizenedDuelist name="Wizened Duelist" desc="GreymaneWizenedDuelistTalent">storm_ui_icon_greymane_curseoftheworgen_var1.dds</GreymaneWizenedDuelist>
+      </Level7>
+      <Level10>
+        <GreymaneHeroicAbilityGoForTheThroat name="Go for the Throat" desc="GreymaneGoForTheThroat" mana="90" cooldown="80">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneHeroicAbilityGoForTheThroat>
+        <GreymaneHeroicAbilityCursedBullet name="Cursed Bullet" desc="GreymaneCursedBullet" mana="50" cooldown="30">storm_ui_icon_Greymane_Snapshot.dds</GreymaneHeroicAbilityCursedBullet>
+      </Level10>
+      <Level13>
+        <GreymaneDarkflightDisengageRunningWild name="Running Wild" desc="GreymaneDarkflightRunningWildTalent">storm_ui_icon_Greymane_Darkflight.dds</GreymaneDarkflightDisengageRunningWild>
+        <GreymaneRazorSwipeVisceralAttacks name="Visceral Attacks" desc="GreymaneRazorSwipeVisceralAttacksTalent">storm_ui_icon_Greymane_Swipe.dds</GreymaneRazorSwipeVisceralAttacks>
+        <GreymaneInnerBeastOnTheProwl name="On the Prowl" desc="GreymaneInnerBeastOnTheProwlTalent">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneInnerBeastOnTheProwl>
+        <GreymaneRazorSwipeUnfetteredAssault name="Unfettered Assault" desc="GreymaneRazorSwipeUnfetteredAssaultTalent">storm_ui_icon_Greymane_Swipe_Var1.dds</GreymaneRazorSwipeUnfetteredAssault>
+      </Level13>
+      <Level16>
+        <GreymaneEagerWolf name="Eager Wolf" desc="GreymaneEagerWolf">storm_ui_icon_Greymane_BeastFocus.dds</GreymaneEagerWolf>
+        <HeroGenericExecutionerPassive name="Executioner" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+        <GreymaneWorgenFormAlphaKiller name="Alpha Killer" desc="GreymaneAlphaKillerTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneWorgenFormAlphaKiller>
+      </Level16>
+      <Level20>
+        <GreymaneGoForTheThroatUnleashed name="Unleashed" desc="GreymaneUnleashed">storm_ui_icon_Greymane_GoForTheThroat.dds</GreymaneGoForTheThroatUnleashed>
+        <GreymaneCursedBulletGilneanRoulette name="Gilnean Roulette" desc="GreymaneCursedBulletGilneanRouletteTalent">storm_ui_icon_Greymane_Snapshot.dds</GreymaneCursedBulletGilneanRoulette>
+        <GreymaneHuntersBlunderbuss name="Hunter's Blunderbuss" desc="GreymaneHuntersBlunderbussTalent">storm_ui_icon_Greymane_CurseOfTheWorgen.dds</GreymaneHuntersBlunderbuss>
+        <GreymaneToothAndClaw name="Tooth and Claw" desc="GreymaneToothAndClawTalent">storm_ui_icon_Greymane_CurseOfTheWorgen_Var1.dds</GreymaneToothAndClaw>
+      </Level20>
+  </Talents>
 </Greymane>

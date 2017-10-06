@@ -1,38 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Samuro>
-  <Level1>
-    <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">storm_ui_icon_samuro_mirrorimage.dds</SamuroWayOfIllusion>
-    <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroMirrorImageWayOfTheBlade>
-    <SamuroWayOfTheWind name="Way of the Wind" desc="SamuroWayOfTheWind">storm_ui_icon_samuro_windwalk.dds</SamuroWayOfTheWind>
-  </Level1>
-  <Level4>
-    <SamuroMirage name="Mirage" desc="SamuroMirage">storm_ui_icon_samuro_mirrorimage.dds</SamuroMirage>
-    <SamuroWindwalkOneWithTheWind name="One With The Wind" desc="SamuroOneWithTheWindTalent">storm_ui_icon_samuro_windwalk.dds</SamuroWindwalkOneWithTheWind>
-    <SamuroAdvancingStrikesDeflection name="Defection" desc="SamuroDeflectionTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroAdvancingStrikesDeflection>
-  </Level4>
-  <Level7>
-    <SamuroBurningBlade name="Burning Blade" desc="SamuroBurningBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroBurningBlade>
-    <SamuroPhantomPain name="Phantom Pain" desc="SamuroPhantomsStrikeTalent">storm_ui_icon_samuro_criticalstrike_a.dds</SamuroPhantomPain>
-    <SamuroOverpoweringBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">storm_ui_icon_samuro_criticalstrike_b.dds</SamuroOverpoweringBlow>
-  </Level7>
-  <Level10>
-    <SamuroHeroicAbilityBladestorm name="Bladestorm" desc="SamuroBladestorm">storm_ui_icon_samuro_bladestorm.dds</SamuroHeroicAbilityBladestorm>
-    <SamuroHeroicAbilityIllusionMaster name="Illusion Master" desc="SamuroIllusionMaster">storm_ui_icon_samuro_illusiondancer.dds</SamuroHeroicAbilityIllusionMaster>
-  </Level10>
-  <Level13>
-    <SamuroMirroredSteel name="Mirrored Steel" desc="SamuroMirroredSteelTalent">storm_ui_icon_samuro_mirrorimage.dds</SamuroMirroredSteel>
-    <SamuroWindwalkKawarimi name="Kawarimi" desc="WindwalkKawarimiTalent">storm_ui_icon_samuro_windwalk.dds</SamuroWindwalkKawarimi>
-    <SamuroShukuchi name="Shukuchi" desc="SamuroShukuchiTalent">storm_ui_icon_samuro_windwalk_a.dds</SamuroShukuchi>
-  </Level13>
-  <Level16>
-    <SamuroMercilessStrikes name="Merciless Strikes" desc="SamuroMercilessStrikes">storm_ui_icon_samuro_criticalstrike.dds</SamuroMercilessStrikes>
-    <SamuroHarshWinds name="Harsh Winds" desc="SamuroHarshWinds">storm_ui_icon_samuro_windwalk.dds</SamuroHarshWinds>
-    <SamuroPressTheAttack name="Press the Attack" desc="SamuroPressTheAttack">storm_ui_icon_samuro_flowingstrikes.dds</SamuroPressTheAttack>
-  </Level16>
-  <Level20>
-    <SamuroWhirlwindStorm name="Dance of Death" desc="SamuroDanceOfDeathTalent">storm_ui_icon_samuro_bladestorm.dds</SamuroWhirlwindStorm>
-    <SamuroThreeBladeStyle name="Three Blade Style" desc="SamuroThreeBladeStyleTalent">storm_ui_icon_samuro_illusiondancer.dds</SamuroThreeBladeStyle>
-    <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_windwalk.dds</SamuroWindStrider>
-    <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroBlademastersPursuit>
-  </Level20>
+  <Samuro available="47479" attributeid="Samu" franchise="Warcraft" type="Melee" difficulty="Hard"
+          portrait="storm_ui_ingame_heroselect_btn_samuro.dds" loading="storm_ui_ingame_hero_loadingscreen_samuro.dds" leader="storm_ui_ingame_hero_leaderboard_samuro.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">storm_ui_icon_samuro_mirrorimage.dds</SamuroWayOfIllusion>
+        <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroMirrorImageWayOfTheBlade>
+        <SamuroWayOfTheWind name="Way of the Wind" desc="SamuroWayOfTheWind">storm_ui_icon_samuro_windwalk.dds</SamuroWayOfTheWind>
+      </Level1>
+      <Level4>
+        <SamuroMirage name="Mirage" desc="SamuroMirage">storm_ui_icon_samuro_mirrorimage.dds</SamuroMirage>
+        <SamuroWindwalkOneWithTheWind name="One With The Wind" desc="SamuroOneWithTheWindTalent">storm_ui_icon_samuro_windwalk.dds</SamuroWindwalkOneWithTheWind>
+        <SamuroAdvancingStrikesDeflection name="Defection" desc="SamuroDeflectionTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroAdvancingStrikesDeflection>
+      </Level4>
+      <Level7>
+        <SamuroBurningBlade name="Burning Blade" desc="SamuroBurningBlade">storm_ui_icon_samuro_criticalstrike.dds</SamuroBurningBlade>
+        <SamuroPhantomPain name="Phantom Pain" desc="SamuroPhantomsStrikeTalent">storm_ui_icon_samuro_criticalstrike_a.dds</SamuroPhantomPain>
+        <SamuroOverpoweringBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">storm_ui_icon_samuro_criticalstrike_b.dds</SamuroOverpoweringBlow>
+      </Level7>
+      <Level10>
+        <SamuroHeroicAbilityBladestorm name="Bladestorm" desc="SamuroBladestorm">storm_ui_icon_samuro_bladestorm.dds</SamuroHeroicAbilityBladestorm>
+        <SamuroHeroicAbilityIllusionMaster name="Illusion Master" desc="SamuroIllusionMaster">storm_ui_icon_samuro_illusiondancer.dds</SamuroHeroicAbilityIllusionMaster>
+      </Level10>
+      <Level13>
+        <SamuroMirroredSteel name="Mirrored Steel" desc="SamuroMirroredSteelTalent">storm_ui_icon_samuro_mirrorimage.dds</SamuroMirroredSteel>
+        <SamuroWindwalkKawarimi name="Kawarimi" desc="WindwalkKawarimiTalent">storm_ui_icon_samuro_windwalk.dds</SamuroWindwalkKawarimi>
+        <SamuroShukuchi name="Shukuchi" desc="SamuroShukuchiTalent">storm_ui_icon_samuro_windwalk_a.dds</SamuroShukuchi>
+      </Level13>
+      <Level16>
+        <SamuroMercilessStrikes name="Merciless Strikes" desc="SamuroMercilessStrikes">storm_ui_icon_samuro_criticalstrike.dds</SamuroMercilessStrikes>
+        <SamuroHarshWinds name="Harsh Winds" desc="SamuroHarshWinds">storm_ui_icon_samuro_windwalk.dds</SamuroHarshWinds>
+        <SamuroPressTheAttack name="Press the Attack" desc="SamuroPressTheAttack">storm_ui_icon_samuro_flowingstrikes.dds</SamuroPressTheAttack>
+      </Level16>
+      <Level20>
+        <SamuroWhirlwindStorm name="Dance of Death" desc="SamuroDanceOfDeathTalent">storm_ui_icon_samuro_bladestorm.dds</SamuroWhirlwindStorm>
+        <SamuroThreeBladeStyle name="Three Blade Style" desc="SamuroThreeBladeStyleTalent">storm_ui_icon_samuro_illusiondancer.dds</SamuroThreeBladeStyle>
+        <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_windwalk.dds</SamuroWindStrider>
+        <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.dds</SamuroBlademastersPursuit>
+      </Level20>
+  </Talents>
 </Samuro>

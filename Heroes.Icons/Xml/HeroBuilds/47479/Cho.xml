@@ -1,38 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Cho attributeid="CCho" role="Warrior" franchise="Warcraft" portrait="storm_ui_ingame_heroselect_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
-  <Level1>
-    <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_Cho_MoltenSurge_A.dds</ChoSurgingDash>
-    <ChoBlazingBulwark name="Blazing Bulwark" desc="ChoBlazingBulwarkTalent">storm_ui_icon_cho_consumingflame.dds</ChoBlazingBulwark>
-    <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.dds</ChoFuelForTheFlame>
-  </Level1>
-  <Level4>
-    <ChoRunedGauntlet name="Runed Gauntlet" desc="ChoRunedGauntletTalent">storm_ui_icon_Cho_RuneBomb.dds</ChoRunedGauntlet>
-    <ChoRollback name="Rollback" desc="ChoRollbackTalent">storm_ui_icon_Cho_RuneBomb_var1.dds</ChoRollback>
-    <ChoSearedFlesh name="Seared Flesh" desc="ChoSearedFleshTalent">storm_ui_icon_cho_twoheaded.dds</ChoSearedFlesh>
-  </Level4>
-  <Level7>
-    <ChoPowerSurge name="Power Surge" desc="ChoPowerSurgeTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoPowerSurge>
-    <ChoFireEater name="Fire Eater" desc="ChoFireEaterTalent">storm_ui_icon_Cho_ConsumingFlame.dds</ChoFireEater>
-    <ChoIAMHurrying name="I AM Hurrying!" desc="ChoIAMHurryingTalent">storm_ui_icon_gall_twoheaded.dds</ChoIAMHurrying>
-  </Level7>
-  <Level10>
-    <ChoHeroicAbilityHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHeroicAbilityHammerOfTwilight>
-    <ChoHeroicAbilityUpheaval name="Upheaval" desc="ChoUpheaval">storm_ui_icon_Cho_Upheaval.dds</ChoHeroicAbilityUpheaval>
-  </Level10>
-  <Level13>
-    <ChoRunicFeedback name="Runic Feedback" desc="ChoRunicFeedbackTalent">storm_ui_icon_Cho_RuneBomb.dds</ChoRunicFeedback>
-    <ChoSurgeOfStamina name="Surge of Stamina" desc="ChoSurgeOfStaminaTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoSurgeOfStamina>
-    <ChoTalentMoltenBlock name="Molten Block" desc="ChoTalentMoltenBlock">storm_ui_icon_cho_moltenblock.dds</ChoTalentMoltenBlock>
-  </Level13>
-  <Level16>
-    <ChoTwilightVeil name="Twilight Veil" desc="ChoTwilightVeilTalent">storm_ui_icon_Cho_ConsumingFlame.dds</ChoTwilightVeil>
-    <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoFrenziedFists>
-    <ChoCripplingBlow name="Crippling Blow" desc="ChoCripplingBlowTalent">storm_ui_icon_cho_moltensurge_b.dds</ChoCripplingBlow>
-  </Level16>
-  <Level20>
-    <ChoCthunsGift name="C'thun's Gift" desc="ChoCthunsGiftTalent">storm_ui_icon_Cho_HammerofTwilight.dds</ChoCthunsGift>
-    <ChoFavorOfTheOldGods name="Favor of the Old Gods" desc="ChoFavorOfTheOldGodsTalent">storm_ui_icon_Cho_Upheaval.dds</ChoFavorOfTheOldGods>
-    <ChoWillOfGall name="The Will Of Gall" desc="ChoWillOfGallTalent">storm_ui_icon_gall_twoheaded.dds</ChoWillOfGall>
-  </Level20>
-  <Old></Old>
+  <Cho available="47479" attributeid="CCho" franchise="Warcraft" type="Melee" difficulty="Medium"
+       portrait="storm_ui_ingame_heroselect_btn_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
+    <Roles>Warrior</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_Cho_MoltenSurge_A.dds</ChoSurgingDash>
+        <ChoBlazingBulwark name="Blazing Bulwark" desc="ChoBlazingBulwarkTalent">storm_ui_icon_cho_consumingflame.dds</ChoBlazingBulwark>
+        <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.dds</ChoFuelForTheFlame>
+      </Level1>
+      <Level4>
+        <ChoRunedGauntlet name="Runed Gauntlet" desc="ChoRunedGauntletTalent">storm_ui_icon_Cho_RuneBomb.dds</ChoRunedGauntlet>
+        <ChoRollback name="Rollback" desc="ChoRollbackTalent">storm_ui_icon_Cho_RuneBomb_var1.dds</ChoRollback>
+        <ChoSearedFlesh name="Seared Flesh" desc="ChoSearedFleshTalent">storm_ui_icon_cho_twoheaded.dds</ChoSearedFlesh>
+      </Level4>
+      <Level7>
+        <ChoPowerSurge name="Power Surge" desc="ChoPowerSurgeTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoPowerSurge>
+        <ChoFireEater name="Fire Eater" desc="ChoFireEaterTalent">storm_ui_icon_Cho_ConsumingFlame.dds</ChoFireEater>
+        <ChoIAMHurrying name="I AM Hurrying!" desc="ChoIAMHurryingTalent">storm_ui_icon_gall_twoheaded.dds</ChoIAMHurrying>
+      </Level7>
+      <Level10>
+        <ChoHeroicAbilityHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHeroicAbilityHammerOfTwilight>
+        <ChoHeroicAbilityUpheaval name="Upheaval" desc="ChoUpheaval">storm_ui_icon_Cho_Upheaval.dds</ChoHeroicAbilityUpheaval>
+      </Level10>
+      <Level13>
+        <ChoRunicFeedback name="Runic Feedback" desc="ChoRunicFeedbackTalent">storm_ui_icon_Cho_RuneBomb.dds</ChoRunicFeedback>
+        <ChoSurgeOfStamina name="Surge of Stamina" desc="ChoSurgeOfStaminaTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoSurgeOfStamina>
+        <ChoTalentMoltenBlock name="Molten Block" desc="ChoTalentMoltenBlock">storm_ui_icon_cho_moltenblock.dds</ChoTalentMoltenBlock>
+      </Level13>
+      <Level16>
+        <ChoTwilightVeil name="Twilight Veil" desc="ChoTwilightVeilTalent">storm_ui_icon_Cho_ConsumingFlame.dds</ChoTwilightVeil>
+        <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoFrenziedFists>
+        <ChoCripplingBlow name="Crippling Blow" desc="ChoCripplingBlowTalent">storm_ui_icon_cho_moltensurge_b.dds</ChoCripplingBlow>
+      </Level16>
+      <Level20>
+        <ChoCthunsGift name="C'thun's Gift" desc="ChoCthunsGiftTalent">storm_ui_icon_Cho_HammerofTwilight.dds</ChoCthunsGift>
+        <ChoFavorOfTheOldGods name="Favor of the Old Gods" desc="ChoFavorOfTheOldGodsTalent">storm_ui_icon_Cho_Upheaval.dds</ChoFavorOfTheOldGods>
+        <ChoWillOfGall name="The Will Of Gall" desc="ChoWillOfGallTalent">storm_ui_icon_gall_twoheaded.dds</ChoWillOfGall>
+      </Level20>
+      <Old></Old>
+  </Talents>
 </Cho>

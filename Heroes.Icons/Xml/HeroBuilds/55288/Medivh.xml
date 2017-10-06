@@ -1,40 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Medivh>
-  <Level1>
-    <MedivhPortalStablePortal name="Stable Portal" desc="MedivhPortalStablePortal">storm_ui_icon_medivh_portal.dds</MedivhPortalStablePortal>
-    <MedivhPortalPortalMastery name="Portal Mastery" desc="MedivhPortalPortalMastery">storm_ui_icon_medivh_portal_a.dds</MedivhPortalPortalMastery>
-    <MedivhTransformRavenRavensIntellect name="Raven’s Intellect" desc="MedivhTransformRavenRavensIntellect">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenRavensIntellect>
-  </Level1>
-  <Level4>
-    <MedivhPortalMageArmor name="Mage Armor" desc="MedivhPortalMageArmor">storm_ui_icon_medivh_portal.dds</MedivhPortalMageArmor>
-    <MedivhTransformRavenBirdsEyeView name="Bird's Eye View" desc="MedivhTransformRavenBirdsEyeView">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenBirdsEyeView>
-    <MedivhDustOfAppearance name="Dust of Appearance" desc="MedivhDustOfAppearance">storm_ui_icon_medivh_dustofappearance.dds</MedivhDustOfAppearance>
-  </Level4>
-  <Level7>
-    <MedivhArcaneRiftArcaneCharge name="Arcane Charge" desc="MedivhArcaneRiftArcaneCharge">storm_ui_icon_medivh_arcanemissile.dds</MedivhArcaneRiftArcaneCharge>
-    <MedivhArcaneRiftTheMastersTouch name="The Master's Touch" desc="MedivhArcaneRiftTheMastersTouch">storm_ui_icon_medivh_arcanemissile_a.dds</MedivhArcaneRiftTheMastersTouch>
-    <MedivhForceOfWillArcaneExplosion name="Arcane Explosion" desc="MedivhForceOfWillArcaneExplosion">storm_ui_icon_medivh_forceofwill.dds</MedivhForceOfWillArcaneExplosion>
-    <MedivhPortalRavenFamiliar name="Raven Familiar" desc="MedivhPortalRavenFamiliar">storm_ui_icon_medivh_portal.dds</MedivhPortalRavenFamiliar>
-  </Level7>
-  <Level10>
-    <MedivhPolyBomb name="Poly Bomb" desc="MedivhPolyBomb">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBomb>
-    <MedivhLeyLineSeal name="Ley Line Seal" desc="MedivhLeyLineSeal">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSeal>
-  </Level10>
-  <Level13>
-    <MedivhPortalQuickening name="Quickening" desc="MedivhPortalQuickening">storm_ui_icon_medivh_portal.dds</MedivhPortalQuickening>
-    <MedivhPortalAstralProjection name="Astral Projection" desc="MedivhPortalAstralProjection">storm_ui_icon_medivh_portal_a.dds</MedivhPortalAstralProjection>
-    <MedivhTransformRavenWindsOfCelerity name="Winds of Celerity" desc="MedivhTransformRavenWindsOfCelerity">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenWindsOfCelerity>
-  </Level13>
-  <Level16>
-    <MedivhForceOfWillCircleOfProtection name="Circle of Protection" desc="MedivhForceOfWillCircleOfProtection">storm_ui_icon_medivh_forceofwill.dds</MedivhForceOfWillCircleOfProtection>
-    <MedivhForceOfWillEnduringWill name="Enduring Will" desc="MedivhForceOfWillEnduringWill">storm_ui_icon_medivh_forceofwill_a.dds</MedivhForceOfWillEnduringWill>
-    <MedivhForceOfWillReabsorption name="Reabsorption" desc="MedivhForceOfWillReabsorption">storm_ui_icon_medivh_forceofwill_b.dds</MedivhForceOfWillReabsorption>
-  </Level16>
-  <Level20>
-    <MedivhPolyBombGlyphOfPolyBomb name="Glyph Of Poly Bomb" desc="MedivhPolyBombGlyphOfPolyBomb">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBombGlyphOfPolyBomb>
-    <MedivhLeyLineSealMedivhCheats name="Medivh Cheats!" desc="MedivhLeyLineSealMedivhCheats">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSealMedivhCheats>
-    <MedivhArcaneRiftGuardianOfTirisfal name="Guardian of Tirisfal" desc="MedivhArcaneRiftGuardianOfTirisfal">storm_ui_icon_medivh_arcanemissile.dds</MedivhArcaneRiftGuardianOfTirisfal>
-    <MedivhArcaneBrilliance name="Arcane Brilliance" desc="MedivhArcaneBrilliance">storm_ui_icon_jaina_arcaneintellect.dds</MedivhArcaneBrilliance>
-    <MedivhInvisibility name="Invisibility" desc="MedivhInvisibility">storm_ui_icon_medivh_invisibility.dds</MedivhInvisibility>
-  </Level20>
+  <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft" type="Ranged" difficulty="VeryHard"
+          portrait="storm_ui_ingame_heroselect_btn_medivh.dds" loading="storm_ui_ingame_hero_loadingscreen_medivh.dds" leader="storm_ui_ingame_hero_leaderboard_medivh.dds">
+    <Roles>Specialist</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <MedivhPortalStablePortal name="Stable Portal" desc="MedivhPortalStablePortal">storm_ui_icon_medivh_portal.dds</MedivhPortalStablePortal>
+        <MedivhPortalPortalMastery name="Portal Mastery" desc="MedivhPortalPortalMastery">storm_ui_icon_medivh_portal_a.dds</MedivhPortalPortalMastery>
+        <MedivhTransformRavenRavensIntellect name="Raven’s Intellect" desc="MedivhTransformRavenRavensIntellect">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenRavensIntellect>
+      </Level1>
+      <Level4>
+        <MedivhPortalMageArmor name="Mage Armor" desc="MedivhPortalMageArmor">storm_ui_icon_medivh_portal.dds</MedivhPortalMageArmor>
+        <MedivhTransformRavenBirdsEyeView name="Bird's Eye View" desc="MedivhTransformRavenBirdsEyeView">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenBirdsEyeView>
+        <MedivhDustOfAppearance name="Dust of Appearance" desc="MedivhDustOfAppearance">storm_ui_icon_medivh_dustofappearance.dds</MedivhDustOfAppearance>
+      </Level4>
+      <Level7>
+        <MedivhArcaneRiftArcaneCharge name="Arcane Charge" desc="MedivhArcaneRiftArcaneCharge">storm_ui_icon_medivh_arcanemissile.dds</MedivhArcaneRiftArcaneCharge>
+        <MedivhArcaneRiftTheMastersTouch name="The Master's Touch" desc="MedivhArcaneRiftTheMastersTouch">storm_ui_icon_medivh_arcanemissile_a.dds</MedivhArcaneRiftTheMastersTouch>
+        <MedivhForceOfWillArcaneExplosion name="Arcane Explosion" desc="MedivhForceOfWillArcaneExplosion">storm_ui_icon_medivh_forceofwill.dds</MedivhForceOfWillArcaneExplosion>
+        <MedivhPortalRavenFamiliar name="Raven Familiar" desc="MedivhPortalRavenFamiliar">storm_ui_icon_medivh_portal.dds</MedivhPortalRavenFamiliar>
+      </Level7>
+      <Level10>
+        <MedivhPolyBomb name="Poly Bomb" desc="MedivhPolyBomb">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBomb>
+        <MedivhLeyLineSeal name="Ley Line Seal" desc="MedivhLeyLineSeal">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSeal>
+      </Level10>
+      <Level13>
+        <MedivhPortalQuickening name="Quickening" desc="MedivhPortalQuickening">storm_ui_icon_medivh_portal.dds</MedivhPortalQuickening>
+        <MedivhPortalAstralProjection name="Astral Projection" desc="MedivhPortalAstralProjection">storm_ui_icon_medivh_portal_a.dds</MedivhPortalAstralProjection>
+        <MedivhTransformRavenWindsOfCelerity name="Winds of Celerity" desc="MedivhTransformRavenWindsOfCelerity">storm_ui_icon_medivh_ravenform.dds</MedivhTransformRavenWindsOfCelerity>
+      </Level13>
+      <Level16>
+        <MedivhForceOfWillCircleOfProtection name="Circle of Protection" desc="MedivhForceOfWillCircleOfProtection">storm_ui_icon_medivh_forceofwill.dds</MedivhForceOfWillCircleOfProtection>
+        <MedivhForceOfWillEnduringWill name="Enduring Will" desc="MedivhForceOfWillEnduringWill">storm_ui_icon_medivh_forceofwill_a.dds</MedivhForceOfWillEnduringWill>
+        <MedivhForceOfWillReabsorption name="Reabsorption" desc="MedivhForceOfWillReabsorption">storm_ui_icon_medivh_forceofwill_b.dds</MedivhForceOfWillReabsorption>
+      </Level16>
+      <Level20>
+        <MedivhPolyBombGlyphOfPolyBomb name="Glyph Of Poly Bomb" desc="MedivhPolyBombGlyphOfPolyBomb">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBombGlyphOfPolyBomb>
+        <MedivhLeyLineSealMedivhCheats name="Medivh Cheats!" desc="MedivhLeyLineSealMedivhCheats">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSealMedivhCheats>
+        <MedivhArcaneRiftGuardianOfTirisfal name="Guardian of Tirisfal" desc="MedivhArcaneRiftGuardianOfTirisfal">storm_ui_icon_medivh_arcanemissile.dds</MedivhArcaneRiftGuardianOfTirisfal>
+        <MedivhArcaneBrilliance name="Arcane Brilliance" desc="MedivhArcaneBrilliance">storm_ui_icon_jaina_arcaneintellect.dds</MedivhArcaneBrilliance>
+        <MedivhInvisibility name="Invisibility" desc="MedivhInvisibility">storm_ui_icon_medivh_invisibility.dds</MedivhInvisibility>
+      </Level20>
+  </Talents>
 </Medivh>

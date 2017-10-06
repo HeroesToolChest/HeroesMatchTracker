@@ -1,42 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Stukov>
-  <Level1>
-    <StukovSpineLauncher name="Spine Launcher" desc="StukovSpineLauncherTalent">storm_ui_icon_stukov_spinelauncher.dds</StukovSpineLauncher>
-    <StukovFetidTouch name="Fetid Touch" desc="StukovFetidTouchTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovFetidTouch>
-    <StukovGrowingInfestation name="Growing Infestation" desc="StukovGrowingInfestationTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovGrowingInfestation>
-    <StukovPoppinPustules name="Poppin Pustules" desc="StukovPoppinPustulesTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovPoppinPustules>
-  </Level1>
-  <Level4>
-    <StukovOneGoodSpread name="One Good Spread..." desc="StukovOneGoodSpreadTalent">storm_ui_icon_stukov_healingpathogen.dds</StukovOneGoodSpread>
-    <StukovTopOff name="Top Off" desc="StukovTopOffTalent">storm_ui_icon_stukov_healingpathogen_a.dds</StukovTopOff>
-    <StukovBioticArmor name="Biotic Armor" desc="StukovBioticArmorTalent">storm_ui_icon_stukov_healingpathogen_b.dds</StukovBioticArmor>
-    <StukovVigorousReuptake name="Vigorous Reuptake" desc="StukovVigorousReuptakeTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovVigorousReuptake>
-  </Level4>
-  <Level7>
-    <StukovLongPitch name="The Long Pitch" desc="StukovLongPitchTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovLongPitch>
-    <StukovWithinMyReach name="Within My Reach" desc="StukovWithinMyReachTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovWithinMyReach>
-    <StukovItHungers name="It Hungers" desc="StukovLurkingArmItHungersTalent">storm_ui_icon_stukov_lurkingarm_a.dds</StukovItHungers>
-    <StukovTargetedExcision name="Targeted Excision" desc="StukovTargetedExcisionTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovTargetedExcision>
-  </Level7>
-  <Level10>
-    <StukovHeroicAbilityFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe">storm_ui_icon_stukov_flailingswipe.dds</StukovHeroicAbilityFlailingSwipe>
-    <StukovHeroicAbilityMassiveShove name="Massive Shove" desc="StukovMassiveShove">storm_ui_icon_stukov_massiveshove.dds</StukovHeroicAbilityMassiveShove>
-  </Level10>
-  <Level13>
-    <StukovWeightedPustuleReactiveBallistospores name="Reactive Ballistospores" desc="StukovReactiveBallistosporesTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovWeightedPustuleReactiveBallistospores>
-    <StukovLowBlow name="Low Blow" desc="StukovLowBlowTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovLowBlow>
-    <StukovLingeringSpines name="Lingering Spines" desc="StukovLingeringSpinesTalent">storm_ui_icon_stukov_lurkingarm_a.dds</StukovLingeringSpines>
-    <StukovVirulentReaction name="Virulent Reaction" desc="StukovVirulentReactionTalent">storm_ui_icon_stukov_lurkingarm_b.dds</StukovVirulentReaction>
-  </Level13>
-  <Level16>
-    <StukovSuperstrain name="Superstrain" desc="StukovSuperstrainTalent">storm_ui_icon_stukov_healingpathogen.dds</StukovSuperstrain>
-    <StukovUniversalCarrier name="Universal Carrier" desc="StukovUniversalCarrierTalent">storm_ui_icon_stukov_healingpathogen_a.dds</StukovUniversalCarrier>
-    <StukovPoxPopuli name="Pox Populi" desc="StukovPoxPopuliTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovPoxPopuli>
-    <StukovEyeInfection name="Eye Infection" desc="StukovEyeInfectionTalent">storm_ui_icon_stukov_bio-killswitch_a.dds</StukovEyeInfection>skin>
-  </Level16>
-  <Level20>
-    <StukovControlledChaos name="Controlled Chaos" desc="StukovControlledChaosTalent">storm_ui_icon_stukov_flailingswipe.dds</StukovControlledChaos>
-    <StukovPushComesToShove name="Push Comes To Shove" desc="StukovPushComesToShoveTalent">storm_ui_icon_stukov_massiveshove.dds</StukovPushComesToShove>
-    <StukovBioExplosionSwitch name="Bio-Explosion Switch" desc="StukovBioExplosionSwitchTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovBioExplosionSwitch>
-  </Level20>
+  <Stukov available="55288" attributeid="STUK" franchise="Starcraft" type="Melee" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_stukov.dds" loading="storm_ui_ingame_hero_loadingscreen_stukov.dds" leader="storm_ui_ingame_hero_leaderboard_stukov.dds">
+    <Roles>Support</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <StukovSpineLauncher name="Spine Launcher" desc="StukovSpineLauncherTalent">storm_ui_icon_stukov_spinelauncher.dds</StukovSpineLauncher>
+        <StukovFetidTouch name="Fetid Touch" desc="StukovFetidTouchTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovFetidTouch>
+        <StukovGrowingInfestation name="Growing Infestation" desc="StukovGrowingInfestationTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovGrowingInfestation>
+        <StukovPoppinPustules name="Poppin Pustules" desc="StukovPoppinPustulesTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovPoppinPustules>
+      </Level1>
+      <Level4>
+        <StukovOneGoodSpread name="One Good Spread..." desc="StukovOneGoodSpreadTalent">storm_ui_icon_stukov_healingpathogen.dds</StukovOneGoodSpread>
+        <StukovTopOff name="Top Off" desc="StukovTopOffTalent">storm_ui_icon_stukov_healingpathogen_a.dds</StukovTopOff>
+        <StukovBioticArmor name="Biotic Armor" desc="StukovBioticArmorTalent">storm_ui_icon_stukov_healingpathogen_b.dds</StukovBioticArmor>
+        <StukovVigorousReuptake name="Vigorous Reuptake" desc="StukovVigorousReuptakeTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovVigorousReuptake>
+      </Level4>
+      <Level7>
+        <StukovLongPitch name="The Long Pitch" desc="StukovLongPitchTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovLongPitch>
+        <StukovWithinMyReach name="Within My Reach" desc="StukovWithinMyReachTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovWithinMyReach>
+        <StukovItHungers name="It Hungers" desc="StukovLurkingArmItHungersTalent">storm_ui_icon_stukov_lurkingarm_a.dds</StukovItHungers>
+        <StukovTargetedExcision name="Targeted Excision" desc="StukovTargetedExcisionTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovTargetedExcision>
+      </Level7>
+      <Level10>
+        <StukovHeroicAbilityFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe">storm_ui_icon_stukov_flailingswipe.dds</StukovHeroicAbilityFlailingSwipe>
+        <StukovHeroicAbilityMassiveShove name="Massive Shove" desc="StukovMassiveShove">storm_ui_icon_stukov_massiveshove.dds</StukovHeroicAbilityMassiveShove>
+      </Level10>
+      <Level13>
+        <StukovWeightedPustuleReactiveBallistospores name="Reactive Ballistospores" desc="StukovReactiveBallistosporesTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovWeightedPustuleReactiveBallistospores>
+        <StukovLowBlow name="Low Blow" desc="StukovLowBlowTalent">storm_ui_icon_stukov_lurkingarm.dds</StukovLowBlow>
+        <StukovLingeringSpines name="Lingering Spines" desc="StukovLingeringSpinesTalent">storm_ui_icon_stukov_lurkingarm_a.dds</StukovLingeringSpines>
+        <StukovVirulentReaction name="Virulent Reaction" desc="StukovVirulentReactionTalent">storm_ui_icon_stukov_lurkingarm_b.dds</StukovVirulentReaction>
+      </Level13>
+      <Level16>
+        <StukovSuperstrain name="Superstrain" desc="StukovSuperstrainTalent">storm_ui_icon_stukov_healingpathogen.dds</StukovSuperstrain>
+        <StukovUniversalCarrier name="Universal Carrier" desc="StukovUniversalCarrierTalent">storm_ui_icon_stukov_healingpathogen_a.dds</StukovUniversalCarrier>
+        <StukovPoxPopuli name="Pox Populi" desc="StukovPoxPopuliTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovPoxPopuli>
+        <StukovEyeInfection name="Eye Infection" desc="StukovEyeInfectionTalent">storm_ui_icon_stukov_bio-killswitch_a.dds</StukovEyeInfection>skin>
+      </Level16>
+      <Level20>
+        <StukovControlledChaos name="Controlled Chaos" desc="StukovControlledChaosTalent">storm_ui_icon_stukov_flailingswipe.dds</StukovControlledChaos>
+        <StukovPushComesToShove name="Push Comes To Shove" desc="StukovPushComesToShoveTalent">storm_ui_icon_stukov_massiveshove.dds</StukovPushComesToShove>
+        <StukovBioExplosionSwitch name="Bio-Explosion Switch" desc="StukovBioExplosionSwitchTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovBioExplosionSwitch>
+      </Level20>
+  </Talents>
 </Stukov>

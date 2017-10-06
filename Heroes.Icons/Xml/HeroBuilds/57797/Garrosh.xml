@@ -1,39 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Garrosh>
-  <Level1>
-    <GarroshGroundbreakerWarbreaker name="Warbreaker" desc="GarroshGroundbreakerWarbreaker">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerWarbreaker>
-    <GarroshWreckingBallUnrivaledStrength name="Unrivaled Strength" desc="GarroshWreckingBallUnrivaledStrength">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallUnrivaledStrength>
-    <GarroshArmorUpBodyCheck name="Body Check" desc="GarroshArmorUpBodyCheck" cooldown="20">storm_ui_icon_garrosh_slam.dds</GarroshArmorUpBodyCheck>
-  </Level1>
-  <Level4>
-    <GarroshBloodthirstInFortheKill name="In For the Kill" desc="GarroshBloodthirstInFortheKill">storm_ui_icon_garrosh_bloodthirst.dds</GarroshBloodthirstInFortheKill>
-    <GarroshBloodthirstThirstforBattle name="Thirst for Battle" desc="GarroshBloodthirstThirstforBattle" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</GarroshBloodthirstThirstforBattle>
-    <GarroshIndomitable name="Indomitable" desc="GarroshIndomitable" cooldown="40">storm_ui_icon_garrosh_indomitablel.dds</GarroshIndomitable>
-  </Level4>
-  <Level7>
-    <GarroshGroundbreakerIntimidation name="Intimidation" desc="GarroshGroundbreakerIntimidation">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerIntimidation>
-    <GarroshBodyCheckBruteForce name="Brute Force" desc="GarroshBodyCheckBruteForce">storm_ui_icon_garrosh_slam.dds</GarroshBodyCheckBruteForce>
-    <GarroshOppressor name="Oppressor" desc="GarroshOppressor" generic="true">storm_ui_icon_talent_autoattack_slow.dds</GarroshOppressor>
-    <GarroshWreckingBallIntotheFray name="Into the Fray" desc="GarroshWreckingBallIntotheFray" cooldown="30">storm_ui_icon_garrosh_intothefray.dds</GarroshWreckingBallIntotheFray>
-  </Level7>
-  <Level10>
-    <GarroshHeroicAbilityWarlordsChallenge name="Warlord's Challenge" desc="GarroshWarlordsChallenge" mana="40" cooldown="50">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshHeroicAbilityWarlordsChallenge>
-    <GarroshHeroicAbilityDecimate name="Decimate" desc="GarroshDecimate" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_garrosh_decimate.dds</GarroshHeroicAbilityDecimate>
-  </Level10>
-  <Level13>
-    <GarroshGroundbreakerDefensiveMeasures name="Defensive Measures" desc="GarroshGroundbreakerDefensiveMeasures">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerDefensiveMeasures>
-    <GarroshBloodthirstBloodcraze name="Bloodcraze" desc="GarroshBloodthirstBloodcraze">storm_ui_icon_garrosh_bloodthirst.dds</GarroshBloodthirstBloodcraze>
-    <GarroshArmorUpDoubleUp name="Double Up" desc="GarroshArmorUpDoubleUp" cooldown="40">storm_ui_icon_garrosh_armor_up.dds</GarroshArmorUpDoubleUp>
-  </Level13>
-  <Level16>
-    <GarroshGroundbreakerRoughLanding name="Rough Landing" desc="GarroshGroundbreakerRoughLanding">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerRoughLanding>
-    <GarroshGroundbreakerMortalCombo name="Mortal Combo" desc="GarroshGroundbreakerMortalCombo">storm_ui_icon_garrosh_groundbreaker_var1.dds</GarroshGroundbreakerMortalCombo>
-    <GarroshWreckingBallEarthshaker name="Earthshaker" desc="GarroshWreckingBallEarthshaker">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallEarthshaker>
-  </Level16>
-  <Level20>
-    <GarroshWarlordsChallengeDeathWish name="Death Wish" desc="GarroshWarlordsChallengeDeathWish">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshWarlordsChallengeDeathWish>
-    <GarroshDecimateDeadlyCalm name="Deadly Calm" desc="GarroshDecimateDeadlyCalm">storm_ui_icon_garrosh_decimate.dds</GarroshDecimateDeadlyCalm>
-    <GarroshWreckingBallTitanicMight name="Titanic Might" desc="GarroshWreckingBallTitanicMight">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallTitanicMight>
-    <GarroshArmorUpInnerRage name="Inner Rage" desc="GarroshArmorUpInnerRage">storm_ui_icon_garrosh_slam.dds</GarroshArmorUpInnerRage>
-  </Level20>
+  <Garrosh available="56175" attributeid="Garr" franchise="Warcraft" type="Melee" difficulty="Medium"
+      portrait="storm_ui_ingame_heroselect_btn_garrosh.dds" loading="storm_ui_ingame_hero_loadingscreen_garrosh.dds" leader="storm_ui_ingame_hero_leaderboard_garrosh.dds">
+    <Roles>Warrior</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <GarroshGroundbreakerWarbreaker name="Warbreaker" desc="GarroshGroundbreakerWarbreaker">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerWarbreaker>
+        <GarroshWreckingBallUnrivaledStrength name="Unrivaled Strength" desc="GarroshWreckingBallUnrivaledStrength">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallUnrivaledStrength>
+        <GarroshArmorUpBodyCheck name="Body Check" desc="GarroshArmorUpBodyCheck" cooldown="20">storm_ui_icon_garrosh_slam.dds</GarroshArmorUpBodyCheck>
+      </Level1>
+      <Level4>
+        <GarroshBloodthirstInFortheKill name="In For the Kill" desc="GarroshBloodthirstInFortheKill">storm_ui_icon_garrosh_bloodthirst.dds</GarroshBloodthirstInFortheKill>
+        <GarroshBloodthirstThirstforBattle name="Thirst for Battle" desc="GarroshBloodthirstThirstforBattle" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</GarroshBloodthirstThirstforBattle>
+        <GarroshIndomitable name="Indomitable" desc="GarroshIndomitable" cooldown="40">storm_ui_icon_garrosh_indomitablel.dds</GarroshIndomitable>
+      </Level4>
+      <Level7>
+        <GarroshGroundbreakerIntimidation name="Intimidation" desc="GarroshGroundbreakerIntimidation">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerIntimidation>
+        <GarroshBodyCheckBruteForce name="Brute Force" desc="GarroshBodyCheckBruteForce">storm_ui_icon_garrosh_slam.dds</GarroshBodyCheckBruteForce>
+        <GarroshOppressor name="Oppressor" desc="GarroshOppressor" generic="true">storm_ui_icon_talent_autoattack_slow.dds</GarroshOppressor>
+        <GarroshWreckingBallIntotheFray name="Into the Fray" desc="GarroshWreckingBallIntotheFray" cooldown="30">storm_ui_icon_garrosh_intothefray.dds</GarroshWreckingBallIntotheFray>
+      </Level7>
+      <Level10>
+        <GarroshHeroicAbilityWarlordsChallenge name="Warlord's Challenge" desc="GarroshWarlordsChallenge" mana="40" cooldown="50">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshHeroicAbilityWarlordsChallenge>
+        <GarroshHeroicAbilityDecimate name="Decimate" desc="GarroshDecimate" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_garrosh_decimate.dds</GarroshHeroicAbilityDecimate>
+      </Level10>
+      <Level13>
+        <GarroshGroundbreakerDefensiveMeasures name="Defensive Measures" desc="GarroshGroundbreakerDefensiveMeasures">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerDefensiveMeasures>
+        <GarroshBloodthirstBloodcraze name="Bloodcraze" desc="GarroshBloodthirstBloodcraze">storm_ui_icon_garrosh_bloodthirst.dds</GarroshBloodthirstBloodcraze>
+        <GarroshArmorUpDoubleUp name="Double Up" desc="GarroshArmorUpDoubleUp" cooldown="40">storm_ui_icon_garrosh_armor_up.dds</GarroshArmorUpDoubleUp>
+      </Level13>
+      <Level16>
+        <GarroshGroundbreakerRoughLanding name="Rough Landing" desc="GarroshGroundbreakerRoughLanding">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerRoughLanding>
+        <GarroshGroundbreakerMortalCombo name="Mortal Combo" desc="GarroshGroundbreakerMortalCombo">storm_ui_icon_garrosh_groundbreaker_var1.dds</GarroshGroundbreakerMortalCombo>
+        <GarroshWreckingBallEarthshaker name="Earthshaker" desc="GarroshWreckingBallEarthshaker">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallEarthshaker>
+      </Level16>
+      <Level20>
+        <GarroshWarlordsChallengeDeathWish name="Death Wish" desc="GarroshWarlordsChallengeDeathWish">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshWarlordsChallengeDeathWish>
+        <GarroshDecimateDeadlyCalm name="Deadly Calm" desc="GarroshDecimateDeadlyCalm">storm_ui_icon_garrosh_decimate.dds</GarroshDecimateDeadlyCalm>
+        <GarroshWreckingBallTitanicMight name="Titanic Might" desc="GarroshWreckingBallTitanicMight">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBallTitanicMight>
+        <GarroshArmorUpInnerRage name="Inner Rage" desc="GarroshArmorUpInnerRage">storm_ui_icon_garrosh_slam.dds</GarroshArmorUpInnerRage>
+      </Level20>
+  </Talents>
 </Garrosh>

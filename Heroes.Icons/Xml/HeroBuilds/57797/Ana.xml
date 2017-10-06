@@ -1,39 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Ana>
-  <Level1>
-    <AnaBioticGrenadeGrenadeCalibration name="Grenade Calibration" desc="AnaBioticGrenadeGrenadeCalibration">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeGrenadeCalibration>
-    <AnaPiercingDarts name="Piercing Darts" desc="AnaPiercingDarts">storm_ui_icon_ana_sleep_dart.dds</AnaPiercingDarts>
-    <AnaDetachableBoxMagazine name="Detachable Box Magazine" desc="AnaDetachableBoxMagazine">storm_ui_icon_ana_detachableboxmagazine.dds</AnaDetachableBoxMagazine>   
-  </Level1>
-  <Level4>
-    <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeAirStrike>
-    <AnaOverdose name="Overdose" desc="AnaOverdose">storm_ui_icon_ana_overdose.dds</AnaOverdose>
-    <AnaAimDownSights name="Aim Down Sights" desc="AnaAimDownSights">storm_ui_icon_ana_aim_down_sights.dds</AnaAimDownSights>
-  </Level4>
-  <Level7>
-    <AnaSleepingDartTemporaryBlindness name="Temporary Blindness" desc="AnaSleepingDartTemporaryBlindness">storm_ui_icon_ana_sleep_dart.dds</AnaSleepingDartTemporaryBlindness>
-    <AnaMindNumbingAgent name="Mind-Numbing Agent" desc="AnaMindNumbingAgent">storm_ui_icon_ana_shrike.dds</AnaMindNumbingAgent>
-    <AnaDebilitatingDart name="Debilitating Dart" desc="AnaDebilitatingDart" cooldown="45">storm_ui_icon_ana_debilitatingdart.dds</AnaDebilitatingDart>
-  </Level7>
-  <Level10>
-    <AnaHeroicAbilityNanaBoost name="Nana Boost" desc="AnaNanoBoost" mana="40" cooldown="50">storm_ui_icon_ana_nano_bost.dds</AnaHeroicAbilityNanaBoost>
-    <AnaHeroicAbilityEyeOfHorus name="Eye of Horus" desc="AnaEyeOfHorusActivate" mana="75" cooldown="60">storm_ui_icon_ana_overwatch.dds</AnaHeroicAbilityEyeOfHorus>
-  </Level10>
-  <Level13>
-    <AnaHealingDartSpeedSerum name="Speed Serum" desc="AnaHealingDartSpeedSerum">storm_ui_icon_ana_healing_dart.dds</AnaHealingDartSpeedSerum>
-    <AnaHealingDartPurifyingDarts name="Purifying Darts" desc="AnaHealingDartPurifyingDarts">storm_ui_icon_ana_healing_dart_a.dds</AnaHealingDartPurifyingDarts>
-    <AnaHealingDartSmellingSalts name="Smelling Salts" desc="AnaHealingDartSmellingSalts">storm_ui_icon_ana_healing_dart_b.dds</AnaHealingDartSmellingSalts>
-  </Level13>
-  <Level16>
-    <AnaHealingDartSharpshooter name="Sharpshooter" desc="AnaHealingDartSharpshooter">storm_ui_icon_ana_healing_dart.dds</AnaHealingDartSharpshooter>
-    <AnaHealingDartConcentratedDoses name="Concentrated Doses" desc="AnaHealingDartConcentratedDoses">storm_ui_icon_ana_healing_dart_a.dds</AnaHealingDartConcentratedDoses>
-    <AnaBioticGrenadeContactHealing name="Contact Healing" desc="AnaBioticGrenadeContactHealing">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeContactHealing>
-  </Level16>
-  <Level20>
-    <AnaNanoInfusion name="Nano Infusion" desc="AnaNanoInfusion">storm_ui_icon_ana_nano_bost.dds</AnaNanoInfusion>
-    <AnaEyeOfHorusBallisticAdvantage name="Ballistic Advantage" desc="AnaEyeOfHorusBallisticAdvantage">storm_ui_icon_ana_overwatch.dds</AnaEyeOfHorusBallisticAdvantage>
-    <AnaSomnolentDoses name="Somnolent Doses" desc="AnaSomnolentDoses">storm_ui_icon_ana_shrike.dds</AnaSomnolentDoses>
-    <AnaDynamicShooting name="Dynamic Shooting" desc="AnaDynamicShooting" generic="true">storm_ui_icon_talent_autoattack_speed.dds</AnaDynamicShooting>
-    <AnaAimDownSightsCustomOptics name="Custom Optics" desc="AnaAimDownSightsCustomOptics">storm_ui_icon_ana_aim_down_sights.dds</AnaAimDownSightsCustomOptics>
-  </Level20>
+  <Ana available="57797" attributeid="HANA" franchise="Overwatch" type="Ranged" difficulty="Hard"
+        portrait="storm_ui_ingame_heroselect_btn_ana.dds" loading="storm_ui_ingame_hero_loadingscreen_ana.dds" leader="storm_ui_ingame_hero_leaderboard_ana.dds">
+    <Roles>Support</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <AnaBioticGrenadeGrenadeCalibration name="Grenade Calibration" desc="AnaBioticGrenadeGrenadeCalibration">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeGrenadeCalibration>
+        <AnaPiercingDarts name="Piercing Darts" desc="AnaPiercingDarts">storm_ui_icon_ana_sleep_dart.dds</AnaPiercingDarts>
+        <AnaDetachableBoxMagazine name="Detachable Box Magazine" desc="AnaDetachableBoxMagazine">storm_ui_icon_ana_detachableboxmagazine.dds</AnaDetachableBoxMagazine>   
+      </Level1>
+      <Level4>
+        <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeAirStrike>
+        <AnaOverdose name="Overdose" desc="AnaOverdose">storm_ui_icon_ana_overdose.dds</AnaOverdose>
+        <AnaAimDownSights name="Aim Down Sights" desc="AnaAimDownSights">storm_ui_icon_ana_aim_down_sights.dds</AnaAimDownSights>
+      </Level4>
+      <Level7>
+        <AnaSleepingDartTemporaryBlindness name="Temporary Blindness" desc="AnaSleepingDartTemporaryBlindness">storm_ui_icon_ana_sleep_dart.dds</AnaSleepingDartTemporaryBlindness>
+        <AnaMindNumbingAgent name="Mind-Numbing Agent" desc="AnaMindNumbingAgent">storm_ui_icon_ana_shrike.dds</AnaMindNumbingAgent>
+        <AnaDebilitatingDart name="Debilitating Dart" desc="AnaDebilitatingDart" cooldown="45">storm_ui_icon_ana_debilitatingdart.dds</AnaDebilitatingDart>
+      </Level7>
+      <Level10>
+        <AnaHeroicAbilityNanaBoost name="Nana Boost" desc="AnaNanoBoost" mana="40" cooldown="50">storm_ui_icon_ana_nano_bost.dds</AnaHeroicAbilityNanaBoost>
+        <AnaHeroicAbilityEyeOfHorus name="Eye of Horus" desc="AnaEyeOfHorusActivate" mana="75" cooldown="60">storm_ui_icon_ana_overwatch.dds</AnaHeroicAbilityEyeOfHorus>
+      </Level10>
+      <Level13>
+        <AnaHealingDartSpeedSerum name="Speed Serum" desc="AnaHealingDartSpeedSerum">storm_ui_icon_ana_healing_dart.dds</AnaHealingDartSpeedSerum>
+        <AnaHealingDartPurifyingDarts name="Purifying Darts" desc="AnaHealingDartPurifyingDarts">storm_ui_icon_ana_healing_dart_a.dds</AnaHealingDartPurifyingDarts>
+        <AnaHealingDartSmellingSalts name="Smelling Salts" desc="AnaHealingDartSmellingSalts">storm_ui_icon_ana_healing_dart_b.dds</AnaHealingDartSmellingSalts>
+      </Level13>
+      <Level16>
+        <AnaHealingDartSharpshooter name="Sharpshooter" desc="AnaHealingDartSharpshooter">storm_ui_icon_ana_healing_dart.dds</AnaHealingDartSharpshooter>
+        <AnaHealingDartConcentratedDoses name="Concentrated Doses" desc="AnaHealingDartConcentratedDoses">storm_ui_icon_ana_healing_dart_a.dds</AnaHealingDartConcentratedDoses>
+        <AnaBioticGrenadeContactHealing name="Contact Healing" desc="AnaBioticGrenadeContactHealing">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeContactHealing>
+      </Level16>
+      <Level20>
+        <AnaNanoInfusion name="Nano Infusion" desc="AnaNanoInfusion">storm_ui_icon_ana_nano_bost.dds</AnaNanoInfusion>
+        <AnaEyeOfHorusBallisticAdvantage name="Ballistic Advantage" desc="AnaEyeOfHorusBallisticAdvantage">storm_ui_icon_ana_overwatch.dds</AnaEyeOfHorusBallisticAdvantage>
+        <AnaSomnolentDoses name="Somnolent Doses" desc="AnaSomnolentDoses">storm_ui_icon_ana_shrike.dds</AnaSomnolentDoses>
+        <AnaDynamicShooting name="Dynamic Shooting" desc="AnaDynamicShooting" generic="true">storm_ui_icon_talent_autoattack_speed.dds</AnaDynamicShooting>
+        <AnaAimDownSightsCustomOptics name="Custom Optics" desc="AnaAimDownSightsCustomOptics">storm_ui_icon_ana_aim_down_sights.dds</AnaAimDownSightsCustomOptics>
+      </Level20>
+  </Talents>
 </Ana>
