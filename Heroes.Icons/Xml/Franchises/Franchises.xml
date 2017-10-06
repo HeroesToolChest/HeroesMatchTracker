@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Franchises>
+  <Classic>hero_franchise_classic.png</Classic>
+  <Diablo>hero_franchise_diablo.png</Diablo>
+  <Starcraft>hero_franchise_overwatch.png</Starcraft>
+  <Overwatch>hero_franchise_starcraft.png</Overwatch>
+  <Warcraft>hero_franchise_warcraft.png</Warcraft>
+</Franchises>
