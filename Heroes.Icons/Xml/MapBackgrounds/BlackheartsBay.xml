@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<BlackheartsBay name="Blackheart's Bay" short="BlackheartsBay">
+<BlackheartsBay name="Blackheart's Bay" alt="BlackheartsBay">
   <Normal fontglow="#FF008000">ui_ingame_mapmechanic_loadscreen_blackheartsbay.jpg</Normal>
-  <Aliases>Baie de Cœur-Noir,Schwarzherzbucht,Bahía de Almanegra,Zatoka Czarnosercego,Baia di Cuornero,Бухта Черносерда,Baía do Coração Negro,블랙하트 항만,黑心湾,黑心灣</Aliases>
 </BlackheartsBay>

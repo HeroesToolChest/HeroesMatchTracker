@@ -1,6 +1,5 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons;
-using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Generic;
@@ -84,11 +83,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         // returns true if replay already exists in database
         private bool BasicData(string fileName)
         {
-            if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
-            {
-                if (!AutoTranslateMapNameByMapObjectives(out mapName))
-                    throw new TranslationException(RetrieveAllMapAndHeroNames());
-            }
+            string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
+            if (string.IsNullOrEmpty(mapName))
+                throw new TranslationException(RetrieveAllMapAndHeroNames());
 
             ReplayMatch replayMatch = new ReplayMatch
             {
@@ -180,11 +177,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 }
                 else
                 {
-                    if (!HeroesIcons.Heroes().HeroNameTranslation(player.value.Character, out string character))
-                    {
-                        if (!AutoTranslateHeroNameByTalent(player.value.Talents, out character))
-                            throw new TranslationException(RetrieveAllMapAndHeroNames());
-                    }
+                    string character = HeroesIcons.HeroBuilds().GetRealHeroNameFromHeroUnitName(player.value.HeroUnits.FirstOrDefault().Name);
+                    if (string.IsNullOrEmpty(character))
+                        throw new TranslationException(RetrieveAllMapAndHeroNames());
 
                     ReplayMatchPlayer replayPlayer = new ReplayMatchPlayer
                     {
@@ -325,7 +320,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
                 foreach (var hero in playersHeroes)
                 {
-                    if (HeroesIcons.Heroes().HeroExists(hero.Key))
+                    if (HeroesIcons.HeroBuilds().HeroExists(hero.Key))
                     {
                         playersHero.PlayerId = playerId;
                         playersHero.HeroName = hero.Key;
@@ -564,10 +559,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             List<string> names = new List<string>();
 
-            if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out string mapName))
+            string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
+
+            if (!string.IsNullOrEmpty(mapName))
                 names.Add($"{Replay.Map}: {mapName} [Good]");
-            else if (AutoTranslateMapNameByMapObjectives(out mapName))
-                names.Add($"{Replay.Map}: {mapName} [Auto]");
             else
                 names.Add($"{Replay.Map}: ??? [Unknown]");
 
@@ -582,10 +577,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     continue;
                 }
 
-                if (HeroesIcons.Heroes().HeroNameTranslation(player.Character, out string character))
+                string character = HeroesIcons.HeroBuilds().GetRealHeroNameFromHeroUnitName(player.HeroUnits.FirstOrDefault().Name);
+
+                if (!string.IsNullOrEmpty(character))
                     names.Add($"{player.Character}: {character} [Good]");
-                else if (AutoTranslateHeroNameByTalent(player.Talents, out character))
-                    names.Add($"{player.Character}: {character} [Auto]");
                 else
                     names.Add($"{player.Character}: ??? [Unknown]");
             }
@@ -593,93 +588,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             string output = "Unable to translate some or all of the following names";
             output += Environment.NewLine;
 
-            foreach (var name in names)
-            {
-                output += name;
-                output += Environment.NewLine;
-            }
+            string.Join(Environment.NewLine, names);
 
             output += "================================";
             output += Environment.NewLine;
             return output;
-        }
-
-        /// <summary>
-        /// Attempt to auto translate Hero name using talents, returns true if succeeded
-        /// </summary>
-        /// <param name="talents"></param>
-        /// <param name="character">Translated hero name</param>
-        /// <returns></returns>
-        private bool AutoTranslateHeroNameByTalent(Heroes.ReplayParser.Talent[] talents, out string character)
-        {
-            int talentCount = talents.Count();
-            character = string.Empty;
-
-            while (talentCount > 0)
-            {
-                if (HeroesIcons.HeroBuilds().GetHeroNameFromTalentReferenceName((TalentTier)(1 << (talentCount - 1)), talents[talentCount - 1].TalentName, out character))
-                    return true;
-                else
-                    talentCount--;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Attempt to auto translate the Map name using the objectives, returns true if succeeded
-        /// </summary>
-        /// <param name="mapName"></param>
-        /// <returns></returns>
-        private bool AutoTranslateMapNameByMapObjectives(out string mapName)
-        {
-            mapName = string.Empty;
-
-            var objTeam0 = Replay.TeamObjectives[0].Select(x => x.TeamObjectiveType.ToString().ToUpperInvariant()).ToList();
-            var objTeam1 = Replay.TeamObjectives[1].Select(x => x.TeamObjectiveType.ToString().ToUpperInvariant()).ToList();
-
-            var mapsList = HeroesIcons.MapBackgrounds().GetMapsList();
-            var mapsListStripped = new List<string>();
-
-            // remove all the spaces from the map names
-            foreach (var map in mapsList)
-            {
-                mapsListStripped.Add(new string(map.Where(x => !char.IsWhiteSpace(x) && !char.IsPunctuation(x)).ToArray()).ToUpperInvariant());
-            }
-
-            // known list of objectives that do not contain a map name
-            var nonMapObjectives = new List<string>
-            {
-                "FirstCatapultSpawn",
-                "BossCampCaptureWithCampID",
-            };
-
-            if (objTeam0 == null && objTeam1 == null)
-                return false;
-
-            objTeam0.AddRange(objTeam1); // add all to first
-            objTeam0 = objTeam0.Distinct().ToList(); // remove duplicates
-
-            if (objTeam0 != null && objTeam0.Count > 0)
-            {
-                foreach (var objective in objTeam0)
-                {
-                    if (nonMapObjectives.Contains(objective))
-                        continue;
-
-                    for (int i = 0; i < mapsListStripped.Count; i++)
-                    {
-                        // find the map
-                        if (objective.Contains(mapsListStripped[i]))
-                        {
-                            mapName = mapsList[i];
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            return false;
         }
     }
 }

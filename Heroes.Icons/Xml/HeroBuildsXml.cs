@@ -22,11 +22,6 @@ namespace Heroes.Icons.Xml
         private int SelectedBuild;
 
         /// <summary>
-        /// Inner dictionary key is talent reference name and values are real hero names
-        /// </summary>
-        private Dictionary<TalentTier, Dictionary<string, string>> RealHeroNameByTalentTierReferenceName = new Dictionary<TalentTier, Dictionary<string, string>>();
-
-        /// <summary>
         /// key is the build number
         /// </summary>
         private Dictionary<int, Tuple<string, string>> BuildPatchNotesByBuildNumber = new Dictionary<int, Tuple<string, string>>();
@@ -47,6 +42,12 @@ namespace Heroes.Icons.Xml
         /// example: Anubarak, Anub'arak
         /// </summary>
         private Dictionary<string, string> RealHeroNameByShortName = new Dictionary<string, string>();
+
+        /// <summary>
+        /// key is hero unit name, value real name
+        /// example: HeroAbathur, Abathur
+        /// </summary>
+        private Dictionary<string, string> RealHeroNameByHeroUnitName = new Dictionary<string, string>();
 
         /// <summary>
         /// key is real hero name
@@ -160,18 +161,6 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Gets the hero name associated with the given talent. Returns true is found, otherwise returns false
-        /// </summary>
-        /// <param name="tier">The tier that the talent resides in</param>
-        /// <param name="talentName">The talent reference name</param>
-        /// <param name="heroName">The real hero name</param>
-        /// <returns></returns>
-        public bool GetHeroNameFromTalentReferenceName(TalentTier tier, string talentName, out string heroName)
-        {
-            return RealHeroNameByTalentTierReferenceName[tier].TryGetValue(talentName, out heroName);
-        }
-
-        /// <summary>
         /// Get the patch notes link from the given build number. Returns null if not found
         /// </summary>
         /// <param name="build">The build number</param>
@@ -206,13 +195,35 @@ namespace Heroes.Icons.Xml
             }
         }
 
-        public string GetRealHeroNameFromShortName(string altName)
+        /// <summary>
+        /// Returns the real hero name from the short name
+        /// </summary>
+        /// <param name="shortName">short name of hero</param>
+        /// <returns></returns>
+        public string GetRealHeroNameFromShortName(string shortName)
         {
             // no pick
-            if (string.IsNullOrEmpty(altName))
+            if (string.IsNullOrEmpty(shortName))
                 return string.Empty;
 
-            if (RealHeroNameByShortName.TryGetValue(altName, out string realName))
+            if (RealHeroNameByShortName.TryGetValue(shortName, out string realName))
+                return realName;
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// Returns the real hero name from the hero unit name
+        /// </summary>
+        /// <param name="heroUnitName">hero unit name</param>
+        /// <returns></returns>
+        public string GetRealHeroNameFromHeroUnitName(string heroUnitName)
+        {
+            // no pick
+            if (string.IsNullOrEmpty(heroUnitName))
+                return string.Empty;
+
+            if (RealHeroNameByHeroUnitName.TryGetValue(heroUnitName, out string realName))
                 return realName;
             else
                 return null;
@@ -556,6 +567,7 @@ namespace Heroes.Icons.Xml
 
             RealHeroNameByAttributeId.Add(hero.AttributeId, hero.Name);
             RealHeroNameByShortName.Add(hero.ShortName, hero.Name);
+            RealHeroNameByHeroUnitName.Add(hero.UnitName, hero.Name);
         }
 
         private void ParseHeroRoles(XmlReader reader, Hero hero)
@@ -663,24 +675,6 @@ namespace Heroes.Icons.Xml
                                             IsChargeCooldown = isCharge,
                                         },
                                     });
-
-                                    if (!isGenericTalent && tier != TalentTier.Old)
-                                    {
-                                        if (!HeroExists(hero.ShortName))
-                                            throw new ArgumentException($"Hero short name not found: {hero.ShortName}");
-
-                                        if (RealHeroNameByTalentTierReferenceName.ContainsKey(tier))
-                                        {
-                                            if (RealHeroNameByTalentTierReferenceName[tier].ContainsKey(refTalentName))
-                                                throw new ArgumentException($"Same key {refTalentName} [{hero.ShortName}]");
-
-                                            RealHeroNameByTalentTierReferenceName[tier].Add(refTalentName, GetRealHeroNameFromShortName(hero.ShortName));
-                                        }
-                                        else
-                                        {
-                                            RealHeroNameByTalentTierReferenceName.Add(tier, new Dictionary<string, string>() { { refTalentName, GetRealHeroNameFromShortName(hero.ShortName) } });
-                                        }
-                                    }
                                 }
                             }
                         }

@@ -80,13 +80,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Heroes.ReplayParser, Version=1.0.0.48760, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLLs\Heroes.ReplayParser.dll</HintPath>
-    </Reference>
-    <Reference Include="LinqKit, Version=1.1.9.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
-      <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
-    </Reference>
     <Reference Include="SQLite.CodeFirst, Version=1.3.2.19, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLite.CodeFirst.1.3.2.19\lib\net45\SQLite.CodeFirst.dll</HintPath>
     </Reference>
@@ -239,6 +232,10 @@
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
       <Project>{5a3636a4-d771-4c7e-9897-0ef94c208a78}</Project>
       <Name>Heroes.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj">
+      <Project>{f21941e5-2251-4ac7-9fe7-6f26e5d5f2db}</Project>
+      <Name>Heroes.ReplayParser.netstandard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

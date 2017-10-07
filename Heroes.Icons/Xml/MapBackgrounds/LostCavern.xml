@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<LostCavern name="Lost Cavern" short="LostCavern" custom="true">
+<LostCavern name="Lost Cavern" alt="LostCavern" custom="true">
   <Normal fontglow="#FFADD8E6">storm_ui_homescreenbackground_lostcavern.jpg</Normal>
-  <Aliases>Caverna Perdida,Caverna perdida,失落洞窟,Vergessene Höhle,Затерянный грот,Caverna Perduta,Grotte perdue,Zaginiona Pieczara,잃어버린 동굴,Caveau perdu,Le caveau perdu</Aliases>
 </LostCavern>

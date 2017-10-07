@@ -20,7 +20,6 @@ namespace Heroes.Icons
         /// Load the latest build
         /// </summary>
         void LoadLatestHeroesBuild();
-        IHeroes Heroes();
         IHeroBuilds HeroBuilds();
         IMatchAwards MatchAwards();
         IMapBackgrounds MapBackgrounds();

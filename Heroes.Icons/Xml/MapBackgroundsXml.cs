@@ -12,7 +12,7 @@ namespace Heroes.Icons.Xml
 
         private Dictionary<string, Uri> MapUriByMapRealName = new Dictionary<string, Uri>();
         private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
-        private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
+        private Dictionary<string, string> MapRealNameByMapAlternativeName = new Dictionary<string, string>();
         private List<string> CustomOnlyMaps = new List<string>();
 
         private MapBackgroundsXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
@@ -111,14 +111,20 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// Returns the map name from the map alternative name
         /// </summary>
-        /// <param name="mapNameAlias">Alias name</param>
-        /// <param name="mapNameEnglish">English name</param>
+        /// <param name="mapAlternativeName">map's alternative name</param>
         /// <returns></returns>
-        public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
+        public string GetMapNameByMapAlternativeName(string mapAlternativeName)
         {
-            return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
+            // no pick
+            if (string.IsNullOrEmpty(mapAlternativeName))
+                return string.Empty;
+
+            if (MapRealNameByMapAlternativeName.TryGetValue(mapAlternativeName, out string mapName))
+                return mapName;
+            else
+                return null;
         }
 
         public int TotalCountOfMaps()
@@ -145,45 +151,27 @@ namespace Heroes.Icons.Xml
                         if (string.IsNullOrEmpty(realMapBackgroundName))
                             realMapBackgroundName = mapBackground; // default
 
+                        string alternativeName = reader["alt"];
                         string custom = reader["custom"] ?? "false";
 
                         if (!bool.TryParse(custom, out bool isCustomOnly))
                             isCustomOnly = false;
 
-                        while (reader.Read())
+                        MapRealNameByMapAlternativeName.Add(alternativeName, realMapBackgroundName);
+
+                        reader.Read();
+                        string element = reader.Name;
+                        string fontGlow = reader["fontglow"];
+
+                        if (reader.Read())
                         {
-                            if (reader.IsStartElement())
+                            if (isCustomOnly)
+                                CustomOnlyMaps.Add(realMapBackgroundName);
+
+                            if (element == "Normal")
                             {
-                                string element = reader.Name;
-                                string fontGlow = reader["fontglow"];
-
-                                if (reader.Read())
-                                {
-                                    if (isCustomOnly)
-                                        CustomOnlyMaps.Add(realMapBackgroundName);
-
-                                    if (element == "Normal")
-                                    {
-                                        MapUriByMapRealName.Add(realMapBackgroundName, GetImageUri(IconFolderName, reader.Value));
-                                        MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
-                                    }
-                                    else if (element == "Aliases")
-                                    {
-                                        string[] aliases = reader.Value.Split(',');
-
-                                        // add the english name
-                                        MapRealNameByMapAliasName.Add(realMapBackgroundName, realMapBackgroundName);
-
-                                        // add all the other aliases
-                                        foreach (var alias in aliases)
-                                        {
-                                            if (MapRealNameByMapAliasName.ContainsKey(alias))
-                                                throw new ArgumentException($"Alias already added to {realMapBackgroundName}: {alias}");
-
-                                            MapRealNameByMapAliasName.Add(alias, realMapBackgroundName);
-                                        }
-                                    }
-                                }
+                                MapUriByMapRealName.Add(realMapBackgroundName, GetImageUri(IconFolderName, reader.Value));
+                                MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
                             }
                         }
                     }

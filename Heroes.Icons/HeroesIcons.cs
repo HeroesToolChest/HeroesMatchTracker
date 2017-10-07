@@ -18,7 +18,6 @@ namespace Heroes.Icons
         private int LatestHeroesBuild;
         private bool Logger;
 
-        private HeroesXml HeroesXml;
         private HeroBuildsXml HeroBuildsXml; // the one that is in use
         private HeroBuildsXml HeroBuildsXmlHolder; // used for swapping between the one that is in use and latest
         private MatchAwardsXml MatchAwardsXml;
@@ -107,11 +106,6 @@ namespace Heroes.Icons
                 HeroBuildsXmlHolder = HeroBuildsXml; // hold the current
                 HeroBuildsXml = HeroBuildsXmlLatest; // switch to latest
             }
-        }
-
-        public IHeroes Heroes()
-        {
-            return HeroesXml;
         }
 
         public IHeroBuilds HeroBuilds()

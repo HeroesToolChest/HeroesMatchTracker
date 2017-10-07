@@ -41,12 +41,11 @@ namespace Heroes.Icons.Xml
         bool IsValidMapName(string mapName);
 
         /// <summary>
-        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// Returns the map name from the map alternative name
         /// </summary>
-        /// <param name="mapNameAlias">Alias name</param>
-        /// <param name="mapNameEnglish">English name</param>
+        /// <param name="mapAlternativeName">map's alternative name</param>
         /// <returns></returns>
-        bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish);
+        string GetMapNameByMapAlternativeName(string mapAlternativeName);
 
         int TotalCountOfMaps();
     }

@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CursedHollow name="Cursed Hollow" short="CursedHollow">
+<CursedHollow name="Cursed Hollow" alt="CursedHollow">
   <Normal fontglow="#FF800080">ui_ingame_mapmechanic_loadscreen_cursedhollow.jpg</Normal>
-  <Aliases>Val Maudit,Verfluchtes Tal,Cuenca Maldita,Valle Maledetta,Przeklęta Kotlina,Проклятая лощина,Creux Maudit,Hondonada maldita,Clareira Maldita,저주받은 골짜기,诅咒谷,詛咒谷地,Cursed Hollow - Scaling Test,Val Maudit - Test d’échelonnage,Valle Maledetta (Test adattamento),Проклятая лощина: тест параметров,詛咒谷地 - 調整測試,Przeklęta Kotlina – Test skalowania,저주받은 골짜기 - 수치 변경 테스트,Clareira Maldita - Teste de Escalonamento,Verfluchtes Tal – Skalierungstest,诅咒谷 - 数值测试,Cuenca Maldita: prueba de escala,Hondonada maldita - Mapa de prueba</Aliases>
 </CursedHollow>
