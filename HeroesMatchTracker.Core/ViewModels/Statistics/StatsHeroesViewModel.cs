@@ -64,7 +64,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
+            HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedHero = HeroesList[0];
 
             GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModeList());
@@ -346,7 +346,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             HeroesIcons.LoadLatestHeroesBuild();
 
             Enum.TryParse(SelectedSeason, out Season selectedSeason);
-            Hero hero = HeroesIcons.Heroes().GetHeroInfo(SelectedHero);
+            Hero hero = HeroesIcons.HeroBuilds().GetHeroInfo(SelectedHero);
 
             SelectedHeroPortrait = hero.GetHeroPortrait();
             HeroName = SelectedHero;

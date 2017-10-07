@@ -89,7 +89,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         private bool IsHealingStatCharacter(string realHeroName)
         {
-            if (HeroesIcons.Heroes().GetHeroInfo(realHeroName).Roles.FirstOrDefault() == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(realHeroName))
+            if (HeroesIcons.HeroBuilds().GetHeroInfo(realHeroName).Roles.FirstOrDefault() == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(realHeroName))
                 return true;
             else
                 return false;

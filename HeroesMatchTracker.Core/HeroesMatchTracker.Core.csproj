@@ -101,10 +101,6 @@
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Heroes.ReplayParser, Version=2.0.0.51779, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\HeroesMatchTracker.Data\DLLs\Heroes.ReplayParser.dll</HintPath>
-    </Reference>
     <Reference Include="LiveCharts, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.6\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -339,6 +335,10 @@
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
       <Project>{5a3636a4-d771-4c7e-9897-0ef94c208a78}</Project>
       <Name>Heroes.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj">
+      <Project>{f21941e5-2251-4ac7-9fe7-6f26e5d5f2db}</Project>
+      <Name>Heroes.ReplayParser.netstandard</Name>
     </ProjectReference>
     <ProjectReference Include="..\HeroesMatchTracker.Data\HeroesMatchTracker.Data.csproj">
       <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>

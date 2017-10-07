@@ -111,7 +111,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         {
             var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(Player.PlayerId);
 
-            Hero hero = HeroesIcons.Heroes().GetHeroInfo(Player.Character);
+            Hero hero = HeroesIcons.HeroBuilds().GetHeroInfo(Player.Character);
 
             LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
             Silenced = Player.IsSilenced;

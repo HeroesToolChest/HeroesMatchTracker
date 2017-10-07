@@ -205,12 +205,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
 
-            var heroesList = HeroesIcons.Heroes().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
+            var heroesList = HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
             foreach (var hero in heroesList)
             {
                 List<object> rowStats = new List<object>();
 
-                Stream leaderboardPortrait = HeroesIcons.Heroes().GetHeroInfo(hero).GetLeaderboardPortrait();
+                Stream leaderboardPortrait = HeroesIcons.HeroBuilds().GetHeroInfo(hero).GetLeaderboardPortrait();
                 int heroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(hero, selectedSeason);
 
                 rowStats.Add(leaderboardPortrait);

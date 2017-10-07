@@ -214,7 +214,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int mercsCaptured = (int)scoreResultsList.Sum(x => x.MercCampCaptures);
 
                 TimeSpan gameTime = Database.ReplaysDb().Statistics.ReadTotalMapGameTime(heroName, season, gameMode, map);
-                Hero heroInfo = HeroesIcons.Heroes().GetHeroInfo(heroName);
+                Hero heroInfo = HeroesIcons.HeroBuilds().GetHeroInfo(heroName);
 
                 double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
                 double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
