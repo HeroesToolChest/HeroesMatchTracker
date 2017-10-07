@@ -8,9 +8,9 @@ using NLog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 
 namespace HeroesMatchTracker.Core.ViewModels.Statistics
 {
@@ -42,7 +42,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private string _heroRole;
         private string _heroLevel;
 
-        private Uri _selectedHeroPortrait;
+        private Stream _selectedHeroPortrait;
         private StatsHeroesDataViewModel _statsHeroesDataViewModel;
 
         private ILoadingOverlayWindowService LoadingOverlayWindow;
@@ -98,7 +98,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
-        public Uri SelectedHeroPortrait
+        public Stream SelectedHeroPortrait
         {
             get => _selectedHeroPortrait;
             set
@@ -348,7 +348,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             Enum.TryParse(SelectedSeason, out Season selectedSeason);
             Hero hero = HeroesIcons.Heroes().GetHeroInfo(SelectedHero);
 
-            SelectedHeroPortrait = hero.HeroPortrait;
+            SelectedHeroPortrait = hero.GetHeroPortrait();
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, selectedSeason).ToString();

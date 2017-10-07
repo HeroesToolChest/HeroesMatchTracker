@@ -25,25 +25,25 @@ namespace Heroes.Icons.Xml
         /// <summary>
         /// Returns a dictionary of all the talents of the given hero in talent tiers
         /// </summary>
-        /// <param name="realHeroName">real hero name</param>
+        /// <param name="heroName">real hero name</param>
         /// <returns></returns>
-        Dictionary<string, Talent> GetHeroTalents(string realHeroName);
+        Dictionary<string, Talent> GetHeroTalents(string heroName);
 
         /// <summary>
         /// Returns a dictionary of all the talents of the given tier
         /// </summary>
-        /// <param name="realHeroName">real hero name</param>
+        /// <param name="heroName">real hero name</param>
         /// <param name="tier">the talent tier</param>
         /// <returns></returns>
-        Dictionary<string, Talent> GetHeroTalentsInTier(string realHeroName, TalentTier tier);
+        Dictionary<string, Talent> GetHeroTalentsInTier(string heroName, TalentTier tier);
 
         /// <summary>
         /// Returns a Talent object from the hero name, tier, and reference name of talent
         /// </summary>
-        /// <param name="realHeroName">real hero name</param>
+        /// <param name="heroName">real hero name</param>
         /// <param name="tier">The tier that the talent exists in</param>
         /// <param name="talentReferenceName">reference name of talent</param>
         /// <returns></returns>
-        Talent GetHeroTalent(string realHeroName, TalentTier tier, string talentReferenceName);
+        Talent GetHeroTalent(string heroName, TalentTier tier, string talentReferenceName);
     }
 }

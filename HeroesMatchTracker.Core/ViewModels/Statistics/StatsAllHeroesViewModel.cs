@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -209,7 +210,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 List<object> rowStats = new List<object>();
 
-                Uri leaderboardPortrait = HeroesIcons.Heroes().GetHeroInfo(hero).LeaderboardPortrait;
+                Stream leaderboardPortrait = HeroesIcons.Heroes().GetHeroInfo(hero).GetLeaderboardPortrait();
                 int heroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(hero, selectedSeason);
 
                 rowStats.Add(leaderboardPortrait);

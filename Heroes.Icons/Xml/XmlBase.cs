@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace Heroes.Icons.Xml
 {
@@ -51,15 +50,12 @@ namespace Heroes.Icons.Xml
 
                 using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlFolder, XmlParentFile), GetXmlReaderSettings()))
                 {
-                    reader.ReadStartElement();
+                    reader.MoveToContent();
 
-                    while (reader.Read() && reader.NodeType != XmlNodeType.EndElement)
+                    while (reader.Read())
                     {
-                        if (reader.NodeType == XmlNodeType.Comment || reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.Whitespace)
-                            continue;
-
-                        XElement el = (XElement)XNode.ReadFrom(reader);
-                        XmlChildFiles.Add(el.Name.ToString());
+                        if (reader.NodeType != XmlNodeType.EndElement)
+                            XmlChildFiles.Add(reader.Name);
                     }
                 }
             }
@@ -142,7 +138,7 @@ namespace Heroes.Icons.Xml
             XmlReaderSettings xmlReaderSettings = new XmlReaderSettings
             {
                 IgnoreComments = true,
-                IgnoreWhitespace = true
+                IgnoreWhitespace = true,
             };
 
             return xmlReaderSettings;

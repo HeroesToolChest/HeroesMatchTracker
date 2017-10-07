@@ -9,6 +9,7 @@ using HeroesMatchTracker.Data.Models.Replays;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -39,7 +40,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
 
         public string GameMode { get; private set; }
         public string MapName { get; private set; }
-        public Uri UserHeroImage { get; private set; }
+        public Stream UserHeroImage { get; private set; }
         public string UserHero { get; private set; }
         public string WinnerResult { get; private set; }
         public DateTime TimeStamp { get; private set; }
@@ -90,7 +91,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 if (player.PlayerId == UserProfile.PlayerId)
                 {
                     UserHero = player.Character;
-                    UserHeroImage = HeroesIcons.Heroes().GetHeroInfo(player.Character).HeroPortrait;
+                    UserHeroImage = HeroesIcons.Heroes().GetHeroInfo(player.Character).GetHeroPortrait();
                     WinnerResult = player.IsWinner ? "Win" : "Loss";
                 }
             }

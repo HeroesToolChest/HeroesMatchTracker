@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Abathur available="47479" attributeid="Abat" franchise="Starcraft" type="Melee" difficulty="VeryHard" mana="None"
+  <Abathur available="47479" attributeid="Abat" unit="HeroAbathur" franchise="Starcraft" type="Melee" difficulty="VeryHard" mana="None"
            portrait="storm_ui_ingame_heroselect_btn_abathur.dds" loading="storm_ui_ingame_hero_loadingscreen_abathur.dds" leader="storm_ui_ingame_hero_leaderboard_abathur.dds">
     <Roles>Specialist</Roles>
     <Abilities>

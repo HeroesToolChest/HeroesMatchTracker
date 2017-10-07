@@ -1,5 +1,6 @@
 ﻿using Heroes.Helpers;
-using System;
+using System.IO;
+using System.Reflection;
 
 namespace Heroes.Icons.Models
 {
@@ -32,13 +33,18 @@ namespace Heroes.Icons.Models
 
         public TalentTier Tier { get; set; }
 
-        public Uri Icon { get; set; }
+        public string Icon { get; set; }
 
         public TalentTooltip Tooltip { get; set; } = new TalentTooltip();
 
         public override string ToString()
         {
             return $"{Tier.GetFriendlyName()} | {ReferenceName}";
+        }
+
+        public Stream GetTalentIcon()
+        {
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(Icon);
         }
     }
 }

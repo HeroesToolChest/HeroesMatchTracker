@@ -20,11 +20,11 @@ namespace Heroes.Icons
         protected string ReferenceLogName => "_ReferenceNameLog.txt";
         protected string XmlErrorsLogName => "_XmlErrorsLog.txt";
         protected string LogFileName => "Logs";
-        protected string ApplicationIconsPath => Path.GetFullPath("Icons");
+        protected string ApplicationImagePath => "Heroes.Icons.Images";
 
         protected Uri GetImageUri(string iconFolderName, string fileName)
         {
-            return new Uri(Path.Combine(ApplicationIconsPath, iconFolderName, fileName), UriKind.Absolute);
+            return new Uri(Path.Combine(ApplicationImagePath, iconFolderName, fileName), UriKind.Absolute);
         }
 
         //protected BitmapImage HeroesBitmapImage(string iconPath)

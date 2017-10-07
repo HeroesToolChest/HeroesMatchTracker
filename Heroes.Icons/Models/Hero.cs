@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Heroes.Icons.Models
 {
@@ -7,7 +9,9 @@ namespace Heroes.Icons.Models
     {
         public string Name { get; set; }
 
-        public string AltName { get; set; }
+        public string ShortName { get; set; }
+
+        public string UnitName { get; set; }
 
         public string AttributeId { get; set; }
 
@@ -24,11 +28,13 @@ namespace Heroes.Icons.Models
 
         public HeroFranchise Franchise { get; set; }
 
-        public Uri HeroPortrait { get; set; }
+        public string HeroPortrait { get; set; }
 
-        public Uri LoadingPortrait { get; set; }
+        public string LoadingPortrait { get; set; }
 
-        public Uri LeaderboardPortrait { get; set; }
+        public string LeaderboardPortrait { get; set; }
+
+        public HeroMana ManaType { get; set; }
 
         /// <summary>
         /// Different language names of the hero name
@@ -39,5 +45,20 @@ namespace Heroes.Icons.Models
         /// Roles of the hero, multiclass will be first if hero has multiple roles
         /// </summary>
         public List<HeroRole> Roles { get; set; } = new List<HeroRole>();
+
+        public Stream GetHeroPortrait()
+        {
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(HeroPortrait);
+        }
+
+        public Stream GetLoadingPortrait()
+        {
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(LoadingPortrait);
+        }
+
+        public Stream GetLeaderboardPortrait()
+        {
+            return Assembly.GetExecutingAssembly().GetManifestResourceStream(LeaderboardPortrait);
+        }
     }
 }

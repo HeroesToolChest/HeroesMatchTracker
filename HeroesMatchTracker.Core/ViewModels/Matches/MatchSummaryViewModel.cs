@@ -510,10 +510,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 await Application.Current.Dispatcher.InvokeAsync(
                     () =>
                 {
-                    MatchHeroBans.Team0Ban0 = bannedHero1.HeroPortrait;
-                    MatchHeroBans.Team0Ban1 = bannedHero2.HeroPortrait;
-                    MatchHeroBans.Team1Ban0 = bannedHero3.HeroPortrait;
-                    MatchHeroBans.Team1Ban1 = bannedHero4.HeroPortrait;
+                    MatchHeroBans.Team0Ban0 = bannedHero1.GetHeroPortrait();
+                    MatchHeroBans.Team0Ban1 = bannedHero2.GetHeroPortrait();
+                    MatchHeroBans.Team1Ban0 = bannedHero3.GetHeroPortrait();
+                    MatchHeroBans.Team1Ban1 = bannedHero4.GetHeroPortrait();
                 });
 
                 MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1.Roles.FirstOrDefault()}";

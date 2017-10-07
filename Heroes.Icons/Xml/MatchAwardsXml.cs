@@ -183,7 +183,7 @@ namespace Heroes.Icons.Xml
 
         private Uri SetMVPAwardUri(string fileName)
         {
-            return new Uri(Path.Combine(ApplicationIconsPath, "Awards", fileName), UriKind.Absolute);
+            return new Uri(Path.Combine(ApplicationImagePath, "Awards", fileName), UriKind.Absolute);
         }
     }
 }

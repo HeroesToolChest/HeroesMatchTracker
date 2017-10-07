@@ -132,7 +132,7 @@ namespace Heroes.Icons.Xml
             {
                 foreach (var mapBackground in XmlChildFiles)
                 {
-                    using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlBaseFolder, $"{mapBackground}{DefaultFileExtension}")))
+                    using (XmlReader reader = XmlReader.Create(Path.Combine(XmlMainFolderName, XmlBaseFolder, $"{mapBackground}{DefaultFileExtension}"), GetXmlReaderSettings()))
                     {
                         reader.MoveToContent();
 

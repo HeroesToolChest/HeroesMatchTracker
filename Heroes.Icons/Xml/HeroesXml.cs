@@ -60,9 +60,9 @@ namespace Heroes.Icons.Xml
                 {
                     Name = heroName,
                     Franchise = HeroFranchise.Unknown,
-                    HeroPortrait = new Uri($@"{ApplicationIconsPath}\HeroPortraits\{NoPortraitPick}", UriKind.Absolute),
-                    LoadingPortrait = new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{NoLoadingScreenPick}", UriKind.Absolute),
-                    LeaderboardPortrait = new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{NoLeaderboardPick}", UriKind.Absolute),
+                    //HeroPortrait = new Uri($@"{ApplicationIconsPath}\HeroPortraits\{NoPortraitPick}", UriKind.Absolute),
+                    //LoadingPortrait = new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{NoLoadingScreenPick}", UriKind.Absolute),
+                    //LeaderboardPortrait = new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{NoLeaderboardPick}", UriKind.Absolute),
                 };
             }
 
@@ -76,9 +76,9 @@ namespace Heroes.Icons.Xml
                 {
                     Name = heroName,
                     Franchise = HeroFranchise.Unknown,
-                    HeroPortrait = new Uri($@"{ApplicationIconsPath}\HeroPortraits\{NoPortraitFound}", UriKind.Absolute),
-                    LoadingPortrait = new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{NoLoadingScreenFound}", UriKind.Absolute),
-                    LeaderboardPortrait = new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{NoLeaderboardFound}", UriKind.Absolute),
+                   // HeroPortrait = new Uri($@"{ApplicationIconsPath}\HeroPortraits\{NoPortraitFound}", UriKind.Absolute),
+                    //LoadingPortrait = new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{NoLoadingScreenFound}", UriKind.Absolute),
+                   // LeaderboardPortrait = new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{NoLeaderboardFound}", UriKind.Absolute),
                 };
             }
         }
@@ -190,14 +190,14 @@ namespace Heroes.Icons.Xml
                         {
                             Hero hero = new Hero()
                             {
-                                AltName = reader.Name,
+                                ShortName = reader.Name,
                             };
 
                             // get real name
                             // example: Anubarak-> (real) Anub'arak
                             hero.Name = reader["name"];
                             if (string.IsNullOrEmpty(hero.Name))
-                                hero.Name = hero.AltName; // default to hero name
+                                hero.Name = hero.ShortName; // default to hero name
 
                             // set the build that the hero is added
                             hero.BuildAvailable = int.TryParse(reader["available"], out int buildAvailable) ? buildAvailable : 0;
@@ -216,18 +216,18 @@ namespace Heroes.Icons.Xml
                             hero.Difficulty = Enum.TryParse(reader["difficulty"], out HeroDifficulty heroDifficulty) ? heroDifficulty : HeroDifficulty.Unknown;
 
                             // set portrait
-                            hero.HeroPortrait = SetHeroPortraitUri(reader["portrait"]);
+                           // hero.HeroPortrait = SetHeroPortraitUri(reader["portrait"]);
 
                             // set loading portrait
-                            hero.LoadingPortrait = SetLoadingPortraitUri(reader["loading"]);
+                          //  hero.LoadingPortrait = SetLoadingPortraitUri(reader["loading"]);
 
                             // set leaderboard portrait
-                            hero.LeaderboardPortrait = SetLeaderboardPortraitUri(reader["leader"]);
+                           // hero.LeaderboardPortrait = SetLeaderboardPortraitUri(reader["leader"]);
 
                             RealHeroNameByAttributeId.Add(hero.AttributeId, hero.Name);
-                            RealHeroNameByAlternativeName.Add(hero.AltName, hero.Name);
+                            RealHeroNameByAlternativeName.Add(hero.ShortName, hero.Name);
 
-                            while (reader.Read() && reader.Name != hero.AltName)
+                            while (reader.Read() && reader.Name != hero.ShortName)
                             {
                                 if (reader.NodeType == XmlNodeType.Element)
                                 {
@@ -291,7 +291,7 @@ namespace Heroes.Icons.Xml
             if (string.IsNullOrEmpty(fileName))
                 return null;
 
-            return new Uri($@"{ApplicationIconsPath}\HeroPortraits\{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationImagePath}\HeroPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLoadingPortraitUri(string fileName)
@@ -299,7 +299,7 @@ namespace Heroes.Icons.Xml
             if (string.IsNullOrEmpty(fileName))
                 return null;
 
-            return new Uri($@"{ApplicationIconsPath}\HeroLoadingScreenPortraits\{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationImagePath}\HeroLoadingScreenPortraits\{fileName}", UriKind.Absolute);
         }
 
         private Uri SetLeaderboardPortraitUri(string fileName)
@@ -307,7 +307,7 @@ namespace Heroes.Icons.Xml
             if (string.IsNullOrEmpty(fileName))
                 return null;
 
-            return new Uri($@"{ApplicationIconsPath}\HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
+            return new Uri($@"{ApplicationImagePath}\HeroLeaderboardPortraits\{fileName}", UriKind.Absolute);
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using System.IO;
 
 namespace HeroesMatchTracker.Core.Models.StatisticsModels
 {
     public class StatsHeroesTalents
     {
-        public Uri TalentImage { get; set; }
+        public Stream TalentImage { get; set; }
         public string TalentName { get; set; }
         public string TalentSubInfo { get; set; }
         public string TalentShortTooltip { get; set; }
