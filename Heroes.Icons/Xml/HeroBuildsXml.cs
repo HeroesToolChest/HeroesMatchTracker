@@ -289,9 +289,9 @@ namespace Heroes.Icons.Xml
                 {
                     Name = heroName,
                     Franchise = HeroFranchise.Unknown,
-                    HeroPortrait = $"{ApplicationImagePath}.{HeroPortraitsFolderName}.{NoPortraitPick}",
-                    LoadingPortrait = $"{ApplicationImagePath}.{HeroLoadingScreenPortraitsFolderName}.{NoLoadingScreenPick}",
-                    LeaderboardPortrait = $"{ApplicationImagePath}.{HeroLeaderboardPortraitsFolderName}.{NoLeaderboardPick}",
+                    HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, NoPortraitPick),
+                    LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, NoLoadingScreenPick),
+                    LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, NoLeaderboardPick),
                 };
             }
 
@@ -305,9 +305,9 @@ namespace Heroes.Icons.Xml
                 {
                     Name = heroName,
                     Franchise = HeroFranchise.Unknown,
-                    HeroPortrait = $"{ApplicationImagePath}.{HeroPortraitsFolderName}.{NoPortraitFound}",
-                    LoadingPortrait = $"{ApplicationImagePath}.{HeroLoadingScreenPortraitsFolderName}.{NoLoadingScreenFound}",
-                    LeaderboardPortrait = $"{ApplicationImagePath}.{HeroLeaderboardPortraitsFolderName}.{NoLeaderboardFound}",
+                    HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, NoPortraitFound),
+                    LoadingPortrait = SetImageStreamString(HeroPortraitsFolderName, NoLoadingScreenFound),
+                    LeaderboardPortrait = SetImageStreamString(HeroPortraitsFolderName, NoLeaderboardFound),
                 };
             }
         }
@@ -316,6 +316,7 @@ namespace Heroes.Icons.Xml
         {
             DuplicateBuildCheck();
             ParseParentFile();
+
             ParseChildFiles();
         }
 
@@ -425,9 +426,9 @@ namespace Heroes.Icons.Xml
                 throw new HeroesIconException($"Image file does not have .dds or .png extension [{fileName}]");
 
             if (!isGenericTalent)
-                return $"{ApplicationImagePath}.{TalentFolderName}.{hero}.{fileName}";
+                return SetImageStreamString($"{TalentFolderName}.{hero}", fileName);
             else
-                return $"{ApplicationImagePath}.{TalentFolderName}.{TalentGenericFolderName}.{fileName}";
+                return SetImageStreamString($"{TalentFolderName}.{TalentGenericFolderName}", fileName);
         }
 
         private void LoadTalentTooltipStrings(Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentFullTooltip)
@@ -557,9 +558,9 @@ namespace Heroes.Icons.Xml
             hero.ManaType = Enum.TryParse(reader["mana"], out HeroMana heroMana) ? heroMana : HeroMana.Mana;
 
             // set portraits
-            hero.HeroPortrait = $"{ApplicationImagePath}.{HeroPortraitsFolderName}.{reader["portrait"]}";
-            hero.LeaderboardPortrait = $"{ApplicationImagePath}.{HeroLeaderboardPortraitsFolderName}.{reader["leader"]}";
-            hero.LoadingPortrait = $"{ApplicationImagePath}.{HeroLoadingScreenPortraitsFolderName}.{reader["loading"]}";
+            hero.HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, reader["portrait"]);
+            hero.LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, reader["leader"]);
+            hero.LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, reader["loading"]);
 
             // hero description, build 55884 is the first build where hero description were added in HMT
             if (SelectedBuild >= 55844)
@@ -567,7 +568,10 @@ namespace Heroes.Icons.Xml
 
             RealHeroNameByAttributeId.Add(hero.AttributeId, hero.Name);
             RealHeroNameByShortName.Add(hero.ShortName, hero.Name);
-            RealHeroNameByHeroUnitName.Add(hero.UnitName, hero.Name);
+
+            // hero unit names, build 57797 is the first build where unit names were added in HMT
+            if (SelectedBuild >= 57797)
+                RealHeroNameByHeroUnitName.Add(hero.UnitName, hero.Name);
         }
 
         private void ParseHeroRoles(XmlReader reader, Hero hero)
@@ -682,10 +686,11 @@ namespace Heroes.Icons.Xml
                 }
             } // end while
 
-            if (!HeroExists(hero.ShortName))
-                throw new ArgumentException($"Hero shrot name not found: {hero.ShortName}");
+            if (HeroExists(hero.Name))
+                throw new ArgumentException($"Hero already added: {hero.Name}");
 
             HeroTalentsByHeroName.Add(GetRealHeroNameFromShortName(hero.ShortName), talents);
+            HeroByHeroName.Add(hero.Name, hero);
         }
     }
 }

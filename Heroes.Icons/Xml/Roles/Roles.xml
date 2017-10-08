@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Roles>
-  <Assassin>hero_role_assassin.png</Assassin>
-  <Specialist>hero_role_specialist.png</Specialist>
-  <Support>hero_role_support.png</Support>
-  <Warrior>hero_role_warrior.png</Warrior>
-</Roles>

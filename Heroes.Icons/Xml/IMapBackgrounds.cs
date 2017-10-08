@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 
 namespace Heroes.Icons.Xml
 {
     public interface IMapBackgrounds
     {
-        Uri GetMapBackground(string mapRealName);
+        Stream GetMapBackground(string mapRealName);
 
         /// <summary>
         /// Returns the color associated with the map, returns black if map not found

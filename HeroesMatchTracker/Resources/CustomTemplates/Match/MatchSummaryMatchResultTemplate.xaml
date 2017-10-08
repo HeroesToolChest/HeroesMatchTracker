@@ -9,7 +9,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0" HorizontalAlignment="Right" Resources="{StaticResource Team1Brushes}">
-                <Image DockPanel.Dock="Right" Source="{StaticResource BlueKills}" Height="28" Margin="10 10 34 0" />
+                <Image DockPanel.Dock="Right" Source="{Binding BlueKillsIcons}" Height="28" Margin="10 10 34 0" />
                 <TextBlock DockPanel.Dock="Right" Text="{Binding TeamBlueKills}" FontSize="60" Foreground="{StaticResource CharacterNameBrush}">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="0" Color="{StaticResource PlayerNameColor}" Opacity="1" BlurRadius="8" />
@@ -28,7 +28,7 @@
                 </StackPanel>
             </DockPanel>
             <DockPanel Grid.Column="2" HorizontalAlignment="Left" Resources="{StaticResource Team2Brushes}">
-                <Image DockPanel.Dock="Left" Source="{StaticResource RedKills}" Height="28" Margin="34 10 10 0" />
+                <Image DockPanel.Dock="Left" Source="{Binding RedKillsIcons}" Height="28" Margin="34 10 10 0" />
                 <TextBlock DockPanel.Dock="Left" Text="{Binding TeamRedKills}" FontSize="60" Foreground="{StaticResource CharacterNameBrush}">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="0" Color="{StaticResource PlayerNameColor}" Opacity="1" BlurRadius="8" />

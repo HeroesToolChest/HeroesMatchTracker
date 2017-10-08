@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using System.Windows.Media.Imaging;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
@@ -29,6 +28,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             UserProfile = internalService.UserProfile;
             Website = website;
             Player = player;
+
+            SilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.Silence);
+            TalentBorderScoreScreenIcon = HeroesIcons.GetOtherIcon(OtherIcon.TalentUnavailable);
         }
 
         protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)
@@ -52,6 +54,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
             HeroDescription = matchPlayerBase.HeroDescription;
             PlayerTag = matchPlayerBase.PlayerTag;
+            SilenceIcon = matchPlayerBase.SilenceIcon;
+            TalentBorderScoreScreenIcon = matchPlayerBase.TalentBorderScoreScreenIcon;
         }
 
         public bool Silenced { get; private set; }
@@ -65,8 +69,10 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public string HeroDescriptionSubInfo { get; private set; }
         public Region PlayerRegion { get; private set; }
         public Stream LeaderboardPortrait { get; private set; }
-        public Uri MvpAward { get; private set; }
-        public Uri PartyIcon { get; private set; }
+        public Stream MvpAward { get; private set; }
+        public Stream PartyIcon { get; private set; }
+        public Stream SilenceIcon { get; private set; }
+        public Stream TalentBorderScoreScreenIcon { get; private set; }
         public PlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
 

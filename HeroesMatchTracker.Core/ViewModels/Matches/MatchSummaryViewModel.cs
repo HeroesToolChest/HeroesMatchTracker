@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
+using Heroes.Icons.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.GraphSummaryModels;
 using HeroesMatchTracker.Core.Models.MatchModels;
@@ -14,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +43,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private string _teamRedName;
         private string _matchLength;
         private Color _matchTitleGlowColor;
+        private Stream _leftArrowNormalIcon;
+        private Stream _leftArrowHoverIcon;
+        private Stream _leftArrowDownIcon;
+        private Stream _leftArrowDisabledIcon;
+        private Stream _rightArrowNormalIcon;
+        private Stream _rightArrowHoverIcon;
+        private Stream _rightArrowDownIcon;
+        private Stream _rightArrowDisabledIcon;
 
         private IWebsiteService Website;
         private ILoadingOverlayWindowService LoadingOverlayWindow;
@@ -74,6 +84,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             IsLeftChangeButtonEnabled = false;
             IsRightChangeButtonEnabled = false;
 
+            ScoreKillIcon = HeroesIcons.GetOtherIcon(OtherIcon.Kills);
+            ScoreAssistIcon = HeroesIcons.GetOtherIcon(OtherIcon.Assist);
+            ScoreDeathIcon = HeroesIcons.GetOtherIcon(OtherIcon.Death);
+            BlueKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsBlue);
+            RedKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsRed);
+
+            LeftArrowDisabledIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftDisabled);
+            LeftArrowDownIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftDown);
+            LeftArrowHoverIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftHover);
+            LeftArrowNormalIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftNormal);
+            RightArrowDisabledIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightDisabled);
+            RightArrowDownIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightDown);
+            RightArrowHoverIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightHover);
+            RightArrowNormalIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightNormal);
+
             HasBans = false;
             HasObservers = false;
             HasChat = false;
@@ -94,6 +119,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public TeamLevelTimeGraph TeamLevelTimeGraph { get; private set; }
         public TeamExperienceGraph TeamExperienceGraph { get; private set; }
         public StatGraphs StatGraphs { get; private set; }
+        public Stream ScoreKillIcon { get; private set; }
+        public Stream ScoreAssistIcon { get; private set; }
+        public Stream ScoreDeathIcon { get; private set; }
+        public Stream BlueKillsIcons { get; private set; }
+        public Stream RedKillsIcons { get; private set; }
 
         public int? TeamBlueKills
         {
@@ -281,6 +311,86 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             set
             {
                 _matchTitleGlowColor = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream LeftArrowNormalIcon
+        {
+            get => _leftArrowNormalIcon;
+            set
+            {
+                _leftArrowNormalIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream LeftArrowHoverIcon
+        {
+            get => _leftArrowHoverIcon;
+            set
+            {
+                _leftArrowHoverIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream LeftArrowDownIcon
+        {
+            get => _leftArrowDownIcon;
+            set
+            {
+                _leftArrowDownIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream LeftArrowDisabledIcon
+        {
+            get => _leftArrowDisabledIcon;
+            set
+            {
+                _leftArrowDisabledIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream RightArrowNormalIcon
+        {
+            get => _rightArrowNormalIcon;
+            set
+            {
+                _rightArrowNormalIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream RightArrowHoverIcon
+        {
+            get => _rightArrowHoverIcon;
+            set
+            {
+                _rightArrowHoverIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream RightArrowDownIcon
+        {
+            get => _rightArrowDownIcon;
+            set
+            {
+                _rightArrowDownIcon = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream RightArrowDisabledIcon
+        {
+            get => _rightArrowDisabledIcon;
+            set
+            {
+                _rightArrowDisabledIcon = value;
                 RaisePropertyChanged();
             }
         }

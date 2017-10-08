@@ -1,7 +1,7 @@
 ﻿using Heroes.Icons.Models;
 using Heroes.Icons.Xml;
-using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Heroes.Icons
 {
@@ -23,12 +23,13 @@ namespace Heroes.Icons
         IHeroBuilds HeroBuilds();
         IMatchAwards MatchAwards();
         IMapBackgrounds MapBackgrounds();
-        IHomeScreens HomeScreens();
+        IHomeScreens Homescreens();
 
-        Uri GetPartyIcon(PartyIconColor partyIconColor);
-        Uri GetOtherIcon(OtherIcon otherIcon);
-        Uri GetRoleIcon(HeroRole heroRole);
-        Uri GetFranchiseIcon(HeroFranchise heroFranchise);
+        Stream GetPartyIcon(PartyIconColor partyIconColor);
+        Stream GetOtherIcon(OtherIcon otherIcon);
+        Stream GetRoleIcon(HeroRole heroRole);
+        Stream GetFranchiseIcon(HeroFranchise heroFranchise);
+
         bool IsNonSupportHeroWithHealingStat(string realHeroName);
         List<string> GetListOfHeroesBuilds();
     }

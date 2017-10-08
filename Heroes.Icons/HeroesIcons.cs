@@ -3,14 +3,22 @@ using Heroes.Icons.Xml;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace Heroes.Icons
 {
     public class HeroesIcons : HeroesBase, IHeroesIconsService
     {
-        private readonly string PartyIconFolderName = "PartyIcons";
-        private readonly string RoleIconFolderName = "Roles";
-        private readonly string FranchiseIconFolderName = "Franchises";
+        private const string PartyIconFolderName = "PartyIcons";
+        private const string RoleIconFolderName = "Roles";
+        private const string FranchiseIconFolderName = "Franchises";
+        private const string OtherFolderName = "Other";
+
+        private static Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
+        private static Dictionary<PartyIconColor, string> PartyIcons = new Dictionary<PartyIconColor, string>();
+        private static Dictionary<HeroRole, string> RoleIcons = new Dictionary<HeroRole, string>();
+        private static Dictionary<HeroFranchise, string> FranchiseIcons = new Dictionary<HeroFranchise, string>();
+        private static Dictionary<OtherIcon, string> OtherIcons = new Dictionary<OtherIcon, string>();
 
         private readonly HeroBuildsXml HeroBuildsXmlLatest; // holds the latest build info
 
@@ -25,19 +33,12 @@ namespace Heroes.Icons
         private HomeScreensXml HomeScreensXml;
         private List<int> ListHeroBuilds;
 
-        /// <summary>
-        /// key is real hero name
-        /// value is HeroRole
-        /// </summary>
-        private Dictionary<string, HeroRole> HeroesNonSupportHealingStat = new Dictionary<string, HeroRole>();
-        private Dictionary<PartyIconColor, Uri> PartyIcons = new Dictionary<PartyIconColor, Uri>();
-        private Dictionary<HeroRole, Uri> RoleIcons = new Dictionary<HeroRole, Uri>();
-        private Dictionary<HeroFranchise, Uri> FranchiseIcons = new Dictionary<HeroFranchise, Uri>();
-        private Dictionary<OtherIcon, Uri> OtherIcons = new Dictionary<OtherIcon, Uri>();
-
         public HeroesIcons(bool logger)
         {
             Logger = logger;
+
+            //var assembly = Assembly.GetExecutingAssembly();
+            //var resources = assembly.GetManifestResourceNames();
 
             try
             {
@@ -65,6 +66,54 @@ namespace Heroes.Icons
             SetFranchiseIcons();
             SetOtherIcons();
         }
+
+        public static Stream GetPartyIcon(PartyIconColor partyIconColor)
+        {
+            if (PartyIcons.ContainsKey(partyIconColor))
+            {
+                return Assembly.GetExecutingAssembly().GetManifestResourceStream(PartyIcons[partyIconColor]);
+            }
+
+            return null;
+        }
+
+        public static Stream GetOtherIcon(OtherIcon otherIcon)
+        {
+            if (OtherIcons.ContainsKey(otherIcon))
+            {
+                return Assembly.GetExecutingAssembly().GetManifestResourceStream(OtherIcons[otherIcon]);
+            }
+
+            return null;
+        }
+
+        public static Stream GetRoleIcon(HeroRole heroRole)
+        {
+            if (RoleIcons.ContainsKey(heroRole))
+            {
+                return Assembly.GetExecutingAssembly().GetManifestResourceStream(RoleIcons[heroRole]);
+            }
+
+            return null;
+        }
+
+        public static Stream GetFranchiseIcon(HeroFranchise heroFranchise)
+        {
+            if (FranchiseIcons.ContainsKey(heroFranchise))
+            {
+                return Assembly.GetExecutingAssembly().GetManifestResourceStream(FranchiseIcons[heroFranchise]);
+            }
+
+            return null;
+        }
+
+        Stream IHeroesIconsService.GetPartyIcon(PartyIconColor partyIconColor) => GetPartyIcon(partyIconColor);
+
+        Stream IHeroesIconsService.GetOtherIcon(OtherIcon otherIcon) => GetOtherIcon(otherIcon);
+
+        Stream IHeroesIconsService.GetRoleIcon(HeroRole heroRole) => GetRoleIcon(heroRole);
+
+        Stream IHeroesIconsService.GetFranchiseIcon(HeroFranchise heroFranchise) => GetFranchiseIcon(heroFranchise);
 
         public int GetLatestHeroesBuild() => LatestHeroesBuild;
 
@@ -123,62 +172,9 @@ namespace Heroes.Icons
             return MapBackgroundsXml;
         }
 
-        public IHomeScreens HomeScreens()
+        public IHomeScreens Homescreens()
         {
             return HomeScreensXml;
-        }
-
-        public Uri GetPartyIcon(PartyIconColor partyIconColor)
-        {
-            if (PartyIcons.ContainsKey(partyIconColor))
-            {
-                return PartyIcons[partyIconColor];
-            }
-            else
-            {
-                LogReferenceNameNotFound($"Other Icons: {partyIconColor}");
-                return null;
-            }
-        }
-
-        public Uri GetOtherIcon(OtherIcon otherIcon)
-        {
-            if (OtherIcons.ContainsKey(otherIcon))
-            {
-                return OtherIcons[otherIcon];
-            }
-            else
-            {
-                LogReferenceNameNotFound($"Other Icons: {otherIcon}");
-                return null;
-            }
-        }
-
-        public Uri GetRoleIcon(HeroRole heroRole)
-        {
-            if (RoleIcons.ContainsKey(heroRole))
-            {
-                return RoleIcons[heroRole];
-            }
-            else
-            {
-                LogReferenceNameNotFound($"Other Icons: {heroRole}");
-                return null;
-            }
-        }
-
-        public Uri GetFranchiseIcon(HeroFranchise heroFranchise)
-        {
-            if (FranchiseIcons.ContainsKey(heroFranchise))
-            {
-                return FranchiseIcons[heroFranchise];
-
-            }
-            else
-            {
-                LogReferenceNameNotFound($"Other Icons: {heroFranchise}");
-                return null;
-            }
         }
 
         public bool IsNonSupportHeroWithHealingStat(string realHeroName)
@@ -204,49 +200,61 @@ namespace Heroes.Icons
 
         private void SetPartyIcons()
         {
-            PartyIcons.Add(PartyIconColor.Purple, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_purple.png"));
-            PartyIcons.Add(PartyIconColor.Yellow, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_yellow.png"));
-            PartyIcons.Add(PartyIconColor.Brown, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_brown.png"));
-            PartyIcons.Add(PartyIconColor.Teal, GetImageUri(PartyIconFolderName, "ui_ingame_loadscreen_partylink_teal.png"));
+            PartyIcons.Add(PartyIconColor.Purple, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_purple.png"));
+            PartyIcons.Add(PartyIconColor.Yellow, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_yellow.png"));
+            PartyIcons.Add(PartyIconColor.Brown, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_brown.png"));
+            PartyIcons.Add(PartyIconColor.Teal, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_teal.png"));
         }
 
         private void SetRoleIcons()
         {
-            RoleIcons.Add(HeroRole.Warrior, GetImageUri(RoleIconFolderName, "hero_role_warrior.png"));
-            RoleIcons.Add(HeroRole.Assassin, GetImageUri(RoleIconFolderName, "hero_role_assassin.png"));
-            RoleIcons.Add(HeroRole.Support, GetImageUri(RoleIconFolderName, "hero_role_support.png"));
-            RoleIcons.Add(HeroRole.Specialist, GetImageUri(RoleIconFolderName, "hero_role_specialist.png"));
+            RoleIcons.Add(HeroRole.Warrior, SetImageStreamString(RoleIconFolderName, "hero_role_warrior.png"));
+            RoleIcons.Add(HeroRole.Assassin, SetImageStreamString(RoleIconFolderName, "hero_role_assassin.png"));
+            RoleIcons.Add(HeroRole.Support, SetImageStreamString(RoleIconFolderName, "hero_role_support.png"));
+            RoleIcons.Add(HeroRole.Specialist, SetImageStreamString(RoleIconFolderName, "hero_role_specialist.png"));
         }
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Classic, GetImageUri(FranchiseIconFolderName, "hero_franchise_classic.png"));
-            FranchiseIcons.Add(HeroFranchise.Diablo, GetImageUri(FranchiseIconFolderName, "hero_franchise_diablo.png"));
-            FranchiseIcons.Add(HeroFranchise.Overwatch, GetImageUri(FranchiseIconFolderName, "hero_franchise_overwatch.png"));
-            FranchiseIcons.Add(HeroFranchise.Starcraft, GetImageUri(FranchiseIconFolderName, "hero_franchise_starcraft.png"));
-            FranchiseIcons.Add(HeroFranchise.Warcraft, GetImageUri(FranchiseIconFolderName, "hero_franchise_warcraft.png"));
+            FranchiseIcons.Add(HeroFranchise.Classic, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_classic.png"));
+            FranchiseIcons.Add(HeroFranchise.Diablo, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_diablo.png"));
+            FranchiseIcons.Add(HeroFranchise.Overwatch, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_overwatch.png"));
+            FranchiseIcons.Add(HeroFranchise.Starcraft, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_starcraft.png"));
+            FranchiseIcons.Add(HeroFranchise.Warcraft, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_warcraft.png"));
         }
 
         private void SetOtherIcons()
         {
-            OtherIcons.Add(OtherIcon.Quest, GetImageUri(string.Empty, "storm_ui_taskbar_buttonicon_quests.png"));
-            OtherIcons.Add(OtherIcon.Silence, GetImageUri(string.Empty, "storm_ui_silencepenalty.png"));
-        }
+            OtherIcons.Add(OtherIcon.Quest, SetImageStreamString(OtherFolderName, "storm_ui_taskbar_buttonicon_quests.png"));
+            OtherIcons.Add(OtherIcon.Silence, SetImageStreamString(OtherFolderName, "storm_ui_silencepenalty.png"));
 
-        private void LogMissingImage(string message)
-        {
-            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ImageMissingLogName), FileMode.Append)))
-            {
-                writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
-            }
-        }
+            OtherIcons.Add(OtherIcon.LongarrowLeftDisabled, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_disabled.png"));
+            OtherIcons.Add(OtherIcon.LongarrowLeftDown, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_down.png"));
+            OtherIcons.Add(OtherIcon.LongarrowLeftHover, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_hover.png"));
+            OtherIcons.Add(OtherIcon.LongarrowLeftNormal, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_normal.png"));
+            OtherIcons.Add(OtherIcon.LongarrowRightDisabled, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_disabled.png"));
+            OtherIcons.Add(OtherIcon.LongarrowRightDown, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_down.png"));
+            OtherIcons.Add(OtherIcon.LongarrowRightHover, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_hover.png"));
+            OtherIcons.Add(OtherIcon.LongarrowRightNormal, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_normal.png"));
 
-        private void LogReferenceNameNotFound(string message)
-        {
-            using (StreamWriter writer = new StreamWriter(File.Open(Path.Combine(LogFileName, ReferenceLogName), FileMode.Append)))
-            {
-                writer.WriteLine($"[{HeroBuildsXml.CurrentLoadedHeroesBuild}] {message}");
-            }
+            OtherIcons.Add(OtherIcon.TalentUnavailable, SetImageStreamString(OtherFolderName, "storm_ui_ingame_leader_talent_unavailable.png"));
+
+            OtherIcons.Add(OtherIcon.StatusResistShieldDefault, SetImageStreamString(OtherFolderName, "storm_ui_ingame_status_resistshieldc3_default.png"));
+            OtherIcons.Add(OtherIcon.StatusResistShieldPhysical, SetImageStreamString(OtherFolderName, "storm_ui_ingame_status_resistshieldc3_physical.png"));
+            OtherIcons.Add(OtherIcon.StatusResistShieldSpell, SetImageStreamString(OtherFolderName, "storm_ui_ingame_status_resistshieldc3_spell.png"));
+
+            OtherIcons.Add(OtherIcon.FilterAssassin, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_assassin-on.png"));
+            OtherIcons.Add(OtherIcon.FilterMulticlass, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_multiclass-on.png"));
+            OtherIcons.Add(OtherIcon.FilterSpecialist, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_specialist.png"));
+            OtherIcons.Add(OtherIcon.FilterSupport, SetImageStreamString(OtherFolderName, "sstorm_ui_play_filter_support-on.png"));
+            OtherIcons.Add(OtherIcon.FilterWarrior, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_warrior-on.png"));
+
+            OtherIcons.Add(OtherIcon.Kills, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kill.png"));
+            OtherIcons.Add(OtherIcon.Assist, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_assist.png"));
+            OtherIcons.Add(OtherIcon.Death, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_death.png"));
+
+            OtherIcons.Add(OtherIcon.KillsBlue, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kills_blue.png"));
+            OtherIcons.Add(OtherIcon.KillsRed, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kills_red.png"));
         }
 
         private void LogErrors(string message)

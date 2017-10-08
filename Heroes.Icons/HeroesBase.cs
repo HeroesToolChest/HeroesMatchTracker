@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace Heroes.Icons
+﻿namespace Heroes.Icons
 {
     public class HeroesBase
     {
@@ -22,45 +19,9 @@ namespace Heroes.Icons
         protected string LogFileName => "Logs";
         protected string ApplicationImagePath => "Heroes.Icons.Images";
 
-        protected Uri GetImageUri(string iconFolderName, string fileName)
+        protected string SetImageStreamString(string imageFolderName, string fileName)
         {
-            return new Uri(Path.Combine(ApplicationImagePath, iconFolderName, fileName), UriKind.Absolute);
+            return $"{ApplicationImagePath}.{imageFolderName}.{fileName}";
         }
-
-        //protected BitmapImage HeroesBitmapImage(string iconPath)
-        //{
-        //    if (string.IsNullOrEmpty(iconPath))
-        //        throw new ArgumentNullException(nameof(iconPath));
-
-        //    BitmapImage image;
-
-        //    if (iconPath.StartsWith(ApplicationIconsPath))
-        //    {
-        //        image = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
-        //        image.Freeze();
-
-        //        return image;
-        //    }
-        //    else if (iconPath[0] != '\\')
-        //    {
-        //        iconPath = '\\' + iconPath;
-        //    }
-
-        //    image = new BitmapImage(new Uri($@"{ApplicationIconsPath}{iconPath}", UriKind.Absolute));
-        //    image.Freeze();
-
-        //    return image;
-        //}
-
-        //protected BitmapImage HeroesBitmapImage(Uri iconPath)
-        //{
-        //    if (string.IsNullOrEmpty(iconPath.AbsoluteUri))
-        //        throw new ArgumentNullException(nameof(iconPath));
-
-        //    BitmapImage image = new BitmapImage(iconPath);
-        //    image.Freeze();
-
-        //    return image;
-        //}
     }
 }

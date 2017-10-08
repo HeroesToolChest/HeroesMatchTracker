@@ -2,17 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <BitmapImage x:Key="HMTStartup" UriSource="pack://application:,,,/Resources/Images/HMT_Startup.png"/>
-    <BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_silencepenalty.png"/>
-    <BitmapImage x:Key="QuestIcon" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds"/>
-    <BitmapImage x:Key="LeftArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_normal.png"/>
+    <!--<BitmapImage x:Key="Silence" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_silencepenalty.png"/>
+    <BitmapImage x:Key="QuestIcon" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_talentpanel_upgrade_quest_icon.dds"/>-->
+    <!--<BitmapImage x:Key="LeftArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_normal.png"/>
     <BitmapImage x:Key="LeftArrowHover" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_hover.png"/>
     <BitmapImage x:Key="LeftArrowDown" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_down.png"/>
     <BitmapImage x:Key="LeftArrowDisabled" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_left_disabled.png"/>
     <BitmapImage x:Key="RightArrowNormal" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_normal.png"/>
     <BitmapImage x:Key="RightArrowHover" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_hover.png"/>
     <BitmapImage x:Key="RightArrowDown" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_down.png"/>
-    <BitmapImage x:Key="RightArrowDisabled" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_disabled.png"/>
-    <BitmapImage x:Key="ScoreAssist" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_assist.png"/>
+    <BitmapImage x:Key="RightArrowDisabled" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_glues_button_longarrow_right_disabled.png"/>-->
+    <!--<BitmapImage x:Key="ScoreAssist" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_assist.png"/>
     <BitmapImage x:Key="ScoreDeath" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_death.png"/>
     <BitmapImage x:Key="ScoreKill" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_kill.png"/>
     <BitmapImage x:Key="FilterAssasin" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_play_filter_assassin-on.png"/>
@@ -22,5 +22,5 @@
     <BitmapImage x:Key="FilterWarrior" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_play_filter_warrior-on.png"/>
     <BitmapImage x:Key="BlueKills" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_kills_blue.png"/>
     <BitmapImage x:Key="RedKills" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_scorescreen_icon_kills_red.png"/>
-    <BitmapImage x:Key="TalentBorderScoreScreen" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_leader_talent_unavailable.png"/>
+    <BitmapImage x:Key="TalentBorderScoreScreen" UriSource="pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_leader_talent_unavailable.png"/>-->
 </ResourceDictionary>

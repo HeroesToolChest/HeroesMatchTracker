@@ -45,17 +45,24 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
         private void InitialMatchHistoryLoad()
         {
-            var replays = Database.ReplaysDb().MatchReplay.ReadLatestReplaysByDateTimeList(20);
-
-            foreach (var replay in replays)
+            try
             {
-                MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
+                var replays = Database.ReplaysDb().MatchReplay.ReadLatestReplaysByDateTimeList(20);
 
-                MatchCollection.Add(match);
+                foreach (var replay in replays)
+                {
+                    MatchHistoryMatch match = new MatchHistoryMatch(InternalService, Website, Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replay.ReplayId));
+
+                    MatchCollection.Add(match);
+                }
+
+                if (replays.Count > 0)
+                    LatestReplayDateTime = replays[0].TimeStamp;
             }
-
-            if (replays.Count > 0)
-                LatestReplayDateTime = replays[0].TimeStamp;
+            catch (Exception ex)
+            {
+                ExceptionLog.Log(NLog.LogLevel.Error, ex);
+            }
         }
 
         private void InitDynamicMatchLoading()

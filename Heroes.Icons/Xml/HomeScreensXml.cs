@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
@@ -9,6 +10,9 @@ namespace Heroes.Icons.Xml
     internal class HomeScreensXml : XmlBase, IHomeScreens
     {
         private readonly string IconFolderName = "Homescreens";
+
+        private Dictionary<string, string> HomescreenStringByMapName = new Dictionary<string, string>();
+        private Dictionary<string, Color> HomescreenFontGlowColorByMapName = new Dictionary<string, Color>();
 
         private HomeScreensXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
             : base(currentBuild, logger)
@@ -18,8 +22,6 @@ namespace Heroes.Icons.Xml
             XmlFolder = xmlBaseFolder;
         }
 
-        public List<Tuple<Uri, Color>> HomeScreenBackgrounds { get; private set; } = new List<Tuple<Uri, Color>>();
-
         public static HomeScreensXml Initialize(string parentFile, string xmlFolder, int currentBuild, bool logger)
         {
             HomeScreensXml xml = new HomeScreensXml(parentFile, xmlFolder, currentBuild, logger);
@@ -27,9 +29,38 @@ namespace Heroes.Icons.Xml
             return xml;
         }
 
-        public List<Tuple<Uri, Color>> GetListOfHomeScreens()
+        public Stream GetHomescreen(string homescreenName)
         {
-            return HomeScreenBackgrounds;
+            try
+            {
+                if (HomescreenStringByMapName.ContainsKey(homescreenName))
+                {
+                    return Assembly.GetExecutingAssembly().GetManifestResourceStream(HomescreenStringByMapName[homescreenName]);
+                }
+                else
+                {
+                    LogReferenceNameNotFound($"Homescreen: {homescreenName}");
+                    return null;
+                }
+            }
+            catch (IOException)
+            {
+                LogReferenceNameNotFound($"Homescreen: {homescreenName}");
+                return null;
+            }
+        }
+
+        public Color GetHomescreenFontGlowColor(string homescreenName)
+        {
+            if (HomescreenFontGlowColorByMapName.TryGetValue(homescreenName, out Color color))
+                return color;
+            else
+                return Color.Black;
+        }
+
+        public List<string> GetHomescreensList()
+        {
+            return new List<string>(HomescreenStringByMapName.Keys);
         }
 
         protected override void Parse()
@@ -54,11 +85,13 @@ namespace Heroes.Icons.Xml
                     {
                         if (reader.IsStartElement())
                         {
+                            string homescreenName = reader.Name;
                             string fontGlow = reader["fontglow"];
 
                             if (reader.Read())
                             {
-                                HomeScreenBackgrounds.Add(new Tuple<Uri, Color>(GetImageUri(IconFolderName, reader.Value), ConvertHexToColor(fontGlow)));
+                                HomescreenStringByMapName.Add(homescreenName, SetImageStreamString(IconFolderName, reader.Value));
+                                HomescreenFontGlowColorByMapName.Add(homescreenName, ConvertHexToColor(fontGlow));
                             }
                         }
                     }

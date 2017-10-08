@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
@@ -10,7 +11,7 @@ namespace Heroes.Icons.Xml
     {
         private readonly string IconFolderName = "MapBackgrounds";
 
-        private Dictionary<string, Uri> MapUriByMapRealName = new Dictionary<string, Uri>();
+        private Dictionary<string, string> MapStringByMapRealName = new Dictionary<string, string>();
         private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
         private Dictionary<string, string> MapRealNameByMapAlternativeName = new Dictionary<string, string>();
         private List<string> CustomOnlyMaps = new List<string>();
@@ -30,13 +31,13 @@ namespace Heroes.Icons.Xml
             return xml;
         }
 
-        public Uri GetMapBackground(string mapRealName)
+        public Stream GetMapBackground(string mapRealName)
         {
             try
             {
-                if (MapUriByMapRealName.ContainsKey(mapRealName))
+                if (MapStringByMapRealName.ContainsKey(mapRealName))
                 {
-                    return MapUriByMapRealName[mapRealName];
+                    return Assembly.GetExecutingAssembly().GetManifestResourceStream(MapStringByMapRealName[mapRealName]);
                 }
                 else
                 {
@@ -51,11 +52,6 @@ namespace Heroes.Icons.Xml
             }
         }
 
-        /// <summary>
-        /// Returns the color associated with the map, returns black if map not found
-        /// </summary>
-        /// <param name="mapRealName">Real map name</param>
-        /// <returns></returns>
         public Color GetMapBackgroundFontGlowColor(string mapRealName)
         {
             if (MapFontGlowColorByMapRealName.TryGetValue(mapRealName, out Color color))
@@ -70,7 +66,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public List<string> GetMapsList()
         {
-            return new List<string>(MapUriByMapRealName.Keys);
+            return new List<string>(MapStringByMapRealName.Keys);
         }
 
         /// <summary>
@@ -79,7 +75,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public List<string> GetMapsListExceptCustomOnly()
         {
-            var allMaps = new Dictionary<string, Uri>(MapUriByMapRealName);
+            var allMaps = new Dictionary<string, string>(MapStringByMapRealName);
             foreach (var customMap in GetCustomOnlyMapsList())
             {
                 if (allMaps.ContainsKey(customMap))
@@ -107,7 +103,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public bool IsValidMapName(string mapName)
         {
-            return MapUriByMapRealName.ContainsKey(mapName);
+            return MapStringByMapRealName.ContainsKey(mapName);
         }
 
         /// <summary>
@@ -170,7 +166,7 @@ namespace Heroes.Icons.Xml
 
                             if (element == "Normal")
                             {
-                                MapUriByMapRealName.Add(realMapBackgroundName, GetImageUri(IconFolderName, reader.Value));
+                                MapStringByMapRealName.Add(realMapBackgroundName, SetImageStreamString(IconFolderName, reader.Value));
                                 MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
                             }
                         }

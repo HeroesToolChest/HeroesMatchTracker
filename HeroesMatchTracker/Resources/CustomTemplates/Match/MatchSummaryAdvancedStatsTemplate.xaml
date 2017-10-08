@@ -31,7 +31,7 @@
                                     </ToolTip>
                                 </Image.ToolTip>
                             </Image>
-                            <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
+                            <Image Source="{Binding SilenceIcon}" Height="22" Width="26" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="62 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                             <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Center" Margin="-62 -16 0 0"/>
                         </Grid>
                         <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource AdvancedTableContentText}">

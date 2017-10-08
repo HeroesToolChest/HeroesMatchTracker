@@ -219,8 +219,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
                 double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
 
-                //var mapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map);
-
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes();
 
                 if (total > 0)
@@ -425,7 +423,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
                 var awardImage = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(award.ToString(), MVPScoreScreenColor.Blue, out string awardName);
-                //awardImage.Freeze();
 
                 StatsHeroesAwards matchAwards = new StatsHeroesAwards
                 {

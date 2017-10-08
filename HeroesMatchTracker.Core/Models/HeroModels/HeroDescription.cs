@@ -1,7 +1,7 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons.Models;
-using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace HeroesMatchTracker.Core.Models.HeroModels
@@ -12,7 +12,7 @@ namespace HeroesMatchTracker.Core.Models.HeroModels
 
         public string Description { get; set; }
 
-        public Uri Franchise { get; set; }
+        public Stream Franchise { get; set; }
 
         public HeroType Type { get; set; }
 

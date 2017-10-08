@@ -63,7 +63,7 @@ namespace HeroesMatchTracker.Core
         /// <returns></returns>
         public static SemanticVersion HeroesReplayParserVersion()
         {
-            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.ReplayParser").ToList()[0].Version;
+            Version version = Assembly.GetExecutingAssembly().GetReferencedAssemblies().Where(x => x.Name == "Heroes.ReplayParser.netstandard").ToList()[0].Version;
             return SemanticVersion.Parse(new Version(version.Major, version.Minor, version.Build).ToString());
         }
     }

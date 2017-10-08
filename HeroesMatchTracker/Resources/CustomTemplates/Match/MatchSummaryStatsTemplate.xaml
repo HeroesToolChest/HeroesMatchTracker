@@ -143,13 +143,13 @@
         <StackPanel Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right" Height="60">
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{StaticResource ScoreKill}" Width="24" ToolTip="Kills" Margin="0 0 0 12"/>
+                    <Image Source="{Binding ScoreKillIcon}" Width="24" ToolTip="Kills" Margin="0 0 0 12"/>
                 </StackPanel>
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{StaticResource ScoreAssist}" Width="24" ToolTip="Assists" Margin="0 0 0 12" />
+                    <Image Source="{Binding ScoreAssistIcon}" Width="24" ToolTip="Assists" Margin="0 0 0 12" />
                 </StackPanel>
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{StaticResource ScoreDeath}" Width="24"  ToolTip="Deaths" Margin="0 0 0 12" />
+                    <Image Source="{Binding ScoreDeathIcon}" Width="24"  ToolTip="Deaths" Margin="0 0 0 12" />
                 </StackPanel>
                 <TextBlock Text="Siege Damage" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
                 <TextBlock Text="Hero Damage" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />

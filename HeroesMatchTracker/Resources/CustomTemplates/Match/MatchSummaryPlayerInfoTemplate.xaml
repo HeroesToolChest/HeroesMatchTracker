@@ -15,7 +15,7 @@
                         </ToolTip>
                     </Image.ToolTip>
                 </Image>
-                <Image Source="{StaticResource Silence}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
+                <Image Source="{Binding SilenceIcon}" Height="22" Width="26" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-34 0 0 0" Visibility="{Binding Silenced, Converter={StaticResource BooleanToVisibility}}"/>
                 <Image Source="{Binding PartyIcon}" Height="28" Width="28" HorizontalAlignment="Left" Margin="-2 -16 0 0"/>
             </Grid>
             <StackPanel DockPanel.Dock="Left" Width="150" ContextMenu="{StaticResource PlayerSearchContextMenu}">

@@ -5,13 +5,13 @@ using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Data;
 using NLog;
 using System;
-using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace HeroesMatchTracker.Core.ViewModels
 {
     public class HmtViewModel : ViewModelBase
     {
-        private BitmapImage _backgroundImage;
+        private Stream _backgroundImage;
 
         protected HmtViewModel(IInternalService internalService)
         {
@@ -32,7 +32,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SetRandomHomescreenBackgroundImage();
         }
 
-        public BitmapImage BackgroundImage
+        public Stream BackgroundImage
         {
             get => _backgroundImage;
             set
@@ -53,7 +53,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger TranslationsLog { get; private set; }
         protected Logger ReplayUploaderLog { get; private set; }
 
-        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = new BitmapImage(HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName));
+        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
 
         private void SetLoggers()
         {
@@ -67,10 +67,10 @@ namespace HeroesMatchTracker.Core.ViewModels
         private void SetRandomHomescreenBackgroundImage()
         {
             Random random = new Random();
-            var listOfBackgroundImages = HeroesIcons.HomeScreens().GetListOfHomeScreens();
+            var listOfBackgroundImages = HeroesIcons.Homescreens().GetHomescreensList();
 
             int num = random.Next(0, listOfBackgroundImages.Count);
-            BackgroundImage = new BitmapImage(listOfBackgroundImages[num].Item1);
+            BackgroundImage = HeroesIcons.Homescreens().GetHomescreen(listOfBackgroundImages[num]);
         }
     }
 }

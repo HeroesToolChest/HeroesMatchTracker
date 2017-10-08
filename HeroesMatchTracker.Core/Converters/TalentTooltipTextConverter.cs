@@ -1,6 +1,9 @@
-﻿using NLog;
+﻿using Heroes.Icons;
+using Heroes.Icons.Models;
+using NLog;
 using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,19 +18,12 @@ namespace HeroesMatchTracker.Core.Converters
     {
         private static Logger WarningLog = LogManager.GetLogger(LogFileNames.WarningLogFileName);
 
-        private readonly Uri QuestIcon = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_taskbar_buttonicon_quests.png", UriKind.Absolute);
-        private readonly Uri Armor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_default.png", UriKind.Absolute);
-        private readonly Uri PhysicalArmor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_physical.png", UriKind.Absolute);
-        private readonly Uri SpellArmor = new Uri($"pack://application:,,,/Heroes.Icons;component/Icons/Other/storm_ui_ingame_status_resistshieldc3_spell.png", UriKind.Absolute);
-
         // if this algorithm is changed then TalentTooltipStripNonText method in HeroIconsTest.cs needs to be changed as well
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string text = value as string;
-            if (text == null)
-                return null;
-            if (text == string.Empty)
-                return string.Empty;
+            if (string.IsNullOrEmpty(text))
+                return text;
 
             var span = new Span();
 
@@ -85,12 +81,9 @@ namespace HeroesMatchTracker.Core.Converters
 
                         span.Inlines.Add(new Run(text.Substring(0, startIndex)));
 
-                        BitmapImage bitmapImage = new BitmapImage(QuestIcon);
-                        bitmapImage.Freeze();
-
                         Image image = new Image()
                         {
-                            Source = bitmapImage,
+                            Source = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.Quest)),
                             Height = 22,
                             Width = 20,
                             Margin = new Thickness(0, 0, 4, -2),
@@ -113,11 +106,11 @@ namespace HeroesMatchTracker.Core.Converters
                         BitmapImage bitmapImage = null;
 
                         if (startTag.Contains("color=\"e12bfc\""))
-                            bitmapImage = new BitmapImage(SpellArmor);
+                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldSpell));
                         else if (startTag.Contains("color=\"ff6600\""))
-                            bitmapImage = new BitmapImage(PhysicalArmor);
+                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldPhysical));
                         else // if (startTag.Contains("color=\"BBBBBB\""))
-                            bitmapImage = new BitmapImage(Armor);
+                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldDefault));
 
                         bitmapImage.Freeze();
 
@@ -201,6 +194,18 @@ namespace HeroesMatchTracker.Core.Converters
             }
 
             return new SolidColorBrush(color);
+        }
+
+        private BitmapImage CreateImage(Stream image)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = image;
+            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+            bitmapImage.EndInit();
+            bitmapImage.Freeze();
+
+            return bitmapImage;
         }
     }
 }

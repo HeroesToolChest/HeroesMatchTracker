@@ -28,7 +28,7 @@
                         <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
                             <Grid Margin="{StaticResource TalentIconMargin}">
                                 <Image Source="{Binding Talents[0]}" Height="40" />
-                                <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                     <Image.ToolTip>
                                         <ToolTip Style="{StaticResource EnhancedToolTip}">
                                             <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -47,7 +47,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[1]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -67,7 +67,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[2]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -87,7 +87,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[3]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -107,7 +107,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[4]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -127,7 +127,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[5]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">
@@ -147,7 +147,7 @@
                             <StackPanel>
                                 <Grid Margin="{StaticResource TalentIconMargin}">
                                     <Image Source="{Binding Talents[6]}" Height="40" />
-                                    <Image Source="{StaticResource TalentBorderScoreScreen}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                                    <Image Source="{Binding TalentBorderScoreScreenIcon}" Margin="-10" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                                         <Image.ToolTip>
                                             <ToolTip Style="{StaticResource EnhancedToolTip}">
                                                 <StackPanel Style="{StaticResource TooltipTalentStackPanel}">

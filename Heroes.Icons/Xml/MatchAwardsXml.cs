@@ -18,8 +18,8 @@ namespace Heroes.Icons.Xml
             XmlFolder = xmlBaseFolder;
         }
 
-        public Dictionary<string, Tuple<string, Uri>> MVPScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
-        public Dictionary<string, Tuple<string, Uri>> MVPScoreScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, Uri>>();
+        public Dictionary<string, Tuple<string, string>> MVPScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, string>>();
+        public Dictionary<string, Tuple<string, string>> MVPScoreScreenAwardByAwardType { get; private set; } = new Dictionary<string, Tuple<string, string>>();
         public Dictionary<string, string> MVPAwardDescriptionByAwardType { get; private set; } = new Dictionary<string, string>();
 
         public static MatchAwardsXml Initialize(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
@@ -36,30 +36,32 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        public Uri GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
+        public Stream GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
         {
-            if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
-            {
-                var award = MVPScreenAwardByAwardType[mvpAwardType];
-                var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+            awardName = null;
+            return null;
+            //if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
+            //{
+            //    var award = MVPScreenAwardByAwardType[mvpAwardType];
+            //    var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
-                awardName = award.Item1;
+            //    awardName = award.Item1;
 
-                return new Uri(uriString, UriKind.Absolute);
+            //    return new Uri(uriString, UriKind.Absolute);
 
-                //catch (IOException)
-                //{
-                //    LogMissingImage($"Missing image: {uriString}");
-                //    awardName = mvpAwardType;
-                //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-                //}
-            }
-            else
-            {
-                LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
-                awardName = mvpAwardType;
-                return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound)); // ($@"Talents\_Generic\{NoTalentIconFound}");
-            }
+            //    //catch (IOException)
+            //    //{
+            //    //    LogMissingImage($"Missing image: {uriString}");
+            //    //    awardName = mvpAwardType;
+            //    //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+            //    //}
+            //}
+            //else
+            //{
+            //    LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
+            //    awardName = mvpAwardType;
+            //    return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound)); // ($@"Talents\_Generic\{NoTalentIconFound}");
+            //}
         }
 
         /// <summary>
@@ -69,29 +71,31 @@ namespace Heroes.Icons.Xml
         /// <param name="mvpColor">Color of icon</param>
         /// <param name="awardName"></param>
         /// <returns></returns>
-        public Uri GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
+        public Stream GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
         {
-            if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
-            {
-                var award = MVPScoreScreenAwardByAwardType[mvpAwardType];
-                var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+            awardName = null;
+            return null;
+            //if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
+            //{
+            //    var award = MVPScoreScreenAwardByAwardType[mvpAwardType];
+            //    var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
 
-                awardName = award.Item1;
+            //    awardName = award.Item1;
 
-                return new Uri(uriString, UriKind.Absolute);
-                //catch (IOException)
-                //{
-                //    LogMissingImage($"Missing image: {uriString}");
-                //    awardName = mvpAwardType;
-                //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-                //}
-            }
-            else
-            {
-                LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
-                awardName = mvpAwardType;
-                return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound));
-            }
+            //    return new Uri(uriString, UriKind.Absolute);
+            //    //catch (IOException)
+            //    //{
+            //    //    LogMissingImage($"Missing image: {uriString}");
+            //    //    awardName = mvpAwardType;
+            //    //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
+            //    //}
+            //}
+            //else
+            //{
+            //    LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
+            //    awardName = mvpAwardType;
+            //    return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound));
+            //}
         }
 
         /// <summary>
@@ -160,7 +164,7 @@ namespace Heroes.Icons.Xml
                                             }
                                             else
                                             {
-                                                var awardTuple = new Tuple<string, Uri>(realAwardName, GetImageUri(IconFolderName, reader.Value));
+                                                var awardTuple = new Tuple<string, string>(realAwardName, SetImageStreamString(IconFolderName, reader.Value));
 
                                                 if (elementName == "MVPScreen")
                                                     MVPScreenAwardByAwardType.Add(awardType, awardTuple);
@@ -179,11 +183,6 @@ namespace Heroes.Icons.Xml
             {
                 throw new ParseXmlException($"Error on xml parsing of {XmlParentFile}", ex);
             }
-        }
-
-        private Uri SetMVPAwardUri(string fileName)
-        {
-            return new Uri(Path.Combine(ApplicationImagePath, "Awards", fileName), UriKind.Absolute);
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using System.IO;
 
 namespace HeroesMatchTracker.Core.Models.StatisticsModels
 {
     public class StatsHeroesAwards
     {
-        public Uri AwardImage { get; set; }
+        public Stream AwardImage { get; set; }
         public string AwardName { get; set; }
         public string AwardDescription { get; set; }
         public int? QuickMatch { get; set; }

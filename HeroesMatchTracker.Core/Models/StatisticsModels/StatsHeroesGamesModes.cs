@@ -1,10 +1,11 @@
 ﻿using System;
+using System.IO;
 
 namespace HeroesMatchTracker.Core.Models.StatisticsModels
 {
     public class StatsHeroesGameModes
     {
-        public Uri MapImage { get; set; }
+        public Stream MapImage { get; set; }
         public string MapName { get; set; }
         public int? Wins { get; set; }
         public int? Losses { get; set; }
