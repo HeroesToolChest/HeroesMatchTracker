@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Alarak available="47479" attributeid="Alar" franchise="Starcraft" type="Melee" difficulty="Hard"
+  <Alarak available="47479" attributeid="Alar" unit="HeroAlarak" franchise="Starcraft" type="Melee" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
     <Roles>Assassin</Roles>
     <Abilities>

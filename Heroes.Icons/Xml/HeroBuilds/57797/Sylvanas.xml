@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Sylvanas available="47479" attributeid="Sylv" franchise="Warcraft" type="Ranged" difficulty="Medium"
+  <Sylvanas available="47479" attributeid="Sylv" unit="HeroSylvanas" franchise="Warcraft" type="Ranged" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_sylvanas.dds" loading="storm_ui_ingame_hero_loadingscreen_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
     <Roles>Specialist</Roles>
     <Abilities>

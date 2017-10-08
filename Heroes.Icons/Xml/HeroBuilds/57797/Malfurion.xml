@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Malfurion available="47479" attributeid="Malf" franchise="Warcraft" type="Ranged" difficulty="Easy"
+  <Malfurion available="47479" attributeid="Malf" unit="HeroMalfurion" franchise="Warcraft" type="Ranged" difficulty="Easy"
              portrait="storm_ui_ingame_heroselect_btn_malfurion.dds" loading="storm_ui_ingame_hero_loadingscreen_malfurion.dds" leader="storm_ui_ingame_hero_leaderboard_malfurion.dds">
     <Roles>Support</Roles>
     <Abilities>

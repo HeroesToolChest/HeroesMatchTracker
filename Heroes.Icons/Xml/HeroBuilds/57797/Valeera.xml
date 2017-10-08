@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Valeera available="49747" attributeid="VALE" franchise="Warcraft" type="Melee" difficulty="Hard" mana="None"
+  <Valeera available="49747" attributeid="VALE" unit="HeroValeera" franchise="Warcraft" type="Melee" difficulty="Hard" mana="None"
            portrait="storm_ui_ingame_heroselect_btn_valeera.dds" loading="storm_ui_ingame_hero_loadingscreen_valeera.dds" leader="storm_ui_ingame_hero_leaderboard_valeera.dds">
     <Roles>Assassin</Roles>
     <Abilities>

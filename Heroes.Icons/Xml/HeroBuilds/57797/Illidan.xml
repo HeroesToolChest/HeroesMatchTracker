@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Illidan available="47479" attributeid="Illi" franchise="Warcraft" type="Melee" difficulty="Medium" mana="None"
+  <Illidan available="47479" attributeid="Illi" unit="HeroIllidan" franchise="Warcraft" type="Melee" difficulty="Medium" mana="None"
            portrait="storm_ui_ingame_heroselect_btn_illidan.dds" loading="storm_ui_ingame_hero_loadingscreen_illidan.dds" leader="storm_ui_ingame_hero_leaderboard_illidan.dds">
     <Roles>Assassin</Roles>
     <Abilities>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Zagara available="47479" attributeid="Zaga" franchise="Starcraft" type="Ranged" difficulty="Medium"
+  <Zagara available="47479" attributeid="Zaga" unit="HeroZagara" franchise="Starcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_zagara.dds" loading="storm_ui_ingame_hero_loadingscreen_zagara.dds" leader="storm_ui_ingame_hero_leaderboard_zagara.dds">
     <Roles>Specialist</Roles>
     <Abilities>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Murky available="47479" attributeid="Murk" franchise="Warcraft" type="Melee" difficulty="Hard" mana="None"
+  <Murky available="47479" attributeid="Murk" unit="HeroMurky" franchise="Warcraft" type="Melee" difficulty="Hard" mana="None"
            portrait="storm_ui_ingame_heroselect_btn_murky.dds" loading="storm_ui_ingame_hero_loadingscreen_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
     <Roles>Specialist</Roles>
     <Abilities>

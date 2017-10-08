@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Probius available="51375" attributeid="Prob" franchise="Starcraft" type="Ranged" difficulty="Hard"
+  <Probius available="51375" attributeid="Prob" unit="HeroProbius" franchise="Starcraft" type="Ranged" difficulty="Hard"
       portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
     <Roles>Specialist</Roles>
     <Abilities>

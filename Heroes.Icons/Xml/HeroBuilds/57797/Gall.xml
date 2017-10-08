@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Gall available="47479" attributeid="Gall" franchise="Warcraft" type="Ranged" difficulty="Easy" mana="None"
+  <Gall available="47479" attributeid="Gall" unit="HeroGall" franchise="Warcraft" type="Ranged" difficulty="Easy" mana="None"
         portrait="storm_ui_ingame_heroselect_btn_gall.dds" loading="storm_ui_ingame_hero_loadingscreen_gall.dds" leader="storm_ui_ingame_hero_leaderboard_gall.dds">
     <Roles>Assassin</Roles>
     <Abilities>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Ragnaros available="48760" attributeid="Ragn" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Ragnaros available="48760" attributeid="Ragn" unit="HeroRagnaros" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_ragnaros.dds" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.dds" leader="storm_ui_ingame_hero_leaderboard_ragnaros.dds">
     <Roles>Assassin</Roles>
     <Abilities>

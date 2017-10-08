@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Jaina available="47479" attributeid="Jain" franchise="Warcraft" type="Ranged" difficulty="Easy"
+  <Jaina available="47479" attributeid="Jain" unit="HeroJaina" franchise="Warcraft" type="Ranged" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_jaina.dds" loading="storm_ui_ingame_hero_loadingscreen_jaina.dds" leader="storm_ui_ingame_hero_leaderboard_jaina.dds">
     <Roles>Assassin</Roles>
     <Abilities>

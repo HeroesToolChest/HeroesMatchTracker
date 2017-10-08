@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Leoric available="47479" attributeid="Leor" franchise="Diablo" type="Melee" difficulty="Easy"
+  <Leoric available="47479" attributeid="Leor" unit="HeroLeoric" franchise="Diablo" type="Melee" difficulty="Easy"
           portrait="storm_ui_ingame_heroselect_btn_leoric.dds" loading="storm_ui_ingame_hero_loadingscreen_leoric.dds" leader="storm_ui_ingame_hero_leaderboard_leoric.dds">
     <Roles>Warrior</Roles>
     <Abilities>

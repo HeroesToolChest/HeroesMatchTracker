@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Lucio available="50441" name="Lúcio" attributeid="Luci" franchise="Overwatch" type="Ranged" difficulty="Medium"
+  <Lucio available="50441" name="Lúcio" attributeid="Luci" unit="HeroLucio" franchise="Overwatch" type="Ranged" difficulty="Medium"
          portrait="storm_ui_ingame_heroselect_btn_lucio.dds" loading="storm_ui_ingame_hero_loadingscreen_lucio.dds" leader="storm_ui_ingame_hero_leaderboard_lucio.dds">
     <Roles>Support</Roles>
     <Abilities>

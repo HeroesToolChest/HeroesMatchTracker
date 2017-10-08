@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <LiLi available="47479" name="Li Li" attributeid="LiLi" franchise="Warcraft" type="Ranged" difficulty="Easy"
+  <LiLi available="47479" name="Li Li" attributeid="LiLi" unit="HeroLiLi" franchise="Warcraft" type="Ranged" difficulty="Easy"
         portrait="storm_ui_ingame_heroselect_btn_lili.dds" loading="storm_ui_ingame_hero_loadingscreen_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
     <Roles>Support</Roles>
     <Abilities>

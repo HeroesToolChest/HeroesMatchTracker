@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Zeratul available="47479" attributeid="Zera" franchise="Starcraft" type="Melee" difficulty="Hard"
+  <Zeratul available="47479" attributeid="Zera" unit="HeroZeratul" franchise="Starcraft" type="Melee" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_zeratul.dds" loading="storm_ui_ingame_hero_loadingscreen_zeratul.dds" leader="storm_ui_ingame_hero_leaderboard_zeratul.dds">
     <Roles>Assassin</Roles>
     <Abilities>

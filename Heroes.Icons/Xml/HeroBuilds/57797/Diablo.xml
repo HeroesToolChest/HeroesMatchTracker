@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Diablo available="47479" attributeid="Diab" franchise="Diablo" type="Melee" difficulty="Medium"
+  <Diablo available="47479" attributeid="Diab" unit="HeroDiablo" franchise="Diablo" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_diablo.dds" loading="storm_ui_ingame_hero_loadingscreen_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
     <Roles>Warrior</Roles>
     <Abilities>

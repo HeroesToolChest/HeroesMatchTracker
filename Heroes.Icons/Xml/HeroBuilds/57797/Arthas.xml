@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Arthas available="47479" attributeid="Arth" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Arthas available="47479" attributeid="Arth" unit="HeroArthas" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_arthas.dds" loading="storm_ui_ingame_hero_loadingscreen_arthas.dds" leader="storm_ui_ingame_hero_leaderboard_arthas.dds">
     <Roles>Warrior</Roles>
     <Abilities>

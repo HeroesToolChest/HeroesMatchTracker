@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Uther available="47479" attributeid="Uthe" franchise="Warcraft" type="Melee" difficulty="Easy"
+  <Uther available="47479" attributeid="Uthe" unit="HeroUther" franchise="Warcraft" type="Melee" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_uther.dds" loading="storm_ui_ingame_hero_loadingscreen_uther.dds" leader="storm_ui_ingame_hero_leaderboard_uther.dds">
     <Roles>Support</Roles>
     <Abilities>

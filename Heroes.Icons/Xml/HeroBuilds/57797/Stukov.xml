@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Stukov available="55288" attributeid="STUK" franchise="Starcraft" type="Melee" difficulty="Medium"
+  <Stukov available="55288" attributeid="STUK" unit="HeroStukov" franchise="Starcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_stukov.dds" loading="storm_ui_ingame_hero_loadingscreen_stukov.dds" leader="storm_ui_ingame_hero_leaderboard_stukov.dds">
     <Roles>Support</Roles>
     <Abilities>

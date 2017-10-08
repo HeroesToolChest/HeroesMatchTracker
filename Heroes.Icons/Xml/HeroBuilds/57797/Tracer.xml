@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Tracer available="47479" attributeid="Tra0" franchise="Overwatch" type="Ranged" difficulty="Hard" mana="None"
+  <Tracer available="47479" attributeid="Tra0" unit="HeroTracer" franchise="Overwatch" type="Ranged" difficulty="Hard" mana="None"
           portrait="storm_ui_ingame_heroselect_btn_tracer.dds" loading="storm_ui_ingame_hero_loadingscreen_tracer.dds" leader="storm_ui_ingame_hero_leaderboard_tracer.dds">
     <Roles>Assassin</Roles>
     <Abilities>

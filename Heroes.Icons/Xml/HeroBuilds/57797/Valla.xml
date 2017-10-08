@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Valla available="47479" attributeid="Demo" franchise="Diablo" type="Ranged" difficulty="Easy"
+  <Valla available="47479" attributeid="Demo" unit="HeroDemonHunter" franchise="Diablo" type="Ranged" difficulty="Easy"
          portrait="storm_ui_ingame_heroselect_btn_demonhunter.dds" loading="storm_ui_ingame_hero_loadingscreen_demonhunter.dds" leader="storm_ui_ingame_hero_leaderboard_demonhunter.dds">
     <Roles>Assassin</Roles>
     <Abilities>

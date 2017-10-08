@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Tychus available="47479" attributeid="Tych" franchise="Starcraft" type="Ranged" difficulty="Medium"
+  <Tychus available="47479" attributeid="Tych" unit="HeroTychus" franchise="Starcraft" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_tychus.dds" loading="storm_ui_ingame_hero_loadingscreen_tychus.dds" leader="storm_ui_ingame_hero_leaderboard_tychus.dds">
     <Roles>Assassin</Roles>
     <Abilities>

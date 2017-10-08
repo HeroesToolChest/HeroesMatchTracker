@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Garrosh available="56175" attributeid="Garr" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Garrosh available="56175" attributeid="Garr" unit="HeroGarrosh" franchise="Warcraft" type="Melee" difficulty="Medium"
       portrait="storm_ui_ingame_heroselect_btn_garrosh.dds" loading="storm_ui_ingame_hero_loadingscreen_garrosh.dds" leader="storm_ui_ingame_hero_leaderboard_garrosh.dds">
     <Roles>Warrior</Roles>
     <Abilities>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Nazeebo available="47479" attributeid="Witc" franchise="Diablo" type="Ranged" difficulty="Medium"
+  <Nazeebo available="47479" attributeid="Witc" unit="HeroWitchDoctor" franchise="Diablo" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_witchdoctor.dds" loading="storm_ui_ingame_hero_loadingscreen_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
     <Roles>Specialist</Roles>
     <Abilities>

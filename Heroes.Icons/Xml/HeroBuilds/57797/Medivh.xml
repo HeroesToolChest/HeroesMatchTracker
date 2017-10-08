@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Medivh available="47479" attributeid="Mdvh" franchise="Warcraft" type="Ranged" difficulty="VeryHard"
+  <Medivh available="47479" attributeid="Mdvh" unit="HeroMedivh" franchise="Warcraft" type="Ranged" difficulty="VeryHard"
           portrait="storm_ui_ingame_heroselect_btn_medivh.dds" loading="storm_ui_ingame_hero_loadingscreen_medivh.dds" leader="storm_ui_ingame_hero_leaderboard_medivh.dds">
     <Roles>Specialist</Roles>
     <Abilities>

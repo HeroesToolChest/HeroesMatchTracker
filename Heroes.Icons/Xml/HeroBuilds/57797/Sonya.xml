@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Sonya available="47479" attributeid="Barb" franchise="Diablo" type="Melee" difficulty="Medium" mana="Fury"
+  <Sonya available="47479" attributeid="Barb" unit="HeroBarbarian" franchise="Diablo" type="Melee" difficulty="Medium" mana="Fury"
          portrait="storm_ui_ingame_heroselect_btn_femalebarbarian.dds" loading="storm_ui_ingame_hero_loadingscreen_femalebarbarian.dds" leader="storm_ui_ingame_hero_leaderboard_femalebarbarian.dds">
     <Roles>Warrior</Roles>
     <Abilities>

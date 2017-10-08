@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <LostVikings available="47479" name="The Lost Vikings" attributeid="Lost" franchise="Classic" type="Melee" difficulty="VeryHard" mana="None"
+  <LostVikings available="47479" name="The Lost Vikings" attributeid="Lost" unit="HeroLostVikingsController" franchise="Classic" type="Melee" difficulty="VeryHard" mana="None"
                portrait="storm_ui_ingame_heroselect_btn_lostvikings.dds" loading="storm_ui_ingame_hero_loadingscreen_lostvikings.dds" leader="storm_ui_ingame_hero_leaderboard_lostvikings.dds">
     <Roles>Specialist</Roles>
     <Abilities>

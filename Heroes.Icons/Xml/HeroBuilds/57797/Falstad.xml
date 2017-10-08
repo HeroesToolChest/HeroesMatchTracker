@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Falstad available="47479" attributeid="Fals" franchise="Warcraft" type="Ranged" difficulty="Medium"
+  <Falstad available="47479" attributeid="Fals" unit="HeroFalstad" franchise="Warcraft" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_falstad.dds" loading="storm_ui_ingame_hero_loadingscreen_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
     <Roles>Assassin</Roles>
     <Abilities>

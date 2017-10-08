@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <KelThuzad available="57062" name="Kel'Thuzad" attributeid="KelT" franchise="Warcraft" type="Ranged" difficulty="Hard"
+  <KelThuzad available="57062" name="Kel'Thuzad" unit="HeroKelThuzad" attributeid="KelT" franchise="Warcraft" type="Ranged" difficulty="Hard"
           portrait="storm_ui_ingame_heroselect_btn_kelthuzad.dds" loading="storm_ui_ingame_hero_loadingscreen_kelthuzad.dds" leader="storm_ui_ingame_hero_leaderboard_kelthuzad.dds">
     <Roles>Assassin</Roles>
     <Abilities>

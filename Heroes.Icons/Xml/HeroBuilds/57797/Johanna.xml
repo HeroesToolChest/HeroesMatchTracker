@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Johanna available="47479" attributeid="Crus" franchise="Diablo" type="Melee" difficulty="Medium"
+  <Johanna available="47479" attributeid="Crus" unit="HeroCrusader" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_johanna.dds" loading="storm_ui_ingame_hero_loadingscreen_johanna.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
     <Roles>Warrior</Roles>
     <Abilities>

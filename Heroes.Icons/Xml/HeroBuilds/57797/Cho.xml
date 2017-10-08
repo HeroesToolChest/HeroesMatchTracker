@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Cho available="47479" attributeid="CCho" franchise="Warcraft" type="Melee" difficulty="Medium" mana="None"
+  <Cho available="47479" attributeid="CCho" unit="HeroCho" franchise="Warcraft" type="Melee" difficulty="Medium" mana="None"
        portrait="storm_ui_ingame_heroselect_btn_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
     <Roles>Warrior</Roles>
     <Abilities>

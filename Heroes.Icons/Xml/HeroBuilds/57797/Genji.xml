@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Genji available="52860" attributeid="Genj" franchise="Overwatch" type="Ranged" difficulty="Hard"
+  <Genji available="52860" attributeid="Genj" unit="HeroGenji" franchise="Overwatch" type="Ranged" difficulty="Hard"
          portrait="storm_ui_ingame_heroselect_btn_genji.dds" loading="storm_ui_ingame_hero_loadingscreen_genji.dds" leader="storm_ui_ingame_hero_leaderboard_genji.dds">
     <Roles>Assassin</Roles>
     <Abilities>

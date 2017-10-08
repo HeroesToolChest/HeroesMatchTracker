@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Kharazim available="47479" attributeid="Monk" franchise="Diablo" type="Melee" difficulty="Medium"
+  <Kharazim available="47479" attributeid="Monk" unit="HeroMonk" franchise="Diablo" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_monk.dds" loading="storm_ui_ingame_hero_loadingscreen_monk.dds" leader="storm_ui_ingame_hero_leaderboard_monk.dds">
     <Roles>Support</Roles>
     <Abilities>

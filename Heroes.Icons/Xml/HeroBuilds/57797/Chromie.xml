@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Chromie available="47479" attributeid="Chro" franchise="Warcraft" type="Ranged" difficulty="Hard"
+  <Chromie available="47479" attributeid="Chro" unit="HeroChromie" franchise="Warcraft" type="Ranged" difficulty="Hard"
            portrait="storm_ui_ingame_heroselect_btn_chromie.dds" loading="storm_ui_ingame_hero_loadingscreen_chromie.dds" leader="storm_ui_ingame_hero_leaderboard_chromie.dds">
     <Roles>Assassin</Roles>
     <Abilities>

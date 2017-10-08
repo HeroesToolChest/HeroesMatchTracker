@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Xul available="47479" attributeid="Necr" franchise="Diablo" type="Melee" difficulty="Medium"
+  <Xul available="47479" attributeid="Necr" unit="HeroNecromancer" franchise="Diablo" type="Melee" difficulty="Medium"
        portrait="storm_ui_ingame_heroselect_btn_necromancer.dds" loading="storm_ui_ingame_hero_loadingscreen_necromancer.dds" leader="storm_ui_ingame_hero_leaderboard_necromancer.dds">
     <Roles>Specialist</Roles>
     <Abilities>

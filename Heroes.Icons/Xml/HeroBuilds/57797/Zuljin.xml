@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Zuljin available="49076" name="Zul'jin" attributeid="ZULJ" franchise="Warcraft" type="Ranged" difficulty="Medium"
+  <Zuljin available="49076" name="Zul'jin" attributeid="ZULJ" unit="HeroZuljin" franchise="Warcraft" type="Ranged" difficulty="Medium"
          portrait="storm_ui_ingame_heroselect_btn_zuljin.dds" loading="storm_ui_ingame_hero_loadingscreen_zuljin.dds" leader="storm_ui_ingame_hero_leaderboard_zuljin.dds">
     <Roles>Assassin</Roles>
     <Abilities>

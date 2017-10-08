@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Ana available="57797" attributeid="HANA" franchise="Overwatch" type="Ranged" difficulty="Hard"
+  <Ana available="57797" attributeid="HANA" unit="HeroAna" franchise="Overwatch" type="Ranged" difficulty="Hard"
         portrait="storm_ui_ingame_heroselect_btn_ana.dds" loading="storm_ui_ingame_hero_loadingscreen_ana.dds" leader="storm_ui_ingame_hero_leaderboard_ana.dds">
     <Roles>Support</Roles>
     <Abilities>

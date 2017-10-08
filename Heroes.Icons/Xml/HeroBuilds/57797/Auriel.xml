@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Auriel available="47479" attributeid="Auri" franchise="Diablo" type="Ranged" difficulty="Medium" mana="Energy"
+  <Auriel available="47479" attributeid="Auri" unit="HeroAuriel" franchise="Diablo" type="Ranged" difficulty="Medium" mana="Energy"
           portrait="storm_ui_ingame_heroselect_btn_auriel.dds" loading="storm_ui_ingame_hero_loadingscreen_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
     <Roles>Support</Roles>
     <Abilities>

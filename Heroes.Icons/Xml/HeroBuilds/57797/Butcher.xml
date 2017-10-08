@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Butcher available="47479" name="The Butcher" attributeid="Butc" franchise="Diablo" type="Melee" difficulty="Medium"
+  <Butcher available="47479" name="The Butcher" attributeid="Butc" unit="HeroButcher" franchise="Diablo" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_butcher.dds" loading="storm_ui_ingame_hero_loadingscreen_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
     <Roles>Assassin</Roles>
     <Abilities>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Artanis available="47479" attributeid="Arts" franchise="Starcraft" type="Melee" difficulty="Medium"
+  <Artanis available="47479" attributeid="Arts" unit="HeroArtanis" franchise="Starcraft" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_artanis.dds" loading="storm_ui_ingame_hero_loadingscreen_artanis.dds" leader="storm_ui_ingame_hero_leaderboard_artanis.dds">
     <Roles>Warrior</Roles>
     <Abilities>

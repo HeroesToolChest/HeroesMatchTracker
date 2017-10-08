@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft" type="Ranged" difficulty="Medium"
+  <Tyrande available="47479" attributeid="Tyrd" unit="HeroTyrande" franchise="Warcraft" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_tyrande.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrande.dds" leader="storm_ui_ingame_hero_leaderboard_tyrande.dds">
     <Roles>Support</Roles>
     <Abilities>

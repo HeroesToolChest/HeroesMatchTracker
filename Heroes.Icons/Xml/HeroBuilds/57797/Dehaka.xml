@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Dehaka available="47479" attributeid="Deha" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Dehaka available="47479" attributeid="Deha" unit="HeroDehaka" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_dehaka.dds" loading="storm_ui_ingame_hero_loadingscreen_dehaka.dds" leader="storm_ui_ingame_hero_leaderboard_dehaka.dds">
     <Roles>Warrior</Roles>
     <Abilities>

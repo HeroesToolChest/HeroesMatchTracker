@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Zarya available="47479" attributeid="Zary" franchise="Overwatch" type="Ranged" difficulty="Easy" mana="None"
+  <Zarya available="47479" attributeid="Zary" unit="HeroZarya" franchise="Overwatch" type="Ranged" difficulty="Easy" mana="None"
          portrait="storm_ui_ingame_heroselect_btn_zarya.dds" loading="storm_ui_ingame_hero_loadingscreen_zarya.dds" leader="storm_ui_ingame_hero_leaderboard_zarya.dds">
     <Roles>Warrior</Roles>
     <Abilities>

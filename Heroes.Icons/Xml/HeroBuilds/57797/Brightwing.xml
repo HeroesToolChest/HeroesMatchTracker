@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Brightwing available="47479" attributeid="Faer" franchise="Warcraft" type="Ranged" difficulty="Hard"
+  <Brightwing available="47479" attributeid="Faer" unit="HeroFaerieDragon" franchise="Warcraft" type="Ranged" difficulty="Hard"
               portrait="storm_ui_ingame_heroselect_btn_faeriedragon.dds" loading="storm_ui_ingame_hero_loadingscreen_faeriedragon.dds" leader="storm_ui_ingame_hero_leaderboard_faeriedragon.dds">
     <Roles>Support</Roles>
     <Abilities>

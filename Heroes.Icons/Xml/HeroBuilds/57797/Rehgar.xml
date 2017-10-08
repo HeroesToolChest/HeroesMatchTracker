@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Rehgar available="47479" attributeid="Rehg" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Rehgar available="47479" attributeid="Rehg" unit="HeroRehgar" franchise="Warcraft" type="Melee" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_rehgar.dds" loading="storm_ui_ingame_hero_loadingscreen_rehgar.dds" leader="storm_ui_ingame_hero_leaderboard_rehgar.dds">
     <Roles>Support</Roles>
     <Abilities>

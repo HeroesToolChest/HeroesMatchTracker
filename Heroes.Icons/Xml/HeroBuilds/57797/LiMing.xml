@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <LiMing available="47479" name="Li-Ming" attributeid="Wiza" franchise="Diablo" type="Ranged" difficulty="Medium"
+  <LiMing available="47479" name="Li-Ming" attributeid="Wiza" unit="HeroWizard" franchise="Diablo" type="Ranged" difficulty="Medium"
           portrait="storm_ui_ingame_heroselect_btn_wizard.dds" loading="storm_ui_ingame_hero_loadingscreen_wizard.dds" leader="storm_ui_ingame_hero_leaderboard_wizard.dds">
     <Roles>Assassin</Roles>
     <Abilities>

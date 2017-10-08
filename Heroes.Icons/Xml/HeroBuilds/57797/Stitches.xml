@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Stitches available="47479" attributeid="Stit" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Stitches available="47479" attributeid="Stit" unit="HeroStitches" franchise="Warcraft" type="Melee" difficulty="Medium"
             portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
     <Roles>Warrior</Roles>
     <Abilities>
