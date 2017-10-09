@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 
 namespace Heroes.Icons.Models
 {
@@ -45,17 +44,17 @@ namespace Heroes.Icons.Models
 
         public Stream GetHeroPortrait()
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(HeroPortrait);
+            return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(HeroPortrait);
         }
 
         public Stream GetLoadingPortrait()
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(LoadingPortrait);
+            return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(LoadingPortrait);
         }
 
         public Stream GetLeaderboardPortrait()
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(LeaderboardPortrait);
+            return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(LeaderboardPortrait);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Heroes.Helpers;
 using System.IO;
-using System.Reflection;
 
 namespace Heroes.Icons.Models
 {
@@ -44,7 +43,7 @@ namespace Heroes.Icons.Models
 
         public Stream GetTalentIcon()
         {
-            return Assembly.GetExecutingAssembly().GetManifestResourceStream(Icon);
+            return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(Icon);
         }
     }
 }

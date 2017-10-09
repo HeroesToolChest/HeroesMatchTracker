@@ -35,7 +35,7 @@ namespace Heroes.Icons.Xml
             {
                 if (HomescreenStringByMapName.ContainsKey(homescreenName))
                 {
-                    return Assembly.GetExecutingAssembly().GetManifestResourceStream(HomescreenStringByMapName[homescreenName]);
+                    return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(HomescreenStringByMapName[homescreenName]);
                 }
                 else
                 {

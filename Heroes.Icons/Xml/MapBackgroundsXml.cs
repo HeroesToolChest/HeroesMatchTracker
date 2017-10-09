@@ -37,7 +37,7 @@ namespace Heroes.Icons.Xml
             {
                 if (MapStringByMapRealName.ContainsKey(mapRealName))
                 {
-                    return Assembly.GetExecutingAssembly().GetManifestResourceStream(MapStringByMapRealName[mapRealName]);
+                    return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(MapStringByMapRealName[mapRealName]);
                 }
                 else
                 {
