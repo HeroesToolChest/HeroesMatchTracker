@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Cassia available="52124" attributeid="Amaz" unit="HeroCassia" franchise="Diablo" type="Ranged" difficulty="Medium"
+  <Cassia available="52124" attributeid="Amaz" unit="HeroAmazon" franchise="Diablo" type="Ranged" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_d2amazonf.dds" loading="storm_ui_ingame_hero_loadingscreen_d2amazonf.dds" leader="storm_ui_ingame_hero_leaderboard_d2amazonf.dds">
     <Roles>Assassin</Roles>
     <Abilities>

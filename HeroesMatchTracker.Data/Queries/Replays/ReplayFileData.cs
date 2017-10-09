@@ -562,9 +562,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
 
             if (!string.IsNullOrEmpty(mapName))
-                names.Add($"{Replay.Map}: {mapName} [Good]");
+                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {mapName} [Good]");
             else
-                names.Add($"{Replay.Map}: ??? [Unknown]");
+                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): ??? [Unknown]");
 
             foreach (var player in GetPlayers())
             {
@@ -580,16 +580,16 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 string character = HeroesIcons.HeroBuilds().GetRealHeroNameFromHeroUnitName(player.HeroUnits.FirstOrDefault().Name);
 
                 if (!string.IsNullOrEmpty(character))
-                    names.Add($"{player.Character}: {character} [Good]");
+                    names.Add($"{player.Character} ({player.HeroUnits.FirstOrDefault().Name}): {character} [Good]");
                 else
-                    names.Add($"{player.Character}: ??? [Unknown]");
+                    names.Add($"{player.Character} ({player.HeroUnits.FirstOrDefault().Name}): ??? [Unknown]");
             }
 
             string output = "Unable to translate some or all of the following names";
             output += Environment.NewLine;
 
             output += string.Join(Environment.NewLine, names);
-
+            output += Environment.NewLine;
             output += "================================";
             output += Environment.NewLine;
             return output;

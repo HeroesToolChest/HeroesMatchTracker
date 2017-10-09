@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Gazlowe available="47479" attributeid="Tink" unit="HeroGazlowe" franchise="Warcraft" type="Melee" difficulty="Medium"
+  <Gazlowe available="47479" attributeid="Tink" unit="HeroTinker" franchise="Warcraft" type="Melee" difficulty="Medium"
            portrait="storm_ui_ingame_heroselect_btn_gazlowe.dds" loading="storm_ui_ingame_hero_loadingscreen_gazlowe.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
     <Roles>Specialist</Roles>
     <Abilities>
