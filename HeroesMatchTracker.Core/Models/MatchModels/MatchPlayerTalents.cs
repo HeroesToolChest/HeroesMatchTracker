@@ -1,5 +1,4 @@
-﻿using Heroes.Icons.Models;
-using HeroesMatchTracker.Core.Services;
+﻿using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
 using System.IO;
@@ -24,13 +23,14 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         public void SetTalents(ReplayMatchPlayerTalent playerTalentList)
         {
-            var talent1 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level1, playerTalentList.TalentName1);
-            var talent4 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level4, playerTalentList.TalentName4);
-            var talent7 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level7, playerTalentList.TalentName7);
-            var talent10 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level10, playerTalentList.TalentName10);
-            var talent13 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level13, playerTalentList.TalentName13);
-            var talent16 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level16, playerTalentList.TalentName16);
-            var talent20 = HeroesIcons.HeroBuilds().GetHeroTalent(playerTalentList.Character, TalentTier.Level20, playerTalentList.TalentName20);
+            HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName1);
+            var talent1 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName1);
+            var talent4 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName4);
+            var talent7 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName7);
+            var talent10 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName10);
+            var talent13 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName13);
+            var talent16 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName16);
+            var talent20 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName20);
 
             Talents.Add(talent1.GetTalentIcon());
             Talents.Add(talent4.GetTalentIcon());

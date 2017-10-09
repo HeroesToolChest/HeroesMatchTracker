@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Heroes.Icons.Models
 {
@@ -37,6 +38,8 @@ namespace Heroes.Icons.Models
 
         public HeroMana ManaType { get; set; }
 
+        public Dictionary<string, Talent> Talents { get; set; }
+
         /// <summary>
         /// Roles of the hero, multiclass will be first if hero has multiple roles
         /// </summary>
@@ -55,6 +58,40 @@ namespace Heroes.Icons.Models
         public Stream GetLeaderboardPortrait()
         {
             return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(LeaderboardPortrait);
+        }
+
+        /// <summary>
+        /// Returns a talent object given the reference name
+        /// </summary>
+        /// <param name="referenceName">reference name of the talent</param>
+        /// <returns></returns>
+        public Talent GetTalent(string referenceName)
+        {
+            if (string.IsNullOrEmpty(referenceName))
+            {
+                return Talents[string.Empty]; // no pick
+            }
+
+            if (Talents.TryGetValue(referenceName, out Talent talent))
+            {
+                return talent;
+            }
+            else
+            {
+                talent = Talents["NotFound"];
+                talent.Name = referenceName;
+                return talent;
+            }
+        }
+
+        /// <summary>
+        /// Returns a collection of all the talents in the selected tier
+        /// </summary>
+        /// <param name="tier">The talent tier</param>
+        /// <returns></returns>
+        public ICollection<Talent> GetTierTalents(TalentTier tier)
+        {
+            return Talents.Values.Where(x => x.Tier == tier).ToArray();
         }
     }
 }
