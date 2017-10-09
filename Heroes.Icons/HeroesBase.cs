@@ -10,6 +10,9 @@
         public const string NoLeaderboardFound = "storm_ui_ingame_hero_leaderboard_notfound.dds";
         public const string NoTalentIconPick = "storm_ui_ingame_leader_talent_unselected.png";
         public const string NoTalentIconFound = "storm_ui_icon_default.dds";
+        public const int MinimumBuild = 47479;
+        public const int DescriptionsAddedBuild = 55844;
+        public const int HeroUnitsAddedBuild = 57797;
 
         protected string XmlMainFolderName => "Xml";
         protected string DefaultFileExtension => ".xml";

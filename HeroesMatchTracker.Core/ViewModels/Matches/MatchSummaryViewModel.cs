@@ -607,10 +607,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 string ban3 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
                 string ban4 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
 
-                if (string.IsNullOrEmpty(ban1)) ban1 = "No pick";
-                if (string.IsNullOrEmpty(ban2)) ban2 = "No pick";
-                if (string.IsNullOrEmpty(ban3)) ban3 = "No pick";
-                if (string.IsNullOrEmpty(ban4)) ban4 = "No pick";
+                if (string.IsNullOrEmpty(ban1)) ban1 = null;
+                if (string.IsNullOrEmpty(ban2)) ban2 = null;
+                if (string.IsNullOrEmpty(ban3)) ban3 = null;
+                if (string.IsNullOrEmpty(ban4)) ban4 = null;
 
                 var bannedHero1 = HeroesIcons.HeroBuilds().GetHeroInfo(ban1);
                 var bannedHero2 = HeroesIcons.HeroBuilds().GetHeroInfo(ban2);

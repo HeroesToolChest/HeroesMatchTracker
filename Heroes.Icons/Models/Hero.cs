@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -11,6 +10,9 @@ namespace Heroes.Icons.Models
 
         public string ShortName { get; set; }
 
+        /// <summary>
+        /// Unit name of the hero, available build 57797
+        /// </summary>
         public string UnitName { get; set; }
 
         public string AttributeId { get; set; }
@@ -35,11 +37,6 @@ namespace Heroes.Icons.Models
         public string LeaderboardPortrait { get; set; }
 
         public HeroMana ManaType { get; set; }
-
-        /// <summary>
-        /// Different language names of the hero name
-        /// </summary>
-        public List<string> Aliases { get; set; } = new List<string>();
 
         /// <summary>
         /// Roles of the hero, multiclass will be first if hero has multiple roles

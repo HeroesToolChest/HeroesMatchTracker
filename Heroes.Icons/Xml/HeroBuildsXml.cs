@@ -17,7 +17,6 @@ namespace Heroes.Icons.Xml
         private const string HeroLoadingScreenPortraitsFolderName = "HeroLoadingScreenPortraits";
         private const string TalentFolderName = "Talents";
         private const string TalentGenericFolderName = "_Generic";
-        private const int MinimumBuild = 47479;
 
         private int SelectedBuild;
 
@@ -283,7 +282,7 @@ namespace Heroes.Icons.Xml
             if (string.IsNullOrEmpty(realName))
                 realName = heroName;
 
-            if (heroName == "No pick")
+            if (heroName == null)
             {
                 return new Hero
                 {
@@ -306,8 +305,8 @@ namespace Heroes.Icons.Xml
                     Name = heroName,
                     Franchise = HeroFranchise.Unknown,
                     HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, NoPortraitFound),
-                    LoadingPortrait = SetImageStreamString(HeroPortraitsFolderName, NoLoadingScreenFound),
-                    LeaderboardPortrait = SetImageStreamString(HeroPortraitsFolderName, NoLeaderboardFound),
+                    LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, NoLoadingScreenFound),
+                    LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, NoLeaderboardFound),
                 };
             }
         }
@@ -316,7 +315,6 @@ namespace Heroes.Icons.Xml
         {
             DuplicateBuildCheck();
             ParseParentFile();
-
             ParseChildFiles();
         }
 
@@ -350,8 +348,10 @@ namespace Heroes.Icons.Xml
                         ShortName = reader.Name,
                     };
 
+                    heroDescriptionByHeroName.TryGetValue(heroName, out string heroDescription);
+
                     // order is important
-                    ParseHeroInformation(reader, hero, heroDescriptionByHeroName[heroName]);
+                    ParseHeroInformation(reader, hero, heroDescription);
                     ParseHeroRoles(reader, hero);
                     ParseHeroAbilities(reader, hero);
                     ParseHeroTalents(reader, hero, talentShortTooltip, talentLongTooltip);
@@ -498,8 +498,7 @@ namespace Heroes.Icons.Xml
 
         private void LoadHeroDescriptions(Dictionary<string, string> heroDescriptions)
         {
-            // 55884 is the build where hero description were added in HMT
-            if (SelectedBuild < 55844)
+            if (SelectedBuild < DescriptionsAddedBuild)
                 return;
 
             try
@@ -562,15 +561,14 @@ namespace Heroes.Icons.Xml
             hero.LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, reader["leader"]);
             hero.LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, reader["loading"]);
 
-            // hero description, build 55884 is the first build where hero description were added in HMT
-            if (SelectedBuild >= 55844)
-                hero.Description = heroDescription;
+            // set hero description
+            hero.Description = heroDescription;
 
             RealHeroNameByAttributeId.Add(hero.AttributeId, hero.Name);
             RealHeroNameByShortName.Add(hero.ShortName, hero.Name);
 
             // hero unit names, build 57797 is the first build where unit names were added in HMT
-            if (SelectedBuild >= 57797)
+            if (SelectedBuild >= HeroUnitsAddedBuild)
                 RealHeroNameByHeroUnitName.Add(hero.UnitName, hero.Name);
         }
 
