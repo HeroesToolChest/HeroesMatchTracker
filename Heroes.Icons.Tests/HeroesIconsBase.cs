@@ -15,12 +15,6 @@ namespace Heroes.Icons.Tests
             HeroesIcons = new HeroesIcons(false);
         }
 
-        //protected static string ImageMissingLogName => "_ImageMissingLog.txt";
-        //protected static string ReferenceLogName => "_ReferenceNameLog.txt";
-        //protected static string XmlErrorsLogName => "_XmlErrorsLog.txt";
-        //protected static string LogFileName => "Logs";
-        ////protected static string ApplicationIconsPath => "pack://application:,,,/Heroes.Icons;component/Icons";
-
         protected HeroesIcons HeroesIcons { get; set; }
 
         protected bool NonValidCharsCheck(string text)

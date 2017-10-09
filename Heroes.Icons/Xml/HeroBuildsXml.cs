@@ -9,15 +9,6 @@ namespace Heroes.Icons.Xml
 {
     internal class HeroBuildsXml : XmlBase, IHeroBuilds
     {
-        private const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
-        private const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
-        private const string HeroDescriptionsFileName = "_HeroDescriptions.txt";
-        private const string HeroPortraitsFolderName = "HeroPortraits";
-        private const string HeroLeaderboardPortraitsFolderName = "HeroLeaderboardPortraits";
-        private const string HeroLoadingScreenPortraitsFolderName = "HeroLoadingScreenPortraits";
-        private const string TalentFolderName = "Talents";
-        private const string TalentGenericFolderName = "_Generic";
-
         private int SelectedBuild;
 
         /// <summary>

@@ -10,6 +10,15 @@
         public const string NoLeaderboardFound = "storm_ui_ingame_hero_leaderboard_notfound.dds";
         public const string NoTalentIconPick = "storm_ui_ingame_leader_talent_unselected.png";
         public const string NoTalentIconFound = "storm_ui_icon_default.dds";
+        public const string ShortTalentTooltipFileName = "_ShortTalentTooltips.txt";
+        public const string FullTalentTooltipFileName = "_FullTalentTooltips.txt";
+        public const string HeroDescriptionsFileName = "_HeroDescriptions.txt";
+        public const string HeroPortraitsFolderName = "HeroPortraits";
+        public const string HeroLeaderboardPortraitsFolderName = "HeroLeaderboardPortraits";
+        public const string HeroLoadingScreenPortraitsFolderName = "HeroLoadingScreenPortraits";
+        public const string TalentFolderName = "Talents";
+        public const string TalentGenericFolderName = "_Generic";
+
         public const int MinimumBuild = 47479;
         public const int DescriptionsAddedBuild = 55844;
         public const int HeroUnitsAddedBuild = 57797;

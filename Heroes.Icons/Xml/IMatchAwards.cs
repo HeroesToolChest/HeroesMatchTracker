@@ -7,7 +7,7 @@ namespace Heroes.Icons.Xml
     public interface IMatchAwards
     {
         /// <summary>
-        /// Returns the MVPScreen award BitmapImage of the given mvpAwardType and color
+        /// Returns the MVPScreen award Stream of the given mvpAwardType and color
         /// </summary>
         /// <param name="mvpAwardType">Reference name of award</param>
         /// <param name="mvpColor">Color of icon</param>
@@ -16,7 +16,7 @@ namespace Heroes.Icons.Xml
         Stream GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName);
 
         /// <summary>
-        /// Returns the ScoreScreen award BitmapImage of the given mvpAwardType and color
+        /// Returns the ScoreScreen award Stream of the given mvpAwardType and color
         /// </summary>
         /// <param name="mvpAwardType">Reference name of award</param>
         /// <param name="mvpColor">Color of icon</param>

@@ -30,7 +30,7 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns the MVPScreen award BitmapImage of the given mvpAwardType and color
+        /// Returns the MVPScreen award Stream of the given mvpAwardType and color
         /// </summary>
         /// <param name="mvpAwardType">Reference name of award</param>
         /// <param name="mvpColor">Color of icon</param>
@@ -38,34 +38,23 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public Stream GetMVPScreenAward(string mvpAwardType, MVPScreenColor mvpColor, out string awardName)
         {
-            awardName = null;
-            return null;
-            //if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
-            //{
-            //    var award = MVPScreenAwardByAwardType[mvpAwardType];
-            //    var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+            if (MVPAwardDescriptionByAwardType.ContainsKey(mvpAwardType))
+            {
+                var award = MVPScreenAwardByAwardType[mvpAwardType];
 
-            //    awardName = award.Item1;
-
-            //    return new Uri(uriString, UriKind.Absolute);
-
-            //    //catch (IOException)
-            //    //{
-            //    //    LogMissingImage($"Missing image: {uriString}");
-            //    //    awardName = mvpAwardType;
-            //    //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-            //    //}
-            //}
-            //else
-            //{
-            //    LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
-            //    awardName = mvpAwardType;
-            //    return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound)); // ($@"Talents\_Generic\{NoTalentIconFound}");
-            //}
+                awardName = award.Item1;
+                return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(award.Item2.Replace("{mvpColor}", mvpColor.ToString().ToLowerInvariant()));
+            }
+            else
+            {
+                LogReferenceNameNotFound($"MVP screen award type: {mvpAwardType}");
+                awardName = mvpAwardType;
+                return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(SetImageStreamString($"{TalentFolderName}.{TalentGenericFolderName}", NoTalentIconFound));
+            }
         }
 
         /// <summary>
-        /// Returns the ScoreScreen award BitmapImage of the given mvpAwardType and color
+        /// Returns the ScoreScreen award Stream of the given mvpAwardType and color
         /// </summary>
         /// <param name="mvpAwardType">Reference name of award</param>
         /// <param name="mvpColor">Color of icon</param>
@@ -73,29 +62,19 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public Stream GetMVPScoreScreenAward(string mvpAwardType, MVPScoreScreenColor mvpColor, out string awardName)
         {
-            awardName = null;
-            return null;
-            //if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
-            //{
-            //    var award = MVPScoreScreenAwardByAwardType[mvpAwardType];
-            //    var uriString = award.Item2.AbsoluteUri.Replace("%7BmvpColor%7D", mvpColor.ToString());
+            if (MVPScoreScreenAwardByAwardType.ContainsKey(mvpAwardType))
+            {
+                var award = MVPScoreScreenAwardByAwardType[mvpAwardType];
 
-            //    awardName = award.Item1;
-
-            //    return new Uri(uriString, UriKind.Absolute);
-            //    //catch (IOException)
-            //    //{
-            //    //    LogMissingImage($"Missing image: {uriString}");
-            //    //    awardName = mvpAwardType;
-            //    //    return HeroesBitmapImage($@"Talents\_Generic\{NoTalentIconFound}");
-            //    //}
-            //}
-            //else
-            //{
-            //    LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
-            //    awardName = mvpAwardType;
-            //    return new Uri(Path.Combine("Talents", "_Generic", NoTalentIconFound));
-            //}
+                awardName = award.Item1;
+                return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(award.Item2.Replace("{mvpColor}", mvpColor.ToString().ToLowerInvariant()));
+            }
+            else
+            {
+                LogReferenceNameNotFound($"MVP score screen award type: {mvpAwardType}");
+                awardName = mvpAwardType;
+                return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(SetImageStreamString($"{TalentFolderName}.{TalentGenericFolderName}", NoTalentIconFound));
+            }
         }
 
         /// <summary>
