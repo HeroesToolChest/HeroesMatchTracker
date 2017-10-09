@@ -115,6 +115,21 @@ namespace Heroes.Icons.Tests
                     if (heroInfo.GetTierTalents(TalentTier.Level20).Count < 1)
                         assertMessages.Add($"[{build}] [{hero}] No Level 20 talents");
 
+                    // test a no pick (empty)
+                    Talent testTalent = heroInfo.GetTalent(string.Empty);
+                    if (testTalent.Name != "No pick" || testTalent.GetTalentIcon() == null)
+                        assertMessages.Add($"[{build}] [{hero}] no pick (empty) talent has incorrect name or icon steam is null");
+
+                    // test a no pick (null)
+                    testTalent = heroInfo.GetTalent(null);
+                    if (testTalent.Name != "No pick" || testTalent.GetTalentIcon() == null)
+                        assertMessages.Add($"[{build}] [{hero}] not pick (null) talent has incorrect name or icon steam is null");
+
+                    // test a not found
+                    testTalent = heroInfo.GetTalent("asdf");
+                    if (testTalent.Name != "asdf" || testTalent.GetTalentIcon() == null)
+                        assertMessages.Add($"[{build}] [{hero}] not found talent has incorrect name or icon steam is null");
+
                     foreach (var talent in heroInfo.Talents.Values)
                     {
                         if (talent.Tier == TalentTier.Old)
@@ -159,7 +174,11 @@ namespace Heroes.Icons.Tests
                         }
 
                         if (talent.GetTalentIcon() == null)
-                            assertMessages.Add($"[{build}] [{hero}] [{talent}] Icons stream is null");
+                            assertMessages.Add($"[{build}] [{hero}] [{talent}] Icon stream is null");
+
+                        testTalent = heroInfo.GetTalent(talent.ReferenceName);
+                        if (testTalent == null || testTalent.Name == talent.ReferenceName || testTalent.Name == "No pick")
+                            assertMessages.Add($"[{build}] [{hero}] [{talent}] GetTalent() failed to return correct info");
                     }
                 }
             }
