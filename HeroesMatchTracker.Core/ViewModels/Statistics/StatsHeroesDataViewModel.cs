@@ -214,7 +214,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int mercsCaptured = (int)scoreResultsList.Sum(x => x.MercCampCaptures);
 
                 TimeSpan gameTime = Database.ReplaysDb().Statistics.ReadTotalMapGameTime(heroName, season, gameMode, map);
-                Hero heroInfo = HeroesIcons.HeroBuilds().GetHeroInfo(heroName);
 
                 double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
                 double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
@@ -314,9 +313,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 {
                     gameTimeAverage = TimeSpan.FromSeconds(Math.Round(map.GameTime.Value.TotalSeconds / totalGames.Value, 0));
                 }
-
-                //var mapImage = map.MapImage;
-                //mapImage.Freeze();
 
                 StatsHeroesGameModes averageMatch = new StatsHeroesGameModes
                 {

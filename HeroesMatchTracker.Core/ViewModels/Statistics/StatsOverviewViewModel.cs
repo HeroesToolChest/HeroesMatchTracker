@@ -300,7 +300,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         // just for the Hero Stats datagrid, switch data according to selected hero stat
         private void QuerySelectedHeroStat()
         {
-            Enum.TryParse(SelectedHeroStat, out OverviewHeroStatOption selectedStatOption);
+            if (!Enum.TryParse(SelectedHeroStat, out OverviewHeroStatOption selectedStatOption))
+                selectedStatOption = OverviewHeroStatOption.HighestWinrate;
 
             IsHeroStatPercentageDataGridVisible = false;
             IsHeroStatDataGridVisible = false;

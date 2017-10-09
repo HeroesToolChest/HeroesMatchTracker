@@ -75,7 +75,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         public override void Dispose()
         {
-            Talents.ForEach((talentImage) => talentImage = null);
+            Talents.ForEach((talentImage) => talentImage.Dispose());
             Talents.Clear();
             TalentNames.Clear();
             TalentShortTooltips.Clear();

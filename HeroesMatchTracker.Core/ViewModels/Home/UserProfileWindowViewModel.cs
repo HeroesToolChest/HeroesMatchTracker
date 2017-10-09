@@ -48,8 +48,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             get => ((Region)_selectedProfileRegion).ToString();
             set
             {
-                Enum.TryParse(value, out Region region);
-                _selectedProfileRegion = (int)region;
+                if (Enum.TryParse(value, out Region region))
+                    _selectedProfileRegion = (int)region;
+                else
+                    _selectedProfileRegion = 99;
                 RaisePropertyChanged();
             }
         }
@@ -125,7 +127,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                 return;
             }
 
-            Enum.TryParse(SelectedProfileRegion, out Region region);
+            if (!Enum.TryParse(SelectedProfileRegion, out Region region))
+                region = Region.XX;
 
             UserProfile profile = new UserProfile()
             {
@@ -180,7 +183,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
             if (items.Length == 2)
             {
-                Enum.TryParse(items[1].Trim(), out Region region);
+                if (!Enum.TryParse(items[1].Trim(), out Region region))
+                    region = Region.XX;
+
                 SelectedUserProfile.SetProfile(items[0].Trim(), (int)region);
             }
             else

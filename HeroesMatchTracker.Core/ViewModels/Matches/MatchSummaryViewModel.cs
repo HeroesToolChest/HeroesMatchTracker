@@ -969,16 +969,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 player.Dispose();
 
             // bans
-            MatchHeroBans.Team0Ban0 = null;
-            MatchHeroBans.Team0Ban1 = null;
-            MatchHeroBans.Team1Ban0 = null;
-            MatchHeroBans.Team1Ban1 = null;
+            if (MatchHeroBans.Team0Ban0 != null)
+                MatchHeroBans.Team0Ban0.Dispose();
+            if (MatchHeroBans.Team0Ban1 != null)
+                MatchHeroBans.Team0Ban1.Dispose();
+            if (MatchHeroBans.Team1Ban0 != null)
+                MatchHeroBans.Team1Ban0.Dispose();
+            if (MatchHeroBans.Team1Ban1 != null)
+                MatchHeroBans.Team1Ban1.Dispose();
+
             MatchHeroBans.Team0Ban0HeroName = null;
             MatchHeroBans.Team0Ban1HeroName = null;
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
 
-            BackgroundImage = null;
+            BackgroundImage.Dispose();
 
             HasBans = false;
             HasChat = false;

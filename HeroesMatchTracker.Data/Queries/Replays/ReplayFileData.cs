@@ -242,14 +242,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplaysDb.MatchPlayerScoreResult.CreateRecord(ReplaysContext, playerScore);
         }
 
-        private void AddPlayerTalents(Heroes.ReplayParser.Talent[] talents, long playerId, string playerCharacter)
+        private void AddPlayerTalents(Talent[] talents, long playerId, string playerCharacter)
         {
-            var talentArray = new Heroes.ReplayParser.Talent[7]; // hold all 7 talents
+            var talentArray = new Talent[7]; // hold all 7 talents
 
             // add known talents
             for (int j = 0; j < talents.Count(); j++)
             {
-                talentArray[j] = new Heroes.ReplayParser.Talent()
+                talentArray[j] = new Talent()
                 {
                     TalentID = talents[j].TalentID,
                     TalentName = talents[j].TalentName,
@@ -260,7 +260,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             // make the rest null
             for (int j = talents.Count(); j < 7; j++)
             {
-                talentArray[j] = new Heroes.ReplayParser.Talent()
+                talentArray[j] = new Talent()
                 {
                     TalentID = null,
                     TalentName = null,
@@ -588,7 +588,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             string output = "Unable to translate some or all of the following names";
             output += Environment.NewLine;
 
-            string.Join(Environment.NewLine, names);
+            output += string.Join(Environment.NewLine, names);
 
             output += "================================";
             output += Environment.NewLine;
