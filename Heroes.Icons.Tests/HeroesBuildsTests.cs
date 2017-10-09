@@ -231,5 +231,19 @@ namespace Heroes.Icons.Tests
 
             Assert.IsFalse(HeroesIcons.HeroBuilds().HeroExists("asdf"));
         }
+
+        [TestMethod]
+        public void GetPatchNotesFromBuildTest()
+        {
+            Assert.IsNotNull(HeroesIcons.HeroBuilds().GetPatchNotes(57797));
+            Assert.IsNull(HeroesIcons.HeroBuilds().GetPatchNotes(0));
+        }
+
+        [TestMethod]
+        public void GetListOfHeroesTest()
+        {
+            Assert.IsTrue(HeroesIcons.HeroBuilds().GetListOfHeroes(57797).Count > 1);
+            Assert.IsTrue(HeroesIcons.HeroBuilds().GetListOfHeroes(0).Count == 0);
+        }
     }
 }
