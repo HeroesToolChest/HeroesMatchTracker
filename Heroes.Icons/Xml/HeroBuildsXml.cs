@@ -340,9 +340,9 @@ namespace Heroes.Icons.Xml
                 throw new HeroesIconException($"Image file does not have .dds or .png extension [{fileName}]");
 
             if (!isGenericTalent)
-                return SetImageStreamString($"{TalentFolderName}.{hero}", fileName);
+                return SetImageStreamString($"{TalentFolderName}.{hero}", fileName.ToLowerInvariant());
             else
-                return SetImageStreamString($"{TalentFolderName}.{TalentGenericFolderName}", fileName);
+                return SetImageStreamString($"{TalentFolderName}.{TalentGenericFolderName}", fileName.ToLowerInvariant());
         }
 
         private void LoadTalentTooltipStrings(Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentFullTooltip)
@@ -578,7 +578,7 @@ namespace Heroes.Icons.Xml
                                         IsIconGeneric = isGeneric,
                                         IsGeneric = isGenericTalent,
                                         TooltipDescriptionName = desc,
-                                        Icon = SetHeroTalentString(hero.Name, reader.Value, isGeneric),
+                                        Icon = SetHeroTalentString(hero.ShortName, reader.Value, isGeneric),
                                         Tier = tier,
                                         Tooltip = new TalentTooltip
                                         {
@@ -611,7 +611,7 @@ namespace Heroes.Icons.Xml
 
             talents.Add("NotFound", new Talent
             {
-                Name = string.Empty,
+                Name = "Not found",
                 Icon = SetHeroTalentString(string.Empty, NoTalentIconFound, true),
             });
 
