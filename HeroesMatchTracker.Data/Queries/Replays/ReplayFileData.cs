@@ -23,7 +23,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             ReplaysContext = new ReplaysContext();
             Replay = replay;
             HeroesIcons = heroesIcons;
-            HeroesIcons.LoadHeroesBuild(Replay.ReplayBuild); // needed for auto translations
+            HeroesIcons.LoadHeroesBuild(99999); // needed for auto translations
             ReplaysDb = new ReplaysDb();
         }
 
@@ -85,7 +85,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
             if (string.IsNullOrEmpty(mapName))
-                throw new TranslationException(RetrieveAllMapAndHeroNames());
+            {
+                if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
+                    throw new TranslationException(RetrieveAllMapAndHeroNames());
+            }
 
             ReplayMatch replayMatch = new ReplayMatch
             {
@@ -560,9 +563,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             List<string> names = new List<string>();
 
             string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
-
             if (!string.IsNullOrEmpty(mapName))
                 names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {mapName} [Good]");
+            else if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
+                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {mapName} [Good (Translated)]");
             else
                 names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): ??? [Unknown]");
 

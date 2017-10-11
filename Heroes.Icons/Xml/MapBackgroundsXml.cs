@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Xml;
 
 namespace Heroes.Icons.Xml
@@ -14,6 +13,7 @@ namespace Heroes.Icons.Xml
         private Dictionary<string, string> MapStringByMapRealName = new Dictionary<string, string>();
         private Dictionary<string, Color> MapFontGlowColorByMapRealName = new Dictionary<string, Color>();
         private Dictionary<string, string> MapRealNameByMapAlternativeName = new Dictionary<string, string>();
+        private Dictionary<string, string> MapRealNameByMapAliasName = new Dictionary<string, string>();
         private List<string> CustomOnlyMaps = new List<string>();
 
         private MapBackgroundsXml(string parentFile, string xmlBaseFolder, int currentBuild, bool logger)
@@ -123,6 +123,17 @@ namespace Heroes.Icons.Xml
                 return null;
         }
 
+        /// <summary>
+        /// Gets the english name of the given alias. Returns true if found, otherwise false
+        /// </summary>
+        /// <param name="mapNameAlias">Alias name</param>
+        /// <param name="mapNameEnglish">English name</param>
+        /// <returns></returns>
+        public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
+        {
+            return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
+        }
+
         public int TotalCountOfMaps()
         {
             return XmlChildFiles.Count;
@@ -168,6 +179,22 @@ namespace Heroes.Icons.Xml
                             {
                                 MapStringByMapRealName.Add(realMapBackgroundName, SetImageStreamString(IconFolderName, reader.Value));
                                 MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
+                            }
+                            else if (element == "Aliases")
+                            {
+                                string[] aliases = reader.Value.Split(',');
+
+                                // add the english name
+                                MapRealNameByMapAliasName.Add(realMapBackgroundName, realMapBackgroundName);
+
+                                // add all the other aliases
+                                foreach (var alias in aliases)
+                                {
+                                    if (MapRealNameByMapAliasName.ContainsKey(alias))
+                                        throw new ArgumentException($"Alias already added to {realMapBackgroundName}: {alias}");
+
+                                    MapRealNameByMapAliasName.Add(alias, realMapBackgroundName);
+                                }
                             }
                         }
                     }

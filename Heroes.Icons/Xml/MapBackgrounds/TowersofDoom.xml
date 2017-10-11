@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TowersofDoom name="Towers of Doom" alt="TowersOfDoom">
   <Normal fontglow="#FFFFA500">ui_ingame_mapmechanic_loadscreen_towersofdoom.jpg</Normal>
+  <Aliases>Torres da Perdição,Torres de Fatalidad,Torres de la perdición,Tours du destin,Türme des Unheils,Wieże Zagłady,Башни Рока,厄運之塔,末日塔,파멸의 탑,Torri della Rovina</Aliases>
 </TowersofDoom>

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WarheadJunction name="Warhead Junction" alt="Warhead Junction">
   <Normal fontglow="#FFFFFF00">storm_ui_homescreenbackground_warhead.jpg</Normal>
+  <Aliases>Cruce nuclear,Estación Nuclear,Junção da Ogiva,Menace nucléaire,핵탄두 격전지,弹头枢纽站,核武戰地,Ядерный полигон,Sprengkopfmanufaktur,Poligon Nuklearny,Stazione Atomica</Aliases>
 </WarheadJunction>

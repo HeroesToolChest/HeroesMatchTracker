@@ -26,8 +26,7 @@
       </Level10>
       <Level13>
         <AmazonGroundingBolt name="Grounding Bolt" desc="AmazonLightningFuryGroundingBolt">storm_ui_icon_cassia_lightningfury.dds</AmazonGroundingBolt>
-        <AmazonThundergodsVigor name="Thundergod's Vigor" desc="AmazonLightningFuryThundergodsVigor">storm_ui_icon_cassia_lightningfury_a.dds</AmazonThundergodsVigor>
-    
+        <AmazonThundergodsVigor name="Thundergod's Vigor" desc="AmazonLightningFuryThundergodsVigor">storm_ui_icon_cassia_lightningfury_a.dds</AmazonThundergodsVigor>   
         <AmazonLungingStrike name="Lunging Strike" desc="AmazonFendLungingStrike">storm_ui_icon_cassia_fend.dds</AmazonLungingStrike>
       </Level13>
       <Level16>
