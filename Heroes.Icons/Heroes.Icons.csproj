@@ -770,6 +770,7 @@
     <Resource Include="Icons\Talents\Chen\storm_ui_icon_chen_fortifyingbrew_b.dds" />
     <Resource Include="Icons\Talents\Johanna\storm_ui_icon_falstad_hammerang_a.dds" />
     <Resource Include="Icons\Talents\Johanna\storm_ui_icon_johanna_condemn_var1.dds" />
+    <Resource Include="Icons\MapBackgrounds\storm_ui_loadscreen_bashem_smashem.jpg" />
     <Content Include="Xml\HeroBuilds\47903\Abathur.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -6782,6 +6783,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\HauntedMines.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\MapBackgrounds\IndustrialDistrict.xml">
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\MapBackgrounds\InfernalShrines.xml">
