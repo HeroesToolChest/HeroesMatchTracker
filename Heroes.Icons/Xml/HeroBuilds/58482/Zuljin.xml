@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Zuljin>
+  <Level1>
+    <ZuljinBoneslicer name="Boneslicer" desc="ZuljinBoneslicer">storm_ui_icon_zuljin_grievousthrow.dds</ZuljinBoneslicer>
+    <ZuljinArcaniteAxes name="Arcanite Axes" desc="ZuljinArcaniteAxes">storm_ui_icon_zuljin_twincleave.dds</ZuljinArcaniteAxes>
+    <ZuljinYouWantAxe name="You Want Axe?" generic="true" desc="ZuljinYouWantAxe">storm_ui_icon_talent_seasonedmarksman.dds</ZuljinYouWantAxe>
+  </Level1>
+  <Level4>
+    <ZuljinTrollsBlood name="Troll's Blood" desc="ZuljinTrollsBlood">storm_ui_icon_zuljin_regeneration.dds</ZuljinTrollsBlood>
+    <ZuljinLetTheKillingBegin name="Let The Killing Begin" generic="true" desc="ZuljinLetTheKillingBegin">storm_ui_icon_talent_autoattack_speed.dds</ZuljinLetTheKillingBegin>
+    <ZuljinHeadhunter name="Headhunter" desc="ZuljinHeadhunter" cooldown="60">storm_ui_icon_zuljin_headhunter.dds</ZuljinHeadhunter>
+  </Level4>
+  <Level7>
+    <ZuljinViciousAssault name="Vicious Assault" desc="ZuljinViciousAssault">storm_ui_icon_zuljin_grievousthrow.dds</ZuljinViciousAssault>
+    <ZuljinWrongPlaceWrongTime name="Wrong Place Wrong Time" desc="ZuljinWrongPlaceWrongTime">storm_ui_icon_zuljin_twincleave.dds</ZuljinWrongPlaceWrongTime>
+    <ZuljinRecklessness name="Recklessness" desc="ZuljinRecklessness">storm_ui_icon_zuljin_berzerker.dds</ZuljinRecklessness>
+  </Level7>
+  <Level10>
+    <ZuljinTazdingo name="Taz'dingo!" desc="ZuljinTazdingo" mana="75" cooldown="90">storm_ui_icon_zuljin_tazdingo.dds</ZuljinTazdingo>
+    <ZuljinGuillotine name="Guillotine" desc="ZuljinGuillotine" mana="70" cooldown="30">storm_ui_icon_zuljin_guillotine.dds</ZuljinGuillotine>
+  </Level10>
+  <Level13>
+    <ZuljinEyeOfZuljin name="Eye Of Zul'jin" desc="ZuljinEyeOfZuljin">storm_ui_icon_zuljin_grievousthrow.dds</ZuljinEyeOfZuljin>
+    <ZuljinForestMedicine name="Forest Medicine" desc="ZuljinForestMedicine">storm_ui_icon_zuljin_regeneration.dds</ZuljinForestMedicine>
+    <ZuljinVoodooShuffle name="Voodoo Shuffle" desc="ZuljinVoodooShuffle" cooldown="10">storm_ui_icon_zuljin_davoodooshuffle.dds</ZuljinVoodooShuffle>
+  </Level13>
+  <Level16>
+    <ZuljinSwirlingDeath name="Swirling Death" desc="ZuljinSwirlingDeath">storm_ui_icon_zuljin_twincleave.dds</ZuljinSwirlingDeath>
+    <ZuljinLacerate name="Lacerate" desc="ZuljinLacerate">storm_ui_icon_zuljin_twincleave_a.dds</ZuljinLacerate>
+    <ZuljinFerocity name="Ferocity" desc="ZuljinFerocity">storm_ui_icon_zuljin_berzerker.dds</ZuljinFerocity>
+  </Level16>
+  <Level20>
+    <ZuljinAmaniResilience name="Amani Resilience" desc="ZuljinAmaniResilience">storm_ui_icon_zuljin_tazdingo.dds</ZuljinAmaniResilience>
+    <ZuljinBuzzsaw name="Buzzsaw" desc="ZuljinBuzzsaw">storm_ui_icon_zuljin_guillotine.dds</ZuljinBuzzsaw>
+    <ZuljinEnsnare name="Ensnare" desc="ZuljinEnsnare" cooldown="45">storm_ui_icon_zuljin_trollnet.dds</ZuljinEnsnare>
+  </Level20>
+</Zuljin>
