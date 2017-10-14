@@ -88,9 +88,9 @@ namespace HeroesMatchTracker.Views
                 }
 
                 if (argsList.Contains("/pre-release"))
-                {
                     Database.SettingsDb().UserSettings.PreReleaseCheck = true;
-                }
+                else
+                    Database.SettingsDb().UserSettings.PreReleaseCheck = false;
             }
         }
     }
