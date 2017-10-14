@@ -1,42 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DVa mana="None">
-  <Level1>
-    <DVaBoostersRushdown name="Rush-down" desc="DVaBoostersRushdown">storm_ui_icon_dva_boosters.dds</DVaBoostersRushdown>
-    <DVaBoostersHitTheNitrous name="Hit the Nitrous" desc="DVaBoostersHitTheNitrous">storm_ui_icon_dva_boosters_a.dds</DVaBoostersHitTheNitrous>
-    <DVaBoostersCrashCourse name="Crash Course" desc="DVaBoostersCrashCourse">storm_ui_icon_dva_boosters_b.dds</DVaBoostersCrashCourse>
-    <DVaMechProMoves name="Pro Moves" desc="DVaMechProMoves">storm_ui_icon_dva_mechmode.dds</DVaMechProMoves>
-  </Level1>
-  <Level4>
-    <DVaDefenseMatrixDivertingPower name="Diverting Power" desc="DVaDefenseMatrixDivertingPower">storm_ui_icon_dva_defensematrix.dds</DVaDefenseMatrixDivertingPower>
-    <DVaDefenseMatrixGetThroughThis name="Get Through This!" desc="DVaDefenseMatrixGetThroughThis">storm_ui_icon_dva_defensematrix_a.dds</DVaDefenseMatrixGetThroughThis>
-    <DVaDefenseMatrixFusionGenerator name="Fusion Generator" desc="DVaDefenseMatrixFusionGenerator">storm_ui_icon_dva_defensematrix_b.dds</DVaDefenseMatrixFusionGenerator>
-    <DVaSelfDestructBringItOn name="Bring It On" desc="DVaSelfDestructBringItOn">storm_ui_icon_dva_selfdestruct.dds</DVaSelfDestructBringItOn>
-  </Level4>
-  <Level7>
-    <DVaBoostersComingThrough name="Coming Through" desc="DVaBoostersComingThrough">storm_ui_icon_dva_boosters.dds</DVaBoostersComingThrough>
-    <DVaDefenseMatrixDazerZone name="Dazer Zone" desc="DVaDefenseMatrixDazerZone">storm_ui_icon_dva_defensematrix.dds</DVaDefenseMatrixDazerZone>
-    <DVaDefenseMatrixAggressionMatrix name="Aggression Matrix" desc="DVaDefenseMatrixAggressionMatrix">storm_ui_icon_dva_defensematrix_a.dds</DVaDefenseMatrixAggressionMatrix>
-    <DVaSelfDestructNuclearOption name="Nuclear Option" desc="DVaSelfDestructNuclearOption">storm_ui_icon_dva_selfdestruct.dds</DVaSelfDestructNuclearOption>
-  </Level7>
-  <Level10>
-    <DVaBunnyHop name="Bunny Hop" desc="DVaBunnyHopOn" cooldown="100">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHop>
-    <DVaBigShot name="Big Shot" desc="DVaPilotBigShot" cooldown="4">storm_ui_icon_dva_bigshot.dds</DVaBigShot>
-  </Level10>
-  <Level13>
-    <DVaMechExpensivePlating name="Expensive Plating" desc="DVaMechExpensivePlating">storm_ui_icon_dva_callmech.dds</DVaMechExpensivePlating>
-    <DVaMechEmergencyShielding name="Emergency Shielding" desc="DVaMechEmergencyShielding">storm_ui_icon_dva_mechmode.dds</DVaMechEmergencyShielding>
-    <DVaMechAblativeArmor name="Ablative Armor" desc="DVaMechAblativeArmor">storm_ui_icon_dva_mechmode_a.dds</DVaMechAblativeArmor>
-  </Level13>
-  <Level16>
-    <DVaPilotTorpedoDash name="Torpedo Dash" desc="DVaPilotTorpedoDashTalent" cooldown="12">storm_ui_icon_dva_jetpackattack.dds</DVaPilotTorpedoDash>
-    <DVaPilotGGWP name="GG, WP" desc="DVaPilotGGWP">storm_ui_icon_dva_pilotmode.dds</DVaPilotGGWP>
-    <DVaPilotNanoweaveSuit name="Nanoweave Suit" desc="DVaPilotNanoweaveSuit">storm_ui_icon_dva_pilotmode_a.dds</DVaPilotNanoweaveSuit>
-    <DVaPilotSuppressingFire name="Suppressing Fire" desc="DVaPilotSuppressingFire">storm_ui_icon_dva_pilotmode_b.dds</DVaPilotSuppressingFire>
-  </Level16>
-  <Level20>
-    <DVaBunnyHopStopAndPop name="Stop and Pop" desc="DVaBunnyHopStopAndPop">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHopStopAndPop>
-    <DVaBigShotPewPewPew name="Pew! Pew! Pew!" desc="DVaBigShotPewPewPew">storm_ui_icon_dva_bigshot.dds</DVaBigShotPewPewPew>
-    <DVaPilotConcussivePulse name="Concussive Pulse" desc="DVaPilotConcussivePulseTalent" cooldown="7">storm_ui_icon_dva_concussivecharge.dds</DVaPilotConcussivePulse>
-    <DVaPilotCallMechMEKAfall name="MEKAfall" desc="DVaPilotCallMechMEKAfallTalent" cooldown="45">storm_ui_icon_dva_callmech.dds</DVaPilotCallMechMEKAfall>
-  </Level20>
+<DVa available="53548" name="D.Va" attributeid="DVA0" unit="HeroDVaMech" franchise="Overwatch" type="Ranged" difficulty="Medium" mana="None"
+      portrait="storm_ui_ingame_heroselect_btn_dva.dds" loading="storm_ui_ingame_hero_loadingscreen_dva.dds" leader="storm_ui_ingame_hero_leaderboard_dva.dds">
+  <Roles>Warrior</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <DVaBoostersRushdown name="Rush-down" desc="DVaBoostersRushdown">storm_ui_icon_dva_boosters.dds</DVaBoostersRushdown>
+      <DVaBoostersHitTheNitrous name="Hit the Nitrous" desc="DVaBoostersHitTheNitrous">storm_ui_icon_dva_boosters_a.dds</DVaBoostersHitTheNitrous>
+      <DVaBoostersCrashCourse name="Crash Course" desc="DVaBoostersCrashCourse">storm_ui_icon_dva_boosters_b.dds</DVaBoostersCrashCourse>
+      <DVaMechProMoves name="Pro Moves" desc="DVaMechProMoves">storm_ui_icon_dva_mechmode.dds</DVaMechProMoves>
+    </Level1>
+    <Level4>
+      <DVaDefenseMatrixDivertingPower name="Diverting Power" desc="DVaDefenseMatrixDivertingPower">storm_ui_icon_dva_defensematrix.dds</DVaDefenseMatrixDivertingPower>
+      <DVaDefenseMatrixGetThroughThis name="Get Through This!" desc="DVaDefenseMatrixGetThroughThis">storm_ui_icon_dva_defensematrix_a.dds</DVaDefenseMatrixGetThroughThis>
+      <DVaDefenseMatrixFusionGenerator name="Fusion Generator" desc="DVaDefenseMatrixFusionGenerator">storm_ui_icon_dva_defensematrix_b.dds</DVaDefenseMatrixFusionGenerator>
+      <DVaSelfDestructBringItOn name="Bring It On" desc="DVaSelfDestructBringItOn">storm_ui_icon_dva_selfdestruct.dds</DVaSelfDestructBringItOn>
+    </Level4>
+    <Level7>
+      <DVaBoostersComingThrough name="Coming Through" desc="DVaBoostersComingThrough">storm_ui_icon_dva_boosters.dds</DVaBoostersComingThrough>
+      <DVaDefenseMatrixDazerZone name="Dazer Zone" desc="DVaDefenseMatrixDazerZone">storm_ui_icon_dva_defensematrix.dds</DVaDefenseMatrixDazerZone>
+      <DVaDefenseMatrixAggressionMatrix name="Aggression Matrix" desc="DVaDefenseMatrixAggressionMatrix">storm_ui_icon_dva_defensematrix_a.dds</DVaDefenseMatrixAggressionMatrix>
+      <DVaSelfDestructNuclearOption name="Nuclear Option" desc="DVaSelfDestructNuclearOption">storm_ui_icon_dva_selfdestruct.dds</DVaSelfDestructNuclearOption>
+    </Level7>
+    <Level10>
+      <DVaBunnyHop name="Bunny Hop" desc="DVaBunnyHopOn" cooldown="100">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHop>
+      <DVaBigShot name="Big Shot" desc="DVaPilotBigShot" cooldown="4">storm_ui_icon_dva_bigshot.dds</DVaBigShot>
+    </Level10>
+    <Level13>
+      <DVaMechExpensivePlating name="Expensive Plating" desc="DVaMechExpensivePlating">storm_ui_icon_dva_callmech.dds</DVaMechExpensivePlating>
+      <DVaMechEmergencyShielding name="Emergency Shielding" desc="DVaMechEmergencyShielding">storm_ui_icon_dva_mechmode.dds</DVaMechEmergencyShielding>
+      <DVaMechAblativeArmor name="Ablative Armor" desc="DVaMechAblativeArmor">storm_ui_icon_dva_mechmode_a.dds</DVaMechAblativeArmor>
+    </Level13>
+    <Level16>
+      <DVaPilotTorpedoDash name="Torpedo Dash" desc="DVaPilotTorpedoDashTalent" cooldown="12">storm_ui_icon_dva_jetpackattack.dds</DVaPilotTorpedoDash>
+      <DVaPilotGGWP name="GG, WP" desc="DVaPilotGGWP">storm_ui_icon_dva_pilotmode.dds</DVaPilotGGWP>
+      <DVaPilotNanoweaveSuit name="Nanoweave Suit" desc="DVaPilotNanoweaveSuit">storm_ui_icon_dva_pilotmode_a.dds</DVaPilotNanoweaveSuit>
+      <DVaPilotSuppressingFire name="Suppressing Fire" desc="DVaPilotSuppressingFire">storm_ui_icon_dva_pilotmode_b.dds</DVaPilotSuppressingFire>
+    </Level16>
+    <Level20>
+      <DVaBunnyHopStopAndPop name="Stop and Pop" desc="DVaBunnyHopStopAndPop">storm_ui_icon_dva_bunnyhop.dds</DVaBunnyHopStopAndPop>
+      <DVaBigShotPewPewPew name="Pew! Pew! Pew!" desc="DVaBigShotPewPewPew">storm_ui_icon_dva_bigshot.dds</DVaBigShotPewPewPew>
+      <DVaPilotConcussivePulse name="Concussive Pulse" desc="DVaPilotConcussivePulseTalent" cooldown="7">storm_ui_icon_dva_concussivecharge.dds</DVaPilotConcussivePulse>
+      <DVaPilotCallMechMEKAfall name="MEKAfall" desc="DVaPilotCallMechMEKAfallTalent" cooldown="45">storm_ui_icon_dva_callmech.dds</DVaPilotCallMechMEKAfall>
+    </Level20>
+  </Talents>
 </DVa>

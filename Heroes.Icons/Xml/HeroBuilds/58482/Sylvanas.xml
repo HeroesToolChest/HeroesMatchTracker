@@ -1,40 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Sylvanas>
-  <Level1>
-    <SylvanasTalentOverflowingQuiver name="Overflowing Quiver" desc="SylvanasWitheringFireOverflowingQuiverTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
-    <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasBlackArrowsParalysisTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasDreadfulWake>
-    <SylvanasTalentMercenaryQueen name="Mercenary Queen" desc="SylvanasMercenaryQueenTalent">storm_ui_icon_sylvanas_bansheequeen.dds</SylvanasTalentMercenaryQueen>
-  </Level1>
-  <Level4>
-    <SylvanasTalentWitheringBarrage name="Withering Barrage" desc="SylvanasWitheringFireWitheringBarrage">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringBarrage>
-    <SylvanasTalentWithTheWind name="With the Wind" desc="SylvanasWitheringFireWithTheWindTalent">storm_ui_icon_sylvanas_witheringfire_var1.dds</SylvanasTalentWithTheWind>
-    <SylvanasTalentLostSoul name="Lost Soul" desc="SylvanasShadowDaggerLostSoulTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLostSoul>
-  </Level4>
-  <Level7>
-    <SylvanasTalentWitheringFireBarbedShot name="Barbed Shot" desc="SylvanasWitheringFireBarbedShotTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireBarbedShot>
-    <SylvanasTalentUnstablePoison name="Unstable Poison" desc="SylvanasBlackArrowsUnstablePoisonTalent">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentUnstablePoison>
-    <SylvanasHeroicAbilityPossession name="Possession" desc="SylvanasPossession" cooldown="8" ch-cooldown="true">storm_ui_icon_sylvanas_possession.dds</SylvanasHeroicAbilityPossession>
-  </Level7>
-  <Level10>
-    <SylvanasHeroicAbilityWailingArrow name="Wailing Arrow" desc="SylvanasWailingArrow" mana="100" cooldown="90">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasHeroicAbilityWailingArrow>
-    <SylvanasHeroicAbilityMindControl name="Mind Control" desc="SylvanasMindControl" mana="75" cooldown="60">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasHeroicAbilityMindControl>
-  </Level10>
-  <Level13>
-    <SylvanasTalentLifeDrain name="Life Drain" desc="SylvanasBlackArrowsLifeDrainTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLifeDrain>
-    <SylvanasTalentWindrunnerHauntingWave name="Windrunner" desc="SylvanasHauntingWaveWindrunnerTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentWindrunnerHauntingWave>
-    <SylvanasTalentWillOfTheForsaken name="Will of the Forsaken" desc="SylvanasWillOfTheForsaken" cooldown="60">storm_ui_icon_sylvanas_willoftheforsaken.dds</SylvanasTalentWillOfTheForsaken>
-    <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
-  </Level13>
-  <Level16>
-    <SylvanasTalentWitheringFireEvasiveFire name="Evasive Fire" desc="SylvanasWitheringFireEvasiveFireTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireEvasiveFire>
-    <SylvanasTalentColdEmbrace name="Cold Embrace" desc="SylvanasShadowDaggerColdEmbraceTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentColdEmbrace>
-    <SylvanasTalentOverwhelmingAffliction name="Overwhelming Affliction" desc="SylvanasBlackArrowsOverwhelmingAfflictionTalent">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentOverwhelmingAffliction>
-    <SylvanasTalentRemorseless name="Remorseless" generic="true" desc="SylvanasRemorselessTalent">storm_ui_icon_talent_autoattack_damage.dds</SylvanasTalentRemorseless>
-  </Level16>
-  <Level20>
-    <SylvanasWailingArrowDeafeningBlast name="Deafening Blast" desc="SylvanasWailingArrowDeafeningBlastTalent">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasWailingArrowDeafeningBlast>
-    <SylvanasTalentDarkLadysCallMindControl name="Dark Lady's Call" desc="SylvanasDarkLadysCallMindControlTalent">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasTalentDarkLadysCallMindControl>
-    <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
-    <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
-  </Level20>
+  <Sylvanas available="47479" attributeid="Sylv" unit="HeroSylvanas" franchise="Warcraft" type="Ranged" difficulty="Medium"
+            portrait="storm_ui_ingame_heroselect_btn_sylvanas.dds" loading="storm_ui_ingame_hero_loadingscreen_sylvanas.dds" leader="storm_ui_ingame_hero_leaderboard_sylvanas.dds">
+    <Roles>Specialist</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <SylvanasTalentOverflowingQuiver name="Overflowing Quiver" desc="SylvanasWitheringFireOverflowingQuiverTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentOverflowingQuiver>
+        <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasBlackArrowsParalysisTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasDreadfulWake>
+        <SylvanasTalentMercenaryQueen name="Mercenary Queen" desc="SylvanasMercenaryQueenTalent">storm_ui_icon_sylvanas_bansheequeen.dds</SylvanasTalentMercenaryQueen>
+      </Level1>
+      <Level4>
+        <SylvanasTalentWitheringBarrage name="Withering Barrage" desc="SylvanasWitheringFireWitheringBarrage">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringBarrage>
+        <SylvanasTalentWithTheWind name="With the Wind" desc="SylvanasWitheringFireWithTheWindTalent">storm_ui_icon_sylvanas_witheringfire_var1.dds</SylvanasTalentWithTheWind>
+        <SylvanasTalentLostSoul name="Lost Soul" desc="SylvanasShadowDaggerLostSoulTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLostSoul>
+      </Level4>
+      <Level7>
+        <SylvanasTalentWitheringFireBarbedShot name="Barbed Shot" desc="SylvanasWitheringFireBarbedShotTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireBarbedShot>
+        <SylvanasTalentUnstablePoison name="Unstable Poison" desc="SylvanasBlackArrowsUnstablePoisonTalent">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentUnstablePoison>
+        <SylvanasHeroicAbilityPossession name="Possession" desc="SylvanasPossession" cooldown="8" ch-cooldown="true">storm_ui_icon_sylvanas_possession.dds</SylvanasHeroicAbilityPossession>
+      </Level7>
+      <Level10>
+        <SylvanasHeroicAbilityWailingArrow name="Wailing Arrow" desc="SylvanasWailingArrow" mana="100" cooldown="90">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasHeroicAbilityWailingArrow>
+        <SylvanasHeroicAbilityMindControl name="Mind Control" desc="SylvanasMindControl" mana="75" cooldown="60">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasHeroicAbilityMindControl>
+      </Level10>
+      <Level13>
+        <SylvanasTalentLifeDrain name="Life Drain" desc="SylvanasBlackArrowsLifeDrainTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLifeDrain>
+        <SylvanasTalentWindrunnerHauntingWave name="Windrunner" desc="SylvanasHauntingWaveWindrunnerTalent">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasTalentWindrunnerHauntingWave>
+        <SylvanasTalentWillOfTheForsaken name="Will of the Forsaken" desc="SylvanasWillOfTheForsaken" cooldown="60">storm_ui_icon_sylvanas_willoftheforsaken.dds</SylvanasTalentWillOfTheForsaken>
+        <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.dds</GenericTalentSpellShield>
+      </Level13>
+      <Level16>
+        <SylvanasTalentWitheringFireEvasiveFire name="Evasive Fire" desc="SylvanasWitheringFireEvasiveFireTalent">storm_ui_icon_sylvanas_witheringfire.dds</SylvanasTalentWitheringFireEvasiveFire>
+        <SylvanasTalentColdEmbrace name="Cold Embrace" desc="SylvanasShadowDaggerColdEmbraceTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentColdEmbrace>
+        <SylvanasTalentOverwhelmingAffliction name="Overwhelming Affliction" desc="SylvanasBlackArrowsOverwhelmingAfflictionTalent">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasTalentOverwhelmingAffliction>
+        <SylvanasTalentRemorseless name="Remorseless" generic="true" desc="SylvanasRemorselessTalent">storm_ui_icon_talent_autoattack_damage.dds</SylvanasTalentRemorseless>
+      </Level16>
+      <Level20>
+        <SylvanasWailingArrowDeafeningBlast name="Deafening Blast" desc="SylvanasWailingArrowDeafeningBlastTalent">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasWailingArrowDeafeningBlast>
+        <SylvanasTalentDarkLadysCallMindControl name="Dark Lady's Call" desc="SylvanasDarkLadysCallMindControlTalent">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasTalentDarkLadysCallMindControl>
+        <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
+        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+      </Level20>
+  </Talents>
 </Sylvanas>

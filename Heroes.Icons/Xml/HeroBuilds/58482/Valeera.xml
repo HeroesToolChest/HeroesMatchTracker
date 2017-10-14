@@ -1,43 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Valeera mana="None">
-  <Level1>
-    <ValeeraVigor name="Vigor" generic="true" desc="ValeeraVigor">storm_ui_icon_talent_conjurerspursuit.dds</ValeeraVigor>
-    <ValeeraVanishSubtlety name="Subtlety" desc="ValeeraSubtlety">storm_ui_icon_valeera_vanish.dds</ValeeraVanishSubtlety>
-    <ValeeraCombatReadiness name="Combat Readiness" generic="true" desc="ValeeraCombatReadiness">storm_ui_icon_talent_block.dds</ValeeraCombatReadiness>
-    <ValeeraCripplingPoison name="Crippling Poison" desc="ValeeraCripplingPoison" cooldown="15">storm_ui_icon_valeera_cripplingpoison.dds</ValeeraCripplingPoison>
-  </Level1>
-  <Level4>
-    <ValeeraSinisterStrikeRelentlessStrikes name="Relentless Strikes" desc="ValeeraRelentlessStrikes">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeRelentlessStrikes>
-    <ValeeraGarroteHemorrhage name="Hemorrhage" desc="ValeeraHemorrhage">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteHemorrhage>
-    <ValeeraVanishInitiative name="Initiative" desc="ValeeraInitiative">storm_ui_icon_valeera_vanish.dds</ValeeraVanishInitiative>
-    <ValeeraWoundPoison name="Wound Poison" desc="ValeeraWoundPoison" cooldown="15">storm_ui_icon_valeera_woundpoison.dds</ValeeraWoundPoison>
-  </Level4>
-  <Level7>
-    <ValeeraSinisterStrikeMutilate name="Mutilate" desc="ValeeraMutilate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeMutilate>
-    <ValeeraBladeFlurryFatalFinesse name="Fatal Finesse" desc="ValeeraFatalFinesse">storm_ui_icon_valeera_bladeflurry.dds</ValeeraBladeFlurryFatalFinesse>
-    <ValeeraEviscerateSliceAndDice name="Slice and Dice" desc="ValeeraSliceAndDice">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerateSliceAndDice>
-    <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushAssassinate>
-  </Level7>
-  <Level10>
-    <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
-    <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows" cooldown="15">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
-  </Level10>
-  <Level13>
-    <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">storm_ui_icon_valeera_vanish.dds</ValeeraVanishElusiveness>
-    <ValeeraAmbushDeathFromAbove name="Death From Above" desc="ValeeraDeathFromAbove">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushDeathFromAbove>
-    <ValeeraCheapShotBlind name="Blind" desc="ValeeraBlind">storm_ui_icon_valeera_cheapshot.dds</ValeeraCheapShotBlind>
-    <ValeeraGarroteStrangle name="Strangle" desc="ValeeraStrangle">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteStrangle>
-  </Level13>
-  <Level16>
-    <ValeeraSinisterStrikeSealFate name="Seal Fate" desc="ValeeraSealFate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeSealFate>
-    <ValeeraGarroteRupture name="Rupture" desc="ValeeraRupture">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteRupture>
-    <ValeeraEviscerateExposeArmor name="Expose Armor" desc="ValeeraExposeArmor">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerateExposeArmor>
-    <ValeeraThistleTea name="Thistle Tea" desc="ValeeraThistleTea" cooldown="60">storm_ui_icon_valeera_thistletea.dds</ValeeraThistleTea>
-  </Level16>
-  <Level20>
-    <ValeeraSmokeBombAdrenalineRush name="Adrenaline Rush" desc="ValeeraAdrenalineRush">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBombAdrenalineRush>
-    <ValeeraCloakOfShadowsEnvelopingShadows name="Enveloping Shadows" desc="ValeeraEnvelopingShadows">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadowsEnvelopingShadows>
-    <ValeeraVanishNightslayer name="Nightslayer" desc="ValeeraNightslayer">storm_ui_icon_valeera_vanish.dds</ValeeraVanishNightslayer>
-    <ValeeraColdBlood name="Cold Blood" desc="ValeeraColdBlood">storm_ui_icon_valeera_coldblood.dds</ValeeraColdBlood>
-  </Level20>
+  <Valeera available="49747" attributeid="VALE" unit="HeroValeera" franchise="Warcraft" type="Melee" difficulty="Hard" mana="None"
+           portrait="storm_ui_ingame_heroselect_btn_valeera.dds" loading="storm_ui_ingame_hero_loadingscreen_valeera.dds" leader="storm_ui_ingame_hero_leaderboard_valeera.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <ValeeraVigor name="Vigor" generic="true" desc="ValeeraVigor">storm_ui_icon_talent_conjurerspursuit.dds</ValeeraVigor>
+        <ValeeraVanishSubtlety name="Subtlety" desc="ValeeraSubtlety">storm_ui_icon_valeera_vanish.dds</ValeeraVanishSubtlety>
+        <ValeeraCombatReadiness name="Combat Readiness" generic="true" desc="ValeeraCombatReadiness">storm_ui_icon_talent_block.dds</ValeeraCombatReadiness>
+        <ValeeraCripplingPoison name="Crippling Poison" desc="ValeeraCripplingPoison" cooldown="15">storm_ui_icon_valeera_cripplingpoison.dds</ValeeraCripplingPoison>
+      </Level1>
+      <Level4>
+        <ValeeraSinisterStrikeRelentlessStrikes name="Relentless Strikes" desc="ValeeraRelentlessStrikes">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeRelentlessStrikes>
+        <ValeeraGarroteHemorrhage name="Hemorrhage" desc="ValeeraHemorrhage">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteHemorrhage>
+        <ValeeraVanishInitiative name="Initiative" desc="ValeeraInitiative">storm_ui_icon_valeera_vanish.dds</ValeeraVanishInitiative>
+        <ValeeraWoundPoison name="Wound Poison" desc="ValeeraWoundPoison" cooldown="15">storm_ui_icon_valeera_woundpoison.dds</ValeeraWoundPoison>
+      </Level4>
+      <Level7>
+        <ValeeraSinisterStrikeMutilate name="Mutilate" desc="ValeeraMutilate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeMutilate>
+        <ValeeraBladeFlurryFatalFinesse name="Fatal Finesse" desc="ValeeraFatalFinesse">storm_ui_icon_valeera_bladeflurry.dds</ValeeraBladeFlurryFatalFinesse>
+        <ValeeraEviscerateSliceAndDice name="Slice and Dice" desc="ValeeraSliceAndDice">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerateSliceAndDice>
+        <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushAssassinate>
+      </Level7>
+      <Level10>
+        <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
+        <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows" cooldown="15">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
+      </Level10>
+      <Level13>
+        <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">storm_ui_icon_valeera_vanish.dds</ValeeraVanishElusiveness>
+        <ValeeraAmbushDeathFromAbove name="Death From Above" desc="ValeeraDeathFromAbove">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushDeathFromAbove>
+        <ValeeraCheapShotBlind name="Blind" desc="ValeeraBlind">storm_ui_icon_valeera_cheapshot.dds</ValeeraCheapShotBlind>
+        <ValeeraGarroteStrangle name="Strangle" desc="ValeeraStrangle">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteStrangle>
+      </Level13>
+      <Level16>
+        <ValeeraSinisterStrikeSealFate name="Seal Fate" desc="ValeeraSealFate">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrikeSealFate>
+        <ValeeraGarroteRupture name="Rupture" desc="ValeeraRupture">storm_ui_icon_valeera_garrote.dds</ValeeraGarroteRupture>
+        <ValeeraEviscerateExposeArmor name="Expose Armor" desc="ValeeraExposeArmor">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerateExposeArmor>
+        <ValeeraThistleTea name="Thistle Tea" desc="ValeeraThistleTea" cooldown="60">storm_ui_icon_valeera_thistletea.dds</ValeeraThistleTea>
+      </Level16>
+      <Level20>
+        <ValeeraSmokeBombAdrenalineRush name="Adrenaline Rush" desc="ValeeraAdrenalineRush">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBombAdrenalineRush>
+        <ValeeraCloakOfShadowsEnvelopingShadows name="Enveloping Shadows" desc="ValeeraEnvelopingShadows">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadowsEnvelopingShadows>
+        <ValeeraVanishNightslayer name="Nightslayer" desc="ValeeraNightslayer">storm_ui_icon_valeera_vanish.dds</ValeeraVanishNightslayer>
+        <ValeeraColdBlood name="Cold Blood" desc="ValeeraColdBlood">storm_ui_icon_valeera_coldblood.dds</ValeeraColdBlood>
+      </Level20>
+  </Talents>
 </Valeera>

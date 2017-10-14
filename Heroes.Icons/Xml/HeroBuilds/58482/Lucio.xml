@@ -1,40 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Lucio>
-  <Level1>
-    <LucioCrossfadeSpeedBoostWeMoveTogether name="We Move Together" desc="LucioCrossfadeSpeedBoostWeMoveTogether">storm_ui_icon_lucio_crossfadespeed.dds</LucioCrossfadeSpeedBoostWeMoveTogether>
-    <LucioAmpItUpMaximumTempoQuest name="Maximum Tempo" desc="LucioAmpItUpMaximumTempo">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpMaximumTempoQuest>
-    <LucioWallRideAccelerando name="Accelerando" desc="LucioWallRideAccelerando">storm_ui_icon_lucio_wallride.dds</LucioWallRideAccelerando>
-    <LucioWallRideSlip name="Slip" desc="LucioWallRideSlip">storm_ui_icon_lucio_wallride_a.dds</LucioWallRideSlip>
-  </Level1>
-  <Level4>
-    <LucioSoundwaveSubwoofer name="Subwoofer" desc="LucioSoundwaveSubwoofer">storm_ui_icon_lucio_soundwave.dds</LucioSoundwaveSubwoofer>
-    <LucioSoundwaveOffTheWall name="Off the Wall" desc="LucioSoundwaveOffTheWall">storm_ui_icon_lucio_soundwave_a.dds</LucioSoundwaveOffTheWall>
-    <LucioSoundwaveChaseTheBassQuest name="Chase the Bass" desc="LucioSoundwaveChaseTheBass">storm_ui_icon_lucio_soundwave_b.dds</LucioSoundwaveChaseTheBassQuest>
-  </Level4>
-  <Level7>
-    <LucioCrossfadePartyMixQuest name="Party Mix" desc="LucioCrossfadePartyMix">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadePartyMixQuest>
-    <LucioAmpItUpSonicAmplifier name="Sonic Amplifier" desc="LucioAmpItUpSonicAmplifier">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpSonicAmplifier>
-    <LucioBoombox name="Boombox" desc="LucioBoomboxBoombox" cooldowno="20">storm_ui_icon_lucio_fineshrine.dds</LucioBoombox>
-  </Level7>
-  <Level10>
-    <LucioSoundBarrier name="Sound Barrier" desc="LucioSoundBarrier" mana="100" cooldown="80">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrier>
-    <LucioReverseAmp name="Reverse Amp" desc="LucioReverseAmp" mana="55" cooldown="45">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmp>
-  </Level10>
-  <Level13>
-    <LucioCrossfadeBeatMixing name="Beat Mixing" desc="LucioCrossfadeBeatMixing">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadeBeatMixing>
-    <LucioWallRideCantStopWontStop name="Can't Stop, Won't Stop" desc="LucioWallRideCantStopWontStop">storm_ui_icon_lucio_wallride.dds</LucioWallRideCantStopWontStop>
-    <LucioWallRideHardStyle name="Hard Style" desc="LucioWallRideHardStyle">storm_ui_icon_lucio_wallride_a.dds</LucioWallRideHardStyle>
-    <LucioBackInTheMix name="Back in the Mix" desc="LucioBackInTheMix">storm_ui_icon_lucio_mrbrightside.dds</LucioBackInTheMix>
-  </Level13>
-  <Level16>
-    <LucioAmpItUpRejuvenescencia name="Rejuvenescência" desc="LucioAmpItUpRejuvenescencia">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpRejuvenescencia>
-    <LucioAmpItUpBringItTogether name="Bring it Together" desc="LucioAmpItUpBringItTogether">storm_ui_icon_lucio_ampitup_a.dds</LucioAmpItUpBringItTogether>
-    <LucioAmpItUpUpTheFrequency name="Up the Frequency" desc="LucioAmpItUpUpTheFrequency">storm_ui_icon_lucio_ampitup_b.dds</LucioAmpItUpUpTheFrequency>
-  </Level16>
-  <Level20>
-    <LucioSoundBarrierBossaNova name="Bossa Nova" desc="LucioSoundBarrierBossaNova">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrierBossaNova>
-    <LucioReverseAmpNonstopRemix name="Nonstop Remix" desc="LucioReverseAmpNonstopRemix">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmpNonstopRemix>
-    <LucioAmptItUpBonusTrack name="Bonus Track" desc="LucioAmptItUpBonusTrack">storm_ui_icon_lucio_ampitup.dds</LucioAmptItUpBonusTrack>
-    <LucioAmpItUpSynaesthesiaAuditiva name="Synaesthesia Auditiva" desc="LucioAmpItUpSynaesthesiaAuditiva">storm_ui_icon_lucio_ampitup_a.dds</LucioAmpItUpSynaesthesiaAuditiva>
-  </Level20>
+  <Lucio available="50441" name="Lúcio" attributeid="Luci" unit="HeroLucio" franchise="Overwatch" type="Ranged" difficulty="Medium"
+         portrait="storm_ui_ingame_heroselect_btn_lucio.dds" loading="storm_ui_ingame_hero_loadingscreen_lucio.dds" leader="storm_ui_ingame_hero_leaderboard_lucio.dds">
+    <Roles>Support</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <LucioCrossfadeSpeedBoostWeMoveTogether name="We Move Together" desc="LucioCrossfadeSpeedBoostWeMoveTogether">storm_ui_icon_lucio_crossfadespeed.dds</LucioCrossfadeSpeedBoostWeMoveTogether>
+        <LucioAmpItUpMaximumTempoQuest name="Maximum Tempo" desc="LucioAmpItUpMaximumTempo">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpMaximumTempoQuest>
+        <LucioWallRideAccelerando name="Accelerando" desc="LucioWallRideAccelerando">storm_ui_icon_lucio_wallride.dds</LucioWallRideAccelerando>
+        <LucioWallRideSlip name="Slip" desc="LucioWallRideSlip">storm_ui_icon_lucio_wallride_a.dds</LucioWallRideSlip>
+      </Level1>
+      <Level4>
+        <LucioSoundwaveSubwoofer name="Subwoofer" desc="LucioSoundwaveSubwoofer">storm_ui_icon_lucio_soundwave.dds</LucioSoundwaveSubwoofer>
+        <LucioSoundwaveOffTheWall name="Off the Wall" desc="LucioSoundwaveOffTheWall">storm_ui_icon_lucio_soundwave_a.dds</LucioSoundwaveOffTheWall>
+        <LucioSoundwaveChaseTheBassQuest name="Chase the Bass" desc="LucioSoundwaveChaseTheBass">storm_ui_icon_lucio_soundwave_b.dds</LucioSoundwaveChaseTheBassQuest>
+      </Level4>
+      <Level7>
+        <LucioCrossfadePartyMixQuest name="Party Mix" desc="LucioCrossfadePartyMix">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadePartyMixQuest>
+        <LucioAmpItUpSonicAmplifier name="Sonic Amplifier" desc="LucioAmpItUpSonicAmplifier">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpSonicAmplifier>
+        <LucioBoombox name="Boombox" desc="LucioBoomboxBoombox" cooldowno="20">storm_ui_icon_lucio_fineshrine.dds</LucioBoombox>
+      </Level7>
+      <Level10>
+        <LucioSoundBarrier name="Sound Barrier" desc="LucioSoundBarrier" mana="100" cooldown="80">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrier>
+        <LucioReverseAmp name="Reverse Amp" desc="LucioReverseAmp" mana="55" cooldown="45">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmp>
+      </Level10>
+      <Level13>
+        <LucioCrossfadeBeatMixing name="Beat Mixing" desc="LucioCrossfadeBeatMixing">storm_ui_icon_lucio_crossfade_all.dds</LucioCrossfadeBeatMixing>
+        <LucioWallRideCantStopWontStop name="Can't Stop, Won't Stop" desc="LucioWallRideCantStopWontStop">storm_ui_icon_lucio_wallride.dds</LucioWallRideCantStopWontStop>
+        <LucioWallRideHardStyle name="Hard Style" desc="LucioWallRideHardStyle">storm_ui_icon_lucio_wallride_a.dds</LucioWallRideHardStyle>
+        <LucioBackInTheMix name="Back in the Mix" desc="LucioBackInTheMix">storm_ui_icon_lucio_mrbrightside.dds</LucioBackInTheMix>
+      </Level13>
+      <Level16>
+        <LucioAmpItUpRejuvenescencia name="Rejuvenescência" desc="LucioAmpItUpRejuvenescencia">storm_ui_icon_lucio_ampitup.dds</LucioAmpItUpRejuvenescencia>
+        <LucioAmpItUpBringItTogether name="Bring it Together" desc="LucioAmpItUpBringItTogether">storm_ui_icon_lucio_ampitup_a.dds</LucioAmpItUpBringItTogether>
+        <LucioAmpItUpUpTheFrequency name="Up the Frequency" desc="LucioAmpItUpUpTheFrequency">storm_ui_icon_lucio_ampitup_b.dds</LucioAmpItUpUpTheFrequency>
+      </Level16>
+      <Level20>
+        <LucioSoundBarrierBossaNova name="Bossa Nova" desc="LucioSoundBarrierBossaNova">storm_ui_icon_lucio_soundbarrier.dds</LucioSoundBarrierBossaNova>
+        <LucioReverseAmpNonstopRemix name="Nonstop Remix" desc="LucioReverseAmpNonstopRemix">storm_ui_icon_lucio_reverseamp.dds</LucioReverseAmpNonstopRemix>
+        <LucioAmptItUpBonusTrack name="Bonus Track" desc="LucioAmptItUpBonusTrack">storm_ui_icon_lucio_ampitup.dds</LucioAmptItUpBonusTrack>
+        <LucioAmpItUpSynaesthesiaAuditiva name="Synaesthesia Auditiva" desc="LucioAmpItUpSynaesthesiaAuditiva">storm_ui_icon_lucio_ampitup_a.dds</LucioAmpItUpSynaesthesiaAuditiva>
+      </Level20>
+  </Talents>
 </Lucio>
