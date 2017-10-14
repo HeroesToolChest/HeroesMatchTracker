@@ -92,6 +92,9 @@ namespace Heroes.Icons
 
         public Stream GetRoleIcon(HeroRole heroRole)
         {
+            if (heroRole == HeroRole.Multiclass)
+                return null;
+
             if (RoleIcons.ContainsKey(heroRole))
             {
                 return HeroesIconsAssembly.GetManifestResourceStream(RoleIcons[heroRole]);
@@ -205,6 +208,8 @@ namespace Heroes.Icons
 
         private void SetRoleIcons()
         {
+            RoleIcons.Add(HeroRole.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.dds"));
+
             RoleIcons.Add(HeroRole.Warrior, SetImageStreamString(RoleIconFolderName, "hero_role_warrior.png"));
             RoleIcons.Add(HeroRole.Assassin, SetImageStreamString(RoleIconFolderName, "hero_role_assassin.png"));
             RoleIcons.Add(HeroRole.Support, SetImageStreamString(RoleIconFolderName, "hero_role_support.png"));
@@ -213,6 +218,8 @@ namespace Heroes.Icons
 
         private void SetFranchiseIcons()
         {
+            FranchiseIcons.Add(HeroFranchise.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.dds"));
+
             FranchiseIcons.Add(HeroFranchise.Classic, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_classic.png"));
             FranchiseIcons.Add(HeroFranchise.Diablo, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_diablo.png"));
             FranchiseIcons.Add(HeroFranchise.Overwatch, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_overwatch.png"));
@@ -226,6 +233,7 @@ namespace Heroes.Icons
                 return;
 
             OtherIcons.Add(OtherIcon.Quest, SetImageStreamString(OtherFolderName, "storm_ui_taskbar_buttonicon_quests.png"));
+            OtherIcons.Add(OtherIcon.UpgradeQuest, SetImageStreamString(OtherFolderName, "storm_ui_ingame_talentpanel_upgrade_quest_icon.png"));
             OtherIcons.Add(OtherIcon.Silence, SetImageStreamString(OtherFolderName, "storm_ui_silencepenalty.png"));
 
             OtherIcons.Add(OtherIcon.LongarrowLeftDisabled, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_disabled.png"));
@@ -245,8 +253,8 @@ namespace Heroes.Icons
 
             OtherIcons.Add(OtherIcon.FilterAssassin, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_assassin-on.png"));
             OtherIcons.Add(OtherIcon.FilterMulticlass, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_multiclass-on.png"));
-            OtherIcons.Add(OtherIcon.FilterSpecialist, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_specialist.png"));
-            OtherIcons.Add(OtherIcon.FilterSupport, SetImageStreamString(OtherFolderName, "sstorm_ui_play_filter_support-on.png"));
+            OtherIcons.Add(OtherIcon.FilterSpecialist, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_specialist-on.png"));
+            OtherIcons.Add(OtherIcon.FilterSupport, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_support-on.png"));
             OtherIcons.Add(OtherIcon.FilterWarrior, SetImageStreamString(OtherFolderName, "storm_ui_play_filter_warrior-on.png"));
 
             OtherIcons.Add(OtherIcon.Kills, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kill.png"));
