@@ -7,7 +7,7 @@
   </Level1>
   <Level4>
     <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenadeAirStrike>
-    <AnaOverdose name="Overdose" desc="AnaOverdose">storm_ui_icon_ana_overdose.dds</AnaOverdose>
+    <AnaOverdose name="Overdose" desc="AnaOverdose">storm_ui_icon_ana_sleep_dart.dds</AnaOverdose>
     <AnaAimDownSights name="Aim Down Sights" desc="AnaAimDownSights">storm_ui_icon_ana_aim_down_sights.dds</AnaAimDownSights>
   </Level4>
   <Level7>
