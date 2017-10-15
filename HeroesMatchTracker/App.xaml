@@ -59,7 +59,6 @@
                 
                 <ResourceDictionary Source="/Resources/CustomTemplates/HeroDescription.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/PlayerTag.xaml"/>
-                <ResourceDictionary Source="/Resources/CustomTemplates/RightLeftButtonTemplate.xaml"/>
 
                 <ResourceDictionary Source="/Resources/CustomTemplates/Match/MatchSummaryMatchResultTemplate.xaml"/>
                 <ResourceDictionary Source="/Resources/CustomTemplates/Match/MatchSummaryPlayerInfoTemplate.xaml"/>
