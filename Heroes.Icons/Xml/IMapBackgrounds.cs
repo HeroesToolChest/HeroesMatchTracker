@@ -34,13 +34,6 @@ namespace Heroes.Icons.Xml
         List<string> GetCustomOnlyMapsList();
 
         /// <summary>
-        /// Returns true if mapName is a valid name
-        /// </summary>
-        /// <param name="mapName">The map name that needs to be checked</param>
-        /// <returns></returns>
-        bool IsValidMapName(string mapName);
-
-        /// <summary>
         /// Returns the map name from the map alternative name
         /// </summary>
         /// <param name="mapAlternativeName">map's alternative name</param>

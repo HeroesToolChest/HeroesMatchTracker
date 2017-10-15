@@ -97,16 +97,6 @@ namespace Heroes.Icons.Xml
         }
 
         /// <summary>
-        /// Returns true if mapName is a valid name
-        /// </summary>
-        /// <param name="mapName">The map name that needs to be checked</param>
-        /// <returns></returns>
-        public bool IsValidMapName(string mapName)
-        {
-            return MapStringByMapRealName.ContainsKey(mapName);
-        }
-
-        /// <summary>
         /// Returns the map name from the map alternative name
         /// </summary>
         /// <param name="mapAlternativeName">map's alternative name</param>
@@ -131,6 +121,12 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
         {
+            if (string.IsNullOrEmpty(mapNameAlias))
+            {
+                mapNameEnglish = string.Empty;
+                return false;
+            }
+
             return MapRealNameByMapAliasName.TryGetValue(mapNameAlias.Replace(",", string.Empty), out mapNameEnglish);
         }
 

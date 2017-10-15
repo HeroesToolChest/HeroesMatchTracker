@@ -48,6 +48,26 @@ namespace Heroes.Icons.Tests
 
             Assert.IsTrue(HeroesIcons.MapBackgrounds().MapNameTranslation("Ich glaub, es hakt", out mapName));
             Assert.IsTrue(mapName == "Pull Party");
+
+            Assert.IsFalse(HeroesIcons.MapBackgrounds().MapNameTranslation(string.Empty, out mapName));
+            Assert.IsTrue(mapName == string.Empty);
+
+            Assert.IsFalse(HeroesIcons.MapBackgrounds().MapNameTranslation(null, out mapName));
+            Assert.IsTrue(mapName == string.Empty);
+
+            Assert.IsFalse(HeroesIcons.MapBackgrounds().MapNameTranslation("asdf", out mapName));
+            Assert.IsTrue(mapName == null);
+        }
+
+        [TestMethod]
+        public void GetMapNameByMapAlternativeName()
+        {
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName("ControlPoints") == "Sky Temple");
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName("Shrines") == "Infernal Shrines");
+
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(string.Empty) == string.Empty);
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(null) == string.Empty);
+            Assert.IsNull(HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName("asdf"));
         }
     }
 }
