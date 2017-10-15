@@ -494,6 +494,8 @@ namespace Heroes.Icons.Xml
 
                 hero.Roles = rolesList;
             }
+
+            reader.Read();
         }
 
         private void ParseHeroAbilities(XmlReader reader, Hero hero)
@@ -503,91 +505,97 @@ namespace Heroes.Icons.Xml
             {
                 // TODO: Add in abilities for all heroes
             }
+
+            reader.Read();
         }
 
         private void ParseHeroTalents(XmlReader reader, Hero hero, Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentLongTooltip)
         {
             var talents = new Dictionary<string, Talent>();
 
-            // add talents, read each tier
-            while (reader.Read())
+            reader.Read();
+            if (reader.Name == "Talents")
             {
-                if (reader.IsStartElement())
+                // add talents, read each tier
+                while (reader.Read())
                 {
-                    // is tier Level1, Level4, etc...
-                    if (Enum.TryParse(reader.Name, out TalentTier tier))
+                    if (reader.IsStartElement())
                     {
-                        // read each talent in tier
-                        while (reader.Read() && reader.Name != tier.ToString())
+                        // is tier Level1, Level4, etc...
+                        if (Enum.TryParse(reader.Name, out TalentTier tier))
                         {
-                            if (reader.NodeType == XmlNodeType.Element)
+                            // read each talent in tier
+                            while (reader.Read() && reader.Name != tier.ToString())
                             {
-                                string refTalentName = reader.Name; // reference name of talent
-                                string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
-                                string generic = reader["generic"] ?? "false";  // is the icon being used generic
-                                string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
-                                int? mana = ConvertToNullableInt(reader["mana"]); // mana/brew/fury/etc... of the talent
-                                string perManaCost = reader["per-mana"] ?? "false"; // the time cost for mana
-                                int? cooldown = ConvertToNullableInt(reader["cooldown"]); // cooldown of the talent
-                                string charge = reader["ch-cooldown"] ?? "false"; // is the cooldown a charge cooldown
-
-                                if (!bool.TryParse(perManaCost, out bool isPerManaCost))
-                                    isPerManaCost = false;
-
-                                if (!bool.TryParse(charge, out bool isCharge))
-                                    isCharge = false;
-
-                                if (!bool.TryParse(generic, out bool isGeneric))
-                                    isGeneric = false;
-
-                                if (reader.Read())
+                                if (reader.NodeType == XmlNodeType.Element)
                                 {
-                                    bool isGenericTalent = false;
+                                    string refTalentName = reader.Name; // reference name of talent
+                                    string realName = reader["name"] ?? string.Empty;  // real ingame name of talent
+                                    string generic = reader["generic"] ?? "false";  // is the icon being used generic
+                                    string desc = reader["desc"] ?? string.Empty; // reference name for talent tooltips
+                                    int? mana = ConvertToNullableInt(reader["mana"]); // mana/brew/fury/etc... of the talent
+                                    string perManaCost = reader["per-mana"] ?? "false"; // the time cost for mana
+                                    int? cooldown = ConvertToNullableInt(reader["cooldown"]); // cooldown of the talent
+                                    string charge = reader["ch-cooldown"] ?? "false"; // is the cooldown a charge cooldown
 
-                                    // check if the talent is generic
-                                    if (refTalentName.StartsWith("Generic") || refTalentName.StartsWith("HeroGeneric") || refTalentName.StartsWith("BattleMomentum"))
+                                    if (!bool.TryParse(perManaCost, out bool isPerManaCost))
+                                        isPerManaCost = false;
+
+                                    if (!bool.TryParse(charge, out bool isCharge))
+                                        isCharge = false;
+
+                                    if (!bool.TryParse(generic, out bool isGeneric))
+                                        isGeneric = false;
+
+                                    if (reader.Read())
                                     {
-                                        isGeneric = true;
-                                        isGenericTalent = true;
-                                    }
+                                        bool isGenericTalent = false;
 
-                                    // create the tooltip
-                                    if (!talentShortTooltip.TryGetValue(desc, out string shortDesc))
-                                        shortDesc = string.Empty;
-
-                                    if (!talentLongTooltip.TryGetValue(desc, out string longDesc))
-                                        longDesc = string.Empty;
-
-                                    if (talents.ContainsKey(refTalentName))
-                                        throw new ParseXmlException($"[{SelectedBuild}] [{hero.Name}] {refTalentName} already exists");
-
-                                    // create the talent
-                                    talents.Add(refTalentName, new Talent
-                                    {
-                                        Name = realName,
-                                        ReferenceName = refTalentName,
-                                        IsIconGeneric = isGeneric,
-                                        IsGeneric = isGenericTalent,
-                                        TooltipDescriptionName = desc,
-                                        Icon = SetHeroTalentString(hero.ShortName, reader.Value, isGeneric),
-                                        Tier = tier,
-                                        Tooltip = new TalentTooltip
+                                        // check if the talent is generic
+                                        if (refTalentName.StartsWith("Generic") || refTalentName.StartsWith("HeroGeneric") || refTalentName.StartsWith("BattleMomentum"))
                                         {
-                                            Short = shortDesc,
-                                            Full = longDesc,
-                                            ManaType = hero.ManaType,
-                                            Mana = mana,
-                                            IsPerManaCost = isPerManaCost,
-                                            Cooldown = cooldown,
-                                            IsChargeCooldown = isCharge,
-                                        },
-                                    });
+                                            isGeneric = true;
+                                            isGenericTalent = true;
+                                        }
+
+                                        // create the tooltip
+                                        if (!talentShortTooltip.TryGetValue(desc, out string shortDesc))
+                                            shortDesc = string.Empty;
+
+                                        if (!talentLongTooltip.TryGetValue(desc, out string longDesc))
+                                            longDesc = string.Empty;
+
+                                        if (talents.ContainsKey(refTalentName))
+                                            throw new ParseXmlException($"[{SelectedBuild}] [{hero.Name}] {refTalentName} already exists");
+
+                                        // create the talent
+                                        talents.Add(refTalentName, new Talent
+                                        {
+                                            Name = realName,
+                                            ReferenceName = refTalentName,
+                                            IsIconGeneric = isGeneric,
+                                            IsGeneric = isGenericTalent,
+                                            TooltipDescriptionName = desc,
+                                            Icon = SetHeroTalentString(hero.ShortName, reader.Value, isGeneric),
+                                            Tier = tier,
+                                            Tooltip = new TalentTooltip
+                                            {
+                                                Short = shortDesc,
+                                                Full = longDesc,
+                                                ManaType = hero.ManaType,
+                                                Mana = mana,
+                                                IsPerManaCost = isPerManaCost,
+                                                Cooldown = cooldown,
+                                                IsChargeCooldown = isCharge,
+                                            },
+                                        });
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            } // end while
+                } // end while
+            }
 
             if (HeroExists(hero.Name))
                 throw new ArgumentException($"Hero already added: {hero.Name}");
