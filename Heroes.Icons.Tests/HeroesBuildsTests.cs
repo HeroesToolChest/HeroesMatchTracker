@@ -214,6 +214,7 @@ namespace Heroes.Icons.Tests
             Assert.IsTrue(heroInfo.Franchise == HeroFranchise.Warcraft);
         }
 
+        [TestMethod]
         public void GetRealHeroNameFromAttributeIdTest()
         {
             Assert.IsTrue(HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId("Abat") == "Abathur");
