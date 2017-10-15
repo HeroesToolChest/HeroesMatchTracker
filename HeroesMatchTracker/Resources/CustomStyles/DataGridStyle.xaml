@@ -12,7 +12,6 @@
         <Setter Property="AlternatingRowBackground" Value="{DynamicResource GrayBrush10}" />
     </Style>
 
-
     <Style TargetType="DataGrid" x:Key="DefaultStatDataGrid" BasedOn="{StaticResource DefaultDataGrid}">
         <Setter Property="RowBackground" Value="AliceBlue" />
         <Setter Property="AlternatingRowBackground" Value="Lavender" />

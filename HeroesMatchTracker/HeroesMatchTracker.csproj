@@ -406,10 +406,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\CustomTemplates\RightLeftButtonTemplate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\CustomTemplates\ReplayUploaders\Uploaders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -36,64 +36,13 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Background="Transparent" BorderThickness="0" Grid.Column="0" Grid.Row="1" Height="162" Width="80" VerticalContentAlignment="Center" 
+            <Button BorderThickness="0" Grid.Column="0" Grid.Row="1" Height="162" Width="80" VerticalContentAlignment="Center" 
                     Visibility="{Binding IsLeftChangeButtonVisible, Converter={StaticResource BooleanToVisibility}}" IsEnabled="{Binding IsLeftChangeButtonEnabled}"
-                    Command="{Binding MatchSummaryLeftChangeButtonCommand}">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding LeftArrowNormalIcon}" Width="80" Height="163"/>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-                <!--<Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="Transparent">
-                            <ContentPresenter/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <Image Source="{Binding LeftArrowHoverIcon}" Width="80" Height="163"/>
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <Image Source="{Binding LeftArrowDownIcon}" Width="80" Height="163"/>
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="ContentTemplate">
-                                    <Setter.Value>
-                                        <DataTemplate>
-                                            <Image Source="{Binding LeftArrowDisabledIcon}" Width="80" Height="163"/>
-                                        </DataTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsMouseOver" Value="True" />
-                                    <Condition Property="IsEnabled" Value="True" />
-                                </MultiTrigger.Conditions>
-                                <MultiTrigger.Setters>
-                                    <Setter Property="Cursor" Value="Hand" />
-                                </MultiTrigger.Setters>
-                            </MultiTrigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>-->
+                    Command="{Binding MatchSummaryLeftChangeButtonCommand}" Style="{StaticResource MatchSummaryLeftButton}">
             </Button>
-
-            <!--<Button Background="Transparent" BorderThickness="0" Grid.Column="2" Grid.Row="1" Height="162" Width="80" VerticalContentAlignment="Center" 
-                        Style="{StaticResource RightChangeButton}" Visibility="{Binding IsLeftChangeButtonVisible, Converter={StaticResource BooleanToVisibility}}" IsEnabled="{Binding IsRightChangeButtonEnabled}"
-                        Command="{Binding MatchSummaryRightChangeButtonCommand}"/>-->
+            <Button Background="Transparent" BorderThickness="0" Grid.Column="2" Grid.Row="1" Height="162" Width="80" VerticalContentAlignment="Center" 
+                    Visibility="{Binding IsRightChangeButtonVisible, Converter={StaticResource BooleanToVisibility}}" IsEnabled="{Binding IsRightChangeButtonEnabled}"
+                    Command="{Binding MatchSummaryRightChangeButtonCommand}" Style="{StaticResource MatchSummaryRightButton}"/>
 
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0 20 0 20">
                 <Label Content="{Binding MatchTitle}" FontSize="26" Foreground="WhiteSmoke" Margin="0" FontWeight="Bold">

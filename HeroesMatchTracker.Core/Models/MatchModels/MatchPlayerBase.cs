@@ -161,11 +161,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         public virtual void Dispose()
         {
-            LeaderboardPortrait.Dispose();
-            PartyIcon.Dispose();
-            MvpAward.Dispose();
+            if (LeaderboardPortrait != null) LeaderboardPortrait.Dispose();
+            if (PartyIcon != null) PartyIcon.Dispose();
+            if (MvpAward != null) MvpAward.Dispose();
             MvpAwardDescription = null;
-            HeroDescription.Franchise.Dispose();
+            if (HeroDescription != null) HeroDescription.Franchise.Dispose();
         }
 
         private void SetPartyIcon(PartyIconColor icon)
