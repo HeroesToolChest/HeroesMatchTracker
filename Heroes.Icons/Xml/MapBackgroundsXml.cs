@@ -131,7 +131,7 @@ namespace Heroes.Icons.Xml
         /// <returns></returns>
         public bool MapNameTranslation(string mapNameAlias, out string mapNameEnglish)
         {
-            return MapRealNameByMapAliasName.TryGetValue(mapNameAlias, out mapNameEnglish);
+            return MapRealNameByMapAliasName.TryGetValue(mapNameAlias.Replace(",", string.Empty), out mapNameEnglish);
         }
 
         public int TotalCountOfMaps()
@@ -167,20 +167,26 @@ namespace Heroes.Icons.Xml
                         MapRealNameByMapAlternativeName.Add(alternativeName, realMapBackgroundName);
 
                         reader.Read();
-                        string element = reader.Name;
-                        string fontGlow = reader["fontglow"];
-
-                        if (reader.Read())
+                        if (reader.Name == "Normal")
                         {
+                            string fontGlow = reader["fontglow"];
+
                             if (isCustomOnly)
                                 CustomOnlyMaps.Add(realMapBackgroundName);
 
-                            if (element == "Normal")
+                            if (reader.Read())
                             {
                                 MapStringByMapRealName.Add(realMapBackgroundName, SetImageStreamString(IconFolderName, reader.Value));
                                 MapFontGlowColorByMapRealName.Add(realMapBackgroundName, ConvertHexToColor(fontGlow));
+
+                                reader.Read();
                             }
-                            else if (element == "Aliases")
+                        }
+
+                        reader.Read();
+                        if (reader.Name == "Aliases")
+                        {
+                            if (reader.Read())
                             {
                                 string[] aliases = reader.Value.Split(',');
 

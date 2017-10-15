@@ -39,5 +39,15 @@ namespace Heroes.Icons.Tests
             Assert.IsFalse(HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor("Battlefield of Eternity") == Color.Black);
             Assert.IsTrue(HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor("asdf") == Color.Black);
         }
+
+        [TestMethod]
+        public void GetMapNameTranslation()
+        {
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().MapNameTranslation("工业园区", out string mapName));
+            Assert.IsTrue(mapName == "Industrial District");
+
+            Assert.IsTrue(HeroesIcons.MapBackgrounds().MapNameTranslation("Ich glaub, es hakt", out mapName));
+            Assert.IsTrue(mapName == "Pull Party");
+        }
     }
 }
