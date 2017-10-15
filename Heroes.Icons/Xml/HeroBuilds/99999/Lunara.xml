@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <Lunara available="47479" attributeid="Drya" unit="HeroDryad" franchise="Warcraft" type="Ranged" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_lunara.dds" loading="storm_ui_ingame_hero_loadingscreen_lunara.dds" leader="storm_ui_ingame_hero_leaderboard_lunara.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <DryadBlossomSwell name="Blossom Swell" desc="DryadBlossomSwellTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadBlossomSwell>
+        <DryadPhotosynthesis name="Photosynthesis" desc="DryadPhotosynthesisTalent">storm_ui_icon_lunara_fullbloom.dds</DryadPhotosynthesis>
+        <DryadNaturalPerspective name="Natural Perspective" desc="DryadNaturalPerspectiveTalent">storm_ui_icon_Lunara_StiflingBlossom.dds</DryadNaturalPerspective>
+        <DryadCruelSpores name="Cruel Spores" desc="DryadCruelSporesTalent">storm_ui_icon_lunara_fullbloom_a.dds</DryadCruelSpores>
+      </Level1>
+      <Level4>
+        <DryadNimbleWisp name="Nimble Wisp" desc="DryadNimbleWispTalent">storm_ui_icon_Lunara_Wisp.dds</DryadNimbleWisp>
+        <DryadTimelostWisp name="Timelost Wisp" desc="DryadTimelostWispTalent">storm_ui_icon_Lunara_Wisp_A.dds</DryadTimelostWisp>
+        <DryadSkyboundWisp name="Skybound Wisp" desc="DryadSkyboundWispTalent">storm_ui_icon_Lunara_Wisp_B.dds</DryadSkyboundWisp>
+        <DryadDividingWisp name="Dividing Wisp" desc="DryadDividingWispTalent">storm_ui_icon_Lunara_Wisp_C.dds</DryadDividingWisp>
+      </Level4>
+      <Level7>
+        <DryadSiphoningToxin name="Siphoning Toxin" desc="DryadSiphoningToxinTalent">storm_ui_icon_lunara_stiflingblossom_var1.dds</DryadSiphoningToxin>
+        <DryadWildVigor name="Wild Vigor" desc="DryadWildVigorTalent">storm_ui_icon_Lunara_FullBloom.dds</DryadWildVigor>
+        <DryadSplinteredSpear name="Splintered Spear" desc="DryadSplinteredSpearTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadSplinteredSpear>
+        <DryadNaturesCulling name="Nature's Culling" desc="DryadNaturesCullingTalent">storm_ui_icon_lunara_stiflingblossom.dds</DryadNaturesCulling>
+      </Level7>
+      <Level10>
+        <DryadHeroicAbilityThornwoodVine name="Thornwood Vine" desc="DryadThornwoodVine" mana="35" cooldown="15" ch-cooldown="true">storm_ui_icon_Lunara_WildSpear.dds</DryadHeroicAbilityThornwoodVine>
+        <DryadHeroicAbilityLeapingStrike name="Leaping Strike" desc="DryadLeapingStrike" mana="50" cooldown="20" ch-cooldown="true">storm_ui_icon_Lunara_BoundlessStride.dds</DryadHeroicAbilityLeapingStrike>
+      </Level10>
+      <Level13>
+        <DryadPesteringBlossom name="Pestering Blossom" desc="DryadPesteringBlossomTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadPesteringBlossom>
+        <DryadUnfairAdvantage name="Unfair Advantage" desc="DryadUnfairAdvantageTalent">storm_ui_icon_Lunara_StiflingBlossom.dds</DryadUnfairAdvantage>
+        <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>
+        <DryadGreaterSpellShield name="Greater Spell Shield" desc="DryadGreaterSpellShieldTalent">storm_ui_icon_lunara_greaterspellshield.dds</DryadGreaterSpellShield>
+      </Level13>
+      <Level16>
+        <DryadChokingPollen name="Choking Pollen" desc="DryadChokingPollenTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadChokingPollen>
+        <DryadStarWoodSpear name="Star Wood Spear" desc="DryadStarWoodSpearTalent">storm_ui_icon_Lunara_FullBloom.dds</DryadStarWoodSpear>
+        <DryadInvigoratingSpores name="Invigorating Spores" desc="DryadInvigoratingSporesTalent">storm_ui_icon_Lunara_FullBloom_A.dds</DryadInvigoratingSpores>
+        <DryadLetThemWither name="Let Them Wither" desc="DryadLetThemWitherTalent">storm_ui_icon_Lunara_FullBloom_B.dds</DryadLetThemWither>
+      </Level16>
+      <Level20>
+        <DryadForestsWrath name="Forest's Wrath" desc="DryadForestsWrathTalent">storm_ui_icon_Lunara_WildSpear.dds</DryadForestsWrath>
+        <DryadBoundlessStrideTalent name="Boundless Stride" desc="DryadBoundlessStrideTalent">storm_ui_icon_Lunara_BoundlessStride.dds</DryadBoundlessStrideTalent>
+        <DryadGallopingGait name="Galloping Gait" desc="DryadGallopingGaitTalent">storm_ui_icon_lunara_boundlessstride_a.dds</DryadGallopingGait>
+        <DryadAbolishMagic name="Abolish Magic" desc="DryadAbolishMagicHotbar" cooldown="35">storm_ui_icon_lunara_abolishmagic.dds</DryadAbolishMagic>
+      </Level20>
+  </Talents>
+</Lunara>

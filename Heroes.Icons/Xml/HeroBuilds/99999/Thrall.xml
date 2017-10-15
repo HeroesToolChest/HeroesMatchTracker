@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <Thrall available="47479" attributeid="Thra" unit="HeroThrall" franchise="Warcraft" type="Melee" difficulty="Easy"
+          portrait="storm_ui_ingame_heroselect_btn_thrall.dds" loading="storm_ui_ingame_hero_loadingscreen_thrall.dds" leader="storm_ui_ingame_hero_leaderboard_thrall.dds">
+    <Roles>Assassin</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <ThrallEchooftheElements name="Echo of the Elements" desc="ThrallEchooftheElements">storm_ui_icon_thrall_chainlightning.dds</ThrallEchooftheElements>
+        <ThrallCrashLightning name="Crash Lightning" desc="ThrallCrashLightning">storm_ui_icon_thrall_chainlightning_var1.dds</ThrallCrashLightning>
+        <ThrallMasteryRollingThunder name="Mastery Rolling Thunder" desc="ThrallRollingThunderTalent">storm_ui_icon_thrall_chainlightning_var2.dds</ThrallMasteryRollingThunder>
+      </Level1>
+      <Level4>
+        <ThrallFeralResilience name="Feral Resilience" desc="ThrallFeralResilience">storm_ui_icon_thrall_feralspirit.dds</ThrallFeralResilience>
+        <ThrallFrostwolfPack name="Frostwolf Pack" desc="ThrallFrostwolfPack">storm_ui_icon_thrall_feralspirit_var1.dds</ThrallFrostwolfPack>
+        <ThrallMasteryManaTide name="Mana Tide" desc="ThrallManaTideTalent">storm_ui_icon_thrall_frostwolfresilience.dds</ThrallMasteryManaTide>
+      </Level4>
+      <Level7>
+        <ThrallMaelstromWeapon name="Maelstrom Weapon" desc="ThrallMaelstromWeapon">storm_ui_icon_thrall_windfury_var1.dds</ThrallMaelstromWeapon>
+        <ThrallAncestralWrath name="Ancestral Wrath" generic="true" desc="ThrallAncestralWrath">storm_ui_icon_talent_bloodforblood.dds</ThrallAncestralWrath>
+        <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
+      </Level7>
+      <Level10>
+        <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering" mana="75" cooldown="70">storm_ui_icon_thrall_sundering.dds</ThrallHeroicAbilitySundering>
+        <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake" mana="90" cooldown="100">storm_ui_icon_thrall_earthquake.dds</ThrallHeroicAbilityEarthquake>
+      </Level10>
+      <Level13>
+        <ThrallMasteryGraceOfAir name="Grace Of Air" desc="ThrallGraceOfAirTalent">storm_ui_icon_thrall_windfury.dds</ThrallMasteryGraceOfAir>
+        <ThrallMasteryFrostwolfsGrace name="Frostwolf's Grace" desc="ThrallFrostwolfResilienceSurgeOfHealing">storm_ui_icon_thrall_frostwolfresilience.dds</ThrallMasteryFrostwolfsGrace>
+        <ThrallSpiritShield name="Spirit Shield" generic="true" desc="ThrallSpiritShield">storm_ui_icon_talent_spellshield.dds</ThrallSpiritShield>
+      </Level13>
+      <Level16>
+        <ThrallMasteryTempestFury name="Tempest Fury" desc="ThrallTempestFuryTalent">storm_ui_icon_thrall_windfury.dds</ThrallMasteryTempestFury>
+        <ThrallThunderstorm name="Thunderstorm" desc="ThrallThunderstorm" cooldown="15">storm_ui_icon_thrall_chainlightning.dds</ThrallThunderstorm>
+        <ThrallAlphaWolf name="Alpha Wolf" desc="ThrallAlphaWolf" cooldown="45">storm_ui_icon_thrall_feralspirit.dds</ThrallAlphaWolf>
+      </Level16>
+      <Level20>
+        <ThrallMasteryWorldbreaker name="World breaker" desc="ThrallWorldbreakerTalent">storm_ui_icon_thrall_sundering.dds</ThrallMasteryWorldbreaker>
+        <ThrallMasteryEarthenShields name="Earthen Shields" desc="ThrallEarthenShieldsTalent">storm_ui_icon_thrall_earthquake.dds</ThrallMasteryEarthenShields>
+        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+        <ThrallWindRush name="Wind Rush" generic="true" desc="ThrallWindRush" cooldown="80">storm_ui_icon_talent_boltofthestorm.dds</ThrallWindRush>
+      </Level20>
+  </Talents>
+</Thrall>

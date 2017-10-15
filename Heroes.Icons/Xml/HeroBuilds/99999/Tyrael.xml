@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <Tyrael available="47479" attributeid="Tyrl" unit="HeroTyrael" franchise="Diablo" type="Melee" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_tyrael.dds" loading="storm_ui_ingame_hero_loadingscreen_tyrael.dds" leader="storm_ui_ingame_hero_leaderboard_tyrael.dds">
+    <Roles>Warrior</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <TyraelMasteryPurgeEvil name="Purge Evil" desc="TyraelSmitePurgeEvilTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasteryPurgeEvil>
+        <TyraelMasteryPassiveProtectioninDeath name="Protection in Death" desc="TyraelArchangelsWrathProtectionInDeathTalent">storm_ui_icon_tyrael_archangelswrath.dds</TyraelMasteryPassiveProtectioninDeath>
+        <TyraelMasteryEvenInDeath name="Even In Death" desc="TyraelArchangelsWrathEvenInDeathTalent">storm_ui_icon_tyrael_archangelswrath_var1.dds</TyraelMasteryEvenInDeath>
+        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+      </Level1>
+      <Level4>
+        <TyraelMasteryElDruinsMightHoradricReforging name="Horadric Reforging" desc="TyraelElDruinsMightHoradricReforgingTalent">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightHoradricReforging>
+        <TyraelMasterySwiftRetribution name="Swift Retribution" desc="TyraelSmiteSwiftRetributionTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasterySwiftRetribution>
+        <GenericVigorousStrikePassive name="Vigorous Strike" desc="GenericVigorousStrikeTalent">storm_ui_icon_talent_autoattack_heal.dds</GenericVigorousStrikePassive>
+      </Level4>
+      <Level7>
+        <TyraelMasteryElDruinsMightAngelsGrace name="Angel's Grace" desc="TyraelElDruinsMightAngelsGraceTalent">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightAngelsGrace>
+        <TyraelMasteryRighteousnessReciprocate name="Reciprocate" desc="TyraelRighteousnessReciprocateTalent">storm_ui_icon_tyrael_righteousness.dds</TyraelMasteryRighteousnessReciprocate>
+        <TyraelMasteryZealotry name="Zealotry" desc="TyraelRighteousnessZealotryTalent">storm_ui_icon_tyrael_righteousness_var1.dds</TyraelMasteryZealotry>
+        <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
+      </Level7>
+      <Level10>
+        <TyraelHeroicAbilityJudgement name="Judgment" desc="TyraelJudgment" mana="80" cooldown="70">storm_ui_icon_tyrael_judgement.dds</TyraelHeroicAbilityJudgement>
+        <TyraelHeroicAbilitySanctification name="Sanctification" desc="TyraelSanctificationStationary" mana="75" cooldown="100">storm_ui_icon_tyrael_sanctification.dds</TyraelHeroicAbilitySanctification>
+      </Level10>
+      <Level13>
+        <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>
+        <TyraelMasteryAngelicAbsorption name="Angelic Absorption" desc="TyraelRighteousnessAngelicAbsorptionTalent">storm_ui_icon_tyrael_righteousness.dds</TyraelMasteryAngelicAbsorption>
+        <TyraelMasteryAngelicMight name="Angelic Might" desc="TyraelSmiteAngelicMightTalent">storm_ui_icon_tyrael_smite.dds</TyraelMasteryAngelicMight>
+      </Level13>
+      <Level16>
+        <TyraelMasteryElDruinsMightBladeOfJustice name="Blade of Justice" desc="TyraelElDruinsMightBladeOfJusticeTalent">storm_ui_icon_tyrael_eldruinsmight_a.dds</TyraelMasteryElDruinsMightBladeOfJustice>
+        <TyraelMasteryHolyGround name="Holy Ground" desc="TyraelElDruinsMightHolyGroundTalent">storm_ui_icon_tyrael_eldruinsmight_b.dds</TyraelMasteryHolyGround>
+        <TyraelMasterySalvation name="Salvation" desc="TyraelRighteousnessSalvationTalent">storm_ui_icon_tyrael_righteousness.dds</TyraelMasterySalvation>
+        <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar" cooldown="60">storm_ui_icon_talent_bloodforblood.dds</GenericTalentBloodForBlood>
+      </Level16>
+      <Level20>
+        <TyraelMasteryJudgmentAngelofJustice name="Angel of Justice" desc="TyraelJudgmentAngelOfJusticeTalent">storm_ui_icon_tyrael_judgement.dds</TyraelMasteryJudgmentAngelofJustice>
+        <TyraelMasterySanctificationHolyArena name="Holy Arena" desc="TyraelSanctificationHolyArenaTalent">storm_ui_icon_tyrael_sanctification.dds</TyraelMasterySanctificationHolyArena>
+        <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent" cooldown="40">storm_ui_icon_talent_hardenedshield.dds</GenericTalentNullificationShield>
+        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+      </Level20>
+  </Talents>
+</Tyrael>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <Johanna available="47479" attributeid="Crus" unit="HeroCrusader" franchise="Diablo" type="Melee" difficulty="Medium"
+           portrait="storm_ui_ingame_heroselect_btn_johanna.dds" loading="storm_ui_ingame_hero_loadingscreen_johanna.dds" leader="storm_ui_ingame_hero_leaderboard_johanna.dds">
+    <Roles>Warrior</Roles>
+    <Abilities>
+    </Abilities>
+    <Talents>
+      <Level1>
+        <CrusaderMasteryIronSkinReinforce name="Reinforce" generic="true" desc="CrusaderIronSkinReinforceTalent">storm_ui_icon_talent_block.dds</CrusaderMasteryIronSkinReinforce>
+        <CrusaderMasteryIronSkinHoldYourGround name="Hold Your Ground" desc="CrusaderIronSkinHoldYourGroundTalent">storm_ui_icon_johanna_iron_skin.dds</CrusaderMasteryIronSkinHoldYourGround>
+        <CrusaderMasteryLawsOfHope name="Laws of Hope" desc="CrusaderLawsOfHope" cooldown="40">storm_ui_icon_johanna_lawsofhope.dds</CrusaderMasteryLawsOfHope>
+      </Level1>
+      <Level4>
+        <CrusaderMasteryCondemnEternalRetaliation name="Eternal Retaliation" desc="CrusaderEternalRetaliationTalent">storm_ui_icon_johanna_condemn.dds</CrusaderMasteryCondemnEternalRetaliation>
+        <CrusaderMasteryCondemnConviction name="Conviction" desc="CrusaderCondemnConvictionTalent">storm_ui_icon_johanna_condemn_var1.dds</CrusaderMasteryCondemnConviction>
+        <CrusaderMasteryShieldGlareSinsExposed name="Sins Exposed" desc="CrusaderShieldGlareSinsExposedTalent">storm_ui_icon_johanna_shield_glare.dds</CrusaderMasteryShieldGlareSinsExposed>
+      </Level4>
+      <Level7>
+        <CrusaderMasteryPunishSubdue name="Subdue" desc="CrusaderSubdueTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishSubdue>
+        <CrusaderZealousGlare name="Zealous Glare" desc="CrusaderZealousGlare">storm_ui_icon_johanna_shield_glare.dds</CrusaderZealousGlare>
+        <BattleMomentumCrusader name="Blessed Momentum" desc="JohannaBlessedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumCrusader>  
+      </Level7>
+      <Level10>
+        <CrusaderHeroicAbilityFallingSword name="Falling Sword" desc="CrusaderFallingSword" mana="90" cooldown="60">storm_ui_icon_johanna_falling_sword.dds</CrusaderHeroicAbilityFallingSword>
+        <CrusaderHeroicAbilityBlessedShield name="Blessed Shield" desc="CrusaderBlessedShield" mana="90" cooldown="60">storm_ui_icon_johanna_blessed_shield.dds</CrusaderHeroicAbilityBlessedShield>
+      </Level10>
+      <Level13>
+        <CrusaderMasteryPunishRoar name="Roar" desc="CrusaderRoarTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishRoar>
+        <CrusaderHolyFury name="Holy Fury" desc="CrusaderHolyFury" generic="true">storm_ui_icon_talent_burningrage.dds</CrusaderHolyFury>
+        <CrusaderMasteryCondemnBlessedHammer name="Blessed Hammer" desc="CrusaderCondemnBlessedHammerTalent" cooldown="30">storm_ui_icon_falstad_hammerang_a.dds</CrusaderMasteryCondemnBlessedHammer>
+      </Level13>
+      <Level16>
+        <CrusaderMasteryShieldGlareHolyRenewal name="Holy Renewal" desc="CrusaderShieldGlareHolyRenewalTalent">storm_ui_icon_johanna_shield_glare.dds</CrusaderMasteryShieldGlareHolyRenewal>  
+        <CrusaderMasteryIronSkinFanaticism name="Fanaticism" desc="CrusaderIronSkinFanaticismTalent">storm_ui_icon_johanna_iron_skin.dds</CrusaderMasteryIronSkinFanaticism>
+        <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+      </Level16>
+      <Level20>
+        <CrusaderMasteryFallingSwordHeavensFury name="Heaven's Fury" desc="CrusaderFallingSwordHeavensFuryTalent">storm_ui_icon_johanna_falling_sword.dds</CrusaderMasteryFallingSwordHeavensFury>
+        <CrusaderMasteryBlessedShieldRadiatingFaith name="Radiating Faith" desc="CrusaderBlessedShieldRadiatingFaithTalent">storm_ui_icon_johanna_blessed_shield.dds</CrusaderMasteryBlessedShieldRadiatingFaith>
+        <CrusaderHeroicMasteryIndestructable name="Indestructible" desc="CrusaderIndestructableTalent">storm_ui_icon_johanna_indestructible.dds</CrusaderHeroicMasteryIndestructable>
+        <CrusaderBlindedByTheLight name="Blinded By The Light" desc="CrusaderBlindedByTheLight" generic="true" cooldown="60">storm_ui_icon_talent_stormshield.dds</CrusaderBlindedByTheLight>
+      </Level20>
+  </Talents>
+</Johanna>
