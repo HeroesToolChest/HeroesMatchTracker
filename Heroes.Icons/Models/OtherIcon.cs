@@ -12,6 +12,7 @@
         LongarrowRightDown,
         LongarrowRightHover,
         LongarrowRightNormal,
+        TalentAvailable,
         TalentUnavailable,
         StatusResistShieldDefault,
         StatusResistShieldPhysical,

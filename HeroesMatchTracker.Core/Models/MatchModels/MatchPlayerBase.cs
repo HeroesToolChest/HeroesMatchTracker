@@ -30,7 +30,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Player = player;
 
             SilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.Silence);
-            TalentBorderScoreScreenIcon = HeroesIcons.GetOtherIcon(OtherIcon.TalentUnavailable);
+            TalentBorderScoreScreenIcon = HeroesIcons.GetOtherIcon(OtherIcon.TalentAvailable);
         }
 
         protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)

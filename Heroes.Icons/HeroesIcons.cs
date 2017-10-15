@@ -245,6 +245,7 @@ namespace Heroes.Icons
             OtherIcons.Add(OtherIcon.LongarrowRightHover, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_hover.png"));
             OtherIcons.Add(OtherIcon.LongarrowRightNormal, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_right_normal.png"));
 
+            OtherIcons.Add(OtherIcon.TalentAvailable, SetImageStreamString(OtherFolderName, "storm_ui_ingame_leader_talent_available.png"));
             OtherIcons.Add(OtherIcon.TalentUnavailable, SetImageStreamString(OtherFolderName, "storm_ui_ingame_leader_talent_unavailable.png"));
 
             OtherIcons.Add(OtherIcon.StatusResistShieldDefault, SetImageStreamString(OtherFolderName, "storm_ui_ingame_status_resistshieldc3_default.png"));
