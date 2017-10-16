@@ -22,13 +22,13 @@ namespace Heroes.Helpers
         Brawl = 1 << 9,
 
         [Description("All Game Modes")]
-        AllGameMode = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl,
+        AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl,
         [Description("Normal Game Modes")]
-        NormalGameMode = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft,
+        NormalGameModes = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft,
         [Description("Draft Modes")]
-        DraftMode = HeroLeague | TeamLeague | UnrankedDraft | Custom,
+        DraftModes = HeroLeague | TeamLeague | UnrankedDraft | Custom,
         [Description("Ranked Modes")]
-        RankedMode = HeroLeague | TeamLeague,
+        RankedModes = HeroLeague | TeamLeague,
     }
 
     public static partial class HeroesHelpers

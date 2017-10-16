@@ -345,19 +345,19 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             HeroesIcons.LoadLatestHeroesBuild();
 
-            Enum.TryParse(SelectedSeason, out Season selectedSeason);
+            Season season = SelectedSeason.ConvertToEnum<Season>();
             Hero hero = HeroesIcons.HeroBuilds().GetHeroInfo(SelectedHero);
 
             SelectedHeroPortrait = hero.GetHeroPortrait();
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
-            HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, selectedSeason).ToString();
+            HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, season).ToString();
 
             // set selected gamemodes
             GameMode gameModes = GameMode.Unknown;
             if (SelectedGameModes.Count <= 0)
             {
-                gameModes = GameMode.AllGameMode;
+                gameModes = GameMode.AllGameModes;
             }
             else
             {
@@ -377,7 +377,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             StatsHeroesDataViewModel.QueryTotalsAndAverages = IsTotalsAveragesChecked;
             StatsHeroesDataViewModel.QueryTalents = IsTalentsChecked;
             StatsHeroesDataViewModel.QueryAwards = IsAwardsChecked;
-            await StatsHeroesDataViewModel.SetDataAsync(SelectedHero, selectedSeason, gameModes, SelectedMaps);
+            await StatsHeroesDataViewModel.SetDataAsync(SelectedHero, season, gameModes, SelectedMaps);
 
             if (IsTotalsAveragesChecked)
             {

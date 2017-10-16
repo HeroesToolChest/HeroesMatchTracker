@@ -308,7 +308,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 case GameMode.Brawl:
                     gmShort = "B";
                     break;
-                case GameMode.AllGameMode:
+                case GameMode.AllGameModes:
                     gmShort = "Total";
                     break;
             }
@@ -394,7 +394,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (IsTotalSelected)
             {
-                CreateGameModeColumns(GameMode.AllGameMode);
+                CreateGameModeColumns(GameMode.AllGameModes);
             }
         }
 

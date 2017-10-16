@@ -8,7 +8,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
     public class AllMatchesViewModel : MatchesBase
     {
         public AllMatchesViewModel(IInternalService internalService, IWebsiteService website, IMatchesTabService matchesTab)
-            : base(internalService, website, matchesTab, GameMode.AllGameMode, MatchesTab.AllMatches)
+            : base(internalService, website, matchesTab, GameMode.AllGameModes, MatchesTab.AllMatches)
         { }
 
         public void SendSearchData(MatchesDataMessage matchesDataMessage)

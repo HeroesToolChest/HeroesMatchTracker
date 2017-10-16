@@ -54,7 +54,7 @@ namespace Heroes.Helpers
             if (Enum.TryParse(value, true, out T replayParseResultEnum))
                 return replayParseResultEnum;
             else
-                throw new ArgumentException($"paramter {value} not found", nameof(value));
+                throw new ArgumentException($"parameter {value} not found");
         }
     }
 }

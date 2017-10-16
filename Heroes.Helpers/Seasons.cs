@@ -11,17 +11,17 @@ namespace Heroes.Helpers
         Lifetime = 0,
         [Description("Preseason")]
         Preseason = 1 << 0,
-        [Description("2016 Season 1")]
+        [Description("Year 2016 Season 1")]
         Year2016Season1 = 1 << 1,
-        [Description("2016 Season 2")]
+        [Description("Year 2016 Season 2")]
         Year2016Season2 = 1 << 2,
-        [Description("2016 Season 3")]
+        [Description("Year 2016 Season 3")]
         Year2016Season3 = 1 << 3,
-        [Description("2017 Season 1")]
+        [Description("Year 2017 Season 1")]
         Year2017Season1 = 1 << 4,
-        [Description("2017 Season 2")]
+        [Description("Year 2017 Season 2")]
         Year2017Season2 = 1 << 5,
-        [Description("2017 Season 3")]
+        [Description("Year 2017 Season 3")]
         Year2017Season3 = 1 << 6,
     }
 
