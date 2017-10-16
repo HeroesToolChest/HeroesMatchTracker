@@ -21,9 +21,13 @@ namespace Heroes.Helpers
         [Description("Brawl")]
         Brawl = 1 << 9,
 
+        [Description("All Game Modes")]
         AllGameMode = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl,
+        [Description("Normal Game Modes")]
         NormalGameMode = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft,
+        [Description("Draft Modes")]
         DraftMode = HeroLeague | TeamLeague | UnrankedDraft | Custom,
+        [Description("Ranked Modes")]
         RankedMode = HeroLeague | TeamLeague,
     }
 
@@ -31,26 +35,38 @@ namespace Heroes.Helpers
     {
         public static class GameModes
         {
-            public static ICollection<string> GetAllGameModeList()
+            /// <summary>
+            /// Returns a collection of the Game Modes
+            /// </summary>
+            /// <returns></returns>
+            public static ICollection<string> GetGameModesList()
             {
                 List<string> list = new List<string>();
 
-                foreach (GameMode gameMode in Enum.GetValues(GameMode.AllGameMode.GetType()))
+                foreach (GameMode gameMode in Enum.GetValues(typeof(GameMode)))
                 {
-                    list.Add(gameMode.GetFriendlyName());
+                    if (gameMode != GameMode.Unknown)
+                        list.Add(gameMode.GetFriendlyName());
                 }
 
                 return list;
             }
 
-            public static ICollection<string> GetNormalGameModeList()
+            /// <summary>
+            /// Returns a collection of all the game modes
+            /// </summary>
+            /// <returns></returns>
+            public static ICollection<string> GetAllGameModesList()
             {
-                List<string> list = new List<string>();
-
-                foreach (GameMode gameMode in Enum.GetValues(GameMode.NormalGameMode.GetType()))
+                List<string> list = new List<string>()
                 {
-                    list.Add(gameMode.GetFriendlyName());
-                }
+                    GameMode.QuickMatch.GetFriendlyName(),
+                    GameMode.HeroLeague.GetFriendlyName(),
+                    GameMode.TeamLeague.GetFriendlyName(),
+                    GameMode.UnrankedDraft.GetFriendlyName(),
+                    GameMode.Brawl.GetFriendlyName(),
+                    GameMode.Custom.GetFriendlyName(),
+                };
 
                 return list;
             }

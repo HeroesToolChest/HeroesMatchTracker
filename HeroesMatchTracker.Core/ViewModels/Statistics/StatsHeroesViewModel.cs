@@ -67,7 +67,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedHero = HeroesList[0];
 
-            GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModeList());
+            GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModesList());
             MapList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
 
             StatsHeroesDataViewModel = new StatsHeroesDataViewModel(internalService, MapList);
