@@ -23,17 +23,17 @@ namespace Heroes.Helpers
         LessThan40Minutes,
         [Description("Longer than 10 Minutes")]
         LongerThan10Minutes,
-        [Description("Less than 15 Minutes")]
+        [Description("Longer than 15 Minutes")]
         LongerThan15Minutes,
-        [Description("Less than 20 Minutes")]
+        [Description("Longer than 20 Minutes")]
         LongerThan20Minutes,
-        [Description("Less than 25 Minutes")]
+        [Description("Longer than 25 Minutes")]
         LongerThan25Minutes,
-        [Description("Less than 30 Minutes")]
+        [Description("Longer than 30 Minutes")]
         LongerThan30Minutes,
-        [Description("Less than 35 Minutes")]
+        [Description("Longer than 35 Minutes")]
         LongerThan35Minutes,
-        [Description("Less than 40 Minutes")]
+        [Description("Longer than 40 Minutes")]
         LongerThan40Minutes,
     }
 
