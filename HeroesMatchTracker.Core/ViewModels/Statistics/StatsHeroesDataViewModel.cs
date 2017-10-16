@@ -266,7 +266,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             double totalDamageTaken = StatsHeroesDataCollection.Sum(x => x.DamageTaken ?? 0);
             double totalExperience = StatsHeroesDataCollection.Sum(x => x.Experience ?? 0);
             int totalMercsCaptured = StatsHeroesDataCollection.Sum(x => x.MercsCaptured ?? 0);
-            TimeSpan totalGameTime = TimeSpan.FromSeconds(StatsHeroesDataCollection.Sum(x => x.GameTime.HasValue ? x.GameTime.Value.Seconds : 0));
+            TimeSpan totalGameTime = TimeSpan.FromSeconds(StatsHeroesDataCollection.Sum(x => x.GameTime.HasValue ? x.GameTime.Value.TotalSeconds : 0));
 
             StatsHeroesGameModes totalMatch = new StatsHeroesGameModes
             {
