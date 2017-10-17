@@ -53,7 +53,7 @@ namespace Heroes.Helpers
             }
 
             /// <summary>
-            /// Returns a collection of all the game modes
+            /// Returns a collection of all the game modes (qm, hl, tl, ud, brawl, and custom)
             /// </summary>
             /// <returns></returns>
             public static ICollection<string> GetAllGameModesList()
