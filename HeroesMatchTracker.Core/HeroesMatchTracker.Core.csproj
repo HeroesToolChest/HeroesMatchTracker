@@ -277,9 +277,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.S3.3.3.10.2\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Heroes.Helpers\Heroes.Helpers.csproj">
       <Project>{de184dee-a3fe-438c-a016-bc0f31235df9}</Project>
       <Name>Heroes.Helpers</Name>
