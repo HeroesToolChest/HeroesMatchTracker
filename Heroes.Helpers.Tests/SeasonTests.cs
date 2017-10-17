@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Heroes.Helpers.Tests
 {
@@ -22,6 +23,15 @@ namespace Heroes.Helpers.Tests
                     Assert.IsTrue(int.TryParse(parts[0], out int result));
                     Assert.IsTrue(int.TryParse(parts[2], out result));
                     Assert.IsTrue(parts[1] == "Season");
+                }
+
+                try
+                {
+                    season.ConvertToEnum<Season>();
+                }
+                catch (ArgumentException)
+                {
+                    Assert.Fail($"Failed to convert season string [{season}] to Season enum");
                 }
             }
         }
