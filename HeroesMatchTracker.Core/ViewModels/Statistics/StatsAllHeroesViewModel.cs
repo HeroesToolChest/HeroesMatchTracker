@@ -278,7 +278,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             };
             GameModesColumnCollection.Add(levelColumn);
 
-            StatsAllHeroesDataTable.Columns.Add("LeaderboardPortrait", typeof(string));
+            StatsAllHeroesDataTable.Columns.Add("LeaderboardPortrait", typeof(Stream));
             StatsAllHeroesDataTable.Columns.Add("CharacterName", typeof(string));
             StatsAllHeroesDataTable.Columns.Add("CharacterLevel", typeof(int));
         }
