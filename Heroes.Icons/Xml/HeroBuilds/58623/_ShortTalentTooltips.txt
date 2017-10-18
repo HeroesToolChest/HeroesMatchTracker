@@ -105,7 +105,7 @@ AnaHealingDartSpeedSerum=Healing Dart grants Move Speed
 AnaMindNumbingAgent=Doses decrease Spell Power
 AnaNanoBoost=Grant ally Spell Power, reduced cooldowns
 AnaNanoInfusion=Nano Boost heals for damage dealt
-AnaOverdose=Biotic Grenade, Sleep Dart apply Doses
+AnaOverdose=Sleep Dart applies Doses
 AnaPiercingDarts=<c val="#TooltipQuest">Quest:</C> Empower Sleep Dart, Healing Dart
 AnaSleepDart=Fire a dart that puts enemies to Sleep
 AnaSleepingDartTemporaryBlindness=Sleep Dart Blinds
@@ -696,7 +696,7 @@ GarroshHellscream'sWarsongDeathWish=Increases the duration and reduces the coold
 GarroshIndomitable=Activate to become Unstoppable
 GarroshOppressor=Basic Attacks reduce Spell Power
 GarroshWarlordsChallenge=Force nearby Heroes to attack Garrosh
-GarroshWarlordsChallengeDeathWish=[PH] Empower's Warlord's Challenge
+GarroshWarlordsChallengeDeathWish=Takedowns reduce Warlord's Challenge cooldown
 GarroshWreckingBall=Throw an enemy, damaging and Slowing them
 GarroshWreckingBallEarthshaker=Wrecking Ball Stuns enemies near impact
 GarroshWreckingBallIntotheFray=Activate to throw an ally
@@ -1670,14 +1670,14 @@ StukovLurkingArmItHungersTalent=Hitting Heroes reduces Lurking Arm cooldown
 StukovMassiveShove=Shove an enemy until they collide with terrain
 StukovOneGoodSpreadTalent=Reduce Healing Pathogen cooldown after spreading
 StukovPatientZero2=The primary target of your Hidden and Slowing Pathogens can spread their effects at twice the distance of any other targets.
-StukovPoppinPustulesTalent=<c val="#TooltipQuest">Quest:</c> Empower Weighted Pustule detonation
+StukovPoppinPustulesTalent=<c val="#TooltipQuest">Quest:</c> Empower Weighted Pustule
 StukovPoxPopuliTalent=Bio-Kill Switch no longer removes Healing Pathogen
 StukovPushComesToShoveTalent=Increase Massive Shove speed, can reduce cooldown
 StukovReactiveBallistosporesTalent=Radiate Weighted Pustule at low Health
 StukovSlowingPathogen=Infect an enemy.
 StukovSpineLauncher=Basic attacks are ranged and slow enemies, but do less damage
 StukovSpineLauncherTalent=Basic Attacks Slow, become ranged
-StukovSuperstrainTalent=Healing Pathogen heals when Stunned
+StukovSuperstrainTalent=Healing Pathogen heals when Stunned, Rooted
 StukovTargetedExcisionTalent=Detonate single Weighted Pustule to reduce cooldown
 StukovTopOffTalent=Healing Pathogen stronger on high Health target
 StukovUniversalCarrierTalent=Healing Pathogen can spread continually

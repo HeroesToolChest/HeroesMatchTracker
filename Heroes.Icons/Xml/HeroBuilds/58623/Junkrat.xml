@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Junkrat available="99999" attributeid="Junk" unit="HeroJunkrat" franchise="Overwatch" type="Ranged" difficulty="Medium" mana="None"
+  <Junkrat available="58623" attributeid="Junk" unit="HeroJunkrat" franchise="Overwatch" type="Ranged" difficulty="Medium" mana="None"
            portrait="storm_ui_ingame_heroselect_btn_junkrat.dds" loading="storm_ui_ingame_hero_loadingscreen_junkrat.dds" leader="storm_ui_ingame_hero_leaderboard_junkrat.dds">
     <Roles>Assassin</Roles>
     <Abilities>
