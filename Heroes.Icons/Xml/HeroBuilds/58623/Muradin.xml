@@ -30,7 +30,7 @@
         <MuradinBronzebeardRage name="Bronzebeard Rage" desc="MuradinBronzebeardRage" generic="true">storm_ui_icon_talent_burningrage.dds</MuradinBronzebeardRage>
       </Level13>
       <Level16>
-        <MuradinMasteryDwarfLaunch name="Dwarf Launch" desc="MuradinDwarfTossDwarfLaunchTalent">storm_ui_icon_muradin_dwarftoss.dds</MuradinMasteryDwarfLaunch>
+        <MuradinMasteryDwarfTossDwarfLaunch name="Dwarf Launch" desc="MuradinDwarfTossDwarfLaunchTalent">storm_ui_icon_muradin_dwarftoss.dds</MuradinMasteryDwarfTossDwarfLaunch>
         <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
         <MuradinMasteryPassiveStoneform name="Stoneform" desc="MuradinSecondWindStoneformTalent">storm_ui_icon_muradin_secondwind.dds</MuradinMasteryPassiveStoneform>
       </Level16>
