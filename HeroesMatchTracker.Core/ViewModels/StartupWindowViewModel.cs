@@ -261,8 +261,10 @@ namespace HeroesMatchTracker.Core.ViewModels
                 {
                     int releaseKey = (int)ndpKey.GetValue("Release");
 
-                    if (releaseKey >= 460798)
-                        dotNetFrameWorkVersion += "4.7 or later";
+                    if (releaseKey >= 461308)
+                        dotNetFrameWorkVersion += "4.7.1 or later";
+                    else if (releaseKey >= 460798)
+                        dotNetFrameWorkVersion += "4.7";
                     else if (releaseKey >= 394802)
                         dotNetFrameWorkVersion += "4.6.2";
                     else if (releaseKey >= 394254)
