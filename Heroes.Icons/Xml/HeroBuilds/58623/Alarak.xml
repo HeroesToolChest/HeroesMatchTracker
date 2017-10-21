@@ -3,6 +3,22 @@
           portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
     <Roles>Assassin</Roles>
     <Abilities>
+      <BasicAbility1>
+        <AlarakDiscordStrike name="Discord Strike" desc="AlarakDiscordStrike" mana="45" cooldown="8">storm_ui_icon_alarak_discordstrike.dds</AlarakDiscordStrike>
+      </BasicAbility1>
+      <BasicAbility2>
+        <AlarakTelekinesis name="Telekinesis" desc="AlarakTelekinesis" mana="30" cooldown="12">storm_ui_icon_alarak_telekinesis.dds</AlarakTelekinesis>
+      </BasicAbility2>
+      <BasicAbility3>
+        <AlarakLightningSurge name="Lightning Surge" desc="AlarakLightningSurge" mana="25" cooldown="6">storm_ui_icon_alarak_lightningsurge.dds</AlarakLightningSurge>
+      </BasicAbility3>
+      <HeroicAbility>
+        <AlarakCounterStrikeTargeted talent="AlarakHeroicAbilityCounterStrike" />
+        <AlarakDeadlyCharge talent="AlarakHeroicAbilityDeadlyCharge" />
+      </HeroicAbility>
+      <TraitAbility>
+        <AlarakSadism name="Sadism" desc="AlarakSadism">storm_ui_icon_alarak_sadism.dds</AlarakSadism>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

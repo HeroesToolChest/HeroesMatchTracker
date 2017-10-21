@@ -2,9 +2,9 @@
 
 namespace Heroes.Icons.Models
 {
-    public class Talent : TalentBase
+    public class Ability : TalentBase
     {
-        public TalentTier Tier { get; set; }
+        public AbilityTier Tier { get; set; }
 
         public override string ToString() => $"{Tier.GetFriendlyName()} | {ReferenceName}";
     }

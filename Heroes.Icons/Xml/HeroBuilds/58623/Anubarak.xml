@@ -3,6 +3,22 @@
             portrait="storm_ui_ingame_heroselect_btn_anubarak.dds" loading="storm_ui_ingame_hero_loadingscreen_anubarak.dds" leader="storm_ui_ingame_hero_leaderboard_anubarak.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <AlarakDiscordStrike name="" desc="" mana="" cooldown=""></AlarakDiscordStrike>
+      </BasicAbility1>
+      <BasicAbility2>
+        <AlarakTelekinesis name="" desc="" mana="" cooldown=""></AlarakTelekinesis>
+      </BasicAbility2>
+      <BasicAbility3>
+        <AlarakLightningSurge name="" desc="" mana="" cooldown=""></AlarakLightningSurge>
+      </BasicAbility3>
+      <HeroicAbility>
+        <AlarakCounterStrikeTargeted talent="" />
+        <AlarakDeadlyCharge talent="" />
+      </HeroicAbility>
+      <TraitAbility>
+        <AlarakSadism name="" desc="" mana="" cooldown=""></AlarakSadism>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace Heroes.Icons.Models
 {
     [Flags]
-    public enum TalentTier : uint
+    public enum TalentTier
     {
         Old = 0,
         [Description("Level 1")]
