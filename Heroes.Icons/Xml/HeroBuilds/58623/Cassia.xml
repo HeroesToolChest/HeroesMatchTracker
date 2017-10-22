@@ -3,6 +3,22 @@
            portrait="storm_ui_ingame_heroselect_btn_d2amazonf.dds" loading="storm_ui_ingame_hero_loadingscreen_d2amazonf.dds" leader="storm_ui_ingame_hero_leaderboard_d2amazonf.dds">
     <Roles>Assassin</Roles>
     <Abilities>
+      <BasicAbility1>
+        <AmazonLightningFury name="Lightning Fury" desc="AmazonLightningFury" mana="30" cooldown="4">storm_ui_icon_cassia_lightningfury.dds</AmazonLightningFury>
+      </BasicAbility1>
+      <BasicAbility2>
+        <AmazonBlindingLight name="Blinding Light" desc="AmazonBlindingLight" mana="70" cooldown="15">storm_ui_icon_cassia_blindinglight.dds</AmazonBlindingLight>
+      </BasicAbility2>
+      <BasicAbility3>
+        <AmazonFend name="Fend" desc="AmazonFend" mana="40" cooldown="8">storm_ui_icon_cassia_fend.dds</AmazonFend>
+      </BasicAbility3>
+      <HeroicAbility>
+        <AmazonBallLightning talent="AmazonBallLightning" />
+        <AmazonValkyrie talent="AmazonValkyrie" />
+      </HeroicAbility>
+      <TraitAbility>
+        <AmazonAvoidance name="Avoidance" desc="AmazonAvoidance">storm_ui_icon_cassia_avoidance.dds</AmazonAvoidance>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

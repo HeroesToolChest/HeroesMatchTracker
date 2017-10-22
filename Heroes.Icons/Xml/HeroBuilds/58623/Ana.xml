@@ -4,20 +4,20 @@
     <Roles>Support</Roles>
     <Abilities>
       <BasicAbility1>
-        <AlarakDiscordStrike name="" desc="" mana="" cooldown=""></AlarakDiscordStrike>
+        <AnaHealingDart name="Healing Dart" desc="AnaHealingDart" mana="15" cooldown="2">storm_ui_icon_ana_healing_dart.dds</AnaHealingDart>
       </BasicAbility1>
       <BasicAbility2>
-        <AlarakTelekinesis name="" desc="" mana="" cooldown=""></AlarakTelekinesis>
+        <AnaBioticGrenade name="Biotic Grenade" desc="AnaBioticGrenade" mana="50" cooldown="16">storm_ui_icon_ana_biotic_grenade.dds</AnaBioticGrenade>
       </BasicAbility2>
       <BasicAbility3>
-        <AlarakLightningSurge name="" desc="" mana="" cooldown=""></AlarakLightningSurge>
+        <AnaSleepDart name="Sleep Dart" desc="AnaSleepDart" mana="50" cooldown="14">storm_ui_icon_ana_sleep_dart.dds</AnaSleepDart>
       </BasicAbility3>
       <HeroicAbility>
-        <AlarakCounterStrikeTargeted talent="" />
-        <AlarakDeadlyCharge talent="" />
+        <AnaNanoBoost talent="AnaHeroicAbilityNanaBoost" />
+        <AnaEyeOfHorusActivate talent="AnaHeroicAbilityEyeOfHorus" />
       </HeroicAbility>
       <TraitAbility>
-        <AlarakSadism name="" desc="" mana="" cooldown=""></AlarakSadism>
+        <AnaTraitShrikeSniper name="Shrike" desc="AnaTraitShrikeSniper">storm_ui_icon_ana_shrike.dds</AnaTraitShrikeSniper>
       </TraitAbility>
     </Abilities>
     <Talents>

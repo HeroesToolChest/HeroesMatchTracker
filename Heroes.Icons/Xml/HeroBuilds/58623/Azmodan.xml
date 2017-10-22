@@ -3,6 +3,22 @@
            portrait="storm_ui_ingame_heroselect_btn_azmodan.dds" loading="storm_ui_ingame_hero_loadingscreen_azmodan.dds" leader="storm_ui_ingame_hero_leaderboard_azmodan.dds">
     <Roles>Specialist</Roles>
     <Abilities>
+      <BasicAbility1>
+        <AzmodanGlobeOfAnnihilation name="Globe Of Annihilation" desc="AzmodanGlobeOfAnnihilation" mana="60" cooldown="10">storm_ui_icon_azmodan_globeofannihilation.dds</AzmodanGlobeOfAnnihilation>
+      </BasicAbility1>
+      <BasicAbility2>
+        <AzmodanSummonDemonWarrior name="Summon Demon Warrior" desc="AzmodanSummonDemonWarrior" mana="40" cooldown="10" ch-cooldown="true">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanSummonDemonWarrior>
+      </BasicAbility2>
+      <BasicAbility3>
+        <AzmodanAllShallBurn name="All Shall Burn" desc="AzmodanAllShallBurn" mana="16" per-mana="true" cooldown="6">storm_ui_icon_azmodan_allshallburn.dds</AzmodanAllShallBurn>
+      </BasicAbility3>
+      <HeroicAbility>
+        <AzmodanDemonicInvasion talent="AzmodanHeroicAbilityDemonicInvasion" />
+        <AzmodanBlackPool talent="AzmodanHeroicAbilityBlackPool" />
+      </HeroicAbility>
+      <TraitAbility>
+        <AzmodanGeneralOfHell name="General of Hell" desc="AzmodanGeneralOfHell" cooldown="30">storm_ui_icon_azmodan_generalofhell.dds</AzmodanGeneralOfHell>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

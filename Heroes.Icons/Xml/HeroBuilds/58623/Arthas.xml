@@ -4,20 +4,20 @@
     <Roles>Warrior</Roles>
     <Abilities>
       <BasicAbility1>
-        <AlarakDiscordStrike name="" desc="" mana="" cooldown=""></AlarakDiscordStrike>
+        <ArthasDeathCoil name="Death Coil" desc="ArthasDeathCoil" mana="50" cooldown="9">storm_ui_icon_arthas_deathcoil.dds</ArthasDeathCoil>
       </BasicAbility1>
       <BasicAbility2>
-        <AlarakTelekinesis name="" desc="" mana="" cooldown=""></AlarakTelekinesis>
+        <ArthasHowlingBlast name="Howling Blast" desc="ArthasHowlingBlast" mana="60" cooldown="10">storm_ui_icon_arthas_howlingblast.dds</ArthasHowlingBlast>
       </BasicAbility2>
       <BasicAbility3>
-        <AlarakLightningSurge name="" desc="" mana="" cooldown=""></AlarakLightningSurge>
+        <ArthasFrozenTempest name="Frozen Tempest" desc="ArthasFrozenTempest" mana="15" per-mana="true" cooldown="1">storm_ui_icon_arthas_frosentempest.dds</ArthasFrozenTempest>
       </BasicAbility3>
       <HeroicAbility>
-        <AlarakCounterStrikeTargeted talent="" />
-        <AlarakDeadlyCharge talent="" />
+        <ArthasArmyOfTheDead talent="ArthasHeroicAbilityArmyoftheDead" />
+        <ArthasSummonSindragosa talent="ArthasHeroicAbilitySummonSindragosa" />
       </HeroicAbility>
       <TraitAbility>
-        <AlarakSadism name="" desc="" mana="" cooldown=""></AlarakSadism>
+        <ArthasFrostmourneHungers name="Frostmourne Hungers" desc="ArthasFrostmourneHungers" cooldown="12">storm_ui_icon_arthas_frostmournehungers_off.dds</ArthasFrostmourneHungers>
       </TraitAbility>
     </Abilities>
     <Talents>

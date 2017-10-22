@@ -3,6 +3,25 @@
         portrait="storm_ui_ingame_heroselect_btn_chen.dds" loading="storm_ui_ingame_hero_loadingscreen_chen.dds" leader="storm_ui_ingame_hero_leaderboard_chen.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <ChenFlyingKick name="Flying Kick" desc="ChenFlyingKick" mana="10" cooldown="5">storm_ui_icon_chen_flyingkick.dds</ChenFlyingKick>
+        <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
+      </BasicAbility1>
+      <BasicAbility2>
+        <ChenKegSmash name="Keg Smash" desc="ChenKegSmash" mana="20" cooldown="5">storm_ui_icon_chen_kegsmash.dds</ChenKegSmash>
+        <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
+      </BasicAbility2>
+      <BasicAbility3>
+        <ChenBreathOfFire name="Breath of Fire" desc="ChenBreathOfFire" mana="30" cooldown="5">storm_ui_icon_chen_breathoffire.dds</ChenBreathOfFire>
+        <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
+      </BasicAbility3>
+      <HeroicAbility>
+        <ChenWanderingKeg talent="ChenHeroicAbilityWanderingKeg" />
+        <ChenStormEarthFire talent="ChenHeroicAbilityStormEarthFire" />
+      </HeroicAbility>
+      <TraitAbility>
+        <ChenFortifyingBrew name="Fortifying Brew" desc="ChenFortifyingBrew" cooldown="5">storm_ui_icon_chen_fortifyingbrew.dds</ChenFortifyingBrew>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

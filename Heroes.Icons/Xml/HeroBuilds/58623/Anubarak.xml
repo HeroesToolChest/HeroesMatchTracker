@@ -4,20 +4,20 @@
     <Roles>Warrior</Roles>
     <Abilities>
       <BasicAbility1>
-        <AlarakDiscordStrike name="" desc="" mana="" cooldown=""></AlarakDiscordStrike>
+        <AnubarakImpale name="Impale" desc="AnubarakImpale" mana="65" cooldown="12">storm_ui_icon_anubarak_impale.dds</AnubarakImpale>
       </BasicAbility1>
       <BasicAbility2>
-        <AlarakTelekinesis name="" desc="" mana="" cooldown=""></AlarakTelekinesis>
+        <AnubarakHardenCarapace name="Harden Carapace" desc="AnubarakHardenCarapace" mana="30" cooldown="7">storm_ui_icon_anubarak_hardencarapace_var1.dds</AnubarakHardenCarapace>
       </BasicAbility2>
       <BasicAbility3>
-        <AlarakLightningSurge name="" desc="" mana="" cooldown=""></AlarakLightningSurge>
+        <AnubarakBurrowCharge name="Burrow Charge" desc="AnubarakBurrowCharge" mana="65" cooldown="14">storm_ui_icon_anubarak_burrowcharge.dds</AnubarakBurrowCharge>
       </BasicAbility3>
       <HeroicAbility>
-        <AlarakCounterStrikeTargeted talent="" />
-        <AlarakDeadlyCharge talent="" />
+        <AnubarakCarrionSwarm talent="AnubarakHeroicAbilityCarrionSwarm" />
+        <AnubarakCocoon talent="AnubarakHeroicAbilityCocoon" />
       </HeroicAbility>
       <TraitAbility>
-        <AlarakSadism name="" desc="" mana="" cooldown=""></AlarakSadism>
+        <AnubarakScarabHostTrait name="Scarab Host" desc="AnubarakScarabHostTrait">storm_ui_icon_anubarak_scarabhost.dds</AnubarakScarabHostTrait>
       </TraitAbility>
     </Abilities>
     <Talents>

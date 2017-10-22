@@ -4,20 +4,20 @@
     <Roles>Warrior</Roles>
     <Abilities>
       <BasicAbility1>
-        <AlarakDiscordStrike name="" desc="" mana="" cooldown=""></AlarakDiscordStrike>
+        <ArtanisBladeDash name="Blade Dash" desc="ArtanisBladeDash" mana="65" cooldown="10">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDash>
       </BasicAbility1>
       <BasicAbility2>
-        <AlarakTelekinesis name="" desc="" mana="" cooldown=""></AlarakTelekinesis>
+        <ArtanisTwinBlades name="Twin Blades" desc="ArtanisTwinBlades" mana="25" cooldown="4">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBlades>
       </BasicAbility2>
       <BasicAbility3>
-        <AlarakLightningSurge name="" desc="" mana="" cooldown=""></AlarakLightningSurge>
+        <ArtanisPhasePrism name="Phase Prism" desc="ArtanisPhasePrism" mana="70" cooldown="16">storm_ui_icon_artanis_repositionmatrix.dds</ArtanisPhasePrism>
       </BasicAbility3>
       <HeroicAbilities>
-        <AlarakCounterStrikeTargeted talent="" />
-        <AlarakDeadlyCharge talent="" />
+        <ArtanisSpearofAdunSuppressionPulse talent="ArtanisHeroicAbilitySpearofAdunSuppressionPulse" />
+        <ArtanisSpearofAdunPurifierBeam talent="ArtanisHeroicAbilitySpearofAdunPurifierBeam" />
       </HeroicAbilities>
       <TraitAbility>
-        <AlarakSadism name="" desc="" mana="" cooldown=""></AlarakSadism>
+        <ArtanisShieldOverloadDummy name="Shield Overload" desc="ArtanisShieldOverloadTrait" cooldown="24">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadDummy>
       </TraitAbility>
     </Abilities>
     <Talents>

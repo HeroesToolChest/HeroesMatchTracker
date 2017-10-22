@@ -3,6 +3,22 @@
           portrait="storm_ui_ingame_heroselect_btn_auriel.dds" loading="storm_ui_ingame_hero_loadingscreen_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
     <Roles>Support</Roles>
     <Abilities>
+      <BasicAbility1>
+        <AurielSacredSweep name="Sacred Sweep" desc="AurielSacredSweep" cooldown="8">storm_ui_icon_auriel_angelicsweep.dds</AurielSacredSweep>
+      </BasicAbility1>
+      <BasicAbility2>
+        <AurielRayOfHeaven name="Ray Of Heaven" desc="AurielRayOfHeaven" cooldown="4">storm_ui_icon_auriel_rayofheaven.dds</AurielRayOfHeaven>
+      </BasicAbility2>
+      <BasicAbility3>
+        <AurielDetainmentStrike name="Detainment Strike" desc="AurielDetainmentStrike" cooldown="14">storm_ui_icon_auriel_restrainingblow.dds</AurielDetainmentStrike>
+      </BasicAbility3>
+      <HeroicAbility>
+        <AurielCrystalAegis talent="AurielHeroicResurrect" />
+        <AurielResurrect talent="AurielHeroicCrystalAegis" />
+      </HeroicAbility>
+      <TraitAbility>
+        <AurielBestowHope name="Bestow Hope" desc="AurielBestowHope" cooldown="1.5">storm_ui_icon_auriel_bestowhope.dds</AurielBestowHope>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

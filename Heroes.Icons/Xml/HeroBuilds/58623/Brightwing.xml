@@ -3,6 +3,25 @@
               portrait="storm_ui_ingame_heroselect_btn_faeriedragon.dds" loading="storm_ui_ingame_hero_loadingscreen_faeriedragon.dds" leader="storm_ui_ingame_hero_leaderboard_faeriedragon.dds">
     <Roles>Support</Roles>
     <Abilities>
+      <BasicAbility1>
+        <FaerieDragonArcaneFlare name="Arcane Flare" desc="BrightwingArcaneFlare" mana="35" cooldown="6">storm_ui_icon_brightwing_arcaneflare.dds</FaerieDragonArcaneFlare>
+      </BasicAbility1>
+      <BasicAbility2>
+        <FaerieDragonPolymorph name="Polymorph" desc="BrightwingPolymorph" mana="60" cooldown="12">storm_ui_icon_brightwing_polymorph.dds</FaerieDragonPolymorph>
+      </BasicAbility2>
+      <BasicAbility3>
+        <FaerieDragonPixieDust name="Pixie Dust" desc="BrightwingPixieDust" mana="60" cooldown="10">storm_ui_icon_brightwing_pixiedust.dds</FaerieDragonPixieDust>
+      </BasicAbility3>
+      <HeroicAbility>
+        <FaerieDragonBlinkHealDash talent="FaerieDragonHeroicAbilityBlinkHeal" />
+        <FaerieDragonEmeraldWind talent="FaerieDragonHeroicAbilityEmeraldWind" />
+      </HeroicAbility>
+      <TraitAbility>
+        <FaerieDragonSoothingMist name="Soothing Mist" desc="BrightwingSoothingMist">storm_ui_icon_brightwing_soothingmist.dds</FaerieDragonSoothingMist>
+      </TraitAbility>
+      <MountAbility>
+        <FaerieDragonPhaseShiftFlight name="Phase Shift" desc="BrightwingPhaseShift" cooldown="55">storm_ui_icon_brightwing_mount.dds</FaerieDragonPhaseShiftFlight>
+      </MountAbility>
     </Abilities>
     <Talents>
       <Level1>

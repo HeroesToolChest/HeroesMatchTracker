@@ -3,6 +3,22 @@
            portrait="storm_ui_ingame_heroselect_btn_butcher.dds" loading="storm_ui_ingame_hero_loadingscreen_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
     <Roles>Assassin</Roles>
     <Abilities>
+      <BasicAbility1>
+        <ButcherHamstring name="Hamstring" desc="ButcherHamstring" mana="40" cooldown="1">storm_ui_icon_butcher_hamstring.dds</ButcherHamstring>
+      </BasicAbility1>
+      <BasicAbility2>
+        <ButcherButchersBrand name="Butcher's Brand" desc="ButcherButchersBrand" mana="65" cooldown="14">storm_ui_icon_butcher_tenderize.dds</ButcherButchersBrand>
+      </BasicAbility2>
+      <BasicAbility3>
+        <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught" mana="55" cooldown="15">storm_ui_icon_butcher_fullboar.dds</ButcherRuthlessOnslaught>
+      </BasicAbility3>
+      <HeroicAbility>
+        <ButcherLambToTheSlaughter talent="ButcherHeroicAbilityButcherFurnaceBlast" />
+        <ButcherFurnaceBlast talent="ButcherHeroicAbilityLambToTheSlaughter" />
+      </HeroicAbility>
+      <TraitAbility>
+        <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">storm_ui_icon_butcher_freshmeat.dds</ButcherFreshMeat>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>
