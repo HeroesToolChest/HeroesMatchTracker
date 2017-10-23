@@ -3,6 +3,22 @@
           portrait="storm_ui_ingame_heroselect_btn_diablo.dds" loading="storm_ui_ingame_hero_loadingscreen_diablo.dds" leader="storm_ui_ingame_hero_leaderboard_diablo.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <DiabloShadowCharge name="Shadow Charge" desc="DiabloShadowCharge" mana="60" cooldown="12">storm_ui_icon_diablo_shadowcharge_var1.dds</DiabloShadowCharge>
+      </BasicAbility1>
+      <BasicAbility2>
+        <DiabloFireStomp name="Fire Stomp" desc="DiabloFireStomp" mana="40" cooldown="6">storm_ui_icon_diablo_firestomp.dds</DiabloFireStomp>
+      </BasicAbility2>
+      <BasicAbility3>
+        <DiabloOverpower name="Overpower" desc="DiabloOverpower" mana="60" cooldown="12">storm_ui_icon_diablo_overpower_var1.dds</DiabloOverpower>
+      </BasicAbility3>
+      <HeroicAbility>
+        <DiabloApocalypse talent="DiabloHeroicAbilityApocalypse" />
+        <DiabloLightningBreath talent="DiabloHeroicAbilityLightningBreath" />
+      </HeroicAbility>
+      <TraitAbility>
+        <DiabloBlackSoulstone name="Black Soulstone" desc="DiabloBlackSoulstone">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloBlackSoulstone>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

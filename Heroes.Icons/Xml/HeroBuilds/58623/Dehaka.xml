@@ -3,6 +3,25 @@
           portrait="storm_ui_ingame_heroselect_btn_dehaka.dds" loading="storm_ui_ingame_hero_loadingscreen_dehaka.dds" leader="storm_ui_ingame_hero_leaderboard_dehaka.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <DehakaDrag name="Drag" desc="DehakaDrag" mana="75" cooldown="15">storm_ui_icon_dehaka_drag.dds</DehakaDrag>
+      </BasicAbility1>
+      <BasicAbility2>
+        <DehakaDarkSwarm name="Dark Swarm" desc="DehakaDarkSwarm" mana="50" cooldown="10">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarm>
+      </BasicAbility2>
+      <BasicAbility3>
+        <DehakaBurrow name="Burrow" desc="DehakaBurrow" mana="65" cooldown="20">storm_ui_icon_dehaka_burrow.dds</DehakaBurrow>
+      </BasicAbility3>
+      <HeroicAbility>
+        <DehakaIsolation talent="DehakaHeroicAbilityIsolation" />
+        <DehakaAdaptation talent="DehakaHeroicAbilityAdaptation" />
+      </HeroicAbility>
+      <TraitAbility>
+        <DehakaEssenceCollection name="Essence Collection" desc="DehakaEssenceCollectionStore" cooldown="1">storm_ui_icon_dehaka_essencecollection.dds</DehakaEssenceCollection>
+      </TraitAbility>
+      <MountAbility>
+        <DehakaBrushstalker name="Brushstalker" desc="DehakaBrushstalker" cooldown="60">storm_ui_icon_dehaka_mount.dds</DehakaBrushstalker>
+      </MountAbility>
     </Abilities>
     <Talents>
       <Level1>

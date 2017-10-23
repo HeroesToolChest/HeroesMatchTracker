@@ -3,6 +3,22 @@
        portrait="storm_ui_ingame_heroselect_btn_etc.dds" loading="storm_ui_ingame_hero_loadingscreen_etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <L90ETCPowerslide name="Powerslide" desc="L90ETCPowerslide" mana="60" cooldown="12">storm_ui_icon_etc_powerslide.dds</L90ETCPowerslide>
+      </BasicAbility1>
+      <BasicAbility2>
+        <L90ETCFaceMelt name="Face Melt" desc="L90ETCFaceMelt" mana="50" cooldown="10">storm_ui_icon_etc_facemelt.dds</L90ETCFaceMelt>
+      </BasicAbility2>
+      <BasicAbility3>
+        <L90ETCGuitarSolo name="Guitar Solo" desc="L90ETCGuitarSolo" mana="40" cooldown="8">storm_ui_icon_etc_guitarsolo.dds</L90ETCGuitarSolo>
+      </BasicAbility3>
+      <HeroicAbility>
+        <L90ETCMoshPit talent="ETCHeroicAbilityMoshPit" />
+        <L90ETCStageDive talent="ETCHeroicAbilityStageDive" />
+      </HeroicAbility>
+      <TraitAbility>
+        <L90ETCRockstar name="Rockstar" desc="L90ETCRockstar">storm_ui_icon_etc_rockstar.dds</L90ETCRockstar>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

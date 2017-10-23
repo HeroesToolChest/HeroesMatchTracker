@@ -3,6 +3,22 @@
       portrait="storm_ui_ingame_heroselect_btn_garrosh.dds" loading="storm_ui_ingame_hero_loadingscreen_garrosh.dds" leader="storm_ui_ingame_hero_leaderboard_garrosh.dds">
     <Roles>Warrior</Roles>
     <Abilities>
+      <BasicAbility1>
+        <GarroshGroundbreaker name="Groundbreaker" desc="GarroshGroundbreaker" mana="35" cooldown="8">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreaker>
+      </BasicAbility1>
+      <BasicAbility2>
+        <GarroshBloodthirst name="Bloodthirst" desc="GarroshBloodthirst" mana="55" cooldown="12">storm_ui_icon_garrosh_bloodthirst.dds</GarroshBloodthirst>
+      </BasicAbility2>
+      <BasicAbility3>
+        <GarroshWreckingBall name="Wrecking Ball" desc="GarroshWreckingBall" mana="70" cooldown="16">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBall>
+      </BasicAbility3>
+      <HeroicAbility>
+        <GarroshWarlordsChallenge talent="GarroshHeroicAbilityWarlordsChallenge" />
+        <GarroshDecimate talent="GarroshHeroicAbilityDecimate" />
+      </HeroicAbility>
+      <TraitAbility>
+        <GarroshArmorUp name="Armor Up" desc="GarroshArmorUp">storm_ui_icon_garrosh_armor_up.dds</GarroshArmorUp>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

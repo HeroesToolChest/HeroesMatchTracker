@@ -3,6 +3,25 @@
            portrait="storm_ui_ingame_heroselect_btn_falstad.dds" loading="storm_ui_ingame_hero_loadingscreen_falstad.dds" leader="storm_ui_ingame_hero_leaderboard_falstad.dds">
     <Roles>Assassin</Roles>
     <Abilities>
+      <BasicAbility1>
+        <FalstadHammerang name="Hammerang" desc="FalstadHammerang" mana="70" cooldown="10">storm_ui_icon_falstad_hammerang.dds</FalstadHammerang>
+      </BasicAbility1>
+      <BasicAbility2>
+        <FalstadLightningRod name="Lightning Rod" desc="FalstadLightningRod" mana="70" cooldown="15">storm_ui_icon_falstad_lightningrod.dds</FalstadLightningRod>
+      </BasicAbility2>
+      <BasicAbility3>
+        <FalstadBarrelRoll name="Barrel Roll" desc="FalstadBarrelRoll" mana="75" cooldown="14">storm_ui_icon_falstad_barrelroll.dds</FalstadBarrelRoll>
+      </BasicAbility3>
+      <HeroicAbility>
+        <FalstadHinterlandBlast talent="FalstadHeroicAbilityHinterlandBlast" />
+        <FalstadMightyGust talent="FalstadHeroicAbilityMightyGust" />
+      </HeroicAbility>
+      <TraitAbility>
+        <FalstadTailwind name="Tailwind" desc="FalstadTailwind">storm_ui_icon_falstad_tailwind.dds</FalstadTailwind>
+      </TraitAbility>
+      <MountAbility>
+        <FalstadFlight name="Flight" desc="FalstadFlight" cooldown="55">storm_ui_icon_falstad_mount.dds</FalstadFlight>
+      </MountAbility>
     </Abilities>
     <Talents>
       <Level1>

@@ -354,7 +354,7 @@ ChenWanderingKeg=Roll around inside an Unstoppable barrel with <c val="#TooltipN
 ChenWanderingKegUntappedPotentialTalent=Wandering Keg increases Movement Speed by <c val="#TooltipNumbers">100%</c> and grants <c val="#TooltipNumbers">50</c> Armor, reducing damage taken by <c val="#TooltipNumbers">50%</c>.
 ChenWitheringFlames=Setting an enemy Hero on fire reduces their Spell Power by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">3</c> seconds.
 ChoCallousedHide=Ogre Hide also increases healing received by <c val="#TooltipNumbers">15%</c>.
-ChoConsumingBlaze=Ignite nearby enemies, dealing <c val="#TooltipNumbers"><VALUE></c> damage over <c val="#TooltipNumbers"><VALUE></c> seconds. Basic Attacking burning enemies re-Ignites them. Cho is healed for <c val="#TooltipNumbers"><VALUE></c> when an enemy is Ignited.
+ChoConsumingBlaze=Ignite nearby enemies, dealing <c val="#TooltipNumbers">150</c> damage over <c val="#TooltipNumbers">5</c> seconds. Basic Attacking burning enemies re-Ignites them. Cho is healed for <c val="#TooltipNumbers">40</c> when an enemy is Ignited.
 ChoConsumingFire=Consuming Blaze heals for <c val="#TooltipNumbers">150%</c> more when a Hero is Ignited.
 ChoCthunsGiftTalent=Cho's Basic Attack becomes ranged and slows targets by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2</c> seconds.
 ChoEnragedRegeneration=While Gall's Ogre Rage is active, Cho's Health Regeneration is increased by <c val="#TooltipNumbers">200%</c>.
@@ -365,16 +365,16 @@ ChoFuelForTheFlameTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="u
 ChoFuelForTheFlameToken=<c val="#TooltipQuest">Consuming Blaze Healing Bonus: </c><VALUE>%
 ChoHammerOfTwilight=Activate to swing the Hammer of Twilight, dealing <c val="#TooltipNumbers">150</c> damage, pushing enemies away, and Stuning them for <c val="#TooltipNumbers">0.75</c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Cho's Basic Attacks deal <c val="#TooltipNumbers">25%</c> increased damage.
 ChoHourofTwilight=Decreases Cho'gall's death timer by <c val="#TooltipNumbers">50%</c>.
-ChoOgreHideActivated=Activate to gain <c val="#TooltipNumbers"><VALUE></c> Armor, but reduce Gall's damage by <c val="#TooltipNumbers"><VALUE>%</c>.
+ChoOgreHideActivated=Activate to gain <c val="#TooltipNumbers">25</c> Armor, but reduce Gall's damage by <c val="#TooltipNumbers">25%</c>.
 ChoOgreHidePassive=Cho's Armor is increased by <c val="#TooltipNumbers"><VALUE></c>, but Gall's damage is reduced by <c val="#TooltipNumbers"><VALUE>%</c>.<n/><n/>Gall can activate Ogre Rage to grant himself <c val="#TooltipNumbers"><VALUE>%</c> increased damage, but remove this Armor bonus.
 ChoPowerSurgeTalent=Each Hero hit by Surging Fist reduces its cooldown by <c val="#TooltipNumbers">4</c> seconds.
 ChoRollbackTalent=Rune Bomb rolls back to Cho, damaging enemies in its path.
-ChoRuneBomb=Roll a bomb dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies in its path. Gall can use Runic Blast to detonate it to deal <c val="#TooltipNumbers"><VALUE></c> damage in an area.
+ChoRuneBomb=Roll a bomb dealing <c val="#TooltipNumbers">91</c> damage to enemies in its path. Gall can use Runic Blast to detonate it to deal <c val="#TooltipNumbers">233</c> damage in an area.
 ChoRunedGauntletTalent=Basic Attacks reduce the cooldown of Cho and Gall's Heroic Abilities by <c val="#TooltipNumbers">0.75</c> seconds.
 ChoRunicFeedbackTalent=Gall's Runic Blast reduces Cho's Rune Bomb cooldown by <c val="#TooltipNumbers">1</c> seconds per enemy hit, and <c val="#TooltipNumbers">2</c> seconds for each Hero hit.
 ChoSearedFleshTalent=Each consecutive Basic Attack to an enemy Hero deals <c val="#TooltipNumbers">20%</c> more damage, to a maximum of <c val="#TooltipNumbers">60%</c> damage. This bonus lasts <c val="#TooltipNumbers">5</c> seconds or until a different enemy is attacked.
 ChoSurgingDashTalent=While channeling Surging Fist, Cho is Unstoppable and heals for <c val="#TooltipNumbers">150</c> Health per second.
-ChoSurgingFist=Activate to begin charging Surging Fist. Activate again to dash forward, knocking aside enemies and dealing <c val="#TooltipNumbers"><VALUE></c> damage. The dash range increases by up to <c val="#TooltipNumbers">250%</c>, depending on how long it is charged.
+ChoSurgingFist=Activate to begin charging Surging Fist. Activate again to dash forward, knocking aside enemies and dealing <c val="#TooltipNumbers">46</c> damage. The dash range increases by up to <c val="#TooltipNumbers">250%</c>, depending on how long it is charged.
 ChoTalentMoltenBlock=Activate to enter Stasis and gain Invulnerability for <c val="#TooltipNumbers">3</c> seconds, damaging nearby enemies for <c val="#TooltipNumbers">92</c> damage per second.
 ChoTheWillofCho=Takedowns permanently increase the Armor granted by Ogre Hide by <c val="#TooltipNumbers">2</c>, to a max of <c val="#TooltipNumbers">50</c> extra Armor.
 ChoTheWillofChoToken=<c val="#TooltipQuest">Ogre Hide Bonus Armor: </c><VALUE>
@@ -392,7 +392,7 @@ ChromieHereAndThere=Activate to swap Chromie's position with her Sand Blast Echo
 ChromiePortBackToBaseByeBye=Reduce the cast time of Hearthstone by <c val="#TooltipNumbers">75%</c>, and it is not interrupted by taking damage.
 ChromieQuantumOverdrive=Activate to increase Spell Power by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">10</c> seconds.
 ChromieReachingThroughTime=Increases Sand Blast and Dragon’s Breath's range by <c val="#TooltipNumbers">15%</c>.
-ChromieSandBlast=After <c val="#TooltipNumbers">1</c> second, fire a missile that deals <c val="#TooltipNumbers">300</c> damage to the first enemy Hero hit.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">60</c> Heroes with Sand Blast. Consecutive hits without missing count as hitting <c val="#TooltipNumbers">2</c> Heroes.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Each Hero hit increases Sand Blast's damage by <c val="#TooltipNumbers">5</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">80</c> Heroes, casting Sand Blast leaves an Echo behind.  The next time Sand Blast is cast, the Echo also casts an untalented Sand Blast that deals <c val="#TooltipNumbers">40%</c> damage.
+ChromieSandBlast=After <c val="#TooltipNumbers">1</c> second, fire a missile that deals <c val="#TooltipNumbers">300</c> damage to the first enemy Hero hit.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">60</c> Heroes with Sand Blast. Consecutive hits without missing count as hitting <c val="#TooltipNumbers">2</c> Heroes.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Each Hero hit increases Sand Blast's damage by <c val="#TooltipNumbers">5</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">60</c> Heroes, casting Sand Blast leaves an Echo behind.  The next time Sand Blast is cast, the Echo also casts an untalented Sand Blast that deals <c val="#TooltipNumbers">40%</c> damage.
 ChromieSandBlastFastForward=If Sand Blast travels at least <c val="#TooltipNumbers">75%</c> of its base distance and hits a Hero, its cooldown is reduced to <c val="#TooltipNumbers">0.75</c> seconds.
 ChromieSandBlastMountingSand=Hitting <c val="#TooltipNumbers">3</c> or more consecutive Sand Blasts without missing counts as hitting <c val="#TooltipNumbers">3</c> Heroes.
 ChromieSandBlastMountingSandTokenTracker=<c val="#TooltipQuest">Bonus hits gained:</c> <c val="#TooltipNumbers"><VALUE></c>
@@ -439,18 +439,18 @@ CrusaderSubdueTalent=Hitting <c val="#TooltipNumbers">2</c> or more Heroes at th
 CrusaderZealousGlare=Increase the Blind duration of Shield Glare by <c val="#TooltipNumbers">0.5</c> seconds. Johanna's Basic Attacks against Heroes with Shield Glare extend its duration by <c val="#TooltipNumbers">1</c> second, up to a maximum of <c val="#TooltipNumbers">3</c> seconds.
 DehakaAdaptation=After <c val="#TooltipNumbers">4</c> seconds, heal for <c val="#TooltipNumbers">100%</c> of the damage Dehaka took over this period.
 DehakaAdaptationChangeIsSurvivalTalent=Increases Adaptation healing to <c val="#TooltipNumbers">200%</c> of the damage received and reduces the cooldown by <c val="#TooltipNumbers">30</c> seconds.
-DehakaBrushstalker=Activate to burrow to a bush on the Battleground.<n/><n/><c val="#AbilityPassive">Passive:</c> Gain <c val="#TooltipNumbers"><VALUE>%</c> movement speed while in a bush and for <c val="#TooltipNumbers"><VALUE></c> seconds after leaving.
+DehakaBrushstalker=Activate to burrow to a bush on the Battleground.<n/><n/><c val="#AbilityPassive">Passive:</c> Gain <c val="#TooltipNumbers">20%</c> movement speed while in a bush and for <c val="#TooltipNumbers">2</c> seconds after leaving.
 DehakaBrushstalkerApexPredatorTalent=Reduces Brushstalker's cooldown by <c val="#TooltipNumbers">25</c> seconds and the cast time by <c val="#TooltipNumbers">0.5</c> seconds.
 DehakaBrushstalkerFerociousStalkerTalent=Dark Swarm deals <c val="#TooltipNumbers">40%</c> more damage while Brushstalker's Movement Speed bonus is active.
-DehakaBurrow=Burrow into the ground, entering Stasis and becoming Invulnerable for <C val="#TooltipNumbers"><VALUE></c> seconds.
+DehakaBurrow=Burrow into the ground, entering Stasis and becoming Invulnerable for <C val="#TooltipNumbers">2</c> seconds.
 DehakaBurrowImprovedBurrowTalent2=While Burrowed you can move at <c val="#TooltipNumbers"><VALUE>%</c> movement speed. 
 DehakaBurrowTalentLurkerStrain=Emerging from Burrow grants Dehaka Stealth for <c val="#TooltipNumbers">3</c> seconds and also knocks nearby enemies back, Slowing them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2</c> seconds.
 DehakaCancelBurrow=Cancels Burrow
-DehakaDarkSwarm=Deal <c val="#TooltipNumbers"><VALUE></c> damage every <c val="#TooltipNumbers"><VALUE></c> seconds to nearby enemies for <c val="#TooltipNumbers"><VALUE></c> seconds. While active, you are able to move through units. Can be cast during Drag and Burrow.
+DehakaDarkSwarm=Deal <c val="#TooltipNumbers">47</c> damage every <c val="#TooltipNumbers">0.5</c> seconds to nearby enemies for <c val="#TooltipNumbers">3.5</c> seconds. While active, you are able to move through units. Can be cast during Drag and Burrow.
 DehakaDarkSwarmTalentEnduringSwarm=Dark Swarm grants <c val="#TooltipNumbers">40</c> Spell Armor while active.
 DehakaDarkSwarmTalentPrimalAggression=Dark Swarm duration increased by <c val="#TooltipNumbers">.5</c> seconds and it deals <c val="#TooltipNumbers">90%</c> bonus damage to Minions and Mercenaries. 
 DehakaDarkSwarmTalentSymbiosis=Every time Dark Swarm damages an enemy Hero, reduce its cooldown by <c val="#TooltipNumbers">0.4</c> seconds.
-DehakaDrag=Dehaka lashes out his tongue, dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit, stunning and dragging them with him for <C val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>If Dehaka is stunned or silenced while using Drag, the effect ends.
+DehakaDrag=Dehaka lashes out his tongue, dealing <c val="#TooltipNumbers">160</c> damage to the first enemy hit, stunning and dragging them with him for <C val="#TooltipNumbers">1.75</c> seconds.<n/><n/>If Dehaka is stunned or silenced while using Drag, the effect ends.
 DehakaDragTalentConstriction=Increases Drag duration by <c val="#TooltipNumbers">0.5</c> seconds.
 DehakaDragTalentElongatedTongue=Increase Drag range by <c val="#TooltipNumbers">20%</c>.
 DehakaDragTalentFeedingFrenzy=Basic Attacks reduce Drag's cooldown by <c val="#TooltipNumbers">2</c> seconds.
@@ -458,7 +458,7 @@ DehakaDragTalentParalyzingEnzymes=Drag slows enemies by <c val="#TooltipNumbers"
 DehakaEssenceClaws=Dehaka's Basic Attacks slow the target by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">1</c> second. If the target is a Hero, Dehaka gains <c val="#TooltipNumbers">5</c> Essence.
 DehakaEssenceCollection=Gain <c val="#TooltipNumbers"><VALUE></c> Essence from Takedowns and <c val="#TooltipNumbers"><VALUE></c> Essence from nearby Minions dying.  Activate to consume all Essence and heal Dehaka for <c val="#TooltipNumbers"><VALUE></c> Health over <c val="#TooltipNumbers"><VALUE></c> seconds for each Essence stored.  Maximum of <c val="#TooltipNumbers">50</c> Essence.  Can be cast during Drag and Burrow.
 DehakaEssenceCollectionOneWhoCollectsTalent=Increases Essence collected from Minions by <c val="#TooltipNumbers">50%</c>.
-DehakaEssenceCollectionStore=Killing an enemy Hero will grant <C val="#TooltipNumbers"><VALUE></c> Essence and Minion kills grant <C val="#TooltipNumbers"><VALUE></c> Essence. Each Essence consumed heals <C val="#TooltipNumbers"><VALUE></c> health over <C val="#TooltipNumbers"><VALUE></c> seconds. A maximum of <C val="#TooltipNumbers">50</c> Essence can be stored. Can be cast while channeling.
+DehakaEssenceCollectionStore=Killing an enemy Hero will grant <C val="#TooltipNumbers">10</c> Essence and Minion kills grant <C val="#TooltipNumbers">2</c> Essence. Each Essence consumed heals <C val="#TooltipNumbers">29</c> health over <C val="#TooltipNumbers">5</c> seconds. A maximum of <C val="#TooltipNumbers">50</c> Essence can be stored. Can be cast while channeling.
 DehakaEssenceCollectionTalentEnhancedAgility=Brushstalker's Movement Speed bonus now lasts for <c val="#TooltipNumbers">5</c> seconds after leaving a bush.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Repeatable Quest:</c> Every <c val="#TooltipNumbers">50</c> Essence collected permanently increases the Movement Speed bonus of Brushstalker by <c val="#TooltipNumbers">2%</c>, up to <c val="#TooltipNumbers">20%</c>.
 DehakaEssenceCollectionTalentEssenceDevourer=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Gathering Regeneration Globes grant <c val="#TooltipNumbers">10</c> Essence and increases maximum Essence by <c val="#TooltipNumbers">1</C>, up to <c val="#TooltipNumbers">10</C>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After collecting <c val="#TooltipNumbers">10</C>, Regeneration Globes will instead grant <c val="#TooltipNumbers">15</c> Essence.
 DehakaEssenceCollectionTalentHeroStalker=Increases Essence gained from Takedowns by <c val="#TooltipNumbers">100%</c>.
@@ -499,7 +499,7 @@ DemonHunterVaultRepeatingArrowTalent=The cooldown for Hungering Arrow is reset w
 DemonHunterVaultTumbleTalent=Vault gains an additional charge, allowing it to be cast twice in quick succession.
 DiabloApocalypse=Create a demonic rune under each enemy Hero on the battleground. After <c val="#TooltipNumbers">1.75</c> seconds the rune explodes dealing <c val="#TooltipNumbers">137</c> damage and stunning them for <c val="#TooltipNumbers">1.75</c> seconds.
 DiabloApocalypseDyingBreathTalent=Apocalypse's cooldown is reduced by <c val="#TooltipNumbers">20</c> seconds and is cast for free when Diablo dies.
-DiabloBlackSoulstone=Gain <c val="#TooltipNumbers">10</c> Souls per Hero killed and <c val="#TooltipNumbers">1</c> Soul per Minion, up to <c val="#TooltipNumbers">100</c>. For each Soul, gain <c val="#TooltipNumbers"><VALUE>%</w></c> maximum Health. If Diablo has <c val="#TooltipNumbers">100</c> Souls upon dying, he will resurrect in <c val="#TooltipNumbers">5</c> seconds but lose <c val="#TooltipNumbers">100</c> Souls.
+DiabloBlackSoulstone=Gain <c val="#TooltipNumbers">10</c> Souls per Hero killed and <c val="#TooltipNumbers">1</c> Soul per Minion, up to <c val="#TooltipNumbers">100</c>. For each Soul, gain <c val="#TooltipNumbers">0.4%</c> maximum Health. If Diablo has <c val="#TooltipNumbers">100</c> Souls upon dying, he will resurrect in <c val="#TooltipNumbers">5</c> seconds but lose <c val="#TooltipNumbers">100</c> Souls.
 DiabloBlackSoulstoneDevilsDueTalent=Black Soulstone increases the effects of Regen Globes and Healing Fountains by <c val="#TooltipNumbers">2% </c>per Soul.
 DiabloBlackSoulstoneSoulFeastTalent=Black Soulstone increases Diablo's Health Regeneration by <c val="#TooltipNumbers">0.4</c> per second per Soul.
 DiabloBulwark=Increases the duration of Armor granted by Shadow Charge from <c val="#TooltipNumbers">2</c> seconds to <c val="#TooltipNumbers">4</c> seconds.
@@ -507,7 +507,7 @@ DiabloDebilitatingFlames=Enemy Heroes hit by Fire Stomp are slowed by <c val="#T
 DiabloDevastatingCharge=Shadow Charge's terrain collision against Heroes deals an additional <c val="#TooltipNumbers">5%</c> of the target's maximum life.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Each time an enemy Hero takes terrain collision damage, increase the maximum life damage by <c val="#TooltipNumbers">2%</c>, to a maximum of <c val="#TooltipNumbers">10%</c> bonus.
 DiabloDiabolicalMomentum=Basic Attacks reduce the cooldown of Overpower and Shadow Charge by <c val="#TooltipNumbers">1.5</c> seconds.
 DiabloFearfulPresence=Activate to reduce the damage dealt by nearby enemy Heroes by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds.<n/><n/><c val="#AbilityPassive">Passive:</c> Heroes and Summons that attack Diablo have their Attack Speed slowed by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2.5 </c>seconds.
-DiabloFireStomp=Unleashes fire waves in all directions that deal <c val="#TooltipNumbers"><VALUE></c> damage each. Once they reach maximum range they return, dealing an additional <c val="#TooltipNumbers"><VALUE></c> damage.
+DiabloFireStomp=Unleashes fire waves in all directions that deal <c val="#TooltipNumbers">54</c> damage each. Once they reach maximum range they return, dealing an additional <c val="#TooltipNumbers">81</c> damage.
 DiabloFirestompFireDevilTalent=Fire Stomp increases Diablo's Basic Attack damage by <c val="#TooltipNumbers">20%</c> and surrounds Diablo in flames that deal <c val="#TooltipNumbers">20</c> damage every second. Lasts <c val="#TooltipNumbers">6</c> seconds.
 DiabloHellfire=Each enemy Hero hit by Fire Stomp increases the damage of the next Fire Stomp by <c val="#TooltipNumbers">12%</c>, up to <c val="#TooltipNumbers">120%</c>.
 DiabloHellgateTalent=Teleport and place a demonic rune at target location. After <c val="#TooltipNumbers">1.75</c> seconds the rune explodes dealing <c val="#TooltipNumbers">137</c> damage and stunning enemies for <c val="#TooltipNumbers">1.75</c> seconds.
@@ -515,10 +515,10 @@ DiabloLifeLeechTalent=Basic Attacks against enemy Heroes deal bonus damage equal
 DiabloLightningBreath=Become Unstoppable while channeling lightning that deals <c val="#TooltipNumbers">800</c> damage over <c val="#TooltipNumbers">4</c> seconds.  The direction of the Lightning changes with your mouse cursor position.
 DiabloLightningBreathHellstormTalent=Lightning Breath lasts and reaches <c val="#TooltipNumbers">50%</c> longer.
 DiabloLordOfTerror=Activate to steal <c val="#TooltipNumbers">10%</c> of the maximum Health of nearby enemy Heroes.
-DiabloOverpower=Grabs the target and slams it behind Diablo, dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning for <c val="#TooltipNumbers"><VALUE></c> seconds.
+DiabloOverpower=Grabs the target and slams it behind Diablo, dealing <c val="#TooltipNumbers">73</c> damage and stunning for <c val="#TooltipNumbers">0.25</c> seconds.
 DiabloOverpowerDemonicStrengthTalent=Once Overpower's stun expires, the target is slowed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds.
 DiabloOverpowerDominationTalent=Casting Overpower resets the cooldown of Shadow Charge.
-DiabloShadowCharge=Charge an enemy, knocking them back, dealing <c val="#TooltipNumbers"><VALUE></c> damage and gaining <c val="#TooltipNumbers"><VALUE></c> Armor for <c val="#TooltipNumbers"><VALUE></c> seconds, reducing damage taken by <c val="#TooltipNumbers"><VALUE>%</c>. If the enemy collides with terrain, they are stunned for <c val="#TooltipNumbers"><VALUE></c> second and take an additional <c val="#TooltipNumbers"><VALUE></c> damage.
+DiabloShadowCharge=Charge an enemy, knocking them back, dealing <c val="#TooltipNumbers">75</c> damage and gaining <c val="#TooltipNumbers">25</c> Armor for <c val="#TooltipNumbers">2</c> seconds, reducing damage taken by <c val="#TooltipNumbers">25%</c>. If the enemy collides with terrain, they are stunned for <c val="#TooltipNumbers">1</c> second and take an additional <c val="#TooltipNumbers">150</c> damage.
 DiabloShadowChargeFromTheShadowsTalent=Increases the cast range of Shadow Charge by <c val="#TooltipNumbers">40%</c>.
 DiabloSoulShield=Black Soulstone grants Diablo <c val="#TooltipNumbers">0.25</c> Spell Armor per soul, reducing Ability Damage taken by <c val="#TooltipNumbers">0.25%</c> per Soul.
 DiabloSpeedDemon=Being Stunned or Rooted increases Diablo's Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">5</c> seconds.
@@ -569,22 +569,24 @@ DVaDefenseMatrixDivertingPower=The area of Defense Matrix is <c val="#TooltipNum
 DVaDefenseMatrixFusionGenerator=Every time an enemy Hero deals damage while inside Defense Matrix, D.Va's Self-Destruct Charge increases by <c val="#TooltipNumbers">1%</c>.<n/><n/>Max of <c val="#TooltipNumbers">15%</c> Charge gained per use.
 DVaDefenseMatrixGetThroughThis=Increase the duration of Defense Matrix by <c val="#TooltipNumbers">3</c> seconds.
 DVaMechAblativeArmor=Damage against D.Va's Mech that would deal <c val="#TooltipNumbers">4%</c> or less of its maximum Health is reduced by <c val="#TooltipNumbers">50%</c>.<n/><n/>This does not decrease the amount of Self-Destruct Charge gained.
-DVaMechBoosters=Increase D.Va's Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds. Enemies that are hit take <c val="#TooltipNumbers"><VALUE></c> damage and are knocked away. <n/><n/>D.Va cannot be Slowed while Boosters are active, and each enemy can only be hit once per use.
-DVaMechDefenseMatrix=Channel a defensive field in the target direction for <c val="#TooltipNumbers"><VALUE></c> seconds, reducing the damage dealt by enemy Heroes inside it by <c val="#TooltipNumbers"><VALUE>%</c>. The Mech can move while channeling, but cannot turn.<n/><n/>Damage dealt to the Mech from enemies within Defense Matrix still grants the same amount of Self-Destruct Charge.
+DVaMechBoosters=Increase D.Va's Movement Speed by <c val="#TooltipNumbers">125%</c> for <c val="#TooltipNumbers">2</c> seconds. Enemies that are hit take <c val="#TooltipNumbers">135</c> damage and are knocked away. <n/><n/>D.Va cannot be Slowed while Boosters are active, and each enemy can only be hit once per use.
+DVaMechDefenseMatrix=Channel a defensive field in the target direction for <c val="#TooltipNumbers">3</c> seconds, reducing the damage dealt by enemy Heroes inside it by <c val="#TooltipNumbers">75%</c>. The Mech can move while channeling, but cannot turn.<n/><n/>Damage dealt to the Mech from enemies within Defense Matrix still grants the same amount of Self-Destruct Charge.
 DVaMechDefenseMatrixFace=Reduce damage of enemy Heroes in an area
 DVaMechEmergencyShielding=When D.Va's Mech would be destroyed, it instead gains a Shield that absorbs <c val="#TooltipNumbers">210</c> damage over <c val="#TooltipNumbers">6</c> seconds.<n/></n>This effect has a <c val="#TooltipNumbers">15</c> second cooldown.
 DVaMechExpensivePlating=Increase Mech Health by <c val="#TooltipNumbers">20%</c>, but also increase the cooldown of Call Mech by <c val="#TooltipNumbers">15</c> seconds.<n/><n/>This does not decrease the amount of Self-Destruct Charge gained.
 DVaMechMEKAout=While in her Mech, D.Va can shoot while moving, but her Movement Speed is reduced by <c val="#TooltipNumbers"><VALUE>%</c>.
-DVaMechMechMode=When D.Va's Mech dies, she is ejected out after <c val="#TooltipNumbers"><VALUE></c> seconds and can continue to fight. D.Va's Mech only awards <c val="#TooltipNumbers">50%</c> of a normal Hero's experience upon dying.
+DVaMechMechMode=When D.Va's Mech dies, she is ejected out after <c val="#TooltipNumbers">0.75</c> seconds and can continue to fight. D.Va's Mech only awards <c val="#TooltipNumbers">50%</c> of a normal Hero's experience upon dying.
 DVaMechProMoves=D.Va's Mech gains <c val="#TooltipNumbers">2%</c> Movement Speed for <c val="#TooltipNumbers">1.5</c> seconds every time it takes damage, up to <c val="#TooltipNumbers">30%</c>.
-DVaMechSelfDestruct=Eject from the Mech, setting it to self-destruct after <c val="#TooltipNumbers"><VALUE></c> seconds. Deals <c val="#TooltipNumbers"><VALUE></c> to <c val="#TooltipNumbers"><VALUE></c> damage in a large area, depending on distance from center. Only deals <c val="#TooltipNumbers"><VALUE>%</c> damage against Structures.</n></n><c val="FF8000">Gain <c val="#TooltipNumbers">1%</c> Charge for every <c val="#TooltipNumbers">2</c> seconds spent Basic Attacking, and <c val="#TooltipNumbers">30%</c> Charge per <c val="#TooltipNumbers">100%</c> of Mech Health lost.</c>
+DVaMechSelfDestruct=Eject from the Mech, setting it to self-destruct after <c val="#TooltipNumbers">4</c> seconds. Deals <c val="#TooltipNumbers">400</c> to <c val="#TooltipNumbers">1200</c> damage in a large area, depending on distance from center. Only deals <c val="#TooltipNumbers">50%</c> damage against Structures.</n></n><c val="FF8000">Gain <c val="#TooltipNumbers">1%</c> Charge for every <c val="#TooltipNumbers">2</c> seconds spent Basic Attacking, and <c val="#TooltipNumbers">30%</c> Charge per <c val="#TooltipNumbers">100%</c> of Mech Health lost.</c>
 DVaPilotBigShot=Deal <c val="#TooltipNumbers">250</c> damage to all enemies in a line. The cooldown of Call Mech is reduced by <c val="#TooltipNumbers">8</c> seconds for each enemy Hero hit.<n/><n/>Requires Pilot Mode.
+DVaPilotCallMech=Call a new Mech and enter Mech Mode.<n/><n/>Basic Attacks lower this cooldown by <c val="#TooltipNumbers">0.5</c> seconds each.
 DVaPilotCallMechMEKAfall=Call Mech now loads it's pilot instantly and is targeted. Upon landing, it deals x damage to any enemies in the impact area.
 DVaPilotCallMechMEKAfallTalent=Call Mech is instant and can target a location. Upon landing, the Mech deals <c val="#TooltipNumbers">202</c> damage to enemies in the impact area.
 DVaPilotConcussivePulseAbility=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies in a cone and knock them back.
 DVaPilotConcussivePulseTalent=D.Va gains the Concussive Pulse ability, allowing her to deal <c val="#TooltipNumbers">141</c> damage to enemies in a cone and knock them back.<n/><n/>Requires Pilot Mode.
 DVaPilotGGWP=Increase Pilot Mode Basic Attack damage by <c val="#TooltipNumbers">50%</c>. Participating in a Takedown while in Pilot Mode instantly refreshes the cooldown of Call Mech.
 DVaPilotNanoweaveSuit=For <c val="#TooltipNumbers">4</c> seconds after ejecting from her Mech, D.Va gains <c val="#TooltipNumbers">50</c> Armor and her Basic Attacks grant <c val="#TooltipNumbers">50%</c> more cooldown reduction towards Call Mech.
+DVaPilotPilotMode=Basic Attacks reduce the cooldown of Call Mech by <c val="#TooltipNumbers">0.5</c> seconds. As a Pilot, D.Va only awards <c val="#TooltipNumbers">50%</c> of a normal Hero's experience upon dying.
 DVaPilotSuppressingFire=Pilot Mode Basic Attacks have <c val="#TooltipNumbers">20%</c> increased range and Slow enemy Movement Speed by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2.5</c> seconds.
 DVaPilotTorpedoDashAbility=Dash towards the target location, passing through enemies along the way.
 DVaPilotTorpedoDashTalent=D.Va gains the Torpedo Dash ability, allowing her to dash forward and pass through enemies.<n/><n/>Requires Pilot Mode.
@@ -608,7 +610,7 @@ FaerieDragonPixieCharm=Each time Brightwing heals an Allied Hero with Soothing M
 FaerieDragonPixieCharmTalent=Each time Brightwing heals an Allied Hero with Soothing Mist, she gains a stack of Bribe. Use <c val="#TooltipNumbers">20</c> stacks to bribe a Mercenary, instantly defeating them. Does not work on Bosses. Maximum of <c val="#TooltipNumbers">80</c> stacks.
 FaerieDragonPixieCharmTalentToken=<c val="#TooltipQuest">Allies healed: </c><VALUE>/<VALUE>
 FaerieDragonPixieCharmToken=<c val="#TooltipQuest">Allies healed with Soothing Mist:</c> <c val="#TooltipNumbers"><VALUE>/<VALUE></c></c>
-FalstadBarrelRoll=Dashes forward and grants a <c val="#TooltipNumbers"><VALUE></c> point Shield for <c val="#TooltipNumbers"><VALUE></c> seconds.
+FalstadBarrelRoll=Dashes forward and grants a <c val="#TooltipNumbers">171</c> point Shield for <c val="#TooltipNumbers">3</c> seconds.
 FalstadBarrelRollAfterburnerTalent=Barrel Roll increases Movement Speed by <c val="#TooltipNumbers">60%</c>, decaying over <c val="#TooltipNumbers">3</c> seconds.
 FalstadBarrelRollUpdraftTalent=Increases Barrel Roll's range, Shield amount, and Shield duration by <c val="#TooltipNumbers">40%</c>.
 FalstadChargedUpTalent=Increases the number of Lightning Rod strikes by <c val="#TooltipNumbers">2</c> and its range by <c val="#TooltipNumbers">25%</c>. 
@@ -618,18 +620,18 @@ FalstadFlowRiderTalent=While Tailwind is active, Falstad's Basic Abilities recha
 FalstadFreeRollTalent=Barrel Roll costs no Mana.
 FalstadGatheringStormTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Every time Hammerang hits a Hero increase its damage by <c val="#TooltipNumbers">1.5</c>.
 FalstadHammerGainsTalent=Basic Attacks heal for <c val="#TooltipNumbers">20%</c> of the damage dealt to the primary target.
-FalstadHammerang=Throw out a Hammer that returns to Falstad, dealing <c val="#TooltipNumbers"><VALUE></c> damage and slowing enemies by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+FalstadHammerang=Throw out a Hammer that returns to Falstad, dealing <c val="#TooltipNumbers">121</c> damage and slowing enemies by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
 FalstadHammerangBOOMerangActive=Deal <c val="#TooltipNumbers"><VALUE></c> additional damage in a small area around the hammer.
 FalstadHammerangBOOMerangTalent=Reactivate Hammerang mid-flight to deal <c val="#TooltipNumbers">165</c> damage around the hammer.
 FalstadHammerangCripplingHammerTalent=Increases Hammerang's slow from <c val="#TooltipNumbers">25%</c> to <c val="#TooltipNumbers">50%</c>.
 FalstadHinterlandBlast=After <c val="#TooltipNumbers">1</c> second, deal <c val="#TooltipNumbers">475</c> damage to enemies within a long line. The cooldown is reduced by <c val="#TooltipNumbers">25</c> seconds for every enemy Hero hit.
 FalstadHinterlandBlastCalloftheWildhammerTalent=Hinterland Blast has double the range and deals <c val="#TooltipNumbers">25%</c> more damage.
-FalstadLightningRod=Deal <c val="#TooltipNumbers"><VALUE></c> damage to an enemy, and an additional <c val="#TooltipNumbers"><VALUE></c> damage per second for <c val="#TooltipNumbers"><VALUE></c> seconds while close to the target.
+FalstadLightningRod=Deal <c val="#TooltipNumbers">107</c> damage to an enemy, and an additional <c val="#TooltipNumbers">75</c> damage per second for <c val="#TooltipNumbers">4</c> seconds while close to the target.
 FalstadMightyGust=Push enemies away, and slow their Movement Speed by <c val="#TooltipNumbers">40%</c> decaying over <c val="#TooltipNumbers">4</c> seconds.
 FalstadPowerThrowTalent=Increase the range and slow duration of Hammerang by <c val="#TooltipNumbers">40%</c>.
 FalstadSecretWeaponTalent=Increases Hammerang's range by <c val="#TooltipNumbers">30%</c> and Basic Attacks deal <c val="#TooltipNumbers">60%</c> bonus damage while Hammerang is in flight.
 FalstadStaticShieldTalent=Gain a Shield equal to <c val="#TooltipNumbers">4%</c> of Falstad's maximum Health after every Lightning Rod strike. Lasts <c val="#TooltipNumbers">4</c> seconds and stacks.
-FalstadTailwind=Gain <c val="#TooltipNumbers"><VALUE>%</c> increased Movement Speed after not taking damage for <c val="#TooltipNumbers"><VALUE></c> seconds.
+FalstadTailwind=Gain <c val="#TooltipNumbers">15%</c> increased Movement Speed after not taking damage for <c val="#TooltipNumbers">6</c> seconds.
 FalstadTailwindAerieGustsTalent=Reduces the activation time for Tailwind from <c val="#TooltipNumbers">6</c> to <c val="#TooltipNumbers">3</c> seconds, and increases the Movement Speed bonus from <c val="#TooltipNumbers">15%</c> to <c val="#TooltipNumbers">25%</c>.
 FalstadThunderstrikesTalent=Lightning Rod deals <c val="#TooltipNumbers">20%</c> more damage each subsequent strike.
 FalstadWindTunnelTalent=Mighty Gust creates a wind tunnel for <c val="#TooltipNumbers">4</c> seconds. Enemies caught in the tunnel will periodically be pushed back.
@@ -644,37 +646,37 @@ GallDoubleBackAbility=Activate to reverse the third bounce's direction.
 GallDoubleBackTalent=Activate Dread Orb before the second bounce ends to reverse the direction of the third bounce.<n/><n/><c val="#AbilityPassive">Passive:</c> The third bounce of Dread Orb deals <c val="#TooltipNumbers">200%</c> more damage to Non-Heroic targets. 
 GallDoubleTroubleTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> If Shadowflame hits an enemy Hero that is afflicted by Cho's Consuming Blaze, its cooldown is reduced by <c val="#TooltipNumbers">1</c> second.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After hitting <c val="#TooltipNumbers">20</c> Heroes, Shadowflame's cooldown is instead permanently reduced by <c val="#TooltipNumbers">1</c> second.
 GallDoubleTroubleToken=<c val="#TooltipQuest">Consuming Blaze Targets Damaged: </c><VALUE>/<VALUE>
-GallDreadOrb=Throw a bomb that will bounce three times, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies.
+GallDreadOrb=Throw a bomb that will bounce three times, dealing <c val="#TooltipNumbers">126</c> damage to enemies.
 GallEdgeOfMadnessTalent=Every subsequent hit of Shadowflame against the same enemy Hero deals an additional <c val="#TooltipNumbers">8%</c> damage, to a maximum of <c val="#TooltipNumbers">40%</c>. These bonuses are lost if the Hero has not been hit for <c val="#TooltipNumbers">4</c> seconds.
 GallEyeofKilroggHotbar=Place an eye, granting vision of a large area around it for <c val="#TooltipNumbers"><VALUE></c> seconds. The eye can be killed by enemies with <c val="#TooltipNumbers"><VALUE></c> Basic Attacks. Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
 GallKeepMoving=Increases the duration of Shove's movement speed bonus by <c val="#TooltipNumbers">1</c> second. Cho's Basic Attacks against Heroes increases the duration of an active Shove by <c val="#TooltipNumbers">1</c> second.
 GallLeadenOrb=Dread Orb stuns enemy Heroes for <c val="#TooltipNumbers">0.5</c> seconds.
-GallOgreRageActivated=Activate to increase Gall's damage by <c val="#TooltipNumbers"><VALUE>%</c>, but reduce Cho's Armor by <c val="#TooltipNumbers"><VALUE></c>.<n/><n/><c val="#AbilityPassive">Passive:</c> Gall is permanently immune to Stun and Silence effects.
+GallOgreRageActivated=Activate to increase Gall's damage by <c val="#TooltipNumbers">25%</c>, but reduce Cho's Armor by <c val="#TooltipNumbers">25</c>.<n/><n/><c val="#AbilityPassive">Passive:</c> Gall is permanently immune to Stun and Silence effects.
 GallOgreRagePassive=Gall's damage is increased by <c val="#TooltipNumbers"><VALUE>%</c>, but Cho's Armor is reduced by <c val="#TooltipNumbers"><VALUE></c>.<n/><n/>Cho can activate Ogre Hide to grant himself <c l="#TooltipNumbers"><c val="#TooltipNumbers"><VALUE></c></c> Armor, but remove this damage bonus.<n/><n/><c val="#AbilityPassive">Passive:</c> Gall is permanently immune to Stun and Silence effects.
 GallOgreRampage=Gall's Basic Abilities cooldown <c val="#TooltipNumbers">75%</c> faster for <c val="#TooltipNumbers">5</c> seconds after Cho activates Ogre Hide.
 GallPsychoticBreakTalent=Upon dying, Gall gains Ogre Rage and can use Abilities for <c val="#TooltipNumbers">10</c> seconds.
 GallRisingDreadTalent=Each bounce of Dread Orb increases its radius by <c val="#TooltipNumbers">25%</c> and damage by <c val="#TooltipNumbers">25%</c>.
-GallRunicBlast=Detonate Cho's Rune Bomb, dealing <c val="#TooltipNumbers"><VALUE></c> damage around it.
+GallRunicBlast=Detonate Cho's Rune Bomb, dealing <c val="#TooltipNumbers">233</c> damage around it.
 GallRunicPersistenceTalent=Runic Blast deals an additional <c val="#TooltipNumbers">180</c> damage over <c val="#TooltipNumbers">3</c> seconds in an area around the detonation point.
 GallSearingShadows=Enemy Heroes hit by Shadowflame take an additional <c val="#TooltipNumbers">2%</c> of their maximum Health as damage.
 GallShadowboltVolley=After <c val="#TooltipNumbers">1</c> second, unleash <c val="#TooltipNumbers">20</c> Shadow Bolts over <c val="#TooltipNumbers">4</c> seconds, each dealing <c val="#TooltipNumbers">87</c> damage to the first target hit. The bolts fire towards your mouse.
 GallShadowboltVolleyShadowfuryTalent=Shadow Bolt Volley hits all enemies in its path.
-GallShadowflame=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies in the area.
+GallShadowflame=Deal <c val="#TooltipNumbers">135</c> damage to enemies in the area.
 GallShadowsnare=Shadowflame slows enemy Heroes by <c val="#TooltipNumbers">10% </c>for <c val="#TooltipNumbers">4</c> seconds. This effect can stack up to <c val="#TooltipNumbers">3</c> times.
 GallShiftingNether=Twisting Nether now teleports Cho to a targeted location before it begins channeling.
-GallShoveHotbar=Nudge Cho a small distance and grant him <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GallShoveHotbar=Nudge Cho a small distance and grant him <c val="#TooltipNumbers">25%</c> Movement Speed for <c val="#TooltipNumbers">2</c> seconds.
 GallTaskmaster=Reduces the cooldown of Shove by <c val="#TooltipNumbers">10</c> seconds. Every time Cho is hit by a Hero Basic Attack, reduce the Cooldown of Shove by <c val="#TooltipNumbers">1</c> second.
 GallTheWillofGall=Takedowns permanently increase the bonus of Ogre Rage by <c val="#TooltipNumbers">2%</c>.
 GallTwilightNovaTalent=After the first bounce of Dread Orb, <c val="#TooltipNumbers">2</c> extra bombs bounce to the sides once.
 GallTwistingNether=After <c val="#TooltipNumbers">1</c> second, nearby enemies are slowed by <c val="#TooltipNumbers">50%</c> while Gall channels, up to <c val="#TooltipNumbers">5</c> seconds. Activate to deal <c val="#TooltipNumbers">353</c> damage.
 GallWeSeeYou=Eye of Kilrogg's cooldown is decreased by <c val="#TooltipNumbers">15</c> seconds and its range is increased by <c val="#TooltipNumbers">33%</c>.
-GarroshArmorUp=Garrosh gains <c val="#TooltipNumbers"><VALUE></c> Armor for every <c val="#TooltipNumbers">2%</c> of maximum Health missing.
+GarroshArmorUp=Garrosh gains <c val="#TooltipNumbers">1</c> Armor for every <c val="#TooltipNumbers">2%</c> of maximum Health missing.
 GarroshArmorUpActivatable=Armor Up can be activated to increase its Armor bonus by <c val="#TooltipNumbers">100%</c> for <c val="#TooltipNumbers">3</c> seconds.
 GarroshArmorUpBodyCheck=Activate to deal <c val="#TooltipNumbers">111</c> damage to a target enemy and Slow them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2</c> seconds.<n/><n/>Damage is increased by <c val="#TooltipNumbers">200%</c> of Armor Up's current bonus, and the Slow amount is increased by <c val="#TooltipNumbers">30%</c> if Armor Up's bonus is above <c val="#TooltipNumbers">25</c>.
 GarroshArmorUpDoubleUp=Armor Up can be activated to increase its Armor bonus by <c val="#TooltipNumbers">100%</c> for <c val="#TooltipNumbers">3</c> seconds.
 GarroshArmorUpInnerRage=Body Check gains an additional charge, and its cooldown recharges <c val="#TooltipNumbers">100%</c> faster while Armor Up's bonus is at or above <c val="#TooltipNumbers">25</c>.
 GarroshArmorUpOutburst=[PH] While your Armor Up bonus is <c val="#TooltipNumbers"><VALUE></c> or higher the damage you deal is increased by <c val="#TooltipNumbers"><VALUE>%</c>.
-GarroshBloodthirst=Deal <c val="#TooltipNumbers"><VALUE></c> damage to an enemy and heal for <c val="#TooltipNumbers"><VALUE>%</c> of Garrosh's missing Health. Healing is increased by <c val="#TooltipNumbers">100%</c> against Heroes.
+GarroshBloodthirst=Deal <c val="#TooltipNumbers">156</c> damage to an enemy and heal for <c val="#TooltipNumbers">10%</c> of Garrosh's missing Health. Healing is increased by <c val="#TooltipNumbers">100%</c> against Heroes.
 GarroshBloodthirstBloodcraze=When hitting a Hero, Bloodthirst heals for an additional <c val="#TooltipNumbers">10%</c> of Garrosh's maximum Health over <c val="#TooltipNumbers">3</c> seconds.
 GarroshBloodthirstInFortheKill=Increase Bloodthirst's damage against non-Heroes by <c val="#TooltipNumbers">70%</c>. Killing enemies with Bloodthirst resets its cooldown and refunds its Mana cost.
 GarroshBloodthirstThirstforBattle=Basic Attacks against Heroes reduce the cooldown of Bloodthirst by <c val="#TooltipNumbers">2</c> seconds.
@@ -682,7 +684,7 @@ GarroshBloodthirstThirstforBattle=Basic Attacks against Heroes reduce the cooldo
 GarroshBodyCheckBruteForce=Enemy Heroes hit by Body Check receive <c val="#TooltipNumbers">50%</c> reduced healing for <c val="#TooltipNumbers">4</c> seconds.
 GarroshDecimate=Deal <c val="#TooltipNumbers">50</c> damage to nearby enemies and Slow them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">1.5</c> seconds. Deals <c val="#TooltipNumbers">100%</c> more damage to Heroes, and each Hero hit reduces the cooldown by <c val="#TooltipNumbers">1</c> second.<n/><n/>Stores up to <c val="#TooltipNumbers">3</c> charges.
 GarroshDecimateDeadlyCalm=Heroes hit by Decimate deal <c val="#TooltipNumbers">20%</c> less damage for <c val="#TooltipNumbers">3</c> seconds.
-GarroshGroundbreaker=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies in an area. Heroes hit on the outer edge are pulled toward Garrosh.
+GarroshGroundbreaker=Deal <c val="#TooltipNumbers">81</c> damage to enemies in an area. Heroes hit on the outer edge are pulled toward Garrosh.
 GarroshGroundbreakerDefensiveMeasures=Pulling a Hero with Groundbreaker grants Garrosh a <c val="#TooltipNumbers">350</c> Shield for <c val="#TooltipNumbers">6</c> seconds.
 GarroshGroundbreakerExposeWeakness=[PH] Enemy heroes who are Pulled in with Groundbreaker have <c val="#TooltipNumbers"><VALUE></c> reduced Armor for <c val="#TooltipNumbers"><VALUE></c> seconds.
 GarroshGroundbreakerIntimidation=Groundbreaker reduces the Attack Speed of Heroes hit by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers">4</c> seconds.
@@ -696,7 +698,7 @@ GarroshIndomitable=Activate to become Unstoppable for <c val="#TooltipNumbers">1
 GarroshOppressor=Basic Attacks against Heroes reduce the target's Spell Power by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers">2.5</c> seconds.
 GarroshWarlordsChallenge=Silence nearby Heroes and force them to attack Garrosh for <c val="#TooltipNumbers">2</c> seconds.
 GarroshWarlordsChallengeDeathWish=If an enemy Hero is killed while Taunted by Warlord's Challenge, its cooldown is reduced by <c val="#TooltipNumbers">45</c> seconds.
-GarroshWreckingBall=Throw a nearby enemy Hero, Minion, or Mercenary to the target location, dealing <c val="#TooltipNumbers"><VALUE></c> damage to enemies near the impact and Slowing them by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+GarroshWreckingBall=Throw a nearby enemy Hero, Minion, or Mercenary to the target location, dealing <c val="#TooltipNumbers">91</c> damage to enemies near the impact and Slowing them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2.5</c> seconds.
 GarroshWreckingBallEarthshaker=Wrecking Ball Stuns enemies near the impact area for <c val="#TooltipNumbers">0.75</c> seconds.
 GarroshWreckingBallIntotheFray=Activate to throw a nearby ally and grant them <c val="#TooltipNumbers">25</c> Armor for <c val="#TooltipNumbers">3</c> seconds. Deals <c val="#TooltipNumbers">91</c> damage to nearby enemies upon impact and Slows them by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">2.5</c> seconds.<n/><n/>While in flight, allied Heroes are Unstoppable.
 GarroshWreckingBallTitanicMight=Wrecking Ball now throws the <c val="#TooltipNumbers">2</c> closest enemies.
@@ -1021,16 +1023,16 @@ KerriganSummonUltralisk=Summon an Ultralisk that attacks the target to deal <c v
 KerriganSummonUltraliskTorrasqueTalent=The Ultralisk morphs into an egg when it dies. If the egg isn't killed within <c val="#TooltipNumbers">4</c> seconds, a new Ultralisk is born.
 KnightMagicVolley=Channels to repeatedly deal Ability damage.
 L90ETCDeathMetalTalent=Upon dying, a ghost uses Mosh Pit at E.T.C's location.
-L90ETCFaceMelt=Deals <c val="#TooltipNumbers"><VALUE></c> damage to nearby enemies, knocking them back.
+L90ETCFaceMelt=Deals <c val="#TooltipNumbers">68</c> damage to nearby enemies, knocking them back.
 L90ETCFaceMeltFaceSmeltTalent=Face Melt slows enemies by <c val="#TooltipNumbers">50%</c> fading over <c val="#TooltipNumbers">2</c> seconds.
 L90ETCFaceMeltLoudSpeakersTalent=Increases Face Melt range and knockback by <c val="#TooltipNumbers">50%</c>.
-L90ETCGuitarSolo=Regenerate <c val="#TooltipNumbers"><VALUE></c> Health per second for <c val="#TooltipNumbers"><VALUE></c> seconds.
+L90ETCGuitarSolo=Regenerate <c val="#TooltipNumbers">66</c> Health per second for <c val="#TooltipNumbers">4</c> seconds.
 L90ETCGuitarSoloGroupiesTalent=Guitar Solo also heals nearby allied Heroes for <c val="#TooltipNumbers"><VALUE></c> Health every second while it is active.
 L90ETCGuitarSoloGuitarHeroTalent=While Guitar Solo is active, E.T.C. heals for <c val="#TooltipNumbers">50%</c> of his damage dealt by Basic Attacks.
 L90ETCMoshPit=After <c val="#TooltipNumbers">0.75</c> seconds, channel to stun nearby enemies for <c val="#TooltipNumbers">4</c> seconds.
 L90ETCMoshPitTourBusTalent=Mosh Pit refreshes the cooldown of Powerslide. E.T.C. can Powerslide during Mosh Pit, which also increases its duration by <c val="#TooltipNumbers">2</c> seconds.
-L90ETCPowerslide=Slide to a location dealing <c val="#TooltipNumbers"><VALUE></c> damage and stunning enemies hit for <c val="#TooltipNumbers"><VALUE></c> second.
-L90ETCRockstar=After E.T.C. uses a Basic or Heroic ability, he gains <c val="#TooltipNumbers">20</c> Armor for <c val="#TooltipNumbers"><VALUE></c> seconds.  This effect does not stack with itself.
+L90ETCPowerslide=Slide to a location dealing <c val="#TooltipNumbers">91</c> damage and stunning enemies hit for <c val="#TooltipNumbers">1.25</c> second.
+L90ETCRockstar=After E.T.C. uses a Basic or Heroic ability, he gains <c val="#TooltipNumbers">20</c> Armor for <c val="#TooltipNumbers">2</c> seconds.  This effect does not stack with itself.
 L90ETCRockstarEchoPedalTalent=Using a Basic or Heroic Ability releases two pulses of <c val="#TooltipNumbers">15</c> damage.  This deals <c val="#TooltipNumbers">250%</c> bonus damage to Minions and Mercenaries. The first occurs instantly, the second occurs <c val="#TooltipNumbers">2</c> seconds later.
 L90ETCStageDive=Leap to target location, landing after <c val="#TooltipNumbers">2.75</c> seconds, dealing <c val="#TooltipNumbers">330</c> damage to enemies in the area, and slowing them by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.
 LeoricBuriedAliveTalent=The duration of Entomb is lowered by <c val="#TooltipNumbers">1</c> second, but enemies trapped inside are Silenced and take <c val="#TooltipNumbers">50</c> damage every <c val="#TooltipNumbers">1</c> second.
@@ -1774,7 +1776,7 @@ ThrallWindStalker=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermid
 ThrallWindStalkerToken=<c val="#TooltipQuest">Enemies Hit: <c val="#TooltipNumbers" validator="True"><VALUE>/<VALUE></c>
 ThrallWorldbreakerTalent=Lower the cooldown of Sundering by <c val="#TooltipNumbers">20</c> seconds. After Sundering impacts, it leaves behind an impassable rift, blocking unit movement for <c val="#TooltipNumbers">3</c> seconds.
 TinkerARKReaktor=Reduces Xplodium Charge's cooldown by <c val="#TooltipNumbers">2 </c>seconds.  If Xplodium Charge hits an enemy Hero, gain <c val="#TooltipNumbers">2</c> charges of Rock-It! Turret.
-TinkerDethLazor=Charged attack that deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies in a line. Damage and range increase the longer the Ability is charged, up to <c val="#TooltipNumbers">100%</c> after <c val="#TooltipNumbers">3</c> seconds.<n/><n/>Deth Lazor can be channeled indefinitely.
+TinkerDethLazor=Charged attack that deals <c val="#TooltipNumbers">137</c> damage to enemies in a line. Damage and range increase the longer the Ability is charged, up to <c val="#TooltipNumbers">100%</c> after <c val="#TooltipNumbers">3</c> seconds.<n/><n/>Deth Lazor can be channeled indefinitely.
 TinkerDethLazorEZPZDimensionalRipperTalent=Deth Lazor Slows Heroes by <c val="#TooltipNumbers">50%</c> and Stuns non-Heroes for <c val="#TooltipNumbers">3</c> seconds.
 TinkerDethLazorGoblinFusionTalent=Deth Lazor can be charged for <c val="#TooltipNumbers">1</c> additional second to increase its damage bonus by an additional <c val="#TooltipNumbers">100%</c>.
 TinkerDethLazorHyperfocusCoilsTalent=The mana cost of Deth Lazor is reduced by <c val="#TooltipNumbers">30</c> and it charges twice as fast.
@@ -1787,18 +1789,18 @@ TinkerHiredGoons=Friendly non-Boss Mercenaries near Gazlowe deal <c val="#Toolti
 TinkerItsRainingScrap=Activate to create <c val="#TooltipNumbers">5</c> Scrap around Gazlowe over <c val="#TooltipNumbers">5</c> seconds.
 TinkerRoboGoblinMechaLordTalent=Basic Attacks deal an additional <c val="#TooltipNumbers">100%</c> damage.<n/><n/><c val="#AbilityPassive">Passive:</c> Gain <c val="#TooltipNumbers">25</c> Armor.
 TinkerRoboGoblinPassive=Activate to gain <c val="#TooltipNumbers">30</c> Armor and <c val="#TooltipNumbers">30%</c> Movement Speed for <c val="#TooltipNumbers">4</c> seconds. <n/><n/><c val="#AbilityPassive">Passive:</c> Basic Attacks deal <c val="#TooltipNumbers">100%</c> bonus damage. 
-TinkerRockItTurret=Creates a turret that deals <c val="#TooltipNumbers"><VALUE></c> damage. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.<n/><n/>Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
+TinkerRockItTurret=Creates a turret that deals <c val="#TooltipNumbers">62</c> damage. Lasts for <c val="#TooltipNumbers">30</c> seconds.<n/><n/>Stores up to <c val="#TooltipNumbers">2</c> charges.
 TinkerRockItTurretClockwerkSteamFistsTalent=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Basic Attacks increase the duration of active Rock-It! Turrets by <c val="#TooltipNumbers">1.5</c> seconds.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After increasing turret duration by <c val="#TooltipNumbers">600</c> total seconds, reduce the charge cooldown of Rock-It! Turret by <c val="#TooltipNumbers">3</c> seconds.
 TinkerRockItTurretEngineGunkTalent=Rock-It! Turret attacks slow enemies by <c val="#TooltipNumbers">20%</c> for <c val="#TooltipNumbers">2</c> seconds.
 TinkerRockItTurretLongRangedTurretsTalent=Turret range increased by <c val="#TooltipNumbers">40%</c>.
 TinkerRockItTurretRockItTurretXLTalent=Rock-It! Turrets attack up to <c val="#TooltipNumbers">2</c> additional enemies for <c val="#TooltipNumbers">60%</c> damage.
 TinkerRockItTurretTurretStorageTalent=Increases Rock-It! Turret maximum charges from <c val="#TooltipNumbers">2</c> to <c val="#TooltipNumbers">3</c>.
-TinkerSalvager=Destroyed enemy Structures and your Rock-it! Turrets drop Scrap. Collecting Scrap restores <c val="#TooltipNumbers"><VALUE></c> Mana and causes Abilities to recharge three times as fast over <c val="#TooltipNumbers"><VALUE></c> seconds. <n/><n/>Activate Salvager to dismantle a target Rock-it! Turret and turn it into Scrap.
+TinkerSalvager=Destroyed enemy Structures and your Rock-it! Turrets drop Scrap. Collecting Scrap restores <c val="#TooltipNumbers">30</c> Mana and causes Abilities to recharge three times as fast over <c val="#TooltipNumbers">3</c> seconds. <n/><n/>Activate Salvager to dismantle a target Rock-it! Turret and turn it into Scrap.
 TinkerSalvagerBreakItDownTalent=Scrap causes Abilities to cooldown four times as fast for <c val="#TooltipNumbers">3</c> seconds.
 TinkerSalvagerReduceReuseRecycleTalent=Enemy Minions that die nearby have a <c val="#TooltipNumbers">15% </c>chance to drop Scrap.
 TinkerSalvagerScrapOMaticSmelterTalent=Increases the Mana restored from Scrap by <c val="#TooltipNumbers">100%</c>.
 TinkerSuperiorSchematics=Gazlowe's Rock-It! Turrets have <c val="#TooltipNumbers">25%</c> increased range while he is within their attack range.
-TinkerXplodiumCharge=Places a bomb that deals <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area after <c val="#TooltipNumbers"><VALUE></c> seconds, stunning them for <c val="#TooltipNumbers"><VALUE></c> seconds.
+TinkerXplodiumCharge=Places a bomb that deals <c val="#TooltipNumbers">233</c> damage to enemies within target area after <c val="#TooltipNumbers">2.5</c> seconds, stunning them for <c val="#TooltipNumbers">1.75</c> seconds.
 TinkerXplodiumChargeExtraTNTTalent=Increases Xplodium Charge damage by <c val="#TooltipNumbers">10%</c> per target hit, up to <c val="#TooltipNumbers">100%</c>.
 TinkerXplodiumChargeKwikReleaseChargeTalent=Xplodium Charge gains a second charge.
 TinkerXplodiumChargeXtraLargeBombsTalent=Increases Xplodium Charge range and radius by <c val="#TooltipNumbers">30%</c>. Being stunned or rooted causes an Xplodium Charge to drop at Gazlowe's feet.<n/><n/>This effect has a <c val="#TooltipNumbers">10</c> second cooldown.

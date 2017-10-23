@@ -3,6 +3,22 @@
            portrait="storm_ui_ingame_heroselect_btn_chromie.dds" loading="storm_ui_ingame_hero_loadingscreen_chromie.dds" leader="storm_ui_ingame_hero_leaderboard_chromie.dds">
     <Roles>Assassin</Roles>
     <Abilities>
+      <BasicAbility1>
+        <ChromieSandBlast name="Sand Blast" desc="ChromieSandBlast" mana="20" cooldown="2.5">storm_ui_icon_chromie_aethercannon.dds</ChromieSandBlast>
+      </BasicAbility1>
+      <BasicAbility2>
+        <ChromieDragonsBreath name="Dragon's Breath" desc="ChromieDragonsBreath" mana="70" cooldown="12">storm_ui_icon_chromie_sandstrike.dds</ChromieDragonsBreath>
+      </BasicAbility2>
+      <BasicAbility3>
+        <ChromieTimeTrap name="Time Trap" desc="ChromieTimeTrap" mana="25" cooldown="18">storm_ui_icon_chromie_timetrap.dds</ChromieTimeTrap>
+      </BasicAbility3>
+      <HeroicAbility>
+        <ChromieSlowingSands talent="ChromieHeroicAbilitySlowingSands" />
+        <ChromieTemporalLoop talent="ChromieHeroicAbilityTemporalLoop" />
+      </HeroicAbility>
+      <TraitAbility>
+        <ChromieTimewalkerTrait name="Timewalker" desc="ChromieTimewalkerTrait">storm_ui_icon_chromie_timetraveler.dds</ChromieTimewalkerTrait>
+      </TraitAbility>
     </Abilities>
     <Talents>
       <Level1>

@@ -18,5 +18,7 @@ namespace Heroes.Icons.Models
         TraitAbility = 1 << 4,
         [Description("Mount Ability")]
         MountAbility = 1 << 5,
+        [Description("Activable Ability")]
+        ActivableAbility = 1 << 6,
     }
 }
