@@ -1,60 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Butcher available="47479" name="The Butcher" attributeid="Butc" unit="HeroButcher" franchise="Diablo" type="Melee" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_butcher.dds" loading="storm_ui_ingame_hero_loadingscreen_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
-    <Roles>Assassin</Roles>
-    <Abilities>
-      <BasicAbility1>
-        <ButcherHamstring name="Hamstring" desc="ButcherHamstring" mana="40" cooldown="1">storm_ui_icon_butcher_hamstring.dds</ButcherHamstring>
-      </BasicAbility1>
-      <BasicAbility2>
-        <ButcherButchersBrand name="Butcher's Brand" desc="ButcherButchersBrand" mana="65" cooldown="14">storm_ui_icon_butcher_tenderize.dds</ButcherButchersBrand>
-      </BasicAbility2>
-      <BasicAbility3>
-        <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught" mana="55" cooldown="15">storm_ui_icon_butcher_fullboar.dds</ButcherRuthlessOnslaught>
-      </BasicAbility3>
-      <HeroicAbility>
-        <ButcherLambToTheSlaughter talent="ButcherHeroicAbilityButcherFurnaceBlast" />
-        <ButcherFurnaceBlast talent="ButcherHeroicAbilityLambToTheSlaughter" />
-      </HeroicAbility>
-      <TraitAbility>
-        <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">storm_ui_icon_butcher_freshmeat.dds</ButcherFreshMeat>
-      </TraitAbility>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringInvigoration>
-        <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
-        <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringChopMeat>
-      </Level1>
-      <Level4>
-        <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringFlailAxe>
-        <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit" desc="ButcherRuthlessOnslaughtUnrelentingPursuitTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
-        <ButcherMasteryHamstringCheapShot name="Cheap Shot" desc="ButcherHamstringCheapShotTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringCheapShot>
-      </Level4>
-      <Level7>
-        <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade" desc="ButcherButchersBrandInsatiableBladeTalent">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandInsatiableBlade>
-        <ButcherMasteryFreshMeatVictuals name="Victuals" desc="ButcherFreshMeatVictualsTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatVictuals>
-        <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
-      </Level7>
-      <Level10>
-        <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
-        <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
-      </Level10>
-      <Level13>
-        <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>
-        <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge" desc="ButcherRuthlessOnslaughtSavageChargeTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtSavageCharge>
-        <ButcherMasteryHamstringBrutalStrike name="Brutal Strike" desc="ButcherHamstringBrutalStrikeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringBrutalStrike>
-      </Level13>
-      <Level16>
-        <ButcherMasteryHamstringCripplingSlam name="Crippling Slam" desc="ButcherHamstringCripplingSlamTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringCripplingSlam>
-        <ButcherTalentEnraged name="Enraged" desc="ButcherEnragedTalent">storm_ui_icon_butcher_enraged.dds</ButcherTalentEnraged>
-        <ButcherMasteryFreshMeatBloodFrenzy name="Blood Frenzy" desc="ButcherFreshBloodFrenzyMeatTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatBloodFrenzy>
-      </Level16>
-      <Level20>
-        <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherMasteryFiresofHell>
-        <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherMasterySlaughterhouse>
-        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
-      </Level20>
+<Butcher available="47479" name="The Butcher" attributeid="Butc" unit="HeroButcher" franchise="Diablo" type="Melee" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_butcher.dds" loading="storm_ui_ingame_hero_loadingscreen_butcher.dds" leader="storm_ui_ingame_hero_leaderboard_butcher.dds">
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <ButcherHamstring name="Hamstring" desc="ButcherHamstring" mana="40" cooldown="1">storm_ui_icon_butcher_hamstring.dds</ButcherHamstring>
+      <ButcherButchersBrand name="Butcher's Brand" desc="ButcherButchersBrand" mana="65" cooldown="14">storm_ui_icon_butcher_tenderize.dds</ButcherButchersBrand>
+      <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught" mana="55" cooldown="15">storm_ui_icon_butcher_fullboar.dds</ButcherRuthlessOnslaught>
+    </Basic>
+    <Heroic>
+      <ButcherLambToTheSlaughter talent="ButcherHeroicAbilityButcherFurnaceBlast" />
+      <ButcherFurnaceBlast talent="ButcherHeroicAbilityLambToTheSlaughter" />
+    </Heroic>
+    <Trait>
+      <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">storm_ui_icon_butcher_freshmeat.dds</ButcherFreshMeat>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringInvigoration>
+      <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+      <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringChopMeat>
+    </Level1>
+    <Level4>
+      <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringFlailAxe>
+      <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit" desc="ButcherRuthlessOnslaughtUnrelentingPursuitTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
+      <ButcherMasteryHamstringCheapShot name="Cheap Shot" desc="ButcherHamstringCheapShotTalent">storm_ui_icon_butcher_hamstring_var1.dds</ButcherMasteryHamstringCheapShot>
+    </Level4>
+    <Level7>
+      <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade" desc="ButcherButchersBrandInsatiableBladeTalent">storm_ui_icon_Butcher_Tenderize.dds</ButcherMasteryButchersBrandInsatiableBlade>
+      <ButcherMasteryFreshMeatVictuals name="Victuals" desc="ButcherFreshMeatVictualsTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatVictuals>
+      <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
+    </Level7>
+    <Level10>
+      <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
+      <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
+    </Level10>
+    <Level13>
+      <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>
+      <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge" desc="ButcherRuthlessOnslaughtSavageChargeTalent">storm_ui_icon_Butcher_FullBoar.dds</ButcherMasteryRuthlessOnslaughtSavageCharge>
+      <ButcherMasteryHamstringBrutalStrike name="Brutal Strike" desc="ButcherHamstringBrutalStrikeTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringBrutalStrike>
+    </Level13>
+    <Level16>
+      <ButcherMasteryHamstringCripplingSlam name="Crippling Slam" desc="ButcherHamstringCripplingSlamTalent">storm_ui_icon_Butcher_Hamstring.dds</ButcherMasteryHamstringCripplingSlam>
+      <ButcherTalentEnraged name="Enraged" desc="ButcherEnragedTalent">storm_ui_icon_butcher_enraged.dds</ButcherTalentEnraged>
+      <ButcherMasteryFreshMeatBloodFrenzy name="Blood Frenzy" desc="ButcherFreshBloodFrenzyMeatTalent">storm_ui_icon_Butcher_FreshMeat.dds</ButcherMasteryFreshMeatBloodFrenzy>
+    </Level16>
+    <Level20>
+      <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherMasteryFiresofHell>
+      <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherMasterySlaughterhouse>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+    </Level20>
   </Talents>
 </Butcher>

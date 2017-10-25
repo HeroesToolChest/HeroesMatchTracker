@@ -3,6 +3,18 @@
         portrait="storm_ui_ingame_heroselect_btn_kelthuzad.dds" loading="storm_ui_ingame_hero_loadingscreen_kelthuzad.dds" leader="storm_ui_ingame_hero_leaderboard_kelthuzad.dds">
   <Roles>Assassin</Roles>
   <Abilities>
+    <Basic>
+      <KelThuzadDeathAndDecay name="Death and Decay" desc="KelThuzadDeathAndDecay" mana="20" cooldown="6">storm_ui_icon_kel'thuzad_deathanddecay.dds</KelThuzadDeathAndDecay>
+      <KelThuzadFrostNova name="Frost Nova" desc="KelThuzadFrostNova" mana="50" cooldown="10">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadFrostNova>
+      <KelThuzadChains name="Chains of Kel'Thuzad" desc="KelThuzadChains" mana="50" cooldown="12">storm_ui_icon_kel'thuzad_chains.dds</KelThuzadChains>
+    </Basic>
+    <Heroic>
+      <KelThuzadFrozenTomb talent="KelThuzadFrozenTomb" />
+      <KelThuzadShadowFissure talent="KelThuzadShadowFissure" />
+    </Heroic>
+    <Trait>
+      <KelThuzadMasterOfTheColdDark name="Master of the Cold Dark" desc="KelThuzadMasterOfTheColdDark">storm_ui_icon_kel'thuzad_powerofthecolddark.dds</KelThuzadMasterOfTheColdDark>
+    </Trait>
   </Abilities>
   <Talents>
     <Level1>

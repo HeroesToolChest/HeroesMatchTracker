@@ -3,6 +3,18 @@
             portrait="storm_ui_ingame_heroselect_btn_monk.dds" loading="storm_ui_ingame_hero_loadingscreen_monk.dds" leader="storm_ui_ingame_hero_leaderboard_monk.dds">
     <Roles>Support</Roles>
     <Abilities>
+      <Basic>
+        <MonkRadiantDash name="Radiant Dash" desc="MonkRadiantDash" mana="30" cooldown="12" ch-cooldown="true">storm_ui_icon_monk_dash.dds</MonkRadiantDash>
+        <MonkBreathOfHeaven name="Breath of Heaven" desc="MonkBreathOfHeaven" mana="65" cooldown="10">storm_ui_icon_monk_breath0fheaven.dds</MonkBreathOfHeaven>
+        <MonkDeadlyReach name="Deadly Reach" desc="MonkDeadlyReach" mana="50" cooldown="10">storm_ui_icon_monk_deadlyreach.dds</MonkDeadlyReach>
+      </Basic>
+      <Heroic>
+        <MonkSevenSidedStrike talent="MonkHeroicAbilityDivinePalm" />
+        <MonkDivinePalm talent="MonkHeroicAbilitySevenSidedStrike" />
+      </Heroic>
+      <Trait>
+        <MonkBlankTrait name="Pick Your Trait" desc="MonkBlankTrait" generic="true">storm_ui_icon_default.dds</MonkBlankTrait>
+      </Trait>
     </Abilities>
     <Talents>
       <Level1>

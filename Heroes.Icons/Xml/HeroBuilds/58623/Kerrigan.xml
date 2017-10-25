@@ -1,45 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Kerrigan available="47479" attributeid="Kerr" unit="HeroKerrigan" franchise="Starcraft" type="Melee" difficulty="Hard"
-            portrait="storm_ui_ingame_heroselect_btn_kerrigan.dds" loading="storm_ui_ingame_hero_loadingscreen_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <KerriganMasteryRavageSiphoningImpact name="Siphoning Impact" desc="KerriganRavageSiphoningImpactTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageSiphoningImpact>
-        <KerriganMasteryImpalingBladesSharpenedBlades name="Sharpened Blades" desc="KerriganImpalingBladesSharpenedBladesTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesSharpenedBlades>
-        <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
-      </Level1>
-      <Level4>
-        <KerriganMasteryRavageCleanKill name="Clean Kill" desc="KerriganRavageCleanKillTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageCleanKill>
-        <KerriganMasteryPrimalGraspPsionicPulse name="Psionic Pulse" desc="KerriganPrimalGraspPsionicPulseTalent">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganMasteryPrimalGraspPsionicPulse>
-        <KerriganCombatStyleFuryoftheSwarm name="Fury of the Swarm" generic="true" desc="KerriganAssimilationFuryOfTheSwarmTalent">storm_ui_icon_talent_autoattack_aoe.dds</KerriganCombatStyleFuryoftheSwarm>
-        <GenericTalentEnvenom name="Envenom" desc="GenericEnvenomTalent" cooldown="60">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
-      </Level4>
-      <Level7>
-        <KerriganMasteryImpalingBladesBladeTorrent name="Blade Torrent" desc="KerriganImpalingBladesBladeTorrentTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesBladeTorrent>
-        <KerriganAssimilationMastery name="Assimilation Mastery" desc="KerriganAssimilationMasteryTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganAssimilationMastery>
-        <BattleMomentumKerrigan name="Bladed Momentum" desc="KerriganBladedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumKerrigan>
-      </Level7>
-      <Level10>
-        <KerriganHeroicAbilityMaelstrom name="Maelstrom" desc="KerriganMaelstrom" mana="90" cooldown="100">storm_ui_icon_kerrigan_maelstrom.dds</KerriganHeroicAbilityMaelstrom>
-        <KerriganHeroicAbilitySummonUltralisk name="Summon Ultralisk" desc="KerriganSummonUltralisk" mana="100" cooldown="80">storm_ui_icon_kerrigan_ultralisk.dds</KerriganHeroicAbilitySummonUltralisk>
-      </Level10>
-      <Level13>
-        <KerriganMasteryEviscerate name="Eviscerate" desc="KerriganRavageEviscerateTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryEviscerate>
-        <KerriganCombatStyleDoubleStrike name="Double Strike" desc="KerriganAssimilationDoubleStrikeTalent">storm_ui_icon_kerrigan_ravage_a.dds</KerriganCombatStyleDoubleStrike>
-        <KerriganQueensRush name="Queen's Rush" desc="KerriganQueensRushHotbar" cooldown="50">storm_ui_icon_kerrigan_queensrush.dds</KerriganQueensRush>
-      </Level13>
-      <Level16>
-        <KerriganMasteryAggressiveDefense name="Aggressive Defense" desc="KerriganAggressiveDefenseTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganMasteryAggressiveDefense>
-        <KerriganEssenceForEssence name="Essence for Essence" desc="KerriganEssenceForEssenceHotbar" cooldown="60">storm_ui_icon_kerrigan_assimilation_a.dds</KerriganEssenceForEssence>
-        <GenericTalentOverdrive name="Overdrive" desc="GenericOverdriveTalent" cooldown="25">storm_ui_icon_talent_overdrive.dds</GenericTalentOverdrive>
-      </Level16>
-      <Level20>
-        <KerriganMasteryMaelstromOmegastorm name="Omegastorm" desc="KerriganMaelstromOmegastormTalent">storm_ui_icon_kerrigan_maelstrom.dds</KerriganMasteryMaelstromOmegastorm>
-        <KerriganMasteryTorrasqueSummonUltralisk name="Torrasque" desc="KerriganSummonUltraliskTorrasqueTalent">storm_ui_icon_kerrigan_ultralisk.dds</KerriganMasteryTorrasqueSummonUltralisk>
-        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
-        <KerriganPsionicShift name="Psionic Shift" generic="true" desc="KerriganPsionicShift" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</KerriganPsionicShift>
-      </Level20>
+<Kerrigan available="47479" attributeid="Kerr" unit="HeroKerrigan" franchise="Starcraft" type="Melee" difficulty="Hard"
+          portrait="storm_ui_ingame_heroselect_btn_kerrigan.dds" loading="storm_ui_ingame_hero_loadingscreen_kerrigan.dds" leader="storm_ui_ingame_hero_leaderboard_kerrigan.dds">
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <KerriganRavage name="Ravage" desc="KerriganRavage" mana="40" cooldown="8">storm_ui_icon_kerrigan_ravage.dds</KerriganRavage>
+      <KerriganCrushingGrip name="Impaling Blades" desc="KerriganImpalingBlades" mana="75" cooldown="12">storm_ui_icon_kerrigan_impalingblades.dds</KerriganCrushingGrip>
+      <KerriganPrimalGrasp name="Primal Grasp" desc="KerriganPrimalGrasp" mana="60" cooldown="10">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganPrimalGrasp>
+    </Basic>
+    <Heroic>
+      <KerriganMaelstrom talent="KerriganHeroicAbilityMaelstrom" />
+      <KerriganSummonUltralisk talent="KerriganHeroicAbilitySummonUltralisk" />
+    </Heroic>
+    <Trait>
+      <KerriganAssimilation name="Assimilation" desc="KerriganAssimilation">storm_ui_icon_kerrigan_assimilation.dds</KerriganAssimilation>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <KerriganMasteryRavageSiphoningImpact name="Siphoning Impact" desc="KerriganRavageSiphoningImpactTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageSiphoningImpact>
+      <KerriganMasteryImpalingBladesSharpenedBlades name="Sharpened Blades" desc="KerriganImpalingBladesSharpenedBladesTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesSharpenedBlades>
+      <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.dds</GenericTalentBlock>
+    </Level1>
+    <Level4>
+      <KerriganMasteryRavageCleanKill name="Clean Kill" desc="KerriganRavageCleanKillTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryRavageCleanKill>
+      <KerriganMasteryPrimalGraspPsionicPulse name="Psionic Pulse" desc="KerriganPrimalGraspPsionicPulseTalent">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganMasteryPrimalGraspPsionicPulse>
+      <KerriganCombatStyleFuryoftheSwarm name="Fury of the Swarm" generic="true" desc="KerriganAssimilationFuryOfTheSwarmTalent">storm_ui_icon_talent_autoattack_aoe.dds</KerriganCombatStyleFuryoftheSwarm>
+      <GenericTalentEnvenom name="Envenom" desc="GenericEnvenomTalent" cooldown="60">storm_ui_icon_talent_envenom.dds</GenericTalentEnvenom>
+    </Level4>
+    <Level7>
+      <KerriganMasteryImpalingBladesBladeTorrent name="Blade Torrent" desc="KerriganImpalingBladesBladeTorrentTalent">storm_ui_icon_kerrigan_impalingblades.dds</KerriganMasteryImpalingBladesBladeTorrent>
+      <KerriganAssimilationMastery name="Assimilation Mastery" desc="KerriganAssimilationMasteryTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganAssimilationMastery>
+      <BattleMomentumKerrigan name="Bladed Momentum" desc="KerriganBladedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumKerrigan>
+    </Level7>
+    <Level10>
+      <KerriganHeroicAbilityMaelstrom name="Maelstrom" desc="KerriganMaelstrom" mana="90" cooldown="100">storm_ui_icon_kerrigan_maelstrom.dds</KerriganHeroicAbilityMaelstrom>
+      <KerriganHeroicAbilitySummonUltralisk name="Summon Ultralisk" desc="KerriganSummonUltralisk" mana="100" cooldown="80">storm_ui_icon_kerrigan_ultralisk.dds</KerriganHeroicAbilitySummonUltralisk>
+    </Level10>
+    <Level13>
+      <KerriganMasteryEviscerate name="Eviscerate" desc="KerriganRavageEviscerateTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryEviscerate>
+      <KerriganCombatStyleDoubleStrike name="Double Strike" desc="KerriganAssimilationDoubleStrikeTalent">storm_ui_icon_kerrigan_ravage_a.dds</KerriganCombatStyleDoubleStrike>
+      <KerriganQueensRush name="Queen's Rush" desc="KerriganQueensRushHotbar" cooldown="50">storm_ui_icon_kerrigan_queensrush.dds</KerriganQueensRush>
+    </Level13>
+    <Level16>
+      <KerriganMasteryAggressiveDefense name="Aggressive Defense" desc="KerriganAggressiveDefenseTalent">storm_ui_icon_kerrigan_assimilation.dds</KerriganMasteryAggressiveDefense>
+      <KerriganEssenceForEssence name="Essence for Essence" desc="KerriganEssenceForEssenceHotbar" cooldown="60">storm_ui_icon_kerrigan_assimilation_a.dds</KerriganEssenceForEssence>
+      <GenericTalentOverdrive name="Overdrive" desc="GenericOverdriveTalent" cooldown="25">storm_ui_icon_talent_overdrive.dds</GenericTalentOverdrive>
+    </Level16>
+    <Level20>
+      <KerriganMasteryMaelstromOmegastorm name="Omegastorm" desc="KerriganMaelstromOmegastormTalent">storm_ui_icon_kerrigan_maelstrom.dds</KerriganMasteryMaelstromOmegastorm>
+      <KerriganMasteryTorrasqueSummonUltralisk name="Torrasque" desc="KerriganSummonUltraliskTorrasqueTalent">storm_ui_icon_kerrigan_ultralisk.dds</KerriganMasteryTorrasqueSummonUltralisk>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+      <KerriganPsionicShift name="Psionic Shift" generic="true" desc="KerriganPsionicShift" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</KerriganPsionicShift>
+    </Level20>
   </Talents>
 </Kerrigan>

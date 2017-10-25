@@ -3,28 +3,26 @@
          portrait="storm_ui_ingame_heroselect_btn_abathur.dds" loading="storm_ui_ingame_hero_loadingscreen_abathur.dds" leader="storm_ui_ingame_hero_leaderboard_abathur.dds">
   <Roles>Specialist</Roles>
   <Abilities>
-    <BasicAbility1>
+    <Basic>
       <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4">storm_ui_icon_abathur_symbiote.dds</AbathurSymbiote>
-      <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
-    </BasicAbility1>
-    <BasicAbility2>
       <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest" cooldown="10" ch-cooldown="true">storm_ui_icon_abathur_toxicnest.dds</AbathurToxicNest>
-      <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
-    </BasicAbility2>
-    <BasicAbility3>
-      <None3></None3>
-      <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
-    </BasicAbility3>
-    <HeroicAbility>
+      <AbathurBasic3None />
+      <Secondary>
+        <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
+        <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
+        <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
+      </Secondary>
+    </Basic>
+    <Heroic>
       <AbathurUltimateEvolution talent="AbathurHeroicAbilityUltimateEvolution" />
       <AbathurEvolveMonstrosity talent="AbathurHeroicAbilityEvolveMonstrosity" />
-    </HeroicAbility>
-    <TraitAbility>
+    </Heroic>
+    <Trait>
       <AbathurSpawnLocusts name="Locust Strain" desc="AbathurLocustStrain" cooldown="15">storm_ui_icon_abathur_spawnlocust.dds</AbathurSpawnLocusts>
-    </TraitAbility>
-    <MountAbility>
+    </Trait>
+    <Mount>
       <AbathurDeepTunnel name="Deep Tunnel" desc="AbathurDeepTunnel" cooldown="30">storm_ui_icon_abathur_mount.dds</AbathurDeepTunnel>
-    </MountAbility>
+    </Mount>
   </Abilities>
   <Talents>
     <Level1>

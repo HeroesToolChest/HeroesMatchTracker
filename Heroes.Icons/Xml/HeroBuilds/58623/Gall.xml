@@ -1,63 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Gall available="47479" attributeid="Gall" unit="HeroGall" franchise="Warcraft" type="Ranged" difficulty="Easy" mana="None"
-        portrait="storm_ui_ingame_heroselect_btn_gall.dds" loading="storm_ui_ingame_hero_loadingscreen_gall.dds" leader="storm_ui_ingame_hero_leaderboard_gall.dds">
-    <Roles>Assassin</Roles>
-    <Abilities>
-      <BasicAbility1>
-        <GallShadowflame name="Shadowflame" desc="GallShadowflame" cooldown="3">storm_ui_icon_gall_shadowflame.dds</GallShadowflame>
-      </BasicAbility1>
-      <BasicAbility2>
-        <GallDreadOrb name="Dread Orb" desc="GallDreadOrb" cooldown="6">storm_ui_icon_gall_chaoscollision.dds</GallDreadOrb>
-      </BasicAbility2>
-      <BasicAbility3>
-        <GallRunicBlast name="Runic Blast" desc="GallRunicBlast">storm_ui_icon_gall_detonaterunes.dds</GallRunicBlast>
-      </BasicAbility3>
-      <HeroicAbility>
-        <GallShadowboltVolley talent="GallHeroicAbilityShadowboltVolley" />
-        <GallTwistingNether talent="GallHeroicAbilityTwistingNether" />
-      </HeroicAbility>
-      <TraitAbility>
-        <GallOgreRage name="Ogre Rage" desc="GallOgreRageActivated" cooldown="5">storm_ui_icon_gall_ogrerage.dds</GallOgreRage>
-      </TraitAbility>
-      <MountAbility>
-        <GallShove name="Shove" desc="GallShoveHotbar" cooldown="30">storm_ui_icon_gall_shove.dds</GallShove>
-      </MountAbility>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <GallKeepMoving name="Keep Moving!" desc="GallKeepMoving">storm_ui_icon_gall_shove.dds</GallKeepMoving>
-        <GallTaskmaster name="Taskmaster" desc="GallTaskmaster">storm_ui_icon_gall_shove_a.dds</GallTaskmaster>
-        <GallWeSeeYou name="We See You!" desc="GallWeSeeYou">storm_ui_icon_gall_eyeofkilrogg.dds</GallWeSeeYou>
-      </Level1>
-      <Level4>
-        <GallDoubleBack name="Double Back" desc="GallDoubleBackTalent">storm_ui_icon_gall_chaoscollision_var1.dds</GallDoubleBack>
-        <GallRunicPersistence name="Runic Persistence" desc="GallRunicPersistenceTalent">storm_ui_icon_gall_detonaterunes.dds</GallRunicPersistence>
-        <GallBombsAway name="Bomb's Away" desc="GallBombsAwayTalent">storm_ui_icon_cho_runebomb_var1.dds</GallBombsAway>
-      </Level4>
-      <Level7>
-        <GallEdgeOfMadness name="Edge Of Madness" desc="GallEdgeOfMadnessTalent">storm_ui_icon_gall_shadowflame.dds</GallEdgeOfMadness>
-        <GallDoubleTrouble name="Double Trouble" desc="GallDoubleTroubleTalent">storm_ui_icon_gall_shadowflame_var1.dds</GallDoubleTrouble>
-        <GallOgreRampage name="Ogre Rampage" desc="GallOgreRampage">storm_ui_icon_gall_ogrerage.dds</GallOgreRampage>
-      </Level7>
-      <Level10>
-        <GallHeroicAbilityShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley" cooldown="60">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallHeroicAbilityShadowboltVolley>
-        <GallHeroicAbilityTwistingNether name="Twisting Nether" desc="GallTwistingNether" cooldown="80">storm_ui_icon_Gall_TwistingNether_A.dds</GallHeroicAbilityTwistingNether>
-      </Level10>
-      <Level13>
-        <GallSearingShadows name="Searing Shadows" desc="GallSearingShadows">storm_ui_icon_gall_shadowflame.dds</GallSearingShadows>
-        <GallRisingDread name="Rising Dread" desc="GallRisingDreadTalent">storm_ui_icon_gall_chaoscollision.dds</GallRisingDread>
-        <GallTwilightNova name="Twilight Nova" desc="GallTwilightNovaTalent">storm_ui_icon_gall_chaoscollision_var1.dds</GallTwilightNova>
-      </Level13>
-      <Level16>
-        <GallShadowsnare name="Shadowsnare" desc="GallShadowsnare">storm_ui_icon_gall_shadowflame.dds</GallShadowsnare>
-        <GallLeadenOrb name="Leaden Orb" desc="GallLeadenOrb">storm_ui_icon_gall_chaoscollision.dds</GallLeadenOrb>
-        <GallDeafeningBlast name="Deafening Blast" desc="GallDeafeningBlast">storm_ui_icon_gall_detonaterunes.dds</GallDeafeningBlast>
-      </Level16>
-      <Level20>
-        <GallShadowboltVolleyShadowfury name="Shadowfury" desc="GallShadowboltVolleyShadowfuryTalent">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallShadowboltVolleyShadowfury>
-        <GallShiftingNether name="Shifting Nether" desc="GallShiftingNether">storm_ui_icon_gall_twistingnether_a.dds</GallShiftingNether>
-        <GallTheWillofGall name="The Will of Gall" desc="GallTheWillofGall">storm_ui_icon_gall_ogrerage.dds</GallTheWillofGall>
-        <GallPsychoticBreak name="Psychotic Break" desc="GallPsychoticBreakTalent">storm_ui_icon_gall_psychoticbreak.dds</GallPsychoticBreak>
-      </Level20>
+<Gall available="47479" attributeid="Gall" unit="HeroGall" franchise="Warcraft" type="Ranged" difficulty="Easy" mana="None"
+      portrait="storm_ui_ingame_heroselect_btn_gall.dds" loading="storm_ui_ingame_hero_loadingscreen_gall.dds" leader="storm_ui_ingame_hero_leaderboard_gall.dds">
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <GallShadowflame name="Shadowflame" desc="GallShadowflame" cooldown="3">storm_ui_icon_gall_shadowflame.dds</GallShadowflame>
+      <GallDreadOrb name="Dread Orb" desc="GallDreadOrb" cooldown="6">storm_ui_icon_gall_chaoscollision.dds</GallDreadOrb>
+      <GallRunicBlast name="Runic Blast" desc="GallRunicBlast">storm_ui_icon_gall_detonaterunes.dds</GallRunicBlast>
+    </Basic>
+    <Heroic>
+      <GallShadowboltVolley talent="GallHeroicAbilityShadowboltVolley" />
+      <GallTwistingNether talent="GallHeroicAbilityTwistingNether" />
+    </Heroic>
+    <Trait>
+      <GallOgreRage name="Ogre Rage" desc="GallOgreRageActivated" cooldown="5">storm_ui_icon_gall_ogrerage.dds</GallOgreRage>
+    </Trait>
+    <Mount>
+      <GallShove name="Shove" desc="GallShoveHotbar" cooldown="30">storm_ui_icon_gall_shove.dds</GallShove>
+    </Mount>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <GallKeepMoving name="Keep Moving!" desc="GallKeepMoving">storm_ui_icon_gall_shove.dds</GallKeepMoving>
+      <GallTaskmaster name="Taskmaster" desc="GallTaskmaster">storm_ui_icon_gall_shove_a.dds</GallTaskmaster>
+      <GallWeSeeYou name="We See You!" desc="GallWeSeeYou">storm_ui_icon_gall_eyeofkilrogg.dds</GallWeSeeYou>
+    </Level1>
+    <Level4>
+      <GallDoubleBack name="Double Back" desc="GallDoubleBackTalent">storm_ui_icon_gall_chaoscollision_var1.dds</GallDoubleBack>
+      <GallRunicPersistence name="Runic Persistence" desc="GallRunicPersistenceTalent">storm_ui_icon_gall_detonaterunes.dds</GallRunicPersistence>
+      <GallBombsAway name="Bomb's Away" desc="GallBombsAwayTalent">storm_ui_icon_cho_runebomb_var1.dds</GallBombsAway>
+    </Level4>
+    <Level7>
+      <GallEdgeOfMadness name="Edge Of Madness" desc="GallEdgeOfMadnessTalent">storm_ui_icon_gall_shadowflame.dds</GallEdgeOfMadness>
+      <GallDoubleTrouble name="Double Trouble" desc="GallDoubleTroubleTalent">storm_ui_icon_gall_shadowflame_var1.dds</GallDoubleTrouble>
+      <GallOgreRampage name="Ogre Rampage" desc="GallOgreRampage">storm_ui_icon_gall_ogrerage.dds</GallOgreRampage>
+    </Level7>
+    <Level10>
+      <GallHeroicAbilityShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley" cooldown="60">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallHeroicAbilityShadowboltVolley>
+      <GallHeroicAbilityTwistingNether name="Twisting Nether" desc="GallTwistingNether" cooldown="80">storm_ui_icon_Gall_TwistingNether_A.dds</GallHeroicAbilityTwistingNether>
+    </Level10>
+    <Level13>
+      <GallSearingShadows name="Searing Shadows" desc="GallSearingShadows">storm_ui_icon_gall_shadowflame.dds</GallSearingShadows>
+      <GallRisingDread name="Rising Dread" desc="GallRisingDreadTalent">storm_ui_icon_gall_chaoscollision.dds</GallRisingDread>
+      <GallTwilightNova name="Twilight Nova" desc="GallTwilightNovaTalent">storm_ui_icon_gall_chaoscollision_var1.dds</GallTwilightNova>
+    </Level13>
+    <Level16>
+      <GallShadowsnare name="Shadowsnare" desc="GallShadowsnare">storm_ui_icon_gall_shadowflame.dds</GallShadowsnare>
+      <GallLeadenOrb name="Leaden Orb" desc="GallLeadenOrb">storm_ui_icon_gall_chaoscollision.dds</GallLeadenOrb>
+      <GallDeafeningBlast name="Deafening Blast" desc="GallDeafeningBlast">storm_ui_icon_gall_detonaterunes.dds</GallDeafeningBlast>
+    </Level16>
+    <Level20>
+      <GallShadowboltVolleyShadowfury name="Shadowfury" desc="GallShadowboltVolleyShadowfuryTalent">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallShadowboltVolleyShadowfury>
+      <GallShiftingNether name="Shifting Nether" desc="GallShiftingNether">storm_ui_icon_gall_twistingnether_a.dds</GallShiftingNether>
+      <GallTheWillofGall name="The Will of Gall" desc="GallTheWillofGall">storm_ui_icon_gall_ogrerage.dds</GallTheWillofGall>
+      <GallPsychoticBreak name="Psychotic Break" desc="GallPsychoticBreakTalent">storm_ui_icon_gall_psychoticbreak.dds</GallPsychoticBreak>
+    </Level20>
   </Talents>
 </Gall>
