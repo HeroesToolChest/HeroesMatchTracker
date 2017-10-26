@@ -528,7 +528,7 @@ DryadAbolishMagicHotbar=Target an Ally to remove all damage over time and disabl
 DryadBlossomSwellTalent=Increases Noxious Blossom's radius by <c val="#TooltipNumbers">20%.</c>
 DryadBoundlessStrideTalent=All Leaping Strike charges are returned every <c val="#TooltipNumbers">20</c> seconds. Leaping Strike can be used on allies.
 DryadChokingPollenTalent=Increases Noxious Blossom damage by <c val="#TooltipNumbers">125%</c> against enemies afflicted with Nature's Toxin.
-DryadCripplingSpores=Enemies currently afflicted by Nature's Toxin have its duration increased by <c val="#TooltipNumbers">3 </c>seconds and are slowed by <c val="#TooltipNumbers"><VALUE>%</c> decaying over <c val="#TooltipNumbers"><VALUE></c> seconds. 
+DryadCripplingSpores=Enemies currently afflicted by Nature's Toxin have its duration increased by <c val="#TooltipNumbers">3 </c>seconds and are slowed by <c val="#TooltipNumbers">40%</c> decaying over <c val="#TooltipNumbers">3</c> seconds. 
 DryadCruelSporesTalent=When Crippling Spores hits only Minions or Mercenaries, its cooldown is reduced by <c val="#TooltipNumbers">80%</c> and <c val="#TooltipNumbers">20</c> Mana is restored.
 DryadDividingWispTalent=The first time a Wisp is relocated, it leaves a copy of itself in the previous location.
 DryadDryadsSwiftness=Lunara moves <c val="#TooltipNumbers">20%</c> faster by leaping short distances.
@@ -542,9 +542,9 @@ DryadLeapingStrike=Leap over an enemy, slowing them by <c val="#TooltipNumbers">
 DryadLetThemWitherTalent=Increases Crippling Spores' slow to <c val="#TooltipNumbers">50%</c> and causes it to no longer decay.
 DryadNaturalPerspectiveTalent=Nature's Toxin reveals enemies for its duration.
 DryadNaturesCullingTalent=Increases Nature's Toxin's damage by <c val="#TooltipNumbers">150%</c> to non-Heroes.
-DryadNaturesToxin=Lunara's Basic Attacks and damaging Abilities poison their target, dealing <c val="#TooltipNumbers"><VALUE></c> damage a second for <c val="#TooltipNumbers"><VALUE></c> seconds. Every additional application increases the duration by <c val="#TooltipNumbers"><VALUE></c> seconds, up to a maximum of <c val="#TooltipNumbers">9</c> seconds.
+DryadNaturesToxin=Lunara's Basic Attacks and damaging Abilities poison their target, dealing <c val="#TooltipNumbers">34</c> damage a second for <c val="#TooltipNumbers">3</c> seconds. Every additional application increases the duration by <c val="#TooltipNumbers">3</c> seconds, up to a maximum of <c val="#TooltipNumbers">9</c> seconds.
 DryadNimbleWispTalent=Increases Wisp Movement Speed by <c val="#TooltipNumbers">100%</c> and vision radius by <c val="#TooltipNumbers">50%</c>.
-DryadNoxiousBlossom=After <c val="#TooltipNumbers"><VALUE></c> seconds, cause an area to explode with pollen dealing <c val="#TooltipNumbers"><VALUE></c> damage.
+DryadNoxiousBlossom=After <c val="#TooltipNumbers">0.5</c> seconds, cause an area to explode with pollen dealing <c val="#TooltipNumbers">160</c> damage.
 DryadPesteringBlossomTalent=Increases Noxious Blossom's range by <c val="#TooltipNumbers">50%</c>.
 DryadPhotosynthesisTalent=Crippling Spores returns <c val="#TooltipNumbers">10</c> Mana per enemy hit, up to <c val="#TooltipNumbers">40</c> Mana.
 DryadSiphoningToxinTalent=As long as Nature's Toxin is active on an enemy, heal <c val="#TooltipNumbers">18</c> Health a second.
@@ -555,7 +555,7 @@ DryadThornwoodVine=Send forth vines that deal <c val="#TooltipNumbers">164</c> d
 DryadTimelostWispTalent=Wisp costs no Mana and its cooldown recharges <c val="#TooltipNumbers">125%</c> faster while no Wisp is active.
 DryadUnfairAdvantageTalent=Nature's Toxin deals <c val="#TooltipNumbers">50%</c> more damage to Heroes that are slowed.
 DryadWildVigorTalent=Using Crippling Spores increases the damage of Lunara's next <c val="#TooltipNumbers">4</c> Basic Attacks by <c val="#TooltipNumbers">50%</c>.
-DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers"><VALUE></c> seconds.
+DryadWisp=Spawn a Wisp to scout an area. Can be redirected once active. Lasts <c val="#TooltipNumbers">45</c> seconds.
 DVaBigShotPewPewPew=Instead of a single shot, Big Shot fires <c val="#TooltipNumbers">3</c> shots over <c val="#TooltipNumbers">0.5</c> seconds. Each shot deals <c val="#TooltipNumbers">50%</c> damage.
 DVaBoostersComingThrough=Knockback distance of Boosters is increased by <c val="#TooltipNumbers">100%</c>.
 DVaBoostersCrashCourse=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest: </c>Damage enemy Heroes with Boosters.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> After damaging <c val="#TooltipNumbers">20</c> Heroes, each use of Boosters lowers its cooldown by <c val="#TooltipNumbers">1</c> second per Hero hit.
@@ -1067,17 +1067,17 @@ LeoricUnyieldingDespairTalent=Drain Hope's cooldown is reduced by <c val="#Toolt
 LeoricWillingVesselTalent=Increase the healing from Drain Hope to <c val="#TooltipNumbers">25%</c> of Leoric's maximum Health. If Drain Hope lasts its full duration, Leoric instantly heals for an additional <c val="#TooltipNumbers">5%</c> of his maximum Health.
 LeoricWraithWalk=Leoric separates from his body, becoming Unstoppable and gaining Movement Speed accelerating up to <c val="#TooltipNumbers">50%</c> over <c val="#TooltipNumbers">2.5</c> seconds. When Wraith Walk ends or is canceled, his body jumps to his wraith.
 LeoricWrathOfTheBoneKing=Leoric's first two Basic Attacks cleave for <c val="#TooltipNumbers">100%</c> damage. His last overhead swing deals <c val="#TooltipNumbers">100%</c> additional damage to a single target.
-LiLiBlindingWind=Throw a cloud of wind at the <c val="#TooltipNumbers"><VALUE></c> nearest enemies (prioritizing Heroes), dealing <c val="#TooltipNumbers"><VALUE></c> damage. Affected targets are Blinded for <c val="#TooltipNumbers"><VALUE></c> seconds, causing their Basic Attacks to miss and deal no damage.
+LiLiBlindingWind=Throw a cloud of wind at the <c val="#TooltipNumbers">2</c> nearest enemies (prioritizing Heroes), dealing <c val="#TooltipNumbers">140</c> damage. Affected targets are Blinded for <c val="#TooltipNumbers">2</c> seconds, causing their Basic Attacks to miss and deal no damage.
 LiLiBlindingWindGaleForceTalent=Increases Blinding Wind damage by <c val="#TooltipNumbers">40%</c>.
 LiLiBlindingWindHinderingWindsTalent=Blinding Wind also slows enemy Movement Speed by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
 LiLiBlindingWindLingeringBlindTalent=Increases the duration of Blinding Wind by <c val="#TooltipNumbers">50%</c>.
 LiLiBlindingWindMassVortexTalent=Increases the number of enemies hit by Blinding Wind from <c val="#TooltipNumbers">2</c> to <c val="#TooltipNumbers">4</c>.
-LiLiCloudSerpent=Summon a Cloud Serpent on an allied Hero that attacks nearby enemies for <c val="#TooltipNumbers"><VALUE></c> damage per attack. Lasts for <c val="#TooltipNumbers"><VALUE></c> seconds.
+LiLiCloudSerpent=Summon a Cloud Serpent on an allied Hero that attacks nearby enemies for <c val="#TooltipNumbers">25</c> damage per attack. Lasts for <c val="#TooltipNumbers">8</c> seconds.
 LiLiCloudSerpentLightningSerpentTalent=Cloud Serpent's attacks bounce to <c val="#TooltipNumbers">3</c> nearby enemy targets, dealing <c val="#TooltipNumbers">14</c> damage each.
 LiLiCloudSerpentTimelessCreatureTalent=Increases the duration of Cloud Serpent by <c val="#TooltipNumbers">50%</c>.
-LiLiFastFeet=Upon taking damage, gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> second.
+LiLiFastFeet=Upon taking damage, gain <c val="#TooltipNumbers">10%</c> Movement Speed for <c val="#TooltipNumbers">1</c> second.
 LiLiFastFeetElusiveFeetTalent=When Fast Feet is triggered, gain <c val="#TooltipNumbers">75</c> Physical Armor against the next <c val="#TooltipNumbers">2</c> Hero Basic Attacks for <c val="#TooltipNumbers">10</c> seconds, reducing the damage taken by <c val="#TooltipNumbers">75%</c>.<n/><n/>This effect has a <c val="#TooltipNumbers">10</c> second cooldown.
-LiLiHealingBrew=Heal lowest Health ally (prioritizing Heroes) within <c val="#TooltipNumbers"><VALUE></c> range for <c val="#TooltipNumbers"><VALUE></c> Health.
+LiLiHealingBrew=Heal lowest Health ally (prioritizing Heroes) within <c val="#TooltipNumbers">7</c> range for <c val="#TooltipNumbers">196</c> Health.
 LiLiHealingBrewTheGoodStuffTalent=Healing Brew heals for an additional <c val="#TooltipNumbers">60</c> Health over <c val="#TooltipNumbers">6</c> seconds.
 LiLiHealingBrewTwoForOneTalent=Increases the number of allies healed by Healing Brew to <c val="#TooltipNumbers">2</c>, but increases the cooldown by <c val="#TooltipNumbers">1.5</c> seconds.
 LiLiJugof1000Cups=Rapidly tosses brew to the most injured nearby allies within <c val="#TooltipNumbers">10</c> range, restoring <c val="#TooltipNumbers">1632</c> Health over <c val="#TooltipNumbers">6</c> seconds.
@@ -1094,13 +1094,13 @@ LiLiWaterDragon=Li Li channels for <c val="#TooltipNumbers">2</c> seconds, summo
 LiLiWaterDragonDoubleDragonTalent=After hitting a target with Water Dragon, another Water Dragon is summoned at the point of impact.
 LostVikingSelectBaleog=Baleog's Basic Attacks deal <c val="#TooltipNumbers">50%</c> splash damage to enemies behind his attack target.
 LostVikingSelectErik=Erik moves faster than the other Vikings and has increased Basic Attack range.
-LostVikingSelectOlaf=Olaf can charge enemies and slow their Movement Speed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds by right-clicking on them. <c val="#TooltipNumbers"><VALUE></c> second cooldown. <n/><n/>Olaf gains increased Health Regeneration when out of combat for <c val="#TooltipNumbers"><VALUE></c> seconds.
+LostVikingSelectOlaf=Olaf can charge enemies and slow their Movement Speed by <c val="#TooltipNumbers">30%</c> for <c val="#TooltipNumbers">3</c> seconds by right-clicking on them. <c val="#TooltipNumbers">8</c> second cooldown. <n/><n/>Olaf gains increased Health Regeneration when out of combat for <c val="#TooltipNumbers">4</c> seconds.
 LostVikingsBaleogTheFierceTalent=Baleog's Basic Attacks increase his Attack Speed by <c val="#TooltipNumbers">8%</c>, stacking up to <c val="#TooltipNumbers">5</c> times. After <c val="#TooltipNumbers">3</c> seconds of not attacking, these stacks will rapidly decay.
 LostVikingsCheckpointReachedTalent=<c val="#TooltipNumbers">10</c> seconds after using Play Again!, any dead Vikings are revived and summoned again, and all are healed to full. 
 LostVikingsErikTheSwiftTalent=Permanently increases Erik's base Movement Speed by <c val="#TooltipNumbers">10%</c>, and as long as Erik is moving he heals <c val="#TooltipNumbers">34</c> Health per second.
 LostVikingsExplosiveAttacksTalent=Increases Baleog's splash damage against non-Heroes to <c val="#TooltipNumbers">100%</c>.
 LostVikingsFuryoftheStormTalent=Every <c val="#TooltipNumbers">5</c> seconds, the next Basic Attack will deal an additional <c val="#TooltipNumbers">41</c> damage to the target, and <c val="#TooltipNumbers">105</c> damage to all nearby Minions, Mercenaries and Monsters.  Each Viking has their own cooldown.
-LostVikingsGoGoGo=The Vikings gain <c val="#TooltipNumbers"><VALUE>%</c> increased Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+LostVikingsGoGoGo=The Vikings gain <c val="#TooltipNumbers">30%</c> increased Movement Speed for <c val="#TooltipNumbers">4</c> seconds.
 LostVikingsGoGoGo64KBMarathonTalent=Gain an additional <c val="#TooltipNumbers">40%</c> Movement Speed when activating Go Go Go! that decays over <c val="#TooltipNumbers">4</c> seconds.  Additionally, the Vikings will break out of Roots and Slows.
 LostVikingsHunkaBurningOlafTalent=Olaf deals <c val="#TooltipNumbers">34</c> damage every second to nearby enemies.
 LostVikingsImpatienceIsAVirtueTalent=Enemies damaged by a Viking's Basic Attack reduce the cooldown of all Viking Abilities by <c val="#TooltipNumbers">0.25</c> seconds.
@@ -1118,11 +1118,11 @@ LostVikingsSpyGamesTalent=After standing still for <c val="#TooltipNumbers">3</c
 LostVikingsTheSequelTalent=Reduces the Lost Vikings' death timer by <c val="#TooltipNumbers">50%</c>.
 LostVikingsVikingBribery=Enemy Minions or captured Mercenaries killed near The Lost Vikings grant stacks of Bribe. Use <c val="#TooltipNumbers">40</c> stacks to bribe target Mercenary, instantly defeating them. Does not work on Bosses. Maximum stacks available: <c val="#TooltipNumbers">200</c>. If a camp is defeated entirely with Bribe, the camp respawns <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Current number of Bribe stacks:</c> <c val="#TooltipNumbers">0</c>
 LostVikingsVikingBriberyToken=<c val="ffff8a">Bribe Stacks: <c val="#TooltipNumbers"><d score="LostVikingsVikingBriberyStackScore"/></c></c>
-LostVikingsVikingHoardHeroSelect=Gathering a Regeneration Globe with a Viking permanently increases all their Health Regeneration by <c val="#TooltipNumbers"><VALUE></c> per second.
+LostVikingsVikingHoardHeroSelect=Gathering a Regeneration Globe with a Viking permanently increases all their Health Regeneration by <c val="#TooltipNumbers">0.5</c> per second.
 LostVikingsVikingHoardTalent=Gathering a Regeneration Globe with a Viking permanently increases all their Health Regeneration by <c val="#TooltipNumbers"><VALUE></c> per second.<n/><n/>Current Bonus: <c val="#TooltipNumbers"><VALUE></c> Regen per second
 LostVikingsVikingHoardTokenCounter=<c val="#TooltipQuest">Bonus Health regen:</c><c val="#TooltipNumbers"> <VALUE></c>
 LostVikingsWereOnABoatTalent=The Longboat can attack two targets at once and the range of its Mortar is increased by <c val="#TooltipNumbers">100%</c>.
-LucioAmpItUp=Raise Lúcio's Crossfade track volume for <c val="#TooltipNumbers"><VALUE></c> seconds, amping <c val="FFF800">Healing Boost</c> to <c val="#TooltipNumbers"><VALUE></c> health per second and <c val="3DFF7F">Speed Boost</c> to <c val="#TooltipNumbers"><VALUE>%</c> increased Movement Speed.
+LucioAmpItUp=Raise Lúcio's Crossfade track volume for <c val="#TooltipNumbers">3</c> seconds, amping <c val="FFF800">Healing Boost</c> to <c val="#TooltipNumbers">124</c> health per second and <c val="3DFF7F">Speed Boost</c> to <c val="#TooltipNumbers">45%</c> increased Movement Speed.
 LucioAmpItUpBringItTogether=If at least <c val="#TooltipNumbers">2</c> Allied Heroes are nearby when Amp It Up is cast, Crossfade's <c val="FFF800">Healing Boost</c> is increased by <c val="#TooltipNumbers">45%</c> for the duration.
 LucioAmptItUpBonusTrack=Swapping Crossfade tracks while Amp It Up is active will set Amp It Up back to its max duration.<n/><n/>Can only happen once per cast.
 LucioAmpItUpSonicAmplifier=If at least <c val="#TooltipNumbers">2</c> Allied Heroes are nearby when Amp It Up is cast, Crossfade's radius is increased by <c val="#TooltipNumbers">50%</c> for the duration.
@@ -1136,36 +1136,37 @@ LucioCrossfadeActivateHealingBoost=Currently playing <c val="3DFF7F">Speed Boost
 LucioCrossfadeActivateSpeedBoost=Currently playing <c val="FFF800">Healing Boost</c>, passively healing Lúcio and nearby allied Heroes for <c val="#TooltipNumbers"><VALUE></c> health per second.<n/><n/>Toggle to play <c val="3DFF7F">Speed Boost</c> instead.
 LucioCrossfadeBeatMixing=After switching Crossfade tracks, if the next song plays for at least <c val="#TooltipNumbers">1.5</c> seconds, Lúcio gains a <c val="#TooltipNumbers">100</c> point Shield that lasts indefinitely.<n/><n/>Switching tracks again removes the Shield.
 LucioCrossfadePartyMix=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Play Lúcio's Crossfade tracks to nearby Allies for a total of <c val="#TooltipNumbers">8</c> minutes. Multiple Allies provide additional time.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Permanently increase Crossfade's range by <c val="#TooltipNumbers">20%</c>.
+LucioCrossfadeShop=Play one of two music tracks for Lúcio and his allies.<n/><n/><c val="FFF800">Healing Boost</c>: Passively heal Lúcio and nearby allied Heroes for <c val="#TooltipNumbers">16</c> health per second.<n/><n/><c val="3DFF7F">Speed Boost</c>: Increase the Movement Speed of Lúcio and nearby allied Heroes by <c val="#TooltipNumbers">15%</c>.
 LucioCrossfadeSpeedBoostWeMoveTogether=Increase the base Movement Speed bonus of Crossfade's <c val="3DFF7F">Speed Boost</c> to <c val="#TooltipNumbers">30%</c>.
 LucioReverseAmp=Blast Lúcio's Crossfade track at enemy Heroes for <c val="#TooltipNumbers">4</c> seconds, causing <c val="FFF800">Healing Boost</c> to inflict <c val="#TooltipNumbers">112</c> damage per second and <c val="3DFF7F">Speed Boost</c> to slow for <c val="#TooltipNumbers">45%</c>.<n/><n/>This ability is unaffected by Crossfade talents.<n/><n/><c val="#AbilityPassive">Passive:</c> Increase Amp It Up's duration to <c val="#TooltipNumbers">4</c> seconds.
 LucioReverseAmpNonstopRemix=While Reverse Amp is affecting at least <c val="#TooltipNumbers">2</c> enemy Heroes, its duration lasts indefinitely.
 LucioSkateMode=Lúcio can shoot while moving. Lúcio skates or dies!
 LucioSoundBarrier=After <c val="#TooltipNumbers">1</c> second, Lúcio and nearby Allied Heroes gain a <c val="#TooltipNumbers">1392</c> point shield that rapidly decays over <c val="#TooltipNumbers">6</c> seconds.
 LucioSoundBarrierBossaNova=Reduce the cooldown of Sound Barrier to <c val="#TooltipNumbers">30</c> seconds, but the shield now decays over <c val="#TooltipNumbers">4</c> seconds.
-LucioSoundwave=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies in an area and knock them back.
+LucioSoundwave=Deal <c val="#TooltipNumbers">112</c> damage to enemies in an area and knock them back.
 LucioSoundwaveChaseTheBass=<img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Quest:</c> Hit <c val="#TooltipNumbers">20</c> enemy Heroes with Soundwave.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Reward:</c> Increase Soundwave's arc by <c val="#TooltipNumbers">50%</c> and its range by <c val="#TooltipNumbers">20%</c>.
 LucioSoundwaveHeliotropics=Soundwave Blinds enemies hit for <c val="#TooltipNumbers">2.5</c> seconds.
 LucioSoundwaveOffTheWall=If Soundwave is cast while having Wall Ride's speed bonus, the cooldown is reduced by <c val="#TooltipNumbers">3</c> seconds.
 LucioSoundwaveSubwoofer=Enemies within the first half of Soundwave's range are knocked back <c val="#TooltipNumbers">50%</c> farther.
-LucioWallRide=When moving alongside impassable battleground terrain and Structures, Lúcio can walk through other units and his Movement Speed is increased by <c val="#TooltipNumbers"><VALUE>%</c>.<n/><n/>This works together with other Movement Speed bonuses.
+LucioWallRide=When moving alongside impassable battleground terrain and Structures, Lúcio can walk through other units and his Movement Speed is increased by <c val="#TooltipNumbers">20%</c>.<n/><n/>This works together with other Movement Speed bonuses.
 LucioWallRideAccelerando=Wall Ride's Movement Speed bonus gradually increases to <c val="#TooltipNumbers">40%</c> over <c val="#TooltipNumbers">4</c> seconds while Lúcio maintains its effect.
 LucioWallRideCantStopWontStop=While Wall Ride's Movement Speed bonus is active, Lúcio is immune to all enemy Slow and Root effects.
 LucioWallRideHardStyle=Gain <c val="#TooltipNumbers">25</c> Armor while Wall Ride's Movement Speed bonus is active, reducing damage taken by <c val="#TooltipNumbers">25%</c>.
 LucioWallRideSlip=Passing through or near an enemy Hero during Wall Ride's effect increases its Movement Speed bonus to <c val="#TooltipNumbers">70%</c> for <c val="#TooltipNumbers">1</c> second.
-MalfurionEntanglingRoots=Root enemies within the target area for <c val="#TooltipNumbers"><VALUE></c> seconds, and deals <c val="#TooltipNumbers"><VALUE></c> damage over the duration. Affected area grows over <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionEntanglingRoots=Root enemies within the target area for <c val="#TooltipNumbers">1.25</c> seconds, and deals <c val="#TooltipNumbers">117</c> damage over the duration. Affected area grows over <c val="#TooltipNumbers">3</c> seconds.
 MalfurionEntanglingRootsStranglingVinesTalent=Enemy Heroes Rooted by Entangling Roots receive <c val="#TooltipNumbers">30%</c> less healing from all sources.
 MalfurionEntanglingRootsTenaciousRootsTalent=Entangling Roots grows <c val="#TooltipNumbers">25%</c> larger, lasts <c val="#TooltipNumbers">25%</c> longer, and Roots targets for <c val="#TooltipNumbers">0.25</c> seconds longer.
 MalfurionEntanglingRootsVengefulRootsTalent=Entangling Roots spawns a Treant that deals <c val="#TooltipNumbers">70</c> damage per second and lasts <c val="#TooltipNumbers">10</c> seconds.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Repeatable Quest:</c> Hitting enemy Heroes with Entangling Roots permanently increases the Treant's damage per second by <c val="#TooltipNumbers">8</c>.
-MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers"><VALUE></c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Cannot be used on Heroes that do not use Mana</c>
+MalfurionInnervate=Grant an allied Hero <c val="#TooltipNumbers">20%</c> of their maximum Mana over <c val="#TooltipNumbers">5</c> seconds. While affected by Innervate, their Basic Ability cooldowns recharge <c val="#TooltipNumbers">50%</c> faster.<n/><n/><c val="ffff8a">Cannot be used on Heroes that do not use Mana</c>
 MalfurionInnervateElunesGraceTalent=Increases the range of Regrowth, Moonfire, and Entangling Roots by <c val="#TooltipNumbers">25%</c>.
 MalfurionInnervateShandosClarityTalent=Reduces Innervate's cooldown by <c val="#TooltipNumbers">8</c> seconds.
-MalfurionMoonfire=Deal <c val="#TooltipNumbers"><VALUE></c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionMoonfire=Deal <c val="#TooltipNumbers">105</c> damage to enemies within target area and reveals them for <c val="#TooltipNumbers">2</c> seconds.
 MalfurionMoonfireFullMoonfireTalent=Increases Moonfire's radius by <c val="#TooltipNumbers">50%</c> and reduces its Mana cost by <c val="#TooltipNumbers">5</c>.
 MalfurionMoonfireHinderingMoonfireTalent=Moonfire Slows enemy Heroes by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2</c> seconds.
 MalfurionMoonfireLunarShowerTalent=Using Moonfire reduces the cooldown of the next Moonfire by <c val="#TooltipNumbers">0.5</c> seconds, and increases the damage by <c val="#TooltipNumbers">15%</c>. Stacks up to <c val="#TooltipNumbers">3</c> times and resets after <c val="#TooltipNumbers">6</c> seconds.
 MalfurionMoonfireMoonburnTalent=Increase Moonfire's damage to Minions by <c val="#TooltipNumbers">75%</c>.<n/><n/><img path="@UI/StormTalentInTextQuestIcon" alignment="uppermiddle" color="B48E4C" width="20" height="22"/><c val="#TooltipQuest">Repeatable Quest:</c> Every <c val="#TooltipNumbers">5</c> Minions killed nearby increase this bonus by <c val="#TooltipNumbers">1%</c>, up to <c val="#TooltipNumbers">25%</c>. After reaching a <c val="#TooltipNumbers">25%</c> bonus, Moonburn's bonus damage also applies to Mercenaries and Monsters.
 MalfurionMoonfireMoonburnTokenTalent=<c val="#TooltipQuest">Bonus Damage: </c><VALUE>%
-MalfurionRegrowth=Heal target ally for <c val="#TooltipNumbers"><VALUE> </c>Health instantly and an additional <c val="#TooltipNumbers"><VALUE> </c>Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
+MalfurionRegrowth=Heal target ally for <c val="#TooltipNumbers">150 </c>Health instantly and an additional <c val="#TooltipNumbers">420 </c>Health over <c val="#TooltipNumbers">15</c> seconds.
 MalfurionRegrowthHarmonyTalent=If Moonfire hits a target, reduce the Mana cost of Regrowth by <c val="#TooltipNumbers">10</c>.
 MalfurionRegrowthLifeSeedTalent=Nearby damaged allied Heroes will automatically gain the heal over time portion of Regrowth. This effect has a <c val="#TooltipNumbers">20</c> second cooldown.
 MalfurionRevitalizeInnervateTalent=Using Innervate also grants Malfurion <c val="#TooltipNumbers">50</c> Mana and causes his Basic Ability cooldowns to refresh <c val="#TooltipNumbers">50%</c> faster for <c val="#TooltipNumbers">5</c> seconds.
@@ -1217,7 +1218,7 @@ MedicDisplacementGrenade=Fire a grenade that can be manually detonated, dealing 
 MedicEMPGrenadeTalent=Displacement Grenade deals an additional <c val="#TooltipNumbers">40</c> damage over <c val="#TooltipNumbers">2</c> seconds, and up to <c val="#TooltipNumbers">400</c> bonus damage to Shields.
 MedicExtendedCare=Increase the range of Healing Beam by <c val="#TooltipNumbers">40%</c>.
 MedicFirstResponder=While above <c val="#TooltipNumbers">70</c> Energy, Healing Beam's healing is increased by <c val="#TooltipNumbers">25%</c>.
-MedicHealingBeam=Heal target ally for <c val="#TooltipNumbers">180</c> Health per second as long as they are in range. After not channeling Healing Beam for <c val="#TooltipNumbers">3</c> seconds, regenerate <c val="#TooltipNumbers">6</c> Energy per second.<n/><n/>Reactivate to switch targets, or self-cast to cancel channeling.
+MedicHealingBeam=Heal target ally for <c val="#TooltipNumbers">180</c> Health per second as long as they are in range. After not channeling Healing Beam for <c val="#TooltipNumbers">2</c> seconds, regenerate <c val="#TooltipNumbers">6</c> Energy per second.<n/><n/>Reactivate to switch targets, or self-cast to cancel channeling.
 MedicHyperactivity=Reduce the cooldown of Stim Drone from <c val="#TooltipNumbers">90</c> seconds to <c val="#TooltipNumbers">45</c> seconds, and increase the Movement Speed bonus from <c val="#TooltipNumbers">25%</c> to <c val="#TooltipNumbers">50%</c>.
 MedicInfusedGrenadeTalent=Displacement Grenade's Mana cost is refunded if it hits an enemy Hero.
 MedicInoculationTalent=Safeguard grants an additional <c val="#TooltipNumbers"><VALUE></c> Armor for the first <c val="#TooltipNumbers"><VALUE></c> seconds.
@@ -2038,7 +2039,7 @@ WitchDoctorZombieWall=After <c val="#TooltipNumbers">1</c> second, create a ring
 WitchDoctorZombieWallDeadRushTalent=Zombie Wall deals <c val="#TooltipNumbers">75%</c> more damage. When it expires up to <c val="#TooltipNumbers">5</c> remaining Zombies uproot and attack nearby enemies for <c val="#TooltipNumbers">3</c> seconds.
 WitchDoctorZombieWallFreshCorpsesTalent=Zombie Wall cooldown reduced by <c val="#TooltipNumbers"><VALUE></c> seconds.
 WizardAetherWalkerTalent=If Li-Ming hasn't taken damage in the last <c val="#TooltipNumbers">5</c> seconds, Teleport costs no mana and its cooldown is decreased by <c val="#TooltipNumbers">2</c> seconds.
-WizardArcaneOrb=Fire an Orb that powers up as it travels, dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit. The amount of damage dealt is increased the further it travels, up to <c val="#TooltipNumbers"><VALUE></c> damage.
+WizardArcaneOrb=Fire an Orb that powers up as it travels, dealing <c val="#TooltipNumbers">135</c> damage to the first enemy hit. The amount of damage dealt is increased the further it travels, up to <c val="#TooltipNumbers">405</c> damage.
 WizardArcaneOrbArcaneOrbitTalent=Arcane Orb travels <c val="#TooltipNumbers">25%</c> farther, doing up to <c val="#TooltipNumbers">25%</c> more damage. 
 WizardArcaneOrbArcaniteOrbTalent=Arcane Orb starts smaller, and grows as it travels
 WizardArcaneOrbObliterationTalent=Takedowns permanently increase Arcane Orbs damage by <c val="#TooltipNumbers">3%</c>, up to <c val="#TooltipNumbers">15%</c>. These bonuses are lost on death.
@@ -2060,7 +2061,7 @@ WizardFirebirdsFineryTalent=If you would die, a Meteor crashes to the ground, an
 WizardFireflies=Drastically increases Magic Missiles speed. Its cooldown is reduced by <c val="#TooltipNumbers">1</c> second, and its Mana cost is reduced by <c val="#TooltipNumbers">5</c>.
 WizardForceArmorTalent=When Magic Missiles damages an enemy Hero, gain <c val="#TooltipNumbers">50</c> Spell Armor against the next enemy Ability, reducing the damage taken by <c val="#TooltipNumbers">50%</c>. Gain <c val="#TooltipNumbers">1</c> charge per cast.<n/><n/>Stores up to <c val="#TooltipNumbers">4</c> charges.
 WizardGlassCannonTalent=Increases your Ability Power by <c val="#TooltipNumbers">15%</c>, but decreases your maximum Health by <c val="#TooltipNumbers">15%</c>.
-WizardMagicMissiles=Fire three missiles toward an area, each dealing <c val="#TooltipNumbers"><VALUE></c> damage to the first enemy hit. These missiles do <c val="#TooltipNumbers">50%</c> damage to Structures.
+WizardMagicMissiles=Fire three missiles toward an area, each dealing <c val="#TooltipNumbers">147</c> damage to the first enemy hit. These missiles do <c val="#TooltipNumbers">50%</c> damage to Structures.
 WizardMagicMissilesChargedBlastTalent=Basic Attacking a target recently hit by a Magic Missile does an extra <c val="#TooltipNumbers">87</c> damage.
 WizardMagicMissilesMirrorballTalent=Magic Missiles fires an additional <c val="#TooltipNumbers">2</c> missiles, but its Mana cost is increased by <c val="#TooltipNumbers">5</c>.
 WizardMagicMissilesSeekerTalent=If three Magic Missiles hit the same target, the third one deals an additional <c val="#TooltipNumbers">125</c> damage.
