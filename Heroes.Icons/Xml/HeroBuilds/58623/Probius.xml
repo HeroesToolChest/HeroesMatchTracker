@@ -1,45 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Probius available="51375" attributeid="Prob" unit="HeroProbius" franchise="Starcraft" type="Ranged" difficulty="Hard"
-      portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
-    <Roles>Specialist</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <ProbiusEchoPulseDisruptionPulse name="Echo Pulse" desc="ProbiusEchoPulseDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusEchoPulseDisruptionPulse>
-        <ProbiusWarpResonanceWarpRiftQuest name="Warp Resonance" desc="ProbiusWarpRiftWarpResonanceQuestTalent">storm_ui_icon_probius_warprift.dds</ProbiusWarpResonanceWarpRiftQuest>
-        <ProbiusGatherMineralsPhotonCannonQuest name="Gather Minerals" desc="ProbiusGatherMineralsPhotonCannonQuestTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusGatherMineralsPhotonCannonQuest>
-      </Level1>
-      <Level4>
-        <ProbiusPhotonBarrierPhotonCannon name="Photon Barrier" desc="ProbiusPhotonBarrierPhotonCannonTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusPhotonBarrierPhotonCannon>
-        <ProbiusTurboChargedWorkerRush name="Turbo Charged" desc="ProbiusTurboChargedWorkerRushTalent">storm_ui_icon_probius_workerrush.dds</ProbiusTurboChargedWorkerRush>
-        <ProbiusShieldCapacitor name="Shield Capacitor" desc="ProbiusShieldCapacitorTalent">storm_ui_icon_probius_shieldcapacitor.dds</ProbiusShieldCapacitor>
-      </Level4>
-      <Level7>
-        <ProbiusParticleAcceleratorDisruptionPulse name="Particle Accelerator" desc="ProbiusParticleAcceleratorDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusParticleAcceleratorDisruptionPulse>
-        <ProbiusRiftShockWarpRift name="Rift Shock" desc="ProbiusRiftShockWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusRiftShockWarpRift>
-        <ProbiusTowerDefensePhotonCannon name="Tower Defense" desc="ProbiusTowerDefensePhotonCannonTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusTowerDefensePhotonCannon>
-      </Level7>
-      <Level10>
-        <ProbiusPylonOverchargeHeroic name="Pylon Overcharge" desc="ProbiusPylonOvercharge" mana="100" cooldown="80">storm_ui_icon_probius_pylonovercharge.dds</ProbiusPylonOverchargeHeroic>
-        <ProbiusNullGateHeroic name="Null Gate" desc="ProbiusNullGate" mana="100" cooldown="30">storm_ui_icon_probius_voidgate.dds</ProbiusNullGateHeroic>
-      </Level10>
-      <Level13>
-        <ProbiusAggressiveMatrixWarpInPylon name="Aggressive Matrix" desc="ProbiusPylonAggressiveMatrixWarpInPylonTalent">storm_ui_icon_probius_warpinpylon.dds</ProbiusAggressiveMatrixWarpInPylon>
-        <ProbiusPowerOverflowingWarpInPylon name="Power Overflowing" desc="ProbiusPowerOverflowingWarpInPylonTalent">storm_ui_icon_probius_warpinpylon_a.dds</ProbiusPowerOverflowingWarpInPylon>
-        <ProbiusShieldBatteryWarpInPylon name="Shield Battery" desc="ProbiusShieldBatteryWarpInPylonTalent">storm_ui_icon_probius_warpinpylon_b.dds</ProbiusShieldBatteryWarpInPylon>
-      </Level13>
-      <Level16>
-        <ProbiusQuantumEntanglementWarpRift name="Quantum Entanglement" desc="ProbiusQuantumEntanglementWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusQuantumEntanglementWarpRift>
-        <ProbiusGravityWellWarpRift name="Gravity Well" desc="ProbiusGravityWellWarpRiftTalent">storm_ui_icon_probius_warprift_a.dds</ProbiusGravityWellWarpRift>
-        <ProbiusRepulsorWarpRift name="Repulsor" desc="ProbiusRepulsorWarpRiftTalent">storm_ui_icon_probius_warprift_b.dds</ProbiusRepulsorWarpRift>
-        <ProbiusInterferenceWarpRift name="Interference" desc="ProbiusInterferenceWarpRiftTalent">storm_ui_icon_probius_warprift_c.dds</ProbiusInterferenceWarpRift>
-      </Level16>
-      <Level20>
-        <ProbiusConstructAdditionalPylonsPylonOvercharge name="Construct Additional Pylons" desc="ProbiusConstructAdditionalPylonsPylonOverchargeTalent">storm_ui_icon_probius_pylonovercharge.dds</ProbiusConstructAdditionalPylonsPylonOvercharge>
-        <ProbiusGateKeeperNullGate name="Gate Keeper" desc="ProbiusGateKeeperNullGateTalent">storm_ui_icon_probius_voidgate.dds</ProbiusGateKeeperNullGate>
-        <ProbiusShootEmUptoRiftsDisruptionPulse name="Shoot'Em Up" desc="ProbiusShootEmUpDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusShootEmUptoRiftsDisruptionPulse>
-        <ProbiusProbiusLoopWarpRift name="Probius Loop" desc="ProbiusProbiusLoopWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusProbiusLoopWarpRift>
-      </Level20>
+<Probius available="51375" attributeid="Prob" unit="HeroProbius" franchise="Starcraft" type="Ranged" difficulty="Hard"
+    portrait="storm_ui_ingame_heroselect_btn_probius.dds" loading="storm_ui_ingame_hero_loadingscreen_probius.dds" leader="storm_ui_ingame_hero_leaderboard_probius.dds">
+  <Roles>Specialist</Roles>
+  <Abilities>
+    <Basic>
+      <ProbiusDisruptionPulse name="Disruption Pulse" desc="ProbiusDisruptionPulse" mana="75" cooldown="3">storm_ui_icon_probius_disruptionpulse.dds</ProbiusDisruptionPulse>
+      <ProbiusWarpRift name="Warp Rift" desc="ProbiusWarpRift" mana="150" cooldown="6" ch-cooldown="true">storm_ui_icon_probius_warprift.dds</ProbiusWarpRift>
+      <ProbiusPhotonCannon name="Photon Cannon" desc="ProbiusPhotonCannon" cooldown="15">storm_ui_icon_probius_photoncannon.dds</ProbiusPhotonCannon>
+    </Basic>
+    <Heroic>
+      <ProbiusPylonOvercharge talent="ProbiusPylonOverchargeHeroic" />
+      <ProbiusNullGate talent="ProbiusNullGateHeroic" />
+    </Heroic>
+    <Trait>
+      <ProbiusWarpInPylon name="Warp In Pylon" desc="ProbiusWarpInPylon" cooldown="12">storm_ui_icon_probius_warpinpylon.dds</ProbiusWarpInPylon>
+    </Trait>
+    <Mount>
+      <ProbiusWorkerRush name="Worker Rush" desc="ProbiusWorkerRush" cooldown="30">storm_ui_icon_probius_mount.dds</ProbiusWorkerRush>
+    </Mount>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <ProbiusEchoPulseDisruptionPulse name="Echo Pulse" desc="ProbiusEchoPulseDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusEchoPulseDisruptionPulse>
+      <ProbiusWarpResonanceWarpRiftQuest name="Warp Resonance" desc="ProbiusWarpRiftWarpResonanceQuestTalent">storm_ui_icon_probius_warprift.dds</ProbiusWarpResonanceWarpRiftQuest>
+      <ProbiusGatherMineralsPhotonCannonQuest name="Gather Minerals" desc="ProbiusGatherMineralsPhotonCannonQuestTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusGatherMineralsPhotonCannonQuest>
+    </Level1>
+    <Level4>
+      <ProbiusPhotonBarrierPhotonCannon name="Photon Barrier" desc="ProbiusPhotonBarrierPhotonCannonTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusPhotonBarrierPhotonCannon>
+      <ProbiusTurboChargedWorkerRush name="Turbo Charged" desc="ProbiusTurboChargedWorkerRushTalent">storm_ui_icon_probius_workerrush.dds</ProbiusTurboChargedWorkerRush>
+      <ProbiusShieldCapacitor name="Shield Capacitor" desc="ProbiusShieldCapacitorTalent">storm_ui_icon_probius_shieldcapacitor.dds</ProbiusShieldCapacitor>
+    </Level4>
+    <Level7>
+      <ProbiusParticleAcceleratorDisruptionPulse name="Particle Accelerator" desc="ProbiusParticleAcceleratorDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusParticleAcceleratorDisruptionPulse>
+      <ProbiusRiftShockWarpRift name="Rift Shock" desc="ProbiusRiftShockWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusRiftShockWarpRift>
+      <ProbiusTowerDefensePhotonCannon name="Tower Defense" desc="ProbiusTowerDefensePhotonCannonTalent">storm_ui_icon_probius_photoncannon.dds</ProbiusTowerDefensePhotonCannon>
+    </Level7>
+    <Level10>
+      <ProbiusPylonOverchargeHeroic name="Pylon Overcharge" desc="ProbiusPylonOvercharge" mana="100" cooldown="80">storm_ui_icon_probius_pylonovercharge.dds</ProbiusPylonOverchargeHeroic>
+      <ProbiusNullGateHeroic name="Null Gate" desc="ProbiusNullGate" mana="100" cooldown="30">storm_ui_icon_probius_voidgate.dds</ProbiusNullGateHeroic>
+    </Level10>
+    <Level13>
+      <ProbiusAggressiveMatrixWarpInPylon name="Aggressive Matrix" desc="ProbiusPylonAggressiveMatrixWarpInPylonTalent">storm_ui_icon_probius_warpinpylon.dds</ProbiusAggressiveMatrixWarpInPylon>
+      <ProbiusPowerOverflowingWarpInPylon name="Power Overflowing" desc="ProbiusPowerOverflowingWarpInPylonTalent">storm_ui_icon_probius_warpinpylon_a.dds</ProbiusPowerOverflowingWarpInPylon>
+      <ProbiusShieldBatteryWarpInPylon name="Shield Battery" desc="ProbiusShieldBatteryWarpInPylonTalent">storm_ui_icon_probius_warpinpylon_b.dds</ProbiusShieldBatteryWarpInPylon>
+    </Level13>
+    <Level16>
+      <ProbiusQuantumEntanglementWarpRift name="Quantum Entanglement" desc="ProbiusQuantumEntanglementWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusQuantumEntanglementWarpRift>
+      <ProbiusGravityWellWarpRift name="Gravity Well" desc="ProbiusGravityWellWarpRiftTalent">storm_ui_icon_probius_warprift_a.dds</ProbiusGravityWellWarpRift>
+      <ProbiusRepulsorWarpRift name="Repulsor" desc="ProbiusRepulsorWarpRiftTalent">storm_ui_icon_probius_warprift_b.dds</ProbiusRepulsorWarpRift>
+      <ProbiusInterferenceWarpRift name="Interference" desc="ProbiusInterferenceWarpRiftTalent">storm_ui_icon_probius_warprift_c.dds</ProbiusInterferenceWarpRift>
+    </Level16>
+    <Level20>
+      <ProbiusConstructAdditionalPylonsPylonOvercharge name="Construct Additional Pylons" desc="ProbiusConstructAdditionalPylonsPylonOverchargeTalent">storm_ui_icon_probius_pylonovercharge.dds</ProbiusConstructAdditionalPylonsPylonOvercharge>
+      <ProbiusGateKeeperNullGate name="Gate Keeper" desc="ProbiusGateKeeperNullGateTalent">storm_ui_icon_probius_voidgate.dds</ProbiusGateKeeperNullGate>
+      <ProbiusShootEmUptoRiftsDisruptionPulse name="Shoot'Em Up" desc="ProbiusShootEmUpDisruptionPulseTalent">storm_ui_icon_probius_disruptionpulse.dds</ProbiusShootEmUptoRiftsDisruptionPulse>
+      <ProbiusProbiusLoopWarpRift name="Probius Loop" desc="ProbiusProbiusLoopWarpRiftTalent">storm_ui_icon_probius_warprift.dds</ProbiusProbiusLoopWarpRift>
+    </Level20>
   </Talents>
 </Probius>

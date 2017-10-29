@@ -3,6 +3,18 @@
         portrait="storm_ui_ingame_heroselect_btn_stukov.dds" loading="storm_ui_ingame_hero_loadingscreen_stukov.dds" leader="storm_ui_ingame_hero_leaderboard_stukov.dds">
   <Roles>Support</Roles>
   <Abilities>
+    <Basic>
+      <StukovHealingPathogen name="Healing Pathogen" desc="StukovHealingPathogen" mana="40" cooldown="10">storm_ui_icon_stukov_healingpathogen.dds</StukovHealingPathogen>
+      <StukovWeightedPustule name="Weighted Pustule" desc="StukovWeightedPustule" mana="50" cooldown="10">storm_ui_icon_stukov_weightedpustule.dds</StukovWeightedPustule>
+      <StukovLurkingArm name="Lurking Arm" desc="StukovLurkingArm" mana="60" cooldown="8">storm_ui_icon_stukov_lurkingarm.dds</StukovLurkingArm>
+    </Basic>
+    <Heroic>
+      <StukovFlailingSwipe talent="StukovHeroicAbilityFlailingSwipe" />
+      <StukovMassiveShove talent="StukovHeroicAbilityMassiveShove" />
+    </Heroic>
+    <Trait>
+      <StukovBioKillSwitch name="Bio-Kill Switch" desc="StukovBioKillSwitch" cooldown="16">storm_ui_icon_stukov_bio-killswitch.dds</StukovBioKillSwitch>
+    </Trait>
   </Abilities>
   <Talents>
     <Level1>

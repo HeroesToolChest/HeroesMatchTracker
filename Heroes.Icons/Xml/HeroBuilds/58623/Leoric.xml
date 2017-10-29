@@ -7,18 +7,19 @@
       <LeoricSkeletalSwingTargetedReady name="Skeletal Swing" desc="LeoricSkeletalSwing" mana="80" cooldown="14">storm_ui_icon_leoric_skeletalswing.dds</LeoricSkeletalSwingTargetedReady>
       <LeoricDrainHope name="Drain Hope" desc="LeoricDrainHope" mana="60" cooldown="11">storm_ui_icon_leoric_drainhope.dds</LeoricDrainHope>
       <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
-      <Secondary>
-        <LeoricGhastlySwing name="Ghastly Swing" desc="LeoricGhastlySwing" cooldown="8">storm_ui_icon_leoric_skeletalswing_undead.dds</LeoricGhastlySwing>
-        <LeoricDrainEssence name="Drain Essence" desc="LeoricDrainEssence" cooldown="9">storm_ui_icon_leoric_drainhope_undead.dds</LeoricDrainEssence>
-        <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
-      </Secondary>
     </Basic>
     <Heroic>
       <LeoricEntomb talent="LeoricHeroicAbilityEntomb" />
       <LeoricMarchoftheBlackKing talent="LeoricHeroicAbilityMarchoftheBlackKing" />
     </Heroic>
     <Trait>
-      <LeoricUndyingTrait name="Undying" desc="LeoricUndyingTrait">storm_ui_icon_leoric_trait.dds</LeoricUndyingTrait>
+      <LeoricUndyingTrait name="Undying" desc="LeoricUndyingTrait" icon="storm_ui_icon_leoric_trait.dds">
+        <Basic>
+          <LeoricGhastlySwing name="Ghastly Swing" desc="LeoricGhastlySwing" cooldown="8">storm_ui_icon_leoric_skeletalswing_undead.dds</LeoricGhastlySwing>
+          <LeoricDrainEssence name="Drain Essence" desc="LeoricDrainEssence" cooldown="9">storm_ui_icon_leoric_drainhope_undead.dds</LeoricDrainEssence>
+          <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
+        </Basic>
+      </LeoricUndyingTrait>
     </Trait>
   </Abilities>
   <Talents>

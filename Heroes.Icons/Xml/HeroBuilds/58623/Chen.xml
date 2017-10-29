@@ -7,15 +7,16 @@
       <ChenFlyingKick name="Flying Kick" desc="ChenFlyingKick" mana="10" cooldown="5">storm_ui_icon_chen_flyingkick.dds</ChenFlyingKick>
       <ChenKegSmash name="Keg Smash" desc="ChenKegSmash" mana="20" cooldown="5">storm_ui_icon_chen_kegsmash.dds</ChenKegSmash>
       <ChenBreathOfFire name="Breath of Fire" desc="ChenBreathOfFire" mana="30" cooldown="5">storm_ui_icon_chen_breathoffire.dds</ChenBreathOfFire>
-      <Secondary>
-        <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
-        <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
-        <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
-      </Secondary>
     </Basic>
     <Heroic>
       <ChenWanderingKeg talent="ChenHeroicAbilityWanderingKeg" />
-      <ChenStormEarthFire talent="ChenHeroicAbilityStormEarthFire" />
+      <ChenStormEarthFire talent="ChenHeroicAbilityStormEarthFire">
+        <Basic>
+          <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
+          <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
+          <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
+        </Basic>
+      </ChenStormEarthFire>
     </Heroic>
     <Trait>
       <ChenFortifyingBrew name="Fortifying Brew" desc="ChenFortifyingBrew" cooldown="5">storm_ui_icon_chen_fortifyingbrew.dds</ChenFortifyingBrew>

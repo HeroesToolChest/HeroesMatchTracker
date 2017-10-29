@@ -7,18 +7,19 @@
       <GreymaneGilneanCocktail name="Gilnean Cocktail" desc="GreymaneGilneanCocktail" mana="70" cooldown="10"></GreymaneGilneanCocktail>
       <GreymaneInnerBeast name="Inner Beast" desc="GreymaneInnerBeast" mana="70" cooldown="20">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeast>
       <GreymaneDarkflight name="Darkflight" desc="GreymaneDarkflight" mana="10" cooldown="5">storm_ui_icon_greymane_darkflight.dds</GreymaneDarkflight>
-      <Secondary>
-        <GreymaneRazorSwipe name="Razor Swipe" desc="GreymaneRazorSwipe" mana="30" cooldown="3">storm_ui_icon_greymane_swipe.dds</GreymaneRazorSwipe>
-        <GreymaneInnerBeast name="Inner Beast" desc="GreymaneInnerBeast" mana="70" cooldown="20">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeast>
-        <GreymaneDisengage name="Disengage" desc="GreymaneDisengage" cooldown="5">storm_ui_icon_greymane_disengage.dds</GreymaneDisengage>
-      </Secondary>
     </Basic>
     <Heroic>
       <GreymaneGoForTheThroat talent="GreymaneHeroicAbilityGoForTheThroat" />
       <GreymaneCursedBullet talent="GreymaneHeroicAbilityCursedBullet" />
     </Heroic>
     <Trait>
-      <GreymaneWorgenForm name="Curse of the Worgen" desc="GreymaneWorgenForm">storm_ui_icon_greymane_curseoftheworgen.dds</GreymaneWorgenForm>
+      <GreymaneWorgenForm name="Curse of the Worgen" desc="GreymaneWorgenForm" icon="storm_ui_icon_greymane_curseoftheworgen.dds">
+        <Basic>
+          <GreymaneRazorSwipe name="Razor Swipe" desc="GreymaneRazorSwipe" mana="30" cooldown="3">storm_ui_icon_greymane_swipe.dds</GreymaneRazorSwipe>
+          <GreymaneInnerBeast name="Inner Beast" desc="GreymaneInnerBeast" mana="70" cooldown="20">storm_ui_icon_greymane_beastfocus.dds</GreymaneInnerBeast>
+          <GreymaneDisengage name="Disengage" desc="GreymaneDisengage" cooldown="5">storm_ui_icon_greymane_disengage.dds</GreymaneDisengage>
+        </Basic>
+      </GreymaneWorgenForm>
     </Trait>
   </Abilities>
   <Talents>

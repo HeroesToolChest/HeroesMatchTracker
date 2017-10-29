@@ -7,11 +7,6 @@
       <DVaBoostersOn name="Boosters" desc="DVaMechBoosters" cooldown="9">storm_ui_icon_dva_boosters.dds</DVaBoostersOn>
       <DVaMechDefenseMatrixOn name="Defense Matrix" desc="DVaMechDefenseMatrixOn" cooldown="10">storm_ui_icon_dva_defensematrix.dds</DVaMechDefenseMatrixOn>
       <DVaMechSelfDestruct name="Self-Destruct" desc="DVaMechSelfDestruct">storm_ui_icon_dva_selfdestruct.dds</DVaMechSelfDestruct>
-      <Secondary>
-        <DVaPilotBasic1None />
-        <DVaPilotBasic2None />
-        <DVaPilotCallMech name="Call Mech" desc="DVaPilotCallMech" cooldown="45">storm_ui_icon_dva_callmech.dds</DVaPilotCallMech>
-      </Secondary>
     </Basic>
     <Heroic>
       <DVaMechBunnyHopHeroic talent="DVaBunnyHop" />
@@ -19,7 +14,13 @@
     </Heroic>
     <Trait>
       <DVaMechMechMode name="Mech Mode" desc="DVaMechMechMode">storm_ui_icon_dva_mechmode.dds</DVaMechMechMode>
-      <DVaPilotPilotMode name="Pilot Mode" desc="DVaPilotPilotMode">storm_ui_icon_dva_pilotmode.dds</DVaPilotPilotMode>
+      <DVaPilotPilotMode name="Pilot Mode" desc="DVaPilotPilotMode" icon="storm_ui_icon_dva_pilotmode.dds">
+        <Basic>
+          <DVaPilotBasic1None />
+          <DVaPilotBasic2None />
+          <DVaPilotCallMech name="Call Mech" desc="DVaPilotCallMech" cooldown="45">storm_ui_icon_dva_callmech.dds</DVaPilotCallMech>
+        </Basic>
+      </DVaPilotPilotMode>
     </Trait>
   </Abilities>
   <Talents>

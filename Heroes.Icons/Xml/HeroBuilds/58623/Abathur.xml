@@ -4,14 +4,15 @@
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4">storm_ui_icon_abathur_symbiote.dds</AbathurSymbiote>
+      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4" icon="storm_ui_icon_abathur_symbiote.dds">
+        <Basic>
+          <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
+          <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
+          <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
+        </Basic>
+      </AbathurSymbiote>
       <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest" cooldown="10" ch-cooldown="true">storm_ui_icon_abathur_toxicnest.dds</AbathurToxicNest>
       <AbathurBasic3None />
-      <Secondary>
-        <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
-        <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
-        <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
-      </Secondary>
     </Basic>
     <Heroic>
       <AbathurUltimateEvolution talent="AbathurHeroicAbilityUltimateEvolution" />

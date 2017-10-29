@@ -1,44 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Nazeebo available="47479" attributeid="Witc" unit="HeroWitchDoctor" franchise="Diablo" type="Ranged" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_witchdoctor.dds" loading="storm_ui_ingame_hero_loadingscreen_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
-    <Roles>Specialist</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <WitchDoctorWidowmakers name="Widowmakers" desc="WitchDoctorWidowmakers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorWidowmakers>
-        <WitchDoctorPandemic name="Pandemic" desc="WitchDoctorPandemic">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPandemic>
-        <WitchDoctorThingOfTheDeep name="Thing of the Deep" generic="true" desc="WitchDoctorThingOfTheDeepTalent">storm_ui_icon_talent_elunesgrace.dds</WitchDoctorThingOfTheDeep>
-      </Level1>
-      <Level4>
-        <WitchDoctorHexedCrawlers name="Hexed Crawlers" desc="WitchDoctorHexedCrawlers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorHexedCrawlers>
-        <WitchDoctorBigVoodoo name="Big Voodoo" desc="WitchDoctorBigVoodoo">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorBigVoodoo>
-        <WitchDoctorBloodRitual name="Blood Ritual" desc="WitchDoctorVoodooRitualBloodRitualTalent">storm_ui_icon_nazeebo_voodooritual_a.dds</WitchDoctorBloodRitual>
-      </Level4>
-      <Level7>
-        <WitchDoctorSpiritofArachyr name="Spirit of Arachyr" desc="WitchDoctorSpiritofArachyr">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorSpiritofArachyr>
-        <WitchDoctorDeadRush name="Dead Rush" desc="WitchDoctorZombieWallDeadRushTalent">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorDeadRush>
-        <WitchDoctorToadsofHugeness name="Toads of Hugeness" desc="WitchDoctorPlagueOfToadsToadsOfHugenessTalent">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorToadsofHugeness>
-      </Level7>
-      <Level10>
-        <WitchDoctorHeroicAbilityGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorHeroicAbilityGargantuan>
-        <WitchDoctorHeroicAbilityRavenousSpirits name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit" mana="100" cooldown="90">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorHeroicAbilityRavenousSpirits>
-      </Level10>
-      <Level13>
-        <WitchDoctorGuardianToads name="Guardian Toads" desc="WitchDoctorGuardianToads">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorGuardianToads>
-        <WitchDoctorSuperstition name="Superstition" desc="WitchDoctorSuperstition">storm_ui_icon_nazeebo_suprerstition.dds</WitchDoctorSuperstition>
-        <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent" cooldown="60">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
-      </Level13>
-      <Level16>
-        <WitchDoctorSpiderColony name="Spider Colony" desc="WitchDoctorSpiderColony">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorSpiderColony>
-        <WitchDoctorRingOfPoison name="Ring of Poison" desc="WitchDoctorRingOfPoison">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorRingOfPoison>
-        <WitchDoctorSoulHarvest name="Soul Harvest" desc="WitchDoctorSoulHarvest" cooldown="15">storm_ui_icon_nazeebo_soulharvest.dds</WitchDoctorSoulHarvest>
-      </Level16>
-      <Level20>
-        <WitchDoctorHumongoid name="Humongoid" desc="WitchDoctorGargantuanHumongoidTalent">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorHumongoid>
-        <WitchDoctorAnnihilatingSpirits name="Annihilating Spirit" desc="WitchDoctorRavenousSpiritAnnihilatingSpiritTalent">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorAnnihilatingSpirits>
-        <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
-        <WitchDoctorVileInfection name="Vile Infection" desc="WitchDoctorVileInfection">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorVileInfection>
-      </Level20>
+<Nazeebo available="47479" attributeid="Witc" unit="HeroWitchDoctor" franchise="Diablo" type="Ranged" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_witchdoctor.dds" loading="storm_ui_ingame_hero_loadingscreen_witchdoctor.dds" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.dds">
+  <Roles>Specialist</Roles>
+  <Abilities>
+    <Basic>
+      <WitchDoctorCorpseSpiders name="Corpse Spiders" desc="WitchDoctorCorpseSpiders" mana="50" cooldown="9">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorCorpseSpiders>
+      <WitchDoctorZombieWall name="Zombie Wall" desc="WitchDoctorZombieWall" mana="70" cooldown="14">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorZombieWall>
+      <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueofToads" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPlagueofToads>
+    </Basic>
+    <Heroic>
+      <WitchDoctorGargantuan talent="WitchDoctorHeroicAbilityGargantuan" />
+      <WitchDoctorRavenousSpirit talent="WitchDoctorHeroicAbilityRavenousSpirits" />
+      <Secondary>
+        <WitchDoctorGargantuanStompCommand name="Gargantuan Stomp" desc="WitchDoctorGargantuanStomp" cooldown="5">storm_ui_icon_nazeebo_gargantuanstomp.dds</WitchDoctorGargantuanStompCommand>
+      </Secondary>
+    </Heroic>
+    <Trait>
+      <WitchDoctorVoodooRitualTrait name="Voodoo Ritual" desc="WitchDoctorVoodooRitualTrait">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorVoodooRitualTrait>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <WitchDoctorWidowmakers name="Widowmakers" desc="WitchDoctorWidowmakers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorWidowmakers>
+      <WitchDoctorPandemic name="Pandemic" desc="WitchDoctorPandemic">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPandemic>
+      <WitchDoctorThingOfTheDeep name="Thing of the Deep" generic="true" desc="WitchDoctorThingOfTheDeepTalent">storm_ui_icon_talent_elunesgrace.dds</WitchDoctorThingOfTheDeep>
+    </Level1>
+    <Level4>
+      <WitchDoctorHexedCrawlers name="Hexed Crawlers" desc="WitchDoctorHexedCrawlers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorHexedCrawlers>
+      <WitchDoctorBigVoodoo name="Big Voodoo" desc="WitchDoctorBigVoodoo">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorBigVoodoo>
+      <WitchDoctorBloodRitual name="Blood Ritual" desc="WitchDoctorVoodooRitualBloodRitualTalent">storm_ui_icon_nazeebo_voodooritual_a.dds</WitchDoctorBloodRitual>
+    </Level4>
+    <Level7>
+      <WitchDoctorSpiritofArachyr name="Spirit of Arachyr" desc="WitchDoctorSpiritofArachyr">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorSpiritofArachyr>
+      <WitchDoctorDeadRush name="Dead Rush" desc="WitchDoctorZombieWallDeadRushTalent">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorDeadRush>
+      <WitchDoctorToadsofHugeness name="Toads of Hugeness" desc="WitchDoctorPlagueOfToadsToadsOfHugenessTalent">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorToadsofHugeness>
+    </Level7>
+    <Level10>
+      <WitchDoctorHeroicAbilityGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorHeroicAbilityGargantuan>
+      <WitchDoctorHeroicAbilityRavenousSpirits name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit" mana="100" cooldown="90">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorHeroicAbilityRavenousSpirits>
+    </Level10>
+    <Level13>
+      <WitchDoctorGuardianToads name="Guardian Toads" desc="WitchDoctorGuardianToads">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorGuardianToads>
+      <WitchDoctorSuperstition name="Superstition" desc="WitchDoctorSuperstition">storm_ui_icon_nazeebo_suprerstition.dds</WitchDoctorSuperstition>
+      <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent" cooldown="60">storm_ui_icon_Talent_IceBlock.dds</GenericTalentIceBlock>
+    </Level13>
+    <Level16>
+      <WitchDoctorSpiderColony name="Spider Colony" desc="WitchDoctorSpiderColony">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorSpiderColony>
+      <WitchDoctorRingOfPoison name="Ring of Poison" desc="WitchDoctorRingOfPoison">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorRingOfPoison>
+      <WitchDoctorSoulHarvest name="Soul Harvest" desc="WitchDoctorSoulHarvest" cooldown="15">storm_ui_icon_nazeebo_soulharvest.dds</WitchDoctorSoulHarvest>
+    </Level16>
+    <Level20>
+      <WitchDoctorHumongoid name="Humongoid" desc="WitchDoctorGargantuanHumongoidTalent">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorHumongoid>
+      <WitchDoctorAnnihilatingSpirits name="Annihilating Spirit" desc="WitchDoctorRavenousSpiritAnnihilatingSpiritTalent">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorAnnihilatingSpirits>
+      <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFuryoftheStorm>
+      <WitchDoctorVileInfection name="Vile Infection" desc="WitchDoctorVileInfection">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorVileInfection>
+    </Level20>
   </Talents>
 </Nazeebo>
