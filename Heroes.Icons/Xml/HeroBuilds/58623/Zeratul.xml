@@ -4,16 +4,16 @@
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <TychusOverkillTargeted name="" desc="" mana="" cooldown=""></TychusOverkillTargeted>
-      <TychusGrenade name="" desc="" mana="" cooldown=""></TychusGrenade>
-      <TychusRunAndGun name="" desc="" mana="" cooldown=""></TychusRunAndGun>
+      <ZeratulCleave name="Cleave" desc="ZeratulCleave" mana="40" cooldown="6">storm_ui_icon_zeratul_cleave.dds</ZeratulCleave>
+      <ZeratulSingularitySpike name="Singularity Spike" desc="ZeratulSingularitySpike" mana="80" cooldown="12">storm_ui_icon_zeratul_singularityspike.dds</ZeratulSingularitySpike>
+      <ZeratulBlinkStorm name="Blink" desc="ZeratulBlink" mana="50" cooldown="10">storm_ui_icon_zeratul_blink.dds</ZeratulBlinkStorm>
     </Basic>
     <Heroic>
-      <TychusOdinNoHealth talent="" />
-      <TychusDrakkenLaserDrill talent="" />
+      <ZeratulShadowAssault talent="ZeratulHeroicAbilityShadowAssault" />
+      <ZeratulVoidPrison talent="ZeratulHeroicAbilityVoidPrison" />
     </Heroic>
     <Trait>
-      <TychusMinigunActive name="" desc="" mana="" cooldown=""></TychusMinigunActive>
+      <ZeratulPermanentCloak name="Permanent Cloak" desc="ZeratulPermanentCloak">storm_ui_icon_zeratul_cloak.dds</ZeratulPermanentCloak>
     </Trait>
   </Abilities>
   <Talents>

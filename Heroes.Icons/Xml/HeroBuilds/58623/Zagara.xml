@@ -4,16 +4,16 @@
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <TychusOverkillTargeted name="" desc="" mana="" cooldown=""></TychusOverkillTargeted>
-      <TychusGrenade name="" desc="" mana="" cooldown=""></TychusGrenade>
-      <TychusRunAndGun name="" desc="" mana="" cooldown=""></TychusRunAndGun>
+      <ZagaraBanelingBarrage name="Baneling Barrage" desc="ZagaraBanelingBarrage" mana="10" cooldown="3" ch-cooldown="true">storm_ui_icon_zagara_banelingbarrage.dds</ZagaraBanelingBarrage>
+      <ZagaraSummonHydralisk name="Hunter Killer" desc="ZagaraHunterKiller" mana="60" cooldown="14">storm_ui_icon_zagara_hunterkiller.dds</ZagaraSummonHydralisk>
+      <ZagaraInfestedDrop name="Infested Drop" desc="ZagaraInfestedDrop" mana="50" cooldown="12">storm_ui_icon_zagara_infesteddrop.dds</ZagaraInfestedDrop>
     </Basic>
     <Heroic>
-      <TychusOdinNoHealth talent="" />
-      <TychusDrakkenLaserDrill talent="" />
+      <ZagaraDevouringMaw talent="ZagaraHeroicAbilityDevouringMaw" />
+      <ZagaraSummonNydusWorm talent="ZagaraHeroicAbilityNydusAssault" />
     </Heroic>
     <Trait>
-      <TychusMinigunActive name="" desc="" mana="" cooldown=""></TychusMinigunActive>
+      <ZagaraSummonCreepTumor name="Creep Tumor" desc="ZagaraCreepTumor" cooldown="18" ch-cooldwon="true">storm_ui_icon_zagara_creep.dds</ZagaraSummonCreepTumor>
     </Trait>
   </Abilities>
   <Talents>

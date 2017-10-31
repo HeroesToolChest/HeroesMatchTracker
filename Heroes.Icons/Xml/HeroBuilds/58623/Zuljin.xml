@@ -4,16 +4,16 @@
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <TychusOverkillTargeted name="" desc="" mana="" cooldown=""></TychusOverkillTargeted>
-      <TychusGrenade name="" desc="" mana="" cooldown=""></TychusGrenade>
-      <TychusRunAndGun name="" desc="" mana="" cooldown=""></TychusRunAndGun>
+      <ZuljinGrievousThrow name="Grievous Throw" desc="ZuljinGrievousThrow" mana="50" cooldown="8">storm_ui_icon_zuljin_grievousthrow.dds</ZuljinGrievousThrow>
+      <ZuljinTwinCleave name="Twin Cleave" desc="ZuljinTwinCleave" mana="60" cooldown="10">storm_ui_icon_zuljin_twincleave.dds</ZuljinTwinCleave>
+      <ZuljinRegeneration name="Regeneration" desc="ZuljinRegeneration" mana="75" cooldown="15">storm_ui_icon_zuljin_regeneration.dds</ZuljinRegeneration>
     </Basic>
     <Heroic>
-      <TychusOdinNoHealth talent="" />
-      <TychusDrakkenLaserDrill talent="" />
+      <ZuljinTazdingo talent="ZuljinTazdingo" />
+      <ZuljinGuillotine talent="ZuljinGuillotine" />
     </Heroic>
     <Trait>
-      <TychusMinigunActive name="" desc="" mana="" cooldown=""></TychusMinigunActive>
+      <ZuljinBerserker name="Berserker" desc="ZuljinBerserker">storm_ui_icon_zuljin_berzerker.dds</ZuljinBerserker>
     </Trait>
   </Abilities>
   <Talents>

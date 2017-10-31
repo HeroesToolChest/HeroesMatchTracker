@@ -4,16 +4,16 @@
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <TychusOverkillTargeted name="" desc="" mana="" cooldown=""></TychusOverkillTargeted>
-      <TychusGrenade name="" desc="" mana="" cooldown=""></TychusGrenade>
-      <TychusRunAndGun name="" desc="" mana="" cooldown=""></TychusRunAndGun>
+      <ZaryaParticleGrenade name="Particle Grenade" desc="ZaryaParticleGrenade" cooldown="8" ch-cooldown="8">storm_ui_icon_zarya_particlegrenade.dds</ZaryaParticleGrenade>
+      <ZaryaPersonalBarrier name="Personal Barrier" desc="ZaryaPersonalBarrier" cooldown="10">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrier>
+      <ZaryaShieldAlly name="Shield Ally" desc="ZaryaShieldAlly" cooldown="12">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAlly>
     </Basic>
     <Heroic>
-      <TychusOdinNoHealth talent="" />
-      <TychusDrakkenLaserDrill talent="" />
+      <ZaryaGravitonSurge talent="ZaryaHeroicAbilityGravitonSurge" />
+      <ZaryaExpulsionZone talent="ZaryaHeroicAbilityExpulsionZone" />
     </Heroic>
     <Trait>
-      <TychusMinigunActive name="" desc="" mana="" cooldown=""></TychusMinigunActive>
+      <ZaryaEnergy name="Energy" desc="ZaryaEnergy">storm_ui_icon_zarya_energy.dds</ZaryaEnergy>
     </Trait>
   </Abilities>
   <Talents>

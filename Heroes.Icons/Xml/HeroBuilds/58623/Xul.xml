@@ -9,8 +9,8 @@
       <NecromancerBonePrison name="Bone Prison" desc="NecromancerBonePrison" mana="80" cooldown="12">storm_ui_icon_necromancer_boneprison.dds</NecromancerBonePrison>
     </Basic>
     <Heroic>
-      <NecromancerPoisonNovaInstant talent="" />
-      <NecromancerSkeletalMages talent="" />
+      <NecromancerPoisonNovaInstant talent="NecromancerHeroicAbilityPoisonNova" />
+      <NecromancerSkeletalMages talent="NecromancerHeroicAbilitySkeletalMages" />
     </Heroic>
     <Trait>
       <NecromancerRaiseSkeleton name="Raise Skeleton" desc="NecromancerRaiseSkeleton">storm_ui_icon_necromancer_raiseskeleton.dds</NecromancerRaiseSkeleton>
