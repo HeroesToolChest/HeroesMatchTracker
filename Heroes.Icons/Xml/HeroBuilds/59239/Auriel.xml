@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Auriel available="47479" attributeid="Auri" unit="HeroAuriel" franchise="Diablo" type="Ranged" difficulty="Medium" mana="Energy"
+        portrait="storm_ui_ingame_heroselect_btn_auriel.dds" loading="storm_ui_ingame_hero_loadingscreen_auriel.dds" leader="storm_ui_ingame_hero_leaderboard_auriel.dds">
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <AurielSacredSweep name="Sacred Sweep" desc="AurielSacredSweep" cooldown="8">storm_ui_icon_auriel_angelicsweep.dds</AurielSacredSweep>
+      <AurielRayOfHeaven name="Ray Of Heaven" desc="AurielRayOfHeaven" cooldown="4">storm_ui_icon_auriel_rayofheaven.dds</AurielRayOfHeaven>
+      <AurielDetainmentStrike name="Detainment Strike" desc="AurielDetainmentStrike" cooldown="14">storm_ui_icon_auriel_restrainingblow.dds</AurielDetainmentStrike>
+    </Basic>
+    <Heroic>
+      <AurielResurrect name="Resurrect" desc="AurielResurrect" cooldown="100">storm_ui_icon_auriel_resurrect.dds</AurielResurrect>
+      <AurielCrystalAegis name="Crystal Aegis" desc="AurielCrystalAegis" cooldown="60">storm_ui_icon_auriel_ribboncocoon.dds</AurielCrystalAegis>
+    </Heroic>
+    <Trait>
+      <AurielBestowHope name="Bestow Hope" desc="AurielBestowHope" cooldown="1.5">storm_ui_icon_auriel_bestowhope.dds</AurielBestowHope>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <AurielSwiftSweepSacredSweepTalent name="Swift Sweep" desc="AurielSwiftSweepSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielSwiftSweepSacredSweepTalent>
+      <AurielIncreasingClaritySacredSweepTalent name="Increasing Clarity" desc="AurielIncreasingClaritySacredSweepTalent">storm_ui_icon_auriel_angelicsweep_a.dds</AurielIncreasingClaritySacredSweepTalent>
+      <AurielRighteousAssaultSacredSweepTalent name="Righteous Assault" desc="AurielRighteousAssaultSacredSweepTalent">storm_ui_icon_auriel_angelicsweep_b.dds</AurielRighteousAssaultSacredSweepTalent>
+      <AurielSearingLightRayOfHeavenTalent name="Searing Light" desc="AurielSearingLightRayOfHeavenTalent">storm_ui_icon_auriel_rayofheaven.dds</AurielSearingLightRayOfHeavenTalent>
+    </Level1>
+    <Level4>
+      <AurielMajesticSpanSacredSweepTalent name="Majestic Span" desc="AurielMajesticSpanSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielMajesticSpanSacredSweepTalent>
+      <AurielHeavyBurdenDetainmentStrikeTalent name="Heavy Burden" desc="AurielHeavyBurdenDetainmentStrikeTalent">storm_ui_icon_auriel_restrainingblow.dds</AurielHeavyBurdenDetainmentStrikeTalent>
+      <AurielRepeatedOffenseDetainmentStrikeTalent name="Repeated Offense" desc="AurielRepeatedOffenseDetainmentStrikeTalent">storm_ui_icon_auriel_restrainingblow_a.dds</AurielRepeatedOffenseDetainmentStrikeTalent>
+    </Level4>
+    <Level7>
+      <AurielGlimmerofHopeRayOfHeavenTalent name="Glimmer of Hope" desc="AurielGlimmerofHopeRayOfHeavenTalent">storm_ui_icon_auriel_rayofheaven_a.dds</AurielGlimmerofHopeRayOfHeavenTalent>
+      <AurielEmpathicLinkBestowHopeTalent name="Empathic Link" desc="AurielEmpathicLinkBestowHopeTalent">storm_ui_icon_auriel_bestowhope.dds</AurielEmpathicLinkBestowHopeTalent>
+      <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord" desc="AurielEnergizedCordRayOfHeavenTalent">storm_ui_icon_auriel_bestowhope_a.dds</AurielEnergizedCordRayOfHeavenTalent>
+    </Level7>
+    <Level10>
+      <AurielHeroicResurrect ability="AurielResurrect" />
+      <AurielHeroicCrystalAegis ability="AurielCrystalAegis" />
+    </Level10>
+    <Level13>
+      <AurielBlindingFlashSacredSweepTalent name="Blinding Flash" desc="AurielBlindingFlashSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielBlindingFlashSacredSweepTalent>
+      <AurielConvergingForceSacredSweepTalent name="Converging Force" desc="AurielConvergingForceSacredSweepTalent">storm_ui_icon_auriel_angelicsweep_a.dds</AurielConvergingForceSacredSweepTalent>
+      <AurielPiercingLashDetainmentStrikeTalent name="Piercing Lash" desc="AurielPiercingLashDetainmentStrikeTalent">storm_ui_icon_auriel_restrainingblow.dds</AurielPiercingLashDetainmentStrikeTalent>
+      <AurielRepellingStrikeDetainmentStrikeTalent name="Repelling Strike" desc="AurielRepellingStrikeDetainmentStrikeTalent">storm_ui_icon_auriel_restrainingblow_a.dds</AurielRepellingStrikeDetainmentStrikeTalent>
+    </Level13>
+    <Level16>
+      <AurielReservoirofHopeRayOfHeavenTalent name="Reservoir of Hope" desc="AurielReservoirofHopeRayOfHeavenTalent">storm_ui_icon_auriel_rayofheaven.dds</AurielReservoirofHopeRayOfHeavenTalent>
+      <AurielWillofHeavenBestowHopeTalent name="Will of Heaven" desc="AurielWillofHeavenBestowHopeTalent">storm_ui_icon_auriel_bestowhope.dds</AurielWillofHeavenBestowHopeTalent>
+      <AurielWrathofHeavenBestowHopeTalent name="Wrath of Heaven" desc="AurielWrathofHeavenBestowHopeTalent">storm_ui_icon_auriel_bestowhope_a.dds</AurielWrathofHeavenBestowHopeTalent>
+    </Level16>
+    <Level20>
+      <AurielLightSpeedResurrectTalent name="Light Speed" desc="AurielLightSpeedResurrectTalent">storm_ui_icon_auriel_resurrect.dds</AurielLightSpeedResurrectTalent>
+      <AurielDiamondResolveCrystalAegisTalent name="Diamond Resolve" desc="AurielDiamondResolveCrystalAegisTalent">storm_ui_icon_auriel_ribboncocoon.dds</AurielDiamondResolveCrystalAegisTalent>
+      <AurielAngelicFlightTalent name="Angelic Flight" desc="AurielAngelicFlightTalent" cooldown="45">storm_ui_icon_auriel_angelicflight.dds</AurielAngelicFlightTalent>
+      <AurielShieldOfHopeTalent name="Shield of Hope" desc="AurielShieldOfHopeTalent" cooldown="60">storm_ui_icon_auriel_shieldofhope.dds</AurielShieldOfHopeTalent>
+    </Level20>
+  </Talents>
+</Auriel>

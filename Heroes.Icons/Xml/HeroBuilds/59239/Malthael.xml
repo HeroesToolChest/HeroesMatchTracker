@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Malthael available="54339" attributeid="MALT" unit="HeroMalthael" franchise="Diablo" type="Melee" difficulty="Medium"
+          portrait="storm_ui_ingame_heroselect_btn_malthael.dds" loading="storm_ui_ingame_hero_loadingscreen_malthael.dds" leader="storm_ui_ingame_hero_leaderboard_malthael.dds">
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <MalthaelSoulRip name="Soul Rip" desc="MalthaelSoulRip" mana="20" cooldown="2">storm_ui_icon_malthael_soulrip.dds</MalthaelSoulRip>
+      <MalthaelWraithStrike name="Wraith Strike" desc="MalthaelWraithStrike" mana="30" cooldown="5">storm_ui_icon_malthael_wraithstrike.dds</MalthaelWraithStrike>
+      <MalthaelDeathShroud name="Death Shroud" desc="MalthaelDeathShroud" mana="50" cooldown="8">storm_ui_icon_malthael_deathshroud.dds</MalthaelDeathShroud>
+    </Basic>
+    <Heroic>
+      <MalthaelTormentedSouls name="Tormented Souls" desc="MalthaelTormentedSouls" mana="100" cooldown="100">storm_ui_icon_malthael_tormentedsoul.dds</MalthaelTormentedSouls>
+      <MalthaelLastRites name="Last Rites" desc="MalthaelLastRites" mana="100" cooldown="75">storm_ui_icon_malthael_lastrites.dds</MalthaelLastRites>
+    </Heroic>
+    <Trait>
+      <MalthaelReapersMark name="Reaper's Mark" desc="MalthaelReapersMark">storm_ui_icon_malthael_reapersmark.dds</MalthaelReapersMark>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <MalthaelDeathsReach name="Death's Reach" desc="MalthaelDeathsReach">storm_ui_icon_malthael_wraithstrike.dds</MalthaelDeathsReach>
+      <MalthaelOnAPaleHorse name="On a Pale Horse" desc="MalthaelOnAPaleHorse">storm_ui_icon_malthael_onpalehorse.dds</MalthaelOnAPaleHorse>
+      <MalthaelFearTheReaper name="Fear the Reaper" desc="MalthaelFearTheReaper" cooldown="25">storm_ui_icon_malthael_fearthereaper.dds</MalthaelFearTheReaper>
+    </Level1>
+    <Level4>
+      <MalthaelDieAlone name="Die Alone" desc="MalthaelDieAlone">storm_ui_icon_malthael_soulrip.dds</MalthaelDieAlone>
+      <MalthaelThrowingShade name="Throwing Shade" desc="MalthaelThrowingShade">storm_ui_icon_malthael_deathshroud.dds</MalthaelThrowingShade>
+      <MalthaelBlackHarvest name="Black Harvest" desc="MalthaelBlackHarvest">storm_ui_icon_malthael_reapersmark.dds</MalthaelBlackHarvest>
+    </Level4>
+    <Level7>
+      <MalthaelColdHand name="Cold Hand" desc="MalthaelColdHand">storm_ui_icon_malthael_soulrip.dds</MalthaelColdHand>
+      <MalthaelMortality name="Mortality" desc="MalthaelMortality">storm_ui_icon_malthael_wraithstrike.dds</MalthaelMortality>
+      <MalthaelTouchOfDeath name="Touch of Death" desc="MalthaelTouchOfDeath" cooldown="30">storm_ui_icon_malthael_touchofdeath.dds</MalthaelTouchOfDeath>
+  </Level7>
+    <Level10>
+      <MalthaelTormentedSouls ability="MalthaelTormentedSouls" />
+      <MalthaelLastRites ability="MalthaelLastRites" />
+    </Level10>
+    <Level13>
+      <MalthaelSoulSiphon name="Soul Siphon" desc="MalthaelSoulSiphon">storm_ui_icon_malthael_soulrip.dds</MalthaelSoulSiphon>
+      <MalthaelEtherealExistence name="Ethereal Existence" desc="MalthaelEtherealExistence">storm_ui_icon_malthael_reapersmark.dds</MalthaelEtherealExistence>
+      <MalthaelInevitableEnd name="Inevitable End" desc="MalthaelInevitableEnd" cooldown="20">storm_ui_icon_malthael_inevitableend.dds</MalthaelInevitableEnd>
+      <MalthaelShroudOfWisdom name="Shroud of Wisdom" desc="MalthaelShroudOfWisdom" cooldown="30">storm_ui_icon_malthael_shroudofwisdom.dds</MalthaelShroudOfWisdom>
+    </Level13>
+    <Level16>
+      <MalthaelSoulCollector name="Soul Collector" desc="MalthaelSoulCollector">storm_ui_icon_malthael_soulrip.dds</MalthaelSoulCollector>
+      <MalthaelMassacre name="Massacre" desc="MalthaelMassacre">storm_ui_icon_malthael_wraithstrike.dds</MalthaelMassacre>
+      <MalthaelMementoMori name="Memento Mori" desc="MalthaelMementoMori">storm_ui_icon_malthael_reapersmark.dds</MalthaelMementoMori>
+    </Level16>
+    <Level20>
+      <MalthaelReaperOfSouls name="Reaper of Souls" desc="MalthaelReaperOfSouls">storm_ui_icon_malthael_tormentedsoul.dds</MalthaelReaperOfSouls>
+      <MalthaelAngelOfDeath name="Angel of Death" desc="MalthaelAngelOfDeath">storm_ui_icon_malthael_lastrites.dds</MalthaelAngelOfDeath>
+      <MalthaelFinalCurtain name="Final Curtain" desc="MalthaelFinalCurtain">storm_ui_icon_malthael_deathshroud.dds</MalthaelFinalCurtain>
+      <MalthaelNoOneCanStopDeath name="No One Can Stop Death" desc="MalthaelNoOneCanStopDeath" cooldown="180">storm_ui_icon_malthael_noonecanstopdeath.dds</MalthaelNoOneCanStopDeath>
+    </Level20>
+  </Talents>
+</Malthael>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Alarak available="47479" attributeid="Alar" unit="HeroAlarak" franchise="Starcraft" type="Melee" difficulty="Hard"
+        portrait="storm_ui_ingame_heroselect_btn_alarak.dds" loading="storm_ui_ingame_hero_loadingscreen_alarak.dds" leader="storm_ui_ingame_hero_leaderboard_alarak.dds">
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <AlarakDiscordStrike name="Discord Strike" desc="AlarakDiscordStrike" mana="45" cooldown="8">storm_ui_icon_alarak_discordstrike.dds</AlarakDiscordStrike>
+      <AlarakTelekinesis name="Telekinesis" desc="AlarakTelekinesis" mana="30" cooldown="12">storm_ui_icon_alarak_telekinesis.dds</AlarakTelekinesis>
+      <AlarakLightningSurge name="Lightning Surge" desc="AlarakLightningSurge" mana="25" cooldown="6">storm_ui_icon_alarak_lightningsurge.dds</AlarakLightningSurge>
+    </Basic>
+    <Heroic>
+      <AlarakDeadlyCharge name="Deadly Charge" desc="AlarakDeadlyCharge" mana="60" cooldown="45">storm_ui_icon_alarak_recklesscharge.dds</AlarakDeadlyCharge>
+      <AlarakCounterStrikeTargeted name="Counter-Strike" desc="AlarakCounterStrikeTargeted" mana="50" cooldown="30">storm_ui_icon_alarak_counterstrike.dds</AlarakCounterStrikeTargeted>
+    </Heroic>
+    <Trait>
+      <AlarakSadism name="Sadism" desc="AlarakSadism">storm_ui_icon_alarak_sadism.dds</AlarakSadism>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <AlarakSustainingPower name="Sustaining Power" desc="AlarakSustainingPower">storm_ui_icon_alarak_lightningsurge_a.dds</AlarakSustainingPower>
+      <AlarakExtendedLightning name="Extended Lightning" desc="AlarakExtendedLightning">storm_ui_icon_alarak_lightningsurge.dds</AlarakExtendedLightning>
+      <AlarakRuthlessMomentum name="Ruthless Momentum" desc="AlarakRuthlessMomentum" generic="true">storm_ui_icon_talent_hardenedfocus.dds</AlarakRuthlessMomentum>
+    </Level1>
+    <Level4>
+      <AlarakChaosReigns name="Chaos Reigns" desc="AlarakChaosReigns">storm_ui_icon_alarak_discordstrike.dds</AlarakChaosReigns>
+      <AlarakNegativelyCharged name="Negatively Charged" desc="AlarakNegativelyCharged">storm_ui_icon_alarak_lightningsurge.dds</AlarakNegativelyCharged>
+      <AlarakShowofForce name="Show of Force" desc="AlarakShowofForce">storm_ui_icon_alarak_sadism.dds</AlarakShowofForce>
+    </Level4>
+    <Level7>
+      <AlarakDissonance name="Dissonance" desc="AlarakDissonance">storm_ui_icon_alarak_discordstrike.dds</AlarakDissonance>
+      <AlarakHinderedMotion name="Hindered Motion" desc="AlarakHinderedMotion">storm_ui_icon_alarak_telekinesis_a.dds</AlarakHinderedMotion>
+      <AlarakAppliedForce name="Applied Force" desc="AlarakAppliedForce">storm_ui_icon_alarak_telekinesis.dds</AlarakAppliedForce>
+    </Level7>
+    <Level10>
+      <AlarakHeroicAbilityDeadlyCharge ability="AlarakDeadlyCharge" />
+      <AlarakHeroicAbilityCounterStrike ability="AlarakCounterStrikeTargeted" />
+    </Level10>
+    <Level13>
+      <AlarakBladeoftheHighlord name="Blade of the Highlord" desc="AlarakBladeoftheHighlord">storm_ui_icon_alarak_sadism.dds</AlarakBladeoftheHighlord>
+      <AlarakPureMalice name="Pure Malice" desc="AlarakPureMalice">storm_ui_icon_alarak_sadism_a.dds</AlarakPureMalice>
+      <AlarakRiteofRakShir name="Rite of Rak'Shir" desc="AlarakRiteofRakShir" cooldown="300">storm_ui_icon_alarak_sadism_b.dds</AlarakRiteofRakShir>
+    </Level13>
+    <Level16>
+      <AlarakLethalOnslaughtDiscordStrike name="Lethal Onslaught" desc="AlarakLethalOnslaught">storm_ui_icon_alarak_discordstrike.dds</AlarakLethalOnslaughtDiscordStrike>
+      <AlarakLightningBarrage name="Lightning Barrage" desc="AlarakLightningBarrage">storm_ui_icon_alarak_lightningsurge.dds</AlarakLightningBarrage>
+      <AlarakMockingStrikes name="Mocking Strikes" desc="AlarakMockingStrikes" generic="true">storm_ui_icon_talent_autoattack_cooldown.dds</AlarakMockingStrikes>
+    </Level16>
+    <Level20>
+      <AlarakCounterStrikeItem name="Counter-Strike" desc="AlarakCounterStrike2ndHeroic" mana="50" cooldown="30">storm_ui_icon_alarak_counterstrike.dds</AlarakCounterStrikeItem>
+      <AlarakDeadlyChargeItem name="Deadly Charge" desc="AlarakDeadlyCharge2ndHeroic" mana="60" cooldown="45">storm_ui_icon_alarak_recklesscharge.dds</AlarakDeadlyChargeItem>
+      <AlarakLastLaugh name="Last Laugh" desc="AlarakLastLaugh" cooldown="30">storm_ui_icon_alarak_lasttrick.dds</AlarakLastLaugh>
+      <AlarakHastyBargain name="Hasty Bargain" desc="AlarakHastyBargain" cooldown="20">storm_ui_icon_alarak_hastybargain.dds</AlarakHastyBargain>
+    </Level20>
+  </Talents>
+</Alarak>
