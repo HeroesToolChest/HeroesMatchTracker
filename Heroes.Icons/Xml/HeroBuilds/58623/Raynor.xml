@@ -9,8 +9,8 @@
       <RaynorAdrenalineRush name="Adrenaline Rush" desc="RaynorAdrenalineRush" cooldown="40">storm_ui_icon_raynor_adrenalinrush.dds</RaynorAdrenalineRush>
     </Basic>
     <Heroic>
-      <RaynorHyperion talent="RaynorHeroicAbilityHyperion" />
-      <RaynorRaynorsBansheeTargeted talent="RaynorHeroicAbilityRaynorsRaiders" />
+      <RaynorHyperion name="Hyperion" desc="RaynorHyperion" mana="100" cooldown="100">storm_ui_icon_raynor_hyperion.dds</RaynorHyperion>
+      <RaynorRaynorsBansheeTargeted name="Raynor's Raiders" desc="RaynorRaynorsRaiders" mana="100" cooldown="80">storm_ui_icon_raynor_raynorsraiders.dds</RaynorRaynorsBansheeTargeted>
     </Heroic>
     <Trait>
       <RaynorAdvancedOptics name="Advanced Optics" desc="RaynorAdvancedOptics">storm_ui_icon_raynor_advancedoptics.dds</RaynorAdvancedOptics>
@@ -35,8 +35,8 @@
       <RaynorLeadFromTheFrontPuttinOnAClinic name="Puttin' On a Clinic" desc="RaynorLeadFromTheFrontPuttinOnAClinicTalent">storm_ui_icon_raynor_puttinonaclinic.dds</RaynorLeadFromTheFrontPuttinOnAClinic>
     </Level7>
     <Level10>
-      <RaynorHeroicAbilityHyperion name="Hyperion" desc="RaynorHyperion" mana="100" cooldown="100">storm_ui_icon_raynor_hyperion.dds</RaynorHeroicAbilityHyperion>
-      <RaynorHeroicAbilityRaynorsRaiders name="Raynor's Raiders" desc="RaynorRaynorsRaiders" mana="100" cooldown="80">storm_ui_icon_raynor_raynorsraiders.dds</RaynorHeroicAbilityRaynorsRaiders>
+      <RaynorHeroicAbilityHyperion ability="RaynorHyperion" />
+      <RaynorHeroicAbilityRaynorsRaiders ability="RaynorRaynorsBansheeTargeted" />
     </Level10>
     <Level13>
       <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>

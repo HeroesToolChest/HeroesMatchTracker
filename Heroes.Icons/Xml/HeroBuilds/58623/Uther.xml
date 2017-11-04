@@ -9,17 +9,18 @@
       <UtherHammerOfJustice name="Hammer of Justice" desc="UtherHammerOfJustice" mana="40" cooldown="8">storm_ui_icon_uther_hammerofjustice.dds</UtherHammerOfJustice>
     </Basic>
     <Heroic>
-      <UtherDivineIntervention talent="UtherHeroicAbilityDivineShield" />
-      <UtherDivineStorm talent="UtherHeroicAbilityDivineStorm" />
+      <UtherDivineIntervention name="Divine Shield" desc="UtherDivineShield" mana="80" cooldown="90">storm_ui_icon_uther_divineshield.dds</UtherDivineIntervention>
+      <UtherDivineStorm name="Divine Storm" desc="UtherDivineStorm" mana="80" cooldown="80">storm_ui_icon_uther_divinestorm.dds</UtherDivineStorm>
     </Heroic>
     <Trait>
-      <UtherEternalDevotion name="Devotion, Eternal Vanguard" desc="UtherEternalDevotion" icon="storm_ui_icon_uther_eternaldevotion.dds">
-        <Basic>
-          <UtherFlashofLight name="Flash of Light" desc="UtherFlashofLight" cooldown="1.5">storm_ui_icon_uther_flashoflight.dds</UtherFlashofLight>
-        </Basic>
-      </UtherEternalDevotion>
+      <UtherEternalDevotion name="Devotion, Eternal Vanguard" desc="UtherEternalDevotion">storm_ui_icon_uther_eternaldevotion.dds</UtherEternalDevotion>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Basic parent="UtherEternalDevotion">
+      <UtherFlashofLight name="Flash of Light" desc="UtherFlashofLight" cooldown="1.5">storm_ui_icon_uther_flashoflight.dds</UtherFlashofLight>
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <UtherHolyLightSilverTouch name="Silver Touch" desc="UtherHolyLightSilverTouch">storm_ui_icon_uther_holylight.dds</UtherHolyLightSilverTouch>
@@ -37,8 +38,8 @@
       <UtherHandOfProtection name="Hand of Protection" generic="true" desc="UtherHandOfProtection" cooldown="90">storm_ui_icon_talent_cleanse.dds</UtherHandOfProtection>
     </Level7>
     <Level10>
-      <UtherHeroicAbilityDivineShield name="Divine Shield" desc="UtherDivineShield" mana="80" cooldown="90">storm_ui_icon_uther_divineshield.dds</UtherHeroicAbilityDivineShield>
-      <UtherHeroicAbilityDivineStorm name="Divine Storm" desc="UtherDivineStorm" mana="80" cooldown="80">storm_ui_icon_uther_divinestorm.dds</UtherHeroicAbilityDivineStorm>
+      <UtherHeroicAbilityDivineShield ability="UtherDivineIntervention" />
+      <UtherHeroicAbilityDivineStorm ability="UtherDivineStorm" />
     </Level10>
     <Level13>
       <UtherMasteryBlessedChampion name="Blessed Champion" desc="UtherEternalDevotionBlessedChampionTalent">storm_ui_icon_uther_holylight.dds</UtherMasteryBlessedChampion>

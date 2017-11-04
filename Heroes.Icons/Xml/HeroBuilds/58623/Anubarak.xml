@@ -9,8 +9,8 @@
       <AnubarakBurrowCharge name="Burrow Charge" desc="AnubarakBurrowCharge" mana="65" cooldown="14">storm_ui_icon_anubarak_burrowcharge.dds</AnubarakBurrowCharge>
     </Basic>
     <Heroic>
-      <AnubarakCarrionSwarm talent="AnubarakHeroicAbilityCarrionSwarm" />
-      <AnubarakCocoon talent="AnubarakHeroicAbilityCocoon" />
+      <AnubarakCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm" mana="75" cooldown="100">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakCarrionSwarm>
+      <AnubarakCocoon name="Cocoon" desc="AnubarakCocoon" mana="70" cooldown="60">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakCocoon>
     </Heroic>
     <Trait>
       <AnubarakScarabHostTrait name="Scarab Host" desc="AnubarakScarabHostTrait">storm_ui_icon_anubarak_scarabhost.dds</AnubarakScarabHostTrait>
@@ -34,8 +34,8 @@
       <AnubarakMasteryLeechingScarabs name="Leeching Scarabs" desc="AnubarakLeechingMandiblesTalent">storm_ui_icon_Anubarak_ScarabHost.dds</AnubarakMasteryLeechingScarabs>
     </Level7>
     <Level10>
-      <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm" mana="75" cooldown="100">storm_ui_icon_Anubarak_LocustSwarm.dds</AnubarakHeroicAbilityCarrionSwarm>
-      <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon" mana="70" cooldown="60">storm_ui_icon_Anubarak_WebBlast.dds</AnubarakHeroicAbilityCocoon>
+      <AnubarakHeroicAbilityCarrionSwarm ability="AnubarakCarrionSwarm" />
+      <AnubarakHeroicAbilityCocoon ability="AnubarakCocoon" />
     </Level10>
     <Level13>
       <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>

@@ -9,8 +9,8 @@
       <MurkySafetyBubble name="Safety Bubble" desc="MurkySafetyBubble" cooldown="14">storm_ui_icon_murky_safetybubble.dds</MurkySafetyBubble>
     </Basic>
     <Heroic>
-      <MurkyMarchoftheMurlocs talent="MurkyHeroicAbilityMarchoftheMurlocs" />
-      <MurkyOctoGrab talent="MurkyHeroicAbilityOctoGrab" />
+      <MurkyMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs" cooldown="110">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyMarchoftheMurlocs>
+      <MurkyOctoGrab name="Octo Grab" desc="MurkyOctoGrab" cooldown="50">storm_ui_icon_murky_octograb.dds</MurkyOctoGrab>
     </Heroic>
     <Trait>
       <MurkyRespawnEgg name="Spawn Egg" desc="MurkySpawnEgg" cooldown="15">storm_ui_icon_murky_octograb.dds</MurkyRespawnEgg>
@@ -33,8 +33,8 @@
       <MurkyTimetoKrill name="Time to Krill" generic="true" desc="MurkyTimetoKrill">storm_ui_icon_talent_autoattack_slow.dds</MurkyTimetoKrill>
     </Level7>
     <Level10>
-      <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs" cooldown="110">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyHeroicAbilityMarchoftheMurlocs>
-      <MurkyHeroicAbilityOctoGrab name="Octo Grab" desc="MurkyOctoGrab" cooldown="50">storm_ui_icon_murky_octograb.dds</MurkyHeroicAbilityOctoGrab>
+      <MurkyHeroicAbilityMarchoftheMurlocs ability="MurkyMarchoftheMurlocs" />
+      <MurkyHeroicAbilityOctoGrab ability="MurkyOctoGrab" />
     </Level10>
     <Level13>
       <MurkyMasteryRejuvenatingBubble name="Rejuvenating Bubble" desc="MurkyRejuvenatingBubbleTalent">storm_ui_icon_murky_safetybubble.dds</MurkyMasteryRejuvenatingBubble>

@@ -9,8 +9,8 @@
       <DryadWisp name="Wisp" desc="DryadWisp" mana="30" cooldown="30">storm_ui_icon_lunara_wisp.dds</DryadWisp>
     </Basic>
     <Heroic>
-      <DryadThornwoodVine talent="DryadHeroicAbilityThornwoodVine" />
-      <DryadLeapingStrike talent="DryadHeroicAbilityLeapingStrike" />
+      <DryadThornwoodVine name="Thornwood Vine" desc="DryadThornwoodVine" mana="35" cooldown="15" ch-cooldown="true">storm_ui_icon_Lunara_WildSpear.dds</DryadThornwoodVine>
+      <DryadLeapingStrike name="Leaping Strike" desc="DryadLeapingStrike" mana="50" cooldown="20" ch-cooldown="true">storm_ui_icon_Lunara_BoundlessStride.dds</DryadLeapingStrike>
     </Heroic>
     <Trait>
       <DryadNaturesToxin name="Nature's Toxin" desc="DryadNaturesToxin">storm_ui_icon_lunara_stiflingblossom.dds</DryadNaturesToxin>
@@ -39,8 +39,8 @@
       <DryadNaturesCulling name="Nature's Culling" desc="DryadNaturesCullingTalent">storm_ui_icon_lunara_stiflingblossom.dds</DryadNaturesCulling>
     </Level7>
     <Level10>
-      <DryadHeroicAbilityThornwoodVine name="Thornwood Vine" desc="DryadThornwoodVine" mana="35" cooldown="15" ch-cooldown="true">storm_ui_icon_Lunara_WildSpear.dds</DryadHeroicAbilityThornwoodVine>
-      <DryadHeroicAbilityLeapingStrike name="Leaping Strike" desc="DryadLeapingStrike" mana="50" cooldown="20" ch-cooldown="true">storm_ui_icon_Lunara_BoundlessStride.dds</DryadHeroicAbilityLeapingStrike>
+      <DryadHeroicAbilityThornwoodVine ability="DryadThornwoodVine" />
+      <DryadHeroicAbilityLeapingStrike ability="DryadLeapingStrike" />
     </Level10>
     <Level13>
       <DryadPesteringBlossom name="Pestering Blossom" desc="DryadPesteringBlossomTalent">storm_ui_icon_Lunara_PollenCloud.dds</DryadPesteringBlossom>

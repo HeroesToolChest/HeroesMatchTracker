@@ -9,8 +9,8 @@
       <KerriganPrimalGrasp name="Primal Grasp" desc="KerriganPrimalGrasp" mana="60" cooldown="10">storm_ui_icon_kerrigan_primalgrasp.dds</KerriganPrimalGrasp>
     </Basic>
     <Heroic>
-      <KerriganMaelstrom talent="KerriganHeroicAbilityMaelstrom" />
-      <KerriganSummonUltralisk talent="KerriganHeroicAbilitySummonUltralisk" />
+      <KerriganMaelstrom name="Maelstrom" desc="KerriganMaelstrom" mana="90" cooldown="100">storm_ui_icon_kerrigan_maelstrom.dds</KerriganMaelstrom>
+      <KerriganSummonUltralisk name="Summon Ultralisk" desc="KerriganSummonUltralisk" mana="100" cooldown="80">storm_ui_icon_kerrigan_ultralisk.dds</KerriganSummonUltralisk>
     </Heroic>
     <Trait>
       <KerriganAssimilation name="Assimilation" desc="KerriganAssimilation">storm_ui_icon_kerrigan_assimilation.dds</KerriganAssimilation>
@@ -34,8 +34,8 @@
       <BattleMomentumKerrigan name="Bladed Momentum" desc="KerriganBladedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumKerrigan>
     </Level7>
     <Level10>
-      <KerriganHeroicAbilityMaelstrom name="Maelstrom" desc="KerriganMaelstrom" mana="90" cooldown="100">storm_ui_icon_kerrigan_maelstrom.dds</KerriganHeroicAbilityMaelstrom>
-      <KerriganHeroicAbilitySummonUltralisk name="Summon Ultralisk" desc="KerriganSummonUltralisk" mana="100" cooldown="80">storm_ui_icon_kerrigan_ultralisk.dds</KerriganHeroicAbilitySummonUltralisk>
+      <KerriganHeroicAbilityMaelstrom ability="KerriganMaelstrom" />
+      <KerriganHeroicAbilitySummonUltralisk ability="KerriganSummonUltralisk" />
     </Level10>
     <Level13>
       <KerriganMasteryEviscerate name="Eviscerate" desc="KerriganRavageEviscerateTalent">storm_ui_icon_kerrigan_ravage.dds</KerriganMasteryEviscerate>

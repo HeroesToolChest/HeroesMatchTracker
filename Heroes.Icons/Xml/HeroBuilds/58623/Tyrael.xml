@@ -9,8 +9,8 @@
       <TyraelSmite name="Smite" desc="TyraelSmite" mana="45" cooldown="6">storm_ui_icon_tyrael_smite.dds</TyraelSmite>
     </Basic>
     <Heroic>
-      <TyraelJudgement talent="TyraelHeroicAbilityJudgement" />
-      <TyraelSanctificationStationary talent="TyraelHeroicAbilitySanctification" />
+      <TyraelJudgement name="Judgment" desc="TyraelJudgment" mana="80" cooldown="70">storm_ui_icon_tyrael_judgement.dds</TyraelJudgement>
+      <TyraelSanctificationStationary name="Sanctification" desc="TyraelSanctificationStationary" mana="75" cooldown="100">storm_ui_icon_tyrael_sanctification.dds</TyraelSanctificationStationary>
     </Heroic>
     <Trait>
       <TyraelArchangelsWrath name="Archangel's Wrath" desc="TyraelArchangelsWrath">storm_ui_icon_tyrael_archangelswrath.dds</TyraelArchangelsWrath>
@@ -35,8 +35,8 @@
       <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
     </Level7>
     <Level10>
-      <TyraelHeroicAbilityJudgement name="Judgment" desc="TyraelJudgment" mana="80" cooldown="70">storm_ui_icon_tyrael_judgement.dds</TyraelHeroicAbilityJudgement>
-      <TyraelHeroicAbilitySanctification name="Sanctification" desc="TyraelSanctificationStationary" mana="75" cooldown="100">storm_ui_icon_tyrael_sanctification.dds</TyraelHeroicAbilitySanctification>
+      <TyraelHeroicAbilityJudgement ability="TyraelJudgement" />
+      <TyraelHeroicAbilitySanctification ability="TyraelSanctificationStationary" />
     </Level10>
     <Level13>
       <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.dds</GenericTalentBurningRage>

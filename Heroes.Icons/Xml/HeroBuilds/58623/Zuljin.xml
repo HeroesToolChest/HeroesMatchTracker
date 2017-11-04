@@ -9,8 +9,8 @@
       <ZuljinRegeneration name="Regeneration" desc="ZuljinRegeneration" mana="75" cooldown="15">storm_ui_icon_zuljin_regeneration.dds</ZuljinRegeneration>
     </Basic>
     <Heroic>
-      <ZuljinTazdingo talent="ZuljinTazdingo" />
-      <ZuljinGuillotine talent="ZuljinGuillotine" />
+      <ZuljinTazdingo name="Taz'dingo!" desc="ZuljinTazdingo" mana="75" cooldown="90">storm_ui_icon_zuljin_tazdingo.dds</ZuljinTazdingo>
+      <ZuljinGuillotine name="Guillotine" desc="ZuljinGuillotine" mana="70" cooldown="30">storm_ui_icon_zuljin_guillotine.dds</ZuljinGuillotine>
     </Heroic>
     <Trait>
       <ZuljinBerserker name="Berserker" desc="ZuljinBerserker">storm_ui_icon_zuljin_berzerker.dds</ZuljinBerserker>
@@ -33,8 +33,8 @@
       <ZuljinFerocity name="Ferocity" desc="ZuljinFerocity">storm_ui_icon_zuljin_berzerker.dds</ZuljinFerocity>
     </Level7>
     <Level10>
-      <ZuljinTazdingo name="Taz'dingo!" desc="ZuljinTazdingo" mana="75" cooldown="90">storm_ui_icon_zuljin_tazdingo.dds</ZuljinTazdingo>
-      <ZuljinGuillotine name="Guillotine" desc="ZuljinGuillotine" mana="70" cooldown="30">storm_ui_icon_zuljin_guillotine.dds</ZuljinGuillotine>
+      <ZuljinTazdingo ability="ZuljinTazdingo" />
+      <ZuljinGuillotine ability="ZuljinGuillotine" />
     </Level10>
     <Level13>
       <ZuljinLacerate name="Lacerate" desc="ZuljinLacerate">storm_ui_icon_zuljin_twincleave_a.dds</ZuljinLacerate>

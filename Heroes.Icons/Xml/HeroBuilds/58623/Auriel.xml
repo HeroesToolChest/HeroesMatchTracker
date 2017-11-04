@@ -9,8 +9,8 @@
       <AurielDetainmentStrike name="Detainment Strike" desc="AurielDetainmentStrike" cooldown="14">storm_ui_icon_auriel_restrainingblow.dds</AurielDetainmentStrike>
     </Basic>
     <Heroic>
-      <AurielCrystalAegis talent="AurielHeroicResurrect" />
-      <AurielResurrect talent="AurielHeroicCrystalAegis" />
+      <AurielResurrect name="Resurrect" desc="AurielResurrect" cooldown="100">storm_ui_icon_auriel_resurrect.dds</AurielResurrect>
+      <AurielCrystalAegis name="Crystal Aegis" desc="AurielCrystalAegis" cooldown="60">storm_ui_icon_auriel_ribboncocoon.dds</AurielCrystalAegis>
     </Heroic>
     <Trait>
       <AurielBestowHope name="Bestow Hope" desc="AurielBestowHope" cooldown="1.5">storm_ui_icon_auriel_bestowhope.dds</AurielBestowHope>
@@ -34,8 +34,8 @@
       <AurielEnergizedCordRayOfHeavenTalent name="Energized Cord" desc="AurielEnergizedCordRayOfHeavenTalent">storm_ui_icon_auriel_bestowhope_a.dds</AurielEnergizedCordRayOfHeavenTalent>
     </Level7>
     <Level10>
-      <AurielHeroicResurrect name="Resurrect" desc="AurielResurrect" cooldown="100">storm_ui_icon_auriel_resurrect.dds</AurielHeroicResurrect>
-      <AurielHeroicCrystalAegis name="Crystal Aegis" desc="AurielCrystalAegis" cooldown="60">storm_ui_icon_auriel_ribboncocoon.dds</AurielHeroicCrystalAegis>
+      <AurielHeroicResurrect ability="AurielResurrect" />
+      <AurielHeroicCrystalAegis ability="AurielCrystalAegis" />
     </Level10>
     <Level13>
       <AurielBlindingFlashSacredSweepTalent name="Blinding Flash" desc="AurielBlindingFlashSacredSweepTalent">storm_ui_icon_auriel_angelicsweep.dds</AurielBlindingFlashSacredSweepTalent>

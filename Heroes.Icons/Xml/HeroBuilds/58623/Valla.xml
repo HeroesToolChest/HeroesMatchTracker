@@ -9,8 +9,8 @@
       <DemonHunterVault name="Vault" desc="DemonHunterVault" mana="50" cooldown="10">storm_ui_icon_valla_vault.dds</DemonHunterVault>
     </Basic>
     <Heroic>
-      <DemonHunterStrafe talent="DemonHunterHeroicAbilityStrafe" />
-      <DemonHunterRainOfVengeance talent="DemonHunterHeroicAbilityRainofVengeance" />
+      <DemonHunterStrafe name="Strafe" desc="DemonHunterStrafe" mana="80" cooldown="60">storm_ui_icon_valla_strafe.dds</DemonHunterStrafe>
+      <DemonHunterRainOfVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance" mana="50" cooldown="50" ch-cooldown="true">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterRainOfVengeance>
     </Heroic>
     <Trait>
       <DemonHunterHatred name="Hatred" desc="DemonHunterHatred">storm_ui_icon_valla_hatred.dds</DemonHunterHatred>
@@ -33,8 +33,8 @@
       <DemonHunterMasteryRepeatingArrowVault name="Repeating Arrow" desc="DemonHunterVaultRepeatingArrowTalent">storm_ui_icon_valla_vault_a.dds</DemonHunterMasteryRepeatingArrowVault>
     </Level7>
     <Level10>
-      <DemonHunterHeroicAbilityStrafe name="Strafe" desc="DemonHunterStrafe" mana="80" cooldown="60">storm_ui_icon_valla_strafe.dds</DemonHunterHeroicAbilityStrafe>
-      <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance" mana="50" cooldown="50" ch-cooldown="true">storm_ui_icon_valla_rainofvengeance.dds</DemonHunterHeroicAbilityRainofVengeance>
+      <DemonHunterHeroicAbilityStrafe ability="DemonHunterStrafe" />
+      <DemonHunterHeroicAbilityRainofVengeance ability="DemonHunterRainOfVengeance" />
     </Level10>
     <Level13>
       <DemonHunterMasterySiphoningArrow name="Siphoning Arrow" desc="DemonHunterHungeringArrowSiphoningArrowTalent">storm_ui_icon_valla_hungeringarrow.dds</DemonHunterMasterySiphoningArrow>

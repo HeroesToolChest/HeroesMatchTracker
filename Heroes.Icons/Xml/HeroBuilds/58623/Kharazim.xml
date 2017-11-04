@@ -9,8 +9,8 @@
         <MonkDeadlyReach name="Deadly Reach" desc="MonkDeadlyReach" mana="50" cooldown="10">storm_ui_icon_monk_deadlyreach.dds</MonkDeadlyReach>
       </Basic>
       <Heroic>
-        <MonkSevenSidedStrike talent="MonkHeroicAbilityDivinePalm" />
-        <MonkDivinePalm talent="MonkHeroicAbilitySevenSidedStrike" />
+        <MonkDivinePalm name="Divine Palm" desc="MonkDivinePalm" mana="50" cooldown="60">storm_ui_icon_monk_divinepalm.dds</MonkDivinePalm>
+        <MonkSevenSidedStrike name="Seven-Sided Strike" desc="MonkSevenSidedStrike" mana="77" cooldown="50">storm_ui_icon_monk_sevensidedstrike.dds</MonkSevenSidedStrike>
       </Heroic>
       <Trait>
         <MonkBlankTrait name="Pick Your Trait" desc="MonkBlankTrait" generic="true">storm_ui_icon_default.dds</MonkBlankTrait>
@@ -33,8 +33,8 @@
         <MonkBlazingFistsDeadlyReach name="Blazing Fists" desc="MonkBlazingFistsTalent">storm_ui_icon_monk_deadlyreach.dds</MonkBlazingFistsDeadlyReach>
       </Level7>
       <Level10>
-        <MonkHeroicAbilityDivinePalm name="Divine Palm" desc="MonkDivinePalm" mana="50" cooldown="60">storm_ui_icon_monk_divinepalm.dds</MonkHeroicAbilityDivinePalm>
-        <MonkHeroicAbilitySevenSidedStrike name="Seven-Sided Strike" desc="MonkSevenSidedStrike" mana="77" cooldown="50">storm_ui_icon_monk_sevensidedstrike.dds</MonkHeroicAbilitySevenSidedStrike>
+        <MonkHeroicAbilityDivinePalm ability="MonkDivinePalm" />
+        <MonkHeroicAbilitySevenSidedStrike ability="MonkSevenSidedStrike" />
       </Level10>
       <Level13>
         <MonkQuicksilverRadiantDash name="Quicksilver" desc="MonkQuicksilverTalent">storm_ui_icon_monk_dash.dds</MonkQuicksilverRadiantDash>

@@ -11,19 +11,20 @@
       </ValeeraEviscerate>
     </Basic>
     <Heroic>
-      <ValeeraSmokeBomb talent="ValeeraSmokeBomb" />
-      <ValeeraCloakOfShadows talent="ValeeraCloakOfShadows" />
+      <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
+      <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows" cooldown="15">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
     </Heroic>
     <Trait>
-      <ValeeraStealth name="Vanish" desc="ValeeraStealth" cooldown="8" icon="storm_ui_icon_valeera_vanish.dds">
-        <Basic>
-          <ValeeraAmbush name="Ambush" desc="ValeeraAmbush" mana="10" cooldown="1">storm_ui_icon_valeera_ambush.dds</ValeeraAmbush>
-          <ValeeraCheapShot name="Cheap Shot" desc="ValeeraCheapShot" mana="30" cooldown="1">storm_ui_icon_valeera_cheapshot.dds</ValeeraCheapShot>
-          <ValeeraGarrote name="Garrote" desc="ValeeraGarrote" mana="30" cooldown="1">storm_ui_icon_valeera_garrote.dds</ValeeraGarrote>
-        </Basic>
-      </ValeeraStealth>
+      <ValeeraStealth name="Vanish" desc="ValeeraStealth" cooldown="8">storm_ui_icon_valeera_vanish.dds</ValeeraStealth>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Basic parent="ValeeraStealth">
+      <ValeeraAmbush name="Ambush" desc="ValeeraAmbush" mana="10" cooldown="1">storm_ui_icon_valeera_ambush.dds</ValeeraAmbush>
+      <ValeeraCheapShot name="Cheap Shot" desc="ValeeraCheapShot" mana="30" cooldown="1">storm_ui_icon_valeera_cheapshot.dds</ValeeraCheapShot>
+      <ValeeraGarrote name="Garrote" desc="ValeeraGarrote" mana="30" cooldown="1">storm_ui_icon_valeera_garrote.dds</ValeeraGarrote>
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <ValeeraVigor name="Vigor" generic="true" desc="ValeeraVigor">storm_ui_icon_talent_conjurerspursuit.dds</ValeeraVigor>
@@ -44,8 +45,8 @@
       <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">storm_ui_icon_valeera_ambush.dds</ValeeraAmbushAssassinate>
     </Level7>
     <Level10>
-      <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>
-      <ValeeraCloakOfShadows name="Cloak Of Shadows" desc="ValeeraCloakOfShadows" cooldown="15">storm_ui_icon_valeera_cloakofshadows.dds</ValeeraCloakOfShadows>
+      <ValeeraSmokeBomb ability="ValeeraSmokeBomb" />
+      <ValeeraCloakOfShadows ability="ValeeraCloakOfShadows" />
     </Level10>
     <Level13>
       <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">storm_ui_icon_valeera_vanish.dds</ValeeraVanishElusiveness>

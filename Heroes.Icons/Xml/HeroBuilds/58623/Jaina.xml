@@ -9,8 +9,8 @@
       <JainaConeOfCold name="Cone of Cold" desc="JainaConeOfCold" mana="40" cooldown="10">storm_ui_icon_jaina_coneofcold.dds</JainaConeOfCold>
     </Basic>
     <Heroic>
-      <JainaRingOfFrost talent="JainaHeroicRingOfFrost" />
-      <JainaSummonWaterElemental talent="JainaHeroicSummonWaterElemental" />
+      <JainaRingOfFrost name="Ring of Frost" desc="JainaRingOfFrost" mana="70" cooldown="80">storm_ui_icon_jaina_ringoffrost.dds</JainaRingOfFrost>
+      <JainaSummonWaterElemental name="Summon Water Elemental" desc="JainaSummonWaterElemental" mana="60" cooldown="60">storm_ui_icon_jaina_summonwaterelemental.dds</JainaSummonWaterElemental>
     </Heroic>
     <Trait>
       <JainaTraitFrostbite name="Frostbite" desc="JainaTraitFrostbite">storm_ui_icon_jaina_frostbite.dds</JainaTraitFrostbite>
@@ -33,8 +33,8 @@
       <JainaIcefuryWand name="Icefury Wand" desc="JainaIcefuryWand" generic="true">storm_ui_icon_talent_autoattack_damage.dds</JainaIcefuryWand>
     </Level7>
     <Level10>
-      <JainaHeroicRingOfFrost name="Ring of Frost" desc="JainaRingOfFrost" mana="70" cooldown="80">storm_ui_icon_jaina_ringoffrost.dds</JainaHeroicRingOfFrost>
-      <JainaHeroicSummonWaterElemental name="Summon Water Elemental" desc="JainaSummonWaterElemental" mana="60" cooldown="60">storm_ui_icon_jaina_summonwaterelemental.dds</JainaHeroicSummonWaterElemental>
+      <JainaHeroicRingOfFrost ability="JainaRingOfFrost" />
+      <JainaHeroicSummonWaterElemental ability="JainaSummonWaterElemental" />
     </Level10>
     <Level13>
       <JainaBlizzardStormFront name="Storm Front" desc="JainaBlizzardStormFrontTalent">storm_ui_icon_jaina_blizzard.dds</JainaBlizzardStormFront>

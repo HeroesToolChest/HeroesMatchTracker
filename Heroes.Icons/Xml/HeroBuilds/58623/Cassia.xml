@@ -9,8 +9,8 @@
       <AmazonFend name="Fend" desc="AmazonFend" mana="40" cooldown="8">storm_ui_icon_cassia_fend.dds</AmazonFend>
     </Basic>
     <Heroic>
-      <AmazonBallLightning talent="AmazonBallLightning" />
-      <AmazonValkyrie talent="AmazonValkyrie" />
+      <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning" mana="60" cooldown="60">storm_ui_icon_cassia_balllightning.dds</AmazonBallLightning>
+      <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie" mana="60" cooldown="60">storm_ui_icon_cassia_valkrie.dds</AmazonValkyrie>
     </Heroic>
     <Trait>
       <AmazonAvoidance name="Avoidance" desc="AmazonAvoidance">storm_ui_icon_cassia_avoidance.dds</AmazonAvoidance>
@@ -33,8 +33,8 @@
       <AmazonSurgeOfLight name="Surge Of Light" desc="AmazonAvoidanceSurgeOfLight">storm_ui_icon_cassia_avoidance_a.dds</AmazonSurgeOfLight>
     </Level7>
     <Level10>
-      <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning" mana="60" cooldown="60">storm_ui_icon_cassia_balllightning.dds</AmazonBallLightning>
-      <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie" mana="60" cooldown="60">storm_ui_icon_cassia_valkrie.dds</AmazonValkyrie>
+      <AmazonBallLightning ability="AmazonBallLightning" />
+      <AmazonValkyrie ability="AmazonValkyrie" />
     </Level10>
     <Level13>
       <AmazonGroundingBolt name="Grounding Bolt" desc="AmazonLightningFuryGroundingBolt">storm_ui_icon_cassia_lightningfury.dds</AmazonGroundingBolt>

@@ -4,19 +4,13 @@
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4" icon="storm_ui_icon_abathur_symbiote.dds">
-        <Basic>
-          <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
-          <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
-          <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
-        </Basic>
-      </AbathurSymbiote>
+      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4">storm_ui_icon_abathur_symbiote.dds</AbathurSymbiote>
       <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest" cooldown="10" ch-cooldown="true">storm_ui_icon_abathur_toxicnest.dds</AbathurToxicNest>
-      <AbathurBasic3None />
+      <AbathurBasic3None></AbathurBasic3None>
     </Basic>
     <Heroic>
-      <AbathurUltimateEvolution talent="AbathurHeroicAbilityUltimateEvolution" />
-      <AbathurEvolveMonstrosity talent="AbathurHeroicAbilityEvolveMonstrosity" />
+      <AbathurUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution" cooldown="70">storm_ui_icon_abathur_ultimateevolution.dds</AbathurUltimateEvolution>
+      <AbathurEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar" cooldown="90">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurEvolveMonstrosity>
     </Heroic>
     <Trait>
       <AbathurSpawnLocusts name="Locust Strain" desc="AbathurLocustStrain" cooldown="15">storm_ui_icon_abathur_spawnlocust.dds</AbathurSpawnLocusts>
@@ -25,6 +19,13 @@
       <AbathurDeepTunnel name="Deep Tunnel" desc="AbathurDeepTunnel" cooldown="30">storm_ui_icon_abathur_mount.dds</AbathurDeepTunnel>
     </Mount>
   </Abilities>
+  <ExtraAbilities>
+    <Basic parent="AbathurSymbiote">
+      <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.dds</AbathurSymbioteStab>
+      <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.dds</AbathurSymbioteSpikeBurst>
+      <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.dds</AbathurSymbioteCarapace>
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <AbathurMasteryPressurizedGlands name="Pressurized Glands" desc="AbathurSymbiotePressurizedGlandsTalent">storm_ui_icon_abathur_spikeburst.dds</AbathurMasteryPressurizedGlands>
@@ -45,8 +46,8 @@
       <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule" cooldown="60">storm_ui_icon_talent_mule.dds</GenericTalentCalldownMULE>
     </Level7>
     <Level10>
-      <AbathurHeroicAbilityUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution" cooldown="70">storm_ui_icon_abathur_ultimateevolution.dds</AbathurHeroicAbilityUltimateEvolution>
-      <AbathurHeroicAbilityEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar" cooldown="90">storm_ui_icon_abathur_evolvemonstrosity.dds</AbathurHeroicAbilityEvolveMonstrosity>
+      <AbathurHeroicAbilityUltimateEvolution ability="AbathurUltimateEvolution" />
+      <AbathurHeroicAbilityEvolveMonstrosity ability="AbathurEvolveMonstrosity" />
     </Level10>
     <Level13>
       <AbathurCombatStyleAssaultStrain name="Assault Strain" desc="AbathurLocustStrainAssaultStrainTalent">storm_ui_icon_abathur_spawnlocust.dds</AbathurCombatStyleAssaultStrain>

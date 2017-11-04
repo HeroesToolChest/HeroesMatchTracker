@@ -9,8 +9,8 @@
       <StitchesDevour name="Devour" desc="StitchesDevour" mana="55" cooldown="20">storm_ui_icon_stitches_devour.dds</StitchesDevour>
     </Basic>
     <Heroic>
-      <StitchesPutridBile talent="StitchesHeroicAbilityPutridBile" />
-      <StitchesGorge talent="StitchesHeroicAbilityGorge" />
+      <StitchesPutridBile name="Putrid Bile" desc="StitchesPutridBile" mana="75" cooldown="60">storm_ui_icon_stitches_putridbile.dds</StitchesPutridBile>
+      <StitchesGorge name="Gorge" desc="StitchesGorge" mana="70" cooldown="60">storm_ui_icon_stitches_cannibalize.dds</StitchesGorge>
     </Heroic>
     <Trait>
       <StitchesVileGas name="Vile Gas" desc="StitchesVileGas" mana="68" cooldown="3">storm_ui_icon_stitches_acidcloud.dds</StitchesVileGas>
@@ -38,8 +38,8 @@
       <StitchesToxicGas name="Toxic Gas" desc="StitchesVileGasToxicGasTalent">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
     </Level7>
     <Level10>
-      <StitchesHeroicAbilityPutridBile name="Putrid Bile" desc="StitchesPutridBile" mana="75" cooldown="60">storm_ui_icon_stitches_putridbile.dds</StitchesHeroicAbilityPutridBile>
-      <StitchesHeroicAbilityGorge name="Gorge" desc="StitchesGorge" mana="70" cooldown="60">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
+      <StitchesHeroicAbilityPutridBile ability="StitchesPutridBile" />
+      <StitchesHeroicAbilityGorge ability="StitchesGorge" />
     </Level10>
     <Level13>
       <StitchesFleaBag name="Flea Bag" generic="true" desc="StitchesFleaBag">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>

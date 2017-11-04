@@ -9,8 +9,8 @@
       <ArthasFrozenTempest name="Frozen Tempest" desc="ArthasFrozenTempest" mana="15" per-mana="true" cooldown="1">storm_ui_icon_arthas_frosentempest.dds</ArthasFrozenTempest>
     </Basic>
     <Heroic>
-      <ArthasArmyOfTheDead talent="ArthasHeroicAbilityArmyoftheDead" />
-      <ArthasSummonSindragosa talent="ArthasHeroicAbilitySummonSindragosa" />
+      <ArthasArmyOfTheDead name="Army of the Dead" desc="ArthasArmyOfTheDead" mana="80" cooldown="80">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasArmyOfTheDead>
+      <ArthasSummonSindragosa name="Summon Sindragosa" desc="ArthasSummonSindragosa" mana="100" cooldown="100">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasSummonSindragosa>
     </Heroic>
     <Trait>
       <ArthasFrostmourneHungers name="Frostmourne Hungers" desc="ArthasFrostmourneHungers" cooldown="12">storm_ui_icon_arthas_frostmournehungers_off.dds</ArthasFrostmourneHungers>
@@ -33,8 +33,8 @@
       <ArthasIceboundFortitude name="Icebound Fortitude" desc="ArthasIceboundFortitudeTalent" cooldown="35">storm_ui_icon_Talent_Icebound_fortitude.dds</ArthasIceboundFortitude>
     </Level7>
     <Level10>
-      <ArthasHeroicAbilityArmyoftheDead name="Army of the Dead" desc="ArthasArmyOfTheDead" mana="80" cooldown="80">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasHeroicAbilityArmyoftheDead>
-      <ArthasHeroicAbilitySummonSindragosa name="Summon Sindragosa" desc="ArthasSummonSindragosa" mana="100" cooldown="100">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasHeroicAbilitySummonSindragosa>
+      <ArthasHeroicAbilityArmyoftheDead ability="ArthasArmyOfTheDead" />
+      <ArthasHeroicAbilitySummonSindragosa ability="ArthasSummonSindragosa" />
     </Level10>
     <Level13>
       <ArthasShatteredArmor name="Shattered Armor" desc="ArthasShatteredArmor">storm_ui_icon_arthas_howlingblast.dds</ArthasShatteredArmor>

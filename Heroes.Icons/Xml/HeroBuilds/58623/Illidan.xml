@@ -9,8 +9,8 @@
       <IllidanEvasion name="Evasion" desc="IllidanEvasion" cooldown="15">storm_ui_icon_illidan_evasion.dds</IllidanEvasion>
     </Basic>
     <Heroic>
-      <IllidanMetamorphosisTargeted talent="IllidanHeroicAbilityMetamorphosis" />
-      <IllidanTheHunt talent="IllidanHeroicAbilityTheHunt" />
+      <IllidanMetamorphosisTargeted name="Metamorphosis" desc="IllidanMetamorphosis" cooldown="120">storm_ui_icon_illidan_metamorphosis.dds</IllidanMetamorphosisTargeted>
+      <IllidanTheHunt name="The Hunt" desc="IllidanTheHunt" cooldown="100">storm_ui_icon_illidan_thehunt.dds</IllidanTheHunt>
     </Heroic>
     <Trait>
       <IllidanBetrayersThirst name="Betrayer's Thirst" desc="IllidanBetrayersThirst">storm_ui_icon_illidan_betrayersthirst.dds</IllidanBetrayersThirst>
@@ -33,8 +33,8 @@
       <IllidanCombatStyleHuntersOnslaught name="Hunter's Onslaught" desc="IllidanBetrayersThirstHuntersOnslaughtTalent">storm_ui_icon_illidan_betrayersthirst_a.dds</IllidanCombatStyleHuntersOnslaught>
     </Level7>
     <Level10>
-      <IllidanHeroicAbilityMetamorphosis name="Metamorphosis" desc="IllidanMetamorphosis" cooldown="120">storm_ui_icon_illidan_metamorphosis.dds</IllidanHeroicAbilityMetamorphosis>
-      <IllidanHeroicAbilityTheHunt name="The Hunt" desc="IllidanTheHunt" cooldown="100">storm_ui_icon_illidan_thehunt.dds</IllidanHeroicAbilityTheHunt>
+      <IllidanHeroicAbilityMetamorphosis ability="IllidanMetamorphosisTargeted" />
+      <IllidanHeroicAbilityTheHunt ability="IllidanTheHunt" />
     </Level10>
     <Level13>
       <IllidanNimbleDefender name="Nimble Defender" desc="IllidanNimbleDefender">storm_ui_icon_illidan_sweepingstrike.dds</IllidanNimbleDefender>

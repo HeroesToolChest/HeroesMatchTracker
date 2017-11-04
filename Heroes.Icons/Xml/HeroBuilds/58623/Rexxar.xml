@@ -9,8 +9,8 @@
       <RexxarMendPet name="Mend Pet" desc="RexxarMendPet" mana="55" cooldown="10">storm_ui_icon_rexxar_mendpet.dds</RexxarMendPet>
     </Basic>
     <Heroic>
-      <RexxarUnleashTheBoars talent="RexxarHeroicAbilityBestialWrath" />
-      <RexxarBestialWrath talent="RexxarHeroicAbilityUnleashTheBoars" />
+      <RexxarUnleashTheBoars name="Bestial Wrath" desc="RexxarBestialWrath" mana="75" cooldown="50">storm_ui_icon_rexxar_bestialwrath.dds</RexxarUnleashTheBoars>
+      <RexxarBestialWrath name="Unleash the Boars" desc="RexxarUnleashTheBoars" mana="75" cooldown="60">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarBestialWrath>
     </Heroic>
     <Trait>
       <RexxarSpiritBond name="Misha, Focus!" desc="RexxarMishaFocus" cooldown="20">storm_ui_icon_rexxar_mishafixate.dds</RexxarSpiritBond>
@@ -34,8 +34,8 @@
       <RexxarTakingFlightSpiritSwoop name="Taking Flight" desc="RexxarTakingFlightTalent">storm_ui_icon_rexxar_spiritswoop_var1.dds</RexxarTakingFlightSpiritSwoop>
     </Level7>
     <Level10>
-      <RexxarHeroicAbilityBestialWrath name="Bestial Wrath" desc="RexxarBestialWrath" mana="75" cooldown="50">storm_ui_icon_rexxar_bestialwrath.dds</RexxarHeroicAbilityBestialWrath>
-      <RexxarHeroicAbilityUnleashTheBoars name="Unleash the Boars" desc="RexxarUnleashTheBoars" mana="75" cooldown="60">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarHeroicAbilityUnleashTheBoars>
+      <RexxarHeroicAbilityBestialWrath ability="RexxarUnleashTheBoars" />
+      <RexxarHeroicAbilityUnleashTheBoars ability="RexxarBestialWrath" />
     </Level10>
     <Level13>
       <RexxarSpiritBondWildfireBear name="Wildfire Bear" generic="true" desc="RexxarSpiritBondWildfireBearTalent">storm_ui_icon_talent_burningrage.dds</RexxarSpiritBondWildfireBear>

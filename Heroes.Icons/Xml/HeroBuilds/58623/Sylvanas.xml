@@ -9,8 +9,8 @@
       <SylvanasHauntingWave name="Haunting Wave" desc="SylvanasHauntingWave" mana="75" cooldown="11">storm_ui_icon_sylvanas_hauntingwave.dds</SylvanasHauntingWave>
     </Basic>
     <Heroic>
-      <SylvanasWailingArrow talent="SylvanasHeroicAbilityWailingArrow" />
-      <SylvanasMindControl talent="SylvanasHeroicAbilityMindControl" />
+      <SylvanasWailingArrow name="Wailing Arrow" desc="SylvanasWailingArrow" mana="100" cooldown="90">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasWailingArrow>
+      <SylvanasMindControl name="Mind Control" desc="SylvanasMindControl" mana="75" cooldown="60">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasMindControl>
     </Heroic>
     <Trait>
       <SylvanasBlackArrows name="Black Arrows" desc="SylvanasBlackArrows">storm_ui_icon_sylvanas_blackarrows.dds</SylvanasBlackArrows>
@@ -33,8 +33,8 @@
       <SylvanasHeroicAbilityPossession name="Possession" desc="SylvanasPossession" cooldown="8" ch-cooldown="true">storm_ui_icon_sylvanas_possession.dds</SylvanasHeroicAbilityPossession>
     </Level7>
     <Level10>
-      <SylvanasHeroicAbilityWailingArrow name="Wailing Arrow" desc="SylvanasWailingArrow" mana="100" cooldown="90">storm_ui_icon_sylvanas_wailingarrow.dds</SylvanasHeroicAbilityWailingArrow>
-      <SylvanasHeroicAbilityMindControl name="Mind Control" desc="SylvanasMindControl" mana="75" cooldown="60">storm_ui_icon_sylvanas_mindcontrol.dds</SylvanasHeroicAbilityMindControl>
+      <SylvanasHeroicAbilityWailingArrow ability="SylvanasWailingArrow" />
+      <SylvanasHeroicAbilityMindControl ability="SylvanasMindControl" />
     </Level10>
     <Level13>
       <SylvanasTalentLifeDrain name="Life Drain" desc="SylvanasBlackArrowsLifeDrainTalent">storm_ui_icon_sylvanas_shadowdagger.dds</SylvanasTalentLifeDrain>

@@ -9,8 +9,8 @@
       <DehakaBurrow name="Burrow" desc="DehakaBurrow" mana="65" cooldown="20">storm_ui_icon_dehaka_burrow.dds</DehakaBurrow>
     </Basic>
     <Heroic>
-      <DehakaIsolation talent="DehakaHeroicAbilityIsolation" />
-      <DehakaAdaptation talent="DehakaHeroicAbilityAdaptation" />
+      <DehakaIsolation name="Isolation" desc="DehakaIsolation" mana="100" cooldown="60">storm_ui_icon_dehaka_isolation.dds</DehakaIsolation>
+      <DehakaAdaptation name="Adaptation" desc="DehakaAdaptation" mana="85" cooldown="90">storm_ui_icon_dehaka_adaptation.dds</DehakaAdaptation>
     </Heroic>
     <Trait>
       <DehakaEssenceCollection name="Essence Collection" desc="DehakaEssenceCollectionStore" cooldown="1">storm_ui_icon_dehaka_essencecollection.dds</DehakaEssenceCollection>
@@ -36,8 +36,8 @@
       <DehakaDarkSwarmTalentSymbiosis name="Symbiosis" desc="DehakaDarkSwarmTalentSymbiosis">storm_ui_icon_dehaka_trample.dds</DehakaDarkSwarmTalentSymbiosis>
     </Level7>
     <Level10>
-      <DehakaHeroicAbilityIsolation name="Isolation" desc="DehakaIsolation" mana="100" cooldown="60">storm_ui_icon_dehaka_isolation.dds</DehakaHeroicAbilityIsolation>
-      <DehakaHeroicAbilityAdaptation name="Adaptation" desc="DehakaAdaptation" mana="85" cooldown="90">storm_ui_icon_dehaka_adaptation.dds</DehakaHeroicAbilityAdaptation>
+      <DehakaHeroicAbilityIsolation ability="DehakaIsolation" />
+      <DehakaHeroicAbilityAdaptation ability="DehakaAdaptation" />
     </Level10>
     <Level13>
       <DehakaPrimalRage name="Primal Rage" desc="DehakaPrimalRage">storm_ui_icon_dehaka_essencecollection.dds</DehakaPrimalRage>

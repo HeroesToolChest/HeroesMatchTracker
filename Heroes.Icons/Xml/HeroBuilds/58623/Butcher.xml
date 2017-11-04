@@ -9,8 +9,8 @@
       <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught" mana="55" cooldown="15">storm_ui_icon_butcher_fullboar.dds</ButcherRuthlessOnslaught>
     </Basic>
     <Heroic>
-      <ButcherLambToTheSlaughter talent="ButcherHeroicAbilityButcherFurnaceBlast" />
-      <ButcherFurnaceBlast talent="ButcherHeroicAbilityLambToTheSlaughter" />
+      <ButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherFurnaceBlast>
+      <ButcherLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherLambToTheSlaughter>
     </Heroic>
     <Trait>
       <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">storm_ui_icon_butcher_freshmeat.dds</ButcherFreshMeat>
@@ -33,8 +33,8 @@
       <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.dds</ButcherMeatShield>
     </Level7>
     <Level10>
-      <ButcherHeroicAbilityButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.dds</ButcherHeroicAbilityButcherFurnaceBlast>
-      <ButcherHeroicAbilityLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.dds</ButcherHeroicAbilityLambToTheSlaughter>
+      <ButcherHeroicAbilityButcherFurnaceBlast ability="ButcherFurnaceBlast" />
+      <ButcherHeroicAbilityLambToTheSlaughter ability="ButcherLambToTheSlaughter" />
     </Level10>
     <Level13>
       <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.dds</ButcherCleaver>

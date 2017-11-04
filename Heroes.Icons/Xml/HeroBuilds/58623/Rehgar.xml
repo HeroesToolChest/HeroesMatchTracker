@@ -9,8 +9,8 @@
       <RehgarEarthbindTotem name="Earthbind Totem" desc="RehgarEarthbindTotem" mana="50" cooldown="15">storm_ui_icon_rehgar_earthbindtotem.dds</RehgarEarthbindTotem>
     </Basic>
     <Heroic>
-      <RehgarAncestralHealing talent="RehgarHeroicAbilityAncestralHealing" />
-      <RehgarBloodlust talent="RehgarHeroicAbilityBloodlust" />
+      <RehgarAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing" mana="80" cooldown="100">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarAncestralHealing>
+      <RehgarBloodlust name="Bloodlust" desc="RehgarBloodlust" mana="70" cooldown="90">storm_ui_icon_rehgar_bloodlust.dds</RehgarBloodlust>
     </Heroic>
     <Trait>
       <RehgarGhostWolf name="Ghost Wolf" desc="RehgarGhostWolf">storm_ui_icon_rehgar_ghostwolf.dds</RehgarGhostWolf>
@@ -39,8 +39,8 @@
       <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">storm_ui_icon_rehgar_earthbindtotem_a.dds</RehgarTotemicProjection>
     </Level7>
     <Level10>
-      <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing" mana="80" cooldown="100">storm_ui_icon_rehgar_ancestralhealing.dds</RehgarHeroicAbilityAncestralHealing>
-      <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust" mana="70" cooldown="90">storm_ui_icon_rehgar_bloodlust.dds</RehgarHeroicAbilityBloodlust>
+      <RehgarHeroicAbilityAncestralHealing ability="RehgarAncestralHealing" />
+      <RehgarHeroicAbilityBloodlust ability="RehgarBloodlust" />
     </Level10>
     <Level13>
       <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">storm_ui_icon_rehgar_lightningshield.dds</RehgarMasteryEarthShield>

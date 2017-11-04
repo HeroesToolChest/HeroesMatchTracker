@@ -9,8 +9,8 @@
       <BarbarianWhirlwind name="Whirlwind" desc="BarbarianWhirlwind" mana="40" cooldown="5">storm_ui_icon_sonya_whirlwind.dds</BarbarianWhirlwind>
     </Basic>
     <Heroic>
-      <BarbarianLeap talent="BarbarianHeroicAbilityLeap" />
-      <BarbarianWrathoftheBerserker talent="BarbarianHeroicAbilityWrathoftheBerserker" />
+      <BarbarianLeap name="Leap" desc="BarbarianLeap" cooldown="70">storm_ui_icon_sonya_leap.dds</BarbarianLeap>
+      <BarbarianWrathoftheBerserker name="Wrath of the Berserker" desc="BarbarianWrathoftheBerserker" cooldown="60">storm_ui_icon_sonya_wrathoftheberserker.dds</BarbarianWrathoftheBerserker>
     </Heroic>
     <Trait>
       <BarbarianFury name="Fury" desc="BarbarianFury">storm_ui_icon_sonya_fury.dds</BarbarianFury>
@@ -35,8 +35,8 @@
       <BarbarianCombatStyleFerociousHealing name="Ferocious Healing" desc="BarbarianFuryFerociousHealing" mana="20" cooldown="10">storm_ui_icon_sonya_ferocioushealing.dds</BarbarianCombatStyleFerociousHealing>
     </Level7>
     <Level10>
-      <BarbarianHeroicAbilityLeap name="Leap" desc="BarbarianLeap" cooldown="70">storm_ui_icon_sonya_leap.dds</BarbarianHeroicAbilityLeap>
-      <BarbarianHeroicAbilityWrathoftheBerserker name="Wrath of the Berserker" desc="BarbarianWrathoftheBerserker" cooldown="60">storm_ui_icon_sonya_wrathoftheberserker.dds</BarbarianHeroicAbilityWrathoftheBerserker>
+      <BarbarianHeroicAbilityLeap ability="BarbarianLeap" />
+      <BarbarianHeroicAbilityWrathoftheBerserker ability="BarbarianWrathoftheBerserker" />
     </Level10>
     <Level13>
       <BarbarianMasteryLifeFunnelWhirlwind name="Life Funnel" desc="BarbarianWhirlwindLifeFunnelTalent">storm_ui_icon_sonya_whirlwind.dds</BarbarianMasteryLifeFunnelWhirlwind>

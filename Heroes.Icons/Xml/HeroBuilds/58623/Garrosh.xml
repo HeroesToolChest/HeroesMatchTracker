@@ -9,8 +9,8 @@
       <GarroshWreckingBall name="Wrecking Ball" desc="GarroshWreckingBall" mana="70" cooldown="16">storm_ui_icon_garrosh_wrecking_ball.dds</GarroshWreckingBall>
     </Basic>
     <Heroic>
-      <GarroshWarlordsChallenge talent="GarroshHeroicAbilityWarlordsChallenge" />
-      <GarroshDecimate talent="GarroshHeroicAbilityDecimate" />
+      <GarroshWarlordsChallenge name="Warlord's Challenge" desc="GarroshWarlordsChallenge" mana="40" cooldown="50">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshWarlordsChallenge>
+      <GarroshDecimate name="Decimate" desc="GarroshDecimate" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_garrosh_decimate.dds</GarroshDecimate>
     </Heroic>
     <Trait>
       <GarroshArmorUp name="Armor Up" desc="GarroshArmorUp">storm_ui_icon_garrosh_armor_up.dds</GarroshArmorUp>
@@ -34,8 +34,8 @@
       <GarroshWreckingBallIntotheFray name="Into the Fray" desc="GarroshWreckingBallIntotheFray" cooldown="30">storm_ui_icon_garrosh_intothefray.dds</GarroshWreckingBallIntotheFray>
     </Level7>
     <Level10>
-      <GarroshHeroicAbilityWarlordsChallenge name="Warlord's Challenge" desc="GarroshWarlordsChallenge" mana="40" cooldown="50">storm_ui_icon_garrosh_warlords_challenge.dds</GarroshHeroicAbilityWarlordsChallenge>
-      <GarroshHeroicAbilityDecimate name="Decimate" desc="GarroshDecimate" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_garrosh_decimate.dds</GarroshHeroicAbilityDecimate>
+      <GarroshHeroicAbilityWarlordsChallenge ability="GarroshWarlordsChallenge" />
+      <GarroshHeroicAbilityDecimate ability="GarroshDecimate" />
     </Level10>
     <Level13>
       <GarroshGroundbreakerDefensiveMeasures name="Defensive Measures" desc="GarroshGroundbreakerDefensiveMeasures">storm_ui_icon_garrosh_groundbreaker.dds</GarroshGroundbreakerDefensiveMeasures>

@@ -9,8 +9,8 @@
       <LostVikingSelectErik name="Select Erik" desc="LostVikingSelectErik">storm_ui_icon_lostvikings_selecterik.dds</LostVikingSelectErik>
     </Basic>
     <Heroic>
-      <LostVikingsLongboatRaidNewer talent="LostVikingsHeroicAbilityLongboatRaid" />
-      <LostVikingsPlayAgain talent="LostVikingsHeroicAbilityPlayAgain" />
+      <LostVikingsLongboatRaidNewer name="Longboat Raid!" desc="LostVikingsLongboatRaid" cooldown="90">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsLongboatRaidNewer>
+      <LostVikingsPlayAgain name="Play Again!" desc="LostVikingsPlayAgain" cooldown="80">storm_ui_icon_lostvikings_playagain.dds</LostVikingsPlayAgain>
     </Heroic>
     <Trait>
       <LostVikingsVikingHoardHeroSelect name="Viking Hoard" desc="LostVikingsVikingHoardHeroSelect">storm_ui_icon_lostvikings_vikinghoard.dds</LostVikingsVikingHoardHeroSelect>
@@ -38,8 +38,8 @@
       <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce" cooldown="30">storm_ui_icon_lostvikings_norseforce.dds</LostVikingsMasteryNorseForce>
     </Level7>
     <Level10>
-      <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid" cooldown="90">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsHeroicAbilityLongboatRaid>
-      <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain" cooldown="80">storm_ui_icon_lostvikings_playagain.dds</LostVikingsHeroicAbilityPlayAgain>
+      <LostVikingsHeroicAbilityLongboatRaid ability="LostVikingsLongboatRaidNewer" />
+      <LostVikingsHeroicAbilityPlayAgain ability="LostVikingsPlayAgain" />
     </Level10>
     <Level13>
       <LostVikingsMasteryHunkaBurningOlaf name="Hunka' Burning Olaf" desc="LostVikingsHunkaBurningOlafTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryHunkaBurningOlaf>

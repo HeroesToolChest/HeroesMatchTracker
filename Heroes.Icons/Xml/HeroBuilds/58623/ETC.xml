@@ -9,8 +9,8 @@
       <L90ETCGuitarSolo name="Guitar Solo" desc="L90ETCGuitarSolo" mana="40" cooldown="8">storm_ui_icon_etc_guitarsolo.dds</L90ETCGuitarSolo>
     </Basic>
     <Heroic>
-      <L90ETCMoshPit talent="ETCHeroicAbilityMoshPit" />
-      <L90ETCStageDive talent="ETCHeroicAbilityStageDive" />
+      <L90ETCMoshPit name="Mosh Pit" desc="L90ETCMoshPit" mana="100" cooldown="120">storm_ui_icon_ETC_MoshPit.dds</L90ETCMoshPit>
+      <L90ETCStageDive name="Stage Dive" desc="L90ETCStageDive" mana="100" cooldown="75">storm_ui_icon_ETC_StageDive.dds</L90ETCStageDive>
     </Heroic>
     <Trait>
       <L90ETCRockstar name="Rockstar" desc="L90ETCRockstar">storm_ui_icon_etc_rockstar.dds</L90ETCRockstar>
@@ -33,8 +33,8 @@
       <ETCMasteryHammeron name="Hammer-on" generic="true" desc="ETCHammeronTalent">storm_ui_icon_talent_autoattack_damage.dds</ETCMasteryHammeron>
     </Level7>
     <Level10>
-      <ETCHeroicAbilityMoshPit name="Mosh Pit" desc="L90ETCMoshPit" mana="100" cooldown="120">storm_ui_icon_ETC_MoshPit.dds</ETCHeroicAbilityMoshPit>
-      <ETCHeroicAbilityStageDive name="Stage Dive" desc="L90ETCStageDive" mana="100" cooldown="75">storm_ui_icon_ETC_StageDive.dds</ETCHeroicAbilityStageDive>
+      <ETCHeroicAbilityMoshPit ability="L90ETCMoshPit" />
+      <ETCHeroicAbilityStageDive ability="L90ETCStageDive" />
     </Level10>
     <Level13>
       <ETCMasteryMicCheck name="Mic Check" desc="ETCMicCheckTalent">storm_ui_icon_etc_facemelt.dds</ETCMasteryMicCheck>

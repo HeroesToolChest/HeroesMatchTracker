@@ -9,8 +9,8 @@
       <ZaryaShieldAlly name="Shield Ally" desc="ZaryaShieldAlly" cooldown="12">storm_ui_icon_zarya_shieldally.dds</ZaryaShieldAlly>
     </Basic>
     <Heroic>
-      <ZaryaGravitonSurge talent="ZaryaHeroicAbilityGravitonSurge" />
-      <ZaryaExpulsionZone talent="ZaryaHeroicAbilityExpulsionZone" />
+      <ZaryaGravitonSurge name="Graviton Surge" desc="ZaryaGravitonSurge" cooldown="80">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaGravitonSurge>
+      <ZaryaExpulsionZone name="Expulsion Zone" desc="ZaryaExpulsionZone" cooldown="45">storm_ui_icon_zarya_expulsionzone.dds</ZaryaExpulsionZone>
     </Heroic>
     <Trait>
       <ZaryaEnergy name="Energy" desc="ZaryaEnergy">storm_ui_icon_zarya_energy.dds</ZaryaEnergy>
@@ -36,8 +36,8 @@
       <ZaryaEnergyHitMe name="Hit Me" desc="ZaryaEnergyHitMeTalent">storm_ui_icon_zarya_energy.dds</ZaryaEnergyHitMe>
     </Level7>
     <Level10>
-      <ZaryaHeroicAbilityGravitonSurge name="Graviton Surge" desc="ZaryaGravitonSurge" cooldown="80">storm_ui_icon_zarya_gravitonsurge.dds</ZaryaHeroicAbilityGravitonSurge>
-      <ZaryaHeroicAbilityExpulsionZone name="Expulsion Zone" desc="ZaryaExpulsionZone" cooldown="45">storm_ui_icon_zarya_expulsionzone.dds</ZaryaHeroicAbilityExpulsionZone>
+      <ZaryaHeroicAbilityGravitonSurge ability="ZaryaGravitonSurge" />
+      <ZaryaHeroicAbilityExpulsionZone ability="ZaryaExpulsionZone" />
     </Level10>
     <Level13>
       <ZaryaPersonalBarrierUnstoppableCompetitor name="Unstoppable Competitor" desc="ZaryaPersonalBarrierUnstoppableCompetitorTalent">storm_ui_icon_zarya_personalbarrier.dds</ZaryaPersonalBarrierUnstoppableCompetitor>

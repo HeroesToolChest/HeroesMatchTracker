@@ -9,8 +9,8 @@
       <KelThuzadChains name="Chains of Kel'Thuzad" desc="KelThuzadChains" mana="50" cooldown="12">storm_ui_icon_kel'thuzad_chains.dds</KelThuzadChains>
     </Basic>
     <Heroic>
-      <KelThuzadFrozenTomb talent="KelThuzadFrozenTomb" />
-      <KelThuzadShadowFissure talent="KelThuzadShadowFissure" />
+      <KelThuzadFrozenTomb name="Frozen Blast" desc="KelThuzadFrozenTomb" mana="60" cooldown="70">storm_ui_icon_kel'thuzad_frozentomb.dds</KelThuzadFrozenTomb>
+      <KelThuzadShadowFissure name="Shadow Fissure" desc="KelThuzadShadowFissure" mana="60" cooldown="20">storm_ui_icon_kel'thuzad_shadowfissure.dds</KelThuzadShadowFissure>
     </Heroic>
     <Trait>
       <KelThuzadMasterOfTheColdDark name="Master of the Cold Dark" desc="KelThuzadMasterOfTheColdDark">storm_ui_icon_kel'thuzad_powerofthecolddark.dds</KelThuzadMasterOfTheColdDark>
@@ -33,8 +33,8 @@
       <KelThuzadChillingTouch name="Chilling Touch" desc="KelThuzadChillingTouch">storm_ui_icon_kel'thuzad_chillingtouch.dds</KelThuzadChillingTouch>>
     </Level7>
     <Level10>
-      <KelThuzadFrozenTomb name="Frozen Blast" desc="KelThuzadFrozenTomb" mana="60" cooldown="70">storm_ui_icon_kel'thuzad_frozentomb.dds</KelThuzadFrozenTomb>
-      <KelThuzadShadowFissure name="Shadow Fissure" desc="KelThuzadShadowFissure" mana="60" cooldown="20">storm_ui_icon_kel'thuzad_shadowfissure.dds</KelThuzadShadowFissure>
+      <KelThuzadFrozenTomb ability="KelThuzadFrozenTomb" />
+      <KelThuzadShadowFissure ability="KelThuzadShadowFissure" />
     </Level10>
     <Level13>
       <KelThuzadIcyGrasp name="Icy Grasp" desc="KelThuzadIcyGrasp">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadIcyGrasp>

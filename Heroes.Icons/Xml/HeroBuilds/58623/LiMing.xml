@@ -9,8 +9,8 @@
       <WizardTeleport name="Teleport" desc="WizardTeleport" mana="30" cooldown="5">storm_ui_icon_wizard_teleport.dds</WizardTeleport>
     </Basic>
     <Heroic>
-      <WizardDisintegrate talent="WizardHeroicAbilityDisintegrate" />
-      <WizardWaveOfForce talent="WizardHeroicAbilityWaveOfForce" />
+      <WizardDisintegrate name="Disintegrate" desc="WizardDisintegrate" mana="80" cooldown="30">storm_ui_icon_wizard_disintegrate.dds</WizardDisintegrate>
+      <WizardWaveOfForce name="Wave Of Force" desc="WizardWaveOfForce" mana="80" cooldown="20">storm_ui_icon_wizard_waveofforce.dds</WizardWaveOfForce>
     </Heroic>
     <Trait>
       <WizardTraitCriticalMass name="Critical Mass" desc="WizardTraitCriticalMass">storm_ui_icon_wizard_criticalmass.dds</WizardTraitCriticalMass>
@@ -34,8 +34,8 @@
       <WizardTeleportCalamity name="Calamity" desc="WizardTeleportCalamityTalent">storm_ui_icon_wizard_teleport.dds</WizardTeleportCalamity>
     </Level7>
     <Level10>
-      <WizardHeroicAbilityDisintegrate name="Disintegrate" desc="WizardDisintegrate" mana="80" cooldown="30">storm_ui_icon_wizard_disintegrate.dds</WizardHeroicAbilityDisintegrate>
-      <WizardHeroicAbilityWaveOfForce name="Wave Of Force" desc="WizardWaveOfForce" mana="80" cooldown="20">storm_ui_icon_wizard_waveofforce.dds</WizardHeroicAbilityWaveOfForce>
+      <WizardHeroicAbilityDisintegrate ability="WizardDisintegrate" />
+      <WizardHeroicAbilityWaveOfForce ability="WizardWaveOfForce" />
     </Level10>
     <Level13>
       <WizardCannoneer name="Cannoneer" generic="true" desc="WizardCannoneerTalent">storm_ui_icon_talent_autoattack_damage.dds</WizardCannoneer>

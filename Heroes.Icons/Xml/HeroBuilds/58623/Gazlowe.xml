@@ -9,8 +9,8 @@
       <TinkerXplodiumBomb name="Xplodium Bomb" desc="TinkerXplodiumBomb" mana="60" cooldown="14">storm_ui_icon_gazlowe_explodiumcharge.dds</TinkerXplodiumBomb>
     </Basic>
     <Heroic>
-      <TinkerRoboGoblin talent="TinkerHeroicAbilityRoboGoblin" />
-      <TinkerGravOBomb3000 talent="TinkerHeroicAbilityGravOBomb3000" />
+      <TinkerRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive" cooldown="60">storm_ui_icon_gazlowe_robogoblin.dds</TinkerRoboGoblin>
+      <TinkerGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000" mana="100" cooldown="110">storm_ui_icon_gazlowe_gravobomb.dds</TinkerGravOBomb3000>
     </Heroic>
     <Trait>
       <TinkerDismantleTurret name="Salvager" desc="TinkerSalvager">storm_ui_icon_gazlowe_salvager.dds</TinkerDismantleTurret>
@@ -38,8 +38,8 @@
       <TinkerMasteryHyperfocusCoils name="Hyperfocus Coils" desc="TinkerDethLazorHyperfocusCoilsTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryHyperfocusCoils>
     </Level7>
     <Level10>
-      <TinkerHeroicAbilityRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive" cooldown="60">storm_ui_icon_gazlowe_robogoblin.dds</TinkerHeroicAbilityRoboGoblin>
-      <TinkerHeroicAbilityGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000" mana="100" cooldown="110">storm_ui_icon_gazlowe_gravobomb.dds</TinkerHeroicAbilityGravOBomb3000>
+      <TinkerHeroicAbilityRoboGoblin ability="TinkerRoboGoblin" />
+      <TinkerHeroicAbilityGravOBomb3000 ability="TinkerGravOBomb3000" />
     </Level10>
     <Level13>
       <TinkerMasteryEZPZDimensionalRipper name="EZ-PZ Dimensional Ripper" desc="TinkerDethLazorEZPZDimensionalRipperTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryEZPZDimensionalRipper>

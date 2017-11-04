@@ -9,8 +9,8 @@
       <LiLiBlindingWind name="Blinding Wind" desc="LiLiBlindingWind" mana="35" cooldown="9">storm_ui_icon_lili_blindingwind.dds</LiLiBlindingWind>
     </Basic>
     <Heroic>
-      <LiLiJugof1000Cups talent="LiLiHeroicAbilityJugof1000Cups" />
-      <LiLiWaterDragon talent="LiLiHeroicAbilityWaterDragon" />
+      <LiLiJugof1000Cups name="Jug of 1,000 Cups" desc="LiLiJugof1000Cups" mana="100" cooldown="70">storm_ui_icon_lili_jugofathousandcups.dds</LiLiJugof1000Cups>
+      <LiLiWaterDragon name="Water Dragon" desc="LiLiWaterDragon" mana="50" cooldown="45">storm_ui_icon_lili_waterdragon.dds</LiLiWaterDragon>
     </Heroic>
     <Trait>
       <LiLiFastFeet name="Fast Feet" desc="LiLiFastFeet">storm_ui_icon_lili_fastfeet.dds</LiLiFastFeet>
@@ -36,8 +36,8 @@
       <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
     </Level7>
     <Level10>
-      <LiLiHeroicAbilityJugof1000Cups name="Jug of 1,000 Cups" desc="LiLiJugof1000Cups" mana="100" cooldown="70">storm_ui_icon_lili_jugofathousandcups.dds</LiLiHeroicAbilityJugof1000Cups>
-      <LiLiHeroicAbilityWaterDragon name="Water Dragon" desc="LiLiWaterDragon" mana="50" cooldown="45">storm_ui_icon_lili_waterdragon.dds</LiLiHeroicAbilityWaterDragon>
+      <LiLiHeroicAbilityJugof1000Cups ability="LiLiJugof1000Cups" />
+      <LiLiHeroicAbilityWaterDragon ability="LiLiWaterDragon" />
     </Level10>
     <Level13>
       <LiLiMasteryFastFeetElusiveFeet name="Elusive Feet" desc="LiLiFastFeetElusiveFeetTalent">storm_ui_icon_lili_fastfeet.dds</LiLiMasteryFastFeetElusiveFeet>

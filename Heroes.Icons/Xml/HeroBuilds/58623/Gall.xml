@@ -9,8 +9,8 @@
       <GallRunicBlast name="Runic Blast" desc="GallRunicBlast">storm_ui_icon_gall_detonaterunes.dds</GallRunicBlast>
     </Basic>
     <Heroic>
-      <GallShadowboltVolley talent="GallHeroicAbilityShadowboltVolley" />
-      <GallTwistingNether talent="GallHeroicAbilityTwistingNether" />
+      <GallShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley" cooldown="60">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallShadowboltVolley>
+      <GallTwistingNether name="Twisting Nether" desc="GallTwistingNether" cooldown="80">storm_ui_icon_Gall_TwistingNether_A.dds</GallTwistingNether>
     </Heroic>
     <Trait>
       <GallOgreRage name="Ogre Rage" desc="GallOgreRageActivated" cooldown="5">storm_ui_icon_gall_ogrerage.dds</GallOgreRage>
@@ -36,8 +36,8 @@
       <GallOgreRampage name="Ogre Rampage" desc="GallOgreRampage">storm_ui_icon_gall_ogrerage.dds</GallOgreRampage>
     </Level7>
     <Level10>
-      <GallHeroicAbilityShadowboltVolley name="Shadow Bolt Volley" desc="GallShadowboltVolley" cooldown="60">storm_ui_icon_Gall_ShadowBoltVolley.dds</GallHeroicAbilityShadowboltVolley>
-      <GallHeroicAbilityTwistingNether name="Twisting Nether" desc="GallTwistingNether" cooldown="80">storm_ui_icon_Gall_TwistingNether_A.dds</GallHeroicAbilityTwistingNether>
+      <GallHeroicAbilityShadowboltVolley ability="GallShadowboltVolley" />
+      <GallHeroicAbilityTwistingNether ability="GallTwistingNether" />
     </Level10>
     <Level13>
       <GallSearingShadows name="Searing Shadows" desc="GallSearingShadows">storm_ui_icon_gall_shadowflame.dds</GallSearingShadows>

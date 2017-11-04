@@ -9,8 +9,8 @@
       <DiabloOverpower name="Overpower" desc="DiabloOverpower" mana="60" cooldown="12">storm_ui_icon_diablo_overpower_var1.dds</DiabloOverpower>
     </Basic>
     <Heroic>
-      <DiabloApocalypse talent="DiabloHeroicAbilityApocalypse" />
-      <DiabloLightningBreath talent="DiabloHeroicAbilityLightningBreath" />
+      <DiabloApocalypse name="Apocalypse" desc="DiabloApocalypse" mana="100" cooldown="100">storm_ui_icon_diablo_apocalypse.dds</DiabloApocalypse>
+      <DiabloLightningBreath name="Lightning Breath" desc="DiabloLightningBreath" mana="80" cooldown="60">storm_ui_icon_diablo_lightningbreath.dds</DiabloLightningBreath>
     </Heroic>
     <Trait>
       <DiabloBlackSoulstone name="Black Soulstone" desc="DiabloBlackSoulstone">storm_ui_icon_diablo_blacksoulstone_var1.dds</DiabloBlackSoulstone>
@@ -33,8 +33,8 @@
       <DiabloDiabolicalMomentum name="Diabolical Momentum" generic="true" desc="DiabloDiabolicalMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</DiabloDiabolicalMomentum>
     </Level7>
     <Level10>
-      <DiabloHeroicAbilityApocalypse name="Apocalypse" desc="DiabloApocalypse" mana="100" cooldown="100">storm_ui_icon_diablo_apocalypse.dds</DiabloHeroicAbilityApocalypse>
-      <DiabloHeroicAbilityLightningBreath name="Lightning Breath" desc="DiabloLightningBreath" mana="80" cooldown="60">storm_ui_icon_diablo_lightningbreath.dds</DiabloHeroicAbilityLightningBreath>
+      <DiabloHeroicAbilityApocalypse ability="DiabloApocalypse" />
+      <DiabloHeroicAbilityLightningBreath ability="DiabloLightningBreath" />
     </Level10>
     <Level13>
       <DiabloDevastatingCharge name="Devastating Charge" desc="DiabloDevastatingCharge">storm_ui_icon_diablo_shadowcharge_var1.dds</DiabloDevastatingCharge>

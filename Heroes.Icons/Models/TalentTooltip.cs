@@ -25,6 +25,11 @@ namespace Heroes.Icons.Models
         public int? Mana { get; set; }
 
         /// <summary>
+        /// Get the life cost of the talent
+        /// </summary>
+        public int? Life { get; set; }
+
+        /// <summary>
         /// Is the mana cost time based
         /// </summary>
         public bool IsPerManaCost { get; set; }

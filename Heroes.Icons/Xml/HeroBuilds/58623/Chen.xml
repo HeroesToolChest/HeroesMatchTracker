@@ -9,19 +9,20 @@
       <ChenBreathOfFire name="Breath of Fire" desc="ChenBreathOfFire" mana="30" cooldown="5">storm_ui_icon_chen_breathoffire.dds</ChenBreathOfFire>
     </Basic>
     <Heroic>
-      <ChenWanderingKeg talent="ChenHeroicAbilityWanderingKeg" />
-      <ChenStormEarthFire talent="ChenHeroicAbilityStormEarthFire">
-        <Basic>
-          <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
-          <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
-          <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
-        </Basic>
-      </ChenStormEarthFire>
+      <ChenWanderingKeg name="Wandering Keg" desc="ChenWanderingKeg" cooldown="70">storm_ui_icon_chen_wanderingkeg.dds</ChenWanderingKeg>
+      <ChenStormEarthFire name="Storm, Earth, Fire" desc="ChenStormEarthFire" cooldown="100">storm_ui_icon_chen_stormearthfire.dds</ChenStormEarthFire>
     </Heroic>
     <Trait>
       <ChenFortifyingBrew name="Fortifying Brew" desc="ChenFortifyingBrew" cooldown="5">storm_ui_icon_chen_fortifyingbrew.dds</ChenFortifyingBrew>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Basic parent="ChenStormEarthFire">
+      <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
+      <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
+      <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">storm_ui_icon_chen_breathoffire.dds</ChenAccumulatingFlame>
@@ -40,8 +41,8 @@
       <ChenPurifyingBrew name="Purifying Brew" desc="ChenPurifyingBrew">storm_ui_icon_chen_fortifyingbrew_b.dds</ChenPurifyingBrew>
     </Level7>
     <Level10>
-      <ChenHeroicAbilityWanderingKeg name="Wandering Keg" desc="ChenWanderingKeg" cooldown="70">storm_ui_icon_chen_wanderingkeg.dds</ChenHeroicAbilityWanderingKeg>
-      <ChenHeroicAbilityStormEarthFire name="Storm, Earth, Fire" desc="ChenStormEarthFire" cooldown="100">storm_ui_icon_chen_stormearthfire.dds</ChenHeroicAbilityStormEarthFire>
+      <ChenHeroicAbilityWanderingKeg ability="ChenWanderingKeg" />
+      <ChenHeroicAbilityStormEarthFire ability="ChenStormEarthFire" />
     </Level10>
     <Level13>
       <ChenPressurePoint name="Pressure Point" desc="ChenFlyingKickPressurePointTalent">storm_ui_icon_chen_flyingkick.dds</ChenPressurePoint>

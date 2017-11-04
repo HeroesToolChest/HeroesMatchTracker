@@ -9,8 +9,8 @@
       <MalthaelDeathShroud name="Death Shroud" desc="MalthaelDeathShroud" mana="50" cooldown="8">storm_ui_icon_malthael_deathshroud.dds</MalthaelDeathShroud>
     </Basic>
     <Heroic>
-      <MalthaelTormentedSouls talent="MalthaelTormentedSouls" />
-      <MalthaelLastRites talent="MalthaelLastRites" />
+      <MalthaelTormentedSouls name="Tormented Souls" desc="MalthaelTormentedSouls" mana="100" cooldown="100">storm_ui_icon_malthael_tormentedsoul.dds</MalthaelTormentedSouls>
+      <MalthaelLastRites name="Last Rites" desc="MalthaelLastRites" mana="100" cooldown="75">storm_ui_icon_malthael_lastrites.dds</MalthaelLastRites>
     </Heroic>
     <Trait>
       <MalthaelReapersMark name="Reaper's Mark" desc="MalthaelReapersMark">storm_ui_icon_malthael_reapersmark.dds</MalthaelReapersMark>
@@ -33,8 +33,8 @@
       <MalthaelTouchOfDeath name="Touch of Death" desc="MalthaelTouchOfDeath" cooldown="30">storm_ui_icon_malthael_touchofdeath.dds</MalthaelTouchOfDeath>
   </Level7>
     <Level10>
-      <MalthaelTormentedSouls name="Tormented Souls" desc="MalthaelTormentedSouls" mana="100" cooldown="100">storm_ui_icon_malthael_tormentedsoul.dds</MalthaelTormentedSouls>
-      <MalthaelLastRites name="Last Rites" desc="MalthaelLastRites" mana="100" cooldown="75">storm_ui_icon_malthael_lastrites.dds</MalthaelLastRites>
+      <MalthaelTormentedSouls ability="MalthaelTormentedSouls" />
+      <MalthaelLastRites ability="MalthaelLastRites" />
     </Level10>
     <Level13>
       <MalthaelSoulSiphon name="Soul Siphon" desc="MalthaelSoulSiphon">storm_ui_icon_malthael_soulrip.dds</MalthaelSoulSiphon>

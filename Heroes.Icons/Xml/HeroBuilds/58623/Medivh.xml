@@ -9,8 +9,8 @@
       <MedivhPortalInstant name="Portal" desc="MedivhPortal" mana="75" cooldown="20">storm_ui_icon_medivh_portal.dds</MedivhPortalInstant>
     </Basic>
     <Heroic>
-      <MedivhPolyBomb talent="MedivhPolyBomb" />
-      <MedivhLeyLineSeal talent="MedivhLeyLineSeal" />
+      <MedivhPolyBomb name="Poly Bomb" desc="MedivhPolyBomb" mana="75" cooldown="40">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBomb>
+      <MedivhLeyLineSeal name="Ley Line Seal" desc="MedivhLeyLineSeal" mana="75" cooldown="80">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSeal>
     </Heroic>
     <Trait>
       <MedivhRavenForm name="Raven Form" desc="MedivhRavenForm">storm_ui_icon_medivh_ravenform.dds</MedivhRavenForm>
@@ -37,8 +37,8 @@
       <MedivhPortalRavenFamiliar name="Raven Familiar" desc="MedivhPortalRavenFamiliar">storm_ui_icon_medivh_portal.dds</MedivhPortalRavenFamiliar>
     </Level7>
     <Level10>
-      <MedivhPolyBomb name="Poly Bomb" desc="MedivhPolyBomb" mana="75" cooldown="40">storm_ui_icon_medivh_polybomb.dds</MedivhPolyBomb>
-      <MedivhLeyLineSeal name="Ley Line Seal" desc="MedivhLeyLineSeal" mana="75" cooldown="80">storm_ui_icon_medivh_leylineblast.dds</MedivhLeyLineSeal>
+      <MedivhPolyBomb ability="MedivhPolyBomb" />
+      <MedivhLeyLineSeal ability="MedivhLeyLineSeal" />
     </Level10>
     <Level13>
       <MedivhPortalQuickening name="Quickening" desc="MedivhPortalQuickening">storm_ui_icon_medivh_portal.dds</MedivhPortalQuickening>

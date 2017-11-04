@@ -9,8 +9,8 @@
       <GenjiSwiftStrike name="Swift Strike" desc="GenjiSwiftStrike" mana="75" cooldown="12">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrike>
     </Basic>
     <Heroic>
-      <GenjiDragonblade talent="GenjiHeroicDragonblade" />
-      <GenjiXStrike talent="GenjiHeroicXStrike" />
+      <GenjiDragonblade name="Dragonblade" desc="GenjiDragonblade" mana="75" cooldown="100">storm_ui_icon_genji_dragonblade.dds</GenjiDragonblade>
+      <GenjiXStrike name="X-Strike" desc="GenjiXStrike" mana="90" cooldown="80">storm_ui_icon_genji_shurikens_xblade.dds</GenjiXStrike>
     </Heroic>
     <Trait>
       <GenjiCyberAgility name="Cyber Agility" desc="GenjiCyberAgility" cooldown="10">storm_ui_icon_genji_cyberagility.dds</GenjiCyberAgility>
@@ -34,8 +34,8 @@
       <GenjiDodge name="Dodge" desc="GenjiDodge">storm_ui_icon_genji_dodge.dds</GenjiDodge>
     </Level7>
     <Level10>
-      <GenjiHeroicDragonblade name="Dragonblade" desc="GenjiDragonblade" mana="75" cooldown="100">storm_ui_icon_genji_dragonblade.dds</GenjiHeroicDragonblade>
-      <GenjiHeroicXStrike name="X-Strike" desc="GenjiXStrike" mana="90" cooldown="80">storm_ui_icon_genji_shurikens_xblade.dds</GenjiHeroicXStrike>
+      <GenjiHeroicDragonblade ability="GenjiDragonblade" />
+      <GenjiHeroicXStrike ability="GenjiXStrike" />
     </Level10>
     <Level13>
       <GenjiShurikenShingan name="Shingan" desc="GenjiShurikenShingan">storm_ui_icon_genji_shurikens.dds</GenjiShurikenShingan>

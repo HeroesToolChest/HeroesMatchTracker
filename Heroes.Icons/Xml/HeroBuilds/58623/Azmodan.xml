@@ -9,8 +9,8 @@
       <AzmodanAllShallBurn name="All Shall Burn" desc="AzmodanAllShallBurn" mana="16" per-mana="true" cooldown="6">storm_ui_icon_azmodan_allshallburn.dds</AzmodanAllShallBurn>
     </Basic>
     <Heroic>
-      <AzmodanDemonicInvasion talent="AzmodanHeroicAbilityDemonicInvasion" />
-      <AzmodanBlackPool talent="AzmodanHeroicAbilityBlackPool" />
+      <AzmodanDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion" mana="100" cooldown="100">storm_ui_icon_azmodan_demonicinvasion.dds</AzmodanDemonicInvasion>
+      <AzmodanBlackPool name="Black Pool" desc="AzmodanBlackPool" mana="60" cooldown="20" ch-cooldown="true">storm_ui_icon_azmodan_blackpool.dds</AzmodanBlackPool>
     </Heroic>
     <Trait>
       <AzmodanGeneralOfHell name="General of Hell" desc="AzmodanGeneralOfHell" cooldown="30">storm_ui_icon_azmodan_generalofhell.dds</AzmodanGeneralOfHell>
@@ -35,8 +35,8 @@
       <AzmodanMasteryMarchOfSin name="March of Sin" desc="AzmodanAllShallBurnMarchOfSinTalent">storm_ui_icon_azmodan_allshallburn.dds</AzmodanMasteryMarchOfSin>
     </Level7>
     <Level10>
-      <AzmodanHeroicAbilityDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion" mana="100" cooldown="100">storm_ui_icon_azmodan_demonicinvasion.dds</AzmodanHeroicAbilityDemonicInvasion>
-      <AzmodanHeroicAbilityBlackPool name="Black Pool" desc="AzmodanBlackPool" mana="60" cooldown="20" ch-cooldown="true">storm_ui_icon_azmodan_blackpool.dds</AzmodanHeroicAbilityBlackPool>
+      <AzmodanHeroicAbilityDemonicInvasion ability="AzmodanDemonicInvasion" />
+      <AzmodanHeroicAbilityBlackPool ability="AzmodanBlackPool" />
     </Level10>
     <Level13>
       <AzmodanMasteryHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">storm_ui_icon_azmodan_summondemonwarrior.dds</AzmodanMasteryHellforgedArmor>

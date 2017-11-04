@@ -9,8 +9,8 @@
       <NecromancerBonePrison name="Bone Prison" desc="NecromancerBonePrison" mana="80" cooldown="12">storm_ui_icon_necromancer_boneprison.dds</NecromancerBonePrison>
     </Basic>
     <Heroic>
-      <NecromancerPoisonNovaInstant talent="NecromancerHeroicAbilityPoisonNova" />
-      <NecromancerSkeletalMages talent="NecromancerHeroicAbilitySkeletalMages" />
+      <NecromancerPoisonNovaInstant name="Poison Nova" desc="NecromancerPoisonNova" mana="100" cooldown="90">storm_ui_icon_necromancer_poisonnova.dds</NecromancerPoisonNovaInstant>
+      <NecromancerSkeletalMages name="Skeletal Mages" desc="NecromancerSkeletalMages" mana="80" cooldown="70">storm_ui_icon_necromancer_skeletalmages.dds</NecromancerSkeletalMages>
     </Heroic>
     <Trait>
       <NecromancerRaiseSkeleton name="Raise Skeleton" desc="NecromancerRaiseSkeleton">storm_ui_icon_necromancer_raiseskeleton.dds</NecromancerRaiseSkeleton>
@@ -36,8 +36,8 @@
       <NecromancerTalentTragOulsEssence name="Trag'Oul's Essence" desc="NecromancerTragOulsEssence">storm_ui_icon_necromancer_raiseskeleton.dds</NecromancerTalentTragOulsEssence>
     </Level7>
     <Level10>
-      <NecromancerHeroicAbilityPoisonNova name="Poison Nova" desc="NecromancerPoisonNova" mana="100" cooldown="90">storm_ui_icon_necromancer_poisonnova.dds</NecromancerHeroicAbilityPoisonNova>
-      <NecromancerHeroicAbilitySkeletalMages name="Skeletal Mages" desc="NecromancerSkeletalMages" mana="80" cooldown="70">storm_ui_icon_necromancer_skeletalmages.dds</NecromancerHeroicAbilitySkeletalMages>
+      <NecromancerHeroicAbilityPoisonNova ability="NecromancerPoisonNovaInstant" />
+      <NecromancerHeroicAbilitySkeletalMages ability="NecromancerSkeletalMages" />
     </Level10>
     <Level13>
       <NecromancerTalentEchoesOfDeath name="Echoes of Death" desc="NecromancerEchoesOfDeathTalent">storm_ui_icon_necromancer_reap.dds</NecromancerTalentEchoesOfDeath>

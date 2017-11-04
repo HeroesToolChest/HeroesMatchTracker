@@ -9,8 +9,8 @@
       <ThrallWindfury name="Windfury" desc="Windfury" mana="60" cooldown="12">storm_ui_icon_thrall_windfury.dds</ThrallWindfury>
     </Basic>
     <Heroic>
-      <ThrallSundering talent="ThrallHeroicAbilitySundering" />
-      <ThrallEarthquake talent="ThrallHeroicAbilityEarthquake" />
+      <ThrallSundering name="Sundering" desc="Sundering" mana="75" cooldown="70">storm_ui_icon_thrall_sundering.dds</ThrallSundering>
+      <ThrallEarthquake name="Earthquake" desc="ThrallEarthquake" mana="90" cooldown="100">storm_ui_icon_thrall_earthquake.dds</ThrallEarthquake>
     </Heroic>
     <Trait>
       <ThrallFrostwolfResilience name="Frostwolf Resilience" desc="ThrallFrostwolfResilience">storm_ui_icon_thrall_feralspirit.dds</ThrallFrostwolfResilience>
@@ -33,8 +33,8 @@
       <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
     </Level7>
     <Level10>
-      <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering" mana="75" cooldown="70">storm_ui_icon_thrall_sundering.dds</ThrallHeroicAbilitySundering>
-      <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake" mana="90" cooldown="100">storm_ui_icon_thrall_earthquake.dds</ThrallHeroicAbilityEarthquake>
+      <ThrallHeroicAbilitySundering ability="ThrallSundering" />
+      <ThrallHeroicAbilityEarthquake ability="ThrallEarthquake" />
     </Level10>
     <Level13>
       <ThrallMasteryGraceOfAir name="Grace Of Air" desc="ThrallGraceOfAirTalent">storm_ui_icon_thrall_windfury.dds</ThrallMasteryGraceOfAir>

@@ -9,8 +9,8 @@
       <MedicDisplacementGrenade name="Displacement Grenade" desc="MedicDisplacementGrenade" cooldown="12">storm_ui_icon_medic_displacementgrenade.dds</MedicDisplacementGrenade>
     </Basic>
     <Heroic>
-      <MedicStimDrone talent="MedicHeroicAbilityStimDrone" />
-      <MedicMedivacDropship talent="MedicHeroicAbilityMedivacDropship" />
+      <MedicStimDrone name="Stim Drone" desc="MedicStimDrone" cooldown="90">storm_ui_icon_medic_stim.dds</MedicStimDrone>
+      <MedicMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship" cooldown="60">storm_ui_icon_medic_medivacdropship.dds</MedicMedivacDropship>
     </Heroic>
     <Trait>
       <MedicCaduceusReactor name="Caduceus Reactor" desc="MedicCaduceusReactor">storm_ui_icon_medic_caduceusreactor.dds</MedicCaduceusReactor>
@@ -33,8 +33,8 @@
       <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguard">storm_ui_icon_medic_deployshield_c.dds</MedicProlongedSafeguard>
     </Level7>
     <Level10>
-      <MedicHeroicAbilityStimDrone name="Stim Drone" desc="MedicStimDrone" cooldown="90">storm_ui_icon_medic_stim.dds</MedicHeroicAbilityStimDrone>
-      <MedicHeroicAbilityMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship" cooldown="60">storm_ui_icon_medic_medivacdropship.dds</MedicHeroicAbilityMedivacDropship>
+      <MedicHeroicAbilityStimDrone ability="MedicStimDrone" />
+      <MedicHeroicAbilityMedivacDropship ability="MedicMedivacDropship" />
     </Level10>
     <Level13>
       <MedicEMPGrenade name="EMP Grenade" desc="MedicEMPGrenadeTalent">storm_ui_icon_medic_displacementgrenade.dds</MedicEMPGrenade>

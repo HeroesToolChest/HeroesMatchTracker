@@ -9,8 +9,8 @@
       <JunkratSteelTrap name="Steel Trap" desc="JunkratSteelTrap" cooldown="12">storm_ui_icon_junkrat_steel_trap.dds</JunkratSteelTrap>
     </Basic>
     <Heroic>
-      <JunkratRIPTire talent="JunkratHeroicAbilityRIPTire" />
-      <JunkratRocketRide talent="JunkratHeroicRocketRide" />
+      <JunkratRIPTire name="RIP-Tire" desc="JunkratRIPTire" cooldown="80">storm_ui_icon_junkrat_rip_tire.dds</JunkratRIPTire>
+      <JunkratRocketRide name="Rocket Ride" desc="JunkratRocketRide" cooldown="100">storm_ui_icon_junkrat_rocket_ride.dds</JunkratRocketRide>
     </Heroic>
     <Trait>
       <JunkratTotalMayhem name="Total Mayhem" desc="JunkratTotalMayhem">storm_ui_icon_junkrat_bomb_pack.dds</JunkratTotalMayhem>
@@ -33,8 +33,8 @@
       <JunkratSteelTrapStickyWicket name="Sticky Wicket" desc="JunkratStickyWicketSteelTrapTalent">storm_ui_icon_junkrat_steel_trap_b.dds</JunkratSteelTrapStickyWicket>
     </Level7>
     <Level10>
-      <JunkratHeroicAbilityRIPTire name="RIP-Tire" desc="JunkratRIPTire" cooldown="80">storm_ui_icon_junkrat_rip_tire.dds</JunkratHeroicAbilityRIPTire>
-      <JunkratHeroicRocketRide name="Rocket Ride" desc="JunkratRocketRide" cooldown="100">storm_ui_icon_junkrat_rocket_ride.dds</JunkratHeroicRocketRide>
+      <JunkratHeroicAbilityRIPTire ability="JunkratRIPTire" />
+      <JunkratHeroicRocketRide ability="JunkratRocketRide" />
     </Level10>
     <Level13>
       <JunkratConcussionMineRipperAir name="Ripper Air" desc="JunkratRipperAirConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.dds</JunkratConcussionMineRipperAir>

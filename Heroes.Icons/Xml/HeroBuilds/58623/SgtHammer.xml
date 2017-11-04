@@ -9,8 +9,8 @@
       <SgtHammerSiegeMode name="Siege Mode" desc="SgtHammerSiegeMode" mana="20" cooldown="2">storm_ui_icon_sgthammer_siegemode.dds</SgtHammerSiegeMode>
     </Basic>
     <Heroic>
-      <SgtHammerBluntForceGun talent="SgtHammerHeroicAbilityBluntForceGun" />
-      <SgtHammerNapalmStrike talent="SgtHammerHeroicAbilityNapalmStrike" />
+      <SgtHammerBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun" mana="100" cooldown="60">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerBluntForceGun>
+      <SgtHammerNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike" mana="35" cooldown="6">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerNapalmStrike>
     </Heroic>
     <Trait>
       <SgtHammerArtillery name="Artillery" desc="SgtHammerArtillery">storm_ui_icon_sgthammer_artillery.dds</SgtHammerArtillery>
@@ -37,8 +37,8 @@
       <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid" cooldown="60">storm_temp_btn-ability-terran-heal-color.dds</GenericTalentFirstAid>
     </Level7>
     <Level10>
-      <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun" mana="100" cooldown="60">storm_ui_icon_sgthammer_bluntforcegun.dds</SgtHammerHeroicAbilityBluntForceGun>
-      <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike" mana="35" cooldown="6">storm_ui_icon_sgthammer_napalmstrike.dds</SgtHammerHeroicAbilityNapalmStrike>
+      <SgtHammerHeroicAbilityBluntForceGun ability="SgtHammerBluntForceGun" />
+      <SgtHammerHeroicAbilityNapalmStrike ability="SgtHammerNapalmStrike" />
     </Level10>
     <Level13>
       <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentGiantKiller>

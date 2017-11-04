@@ -38,6 +38,8 @@ namespace Heroes.Icons.Models
 
         public HeroMana ManaType { get; set; }
 
+        public Dictionary<string, Ability> Abilities { get; set; }
+
         public Dictionary<string, Talent> Talents { get; set; }
 
         /// <summary>

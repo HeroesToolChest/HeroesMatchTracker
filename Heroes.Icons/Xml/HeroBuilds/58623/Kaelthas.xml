@@ -9,8 +9,8 @@
       <KaelthasGravityLapse name="Gravity Lapse" desc="KaelthasGravityLapse" mana="90" cooldown="14">storm_ui_icon_kaelthas_gravitylapse.dds</KaelthasGravityLapse>
     </Basic>
     <Heroic>
-      <KaelthasPhoenix talent="KaelthasHeroicAbilityPhoenix" />
-      <KaelthasPyroblast talent="KaelthasHeroicAbilityPyroblast" />
+      <KaelthasPhoenix name="Phoenix" desc="KaelthasPhoenix" mana="80" cooldown="60">storm_ui_icon_kaelthas_phoenix.dds</KaelthasPhoenix>
+      <KaelthasPyroblast name="Pyroblast" desc="KaelthasPyroblast" mana="80" cooldown="100">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasPyroblast>
     </Heroic>
     <Trait>
       <KaelthasVerdantSpheres name="Verdant Spheres" desc="KaelthasVerdantSpheres" cooldown="6">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasVerdantSpheres>
@@ -33,8 +33,8 @@
       <KaelthasMasterySunfireEnchantment name="Sunfire Enchantment" desc="KaelthasSunfireEnchantmentTalent">storm_ui_icon_kaelthas_verdantspheres.dds</KaelthasMasterySunfireEnchantment>
     </Level7>
     <Level10>
-      <KaelthasHeroicAbilityPhoenix name="Phoenix" desc="KaelthasPhoenix" mana="80" cooldown="60">storm_ui_icon_kaelthas_phoenix.dds</KaelthasHeroicAbilityPhoenix>
-      <KaelthasHeroicAbilityPyroblast name="Pyroblast" desc="KaelthasPyroblast" mana="80" cooldown="100">storm_ui_icon_kaelthas_pyroblast.dds</KaelthasHeroicAbilityPyroblast>
+      <KaelthasHeroicAbilityPhoenix ability="KaelthasPhoenix" />
+      <KaelthasHeroicAbilityPyroblast ability="KaelthasPyroblast" />
     </Level10>
     <Level13>
       <KaelthasLivingBombPyromaniac name="Pyromaniac" desc="KaelthasLivingBombPyromaniacTalent">storm_ui_icon_kaelthas_livingbomb.dds</KaelthasLivingBombPyromaniac>

@@ -9,8 +9,8 @@
       <ZeratulBlinkStorm name="Blink" desc="ZeratulBlink" mana="50" cooldown="10">storm_ui_icon_zeratul_blink.dds</ZeratulBlinkStorm>
     </Basic>
     <Heroic>
-      <ZeratulShadowAssault talent="ZeratulHeroicAbilityShadowAssault" />
-      <ZeratulVoidPrison talent="ZeratulHeroicAbilityVoidPrison" />
+      <ZeratulShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault" mana="50" cooldown="45">storm_ui_icon_zeratul_shadowassault.dds</ZeratulShadowAssault>
+      <ZeratulVoidPrison name="Void Prison" desc="ZeratulVoidPrison" mana="100" cooldown="100">storm_ui_icon_zeratul_voidprison.dds</ZeratulVoidPrison>
     </Heroic>
     <Trait>
       <ZeratulPermanentCloak name="Permanent Cloak" desc="ZeratulPermanentCloak">storm_ui_icon_zeratul_cloak.dds</ZeratulPermanentCloak>
@@ -33,8 +33,8 @@
       <ZeratulSeekerInTheDark name="Seeker in the Dark" desc="ZeratulSeekerInTheDark">storm_ui_icon_zeratul_singularityspike.dds</ZeratulSeekerInTheDark>
     </Level7>
     <Level10>
-      <ZeratulHeroicAbilityShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault" mana="50" cooldown="45">storm_ui_icon_zeratul_shadowassault.dds</ZeratulHeroicAbilityShadowAssault>
-      <ZeratulHeroicAbilityVoidPrison name="Void Prison" desc="ZeratulVoidPrison" mana="100" cooldown="100">storm_ui_icon_zeratul_voidprison.dds</ZeratulHeroicAbilityVoidPrison>
+      <ZeratulHeroicAbilityShadowAssault ability="ZeratulShadowAssault" />
+      <ZeratulHeroicAbilityVoidPrison ability="ZeratulVoidPrison" />
     </Level10>
     <Level13>
       <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">storm_ui_icon_zeratul_cloak.dds</ZeratulShroudofAdun>

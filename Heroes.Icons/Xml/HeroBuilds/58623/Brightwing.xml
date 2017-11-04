@@ -9,8 +9,8 @@
       <FaerieDragonPixieDust name="Pixie Dust" desc="BrightwingPixieDust" mana="60" cooldown="10">storm_ui_icon_brightwing_pixiedust.dds</FaerieDragonPixieDust>
     </Basic>
     <Heroic>
-      <FaerieDragonBlinkHealDash talent="FaerieDragonHeroicAbilityBlinkHeal" />
-      <FaerieDragonEmeraldWind talent="FaerieDragonHeroicAbilityEmeraldWind" />
+      <FaerieDragonBlinkHealDash name="Blink Heal" desc="BrightwingBlinkHealAllyDash" mana="40" cooldown="10" ch-cooldown="true">storm_ui_icon_brightwing_blinkheal.dds</FaerieDragonBlinkHealDash>
+      <FaerieDragonEmeraldWind name="Emerald Wind" desc="BrightwingEmeraldWind" mana="90" cooldown="60">storm_ui_icon_brightwing_emeraldwind.dds</FaerieDragonEmeraldWind>
     </Heroic>
     <Trait>
       <FaerieDragonSoothingMist name="Soothing Mist" desc="BrightwingSoothingMist">storm_ui_icon_brightwing_soothingmist.dds</FaerieDragonSoothingMist>
@@ -38,8 +38,8 @@
       <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
     </Level7>
     <Level10>
-      <FaerieDragonHeroicAbilityBlinkHeal name="Blink Heal" desc="BrightwingBlinkHealAllyDash" mana="40" cooldown="10" ch-cooldown="true">storm_ui_icon_brightwing_blinkheal.dds</FaerieDragonHeroicAbilityBlinkHeal>
-      <FaerieDragonHeroicAbilityEmeraldWind name="Emerald Wind" desc="BrightwingEmeraldWind" mana="90" cooldown="60">storm_ui_icon_brightwing_emeraldwind.dds</FaerieDragonHeroicAbilityEmeraldWind>
+      <FaerieDragonHeroicAbilityBlinkHeal ability="FaerieDragonBlinkHealDash" />
+      <FaerieDragonHeroicAbilityEmeraldWind ability="FaerieDragonEmeraldWind" />
     </Level10>
     <Level13>
       <FaerieDragonMasteryStickyFlare name="Sticky Flare" desc="BrightwingArcaneFlareStickyFlareTalent">storm_ui_icon_brightwing_arcaneflare.dds</FaerieDragonMasteryStickyFlare>

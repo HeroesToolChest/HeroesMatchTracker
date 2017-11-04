@@ -9,9 +9,9 @@
       <VarianCharge name="Charge" desc="VarianCharge" mana="45" cooldown="12">storm_ui_icon_varian_charge.dds</VarianCharge>
     </Basic>
     <Heroic>
-      <VarianTaunt talent="VarianTaunt" />
-      <VarianColossusSmash talent="VarianColossusSmash" />
-      <VarianTwinBladesofFury talent="VarianTwinBladesOfFury" />
+      <VarianTaunt name="Taunt" desc="VarianTaunt" mana="20" cooldown="16">storm_ui_icon_varian_taunt.dds</VarianTaunt>
+      <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash" mana="40" cooldown="20">storm_ui_icon_varian_colossus_smash.dds</VarianColossusSmash>
+      <VarianTwinBladesofFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury" mana="" cooldown="">storm_ui_icon_varian_twinbladesoffury.dds</VarianTwinBladesofFury>
     </Heroic>
     <Trait>
       <VarianHeroicStrike name="Heroic Strike" desc="VarianHeroicStrike" cooldown="18">storm_ui_icon_varian_heroicstrike.dds</VarianHeroicStrike>
@@ -33,9 +33,9 @@
       <VarianVictoryRush name="Victory Rush" desc="VarianVictoryRush">storm_ui_icon_varian_victoryrush.dds</VarianVictoryRush>
     </Level7>
     <Level10>
-      <VarianTaunt name="Taunt" desc="VarianTaunt" mana="20" cooldown="16">storm_ui_icon_varian_taunt.dds</VarianTaunt>
-      <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash" mana="40" cooldown="20">storm_ui_icon_varian_colossus_smash.dds</VarianColossusSmash>
-      <VarianTwinBladesOfFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury" mana="" cooldown="">storm_ui_icon_varian_twinbladesoffury.dds</VarianTwinBladesOfFury>
+      <VarianTaunt ability="VarianTaunt" />
+      <VarianColossusSmash ability="VarianColossusSmash" />
+      <VarianTwinBladesOfFury ability="VarianTwinBladesofFury" />
     </Level10>
     <Level13>
       <VarianChargeJuggernaut name="Juggernaut" desc="VarianChargeJuggernaut">storm_ui_icon_varian_charge.dds</VarianChargeJuggernaut>

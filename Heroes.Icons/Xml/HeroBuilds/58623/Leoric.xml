@@ -9,19 +9,20 @@
       <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
     </Basic>
     <Heroic>
-      <LeoricEntomb talent="LeoricHeroicAbilityEntomb" />
-      <LeoricMarchoftheBlackKing talent="LeoricHeroicAbilityMarchoftheBlackKing" />
+      <LeoricEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="75">storm_ui_icon_leoric_entomb.dds</LeoricEntomb>
+      <LeoricMarchoftheBlackKing name="March of the Black King" desc="LeoricMarchoftheBlackKing" mana="75" cooldown="50">storm_ui_icon_leoric_r2.dds</LeoricMarchoftheBlackKing>
     </Heroic>
     <Trait>
-      <LeoricUndyingTrait name="Undying" desc="LeoricUndyingTrait" icon="storm_ui_icon_leoric_trait.dds">
-        <Basic>
-          <LeoricGhastlySwing name="Ghastly Swing" desc="LeoricGhastlySwing" cooldown="8">storm_ui_icon_leoric_skeletalswing_undead.dds</LeoricGhastlySwing>
-          <LeoricDrainEssence name="Drain Essence" desc="LeoricDrainEssence" cooldown="9">storm_ui_icon_leoric_drainhope_undead.dds</LeoricDrainEssence>
-          <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
-        </Basic>
-      </LeoricUndyingTrait>
+      <LeoricUndyingTrait name="Undying" desc="LeoricUndyingTrait">storm_ui_icon_leoric_trait.dds</LeoricUndyingTrait>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Basic>
+      <LeoricGhastlySwing name="Ghastly Swing" desc="LeoricGhastlySwing" cooldown="8">storm_ui_icon_leoric_skeletalswing_undead.dds</LeoricGhastlySwing>
+      <LeoricDrainEssence name="Drain Essence" desc="LeoricDrainEssence" cooldown="9">storm_ui_icon_leoric_drainhope_undead.dds</LeoricDrainEssence>
+      <LeoricBasic3Same ability="LeoricWraithWalk" />
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <LeoricMasteryConsumeVitalitySkeletalSwing name="Consume Vitality" desc="LeoricConsumeVitalityTalent">storm_ui_icon_leoric_skeletalswing_undead.dds</LeoricMasteryConsumeVitalitySkeletalSwing>
@@ -39,8 +40,8 @@
       <LeoricMasteryHopelessnessDrainHope name="Hopelessness" desc="LeoricHopelessnessTalent">storm_ui_icon_leoric_drainhope_var2.dds</LeoricMasteryHopelessnessDrainHope>
     </Level7>
     <Level10>
-      <LeoricHeroicAbilityEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="75">storm_ui_icon_leoric_entomb.dds</LeoricHeroicAbilityEntomb>
-      <LeoricHeroicAbilityMarchoftheBlackKing name="March of the Black King" desc="LeoricMarchoftheBlackKing" mana="75" cooldown="50">storm_ui_icon_leoric_r2.dds</LeoricHeroicAbilityMarchoftheBlackKing>
+      <LeoricHeroicAbilityEntomb ability="LeoricEntomb" />
+      <LeoricHeroicAbilityMarchoftheBlackKing ability="LeoricMarchoftheBlackKing" />
     </Level10>
     <Level13>
       <LeoricMasteryUnyieldingDespairDrainHope name="Unyielding Despair" desc="LeoricUnyieldingDespairTalent">storm_ui_icon_leoric_drainhope.dds</LeoricMasteryUnyieldingDespairDrainHope>

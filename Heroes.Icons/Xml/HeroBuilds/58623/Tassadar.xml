@@ -9,8 +9,8 @@
       <TassadarDimensionalShift name="Dimensional Shift" desc="TassadarDimensionalShift" mana="75" cooldown="30">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarDimensionalShift>
     </Basic>
     <Heroic>
-      <TassadarArchon talent="TassadarHeroicAbilityArchon" />
-      <TassadarForceWall talent="TassadarHeroicAbilityForceWall" />
+      <TassadarArchon name="Archon" desc="TassadarArchon" mana="80" cooldown="100">storm_ui_icon_tassadar_archon.dds</TassadarArchon>
+      <TassadarForceWall name="Force Wall" desc="TassadarForceWall" mana="25" cooldown="8">storm_ui_icon_tassadar_forcewall.dds</TassadarForceWall>
     </Heroic>
     <Trait>
       <TassadarOracle name="Oracle" desc="TassadarOracle" cooldown="30">storm_ui_icon_tassadar_oracle.dds</TassadarOracle>
@@ -33,8 +33,8 @@
       <TassadarMasteryMentalAcuity name="Mental Acuity" desc="TassadarOracleMentalAcuityTalent">storm_ui_icon_tassadar_oracle.dds</TassadarMasteryMentalAcuity>
     </Level7>
     <Level10>
-      <TassadarHeroicAbilityArchon name="Archon" desc="TassadarArchon" mana="80" cooldown="100">storm_ui_icon_tassadar_archon.dds</TassadarHeroicAbilityArchon>
-      <TassadarHeroicAbilityForceWall name="Force Wall" desc="TassadarForceWall" mana="25" cooldown="8">storm_ui_icon_tassadar_forcewall.dds</TassadarHeroicAbilityForceWall>
+      <TassadarHeroicAbilityArchon ability="TassadarArchon" />
+      <TassadarHeroicAbilityForceWall ability="TassadarForceWall" />
     </Level10>
     <Level13>
       <TassadarDeepShift name="Deep Shift" desc="TassadarDimensionalShiftDeepShiftTalent">storm_ui_icon_tassadar_dimensionalshift.dds</TassadarDeepShift>

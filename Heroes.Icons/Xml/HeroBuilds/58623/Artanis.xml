@@ -9,8 +9,8 @@
       <ArtanisPhasePrism name="Phase Prism" desc="ArtanisPhasePrism" mana="70" cooldown="16">storm_ui_icon_artanis_repositionmatrix.dds</ArtanisPhasePrism>
     </Basic>
     <Heroic>
-      <ArtanisSpearofAdunSuppressionPulse talent="ArtanisHeroicAbilitySpearofAdunSuppressionPulse" />
-      <ArtanisSpearofAdunPurifierBeam talent="ArtanisHeroicAbilitySpearofAdunPurifierBeam" />
+      <ArtanisSpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse" mana="40" cooldown="50">storm_ui_icon_artanis_disruptionweb.dds</ArtanisSpearofAdunSuppressionPulse>
+      <ArtanisSpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam" mana="80" cooldown="80">storm_ui_icon_artanis_purifierbeam.dds</ArtanisSpearofAdunPurifierBeam>
     </Heroic>
     <Trait>
       <ArtanisShieldOverloadDummy name="Shield Overload" desc="ArtanisShieldOverloadTrait" cooldown="24">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadDummy>
@@ -34,8 +34,8 @@
       <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
     </Level7>
     <Level10>
-      <ArtanisHeroicAbilitySpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse" mana="40" cooldown="50">storm_ui_icon_artanis_disruptionweb.dds</ArtanisHeroicAbilitySpearofAdunSuppressionPulse>
-      <ArtanisHeroicAbilitySpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam" mana="80" cooldown="80">storm_ui_icon_artanis_purifierbeam.dds</ArtanisHeroicAbilitySpearofAdunPurifierBeam>
+      <ArtanisHeroicAbilitySpearofAdunSuppressionPulse ability="ArtanisSpearofAdunSuppressionPulse" />
+      <ArtanisHeroicAbilitySpearofAdunPurifierBeam ability="ArtanisSpearofAdunPurifierBeam" />
     </Level10>
     <Level13>
       <ArtanisBladeDashTemplarsZeal name="Templar's Zeal" desc="ArtanisBladeDashTemplarsZealTalent">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDashTemplarsZeal>

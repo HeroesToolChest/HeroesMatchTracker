@@ -9,8 +9,8 @@
       <ChromieTimeTrap name="Time Trap" desc="ChromieTimeTrap" mana="25" cooldown="18">storm_ui_icon_chromie_timetrap.dds</ChromieTimeTrap>
     </Basic>
     <Heroic>
-      <ChromieSlowingSands talent="ChromieHeroicAbilitySlowingSands" />
-      <ChromieTemporalLoop talent="ChromieHeroicAbilityTemporalLoop" />
+      <ChromieSlowingSands name="Slowing Sands" desc="ChromieSlowingSands" mana="4" per-mana="true" cooldown="5">storm_ui_icon_chromie_timewarp.dds</ChromieSlowingSands>
+      <ChromieTemporalLoop name="Temporal Loop" desc="ChromieTemporalLoop" mana="60" cooldown="70">storm_ui_icon_chromie_looper.dds</ChromieTemporalLoop>
     </Heroic>
     <Trait>
       <ChromieTimewalkerTrait name="Timewalker" desc="ChromieTimewalkerTrait">storm_ui_icon_chromie_timetraveler.dds</ChromieTimewalkerTrait>
@@ -33,8 +33,8 @@
       <ChromieTimeTrapChronoSickness name="Chrono Sickness" desc="ChromieTimeTrapChronoSickness">storm_ui_icon_chromie_timetrap.dds</ChromieTimeTrapChronoSickness>
     </Level7>
     <Level10>
-      <ChromieHeroicAbilitySlowingSands name="Slowing Sands" desc="ChromieSlowingSands" mana="4" per-mana="true" cooldown="5">storm_ui_icon_chromie_timewarp.dds</ChromieHeroicAbilitySlowingSands>
-      <ChromieHeroicAbilityTemporalLoop name="Temporal Loop" desc="ChromieTemporalLoop" mana="60" cooldown="70">storm_ui_icon_chromie_looper.dds</ChromieHeroicAbilityTemporalLoop>
+      <ChromieHeroicAbilitySlowingSands ability="ChromieSlowingSands" />
+      <ChromieHeroicAbilityTemporalLoop ability="ChromieTemporalLoop" />
     </Level10>
     <Level13>
       <ChromiePortBackToBaseByeBye name="Bye Bye!" desc="ChromiePortBackToBaseByeBye">storm_ui_icon_chromie_poof.dds</ChromiePortBackToBaseByeBye>

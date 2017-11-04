@@ -9,8 +9,8 @@
       <MalfurionEntanglingRoots name="Entangling Roots" desc="MalfurionEntanglingRoots" mana="75" cooldown="14">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionEntanglingRoots>
     </Basic>
     <Heroic>
-      <MalfurionTranquility talent="MalfurionHeroicAbilityTranquility" />
-      <MalfurionTwilightDream talent="MalfurionHeroicAbilityTwilightDream" />
+      <MalfurionTranquility name="Tranquility" desc="MalfurionTranquility" mana="100" cooldown="100">storm_ui_icon_malfurion_tranquility.dds</MalfurionTranquility>
+      <MalfurionTwilightDream name="Twilight Dream" desc="MalfurionTwilightDream" mana="100" cooldown="90">storm_ui_icon_malfurion_twilightdream.dds</MalfurionTwilightDream>
     </Heroic>
     <Trait>
       <MalfurionInnervate name="Innervate" desc="MalfurionInnervate" cooldown="30">storm_ui_icon_malfurion_innerrvate.dds</MalfurionInnervate>
@@ -33,8 +33,8 @@
       <MalfurionMasteryStranglingVinesEntanglingRoots name="Strangling Vines" desc="MalfurionEntanglingRootsStranglingVinesTalent">storm_ui_icon_malfurion_entanglingroots.dds</MalfurionMasteryStranglingVinesEntanglingRoots>
   </Level7>
     <Level10>
-      <MalfurionHeroicAbilityTranquility name="Tranquility" desc="MalfurionTranquility" mana="100" cooldown="100">storm_ui_icon_malfurion_tranquility.dds</MalfurionHeroicAbilityTranquility>
-      <MalfurionHeroicAbilityTwilightDream name="Twilight Dream" desc="MalfurionTwilightDream" mana="100" cooldown="90">storm_ui_icon_malfurion_twilightdream.dds</MalfurionHeroicAbilityTwilightDream>
+      <MalfurionHeroicAbilityTranquility ability="MalfurionTranquility" />
+      <MalfurionHeroicAbilityTwilightDream ability="MalfurionTwilightDream" />
     </Level10>
     <Level13>
       <MalfurionMasteryLifeSeed name="Life Seed" desc="MalfurionRegrowthLifeSeedTalent">storm_ui_icon_malfurion_regrowth.dds</MalfurionMasteryLifeSeed>

@@ -9,8 +9,8 @@
       <ZagaraInfestedDrop name="Infested Drop" desc="ZagaraInfestedDrop" mana="50" cooldown="12">storm_ui_icon_zagara_infesteddrop.dds</ZagaraInfestedDrop>
     </Basic>
     <Heroic>
-      <ZagaraDevouringMaw talent="ZagaraHeroicAbilityDevouringMaw" />
-      <ZagaraSummonNydusWorm talent="ZagaraHeroicAbilityNydusAssault" />
+      <ZagaraDevouringMaw name="Devouring Maw" desc="ZagaraDevouringMaw" mana="100" cooldown="100">storm_ui_icon_zagara_devouringmaw.dds</ZagaraDevouringMaw>
+      <ZagaraSummonNydusWorm name="Nydus Network" desc="ZagaraNydusNetwork" mana="50" cooldown="60" ch-cooldown="true">storm_ui_icon_zagara_nydusworm.dds</ZagaraSummonNydusWorm>
     </Heroic>
     <Trait>
       <ZagaraSummonCreepTumor name="Creep Tumor" desc="ZagaraCreepTumor" cooldown="18" ch-cooldwon="true">storm_ui_icon_zagara_creep.dds</ZagaraSummonCreepTumor>
@@ -33,8 +33,8 @@
       <ZagaraMasteryBileDrop name="Bile Drop" desc="ZagaraInfestedDropBileDropTalent">storm_ui_icon_zagara_infesteddrop.dds</ZagaraMasteryBileDrop>
     </Level7>
     <Level10>
-      <ZagaraHeroicAbilityDevouringMaw name="Devouring Maw" desc="ZagaraDevouringMaw" mana="100" cooldown="100">storm_ui_icon_zagara_devouringmaw.dds</ZagaraHeroicAbilityDevouringMaw>
-      <ZagaraHeroicAbilityNydusAssault name="Nydus Network" desc="ZagaraNydusNetwork" mana="50" cooldown="60" ch-cooldown="true">storm_ui_icon_zagara_nydusworm.dds</ZagaraHeroicAbilityNydusAssault>
+      <ZagaraHeroicAbilityDevouringMaw ability="ZagaraDevouringMaw" />
+      <ZagaraHeroicAbilityNydusAssault ability="ZagaraSummonNydusWorm" />
     </Level10>
     <Level13>
       <ZagaraMasteryHydraliskTransfusion name="Hydralisk Transfusion" desc="ZagaraHydraliskTransfusionTalent">storm_ui_icon_zagara_hunterkiller.dds</ZagaraMasteryHydraliskTransfusion>

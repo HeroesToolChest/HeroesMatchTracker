@@ -9,8 +9,8 @@
       <GuldanCorruption name="Corruption" desc="GuldanCorruption" mana="80" cooldown="14">storm_ui_icon_guldan_handofguldan.dds</GuldanCorruption>
     </Basic>
     <Heroic>
-      <GuldanHorrify talent="GuldanHorrify" />
-      <GuldanRainOfDestruction talent="GuldanRainOfDestruction" />
+      <GuldanHorrify name="Horrify" desc="GuldanHorrify" mana="90" cooldown="80">storm_ui_icon_guldan_horrify.dds</GuldanHorrify>
+      <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction" mana="90" cooldown="100">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestruction>
     </Heroic>
     <Trait>
       <GuldanLifeTap name="Life Tap" desc="GuldanLifeTap" Life="222">storm_ui_icon_guldan_lifetap.dds</GuldanLifeTap>
@@ -35,8 +35,8 @@
       <GuldanLifeTapHungerforPower name="Hunger for Power" desc="GuldanLifeTapHungerforPower">storm_ui_icon_guldan_hungerforpower.dds</GuldanLifeTapHungerforPower>
     </Level7>
     <Level10>
-      <GuldanHorrify name="Horrify" desc="GuldanHorrify" mana="90" cooldown="80">storm_ui_icon_guldan_horrify.dds</GuldanHorrify>
-      <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction" mana="90" cooldown="100">storm_ui_icon_guldan_rainoffire.dds</GuldanRainOfDestruction>
+      <GuldanHorrify ability="GuldanHorrify" />
+      <GuldanRainOfDestruction ability="GuldanRainOfDestruction" />
     </Level10>
     <Level13>
       <GuldanFelFlameFelArmor name="Fel Armor" desc="GuldanFelFlameFelArmor">storm_ui_icon_guldan_felflame.dds</GuldanFelFlameFelArmor>

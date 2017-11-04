@@ -9,8 +9,8 @@
       <ChoRuneBomb name="Rune Bomb" desc="ChoRuneBomb" cooldown="8">storm_ui_icon_cho_runebomb.dds</ChoRuneBomb>
     </Basic>
     <Heroic>
-      <ChoHammerOfTwilight talent="ChoHeroicAbilityHammerOfTwilight" />
-      <ChoUpheaval talent="ChoHeroicAbilityUpheaval" />
+      <ChoHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight" cooldown="15">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHammerOfTwilight>
+      <ChoUpheaval name="Upheaval" desc="ChoUpheaval" cooldown="60">storm_ui_icon_Cho_Upheaval.dds</ChoUpheaval>
     </Heroic>
     <Trait>
       <ChoOgreHide name="Ogre Hide" desc="ChoOgreHideActivated" cooldown="5">storm_ui_icon_cho_ogrehide.dds</ChoOgreHide>
@@ -33,8 +33,8 @@
       <ChoEnragedRegeneration name="Enraged Regeneration" desc="ChoEnragedRegeneration">storm_ui_icon_cho_ogrehide.dds</ChoEnragedRegeneration>
     </Level7>
     <Level10>
-      <ChoHeroicAbilityHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight" cooldown="15">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHeroicAbilityHammerOfTwilight>
-      <ChoHeroicAbilityUpheaval name="Upheaval" desc="ChoUpheaval" cooldown="60">storm_ui_icon_Cho_Upheaval.dds</ChoHeroicAbilityUpheaval>
+      <ChoHeroicAbilityHammerOfTwilight ability="ChoHammerOfTwilight" />
+      <ChoHeroicAbilityUpheaval ability="ChoUpheaval" />
     </Level10>
     <Level13>
       <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoFrenziedFists>

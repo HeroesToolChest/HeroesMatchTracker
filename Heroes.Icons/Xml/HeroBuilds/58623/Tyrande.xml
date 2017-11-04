@@ -9,8 +9,8 @@
       <TyrandeLunarFlare name="Lunar Flare" desc="TyrandeLunarFlare" mana="60" cooldown="12">storm_ui_icon_tyrande_lunarflare.dds</TyrandeLunarFlare>
     </Basic>
     <Heroic>
-      <TyrandeStarfall talent="TyrandeHeroicAbilityShadowstalk" />
-      <TyrandeShadowstalk talent="TyrandeHeroicAbilityStarfall" />
+      <TyrandeShadowstalk name="Shadowstalk" desc="TyrandeShadowstalk" mana="40" cooldown="20">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeShadowstalk>
+      <TyrandeStarfall name="Starfall" desc="TyrandeStarfall" mana="75" cooldown="80">storm_ui_icon_tyrande_starfall.dds</TyrandeStarfall>
     </Heroic>
     <Trait>
       <TyrandeHuntersMark name="Hunter's Mark" desc="TyrandeHuntersMark" cooldown="20">storm_ui_icon_tyrande_huntersmark.dds</TyrandeHuntersMark>
@@ -33,8 +33,8 @@
       <TyrandeTrueshotAura name="Trueshot Aura" desc="TyrandeHuntersMarkTrueshotAuraTalent" cooldown="60">storm_ui_icon_tyrande_trueshotaura.dds</TyrandeTrueshotAura>
     </Level7>
     <Level10>
-      <TyrandeHeroicAbilityShadowstalk name="Shadowstalk" desc="TyrandeShadowstalk" mana="40" cooldown="20">storm_ui_icon_tyrande_shadowstalk.dds</TyrandeHeroicAbilityShadowstalk>
-      <TyrandeHeroicAbilityStarfall name="Starfall" desc="TyrandeStarfall" mana="75" cooldown="80">storm_ui_icon_tyrande_starfall.dds</TyrandeHeroicAbilityStarfall>
+      <TyrandeHeroicAbilityShadowstalk ability="TyrandeShadowstalk" />
+      <TyrandeHeroicAbilityStarfall ability="TyrandeStarfall" />
     </Level10>
     <Level13>
       <TyrandeMasteryLightofEluneQuickeningBlessing name="Quickening Blessing" desc="TyrandeLightOfEluneQuickeningBlessingTalent">storm_ui_icon_tyrande_lightofelune.dds</TyrandeMasteryLightofEluneQuickeningBlessing>

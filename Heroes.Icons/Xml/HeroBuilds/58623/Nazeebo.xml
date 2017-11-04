@@ -9,16 +9,18 @@
       <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueofToads" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPlagueofToads>
     </Basic>
     <Heroic>
-      <WitchDoctorGargantuan talent="WitchDoctorHeroicAbilityGargantuan" />
-      <WitchDoctorRavenousSpirit talent="WitchDoctorHeroicAbilityRavenousSpirits" />
-      <Secondary>
-        <WitchDoctorGargantuanStompCommand name="Gargantuan Stomp" desc="WitchDoctorGargantuanStomp" cooldown="5">storm_ui_icon_nazeebo_gargantuanstomp.dds</WitchDoctorGargantuanStompCommand>
-      </Secondary>
+      <WitchDoctorGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorGargantuan>
+      <WitchDoctorRavenousSpirit name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit" mana="100" cooldown="90">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorRavenousSpirit>
     </Heroic>
     <Trait>
       <WitchDoctorVoodooRitualTrait name="Voodoo Ritual" desc="WitchDoctorVoodooRitualTrait">storm_ui_icon_nazeebo_voodooritual.dds</WitchDoctorVoodooRitualTrait>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Heroic>
+      <WitchDoctorGargantuanStompCommand name="Gargantuan Stomp" desc="WitchDoctorGargantuanStomp" cooldown="5">storm_ui_icon_nazeebo_gargantuanstomp.dds</WitchDoctorGargantuanStompCommand>
+    </Heroic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <WitchDoctorWidowmakers name="Widowmakers" desc="WitchDoctorWidowmakers">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorWidowmakers>
@@ -36,8 +38,8 @@
       <WitchDoctorToadsofHugeness name="Toads of Hugeness" desc="WitchDoctorPlagueOfToadsToadsOfHugenessTalent">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorToadsofHugeness>
     </Level7>
     <Level10>
-      <WitchDoctorHeroicAbilityGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorHeroicAbilityGargantuan>
-      <WitchDoctorHeroicAbilityRavenousSpirits name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit" mana="100" cooldown="90">storm_ui_icon_Nazeebo_RavenousSpirit.dds</WitchDoctorHeroicAbilityRavenousSpirits>
+      <WitchDoctorHeroicAbilityGargantuan ability="WitchDoctorGargantuan" />
+      <WitchDoctorHeroicAbilityRavenousSpirits ability="WitchDoctorRavenousSpirit" />
     </Level10>
     <Level13>
       <WitchDoctorGuardianToads name="Guardian Toads" desc="WitchDoctorGuardianToads">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorGuardianToads>

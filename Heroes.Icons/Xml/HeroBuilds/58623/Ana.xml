@@ -9,8 +9,8 @@
       <AnaSleepDart name="Sleep Dart" desc="AnaSleepDart" mana="50" cooldown="14">storm_ui_icon_ana_sleep_dart.dds</AnaSleepDart>
     </Basic>
     <Heroic>
-      <AnaNanoBoost talent="AnaHeroicAbilityNanaBoost" />
-      <AnaEyeOfHorusActivate talent="AnaHeroicAbilityEyeOfHorus" />
+      <AnaNanoBoost name="Nana Boost" desc="AnaNanoBoost" mana="40" cooldown="50">storm_ui_icon_ana_nano_bost.dds</AnaNanoBoost>
+      <AnaEyeOfHorusActivate name="Eye of Horus" desc="AnaEyeOfHorusActivate" mana="75" cooldown="60">storm_ui_icon_ana_overwatch.dds</AnaEyeOfHorusActivate>
     </Heroic>
     <Trait>
       <AnaTraitShrikeSniper name="Shrike" desc="AnaTraitShrikeSniper">storm_ui_icon_ana_shrike.dds</AnaTraitShrikeSniper>
@@ -33,8 +33,8 @@
       <AnaDebilitatingDart name="Debilitating Dart" desc="AnaDebilitatingDart" cooldown="45">storm_ui_icon_ana_debilitatingdart.dds</AnaDebilitatingDart>
     </Level7>
     <Level10>
-      <AnaHeroicAbilityNanaBoost name="Nana Boost" desc="AnaNanoBoost" mana="40" cooldown="50">storm_ui_icon_ana_nano_bost.dds</AnaHeroicAbilityNanaBoost>
-      <AnaHeroicAbilityEyeOfHorus name="Eye of Horus" desc="AnaEyeOfHorusActivate" mana="75" cooldown="60">storm_ui_icon_ana_overwatch.dds</AnaHeroicAbilityEyeOfHorus>
+      <AnaHeroicAbilityNanaBoost ability="AnaNanoBoost" />
+      <AnaHeroicAbilityEyeOfHorus ability="AnaEyeOfHorusActivate" />
     </Level10>
     <Level13>
       <AnaHealingDartSpeedSerum name="Speed Serum" desc="AnaHealingDartSpeedSerum">storm_ui_icon_ana_healing_dart.dds</AnaHealingDartSpeedSerum>

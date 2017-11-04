@@ -5,16 +5,12 @@
   <Abilities>
     <Basic>
       <AlarakDiscordStrike name="Discord Strike" desc="AlarakDiscordStrike" mana="45" cooldown="8">storm_ui_icon_alarak_discordstrike.dds</AlarakDiscordStrike>
-    </Basic>
-    <BasicAbility2>
       <AlarakTelekinesis name="Telekinesis" desc="AlarakTelekinesis" mana="30" cooldown="12">storm_ui_icon_alarak_telekinesis.dds</AlarakTelekinesis>
-    </BasicAbility2>
-    <BasicAbility3>
       <AlarakLightningSurge name="Lightning Surge" desc="AlarakLightningSurge" mana="25" cooldown="6">storm_ui_icon_alarak_lightningsurge.dds</AlarakLightningSurge>
-    </BasicAbility3>
+    </Basic>
     <Heroic>
-      <AlarakCounterStrikeTargeted talent="AlarakHeroicAbilityCounterStrike" />
-      <AlarakDeadlyCharge talent="AlarakHeroicAbilityDeadlyCharge" />
+      <AlarakDeadlyCharge name="Deadly Charge" desc="AlarakDeadlyCharge" mana="60" cooldown="45">storm_ui_icon_alarak_recklesscharge.dds</AlarakDeadlyCharge>
+      <AlarakCounterStrikeTargeted name="Counter-Strike" desc="AlarakCounterStrikeTargeted" mana="50" cooldown="30">storm_ui_icon_alarak_counterstrike.dds</AlarakCounterStrikeTargeted>
     </Heroic>
     <Trait>
       <AlarakSadism name="Sadism" desc="AlarakSadism">storm_ui_icon_alarak_sadism.dds</AlarakSadism>
@@ -37,8 +33,8 @@
       <AlarakAppliedForce name="Applied Force" desc="AlarakAppliedForce">storm_ui_icon_alarak_telekinesis.dds</AlarakAppliedForce>
     </Level7>
     <Level10>
-      <AlarakHeroicAbilityDeadlyCharge name="Deadly Charge" desc="AlarakDeadlyCharge" mana="60" cooldown="45">storm_ui_icon_alarak_recklesscharge.dds</AlarakHeroicAbilityDeadlyCharge>
-      <AlarakHeroicAbilityCounterStrike name="Counter-Strike" desc="AlarakCounterStrikeTargeted" mana="50" cooldown="30">storm_ui_icon_alarak_counterstrike.dds</AlarakHeroicAbilityCounterStrike>
+      <AlarakHeroicAbilityDeadlyCharge ability="AlarakDeadlyCharge" />
+      <AlarakHeroicAbilityCounterStrike ability="AlarakCounterStrikeTargeted" />
     </Level10>
     <Level13>
       <AlarakBladeoftheHighlord name="Blade of the Highlord" desc="AlarakBladeoftheHighlord">storm_ui_icon_alarak_sadism.dds</AlarakBladeoftheHighlord>

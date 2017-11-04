@@ -9,8 +9,8 @@
       <StukovLurkingArm name="Lurking Arm" desc="StukovLurkingArm" mana="60" cooldown="8">storm_ui_icon_stukov_lurkingarm.dds</StukovLurkingArm>
     </Basic>
     <Heroic>
-      <StukovFlailingSwipe talent="StukovHeroicAbilityFlailingSwipe" />
-      <StukovMassiveShove talent="StukovHeroicAbilityMassiveShove" />
+      <StukovFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe" mana="100" cooldown="80">storm_ui_icon_stukov_flailingswipe.dds</StukovFlailingSwipe>
+      <StukovMassiveShove name="Massive Shove" desc="StukovMassiveShove" mana="50" cooldown="20">storm_ui_icon_stukov_massiveshove.dds</StukovMassiveShove>
     </Heroic>
     <Trait>
       <StukovBioKillSwitch name="Bio-Kill Switch" desc="StukovBioKillSwitch" cooldown="16">storm_ui_icon_stukov_bio-killswitch.dds</StukovBioKillSwitch>
@@ -36,8 +36,8 @@
       <StukovTargetedExcision name="Targeted Excision" desc="StukovTargetedExcisionTalent">storm_ui_icon_stukov_bio-killswitch.dds</StukovTargetedExcision>
     </Level7>
     <Level10>
-      <StukovHeroicAbilityFlailingSwipe name="Flailing Swipe" desc="StukovFlailingSwipe" mana="100" cooldown="80">storm_ui_icon_stukov_flailingswipe.dds</StukovHeroicAbilityFlailingSwipe>
-      <StukovHeroicAbilityMassiveShove name="Massive Shove" desc="StukovMassiveShove" mana="50" cooldown="20">storm_ui_icon_stukov_massiveshove.dds</StukovHeroicAbilityMassiveShove>
+      <StukovHeroicAbilityFlailingSwipe ability="StukovFlailingSwipe" />
+      <StukovHeroicAbilityMassiveShove ability="StukovMassiveShove" />
     </Level10>
     <Level13>
       <StukovWeightedPustuleReactiveBallistospores name="Reactive Ballistospores" desc="StukovReactiveBallistosporesTalent">storm_ui_icon_stukov_weightedpustule.dds</StukovWeightedPustuleReactiveBallistospores>

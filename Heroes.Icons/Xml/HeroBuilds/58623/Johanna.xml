@@ -9,8 +9,8 @@
       <CrusaderShieldGlare name="Shield Glare" desc="CrusaderShieldGlare" mana="45" cooldown="12">storm_ui_icon_johanna_shield_glare.dds</CrusaderShieldGlare>
     </Basic>
     <Heroic>
-      <CrusaderFallingSword talent="CrusaderHeroicAbilityFallingSword" />
-      <CrusaderBlessedShield talent="CrusaderHeroicAbilityBlessedShield" />
+      <CrusaderFallingSword name="Falling Sword" desc="CrusaderFallingSword" mana="90" cooldown="60">storm_ui_icon_johanna_falling_sword.dds</CrusaderFallingSword>
+      <CrusaderBlessedShield name="Blessed Shield" desc="CrusaderBlessedShield" mana="90" cooldown="60">storm_ui_icon_johanna_blessed_shield.dds</CrusaderBlessedShield>
     </Heroic>
     <Trait>
       <CrusaderIronSkin name="Iron Skin" desc="CrusaderIronSkin" mana="25" cooldown="20">storm_ui_icon_johanna_iron_skin.dds</CrusaderIronSkin>
@@ -33,8 +33,8 @@
       <BattleMomentumCrusader name="Blessed Momentum" desc="JohannaBlessedMomentum">storm_ui_icon_talent_autoattack_cooldown.dds</BattleMomentumCrusader>  
     </Level7>
     <Level10>
-      <CrusaderHeroicAbilityFallingSword name="Falling Sword" desc="CrusaderFallingSword" mana="90" cooldown="60">storm_ui_icon_johanna_falling_sword.dds</CrusaderHeroicAbilityFallingSword>
-      <CrusaderHeroicAbilityBlessedShield name="Blessed Shield" desc="CrusaderBlessedShield" mana="90" cooldown="60">storm_ui_icon_johanna_blessed_shield.dds</CrusaderHeroicAbilityBlessedShield>
+      <CrusaderHeroicAbilityFallingSword ability="CrusaderFallingSword" />
+      <CrusaderHeroicAbilityBlessedShield ability="CrusaderBlessedShield" />
     </Level10>
     <Level13>
       <CrusaderMasteryPunishRoar name="Roar" desc="CrusaderRoarTalent">storm_ui_icon_johanna_punish.dds</CrusaderMasteryPunishRoar>

@@ -9,8 +9,8 @@
       <MuradinDwarfToss name="Dwarf Toss" desc="MuradinDwarfToss" mana="55" cooldown="10">storm_ui_icon_muradin_dwarftoss.dds</MuradinDwarfToss>
     </Basic>
     <Heroic>
-      <MuradinAvatar talent="MuradinHeroicAbilityAvatar" />
-      <MuradinHaymaker talent="MuradinHeroicAbilityHaymaker" />
+      <MuradinAvatar name="Avatar" desc="MuradinAvatar" mana="100" cooldown="90">storm_ui_icon_muradin_avatar.dds</MuradinAvatar>
+      <MuradinHaymaker name="Haymaker" desc="MuradinHaymaker" mana="80" cooldown="40">storm_ui_icon_muradin_haymaker.dds</MuradinHaymaker>
     </Heroic>
     <Trait>
       <MuradinSecondWind name="Second Wind" desc="MuradinSecondWind">storm_ui_icon_muradin_secondwind.dds</MuradinSecondWind>
@@ -33,8 +33,8 @@
       <MuradinCombatStyleSkullcracker name="Skullcracker" generic="true" desc="MuradinSecondWindSkullcrackerTalent">storm_ui_icon_talent_autoattack_stun.dds</MuradinCombatStyleSkullcracker>
     </Level7>
     <Level10>
-      <MuradinHeroicAbilityAvatar name="Avatar" desc="MuradinAvatar" mana="100" cooldown="90">storm_ui_icon_muradin_avatar.dds</MuradinHeroicAbilityAvatar>
-      <MuradinHeroicAbilityHaymaker name="Haymaker" desc="MuradinHaymaker" mana="80" cooldown="40">storm_ui_icon_muradin_haymaker.dds</MuradinHeroicAbilityHaymaker>
+      <MuradinHeroicAbilityAvatar ability="MuradinAvatar" />
+      <MuradinHeroicAbilityHaymaker ability="MuradinHaymaker" />
     </Level10>
     <Level13>
       <MuradinMasteryThunderclapHealingStatic name="Healing Static" desc="MuradinThunderclapHealingStaticTalent">storm_ui_icon_muradin_thunderclap_a.dds</MuradinMasteryThunderclapHealingStatic>

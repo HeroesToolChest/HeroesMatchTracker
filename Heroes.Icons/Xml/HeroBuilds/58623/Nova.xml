@@ -9,8 +9,8 @@
       <NovaHoloDecoy name="Holo Decoy" desc="NovaHoloDecoy" mana="50" cooldown="15">storm_ui_icon_nova_holodecoy.dds</NovaHoloDecoy>
     </Basic>
     <Heroic>
-      <NovaTripleTap talent="NovaHeroicAbilityTripleTap" />
-      <NovaPrecisionStrike talent="NovaHeroicAbilityPrecisionStrike" />
+      <NovaTripleTap name="Triple Tap" desc="NovaTripleTap" mana="100" cooldown="100">storm_ui_icon_nova_tripletap.dds</NovaTripleTap>
+      <NovaPrecisionStrike name="Precision Strike" desc="NovaPrecisionStrike" mana="100" cooldown="60">storm_ui_icon_nova_orbitalstrike.dds</NovaPrecisionStrike>
     </Heroic>
     <Trait>
       <NovaPermanentCloakSniper name="Permanent Cloak, Sniper" desc="NovaPermanentCloakSniper">storm_ui_icon_nova_personalcloaking.dds</NovaPermanentCloakSniper>
@@ -33,8 +33,8 @@
       <NovaSnipeMaster name="Snipe Master" desc="NovaSnipeMasterTalent">storm_ui_icon_nova_snipe.dds</NovaSnipeMaster>
     </Level7>
     <Level10>
-      <NovaHeroicAbilityTripleTap name="Triple Tap" desc="NovaTripleTap" mana="100" cooldown="100">storm_ui_icon_nova_tripletap.dds</NovaHeroicAbilityTripleTap>
-      <NovaHeroicAbilityPrecisionStrike name="Precision Strike" desc="NovaPrecisionStrike" mana="100" cooldown="60">storm_ui_icon_nova_orbitalstrike.dds</NovaHeroicAbilityPrecisionStrike>
+      <NovaHeroicAbilityTripleTap ability="NovaTripleTap" />
+      <NovaHeroicAbilityPrecisionStrike ability="NovaPrecisionStrike" />
     </Level10>
     <Level13>
       <NovaMasteryDoubleTap name="Double Tap" desc="NovaPinningShotDoubleTapTalent">storm_ui_icon_Nova_PinningShot.dds</NovaMasteryDoubleTap>
