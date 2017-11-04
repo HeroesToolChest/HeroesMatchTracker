@@ -21,7 +21,7 @@
         <LeoricMasteryHopelessnessDrainHope name="Hopelessness" desc="LeoricHopelessnessTalent">storm_ui_icon_leoric_drainhope_var2.dds</LeoricMasteryHopelessnessDrainHope>
       </Level7>
       <Level10>
-        <LeoricHeroicAbilityEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="75">storm_ui_icon_leoric_entomb.dds</LeoricHeroicAbilityEntomb>
+        <LeoricHeroicAbilityEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="60">storm_ui_icon_leoric_entomb.dds</LeoricHeroicAbilityEntomb>
         <LeoricHeroicAbilityMarchoftheBlackKing name="March of the Black King" desc="LeoricMarchoftheBlackKing" mana="75" cooldown="50">storm_ui_icon_leoric_r2.dds</LeoricHeroicAbilityMarchoftheBlackKing>
       </Level10>
       <Level13>

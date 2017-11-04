@@ -9,7 +9,7 @@
       <LeoricWraithWalk name="Wraith Walk" desc="LeoricWraithWalk" mana="50" cooldown="14">storm_ui_icon_leoric_wraithwalk.dds</LeoricWraithWalk>
     </Basic>
     <Heroic>
-      <LeoricEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="75">storm_ui_icon_leoric_entomb.dds</LeoricEntomb>
+      <LeoricEntomb name="Entomb" desc="LeoricEntomb" mana="90" cooldown="60">storm_ui_icon_leoric_entomb.dds</LeoricEntomb>
       <LeoricMarchoftheBlackKing name="March of the Black King" desc="LeoricMarchoftheBlackKing" mana="75" cooldown="50">storm_ui_icon_leoric_r2.dds</LeoricMarchoftheBlackKing>
     </Heroic>
     <Trait>
