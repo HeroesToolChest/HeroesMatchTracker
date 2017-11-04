@@ -75,6 +75,33 @@ namespace HeroesMatchTracker.Core.Converters
                             text = string.Empty;
                         }
                     }
+                    else if (startTag.ToLower().StartsWith("<s val="))
+                    {
+                        string colorValue = startTag.Substring(8, startTag.Length - 10);
+
+                        int offset = 4;
+                        int closingCTagIndex = text.ToLower().IndexOf("</s>", endIndex);
+
+                        // check if an ending tag exists
+                        if (closingCTagIndex > 0)
+                        {
+                            span.Inlines.Add(new Run(text.Substring(0, startIndex)));
+                            span.Inlines.Add(new Run(text.Substring(endIndex, closingCTagIndex - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
+
+                            // remove, this part of the string is not needed anymore
+                            text = text.Remove(0, closingCTagIndex + offset);
+                        }
+                        else
+                        {
+                            span.Inlines.Add(new Run(text.Substring(0, startIndex)));
+
+                            // add the rest of the text
+                            span.Inlines.Add(new Run(text.Substring(endIndex, text.Length - endIndex)) { Foreground = SetTooltipColors(colorValue), FontSize = 15, FontWeight = FontWeights.SemiBold });
+
+                            // none left
+                            text = string.Empty;
+                        }
+                    }
                     else if (startTag.StartsWith("<img path=\"@UI/StormTalentInTextQuestIcon\"") || startTag.StartsWith("<img  path=\"@UI/StormTalentInTextQuestIcon\""))
                     {
                         int closingTag = text.IndexOf("/>");
@@ -169,22 +196,28 @@ namespace HeroesMatchTracker.Core.Converters
                 switch (colorValue.ToUpper())
                 {
                     case "#TOOLTIPNUMBERS":
-                        color = (Color)ColorConverter.ConvertFromString("#bfd4fd");
+                        color = (Color)ColorConverter.ConvertFromString("#BFD4FD");
+                        break;
+                    case "#STANDARDTOOLTIPHEADER":
+                        color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
                         break;
                     case "#TOOLTIPQUEST": // yellow-gold
-                        color = (Color)ColorConverter.ConvertFromString("#e4b800");
+                        color = (Color)ColorConverter.ConvertFromString("#E4B800");
                         break;
                     case "#ABILITYPASSIVE":
-                        color = (Color)ColorConverter.ConvertFromString("#00ff90");
+                        color = (Color)ColorConverter.ConvertFromString("#00FF90");
                         break;
                     case "#COLORVIOLET":
                         color = (Color)ColorConverter.ConvertFromString("#D65CFF");
                         break;
                     case "#COLORCREAMYELLOW":
-                        color = (Color)ColorConverter.ConvertFromString("#ffff80");
+                        color = (Color)ColorConverter.ConvertFromString("#FFFF80");
                         break;
                     case "#MALTHAELTRAIT":
                         color = (Color)ColorConverter.ConvertFromString("#00DFDF");
+                        break;
+                    case "#GLOWCOLORRED":
+                        color = (Color)ColorConverter.ConvertFromString("#FF5858");
                         break;
                     default:
                         WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");

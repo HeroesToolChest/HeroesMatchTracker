@@ -80,6 +80,103 @@ namespace Heroes.Icons.Tests
         }
 
         [TestMethod]
+        public void HeroAbilitiesTest()
+        {
+            List<string> assertMessages = new List<string>();
+
+            foreach (int build in HeroesIcons.GetListOfHeroesBuilds().ConvertAll(x => int.Parse(x)))
+            {
+                if (build < 58623)
+                    continue;
+
+                HeroesIcons.LoadHeroesBuild(build);
+
+                var heroes = HeroesIcons.HeroBuilds().GetListOfHeroes(build);
+
+                foreach (var hero in heroes)
+                {
+                    Hero heroInfo = HeroesIcons.HeroBuilds().GetHeroInfo(hero);
+
+                    if (heroInfo.Abilities.Values.Count < 1)
+                    {
+                        assertMessages.Add($"[{build}] [{hero}] No abilities found");
+                        continue;
+                    }
+
+                    if (heroInfo.GetTierAbilities(AbilityTier.Basic).Count < 1)
+                        assertMessages.Add($"[{build}] [{hero}] No basic abilities");
+                    if (heroInfo.GetTierAbilities(AbilityTier.Heroic).Count < 1)
+                        assertMessages.Add($"[{build}] [{hero}] No heroic abilities");
+
+                    // test a no pick (empty)
+                    Ability testAbility = heroInfo.GetAbility(string.Empty);
+                    if (testAbility != null)
+                        assertMessages.Add($"[{build}] [{hero}] no pick (empty) ability is not null");
+
+                    // test a no pick (null)
+                    testAbility = heroInfo.GetAbility(string.Empty);
+                    if (testAbility != null)
+                        assertMessages.Add($"[{build}] [{hero}] no pick (null) ability is not null");
+
+                    // test a not found
+                    testAbility = heroInfo.GetAbility("asdf");
+                    if (testAbility != null)
+                        assertMessages.Add($"[{build}] [{hero}] not found ability is not null");
+
+                    foreach (var ability in heroInfo.Abilities.Values)
+                    {
+                        if (string.IsNullOrEmpty(ability.Name))
+                            Assert.Fail($"[{build}] [{hero}] [{ability}] name is null or emtpy");
+
+                        if (string.IsNullOrEmpty(ability.ReferenceName))
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] ability reference name is null or emtpy");
+
+                        if (string.IsNullOrEmpty(ability.TooltipDescriptionName) && ability.Name != "[None]")
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] talent tooltip description name is null or emtpy");
+
+                        // tooltips
+                        TalentTooltip talentTooltip = ability.Tooltip;
+
+                        // full
+                        if (string.IsNullOrEmpty(talentTooltip.Full) && ability.Name != "[None]")
+                        {
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] Full tooltip is null or empty");
+                        }
+                        else
+                        {
+                            string strippedText = TalentTooltipStripNonText(talentTooltip.Full);
+
+                            if (NonValidCharsCheck(strippedText))
+                                assertMessages.Add($"[{build}] [{hero}] [{ability}] Invalid chars in FULL tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
+                        }
+
+                        // short
+                        if (string.IsNullOrEmpty(talentTooltip.Short) && ability.Name != "[None]")
+                        {
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] Short tooltip is null or empty");
+                        }
+                        else
+                        {
+                            string strippedText = TalentTooltipStripNonText(talentTooltip.Short);
+
+                            if (NonValidCharsCheck(strippedText))
+                                assertMessages.Add($"[{build}] [{hero}] [{ability}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
+                        }
+
+                        if (ability.GetIcon() == null && ability.Name != "[None]")
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] Icon stream is null");
+
+                        testAbility = heroInfo.GetAbility(ability.ReferenceName);
+                        if (testAbility == null || testAbility.Name == ability.ReferenceName)
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] GetAbility() failed to return correct info");
+                    }
+                }
+            }
+
+            AssertFailMessage(assertMessages);
+        }
+
+        [TestMethod]
         public void HeroTalentsTest()
         {
             List<string> assertMessages = new List<string>();
@@ -117,17 +214,17 @@ namespace Heroes.Icons.Tests
 
                     // test a no pick (empty)
                     Talent testTalent = heroInfo.GetTalent(string.Empty);
-                    if (testTalent.Name != "No pick" || testTalent.GetTalentIcon() == null)
+                    if (testTalent.Name != "No pick" || testTalent.GetIcon() == null)
                         assertMessages.Add($"[{build}] [{hero}] no pick (empty) talent has incorrect name or icon steam is null");
 
                     // test a no pick (null)
                     testTalent = heroInfo.GetTalent(null);
-                    if (testTalent.Name != "No pick" || testTalent.GetTalentIcon() == null)
+                    if (testTalent.Name != "No pick" || testTalent.GetIcon() == null)
                         assertMessages.Add($"[{build}] [{hero}] not pick (null) talent has incorrect name or icon steam is null");
 
                     // test a not found
                     testTalent = heroInfo.GetTalent("asdf");
-                    if (testTalent.Name != "asdf" || testTalent.GetTalentIcon() == null)
+                    if (testTalent.Name != "asdf" || testTalent.GetIcon() == null)
                         assertMessages.Add($"[{build}] [{hero}] not found talent has incorrect name or icon steam is null");
 
                     foreach (var talent in heroInfo.Talents.Values)
@@ -173,7 +270,7 @@ namespace Heroes.Icons.Tests
                                 assertMessages.Add($"[{build}] [{hero}] [{talent}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
                         }
 
-                        if (talent.GetTalentIcon() == null)
+                        if (talent.GetIcon() == null)
                             assertMessages.Add($"[{build}] [{hero}] [{talent}] Icon stream is null");
 
                         testTalent = heroInfo.GetTalent(talent.ReferenceName);

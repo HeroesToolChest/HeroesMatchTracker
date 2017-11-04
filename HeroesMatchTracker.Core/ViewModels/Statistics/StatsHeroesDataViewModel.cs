@@ -386,7 +386,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesTalents talentPick = new StatsHeroesTalents
                 {
                     TalentName = talent.Name,
-                    TalentImage = talent.GetTalentIcon(),
+                    TalentImage = talent.GetIcon(),
                     TalentSubInfo = talent.Tooltip.GetTalentSubInfo(),
                     TalentShortTooltip = talent.Tooltip.Short,
                     TalentFullTooltip = talent.Tooltip.Full,

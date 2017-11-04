@@ -30,6 +30,11 @@ namespace Heroes.Icons.Models
         public int? Life { get; set; }
 
         /// <summary>
+        /// Custom string that goes after the cooldown string
+        /// </summary>
+        public string Custom { get; set; }
+
+        /// <summary>
         /// Is the mana cost time based
         /// </summary>
         public bool IsPerManaCost { get; set; }
@@ -45,7 +50,7 @@ namespace Heroes.Icons.Models
         public HeroMana ManaType { get; set; }
 
         /// <summary>
-        /// Returns a string of the talent's cooldown and mana cost
+        /// Returns a string of the talent's cooldown, mana/life cost, and custom string
         /// </summary>
         /// <returns></returns>
         public string GetTalentSubInfo()
@@ -60,17 +65,33 @@ namespace Heroes.Icons.Models
                     text += $"{ManaType.ToString()}: {Mana.Value}";
             }
 
-            if (Mana.HasValue && Cooldown.HasValue)
-                text += Environment.NewLine;
+            if (Life.HasValue)
+            {
+                if (!string.IsNullOrEmpty(text))
+                    text += Environment.NewLine;
+
+                text += $"{Life.ToString()}: {Life.Value}";
+            }
 
             if (Cooldown.HasValue)
             {
+                if (!string.IsNullOrEmpty(text))
+                    text += Environment.NewLine;
+
                 string time = Cooldown.Value > 1 ? "seconds" : "second";
 
                 if (IsChargeCooldown)
                     text += $"Charge Cooldown: {Cooldown.Value} {time}";
                 else
                     text += $"Cooldown: {Cooldown.Value} {time}";
+            }
+
+            if (!string.IsNullOrEmpty(Custom))
+            {
+                if (!string.IsNullOrEmpty(text))
+                    text += Environment.NewLine;
+
+                text += Custom;
             }
 
             return text;

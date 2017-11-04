@@ -5,7 +5,7 @@
   <Abilities>
     <Basic>
       <GenjiShuriken name="Shuriken" desc="GenjiShuriken" mana="20" cooldown="12" ch-cooldown="true">storm_ui_icon_genji_shurikens.dds</GenjiShuriken>
-      <GenjiDeflectInstant name="Deflect" desc="GenjiDeflectInstant" mana="70" cooldown="16">storm_ui_icon_genji_deflect.dds</GenjiDeflectInstant>
+      <GenjiDeflectInstant name="Deflect" desc="GenjiDeflect" mana="70" cooldown="16">storm_ui_icon_genji_deflect.dds</GenjiDeflectInstant>
       <GenjiSwiftStrike name="Swift Strike" desc="GenjiSwiftStrike" mana="75" cooldown="12">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrike>
     </Basic>
     <Heroic>

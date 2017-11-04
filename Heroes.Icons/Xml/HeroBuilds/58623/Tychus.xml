@@ -6,7 +6,7 @@
     <Basic>
       <TychusOverkillTargeted name="Overkill" desc="TychusOverkill" mana="65" cooldown="13">storm_ui_icon_tychus_overkill.dds</TychusOverkillTargeted>
       <TychusGrenade name="Frag Grenade" desc="TychusFragGrenade" mana="50" cooldown="10">storm_ui_icon_tychus_fraggrenade.dds</TychusGrenade>
-      <TychusRunAndGun name="Run And Gun" desc="TychusRunAndGun" mana="50" cooldown="10">storm_ui_icon_tychus_runandgun.dds</TychusRunAndGun>
+      <TychusRunAndGun name="Run And Gun" desc="TychusRunandGun" mana="50" cooldown="10">storm_ui_icon_tychus_runandgun.dds</TychusRunAndGun>
     </Basic>
     <Heroic>
       <TychusOdinNoHealth name="Commandeer Odin" desc="TychusCommandeerOdin" mana="100" cooldown="100">storm_ui_icon_tychus_commandeerodin.dds</TychusOdinNoHealth>
@@ -20,7 +20,7 @@
     <Basic parent="TychusOdinNoHealth">
       <TychusOdinAnnihilate name="Annihilate" desc="TychusCommandeerOdinAnnihilate" cooldown="7">storm_ui_icon_tychus_annihilate.dds</TychusOdinAnnihilate>
       <TychusOdinRagnarokMissilesTargeted name="Ragnarok Missiles" desc="TychusCommandeerOdinRagnarokMissilesTargeted" cooldown="7">storm_ui_icon_tychus_ragnarokmissiles.dds</TychusOdinRagnarokMissilesTargeted>
-      <TychusOdinThrusters name="hrusters" desc="TychusOdinThrusters" cooldown="10">storm_ui_icon_tychus_thrusters.dds</TychusOdinThrusters>
+      <TychusOdinThrusters name="Thrusters" desc="TychusCommandeerOdinThrusters" cooldown="10">storm_ui_icon_tychus_thrusters.dds</TychusOdinThrusters>
     </Basic>
   </ExtraAbilities>
   <Talents>

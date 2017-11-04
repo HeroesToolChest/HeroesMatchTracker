@@ -16,7 +16,7 @@
       <StitchesVileGas name="Vile Gas" desc="StitchesVileGas" mana="68" cooldown="3">storm_ui_icon_stitches_acidcloud.dds</StitchesVileGas>
     </Trait>
     <Activable>
-      <StitchesHookHelpingHand name="Helping Hand" desc="StitchesHookHelpingHand" mana="75" cooldown="16">storm_ui_icon_stitches_hook_var1.dds</StitchesHookHelpingHand>
+      <StitchesHookHelpingHand name="Helping Hand" desc="StitchesHookHelpingHandTalent" mana="75" cooldown="16">storm_ui_icon_stitches_hook_var1.dds</StitchesHookHelpingHand>
     </Activable>
   </Abilities>
   <Talents>

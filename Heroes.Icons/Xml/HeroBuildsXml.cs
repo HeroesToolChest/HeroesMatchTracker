@@ -646,6 +646,7 @@ namespace Heroes.Icons.Xml
             string perManaCost = "false"; // the time cost for mana
             int? cooldown = null; // cooldown
             string charge = "false"; // is the cooldown a charge cooldown
+            string custom = string.Empty; // custom string that goes after the cooldown
 
             string icon = string.Empty;
 
@@ -662,6 +663,7 @@ namespace Heroes.Icons.Xml
                 perManaCost = ability.Tooltip.IsPerManaCost.ToString();
                 cooldown = ability.Tooltip.Cooldown;
                 charge = ability.Tooltip.IsChargeCooldown.ToString();
+                custom = ability.Tooltip.Custom;
 
                 icon = $"{ability.Icon.Split('.')[ability.Icon.Split('.').Length - 2]}.dds";
             }
@@ -674,6 +676,7 @@ namespace Heroes.Icons.Xml
             if (reader["per-mana"] != null) perManaCost = reader["per-mana"];
             if (reader["cooldown"] != null) cooldown = ConvertToNullableInt(reader["cooldown"]);
             if (reader["ch-cooldown"] != null) charge = reader["ch-cooldown"];
+            if (reader["custom"] != null) custom = reader["custom"];
 
             if (!bool.TryParse(perManaCost, out bool isPerManaCost))
                 isPerManaCost = false;
@@ -724,6 +727,7 @@ namespace Heroes.Icons.Xml
                     IsPerManaCost = isPerManaCost,
                     Cooldown = cooldown,
                     IsChargeCooldown = isCharge,
+                    Custom = custom,
                 },
             };
         }

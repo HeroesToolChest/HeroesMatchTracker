@@ -19,7 +19,7 @@
   <ExtraAbilities>
     <Basic parent="ChenStormEarthFire">
       <ChenStorm name="Storm" desc="ChenStorm" cooldown="12">storm_temp_war3_btntornado.dds</ChenStorm>
-      <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake</ChenEarth>
+      <ChenEarth name="Earth" desc="ChenEarth" cooldown="6">storm_temp_war3_btnearthquake.dds</ChenEarth>
       <ChenFire name="Fire" desc="ChenFire" cooldown="12">storm_temp_war3_btnmarkoffire.dds</ChenFire>
     </Basic>
   </ExtraAbilities>

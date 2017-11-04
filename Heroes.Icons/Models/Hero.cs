@@ -63,6 +63,28 @@ namespace Heroes.Icons.Models
         }
 
         /// <summary>
+        /// Returns an ability object given the reference name
+        /// </summary>
+        /// <param name="referenceName">reference name of the ability</param>
+        /// <returns></returns>
+        public Ability GetAbility(string referenceName)
+        {
+            if (string.IsNullOrEmpty(referenceName))
+            {
+                return null;
+            }
+
+            if (Abilities.TryGetValue(referenceName, out Ability ability))
+            {
+                return ability;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Returns a talent object given the reference name
         /// </summary>
         /// <param name="referenceName">reference name of the talent</param>
@@ -84,6 +106,16 @@ namespace Heroes.Icons.Models
                 talent.Name = referenceName;
                 return talent;
             }
+        }
+
+        /// <summary>
+        /// Returns a collection of all the abilities in the selected tier
+        /// </summary>
+        /// <param name="tier">The ability tier</param>
+        /// <returns></returns>
+        public ICollection<Ability> GetTierAbilities(AbilityTier tier)
+        {
+            return Abilities.Values.Where(x => x.Tier == tier).ToArray();
         }
 
         /// <summary>

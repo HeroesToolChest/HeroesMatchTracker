@@ -6,7 +6,7 @@
     <Basic>
       <WitchDoctorCorpseSpiders name="Corpse Spiders" desc="WitchDoctorCorpseSpiders" mana="50" cooldown="9">storm_ui_icon_nazeebo_corpsespider.dds</WitchDoctorCorpseSpiders>
       <WitchDoctorZombieWall name="Zombie Wall" desc="WitchDoctorZombieWall" mana="70" cooldown="14">storm_ui_icon_nazeebo_zombiewall.dds</WitchDoctorZombieWall>
-      <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueofToads" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPlagueofToads>
+      <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueOfToads" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_nazeebo_plagueoftoads.dds</WitchDoctorPlagueofToads>
     </Basic>
     <Heroic>
       <WitchDoctorGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.dds</WitchDoctorGargantuan>

@@ -4,7 +4,7 @@
   <Roles>Support</Roles>
   <Abilities>
     <Basic>
-      <TyrandeLightofElune name="Light of Elune" desc="TyrandeLightofElune" mana="30" cooldown="12">storm_ui_icon_tyrande_lightofelune.dds</TyrandeLightofElune>
+      <TyrandeLightofElune name="Light of Elune" desc="TyrandeLightOfElune" mana="30" cooldown="12">storm_ui_icon_tyrande_lightofelune.dds</TyrandeLightofElune>
       <TyrandeSentinelShot name="Sentinel" desc="TyrandeSentinel" mana="70" cooldown="18">storm_ui_icon_tyrande_sentinel.dds</TyrandeSentinelShot>
       <TyrandeLunarFlare name="Lunar Flare" desc="TyrandeLunarFlare" mana="60" cooldown="12">storm_ui_icon_tyrande_lunarflare.dds</TyrandeLunarFlare>
     </Basic>

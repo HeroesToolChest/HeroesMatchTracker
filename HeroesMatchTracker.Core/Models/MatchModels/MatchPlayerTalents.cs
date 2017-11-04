@@ -32,13 +32,13 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             var talent16 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName16);
             var talent20 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName20);
 
-            Talents.Add(talent1.GetTalentIcon());
-            Talents.Add(talent4.GetTalentIcon());
-            Talents.Add(talent7.GetTalentIcon());
-            Talents.Add(talent10.GetTalentIcon());
-            Talents.Add(talent13.GetTalentIcon());
-            Talents.Add(talent16.GetTalentIcon());
-            Talents.Add(talent20.GetTalentIcon());
+            Talents.Add(talent1.GetIcon());
+            Talents.Add(talent4.GetIcon());
+            Talents.Add(talent7.GetIcon());
+            Talents.Add(talent10.GetIcon());
+            Talents.Add(talent13.GetIcon());
+            Talents.Add(talent16.GetIcon());
+            Talents.Add(talent20.GetIcon());
 
             TalentNames.Add(talent1.Name);
             TalentNames.Add(talent4.Name);

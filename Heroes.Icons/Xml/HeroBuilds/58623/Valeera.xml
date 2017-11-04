@@ -6,9 +6,7 @@
     <Basic>
       <ValeeraSinisterStrike name="Sinister Strike" desc="ValeeraSinisterStrike" mana="30" cooldown="5">storm_ui_icon_valeera_sinisterstrike.dds</ValeeraSinisterStrike>
       <ValeeraBladeFlurry name="Blade Flurry" desc="ValeeraBladeFlurry" mana="40" cooldown="4">storm_ui_icon_valeera_bladeflurry.dds</ValeeraBladeFlurry>
-      <ValeeraEviscerate name="Eviscerate" desc="ValeeraEviscerate" mana="25" cooldown="1" icon="storm_ui_icon_valeera_eviscerate.dds">
-        <Custom>Consumes All Combo Points</Custom>
-      </ValeeraEviscerate>
+      <ValeeraEviscerate name="Eviscerate" desc="ValeeraEviscerate" mana="25" cooldown="1" custom="Consumes All Combo Points">storm_ui_icon_valeera_eviscerate.dds</ValeeraEviscerate>
     </Basic>
     <Heroic>
       <ValeeraSmokeBomb name="Smoke Bomb" desc="ValeeraSmokeBomb" cooldown="60">storm_ui_icon_valeera_smokebomb.dds</ValeeraSmokeBomb>

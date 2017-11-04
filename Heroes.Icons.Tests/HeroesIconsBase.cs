@@ -120,6 +120,31 @@ namespace Heroes.Icons.Tests
                             text = string.Empty;
                         }
                     }
+                    else if (startTag.ToLower().StartsWith("<s val="))
+                    {
+                        int offset = 4;
+                        int closingCTagIndex = text.ToLower().IndexOf("</s>", endIndex);
+
+                        // check if an ending tag exists
+                        if (closingCTagIndex > 0)
+                        {
+                            strippedText += text.Substring(0, startIndex);
+                            strippedText += text.Substring(endIndex, closingCTagIndex - endIndex);
+
+                            // remove, this part of the string is not needed anymore
+                            text = text.Remove(0, closingCTagIndex + offset);
+                        }
+                        else
+                        {
+                            strippedText += text.Substring(0, startIndex);
+
+                            // add the rest of the text
+                            strippedText += text.Substring(endIndex, text.Length - endIndex);
+
+                            // none left
+                            text = string.Empty;
+                        }
+                    }
                     else if (startTag.StartsWith("<img path=\"@UI/StormTalentInTextQuestIcon\"") || startTag.StartsWith("<img  path=\"@UI/StormTalentInTextQuestIcon\""))
                     {
                         int closingTag = text.IndexOf("/>");

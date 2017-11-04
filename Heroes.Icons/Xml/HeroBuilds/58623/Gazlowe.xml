@@ -5,8 +5,8 @@
   <Abilities>
     <Basic>
       <TinkerRockItTurret name="Rock-It! Turret" desc="TinkerRockItTurret" mana="70" cooldown="15" ch-cooldown="true">storm_ui_icon_gazlowe_rockitturret.dds</TinkerRockItTurret>
-      <TinkerDethLazorCharged name="Deth Lazor" desc="TinkerDethLazorCharged" mana="60" cooldown="12">storm_ui_icon_gazlowe_dethlazor.dds</TinkerDethLazorCharged>
-      <TinkerXplodiumBomb name="Xplodium Bomb" desc="TinkerXplodiumBomb" mana="60" cooldown="14">storm_ui_icon_gazlowe_explodiumcharge.dds</TinkerXplodiumBomb>
+      <TinkerDethLazorCharged name="Deth Lazor" desc="TinkerDethLazor" mana="60" cooldown="12">storm_ui_icon_gazlowe_dethlazor.dds</TinkerDethLazorCharged>
+      <TinkerXplodiumBomb name="Xplodium Bomb" desc="TinkerXplodiumCharge" mana="60" cooldown="14">storm_ui_icon_gazlowe_explodiumcharge.dds</TinkerXplodiumBomb>
     </Basic>
     <Heroic>
       <TinkerRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive" cooldown="60">storm_ui_icon_gazlowe_robogoblin.dds</TinkerRoboGoblin>

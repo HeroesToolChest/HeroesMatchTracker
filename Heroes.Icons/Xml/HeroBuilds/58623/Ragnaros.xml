@@ -13,15 +13,16 @@
       <RagnarosLavaWaveTargetPoint name="Lava Wave" desc="RagnarosLavaWaveTargetPoint" mana="80" cooldown="120">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWaveTargetPoint>
     </Heroic>
     <Trait>
-      <RagnarosMoltenCore name="Molten Core" desc="RagnarosMoltenCore" cooldown="120" iocn="storm_ui_icon_ragnaros_moltencore.dds">
-        <Basic>
-          <RagnarosBigRagMoltenSwing name="Molten Swing" desc="RagnarosBigRagMoltenSwing" cooldown="6">storm_ui_icon_ragnaros_moltenswing.dds</RagnarosBigRagMoltenSwing>
-          <RagnarosBigRagMeteorShower name="Meteor Shower" desc="RagnarosBigRagMeteorShower" cooldown="2.5">storm_ui_icon_ragnaros_meteorshower.dds</RagnarosBigRagMeteorShower>
-          <RagnarosBigRagExplosiveRune name="Explosive Rune" desc="RagnarosBigRagExplosiveRune" cooldown="4">storm_ui_icon_ragnaros_explosiverune.dds</RagnarosBigRagExplosiveRune>
-        </Basic>
-      </RagnarosMoltenCore>
+      <RagnarosMoltenCore name="Molten Core" desc="RagnarosMoltenCore" cooldown="120">storm_ui_icon_ragnaros_moltencore.dds</RagnarosMoltenCore>
     </Trait>
   </Abilities>
+  <ExtraAbilities>
+    <Basic>
+      <RagnarosBigRagMoltenSwing name="Molten Swing" desc="RagnarosBigRagMoltenSwing" cooldown="6">storm_ui_icon_ragnaros_moltenswing.dds</RagnarosBigRagMoltenSwing>
+      <RagnarosBigRagMeteorShower name="Meteor Shower" desc="RagnarosBigRagMeteorShower" cooldown="2.5">storm_ui_icon_ragnaros_meteorshower.dds</RagnarosBigRagMeteorShower>
+      <RagnarosBigRagExplosiveRune name="Explosive Rune" desc="RagnarosBigRagExplosiveRune" cooldown="4">storm_ui_icon_ragnaros_explosiverune.dds</RagnarosBigRagExplosiveRune>
+    </Basic>
+  </ExtraAbilities>
   <Talents>
     <Level1>
       <RagnarosEmpowerSulfurasSulfurasHungers name="Sulfuras Hungers" desc="RagnarosEmpowerSulfurasSulfurasHungers">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasSulfurasHungers>

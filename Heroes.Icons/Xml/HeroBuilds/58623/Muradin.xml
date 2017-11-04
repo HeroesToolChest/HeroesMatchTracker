@@ -4,7 +4,7 @@
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <MuradinStormBolt name="Storm Bolt" desc="MuradinStormBolt" mana="50" cooldown="10">storm_ui_icon_muradin_stormbolt.dds</MuradinStormBolt>
+      <MuradinStormBolt name="Storm Bolt" desc="MuradinStormbolt" mana="50" cooldown="10">storm_ui_icon_muradin_stormbolt.dds</MuradinStormBolt>
       <MuradinThunderclap name="Thunderclap" desc="MuradinThunderclap" mana="50" cooldown="8">storm_ui_icon_muradin_thunderclap.dds</MuradinThunderclap>
       <MuradinDwarfToss name="Dwarf Toss" desc="MuradinDwarfToss" mana="55" cooldown="10">storm_ui_icon_muradin_dwarftoss.dds</MuradinDwarfToss>
     </Basic>

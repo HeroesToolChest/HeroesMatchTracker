@@ -6,7 +6,7 @@
     <Basic>
       <UtherHolyLight name="Holy Light" desc="UtherHolyLight" mana="90" cooldown="12">storm_ui_icon_uther_holylight.dds</UtherHolyLight>
       <UtherHolyRadiance name="Holy Radiance" desc="UtherHolyRadiance" mana="70" cooldown="12">storm_ui_icon_uther_holyradiance.dds</UtherHolyRadiance>
-      <UtherHammerOfJustice name="Hammer of Justice" desc="UtherHammerOfJustice" mana="40" cooldown="8">storm_ui_icon_uther_hammerofjustice.dds</UtherHammerOfJustice>
+      <UtherHammerOfJustice name="Hammer of Justice" desc="UtherHammerofJustice" mana="40" cooldown="8">storm_ui_icon_uther_hammerofjustice.dds</UtherHammerOfJustice>
     </Basic>
     <Heroic>
       <UtherDivineIntervention name="Divine Shield" desc="UtherDivineShield" mana="80" cooldown="90">storm_ui_icon_uther_divineshield.dds</UtherDivineIntervention>

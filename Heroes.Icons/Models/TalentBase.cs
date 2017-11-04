@@ -33,7 +33,7 @@ namespace Heroes.Icons.Models
 
         public TalentTooltip Tooltip { get; set; } = new TalentTooltip();
 
-        public Stream GetTalentIcon()
+        public Stream GetIcon()
         {
             return HeroesIcons.GetHeroesIconsAssembly().GetManifestResourceStream(Icon);
         }
