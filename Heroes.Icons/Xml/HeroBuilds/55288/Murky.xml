@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Murky available="47479" attributeid="Murk" franchise="Warcraft" type="Melee" difficulty="Hard"
-           portrait="storm_ui_ingame_heroselect_btn_murky.dds" loading="storm_ui_ingame_hero_loadingscreen_murky.dds" leader="storm_ui_ingame_hero_leaderboard_murky.dds">
+           portrait="storm_ui_ingame_heroselect_btn_murky.png" loading="storm_ui_ingame_hero_loadingscreen_murky.png" leader="storm_ui_ingame_hero_leaderboard_murky.png">
     <Roles>Specialist</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <MurkyFishEye name="Fish Eye" desc="MurkyFishEye">storm_ui_icon_murky_trait_spawnegg.dds</MurkyFishEye>
-        <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent">storm_ui_icon_murky_egghunt.dds</MurkyEggHunt>
-        <MurkyAFishyDeal name="A Fishy Deal" generic="true" desc="MurkyAFishyDeal">storm_ui_icon_talent_bribe.dds</MurkyAFishyDeal>
+        <MurkyFishEye name="Fish Eye" desc="MurkyFishEye">storm_ui_icon_murky_trait_spawnegg.png</MurkyFishEye>
+        <MurkyEggHunt name="Egg Hunt" desc="MurkyEggHuntTalent">storm_ui_icon_murky_egghunt.png</MurkyEggHunt>
+        <MurkyAFishyDeal name="A Fishy Deal" generic="true" desc="MurkyAFishyDeal">storm_ui_icon_talent_bribe.png</MurkyAFishyDeal>
       </Level1>
       <Level4>
-        <MurkySlimeTime name="Slime Time" desc="MurkySlimeTime">storm_ui_icon_murky_slime.dds</MurkySlimeTime>
-        <MurkyMasteryTufferfish name="Tufferfish" desc="MurkyPufferfishTufferfishTalent">storm_ui_icon_murky_pufferfish.dds</MurkyMasteryTufferfish>
-        <MurkyLivingtheDream name="Living the Dream" desc="MurkyLivingTheDreamTalent">storm_ui_icon_murky_trait_spawnegg_var1.dds</MurkyLivingtheDream>
+        <MurkySlimeTime name="Slime Time" desc="MurkySlimeTime">storm_ui_icon_murky_slime.png</MurkySlimeTime>
+        <MurkyMasteryTufferfish name="Tufferfish" desc="MurkyPufferfishTufferfishTalent">storm_ui_icon_murky_pufferfish.png</MurkyMasteryTufferfish>
+        <MurkyLivingtheDream name="Living the Dream" desc="MurkyLivingTheDreamTalent">storm_ui_icon_murky_trait_spawnegg_var1.png</MurkyLivingtheDream>
       </Level4>
       <Level7>
-        <MurkyBlackLagoon name="Black Lagoon" desc="MurkySlimeBlackLagoonTalent">storm_ui_icon_murky_slime.dds</MurkyBlackLagoon>
-        <MurkySlipperyWhenWet name="Slippery When Wet" desc="MurkySafetyBubbleSlipperyWhenWetTalent">storm_ui_icon_murky_safetybubble.dds</MurkySlipperyWhenWet>
-        <MurkyTimetoKrill name="Time to Krill" generic="true" desc="MurkyTimetoKrill">storm_ui_icon_talent_autoattack_slow.dds</MurkyTimetoKrill>
+        <MurkyBlackLagoon name="Black Lagoon" desc="MurkySlimeBlackLagoonTalent">storm_ui_icon_murky_slime.png</MurkyBlackLagoon>
+        <MurkySlipperyWhenWet name="Slippery When Wet" desc="MurkySafetyBubbleSlipperyWhenWetTalent">storm_ui_icon_murky_safetybubble.png</MurkySlipperyWhenWet>
+        <MurkyTimetoKrill name="Time to Krill" generic="true" desc="MurkyTimetoKrill">storm_ui_icon_talent_autoattack_slow.png</MurkyTimetoKrill>
       </Level7>
       <Level10>
-        <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyHeroicAbilityMarchoftheMurlocs>
-        <MurkyHeroicAbilityOctoGrab name="Octo Grab" desc="MurkyOctoGrab">storm_ui_icon_murky_octograb.dds</MurkyHeroicAbilityOctoGrab>
+        <MurkyHeroicAbilityMarchoftheMurlocs name="March of the Murlocs" desc="MurkyMarchOfTheMurlocs">storm_ui_icon_murky_marchofthemurlocs.png</MurkyHeroicAbilityMarchoftheMurlocs>
+        <MurkyHeroicAbilityOctoGrab name="Octo Grab" desc="MurkyOctoGrab">storm_ui_icon_murky_octograb.png</MurkyHeroicAbilityOctoGrab>
       </Level10>
       <Level13>
-        <MurkyMasteryRejuvenatingBubble name="Rejuvenating Bubble" desc="MurkyRejuvenatingBubbleTalent">storm_ui_icon_murky_safetybubble.dds</MurkyMasteryRejuvenatingBubble>
-        <MurkyFishTank name="Fish Tank" desc="MurkyFishTank">storm_ui_icon_murky_fishtank.dds</MurkyFishTank>
-        <MurkyEggShell name="Egg Shell" desc="MurkyEggShell">storm_ui_icon_murky_trait_spawnegg.dds</MurkyEggShell>
+        <MurkyMasteryRejuvenatingBubble name="Rejuvenating Bubble" desc="MurkyRejuvenatingBubbleTalent">storm_ui_icon_murky_safetybubble.png</MurkyMasteryRejuvenatingBubble>
+        <MurkyFishTank name="Fish Tank" desc="MurkyFishTank">storm_ui_icon_murky_fishtank.png</MurkyFishTank>
+        <MurkyEggShell name="Egg Shell" desc="MurkyEggShell">storm_ui_icon_murky_trait_spawnegg.png</MurkyEggShell>
       </Level13>
       <Level16>
-        <MurkyToxicBuildup name="Toxic Buildup" desc="MurkyToxicBuildup">storm_ui_icon_murky_slime.dds</MurkyToxicBuildup>
-        <MurkyFishOil name="Fish Oil" desc="MurkyFishOil">storm_ui_icon_murky_pufferfish.dds</MurkyFishOil>
-        <MurkyMasteryWrathOfCod name="Wrath of Cod" desc="MurkyPufferfishWrathOfCodTalent">storm_ui_icon_murky_pufferfish_b.dds</MurkyMasteryWrathOfCod>
+        <MurkyToxicBuildup name="Toxic Buildup" desc="MurkyToxicBuildup">storm_ui_icon_murky_slime.png</MurkyToxicBuildup>
+        <MurkyFishOil name="Fish Oil" desc="MurkyFishOil">storm_ui_icon_murky_pufferfish.png</MurkyFishOil>
+        <MurkyMasteryWrathOfCod name="Wrath of Cod" desc="MurkyPufferfishWrathOfCodTalent">storm_ui_icon_murky_pufferfish_b.png</MurkyMasteryWrathOfCod>
       </Level16>
       <Level20>
-        <MurkyMasteryNeverEndingMurlocs name="Never-Ending Murlocs" desc="MurkyMarchOfTheMurlocsNeverEndingMurlocsTalent">storm_ui_icon_murky_marchofthemurlocs.dds</MurkyMasteryNeverEndingMurlocs>
-        <MurkyMasteryAndASharkToo name="... And a Shark Too!" desc="MurkyOctoGrabAndASharkTooTalent">storm_ui_icon_murky_octograb.dds</MurkyMasteryAndASharkToo>
-        <MurkyBigTunaKahuna name="Big Tuna Kahuna" desc="MurkyBigTunaKahuna">big_tuna_kahuna.dds</MurkyBigTunaKahuna>
-        <MurkyMakingInky name="Making Inky" desc="MurkyMakingInky">storm_ui_icon_murky_slime.dds</MurkyMakingInky>
+        <MurkyMasteryNeverEndingMurlocs name="Never-Ending Murlocs" desc="MurkyMarchOfTheMurlocsNeverEndingMurlocsTalent">storm_ui_icon_murky_marchofthemurlocs.png</MurkyMasteryNeverEndingMurlocs>
+        <MurkyMasteryAndASharkToo name="... And a Shark Too!" desc="MurkyOctoGrabAndASharkTooTalent">storm_ui_icon_murky_octograb.png</MurkyMasteryAndASharkToo>
+        <MurkyBigTunaKahuna name="Big Tuna Kahuna" desc="MurkyBigTunaKahuna">big_tuna_kahuna.png</MurkyBigTunaKahuna>
+        <MurkyMakingInky name="Making Inky" desc="MurkyMakingInky">storm_ui_icon_murky_slime.png</MurkyMakingInky>
       </Level20>
   </Talents>
 </Murky>

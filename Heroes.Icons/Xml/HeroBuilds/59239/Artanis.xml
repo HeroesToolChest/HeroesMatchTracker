@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Artanis available="47479" attributeid="Arts" unit="HeroArtanis" franchise="Starcraft" type="Melee" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_artanis.dds" loading="storm_ui_ingame_hero_loadingscreen_artanis.dds" leader="storm_ui_ingame_hero_leaderboard_artanis.dds">
+          portrait="storm_ui_ingame_heroselect_btn_artanis.png" loading="storm_ui_ingame_hero_loadingscreen_artanis.png" leader="storm_ui_ingame_hero_leaderboard_artanis.png">
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <ArtanisBladeDash name="Blade Dash" desc="ArtanisBladeDash" mana="65" cooldown="10">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDash>
-      <ArtanisTwinBlades name="Twin Blades" desc="ArtanisTwinBlades" mana="25" cooldown="4">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBlades>
-      <ArtanisPhasePrism name="Phase Prism" desc="ArtanisPhasePrism" mana="70" cooldown="16">storm_ui_icon_artanis_repositionmatrix.dds</ArtanisPhasePrism>
+      <ArtanisBladeDash name="Blade Dash" desc="ArtanisBladeDash" mana="65" cooldown="10">storm_ui_icon_artanis_powerstrikes.png</ArtanisBladeDash>
+      <ArtanisTwinBlades name="Twin Blades" desc="ArtanisTwinBlades" mana="25" cooldown="4">storm_ui_icon_artanis_doubleslash_on.png</ArtanisTwinBlades>
+      <ArtanisPhasePrism name="Phase Prism" desc="ArtanisPhasePrism" mana="70" cooldown="16">storm_ui_icon_artanis_repositionmatrix.png</ArtanisPhasePrism>
     </Basic>
     <Heroic>
-      <ArtanisSpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse" mana="40" cooldown="50">storm_ui_icon_artanis_disruptionweb.dds</ArtanisSpearofAdunSuppressionPulse>
-      <ArtanisSpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam" mana="80" cooldown="80">storm_ui_icon_artanis_purifierbeam.dds</ArtanisSpearofAdunPurifierBeam>
+      <ArtanisSpearofAdunSuppressionPulse name="Suppression Pulse" desc="ArtanisSpearofAdunSuppressionPulse" mana="40" cooldown="50">storm_ui_icon_artanis_disruptionweb.png</ArtanisSpearofAdunSuppressionPulse>
+      <ArtanisSpearofAdunPurifierBeam name="Purifier Beam" desc="ArtanisSpearofAdunPurifierBeam" mana="80" cooldown="80">storm_ui_icon_artanis_purifierbeam.png</ArtanisSpearofAdunPurifierBeam>
     </Heroic>
     <Trait>
-      <ArtanisShieldOverloadDummy name="Shield Overload" desc="ArtanisShieldOverloadTrait" cooldown="24">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadDummy>
+      <ArtanisShieldOverloadDummy name="Shield Overload" desc="ArtanisShieldOverloadTrait" cooldown="24">storm_ui_icon_artanis_shieldoverload.png</ArtanisShieldOverloadDummy>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ArtanisTwinBladesReactiveParry name="Reactive Parry" desc="ArtanisTwinBladesReactiveParryTalent">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBladesReactiveParry>
-      <ArtanisTwinBladesAmateurOpponent name="Amateur Opponent" desc="ArtanisTwinBladesAmateurOpponentTalent">storm_ui_icon_artanis_doubleslash_var1.dds</ArtanisTwinBladesAmateurOpponent>
-      <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.dds</GenericTalentSeasonedMarksman>
+      <ArtanisTwinBladesReactiveParry name="Reactive Parry" desc="ArtanisTwinBladesReactiveParryTalent">storm_ui_icon_artanis_doubleslash_on.png</ArtanisTwinBladesReactiveParry>
+      <ArtanisTwinBladesAmateurOpponent name="Amateur Opponent" desc="ArtanisTwinBladesAmateurOpponentTalent">storm_ui_icon_artanis_doubleslash_var1.png</ArtanisTwinBladesAmateurOpponent>
+      <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.png</GenericTalentSeasonedMarksman>
     </Level1>
     <Level4>
-      <ArtanisBladeDashPsionicSynergy name="Psionic Synergy" desc="ArtanisBladeDashPsionicSynergyTalent">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDashPsionicSynergy>
-      <ArtanisShieldOverloadShieldBattery name="Shield Battery" desc="ArtanisShieldOverloadShieldBatteryTalent">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadShieldBattery>
-      <ArtanisShieldOverloadShieldSurge name="Shield Surge" desc="ArtanisShieldOverloadShieldSurgeTalentNew">storm_ui_icon_artanis_shieldoverload_a.dds</ArtanisShieldOverloadShieldSurge>
+      <ArtanisBladeDashPsionicSynergy name="Psionic Synergy" desc="ArtanisBladeDashPsionicSynergyTalent">storm_ui_icon_artanis_powerstrikes.png</ArtanisBladeDashPsionicSynergy>
+      <ArtanisShieldOverloadShieldBattery name="Shield Battery" desc="ArtanisShieldOverloadShieldBatteryTalent">storm_ui_icon_artanis_shieldoverload.png</ArtanisShieldOverloadShieldBattery>
+      <ArtanisShieldOverloadShieldSurge name="Shield Surge" desc="ArtanisShieldOverloadShieldSurgeTalentNew">storm_ui_icon_artanis_shieldoverload_a.png</ArtanisShieldOverloadShieldSurge>
     </Level4>
     <Level7>
-      <ArtanisBladeDashSolariteReaper name="Solarite Reaper" desc="ArtanisBladeDashSolariteReaperTalent">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDashSolariteReaper>
-      <ArtanisPhasePrismWarpSickness name="Warp Sickness" desc="ArtanisPhasePrismWarpSicknessTalent">storm_ui_icon_artanis_repositionmatrix.dds</ArtanisPhasePrismWarpSickness>
-      <ArtanisPhasePrismChronoSurge name="Chrono Surge" desc="ArtanisPhasePrismChronoSurgeTalent">storm_ui_icon_artanis_repositionmatrix_a.dds</ArtanisPhasePrismChronoSurge>
-      <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.dds</GenericTalentFollowThrough>
+      <ArtanisBladeDashSolariteReaper name="Solarite Reaper" desc="ArtanisBladeDashSolariteReaperTalent">storm_ui_icon_artanis_powerstrikes.png</ArtanisBladeDashSolariteReaper>
+      <ArtanisPhasePrismWarpSickness name="Warp Sickness" desc="ArtanisPhasePrismWarpSicknessTalent">storm_ui_icon_artanis_repositionmatrix.png</ArtanisPhasePrismWarpSickness>
+      <ArtanisPhasePrismChronoSurge name="Chrono Surge" desc="ArtanisPhasePrismChronoSurgeTalent">storm_ui_icon_artanis_repositionmatrix_a.png</ArtanisPhasePrismChronoSurge>
+      <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.png</GenericTalentFollowThrough>
     </Level7>
     <Level10>
       <ArtanisHeroicAbilitySpearofAdunSuppressionPulse ability="ArtanisSpearofAdunSuppressionPulse" />
       <ArtanisHeroicAbilitySpearofAdunPurifierBeam ability="ArtanisSpearofAdunPurifierBeam" />
     </Level10>
     <Level13>
-      <ArtanisBladeDashTemplarsZeal name="Templar's Zeal" desc="ArtanisBladeDashTemplarsZealTalent">storm_ui_icon_artanis_powerstrikes.dds</ArtanisBladeDashTemplarsZeal>
-      <ArtanisTwinBladesTripleStrike name="Triple Strike" desc="ArtanisTwinBladesTripleStrikeTalent">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBladesTripleStrike>
-      <ArtanisPhasePrismGravitonVortex name="Graviton Vortex" desc="ArtanisPhasePrismGravitonVortexTalent">storm_ui_icon_artanis_repositionmatrix.dds</ArtanisPhasePrismGravitonVortex>
-      <ArtanisShieldOverloadPhaseBulwark name="Phase Bulwark" desc="ArtanisShieldOverloadPhaseBulwarkTalent">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadPhaseBulwark>
+      <ArtanisBladeDashTemplarsZeal name="Templar's Zeal" desc="ArtanisBladeDashTemplarsZealTalent">storm_ui_icon_artanis_powerstrikes.png</ArtanisBladeDashTemplarsZeal>
+      <ArtanisTwinBladesTripleStrike name="Triple Strike" desc="ArtanisTwinBladesTripleStrikeTalent">storm_ui_icon_artanis_doubleslash_on.png</ArtanisTwinBladesTripleStrike>
+      <ArtanisPhasePrismGravitonVortex name="Graviton Vortex" desc="ArtanisPhasePrismGravitonVortexTalent">storm_ui_icon_artanis_repositionmatrix.png</ArtanisPhasePrismGravitonVortex>
+      <ArtanisShieldOverloadPhaseBulwark name="Phase Bulwark" desc="ArtanisShieldOverloadPhaseBulwarkTalent">storm_ui_icon_artanis_shieldoverload.png</ArtanisShieldOverloadPhaseBulwark>
     </Level13>
     <Level16>
-      <ArtanisTwinBladesZealotCharge name="Zealot Charge" desc="ArtanisTwinBladesZealotChargeTalent">storm_ui_icon_artanis_doubleslash_on.dds</ArtanisTwinBladesZealotCharge>
-      <ArtanisTwinBladesTitanKiller name="Titan Killer" desc="ArtanisTwinBladesTitanKillerTalent">storm_ui_icon_artanis_doubleslash_var1.dds</ArtanisTwinBladesTitanKiller>
-      <ArtanisTwinBladesPsionicWound name="Psionic Wound" desc="ArtanisTwinBladesPsionicWoundTalent">storm_ui_icon_artanis_doubleslash_var2.dds</ArtanisTwinBladesPsionicWound>
-      <ArtanisPlasmaBurn name="Plasma Burn" desc="ArtanisPlasmaBurn">storm_ui_icon_artanis_shieldoverload.dds</ArtanisPlasmaBurn>
+      <ArtanisTwinBladesZealotCharge name="Zealot Charge" desc="ArtanisTwinBladesZealotChargeTalent">storm_ui_icon_artanis_doubleslash_on.png</ArtanisTwinBladesZealotCharge>
+      <ArtanisTwinBladesTitanKiller name="Titan Killer" desc="ArtanisTwinBladesTitanKillerTalent">storm_ui_icon_artanis_doubleslash_var1.png</ArtanisTwinBladesTitanKiller>
+      <ArtanisTwinBladesPsionicWound name="Psionic Wound" desc="ArtanisTwinBladesPsionicWoundTalent">storm_ui_icon_artanis_doubleslash_var2.png</ArtanisTwinBladesPsionicWound>
+      <ArtanisPlasmaBurn name="Plasma Burn" desc="ArtanisPlasmaBurn">storm_ui_icon_artanis_shieldoverload.png</ArtanisPlasmaBurn>
     </Level16>
     <Level20>
-      <ArtanisSpearofAdunSuppressionPulseOrbitalBombardment name="Orbital Bombardment" desc="ArtanisSpearofAdunSuppressionPulseOrbitalBombardmentTalent">storm_ui_icon_artanis_disruptionweb.dds</ArtanisSpearofAdunSuppressionPulseOrbitalBombardment>
-      <ArtanisSpearofAdunPurifierBeamTargetPurified name="Target Purified" desc="ArtanisSpearofAdunPurifierBeamTargetPurifiedTalent">storm_ui_icon_artanis_purifierbeam.dds</ArtanisSpearofAdunPurifierBeamTargetPurified>
-      <ArtanisShieldOverloadForceofWill name="Force of Will" desc="ArtanisShieldOverloadForceofWillTalent">storm_ui_icon_artanis_shieldoverload.dds</ArtanisShieldOverloadForceofWill>
-      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.dds</GenericTalentNexusBlades>
+      <ArtanisSpearofAdunSuppressionPulseOrbitalBombardment name="Orbital Bombardment" desc="ArtanisSpearofAdunSuppressionPulseOrbitalBombardmentTalent">storm_ui_icon_artanis_disruptionweb.png</ArtanisSpearofAdunSuppressionPulseOrbitalBombardment>
+      <ArtanisSpearofAdunPurifierBeamTargetPurified name="Target Purified" desc="ArtanisSpearofAdunPurifierBeamTargetPurifiedTalent">storm_ui_icon_artanis_purifierbeam.png</ArtanisSpearofAdunPurifierBeamTargetPurified>
+      <ArtanisShieldOverloadForceofWill name="Force of Will" desc="ArtanisShieldOverloadForceofWillTalent">storm_ui_icon_artanis_shieldoverload.png</ArtanisShieldOverloadForceofWill>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.png</GenericTalentNexusBlades>
     </Level20>
   </Talents>
 </Artanis>

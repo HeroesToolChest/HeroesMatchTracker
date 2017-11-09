@@ -208,7 +208,7 @@ namespace Heroes.Icons
 
         private void SetRoleIcons()
         {
-            RoleIcons.Add(HeroRole.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.dds"));
+            RoleIcons.Add(HeroRole.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.png"));
 
             RoleIcons.Add(HeroRole.Warrior, SetImageStreamString(RoleIconFolderName, "hero_role_warrior.png"));
             RoleIcons.Add(HeroRole.Assassin, SetImageStreamString(RoleIconFolderName, "hero_role_assassin.png"));
@@ -218,7 +218,7 @@ namespace Heroes.Icons
 
         private void SetFranchiseIcons()
         {
-            FranchiseIcons.Add(HeroFranchise.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.dds"));
+            FranchiseIcons.Add(HeroFranchise.Unknown, SetImageStreamString(HeroPortraitsFolderName, "storm_ui_ingame_heroselect_btn_notfound.png"));
 
             FranchiseIcons.Add(HeroFranchise.Classic, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_classic.png"));
             FranchiseIcons.Add(HeroFranchise.Diablo, SetImageStreamString(FranchiseIconFolderName, "hero_franchise_diablo.png"));

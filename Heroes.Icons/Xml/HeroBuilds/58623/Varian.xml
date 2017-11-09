@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Varian available="48027" attributeid="Vari" unit="HeroVarian" franchise="Warcraft" type="Melee" difficulty="Medium"
-        portrait="storm_ui_ingame_heroselect_btn_varian.dds" loading="storm_ui_ingame_hero_loadingscreen_varian.dds" leader="storm_ui_ingame_hero_leaderboard_varian.dds">
+        portrait="storm_ui_ingame_heroselect_btn_varian.png" loading="storm_ui_ingame_hero_loadingscreen_varian.png" leader="storm_ui_ingame_hero_leaderboard_varian.png">
   <Roles>Multiclass,Warrior,Assassin</Roles>
   <Abilities>
     <Basic>
-      <VarianLionsFang name="Lion's Fang" desc="VarianLionsFang" mana="50" cooldown="8">storm_ui_icon_varian_lionsfang.dds</VarianLionsFang>
-      <VarianParry name="Parry" desc="VarianParry" mana="15" cooldown="8" ch-cooldown="true">storm_ui_icon_varian_parry.dds</VarianParry>
-      <VarianCharge name="Charge" desc="VarianCharge" mana="45" cooldown="12">storm_ui_icon_varian_charge.dds</VarianCharge>
+      <VarianLionsFang name="Lion's Fang" desc="VarianLionsFang" mana="50" cooldown="8">storm_ui_icon_varian_lionsfang.png</VarianLionsFang>
+      <VarianParry name="Parry" desc="VarianParry" mana="15" cooldown="8" ch-cooldown="true">storm_ui_icon_varian_parry.png</VarianParry>
+      <VarianCharge name="Charge" desc="VarianCharge" mana="45" cooldown="12">storm_ui_icon_varian_charge.png</VarianCharge>
     </Basic>
     <Heroic>
-      <VarianTaunt name="Taunt" desc="VarianTaunt" mana="20" cooldown="16">storm_ui_icon_varian_taunt.dds</VarianTaunt>
-      <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash" mana="40" cooldown="20">storm_ui_icon_varian_colossus_smash.dds</VarianColossusSmash>
-      <VarianTwinBladesofFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury" mana="" cooldown="">storm_ui_icon_varian_twinbladesoffury.dds</VarianTwinBladesofFury>
+      <VarianTaunt name="Taunt" desc="VarianTaunt" mana="20" cooldown="16">storm_ui_icon_varian_taunt.png</VarianTaunt>
+      <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash" mana="40" cooldown="20">storm_ui_icon_varian_colossus_smash.png</VarianColossusSmash>
+      <VarianTwinBladesofFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury" mana="" cooldown="">storm_ui_icon_varian_twinbladesoffury.png</VarianTwinBladesofFury>
     </Heroic>
     <Trait>
-      <VarianHeroicStrike name="Heroic Strike" desc="VarianHeroicStrike" cooldown="18">storm_ui_icon_varian_heroicstrike.dds</VarianHeroicStrike>
+      <VarianHeroicStrike name="Heroic Strike" desc="VarianHeroicStrike" cooldown="18">storm_ui_icon_varian_heroicstrike.png</VarianHeroicStrike>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="VarianLionsFangLionsMawQuest">storm_ui_icon_varian_lionsfang.dds</VarianLionsFangLionsMawQuest>
-      <VarianParryOverpower name="Overpower" desc="VarianParryOverpower">storm_ui_icon_varian_parry.dds</VarianParryOverpower>
-      <VarianHighKingsQuestQuest name="High King's Quest" desc="VarianHighKingsQuestQuest">storm_ui_icon_varian_highkingsquest.dds</VarianHighKingsQuestQuest>
+      <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="VarianLionsFangLionsMawQuest">storm_ui_icon_varian_lionsfang.png</VarianLionsFangLionsMawQuest>
+      <VarianParryOverpower name="Overpower" desc="VarianParryOverpower">storm_ui_icon_varian_parry.png</VarianParryOverpower>
+      <VarianHighKingsQuestQuest name="High King's Quest" desc="VarianHighKingsQuestQuest">storm_ui_icon_varian_highkingsquest.png</VarianHighKingsQuestQuest>
     </Level1>
     <Level4>
-      <VarianParryShieldWall name="Shield Wall" desc="VarianParryShieldWall">storm_ui_icon_varian_parry.dds</VarianParryShieldWall>
-      <VarianChargeWarbringer name="Warbringer" desc="VarianChargeWarbringer">storm_ui_icon_varian_charge.dds</VarianChargeWarbringer>
+      <VarianParryShieldWall name="Shield Wall" desc="VarianParryShieldWall">storm_ui_icon_varian_parry.png</VarianParryShieldWall>
+      <VarianChargeWarbringer name="Warbringer" desc="VarianChargeWarbringer">storm_ui_icon_varian_charge.png</VarianChargeWarbringer>
     </Level4>
     <Level7>
-      <VarianParryLivebytheSword name="Live by the Sword" desc="VarianParryLivebytheSword">storm_ui_icon_varian_parry.dds</VarianParryLivebytheSword>
-      <VarianSecondWind name="Second Wind" desc="VarianSecondWind">storm_ui_icon_varian_secondwind.dds</VarianSecondWind>
-      <VarianVictoryRush name="Victory Rush" desc="VarianVictoryRush">storm_ui_icon_varian_victoryrush.dds</VarianVictoryRush>
+      <VarianParryLivebytheSword name="Live by the Sword" desc="VarianParryLivebytheSword">storm_ui_icon_varian_parry.png</VarianParryLivebytheSword>
+      <VarianSecondWind name="Second Wind" desc="VarianSecondWind">storm_ui_icon_varian_secondwind.png</VarianSecondWind>
+      <VarianVictoryRush name="Victory Rush" desc="VarianVictoryRush">storm_ui_icon_varian_victoryrush.png</VarianVictoryRush>
     </Level7>
     <Level10>
       <VarianTaunt ability="VarianTaunt" />
@@ -38,21 +38,21 @@
       <VarianTwinBladesOfFury ability="VarianTwinBladesofFury" />
     </Level10>
     <Level13>
-      <VarianChargeJuggernaut name="Juggernaut" desc="VarianChargeJuggernaut">storm_ui_icon_varian_charge.dds</VarianChargeJuggernaut>
-      <VarianMortalStrike name="Mortal Strike" desc="VarianMortalStrike">storm_ui_icon_varian_mortalstrike.dds</VarianMortalStrike>
-      <VarianShatteringThrow name="Shattering Throw" desc="VarianShatteringThrow" cooldown="30">storm_ui_icon_varian_shatteringthrow.dds</VarianShatteringThrow>
+      <VarianChargeJuggernaut name="Juggernaut" desc="VarianChargeJuggernaut">storm_ui_icon_varian_charge.png</VarianChargeJuggernaut>
+      <VarianMortalStrike name="Mortal Strike" desc="VarianMortalStrike">storm_ui_icon_varian_mortalstrike.png</VarianMortalStrike>
+      <VarianShatteringThrow name="Shattering Throw" desc="VarianShatteringThrow" cooldown="30">storm_ui_icon_varian_shatteringthrow.png</VarianShatteringThrow>
     </Level13>
     <Level16>
-      <VarianBannerOfStormwind name="Banner of Stormwind" desc="VarianBannerOfStormwind" cooldown="45">storm_ui_icon_varian_bannerofstormwind.dds</VarianBannerOfStormwind>
-      <VarianBannerOfIronforge name="Banner of Ironforge" desc="VarianBannerOfIronforge" cooldown="45">storm_ui_icon_varian_bannerofironforge.dds</VarianBannerOfIronforge>
-      <VarianBannerOfDalaran name="Banner of Dalaran" desc="VarianBannerOfDalaran" cooldown="45">storm_ui_icon_varian_bannerofdalaran.dds</VarianBannerOfDalaran>
+      <VarianBannerOfStormwind name="Banner of Stormwind" desc="VarianBannerOfStormwind" cooldown="45">storm_ui_icon_varian_bannerofstormwind.png</VarianBannerOfStormwind>
+      <VarianBannerOfIronforge name="Banner of Ironforge" desc="VarianBannerOfIronforge" cooldown="45">storm_ui_icon_varian_bannerofironforge.png</VarianBannerOfIronforge>
+      <VarianBannerOfDalaran name="Banner of Dalaran" desc="VarianBannerOfDalaran" cooldown="45">storm_ui_icon_varian_bannerofdalaran.png</VarianBannerOfDalaran>
     </Level16>
     <Level20>
-      <VarianTauntVigilance name="Vigilance" desc="VarianTauntVigilance">storm_ui_icon_varian_taunt.dds</VarianTauntVigilance>
-      <VarianColossusSmashMasterAtArms name="Master at Arms" desc="VarianColossusSmashMasterAtArms">storm_ui_icon_varian_colossus_smash.dds</VarianColossusSmashMasterAtArms>
-      <VarianTwinBladesOfFuryFrenzy name="Frenzy" desc="VarianTwinBladesOfFuryFrenzy">storm_ui_icon_varian_twinbladesoffury.dds</VarianTwinBladesOfFuryFrenzy>
-      <VarianBannersGloryToTheAlliance name="Glory to the Alliance" desc="VarianBannersGloryToTheAlliance">storm_ui_icon_varian_glorytothealliance.dds</VarianBannersGloryToTheAlliance>
-      <VarianDemoralizingShout name="Demoralizing Shout" desc="VarianDemoralizingShout" cooldown="25">storm_ui_icon_varian_demoralizingshout.dds</VarianDemoralizingShout>
+      <VarianTauntVigilance name="Vigilance" desc="VarianTauntVigilance">storm_ui_icon_varian_taunt.png</VarianTauntVigilance>
+      <VarianColossusSmashMasterAtArms name="Master at Arms" desc="VarianColossusSmashMasterAtArms">storm_ui_icon_varian_colossus_smash.png</VarianColossusSmashMasterAtArms>
+      <VarianTwinBladesOfFuryFrenzy name="Frenzy" desc="VarianTwinBladesOfFuryFrenzy">storm_ui_icon_varian_twinbladesoffury.png</VarianTwinBladesOfFuryFrenzy>
+      <VarianBannersGloryToTheAlliance name="Glory to the Alliance" desc="VarianBannersGloryToTheAlliance">storm_ui_icon_varian_glorytothealliance.png</VarianBannersGloryToTheAlliance>
+      <VarianDemoralizingShout name="Demoralizing Shout" desc="VarianDemoralizingShout" cooldown="25">storm_ui_icon_varian_demoralizingshout.png</VarianDemoralizingShout>
     </Level20>
   </Talents>
 </Varian>

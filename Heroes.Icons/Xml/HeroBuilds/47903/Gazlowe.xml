@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Gazlowe available="47479" attributeid="Tink" franchise="Warcraft" type="Melee" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_gazlowe.dds" loading="storm_ui_ingame_hero_loadingscreen_gazlowe.dds" leader="storm_ui_ingame_hero_leaderboard_gazlowe.dds">
+           portrait="storm_ui_ingame_heroselect_btn_gazlowe.png" loading="storm_ui_ingame_hero_loadingscreen_gazlowe.png" leader="storm_ui_ingame_hero_leaderboard_gazlowe.png">
     <Roles>Specialist</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <TinkerMasteryExtraTNT name="Extra TNT" desc="TinkerXplodiumChargeExtraTNTTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryExtraTNT>
-        <TinkerCombatStyleScrapoMaticSmelter name="Scrap-o-Matic Smelter" desc="TinkerSalvagerScrapOMaticSmelterTalent">storm_ui_icon_gazlowe_salvager.dds</TinkerCombatStyleScrapoMaticSmelter>
-        <TinkerCombatStyleBreakitDown name="Break it Down!" desc="TinkerSalvagerBreakItDownTalent">storm_ui_icon_gazlowe_salvager_var1.dds</TinkerCombatStyleBreakitDown>
-        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.dds</GenericTalentRegenerationMaster>
+        <TinkerMasteryExtraTNT name="Extra TNT" desc="TinkerXplodiumChargeExtraTNTTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.png</TinkerMasteryExtraTNT>
+        <TinkerCombatStyleScrapoMaticSmelter name="Scrap-o-Matic Smelter" desc="TinkerSalvagerScrapOMaticSmelterTalent">storm_ui_icon_gazlowe_salvager.png</TinkerCombatStyleScrapoMaticSmelter>
+        <TinkerCombatStyleBreakitDown name="Break it Down!" desc="TinkerSalvagerBreakItDownTalent">storm_ui_icon_gazlowe_salvager_var1.png</TinkerCombatStyleBreakitDown>
+        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.png</GenericTalentRegenerationMaster>
       </Level1>
       <Level4>
-        <TinkerCombatStyleClockwerkSteamFists name="Clockwerk Steam Fists" desc="TinkerRockItTurretClockwerkSteamFistsTalent">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerCombatStyleClockwerkSteamFists>
-        <TinkerMasteryARKReaktor name="ARK Reaktor" desc="TinkerARKReaktor">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryARKReaktor>
-        <TinkerCombatStyleReduceReuseRecycle name="Reduce, Reuse, Recycle" desc="TinkerSalvagerReduceReuseRecycleTalent">storm_ui_icon_gazlowe_salvager.dds</TinkerCombatStyleReduceReuseRecycle>
-        <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.dds</GenericTalentMercenaryLord>
+        <TinkerCombatStyleClockwerkSteamFists name="Clockwerk Steam Fists" desc="TinkerRockItTurretClockwerkSteamFistsTalent">storm_ui_icon_Gazlowe_RockItTurret.png</TinkerCombatStyleClockwerkSteamFists>
+        <TinkerMasteryARKReaktor name="ARK Reaktor" desc="TinkerARKReaktor">storm_ui_icon_Gazlowe_ExplodiumCharge.png</TinkerMasteryARKReaktor>
+        <TinkerCombatStyleReduceReuseRecycle name="Reduce, Reuse, Recycle" desc="TinkerSalvagerReduceReuseRecycleTalent">storm_ui_icon_gazlowe_salvager.png</TinkerCombatStyleReduceReuseRecycle>
+        <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.png</GenericTalentMercenaryLord>
       </Level4>
       <Level7>
-        <TinkerMasteryRockitTurretXL name="Rock-It! Turret XL" desc="TinkerRockItTurretRockItTurretXLTalent">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryRockitTurretXL>
-        <TinkerMasteryEngineGunk name="Engine Gunk" desc="TinkerRockItTurretEngineGunkTalent">storm_ui_icon_Gazlowe_RockItTurret_Var1.dds</TinkerMasteryEngineGunk>
-        <TinkerMasteryHyperfocusCoils name="Hyperfocus Coils" desc="TinkerDethLazorHyperfocusCoilsTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryHyperfocusCoils>
+        <TinkerMasteryRockitTurretXL name="Rock-It! Turret XL" desc="TinkerRockItTurretRockItTurretXLTalent">storm_ui_icon_Gazlowe_RockItTurret.png</TinkerMasteryRockitTurretXL>
+        <TinkerMasteryEngineGunk name="Engine Gunk" desc="TinkerRockItTurretEngineGunkTalent">storm_ui_icon_Gazlowe_RockItTurret_Var1.png</TinkerMasteryEngineGunk>
+        <TinkerMasteryHyperfocusCoils name="Hyperfocus Coils" desc="TinkerDethLazorHyperfocusCoilsTalent">storm_ui_icon_Gazlowe_DethLazor.png</TinkerMasteryHyperfocusCoils>
       </Level7>
       <Level10>
-        <TinkerHeroicAbilityRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive">storm_ui_icon_gazlowe_robogoblin.dds</TinkerHeroicAbilityRoboGoblin>
-        <TinkerHeroicAbilityGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000">storm_ui_icon_gazlowe_gravobomb.dds</TinkerHeroicAbilityGravOBomb3000>
+        <TinkerHeroicAbilityRoboGoblin name="Robo-Goblin" desc="TinkerRoboGoblinPassive">storm_ui_icon_gazlowe_robogoblin.png</TinkerHeroicAbilityRoboGoblin>
+        <TinkerHeroicAbilityGravOBomb3000 name="Grav-O-Bomb 3000" desc="TinkerGravOBomb3000">storm_ui_icon_gazlowe_gravobomb.png</TinkerHeroicAbilityGravOBomb3000>
       </Level10>
       <Level13>
-        <TinkerMasteryTurretStorage name="Turret Storage" desc="TinkerRockItTurretTurretStorageTalent">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerMasteryTurretStorage>
-        <TinkerMasteryEZPZDimensionalRipper name="EZ-PZ Dimensional Ripper" desc="TinkerDethLazorEZPZDimensionalRipperTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryEZPZDimensionalRipper>
-        <TinkerMasteryXTraLargeBombs name="X-Tra Large Bombs" desc="TinkerXplodiumChargeXtraLargeBombsTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryXTraLargeBombs>
-        <GenericTalentSprint name="Sprint" desc="GenericSprint">storm_ui_icon_talent_sprint.dds</GenericTalentSprint>
+        <TinkerMasteryTurretStorage name="Turret Storage" desc="TinkerRockItTurretTurretStorageTalent">storm_ui_icon_Gazlowe_RockItTurret.png</TinkerMasteryTurretStorage>
+        <TinkerMasteryEZPZDimensionalRipper name="EZ-PZ Dimensional Ripper" desc="TinkerDethLazorEZPZDimensionalRipperTalent">storm_ui_icon_Gazlowe_DethLazor.png</TinkerMasteryEZPZDimensionalRipper>
+        <TinkerMasteryXTraLargeBombs name="X-Tra Large Bombs" desc="TinkerXplodiumChargeXtraLargeBombsTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.png</TinkerMasteryXTraLargeBombs>
+        <GenericTalentSprint name="Sprint" desc="GenericSprint">storm_ui_icon_talent_sprint.png</GenericTalentSprint>
       </Level13>
       <Level16>
-        <TinkerSuperiorSchematics name="Superior Schematics" desc="TinkerSuperiorSchematics">storm_ui_icon_Gazlowe_RockItTurret.dds</TinkerSuperiorSchematics>
-        <TinkerMasteryGoblinFusion name="Goblin Fusion" desc="TinkerDethLazorGoblinFusionTalent">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerMasteryGoblinFusion>
-        <TinkerMasteryQuikReleaseCharge name="Kwik Release Charge" desc="TinkerXplodiumChargeKwikReleaseChargeTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.dds</TinkerMasteryQuikReleaseCharge>
+        <TinkerSuperiorSchematics name="Superior Schematics" desc="TinkerSuperiorSchematics">storm_ui_icon_Gazlowe_RockItTurret.png</TinkerSuperiorSchematics>
+        <TinkerMasteryGoblinFusion name="Goblin Fusion" desc="TinkerDethLazorGoblinFusionTalent">storm_ui_icon_Gazlowe_DethLazor.png</TinkerMasteryGoblinFusion>
+        <TinkerMasteryQuikReleaseCharge name="Kwik Release Charge" desc="TinkerXplodiumChargeKwikReleaseChargeTalent">storm_ui_icon_Gazlowe_ExplodiumCharge.png</TinkerMasteryQuikReleaseCharge>
       </Level16>
       <Level20>
-        <TinkerMasteryMechaLord name="Mecha-Lord" desc="TinkerRoboGoblinMechaLordTalent">storm_ui_icon_gazlowe_robogoblin.dds</TinkerMasteryMechaLord>
-        <TinkerMasteryMiniatureBlackHole name="Miniature Black Hole" desc="TinkerGravOBombMiniatureBlackHoleTalent">storm_ui_icon_gazlowe_gravobomb.dds</TinkerMasteryMiniatureBlackHole>
-        <TinkerTalentFirinMahLazorz name="Firin' Mah Lazorz" desc="TinkerFirinMahLazorz">storm_ui_icon_Gazlowe_DethLazor.dds</TinkerTalentFirinMahLazorz>
-        <TinkerItsRainingScrap name="It's Raining Scrap" desc="TinkerItsRainingScrap">storm_ui_icon_gazlowe_itsrainingscrap.dds</TinkerItsRainingScrap>
+        <TinkerMasteryMechaLord name="Mecha-Lord" desc="TinkerRoboGoblinMechaLordTalent">storm_ui_icon_gazlowe_robogoblin.png</TinkerMasteryMechaLord>
+        <TinkerMasteryMiniatureBlackHole name="Miniature Black Hole" desc="TinkerGravOBombMiniatureBlackHoleTalent">storm_ui_icon_gazlowe_gravobomb.png</TinkerMasteryMiniatureBlackHole>
+        <TinkerTalentFirinMahLazorz name="Firin' Mah Lazorz" desc="TinkerFirinMahLazorz">storm_ui_icon_Gazlowe_DethLazor.png</TinkerTalentFirinMahLazorz>
+        <TinkerItsRainingScrap name="It's Raining Scrap" desc="TinkerItsRainingScrap">storm_ui_icon_gazlowe_itsrainingscrap.png</TinkerItsRainingScrap>
       </Level20>
   </Talents>
 </Gazlowe>

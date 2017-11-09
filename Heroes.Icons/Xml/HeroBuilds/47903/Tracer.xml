@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Tracer available="47479" attributeid="Tra0" franchise="Overwatch" type="Ranged" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_tracer.dds" loading="storm_ui_ingame_hero_loadingscreen_tracer.dds" leader="storm_ui_ingame_hero_leaderboard_tracer.dds">
+          portrait="storm_ui_ingame_heroselect_btn_tracer.png" loading="storm_ui_ingame_hero_loadingscreen_tracer.png" leader="storm_ui_ingame_hero_leaderboard_tracer.png">
     <Roles>Assassin</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <TracerPulseStrikeMelee name="Pulse Strike" desc="TracerPulseStrikeMelee">storm_ui_icon_tracer_melee.dds</TracerPulseStrikeMelee>
-        <TracerSlipstreamRecall name="Slipstream" desc="TracerSlipstreamRecall">storm_ui_icon_tracer_recall.dds</TracerSlipstreamRecall>
-        <TracerTracerRounds name="Tracer Rounds" generic="true" desc="TracerTracerRounds">storm_ui_icon_talent_autoattack_reveal.dds</TracerTracerRounds>
+        <TracerPulseStrikeMelee name="Pulse Strike" desc="TracerPulseStrikeMelee">storm_ui_icon_tracer_melee.png</TracerPulseStrikeMelee>
+        <TracerSlipstreamRecall name="Slipstream" desc="TracerSlipstreamRecall">storm_ui_icon_tracer_recall.png</TracerSlipstreamRecall>
+        <TracerTracerRounds name="Tracer Rounds" generic="true" desc="TracerTracerRounds">storm_ui_icon_talent_autoattack_reveal.png</TracerTracerRounds>
       </Level1>
       <Level4>
-        <TracerPartingGift name="Parting Gift" desc="TracerPartingGift">storm_ui_icon_tracer_recall.dds</TracerPartingGift>
-        <TracerIsthataHealthPack name="Is That a Health Pack?!" desc="TracerIsthataHealthPack">storm_ui_icon_tracer_medpack.dds</TracerIsthataHealthPack>
-        <TracerUntouchable name="Untouchable" generic="true" desc="TracerUntouchable">storm_ui_icon_talent_autoattack_damage.dds</TracerUntouchable>
+        <TracerPartingGift name="Parting Gift" desc="TracerPartingGift">storm_ui_icon_tracer_recall.png</TracerPartingGift>
+        <TracerIsthataHealthPack name="Is That a Health Pack?!" desc="TracerIsthataHealthPack">storm_ui_icon_tracer_medpack.png</TracerIsthataHealthPack>
+        <TracerUntouchable name="Untouchable" generic="true" desc="TracerUntouchable">storm_ui_icon_talent_autoattack_damage.png</TracerUntouchable>
       </Level4>
       <Level7>
-        <TracerJumper name="Jumper" desc="TracerJumper">storm_ui_icon_tracer_blink_b.dds</TracerJumper>
-        <TracerBulletTime name="Bullet Time" desc="TracerBulletTime">storm_ui_icon_tracer_blink_c.dds</TracerBulletTime>
-        <TracerSpatialEcho name="Spatial Echo" desc="TracerSpatialEcho">storm_ui_icon_tracer_blink_d.dds</TracerSpatialEcho>
+        <TracerJumper name="Jumper" desc="TracerJumper">storm_ui_icon_tracer_blink_b.png</TracerJumper>
+        <TracerBulletTime name="Bullet Time" desc="TracerBulletTime">storm_ui_icon_tracer_blink_c.png</TracerBulletTime>
+        <TracerSpatialEcho name="Spatial Echo" desc="TracerSpatialEcho">storm_ui_icon_tracer_blink_d.png</TracerSpatialEcho>
       </Level7>
       <Level10>
-        <TracerStickyBomb name="Sticky Bomb" desc="TracerStickyBomb">storm_ui_icon_tracer_pulsebomb.dds</TracerStickyBomb>
-        <TracerQuantumSpike name="Quantum Spike" desc="TracerQuantumSpike">storm_ui_icon_tracer_pulsebomb_b.dds</TracerQuantumSpike>
-        <TracerPulseRounds name="Pulse Rounds" desc="TracerPulseRounds">storm_ui_icon_tracer_pulsebomb_c.dds</TracerPulseRounds>
+        <TracerStickyBomb name="Sticky Bomb" desc="TracerStickyBomb">storm_ui_icon_tracer_pulsebomb.png</TracerStickyBomb>
+        <TracerQuantumSpike name="Quantum Spike" desc="TracerQuantumSpike">storm_ui_icon_tracer_pulsebomb_b.png</TracerQuantumSpike>
+        <TracerPulseRounds name="Pulse Rounds" desc="TracerPulseRounds">storm_ui_icon_tracer_pulsebomb_c.png</TracerPulseRounds>
       </Level10>
       <Level13>
-        <TracerBulletSprayMelee name="Bullet Spray" desc="TracerBulletSprayMelee">storm_ui_icon_tracer_melee.dds</TracerBulletSprayMelee>
-        <TracerRicochetHeroWeapon name="Ricochet" generic="true" desc="TracerRicochetHeroWeapon">storm_ui_icon_talent_autoattack_aoe.dds</TracerRicochetHeroWeapon>
-        <TracerLeechingRounds name="Leeching Rounds" generic="true" desc="TracerLeechingRounds">storm_ui_icon_talent_autoattack_heal.dds</TracerLeechingRounds>
+        <TracerBulletSprayMelee name="Bullet Spray" desc="TracerBulletSprayMelee">storm_ui_icon_tracer_melee.png</TracerBulletSprayMelee>
+        <TracerRicochetHeroWeapon name="Ricochet" generic="true" desc="TracerRicochetHeroWeapon">storm_ui_icon_talent_autoattack_aoe.png</TracerRicochetHeroWeapon>
+        <TracerLeechingRounds name="Leeching Rounds" generic="true" desc="TracerLeechingRounds">storm_ui_icon_talent_autoattack_heal.png</TracerLeechingRounds>
       </Level13>
       <Level16>
-        <TracerSleightofHand name="Sleight of Hand" desc="TracerSleightofHand">storm_ui_icon_tracer_reload.dds</TracerSleightofHand>
-        <TracerFocusFire name="Focus Fire" desc="TracerFocusFire">storm_ui_icon_tracer_reload_b.dds</TracerFocusFire>
-        <TracerLockedandLoaded name="Locked and Loaded" desc="TracerLockedandLoaded">storm_ui_icon_tracer_reload_c.dds</TracerLockedandLoaded>
+        <TracerSleightofHand name="Sleight of Hand" desc="TracerSleightofHand">storm_ui_icon_tracer_reload.png</TracerSleightofHand>
+        <TracerFocusFire name="Focus Fire" desc="TracerFocusFire">storm_ui_icon_tracer_reload_b.png</TracerFocusFire>
+        <TracerLockedandLoaded name="Locked and Loaded" desc="TracerLockedandLoaded">storm_ui_icon_tracer_reload_c.png</TracerLockedandLoaded>
       </Level16>
       <Level20>
-        <TracerGetStuffedMelee name="Get Stuffed!" desc="TracerGetStuffedMelee">storm_ui_icon_tracer_melee.dds</TracerGetStuffedMelee>
-        <TracerTotalRecallRecall name="Total Recall" desc="TracerTotalRecallRecall">storm_ui_icon_tracer_recall.dds</TracerTotalRecallRecall>
-        <TracerCompositionBPulseBomb name="Composition B" desc="TracerCompositionBPulseBomb">storm_ui_icon_tracer_pulsebomb.dds</TracerCompositionBPulseBomb>
+        <TracerGetStuffedMelee name="Get Stuffed!" desc="TracerGetStuffedMelee">storm_ui_icon_tracer_melee.png</TracerGetStuffedMelee>
+        <TracerTotalRecallRecall name="Total Recall" desc="TracerTotalRecallRecall">storm_ui_icon_tracer_recall.png</TracerTotalRecallRecall>
+        <TracerCompositionBPulseBomb name="Composition B" desc="TracerCompositionBPulseBomb">storm_ui_icon_tracer_pulsebomb.png</TracerCompositionBPulseBomb>
       </Level20>
   </Talents>
 </Tracer>

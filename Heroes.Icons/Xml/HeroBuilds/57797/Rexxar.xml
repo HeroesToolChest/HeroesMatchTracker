@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Rexxar available="47479" attributeid="Rexx" unit="HeroRexxar" franchise="Warcraft" type="Ranged" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_rexxar.dds" loading="storm_ui_ingame_hero_loadingscreen_rexxar.dds" leader="storm_ui_ingame_hero_leaderboard_rexxar.dds">
+          portrait="storm_ui_ingame_heroselect_btn_rexxar.png" loading="storm_ui_ingame_hero_loadingscreen_rexxar.png" leader="storm_ui_ingame_hero_leaderboard_rexxar.png">
     <Roles>Warrior</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <RexxarSpiritBondEasyPrey name="Easy Prey" desc="RexxarSpiritBondEasyPreyTalent">storm_ui_icon_rexxar_heremishaactive.dds</RexxarSpiritBondEasyPrey>
-        <RexxarSpiritSwoopBirdOfPrey name="Bird of Prey" desc="RexxarSpiritSwoopBirdOfPreyTalent">storm_ui_icon_rexxar_spiritswoop.dds</RexxarSpiritSwoopBirdOfPrey>
-        <RexxarFlare name="Flare" desc="RexxarFlare" cooldown="20">storm_ui_icon_rexxar_flare.dds</RexxarFlare>
+        <RexxarSpiritBondEasyPrey name="Easy Prey" desc="RexxarSpiritBondEasyPreyTalent">storm_ui_icon_rexxar_heremishaactive.png</RexxarSpiritBondEasyPrey>
+        <RexxarSpiritSwoopBirdOfPrey name="Bird of Prey" desc="RexxarSpiritSwoopBirdOfPreyTalent">storm_ui_icon_rexxar_spiritswoop.png</RexxarSpiritSwoopBirdOfPrey>
+        <RexxarFlare name="Flare" desc="RexxarFlare" cooldown="20">storm_ui_icon_rexxar_flare.png</RexxarFlare>
       </Level1>
       <Level4>
-        <RexxarHungryBear name="Hungry Bear" desc="RexxarHungryBearTalent">storm_ui_icon_rexxar_heremishaactive.dds</RexxarHungryBear>
-        <RexxarHunterGatherer name="Hunter Gatherer" generic="true" desc="RexxarHunterGathererTalent">storm_ui_icon_talent_regenerationmaster.dds</RexxarHunterGatherer>
-        <RexxarSpiritBondGrizzledFortitude name="Grizzled Fortitude" generic="true" desc="RexxarSpiritBondGrizzledFortitudeTalent">storm_ui_icon_talent_block.dds</RexxarSpiritBondGrizzledFortitude>
-        <RexxarAnimalHusbandry name="Animal Husbandry" desc="RexxarAnimalHusbandry">storm_ui_icon_rexxar_stayinalive.dds</RexxarAnimalHusbandry>
+        <RexxarHungryBear name="Hungry Bear" desc="RexxarHungryBearTalent">storm_ui_icon_rexxar_heremishaactive.png</RexxarHungryBear>
+        <RexxarHunterGatherer name="Hunter Gatherer" generic="true" desc="RexxarHunterGathererTalent">storm_ui_icon_talent_regenerationmaster.png</RexxarHunterGatherer>
+        <RexxarSpiritBondGrizzledFortitude name="Grizzled Fortitude" generic="true" desc="RexxarSpiritBondGrizzledFortitudeTalent">storm_ui_icon_talent_block.png</RexxarSpiritBondGrizzledFortitude>
+        <RexxarAnimalHusbandry name="Animal Husbandry" desc="RexxarAnimalHusbandry">storm_ui_icon_rexxar_stayinalive.png</RexxarAnimalHusbandry>
       </Level4>
       <Level7>
-        <RexxarAspectoftheBeastCharge name="Aspect of the Beast" desc="RexxarAspectoftheBeastTalent">storm_ui_icon_rexxar_mishacharge.dds</RexxarAspectoftheBeastCharge>
-        <RexxarSpiritSwoopCripplingTalons name="Crippling Talons" desc="RexxarCripplingTalonsTalent">storm_ui_icon_rexxar_spiritswoop.dds</RexxarSpiritSwoopCripplingTalons>
-        <RexxarTakingFlightSpiritSwoop name="Taking Flight" desc="RexxarTakingFlightTalent">storm_ui_icon_rexxar_spiritswoop_var1.dds</RexxarTakingFlightSpiritSwoop>
+        <RexxarAspectoftheBeastCharge name="Aspect of the Beast" desc="RexxarAspectoftheBeastTalent">storm_ui_icon_rexxar_mishacharge.png</RexxarAspectoftheBeastCharge>
+        <RexxarSpiritSwoopCripplingTalons name="Crippling Talons" desc="RexxarCripplingTalonsTalent">storm_ui_icon_rexxar_spiritswoop.png</RexxarSpiritSwoopCripplingTalons>
+        <RexxarTakingFlightSpiritSwoop name="Taking Flight" desc="RexxarTakingFlightTalent">storm_ui_icon_rexxar_spiritswoop_var1.png</RexxarTakingFlightSpiritSwoop>
       </Level7>
       <Level10>
-        <RexxarHeroicAbilityBestialWrath name="Bestial Wrath" desc="RexxarBestialWrath" mana="75" cooldown="50">storm_ui_icon_rexxar_bestialwrath.dds</RexxarHeroicAbilityBestialWrath>
-        <RexxarHeroicAbilityUnleashTheBoars name="Unleash the Boars" desc="RexxarUnleashTheBoars" mana="75" cooldown="60">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarHeroicAbilityUnleashTheBoars>
+        <RexxarHeroicAbilityBestialWrath name="Bestial Wrath" desc="RexxarBestialWrath" mana="75" cooldown="50">storm_ui_icon_rexxar_bestialwrath.png</RexxarHeroicAbilityBestialWrath>
+        <RexxarHeroicAbilityUnleashTheBoars name="Unleash the Boars" desc="RexxarUnleashTheBoars" mana="75" cooldown="60">storm_ui_icon_rexxar_unleashtheboars.png</RexxarHeroicAbilityUnleashTheBoars>
       </Level10>
       <Level13>
-        <RexxarSpiritBondWildfireBear name="Wildfire Bear" generic="true" desc="RexxarSpiritBondWildfireBearTalent">storm_ui_icon_talent_burningrage.dds</RexxarSpiritBondWildfireBear>
-        <RexxarAspectOfTheHawkSpiritSwoop name="Aspect of the Hawk" desc="RexxarAspectOfTheHawkTalent">storm_ui_icon_rexxar_spiritswoop.dds</RexxarAspectOfTheHawkSpiritSwoop>
-        <RexxarDireBeast name="Dire Beast" desc="RexxarDireBeast">storm_ui_icon_rexxar_mishacharge_var1.dds</RexxarDireBeast>
+        <RexxarSpiritBondWildfireBear name="Wildfire Bear" generic="true" desc="RexxarSpiritBondWildfireBearTalent">storm_ui_icon_talent_burningrage.png</RexxarSpiritBondWildfireBear>
+        <RexxarAspectOfTheHawkSpiritSwoop name="Aspect of the Hawk" desc="RexxarAspectOfTheHawkTalent">storm_ui_icon_rexxar_spiritswoop.png</RexxarAspectOfTheHawkSpiritSwoop>
+        <RexxarDireBeast name="Dire Beast" desc="RexxarDireBeast">storm_ui_icon_rexxar_mishacharge_var1.png</RexxarDireBeast>
       </Level13>
       <Level16>
-        <RexxarThrilloftheHunt name="Thrill of the Hunt" desc="RexxarThrilloftheHuntTalent">storm_ui_icon_rexxar_heremishaactive.dds</RexxarThrilloftheHunt>
-        <RexxarSpiritBondPrimalIntimidation name="Primal Intimidation" generic="true" desc="RexxarSpiritBondPrimalIntimidationTalent">storm_ui_icon_talent_imposingpresence.dds</RexxarSpiritBondPrimalIntimidation>
-        <RexxarFeignDeath name="Feign Death" desc="RexxarFeignDeath" cooldown="35">storm_ui_icon_rexxar_feigndeath.dds</RexxarFeignDeath>
+        <RexxarThrilloftheHunt name="Thrill of the Hunt" desc="RexxarThrilloftheHuntTalent">storm_ui_icon_rexxar_heremishaactive.png</RexxarThrilloftheHunt>
+        <RexxarSpiritBondPrimalIntimidation name="Primal Intimidation" generic="true" desc="RexxarSpiritBondPrimalIntimidationTalent">storm_ui_icon_talent_imposingpresence.png</RexxarSpiritBondPrimalIntimidation>
+        <RexxarFeignDeath name="Feign Death" desc="RexxarFeignDeath" cooldown="35">storm_ui_icon_rexxar_feigndeath.png</RexxarFeignDeath>
       </Level16>
       <Level20>
-        <RexxarSpiritBond name="Spirit Bond" desc="RexxarSpiritBondTalent">storm_ui_icon_rexxar_bestialwrath.dds</RexxarSpiritBond>
-        <RexxarUnleashTheBoarsKillCommand name="Kill Command" desc="RexxarUnleashTheBoarsKillCommandTalent">storm_ui_icon_rexxar_unleashtheboars.dds</RexxarUnleashTheBoarsKillCommand>
-        <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor" generic="true" desc="RexxarFrenzyofKalimdorTalent">storm_ui_icon_talent_autoattack_slow.dds</RexxarFrenzyofKalimdor>
-        <RexxarHardenedSkin name="Hardened Skin" generic="true" desc="RexxarHardenedSkin" cooldown="60">storm_ui_icon_talent_hardenedshield.dds</RexxarHardenedSkin>
+        <RexxarSpiritBond name="Spirit Bond" desc="RexxarSpiritBondTalent">storm_ui_icon_rexxar_bestialwrath.png</RexxarSpiritBond>
+        <RexxarUnleashTheBoarsKillCommand name="Kill Command" desc="RexxarUnleashTheBoarsKillCommandTalent">storm_ui_icon_rexxar_unleashtheboars.png</RexxarUnleashTheBoarsKillCommand>
+        <RexxarFrenzyofKalimdor name="Frenzy of Kalimdor" generic="true" desc="RexxarFrenzyofKalimdorTalent">storm_ui_icon_talent_autoattack_slow.png</RexxarFrenzyofKalimdor>
+        <RexxarHardenedSkin name="Hardened Skin" generic="true" desc="RexxarHardenedSkin" cooldown="60">storm_ui_icon_talent_hardenedshield.png</RexxarHardenedSkin>
       </Level20>
   </Talents>
 </Rexxar>

@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <KelThuzad available="57062" name="Kel'Thuzad" attributeid="KelT" franchise="Warcraft" type="Ranged" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_kelthuzad.dds" loading="storm_ui_ingame_hero_loadingscreen_kelthuzad.dds" leader="storm_ui_ingame_hero_leaderboard_kelthuzad.dds">
+          portrait="storm_ui_ingame_heroselect_btn_kelthuzad.png" loading="storm_ui_ingame_hero_loadingscreen_kelthuzad.png" leader="storm_ui_ingame_hero_leaderboard_kelthuzad.png">
     <Roles>Assassin</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <KelThuzadThePlaguelands name="The Plaguelands" desc="KelThuzadThePlaguelands">storm_ui_icon_kel'thuzad_deathanddecay.dds</KelThuzadThePlaguelands>
-        <KelThuzadBlightedFrost name="Blighted Frost" desc="KelThuzadBlightedFrost">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadBlightedFrost>
-        <KelThuzadBarbedChains name="Barbed Chains" desc="KelThuzadBarbedChains">storm_ui_icon_kel'thuzad_chains.dds</KelThuzadBarbedChains>
+        <KelThuzadThePlaguelands name="The Plaguelands" desc="KelThuzadThePlaguelands">storm_ui_icon_kel'thuzad_deathanddecay.png</KelThuzadThePlaguelands>
+        <KelThuzadBlightedFrost name="Blighted Frost" desc="KelThuzadBlightedFrost">storm_ui_icon_kel'thuzad_frostnova.png</KelThuzadBlightedFrost>
+        <KelThuzadBarbedChains name="Barbed Chains" desc="KelThuzadBarbedChains">storm_ui_icon_kel'thuzad_chains.png</KelThuzadBarbedChains>
       </Level1>
       <Level4>
-        <KelThuzadStripShields name="Strip Shields" desc="KelThuzadStripShields">storm_ui_icon_kel'thuzad_chains.dds</KelThuzadStripShields>
-        <KelThuzadPhylactery name="Phylactery of Kel'Thuzad" desc="KelThuzadPhylactery">storm_ui_icon_kel'thuzad_phylactery.dds</KelThuzadPhylactery>
-        <KelThuzadArchlichArmor name="Armor of the Archlich" desc="KelThuzadArchlichArmor" cooldown="25">storm_ui_icon_kel'thuzad_armorofthearchlich.dds</KelThuzadArchlichArmor>
+        <KelThuzadStripShields name="Strip Shields" desc="KelThuzadStripShields">storm_ui_icon_kel'thuzad_chains.png</KelThuzadStripShields>
+        <KelThuzadPhylactery name="Phylactery of Kel'Thuzad" desc="KelThuzadPhylactery">storm_ui_icon_kel'thuzad_phylactery.png</KelThuzadPhylactery>
+        <KelThuzadArchlichArmor name="Armor of the Archlich" desc="KelThuzadArchlichArmor" cooldown="25">storm_ui_icon_kel'thuzad_armorofthearchlich.png</KelThuzadArchlichArmor>
       </Level4>
       <Level7>
-        <KelThuzadAcceleratedDecay name="Accelerated Decay" desc="KelThuzadAcceleratedDecay">storm_ui_icon_kel'thuzad_deathanddecay.dds</KelThuzadAcceleratedDecay>
-        <KelThuzadGlacialSpike name="Glacial Spike" desc="KelThuzadGlacialSpike" cooldown="30">storm_ui_icon_kel'thuzad_glacialspike.dds</KelThuzadGlacialSpike>
-        <KelThuzadChillingTouch name="Chilling Touch" desc="KelThuzadChillingTouch">storm_ui_icon_kel'thuzad_chillingtouch.dds</KelThuzadChillingTouch>>
+        <KelThuzadAcceleratedDecay name="Accelerated Decay" desc="KelThuzadAcceleratedDecay">storm_ui_icon_kel'thuzad_deathanddecay.png</KelThuzadAcceleratedDecay>
+        <KelThuzadGlacialSpike name="Glacial Spike" desc="KelThuzadGlacialSpike" cooldown="30">storm_ui_icon_kel'thuzad_glacialspike.png</KelThuzadGlacialSpike>
+        <KelThuzadChillingTouch name="Chilling Touch" desc="KelThuzadChillingTouch">storm_ui_icon_kel'thuzad_chillingtouch.png</KelThuzadChillingTouch>>
       </Level7>
       <Level10>
-        <KelThuzadFrozenTomb name="Frozen Blast" desc="KelThuzadFrozenTomb" mana="70" cooldown="80">storm_ui_icon_kel'thuzad_frozentomb.dds</KelThuzadFrozenTomb>
-        <KelThuzadShadowFissure name="Shadow Fissure" desc="KelThuzadShadowFissure" mana="60" cooldown="20">storm_ui_icon_kel'thuzad_shadowfissure.dds</KelThuzadShadowFissure>
+        <KelThuzadFrozenTomb name="Frozen Blast" desc="KelThuzadFrozenTomb" mana="70" cooldown="80">storm_ui_icon_kel'thuzad_frozentomb.png</KelThuzadFrozenTomb>
+        <KelThuzadShadowFissure name="Shadow Fissure" desc="KelThuzadShadowFissure" mana="60" cooldown="20">storm_ui_icon_kel'thuzad_shadowfissure.png</KelThuzadShadowFissure>
       </Level10>
       <Level13>
-        <KelThuzadIcyGrasp name="Icy Grasp" desc="KelThuzadIcyGrasp">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadIcyGrasp>
-        <KelThuzadChainsOfIce name="Chains of Ice" desc="KelThuzadChainsOfIce">storm_ui_icon_kel'thuzad_chains.dds</KelThuzadChainsOfIce>
-        <KelThuzadChainLink name="Chain-Link" desc="KelThuzadChainLink">storm_ui_icon_kel'thuzad_chains_a.dds</KelThuzadChainLink>
+        <KelThuzadIcyGrasp name="Icy Grasp" desc="KelThuzadIcyGrasp">storm_ui_icon_kel'thuzad_frostnova.png</KelThuzadIcyGrasp>
+        <KelThuzadChainsOfIce name="Chains of Ice" desc="KelThuzadChainsOfIce">storm_ui_icon_kel'thuzad_chains.png</KelThuzadChainsOfIce>
+        <KelThuzadChainLink name="Chain-Link" desc="KelThuzadChainLink">storm_ui_icon_kel'thuzad_chains_a.png</KelThuzadChainLink>
       </Level13>
       <Level16>
-        <KelThuzadArcaneEchoes name="Arcane Echoes" desc="KelThuzadArcaneEchoes">storm_ui_icon_kel'thuzad_deathanddecay.dds</KelThuzadArcaneEchoes>
-        <KelThuzadHungeringCold name="Hungering Cold" desc="KelThuzadHungeringCold">storm_ui_icon_kel'thuzad_frostnova.dds</KelThuzadHungeringCold>
-        <KelThuzadPowerOfIcecrown name="Power of Icecrown" desc="KelThuzadPowerOfIcecrown">storm_ui_icon_kel'thuzad_poweroficecrown.dds</KelThuzadPowerOfIcecrown>
+        <KelThuzadArcaneEchoes name="Arcane Echoes" desc="KelThuzadArcaneEchoes">storm_ui_icon_kel'thuzad_deathanddecay.png</KelThuzadArcaneEchoes>
+        <KelThuzadHungeringCold name="Hungering Cold" desc="KelThuzadHungeringCold">storm_ui_icon_kel'thuzad_frostnova.png</KelThuzadHungeringCold>
+        <KelThuzadPowerOfIcecrown name="Power of Icecrown" desc="KelThuzadPowerOfIcecrown">storm_ui_icon_kel'thuzad_poweroficecrown.png</KelThuzadPowerOfIcecrown>
       </Level16>
       <Level20>
-        <KelThuzadDeathchill name="Deathchill" desc="KelThuzadDeathchill">storm_ui_icon_kel'thuzad_frozentomb.dds</KelThuzadDeathchill>
-        <KelThuzadMightOfTheScourge name="Might of the Scourge" desc="KelThuzadMightOfTheScourge">storm_ui_icon_kel'thuzad_shadowfissure.dds</KelThuzadMightOfTheScourge>
-        <KelThuzadShiftingMalice name="Shifting Malice" desc="KelThuzadShiftingMalice" cooldown="240">storm_ui_icon_kel'thuzad_shiftingmalice.dds</KelThuzadShiftingMalice>
-        <KelThuzadTheDamnedReturn name="The Damned Return" desc="KelThuzadTheDamnedReturn" cooldown="15">storm_ui_icon_kel'thuzad_cultofthedamned.dds</KelThuzadTheDamnedReturn>
+        <KelThuzadDeathchill name="Deathchill" desc="KelThuzadDeathchill">storm_ui_icon_kel'thuzad_frozentomb.png</KelThuzadDeathchill>
+        <KelThuzadMightOfTheScourge name="Might of the Scourge" desc="KelThuzadMightOfTheScourge">storm_ui_icon_kel'thuzad_shadowfissure.png</KelThuzadMightOfTheScourge>
+        <KelThuzadShiftingMalice name="Shifting Malice" desc="KelThuzadShiftingMalice" cooldown="240">storm_ui_icon_kel'thuzad_shiftingmalice.png</KelThuzadShiftingMalice>
+        <KelThuzadTheDamnedReturn name="The Damned Return" desc="KelThuzadTheDamnedReturn" cooldown="15">storm_ui_icon_kel'thuzad_cultofthedamned.png</KelThuzadTheDamnedReturn>
       </Level20>
   </Talents>
 </KelThuzad>

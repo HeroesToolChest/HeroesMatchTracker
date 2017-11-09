@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <LostVikings available="47479" name="The Lost Vikings" attributeid="Lost" franchise="Classic" type="Melee" difficulty="VeryHard" mana="None"
-               portrait="storm_ui_ingame_heroselect_btn_lostvikings.dds" loading="storm_ui_ingame_hero_loadingscreen_lostvikings.dds" leader="storm_ui_ingame_hero_leaderboard_lostvikings.dds">
+               portrait="storm_ui_ingame_heroselect_btn_lostvikings.png" loading="storm_ui_ingame_hero_loadingscreen_lostvikings.png" leader="storm_ui_ingame_hero_leaderboard_lostvikings.png">
     <Roles>Specialist</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryOlafTheStout>
-        <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasterySpyGames>
-        <LostVikingsMasteryExplosiveAttacks name="Explosive Attacks" desc="LostVikingsExplosiveAttacksTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryExplosiveAttacks>
-        <LostVikingsMasteryVikingBribery name="Viking Bribery" generic="true" desc="LostVikingsVikingBribery">storm_ui_icon_talent_bribe.dds</LostVikingsMasteryVikingBribery>
+        <LostVikingsMasteryOlafTheStout name="Olaf the Stout" desc="LostVikingsOlafTheStoutTalent">storm_ui_icon_lostvikings_selectolaf.png</LostVikingsMasteryOlafTheStout>
+        <LostVikingsMasterySpyGames name="Spy Games" desc="LostVikingsSpyGamesTalent">storm_ui_icon_lostvikings_selecterik.png</LostVikingsMasterySpyGames>
+        <LostVikingsMasteryExplosiveAttacks name="Explosive Attacks" desc="LostVikingsExplosiveAttacksTalent">storm_ui_icon_lostvikings_selectbaleog.png</LostVikingsMasteryExplosiveAttacks>
+        <LostVikingsMasteryVikingBribery name="Viking Bribery" generic="true" desc="LostVikingsVikingBribery">storm_ui_icon_talent_bribe.png</LostVikingsMasteryVikingBribery>
       </Level1>
       <Level4>
-        <LostVikingsMasteryPainDontHurt name="Pain Don't Hurt" desc="LostVikingsPainDontHurtTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryPainDontHurt>
-        <LostVikingsMasteryErikTheSwift name="Erik the Swift" desc="LostVikingsErikTheSwiftTalent">storm_ui_icon_lostvikings_selecterik.dds</LostVikingsMasteryErikTheSwift>
-        <LostVikingsMasteryItsASabotage name="It's a Sabotage!" desc="LostVikingsItsASabotageTalent">storm_ui_icon_lostvikings_selecterik_var1.dds</LostVikingsMasteryItsASabotage>
-        <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.dds</GenericTalentMercenaryLord>
+        <LostVikingsMasteryPainDontHurt name="Pain Don't Hurt" desc="LostVikingsPainDontHurtTalent">storm_ui_icon_lostvikings_selectbaleog.png</LostVikingsMasteryPainDontHurt>
+        <LostVikingsMasteryErikTheSwift name="Erik the Swift" desc="LostVikingsErikTheSwiftTalent">storm_ui_icon_lostvikings_selecterik.png</LostVikingsMasteryErikTheSwift>
+        <LostVikingsMasteryItsASabotage name="It's a Sabotage!" desc="LostVikingsItsASabotageTalent">storm_ui_icon_lostvikings_selecterik_var1.png</LostVikingsMasteryItsASabotage>
+        <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.png</GenericTalentMercenaryLord>
       </Level4>
       <Level7>
-        <LostVikingsMasteryBaleogTheFierce name="Baleog the Fierce" desc="LostVikingsBaleogTheFierceTalent">storm_ui_icon_lostvikings_selectbaleog.dds</LostVikingsMasteryBaleogTheFierce>
-        <LostVikingsMasterySpinToWin name="Spin To Win!" desc="LostVikingsSpinToWin" cooldown="10">storm_ui_icon_lostvikings_spintowin.dds</LostVikingsMasterySpinToWin>
-        <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce" cooldown="30">storm_ui_icon_lostvikings_norseforce.dds</LostVikingsMasteryNorseForce>
+        <LostVikingsMasteryBaleogTheFierce name="Baleog the Fierce" desc="LostVikingsBaleogTheFierceTalent">storm_ui_icon_lostvikings_selectbaleog.png</LostVikingsMasteryBaleogTheFierce>
+        <LostVikingsMasterySpinToWin name="Spin To Win!" desc="LostVikingsSpinToWin" cooldown="10">storm_ui_icon_lostvikings_spintowin.png</LostVikingsMasterySpinToWin>
+        <LostVikingsMasteryNorseForce name="Norse Force!" desc="LostVikingsNorseForce" cooldown="30">storm_ui_icon_lostvikings_norseforce.png</LostVikingsMasteryNorseForce>
       </Level7>
       <Level10>
-        <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid" cooldown="90">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsHeroicAbilityLongboatRaid>
-        <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain" cooldown="80">storm_ui_icon_lostvikings_playagain.dds</LostVikingsHeroicAbilityPlayAgain>
+        <LostVikingsHeroicAbilityLongboatRaid name="Longboat Raid!" desc="LostVikingsLongboatRaid" cooldown="90">storm_ui_icon_lostvikings_longboatraid.png</LostVikingsHeroicAbilityLongboatRaid>
+        <LostVikingsHeroicAbilityPlayAgain name="Play Again!" desc="LostVikingsPlayAgain" cooldown="80">storm_ui_icon_lostvikings_playagain.png</LostVikingsHeroicAbilityPlayAgain>
       </Level10>
       <Level13>
-        <LostVikingsMasteryHunkaBurningOlaf name="Hunka' Burning Olaf" desc="LostVikingsHunkaBurningOlafTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryHunkaBurningOlaf>
-        <LostVikingsMasteryJump name="Jump!" desc="LostVikingsJump" cooldown="30">storm_ui_icon_lostvikings_jump.dds</LostVikingsMasteryJump>
-        <LostVikingsMasteryNordicAttackSquad name="Nordic Attack Squad" generic="true" desc="LostVikingsNordicAttackSquad" cooldown="30">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsMasteryNordicAttackSquad>
+        <LostVikingsMasteryHunkaBurningOlaf name="Hunka' Burning Olaf" desc="LostVikingsHunkaBurningOlafTalent">storm_ui_icon_lostvikings_selectolaf.png</LostVikingsMasteryHunkaBurningOlaf>
+        <LostVikingsMasteryJump name="Jump!" desc="LostVikingsJump" cooldown="30">storm_ui_icon_lostvikings_jump.png</LostVikingsMasteryJump>
+        <LostVikingsMasteryNordicAttackSquad name="Nordic Attack Squad" generic="true" desc="LostVikingsNordicAttackSquad" cooldown="30">storm_ui_icon_talent_autoattack_damage.png</LostVikingsMasteryNordicAttackSquad>
       </Level13>
       <Level16>
-        <LostVikingsMasteryLargeAndInCharge name="Large and In Charge" desc="LostVikingsLargeAndInChargeTalent">storm_ui_icon_lostvikings_selectolaf.dds</LostVikingsMasteryLargeAndInCharge>
-        <LostVikingsMasteryImpatienceIsAVirtue name="Impatience Is a Virtue" generic="true" desc="LostVikingsImpatienceIsAVirtueTalent">storm_ui_icon_talent_autoattack_cooldown.dds</LostVikingsMasteryImpatienceIsAVirtue>
-        <LostVikingsGoGoGo64KBMarathon name="64 KB Marathon" desc="LostVikingsGoGoGo64KBMarathonTalent">storm_ui_icon_lostvikings_64kbmarathon.dds</LostVikingsGoGoGo64KBMarathon>
-        <HeroGenericExecutionerPassive name="Executioner" generic="true" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.dds</HeroGenericExecutionerPassive>
+        <LostVikingsMasteryLargeAndInCharge name="Large and In Charge" desc="LostVikingsLargeAndInChargeTalent">storm_ui_icon_lostvikings_selectolaf.png</LostVikingsMasteryLargeAndInCharge>
+        <LostVikingsMasteryImpatienceIsAVirtue name="Impatience Is a Virtue" generic="true" desc="LostVikingsImpatienceIsAVirtueTalent">storm_ui_icon_talent_autoattack_cooldown.png</LostVikingsMasteryImpatienceIsAVirtue>
+        <LostVikingsGoGoGo64KBMarathon name="64 KB Marathon" desc="LostVikingsGoGoGo64KBMarathonTalent">storm_ui_icon_lostvikings_64kbmarathon.png</LostVikingsGoGoGo64KBMarathon>
+        <HeroGenericExecutionerPassive name="Executioner" generic="true" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.png</HeroGenericExecutionerPassive>
       </Level16>
       <Level20>
-        <LostVikingsMasteryWereOnABoat name="Ragnarok 'n' Roll!" desc="LostVikingsWereOnABoatTalent">storm_ui_icon_lostvikings_longboatraid.dds</LostVikingsMasteryWereOnABoat>
-        <LostVikingsMasteryCheckpointReached name="Checkpoint Reached" desc="LostVikingsCheckpointReachedTalent">storm_ui_icon_lostvikings_playagain.dds</LostVikingsMasteryCheckpointReached>
-        <LostVikingsMasteryTheSequel name="The Sequel!" desc="LostVikingsTheSequelTalent">storm_ui_icon_lostvikings_fastrestart.dds</LostVikingsMasteryTheSequel>
-        <LostVikingsTalentFuryoftheStorm name="Fury of the Storm" generic="true" desc="LostVikingsFuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.dds</LostVikingsTalentFuryoftheStorm>
+        <LostVikingsMasteryWereOnABoat name="Ragnarok 'n' Roll!" desc="LostVikingsWereOnABoatTalent">storm_ui_icon_lostvikings_longboatraid.png</LostVikingsMasteryWereOnABoat>
+        <LostVikingsMasteryCheckpointReached name="Checkpoint Reached" desc="LostVikingsCheckpointReachedTalent">storm_ui_icon_lostvikings_playagain.png</LostVikingsMasteryCheckpointReached>
+        <LostVikingsMasteryTheSequel name="The Sequel!" desc="LostVikingsTheSequelTalent">storm_ui_icon_lostvikings_fastrestart.png</LostVikingsMasteryTheSequel>
+        <LostVikingsTalentFuryoftheStorm name="Fury of the Storm" generic="true" desc="LostVikingsFuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.png</LostVikingsTalentFuryoftheStorm>
       </Level20>
   </Talents>
 </LostVikings>
