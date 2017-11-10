@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Malfurion available="47479" attributeid="Malf" unit="HeroMalfurion" franchise="Warcraft" type="Ranged" difficulty="Easy"
+            portrait="storm_ui_ingame_heroselect_btn_malfurion.png" loading="storm_ui_ingame_hero_loadingscreen_malfurion.png" leader="storm_ui_ingame_hero_leaderboard_malfurion.png">
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <MalfurionRegrowth name="Regrowth" desc="MalfurionRegrowth" mana="45" cooldown="5">storm_ui_icon_malfurion_regrowth.png</MalfurionRegrowth>
+      <MalfurionMoonfire name="Moonfire" desc="MalfurionMoonfire" mana="15" cooldown="3">storm_ui_icon_malfurion_moonfire.png</MalfurionMoonfire>
+      <MalfurionEntanglingRoots name="Entangling Roots" desc="MalfurionEntanglingRoots" mana="75" cooldown="14">storm_ui_icon_malfurion_entanglingroots.png</MalfurionEntanglingRoots>
+    </Basic>
+    <Heroic>
+      <MalfurionTranquility name="Tranquility" desc="MalfurionTranquility" mana="100" cooldown="100">storm_ui_icon_malfurion_tranquility.png</MalfurionTranquility>
+      <MalfurionTwilightDream name="Twilight Dream" desc="MalfurionTwilightDream" mana="100" cooldown="90">storm_ui_icon_malfurion_twilightdream.png</MalfurionTwilightDream>
+    </Heroic>
+    <Trait>
+      <MalfurionInnervate name="Innervate" desc="MalfurionInnervate" cooldown="30">storm_ui_icon_malfurion_innerrvate.png</MalfurionInnervate>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <MalfurionCombatStyleShandosClarity name="Shan'do's Clarity" desc="MalfurionInnervateShandosClarityTalent">storm_ui_icon_malfurion_innerrvate.png</MalfurionCombatStyleShandosClarity>
+      <MalfurionMasteryMoonburn name="Moonburn" desc="MalfurionMoonfireMoonburnTalent">storm_ui_icon_malfurion_moonfire.png</MalfurionMasteryMoonburn>
+      <GenericTalentScoutingDrone name="Scouting Drone" desc="GenericScoutingDrone" cooldown="45" ch-cooldown="true">storm_ui_icon_talent_scoutingdrone.png</GenericTalentScoutingDrone>
+    </Level1>
+    <Level4>
+      <MalfurionCombatStyleElunesGrace name="Elune's Grace" desc="MalfurionInnervateElunesGraceTalent">storm_ui_icon_malfurion_elunesgrace.png</MalfurionCombatStyleElunesGrace>
+      <MalfurionMasteryFullMoonfire name="Full Moonfire" desc="MalfurionMoonfireFullMoonfireTalent">storm_ui_icon_malfurion_moonfire.png</MalfurionMasteryFullMoonfire>
+      <MalfurionMasteryVengefulRoots name="Vengeful Roots" desc="MalfurionEntanglingRootsVengefulRootsTalent">storm_ui_icon_malfurion_entanglingroots.png</MalfurionMasteryVengefulRoots>
+    </Level4>
+    <Level7>
+      <MalfurionMasteryHinderingMoonfire name="Hindering Moonfire" desc="MalfurionMoonfireHinderingMoonfireTalent">storm_ui_icon_malfurion_moonfire.png</MalfurionMasteryHinderingMoonfire>
+      <MalfurionMasteryLunarShower name="Lunar Shower" desc="MalfurionMoonfireLunarShowerTalent">storm_ui_icon_malfurion_moonfire_a.png</MalfurionMasteryLunarShower>
+      <MalfurionMasteryStranglingVinesEntanglingRoots name="Strangling Vines" desc="MalfurionEntanglingRootsStranglingVinesTalent">storm_ui_icon_malfurion_entanglingroots.png</MalfurionMasteryStranglingVinesEntanglingRoots>
+  </Level7>
+    <Level10>
+      <MalfurionHeroicAbilityTranquility ability="MalfurionTranquility" />
+      <MalfurionHeroicAbilityTwilightDream ability="MalfurionTwilightDream" />
+    </Level10>
+    <Level13>
+      <MalfurionMasteryLifeSeed name="Life Seed" desc="MalfurionRegrowthLifeSeedTalent">storm_ui_icon_malfurion_regrowth.png</MalfurionMasteryLifeSeed>
+      <GenericTalentShrinkRay name="Shrink Ray" desc="GenericShrinkRayTalent" cooldown="60">storm_ui_icon_talent_shrinkray.png</GenericTalentShrinkRay>
+      <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent" cooldown="60">storm_ui_icon_Talent_IceBlock.png</GenericTalentIceBlock>
+    </Level13>
+    <Level16>
+      <MalfurionYserasGift name="Ysera's Gift" desc="MalfurionYserasGift">storm_ui_icon_malfurion_regrowth.png</MalfurionYserasGift>
+      <MalfurionMasteryTenaciousRootsEntanglingRoots name="Tenacious Roots" desc="MalfurionEntanglingRootsTenaciousRootsTalent">storm_ui_icon_malfurion_entanglingroots.png</MalfurionMasteryTenaciousRootsEntanglingRoots>
+      <MalfurionRevitalizeInnervateTalent name="Revitalize" desc="MalfurionRevitalizeInnervateTalent">storm_ui_icon_malfurion_innerrvate.png</MalfurionRevitalizeInnervateTalent>
+    </Level16>
+    <Level20>
+      <MalfurionMasterySerenity name="Serenity" desc="MalfurionTranquilitySerenityTalent">storm_ui_icon_malfurion_tranquility.png</MalfurionMasterySerenity>
+      <MalfurionMasteryAstralCommunion name="Astral Communion" desc="MalfurionTwilightDreamAstralCommunionTalent">storm_ui_icon_malfurion_twilightdream.png</MalfurionMasteryAstralCommunion>
+      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.png</GenericTalentStormShield>
+      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.png</GenericTalentRewind>
+    </Level20>
+  </Talents>
+</Malfurion>

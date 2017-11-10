@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Uther available="47479" attributeid="Uthe" unit="HeroUther" franchise="Warcraft" type="Melee" difficulty="Easy"
+        portrait="storm_ui_ingame_heroselect_btn_uther.png" loading="storm_ui_ingame_hero_loadingscreen_uther.png" leader="storm_ui_ingame_hero_leaderboard_uther.png">
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <UtherHolyLight name="Holy Light" desc="UtherHolyLight" mana="90" cooldown="12">storm_ui_icon_uther_holylight.png</UtherHolyLight>
+      <UtherHolyRadiance name="Holy Radiance" desc="UtherHolyRadiance" mana="70" cooldown="12">storm_ui_icon_uther_holyradiance.png</UtherHolyRadiance>
+      <UtherHammerOfJustice name="Hammer of Justice" desc="UtherHammerofJustice" mana="40" cooldown="8">storm_ui_icon_uther_hammerofjustice.png</UtherHammerOfJustice>
+    </Basic>
+    <Heroic>
+      <UtherDivineIntervention name="Divine Shield" desc="UtherDivineShield" mana="80" cooldown="90">storm_ui_icon_uther_divineshield.png</UtherDivineIntervention>
+      <UtherDivineStorm name="Divine Storm" desc="UtherDivineStorm" mana="80" cooldown="80">storm_ui_icon_uther_divinestorm.png</UtherDivineStorm>
+    </Heroic>
+    <Trait>
+      <UtherEternalDevotion name="Devotion, Eternal Vanguard" desc="UtherEternalDevotion">storm_ui_icon_uther_eternaldevotion.png</UtherEternalDevotion>
+    </Trait>
+  </Abilities>
+  <ExtraAbilities>
+    <Basic parent="UtherEternalDevotion">
+      <UtherFlashofLight name="Flash of Light" desc="UtherFlashofLight" cooldown="1.5">storm_ui_icon_uther_flashoflight.png</UtherFlashofLight>
+    </Basic>
+  </ExtraAbilities>
+  <Talents>
+    <Level1>
+      <UtherHolyLightSilverTouch name="Silver Touch" desc="UtherHolyLightSilverTouch">storm_ui_icon_uther_holylight.png</UtherHolyLightSilverTouch>
+      <UtherMasteryWaveofLightHolyRadiance name="Wave of Light" desc="UtherHolyRadianceWaveofLightTalent">storm_ui_icon_uther_holyradiance.png</UtherMasteryWaveofLightHolyRadiance>
+      <UtherCombatStyleHammerOfTheLightbringer name="Hammer of the Lightbringer" generic="true" desc="UtherEternalDevotionHammerOfTheLightbringerTalent">storm_ui_icon_talent_autoattack_mana.png</UtherCombatStyleHammerOfTheLightbringer>
+    </Level1>
+    <Level4>
+      <UtherMasteryHolyShock name="Holy Shock" desc="UtherHolyLightHolyShockTalent">storm_ui_icon_uther_holylight.png</UtherMasteryHolyShock>
+      <UtherHammerOfJusticePursuitOfJustice name="Pursuit of Justice" desc="UtherHammerOfJusticePursuitOfJusticeTalent">storm_ui_icon_uther_hammerofjustice.png</UtherHammerOfJusticePursuitOfJustice>
+      <UtherHolyFire name="Holy Fire" desc="UtherHolyFireTalent">storm_ui_icon_uther_holyfire.png</UtherHolyFire>
+    </Level4>
+    <Level7>
+      <UtherEternalDevotionArmorOfFaith name="Armor of Faith" desc="UtherEternalDevotionArmorOfFaithTalent">storm_ui_icon_uther_holylight.png</UtherEternalDevotionArmorOfFaith>
+      <UtherEternalDevotionGuardianOfAncientKings name="Guardian of Ancient Kings" desc="UtherEternalDevotionGuardianOfAncientKingsTalent">storm_ui_icon_uther_eternaldevotion.png</UtherEternalDevotionGuardianOfAncientKings>
+      <UtherHandOfProtection name="Hand of Protection" generic="true" desc="UtherHandOfProtection" cooldown="90">storm_ui_icon_talent_cleanse.png</UtherHandOfProtection>
+    </Level7>
+    <Level10>
+      <UtherHeroicAbilityDivineShield ability="UtherDivineIntervention" />
+      <UtherHeroicAbilityDivineStorm ability="UtherDivineStorm" />
+    </Level10>
+    <Level13>
+      <UtherMasteryBlessedChampion name="Blessed Champion" desc="UtherEternalDevotionBlessedChampionTalent">storm_ui_icon_uther_holylight.png</UtherMasteryBlessedChampion>
+      <UtherHammerOfJusticeWellMet name="Well Met" desc="UtherHammerOfJusticeWellMetTalent">storm_ui_icon_uther_hammerofjustice.png</UtherHammerOfJusticeWellMet>
+      <GenericTalentSpellShield name="Spell Shield" generic="true" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.png</GenericTalentSpellShield>
+    </Level13>
+    <Level16>
+      <UtherBeaconOfLight name="Beacon of Light" desc="UtherBeaconOfLight">storm_ui_icon_uther_beaconoflight.png</UtherBeaconOfLight>
+      <UtherHolyRadianceTyrsDeliverance name="Tyr's Deliverance" desc="UtherHolyRadianceTyrsDeliveranceTalent">storm_ui_icon_uther_holyradiance.png</UtherHolyRadianceTyrsDeliverance>
+      <UtherMasteryBenediction name="Benediction" desc="UtherBenedictionHotbar" cooldown="60">storm_ui_icon_uther_benediction.png</UtherMasteryBenediction>
+    </Level16>
+    <Level20>
+      <UtherMasteryBulwarkOfLightDivineShield name="Bulwark of Light" desc="UtherDivineShieldBulwarkOfLightTalent">storm_ui_icon_uther_divineshield.png</UtherMasteryBulwarkOfLightDivineShield>
+      <UtherMasteryDivineHurricaneDivineStorm name="Divine Hurricane" desc="UtherDivineStormDivineHurricaneTalent">storm_ui_icon_uther_divinestorm.png</UtherMasteryDivineHurricaneDivineStorm>
+      <UtherMasteryRedemption name="Redemption" desc="UtherRedemptionTalent">storm_ui_icon_uther_eternaldevotion.png</UtherMasteryRedemption>
+      <UtherEternalDevotionDivineProtection name="Divine Protection" desc="UtherEternalDevotionDivineProtectionTalent">storm_ui_icon_uther_eternaldevotion_a.png</UtherEternalDevotionDivineProtection>
+    </Level20>
+  </Talents>
+</Uther>
