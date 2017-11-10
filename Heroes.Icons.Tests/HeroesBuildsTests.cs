@@ -56,13 +56,13 @@ namespace Heroes.Icons.Tests
                     if (heroRoles.Count > 1 && heroRoles[0] != HeroRole.Multiclass)
                         assertMessages.Add($"[{build}] Hero {hero} has multiple roles but first role is NOT Multiclass");
 
-                    if (!heroInfo.HeroPortrait.EndsWith($"{HeroPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.dds"))
+                    if (!heroInfo.HeroPortrait.EndsWith($"{HeroPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.png"))
                         assertMessages.Add($"[{build}] Hero portrait string not found for {hero}");
 
-                    if (!heroInfo.LoadingPortrait.EndsWith($"{LoadingPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.dds"))
+                    if (!heroInfo.LoadingPortrait.EndsWith($"{LoadingPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.png"))
                         assertMessages.Add($"[{build}] Loading portrait string not found for {hero}");
 
-                    if (!heroInfo.LeaderboardPortrait.EndsWith($"{LeaderboardPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.dds"))
+                    if (!heroInfo.LeaderboardPortrait.EndsWith($"{LeaderboardPortraitPrefix}{GetUniqueHeroName(heroInfo.ShortName.ToLowerInvariant())}.png"))
                         assertMessages.Add($"[{build}] Leaderboard portrait string not found for {hero}");
 
                     if (heroInfo.GetHeroPortrait() == null)

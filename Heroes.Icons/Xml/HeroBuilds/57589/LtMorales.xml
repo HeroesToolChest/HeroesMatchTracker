@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <LtMorales available="47479" name="Lt. Morales" attributeid="Medi" franchise="Starcraft" type="Ranged" difficulty="Medium" mana="Energy"
-             portrait="storm_ui_ingame_heroselect_btn_medic.dds" loading="storm_ui_ingame_hero_loadingscreen_medic.dds" leader="storm_ui_ingame_hero_leaderboard_medic.dds">
+             portrait="storm_ui_ingame_heroselect_btn_medic.png" loading="storm_ui_ingame_hero_loadingscreen_medic.png" leader="storm_ui_ingame_hero_leaderboard_medic.png">
     <Roles>Support</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <MedicCaduceusFeedback name="Caduceus Feedback" desc="MedicCaduceusFeedbackTalent" generic="true">storm_ui_icon_talent_autoattack_mana.dds</MedicCaduceusFeedback>
-        <MedicLifeSupport name="Life Support" desc="MedicLifeSupport">storm_ui_icon_medic_deployshield.dds</MedicLifeSupport>
-        <MedicClear name="Clear!" desc="MedicClearTalent">storm_ui_icon_medic_displacementgrenade.dds</MedicClear>
+        <MedicCaduceusFeedback name="Caduceus Feedback" desc="MedicCaduceusFeedbackTalent" generic="true">storm_ui_icon_talent_autoattack_mana.png</MedicCaduceusFeedback>
+        <MedicLifeSupport name="Life Support" desc="MedicLifeSupport">storm_ui_icon_medic_deployshield.png</MedicLifeSupport>
+        <MedicClear name="Clear!" desc="MedicClearTalent">storm_ui_icon_medic_displacementgrenade.png</MedicClear>
       </Level1>
       <Level4>
-        <MedicCellularReactor name="Cellular Reactor" desc="MedicCellularReactorTalent" cooldown="45">storm_temp_btn-upgrade-terran-moebiusreactor.dds</MedicCellularReactor>
-        <MedicTraumaTrigger name="Trauma Trigger" desc="MedicTraumaTriggerTalent">storm_ui_icon_medic_advancedblock.dds</MedicTraumaTrigger>
-        <MedicBlastShield name="Blast Shield" desc="MedicBlastShield">storm_ui_icon_medic_displacementgrenade.dds</MedicBlastShield>
+        <MedicCellularReactor name="Cellular Reactor" desc="MedicCellularReactorTalent" cooldown="45">storm_temp_btn-upgrade-terran-moebiusreactor.png</MedicCellularReactor>
+        <MedicTraumaTrigger name="Trauma Trigger" desc="MedicTraumaTriggerTalent">storm_ui_icon_medic_advancedblock.png</MedicTraumaTrigger>
+        <MedicBlastShield name="Blast Shield" desc="MedicBlastShield">storm_ui_icon_medic_displacementgrenade.png</MedicBlastShield>
       </Level4>
       <Level7>
-        <MedicPhysicalTherapy name="Physical Therapy" desc="MedicPhysicalTherapy">storm_ui_icon_medic_deployshield.dds</MedicPhysicalTherapy>
-        <MedicVanadiumPlating name="Vanadium Plating" desc="MedicVanadiumPlating">storm_ui_icon_medic_deployshield_b.dds</MedicVanadiumPlating>
-        <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguard">storm_ui_icon_medic_deployshield_c.dds</MedicProlongedSafeguard>
+        <MedicPhysicalTherapy name="Physical Therapy" desc="MedicPhysicalTherapy">storm_ui_icon_medic_deployshield.png</MedicPhysicalTherapy>
+        <MedicVanadiumPlating name="Vanadium Plating" desc="MedicVanadiumPlating">storm_ui_icon_medic_deployshield_b.png</MedicVanadiumPlating>
+        <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguard">storm_ui_icon_medic_deployshield_c.png</MedicProlongedSafeguard>
       </Level7>
       <Level10>
-        <MedicHeroicAbilityStimDrone name="Stim Drone" desc="MedicStimDrone" cooldown="90">storm_ui_icon_medic_stim.dds</MedicHeroicAbilityStimDrone>
-        <MedicHeroicAbilityMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship" cooldown="60">storm_ui_icon_medic_medivacdropship.dds</MedicHeroicAbilityMedivacDropship>
+        <MedicHeroicAbilityStimDrone name="Stim Drone" desc="MedicStimDrone" cooldown="90">storm_ui_icon_medic_stim.png</MedicHeroicAbilityStimDrone>
+        <MedicHeroicAbilityMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship" cooldown="60">storm_ui_icon_medic_medivacdropship.png</MedicHeroicAbilityMedivacDropship>
       </Level10>
       <Level13>
-        <MedicEMPGrenade name="EMP Grenade" desc="MedicEMPGrenadeTalent">storm_ui_icon_medic_displacementgrenade.dds</MedicEMPGrenade>
-        <MedicSystemShock name="System Shock" desc="MedicSystemShockTalent">storm_ui_icon_medic_displacementgrenade_b.dds</MedicSystemShock>
-        <MedicSecondOpinion name="Second Opinion" desc="MedicSecondOpinion">storm_ui_icon_medic_displacementgrenade_c.dds</MedicSecondOpinion>
+        <MedicEMPGrenade name="EMP Grenade" desc="MedicEMPGrenadeTalent">storm_ui_icon_medic_displacementgrenade.png</MedicEMPGrenade>
+        <MedicSystemShock name="System Shock" desc="MedicSystemShockTalent">storm_ui_icon_medic_displacementgrenade_b.png</MedicSystemShock>
+        <MedicSecondOpinion name="Second Opinion" desc="MedicSecondOpinion">storm_ui_icon_medic_displacementgrenade_c.png</MedicSecondOpinion>
       </Level13>
       <Level16>
-        <MedicExtendedCare name="Extended Care" desc="MedicExtendedCare">storm_ui_icon_medic_healingbeam.dds</MedicExtendedCare>
-        <MedicFirstResponder name="First Responder" desc="MedicFirstResponder">storm_ui_icon_medic_healingbeam_c.dds</MedicFirstResponder>
-        <MedicShieldSequencer name="Shield Sequencer" desc="MedicShieldSequencerTalent">storm_ui_icon_medic_deployshield.dds</MedicShieldSequencer>
+        <MedicExtendedCare name="Extended Care" desc="MedicExtendedCare">storm_ui_icon_medic_healingbeam.png</MedicExtendedCare>
+        <MedicFirstResponder name="First Responder" desc="MedicFirstResponder">storm_ui_icon_medic_healingbeam_c.png</MedicFirstResponder>
+        <MedicShieldSequencer name="Shield Sequencer" desc="MedicShieldSequencerTalent">storm_ui_icon_medic_deployshield.png</MedicShieldSequencer>
       </Level16>
       <Level20>
-        <MedicHyperactivity name="Hyperactivity" desc="MedicHyperactivity">storm_ui_icon_medic_stim.dds</MedicHyperactivity>
-        <MedicSafeZone name="Safe Zone" desc="MedicSafeZoneTalent">storm_ui_icon_medic_medivacdropship.dds</MedicSafeZone>
-        <MedicReinforcements name="Reinforcements" desc="MedicReinforcements" cooldown="30">storm_ui_icon_medic_medivacdropship_b.dds</MedicReinforcements>
-        <MedicCaduceusReactor2dot0 name="CaduceusReactor 2.0" desc="MedicCaduceusReactor20">storm_ui_icon_medic_caduceusreactor.dds</MedicCaduceusReactor2dot0>
+        <MedicHyperactivity name="Hyperactivity" desc="MedicHyperactivity">storm_ui_icon_medic_stim.png</MedicHyperactivity>
+        <MedicSafeZone name="Safe Zone" desc="MedicSafeZoneTalent">storm_ui_icon_medic_medivacdropship.png</MedicSafeZone>
+        <MedicReinforcements name="Reinforcements" desc="MedicReinforcements" cooldown="30">storm_ui_icon_medic_medivacdropship_b.png</MedicReinforcements>
+        <MedicCaduceusReactor2dot0 name="CaduceusReactor 2.0" desc="MedicCaduceusReactor20">storm_ui_icon_medic_caduceusreactor.png</MedicCaduceusReactor2dot0>
       </Level20>
   </Talents>
 </LtMorales>

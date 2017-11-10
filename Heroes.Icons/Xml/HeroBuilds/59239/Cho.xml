@@ -1,56 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Cho available="47479" attributeid="CCho" unit="HeroCho" franchise="Warcraft" type="Melee" difficulty="Medium" mana="None"
-      portrait="storm_ui_ingame_heroselect_btn_cho.dds" loading="storm_ui_ingame_hero_loadingscreen_cho.dds" leader="storm_ui_ingame_hero_leaderboard_cho.dds">
+      portrait="storm_ui_ingame_heroselect_btn_cho.png" loading="storm_ui_ingame_hero_loadingscreen_cho.png" leader="storm_ui_ingame_hero_leaderboard_cho.png">
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <ChoSurgingFistCast name="Surging Fist" desc="ChoSurgingFist" cooldown="12">storm_ui_icon_cho_moltensurge_a.dds</ChoSurgingFistCast>
-      <ChoConsumingBlaze name="Consuming Blaze" desc="ChoConsumingBlaze" cooldown="12">storm_ui_icon_cho_consumingflame.dds</ChoConsumingBlaze>
-      <ChoRuneBomb name="Rune Bomb" desc="ChoRuneBomb" cooldown="8">storm_ui_icon_cho_runebomb.dds</ChoRuneBomb>
+      <ChoSurgingFistCast name="Surging Fist" desc="ChoSurgingFist" cooldown="12">storm_ui_icon_cho_moltensurge_a.png</ChoSurgingFistCast>
+      <ChoConsumingBlaze name="Consuming Blaze" desc="ChoConsumingBlaze" cooldown="12">storm_ui_icon_cho_consumingflame.png</ChoConsumingBlaze>
+      <ChoRuneBomb name="Rune Bomb" desc="ChoRuneBomb" cooldown="8">storm_ui_icon_cho_runebomb.png</ChoRuneBomb>
     </Basic>
     <Heroic>
-      <ChoHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight" cooldown="15">storm_ui_icon_Cho_HammerofTwilight.dds</ChoHammerOfTwilight>
-      <ChoUpheaval name="Upheaval" desc="ChoUpheaval" cooldown="60">storm_ui_icon_Cho_Upheaval.dds</ChoUpheaval>
+      <ChoHammerOfTwilight name="Hammer of Twilight" desc="ChoHammerOfTwilight" cooldown="15">storm_ui_icon_Cho_HammerofTwilight.png</ChoHammerOfTwilight>
+      <ChoUpheaval name="Upheaval" desc="ChoUpheaval" cooldown="60">storm_ui_icon_Cho_Upheaval.png</ChoUpheaval>
     </Heroic>
     <Trait>
-      <ChoOgreHide name="Ogre Hide" desc="ChoOgreHideActivated" cooldown="5">storm_ui_icon_cho_ogrehide.dds</ChoOgreHide>
+      <ChoOgreHide name="Ogre Hide" desc="ChoOgreHideActivated" cooldown="5">storm_ui_icon_cho_ogrehide.png</ChoOgreHide>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ChoConsumingFire name="Consuming Fire" desc="ChoConsumingFire">storm_ui_icon_cho_consumingflame.dds</ChoConsumingFire>
-      <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.dds</ChoFuelForTheFlame>
-      <ChoCallousedHide name="Calloused Hide" desc="ChoCallousedHide">storm_ui_icon_cho_ogrehide.dds</ChoCallousedHide>
+      <ChoConsumingFire name="Consuming Fire" desc="ChoConsumingFire">storm_ui_icon_cho_consumingflame.png</ChoConsumingFire>
+      <ChoFuelForTheFlame name="Fuel for the Flame" desc="ChoFuelForTheFlameTalent">storm_ui_icon_cho_consumingflame_var1.png</ChoFuelForTheFlame>
+      <ChoCallousedHide name="Calloused Hide" desc="ChoCallousedHide">storm_ui_icon_cho_ogrehide.png</ChoCallousedHide>
     </Level1>
     <Level4>
-      <ChoUppercut name="Uppercut" desc="ChoUppercut">storm_ui_icon_cho_moltensurge_a.dds</ChoUppercut>
-      <ChoRollback name="Rollback" desc="ChoRollbackTalent">storm_ui_icon_cho_runebomb_var1.dds</ChoRollback>
-      <ChoSearedFlesh name="Seared Flesh" generic="true" desc="ChoSearedFleshTalent">storm_ui_icon_talent_autoattack_damage.dds</ChoSearedFlesh>
+      <ChoUppercut name="Uppercut" desc="ChoUppercut">storm_ui_icon_cho_moltensurge_a.png</ChoUppercut>
+      <ChoRollback name="Rollback" desc="ChoRollbackTalent">storm_ui_icon_cho_runebomb_var1.png</ChoRollback>
+      <ChoSearedFlesh name="Seared Flesh" generic="true" desc="ChoSearedFleshTalent">storm_ui_icon_talent_autoattack_damage.png</ChoSearedFlesh>
     </Level4>
     <Level7>
-      <ChoPowerSurge name="Power Surge" desc="ChoPowerSurgeTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoPowerSurge>
-      <ChoFirestarter name="Firestarter" desc="ChoFirestarter">storm_ui_icon_cho_consumingflame.dds</ChoFirestarter>
-      <ChoEnragedRegeneration name="Enraged Regeneration" desc="ChoEnragedRegeneration">storm_ui_icon_cho_ogrehide.dds</ChoEnragedRegeneration>
+      <ChoPowerSurge name="Power Surge" desc="ChoPowerSurgeTalent">storm_ui_icon_cho_moltensurge_a.png</ChoPowerSurge>
+      <ChoFirestarter name="Firestarter" desc="ChoFirestarter">storm_ui_icon_cho_consumingflame.png</ChoFirestarter>
+      <ChoEnragedRegeneration name="Enraged Regeneration" desc="ChoEnragedRegeneration">storm_ui_icon_cho_ogrehide.png</ChoEnragedRegeneration>
     </Level7>
     <Level10>
       <ChoHeroicAbilityHammerOfTwilight ability="ChoHammerOfTwilight" />
       <ChoHeroicAbilityUpheaval ability="ChoUpheaval" />
     </Level10>
     <Level13>
-      <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoFrenziedFists>
-      <ChoRunicFeedback name="Runic Feedback" desc="ChoRunicFeedbackTalent">storm_ui_icon_cho_runebomb.dds</ChoRunicFeedback>
-      <ChoRunedGauntlet name="Runed Gauntlet" generic="true" desc="ChoRunedGauntletTalent">storm_ui_icon_talent_autoattack_cooldown.dds</ChoRunedGauntlet>
+      <ChoFrenziedFists name="Frenzied Fists" desc="ChoFrenziedFistsTalent">storm_ui_icon_cho_moltensurge_a.png</ChoFrenziedFists>
+      <ChoRunicFeedback name="Runic Feedback" desc="ChoRunicFeedbackTalent">storm_ui_icon_cho_runebomb.png</ChoRunicFeedback>
+      <ChoRunedGauntlet name="Runed Gauntlet" generic="true" desc="ChoRunedGauntletTalent">storm_ui_icon_talent_autoattack_cooldown.png</ChoRunedGauntlet>
     </Level13>
     <Level16>
-      <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_cho_moltensurge_a.dds</ChoSurgingDash>
-      <ChoTwilightVeil name="Twilight Veil" generic="true" desc="ChoTwilightVeilTalent" cooldown="30">storm_ui_icon_talent_hardenedshield.dds</ChoTwilightVeil>
-      <ChoTalentMoltenBlock name="Molten Block" desc="ChoTalentMoltenBlock">storm_ui_icon_cho_moltenblock.dds</ChoTalentMoltenBlock>
+      <ChoSurgingDash name="Surging Dash" desc="ChoSurgingDashTalent">storm_ui_icon_cho_moltensurge_a.png</ChoSurgingDash>
+      <ChoTwilightVeil name="Twilight Veil" generic="true" desc="ChoTwilightVeilTalent" cooldown="30">storm_ui_icon_talent_hardenedshield.png</ChoTwilightVeil>
+      <ChoTalentMoltenBlock name="Molten Block" desc="ChoTalentMoltenBlock">storm_ui_icon_cho_moltenblock.png</ChoTalentMoltenBlock>
     </Level16>
     <Level20>
-      <ChoCthunsGift name="C'thun's Gift" desc="ChoCthunsGiftTalent">storm_ui_icon_Cho_HammerofTwilight.dds</ChoCthunsGift>
-      <ChoFavorOfTheOldGods name="Favor of the Old Gods" desc="ChoFavorOfTheOldGodsTalent">storm_ui_icon_Cho_Upheaval.dds</ChoFavorOfTheOldGods>
-      <ChoTheWillofCho name="The Will of Cho" desc="ChoTheWillofCho">storm_ui_icon_cho_ogrehide.dds</ChoTheWillofCho>
-      <ChoHourofTwilight name="Hour of Twilight" desc="ChoHourofTwilight">storm_ui_icon_gall_psychoticbreak.dds</ChoHourofTwilight>
+      <ChoCthunsGift name="C'thun's Gift" desc="ChoCthunsGiftTalent">storm_ui_icon_Cho_HammerofTwilight.png</ChoCthunsGift>
+      <ChoFavorOfTheOldGods name="Favor of the Old Gods" desc="ChoFavorOfTheOldGodsTalent">storm_ui_icon_Cho_Upheaval.png</ChoFavorOfTheOldGods>
+      <ChoTheWillofCho name="The Will of Cho" desc="ChoTheWillofCho">storm_ui_icon_cho_ogrehide.png</ChoTheWillofCho>
+      <ChoHourofTwilight name="Hour of Twilight" desc="ChoHourofTwilight">storm_ui_icon_gall_psychoticbreak.png</ChoHourofTwilight>
     </Level20>
   </Talents>
 </Cho>

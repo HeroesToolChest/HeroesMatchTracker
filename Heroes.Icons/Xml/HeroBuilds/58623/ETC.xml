@@ -1,57 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ETC available="47479" name="E.T.C." attributeid="L90E" unit="HeroL90ETC" franchise="Warcraft" type="Melee" difficulty="Easy"
-      portrait="storm_ui_ingame_heroselect_btn_etc.dds" loading="storm_ui_ingame_hero_loadingscreen_etc.dds" leader="storm_ui_ingame_hero_leaderboard_etc.dds">
+      portrait="storm_ui_ingame_heroselect_btn_etc.png" loading="storm_ui_ingame_hero_loadingscreen_etc.png" leader="storm_ui_ingame_hero_leaderboard_etc.png">
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <L90ETCPowerslide name="Powerslide" desc="L90ETCPowerslide" mana="60" cooldown="12">storm_ui_icon_etc_powerslide.dds</L90ETCPowerslide>
-      <L90ETCFaceMelt name="Face Melt" desc="L90ETCFaceMelt" mana="50" cooldown="10">storm_ui_icon_etc_facemelt.dds</L90ETCFaceMelt>
-      <L90ETCGuitarSolo name="Guitar Solo" desc="L90ETCGuitarSolo" mana="40" cooldown="8">storm_ui_icon_etc_guitarsolo.dds</L90ETCGuitarSolo>
+      <L90ETCPowerslide name="Powerslide" desc="L90ETCPowerslide" mana="60" cooldown="12">storm_ui_icon_etc_powerslide.png</L90ETCPowerslide>
+      <L90ETCFaceMelt name="Face Melt" desc="L90ETCFaceMelt" mana="50" cooldown="10">storm_ui_icon_etc_facemelt.png</L90ETCFaceMelt>
+      <L90ETCGuitarSolo name="Guitar Solo" desc="L90ETCGuitarSolo" mana="40" cooldown="8">storm_ui_icon_etc_guitarsolo.png</L90ETCGuitarSolo>
     </Basic>
     <Heroic>
-      <L90ETCMoshPit name="Mosh Pit" desc="L90ETCMoshPit" mana="100" cooldown="120">storm_ui_icon_ETC_MoshPit.dds</L90ETCMoshPit>
-      <L90ETCStageDive name="Stage Dive" desc="L90ETCStageDive" mana="100" cooldown="75">storm_ui_icon_ETC_StageDive.dds</L90ETCStageDive>
+      <L90ETCMoshPit name="Mosh Pit" desc="L90ETCMoshPit" mana="100" cooldown="120">storm_ui_icon_ETC_MoshPit.png</L90ETCMoshPit>
+      <L90ETCStageDive name="Stage Dive" desc="L90ETCStageDive" mana="100" cooldown="75">storm_ui_icon_ETC_StageDive.png</L90ETCStageDive>
     </Heroic>
     <Trait>
-      <L90ETCRockstar name="Rockstar" desc="L90ETCRockstar">storm_ui_icon_etc_rockstar.dds</L90ETCRockstar>
+      <L90ETCRockstar name="Rockstar" desc="L90ETCRockstar">storm_ui_icon_etc_rockstar.png</L90ETCRockstar>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ETCMasteryGuitarHero name="Guitar Hero" desc="L90ETCGuitarSoloGuitarHeroTalent">storm_ui_icon_etc_guitarsolo.dds</ETCMasteryGuitarHero>
-      <ETCMasteryProgRock name="Prog Rock" desc="ETCProgRockTalent">storm_ui_icon_etc_guitarsolo_a.dds</ETCMasteryProgRock>
-      <ETCBlockParty name="Block Party" desc="ETCBlockParty">storm_ui_icon_etc_rockstar.dds</ETCBlockParty>
+      <ETCMasteryGuitarHero name="Guitar Hero" desc="L90ETCGuitarSoloGuitarHeroTalent">storm_ui_icon_etc_guitarsolo.png</ETCMasteryGuitarHero>
+      <ETCMasteryProgRock name="Prog Rock" desc="ETCProgRockTalent">storm_ui_icon_etc_guitarsolo_a.png</ETCMasteryProgRock>
+      <ETCBlockParty name="Block Party" desc="ETCBlockParty">storm_ui_icon_etc_rockstar.png</ETCBlockParty>
     </Level1>
     <Level4>
-      <ETCCrowdSurfer name="Crowd Surfer" desc="ETCCrowdSurfer">storm_ui_icon_etc_powerslide.dds</ETCCrowdSurfer>
-      <L90ETCMasteryFaceMeltLoudSpeakers name="Loud Speakers" desc="L90ETCFaceMeltLoudSpeakersTalent">storm_ui_icon_etc_facemelt.dds</L90ETCMasteryFaceMeltLoudSpeakers>
-      <ETCMasterySpeedMetal name="Speed Metal" desc="ETCSpeedMetalTalent">storm_ui_icon_etc_speedmetal.dds</ETCMasterySpeedMetal>
+      <ETCCrowdSurfer name="Crowd Surfer" desc="ETCCrowdSurfer">storm_ui_icon_etc_powerslide.png</ETCCrowdSurfer>
+      <L90ETCMasteryFaceMeltLoudSpeakers name="Loud Speakers" desc="L90ETCFaceMeltLoudSpeakersTalent">storm_ui_icon_etc_facemelt.png</L90ETCMasteryFaceMeltLoudSpeakers>
+      <ETCMasterySpeedMetal name="Speed Metal" desc="ETCSpeedMetalTalent">storm_ui_icon_etc_speedmetal.png</ETCMasterySpeedMetal>
     </Level4>
     <Level7>
-      <L90ETCMasteryFaceMeltPinballWizard name="Pinball Wizard" desc="ETCPinballWizardTalent">storm_ui_icon_etc_facemelt.dds</L90ETCMasteryFaceMeltPinballWizard>
-      <ETCCombatStyleEchoPedal name="Echo Pedal" desc="L90ETCRockstarEchoPedalTalent">storm_ui_icon_etc_echopedal.dds</ETCCombatStyleEchoPedal>
-      <ETCMasteryHammeron name="Hammer-on" generic="true" desc="ETCHammeronTalent">storm_ui_icon_talent_autoattack_damage.dds</ETCMasteryHammeron>
+      <L90ETCMasteryFaceMeltPinballWizard name="Pinball Wizard" desc="ETCPinballWizardTalent">storm_ui_icon_etc_facemelt.png</L90ETCMasteryFaceMeltPinballWizard>
+      <ETCCombatStyleEchoPedal name="Echo Pedal" desc="L90ETCRockstarEchoPedalTalent">storm_ui_icon_etc_echopedal.png</ETCCombatStyleEchoPedal>
+      <ETCMasteryHammeron name="Hammer-on" generic="true" desc="ETCHammeronTalent">storm_ui_icon_talent_autoattack_damage.png</ETCMasteryHammeron>
     </Level7>
     <Level10>
       <ETCHeroicAbilityMoshPit ability="L90ETCMoshPit" />
       <ETCHeroicAbilityStageDive ability="L90ETCStageDive" />
     </Level10>
     <Level13>
-      <ETCMasteryMicCheck name="Mic Check" desc="ETCMicCheckTalent">storm_ui_icon_etc_facemelt.dds</ETCMasteryMicCheck>
-      <ETCMasteryEncore name="Encore" desc="ETCEncoreTalent">storm_ui_icon_etc_facemelt_a.dds</ETCMasteryEncore>
-      <ETCMasteryFaceSmelt name="Face Smelt" desc="L90ETCFaceMeltFaceSmeltTalent">storm_ui_icon_etc_facemelt_b.dds</ETCMasteryFaceSmelt>
+      <ETCMasteryMicCheck name="Mic Check" desc="ETCMicCheckTalent">storm_ui_icon_etc_facemelt.png</ETCMasteryMicCheck>
+      <ETCMasteryEncore name="Encore" desc="ETCEncoreTalent">storm_ui_icon_etc_facemelt_a.png</ETCMasteryEncore>
+      <ETCMasteryFaceSmelt name="Face Smelt" desc="L90ETCFaceMeltFaceSmeltTalent">storm_ui_icon_etc_facemelt_b.png</ETCMasteryFaceSmelt>
     </Level13>
     <Level16>
-      <ETCMasteryShowStopper name="Show Stopper" desc="ETCShowStopperTalent">storm_ui_icon_etc_powerslide.dds</ETCMasteryShowStopper>
-      <ETCMasteryGuitarSoloAggressiveShredding name="Aggressive Shredding" desc="ETCGuitarSoloAggressiveShreddingTalent">storm_ui_icon_etc_guitarsolo.dds</ETCMasteryGuitarSoloAggressiveShredding>
-      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.dds</GenericTalentImposingPresence>
+      <ETCMasteryShowStopper name="Show Stopper" desc="ETCShowStopperTalent">storm_ui_icon_etc_powerslide.png</ETCMasteryShowStopper>
+      <ETCMasteryGuitarSoloAggressiveShredding name="Aggressive Shredding" desc="ETCGuitarSoloAggressiveShreddingTalent">storm_ui_icon_etc_guitarsolo.png</ETCMasteryGuitarSoloAggressiveShredding>
+      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.png</GenericTalentImposingPresence>
     </Level16>
     <Level20>
-      <L90ETCMasteryMoshPitTourBus name="Tour Bus" desc="L90ETCMoshPitTourBusTalent">storm_ui_icon_ETC_MoshPit.dds</L90ETCMasteryMoshPitTourBus>
-      <L90ETCMasteryStageDiveCrowdPleaser name="Crowd Pleaser" desc="ETCStageDiveCrowdPleaserTalent">storm_ui_icon_ETC_StageDive.dds</L90ETCMasteryStageDiveCrowdPleaser>
-      <L90ETCMasteryDeathMetal name="Death Metal" desc="L90ETCDeathMetalTalent">storm_ui_icon_etc_moshpit_a.dds</L90ETCMasteryDeathMetal>
-      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
-      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+      <L90ETCMasteryMoshPitTourBus name="Tour Bus" desc="L90ETCMoshPitTourBusTalent">storm_ui_icon_ETC_MoshPit.png</L90ETCMasteryMoshPitTourBus>
+      <L90ETCMasteryStageDiveCrowdPleaser name="Crowd Pleaser" desc="ETCStageDiveCrowdPleaserTalent">storm_ui_icon_ETC_StageDive.png</L90ETCMasteryStageDiveCrowdPleaser>
+      <L90ETCMasteryDeathMetal name="Death Metal" desc="L90ETCDeathMetalTalent">storm_ui_icon_etc_moshpit_a.png</L90ETCMasteryDeathMetal>
+      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.png</GenericTalentStormShield>
+      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.png</GenericTalentFlashoftheStorms>
     </Level20>
   </Talents>
 </ETC>

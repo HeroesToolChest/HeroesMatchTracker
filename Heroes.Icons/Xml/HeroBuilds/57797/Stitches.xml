@@ -1,47 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Stitches available="47479" attributeid="Stit" unit="HeroStitches" franchise="Warcraft" type="Melee" difficulty="Medium"
-            portrait="storm_ui_ingame_heroselect_btn_stitches.dds" loading="storm_ui_ingame_hero_loadingscreen_stitches.dds" leader="storm_ui_ingame_hero_leaderboard_stitches.dds">
+            portrait="storm_ui_ingame_heroselect_btn_stitches.png" loading="storm_ui_ingame_hero_loadingscreen_stitches.png" leader="storm_ui_ingame_hero_leaderboard_stitches.png">
     <Roles>Warrior</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <StitchesMasteryChewYourFood name="Chew Your Food" desc="StitchesDevourChewYourFoodTalent">storm_ui_icon_stitches_devour.dds</StitchesMasteryChewYourFood>
-        <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.dds</GenericDampenMagic>
-        <StitchesHungryforMore name="Hungry for More" generic="true" desc="StitchesHungryforMore">storm_ui_icon_talent_regenerationmaster.dds</StitchesHungryforMore>
-        <StitchesMasteryHeavySlam name="Heavy Slam" desc="StitchesSlamHeavySlamTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryHeavySlam>
+        <StitchesMasteryChewYourFood name="Chew Your Food" desc="StitchesDevourChewYourFoodTalent">storm_ui_icon_stitches_devour.png</StitchesMasteryChewYourFood>
+        <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.png</GenericDampenMagic>
+        <StitchesHungryforMore name="Hungry for More" generic="true" desc="StitchesHungryforMore">storm_ui_icon_talent_regenerationmaster.png</StitchesHungryforMore>
+        <StitchesMasteryHeavySlam name="Heavy Slam" desc="StitchesSlamHeavySlamTalent">storm_ui_icon_stitches_slam.png</StitchesMasteryHeavySlam>
       </Level1>
       <Level4>
-        <GenericTalentAmplifiedHealing name="Amplified Healing" desc="GenericAmplifiedHealingTalent">storm_ui_icon_talent_amplifiedhealing.dds</GenericTalentAmplifiedHealing>
-        <StitchesRestorativeFumes name="Restorative Fumes" desc="StitchesRestorativeFumes">storm_ui_icon_stitches_acidcloud.dds</StitchesRestorativeFumes>
-        <StitchesMasteryPutridGroundSlam name="Putrid Ground" desc="StitchesSlamPutridGroundTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryPutridGroundSlam>
+        <GenericTalentAmplifiedHealing name="Amplified Healing" desc="GenericAmplifiedHealingTalent">storm_ui_icon_talent_amplifiedhealing.png</GenericTalentAmplifiedHealing>
+        <StitchesRestorativeFumes name="Restorative Fumes" desc="StitchesRestorativeFumes">storm_ui_icon_stitches_acidcloud.png</StitchesRestorativeFumes>
+        <StitchesMasteryPutridGroundSlam name="Putrid Ground" desc="StitchesSlamPutridGroundTalent">storm_ui_icon_stitches_slam.png</StitchesMasteryPutridGroundSlam>
       </Level4>
       <Level7>
-        <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor" desc="StitchesDevourSavorTheFlavorTalent">storm_ui_icon_stitches_devour.dds</StitchesMasterySavorTheFlavorDevour>
-        <StitchesMasteryLastBiteDevour name="Last Bite" desc="StitchesDevourLastBiteTalent">storm_ui_icon_stitches_devour_var1.dds</StitchesMasteryLastBiteDevour>
-        <StitchesCombatStyleTenderizer name="Tenderizer" generic="true" desc="StitchesVileGasTenderizerTalent">storm_ui_icon_talent_autoattack_slow.dds</StitchesCombatStyleTenderizer>
-        <StitchesToxicGas name="Toxic Gas" desc="StitchesVileGasToxicGasTalent">storm_ui_icon_stitches_acidcloud.dds</StitchesToxicGas>
+        <StitchesMasterySavorTheFlavorDevour name="Savor the Flavor" desc="StitchesDevourSavorTheFlavorTalent">storm_ui_icon_stitches_devour.png</StitchesMasterySavorTheFlavorDevour>
+        <StitchesMasteryLastBiteDevour name="Last Bite" desc="StitchesDevourLastBiteTalent">storm_ui_icon_stitches_devour_var1.png</StitchesMasteryLastBiteDevour>
+        <StitchesCombatStyleTenderizer name="Tenderizer" generic="true" desc="StitchesVileGasTenderizerTalent">storm_ui_icon_talent_autoattack_slow.png</StitchesCombatStyleTenderizer>
+        <StitchesToxicGas name="Toxic Gas" desc="StitchesVileGasToxicGasTalent">storm_ui_icon_stitches_acidcloud.png</StitchesToxicGas>
       </Level7>
       <Level10>
-        <StitchesHeroicAbilityPutridBile name="Putrid Bile" desc="StitchesPutridBile" mana="75" cooldown="60">storm_ui_icon_stitches_putridbile.dds</StitchesHeroicAbilityPutridBile>
-        <StitchesHeroicAbilityGorge name="Gorge" desc="StitchesGorge" mana="70" cooldown="60">storm_ui_icon_stitches_cannibalize.dds</StitchesHeroicAbilityGorge>
+        <StitchesHeroicAbilityPutridBile name="Putrid Bile" desc="StitchesPutridBile" mana="75" cooldown="60">storm_ui_icon_stitches_putridbile.png</StitchesHeroicAbilityPutridBile>
+        <StitchesHeroicAbilityGorge name="Gorge" desc="StitchesGorge" mana="70" cooldown="60">storm_ui_icon_stitches_cannibalize.png</StitchesHeroicAbilityGorge>
       </Level10>
       <Level13>
-        <StitchesFleaBag name="Flea Bag" generic="true" desc="StitchesFleaBag">storm_ui_icon_Talent_Relentless.dds</StitchesFleaBag>
-        <StitchesMasteryMegaSmashSlam name="Mega Smash" desc="StitchesSlamMegaSmashTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryMegaSmashSlam>
-        <StitchesMasteryIndigestionDevour name="Indigestion" desc="StitchesDevourIndigestionTalent">storm_ui_icon_stitches_devour.dds</StitchesMasteryIndigestionDevour>
+        <StitchesFleaBag name="Flea Bag" generic="true" desc="StitchesFleaBag">storm_ui_icon_Talent_Relentless.png</StitchesFleaBag>
+        <StitchesMasteryMegaSmashSlam name="Mega Smash" desc="StitchesSlamMegaSmashTalent">storm_ui_icon_stitches_slam.png</StitchesMasteryMegaSmashSlam>
+        <StitchesMasteryIndigestionDevour name="Indigestion" desc="StitchesDevourIndigestionTalent">storm_ui_icon_stitches_devour.png</StitchesMasteryIndigestionDevour>
       </Level13>
       <Level16>
-        <StitchesMasteryPulverizeSlam name="Pulverize" desc="StitchesSlamPulverizeTalent">storm_ui_icon_stitches_slam.dds</StitchesMasteryPulverizeSlam>
-        <StitchesMasteryFishingHook name="Fishing Hook" desc="StitchesHookFishingHookTalent">storm_ui_icon_stitches_hook.dds</StitchesMasteryFishingHook>
-        <StitchesMasteryShishKabobHook name="Shish Kabob" desc="StitchesHookShishKabobTalent">storm_ui_icon_stitches_hook_var1.dds</StitchesMasteryShishKabobHook>
-        <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin" cooldown="60">storm_ui_icon_talent_stoneskin.dds</GenericTalentStoneskin>
+        <StitchesMasteryPulverizeSlam name="Pulverize" desc="StitchesSlamPulverizeTalent">storm_ui_icon_stitches_slam.png</StitchesMasteryPulverizeSlam>
+        <StitchesMasteryFishingHook name="Fishing Hook" desc="StitchesHookFishingHookTalent">storm_ui_icon_stitches_hook.png</StitchesMasteryFishingHook>
+        <StitchesMasteryShishKabobHook name="Shish Kabob" desc="StitchesHookShishKabobTalent">storm_ui_icon_stitches_hook_var1.png</StitchesMasteryShishKabobHook>
+        <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin" cooldown="60">storm_ui_icon_talent_stoneskin.png</GenericTalentStoneskin>
       </Level16>
       <Level20>
-        <StitchesPotentBile name="Potent Bile" desc="StitchesPotentBile">storm_ui_icon_stitches_putridbile.dds</StitchesPotentBile>
-        <StitchesMasteryHungryHungryStitchesGorge name="Hungry Hungry Stitches" desc="StitchesGorgeHungryHungryStitchesTalent">storm_ui_icon_stitches_cannibalize.dds</StitchesMasteryHungryHungryStitchesGorge>
-        <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent" cooldown="60">storm_ui_icon_Talent_HardenedShield.dds</GenericTalentHardenedShield>
-        <StitchesCannibalize name="Cannibalize" generic="true" desc="StitchesCannibalize">storm_ui_icon_talent_autoattack_heal.dds</StitchesCannibalize>
+        <StitchesPotentBile name="Potent Bile" desc="StitchesPotentBile">storm_ui_icon_stitches_putridbile.png</StitchesPotentBile>
+        <StitchesMasteryHungryHungryStitchesGorge name="Hungry Hungry Stitches" desc="StitchesGorgeHungryHungryStitchesTalent">storm_ui_icon_stitches_cannibalize.png</StitchesMasteryHungryHungryStitchesGorge>
+        <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent" cooldown="60">storm_ui_icon_Talent_HardenedShield.png</GenericTalentHardenedShield>
+        <StitchesCannibalize name="Cannibalize" generic="true" desc="StitchesCannibalize">storm_ui_icon_talent_autoattack_heal.png</StitchesCannibalize>
       </Level20>
   </Talents>
 </Stitches>

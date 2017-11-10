@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Arthas available="47479" attributeid="Arth" franchise="Warcraft" type="Melee" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_arthas.dds" loading="storm_ui_ingame_hero_loadingscreen_arthas.dds" leader="storm_ui_ingame_hero_leaderboard_arthas.dds">
+          portrait="storm_ui_ingame_heroselect_btn_arthas.png" loading="storm_ui_ingame_hero_loadingscreen_arthas.png" leader="storm_ui_ingame_hero_leaderboard_arthas.png">
     <Roles>Warrior</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger" desc="ArthasEternalHungerFrostmourneHungersTalent">storm_ui_icon_arthas_frostmournehungers_off.dds</ArthasMasteryEternalHungerFrostmourneHungers>
-        <ArthasMasteryFrostPresenceHowlingBlast name="Frost Presence" desc="ArthasFrostPresenceHowlingBlastTalent">storm_ui_icon_arthas_howlingblast.dds</ArthasMasteryFrostPresenceHowlingBlast>
-        <ArthasRime name="Rime" generic="true" desc="ArthasRime">storm_ui_icon_talent_block.dds</ArthasRime>
+        <ArthasMasteryEternalHungerFrostmourneHungers name="Eternal Hunger" desc="ArthasEternalHungerFrostmourneHungersTalent">storm_ui_icon_arthas_frostmournehungers_off.png</ArthasMasteryEternalHungerFrostmourneHungers>
+        <ArthasMasteryFrostPresenceHowlingBlast name="Frost Presence" desc="ArthasFrostPresenceHowlingBlastTalent">storm_ui_icon_arthas_howlingblast.png</ArthasMasteryFrostPresenceHowlingBlast>
+        <ArthasRime name="Rime" generic="true" desc="ArthasRime">storm_ui_icon_talent_block.png</ArthasRime>
       </Level1>
       <Level4>
-        <ArthasMasteryFrozenWastesFrozenTempest name="Frozen Wastes" desc="ArthasFrozenWastesFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryFrozenWastesFrozenTempest>
-        <ArthasIcyTalons name="Icy Talons" desc="ArthasIcyTalons">storm_ui_icon_arthas_frosentempest_a.dds</ArthasIcyTalons>
-        <ArthasDeathlord name="Deathlord" desc="ArthasDeathlord">storm_ui_icon_arthas_deathcoil.dds</ArthasDeathlord>>
+        <ArthasMasteryFrozenWastesFrozenTempest name="Frozen Wastes" desc="ArthasFrozenWastesFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.png</ArthasMasteryFrozenWastesFrozenTempest>
+        <ArthasIcyTalons name="Icy Talons" desc="ArthasIcyTalons">storm_ui_icon_arthas_frosentempest_a.png</ArthasIcyTalons>
+        <ArthasDeathlord name="Deathlord" desc="ArthasDeathlord">storm_ui_icon_arthas_deathcoil.png</ArthasDeathlord>>
       </Level4>
       <Level7>
-        <ArthasRuneTap name="Rune Tap" desc="ArthasRuneTapTalent">storm_ui_icon_arthas_runetap.dds</ArthasRuneTap>
-        <ArthasMasteryImmortalCoilDeathCoil name="Immortal Coil" desc="ArthasImmortalCoilDeathCoilTalent">storm_ui_icon_Arthas_DeathCoil.dds</ArthasMasteryImmortalCoilDeathCoil>
-        <ArthasIceboundFortitude name="Icebound Fortitude" desc="ArthasIceboundFortitudeTalent" cooldown="35">storm_ui_icon_Talent_Icebound_fortitude.dds</ArthasIceboundFortitude>
+        <ArthasRuneTap name="Rune Tap" desc="ArthasRuneTapTalent">storm_ui_icon_arthas_runetap.png</ArthasRuneTap>
+        <ArthasMasteryImmortalCoilDeathCoil name="Immortal Coil" desc="ArthasImmortalCoilDeathCoilTalent">storm_ui_icon_Arthas_DeathCoil.png</ArthasMasteryImmortalCoilDeathCoil>
+        <ArthasIceboundFortitude name="Icebound Fortitude" desc="ArthasIceboundFortitudeTalent" cooldown="35">storm_ui_icon_Talent_Icebound_fortitude.png</ArthasIceboundFortitude>
       </Level7>
       <Level10>
-        <ArthasHeroicAbilityArmyoftheDead name="Army of the Dead" desc="ArthasArmyOfTheDead" mana="80" cooldown="80">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasHeroicAbilityArmyoftheDead>
-        <ArthasHeroicAbilitySummonSindragosa name="Summon Sindragosa" desc="ArthasSummonSindragosa" mana="100" cooldown="100">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasHeroicAbilitySummonSindragosa>
+        <ArthasHeroicAbilityArmyoftheDead name="Army of the Dead" desc="ArthasArmyOfTheDead" mana="80" cooldown="80">storm_ui_icon_Arthas_ArmyOfTheDead.png</ArthasHeroicAbilityArmyoftheDead>
+        <ArthasHeroicAbilitySummonSindragosa name="Summon Sindragosa" desc="ArthasSummonSindragosa" mana="100" cooldown="100">storm_ui_icon_Arthas_SummonSindragosa.png</ArthasHeroicAbilitySummonSindragosa>
       </Level10>
       <Level13>
-        <ArthasShatteredArmor name="Shattered Armor" desc="ArthasShatteredArmor">storm_ui_icon_arthas_howlingblast.dds</ArthasShatteredArmor>
-        <ArthasMasteryFrostStrikeFrostmourneHungers name="Frost Strike" desc="ArthasFrostStrikeFrostmourneHungersTalent">storm_ui_icon_arthas_frostmournehungers_off.dds</ArthasMasteryFrostStrikeFrostmourneHungers>
-        <ArthasMasteryBitingColdFrozenTempest name="Biting Cold" desc="ArthasBitingColdFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryBitingColdFrozenTempest>
+        <ArthasShatteredArmor name="Shattered Armor" desc="ArthasShatteredArmor">storm_ui_icon_arthas_howlingblast.png</ArthasShatteredArmor>
+        <ArthasMasteryFrostStrikeFrostmourneHungers name="Frost Strike" desc="ArthasFrostStrikeFrostmourneHungersTalent">storm_ui_icon_arthas_frostmournehungers_off.png</ArthasMasteryFrostStrikeFrostmourneHungers>
+        <ArthasMasteryBitingColdFrozenTempest name="Biting Cold" desc="ArthasBitingColdFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.png</ArthasMasteryBitingColdFrozenTempest>
       </Level13>
       <Level16>
-        <ArthasMasteryRemorselessWinterFrozenTempest name="Remorseless Winter" desc="ArthasRemorselessWinterFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.dds</ArthasMasteryRemorselessWinterFrozenTempest>
-        <ArthasMasteryFrostmourneFeedsFrostmourneHungers name="Frostmourne Feeds" desc="ArthasFrostmourneFeedsFrostmourneHungersTalents">storm_ui_icon_Arthas_FrostmourneHungers_Off.dds</ArthasMasteryFrostmourneFeedsFrostmourneHungers>
-        <ArthasMasteryEmbraceDeathDeathCoil name="Embrace Death" desc="ArthasEmbraceDeathDeathCoilTalent">storm_ui_icon_arthas_deathcoil.dds</ArthasMasteryEmbraceDeathDeathCoil>
+        <ArthasMasteryRemorselessWinterFrozenTempest name="Remorseless Winter" desc="ArthasRemorselessWinterFrozenTempestTalent">storm_ui_icon_arthas_frosentempest.png</ArthasMasteryRemorselessWinterFrozenTempest>
+        <ArthasMasteryFrostmourneFeedsFrostmourneHungers name="Frostmourne Feeds" desc="ArthasFrostmourneFeedsFrostmourneHungersTalents">storm_ui_icon_Arthas_FrostmourneHungers_Off.png</ArthasMasteryFrostmourneFeedsFrostmourneHungers>
+        <ArthasMasteryEmbraceDeathDeathCoil name="Embrace Death" desc="ArthasEmbraceDeathDeathCoilTalent">storm_ui_icon_arthas_deathcoil.png</ArthasMasteryEmbraceDeathDeathCoil>
       </Level16>
       <Level20>
-        <ArthasMasteryLegionOfNorthrendArmyoftheDead name="Legion of Northrend" desc="ArthasLegionOfNorthrendArmyOfTheDeadTalent">storm_ui_icon_Arthas_ArmyOfTheDead.dds</ArthasMasteryLegionOfNorthrendArmyoftheDead>
-        <ArthasMasteryAbsoluteZeroSummonSindragosa name="Absolute Zero" desc="ArthasAbsoluteZeroSummonSindragosaTalent">storm_ui_icon_Arthas_SummonSindragosa.dds</ArthasMasteryAbsoluteZeroSummonSindragosa>
-        <ArthasDeathsAdvance name="Death's Advance" desc="ArthasDeathsAdvanceTalent" cooldown="50">storm_ui_icon_talent_deaths_advance.dds</ArthasDeathsAdvance>
-        <ArthasAntiMagicShell name="Anti-Magic Shell" desc="ArthasAntiMagicShellTalent" cooldown="60">storm_temp_war3_btnantimagicshell.dds</ArthasAntiMagicShell>
+        <ArthasMasteryLegionOfNorthrendArmyoftheDead name="Legion of Northrend" desc="ArthasLegionOfNorthrendArmyOfTheDeadTalent">storm_ui_icon_Arthas_ArmyOfTheDead.png</ArthasMasteryLegionOfNorthrendArmyoftheDead>
+        <ArthasMasteryAbsoluteZeroSummonSindragosa name="Absolute Zero" desc="ArthasAbsoluteZeroSummonSindragosaTalent">storm_ui_icon_Arthas_SummonSindragosa.png</ArthasMasteryAbsoluteZeroSummonSindragosa>
+        <ArthasDeathsAdvance name="Death's Advance" desc="ArthasDeathsAdvanceTalent" cooldown="50">storm_ui_icon_talent_deaths_advance.png</ArthasDeathsAdvance>
+        <ArthasAntiMagicShell name="Anti-Magic Shell" desc="ArthasAntiMagicShellTalent" cooldown="60">storm_temp_war3_btnantimagicshell.png</ArthasAntiMagicShell>
       </Level20>
   </Talents>
 </Arthas>

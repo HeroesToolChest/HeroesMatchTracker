@@ -1,56 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Junkrat available="58623" attributeid="Junk" unit="HeroJunkrat" franchise="Overwatch" type="Ranged" difficulty="Medium" mana="None"
-          portrait="storm_ui_ingame_heroselect_btn_junkrat.dds" loading="storm_ui_ingame_hero_loadingscreen_junkrat.dds" leader="storm_ui_ingame_hero_leaderboard_junkrat.dds">
+          portrait="storm_ui_ingame_heroselect_btn_junkrat.png" loading="storm_ui_ingame_hero_loadingscreen_junkrat.png" leader="storm_ui_ingame_hero_leaderboard_junkrat.png">
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <JunkratFragLauncher name="Frag Launcher" desc="JunkratFragLauncher" cooldown="12" ch-cooldown="true">storm_ui_icon_junkrat_frag_launcher.dds</JunkratFragLauncher>
-      <JunkratConcussionMine name="Concussion Mine" desc="JunkratConcussionMine" cooldown="16">storm_ui_icon_junkrat_concussion_mine.dds</JunkratConcussionMine>
-      <JunkratSteelTrap name="Steel Trap" desc="JunkratSteelTrap" cooldown="12">storm_ui_icon_junkrat_steel_trap.dds</JunkratSteelTrap>
+      <JunkratFragLauncher name="Frag Launcher" desc="JunkratFragLauncher" cooldown="12" ch-cooldown="true">storm_ui_icon_junkrat_frag_launcher.png</JunkratFragLauncher>
+      <JunkratConcussionMine name="Concussion Mine" desc="JunkratConcussionMine" cooldown="16">storm_ui_icon_junkrat_concussion_mine.png</JunkratConcussionMine>
+      <JunkratSteelTrap name="Steel Trap" desc="JunkratSteelTrap" cooldown="12">storm_ui_icon_junkrat_steel_trap.png</JunkratSteelTrap>
     </Basic>
     <Heroic>
-      <JunkratRIPTire name="RIP-Tire" desc="JunkratRIPTire" cooldown="80">storm_ui_icon_junkrat_rip_tire.dds</JunkratRIPTire>
-      <JunkratRocketRide name="Rocket Ride" desc="JunkratRocketRide" cooldown="100">storm_ui_icon_junkrat_rocket_ride.dds</JunkratRocketRide>
+      <JunkratRIPTire name="RIP-Tire" desc="JunkratRIPTire" cooldown="80">storm_ui_icon_junkrat_rip_tire.png</JunkratRIPTire>
+      <JunkratRocketRide name="Rocket Ride" desc="JunkratRocketRide" cooldown="100">storm_ui_icon_junkrat_rocket_ride.png</JunkratRocketRide>
     </Heroic>
     <Trait>
-      <JunkratTotalMayhem name="Total Mayhem" desc="JunkratTotalMayhem">storm_ui_icon_junkrat_bomb_pack.dds</JunkratTotalMayhem>
+      <JunkratTotalMayhem name="Total Mayhem" desc="JunkratTotalMayhem">storm_ui_icon_junkrat_bomb_pack.png</JunkratTotalMayhem>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <JunkratFragLauncherPutSomeEnglishOnIt name="Put Some English On It" desc="JunkratPutSomeEnglishOnItFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_c.dds</JunkratFragLauncherPutSomeEnglishOnIt>
-      <JunkratFragLauncherExtraWoundTimers name="Extra-Wound Timers" desc="JunkratExtraWoundTimersFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_b.dds</JunkratFragLauncherExtraWoundTimers>
-      <JunkratFragLauncherBouncyBouncy name="Bouncy Bouncy" desc="JunkratBouncyBouncyFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_a.dds</JunkratFragLauncherBouncyBouncy>
+      <JunkratFragLauncherPutSomeEnglishOnIt name="Put Some English On It" desc="JunkratPutSomeEnglishOnItFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_c.png</JunkratFragLauncherPutSomeEnglishOnIt>
+      <JunkratFragLauncherExtraWoundTimers name="Extra-Wound Timers" desc="JunkratExtraWoundTimersFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_b.png</JunkratFragLauncherExtraWoundTimers>
+      <JunkratFragLauncherBouncyBouncy name="Bouncy Bouncy" desc="JunkratBouncyBouncyFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_a.png</JunkratFragLauncherBouncyBouncy>
     </Level1>
     <Level4>
-      <JunkratFragLauncherTasteForExplosions name="Taste For Explosions" desc="JunkratTasteForExplosionsFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher.dds</JunkratFragLauncherTasteForExplosions>
-      <JunkratConcussionMineBonzerHits name="Bonzer Hits" desc="JunkratBonzerHitsConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.dds</JunkratConcussionMineBonzerHits>
-      <JunkratSteelTrapGottaTrapEmAll name="Gotta Trap 'Em All!" desc="JunkratGottaTrapEmAllSteelTrapTalent">storm_ui_icon_junkrat_steel_trap.dds</JunkratSteelTrapGottaTrapEmAll>
+      <JunkratFragLauncherTasteForExplosions name="Taste For Explosions" desc="JunkratTasteForExplosionsFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher.png</JunkratFragLauncherTasteForExplosions>
+      <JunkratConcussionMineBonzerHits name="Bonzer Hits" desc="JunkratBonzerHitsConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.png</JunkratConcussionMineBonzerHits>
+      <JunkratSteelTrapGottaTrapEmAll name="Gotta Trap 'Em All!" desc="JunkratGottaTrapEmAllSteelTrapTalent">storm_ui_icon_junkrat_steel_trap.png</JunkratSteelTrapGottaTrapEmAll>
     </Level4>
     <Level7>
-      <JunkratFragLauncherTrickyShuffles name="Tricky Shuffles" desc="JunkratTrickyShufflesFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher.dds</JunkratFragLauncherTrickyShuffles>
-      <JunkratSteelTrapBigAs name="Big As" desc="JunkratBigAsSteelTrapTalent">storm_ui_icon_junkrat_steel_trap_a.dds</JunkratSteelTrapBigAs>
-      <JunkratSteelTrapStickyWicket name="Sticky Wicket" desc="JunkratStickyWicketSteelTrapTalent">storm_ui_icon_junkrat_steel_trap_b.dds</JunkratSteelTrapStickyWicket>
+      <JunkratFragLauncherTrickyShuffles name="Tricky Shuffles" desc="JunkratTrickyShufflesFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher.png</JunkratFragLauncherTrickyShuffles>
+      <JunkratSteelTrapBigAs name="Big As" desc="JunkratBigAsSteelTrapTalent">storm_ui_icon_junkrat_steel_trap_a.png</JunkratSteelTrapBigAs>
+      <JunkratSteelTrapStickyWicket name="Sticky Wicket" desc="JunkratStickyWicketSteelTrapTalent">storm_ui_icon_junkrat_steel_trap_b.png</JunkratSteelTrapStickyWicket>
     </Level7>
     <Level10>
       <JunkratHeroicAbilityRIPTire ability="JunkratRIPTire" />
       <JunkratHeroicRocketRide ability="JunkratRocketRide" />
     </Level10>
     <Level13>
-      <JunkratConcussionMineRipperAir name="Ripper Air" desc="JunkratRipperAirConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.dds</JunkratConcussionMineRipperAir>
-      <JunkratConcussionMineBoggedDown name="Bogged Down" desc="JunkratBoggedDownConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine_a.dds</JunkratConcussionMineBoggedDown>
-      <JunkratSteelTrapChatteringTeeth name="Chattering Teeth" desc="JunkratChatteringTeethSteelTrapTalent">storm_ui_icon_junkrat_steel_trap.dds</JunkratSteelTrapChatteringTeeth>
+      <JunkratConcussionMineRipperAir name="Ripper Air" desc="JunkratRipperAirConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.png</JunkratConcussionMineRipperAir>
+      <JunkratConcussionMineBoggedDown name="Bogged Down" desc="JunkratBoggedDownConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine_a.png</JunkratConcussionMineBoggedDown>
+      <JunkratSteelTrapChatteringTeeth name="Chattering Teeth" desc="JunkratChatteringTeethSteelTrapTalent">storm_ui_icon_junkrat_steel_trap.png</JunkratSteelTrapChatteringTeeth>
     </Level13>
     <Level16>
-      <JunkratFragLauncherBurstFire name="Burst Fire" desc="JunkratBurstFireFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_f.dds</JunkratFragLauncherBurstFire>
-      <JunkratFragLauncherEndlessNades name="Endless Nades" desc="JunkratEndlessNadesFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_e.dds</JunkratFragLauncherEndlessNades>
-      <JunkratSpreadVolley name="Spread Volley" desc="JunkratSpreadVolleyFragLauncherTalent" cooldown="30">storm_ui_icon_junkrat_frag_launcher_d.dds</JunkratSpreadVolley>
+      <JunkratFragLauncherBurstFire name="Burst Fire" desc="JunkratBurstFireFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_f.png</JunkratFragLauncherBurstFire>
+      <JunkratFragLauncherEndlessNades name="Endless Nades" desc="JunkratEndlessNadesFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_e.png</JunkratFragLauncherEndlessNades>
+      <JunkratSpreadVolley name="Spread Volley" desc="JunkratSpreadVolleyFragLauncherTalent" cooldown="30">storm_ui_icon_junkrat_frag_launcher_d.png</JunkratSpreadVolley>
     </Level16>
     <Level20>
-      <JunkratRIPTireExtraOomph name="Extra Oomph" desc="JunkratExtraOomphRIPTireTalent">storm_ui_icon_junkrat_rip_tire.dds</JunkratRIPTireExtraOomph>
-      <JunkratRocketRidePuckishScamp name="Puckish Scamp" desc="JunkratPuckishScampRocketRideTalent">storm_ui_icon_junkrat_rocket_ride.dds</JunkratRocketRidePuckishScamp>
-      <JunkratFragLauncherCannonball name="Cannonball!" desc="JunkratCannonballFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_g.dds</JunkratFragLauncherCannonball>
-      <JunkratConcussionMineBOOMPOW name="BOOM POW" desc="JunkratBOOMPOWConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.dds</JunkratConcussionMineBOOMPOW>
+      <JunkratRIPTireExtraOomph name="Extra Oomph" desc="JunkratExtraOomphRIPTireTalent">storm_ui_icon_junkrat_rip_tire.png</JunkratRIPTireExtraOomph>
+      <JunkratRocketRidePuckishScamp name="Puckish Scamp" desc="JunkratPuckishScampRocketRideTalent">storm_ui_icon_junkrat_rocket_ride.png</JunkratRocketRidePuckishScamp>
+      <JunkratFragLauncherCannonball name="Cannonball!" desc="JunkratCannonballFragLauncherTalent">storm_ui_icon_junkrat_frag_launcher_g.png</JunkratFragLauncherCannonball>
+      <JunkratConcussionMineBOOMPOW name="BOOM POW" desc="JunkratBOOMPOWConcussionMineTalent">storm_ui_icon_junkrat_concussion_mine.png</JunkratConcussionMineBOOMPOW>
     </Level20>
   </Talents>
 </Junkrat>

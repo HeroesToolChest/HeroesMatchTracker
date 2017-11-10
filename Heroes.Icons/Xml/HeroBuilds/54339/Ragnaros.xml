@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Ragnaros available="48760" attributeid="Ragn" franchise="Warcraft" type="Melee" difficulty="Medium"
-            portrait="storm_ui_ingame_heroselect_btn_ragnaros.dds" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.dds" leader="storm_ui_ingame_hero_leaderboard_ragnaros.dds">
+            portrait="storm_ui_ingame_heroselect_btn_ragnaros.png" loading="storm_ui_ingame_hero_loadingscreen_ragnaros.png" leader="storm_ui_ingame_hero_leaderboard_ragnaros.png">
     <Roles>Assassin</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <RagnarosEmpowerSulfurasSulfurasHungers name="Sulfuras Hungers" desc="RagnarosEmpowerSulfurasSulfurasHungers">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasSulfurasHungers>
-        <RagnarosLivingMeteorShiftingMeteor name="Shifting Meteor" desc="RagnarosLivingMeteorShiftingMeteor">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorShiftingMeteor>
-        <RagnarosBlastWaveEngulfingFlame name="Engulfing Flame" desc="RagnarosBlastWaveEngulfingFlame">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveEngulfingFlame>
+        <RagnarosEmpowerSulfurasSulfurasHungers name="Sulfuras Hungers" desc="RagnarosEmpowerSulfurasSulfurasHungers">storm_ui_icon_ragnaros_empowersulfuras.png</RagnarosEmpowerSulfurasSulfurasHungers>
+        <RagnarosLivingMeteorShiftingMeteor name="Shifting Meteor" desc="RagnarosLivingMeteorShiftingMeteor">storm_ui_icon_ragnaros_livingmeteor.png</RagnarosLivingMeteorShiftingMeteor>
+        <RagnarosBlastWaveEngulfingFlame name="Engulfing Flame" desc="RagnarosBlastWaveEngulfingFlame">storm_ui_icon_ragnaros_blastwave.png</RagnarosBlastWaveEngulfingFlame>
       </Level1>
       <Level4>
-        <RagnarosLivingMeteorFireWard name="Fire Ward" desc="RagnarosLivingMeteorFireWard">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorFireWard>
-        <RagnarosBlastWaveSlowBurn name="Slow Burn" desc="RagnarosBlastWaveSlowBurn">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveSlowBurn>
-        <RagnarosCatchingFire name="Catching Fire" desc="RagnarosCatchingFireTalent">storm_ui_icon_ragnaros_catchingfire.dds</RagnarosCatchingFire>
+        <RagnarosLivingMeteorFireWard name="Fire Ward" desc="RagnarosLivingMeteorFireWard">storm_ui_icon_ragnaros_livingmeteor.png</RagnarosLivingMeteorFireWard>
+        <RagnarosBlastWaveSlowBurn name="Slow Burn" desc="RagnarosBlastWaveSlowBurn">storm_ui_icon_ragnaros_blastwave.png</RagnarosBlastWaveSlowBurn>
+        <RagnarosCatchingFire name="Catching Fire" desc="RagnarosCatchingFireTalent">storm_ui_icon_ragnaros_catchingfire.png</RagnarosCatchingFire>
       </Level4>
       <Level7>
-        <RagnarosEmpowerSulfurasHandOfRagnaros name="Hand of Ragnaros" desc="RagnarosEmpowerSulfurasHandOfRagnaros">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasHandOfRagnaros>
-        <RagnarosLivingMeteorMoltenPower name="Molten Power" desc="RagnarosLivingMeteorMoltenPower">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorMoltenPower>
-        <RagnarosBlastWaveSuperheated name="Superheated" desc="RagnarosBlastWaveSuperheated">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveSuperheated>
+        <RagnarosEmpowerSulfurasHandOfRagnaros name="Hand of Ragnaros" desc="RagnarosEmpowerSulfurasHandOfRagnaros">storm_ui_icon_ragnaros_empowersulfuras.png</RagnarosEmpowerSulfurasHandOfRagnaros>
+        <RagnarosLivingMeteorMoltenPower name="Molten Power" desc="RagnarosLivingMeteorMoltenPower">storm_ui_icon_ragnaros_livingmeteor.png</RagnarosLivingMeteorMoltenPower>
+        <RagnarosBlastWaveSuperheated name="Superheated" desc="RagnarosBlastWaveSuperheated">storm_ui_icon_ragnaros_blastwave.png</RagnarosBlastWaveSuperheated>
       </Level7>
       <Level10>
-        <RagnarosSulfurasSmash name="Sulfuras Smash" desc="RagnarosSulfurasSmash">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmash>
-        <RagnarosLavaWave name="Lava Wave" desc="RagnarosLavaWaveTargetPoint">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWave>
+        <RagnarosSulfurasSmash name="Sulfuras Smash" desc="RagnarosSulfurasSmash">storm_ui_icon_ragnaros_sulfurassmash.png</RagnarosSulfurasSmash>
+        <RagnarosLavaWave name="Lava Wave" desc="RagnarosLavaWaveTargetPoint">storm_ui_icon_ragnaros_lavawave.png</RagnarosLavaWave>
       </Level10>
       <Level13>
-        <RagnarosEmpowerSulfurasCauterizeWounds name="Cauterize Wounds" desc="RagnarosEmpowerSulfurasCauterizeWounds">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasCauterizeWounds>
-        <RagnarosBlastWaveTemperedFlame name="Tempered Flame" desc="RagnarosBlastWaveTemperedFlame">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveTemperedFlame>
-        <RagnarosResilientFlame name="Resilient Flame" generic="true" desc="RagnarosResilientFlame">storm_ui_icon_talent_resistance.dds</RagnarosResilientFlame>
+        <RagnarosEmpowerSulfurasCauterizeWounds name="Cauterize Wounds" desc="RagnarosEmpowerSulfurasCauterizeWounds">storm_ui_icon_ragnaros_empowersulfuras.png</RagnarosEmpowerSulfurasCauterizeWounds>
+        <RagnarosBlastWaveTemperedFlame name="Tempered Flame" desc="RagnarosBlastWaveTemperedFlame">storm_ui_icon_ragnaros_blastwave.png</RagnarosBlastWaveTemperedFlame>
+        <RagnarosResilientFlame name="Resilient Flame" generic="true" desc="RagnarosResilientFlame">storm_ui_icon_talent_resistance.png</RagnarosResilientFlame>
       </Level13>
       <Level16>
-        <RagnarosEmpowerSulfurasGiantScorcher name="Giant Scorcher" desc="RagnarosEmpowerSulfurasGiantScorcher">storm_ui_icon_ragnaros_empowersulfuras.dds</RagnarosEmpowerSulfurasGiantScorcher>
-        <RagnarosLivingMeteorMeteorBomb name="Meteor Bomb" desc="RagnarosLivingMeteorMeteorBomb">storm_ui_icon_ragnaros_livingmeteor.dds</RagnarosLivingMeteorMeteorBomb>
-        <RagnarosBlastWaveBlastEcho name="Blast Echo" desc="RagnarosBlastWaveBlastEcho">storm_ui_icon_ragnaros_blastwave.dds</RagnarosBlastWaveBlastEcho>
+        <RagnarosEmpowerSulfurasGiantScorcher name="Giant Scorcher" desc="RagnarosEmpowerSulfurasGiantScorcher">storm_ui_icon_ragnaros_empowersulfuras.png</RagnarosEmpowerSulfurasGiantScorcher>
+        <RagnarosLivingMeteorMeteorBomb name="Meteor Bomb" desc="RagnarosLivingMeteorMeteorBomb">storm_ui_icon_ragnaros_livingmeteor.png</RagnarosLivingMeteorMeteorBomb>
+        <RagnarosBlastWaveBlastEcho name="Blast Echo" desc="RagnarosBlastWaveBlastEcho">storm_ui_icon_ragnaros_blastwave.png</RagnarosBlastWaveBlastEcho>
       </Level16>
       <Level20>
-        <RagnarosSulfurasSmashFlamesOfSulfuron name="Flames of Sulfuron" desc="RagnarosSulfurasSmashFlamesOfSulfuron">storm_ui_icon_ragnaros_sulfurassmash.dds</RagnarosSulfurasSmashFlamesOfSulfuron>
-        <RagnarosLavaWaveLavaSurge name="Lava Surge" desc="RagnarosLavaWaveLavaSurge">storm_ui_icon_ragnaros_lavawave.dds</RagnarosLavaWaveLavaSurge>
-        <RagnarosMoltenCoreHeroicDifficulty name="Heroic Difficulty" desc="RagnarosMoltenCoreHeroicDifficulty">storm_ui_icon_ragnaros_moltencore.dds</RagnarosMoltenCoreHeroicDifficulty>
-        <RagnarosSubmerge name="Submerge" desc="RagnarosSubmerge">storm_ui_icon_ragnaros_submerge.dds</RagnarosSubmerge>
+        <RagnarosSulfurasSmashFlamesOfSulfuron name="Flames of Sulfuron" desc="RagnarosSulfurasSmashFlamesOfSulfuron">storm_ui_icon_ragnaros_sulfurassmash.png</RagnarosSulfurasSmashFlamesOfSulfuron>
+        <RagnarosLavaWaveLavaSurge name="Lava Surge" desc="RagnarosLavaWaveLavaSurge">storm_ui_icon_ragnaros_lavawave.png</RagnarosLavaWaveLavaSurge>
+        <RagnarosMoltenCoreHeroicDifficulty name="Heroic Difficulty" desc="RagnarosMoltenCoreHeroicDifficulty">storm_ui_icon_ragnaros_moltencore.png</RagnarosMoltenCoreHeroicDifficulty>
+        <RagnarosSubmerge name="Submerge" desc="RagnarosSubmerge">storm_ui_icon_ragnaros_submerge.png</RagnarosSubmerge>
       </Level20>
   </Talents>
 </Ragnaros>

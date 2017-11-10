@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <LiLi available="47479" name="Li Li" attributeid="LiLi" franchise="Warcraft" type="Ranged" difficulty="Easy"
-        portrait="storm_ui_ingame_heroselect_btn_lili.dds" loading="storm_ui_ingame_hero_loadingscreen_lili.dds" leader="storm_ui_ingame_hero_leaderboard_lili.dds">
+        portrait="storm_ui_ingame_heroselect_btn_lili.png" loading="storm_ui_ingame_hero_loadingscreen_lili.png" leader="storm_ui_ingame_hero_leaderboard_lili.png">
     <Roles>Support</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.dds</GenericTalentConjurersPursuit>
-        <LiLiMasteryHealingBrewProToss name="Pro Toss" desc="LiLiProTossTalent">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewProToss>
-        <LiLiMasteryCloudSerpentTimelessCreature name="Timeless Creature" desc="LiLiCloudSerpentTimelessCreatureTalent">storm_ui_icon_Lili_CloudSerpent.dds</LiLiMasteryCloudSerpentTimelessCreature>
-        <LiLiMasteryBlindingWindGaleForce name="Gale Force" desc="LiLiBlindingWindGaleForceTalent">storm_ui_icon_Lili_BlindingWind.dds</LiLiMasteryBlindingWindGaleForce>
+        <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.png</GenericTalentConjurersPursuit>
+        <LiLiMasteryHealingBrewProToss name="Pro Toss" desc="LiLiProTossTalent">storm_ui_icon_Lili_HealingBrew.png</LiLiMasteryHealingBrewProToss>
+        <LiLiMasteryCloudSerpentTimelessCreature name="Timeless Creature" desc="LiLiCloudSerpentTimelessCreatureTalent">storm_ui_icon_Lili_CloudSerpent.png</LiLiMasteryCloudSerpentTimelessCreature>
+        <LiLiMasteryBlindingWindGaleForce name="Gale Force" desc="LiLiBlindingWindGaleForceTalent">storm_ui_icon_Lili_BlindingWind.png</LiLiMasteryBlindingWindGaleForce>
       </Level1>
       <Level4>
-        <GenericTalentHealingWard name="Healing Ward" desc="GenericHealingWardTalent">storm_ui_icon_talent_healingward.dds</GenericTalentHealingWard>
-        <LiLiMasteryCloudSerpentMendingSerpent name="Mending Serpent" desc="LiLiMendingSerpentTalent">storm_ui_icon_Lili_CloudSerpent.dds</LiLiMasteryCloudSerpentMendingSerpent>
-        <LiLiMasteryBlindingWindMassVortex name="Mass Vortex" desc="LiLiBlindingWindMassVortexTalent">storm_ui_icon_Lili_BlindingWind.dds</LiLiMasteryBlindingWindMassVortex>
-        <LiLiMasteryBlindingWindLingeringBlind name="Lingering Blind" desc="LiLiBlindingWindLingeringBlindTalent">storm_ui_icon_Lili_BlindingWind_A.dds</LiLiMasteryBlindingWindLingeringBlind>
+        <GenericTalentHealingWard name="Healing Ward" desc="GenericHealingWardTalent">storm_ui_icon_talent_healingward.png</GenericTalentHealingWard>
+        <LiLiMasteryCloudSerpentMendingSerpent name="Mending Serpent" desc="LiLiMendingSerpentTalent">storm_ui_icon_Lili_CloudSerpent.png</LiLiMasteryCloudSerpentMendingSerpent>
+        <LiLiMasteryBlindingWindMassVortex name="Mass Vortex" desc="LiLiBlindingWindMassVortexTalent">storm_ui_icon_Lili_BlindingWind.png</LiLiMasteryBlindingWindMassVortex>
+        <LiLiMasteryBlindingWindLingeringBlind name="Lingering Blind" desc="LiLiBlindingWindLingeringBlindTalent">storm_ui_icon_Lili_BlindingWind_A.png</LiLiMasteryBlindingWindLingeringBlind>
       </Level4>
       <Level7>
-        <LiLiMasteryHealingBrewPitchPerfect name="Pitch Perfect" desc="LiLiPitchPerfectTalent">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewPitchPerfect>
-        <LiLiMasteryHealingBrewTheGoodStuff name="The Good Stuff" desc="LiLiHealingBrewTheGoodStuffTalent">storm_ui_icon_Lili_HealingBrew_A.dds</LiLiMasteryHealingBrewTheGoodStuff>
-        <LiLiMasteryCloudSerpentLightningSerpent name="Lightning Serpent" desc="LiLiCloudSerpentLightningSerpentTalent">storm_ui_icon_Lili_CloudSerpent.dds</LiLiMasteryCloudSerpentLightningSerpent>
-        <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.dds</GenericTalentCleanse>
+        <LiLiMasteryHealingBrewPitchPerfect name="Pitch Perfect" desc="LiLiPitchPerfectTalent">storm_ui_icon_Lili_HealingBrew.png</LiLiMasteryHealingBrewPitchPerfect>
+        <LiLiMasteryHealingBrewTheGoodStuff name="The Good Stuff" desc="LiLiHealingBrewTheGoodStuffTalent">storm_ui_icon_Lili_HealingBrew_A.png</LiLiMasteryHealingBrewTheGoodStuff>
+        <LiLiMasteryCloudSerpentLightningSerpent name="Lightning Serpent" desc="LiLiCloudSerpentLightningSerpentTalent">storm_ui_icon_Lili_CloudSerpent.png</LiLiMasteryCloudSerpentLightningSerpent>
+        <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">storm_ui_icon_talent_cleanse.png</GenericTalentCleanse>
       </Level7>
       <Level10>
-        <LiLiHeroicAbilityJugof1000Cups name="Jug of 1,000 Cups" desc="LiLiJugof1000Cups">storm_ui_icon_lili_jugofathousandcups.dds</LiLiHeroicAbilityJugof1000Cups>
-        <LiLiHeroicAbilityWaterDragon name="Water Dragon" desc="LiLiWaterDragon">storm_ui_icon_lili_waterdragon.dds</LiLiHeroicAbilityWaterDragon>
+        <LiLiHeroicAbilityJugof1000Cups name="Jug of 1,000 Cups" desc="LiLiJugof1000Cups">storm_ui_icon_lili_jugofathousandcups.png</LiLiHeroicAbilityJugof1000Cups>
+        <LiLiHeroicAbilityWaterDragon name="Water Dragon" desc="LiLiWaterDragon">storm_ui_icon_lili_waterdragon.png</LiLiHeroicAbilityWaterDragon>
       </Level10>
       <Level13>
-        <LiLiMasteryFastFeetElusiveFeet name="Elusive Feet" desc="LiLiFastFeetElusiveFeetTalent">storm_ui_icon_lili_fastfeet.dds</LiLiMasteryFastFeetElusiveFeet>
-        <LiLiMasteryBlindingWindHinderingWinds name="Hindering Winds" desc="LiLiBlindingWindHinderingWindsTalent">storm_ui_icon_Lili_BlindingWind.dds</LiLiMasteryBlindingWindHinderingWinds>
-        <LiLiMasteryBlindingWindSurgingWinds name="Surging Winds" desc="LiLiSurgingWindsTalent">storm_ui_icon_Lili_BlindingWind_A.dds</LiLiMasteryBlindingWindSurgingWinds>
-        <GenericTalentShrinkRay name="Shrink Ray" desc="GenericShrinkRayTalent">storm_ui_icon_talent_shrinkray.dds</GenericTalentShrinkRay>
+        <LiLiMasteryFastFeetElusiveFeet name="Elusive Feet" desc="LiLiFastFeetElusiveFeetTalent">storm_ui_icon_lili_fastfeet.png</LiLiMasteryFastFeetElusiveFeet>
+        <LiLiMasteryBlindingWindHinderingWinds name="Hindering Winds" desc="LiLiBlindingWindHinderingWindsTalent">storm_ui_icon_Lili_BlindingWind.png</LiLiMasteryBlindingWindHinderingWinds>
+        <LiLiMasteryBlindingWindSurgingWinds name="Surging Winds" desc="LiLiSurgingWindsTalent">storm_ui_icon_Lili_BlindingWind_A.png</LiLiMasteryBlindingWindSurgingWinds>
+        <GenericTalentShrinkRay name="Shrink Ray" desc="GenericShrinkRayTalent">storm_ui_icon_talent_shrinkray.png</GenericTalentShrinkRay>
       </Level13>
       <Level16>
-        <LiLiMasteryShakeItOff name="Shake It Off" desc="LiLiShakeItOffTalent">storm_ui_icon_Lili_ShakeitOff.dds</LiLiMasteryShakeItOff>
-        <LiLiMasteryFastFeetSafetySprint name="Safety Sprint" desc="LiLiSafetySprintTalent">storm_ui_icon_lili_fastfeet.dds</LiLiMasteryFastFeetSafetySprint>
-        <LiLiMasteryHealingBrewTwoForOne name="Two For One" desc="LiLiHealingBrewTwoForOneTalent">storm_ui_icon_Lili_HealingBrew.dds</LiLiMasteryHealingBrewTwoForOne>
-        <LiLiMasteryCloudSerpentSerpentSidekick name="Serpent Sidekick" desc="LiLiSerpentSidekickTalent">storm_ui_icon_Lili_CloudSerpent.dds</LiLiMasteryCloudSerpentSerpentSidekick>
+        <LiLiMasteryShakeItOff name="Shake It Off" desc="LiLiShakeItOffTalent">storm_ui_icon_Lili_ShakeitOff.png</LiLiMasteryShakeItOff>
+        <LiLiMasteryFastFeetSafetySprint name="Safety Sprint" desc="LiLiSafetySprintTalent">storm_ui_icon_lili_fastfeet.png</LiLiMasteryFastFeetSafetySprint>
+        <LiLiMasteryHealingBrewTwoForOne name="Two For One" desc="LiLiHealingBrewTwoForOneTalent">storm_ui_icon_Lili_HealingBrew.png</LiLiMasteryHealingBrewTwoForOne>
+        <LiLiMasteryCloudSerpentSerpentSidekick name="Serpent Sidekick" desc="LiLiSerpentSidekickTalent">storm_ui_icon_Lili_CloudSerpent.png</LiLiMasteryCloudSerpentSerpentSidekick>
       </Level16>
       <Level20>
-        <LiLiMasteryJugof1000CupsJugof1000000Cups name="Jug of 1,000,000 Cups" desc="LiLiJugof1000CupsJugof1000000CupsTalent">storm_ui_icon_lili_jugofathousandcups.dds</LiLiMasteryJugof1000CupsJugof1000000Cups>
-        <LiLiMasteryWaterDragonDoubleDragon name="Double Dragon" desc="LiLiWaterDragonDoubleDragonTalent">storm_ui_icon_Lili_WaterDragon.dds</LiLiMasteryWaterDragonDoubleDragon>
-        <LiLiMasteryKungFuHustle name="Kung Fu Hustle" desc="LiLiKungFuHustleTalent">storm_ui_icon_lili_fastfeet.dds</LiLiMasteryKungFuHustle>
-        <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.dds</GenericTalentStormShield>
-        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.dds</GenericTalentFlashoftheStorms>
+        <LiLiMasteryJugof1000CupsJugof1000000Cups name="Jug of 1,000,000 Cups" desc="LiLiJugof1000CupsJugof1000000CupsTalent">storm_ui_icon_lili_jugofathousandcups.png</LiLiMasteryJugof1000CupsJugof1000000Cups>
+        <LiLiMasteryWaterDragonDoubleDragon name="Double Dragon" desc="LiLiWaterDragonDoubleDragonTalent">storm_ui_icon_Lili_WaterDragon.png</LiLiMasteryWaterDragonDoubleDragon>
+        <LiLiMasteryKungFuHustle name="Kung Fu Hustle" desc="LiLiKungFuHustleTalent">storm_ui_icon_lili_fastfeet.png</LiLiMasteryKungFuHustle>
+        <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">storm_ui_icon_Talent_StormShield.png</GenericTalentStormShield>
+        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.png</GenericTalentFlashoftheStorms>
       </Level20>
   </Talents>
 </LiLi>

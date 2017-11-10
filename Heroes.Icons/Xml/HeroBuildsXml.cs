@@ -330,8 +330,8 @@ namespace Heroes.Icons.Xml
 
         private string SetHeroTalentString(string hero, string fileName, bool isGenericTalent)
         {
-            if (!(Path.GetExtension(fileName) != ".dds" || Path.GetExtension(fileName) != ".png"))
-                throw new HeroesIconException($"Image file does not have .dds or .png extension [{fileName}]");
+            if (!string.IsNullOrEmpty(fileName) && Path.GetExtension(fileName) != ".png")
+                throw new HeroesIconException($"Image file does not have .png extension [{fileName}]");
 
             if (!isGenericTalent)
                 return SetImageStreamString($"{TalentFolderName}.{hero}", fileName.ToLowerInvariant());
@@ -665,7 +665,7 @@ namespace Heroes.Icons.Xml
                 charge = ability.Tooltip.IsChargeCooldown.ToString();
                 custom = ability.Tooltip.Custom;
 
-                icon = $"{ability.Icon.Split('.')[ability.Icon.Split('.').Length - 2]}.dds";
+                icon = $"{ability.Icon.Split('.')[ability.Icon.Split('.').Length - 2]}.png";
             }
 
             if (reader["name"] != null) realName = reader["name"];

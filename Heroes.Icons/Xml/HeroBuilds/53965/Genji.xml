@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
   <Genji available="52860" attributeid="Genj" franchise="Overwatch" type="Ranged" difficulty="Hard"
-         portrait="storm_ui_ingame_heroselect_btn_genji.dds" loading="storm_ui_ingame_hero_loadingscreen_genji.dds" leader="storm_ui_ingame_hero_leaderboard_genji.dds">
+         portrait="storm_ui_ingame_heroselect_btn_genji.png" loading="storm_ui_ingame_hero_loadingscreen_genji.png" leader="storm_ui_ingame_hero_leaderboard_genji.png">
     <Roles>Assassin</Roles>
     <Abilities>
     </Abilities>
     <Talents>
       <Level1>
-        <GenjiSwiftStrikeSwiftAsTheWind name="Swift as the Wind" desc="GenjiSwiftStrikeSwiftAsTheWind">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrikeSwiftAsTheWind>
-        <GenjiCyberAgilityAgileDismount name="Agile Dismount" desc="GenjiCyberAgilityAgileDismount">storm_ui_icon_genji_cyberagility.dds</GenjiCyberAgilityAgileDismount>
-        <GenjiCyberAgilityPathfinder name="Pathfinder" desc="GenjiCyberAgilityPathfinder">storm_ui_icon_genji_cyberagility_a.dds</GenjiCyberAgilityPathfinder>
+        <GenjiSwiftStrikeSwiftAsTheWind name="Swift as the Wind" desc="GenjiSwiftStrikeSwiftAsTheWind">storm_ui_icon_genji_swiftstrike.png</GenjiSwiftStrikeSwiftAsTheWind>
+        <GenjiCyberAgilityAgileDismount name="Agile Dismount" desc="GenjiCyberAgilityAgileDismount">storm_ui_icon_genji_cyberagility.png</GenjiCyberAgilityAgileDismount>
+        <GenjiCyberAgilityPathfinder name="Pathfinder" desc="GenjiCyberAgilityPathfinder">storm_ui_icon_genji_cyberagility_a.png</GenjiCyberAgilityPathfinder>
       </Level1>
       <Level4>
-        <GenjiShurikenShurikenMastery name="Shuriken Mastery" desc="GenjiShurikenShurikenMastery">storm_ui_icon_genji_shurikens.dds</GenjiShurikenShurikenMastery>
-        <GenjiSwiftStrikeStrikeAtTheHeart name="Strike At The Heart" desc="GenjiSwiftStrikeStrikeAtTheHeart">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrikeStrikeAtTheHeart>
-        <GenjiDeflectDragonClaw name="Dragon Claw" desc="GenjiDeflectDragonClawTalent">storm_ui_icon_genji_shurikens_dragonsoul.dds</GenjiDeflectDragonClaw>
+        <GenjiShurikenShurikenMastery name="Shuriken Mastery" desc="GenjiShurikenShurikenMastery">storm_ui_icon_genji_shurikens.png</GenjiShurikenShurikenMastery>
+        <GenjiSwiftStrikeStrikeAtTheHeart name="Strike At The Heart" desc="GenjiSwiftStrikeStrikeAtTheHeart">storm_ui_icon_genji_swiftstrike.png</GenjiSwiftStrikeStrikeAtTheHeart>
+        <GenjiDeflectDragonClaw name="Dragon Claw" desc="GenjiDeflectDragonClawTalent">storm_ui_icon_genji_shurikens_dragonsoul.png</GenjiDeflectDragonClaw>
       </Level4>
       <Level7>
-        <GenjiDeflectAugmentedGuard name="Augmented Guard" desc="GenjiDeflectAugmentedGuard">storm_ui_icon_genji_deflect.dds</GenjiDeflectAugmentedGuard>
-        <GenjiDeflectPerfectDefense name="Perfect Defense" desc="GenjiDeflectPerfectDefense">storm_ui_icon_genji_deflect_a.dds</GenjiDeflectPerfectDefense>
-        <GenjiCyberAgilityCyberShield name="Cyber Shield" desc="GenjiCyberAgilityCyberShield">storm_ui_icon_genji_cyberagility.dds</GenjiCyberAgilityCyberShield>
-        <GenjiDodge name="Dodge" desc="GenjiDodge">storm_ui_icon_genji_dodge.dds</GenjiDodge>
+        <GenjiDeflectAugmentedGuard name="Augmented Guard" desc="GenjiDeflectAugmentedGuard">storm_ui_icon_genji_deflect.png</GenjiDeflectAugmentedGuard>
+        <GenjiDeflectPerfectDefense name="Perfect Defense" desc="GenjiDeflectPerfectDefense">storm_ui_icon_genji_deflect_a.png</GenjiDeflectPerfectDefense>
+        <GenjiCyberAgilityCyberShield name="Cyber Shield" desc="GenjiCyberAgilityCyberShield">storm_ui_icon_genji_cyberagility.png</GenjiCyberAgilityCyberShield>
+        <GenjiDodge name="Dodge" desc="GenjiDodge">storm_ui_icon_genji_dodge.png</GenjiDodge>
       </Level7>
       <Level10>
-        <GenjiHeroicDragonblade name="Dragonblade" desc="GenjiDragonblade">storm_ui_icon_genji_dragonblade.dds</GenjiHeroicDragonblade>
-        <GenjiHeroicXStrike name="X-Strike" desc="GenjiXStrike">storm_ui_icon_genji_shurikens_xblade.dds</GenjiHeroicXStrike>
+        <GenjiHeroicDragonblade name="Dragonblade" desc="GenjiDragonblade">storm_ui_icon_genji_dragonblade.png</GenjiHeroicDragonblade>
+        <GenjiHeroicXStrike name="X-Strike" desc="GenjiXStrike">storm_ui_icon_genji_shurikens_xblade.png</GenjiHeroicXStrike>
       </Level10>
       <Level13>
-        <GenjiShurikenShingan name="Shingan" desc="GenjiShurikenShingan">storm_ui_icon_genji_shurikens.dds</GenjiShurikenShingan>
-        <GenjiSwiftStrikeFlowLikeWater name="Flow Like Water" desc="GenjiSwiftStrikeFlowLikeWater">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrikeFlowLikeWater>
-        <GenjiCyberAgilityDoubleJump name="Double Jump" desc="GenjiCyberAgilityDoubleJump">storm_ui_icon_genji_cyberagility.dds</GenjiCyberAgilityDoubleJump>
+        <GenjiShurikenShingan name="Shingan" desc="GenjiShurikenShingan">storm_ui_icon_genji_shurikens.png</GenjiShurikenShingan>
+        <GenjiSwiftStrikeFlowLikeWater name="Flow Like Water" desc="GenjiSwiftStrikeFlowLikeWater">storm_ui_icon_genji_swiftstrike.png</GenjiSwiftStrikeFlowLikeWater>
+        <GenjiCyberAgilityDoubleJump name="Double Jump" desc="GenjiCyberAgilityDoubleJump">storm_ui_icon_genji_cyberagility.png</GenjiCyberAgilityDoubleJump>
       </Level13>
       <Level16>
-        <GenjiDeflectReflect name="Reflect" desc="GenjiDeflectReflect">storm_ui_icon_genji_deflect.dds</GenjiDeflectReflect>
-        <GenjiSwiftStrikeFinalCut name="Final Cut" desc="GenjiSwiftStrikeFinalCut">storm_ui_icon_genji_swiftstrike.dds</GenjiSwiftStrikeFinalCut>
-        <GenjiSwiftStrikeSteadyBlade name="Steady Blade" desc="GenjiSwiftStrikeSteadyBlade">storm_ui_icon_genji_swiftstrike_a.dds</GenjiSwiftStrikeSteadyBlade>
+        <GenjiDeflectReflect name="Reflect" desc="GenjiDeflectReflect">storm_ui_icon_genji_deflect.png</GenjiDeflectReflect>
+        <GenjiSwiftStrikeFinalCut name="Final Cut" desc="GenjiSwiftStrikeFinalCut">storm_ui_icon_genji_swiftstrike.png</GenjiSwiftStrikeFinalCut>
+        <GenjiSwiftStrikeSteadyBlade name="Steady Blade" desc="GenjiSwiftStrikeSteadyBlade">storm_ui_icon_genji_swiftstrike_a.png</GenjiSwiftStrikeSteadyBlade>
       </Level16>
       <Level20>
-        <GenjiDragonbladeTheDragonBecomesMe name="The Dragon Becomes Me" desc="GenjiDragonbladeTheDragonBecomesMe">storm_ui_icon_genji_dragonblade.dds</GenjiDragonbladeTheDragonBecomesMe>
-        <GenjiXStrikeLivingWeapon name="Living Weapon" desc="GenjiXStrikeLivingWeapon">storm_ui_icon_genji_shurikens_xblade.dds</GenjiXStrikeLivingWeapon>
-        <GenjiShurikenSharpenedStars name="Sharpened Stars" desc="GenjiShurikenSharpenedStars">storm_ui_icon_genji_shurikens.dds</GenjiShurikenSharpenedStars>
-        <GenjiDeflectZanshin name="Zanshin" desc="GenjiDeflectZanshin">storm_ui_icon_genji_deflect_b.dds</GenjiDeflectZanshin>
+        <GenjiDragonbladeTheDragonBecomesMe name="The Dragon Becomes Me" desc="GenjiDragonbladeTheDragonBecomesMe">storm_ui_icon_genji_dragonblade.png</GenjiDragonbladeTheDragonBecomesMe>
+        <GenjiXStrikeLivingWeapon name="Living Weapon" desc="GenjiXStrikeLivingWeapon">storm_ui_icon_genji_shurikens_xblade.png</GenjiXStrikeLivingWeapon>
+        <GenjiShurikenSharpenedStars name="Sharpened Stars" desc="GenjiShurikenSharpenedStars">storm_ui_icon_genji_shurikens.png</GenjiShurikenSharpenedStars>
+        <GenjiDeflectZanshin name="Zanshin" desc="GenjiDeflectZanshin">storm_ui_icon_genji_deflect_b.png</GenjiDeflectZanshin>
       </Level20>
   </Talents>
 </Genji>
