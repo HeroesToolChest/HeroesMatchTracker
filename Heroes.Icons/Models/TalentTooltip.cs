@@ -25,9 +25,9 @@ namespace Heroes.Icons.Models
         public int? Mana { get; set; }
 
         /// <summary>
-        /// Get the life cost of the talent
+        /// Get the health cost of the talent
         /// </summary>
-        public int? Life { get; set; }
+        public int? Health { get; set; }
 
         /// <summary>
         /// Custom string that goes after the cooldown string
@@ -43,6 +43,11 @@ namespace Heroes.Icons.Models
         /// Is the cooldown a charge cooldown
         /// </summary>
         public bool IsChargeCooldown { get; set; }
+
+        /// <summary>
+        /// Is the health cost a percentage
+        /// </summary>
+        public bool IsHealthPercentage { get; set; }
 
         /// <summary>
         /// Type of energy: Mana is default
@@ -65,12 +70,12 @@ namespace Heroes.Icons.Models
                     text += $"{ManaType.ToString()}: {Mana.Value}";
             }
 
-            if (Life.HasValue)
+            if (Health.HasValue)
             {
                 if (!string.IsNullOrEmpty(text))
                     text += Environment.NewLine;
 
-                text += $"{Life.ToString()}: {Life.Value}";
+                text += $"{Health.ToString()}: {Health.Value}";
             }
 
             if (Cooldown.HasValue)

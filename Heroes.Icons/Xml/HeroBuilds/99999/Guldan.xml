@@ -13,7 +13,7 @@
       <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction" mana="90" cooldown="100">storm_ui_icon_guldan_rainoffire.png</GuldanRainOfDestruction>
     </Heroic>
     <Trait>
-      <GuldanLifeTap name="Life Tap" desc="GuldanLifeTap" Life="222">storm_ui_icon_guldan_lifetap.png</GuldanLifeTap>
+      <GuldanLifeTap name="Life Tap" desc="GuldanLifeTap" health="222">storm_ui_icon_guldan_lifetap.png</GuldanLifeTap>
     </Trait>
   </Abilities>
   <Talents>

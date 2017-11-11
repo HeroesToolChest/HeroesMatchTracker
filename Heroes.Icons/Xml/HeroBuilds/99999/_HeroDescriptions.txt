@@ -1,5 +1,6 @@
 ﻿Abathur=A unique Hero that can manipulate the battle from anywhere on the map.
 Alarak=A combo Assassin that can move enemies around and punish mistakes.
+Alexstrasza=A Healer who shares her Health with allies and can transform into a Dragon to empower her Abilities.
 Ana=A burst Healer who uses precise skillshots to heal allies and can deny enemy healing.
 Anubarak=A Tank who specializes against Mages thanks in part to his innate Spell Armor.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers">20 Spell Armor</c>
 Artanis=A tough Bruiser that deals high damage if the enemy team is unable to shut him down.
@@ -23,7 +24,7 @@ Garrosh=A frontline Tank that enters the fray, trying to isolate a single oppone
 Genji=An opportunistic, mobile Assassin who can tear apart a weak backline.
 Greymane=A high damage Assassin that wears down enemies from afar and dives in for the kill.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="BBBBBB" width="20" height="22"/><c val="#TooltipNumbers">10 Armor (in Worgen Form)</c>
 Guldan=A sustained damage Mage who uses his health as fuel but can steal life from his enemies.
-Junkrat=A mobile assassin that bombards the enemy from afar, and sews chaos with traps and mines.
+Junkrat=A mobile Assassin that bombards the enemy from afar, and sows chaos with traps and mines.
 Illidan=A mobile, sustained damage Assassin who pairs well with Heroes that can enable him.
 Jaina=A frost Mage that can slow the entire enemy team.
 Johanna=A Tank who shines against Physical Attackers and can effectively clear groups of minions.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers">25 Physical Armor</c>

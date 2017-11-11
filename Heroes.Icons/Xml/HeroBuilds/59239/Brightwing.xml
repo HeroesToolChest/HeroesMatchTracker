@@ -21,13 +21,11 @@
   </Abilities>
   <Talents>
     <Level1>
-      <BrightwingDreamShotArcaneFlare name="Dream Shot" desc="BrightwingDreamShotTalent">storm_ui_icon_brightwing_arcaneflare.png</BrightwingDreamShotArcaneFlare>
-      <BrightwingUnfurlingSpraySoothingMist name="Unfurling Spray" desc="BrightwingUnfurlingSprayTalent">storm_ui_icon_brightwing_soothingmist.png</BrightwingUnfurlingSpraySoothingMist>
+      <BrightwingDreamShotArcaneFlare name="Dream Shot" desc="BrightwingDreamShotTalent">storm_ui_icon_brightwing_arcaneflare.png</BrightwingDreamShotArcaneFlare> 
       <BrightwingHyperShiftPhaseShift name="Hyper Shift" desc="BrightwingHyperShiftTalent">storm_ui_icon_brightwing_hypershift.png</BrightwingHyperShiftPhaseShift>
       <BrightwingPixieCharm name="Pixie Charm" generic="true" desc="FaerieDragonPixieCharmTalent">storm_ui_icon_talent_bribe.png</BrightwingPixieCharm>
     </Level1>
     <Level4>
-      <BrightwingArcaneBarrageArcaneFlare name="Arcane Barrage" desc="BrightwingArcaneBarrageTalent">storm_ui_icon_brightwing_arcaneflare.png</BrightwingArcaneBarrageArcaneFlare>
       <BrightwingUnstableAnomalyPolymorph name="Unstable Anomaly" desc="BrightwingUnstableAnomalyTalent">storm_ui_icon_brightwing_polymorph.png</BrightwingUnstableAnomalyPolymorph>
       <BrightwingManicPixiePixieDust name="Manic Pixie" desc="BrightwingManicPixieTalent">storm_ui_icon_brightwing_pixiedust.png</BrightwingManicPixiePixieDust>
       <BrightwingPeekabooPhaseShift name="Peekaboo!" desc="BrightwingPeekabooTalent">storm_ui_icon_brightwing_hypershift.png</BrightwingPeekabooPhaseShift>

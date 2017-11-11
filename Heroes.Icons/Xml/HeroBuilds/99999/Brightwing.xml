@@ -22,19 +22,17 @@
   <Talents>
     <Level1>
       <BrightwingDreamShotArcaneFlare name="Dream Shot" desc="BrightwingDreamShotTalent">storm_ui_icon_brightwing_arcaneflare.png</BrightwingDreamShotArcaneFlare>
-      <BrightwingUnfurlingSpraySoothingMist name="Unfurling Spray" desc="BrightwingUnfurlingSprayTalent">storm_ui_icon_brightwing_soothingmist.png</BrightwingUnfurlingSpraySoothingMist>
-      <BrightwingHyperShiftPhaseShift name="Hyper Shift" desc="BrightwingHyperShiftTalent">storm_ui_icon_brightwing_hypershift.png</BrightwingHyperShiftPhaseShift>
+      <BrightwingPhaseShiftHyperShift name="Hyper Shift" desc="BrightwingPhaseShiftHyperShift">storm_ui_icon_brightwing_hypershift.png</BrightwingPhaseShiftHyperShift>
       <BrightwingPixieCharm name="Pixie Charm" generic="true" desc="FaerieDragonPixieCharmTalent">storm_ui_icon_talent_bribe.png</BrightwingPixieCharm>
     </Level1>
     <Level4>
-      <BrightwingArcaneBarrageArcaneFlare name="Arcane Barrage" desc="BrightwingArcaneBarrageTalent">storm_ui_icon_brightwing_arcaneflare.png</BrightwingArcaneBarrageArcaneFlare>
       <BrightwingUnstableAnomalyPolymorph name="Unstable Anomaly" desc="BrightwingUnstableAnomalyTalent">storm_ui_icon_brightwing_polymorph.png</BrightwingUnstableAnomalyPolymorph>
       <BrightwingManicPixiePixieDust name="Manic Pixie" desc="BrightwingManicPixieTalent">storm_ui_icon_brightwing_pixiedust.png</BrightwingManicPixiePixieDust>
-      <BrightwingPeekabooPhaseShift name="Peekaboo!" desc="BrightwingPeekabooTalent">storm_ui_icon_brightwing_hypershift.png</BrightwingPeekabooPhaseShift>
+      <BrightwingPhaseShiftPeekaboo name="Peekaboo!" desc="BrightwingPhaseShiftPeekaboo">storm_ui_icon_brightwing_hypershift.png</BrightwingPhaseShiftPeekaboo>
     </Level4>
     <Level7>
       <BrightwingMistifiedSoothingMist name="Mistified" desc="BrightwingMistifiedTalent">storm_ui_icon_brightwing_soothingmist.png</BrightwingMistifiedSoothingMist>
-      <FaerieDragonMasteryPhaseShield name="Phase Shield" desc="BrightwingPhaseShiftPhaseShieldTalent">storm_ui_icon_brightwing_hypershift.png</FaerieDragonMasteryPhaseShield>
+      <BrightwingPhaseShiftPhaseShield name="Phase Shield" desc="BrightwingPhaseShiftPhaseShield">storm_ui_icon_brightwing_hypershift.png</BrightwingPhaseShiftPhaseShield>
       <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.png</GenericTalentCleanse>
     </Level7>
     <Level10>

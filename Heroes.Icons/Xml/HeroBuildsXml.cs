@@ -642,7 +642,8 @@ namespace Heroes.Icons.Xml
             string generic = "false";  // is the icon being used generic
             string desc = string.Empty; // reference name for tooltips
             int? mana = null; // mana/brew/fury/etc...
-            int? life = null; // life cost
+            int? health = null; // health cost
+            string healthPercent = "false"; // is the health cost a percentage
             string perManaCost = "false"; // the time cost for mana
             int? cooldown = null; // cooldown
             string charge = "false"; // is the cooldown a charge cooldown
@@ -659,7 +660,7 @@ namespace Heroes.Icons.Xml
                 generic = ability.IsGeneric.ToString();
                 desc = ability.TooltipDescriptionName;
                 mana = ability.Tooltip.Mana;
-                life = ability.Tooltip.Life;
+                health = ability.Tooltip.Health;
                 perManaCost = ability.Tooltip.IsPerManaCost.ToString();
                 cooldown = ability.Tooltip.Cooldown;
                 charge = ability.Tooltip.IsChargeCooldown.ToString();
@@ -672,11 +673,15 @@ namespace Heroes.Icons.Xml
             if (reader["generic"] != null) generic = reader["generic"];
             if (reader["desc"] != null) desc = reader["desc"];
             if (reader["mana"] != null) mana = ConvertToNullableInt(reader["mana"]);
-            if (reader["life"] != null) life = ConvertToNullableInt(reader["life"]);
+            if (reader["health"] != null) health = ConvertToNullableInt(reader["life"]);
+            if (reader["health-percent"] != null) healthPercent = reader["health-percent"];
             if (reader["per-mana"] != null) perManaCost = reader["per-mana"];
             if (reader["cooldown"] != null) cooldown = ConvertToNullableInt(reader["cooldown"]);
             if (reader["ch-cooldown"] != null) charge = reader["ch-cooldown"];
             if (reader["custom"] != null) custom = reader["custom"];
+
+            if (!bool.TryParse(healthPercent, out bool isHealthPercent))
+                isHealthPercent = false;
 
             if (!bool.TryParse(perManaCost, out bool isPerManaCost))
                 isPerManaCost = false;
@@ -723,7 +728,8 @@ namespace Heroes.Icons.Xml
                     Full = longDesc,
                     ManaType = hero.ManaType,
                     Mana = mana,
-                    Life = life,
+                    Health = health,
+                    IsHealthPercentage = isHealthPercent,
                     IsPerManaCost = isPerManaCost,
                     Cooldown = cooldown,
                     IsChargeCooldown = isCharge,

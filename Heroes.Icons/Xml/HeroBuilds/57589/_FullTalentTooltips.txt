@@ -247,7 +247,7 @@ BrightwingEmeraldWind=After <c val="#TooltipNumbers">0.5</c> seconds, create an 
 BrightwingEmeraldWindContinuousWindsTalent=Emerald Wind releases two additional novas that deal <c val="#TooltipNumbers">25%</c> damage. Also further increases the healing bonus of Soothing Mist by <c val="#TooltipNumbers">7%</c>.
 BrightwingEmeraldWindSoothingMistAppender=Passively increases the healing of Soothing Mist by <c val="#TooltipNumbers"><VALUE>%</c>.
 BrightwingGreaterPolymorphTalent=Increases the duration of Polymorph by <c val="#TooltipNumbers">0.75</c> seconds.
-BrightwingHyperShiftTalent=Each allied Hero healed by Soothing Mist reduces the cooldown of Phase Shift by <c val="#TooltipNumbers">2</c> seconds.
+BrightwingHyperShiftTalent=Each allied Hero healed by Soothing Mist reduces the cooldown of Phase Shift by <c val="#TooltipNumbers">3</c> seconds.
 BrightwingManicPixieTalent=When Soothing Mist heals an ally with Pixie Dust on them, they heal for an additional <c val="#TooltipNumbers">104</c> over <c val="#TooltipNumbers">4</c> seconds.
 BrightwingMistifiedTalent=Reduces the cooldown of Soothing Mist by <c val="#TooltipNumbers">0.5</c> seconds every time Brightwing casts a Basic Ability.
 BrightwingPeekabooTalent=Phase Shifting to an ally casts a free Pixie Dust on them and reveals a large area around them and all enemies in it for <c val="#TooltipNumbers">6</c> seconds. 
