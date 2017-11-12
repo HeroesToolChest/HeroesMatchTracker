@@ -1,46 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Kharazim available="47479" attributeid="Monk" franchise="Diablo" type="Melee" difficulty="Medium"
-            portrait="storm_ui_ingame_heroselect_btn_monk.png" loading="storm_ui_ingame_hero_loadingscreen_monk.png" leader="storm_ui_ingame_hero_leaderboard_monk.png">
-    <Roles>Support</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <MonkTranscendence name="Transcendence" desc="MonkTranscendenceTalent">storm_ui_icon_monk_trait_transcendence.png</MonkTranscendence>
-        <MonkIronFists name="Iron Fists" desc="MonkIronFistsTalent">storm_ui_icon_monk_trait_ironfist.png</MonkIronFists>
-        <MonkInsight name="Insight" desc="MonkInsightTalent">storm_ui_icon_monk_trait_insight.png</MonkInsight>
-      </Level1>
-      <Level4>
-        <MonkSpiritAlly name="Spirit Ally" desc="MonkSpiritAlly" cooldown="45">storm_ui_icon_monk_allyspirit.png</MonkSpiritAlly>
-        <MonkEarthAlly name="Earth Ally" desc="MonkEarthAlly" cooldown="45">storm_ui_icon_monk_allyearth.png</MonkEarthAlly>
-        <MonkAirAlly name="Air Ally" desc="MonkAirAlly" cooldown="20" ch-cooldown="true">storm_ui_icon_monk_allyair.png</MonkAirAlly>
-      </Level4>
-      <Level7>
-        <MonkBlindingSpeedRadiantDash name="Blinding Speed" desc="MonkBlindingSpeedTalent">storm_ui_icon_monk_dash.png</MonkBlindingSpeedRadiantDash>
-        <MonkHeavenlyZealBreathofHeaven name="Heavenly Zeal" desc="MonkHeavenlyZealBreathofHeaven">storm_ui_icon_monk_breath0fheaven.png</MonkHeavenlyZealBreathofHeaven>
-        <MonkBlazingFistsDeadlyReach name="Blazing Fists" desc="MonkBlazingFistsTalent">storm_ui_icon_monk_deadlyreach.png</MonkBlazingFistsDeadlyReach>
-      </Level7>
-      <Level10>
-        <MonkHeroicAbilityDivinePalm name="Divine Palm" desc="MonkDivinePalm" mana="50" cooldown="60">storm_ui_icon_monk_divinepalm.png</MonkHeroicAbilityDivinePalm>
-        <MonkHeroicAbilitySevenSidedStrike name="Seven-Sided Strike" desc="MonkSevenSidedStrike" mana="77" cooldown="50">storm_ui_icon_monk_sevensidedstrike.png</MonkHeroicAbilitySevenSidedStrike>
-      </Level10>
-      <Level13>
-        <MonkQuicksilverRadiantDash name="Quicksilver" desc="MonkQuicksilverTalent">storm_ui_icon_monk_dash.png</MonkQuicksilverRadiantDash>
-        <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.png</GenericTalentSpellShield>
-        <MonkSixthSense name="Sixth Sense" generic="true" desc="MonkSixthSense">storm_ui_icon_Talent_Relentless.png</MonkSixthSense>
-        <MonkFistsofFuryDeadlyReach name="Fists of Fury" desc="MonkFistsofFuryTalent">storm_ui_icon_monk_deadlyreach.png</MonkFistsofFuryDeadlyReach>
-      </Level13>
-      <Level16>
-        <MonkCleansingTouchRadiantDash name="Cleansing Touch" desc="MonkCleansingTouch">storm_ui_icon_monk_dash.png</MonkCleansingTouchRadiantDash>
-        <MonkWayoftheHundredFistsRadiantDash name="Way of the Hundred Fists" desc="MonkWayoftheHundredFistsTalent">storm_ui_icon_monk_dash_a.png</MonkWayoftheHundredFistsRadiantDash>
-        <MonkEchoofHeavenBreathofHeaven name="Echo of Heaven" desc="MonkEchoofHeavenTalent">storm_ui_icon_monk_breath0fheaven.png</MonkEchoofHeavenBreathofHeaven>
-        <MonkDashofLight name="Dash of Light" desc="MonkDashofLight">storm_ui_icon_monk_breath0fheaven_var1.png</MonkDashofLight>
-      </Level16>
-      <Level20>
-        <MonkPeacefulReposeDivinePalm name="Peaceful Repose" desc="MonkPeacefulReposeTalent">storm_ui_icon_monk_divinepalm.png</MonkPeacefulReposeDivinePalm>
-        <MonkElevenSidedStrikeSevenSidedStrike name="Transgression" desc="MonkElevenSidedStrikeTalent">storm_ui_icon_monk_sevensidedstrike.png</MonkElevenSidedStrikeSevenSidedStrike>
-        <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.png</GenericTalentStormShield>
-        <MonkEpiphany name="Epiphany" desc="MonkEpiphany" cooldown="60">storm_ui_icon_kharazim_epiphany.png</MonkEpiphany>
-      </Level20>
+<Kharazim available="47479" attributeid="Monk" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_monk.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_monk.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_monk.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <MonkTranscendence name="Transcendence" desc="MonkTranscendenceTalent">
+        <Icon>storm_ui_icon_monk_trait_transcendence.png</Icon>
+      </MonkTranscendence>
+      <MonkIronFists name="Iron Fists" desc="MonkIronFistsTalent">
+        <Icon>storm_ui_icon_monk_trait_ironfist.png</Icon>
+      </MonkIronFists>
+      <MonkInsight name="Insight" desc="MonkInsightTalent">
+        <Icon>storm_ui_icon_monk_trait_insight.png</Icon>
+      </MonkInsight>
+    </Level1>
+    <Level4>
+      <MonkSpiritAlly name="Spirit Ally" desc="MonkSpiritAlly">
+        <Icon>storm_ui_icon_monk_allyspirit.png</Icon>
+        <Cooldown>45</Cooldown>
+      </MonkSpiritAlly>
+      <MonkEarthAlly name="Earth Ally" desc="MonkEarthAlly">
+        <Icon>storm_ui_icon_monk_allyearth.png</Icon>
+        <Cooldown>45</Cooldown>
+      </MonkEarthAlly>
+      <MonkAirAlly name="Air Ally" desc="MonkAirAlly">
+        <Icon>storm_ui_icon_monk_allyair.png</Icon>
+        <Cooldown charge="true">20</Cooldown>
+      </MonkAirAlly>
+    </Level4>
+    <Level7>
+      <MonkBlindingSpeedRadiantDash name="Blinding Speed" desc="MonkBlindingSpeedTalent">
+        <Icon>storm_ui_icon_monk_dash.png</Icon>
+      </MonkBlindingSpeedRadiantDash>
+      <MonkHeavenlyZealBreathofHeaven name="Heavenly Zeal" desc="MonkHeavenlyZealBreathofHeaven">
+        <Icon>storm_ui_icon_monk_breath0fheaven.png</Icon>
+      </MonkHeavenlyZealBreathofHeaven>
+      <MonkBlazingFistsDeadlyReach name="Blazing Fists" desc="MonkBlazingFistsTalent">
+        <Icon>storm_ui_icon_monk_deadlyreach.png</Icon>
+      </MonkBlazingFistsDeadlyReach>
+    </Level7>
+    <Level10>
+      <MonkHeroicAbilityDivinePalm name="Divine Palm" desc="MonkDivinePalm">
+        <Icon>storm_ui_icon_monk_divinepalm.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>60</Cooldown>
+      </MonkHeroicAbilityDivinePalm>
+      <MonkHeroicAbilitySevenSidedStrike name="Seven-Sided Strike" desc="MonkSevenSidedStrike">
+        <Icon>storm_ui_icon_monk_sevensidedstrike.png</Icon>
+        <Mana>77</Mana>
+        <Cooldown>50</Cooldown>
+      </MonkHeroicAbilitySevenSidedStrike>
+    </Level10>
+    <Level13>
+      <MonkQuicksilverRadiantDash name="Quicksilver" desc="MonkQuicksilverTalent">
+        <Icon>storm_ui_icon_monk_dash.png</Icon>
+      </MonkQuicksilverRadiantDash>
+      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
+        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
+      </GenericTalentSpellShield>
+      <MonkSixthSense name="Sixth Sense" desc="MonkSixthSense">
+        <Icon generic="true">storm_ui_icon_Talent_Relentless.png</Icon>
+      </MonkSixthSense>
+      <MonkFistsofFuryDeadlyReach name="Fists of Fury" desc="MonkFistsofFuryTalent">
+        <Icon>storm_ui_icon_monk_deadlyreach.png</Icon>
+      </MonkFistsofFuryDeadlyReach>
+    </Level13>
+    <Level16>
+      <MonkCleansingTouchRadiantDash name="Cleansing Touch" desc="MonkCleansingTouch">
+        <Icon>storm_ui_icon_monk_dash.png</Icon>
+      </MonkCleansingTouchRadiantDash>
+      <MonkWayoftheHundredFistsRadiantDash name="Way of the Hundred Fists" desc="MonkWayoftheHundredFistsTalent">
+        <Icon>storm_ui_icon_monk_dash_a.png</Icon>
+      </MonkWayoftheHundredFistsRadiantDash>
+      <MonkEchoofHeavenBreathofHeaven name="Echo of Heaven" desc="MonkEchoofHeavenTalent">
+        <Icon>storm_ui_icon_monk_breath0fheaven.png</Icon>
+      </MonkEchoofHeavenBreathofHeaven>
+      <MonkDashofLight name="Dash of Light" desc="MonkDashofLight">
+        <Icon>storm_ui_icon_monk_breath0fheaven_var1.png</Icon>
+      </MonkDashofLight>
+    </Level16>
+    <Level20>
+      <MonkPeacefulReposeDivinePalm name="Peaceful Repose" desc="MonkPeacefulReposeTalent">
+        <Icon>storm_ui_icon_monk_divinepalm.png</Icon>
+      </MonkPeacefulReposeDivinePalm>
+      <MonkElevenSidedStrikeSevenSidedStrike name="Transgression" desc="MonkElevenSidedStrikeTalent">
+        <Icon>storm_ui_icon_monk_sevensidedstrike.png</Icon>
+      </MonkElevenSidedStrikeSevenSidedStrike>
+      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">
+        <Icon>storm_ui_icon_Talent_StormShield.png</Icon>
+        <Cooldown>45</Cooldown>
+      </GenericTalentStormShield>
+      <MonkEpiphany name="Epiphany" desc="MonkEpiphany">
+        <Icon>storm_ui_icon_kharazim_epiphany.png</Icon>
+        <Cooldown>60</Cooldown>
+      </MonkEpiphany>
+    </Level20>
   </Talents>
 </Kharazim>

@@ -1,44 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft" type="Ranged" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_tyrande.png" loading="storm_ui_ingame_hero_loadingscreen_tyrande.png" leader="storm_ui_ingame_hero_leaderboard_tyrande.png">
-    <Roles>Support</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <TyrandeRanger name="Ranger" desc="TyrandeSentinelRangerTalent">storm_ui_icon_tyrande_sentinel.png</TyrandeRanger>
-        <TyrandeMasteryLunarBlaze name="Lunar Blaze" desc="TyrandeLunarFlareLunarBlazeTalent">storm_ui_icon_tyrande_lunarflare.png</TyrandeMasteryLunarBlaze>
-        <TyrandeRangersMark name="Ranger's Mark" desc="TyrandeHuntersMarkRangersMarkTalent">storm_ui_icon_tyrande_huntersmark.png</TyrandeRangersMark>
-      </Level1>
-      <Level4>
-        <TyrandeMoonlitArrows name="Moonlit Arrows" desc="TyrandeMoonlitArrows">storm_ui_icon_tyrande_lightofelune.png</TyrandeMoonlitArrows>
-        <TyrandeCelestialAttunement name="Celestial Attunement" desc="TyrandeLightOfEluneOverflowingLightTalent">storm_ui_icon_tyrande_lightofelune_b.png</TyrandeCelestialAttunement>
-        <TyrandeKaldoreiResistance name="Kaldorei Resistance" desc="TyrandeKaldoreiResistance">storm_ui_icon_tyrande_lightofelune_a.png</TyrandeKaldoreiResistance>
-      </Level4>
-      <Level7>
-        <TyrandeHuntressFury name="Huntress Fury" desc="TyrandeHuntersMarkHuntressFuryTalent">storm_ui_icon_tyrande_huntersmark.png</TyrandeHuntressFury>
-        <TyrandeDarnassianArchery name="Darnassian Archery" desc="TyrandeDarnassianArchery" generic="true">storm_ui_icon_talent_autoattack_damage.png</TyrandeDarnassianArchery>
-        <TyrandeTrueshotAura name="Trueshot Aura" desc="TyrandeHuntersMarkTrueshotAuraTalent" cooldown="60">storm_ui_icon_tyrande_trueshotaura.png</TyrandeTrueshotAura>
-      </Level7>
-      <Level10>
-        <TyrandeHeroicAbilityShadowstalk name="Shadowstalk" desc="TyrandeShadowstalk" mana="40" cooldown="20">storm_ui_icon_tyrande_shadowstalk.png</TyrandeHeroicAbilityShadowstalk>
-        <TyrandeHeroicAbilityStarfall name="Starfall" desc="TyrandeStarfall" mana="75" cooldown="80">storm_ui_icon_tyrande_starfall.png</TyrandeHeroicAbilityStarfall>
-      </Level10>
-      <Level13>
-        <TyrandeMasteryLightofEluneQuickeningBlessing name="Quickening Blessing" desc="TyrandeLightOfEluneQuickeningBlessingTalent">storm_ui_icon_tyrande_lightofelune.png</TyrandeMasteryLightofEluneQuickeningBlessing>
-        <TyrandeEmpower name="Empower" desc="TyrandeSentinelEmpowerTalent">storm_ui_icon_tyrande_sentinel.png</TyrandeEmpower>
-        <TyrandeHarshMoonlight name="Harsh Moonlight" desc="TyrandeHarshMoonlight">storm_ui_icon_tyrande_sentinel_a.png</TyrandeHarshMoonlight>
-      </Level13>
-      <Level16>
-        <TyrandeOverflowingLight name="Overflowing Light" desc="TyrandeLightOfEluneOverflowingLightTalent">storm_ui_icon_tyrande_lightofelune.png</TyrandeOverflowingLight>
-        <TyrandeMarkofMending name="Mark of Mending" desc="TyrandeHuntersMarkMarkOfMendingTalent">storm_ui_icon_tyrande_huntersmark.png</TyrandeMarkofMending>
-        <TyrandeElunesChosen name="Elune's Chosen" desc="TyrandeElunesChosen" generic="true" cooldown="30">storm_ui_icon_talent_autoattack_heal.png</TyrandeElunesChosen>
-      </Level16>
-      <Level20>
-        <TyrandeEyesOfTheHuntress name="Eyes of the Huntress" desc="TyrandeEyesOfTheHuntress">storm_ui_icon_tyrande_shadowstalk.png</TyrandeEyesOfTheHuntress>
-        <TyrandeMasteryStarfallCelestialWrath name="Celestial Wrath" desc="TyrandeStarfallCelestialWrathTalent">storm_ui_icon_tyrande_starfall.png</TyrandeMasteryStarfallCelestialWrath>
-        <TyrandeShootingStar name="Shooting Star" desc="TyrandeShootingStar" generic="true">storm_ui_icon_talent_autoattack_speed.png</TyrandeShootingStar>
-        <TyrandeIcebladeArrows name="Iceblade Arrows" desc="TyrandeIcebladeArrows" generic="true">storm_ui_icon_talent_autoattack_slow.png</TyrandeIcebladeArrows>
-      </Level20>
+<Tyrande available="47479" attributeid="Tyrd" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_tyrande.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_tyrande.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_tyrande.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <TyrandeRanger name="Ranger" desc="TyrandeSentinelRangerTalent">
+        <Icon>storm_ui_icon_tyrande_sentinel.png</Icon>
+      </TyrandeRanger>
+      <TyrandeMasteryLunarBlaze name="Lunar Blaze" desc="TyrandeLunarFlareLunarBlazeTalent">
+        <Icon>storm_ui_icon_tyrande_lunarflare.png</Icon>
+      </TyrandeMasteryLunarBlaze>
+      <TyrandeRangersMark name="Ranger's Mark" desc="TyrandeHuntersMarkRangersMarkTalent">
+        <Icon>storm_ui_icon_tyrande_huntersmark.png</Icon>
+      </TyrandeRangersMark>
+    </Level1>
+    <Level4>
+      <TyrandeMoonlitArrows name="Moonlit Arrows" desc="TyrandeMoonlitArrows">
+        <Icon>storm_ui_icon_tyrande_lightofelune.png</Icon>
+      </TyrandeMoonlitArrows>
+      <TyrandeCelestialAttunement name="Celestial Attunement" desc="TyrandeLightOfEluneOverflowingLightTalent">
+        <Icon>storm_ui_icon_tyrande_lightofelune_b.png</Icon>
+      </TyrandeCelestialAttunement>
+      <TyrandeKaldoreiResistance name="Kaldorei Resistance" desc="TyrandeKaldoreiResistance">
+        <Icon>storm_ui_icon_tyrande_lightofelune_a.png</Icon>
+      </TyrandeKaldoreiResistance>
+    </Level4>
+    <Level7>
+      <TyrandeHuntressFury name="Huntress Fury" desc="TyrandeHuntersMarkHuntressFuryTalent">
+        <Icon>storm_ui_icon_tyrande_huntersmark.png</Icon>
+      </TyrandeHuntressFury>
+      <TyrandeDarnassianArchery name="Darnassian Archery" desc="TyrandeDarnassianArchery">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </TyrandeDarnassianArchery>
+      <TyrandeTrueshotAura name="Trueshot Aura" desc="TyrandeHuntersMarkTrueshotAuraTalent">
+        <Icon>storm_ui_icon_tyrande_trueshotaura.png</Icon>
+        <Cooldown>60</Cooldown>
+      </TyrandeTrueshotAura>
+    </Level7>
+    <Level10>
+      <TyrandeHeroicAbilityShadowstalk name="Shadowstalk" desc="TyrandeShadowstalk">
+        <Icon>storm_ui_icon_tyrande_shadowstalk.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>20</Cooldown>
+      </TyrandeHeroicAbilityShadowstalk>
+      <TyrandeHeroicAbilityStarfall name="Starfall" desc="TyrandeStarfall">
+        <Icon>storm_ui_icon_tyrande_starfall.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>80</Cooldown>
+      </TyrandeHeroicAbilityStarfall>
+    </Level10>
+    <Level13>
+      <TyrandeMasteryLightofEluneQuickeningBlessing name="Quickening Blessing" desc="TyrandeLightOfEluneQuickeningBlessingTalent">
+        <Icon>storm_ui_icon_tyrande_lightofelune.png</Icon>
+      </TyrandeMasteryLightofEluneQuickeningBlessing>
+      <TyrandeEmpower name="Empower" desc="TyrandeSentinelEmpowerTalent">
+        <Icon>storm_ui_icon_tyrande_sentinel.png</Icon>
+      </TyrandeEmpower>
+      <TyrandeHarshMoonlight name="Harsh Moonlight" desc="TyrandeHarshMoonlight">
+        <Icon>storm_ui_icon_tyrande_sentinel_a.png</Icon>
+      </TyrandeHarshMoonlight>
+    </Level13>
+    <Level16>
+      <TyrandeOverflowingLight name="Overflowing Light" desc="TyrandeLightOfEluneOverflowingLightTalent">
+        <Icon>storm_ui_icon_tyrande_lightofelune.png</Icon>
+      </TyrandeOverflowingLight>
+      <TyrandeMarkofMending name="Mark of Mending" desc="TyrandeHuntersMarkMarkOfMendingTalent">
+        <Icon>storm_ui_icon_tyrande_huntersmark.png</Icon>
+      </TyrandeMarkofMending>
+      <TyrandeElunesChosen name="Elune's Chosen" desc="TyrandeElunesChosen">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
+        <Cooldown>30</Cooldown>
+      </TyrandeElunesChosen>
+    </Level16>
+    <Level20>
+      <TyrandeEyesOfTheHuntress name="Eyes of the Huntress" desc="TyrandeEyesOfTheHuntress">
+        <Icon>storm_ui_icon_tyrande_shadowstalk.png</Icon>
+      </TyrandeEyesOfTheHuntress>
+      <TyrandeMasteryStarfallCelestialWrath name="Celestial Wrath" desc="TyrandeStarfallCelestialWrathTalent">
+        <Icon>storm_ui_icon_tyrande_starfall.png</Icon>
+      </TyrandeMasteryStarfallCelestialWrath>
+      <TyrandeShootingStar name="Shooting Star" desc="TyrandeShootingStar">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_speed.png</Icon>
+      </TyrandeShootingStar>
+      <TyrandeIcebladeArrows name="Iceblade Arrows" desc="TyrandeIcebladeArrows">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </TyrandeIcebladeArrows>
+    </Level20>
   </Talents>
 </Tyrande>

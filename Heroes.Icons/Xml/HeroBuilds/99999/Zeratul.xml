@@ -1,56 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Zeratul available="47479" attributeid="Zera" unit="HeroZeratul" franchise="Starcraft" type="Melee" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_zeratul.png" loading="storm_ui_ingame_hero_loadingscreen_zeratul.png" leader="storm_ui_ingame_hero_leaderboard_zeratul.png">
+<Zeratul available="47479" attributeid="Zera" unit="HeroZeratul" franchise="Starcraft" type="Melee" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_zeratul.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_zeratul.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_zeratul.png</Leader>
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <ZeratulCleave name="Cleave" desc="ZeratulCleave" mana="40" cooldown="6">storm_ui_icon_zeratul_cleave.png</ZeratulCleave>
-      <ZeratulSingularitySpike name="Singularity Spike" desc="ZeratulSingularitySpike" mana="80" cooldown="12">storm_ui_icon_zeratul_singularityspike.png</ZeratulSingularitySpike>
-      <ZeratulBlinkStorm name="Blink" desc="ZeratulBlink" mana="50" cooldown="10">storm_ui_icon_zeratul_blink.png</ZeratulBlinkStorm>
+      <ZeratulCleave name="Cleave" desc="ZeratulCleave">
+        <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>6</Cooldown>
+      </ZeratulCleave>
+      <ZeratulSingularitySpike name="Singularity Spike" desc="ZeratulSingularitySpike">
+        <Icon>storm_ui_icon_zeratul_singularityspike.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>12</Cooldown>
+      </ZeratulSingularitySpike>
+      <ZeratulBlinkStorm name="Blink" desc="ZeratulBlink">
+        <Icon>storm_ui_icon_zeratul_blink.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </ZeratulBlinkStorm>
     </Basic>
     <Heroic>
-      <ZeratulShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault" mana="50" cooldown="45">storm_ui_icon_zeratul_shadowassault.png</ZeratulShadowAssault>
-      <ZeratulVoidPrison name="Void Prison" desc="ZeratulVoidPrison" mana="100" cooldown="100">storm_ui_icon_zeratul_voidprison.png</ZeratulVoidPrison>
+      <ZeratulShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">
+        <Icon>storm_ui_icon_zeratul_shadowassault.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>45</Cooldown>
+      </ZeratulShadowAssault>
+      <ZeratulVoidPrison name="Void Prison" desc="ZeratulVoidPrison">
+        <Icon>storm_ui_icon_zeratul_voidprison.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>100</Cooldown>
+      </ZeratulVoidPrison>
     </Heroic>
     <Trait>
-      <ZeratulPermanentCloak name="Permanent Cloak" desc="ZeratulPermanentCloak">storm_ui_icon_zeratul_cloak.png</ZeratulPermanentCloak>
+      <ZeratulPermanentCloak name="Permanent Cloak" desc="ZeratulPermanentCloak">
+        <Icon>storm_ui_icon_zeratul_cloak.png</Icon>
+      </ZeratulPermanentCloak>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">storm_ui_icon_zeratul_cleave.png</ZeratulMasteryGreaterCleaveCleave>
-      <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar" cooldown="15">storm_ui_icon_zeratul_vorpalblade.png</ZeratulVorpalBlade>
-      <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">storm_ui_icon_zeratul_blink.png</ZeratulShadowHunter>
+      <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">
+        <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
+      </ZeratulMasteryGreaterCleaveCleave>
+      <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">
+        <Icon>storm_ui_icon_zeratul_vorpalblade.png</Icon>
+        <Cooldown>15</Cooldown>
+      </ZeratulVorpalBlade>
+      <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">
+        <Icon>storm_ui_icon_zeratul_blink.png</Icon>
+      </ZeratulShadowHunter>
     </Level1>
     <Level4>
-      <ZeratulGrimTask name="Grim Task" generic="true" desc="ZeratulGrimTaskTalent">storm_ui_icon_talent_gatheringpower.png</ZeratulGrimTask>
-      <ZeratulRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">storm_ui_icon_zeratul_cleave.png</ZeratulRendingCleave>
-      <ZeratulComboSlash name="Combo Slash" generic="true" desc="ZeratulComboSlash">storm_ui_icon_talent_autoattack_damage.png</ZeratulComboSlash>
+      <ZeratulGrimTask name="Grim Task" desc="ZeratulGrimTaskTalent">
+        <Icon generic="true">storm_ui_icon_talent_gatheringpower.png</Icon>
+      </ZeratulGrimTask>
+      <ZeratulRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">
+        <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
+      </ZeratulRendingCleave>
+      <ZeratulComboSlash name="Combo Slash" desc="ZeratulComboSlash">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </ZeratulComboSlash>
     </Level4>
     <Level7>
-      <ZeratulWormhole name="Wormhole" desc="ZeratulWormholeTalent">storm_ui_icon_zeratul_blink.png</ZeratulWormhole>
-      <ZeratulSlipintoShadow name="Slip into Shadow" desc="ZeratulSlipintoShadow">storm_ui_icon_zeratul_blink_a.png</ZeratulSlipintoShadow>
-      <ZeratulSeekerInTheDark name="Seeker in the Dark" desc="ZeratulSeekerInTheDark">storm_ui_icon_zeratul_singularityspike.png</ZeratulSeekerInTheDark>
+      <ZeratulWormhole name="Wormhole" desc="ZeratulWormholeTalent">
+        <Icon>storm_ui_icon_zeratul_blink.png</Icon>
+      </ZeratulWormhole>
+      <ZeratulSlipintoShadow name="Slip into Shadow" desc="ZeratulSlipintoShadow">
+        <Icon>storm_ui_icon_zeratul_blink_a.png</Icon>
+      </ZeratulSlipintoShadow>
+      <ZeratulSeekerInTheDark name="Seeker in the Dark" desc="ZeratulSeekerInTheDark">
+        <Icon>storm_ui_icon_zeratul_singularityspike.png</Icon>
+      </ZeratulSeekerInTheDark>
     </Level7>
     <Level10>
       <ZeratulHeroicAbilityShadowAssault ability="ZeratulShadowAssault" />
       <ZeratulHeroicAbilityVoidPrison ability="ZeratulVoidPrison" />
     </Level10>
     <Level13>
-      <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">storm_ui_icon_zeratul_cloak.png</ZeratulShroudofAdun>
-      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.png</GenericTalentSpellShield>
-      <ZeratulMendingStrikes name="Mending Strikes" generic="true" desc="ZeratulMendingStrikes">storm_ui_icon_talent_autoattack_heal.png</ZeratulMendingStrikes>
+      <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">
+        <Icon>storm_ui_icon_zeratul_cloak.png</Icon>
+      </ZeratulShroudofAdun>
+      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
+        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
+      </GenericTalentSpellShield>
+      <ZeratulMendingStrikes name="Mending Strikes" desc="ZeratulMendingStrikes">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
+      </ZeratulMendingStrikes>
     </Level13>
     <Level16>
-      <ZeratulMasterWarpBlade name="Master Warp-Blade" generic="true" desc="ZeratulMasterWarpBlade">storm_ui_icon_talent_autoattack_damage.png</ZeratulMasterWarpBlade>
-      <ZeratulVoidSlash name="Void Slash" desc="ZeratulVoidSlashTalent">storm_ui_icon_zeratul_cleave.png</ZeratulVoidSlash>
-      <ZeratulSentencedtoDeath name="Sentenced to Death" desc="ZeratulSentencedtoDeath">storm_ui_icon_zeratul_singularityspike.png</ZeratulSentencedtoDeath>
+      <ZeratulMasterWarpBlade name="Master Warp-Blade" desc="ZeratulMasterWarpBlade">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </ZeratulMasterWarpBlade>
+      <ZeratulVoidSlash name="Void Slash" desc="ZeratulVoidSlashTalent">
+        <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
+      </ZeratulVoidSlash>
+      <ZeratulSentencedtoDeath name="Sentenced to Death" desc="ZeratulSentencedtoDeath">
+        <Icon>storm_ui_icon_zeratul_singularityspike.png</Icon>
+      </ZeratulSentencedtoDeath>
     </Level16>
     <Level20>
-      <ZeratulNerazimFury name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">storm_ui_icon_zeratul_shadowassault.png</ZeratulNerazimFury>
-      <ZeratulGiftoftheXelNaga name="Gift of the Xel'Naga" desc="ZeratulGiftoftheXelNaga">storm_ui_icon_zeratul_voidprison.png</ZeratulGiftoftheXelNaga>
-      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.png</GenericTalentNexusBlades>
-      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.png</GenericTalentRewind>
+      <ZeratulNerazimFury name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">
+        <Icon>storm_ui_icon_zeratul_shadowassault.png</Icon>
+      </ZeratulNerazimFury>
+      <ZeratulGiftoftheXelNaga name="Gift of the Xel'Naga" desc="ZeratulGiftoftheXelNaga">
+        <Icon>storm_ui_icon_zeratul_voidprison.png</Icon>
+      </ZeratulGiftoftheXelNaga>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
+        <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </GenericTalentNexusBlades>
+      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
+        <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentRewind>
     </Level20>
   </Talents>
 </Zeratul>

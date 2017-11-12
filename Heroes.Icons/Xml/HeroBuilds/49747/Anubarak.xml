@@ -1,45 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" type="Melee" difficulty="Medium"
-            portrait="storm_ui_ingame_heroselect_btn_anubarak.png" loading="storm_ui_ingame_hero_loadingscreen_anubarak.png" leader="storm_ui_ingame_hero_leaderboard_anubarak.png">
-    <Roles>Warrior</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes" desc="AnubarakImpaleExtendedSpikesTalent">storm_ui_icon_Anubarak_Impale.png</AnubarakMasteryExtendedSpikesImpale>
-        <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">storm_ui_icon_talent_dampenmagic.png</GenericDampenMagic>
-        <AnubarakMasteryAssaultScarabBeetleSpit name="Assault Scarab" desc="AnubarakScarabHostAssaultScarabTalent">storm_ui_icon_Anubarak_ScarabHost.png</AnubarakMasteryAssaultScarabBeetleSpit>
-        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.png</GenericTalentRegenerationMaster>
-      </Level1>
-      <Level4>
-        <AnubarakMasteryUnderkingBurrowCharge name="Underking" desc="AnubarakBurrowChargeUnderkingTalent">storm_ui_icon_Anubarak_BurrowCharge.png</AnubarakMasteryUnderkingBurrowCharge>
-        <AnubarakCombatStyleLocustNeedles name="Locust Needles" generic="true" desc="AnubarakRegeneratingCarapaceLocustNeedlesTalent">storm_ui_icon_talent_autoattack_aoe.png</AnubarakCombatStyleLocustNeedles>
-        <AnubarakCombatStyleLegionOfBeetles name="Legion of Beetles" desc="AnubarakLegionOfBeetlesTalent">storm_ui_icon_Anubarak_ScarabHost.png</AnubarakCombatStyleLegionOfBeetles>
-      </Level4>
-      <Level7>
-        <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton" desc="AnubarakRegeneratingCarapaceShedExoskeletonTalent">storm_ui_icon_Anubarak_HardenCarapace_Var1.png</AnubarakMasteryShedExoskeletonHardenCarapace>
-        <AnubarakCombatStyleChitinousPlating name="Chitinous Plating" desc="AnubarakRegeneratingCarapaceChitinousPlatingTalent">storm_ui_icon_anubarak_hardencarapace_var2.png</AnubarakCombatStyleChitinousPlating>
-        <AnubarakMasteryLeechingScarabs name="Leeching Scarabs" desc="AnubarakLeechingMandiblesTalent">storm_ui_icon_Anubarak_ScarabHost.png</AnubarakMasteryLeechingScarabs>
-      </Level7>
-      <Level10>
-        <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm">storm_ui_icon_Anubarak_LocustSwarm.png</AnubarakHeroicAbilityCarrionSwarm>
-        <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon">storm_ui_icon_Anubarak_WebBlast.png</AnubarakHeroicAbilityCocoon>
-      </Level10>
-      <Level13>
-        <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">storm_ui_icon_Talent_BurningRage.png</GenericTalentBurningRage>
-        <AnubarakMasteryUrticatingSpines name="Urticating Spines" desc="AnubarakHardenCarapaceUrtricatingSpinesTalent">storm_ui_icon_Anubarak_HardenCarapace_Var1.png</AnubarakMasteryUrticatingSpines>
-        <AnubarakMasteryBedOfBarbs name="Bed of Barbs" desc="AnubarakImpaleBedOfBarbsTalent">storm_ui_icon_Anubarak_Impale.png</AnubarakMasteryBedOfBarbs>
-      </Level13>
-      <Level16>
-        <AnubarakMasteryEpicenterBurrowCharge name="Epicenter" desc="AnubarakBurrowChargeEpicenterTalent">storm_ui_icon_Anubarak_BurrowCharge.png</AnubarakMasteryEpicenterBurrowCharge>
-        <AnubarakScarabHostBeetleJuiced name="Beetle, Juiced" desc="AnubarakBeetleSpitBeetleJuiceTalent">storm_ui_icon_Anubarak_ScarabHost.png</AnubarakScarabHostBeetleJuiced>
-        <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">storm_ui_icon_talent_bloodforblood.png</GenericTalentBloodForBlood>
-      </Level16>
-      <Level20>
-        <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master" desc="AnubarakCarrionSwarmHiveMasterTalent">storm_ui_icon_Anubarak_LocustSwarm.png</AnubarakMasteryHiveMasterCarrionSwarm>
-        <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">storm_ui_icon_Anubarak_WebBlast.png</AnubarakCocoonCryptweave>
-        <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">storm_ui_icon_Talent_HardenedShield.png</GenericTalentHardenedShield>
-        <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">storm_ui_icon_Talent_Rewind.png</GenericTalentRewind>
-      </Level20>
+<Anubarak available="47479" name="Anub'arak" attributeid="Anub" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_anubarak.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_anubarak.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_anubarak.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <AnubarakMasteryExtendedSpikesImpale name="Extended Spikes" desc="AnubarakImpaleExtendedSpikesTalent">
+        <Icon>storm_ui_icon_Anubarak_Impale.png</Icon>
+      </AnubarakMasteryExtendedSpikesImpale>
+      <GenericDampenMagic name="Dampen Magic" desc="TalentDampenMagic">
+        <Icon>storm_ui_icon_talent_dampenmagic.png</Icon>
+      </GenericDampenMagic>
+      <AnubarakMasteryAssaultScarabBeetleSpit name="Assault Scarab" desc="AnubarakScarabHostAssaultScarabTalent">
+        <Icon>storm_ui_icon_Anubarak_ScarabHost.png</Icon>
+      </AnubarakMasteryAssaultScarabBeetleSpit>
+      <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">
+        <Icon>storm_ui_icon_talent_regenerationmaster.png</Icon>
+      </GenericTalentRegenerationMaster>
+    </Level1>
+    <Level4>
+      <AnubarakMasteryUnderkingBurrowCharge name="Underking" desc="AnubarakBurrowChargeUnderkingTalent">
+        <Icon>storm_ui_icon_Anubarak_BurrowCharge.png</Icon>
+      </AnubarakMasteryUnderkingBurrowCharge>
+      <AnubarakCombatStyleLocustNeedles name="Locust Needles" desc="AnubarakRegeneratingCarapaceLocustNeedlesTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_aoe.png</Icon>
+      </AnubarakCombatStyleLocustNeedles>
+      <AnubarakCombatStyleLegionOfBeetles name="Legion of Beetles" desc="AnubarakLegionOfBeetlesTalent">
+        <Icon>storm_ui_icon_Anubarak_ScarabHost.png</Icon>
+      </AnubarakCombatStyleLegionOfBeetles>
+    </Level4>
+    <Level7>
+      <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton" desc="AnubarakRegeneratingCarapaceShedExoskeletonTalent">
+        <Icon>storm_ui_icon_Anubarak_HardenCarapace_Var1.png</Icon>
+      </AnubarakMasteryShedExoskeletonHardenCarapace>
+      <AnubarakCombatStyleChitinousPlating name="Chitinous Plating" desc="AnubarakRegeneratingCarapaceChitinousPlatingTalent">
+        <Icon>storm_ui_icon_anubarak_hardencarapace_var2.png</Icon>
+      </AnubarakCombatStyleChitinousPlating>
+      <AnubarakMasteryLeechingScarabs name="Leeching Scarabs" desc="AnubarakLeechingMandiblesTalent">
+        <Icon>storm_ui_icon_Anubarak_ScarabHost.png</Icon>
+      </AnubarakMasteryLeechingScarabs>
+    </Level7>
+    <Level10>
+      <AnubarakHeroicAbilityCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm">
+        <Icon>storm_ui_icon_Anubarak_LocustSwarm.png</Icon>
+      </AnubarakHeroicAbilityCarrionSwarm>
+      <AnubarakHeroicAbilityCocoon name="Cocoon" desc="AnubarakCocoon">
+        <Icon>storm_ui_icon_Anubarak_WebBlast.png</Icon>
+      </AnubarakHeroicAbilityCocoon>
+    </Level10>
+    <Level13>
+      <GenericTalentBurningRage name="Burning Rage" desc="GenericBurningRageTalent">
+        <Icon>storm_ui_icon_Talent_BurningRage.png</Icon>
+      </GenericTalentBurningRage>
+      <AnubarakMasteryUrticatingSpines name="Urticating Spines" desc="AnubarakHardenCarapaceUrtricatingSpinesTalent">
+        <Icon>storm_ui_icon_Anubarak_HardenCarapace_Var1.png</Icon>
+      </AnubarakMasteryUrticatingSpines>
+      <AnubarakMasteryBedOfBarbs name="Bed of Barbs" desc="AnubarakImpaleBedOfBarbsTalent">
+        <Icon>storm_ui_icon_Anubarak_Impale.png</Icon>
+      </AnubarakMasteryBedOfBarbs>
+    </Level13>
+    <Level16>
+      <AnubarakMasteryEpicenterBurrowCharge name="Epicenter" desc="AnubarakBurrowChargeEpicenterTalent">
+        <Icon>storm_ui_icon_Anubarak_BurrowCharge.png</Icon>
+      </AnubarakMasteryEpicenterBurrowCharge>
+      <AnubarakScarabHostBeetleJuiced name="Beetle, Juiced" desc="AnubarakBeetleSpitBeetleJuiceTalent">
+        <Icon>storm_ui_icon_Anubarak_ScarabHost.png</Icon>
+      </AnubarakScarabHostBeetleJuiced>
+      <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">
+        <Icon>storm_ui_icon_talent_bloodforblood.png</Icon>
+      </GenericTalentBloodForBlood>
+    </Level16>
+    <Level20>
+      <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master" desc="AnubarakCarrionSwarmHiveMasterTalent">
+        <Icon>storm_ui_icon_Anubarak_LocustSwarm.png</Icon>
+      </AnubarakMasteryHiveMasterCarrionSwarm>
+      <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">
+        <Icon>storm_ui_icon_Anubarak_WebBlast.png</Icon>
+      </AnubarakCocoonCryptweave>
+      <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">
+        <Icon>storm_ui_icon_Talent_HardenedShield.png</Icon>
+      </GenericTalentHardenedShield>
+      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
+        <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
+      </GenericTalentRewind>
+    </Level20>
   </Talents>
 </Anubarak>

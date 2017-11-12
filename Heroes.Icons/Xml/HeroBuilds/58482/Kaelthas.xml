@@ -1,44 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Kaelthas available="47479" name="Kael'thas" unit="HeroKaelthas" attributeid="Kael" franchise="Warcraft" type="Ranged" difficulty="Hard"
-            portrait="storm_ui_ingame_heroselect_btn_kaelthas.png" loading="storm_ui_ingame_hero_loadingscreen_kaelthas.png" leader="storm_ui_ingame_hero_leaderboard_kaelthas.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <KaelthasFlamestrikeConvection name="Convection" desc="KaelthasFlamestrikeConvectionTalent">storm_ui_icon_kaelthas_flamestrike.png</KaelthasFlamestrikeConvection>
-        <KaelthasVerdantSpheresFelInfusion name="Fel Infusion" desc="KaelthasVerdantSpheresFelInfusionTalent">storm_ui_icon_kaelthas_verdantspheres.png</KaelthasVerdantSpheresFelInfusion>
-        <KaelthasManaAddict name="Mana Addict" desc="KaelthasManaAddictTalent">storm_ui_icon_kaelthas_manaaddict.png</KaelthasManaAddict>
-      </Level1>
-      <Level4>
-        <KaelthasGravityLapseNetherWind name="Nether Wind" desc="KaelthasGravityLapseNetherWindTalent">storm_ui_icon_kaelthas_gravitylapse.png</KaelthasGravityLapseNetherWind>
-        <KaelthasGravityLapseEnergyRoil name="Energy Roil" desc="KaelthasGravityLapseEnergyRoilTalent">storm_ui_icon_kaelthas_gravitylapse_a.png</KaelthasGravityLapseEnergyRoil>
-        <KaelthasFlamestrikeManaTap name="Mana Tap" desc="KaelthasManaTapTalent">storm_ui_icon_kaelthas_verdantspheres.png</KaelthasFlamestrikeManaTap>
-      </Level4>
-      <Level7>
-        <KaelthasFlamestrikeBurnedFlesh name="Burned Flesh" desc="KaelthasBurnedFleshTalent">storm_ui_icon_kaelthas_flamestrike.png</KaelthasFlamestrikeBurnedFlesh>
-        <KaelthasLivingBombSunKingsFury name="Sun King's Fury" desc="KaelthasLivingBombSunKingsFury">storm_ui_icon_kaelthas_livingbomb.png</KaelthasLivingBombSunKingsFury>
-        <KaelthasMasterySunfireEnchantment name="Sunfire Enchantment" desc="KaelthasSunfireEnchantmentTalent">storm_ui_icon_kaelthas_verdantspheres.png</KaelthasMasterySunfireEnchantment>
-      </Level7>
-      <Level10>
-        <KaelthasHeroicAbilityPhoenix name="Phoenix" desc="KaelthasPhoenix" mana="80" cooldown="60">storm_ui_icon_kaelthas_phoenix.png</KaelthasHeroicAbilityPhoenix>
-        <KaelthasHeroicAbilityPyroblast name="Pyroblast" desc="KaelthasPyroblast" mana="80" cooldown="100">storm_ui_icon_kaelthas_pyroblast.png</KaelthasHeroicAbilityPyroblast>
-      </Level10>
-      <Level13>
-        <KaelthasLivingBombPyromaniac name="Pyromaniac" desc="KaelthasLivingBombPyromaniacTalent">storm_ui_icon_kaelthas_livingbomb.png</KaelthasLivingBombPyromaniac>
-        <KaelthasLivingBombBackdraft name="Backdraft" desc="KaelthasLivingBombBackdraftTalent">storm_ui_icon_kaelthas_livingbomb_var1.png</KaelthasLivingBombBackdraft>
-        <KaelthasLivingBombFissionBomb name="Fission Bomb" desc="KaelthasLivingBombFissionBombTalent">storm_ui_icon_kaelthas_livingbomb_b.png</KaelthasLivingBombFissionBomb>
-      </Level13>
-      <Level16>
-        <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell" desc="KaelthasFlamestrikeFuryOfTheSunwellTalent">storm_ui_icon_kaelthas_flamestrike.png</KaelthasFlamestrikeFuryOfTheSunwell>
-        <KaelthasArcaneDynamo name="Arcane Dynamo" generic="true" desc="KaelthasArcaneDynamo">storm_ui_icon_talent_arcanepower.png</KaelthasArcaneDynamo>
-        <KaelthasTwinSpheres name="Twin Spheres" desc="KaelthasVerdantSpheresTwinSpheresTalent">storm_ui_icon_kaelthas_verdantspheres.png</KaelthasTwinSpheres>
-      </Level16>
-      <Level20>
-        <KaelthasPhoenixRebirth name="Rebirth" desc="KaelthasPhoenixRebirthTalent">storm_ui_icon_kaelthas_phoenix.png</KaelthasPhoenixRebirth>
-        <KaelthasPyroblastPresenceOfMind name="Presence Of Mind" desc="KaelthasPyroblastPresenceOfMindTalent">storm_ui_icon_kaelthas_pyroblast.png</KaelthasPyroblastPresenceOfMind>
-        <KaelthasMasterOfFlames name="Master of Flames" desc="KaelthasMasterOfFlamesLivingBomb">storm_ui_icon_kaelthas_livingbomb.png</KaelthasMasterOfFlames>
-        <KaelthasMasteryFlamethrower name="Flamethrower" desc="KaelthasFlamethrowerTalent">storm_ui_icon_kaelthas_flamestrike.png</KaelthasMasteryFlamethrower>
-      </Level20>
+<Kaelthas available="47479" name="Kael'thas" unit="HeroKaelthas" attributeid="Kael" franchise="Warcraft" type="Ranged" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_kaelthas.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_kaelthas.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_kaelthas.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <KaelthasFlamestrikeConvection name="Convection" desc="KaelthasFlamestrikeConvectionTalent">
+        <Icon>storm_ui_icon_kaelthas_flamestrike.png</Icon>
+      </KaelthasFlamestrikeConvection>
+      <KaelthasVerdantSpheresFelInfusion name="Fel Infusion" desc="KaelthasVerdantSpheresFelInfusionTalent">
+        <Icon>storm_ui_icon_kaelthas_verdantspheres.png</Icon>
+      </KaelthasVerdantSpheresFelInfusion>
+      <KaelthasManaAddict name="Mana Addict" desc="KaelthasManaAddictTalent">
+        <Icon>storm_ui_icon_kaelthas_manaaddict.png</Icon>
+      </KaelthasManaAddict>
+    </Level1>
+    <Level4>
+      <KaelthasGravityLapseNetherWind name="Nether Wind" desc="KaelthasGravityLapseNetherWindTalent">
+        <Icon>storm_ui_icon_kaelthas_gravitylapse.png</Icon>
+      </KaelthasGravityLapseNetherWind>
+      <KaelthasGravityLapseEnergyRoil name="Energy Roil" desc="KaelthasGravityLapseEnergyRoilTalent">
+        <Icon>storm_ui_icon_kaelthas_gravitylapse_a.png</Icon>
+      </KaelthasGravityLapseEnergyRoil>
+      <KaelthasFlamestrikeManaTap name="Mana Tap" desc="KaelthasManaTapTalent">
+        <Icon>storm_ui_icon_kaelthas_verdantspheres.png</Icon>
+      </KaelthasFlamestrikeManaTap>
+    </Level4>
+    <Level7>
+      <KaelthasFlamestrikeBurnedFlesh name="Burned Flesh" desc="KaelthasBurnedFleshTalent">
+        <Icon>storm_ui_icon_kaelthas_flamestrike.png</Icon>
+      </KaelthasFlamestrikeBurnedFlesh>
+      <KaelthasLivingBombSunKingsFury name="Sun King's Fury" desc="KaelthasLivingBombSunKingsFury">
+        <Icon>storm_ui_icon_kaelthas_livingbomb.png</Icon>
+      </KaelthasLivingBombSunKingsFury>
+      <KaelthasMasterySunfireEnchantment name="Sunfire Enchantment" desc="KaelthasSunfireEnchantmentTalent">
+        <Icon>storm_ui_icon_kaelthas_verdantspheres.png</Icon>
+      </KaelthasMasterySunfireEnchantment>
+    </Level7>
+    <Level10>
+      <KaelthasHeroicAbilityPhoenix name="Phoenix" desc="KaelthasPhoenix">
+        <Icon>storm_ui_icon_kaelthas_phoenix.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>60</Cooldown>
+      </KaelthasHeroicAbilityPhoenix>
+      <KaelthasHeroicAbilityPyroblast name="Pyroblast" desc="KaelthasPyroblast">
+        <Icon>storm_ui_icon_kaelthas_pyroblast.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>100</Cooldown>
+      </KaelthasHeroicAbilityPyroblast>
+    </Level10>
+    <Level13>
+      <KaelthasLivingBombPyromaniac name="Pyromaniac" desc="KaelthasLivingBombPyromaniacTalent">
+        <Icon>storm_ui_icon_kaelthas_livingbomb.png</Icon>
+      </KaelthasLivingBombPyromaniac>
+      <KaelthasLivingBombBackdraft name="Backdraft" desc="KaelthasLivingBombBackdraftTalent">
+        <Icon>storm_ui_icon_kaelthas_livingbomb_var1.png</Icon>
+      </KaelthasLivingBombBackdraft>
+      <KaelthasLivingBombFissionBomb name="Fission Bomb" desc="KaelthasLivingBombFissionBombTalent">
+        <Icon>storm_ui_icon_kaelthas_livingbomb_b.png</Icon>
+      </KaelthasLivingBombFissionBomb>
+    </Level13>
+    <Level16>
+      <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell" desc="KaelthasFlamestrikeFuryOfTheSunwellTalent">
+        <Icon>storm_ui_icon_kaelthas_flamestrike.png</Icon>
+      </KaelthasFlamestrikeFuryOfTheSunwell>
+      <KaelthasArcaneDynamo name="Arcane Dynamo" desc="KaelthasArcaneDynamo">
+        <Icon generic="true">storm_ui_icon_talent_arcanepower.png</Icon>
+      </KaelthasArcaneDynamo>
+      <KaelthasTwinSpheres name="Twin Spheres" desc="KaelthasVerdantSpheresTwinSpheresTalent">
+        <Icon>storm_ui_icon_kaelthas_verdantspheres.png</Icon>
+      </KaelthasTwinSpheres>
+    </Level16>
+    <Level20>
+      <KaelthasPhoenixRebirth name="Rebirth" desc="KaelthasPhoenixRebirthTalent">
+        <Icon>storm_ui_icon_kaelthas_phoenix.png</Icon>
+      </KaelthasPhoenixRebirth>
+      <KaelthasPyroblastPresenceOfMind name="Presence Of Mind" desc="KaelthasPyroblastPresenceOfMindTalent">
+        <Icon>storm_ui_icon_kaelthas_pyroblast.png</Icon>
+      </KaelthasPyroblastPresenceOfMind>
+      <KaelthasMasterOfFlames name="Master of Flames" desc="KaelthasMasterOfFlamesLivingBomb">
+        <Icon>storm_ui_icon_kaelthas_livingbomb.png</Icon>
+      </KaelthasMasterOfFlames>
+      <KaelthasMasteryFlamethrower name="Flamethrower" desc="KaelthasFlamethrowerTalent">
+        <Icon>storm_ui_icon_kaelthas_flamestrike.png</Icon>
+      </KaelthasMasteryFlamethrower>
+    </Level20>
   </Talents>
 </Kaelthas>

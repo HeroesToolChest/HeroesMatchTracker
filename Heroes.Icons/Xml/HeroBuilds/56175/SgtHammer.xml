@@ -1,48 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <SgtHammer available="47479" name="Sgt. Hammer" attributeid="Sgth" franchise="Starcraft" type="Ranged" difficulty="Hard"
-             portrait="storm_ui_ingame_heroselect_btn_sgthammer.png" loading="storm_ui_ingame_hero_loadingscreen_sgthammer.png" leader="storm_ui_ingame_hero_leaderboard_sgthammer.png">
-    <Roles>Specialist</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <SgtHammerMasteryAdvancedArtillery name="Advanced Artillery" desc="SgtHammerArtilleryAdvancedArtilleryTalent">storm_ui_icon_sgthammer_artillery.png</SgtHammerMasteryAdvancedArtillery>
-        <SgtHammerResistant name="Resistant" desc="SgtHammerSiegeModeResistantTalent">storm_ui_icon_sgthammer_siegemode.png</SgtHammerResistant>
-        <SgtHammerAmbush name="Ambush" desc="SgtHammerSiegeModeAmbushTalent">storm_ui_icon_sgthammer_siegemode_var1.png</SgtHammerAmbush>
-        <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">storm_ui_icon_talent_regenerationmaster.png</GenericTalentRegenerationMaster>
-      </Level1>
-      <Level4>
-        <GenericTalentVigorousAssault name="Vigorous Assault" desc="GenericVigorousAssaultTalent">storm_ui_icon_talent_autoattack_heal.png</GenericTalentVigorousAssault>
-        <GenericTalentFocusedAttack name="Focused Attack" desc="GenericFocusedAttackTalent">storm_ui_icon_talent_autoattack_damage.png</GenericTalentFocusedAttack>
-        <SgtHammerMasteryExcessiveForceConcussiveBlast name="Excessive Force" desc="SgtHammerConcussiveBlastExcessiveForceTalent">storm_ui_icon_sgthammer_concussiveblast.png</SgtHammerMasteryExcessiveForceConcussiveBlast>
-      </Level4>
-      <Level7>
-        <SgtHammerMasterySlowingMinesSpiderMines name="Slowing Mines" desc="SgtHammerSpiderMinesSlowingMinesTalent">storm_ui_icon_sgthammer_spidermines.png</SgtHammerMasterySlowingMinesSpiderMines>
-        <SgtHammerHyperCoolingEngines name="Hyper-Cooling Engines" desc="SgtHammerThrustersHyperCoolingEnginesTalent">storm_ui_icon_sgthammer_hypercoolingengines.png</SgtHammerHyperCoolingEngines>
-        <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid" cooldown="60">storm_temp_btn-ability-terran-heal-color.png</GenericTalentFirstAid>
-      </Level7>
-      <Level10>
-        <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun" mana="100" cooldown="60">storm_ui_icon_sgthammer_bluntforcegun.png</SgtHammerHeroicAbilityBluntForceGun>
-        <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike" mana="35" cooldown="6">storm_ui_icon_sgthammer_napalmstrike.png</SgtHammerHeroicAbilityNapalmStrike>
-      </Level10>
-      <Level13>
-        <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.png</GenericTalentGiantKiller>
-        <SgtHammerFirstStrike name="First Strike" desc="SgtHammerArtilleryFirstStrikeTalent">storm_ui_icon_sgthammer_artillery.png</SgtHammerFirstStrike>
-        <SgtHammerBullheadMines name="Bullhead Mines" desc="SgtHammerSpiderMinesBullheadMinesTalent">storm_ui_icon_sgthammer_spidermines.png</SgtHammerBullheadMines>
-        <SgtHammerMasteryFlakCannons name="Barricade" desc="SgtHammerConcussiveBlastBarricadeTalent">storm_ui_icon_sgthammer_concussiveblast.png</SgtHammerMasteryFlakCannons>
-      </Level13>
-      <Level16>
-        <HeroGenericExecutionerPassive name="Executioner" desc="GenericExecutionerTalent">storm_ui_icon_talent_autoattack_damage.png</HeroGenericExecutionerPassive>
-        <SgtHammerMasteryMineField name="Mine Field" desc="SgtHammerSpiderMinesMineFieldTalent">storm_ui_icon_sgthammer_spidermines.png</SgtHammerMasteryMineField>
-        <SgtHammerMasteryHoverSiegeMode name="Hover Siege Mode" desc="SgtHammerSiegeModeHoverSiegeModeTalent">storm_ui_icon_sgthammer_siegemode.png</SgtHammerMasteryHoverSiegeMode>
-        <SgtHammerGraduatingRange name="Graduating Range" desc="SgtHammerSiegeModeGraduatingRangeTalent">storm_ui_icon_sgthammer_siegemode_var1.png</SgtHammerGraduatingRange>
-        <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin" cooldown="60">storm_ui_icon_talent_stoneskin.png</GenericTalentStoneskin>
-      </Level16>
-      <Level20>
-        <SgtHammerMasteryOrbitalBFGBluntForceGun name="Orbital BFG" desc="SgtHammerBluntForceGunOrbitalBFGTalent">storm_ui_icon_sgthammer_bluntforcegun.png</SgtHammerMasteryOrbitalBFGBluntForceGun>
-        <SgtHammerMasteryAdvancedLavaStrikeNapalmStrike name="Advanced Lava Strike" desc="SgtHammerNapalmStrikeAdvancedLavaStrikeTalent">storm_ui_icon_sgthammer_napalmstrike.png</SgtHammerMasteryAdvancedLavaStrikeNapalmStrike>
-        <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.png</GenericTalentFuryoftheStorm>
-        <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">storm_ui_icon_talent_autoattack_range.png</GenericTalentNexusFrenzy>
-      </Level20>
+<SgtHammer available="47479" name="Sgt. Hammer" attributeid="Sgth" franchise="Starcraft" type="Ranged" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_sgthammer.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_sgthammer.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_sgthammer.png</Leader>
+  <Roles>Specialist</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <SgtHammerMasteryAdvancedArtillery name="Advanced Artillery" desc="SgtHammerArtilleryAdvancedArtilleryTalent">
+        <Icon>storm_ui_icon_sgthammer_artillery.png</Icon>
+      </SgtHammerMasteryAdvancedArtillery>
+      <SgtHammerResistant name="Resistant" desc="SgtHammerSiegeModeResistantTalent">
+        <Icon>storm_ui_icon_sgthammer_siegemode.png</Icon>
+      </SgtHammerResistant>
+      <SgtHammerAmbush name="Ambush" desc="SgtHammerSiegeModeAmbushTalent">
+        <Icon>storm_ui_icon_sgthammer_siegemode_var1.png</Icon>
+      </SgtHammerAmbush>
+      <GenericTalentRegenerationMaster name="Regeneration Master" desc="GenericRegenerationMasterTalent">
+        <Icon>storm_ui_icon_talent_regenerationmaster.png</Icon>
+      </GenericTalentRegenerationMaster>
+    </Level1>
+    <Level4>
+      <GenericTalentVigorousAssault name="Vigorous Assault" desc="GenericVigorousAssaultTalent">
+        <Icon>storm_ui_icon_talent_autoattack_heal.png</Icon>
+      </GenericTalentVigorousAssault>
+      <GenericTalentFocusedAttack name="Focused Attack" desc="GenericFocusedAttackTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentFocusedAttack>
+      <SgtHammerMasteryExcessiveForceConcussiveBlast name="Excessive Force" desc="SgtHammerConcussiveBlastExcessiveForceTalent">
+        <Icon>storm_ui_icon_sgthammer_concussiveblast.png</Icon>
+      </SgtHammerMasteryExcessiveForceConcussiveBlast>
+    </Level4>
+    <Level7>
+      <SgtHammerMasterySlowingMinesSpiderMines name="Slowing Mines" desc="SgtHammerSpiderMinesSlowingMinesTalent">
+        <Icon>storm_ui_icon_sgthammer_spidermines.png</Icon>
+      </SgtHammerMasterySlowingMinesSpiderMines>
+      <SgtHammerHyperCoolingEngines name="Hyper-Cooling Engines" desc="SgtHammerThrustersHyperCoolingEnginesTalent">
+        <Icon>storm_ui_icon_sgthammer_hypercoolingengines.png</Icon>
+      </SgtHammerHyperCoolingEngines>
+      <GenericTalentFirstAid name="First Aid" desc="GenericFirstAid">
+        <Icon>storm_temp_btn-ability-terran-heal-color.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentFirstAid>
+    </Level7>
+    <Level10>
+      <SgtHammerHeroicAbilityBluntForceGun name="Blunt Force Gun" desc="SgtHammerBluntForceGun">
+        <Icon>storm_ui_icon_sgthammer_bluntforcegun.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>60</Cooldown>
+      </SgtHammerHeroicAbilityBluntForceGun>
+      <SgtHammerHeroicAbilityNapalmStrike name="Napalm Strike" desc="SgtHammerNapalmStrike">
+        <Icon>storm_ui_icon_sgthammer_napalmstrike.png</Icon>
+        <Mana>35</Mana>
+        <Cooldown>6</Cooldown>
+      </SgtHammerHeroicAbilityNapalmStrike>
+    </Level10>
+    <Level13>
+      <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentGiantKiller>
+      <SgtHammerFirstStrike name="First Strike" desc="SgtHammerArtilleryFirstStrikeTalent">
+        <Icon>storm_ui_icon_sgthammer_artillery.png</Icon>
+      </SgtHammerFirstStrike>
+      <SgtHammerBullheadMines name="Bullhead Mines" desc="SgtHammerSpiderMinesBullheadMinesTalent">
+        <Icon>storm_ui_icon_sgthammer_spidermines.png</Icon>
+      </SgtHammerBullheadMines>
+      <SgtHammerMasteryFlakCannons name="Barricade" desc="SgtHammerConcussiveBlastBarricadeTalent">
+        <Icon>storm_ui_icon_sgthammer_concussiveblast.png</Icon>
+      </SgtHammerMasteryFlakCannons>
+    </Level13>
+    <Level16>
+      <HeroGenericExecutionerPassive name="Executioner" desc="GenericExecutionerTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </HeroGenericExecutionerPassive>
+      <SgtHammerMasteryMineField name="Mine Field" desc="SgtHammerSpiderMinesMineFieldTalent">
+        <Icon>storm_ui_icon_sgthammer_spidermines.png</Icon>
+      </SgtHammerMasteryMineField>
+      <SgtHammerMasteryHoverSiegeMode name="Hover Siege Mode" desc="SgtHammerSiegeModeHoverSiegeModeTalent">
+        <Icon>storm_ui_icon_sgthammer_siegemode.png</Icon>
+      </SgtHammerMasteryHoverSiegeMode>
+      <SgtHammerGraduatingRange name="Graduating Range" desc="SgtHammerSiegeModeGraduatingRangeTalent">
+        <Icon>storm_ui_icon_sgthammer_siegemode_var1.png</Icon>
+      </SgtHammerGraduatingRange>
+      <GenericTalentStoneskin name="Stoneskin" desc="GenericStoneskin">
+        <Icon>storm_ui_icon_talent_stoneskin.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentStoneskin>
+    </Level16>
+    <Level20>
+      <SgtHammerMasteryOrbitalBFGBluntForceGun name="Orbital BFG" desc="SgtHammerBluntForceGunOrbitalBFGTalent">
+        <Icon>storm_ui_icon_sgthammer_bluntforcegun.png</Icon>
+      </SgtHammerMasteryOrbitalBFGBluntForceGun>
+      <SgtHammerMasteryAdvancedLavaStrikeNapalmStrike name="Advanced Lava Strike" desc="SgtHammerNapalmStrikeAdvancedLavaStrikeTalent">
+        <Icon>storm_ui_icon_sgthammer_napalmstrike.png</Icon>
+      </SgtHammerMasteryAdvancedLavaStrikeNapalmStrike>
+      <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentFuryoftheStorm>
+      <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">
+        <Icon>storm_ui_icon_talent_autoattack_range.png</Icon>
+      </GenericTalentNexusFrenzy>
+    </Level20>
   </Talents>
 </SgtHammer>

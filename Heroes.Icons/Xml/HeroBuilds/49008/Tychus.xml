@@ -1,45 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Tychus available="47479" attributeid="Tych" franchise="Starcraft" type="Ranged" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_tychus.png" loading="storm_ui_ingame_hero_loadingscreen_tychus.png" leader="storm_ui_ingame_hero_leaderboard_tychus.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <TychusPressTheAdvantage name="Press the Advantage" desc="TychusPressTheAdvantage">storm_ui_icon_tychus_runandgun_A.png</TychusPressTheAdvantage>
-        <TychusMasteryRunandGunDash name="Dash" desc="TychusRunandGunDashTalent">storm_ui_icon_tychus_runandgun_B.png</TychusMasteryRunandGunDash>
-        <TychusCombatTactician name="Combat Tactician" desc="TychusCombatTactician">storm_ui_icon_tychus_runandgun_C.png</TychusCombatTactician>
-      </Level1>
-      <Level4>
-        <TychusInTheRhythm name="In the Rhythm" desc="TychusIntheRhythmTalent">storm_ui_icon_tychus_minigun.png</TychusInTheRhythm>
-        <TychusFullyLoaded name="Fully Loaded" desc="TychusFullyLoaded">storm_ui_icon_tychus_minigun_A.png</TychusFullyLoaded>
-        <TychusTheBiggerTheyAre name="The Bigger They Are..." desc="TychusTheBiggerTheyAre">storm_ui_icon_tychus_minigun_B.png</TychusTheBiggerTheyAre>
-        <TychusMasterAssassin name="Master Assassin" generic="true" desc="TychusMasterAssassinTalent">storm_ui_icon_talent_autoattack_speed.png</TychusMasterAssassin>
-      </Level4>
-      <Level7>
-        <TychusMasteryQuarterback name="Quarterback" desc="TychusFragGrenadeQuarterbackTalent">storm_ui_icon_tychus_fraggrenade.png</TychusMasteryQuarterback>
-        <TychusMasteryFragGrenadeConcussionGrenade name="Concussion Grenade" desc="TychusFragGrenadeConcussionGrenadeTalent">storm_ui_icon_tychus_fraggrenade_A.png</TychusMasteryFragGrenadeConcussionGrenade>
-        <TychusRelentlessSoldier name="Relentless Soldier" generic="true" desc="TychusRelentlessSoldierTalent">storm_ui_icon_Talent_Relentless.png</TychusRelentlessSoldier>
-      </Level7>
-      <Level10>
-        <TychusHeroicAbilityCommandeerOdin name="Commandeer Odin" desc="TychusCommandeerOdin">storm_ui_icon_tychus_commandeerodin.png</TychusHeroicAbilityCommandeerOdin>
-        <TychusHeroicAbilityDrakkenLaserDrill name="Drakken Laser Drill" desc="TychusDrakkenLaserDrill">storm_ui_icon_tychus_drakkinlaserdrill.png</TychusHeroicAbilityDrakkenLaserDrill>
-      </Level10>
-      <Level13>
-        <TychusThatsTheStuff name="That's the Stuff!" desc="TychusThatsTheStuff">storm_ui_icon_tychus_minigun.png</TychusThatsTheStuff>
-        <TychusNeosteelCoating name="Neosteel Coating" desc="TychusNeosteelCoatingTalent">storm_temp_btn-upgrade-terran-neosteelframe.png</TychusNeosteelCoating>
-        <TychusMasterySprayNPray name="Spray 'n' Pray" desc="TychusOverkillSprayNPrayTalent">storm_ui_icon_tychus_overkill.png</TychusMasterySprayNPray>
-      </Level13>
-      <Level16>
-        <TychusMasteryFragGrenadeTitanGrenade name="Titan Grenade" desc="TychusFragGrenadeTitanGrenadeTalent">storm_ui_icon_tychus_fraggrenade.png</TychusMasteryFragGrenadeTitanGrenade>
-        <TychusMasteryLeadRain name="Lead Rain" desc="TychusOverkillLeadRainTalent">storm_ui_icon_tychus_overkill.png</TychusMasteryLeadRain>
-        <TychusMasteryOverkillArmorPiercingRounds name="Armor Piercing Rounds" desc="TychusOverkillArmorPiercingRoundsTalent">storm_ui_icon_tychus_overkill_A.png</TychusMasteryOverkillArmorPiercingRounds>
-      </Level16>
-      <Level20>
-        <TychusMasteryOdinBigRedButton name="Big Red Button" desc="TychusCommandeerOdinBigRedButtonTalent">storm_ui_icon_tychus_commandeerodin.png</TychusMasteryOdinBigRedButton>
-        <TychusMasteryDrakkenLaserFocusingDiodes name="Focusing Diodes" desc="TychusDrakkenLaserFocusingDiodesTalent">storm_ui_icon_tychus_drakkinlaserdrill.png</TychusMasteryDrakkenLaserFocusingDiodes>
-        <TychusSizzlinAttacks name="Sizzlin' Attacks" generic="true" desc="TychusSizzlinAttacks">storm_ui_icon_talent_autoattack_damage.png</TychusSizzlinAttacks>
-        <TychusRunAndGunBobAndWeave name="Bob and Weave" desc="TychusRunAndGunBobAndWeaveTalent">storm_ui_icon_tychus_runandgun.png</TychusRunAndGunBobAndWeave>
-      </Level20>
+<Tychus available="47479" attributeid="Tych" franchise="Starcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_tychus.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_tychus.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_tychus.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <TychusPressTheAdvantage name="Press the Advantage" desc="TychusPressTheAdvantage">
+        <Icon>storm_ui_icon_tychus_runandgun_A.png</Icon>
+      </TychusPressTheAdvantage>
+      <TychusMasteryRunandGunDash name="Dash" desc="TychusRunandGunDashTalent">
+        <Icon>storm_ui_icon_tychus_runandgun_B.png</Icon>
+      </TychusMasteryRunandGunDash>
+      <TychusCombatTactician name="Combat Tactician" desc="TychusCombatTactician">
+        <Icon>storm_ui_icon_tychus_runandgun_C.png</Icon>
+      </TychusCombatTactician>
+    </Level1>
+    <Level4>
+      <TychusInTheRhythm name="In the Rhythm" desc="TychusIntheRhythmTalent">
+        <Icon>storm_ui_icon_tychus_minigun.png</Icon>
+      </TychusInTheRhythm>
+      <TychusFullyLoaded name="Fully Loaded" desc="TychusFullyLoaded">
+        <Icon>storm_ui_icon_tychus_minigun_A.png</Icon>
+      </TychusFullyLoaded>
+      <TychusTheBiggerTheyAre name="The Bigger They Are..." desc="TychusTheBiggerTheyAre">
+        <Icon>storm_ui_icon_tychus_minigun_B.png</Icon>
+      </TychusTheBiggerTheyAre>
+      <TychusMasterAssassin name="Master Assassin" desc="TychusMasterAssassinTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_speed.png</Icon>
+      </TychusMasterAssassin>
+    </Level4>
+    <Level7>
+      <TychusMasteryQuarterback name="Quarterback" desc="TychusFragGrenadeQuarterbackTalent">
+        <Icon>storm_ui_icon_tychus_fraggrenade.png</Icon>
+      </TychusMasteryQuarterback>
+      <TychusMasteryFragGrenadeConcussionGrenade name="Concussion Grenade" desc="TychusFragGrenadeConcussionGrenadeTalent">
+        <Icon>storm_ui_icon_tychus_fraggrenade_A.png</Icon>
+      </TychusMasteryFragGrenadeConcussionGrenade>
+      <TychusRelentlessSoldier name="Relentless Soldier" desc="TychusRelentlessSoldierTalent">
+        <Icon generic="true">storm_ui_icon_Talent_Relentless.png</Icon>
+      </TychusRelentlessSoldier>
+    </Level7>
+    <Level10>
+      <TychusHeroicAbilityCommandeerOdin name="Commandeer Odin" desc="TychusCommandeerOdin">
+        <Icon>storm_ui_icon_tychus_commandeerodin.png</Icon>
+      </TychusHeroicAbilityCommandeerOdin>
+      <TychusHeroicAbilityDrakkenLaserDrill name="Drakken Laser Drill" desc="TychusDrakkenLaserDrill">
+        <Icon>storm_ui_icon_tychus_drakkinlaserdrill.png</Icon>
+      </TychusHeroicAbilityDrakkenLaserDrill>
+    </Level10>
+    <Level13>
+      <TychusThatsTheStuff name="That's the Stuff!" desc="TychusThatsTheStuff">
+        <Icon>storm_ui_icon_tychus_minigun.png</Icon>
+      </TychusThatsTheStuff>
+      <TychusNeosteelCoating name="Neosteel Coating" desc="TychusNeosteelCoatingTalent">
+        <Icon>storm_temp_btn-upgrade-terran-neosteelframe.png</Icon>
+      </TychusNeosteelCoating>
+      <TychusMasterySprayNPray name="Spray 'n' Pray" desc="TychusOverkillSprayNPrayTalent">
+        <Icon>storm_ui_icon_tychus_overkill.png</Icon>
+      </TychusMasterySprayNPray>
+    </Level13>
+    <Level16>
+      <TychusMasteryFragGrenadeTitanGrenade name="Titan Grenade" desc="TychusFragGrenadeTitanGrenadeTalent">
+        <Icon>storm_ui_icon_tychus_fraggrenade.png</Icon>
+      </TychusMasteryFragGrenadeTitanGrenade>
+      <TychusMasteryLeadRain name="Lead Rain" desc="TychusOverkillLeadRainTalent">
+        <Icon>storm_ui_icon_tychus_overkill.png</Icon>
+      </TychusMasteryLeadRain>
+      <TychusMasteryOverkillArmorPiercingRounds name="Armor Piercing Rounds" desc="TychusOverkillArmorPiercingRoundsTalent">
+        <Icon>storm_ui_icon_tychus_overkill_A.png</Icon>
+      </TychusMasteryOverkillArmorPiercingRounds>
+    </Level16>
+    <Level20>
+      <TychusMasteryOdinBigRedButton name="Big Red Button" desc="TychusCommandeerOdinBigRedButtonTalent">
+        <Icon>storm_ui_icon_tychus_commandeerodin.png</Icon>
+      </TychusMasteryOdinBigRedButton>
+      <TychusMasteryDrakkenLaserFocusingDiodes name="Focusing Diodes" desc="TychusDrakkenLaserFocusingDiodesTalent">
+        <Icon>storm_ui_icon_tychus_drakkinlaserdrill.png</Icon>
+      </TychusMasteryDrakkenLaserFocusingDiodes>
+      <TychusSizzlinAttacks name="Sizzlin' Attacks" desc="TychusSizzlinAttacks">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </TychusSizzlinAttacks>
+      <TychusRunAndGunBobAndWeave name="Bob and Weave" desc="TychusRunAndGunBobAndWeaveTalent">
+        <Icon>storm_ui_icon_tychus_runandgun.png</Icon>
+      </TychusRunAndGunBobAndWeave>
+    </Level20>
   </Talents>
 </Tychus>

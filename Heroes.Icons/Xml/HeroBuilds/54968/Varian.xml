@@ -1,45 +1,91 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Varian available="48027" attributeid="Vari" franchise="Warcraft" type="Melee" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_varian.png" loading="storm_ui_ingame_hero_loadingscreen_varian.png" leader="storm_ui_ingame_hero_leaderboard_varian.png">
-    <Roles>Multiclass,Warrior,Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="VarianLionsFangLionsMawQuest">storm_ui_icon_varian_lionsfang.png</VarianLionsFangLionsMawQuest>
-        <VarianParryOverpower name="Overpower" desc="VarianParryOverpower">storm_ui_icon_varian_parry.png</VarianParryOverpower>
-        <VarianHighKingsQuestQuest name="High King's Quest" desc="VarianHighKingsQuestQuest">storm_ui_icon_varian_highkingsquest.png</VarianHighKingsQuestQuest>
-      </Level1>
-      <Level4>
-        <VarianParryShieldWall name="Shield Wall" desc="VarianParryShieldWall">storm_ui_icon_varian_parry.png</VarianParryShieldWall>
-        <VarianChargeWarbringer name="Warbringer" desc="VarianChargeWarbringer">storm_ui_icon_varian_charge.png</VarianChargeWarbringer>
-      </Level4>
-      <Level7>
-        <VarianParryLivebytheSword name="Live by the Sword" desc="VarianParryLivebytheSword">storm_ui_icon_varian_parry.png</VarianParryLivebytheSword>
-        <VarianSecondWind name="Second Wind" desc="VarianSecondWind">storm_ui_icon_varian_secondwind.png</VarianSecondWind>
-        <VarianVictoryRush name="Victory Rush" desc="VarianVictoryRush">storm_ui_icon_varian_victoryrush.png</VarianVictoryRush>
-      </Level7>
-      <Level10>
-        <VarianTaunt name="Taunt" desc="VarianTaunt">storm_ui_icon_varian_taunt.png</VarianTaunt>
-        <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash">storm_ui_icon_varian_colossus_smash.png</VarianColossusSmash>
-        <VarianTwinBladesOfFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury">storm_ui_icon_varian_twinbladesoffury.png</VarianTwinBladesOfFury>
-      </Level10>
-      <Level13>
-        <VarianChargeJuggernaut name="Juggernaut" desc="VarianChargeJuggernaut">storm_ui_icon_varian_charge.png</VarianChargeJuggernaut>
-        <VarianMortalStrike name="Mortal Strike" desc="VarianMortalStrike">storm_ui_icon_varian_mortalstrike.png</VarianMortalStrike>
-        <VarianShatteringThrow name="Shattering Throw" desc="VarianShatteringThrow">storm_ui_icon_varian_shatteringthrow.png</VarianShatteringThrow>
-      </Level13>
-      <Level16>
-        <VarianBannerOfStormwind name="Banner of Stormwind" desc="VarianBannerOfStormwind">storm_ui_icon_varian_bannerofstormwind.png</VarianBannerOfStormwind>
-        <VarianBannerOfIronforge name="Banner of Ironforge" desc="VarianBannerOfIronforge">storm_ui_icon_varian_bannerofironforge.png</VarianBannerOfIronforge>
-        <VarianBannerOfDalaran name="Banner of Dalaran" desc="VarianBannerOfDalaran">storm_ui_icon_varian_bannerofdalaran.png</VarianBannerOfDalaran>
-      </Level16>
-      <Level20>
-        <VarianTauntVigilance name="Vigilance" desc="VarianTauntVigilance">storm_ui_icon_varian_taunt.png</VarianTauntVigilance>
-        <VarianColossusSmashMasterAtArms name="Master at Arms" desc="VarianColossusSmashMasterAtArms">storm_ui_icon_varian_colossus_smash.png</VarianColossusSmashMasterAtArms>
-        <VarianTwinBladesOfFuryFrenzy name="Frenzy" desc="VarianTwinBladesOfFuryFrenzy">storm_ui_icon_varian_twinbladesoffury.png</VarianTwinBladesOfFuryFrenzy>
-        <VarianBannersGloryToTheAlliance name="Glory to the Alliance" desc="VarianBannersGloryToTheAlliance">storm_ui_icon_varian_glorytothealliance.png</VarianBannersGloryToTheAlliance>
-        <VarianDemoralizingShout name="Demoralizing Shout" desc="VarianDemoralizingShout">storm_ui_icon_varian_demoralizingshout.png</VarianDemoralizingShout>
-      </Level20>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Varian available="48027" attributeid="Vari" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_varian.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_varian.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_varian.png</Leader>
+  <Roles>Multiclass,Warrior,Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <VarianLionsFangLionsMawQuest name="Lion's Maw" desc="VarianLionsFangLionsMawQuest">
+        <Icon>storm_ui_icon_varian_lionsfang.png</Icon>
+      </VarianLionsFangLionsMawQuest>
+      <VarianParryOverpower name="Overpower" desc="VarianParryOverpower">
+        <Icon>storm_ui_icon_varian_parry.png</Icon>
+      </VarianParryOverpower>
+      <VarianHighKingsQuestQuest name="High King's Quest" desc="VarianHighKingsQuestQuest">
+        <Icon>storm_ui_icon_varian_highkingsquest.png</Icon>
+      </VarianHighKingsQuestQuest>
+    </Level1>
+    <Level4>
+      <VarianParryShieldWall name="Shield Wall" desc="VarianParryShieldWall">
+        <Icon>storm_ui_icon_varian_parry.png</Icon>
+      </VarianParryShieldWall>
+      <VarianChargeWarbringer name="Warbringer" desc="VarianChargeWarbringer">
+        <Icon>storm_ui_icon_varian_charge.png</Icon>
+      </VarianChargeWarbringer>
+    </Level4>
+    <Level7>
+      <VarianParryLivebytheSword name="Live by the Sword" desc="VarianParryLivebytheSword">
+        <Icon>storm_ui_icon_varian_parry.png</Icon>
+      </VarianParryLivebytheSword>
+      <VarianSecondWind name="Second Wind" desc="VarianSecondWind">
+        <Icon>storm_ui_icon_varian_secondwind.png</Icon>
+      </VarianSecondWind>
+      <VarianVictoryRush name="Victory Rush" desc="VarianVictoryRush">
+        <Icon>storm_ui_icon_varian_victoryrush.png</Icon>
+      </VarianVictoryRush>
+    </Level7>
+    <Level10>
+      <VarianTaunt name="Taunt" desc="VarianTaunt">
+        <Icon>storm_ui_icon_varian_taunt.png</Icon>
+      </VarianTaunt>
+      <VarianColossusSmash name="Colossus Smash" desc="VarianColossusSmash">
+        <Icon>storm_ui_icon_varian_colossus_smash.png</Icon>
+      </VarianColossusSmash>
+      <VarianTwinBladesOfFury name="Twin Blades of Fury" desc="VarianTwinBladesOfFury">
+        <Icon>storm_ui_icon_varian_twinbladesoffury.png</Icon>
+      </VarianTwinBladesOfFury>
+    </Level10>
+    <Level13>
+      <VarianChargeJuggernaut name="Juggernaut" desc="VarianChargeJuggernaut">
+        <Icon>storm_ui_icon_varian_charge.png</Icon>
+      </VarianChargeJuggernaut>
+      <VarianMortalStrike name="Mortal Strike" desc="VarianMortalStrike">
+        <Icon>storm_ui_icon_varian_mortalstrike.png</Icon>
+      </VarianMortalStrike>
+      <VarianShatteringThrow name="Shattering Throw" desc="VarianShatteringThrow">
+        <Icon>storm_ui_icon_varian_shatteringthrow.png</Icon>
+      </VarianShatteringThrow>
+    </Level13>
+    <Level16>
+      <VarianBannerOfStormwind name="Banner of Stormwind" desc="VarianBannerOfStormwind">
+        <Icon>storm_ui_icon_varian_bannerofstormwind.png</Icon>
+      </VarianBannerOfStormwind>
+      <VarianBannerOfIronforge name="Banner of Ironforge" desc="VarianBannerOfIronforge">
+        <Icon>storm_ui_icon_varian_bannerofironforge.png</Icon>
+      </VarianBannerOfIronforge>
+      <VarianBannerOfDalaran name="Banner of Dalaran" desc="VarianBannerOfDalaran">
+        <Icon>storm_ui_icon_varian_bannerofdalaran.png</Icon>
+      </VarianBannerOfDalaran>
+    </Level16>
+    <Level20>
+      <VarianTauntVigilance name="Vigilance" desc="VarianTauntVigilance">
+        <Icon>storm_ui_icon_varian_taunt.png</Icon>
+      </VarianTauntVigilance>
+      <VarianColossusSmashMasterAtArms name="Master at Arms" desc="VarianColossusSmashMasterAtArms">
+        <Icon>storm_ui_icon_varian_colossus_smash.png</Icon>
+      </VarianColossusSmashMasterAtArms>
+      <VarianTwinBladesOfFuryFrenzy name="Frenzy" desc="VarianTwinBladesOfFuryFrenzy">
+        <Icon>storm_ui_icon_varian_twinbladesoffury.png</Icon>
+      </VarianTwinBladesOfFuryFrenzy>
+      <VarianBannersGloryToTheAlliance name="Glory to the Alliance" desc="VarianBannersGloryToTheAlliance">
+        <Icon>storm_ui_icon_varian_glorytothealliance.png</Icon>
+      </VarianBannersGloryToTheAlliance>
+      <VarianDemoralizingShout name="Demoralizing Shout" desc="VarianDemoralizingShout">
+        <Icon>storm_ui_icon_varian_demoralizingshout.png</Icon>
+      </VarianDemoralizingShout>
+    </Level20>
   </Talents>
 </Varian>

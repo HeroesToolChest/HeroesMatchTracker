@@ -1,44 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <LtMorales available="47479" name="Lt. Morales" attributeid="Medi" unit="HeroMedic" franchise="Starcraft" type="Ranged" difficulty="Medium" mana="Energy"
-             portrait="storm_ui_ingame_heroselect_btn_medic.png" loading="storm_ui_ingame_hero_loadingscreen_medic.png" leader="storm_ui_ingame_hero_leaderboard_medic.png">
-    <Roles>Support</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <MedicCaduceusFeedback name="Caduceus Feedback" desc="MedicCaduceusFeedbackTalent" generic="true">storm_ui_icon_talent_autoattack_mana.png</MedicCaduceusFeedback>
-        <MedicLifeSupport name="Life Support" desc="MedicLifeSupport">storm_ui_icon_medic_deployshield.png</MedicLifeSupport>
-        <MedicClear name="Clear!" desc="MedicClearTalent">storm_ui_icon_medic_displacementgrenade.png</MedicClear>
-      </Level1>
-      <Level4>
-        <MedicCellularReactor name="Cellular Reactor" desc="MedicCellularReactorTalent" cooldown="45">storm_temp_btn-upgrade-terran-moebiusreactor.png</MedicCellularReactor>
-        <MedicTraumaTrigger name="Trauma Trigger" desc="MedicTraumaTriggerTalent">storm_ui_icon_medic_advancedblock.png</MedicTraumaTrigger>
-        <MedicBlastShield name="Blast Shield" desc="MedicBlastShield">storm_ui_icon_medic_displacementgrenade.png</MedicBlastShield>
-      </Level4>
-      <Level7>
-        <MedicPhysicalTherapy name="Physical Therapy" desc="MedicPhysicalTherapy">storm_ui_icon_medic_deployshield.png</MedicPhysicalTherapy>
-        <MedicVanadiumPlating name="Vanadium Plating" desc="MedicVanadiumPlating">storm_ui_icon_medic_deployshield_b.png</MedicVanadiumPlating>
-        <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguard">storm_ui_icon_medic_deployshield_c.png</MedicProlongedSafeguard>
-      </Level7>
-      <Level10>
-        <MedicHeroicAbilityStimDrone name="Stim Drone" desc="MedicStimDrone" cooldown="90">storm_ui_icon_medic_stim.png</MedicHeroicAbilityStimDrone>
-        <MedicHeroicAbilityMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship" cooldown="60">storm_ui_icon_medic_medivacdropship.png</MedicHeroicAbilityMedivacDropship>
-      </Level10>
-      <Level13>
-        <MedicEMPGrenade name="EMP Grenade" desc="MedicEMPGrenadeTalent">storm_ui_icon_medic_displacementgrenade.png</MedicEMPGrenade>
-        <MedicSystemShock name="System Shock" desc="MedicSystemShockTalent">storm_ui_icon_medic_displacementgrenade_b.png</MedicSystemShock>
-        <MedicSecondOpinion name="Second Opinion" desc="MedicSecondOpinion">storm_ui_icon_medic_displacementgrenade_c.png</MedicSecondOpinion>
-      </Level13>
-      <Level16>
-        <MedicExtendedCare name="Extended Care" desc="MedicExtendedCare">storm_ui_icon_medic_healingbeam.png</MedicExtendedCare>
-        <MedicFirstResponder name="First Responder" desc="MedicFirstResponder">storm_ui_icon_medic_healingbeam_c.png</MedicFirstResponder>
-        <MedicShieldSequencer name="Shield Sequencer" desc="MedicShieldSequencerTalent">storm_ui_icon_medic_deployshield.png</MedicShieldSequencer>
-      </Level16>
-      <Level20>
-        <MedicHyperactivity name="Hyperactivity" desc="MedicHyperactivity">storm_ui_icon_medic_stim.png</MedicHyperactivity>
-        <MedicSafeZone name="Safe Zone" desc="MedicSafeZoneTalent">storm_ui_icon_medic_medivacdropship.png</MedicSafeZone>
-        <MedicReinforcements name="Reinforcements" desc="MedicReinforcements" cooldown="30">storm_ui_icon_medic_medivacdropship_b.png</MedicReinforcements>
-        <MedicCaduceusReactor2dot0 name="CaduceusReactor 2.0" desc="MedicCaduceusReactor20">storm_ui_icon_medic_caduceusreactor.png</MedicCaduceusReactor2dot0>
-      </Level20>
+<LtMorales available="47479" name="Lt. Morales" attributeid="Medi" unit="HeroMedic" franchise="Starcraft" type="Ranged" difficulty="Medium" mana="Energy">
+  <Portrait>storm_ui_ingame_heroselect_btn_medic.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_medic.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_medic.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <MedicCaduceusFeedback name="Caduceus Feedback" desc="MedicCaduceusFeedbackTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_mana.png</Icon>
+      </MedicCaduceusFeedback>
+      <MedicLifeSupport name="Life Support" desc="MedicLifeSupport">
+        <Icon>storm_ui_icon_medic_deployshield.png</Icon>
+      </MedicLifeSupport>
+      <MedicClear name="Clear!" desc="MedicClearTalent">
+        <Icon>storm_ui_icon_medic_displacementgrenade.png</Icon>
+      </MedicClear>
+    </Level1>
+    <Level4>
+      <MedicCellularReactor name="Cellular Reactor" desc="MedicCellularReactorTalent">
+        <Icon>storm_temp_btn-upgrade-terran-moebiusreactor.png</Icon>
+        <Cooldown>45</Cooldown>
+      </MedicCellularReactor>
+      <MedicTraumaTrigger name="Trauma Trigger" desc="MedicTraumaTriggerTalent">
+        <Icon>storm_ui_icon_medic_advancedblock.png</Icon>
+      </MedicTraumaTrigger>
+      <MedicBlastShield name="Blast Shield" desc="MedicBlastShield">
+        <Icon>storm_ui_icon_medic_displacementgrenade.png</Icon>
+      </MedicBlastShield>
+    </Level4>
+    <Level7>
+      <MedicPhysicalTherapy name="Physical Therapy" desc="MedicPhysicalTherapy">
+        <Icon>storm_ui_icon_medic_deployshield.png</Icon>
+      </MedicPhysicalTherapy>
+      <MedicVanadiumPlating name="Vanadium Plating" desc="MedicVanadiumPlating">
+        <Icon>storm_ui_icon_medic_deployshield_b.png</Icon>
+      </MedicVanadiumPlating>
+      <MedicProlongedSafeguard name="Prolonged Safeguard" desc="MedicProlongedSafeguard">
+        <Icon>storm_ui_icon_medic_deployshield_c.png</Icon>
+      </MedicProlongedSafeguard>
+    </Level7>
+    <Level10>
+      <MedicHeroicAbilityStimDrone name="Stim Drone" desc="MedicStimDrone">
+        <Icon>storm_ui_icon_medic_stim.png</Icon>
+        <Cooldown>90</Cooldown>
+      </MedicHeroicAbilityStimDrone>
+      <MedicHeroicAbilityMedivacDropship name="Medivac Dropship" desc="MedicMedivacDropship">
+        <Icon>storm_ui_icon_medic_medivacdropship.png</Icon>
+        <Cooldown>60</Cooldown>
+      </MedicHeroicAbilityMedivacDropship>
+    </Level10>
+    <Level13>
+      <MedicEMPGrenade name="EMP Grenade" desc="MedicEMPGrenadeTalent">
+        <Icon>storm_ui_icon_medic_displacementgrenade.png</Icon>
+      </MedicEMPGrenade>
+      <MedicSystemShock name="System Shock" desc="MedicSystemShockTalent">
+        <Icon>storm_ui_icon_medic_displacementgrenade_b.png</Icon>
+      </MedicSystemShock>
+      <MedicSecondOpinion name="Second Opinion" desc="MedicSecondOpinion">
+        <Icon>storm_ui_icon_medic_displacementgrenade_c.png</Icon>
+      </MedicSecondOpinion>
+    </Level13>
+    <Level16>
+      <MedicExtendedCare name="Extended Care" desc="MedicExtendedCare">
+        <Icon>storm_ui_icon_medic_healingbeam.png</Icon>
+      </MedicExtendedCare>
+      <MedicFirstResponder name="First Responder" desc="MedicFirstResponder">
+        <Icon>storm_ui_icon_medic_healingbeam_c.png</Icon>
+      </MedicFirstResponder>
+      <MedicShieldSequencer name="Shield Sequencer" desc="MedicShieldSequencerTalent">
+        <Icon>storm_ui_icon_medic_deployshield.png</Icon>
+      </MedicShieldSequencer>
+    </Level16>
+    <Level20>
+      <MedicHyperactivity name="Hyperactivity" desc="MedicHyperactivity">
+        <Icon>storm_ui_icon_medic_stim.png</Icon>
+      </MedicHyperactivity>
+      <MedicSafeZone name="Safe Zone" desc="MedicSafeZoneTalent">
+        <Icon>storm_ui_icon_medic_medivacdropship.png</Icon>
+      </MedicSafeZone>
+      <MedicReinforcements name="Reinforcements" desc="MedicReinforcements">
+        <Icon>storm_ui_icon_medic_medivacdropship_b.png</Icon>
+        <Cooldown>30</Cooldown>
+      </MedicReinforcements>
+      <MedicCaduceusReactor2dot0 name="CaduceusReactor 2.0" desc="MedicCaduceusReactor20">
+        <Icon>storm_ui_icon_medic_caduceusreactor.png</Icon>
+      </MedicCaduceusReactor2dot0>
+    </Level20>
   </Talents>
 </LtMorales>

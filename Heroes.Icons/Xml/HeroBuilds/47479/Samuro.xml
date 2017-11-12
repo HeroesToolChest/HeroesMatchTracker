@@ -1,45 +1,90 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Samuro available="47479" attributeid="Samu" franchise="Warcraft" type="Melee" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_samuro.png" loading="storm_ui_ingame_hero_loadingscreen_samuro.png" leader="storm_ui_ingame_hero_leaderboard_samuro.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">storm_ui_icon_samuro_mirrorimage.png</SamuroWayOfIllusion>
-        <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">storm_ui_icon_samuro_criticalstrike.png</SamuroMirrorImageWayOfTheBlade>
-        <SamuroWayOfTheWind name="Way of the Wind" desc="SamuroWayOfTheWind">storm_ui_icon_samuro_windwalk.png</SamuroWayOfTheWind>
-      </Level1>
-      <Level4>
-        <SamuroMirage name="Mirage" desc="SamuroMirage">storm_ui_icon_samuro_mirrorimage.png</SamuroMirage>
-        <SamuroWindwalkOneWithTheWind name="One With The Wind" desc="SamuroOneWithTheWindTalent">storm_ui_icon_samuro_windwalk.png</SamuroWindwalkOneWithTheWind>
-        <SamuroAdvancingStrikesDeflection name="Defection" desc="SamuroDeflectionTalent">storm_ui_icon_samuro_flowingstrikes.png</SamuroAdvancingStrikesDeflection>
-      </Level4>
-      <Level7>
-        <SamuroBurningBlade name="Burning Blade" desc="SamuroBurningBlade">storm_ui_icon_samuro_criticalstrike.png</SamuroBurningBlade>
-        <SamuroPhantomPain name="Phantom Pain" desc="SamuroPhantomsStrikeTalent">storm_ui_icon_samuro_criticalstrike_a.png</SamuroPhantomPain>
-        <SamuroOverpoweringBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">storm_ui_icon_samuro_criticalstrike_b.png</SamuroOverpoweringBlow>
-      </Level7>
-      <Level10>
-        <SamuroHeroicAbilityBladestorm name="Bladestorm" desc="SamuroBladestorm">storm_ui_icon_samuro_bladestorm.png</SamuroHeroicAbilityBladestorm>
-        <SamuroHeroicAbilityIllusionMaster name="Illusion Master" desc="SamuroIllusionMaster">storm_ui_icon_samuro_illusiondancer.png</SamuroHeroicAbilityIllusionMaster>
-      </Level10>
-      <Level13>
-        <SamuroMirroredSteel name="Mirrored Steel" desc="SamuroMirroredSteelTalent">storm_ui_icon_samuro_mirrorimage.png</SamuroMirroredSteel>
-        <SamuroWindwalkKawarimi name="Kawarimi" desc="WindwalkKawarimiTalent">storm_ui_icon_samuro_windwalk.png</SamuroWindwalkKawarimi>
-        <SamuroShukuchi name="Shukuchi" desc="SamuroShukuchiTalent">storm_ui_icon_samuro_windwalk_a.png</SamuroShukuchi>
-      </Level13>
-      <Level16>
-        <SamuroMercilessStrikes name="Merciless Strikes" desc="SamuroMercilessStrikes">storm_ui_icon_samuro_criticalstrike.png</SamuroMercilessStrikes>
-        <SamuroHarshWinds name="Harsh Winds" desc="SamuroHarshWinds">storm_ui_icon_samuro_windwalk.png</SamuroHarshWinds>
-        <SamuroPressTheAttack name="Press the Attack" desc="SamuroPressTheAttack">storm_ui_icon_samuro_flowingstrikes.png</SamuroPressTheAttack>
-      </Level16>
-      <Level20>
-        <SamuroWhirlwindStorm name="Dance of Death" desc="SamuroDanceOfDeathTalent">storm_ui_icon_samuro_bladestorm.png</SamuroWhirlwindStorm>
-        <SamuroThreeBladeStyle name="Three Blade Style" desc="SamuroThreeBladeStyleTalent">storm_ui_icon_samuro_illusiondancer.png</SamuroThreeBladeStyle>
-        <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">storm_ui_icon_samuro_windwalk.png</SamuroWindStrider>
-        <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">storm_ui_icon_samuro_flowingstrikes.png</SamuroBlademastersPursuit>
-      </Level20>
-      <Old></Old>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Samuro available="47479" attributeid="Samu" franchise="Warcraft" type="Melee" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_samuro.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_samuro.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_samuro.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <SamuroWayOfIllusion name="Way of Illusion" desc="SamuroWayOfIllusion">
+        <Icon>storm_ui_icon_samuro_mirrorimage.png</Icon>
+      </SamuroWayOfIllusion>
+      <SamuroMirrorImageWayOfTheBlade name="Way of the Blade" desc="SamuroWayoftheBlade">
+        <Icon>storm_ui_icon_samuro_criticalstrike.png</Icon>
+      </SamuroMirrorImageWayOfTheBlade>
+      <SamuroWayOfTheWind name="Way of the Wind" desc="SamuroWayOfTheWind">
+        <Icon>storm_ui_icon_samuro_windwalk.png</Icon>
+      </SamuroWayOfTheWind>
+    </Level1>
+    <Level4>
+      <SamuroMirage name="Mirage" desc="SamuroMirage">
+        <Icon>storm_ui_icon_samuro_mirrorimage.png</Icon>
+      </SamuroMirage>
+      <SamuroWindwalkOneWithTheWind name="One With The Wind" desc="SamuroOneWithTheWindTalent">
+        <Icon>storm_ui_icon_samuro_windwalk.png</Icon>
+      </SamuroWindwalkOneWithTheWind>
+      <SamuroAdvancingStrikesDeflection name="Defection" desc="SamuroDeflectionTalent">
+        <Icon>storm_ui_icon_samuro_flowingstrikes.png</Icon>
+      </SamuroAdvancingStrikesDeflection>
+    </Level4>
+    <Level7>
+      <SamuroBurningBlade name="Burning Blade" desc="SamuroBurningBlade">
+        <Icon>storm_ui_icon_samuro_criticalstrike.png</Icon>
+      </SamuroBurningBlade>
+      <SamuroPhantomPain name="Phantom Pain" desc="SamuroPhantomsStrikeTalent">
+        <Icon>storm_ui_icon_samuro_criticalstrike_a.png</Icon>
+      </SamuroPhantomPain>
+      <SamuroOverpoweringBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">
+        <Icon>storm_ui_icon_samuro_criticalstrike_b.png</Icon>
+      </SamuroOverpoweringBlow>
+    </Level7>
+    <Level10>
+      <SamuroHeroicAbilityBladestorm name="Bladestorm" desc="SamuroBladestorm">
+        <Icon>storm_ui_icon_samuro_bladestorm.png</Icon>
+      </SamuroHeroicAbilityBladestorm>
+      <SamuroHeroicAbilityIllusionMaster name="Illusion Master" desc="SamuroIllusionMaster">
+        <Icon>storm_ui_icon_samuro_illusiondancer.png</Icon>
+      </SamuroHeroicAbilityIllusionMaster>
+    </Level10>
+    <Level13>
+      <SamuroMirroredSteel name="Mirrored Steel" desc="SamuroMirroredSteelTalent">
+        <Icon>storm_ui_icon_samuro_mirrorimage.png</Icon>
+      </SamuroMirroredSteel>
+      <SamuroWindwalkKawarimi name="Kawarimi" desc="WindwalkKawarimiTalent">
+        <Icon>storm_ui_icon_samuro_windwalk.png</Icon>
+      </SamuroWindwalkKawarimi>
+      <SamuroShukuchi name="Shukuchi" desc="SamuroShukuchiTalent">
+        <Icon>storm_ui_icon_samuro_windwalk_a.png</Icon>
+      </SamuroShukuchi>
+    </Level13>
+    <Level16>
+      <SamuroMercilessStrikes name="Merciless Strikes" desc="SamuroMercilessStrikes">
+        <Icon>storm_ui_icon_samuro_criticalstrike.png</Icon>
+      </SamuroMercilessStrikes>
+      <SamuroHarshWinds name="Harsh Winds" desc="SamuroHarshWinds">
+        <Icon>storm_ui_icon_samuro_windwalk.png</Icon>
+      </SamuroHarshWinds>
+      <SamuroPressTheAttack name="Press the Attack" desc="SamuroPressTheAttack">
+        <Icon>storm_ui_icon_samuro_flowingstrikes.png</Icon>
+      </SamuroPressTheAttack>
+    </Level16>
+    <Level20>
+      <SamuroWhirlwindStorm name="Dance of Death" desc="SamuroDanceOfDeathTalent">
+        <Icon>storm_ui_icon_samuro_bladestorm.png</Icon>
+      </SamuroWhirlwindStorm>
+      <SamuroThreeBladeStyle name="Three Blade Style" desc="SamuroThreeBladeStyleTalent">
+        <Icon>storm_ui_icon_samuro_illusiondancer.png</Icon>
+      </SamuroThreeBladeStyle>
+      <SamuroWindStrider name="Wind Strider" desc="SamuroWindStrider">
+        <Icon>storm_ui_icon_samuro_windwalk.png</Icon>
+      </SamuroWindStrider>
+      <SamuroBlademastersPursuit name="Blademaster's Pursuit" desc="SamuroBlademastersPursuitTalent">
+        <Icon>storm_ui_icon_samuro_flowingstrikes.png</Icon>
+      </SamuroBlademastersPursuit>
+    </Level20>
+    <Old>
+    </Old>
   </Talents>
 </Samuro>

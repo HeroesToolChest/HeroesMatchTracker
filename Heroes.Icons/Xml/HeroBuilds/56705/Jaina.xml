@@ -1,45 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Jaina available="47479" attributeid="Jain" franchise="Warcraft" type="Ranged" difficulty="Easy"
-         portrait="storm_ui_ingame_heroselect_btn_jaina.png" loading="storm_ui_ingame_hero_loadingscreen_jaina.png" leader="storm_ui_ingame_hero_leaderboard_jaina.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <JainaFrostboltWintersReach name="Winter's Reach" desc="JainaFrostboltWintersReachTalent">storm_ui_icon_jaina_frostbolt.png</JainaFrostboltWintersReach>
-        <JainaFrostbiteLingeringChill name="Lingering Chill" desc="JainaFrostbiteLingeringChillTalent">storm_ui_icon_jaina_frostbite.png</JainaFrostbiteLingeringChill>
-        <JainaFrostbiteDeepChill name="Deep Chill" desc="JainaFrostbiteDeepChillTalent">storm_ui_icon_jaina_frostbite_var1.png</JainaFrostbiteDeepChill>
-        <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">storm_ui_icon_talent_conjurerspursuit.png</GenericTalentConjurersPursuit>
-      </Level1>
-      <Level4>
-        <JainaFrostboltFrostShards name="Frost Shards" desc="JainaFrostboltFrostShardsTalent">storm_ui_icon_jaina_frostbolt.png</JainaFrostboltFrostShards>
-        <JainaFrostbiteArcaneIntellect name="Arcane Intellect" desc="JainaFrostbiteArcaneIntellectTalent">storm_ui_icon_jaina_arcaneintellect.png</JainaFrostbiteArcaneIntellect>
-        <JainaFrostbiteFrostArmor name="Frost Armor" desc="JainaFrostbiteFrostArmorTalent">storm_ui_icon_jaina_frostarmor.png</JainaFrostbiteFrostArmor>
-      </Level4>
-      <Level7>
-        <JainaConeOfColdIceFloes name="Ice Floes" desc="JainaConeOfColdIceFloesTalent">storm_ui_icon_jaina_coneofcold.png</JainaConeOfColdIceFloes>
-        <JainaFrostbiteFrostbitten name="Frostbitten" desc="JainaFrostbiteFrostbittenTalent">storm_ui_icon_jaina_frostbite.png</JainaFrostbiteFrostbitten>
-        <JainaFrostboltIceLance name="Ice Lance" desc="JainaFrostboltIceLanceTalent">storm_ui_icon_jaina_frostbolt.png</JainaFrostboltIceLance>
-      </Level7>
-      <Level10>
-        <JainaHeroicRingOfFrost name="Ring of Frost" desc="JainaRingOfFrost" mana="70" cooldown="80">storm_ui_icon_jaina_ringoffrost.png</JainaHeroicRingOfFrost>
-        <JainaHeroicSummonWaterElemental name="Summon Water Elemental" desc="JainaSummonWaterElemental" mana="75" cooldown="80">storm_ui_icon_jaina_summonwaterelemental.png</JainaHeroicSummonWaterElemental>
-      </Level10>
-      <Level13>
-        <JainaBlizzardStormFront name="Storm Front" desc="JainaBlizzardStormFrontTalent">storm_ui_icon_jaina_blizzard.png</JainaBlizzardStormFront>
-        <JainaFrostbiteIceBarrier name="Ice Barrier" desc="JainaFrostbiteIceBarrierTalent">storm_ui_icon_jaina_frostbite.png</JainaFrostbiteIceBarrier>
-        <JainaIcyVeins name="Icy Veins" desc="JainaIcyVeinsHotbar" cooldown="60">storm_ui_icon_jaina_icyveins.png</JainaIcyVeins>
-      </Level13>
-      <Level16>
-        <JainaBlizzardSnowstorm name="Snowstorm" desc="JainaBlizzardSnowstormTalent">storm_ui_icon_jaina_blizzard.png</JainaBlizzardSnowstorm>
-        <JainaConeOfColdNorthernExposure name="Northern Exposure" desc="JainaConeOfColdNorthernExposureTalent">storm_ui_icon_jaina_coneofcold.png</JainaConeOfColdNorthernExposure>
-        <JainaConeOfColdNumbingBlast name="Numbing Blast" desc="JainaConeOfColdNumbingBlastTalent">storm_ui_icon_jaina_coneofcold_var1.png</JainaConeOfColdNumbingBlast>
-      </Level16>
-      <Level20>
-        <JainaRingOfFrostColdSnap name="Cold Snap" desc="JainaRingOfFrostColdSnapTalent">storm_ui_icon_jaina_ringoffrost.png</JainaRingOfFrostColdSnap>
-        <JainaSummonWaterElementalWintermute name="Wintermute" desc="JainaSummonWaterElementalWintermuteTalent">storm_ui_icon_jaina_summonwaterelemental.png</JainaSummonWaterElementalWintermute>
-        <JainaImprovedIceBlock name="Improved Ice Block" desc="JainaImprovedIceBlockHotbar" cooldown="20">storm_ui_icon_jaina_improvediceblock.png</JainaImprovedIceBlock>
-        <GenericArcanePower name="Arcane Power" desc="GenericArcanePowerHotbar" cooldown="60">storm_ui_icon_talent_arcanepower.png</GenericArcanePower>
-      </Level20>
+<Jaina available="47479" attributeid="Jain" franchise="Warcraft" type="Ranged" difficulty="Easy">
+  <Portrait>storm_ui_ingame_heroselect_btn_jaina.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_jaina.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_jaina.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <JainaFrostboltWintersReach name="Winter's Reach" desc="JainaFrostboltWintersReachTalent">
+        <Icon>storm_ui_icon_jaina_frostbolt.png</Icon>
+      </JainaFrostboltWintersReach>
+      <JainaFrostbiteLingeringChill name="Lingering Chill" desc="JainaFrostbiteLingeringChillTalent">
+        <Icon>storm_ui_icon_jaina_frostbite.png</Icon>
+      </JainaFrostbiteLingeringChill>
+      <JainaFrostbiteDeepChill name="Deep Chill" desc="JainaFrostbiteDeepChillTalent">
+        <Icon>storm_ui_icon_jaina_frostbite_var1.png</Icon>
+      </JainaFrostbiteDeepChill>
+      <GenericTalentConjurersPursuit name="Conjurer's Pursuit" desc="GenericConjurersPursuitTalent">
+        <Icon>storm_ui_icon_talent_conjurerspursuit.png</Icon>
+      </GenericTalentConjurersPursuit>
+    </Level1>
+    <Level4>
+      <JainaFrostboltFrostShards name="Frost Shards" desc="JainaFrostboltFrostShardsTalent">
+        <Icon>storm_ui_icon_jaina_frostbolt.png</Icon>
+      </JainaFrostboltFrostShards>
+      <JainaFrostbiteArcaneIntellect name="Arcane Intellect" desc="JainaFrostbiteArcaneIntellectTalent">
+        <Icon>storm_ui_icon_jaina_arcaneintellect.png</Icon>
+      </JainaFrostbiteArcaneIntellect>
+      <JainaFrostbiteFrostArmor name="Frost Armor" desc="JainaFrostbiteFrostArmorTalent">
+        <Icon>storm_ui_icon_jaina_frostarmor.png</Icon>
+      </JainaFrostbiteFrostArmor>
+    </Level4>
+    <Level7>
+      <JainaConeOfColdIceFloes name="Ice Floes" desc="JainaConeOfColdIceFloesTalent">
+        <Icon>storm_ui_icon_jaina_coneofcold.png</Icon>
+      </JainaConeOfColdIceFloes>
+      <JainaFrostbiteFrostbitten name="Frostbitten" desc="JainaFrostbiteFrostbittenTalent">
+        <Icon>storm_ui_icon_jaina_frostbite.png</Icon>
+      </JainaFrostbiteFrostbitten>
+      <JainaFrostboltIceLance name="Ice Lance" desc="JainaFrostboltIceLanceTalent">
+        <Icon>storm_ui_icon_jaina_frostbolt.png</Icon>
+      </JainaFrostboltIceLance>
+    </Level7>
+    <Level10>
+      <JainaHeroicRingOfFrost name="Ring of Frost" desc="JainaRingOfFrost">
+        <Icon>storm_ui_icon_jaina_ringoffrost.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>80</Cooldown>
+      </JainaHeroicRingOfFrost>
+      <JainaHeroicSummonWaterElemental name="Summon Water Elemental" desc="JainaSummonWaterElemental">
+        <Icon>storm_ui_icon_jaina_summonwaterelemental.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>80</Cooldown>
+      </JainaHeroicSummonWaterElemental>
+    </Level10>
+    <Level13>
+      <JainaBlizzardStormFront name="Storm Front" desc="JainaBlizzardStormFrontTalent">
+        <Icon>storm_ui_icon_jaina_blizzard.png</Icon>
+      </JainaBlizzardStormFront>
+      <JainaFrostbiteIceBarrier name="Ice Barrier" desc="JainaFrostbiteIceBarrierTalent">
+        <Icon>storm_ui_icon_jaina_frostbite.png</Icon>
+      </JainaFrostbiteIceBarrier>
+      <JainaIcyVeins name="Icy Veins" desc="JainaIcyVeinsHotbar">
+        <Icon>storm_ui_icon_jaina_icyveins.png</Icon>
+        <Cooldown>60</Cooldown>
+      </JainaIcyVeins>
+    </Level13>
+    <Level16>
+      <JainaBlizzardSnowstorm name="Snowstorm" desc="JainaBlizzardSnowstormTalent">
+        <Icon>storm_ui_icon_jaina_blizzard.png</Icon>
+      </JainaBlizzardSnowstorm>
+      <JainaConeOfColdNorthernExposure name="Northern Exposure" desc="JainaConeOfColdNorthernExposureTalent">
+        <Icon>storm_ui_icon_jaina_coneofcold.png</Icon>
+      </JainaConeOfColdNorthernExposure>
+      <JainaConeOfColdNumbingBlast name="Numbing Blast" desc="JainaConeOfColdNumbingBlastTalent">
+        <Icon>storm_ui_icon_jaina_coneofcold_var1.png</Icon>
+      </JainaConeOfColdNumbingBlast>
+    </Level16>
+    <Level20>
+      <JainaRingOfFrostColdSnap name="Cold Snap" desc="JainaRingOfFrostColdSnapTalent">
+        <Icon>storm_ui_icon_jaina_ringoffrost.png</Icon>
+      </JainaRingOfFrostColdSnap>
+      <JainaSummonWaterElementalWintermute name="Wintermute" desc="JainaSummonWaterElementalWintermuteTalent">
+        <Icon>storm_ui_icon_jaina_summonwaterelemental.png</Icon>
+      </JainaSummonWaterElementalWintermute>
+      <JainaImprovedIceBlock name="Improved Ice Block" desc="JainaImprovedIceBlockHotbar">
+        <Icon>storm_ui_icon_jaina_improvediceblock.png</Icon>
+        <Cooldown>20</Cooldown>
+      </JainaImprovedIceBlock>
+      <GenericArcanePower name="Arcane Power" desc="GenericArcanePowerHotbar">
+        <Icon>storm_ui_icon_talent_arcanepower.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericArcanePower>
+    </Level20>
   </Talents>
 </Jaina>

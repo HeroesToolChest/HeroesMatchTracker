@@ -1,58 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Guldan available="47479" name="Gul'dan" unit="HeroGuldan" attributeid="Guld" franchise="Warcraft" type="Ranged" difficulty="Medium"
-        portrait="storm_ui_ingame_heroselect_btn_guldan.png" loading="storm_ui_ingame_hero_loadingscreen_guldan.png" leader="storm_ui_ingame_hero_leaderboard_guldan.png">
+<Guldan available="47479" name="Gul'dan" unit="HeroGuldan" attributeid="Guld" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_guldan.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_guldan.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_guldan.png</Leader>
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <GuldanFelFlame name="Fel Flame" desc="GuldanFelFlame" mana="75" cooldown="1.5">storm_ui_icon_guldan_felflame.png</GuldanFelFlame>
-      <GuldanDrainLife name="Drain Life" desc="GuldanDrainLife" cooldown="10">storm_ui_icon_guldan_healthfunnel.png</GuldanDrainLife>
-      <GuldanCorruption name="Corruption" desc="GuldanCorruption" mana="80" cooldown="14">storm_ui_icon_guldan_handofguldan.png</GuldanCorruption>
+      <GuldanFelFlame name="Fel Flame" desc="GuldanFelFlame" cooldown="1.5">
+        <Icon>storm_ui_icon_guldan_felflame.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>15</Cooldown>
+      </GuldanFelFlame>
+      <GuldanDrainLife name="Drain Life" desc="GuldanDrainLife">
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
+        <Cooldown>10</Cooldown>
+      </GuldanDrainLife>
+      <GuldanCorruption name="Corruption" desc="GuldanCorruption">
+        <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>14</Cooldown>
+      </GuldanCorruption>
     </Basic>
     <Heroic>
-      <GuldanHorrify name="Horrify" desc="GuldanHorrify" mana="90" cooldown="80">storm_ui_icon_guldan_horrify.png</GuldanHorrify>
-      <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction" mana="90" cooldown="100">storm_ui_icon_guldan_rainoffire.png</GuldanRainOfDestruction>
+      <GuldanHorrify name="Horrify" desc="GuldanHorrify">
+        <Icon>storm_ui_icon_guldan_horrify.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>80</Cooldown>
+      </GuldanHorrify>
+      <GuldanRainOfDestruction name="Rain of Destruction" desc="GuldanRainOfDestruction">
+        <Icon>storm_ui_icon_guldan_rainoffire.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>100</Cooldown>
+      </GuldanRainOfDestruction>
     </Heroic>
     <Trait>
-      <GuldanLifeTap name="Life Tap" desc="GuldanLifeTap" health="222">storm_ui_icon_guldan_lifetap.png</GuldanLifeTap>
+      <GuldanLifeTap name="Life Tap" desc="GuldanLifeTap">
+        <Icon>storm_ui_icon_guldan_lifetap.png</Icon>
+        <Health>222</Health>
+      </GuldanLifeTap>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame" desc="GuldanFelFlameTalentPursuitOfFlame">storm_ui_icon_guldan_felflame.png</GuldanFelFlamePursuitOfFlame>
-      <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life" desc="GuldanDrainLifeTalentGlyphofDrainLife">storm_ui_icon_guldan_healthfunnel.png</GuldanDrainLifeGlyphOfDrainLife>
-      <GuldanCorruptionEchoedCorruption name="Echoed Corruption" desc="GuldanCorruptionEchoedCorruption">storm_ui_icon_guldan_handofguldan.png</GuldanCorruptionEchoedCorruption>
-      <GuldanChaoticEnergy name="Chaotic Energy" desc="GuldanChaoticEnergy">storm_ui_icon_chaoticenergy.png</GuldanChaoticEnergy>
+      <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame" desc="GuldanFelFlameTalentPursuitOfFlame">
+        <Icon>storm_ui_icon_guldan_felflame.png</Icon>
+      </GuldanFelFlamePursuitOfFlame>
+      <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life" desc="GuldanDrainLifeTalentGlyphofDrainLife">
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
+      </GuldanDrainLifeGlyphOfDrainLife>
+      <GuldanCorruptionEchoedCorruption name="Echoed Corruption" desc="GuldanCorruptionEchoedCorruption">
+        <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
+      </GuldanCorruptionEchoedCorruption>
+      <GuldanChaoticEnergy name="Chaotic Energy" desc="GuldanChaoticEnergy">
+        <Icon>storm_ui_icon_chaoticenergy.png</Icon>
+      </GuldanChaoticEnergy>
     </Level1>
     <Level4>
-      <GuldanDrainLifeHealthFunnel name="Health Funnel" desc="GuldanDrainLifeHealthFunnel">storm_ui_icon_guldan_healthfunnel.png</GuldanDrainLifeHealthFunnel>
-      <GuldanLifeTapImprovedLifeTap name="Improved Life Tap" desc="GuldanLifeTapImprovedLifeTap">storm_ui_icon_guldan_lifetap.png</GuldanLifeTapImprovedLifeTap>
-      <GuldanConsumeSoul name="Consume Soul" desc="GuldanConsumeSoul" cooldown="30" ch-cooldown="true">storm_ui_icon_guldan_darkpact.png</GuldanConsumeSoul>
+      <GuldanDrainLifeHealthFunnel name="Health Funnel" desc="GuldanDrainLifeHealthFunnel">
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
+      </GuldanDrainLifeHealthFunnel>
+      <GuldanLifeTapImprovedLifeTap name="Improved Life Tap" desc="GuldanLifeTapImprovedLifeTap">
+        <Icon>storm_ui_icon_guldan_lifetap.png</Icon>
+      </GuldanLifeTapImprovedLifeTap>
+      <GuldanConsumeSoul name="Consume Soul" desc="GuldanConsumeSoul">
+        <Icon>storm_ui_icon_guldan_darkpact.png</Icon>
+        <Cooldown charge="true">30</Cooldown>
+      </GuldanConsumeSoul>
     </Level4>
     <Level7>
-      <GuldanFelFlameBoundByShadow name="Bound by Shadow" desc="GuldanFelFlameBoundByShadow">storm_ui_icon_guldan_felflame.png</GuldanFelFlameBoundByShadow>
-      <GuldanDrainLifeDevourTheFrail name="Devour the Frail" desc="GuldanDrainLifeDevourTheFrail">storm_ui_icon_guldan_healthfunnel.png</GuldanDrainLifeDevourTheFrail>
-      <GuldanCorruptionCurseOfExhaustion name="Curse of Exhaustion" desc="GuldanCorruptionCurseOfExhaustion">storm_ui_icon_guldan_handofguldan.png</GuldanCorruptionCurseOfExhaustion>
-      <GuldanLifeTapHungerforPower name="Hunger for Power" desc="GuldanLifeTapHungerforPower">storm_ui_icon_guldan_hungerforpower.png</GuldanLifeTapHungerforPower>
+      <GuldanFelFlameBoundByShadow name="Bound by Shadow" desc="GuldanFelFlameBoundByShadow">
+        <Icon>storm_ui_icon_guldan_felflame.png</Icon>
+      </GuldanFelFlameBoundByShadow>
+      <GuldanDrainLifeDevourTheFrail name="Devour the Frail" desc="GuldanDrainLifeDevourTheFrail">
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
+      </GuldanDrainLifeDevourTheFrail>
+      <GuldanCorruptionCurseOfExhaustion name="Curse of Exhaustion" desc="GuldanCorruptionCurseOfExhaustion">
+        <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
+      </GuldanCorruptionCurseOfExhaustion>
+      <GuldanLifeTapHungerforPower name="Hunger for Power" desc="GuldanLifeTapHungerforPower">
+        <Icon>storm_ui_icon_guldan_hungerforpower.png</Icon>
+      </GuldanLifeTapHungerforPower>
     </Level7>
     <Level10>
       <GuldanHorrify ability="GuldanHorrify" />
       <GuldanRainOfDestruction ability="GuldanRainOfDestruction" />
     </Level10>
     <Level13>
-      <GuldanFelFlameFelArmor name="Fel Armor" desc="GuldanFelFlameFelArmor">storm_ui_icon_guldan_felflame.png</GuldanFelFlameFelArmor>
-      <GuldanDrainLifeHarvestLife name="Harvest Life" desc="GuldanDrainLifeHarvestLife">storm_ui_icon_guldan_healthfunnel.png</GuldanDrainLifeHarvestLife>
-      <GuldanDarkBargain name="Dark Bargain" desc="GuldanDarkBargain">storm_ui_icon_guldan_darkbargain.png</GuldanDarkBargain>
-      <GuldanHealthstone name="Healthstone" desc="GuldanHealthstone" cooldown="60">storm_ui_icon_guldan_healthstone.png</GuldanHealthstone>
+      <GuldanFelFlameFelArmor name="Fel Armor" desc="GuldanFelFlameFelArmor">
+        <Icon>storm_ui_icon_guldan_felflame.png</Icon>
+      </GuldanFelFlameFelArmor>
+      <GuldanDrainLifeHarvestLife name="Harvest Life" desc="GuldanDrainLifeHarvestLife">
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
+      </GuldanDrainLifeHarvestLife>
+      <GuldanDarkBargain name="Dark Bargain" desc="GuldanDarkBargain">
+        <Icon>storm_ui_icon_guldan_darkbargain.png</Icon>
+      </GuldanDarkBargain>
+      <GuldanHealthstone name="Healthstone" desc="GuldanHealthstone">
+        <Icon>storm_ui_icon_guldan_healthstone.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GuldanHealthstone>
     </Level13>
     <Level16>
-      <GuldanFelFlameRampantHellfire name="Rampant Hellfire" desc="GuldanFelFlameRampantHellfire">storm_ui_icon_guldan_felflame.png</GuldanFelFlameRampantHellfire>
-      <GuldanCorruptionRuinousAffliction name="Ruinous Affliction" desc="GuldanCorruptionRuinousAffliction">storm_ui_icon_guldan_handofguldan.png</GuldanCorruptionRuinousAffliction>
-      <GuldanLifeTapDarknessWithin name="Darkness Within" desc="GuldanLifeTapDarknessWithin">storm_ui_icon_guldan_lifetap.png</GuldanLifeTapDarknessWithin>
+      <GuldanFelFlameRampantHellfire name="Rampant Hellfire" desc="GuldanFelFlameRampantHellfire">
+        <Icon>storm_ui_icon_guldan_felflame.png</Icon>
+      </GuldanFelFlameRampantHellfire>
+      <GuldanCorruptionRuinousAffliction name="Ruinous Affliction" desc="GuldanCorruptionRuinousAffliction">
+        <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
+      </GuldanCorruptionRuinousAffliction>
+      <GuldanLifeTapDarknessWithin name="Darkness Within" desc="GuldanLifeTapDarknessWithin">
+        <Icon>storm_ui_icon_guldan_lifetap.png</Icon>
+      </GuldanLifeTapDarknessWithin>
     </Level16>
     <Level20>
-      <GuldanHorrifyHaunt name="Haunt" desc="GuldanHorrifyHaunt">storm_ui_icon_guldan_horrify.png</GuldanHorrifyHaunt>
-      <GuldanRainOfDestructionDeepImpact name="Deep Impact" desc="GuldanRainOfDestructionDeepImpact">storm_ui_icon_guldan_rainoffire.png</GuldanRainOfDestructionDeepImpact>
-      <GuldanDemonicCircle name="Demonic Circle" desc="GuldanDemonicCircle" cooldown="60">storm_ui_icon_guldan_demoniccircle.png</GuldanDemonicCircle>
+      <GuldanHorrifyHaunt name="Haunt" desc="GuldanHorrifyHaunt">
+        <Icon>storm_ui_icon_guldan_horrify.png</Icon>
+      </GuldanHorrifyHaunt>
+      <GuldanRainOfDestructionDeepImpact name="Deep Impact" desc="GuldanRainOfDestructionDeepImpact">
+        <Icon>storm_ui_icon_guldan_rainoffire.png</Icon>
+      </GuldanRainOfDestructionDeepImpact>
+      <GuldanDemonicCircle name="Demonic Circle" desc="GuldanDemonicCircle">
+        <Icon>storm_ui_icon_guldan_demoniccircle.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GuldanDemonicCircle>
     </Level20>
   </Talents>
 </Guldan>

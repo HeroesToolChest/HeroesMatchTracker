@@ -1,44 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Illidan available="47479" attributeid="Illi" franchise="Warcraft" type="Melee" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_illidan.png" loading="storm_ui_ingame_hero_loadingscreen_illidan.png" leader="storm_ui_ingame_hero_leaderboard_illidan.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <IllidanMasteryImmolationSweepingStrike name="Immolation" desc="IllidanSweepingStrikeImmolationTalent">storm_ui_icon_illidan_sweepingstrike.png</IllidanMasteryImmolationSweepingStrike>
-        <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault" desc="IllidanSweepingStrikeBatteredAssaultTalent">storm_ui_icon_illidan_sweepingstrike_a.png</IllidanMasteryBatteredAssaultSweepingStrike>
-        <IllidanUnendingHatredPassive name="Unending Hatred" generic="true" desc="IllidanUnendingHatredTalent">storm_ui_icon_talent_seasonedmarksman.png</IllidanUnendingHatredPassive>
-      </Level1>
-      <Level4>
-        <IllidanMasteryRapidChaseDive name="Rapid Chase" desc="IllidanDiveRapidChaseTalent">storm_ui_icon_illidan_dive.png</IllidanMasteryRapidChaseDive>
-        <IllidanMasteryFriendOrFoeDive name="Friend or Foe" desc="IllidanDiveFriendOrFoeTalent">storm_ui_icon_illidan_dive_a.png</IllidanMasteryFriendOrFoeDive>
-        <IllidanMasteryUnboundSweepingStrike name="Unbound" desc="IllidanSweepingStrikeUnboundTalent">storm_ui_icon_illidan_sweepingstrike.png</IllidanMasteryUnboundSweepingStrike>
-      </Level4>
-      <Level7>
-        <IllidanReflexiveBlock name="Reflexive Block" desc="IllidanEvasionReflexiveBlockTalent">storm_ui_icon_illidan_dive.png</IllidanReflexiveBlock>
-        <IllidanSweepingStrikesThirstingBlade name="Thirsting Blade" desc="IllidanBetrayersThirstThirstingBladeTalent">storm_ui_icon_illidan_betrayersthirst.png</IllidanSweepingStrikesThirstingBlade>
-        <IllidanCombatStyleHuntersOnslaught name="Hunter's Onslaught" desc="IllidanBetrayersThirstHuntersOnslaughtTalent">storm_ui_icon_illidan_betrayersthirst_a.png</IllidanCombatStyleHuntersOnslaught>
-      </Level7>
-      <Level10>
-        <IllidanHeroicAbilityMetamorphosis name="Metamorphosis" desc="IllidanMetamorphosis">storm_ui_icon_illidan_metamorphosis.png</IllidanHeroicAbilityMetamorphosis>
-        <IllidanHeroicAbilityTheHunt name="The Hunt" desc="IllidanTheHunt">storm_ui_icon_illidan_thehunt.png</IllidanHeroicAbilityTheHunt>
-      </Level10>
-      <Level13>
-        <IllidanNimbleDefender name="Nimble Defender" desc="IllidanNimbleDefender">storm_ui_icon_illidan_sweepingstrike.png</IllidanNimbleDefender>
-        <IllidanElusiveStrike name="Elusive Strike" desc="IllidanElusiveStrike">storm_ui_icon_illidan_evasion.png</IllidanElusiveStrike>
-        <IllidanMasterySixthSenseEvasion name="Sixth Sense" desc="IllidanEvasionSixthSenseTalent">storm_ui_icon_illidan_evasion_a.png</IllidanMasterySixthSenseEvasion>
-      </Level13>
-      <Level16>
-        <IllidanMasteryMarkedforDeathDive name="Marked for Death" desc="IllidanDiveMarkedForDeathTalent">storm_ui_icon_illidan_dive.png</IllidanMasteryMarkedforDeathDive>
-        <IllidanFieryBrand name="Fiery Brand" generic="true" desc="IllidanFieryBrand">storm_ui_icon_talent_autoattack_damage.png</IllidanFieryBrand>
-        <IllidanBladesOfAzzinoth name="Blades of Azzinoth" desc="IllidanBladesOfAzzinoth">storm_ui_icon_illidan_sweepingstrike_c.png</IllidanBladesOfAzzinoth>
-      </Level16>
-      <Level20>
-        <IllidanMasteryDemonicFormMetamorphosis name="Demonic Form" desc="IllidanMetamorphosisDemonicFormTalent">storm_ui_icon_illidan_metamorphosis.png</IllidanMasteryDemonicFormMetamorphosis>
-        <IllidanMasteryNowhereToHideTheHunt name="Nowhere to Hide" desc="IllidanTheHuntNowhereToHideTalent">storm_ui_icon_illidan_thehunt.png</IllidanMasteryNowhereToHideTheHunt>
-        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.png</GenericTalentNexusBlades>
-        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.png</GenericTalentFlashoftheStorms>
-      </Level20>
+<Illidan available="47479" attributeid="Illi" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_illidan.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_illidan.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_illidan.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <IllidanMasteryImmolationSweepingStrike name="Immolation" desc="IllidanSweepingStrikeImmolationTalent">
+        <Icon>storm_ui_icon_illidan_sweepingstrike.png</Icon>
+      </IllidanMasteryImmolationSweepingStrike>
+      <IllidanMasteryBatteredAssaultSweepingStrike name="Battered Assault" desc="IllidanSweepingStrikeBatteredAssaultTalent">
+        <Icon>storm_ui_icon_illidan_sweepingstrike_a.png</Icon>
+      </IllidanMasteryBatteredAssaultSweepingStrike>
+      <IllidanUnendingHatredPassive name="Unending Hatred" desc="IllidanUnendingHatredTalent">
+        <Icon generic="true">storm_ui_icon_talent_seasonedmarksman.png</Icon>
+      </IllidanUnendingHatredPassive>
+    </Level1>
+    <Level4>
+      <IllidanMasteryRapidChaseDive name="Rapid Chase" desc="IllidanDiveRapidChaseTalent">
+        <Icon>storm_ui_icon_illidan_dive.png</Icon>
+      </IllidanMasteryRapidChaseDive>
+      <IllidanMasteryFriendOrFoeDive name="Friend or Foe" desc="IllidanDiveFriendOrFoeTalent">
+        <Icon>storm_ui_icon_illidan_dive_a.png</Icon>
+      </IllidanMasteryFriendOrFoeDive>
+      <IllidanMasteryUnboundSweepingStrike name="Unbound" desc="IllidanSweepingStrikeUnboundTalent">
+        <Icon>storm_ui_icon_illidan_sweepingstrike.png</Icon>
+      </IllidanMasteryUnboundSweepingStrike>
+    </Level4>
+    <Level7>
+      <IllidanReflexiveBlock name="Reflexive Block" desc="IllidanEvasionReflexiveBlockTalent">
+        <Icon>storm_ui_icon_illidan_dive.png</Icon>
+      </IllidanReflexiveBlock>
+      <IllidanSweepingStrikesThirstingBlade name="Thirsting Blade" desc="IllidanBetrayersThirstThirstingBladeTalent">
+        <Icon>storm_ui_icon_illidan_betrayersthirst.png</Icon>
+      </IllidanSweepingStrikesThirstingBlade>
+      <IllidanCombatStyleHuntersOnslaught name="Hunter's Onslaught" desc="IllidanBetrayersThirstHuntersOnslaughtTalent">
+        <Icon>storm_ui_icon_illidan_betrayersthirst_a.png</Icon>
+      </IllidanCombatStyleHuntersOnslaught>
+    </Level7>
+    <Level10>
+      <IllidanHeroicAbilityMetamorphosis name="Metamorphosis" desc="IllidanMetamorphosis">
+        <Icon>storm_ui_icon_illidan_metamorphosis.png</Icon>
+      </IllidanHeroicAbilityMetamorphosis>
+      <IllidanHeroicAbilityTheHunt name="The Hunt" desc="IllidanTheHunt">
+        <Icon>storm_ui_icon_illidan_thehunt.png</Icon>
+      </IllidanHeroicAbilityTheHunt>
+    </Level10>
+    <Level13>
+      <IllidanNimbleDefender name="Nimble Defender" desc="IllidanNimbleDefender">
+        <Icon>storm_ui_icon_illidan_sweepingstrike.png</Icon>
+      </IllidanNimbleDefender>
+      <IllidanElusiveStrike name="Elusive Strike" desc="IllidanElusiveStrike">
+        <Icon>storm_ui_icon_illidan_evasion.png</Icon>
+      </IllidanElusiveStrike>
+      <IllidanMasterySixthSenseEvasion name="Sixth Sense" desc="IllidanEvasionSixthSenseTalent">
+        <Icon>storm_ui_icon_illidan_evasion_a.png</Icon>
+      </IllidanMasterySixthSenseEvasion>
+    </Level13>
+    <Level16>
+      <IllidanMasteryMarkedforDeathDive name="Marked for Death" desc="IllidanDiveMarkedForDeathTalent">
+        <Icon>storm_ui_icon_illidan_dive.png</Icon>
+      </IllidanMasteryMarkedforDeathDive>
+      <IllidanFieryBrand name="Fiery Brand" desc="IllidanFieryBrand">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </IllidanFieryBrand>
+      <IllidanBladesOfAzzinoth name="Blades of Azzinoth" desc="IllidanBladesOfAzzinoth">
+        <Icon>storm_ui_icon_illidan_sweepingstrike_c.png</Icon>
+      </IllidanBladesOfAzzinoth>
+    </Level16>
+    <Level20>
+      <IllidanMasteryDemonicFormMetamorphosis name="Demonic Form" desc="IllidanMetamorphosisDemonicFormTalent">
+        <Icon>storm_ui_icon_illidan_metamorphosis.png</Icon>
+      </IllidanMasteryDemonicFormMetamorphosis>
+      <IllidanMasteryNowhereToHideTheHunt name="Nowhere to Hide" desc="IllidanTheHuntNowhereToHideTalent">
+        <Icon>storm_ui_icon_illidan_thehunt.png</Icon>
+      </IllidanMasteryNowhereToHideTheHunt>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
+        <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </GenericTalentNexusBlades>
+      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">
+        <Icon>storm_ui_icon_talent_boltofthestorm.png</Icon>
+      </GenericTalentFlashoftheStorms>
+    </Level20>
   </Talents>
 </Illidan>

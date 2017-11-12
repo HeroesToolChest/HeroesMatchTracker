@@ -1,44 +1,93 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-  <Cassia available="52124" attributeid="Amaz" franchise="Diablo" type="Ranged" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_d2amazonf.png" loading="storm_ui_ingame_hero_loadingscreen_d2amazonf.png" leader="storm_ui_ingame_hero_leaderboard_d2amazonf.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <AmazonThunderstroke name="Thunderstroke" desc="AmazonLightningFuryThunderstroke">storm_ui_icon_cassia_lightningfury.png</AmazonThunderstroke>
-        <AmazonTrueSight name="True Sight" desc="AmazonBlindingLightTrueSight">storm_ui_icon_cassia_blindinglight.png</AmazonTrueSight>
-        <AmazonChargedStrikes name="Charged Strikes" desc="AmazonAvoidanceChargedStrikes" cooldown="20">storm_ui_icon_cassia_chargedstrikes.png</AmazonChargedStrikes>
-      </Level1>
-      <Level4>
-        <AmazonInnerLight name="Inner Light" desc="AmazonBlindingLightInnerLight">storm_ui_icon_cassia_innerlight.png</AmazonInnerLight>
-        <AmazonRingoftheLeech name="Ring of the Leech" desc="AmazonRingoftheLeech">storm_ui_icon_cassia_ringoftheleech.png</AmazonRingoftheLeech>
-        <AmazonPlateoftheWhale name="Plate of the Whale" desc="AmazonAvoidancePlateoftheWhale">storm_ui_icon_cassia_avoidance.png</AmazonPlateoftheWhale>
-      </Level4>
-      <Level7>
-        <AmazonImpale name="Impale" desc="AmazonFendImpale">storm_ui_icon_cassia_fend.png</AmazonImpale>
-        <AmazonWarTraveler name="War Traveler" desc="AmazonAvoidanceWarTraveler">storm_ui_icon_cassia_avoidance.png</AmazonWarTraveler>
-        <AmazonSurgeOfLight name="Surge Of Light" desc="AmazonAvoidanceSurgeOfLight">storm_ui_icon_cassia_avoidance_a.png</AmazonSurgeOfLight>
-      </Level7>
-      <Level10>
-        <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning" mana="60" cooldown="60">storm_ui_icon_cassia_balllightning.png</AmazonBallLightning>
-        <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie" mana="60" cooldown="60">storm_ui_icon_cassia_valkrie.png</AmazonValkyrie>
-      </Level10>
-      <Level13>
-        <AmazonGroundingBolt name="Grounding Bolt" desc="AmazonLightningFuryGroundingBolt">storm_ui_icon_cassia_lightningfury.png</AmazonGroundingBolt>
-        <AmazonThundergodsVigor name="Thundergod's Vigor" desc="AmazonLightningFuryThundergodsVigor">storm_ui_icon_cassia_lightningfury_a.png</AmazonThundergodsVigor>
-        <AmazonSeraphsHymn name="Seraph's Hymn" desc="AmazonBlindingLightSeraphsHymn">storm_ui_icon_cassia_blindinglight.png</AmazonSeraphsHymn>
-        <AmazonLungingStrike name="Lunging Strike" desc="AmazonFendLungingStrike">storm_ui_icon_cassia_fend.png</AmazonLungingStrike>
-      </Level13>
-      <Level16>
-        <AmazonPierce name="Pierce" desc="AmazonLightningFuryPierce">storm_ui_icon_cassia_lightningfury.png</AmazonPierce>
-        <AmazonPenetrate name="Penetrate" desc="AmazonFendPenetrate">storm_ui_icon_cassia_fend.png</AmazonPenetrate>
-        <AmazonMartialLaw name="MartialLaw" generic="true" desc="AmazonMartialLaw">storm_ui_icon_talent_autoattack_damage.png</AmazonMartialLaw>
-      </Level16>
-      <Level20>
-        <AmazonInfiniteLightning name="Infinite Lightning" desc="AmazonBallLightningInfiniteLightning">storm_ui_icon_cassia_balllightning_a.png</AmazonInfiniteLightning>
-        <AmazonImprisoningLight name="Imprisoning Light" desc="AmazonValkyrieImprisoningLight">storm_ui_icon_cassia_valkrie_a.png</AmazonImprisoningLight>
-        <AmazonTitansRevenge name="Titan's Revenge" generic="true" desc="AmazonTitansRevenge">storm_ui_icon_talent_autoattack_range.png</AmazonTitansRevenge>
-      </Level20>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Cassia available="52124" attributeid="Amaz" franchise="Diablo" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_d2amazonf.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_d2amazonf.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_d2amazonf.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <AmazonThunderstroke name="Thunderstroke" desc="AmazonLightningFuryThunderstroke">
+        <Icon>storm_ui_icon_cassia_lightningfury.png</Icon>
+      </AmazonThunderstroke>
+      <AmazonTrueSight name="True Sight" desc="AmazonBlindingLightTrueSight">
+        <Icon>storm_ui_icon_cassia_blindinglight.png</Icon>
+      </AmazonTrueSight>
+      <AmazonChargedStrikes name="Charged Strikes" desc="AmazonAvoidanceChargedStrikes">
+        <Icon>storm_ui_icon_cassia_chargedstrikes.png</Icon>
+        <Cooldown>20</Cooldown>
+      </AmazonChargedStrikes>
+    </Level1>
+    <Level4>
+      <AmazonInnerLight name="Inner Light" desc="AmazonBlindingLightInnerLight">
+        <Icon>storm_ui_icon_cassia_innerlight.png</Icon>
+      </AmazonInnerLight>
+      <AmazonRingoftheLeech name="Ring of the Leech" desc="AmazonRingoftheLeech">
+        <Icon>storm_ui_icon_cassia_ringoftheleech.png</Icon>
+      </AmazonRingoftheLeech>
+      <AmazonPlateoftheWhale name="Plate of the Whale" desc="AmazonAvoidancePlateoftheWhale">
+        <Icon>storm_ui_icon_cassia_avoidance.png</Icon>
+      </AmazonPlateoftheWhale>
+    </Level4>
+    <Level7>
+      <AmazonImpale name="Impale" desc="AmazonFendImpale">
+        <Icon>storm_ui_icon_cassia_fend.png</Icon>
+      </AmazonImpale>
+      <AmazonWarTraveler name="War Traveler" desc="AmazonAvoidanceWarTraveler">
+        <Icon>storm_ui_icon_cassia_avoidance.png</Icon>
+      </AmazonWarTraveler>
+      <AmazonSurgeOfLight name="Surge Of Light" desc="AmazonAvoidanceSurgeOfLight">
+        <Icon>storm_ui_icon_cassia_avoidance_a.png</Icon>
+      </AmazonSurgeOfLight>
+    </Level7>
+    <Level10>
+      <AmazonBallLightning name="Ball Lightning" desc="AmazonBallLightning">
+        <Icon>storm_ui_icon_cassia_balllightning.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>60</Cooldown>
+      </AmazonBallLightning>
+      <AmazonValkyrie name="Valkyrie" desc="AmazonValkyrie">
+        <Icon>storm_ui_icon_cassia_valkrie.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>60</Cooldown>
+      </AmazonValkyrie>
+    </Level10>
+    <Level13>
+      <AmazonGroundingBolt name="Grounding Bolt" desc="AmazonLightningFuryGroundingBolt">
+        <Icon>storm_ui_icon_cassia_lightningfury.png</Icon>
+      </AmazonGroundingBolt>
+      <AmazonThundergodsVigor name="Thundergod's Vigor" desc="AmazonLightningFuryThundergodsVigor">
+        <Icon>storm_ui_icon_cassia_lightningfury_a.png</Icon>
+      </AmazonThundergodsVigor>
+      <AmazonSeraphsHymn name="Seraph's Hymn" desc="AmazonBlindingLightSeraphsHymn">
+        <Icon>storm_ui_icon_cassia_blindinglight.png</Icon>
+      </AmazonSeraphsHymn>
+      <AmazonLungingStrike name="Lunging Strike" desc="AmazonFendLungingStrike">
+        <Icon>storm_ui_icon_cassia_fend.png</Icon>
+      </AmazonLungingStrike>
+    </Level13>
+    <Level16>
+      <AmazonPierce name="Pierce" desc="AmazonLightningFuryPierce">
+        <Icon>storm_ui_icon_cassia_lightningfury.png</Icon>
+      </AmazonPierce>
+      <AmazonPenetrate name="Penetrate" desc="AmazonFendPenetrate">
+        <Icon>storm_ui_icon_cassia_fend.png</Icon>
+      </AmazonPenetrate>
+      <AmazonMartialLaw name="MartialLaw" desc="AmazonMartialLaw">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </AmazonMartialLaw>
+    </Level16>
+    <Level20>
+      <AmazonInfiniteLightning name="Infinite Lightning" desc="AmazonBallLightningInfiniteLightning">
+        <Icon>storm_ui_icon_cassia_balllightning_a.png</Icon>
+      </AmazonInfiniteLightning>
+      <AmazonImprisoningLight name="Imprisoning Light" desc="AmazonValkyrieImprisoningLight">
+        <Icon>storm_ui_icon_cassia_valkrie_a.png</Icon>
+      </AmazonImprisoningLight>
+      <AmazonTitansRevenge name="Titan's Revenge" desc="AmazonTitansRevenge">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_range.png</Icon>
+      </AmazonTitansRevenge>
+    </Level20>
   </Talents>
 </Cassia>

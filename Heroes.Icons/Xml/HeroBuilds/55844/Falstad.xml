@@ -1,44 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Falstad available="47479" attributeid="Fals" franchise="Warcraft" type="Ranged" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_falstad.png" loading="storm_ui_ingame_hero_loadingscreen_falstad.png" leader="storm_ui_ingame_hero_leaderboard_falstad.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <FalstadHammerangGatheringStorm name="Gathering Storm" desc="FalstadGatheringStormTalent">storm_ui_icon_falstad_hammerang.png</FalstadHammerangGatheringStorm>
-        <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.png</GenericTalentSeasonedMarksman>
-        <FalstadWingman name="Wingman" generic="true" desc="FalstadWingmanHotbarTalent">storm_ui_icon_talent_bribe.png</FalstadWingman>
-      </Level1>
-      <Level4>
-        <FalstadMasteryLightningRodStaticShield name="Static Shield" desc="FalstadStaticShieldTalent">storm_ui_icon_falstad_lightningrod.png</FalstadMasteryLightningRodStaticShield>
-        <FalstadMasteryUpdraftBarrelRoll name="Updraft" desc="FalstadBarrelRollUpdraftTalent">storm_ui_icon_falstad_barrelroll.png</FalstadMasteryUpdraftBarrelRoll>
-        <FalstadTalentHammerGains name="Hammer Gains" generic="true" desc="FalstadHammerGainsTalent">storm_ui_icon_talent_autoattack_heal.png</FalstadTalentHammerGains>
-      </Level4>
-      <Level7>
-        <FalstadMasteryHammerangSecretWeapon name="Secret Weapon" desc="FalstadSecretWeaponTalent">storm_ui_icon_falstad_hammerang.png</FalstadMasteryHammerangSecretWeapon>
-        <FalstadHammerangBOOMerang name="BOOMerang" desc="FalstadHammerangBOOMerangTalent">storm_ui_icon_falstad_hammerang_a.png</FalstadHammerangBOOMerang>
-        <FalstadMasteryLightningRodChargedUp name="Charged Up" desc="FalstadChargedUpTalent">storm_ui_icon_falstad_lightningrod.png</FalstadMasteryLightningRodChargedUp>
-      </Level7>
-      <Level10>
-        <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast" desc="FalstadHinterlandBlast" mana="100" cooldown="120">storm_ui_icon_falstad_hinterlandblast.png</FalstadHeroicAbilityHinterlandBlast>
-        <FalstadHeroicAbilityMightyGust name="Mighty Gust" desc="FalstadMightyGust" mana="70" cooldown="60">storm_ui_icon_falstad_mightygust.png</FalstadHeroicAbilityMightyGust>
-      </Level10>
-      <Level13>
-        <FalstadMasteryLightningRodThunderstrikes name="Thunderstrikes" desc="FalstadThunderstrikesTalent">storm_ui_icon_falstad_lightningrod.png</FalstadMasteryLightningRodThunderstrikes>
-        <FalstadMasteryBarrelRollFlowRider name="Flow Rider" desc="FalstadFlowRiderTalent">storm_ui_icon_falstad_tailwind.png</FalstadMasteryBarrelRollFlowRider>
-        <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.png</GenericTalentGiantKiller>
-      </Level13>
-      <Level16>
-        <FalstadMasteryCripplingHammerHammerang name="Crippling Hammer" desc="FalstadHammerangCripplingHammerTalent">storm_ui_icon_falstad_hammerang.png</FalstadMasteryCripplingHammerHammerang>
-        <FalstadMasteryAerieGustsTailwind name="Aerie Gusts" desc="FalstadTailwindAerieGustsTalent">storm_ui_icon_falstad_tailwind.png</FalstadMasteryAerieGustsTailwind>
-        <FalstadMasteryAfterburner name="Afterburner" desc="FalstadBarrelRollAfterburnerTalent">storm_ui_icon_falstad_barrelroll.png</FalstadMasteryAfterburner>
-      </Level16>
-      <Level20>
-        <FalstadMasteryCalloftheWildhammerHinterlandBlast name="Call of the Wildhammer" desc="FalstadHinterlandBlastCalloftheWildhammerTalent">storm_ui_icon_falstad_hinterlandblast.png</FalstadMasteryCalloftheWildhammerHinterlandBlast>
-        <FalstadMasteryMightyGustWindTunnel name="Wind Tunnel" desc="FalstadWindTunnelTalent">storm_ui_icon_falstad_mightygust.png</FalstadMasteryMightyGustWindTunnel>
-        <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">storm_ui_icon_talent_autoattack_range.png</GenericTalentNexusFrenzy>
-        <FalstadMasteryFlightEpicMount name="Epic Mount" desc="FalstadEpicMountTalent">storm_ui_icon_falstad_epicmount.png</FalstadMasteryFlightEpicMount>
-      </Level20>
+<Falstad available="47479" attributeid="Fals" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_falstad.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_falstad.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_falstad.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <FalstadHammerangGatheringStorm name="Gathering Storm" desc="FalstadGatheringStormTalent">
+        <Icon>storm_ui_icon_falstad_hammerang.png</Icon>
+      </FalstadHammerangGatheringStorm>
+      <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">
+        <Icon>storm_ui_icon_talent_seasonedmarksman.png</Icon>
+      </GenericTalentSeasonedMarksman>
+      <FalstadWingman name="Wingman" desc="FalstadWingmanHotbarTalent">
+        <Icon generic="true">storm_ui_icon_talent_bribe.png</Icon>
+      </FalstadWingman>
+    </Level1>
+    <Level4>
+      <FalstadMasteryLightningRodStaticShield name="Static Shield" desc="FalstadStaticShieldTalent">
+        <Icon>storm_ui_icon_falstad_lightningrod.png</Icon>
+      </FalstadMasteryLightningRodStaticShield>
+      <FalstadMasteryUpdraftBarrelRoll name="Updraft" desc="FalstadBarrelRollUpdraftTalent">
+        <Icon>storm_ui_icon_falstad_barrelroll.png</Icon>
+      </FalstadMasteryUpdraftBarrelRoll>
+      <FalstadTalentHammerGains name="Hammer Gains" desc="FalstadHammerGainsTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
+      </FalstadTalentHammerGains>
+    </Level4>
+    <Level7>
+      <FalstadMasteryHammerangSecretWeapon name="Secret Weapon" desc="FalstadSecretWeaponTalent">
+        <Icon>storm_ui_icon_falstad_hammerang.png</Icon>
+      </FalstadMasteryHammerangSecretWeapon>
+      <FalstadHammerangBOOMerang name="BOOMerang" desc="FalstadHammerangBOOMerangTalent">
+        <Icon>storm_ui_icon_falstad_hammerang_a.png</Icon>
+      </FalstadHammerangBOOMerang>
+      <FalstadMasteryLightningRodChargedUp name="Charged Up" desc="FalstadChargedUpTalent">
+        <Icon>storm_ui_icon_falstad_lightningrod.png</Icon>
+      </FalstadMasteryLightningRodChargedUp>
+    </Level7>
+    <Level10>
+      <FalstadHeroicAbilityHinterlandBlast name="Hinterland Blast" desc="FalstadHinterlandBlast">
+        <Icon>storm_ui_icon_falstad_hinterlandblast.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>120</Cooldown>
+      </FalstadHeroicAbilityHinterlandBlast>
+      <FalstadHeroicAbilityMightyGust name="Mighty Gust" desc="FalstadMightyGust">
+        <Icon>storm_ui_icon_falstad_mightygust.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>60</Cooldown>
+      </FalstadHeroicAbilityMightyGust>
+    </Level10>
+    <Level13>
+      <FalstadMasteryLightningRodThunderstrikes name="Thunderstrikes" desc="FalstadThunderstrikesTalent">
+        <Icon>storm_ui_icon_falstad_lightningrod.png</Icon>
+      </FalstadMasteryLightningRodThunderstrikes>
+      <FalstadMasteryBarrelRollFlowRider name="Flow Rider" desc="FalstadFlowRiderTalent">
+        <Icon>storm_ui_icon_falstad_tailwind.png</Icon>
+      </FalstadMasteryBarrelRollFlowRider>
+      <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentGiantKiller>
+    </Level13>
+    <Level16>
+      <FalstadMasteryCripplingHammerHammerang name="Crippling Hammer" desc="FalstadHammerangCripplingHammerTalent">
+        <Icon>storm_ui_icon_falstad_hammerang.png</Icon>
+      </FalstadMasteryCripplingHammerHammerang>
+      <FalstadMasteryAerieGustsTailwind name="Aerie Gusts" desc="FalstadTailwindAerieGustsTalent">
+        <Icon>storm_ui_icon_falstad_tailwind.png</Icon>
+      </FalstadMasteryAerieGustsTailwind>
+      <FalstadMasteryAfterburner name="Afterburner" desc="FalstadBarrelRollAfterburnerTalent">
+        <Icon>storm_ui_icon_falstad_barrelroll.png</Icon>
+      </FalstadMasteryAfterburner>
+    </Level16>
+    <Level20>
+      <FalstadMasteryCalloftheWildhammerHinterlandBlast name="Call of the Wildhammer" desc="FalstadHinterlandBlastCalloftheWildhammerTalent">
+        <Icon>storm_ui_icon_falstad_hinterlandblast.png</Icon>
+      </FalstadMasteryCalloftheWildhammerHinterlandBlast>
+      <FalstadMasteryMightyGustWindTunnel name="Wind Tunnel" desc="FalstadWindTunnelTalent">
+        <Icon>storm_ui_icon_falstad_mightygust.png</Icon>
+      </FalstadMasteryMightyGustWindTunnel>
+      <GenericTalentNexusFrenzy name="Nexus Frenzy" desc="NexusFrenzyTalent">
+        <Icon>storm_ui_icon_talent_autoattack_range.png</Icon>
+      </GenericTalentNexusFrenzy>
+      <FalstadMasteryFlightEpicMount name="Epic Mount" desc="FalstadEpicMountTalent">
+        <Icon>storm_ui_icon_falstad_epicmount.png</Icon>
+      </FalstadMasteryFlightEpicMount>
+    </Level20>
   </Talents>
 </Falstad>

@@ -1,70 +1,150 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Abathur available="47479" attributeid="Abat" unit="HeroAbathur" franchise="Starcraft" type="Melee" difficulty="VeryHard" mana="None"
-         portrait="storm_ui_ingame_heroselect_btn_abathur.png" loading="storm_ui_ingame_hero_loadingscreen_abathur.png" leader="storm_ui_ingame_hero_leaderboard_abathur.png">
+<Abathur available="47479" attributeid="Abat" unit="HeroAbathur" franchise="Starcraft" type="Melee" difficulty="VeryHard" mana="None">
+  <Portrait>storm_ui_ingame_heroselect_btn_abathur.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_abathur.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_abathur.png</Leader>
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4">storm_ui_icon_abathur_symbiote.png</AbathurSymbiote>
-      <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest" cooldown="10" ch-cooldown="true">storm_ui_icon_abathur_toxicnest.png</AbathurToxicNest>
+      <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote">
+        <Icon>storm_ui_icon_abathur_symbiote.png</Icon>
+        <Cooldown>4</Cooldown>
+      </AbathurSymbiote>
+      <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest">
+        <Icon>storm_ui_icon_abathur_toxicnest.png</Icon>
+        <Cooldown charge="true">10</Cooldown>
+      </AbathurToxicNest>
     </Basic>
     <Heroic>
-      <AbathurUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution" cooldown="70">storm_ui_icon_abathur_ultimateevolution.png</AbathurUltimateEvolution>
-      <AbathurEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar" cooldown="90">storm_ui_icon_abathur_evolvemonstrosity.png</AbathurEvolveMonstrosity>
+      <AbathurUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution">
+        <Icon>storm_ui_icon_abathur_ultimateevolution.png</Icon>
+        <Cooldown>70</Cooldown>
+      </AbathurUltimateEvolution>
+      <AbathurEvolveMonstrosity name="Evolve Monstrosity" desc="AbathurEvolveMonstrosityHotbar">
+        <Icon>storm_ui_icon_abathur_evolvemonstrosity.png</Icon>
+        <Cooldown>90</Cooldown>
+      </AbathurEvolveMonstrosity>
     </Heroic>
     <Trait>
-      <AbathurSpawnLocusts name="Locust Strain" desc="AbathurLocustStrain" cooldown="15">storm_ui_icon_abathur_spawnlocust.png</AbathurSpawnLocusts>
+      <AbathurSpawnLocusts name="Locust Strain" desc="AbathurLocustStrain">
+        <Icon>storm_ui_icon_abathur_spawnlocust.png</Icon>
+        <Cooldown>15</Cooldown>
+      </AbathurSpawnLocusts>
     </Trait>
     <Mount>
-      <AbathurDeepTunnel name="Deep Tunnel" desc="AbathurDeepTunnel" cooldown="30">storm_ui_icon_abathur_mount.png</AbathurDeepTunnel>
+      <AbathurDeepTunnel name="Deep Tunnel" desc="AbathurDeepTunnel">
+        <Icon>storm_ui_icon_abathur_mount.png</Icon>
+        <Cooldown>30</Cooldown>
+      </AbathurDeepTunnel>
     </Mount>
   </Abilities>
   <ExtraAbilities>
     <Basic parent="AbathurSymbiote">
-      <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab" cooldown="3" ch-cooldown="true">storm_ui_icon_abathur_stab.png</AbathurSymbioteStab>
-      <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst" cooldown="6">storm_ui_icon_abathur_spikeburst.png</AbathurSymbioteSpikeBurst>
-      <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace" cooldown="12">storm_ui_icon_abathur_carapace.png</AbathurSymbioteCarapace>
+      <AbathurSymbioteStab name="Stab" desc="AbathurSymbioteStab">
+        <Icon>storm_ui_icon_abathur_stab.png</Icon>
+        <Cooldown charge="true">3</Cooldown>
+      </AbathurSymbioteStab>
+      <AbathurSymbioteSpikeBurst name="Spike Burst" desc="AbathurSymbioteSpikeBurst">
+        <Icon>storm_ui_icon_abathur_spikeburst.png</Icon>
+        <Cooldown>6</Cooldown>
+      </AbathurSymbioteSpikeBurst>
+      <AbathurSymbioteCarapace name="Carapace" desc="AbathurSymbioteCarapace">
+        <Icon>storm_ui_icon_abathur_carapace.png</Icon>
+        <Cooldown>12</Cooldown>
+      </AbathurSymbioteCarapace>
     </Basic>
   </ExtraAbilities>
   <Talents>
     <Level1>
-      <AbathurMasteryPressurizedGlands name="Pressurized Glands" desc="AbathurSymbiotePressurizedGlandsTalent">storm_ui_icon_abathur_spikeburst.png</AbathurMasteryPressurizedGlands>
-      <AbathurCombatStyleSurvivalInstincts name="Survival Instincts" desc="AbathurLocustStrainSurvivalInstinctsTalent">storm_ui_icon_abathur_spawnlocust.png</AbathurCombatStyleSurvivalInstincts>
-      <AbathurMasteryRegenerativeMicrobes name="Regenerative Microbes" desc="AbathurSymbioteRegenerativeMicrobesTalent">storm_ui_icon_abathur_carapace.png</AbathurMasteryRegenerativeMicrobes>
-      <AbathurMasteryEnvenomedNestsToxicNest name="Envenomed Nest" desc="AbathurToxicNestEnvenomedNestTalent">storm_ui_icon_abathur_toxicnest.png</AbathurMasteryEnvenomedNestsToxicNest>
+      <AbathurMasteryPressurizedGlands name="Pressurized Glands" desc="AbathurSymbiotePressurizedGlandsTalent">
+        <Icon>storm_ui_icon_abathur_spikeburst.png</Icon>
+      </AbathurMasteryPressurizedGlands>
+      <AbathurCombatStyleSurvivalInstincts name="Survival Instincts" desc="AbathurLocustStrainSurvivalInstinctsTalent">
+        <Icon>storm_ui_icon_abathur_spawnlocust.png</Icon>
+      </AbathurCombatStyleSurvivalInstincts>
+      <AbathurMasteryRegenerativeMicrobes name="Regenerative Microbes" desc="AbathurSymbioteRegenerativeMicrobesTalent">
+        <Icon>storm_ui_icon_abathur_carapace.png</Icon>
+      </AbathurMasteryRegenerativeMicrobes>
+      <AbathurMasteryEnvenomedNestsToxicNest name="Envenomed Nest" desc="AbathurToxicNestEnvenomedNestTalent">
+        <Icon>storm_ui_icon_abathur_toxicnest.png</Icon>
+      </AbathurMasteryEnvenomedNestsToxicNest>
     </Level1>
     <Level4>
-      <AbathurMasteryProlificDispersal name="Prolific Dispersal" desc="AbathurToxicNestProlificDispersalTalent">storm_ui_icon_abathur_toxicnest.png</AbathurMasteryProlificDispersal>
-      <AbathurMasteryBallistospores name="Ballistospores" desc="AbathurToxicNestBallistosporesTalent">storm_ui_icon_abathur_toxicnest_var1.png</AbathurMasteryBallistospores>
-      <AbathurSymbioteCarapaceSustainedCarapace name="Sustained Carapace" desc="AbathurSymbioteCarapaceSustainedCarapaceTalent">storm_ui_icon_abathur_carapace.png</AbathurSymbioteCarapaceSustainedCarapace>
-      <AbathurSymbioteAdrenalOverload name="Adrenal Overload" desc="AbathurSymbioteAdrenalOverloadTalent">storm_ui_icon_abathur_symbiote.png</AbathurSymbioteAdrenalOverload>
+      <AbathurMasteryProlificDispersal name="Prolific Dispersal" desc="AbathurToxicNestProlificDispersalTalent">
+        <Icon>storm_ui_icon_abathur_toxicnest.png</Icon>
+      </AbathurMasteryProlificDispersal>
+      <AbathurMasteryBallistospores name="Ballistospores" desc="AbathurToxicNestBallistosporesTalent">
+        <Icon>storm_ui_icon_abathur_toxicnest_var1.png</Icon>
+      </AbathurMasteryBallistospores>
+      <AbathurSymbioteCarapaceSustainedCarapace name="Sustained Carapace" desc="AbathurSymbioteCarapaceSustainedCarapaceTalent">
+        <Icon>storm_ui_icon_abathur_carapace.png</Icon>
+      </AbathurSymbioteCarapaceSustainedCarapace>
+      <AbathurSymbioteAdrenalOverload name="Adrenal Overload" desc="AbathurSymbioteAdrenalOverloadTalent">
+        <Icon>storm_ui_icon_abathur_symbiote.png</Icon>
+      </AbathurSymbioteAdrenalOverload>
     </Level4>
     <Level7>
-      <AbathurMasteryNeedlespine name="Needlespine" desc="AbathurSymbioteNeedlespineTalent">storm_ui_icon_abathur_stab.png</AbathurMasteryNeedlespine>
-      <AbathurMasteryVileNestsToxicNest name="Vile Nest" desc="AbathurToxicNestVileNestTalent">storm_ui_icon_abathur_toxicnest.png</AbathurMasteryVileNestsToxicNest>
-      <AbathurSymbioteCarapaceNetworkedCarapace name="Networked Carapace" desc="AbathurSymbioteCarapaceNetworkedCarapaceTalent">storm_ui_icon_abathur_carapace.png</AbathurSymbioteCarapaceNetworkedCarapace>
-      <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule" cooldown="60">storm_ui_icon_talent_mule.png</GenericTalentCalldownMULE>
+      <AbathurMasteryNeedlespine name="Needlespine" desc="AbathurSymbioteNeedlespineTalent">
+        <Icon>storm_ui_icon_abathur_stab.png</Icon>
+      </AbathurMasteryNeedlespine>
+      <AbathurMasteryVileNestsToxicNest name="Vile Nest" desc="AbathurToxicNestVileNestTalent">
+        <Icon>storm_ui_icon_abathur_toxicnest.png</Icon>
+      </AbathurMasteryVileNestsToxicNest>
+      <AbathurSymbioteCarapaceNetworkedCarapace name="Networked Carapace" desc="AbathurSymbioteCarapaceNetworkedCarapaceTalent">
+        <Icon>storm_ui_icon_abathur_carapace.png</Icon>
+      </AbathurSymbioteCarapaceNetworkedCarapace>
+      <GenericTalentCalldownMULE name="Calldown: MULE" desc="GenericCalldownMule">
+        <Icon>storm_ui_icon_talent_mule.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentCalldownMULE>
     </Level7>
     <Level10>
       <AbathurHeroicAbilityUltimateEvolution ability="AbathurUltimateEvolution" />
       <AbathurHeroicAbilityEvolveMonstrosity ability="AbathurEvolveMonstrosity" />
     </Level10>
     <Level13>
-      <AbathurCombatStyleAssaultStrain name="Assault Strain" desc="AbathurLocustStrainAssaultStrainTalent">storm_ui_icon_abathur_spawnlocust.png</AbathurCombatStyleAssaultStrain>
-      <AbathurCombatStyleBombardStrain name="Bombard Strain" desc="AbathurLocustStrainBombardStrainTalent">storm_ui_icon_abathur_spawnlocust_var1.png</AbathurCombatStyleBombardStrain>
-      <AbathurMasterySpatialEfficiency name="Spatial Efficiency" desc="AbathurSymbioteSpatialEfficiencyTalent">storm_ui_icon_abathur_stab.png</AbathurMasterySpatialEfficiency>
-      <AbathurSymbioteSpikeBurstSomaTransference name="Soma Transference" desc="AbathurSymbioteSpikeBurstSomaTransferenceTalent">storm_ui_icon_abathur_spikeburst.png</AbathurSymbioteSpikeBurstSomaTransference>
+      <AbathurCombatStyleAssaultStrain name="Assault Strain" desc="AbathurLocustStrainAssaultStrainTalent">
+        <Icon>storm_ui_icon_abathur_spawnlocust.png</Icon>
+      </AbathurCombatStyleAssaultStrain>
+      <AbathurCombatStyleBombardStrain name="Bombard Strain" desc="AbathurLocustStrainBombardStrainTalent">
+        <Icon>storm_ui_icon_abathur_spawnlocust_var1.png</Icon>
+      </AbathurCombatStyleBombardStrain>
+      <AbathurMasterySpatialEfficiency name="Spatial Efficiency" desc="AbathurSymbioteSpatialEfficiencyTalent">
+        <Icon>storm_ui_icon_abathur_stab.png</Icon>
+      </AbathurMasterySpatialEfficiency>
+      <AbathurSymbioteSpikeBurstSomaTransference name="Soma Transference" desc="AbathurSymbioteSpikeBurstSomaTransferenceTalent">
+        <Icon>storm_ui_icon_abathur_spikeburst.png</Icon>
+      </AbathurSymbioteSpikeBurstSomaTransference>
     </Level13>
     <Level16>
-      <AbathurMasteryEnvenomedSpikes name="Envenomed Spikes" desc="AbathurSymbioteEnvenomedSpikesTalent">storm_ui_icon_abathur_spikeburst.png</AbathurMasteryEnvenomedSpikes>
-      <AbathurMasteryAdrenalineBoost name="Adrenaline Boost" desc="AbathurSymbioteAdrenalineBoostTalent">storm_ui_icon_abathur_carapace.png</AbathurMasteryAdrenalineBoost>
-      <AbathurCombatStyleLocustBrood name="Locust Brood" desc="AbathurLocustSwarm" cooldown="45">storm_ui_icon_abathur_spawnlocust.png</AbathurCombatStyleLocustBrood>
-      <AbathurVolatileMutation name="Volatile Mutation" desc="AbathurVolatileMutationTalent">storm_ui_icon_abathur_volatilemutation.png</AbathurVolatileMutation>
+      <AbathurMasteryEnvenomedSpikes name="Envenomed Spikes" desc="AbathurSymbioteEnvenomedSpikesTalent">
+        <Icon>storm_ui_icon_abathur_spikeburst.png</Icon>
+      </AbathurMasteryEnvenomedSpikes>
+      <AbathurMasteryAdrenalineBoost name="Adrenaline Boost" desc="AbathurSymbioteAdrenalineBoostTalent">
+        <Icon>storm_ui_icon_abathur_carapace.png</Icon>
+      </AbathurMasteryAdrenalineBoost>
+      <AbathurCombatStyleLocustBrood name="Locust Brood" desc="AbathurLocustSwarm">
+        <Icon>storm_ui_icon_abathur_spawnlocust.png</Icon>
+        <Cooldown>45</Cooldown>
+      </AbathurCombatStyleLocustBrood>
+      <AbathurVolatileMutation name="Volatile Mutation" desc="AbathurVolatileMutationTalent">
+        <Icon>storm_ui_icon_abathur_volatilemutation.png</Icon>
+      </AbathurVolatileMutation>
     </Level16>
     <Level20>
-      <AbathurUltimateEvolutionEvolutionaryLink name="Evolutionary Link" desc="AbathurUltimateEvolutionEvolutionaryLinkTalent">storm_ui_icon_abathur_ultimateevolution.png</AbathurUltimateEvolutionEvolutionaryLink>
-      <AbathurMasteryEvolutionComplete name="Evolution Complete" desc="AbathurMonstrosityEvolutionCompleteTalent">storm_ui_icon_abathur_evolvemonstrosity.png</AbathurMasteryEvolutionComplete>
-      <AbathurSymbioteHivemind name="Hivemind" desc="AbathurSymbioteHivemindTalent">storm_ui_icon_abathur_symbiote.png</AbathurSymbioteHivemind>
-      <AbathurMasteryLocustMaster name="Locust Nest" desc="AbathurLocustMasterHotbar" cooldown="45">storm_ui_icon_abathur_locustnest.png</AbathurMasteryLocustMaster>
+      <AbathurUltimateEvolutionEvolutionaryLink name="Evolutionary Link" desc="AbathurUltimateEvolutionEvolutionaryLinkTalent">
+        <Icon>storm_ui_icon_abathur_ultimateevolution.png</Icon>
+      </AbathurUltimateEvolutionEvolutionaryLink>
+      <AbathurMasteryEvolutionComplete name="Evolution Complete" desc="AbathurMonstrosityEvolutionCompleteTalent">
+        <Icon>storm_ui_icon_abathur_evolvemonstrosity.png</Icon>
+      </AbathurMasteryEvolutionComplete>
+      <AbathurSymbioteHivemind name="Hivemind" desc="AbathurSymbioteHivemindTalent">
+        <Icon>storm_ui_icon_abathur_symbiote.png</Icon>
+      </AbathurSymbioteHivemind>
+      <AbathurMasteryLocustMaster name="Locust Nest" desc="AbathurLocustMasterHotbar">
+        <Icon>storm_ui_icon_abathur_locustnest.png</Icon>
+        <Cooldown>45</Cooldown>
+      </AbathurMasteryLocustMaster>
     </Level20>
   </Talents>
 </Abathur>

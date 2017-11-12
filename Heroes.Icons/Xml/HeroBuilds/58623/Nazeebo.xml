@@ -1,61 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Nazeebo available="47479" attributeid="Witc" unit="HeroWitchDoctor" franchise="Diablo" type="Ranged" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_witchdoctor.png" loading="storm_ui_ingame_hero_loadingscreen_witchdoctor.png" leader="storm_ui_ingame_hero_leaderboard_witchdoctor.png">
+<Nazeebo available="47479" attributeid="Witc" unit="HeroWitchDoctor" franchise="Diablo" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_witchdoctor.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_witchdoctor.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_witchdoctor.png</Leader>
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <WitchDoctorCorpseSpiders name="Corpse Spiders" desc="WitchDoctorCorpseSpiders" mana="50" cooldown="9">storm_ui_icon_nazeebo_corpsespider.png</WitchDoctorCorpseSpiders>
-      <WitchDoctorZombieWall name="Zombie Wall" desc="WitchDoctorZombieWall" mana="70" cooldown="14">storm_ui_icon_nazeebo_zombiewall.png</WitchDoctorZombieWall>
-      <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueOfToads" mana="30" cooldown="8" ch-cooldown="true">storm_ui_icon_nazeebo_plagueoftoads.png</WitchDoctorPlagueofToads>
+      <WitchDoctorCorpseSpiders name="Corpse Spiders" desc="WitchDoctorCorpseSpiders">
+        <Icon>storm_ui_icon_nazeebo_corpsespider.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>9</Cooldown>
+      </WitchDoctorCorpseSpiders>
+      <WitchDoctorZombieWall name="Zombie Wall" desc="WitchDoctorZombieWall">
+        <Icon>storm_ui_icon_nazeebo_zombiewall.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>14</Cooldown>
+      </WitchDoctorZombieWall>
+      <WitchDoctorPlagueofToads name="Plague of Toads" desc="WitchDoctorPlagueOfToads">
+        <Icon>storm_ui_icon_nazeebo_plagueoftoads.png</Icon>
+        <Mana>30</Mana>
+        <Cooldown charge="true">8</Cooldown>
+      </WitchDoctorPlagueofToads>
     </Basic>
     <Heroic>
-      <WitchDoctorGargantuan name="Gargantuan" desc="WitchDoctorGargantuan" mana="90" cooldown="70">storm_ui_icon_Nazeebo_Gargantuan.png</WitchDoctorGargantuan>
-      <WitchDoctorRavenousSpirit name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit" mana="100" cooldown="90">storm_ui_icon_Nazeebo_RavenousSpirit.png</WitchDoctorRavenousSpirit>
+      <WitchDoctorGargantuan name="Gargantuan" desc="WitchDoctorGargantuan">
+        <Icon>storm_ui_icon_Nazeebo_Gargantuan.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>70</Cooldown>
+      </WitchDoctorGargantuan>
+      <WitchDoctorRavenousSpirit name="Ravenous Spirit" desc="WitchDoctorRavenousSpirit">
+        <Icon>storm_ui_icon_Nazeebo_RavenousSpirit.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>90</Cooldown>
+      </WitchDoctorRavenousSpirit>
     </Heroic>
     <Trait>
-      <WitchDoctorVoodooRitualTrait name="Voodoo Ritual" desc="WitchDoctorVoodooRitualTrait">storm_ui_icon_nazeebo_voodooritual.png</WitchDoctorVoodooRitualTrait>
+      <WitchDoctorVoodooRitualTrait name="Voodoo Ritual" desc="WitchDoctorVoodooRitualTrait">
+        <Icon>storm_ui_icon_nazeebo_voodooritual.png</Icon>
+      </WitchDoctorVoodooRitualTrait>
     </Trait>
   </Abilities>
   <ExtraAbilities>
     <Heroic>
-      <WitchDoctorGargantuanStompCommand name="Gargantuan Stomp" desc="WitchDoctorGargantuanStomp" cooldown="5">storm_ui_icon_nazeebo_gargantuanstomp.png</WitchDoctorGargantuanStompCommand>
+      <WitchDoctorGargantuanStompCommand name="Gargantuan Stomp" desc="WitchDoctorGargantuanStomp">
+        <Icon>storm_ui_icon_nazeebo_gargantuanstomp.png</Icon>
+        <Cooldown>5</Cooldown>
+      </WitchDoctorGargantuanStompCommand>
     </Heroic>
   </ExtraAbilities>
   <Talents>
     <Level1>
-      <WitchDoctorWidowmakers name="Widowmakers" desc="WitchDoctorWidowmakers">storm_ui_icon_nazeebo_corpsespider.png</WitchDoctorWidowmakers>
-      <WitchDoctorPandemic name="Pandemic" desc="WitchDoctorPandemic">storm_ui_icon_nazeebo_plagueoftoads.png</WitchDoctorPandemic>
-      <WitchDoctorThingOfTheDeep name="Thing of the Deep" generic="true" desc="WitchDoctorThingOfTheDeepTalent">storm_ui_icon_talent_elunesgrace.png</WitchDoctorThingOfTheDeep>
+      <WitchDoctorWidowmakers name="Widowmakers" desc="WitchDoctorWidowmakers">
+        <Icon>storm_ui_icon_nazeebo_corpsespider.png</Icon>
+      </WitchDoctorWidowmakers>
+      <WitchDoctorPandemic name="Pandemic" desc="WitchDoctorPandemic">
+        <Icon>storm_ui_icon_nazeebo_plagueoftoads.png</Icon>
+      </WitchDoctorPandemic>
+      <WitchDoctorThingOfTheDeep name="Thing of the Deep" desc="WitchDoctorThingOfTheDeepTalent">
+        <Icon generic="true">storm_ui_icon_talent_elunesgrace.png</Icon>
+      </WitchDoctorThingOfTheDeep>
     </Level1>
     <Level4>
-      <WitchDoctorHexedCrawlers name="Hexed Crawlers" desc="WitchDoctorHexedCrawlers">storm_ui_icon_nazeebo_corpsespider.png</WitchDoctorHexedCrawlers>
-      <WitchDoctorBigVoodoo name="Big Voodoo" desc="WitchDoctorBigVoodoo">storm_ui_icon_nazeebo_voodooritual.png</WitchDoctorBigVoodoo>
-      <WitchDoctorBloodRitual name="Blood Ritual" desc="WitchDoctorVoodooRitualBloodRitualTalent">storm_ui_icon_nazeebo_voodooritual_a.png</WitchDoctorBloodRitual>
+      <WitchDoctorHexedCrawlers name="Hexed Crawlers" desc="WitchDoctorHexedCrawlers">
+        <Icon>storm_ui_icon_nazeebo_corpsespider.png</Icon>
+      </WitchDoctorHexedCrawlers>
+      <WitchDoctorBigVoodoo name="Big Voodoo" desc="WitchDoctorBigVoodoo">
+        <Icon>storm_ui_icon_nazeebo_voodooritual.png</Icon>
+      </WitchDoctorBigVoodoo>
+      <WitchDoctorBloodRitual name="Blood Ritual" desc="WitchDoctorVoodooRitualBloodRitualTalent">
+        <Icon>storm_ui_icon_nazeebo_voodooritual_a.png</Icon>
+      </WitchDoctorBloodRitual>
     </Level4>
     <Level7>
-      <WitchDoctorSpiritofArachyr name="Spirit of Arachyr" desc="WitchDoctorSpiritofArachyr">storm_ui_icon_nazeebo_corpsespider.png</WitchDoctorSpiritofArachyr>
-      <WitchDoctorDeadRush name="Dead Rush" desc="WitchDoctorZombieWallDeadRushTalent">storm_ui_icon_nazeebo_zombiewall.png</WitchDoctorDeadRush>
-      <WitchDoctorToadsofHugeness name="Toads of Hugeness" desc="WitchDoctorPlagueOfToadsToadsOfHugenessTalent">storm_ui_icon_nazeebo_plagueoftoads.png</WitchDoctorToadsofHugeness>
+      <WitchDoctorSpiritofArachyr name="Spirit of Arachyr" desc="WitchDoctorSpiritofArachyr">
+        <Icon>storm_ui_icon_nazeebo_corpsespider.png</Icon>
+      </WitchDoctorSpiritofArachyr>
+      <WitchDoctorDeadRush name="Dead Rush" desc="WitchDoctorZombieWallDeadRushTalent">
+        <Icon>storm_ui_icon_nazeebo_zombiewall.png</Icon>
+      </WitchDoctorDeadRush>
+      <WitchDoctorToadsofHugeness name="Toads of Hugeness" desc="WitchDoctorPlagueOfToadsToadsOfHugenessTalent">
+        <Icon>storm_ui_icon_nazeebo_plagueoftoads.png</Icon>
+      </WitchDoctorToadsofHugeness>
     </Level7>
     <Level10>
       <WitchDoctorHeroicAbilityGargantuan ability="WitchDoctorGargantuan" />
       <WitchDoctorHeroicAbilityRavenousSpirits ability="WitchDoctorRavenousSpirit" />
     </Level10>
     <Level13>
-      <WitchDoctorGuardianToads name="Guardian Toads" desc="WitchDoctorGuardianToads">storm_ui_icon_nazeebo_plagueoftoads.png</WitchDoctorGuardianToads>
-      <WitchDoctorSuperstition name="Superstition" desc="WitchDoctorSuperstition">storm_ui_icon_nazeebo_suprerstition.png</WitchDoctorSuperstition>
-      <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent" cooldown="60">storm_ui_icon_Talent_IceBlock.png</GenericTalentIceBlock>
+      <WitchDoctorGuardianToads name="Guardian Toads" desc="WitchDoctorGuardianToads">
+        <Icon>storm_ui_icon_nazeebo_plagueoftoads.png</Icon>
+      </WitchDoctorGuardianToads>
+      <WitchDoctorSuperstition name="Superstition" desc="WitchDoctorSuperstition">
+        <Icon>storm_ui_icon_nazeebo_suprerstition.png</Icon>
+      </WitchDoctorSuperstition>
+      <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent">
+        <Icon>storm_ui_icon_Talent_IceBlock.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentIceBlock>
     </Level13>
     <Level16>
-      <WitchDoctorSpiderColony name="Spider Colony" desc="WitchDoctorSpiderColony">storm_ui_icon_nazeebo_corpsespider.png</WitchDoctorSpiderColony>
-      <WitchDoctorRingOfPoison name="Ring of Poison" desc="WitchDoctorRingOfPoison">storm_ui_icon_nazeebo_zombiewall.png</WitchDoctorRingOfPoison>
-      <WitchDoctorSoulHarvest name="Soul Harvest" desc="WitchDoctorSoulHarvest" cooldown="15">storm_ui_icon_nazeebo_soulharvest.png</WitchDoctorSoulHarvest>
+      <WitchDoctorSpiderColony name="Spider Colony" desc="WitchDoctorSpiderColony">
+        <Icon>storm_ui_icon_nazeebo_corpsespider.png</Icon>
+      </WitchDoctorSpiderColony>
+      <WitchDoctorRingOfPoison name="Ring of Poison" desc="WitchDoctorRingOfPoison">
+        <Icon>storm_ui_icon_nazeebo_zombiewall.png</Icon>
+      </WitchDoctorRingOfPoison>
+      <WitchDoctorSoulHarvest name="Soul Harvest" desc="WitchDoctorSoulHarvest">
+        <Icon>storm_ui_icon_nazeebo_soulharvest.png</Icon>
+        <Cooldown>15</Cooldown>
+      </WitchDoctorSoulHarvest>
     </Level16>
     <Level20>
-      <WitchDoctorHumongoid name="Humongoid" desc="WitchDoctorGargantuanHumongoidTalent">storm_ui_icon_Nazeebo_Gargantuan.png</WitchDoctorHumongoid>
-      <WitchDoctorAnnihilatingSpirits name="Annihilating Spirit" desc="WitchDoctorRavenousSpiritAnnihilatingSpiritTalent">storm_ui_icon_Nazeebo_RavenousSpirit.png</WitchDoctorAnnihilatingSpirits>
-      <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">storm_ui_icon_talent_autoattack_damage.png</GenericTalentFuryoftheStorm>
-      <WitchDoctorVileInfection name="Vile Infection" desc="WitchDoctorVileInfection">storm_ui_icon_nazeebo_voodooritual.png</WitchDoctorVileInfection>
+      <WitchDoctorHumongoid name="Humongoid" desc="WitchDoctorGargantuanHumongoidTalent">
+        <Icon>storm_ui_icon_Nazeebo_Gargantuan.png</Icon>
+      </WitchDoctorHumongoid>
+      <WitchDoctorAnnihilatingSpirits name="Annihilating Spirit" desc="WitchDoctorRavenousSpiritAnnihilatingSpiritTalent">
+        <Icon>storm_ui_icon_Nazeebo_RavenousSpirit.png</Icon>
+      </WitchDoctorAnnihilatingSpirits>
+      <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentFuryoftheStorm>
+      <WitchDoctorVileInfection name="Vile Infection" desc="WitchDoctorVileInfection">
+        <Icon>storm_ui_icon_nazeebo_voodooritual.png</Icon>
+      </WitchDoctorVileInfection>
     </Level20>
   </Talents>
 </Nazeebo>

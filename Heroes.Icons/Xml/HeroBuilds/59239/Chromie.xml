@@ -1,56 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Chromie available="47479" attributeid="Chro" unit="HeroChromie" franchise="Warcraft" type="Ranged" difficulty="Hard"
-          portrait="storm_ui_ingame_heroselect_btn_chromie.png" loading="storm_ui_ingame_hero_loadingscreen_chromie.png" leader="storm_ui_ingame_hero_leaderboard_chromie.png">
+<Chromie available="47479" attributeid="Chro" unit="HeroChromie" franchise="Warcraft" type="Ranged" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_chromie.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_chromie.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_chromie.png</Leader>
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <ChromieSandBlast name="Sand Blast" desc="ChromieSandBlast" mana="20" cooldown="2.5">storm_ui_icon_chromie_aethercannon.png</ChromieSandBlast>
-      <ChromieDragonsBreath name="Dragon's Breath" desc="ChromieDragonsBreath" mana="70" cooldown="12">storm_ui_icon_chromie_sandstrike.png</ChromieDragonsBreath>
-      <ChromieTimeTrap name="Time Trap" desc="ChromieTimeTrap" mana="25" cooldown="18">storm_ui_icon_chromie_timetrap.png</ChromieTimeTrap>
+      <ChromieSandBlast name="Sand Blast" desc="ChromieSandBlast" cooldown="2.5">
+        <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
+        <Mana>20</Mana>
+        <Cooldown>25</Cooldown>
+      </ChromieSandBlast>
+      <ChromieDragonsBreath name="Dragon's Breath" desc="ChromieDragonsBreath">
+        <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>12</Cooldown>
+      </ChromieDragonsBreath>
+      <ChromieTimeTrap name="Time Trap" desc="ChromieTimeTrap">
+        <Icon>storm_ui_icon_chromie_timetrap.png</Icon>
+        <Mana>25</Mana>
+        <Cooldown>18</Cooldown>
+      </ChromieTimeTrap>
     </Basic>
     <Heroic>
-      <ChromieSlowingSands name="Slowing Sands" desc="ChromieSlowingSands" mana="4" per-mana="true" cooldown="5">storm_ui_icon_chromie_timewarp.png</ChromieSlowingSands>
-      <ChromieTemporalLoop name="Temporal Loop" desc="ChromieTemporalLoop" mana="60" cooldown="70">storm_ui_icon_chromie_looper.png</ChromieTemporalLoop>
+      <ChromieSlowingSands name="Slowing Sands" desc="ChromieSlowingSands" per-mana="true">
+        <Icon>storm_ui_icon_chromie_timewarp.png</Icon>
+        <Mana time="true">4</Mana>
+        <Cooldown>5</Cooldown>
+      </ChromieSlowingSands>
+      <ChromieTemporalLoop name="Temporal Loop" desc="ChromieTemporalLoop">
+        <Icon>storm_ui_icon_chromie_looper.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>70</Cooldown>
+      </ChromieTemporalLoop>
     </Heroic>
     <Trait>
-      <ChromieTimewalkerTrait name="Timewalker" desc="ChromieTimewalkerTrait">storm_ui_icon_chromie_timetraveler.png</ChromieTimewalkerTrait>
+      <ChromieTimewalkerTrait name="Timewalker" desc="ChromieTimewalkerTrait">
+        <Icon>storm_ui_icon_chromie_timetraveler.png</Icon>
+      </ChromieTimewalkerTrait>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ChromieSandBlastMountingSand name="Mounting Sand" desc="ChromieSandBlastMountingSand">storm_ui_icon_chromie_aethercannon.png</ChromieSandBlastMountingSand>
-      <ChromieDragonsBreathDeepBreathing name="Deep Breathing" desc="ChromieDragonsBreathDeepBreathing">storm_ui_icon_chromie_sandstrike.png</ChromieDragonsBreathDeepBreathing>
-      <ChromieTimewalkersPursuit name="Timewalker's Pursuit" desc="ChromieTimewalkersPursuit" generic="true" cooldown="25">storm_ui_icon_talent_clairvoyance.png</ChromieTimewalkersPursuit>
+      <ChromieSandBlastMountingSand name="Mounting Sand" desc="ChromieSandBlastMountingSand">
+        <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
+      </ChromieSandBlastMountingSand>
+      <ChromieDragonsBreathDeepBreathing name="Deep Breathing" desc="ChromieDragonsBreathDeepBreathing">
+        <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
+      </ChromieDragonsBreathDeepBreathing>
+      <ChromieTimewalkersPursuit name="Timewalker's Pursuit" desc="ChromieTimewalkersPursuit">
+        <Icon generic="true">storm_ui_icon_talent_clairvoyance.png</Icon>
+        <Cooldown>25</Cooldown>
+      </ChromieTimewalkersPursuit>
     </Level1>
     <Level4>
-      <ChromieBronzeTalons name="Bronze Talons" desc="ChromieBronzeTalons" generic="true">storm_ui_icon_talent_autoattack_damage.png</ChromieBronzeTalons>
-      <ChromieDragonsBreathEnvelopingAssault name="Enveloping Assault" desc="ChromieDragonsBreathEnvelopingAssault">storm_ui_icon_chromie_sandstrike.png</ChromieDragonsBreathEnvelopingAssault>
-      <ChromieTimeTrapTimelySurprise name="Timely Surprise" desc="ChromieTimeTrapTimelySurprise">storm_ui_icon_chromie_timetrap.png</ChromieTimeTrapTimelySurprise>
+      <ChromieBronzeTalons name="Bronze Talons" desc="ChromieBronzeTalons">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </ChromieBronzeTalons>
+      <ChromieDragonsBreathEnvelopingAssault name="Enveloping Assault" desc="ChromieDragonsBreathEnvelopingAssault">
+        <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
+      </ChromieDragonsBreathEnvelopingAssault>
+      <ChromieTimeTrapTimelySurprise name="Timely Surprise" desc="ChromieTimeTrapTimelySurprise">
+        <Icon>storm_ui_icon_chromie_timetrap.png</Icon>
+      </ChromieTimeTrapTimelySurprise>
     </Level4>
     <Level7>
-      <ChromieDragonsBreathMobiusLoop name="Mobius Loop" desc="ChromieDragonsBreathMobiusLoop">storm_ui_icon_chromie_sandstrike.png</ChromieDragonsBreathMobiusLoop>
-      <ChromieDragonsBreathDragonsEye name="Dragon's Eye" desc="ChromieDragonsBreathDragonsEye">storm_ui_icon_chromie_sandstrike_a.png</ChromieDragonsBreathDragonsEye>
-      <ChromieTimeTrapChronoSickness name="Chrono Sickness" desc="ChromieTimeTrapChronoSickness">storm_ui_icon_chromie_timetrap.png</ChromieTimeTrapChronoSickness>
+      <ChromieDragonsBreathMobiusLoop name="Mobius Loop" desc="ChromieDragonsBreathMobiusLoop">
+        <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
+      </ChromieDragonsBreathMobiusLoop>
+      <ChromieDragonsBreathDragonsEye name="Dragon's Eye" desc="ChromieDragonsBreathDragonsEye">
+        <Icon>storm_ui_icon_chromie_sandstrike_a.png</Icon>
+      </ChromieDragonsBreathDragonsEye>
+      <ChromieTimeTrapChronoSickness name="Chrono Sickness" desc="ChromieTimeTrapChronoSickness">
+        <Icon>storm_ui_icon_chromie_timetrap.png</Icon>
+      </ChromieTimeTrapChronoSickness>
     </Level7>
     <Level10>
       <ChromieHeroicAbilitySlowingSands ability="ChromieSlowingSands" />
       <ChromieHeroicAbilityTemporalLoop ability="ChromieTemporalLoop" />
     </Level10>
     <Level13>
-      <ChromiePortBackToBaseByeBye name="Bye Bye!" desc="ChromiePortBackToBaseByeBye">storm_ui_icon_chromie_poof.png</ChromiePortBackToBaseByeBye>
-      <ChromieHereAndThere name="Here And There" desc="ChromieHereAndThere" cooldown="30">storm_ui_icon_chromie_herethere.png</ChromieHereAndThere>
-      <ChromieTimeOut name="Time Out" desc="ChromieTimeOutHotbar" cooldown="60">storm_ui_icon_chromie_timeblock.png</ChromieTimeOut>
+      <ChromiePortBackToBaseByeBye name="Bye Bye!" desc="ChromiePortBackToBaseByeBye">
+        <Icon>storm_ui_icon_chromie_poof.png</Icon>
+      </ChromiePortBackToBaseByeBye>
+      <ChromieHereAndThere name="Here And There" desc="ChromieHereAndThere">
+        <Icon>storm_ui_icon_chromie_herethere.png</Icon>
+        <Cooldown>30</Cooldown>
+      </ChromieHereAndThere>
+      <ChromieTimeOut name="Time Out" desc="ChromieTimeOutHotbar">
+        <Icon>storm_ui_icon_chromie_timeblock.png</Icon>
+        <Cooldown>60</Cooldown>
+      </ChromieTimeOut>
     </Level13>
     <Level16>
-      <ChromieSandBlastShiftingSands name="Shifting Sands" desc="ChromieSandBlastShiftingSands">storm_ui_icon_chromie_aethercannon.png</ChromieSandBlastShiftingSands>
-      <ChromieSandBlastFastForward name="Fast Forward" desc="ChromieSandBlastFastForward">storm_ui_icon_chromie_aethercannon_a.png</ChromieSandBlastFastForward>
-      <ChromieQuantumOverdrive name="Quantum Overdrive" desc="ChromieQuantumOverdrive" cooldown="30">storm_ui_icon_chromie_hyperdrivesreach.png</ChromieQuantumOverdrive>
+      <ChromieSandBlastShiftingSands name="Shifting Sands" desc="ChromieSandBlastShiftingSands">
+        <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
+      </ChromieSandBlastShiftingSands>
+      <ChromieSandBlastFastForward name="Fast Forward" desc="ChromieSandBlastFastForward">
+        <Icon>storm_ui_icon_chromie_aethercannon_a.png</Icon>
+      </ChromieSandBlastFastForward>
+      <ChromieQuantumOverdrive name="Quantum Overdrive" desc="ChromieQuantumOverdrive">
+        <Icon>storm_ui_icon_chromie_hyperdrivesreach.png</Icon>
+        <Cooldown>30</Cooldown>
+      </ChromieQuantumOverdrive>
     </Level16>
     <Level20>
-      <ChromieSlowingSandsPocketOfTime name="Pocket of Time" desc="ChromieSlowingSandsPocketOfTime">storm_ui_icon_chromie_timewarp.png</ChromieSlowingSandsPocketOfTime>
-      <ChromieTemporalLoopStuckInALoop name="Stuck in a Loop" desc="ChromieTemporalLoopStuckInALoop">storm_ui_icon_chromie_looper.png</ChromieTemporalLoopStuckInALoop>
-      <ChromieSandBlastPiercingSands name="Piercing Sands" desc="ChromieSandBlastPiercingSands">storm_ui_icon_chromie_aethercannon.png</ChromieSandBlastPiercingSands>
-      <ChromieTimeTrapAndorhalAnomaly name="Andorhal Anomaly" desc="ChromieTimeTrapAndorhalAnomaly">storm_ui_icon_chromie_timetrap.png</ChromieTimeTrapAndorhalAnomaly>
+      <ChromieSlowingSandsPocketOfTime name="Pocket of Time" desc="ChromieSlowingSandsPocketOfTime">
+        <Icon>storm_ui_icon_chromie_timewarp.png</Icon>
+      </ChromieSlowingSandsPocketOfTime>
+      <ChromieTemporalLoopStuckInALoop name="Stuck in a Loop" desc="ChromieTemporalLoopStuckInALoop">
+        <Icon>storm_ui_icon_chromie_looper.png</Icon>
+      </ChromieTemporalLoopStuckInALoop>
+      <ChromieSandBlastPiercingSands name="Piercing Sands" desc="ChromieSandBlastPiercingSands">
+        <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
+      </ChromieSandBlastPiercingSands>
+      <ChromieTimeTrapAndorhalAnomaly name="Andorhal Anomaly" desc="ChromieTimeTrapAndorhalAnomaly">
+        <Icon>storm_ui_icon_chromie_timetrap.png</Icon>
+      </ChromieTimeTrapAndorhalAnomaly>
     </Level20>
   </Talents>
 </Chromie>

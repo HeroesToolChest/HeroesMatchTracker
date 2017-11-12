@@ -1,47 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Azmodan available="47479" attributeid="Azmo" franchise="Diablo" type="Melee" difficulty="Medium"
-           portrait="storm_ui_ingame_heroselect_btn_azmodan.png" loading="storm_ui_ingame_hero_loadingscreen_azmodan.png" leader="storm_ui_ingame_hero_leaderboard_azmodan.png">
-    <Roles>Specialist</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <AzmodanMasteryTasteForBlood name="Taste for Blood" desc="AzmodanGlobeOfAnnihilationTasteForBloodTalent">storm_ui_icon_azmodan_globeofannihilation.png</AzmodanMasteryTasteForBlood>
-        <AzmodanMasterySiegingWrath name="Sieging Wrath" desc="AzmodanGlobeOfAnnihilationSiegingWrathTalent">storm_ui_icon_azmodan_globeofannihilation_a.png</AzmodanMasterySiegingWrath>
-        <AzmodanMasteryMasterOfDestruction name="Master of Destruction" desc="AzmodanAllShallBurnMasterOfDestructionTalent">storm_ui_icon_azmodan_allshallburn.png</AzmodanMasteryMasterOfDestruction>
-      </Level1>
-      <Level4>
-        <AzmodanMasteryGluttony name="Gluttony" desc="AzmodanAllShallBurnGluttonyTalent">storm_ui_icon_azmodan_allshallburn.png</AzmodanMasteryGluttony>
-        <AzmodanMasteryArmyOfHell name="Army of Hell" desc="AzmodanSummonDemonWarriorArmyOfHellTalent">storm_ui_icon_azmodan_summondemonwarrior.png</AzmodanMasteryArmyOfHell>
-        <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">storm_ui_icon_Talent_MercenaryLord.png</GenericTalentMercenaryLord>
-        <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">storm_ui_icon_azmodan_sinsgrasp.png</AzmodanSinsGrasp>
-      </Level4>
-      <Level7>
-        <AzmodanMasteryInfernalGlobe name="Infernal Globe" desc="AzmodanGlobeOfAnnihilationInfernalGlobeTalent">storm_ui_icon_azmodan_globeofannihilation.png</AzmodanMasteryInfernalGlobe>
-        <AzmodanMasteryBoundMinion name="Bound Minion" desc="AzmodanGeneralOfHellBoundMinionTalent">storm_ui_icon_azmodan_generalofhell.png</AzmodanMasteryBoundMinion>
-        <AzmodanGluttonousWard name="Gluttonous Ward" desc="AzmodanGluttonousWardHotbar">storm_ui_icon_azmodan_gluttonousward.png</AzmodanGluttonousWard>
-        <AzmodanMasteryMarchOfSin name="March of Sin" desc="AzmodanAllShallBurnMarchOfSinTalent">storm_ui_icon_azmodan_allshallburn.png</AzmodanMasteryMarchOfSin>
-      </Level7>
-      <Level10>
-        <AzmodanHeroicAbilityDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion">storm_ui_icon_azmodan_demonicinvasion.png</AzmodanHeroicAbilityDemonicInvasion>
-        <AzmodanHeroicAbilityBlackPool name="Black Pool" desc="AzmodanBlackPool">storm_ui_icon_azmodan_blackpool.png</AzmodanHeroicAbilityBlackPool>
-      </Level10>
-      <Level13>
-        <AzmodanMasteryHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">storm_ui_icon_azmodan_summondemonwarrior.png</AzmodanMasteryHellforgedArmor>
-        <AzmodanMasteryHedonism name="Hedonism" desc="AzmodanGlobeOfAnnihilationHedonismTalent">storm_ui_icon_azmodan_globeofannihilation.png</AzmodanMasteryHedonism>
-        <AzmodanMasteryInfusedPower name="Infused Power" desc="AzmodanInfusedPowerTalent">storm_ui_icon_azmodan_allshallburn.png</AzmodanMasteryInfusedPower>
-      </Level13>
-      <Level16>
-        <AzmodanMasteryBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">storm_ui_icon_azmodan_globeofannihilation.png</AzmodanMasteryBattleborn>
-        <AzmodanMasteryDemonicSmite name="Demonic Smite" desc="AzmodanGeneralOfHellDemonicSmiteTalent">storm_ui_icon_azmodan_generalofhell.png</AzmodanMasteryDemonicSmite>
-        <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">storm_ui_icon_talent_imposingpresence.png</GenericTalentImposingPresence>
-        <AzmodanSinforSin name="Sin for Sin" generic="true" desc="AzmodanSinforSin">storm_ui_icon_talent_bloodforblood.png</AzmodanSinforSin>
-      </Level16>
-      <Level20>
-        <AzmodanMasteryPerishingFlame name="Perishing Flame" desc="AzmodanDemonicInvasionPerishingFlameTalent">storm_ui_icon_azmodan_demonicinvasion.png</AzmodanMasteryPerishingFlame>
-        <AzmodanMasteryBlackPoolFifthCircle name="Fifth Circle" desc="AzmodanBlackPoolFifthCircleTalent">storm_ui_icon_azmodan_blackpool.png</AzmodanMasteryBlackPoolFifthCircle>
-        <AzmodanBoltoftheStorms name="Bolt of the Storm" generic="true" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.png</AzmodanBoltoftheStorms>
-        <AzmodanMasteryForcedRecruitment name="Forced Recruitment" desc="AzmodanGeneralOfHellForcedRecruitmentTalent">storm_ui_icon_azmodan_generalofhell.png</AzmodanMasteryForcedRecruitment>
-      </Level20>
+<Azmodan available="47479" attributeid="Azmo" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_azmodan.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_azmodan.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_azmodan.png</Leader>
+  <Roles>Specialist</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <AzmodanMasteryTasteForBlood name="Taste for Blood" desc="AzmodanGlobeOfAnnihilationTasteForBloodTalent">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
+      </AzmodanMasteryTasteForBlood>
+      <AzmodanMasterySiegingWrath name="Sieging Wrath" desc="AzmodanGlobeOfAnnihilationSiegingWrathTalent">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation_a.png</Icon>
+      </AzmodanMasterySiegingWrath>
+      <AzmodanMasteryMasterOfDestruction name="Master of Destruction" desc="AzmodanAllShallBurnMasterOfDestructionTalent">
+        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
+      </AzmodanMasteryMasterOfDestruction>
+    </Level1>
+    <Level4>
+      <AzmodanMasteryGluttony name="Gluttony" desc="AzmodanAllShallBurnGluttonyTalent">
+        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
+      </AzmodanMasteryGluttony>
+      <AzmodanMasteryArmyOfHell name="Army of Hell" desc="AzmodanSummonDemonWarriorArmyOfHellTalent">
+        <Icon>storm_ui_icon_azmodan_summondemonwarrior.png</Icon>
+      </AzmodanMasteryArmyOfHell>
+      <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">
+        <Icon>storm_ui_icon_Talent_MercenaryLord.png</Icon>
+      </GenericTalentMercenaryLord>
+      <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">
+        <Icon>storm_ui_icon_azmodan_sinsgrasp.png</Icon>
+      </AzmodanSinsGrasp>
+    </Level4>
+    <Level7>
+      <AzmodanMasteryInfernalGlobe name="Infernal Globe" desc="AzmodanGlobeOfAnnihilationInfernalGlobeTalent">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
+      </AzmodanMasteryInfernalGlobe>
+      <AzmodanMasteryBoundMinion name="Bound Minion" desc="AzmodanGeneralOfHellBoundMinionTalent">
+        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
+      </AzmodanMasteryBoundMinion>
+      <AzmodanGluttonousWard name="Gluttonous Ward" desc="AzmodanGluttonousWardHotbar">
+        <Icon>storm_ui_icon_azmodan_gluttonousward.png</Icon>
+      </AzmodanGluttonousWard>
+      <AzmodanMasteryMarchOfSin name="March of Sin" desc="AzmodanAllShallBurnMarchOfSinTalent">
+        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
+      </AzmodanMasteryMarchOfSin>
+    </Level7>
+    <Level10>
+      <AzmodanHeroicAbilityDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion">
+        <Icon>storm_ui_icon_azmodan_demonicinvasion.png</Icon>
+      </AzmodanHeroicAbilityDemonicInvasion>
+      <AzmodanHeroicAbilityBlackPool name="Black Pool" desc="AzmodanBlackPool">
+        <Icon>storm_ui_icon_azmodan_blackpool.png</Icon>
+      </AzmodanHeroicAbilityBlackPool>
+    </Level10>
+    <Level13>
+      <AzmodanMasteryHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">
+        <Icon>storm_ui_icon_azmodan_summondemonwarrior.png</Icon>
+      </AzmodanMasteryHellforgedArmor>
+      <AzmodanMasteryHedonism name="Hedonism" desc="AzmodanGlobeOfAnnihilationHedonismTalent">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
+      </AzmodanMasteryHedonism>
+      <AzmodanMasteryInfusedPower name="Infused Power" desc="AzmodanInfusedPowerTalent">
+        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
+      </AzmodanMasteryInfusedPower>
+    </Level13>
+    <Level16>
+      <AzmodanMasteryBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
+      </AzmodanMasteryBattleborn>
+      <AzmodanMasteryDemonicSmite name="Demonic Smite" desc="AzmodanGeneralOfHellDemonicSmiteTalent">
+        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
+      </AzmodanMasteryDemonicSmite>
+      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">
+        <Icon>storm_ui_icon_talent_imposingpresence.png</Icon>
+      </GenericTalentImposingPresence>
+      <AzmodanSinforSin name="Sin for Sin" desc="AzmodanSinforSin">
+        <Icon generic="true">storm_ui_icon_talent_bloodforblood.png</Icon>
+      </AzmodanSinforSin>
+    </Level16>
+    <Level20>
+      <AzmodanMasteryPerishingFlame name="Perishing Flame" desc="AzmodanDemonicInvasionPerishingFlameTalent">
+        <Icon>storm_ui_icon_azmodan_demonicinvasion.png</Icon>
+      </AzmodanMasteryPerishingFlame>
+      <AzmodanMasteryBlackPoolFifthCircle name="Fifth Circle" desc="AzmodanBlackPoolFifthCircleTalent">
+        <Icon>storm_ui_icon_azmodan_blackpool.png</Icon>
+      </AzmodanMasteryBlackPoolFifthCircle>
+      <AzmodanBoltoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">
+        <Icon generic="true">storm_ui_icon_talent_boltofthestorm.png</Icon>
+      </AzmodanBoltoftheStorms>
+      <AzmodanMasteryForcedRecruitment name="Forced Recruitment" desc="AzmodanGeneralOfHellForcedRecruitmentTalent">
+        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
+      </AzmodanMasteryForcedRecruitment>
+    </Level20>
   </Talents>
 </Azmodan>

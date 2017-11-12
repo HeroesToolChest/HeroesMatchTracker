@@ -1,47 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Rehgar available="47479" attributeid="Rehg" franchise="Warcraft" type="Melee" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_rehgar.png" loading="storm_ui_ingame_hero_loadingscreen_rehgar.png" leader="storm_ui_ingame_hero_leaderboard_rehgar.png">
-    <Roles>Support</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <RehgarMasteryColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotemTalent">storm_ui_icon_rehgar_earthbindtotem.png</RehgarMasteryColossalTotem>
-        <RehgarMasteryElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricChargeTalent">storm_ui_icon_rehgar_lightningshield.png</RehgarMasteryElectricCharge>
-        <RehgarMasteryWolfRun name="Wolf Run" desc="RehgarGhostWolfWolfRunTalent">storm_ui_icon_rehgar_ghostwolf.png</RehgarMasteryWolfRun>
-        <RehgarMasteryLightningBond name="Lightning Bond" desc="RehgarLightningShieldLightningBondTalent">storm_ui_icon_rehgar_lightningshield_a.png</RehgarMasteryLightningBond>
-      </Level1>
-      <Level4>
-        <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace" desc="RehgarChainHealSpiritwalkersGraceTalent">storm_ui_icon_rehgar_chainheal.png</RehgarMasterySpiritwalkersGrace>
-        <RehgarMasteryFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">storm_ui_icon_rehgar_ghostwolf.png</RehgarMasteryFeralHeart>
-        <RehgarMasteryStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcallerTalent">storm_ui_icon_rehgar_lightningshield.png</RehgarMasteryStormcaller>
-        <RehgarMasteryShamanHealingWard name="Healing Totem" generic="true" desc="RehgarHealingTotem" cooldown="30">storm_ui_icon_talent_healingward.png</RehgarMasteryShamanHealingWard>
-      </Level4>
-      <Level7>
-        <RehgarGhostWolfBloodAndThunder name="Blood and Thunder" desc="GenericForwardMomentumTalent">storm_ui_icon_rehgar_ghostwolf.png</RehgarGhostWolfBloodAndThunder>
-        <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight" cooldown="30">storm_ui_icon_rehgar_farsight.png</RehgarMasteryFarsight>
-        <GenericTalentCleanse name="Cleanse" desc="GenericCleanse" cooldown="60">storm_ui_icon_talent_cleanse.png</GenericTalentCleanse>
-        <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">storm_ui_icon_rehgar_earthbindtotem_a.png</RehgarTotemicProjection>
-      </Level7>
-      <Level10>
-        <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing" mana="80" cooldown="100">storm_ui_icon_rehgar_ancestralhealing.png</RehgarHeroicAbilityAncestralHealing>
-        <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust" mana="70" cooldown="90">storm_ui_icon_rehgar_bloodlust.png</RehgarHeroicAbilityBloodlust>
-      </Level10>
-      <Level13>
-        <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">storm_ui_icon_rehgar_lightningshield.png</RehgarMasteryEarthShield>
-        <RehgarMasteryTidalWaves name="Tidal Waves" desc="RehgarChainHealTidalWavesTalent">storm_ui_icon_rehgar_chainheal.png</RehgarMasteryTidalWaves>
-        <RehgarEarthlivingEnchant name="Earthliving Enchant" desc="RehgarEarthlivingEnchant">storm_ui_icon_rehgar_chainheal_a.png</RehgarEarthlivingEnchant>
-      </Level13>
-      <Level16>
-        <RehgarMasteryEarthGraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotemTalent">storm_ui_icon_rehgar_earthbindtotem.png</RehgarMasteryEarthGraspTotem>
-        <RehgarHungeroftheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">storm_ui_icon_rehgar_ghostwolf.png</RehgarHungeroftheWolf>
-        <RehgarRisingStorm name="Rising Storm" desc="RehgarRisingStorm">storm_ui_icon_rehgar_lightningshield.png</RehgarRisingStorm>
-      </Level16>
-      <Level20>
-        <RehgarMasteryFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessingTalent">storm_ui_icon_rehgar_ancestralhealing.png</RehgarMasteryFarseersBlessing>
-        <RehgarMasteryGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShoutTalent">storm_ui_icon_rehgar_bloodlust.png</RehgarMasteryGladiatorsWarShout>
-        <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_Talent_Rewind.png</GenericTalentRewind>
-        <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield" cooldown="45">storm_ui_icon_Talent_StormShield.png</GenericTalentStormShield>
-      </Level20>
+<Rehgar available="47479" attributeid="Rehg" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_rehgar.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_rehgar.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_rehgar.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <RehgarMasteryColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotemTalent">
+        <Icon>storm_ui_icon_rehgar_earthbindtotem.png</Icon>
+      </RehgarMasteryColossalTotem>
+      <RehgarMasteryElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricChargeTalent">
+        <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
+      </RehgarMasteryElectricCharge>
+      <RehgarMasteryWolfRun name="Wolf Run" desc="RehgarGhostWolfWolfRunTalent">
+        <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
+      </RehgarMasteryWolfRun>
+      <RehgarMasteryLightningBond name="Lightning Bond" desc="RehgarLightningShieldLightningBondTalent">
+        <Icon>storm_ui_icon_rehgar_lightningshield_a.png</Icon>
+      </RehgarMasteryLightningBond>
+    </Level1>
+    <Level4>
+      <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace" desc="RehgarChainHealSpiritwalkersGraceTalent">
+        <Icon>storm_ui_icon_rehgar_chainheal.png</Icon>
+      </RehgarMasterySpiritwalkersGrace>
+      <RehgarMasteryFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">
+        <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
+      </RehgarMasteryFeralHeart>
+      <RehgarMasteryStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcallerTalent">
+        <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
+      </RehgarMasteryStormcaller>
+      <RehgarMasteryShamanHealingWard name="Healing Totem" desc="RehgarHealingTotem">
+        <Icon generic="true">storm_ui_icon_talent_healingward.png</Icon>
+        <Cooldown>30</Cooldown>
+      </RehgarMasteryShamanHealingWard>
+    </Level4>
+    <Level7>
+      <RehgarGhostWolfBloodAndThunder name="Blood and Thunder" desc="GenericForwardMomentumTalent">
+        <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
+      </RehgarGhostWolfBloodAndThunder>
+      <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight">
+        <Icon>storm_ui_icon_rehgar_farsight.png</Icon>
+        <Cooldown>30</Cooldown>
+      </RehgarMasteryFarsight>
+      <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">
+        <Icon>storm_ui_icon_talent_cleanse.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentCleanse>
+      <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">
+        <Icon>storm_ui_icon_rehgar_earthbindtotem_a.png</Icon>
+      </RehgarTotemicProjection>
+    </Level7>
+    <Level10>
+      <RehgarHeroicAbilityAncestralHealing name="Ancestral Healing" desc="RehgarAncestralHealing">
+        <Icon>storm_ui_icon_rehgar_ancestralhealing.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>100</Cooldown>
+      </RehgarHeroicAbilityAncestralHealing>
+      <RehgarHeroicAbilityBloodlust name="Bloodlust" desc="RehgarBloodlust">
+        <Icon>storm_ui_icon_rehgar_bloodlust.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>90</Cooldown>
+      </RehgarHeroicAbilityBloodlust>
+    </Level10>
+    <Level13>
+      <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">
+        <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
+      </RehgarMasteryEarthShield>
+      <RehgarMasteryTidalWaves name="Tidal Waves" desc="RehgarChainHealTidalWavesTalent">
+        <Icon>storm_ui_icon_rehgar_chainheal.png</Icon>
+      </RehgarMasteryTidalWaves>
+      <RehgarEarthlivingEnchant name="Earthliving Enchant" desc="RehgarEarthlivingEnchant">
+        <Icon>storm_ui_icon_rehgar_chainheal_a.png</Icon>
+      </RehgarEarthlivingEnchant>
+    </Level13>
+    <Level16>
+      <RehgarMasteryEarthGraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotemTalent">
+        <Icon>storm_ui_icon_rehgar_earthbindtotem.png</Icon>
+      </RehgarMasteryEarthGraspTotem>
+      <RehgarHungeroftheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">
+        <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
+      </RehgarHungeroftheWolf>
+      <RehgarRisingStorm name="Rising Storm" desc="RehgarRisingStorm">
+        <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
+      </RehgarRisingStorm>
+    </Level16>
+    <Level20>
+      <RehgarMasteryFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessingTalent">
+        <Icon>storm_ui_icon_rehgar_ancestralhealing.png</Icon>
+      </RehgarMasteryFarseersBlessing>
+      <RehgarMasteryGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShoutTalent">
+        <Icon>storm_ui_icon_rehgar_bloodlust.png</Icon>
+      </RehgarMasteryGladiatorsWarShout>
+      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
+        <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentRewind>
+      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">
+        <Icon>storm_ui_icon_Talent_StormShield.png</Icon>
+        <Cooldown>45</Cooldown>
+      </GenericTalentStormShield>
+    </Level20>
   </Talents>
 </Rehgar>

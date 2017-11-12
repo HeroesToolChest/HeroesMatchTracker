@@ -1,50 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Thrall available="47479" attributeid="Thra" franchise="Warcraft" type="Melee" difficulty="Easy"
-          portrait="storm_ui_ingame_heroselect_btn_thrall.png" loading="storm_ui_ingame_hero_loadingscreen_thrall.png" leader="storm_ui_ingame_hero_leaderboard_thrall.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.png</GenericTalentBlock>
-        <ThrallMasteryRollingThunder name="Rolling Thunder" desc="ThrallRollingThunderTalent">storm_ui_icon_thrall_chainlightning.png</ThrallMasteryRollingThunder>
-        <ThrallMasteryRabidWolves name="Rabid Wolves" desc="ThrallRabidWolvesTalent">storm_ui_icon_thrall_feralspirit.png</ThrallMasteryRabidWolves>
-        <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">storm_ui_icon_talent_seasonedmarksman.png</GenericTalentSeasonedMarksman>
-      </Level1>
-      <Level4>
-        <ThrallMasteryRideTheLightning name="Ride The Lightning" desc="ThrallRideTheLightningTalent">storm_ui_icon_thrall_chainlightning.png</ThrallMasteryRideTheLightning>
-        <ThrallMasterySpiritJourney name="Spirit Journey" desc="ThrallSpiritJourneyTalent">storm_ui_icon_thrall_feralspirit.png</ThrallMasterySpiritJourney>
-        <ThrallMasteryManaTide name="Mana Tide" desc="ThrallManaTideTalent">storm_ui_icon_thrall_frostwolfresilience.png</ThrallMasteryManaTide>
-        <GenericTalentEnvenom name="Envenom" desc="GenericEnvenomTalent">storm_ui_icon_talent_envenom.png</GenericTalentEnvenom>
-      </Level4>
-      <Level7>
-        <ThrallMasteryWindShear name="Wind Shear" desc="ThrallWindShearTalent">storm_ui_icon_thrall_windfury.png</ThrallMasteryWindShear>
-        <ThrallMasteryStoneWolves name="Stone Wolves" desc="ThrallStoneWolvesTalent">storm_ui_icon_thrall_feralspirit.png</ThrallMasteryStoneWolves>
-        <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">storm_ui_icon_talent_autoattack_damage.png</GenericTalentFollowThrough>
-        <ThrallMasteryFrostwolfsGrace name="Frostwolf's Grace" desc="ThrallFrostwolfResilienceSurgeOfHealing">storm_ui_icon_thrall_frostwolfresilience.png</ThrallMasteryFrostwolfsGrace>
-      </Level7>
-      <Level10>
-        <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering">storm_ui_icon_thrall_sundering.png</ThrallHeroicAbilitySundering>
-        <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake">storm_ui_icon_thrall_earthquake.png</ThrallHeroicAbilityEarthquake>
-      </Level10>
-      <Level13>
-        <ThrallMasteryRestlessWolves name="Restless Wolves" desc="ThrallRestlessWolvesTalent">storm_ui_icon_thrall_feralspirit.png</ThrallMasteryRestlessWolves>
-        <ThrallMasteryGraceOfAir name="Grace Of Air" desc="ThrallGraceOfAirTalent">storm_ui_icon_thrall_windfury.png</ThrallMasteryGraceOfAir>
-        <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">storm_ui_icon_talent_autoattack_damage.png</GenericTalentGiantKiller>
-        <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">storm_ui_icon_talent_spellshield.png</GenericTalentSpellShield>
-      </Level13>
-      <Level16>
-        <ThrallMasteryForkedLightning name="Forked Lightning" desc="ThrallForkedLightningTalent">storm_ui_icon_thrall_chainlightning.png</ThrallMasteryForkedLightning>
-        <ThrallMasteryTempestFury name="Tempest Fury" desc="ThrallTempestFuryTalent">storm_ui_icon_thrall_windfury.png</ThrallMasteryTempestFury>
-        <ThrallMasteryRideTheWind name="Ride The Wind" desc="ThrallRideTheWindTalent">storm_ui_icon_thrall_windfury_var1.png</ThrallMasteryRideTheWind>
-        <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">storm_ui_icon_talent_bloodforblood.png</GenericTalentBloodForBlood>
-      </Level16>
-      <Level20>
-        <ThrallMasteryWorldbreaker name="Worldbreaker" desc="ThrallWorldbreakerTalent">storm_ui_icon_thrall_sundering.png</ThrallMasteryWorldbreaker>
-        <ThrallMasteryEarthenShields name="Earthen Shields" desc="ThrallEarthenShieldsTalent">storm_ui_icon_thrall_earthquake.png</ThrallMasteryEarthenShields>
-        <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.png</GenericTalentNexusBlades>
-        <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">storm_ui_icon_talent_boltofthestorm.png</GenericTalentFlashoftheStorms>
-      </Level20>
-      <Old></Old>
+<Thrall available="47479" attributeid="Thra" franchise="Warcraft" type="Melee" difficulty="Easy">
+  <Portrait>storm_ui_ingame_heroselect_btn_thrall.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_thrall.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_thrall.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <GenericTalentBlock name="Block" desc="GenericBlockTalent">
+        <Icon>storm_ui_icon_talent_block.png</Icon>
+      </GenericTalentBlock>
+      <ThrallMasteryRollingThunder name="Rolling Thunder" desc="ThrallRollingThunderTalent">
+        <Icon>storm_ui_icon_thrall_chainlightning.png</Icon>
+      </ThrallMasteryRollingThunder>
+      <ThrallMasteryRabidWolves name="Rabid Wolves" desc="ThrallRabidWolvesTalent">
+        <Icon>storm_ui_icon_thrall_feralspirit.png</Icon>
+      </ThrallMasteryRabidWolves>
+      <GenericTalentSeasonedMarksman name="Seasoned Marksman" desc="GenericSeasonedMarksmanTalent">
+        <Icon>storm_ui_icon_talent_seasonedmarksman.png</Icon>
+      </GenericTalentSeasonedMarksman>
+    </Level1>
+    <Level4>
+      <ThrallMasteryRideTheLightning name="Ride The Lightning" desc="ThrallRideTheLightningTalent">
+        <Icon>storm_ui_icon_thrall_chainlightning.png</Icon>
+      </ThrallMasteryRideTheLightning>
+      <ThrallMasterySpiritJourney name="Spirit Journey" desc="ThrallSpiritJourneyTalent">
+        <Icon>storm_ui_icon_thrall_feralspirit.png</Icon>
+      </ThrallMasterySpiritJourney>
+      <ThrallMasteryManaTide name="Mana Tide" desc="ThrallManaTideTalent">
+        <Icon>storm_ui_icon_thrall_frostwolfresilience.png</Icon>
+      </ThrallMasteryManaTide>
+      <GenericTalentEnvenom name="Envenom" desc="GenericEnvenomTalent">
+        <Icon>storm_ui_icon_talent_envenom.png</Icon>
+      </GenericTalentEnvenom>
+    </Level4>
+    <Level7>
+      <ThrallMasteryWindShear name="Wind Shear" desc="ThrallWindShearTalent">
+        <Icon>storm_ui_icon_thrall_windfury.png</Icon>
+      </ThrallMasteryWindShear>
+      <ThrallMasteryStoneWolves name="Stone Wolves" desc="ThrallStoneWolvesTalent">
+        <Icon>storm_ui_icon_thrall_feralspirit.png</Icon>
+      </ThrallMasteryStoneWolves>
+      <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentFollowThrough>
+      <ThrallMasteryFrostwolfsGrace name="Frostwolf's Grace" desc="ThrallFrostwolfResilienceSurgeOfHealing">
+        <Icon>storm_ui_icon_thrall_frostwolfresilience.png</Icon>
+      </ThrallMasteryFrostwolfsGrace>
+    </Level7>
+    <Level10>
+      <ThrallHeroicAbilitySundering name="Sundering" desc="Sundering">
+        <Icon>storm_ui_icon_thrall_sundering.png</Icon>
+      </ThrallHeroicAbilitySundering>
+      <ThrallHeroicAbilityEarthquake name="Earthquake" desc="ThrallEarthquake">
+        <Icon>storm_ui_icon_thrall_earthquake.png</Icon>
+      </ThrallHeroicAbilityEarthquake>
+    </Level10>
+    <Level13>
+      <ThrallMasteryRestlessWolves name="Restless Wolves" desc="ThrallRestlessWolvesTalent">
+        <Icon>storm_ui_icon_thrall_feralspirit.png</Icon>
+      </ThrallMasteryRestlessWolves>
+      <ThrallMasteryGraceOfAir name="Grace Of Air" desc="ThrallGraceOfAirTalent">
+        <Icon>storm_ui_icon_thrall_windfury.png</Icon>
+      </ThrallMasteryGraceOfAir>
+      <GenericTalentGiantKiller name="Giant Killer" desc="GenericGiantKiller">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentGiantKiller>
+      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
+        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
+      </GenericTalentSpellShield>
+    </Level13>
+    <Level16>
+      <ThrallMasteryForkedLightning name="Forked Lightning" desc="ThrallForkedLightningTalent">
+        <Icon>storm_ui_icon_thrall_chainlightning.png</Icon>
+      </ThrallMasteryForkedLightning>
+      <ThrallMasteryTempestFury name="Tempest Fury" desc="ThrallTempestFuryTalent">
+        <Icon>storm_ui_icon_thrall_windfury.png</Icon>
+      </ThrallMasteryTempestFury>
+      <ThrallMasteryRideTheWind name="Ride The Wind" desc="ThrallRideTheWindTalent">
+        <Icon>storm_ui_icon_thrall_windfury_var1.png</Icon>
+      </ThrallMasteryRideTheWind>
+      <GenericTalentBloodForBlood name="Blood for Blood" desc="GenericBloodForBloodHotbar">
+        <Icon>storm_ui_icon_talent_bloodforblood.png</Icon>
+      </GenericTalentBloodForBlood>
+    </Level16>
+    <Level20>
+      <ThrallMasteryWorldbreaker name="Worldbreaker" desc="ThrallWorldbreakerTalent">
+        <Icon>storm_ui_icon_thrall_sundering.png</Icon>
+      </ThrallMasteryWorldbreaker>
+      <ThrallMasteryEarthenShields name="Earthen Shields" desc="ThrallEarthenShieldsTalent">
+        <Icon>storm_ui_icon_thrall_earthquake.png</Icon>
+      </ThrallMasteryEarthenShields>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
+        <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </GenericTalentNexusBlades>
+      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">
+        <Icon>storm_ui_icon_talent_boltofthestorm.png</Icon>
+      </GenericTalentFlashoftheStorms>
+    </Level20>
+    <Old>
+    </Old>
   </Talents>
 </Thrall>

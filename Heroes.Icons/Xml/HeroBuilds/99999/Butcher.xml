@@ -1,56 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Butcher available="47479" name="The Butcher" attributeid="Butc" unit="HeroButcher" franchise="Diablo" type="Melee" difficulty="Medium"
-          portrait="storm_ui_ingame_heroselect_btn_butcher.png" loading="storm_ui_ingame_hero_loadingscreen_butcher.png" leader="storm_ui_ingame_hero_leaderboard_butcher.png">
+<Butcher available="47479" name="The Butcher" attributeid="Butc" unit="HeroButcher" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_butcher.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_butcher.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_butcher.png</Leader>
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <ButcherHamstring name="Hamstring" desc="ButcherHamstring" mana="40" cooldown="1">storm_ui_icon_butcher_hamstring.png</ButcherHamstring>
-      <ButcherButchersBrand name="Butcher's Brand" desc="ButcherButchersBrand" mana="65" cooldown="14">storm_ui_icon_butcher_tenderize.png</ButcherButchersBrand>
-      <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught" mana="55" cooldown="15">storm_ui_icon_butcher_fullboar.png</ButcherRuthlessOnslaught>
+      <ButcherHamstring name="Hamstring" desc="ButcherHamstring">
+        <Icon>storm_ui_icon_butcher_hamstring.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>1</Cooldown>
+      </ButcherHamstring>
+      <ButcherButchersBrand name="Butcher's Brand" desc="ButcherButchersBrand">
+        <Icon>storm_ui_icon_butcher_tenderize.png</Icon>
+        <Mana>65</Mana>
+        <Cooldown>14</Cooldown>
+      </ButcherButchersBrand>
+      <ButcherRuthlessOnslaught name="Ruthless Onslaught" desc="ButcherRuthlessOnslaught">
+        <Icon>storm_ui_icon_butcher_fullboar.png</Icon>
+        <Mana>55</Mana>
+        <Cooldown>15</Cooldown>
+      </ButcherRuthlessOnslaught>
     </Basic>
     <Heroic>
-      <ButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast" mana="75" cooldown="60">storm_ui_icon_Butcher_FurnaceBlast.png</ButcherFurnaceBlast>
-      <ButcherLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter" mana="75" cooldown="90">storm_ui_icon_Butcher_LambToTheSlaughter.png</ButcherLambToTheSlaughter>
+      <ButcherFurnaceBlast name="Furnace Blast" desc="ButcherFurnaceBlast">
+        <Icon>storm_ui_icon_Butcher_FurnaceBlast.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>60</Cooldown>
+      </ButcherFurnaceBlast>
+      <ButcherLambToTheSlaughter name="Lamb to the Slaughter" desc="ButcherLambToTheSlaughter">
+        <Icon>storm_ui_icon_Butcher_LambToTheSlaughter.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>90</Cooldown>
+      </ButcherLambToTheSlaughter>
     </Heroic>
     <Trait>
-      <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">storm_ui_icon_butcher_freshmeat.png</ButcherFreshMeat>
+      <ButcherFreshMeat name="Fresh Meat" desc="ButcherFreshMeat">
+        <Icon>storm_ui_icon_butcher_freshmeat.png</Icon>
+      </ButcherFreshMeat>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">storm_ui_icon_Butcher_Hamstring.png</ButcherMasteryHamstringInvigoration>
-      <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.png</GenericTalentBlock>
-      <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">storm_ui_icon_butcher_hamstring_var1.png</ButcherMasteryHamstringChopMeat>
+      <ButcherMasteryHamstringInvigoration name="Invigoration" desc="ButcherHamstringInvigorationTalent">
+        <Icon>storm_ui_icon_Butcher_Hamstring.png</Icon>
+      </ButcherMasteryHamstringInvigoration>
+      <GenericTalentBlock name="Block" desc="GenericBlockTalent">
+        <Icon>storm_ui_icon_talent_block.png</Icon>
+      </GenericTalentBlock>
+      <ButcherMasteryHamstringChopMeat name="Chop Meat" desc="ButcherHamstringChopMeatTalent">
+        <Icon>storm_ui_icon_butcher_hamstring_var1.png</Icon>
+      </ButcherMasteryHamstringChopMeat>
     </Level1>
     <Level4>
-      <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">storm_ui_icon_Butcher_Hamstring.png</ButcherMasteryHamstringFlailAxe>
-      <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit" desc="ButcherRuthlessOnslaughtUnrelentingPursuitTalent">storm_ui_icon_Butcher_FullBoar.png</ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
-      <ButcherMasteryHamstringCheapShot name="Cheap Shot" desc="ButcherHamstringCheapShotTalent">storm_ui_icon_butcher_hamstring_var1.png</ButcherMasteryHamstringCheapShot>
+      <ButcherMasteryHamstringFlailAxe name="Flail Axe" desc="ButcherHamstringFlailAxeTalent">
+        <Icon>storm_ui_icon_Butcher_Hamstring.png</Icon>
+      </ButcherMasteryHamstringFlailAxe>
+      <ButcherMasteryRuthlessOnslaughtUnrelentingPursuit name="Unrelenting Pursuit" desc="ButcherRuthlessOnslaughtUnrelentingPursuitTalent">
+        <Icon>storm_ui_icon_Butcher_FullBoar.png</Icon>
+      </ButcherMasteryRuthlessOnslaughtUnrelentingPursuit>
+      <ButcherMasteryHamstringCheapShot name="Cheap Shot" desc="ButcherHamstringCheapShotTalent">
+        <Icon>storm_ui_icon_butcher_hamstring_var1.png</Icon>
+      </ButcherMasteryHamstringCheapShot>
     </Level4>
     <Level7>
-      <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade" desc="ButcherButchersBrandInsatiableBladeTalent">storm_ui_icon_Butcher_Tenderize.png</ButcherMasteryButchersBrandInsatiableBlade>
-      <ButcherMasteryFreshMeatVictuals name="Victuals" desc="ButcherFreshMeatVictualsTalent">storm_ui_icon_Butcher_FreshMeat.png</ButcherMasteryFreshMeatVictuals>
-      <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">storm_ui_icon_butcher_fullboar.png</ButcherMeatShield>
+      <ButcherMasteryButchersBrandInsatiableBlade name="Insatiable Blade" desc="ButcherButchersBrandInsatiableBladeTalent">
+        <Icon>storm_ui_icon_Butcher_Tenderize.png</Icon>
+      </ButcherMasteryButchersBrandInsatiableBlade>
+      <ButcherMasteryFreshMeatVictuals name="Victuals" desc="ButcherFreshMeatVictualsTalent">
+        <Icon>storm_ui_icon_Butcher_FreshMeat.png</Icon>
+      </ButcherMasteryFreshMeatVictuals>
+      <ButcherMeatShield name="Meat Shield" desc="ButcherMeatShield">
+        <Icon>storm_ui_icon_butcher_fullboar.png</Icon>
+      </ButcherMeatShield>
     </Level7>
     <Level10>
       <ButcherHeroicAbilityButcherFurnaceBlast ability="ButcherFurnaceBlast" />
       <ButcherHeroicAbilityLambToTheSlaughter ability="ButcherLambToTheSlaughter" />
     </Level10>
     <Level13>
-      <ButcherCleaver name="Cleaver" desc="ButcherCleaver">storm_ui_icon_talent_autoattack_aoe.png</ButcherCleaver>
-      <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge" desc="ButcherRuthlessOnslaughtSavageChargeTalent">storm_ui_icon_Butcher_FullBoar.png</ButcherMasteryRuthlessOnslaughtSavageCharge>
-      <ButcherMasteryHamstringBrutalStrike name="Brutal Strike" desc="ButcherHamstringBrutalStrikeTalent">storm_ui_icon_Butcher_Hamstring.png</ButcherMasteryHamstringBrutalStrike>
+      <ButcherCleaver name="Cleaver" desc="ButcherCleaver">
+        <Icon>storm_ui_icon_talent_autoattack_aoe.png</Icon>
+      </ButcherCleaver>
+      <ButcherMasteryRuthlessOnslaughtSavageCharge name="Savage Charge" desc="ButcherRuthlessOnslaughtSavageChargeTalent">
+        <Icon>storm_ui_icon_Butcher_FullBoar.png</Icon>
+      </ButcherMasteryRuthlessOnslaughtSavageCharge>
+      <ButcherMasteryHamstringBrutalStrike name="Brutal Strike" desc="ButcherHamstringBrutalStrikeTalent">
+        <Icon>storm_ui_icon_Butcher_Hamstring.png</Icon>
+      </ButcherMasteryHamstringBrutalStrike>
     </Level13>
     <Level16>
-      <ButcherMasteryHamstringCripplingSlam name="Crippling Slam" desc="ButcherHamstringCripplingSlamTalent">storm_ui_icon_Butcher_Hamstring.png</ButcherMasteryHamstringCripplingSlam>
-      <ButcherTalentEnraged name="Enraged" desc="ButcherEnragedTalent">storm_ui_icon_butcher_enraged.png</ButcherTalentEnraged>
-      <ButcherMasteryFreshMeatBloodFrenzy name="Blood Frenzy" desc="ButcherFreshBloodFrenzyMeatTalent">storm_ui_icon_Butcher_FreshMeat.png</ButcherMasteryFreshMeatBloodFrenzy>
+      <ButcherMasteryHamstringCripplingSlam name="Crippling Slam" desc="ButcherHamstringCripplingSlamTalent">
+        <Icon>storm_ui_icon_Butcher_Hamstring.png</Icon>
+      </ButcherMasteryHamstringCripplingSlam>
+      <ButcherTalentEnraged name="Enraged" desc="ButcherEnragedTalent">
+        <Icon>storm_ui_icon_butcher_enraged.png</Icon>
+      </ButcherTalentEnraged>
+      <ButcherMasteryFreshMeatBloodFrenzy name="Blood Frenzy" desc="ButcherFreshBloodFrenzyMeatTalent">
+        <Icon>storm_ui_icon_Butcher_FreshMeat.png</Icon>
+      </ButcherMasteryFreshMeatBloodFrenzy>
     </Level16>
     <Level20>
-      <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">storm_ui_icon_Butcher_FurnaceBlast.png</ButcherMasteryFiresofHell>
-      <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">storm_ui_icon_Butcher_LambToTheSlaughter.png</ButcherMasterySlaughterhouse>
-      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">storm_ui_icon_talent_autoattack_slow.png</GenericTalentNexusBlades>
-      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent" cooldown="70">storm_ui_icon_talent_boltofthestorm.png</GenericTalentFlashoftheStorms>
+      <ButcherMasteryFiresofHell name="Fires of Hell" desc="ButcherFurnaceBlastFiresofHellTalent">
+        <Icon>storm_ui_icon_Butcher_FurnaceBlast.png</Icon>
+      </ButcherMasteryFiresofHell>
+      <ButcherMasterySlaughterhouse name="Slaughterhouse" desc="ButcherLambToTheSlaughterSlaughterhouseTalent">
+        <Icon>storm_ui_icon_Butcher_LambToTheSlaughter.png</Icon>
+      </ButcherMasterySlaughterhouse>
+      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
+        <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </GenericTalentNexusBlades>
+      <GenericTalentFlashoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">
+        <Icon>storm_ui_icon_talent_boltofthestorm.png</Icon>
+        <Cooldown>70</Cooldown>
+      </GenericTalentFlashoftheStorms>
     </Level20>
   </Talents>
 </Butcher>

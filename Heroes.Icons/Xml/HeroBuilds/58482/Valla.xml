@@ -1,44 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-  <Valla available="47479" attributeid="Demo" unit="HeroDemonHunter" franchise="Diablo" type="Ranged" difficulty="Easy"
-         portrait="storm_ui_ingame_heroselect_btn_demonhunter.png" loading="storm_ui_ingame_hero_loadingscreen_demonhunter.png" leader="storm_ui_ingame_hero_leaderboard_demonhunter.png">
-    <Roles>Assassin</Roles>
-    <Abilities>
-    </Abilities>
-    <Talents>
-      <Level1>
-        <DemonHunterMasteryMonsterHunterHungeringArrow name="Monster Hunger" desc="DemonHunterHungeringArrowMonsterHunterTalent">storm_ui_icon_valla_hungeringarrow.png</DemonHunterMasteryMonsterHunterHungeringArrow>
-        <DemonHunterMasteryCaltrops name="Caltrops" desc="DemonHunterVaultCaltropsTalent">storm_ui_icon_valla_vault.png</DemonHunterMasteryCaltrops>
-        <DemonHunterCombatStyleHotPursuit name="HotPursuit" desc="DemonHunterHatredHotPursuitTalent">storm_ui_icon_valla_hatred.png</DemonHunterCombatStyleHotPursuit>
+<Valla available="47479" attributeid="Demo" unit="HeroDemonHunter" franchise="Diablo" type="Ranged" difficulty="Easy">
+  <Portrait>storm_ui_ingame_heroselect_btn_demonhunter.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_demonhunter.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_demonhunter.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <DemonHunterMasteryMonsterHunterHungeringArrow name="Monster Hunger" desc="DemonHunterHungeringArrowMonsterHunterTalent">
+        <Icon>storm_ui_icon_valla_hungeringarrow.png</Icon>
+      </DemonHunterMasteryMonsterHunterHungeringArrow>
+      <DemonHunterMasteryCaltrops name="Caltrops" desc="DemonHunterVaultCaltropsTalent">
+        <Icon>storm_ui_icon_valla_vault.png</Icon>
+      </DemonHunterMasteryCaltrops>
+      <DemonHunterCombatStyleHotPursuit name="HotPursuit" desc="DemonHunterHatredHotPursuitTalent">
+        <Icon>storm_ui_icon_valla_hatred.png</Icon>
+      </DemonHunterCombatStyleHotPursuit>
     </Level1>
-      <Level4>
-        <DemonHunterMasteryPuncturingArrow name="Puncturing Arrow" desc="DemonHunterHungeringArrowPuncturingArrowTalent">storm_ui_icon_valla_hungeringarrow.png</DemonHunterMasteryPuncturingArrow>
-        <DemonHunterPunishment name="Punishment" desc="DemonHunterHatredPunishmentTalent">storm_ui_icon_valla_multishot.png</DemonHunterPunishment>
-        <DemonHunterCreedoftheHunter name="Creed of the Hunter" desc="DemonHunterCreedoftheHunter">storm_ui_icon_valla_hatred.png</DemonHunterCreedoftheHunter>
-      </Level4>
-      <Level7>
-        <DemonHunterMasteryArsenal name="Arsenal" desc="DemonHunterMultishotArsenalTalent">storm_ui_icon_valla_multishot.png</DemonHunterMasteryArsenal>
-        <DemonHunterDeathDealer name="Death Dealer" desc="DemonHunterDeathDealer">storm_ui_icon_valla_vault.png</DemonHunterDeathDealer>
-        <DemonHunterMasteryRepeatingArrowVault name="Repeating Arrow" desc="DemonHunterVaultRepeatingArrowTalent">storm_ui_icon_valla_vault_a.png</DemonHunterMasteryRepeatingArrowVault>
-      </Level7>
-      <Level10>
-        <DemonHunterHeroicAbilityStrafe name="Strafe" desc="DemonHunterStrafe" mana="80" cooldown="60">storm_ui_icon_valla_strafe.png</DemonHunterHeroicAbilityStrafe>
-        <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance" mana="50" cooldown="50" ch-cooldown="true">storm_ui_icon_valla_rainofvengeance.png</DemonHunterHeroicAbilityRainofVengeance>
-      </Level10>
-      <Level13>
-        <DemonHunterMasterySiphoningArrow name="Siphoning Arrow" desc="DemonHunterHungeringArrowSiphoningArrowTalent">storm_ui_icon_valla_hungeringarrow.png</DemonHunterMasterySiphoningArrow>
-        <DemonHunterCombatStyleTemperedByDiscipline name="Tempered by Discipline" desc="DemonHunterHatredTemperedByDisciplineTalent">storm_ui_icon_valla_hatred.png</DemonHunterCombatStyleTemperedByDiscipline>
-        <DemonHunterGloom name="Gloom" desc="DemonHunterGloom" cooldown="5">storm_ui_icon_valla_hatred_var1.png</DemonHunterGloom>
-      </Level13>
-      <Level16>
-        <DemonHunterMasteryFrostShot name="Frost Shot" desc="DemonHunterMultishotFrostShotTalent">storm_ui_icon_valla_multishot.png</DemonHunterMasteryFrostShot>
-        <DemonHunterSeethingHatred name="Seething Hatred" desc="DemonHunterSeethingHatred">storm_ui_icon_valla_hatred.png</DemonHunterSeethingHatred>
-        <DemonHunterManticore name="Manticore" generic="true" desc="DemonHunterManticore">storm_ui_icon_talent_autoattack_damage.png</DemonHunterManticore>
-      </Level16>
-      <Level20>
-        <DemonHunterMasteryDeathSiphon name="Death Siphon" desc="DemonHunterStrafeDeathSiphonTalent">storm_ui_icon_valla_strafe.png</DemonHunterMasteryDeathSiphon>
-        <DemonHunterMasteryStormofVengeance name="Storm of Vengeance" desc="DemonHunterRainOfVengeanceStormOfVengeanceTalent">storm_ui_icon_valla_rainofvengeance.png</DemonHunterMasteryStormofVengeance>
-        <DemonHunterCombatStyleRancor name="Rancor" desc="DemonHunterHatredRancorTalent">storm_ui_icon_valla_hatred.png</DemonHunterCombatStyleRancor>
-        <DemonHunterFarflightQuiver name="Farflight Quiver" generic="true" desc="DemonHunterFarflightQuiver">storm_ui_icon_talent_autoattack_range.png</DemonHunterFarflightQuiver>
-      </Level20>
+    <Level4>
+      <DemonHunterMasteryPuncturingArrow name="Puncturing Arrow" desc="DemonHunterHungeringArrowPuncturingArrowTalent">
+        <Icon>storm_ui_icon_valla_hungeringarrow.png</Icon>
+      </DemonHunterMasteryPuncturingArrow>
+      <DemonHunterPunishment name="Punishment" desc="DemonHunterHatredPunishmentTalent">
+        <Icon>storm_ui_icon_valla_multishot.png</Icon>
+      </DemonHunterPunishment>
+      <DemonHunterCreedoftheHunter name="Creed of the Hunter" desc="DemonHunterCreedoftheHunter">
+        <Icon>storm_ui_icon_valla_hatred.png</Icon>
+      </DemonHunterCreedoftheHunter>
+    </Level4>
+    <Level7>
+      <DemonHunterMasteryArsenal name="Arsenal" desc="DemonHunterMultishotArsenalTalent">
+        <Icon>storm_ui_icon_valla_multishot.png</Icon>
+      </DemonHunterMasteryArsenal>
+      <DemonHunterDeathDealer name="Death Dealer" desc="DemonHunterDeathDealer">
+        <Icon>storm_ui_icon_valla_vault.png</Icon>
+      </DemonHunterDeathDealer>
+      <DemonHunterMasteryRepeatingArrowVault name="Repeating Arrow" desc="DemonHunterVaultRepeatingArrowTalent">
+        <Icon>storm_ui_icon_valla_vault_a.png</Icon>
+      </DemonHunterMasteryRepeatingArrowVault>
+    </Level7>
+    <Level10>
+      <DemonHunterHeroicAbilityStrafe name="Strafe" desc="DemonHunterStrafe">
+        <Icon>storm_ui_icon_valla_strafe.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>60</Cooldown>
+      </DemonHunterHeroicAbilityStrafe>
+      <DemonHunterHeroicAbilityRainofVengeance name="Rain of Vengeance" desc="DemonHunterRainOfVengeance">
+        <Icon>storm_ui_icon_valla_rainofvengeance.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown charge="true">50</Cooldown>
+      </DemonHunterHeroicAbilityRainofVengeance>
+    </Level10>
+    <Level13>
+      <DemonHunterMasterySiphoningArrow name="Siphoning Arrow" desc="DemonHunterHungeringArrowSiphoningArrowTalent">
+        <Icon>storm_ui_icon_valla_hungeringarrow.png</Icon>
+      </DemonHunterMasterySiphoningArrow>
+      <DemonHunterCombatStyleTemperedByDiscipline name="Tempered by Discipline" desc="DemonHunterHatredTemperedByDisciplineTalent">
+        <Icon>storm_ui_icon_valla_hatred.png</Icon>
+      </DemonHunterCombatStyleTemperedByDiscipline>
+      <DemonHunterGloom name="Gloom" desc="DemonHunterGloom">
+        <Icon>storm_ui_icon_valla_hatred_var1.png</Icon>
+        <Cooldown>5</Cooldown>
+      </DemonHunterGloom>
+    </Level13>
+    <Level16>
+      <DemonHunterMasteryFrostShot name="Frost Shot" desc="DemonHunterMultishotFrostShotTalent">
+        <Icon>storm_ui_icon_valla_multishot.png</Icon>
+      </DemonHunterMasteryFrostShot>
+      <DemonHunterSeethingHatred name="Seething Hatred" desc="DemonHunterSeethingHatred">
+        <Icon>storm_ui_icon_valla_hatred.png</Icon>
+      </DemonHunterSeethingHatred>
+      <DemonHunterManticore name="Manticore" desc="DemonHunterManticore">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </DemonHunterManticore>
+    </Level16>
+    <Level20>
+      <DemonHunterMasteryDeathSiphon name="Death Siphon" desc="DemonHunterStrafeDeathSiphonTalent">
+        <Icon>storm_ui_icon_valla_strafe.png</Icon>
+      </DemonHunterMasteryDeathSiphon>
+      <DemonHunterMasteryStormofVengeance name="Storm of Vengeance" desc="DemonHunterRainOfVengeanceStormOfVengeanceTalent">
+        <Icon>storm_ui_icon_valla_rainofvengeance.png</Icon>
+      </DemonHunterMasteryStormofVengeance>
+      <DemonHunterCombatStyleRancor name="Rancor" desc="DemonHunterHatredRancorTalent">
+        <Icon>storm_ui_icon_valla_hatred.png</Icon>
+      </DemonHunterCombatStyleRancor>
+      <DemonHunterFarflightQuiver name="Farflight Quiver" desc="DemonHunterFarflightQuiver">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_range.png</Icon>
+      </DemonHunterFarflightQuiver>
+    </Level20>
   </Talents>
 </Valla>

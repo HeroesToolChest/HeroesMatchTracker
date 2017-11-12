@@ -1,56 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Muradin available="47479" attributeid="Mura" unit="HeroMuradin" franchise="Warcraft" type="Melee" difficulty="Easy"
-          portrait="storm_ui_ingame_heroselect_btn_muradin.png" loading="storm_ui_ingame_hero_loadingscreen_muradin.png" leader="storm_ui_ingame_hero_leaderboard_muradin.png">
+<Muradin available="47479" attributeid="Mura" unit="HeroMuradin" franchise="Warcraft" type="Melee" difficulty="Easy">
+  <Portrait>storm_ui_ingame_heroselect_btn_muradin.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_muradin.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_muradin.png</Leader>
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <MuradinStormBolt name="Storm Bolt" desc="MuradinStormbolt" mana="50" cooldown="10">storm_ui_icon_muradin_stormbolt.png</MuradinStormBolt>
-      <MuradinThunderclap name="Thunderclap" desc="MuradinThunderclap" mana="50" cooldown="8">storm_ui_icon_muradin_thunderclap.png</MuradinThunderclap>
-      <MuradinDwarfToss name="Dwarf Toss" desc="MuradinDwarfToss" mana="55" cooldown="10">storm_ui_icon_muradin_dwarftoss.png</MuradinDwarfToss>
+      <MuradinStormBolt name="Storm Bolt" desc="MuradinStormbolt">
+        <Icon>storm_ui_icon_muradin_stormbolt.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </MuradinStormBolt>
+      <MuradinThunderclap name="Thunderclap" desc="MuradinThunderclap">
+        <Icon>storm_ui_icon_muradin_thunderclap.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>8</Cooldown>
+      </MuradinThunderclap>
+      <MuradinDwarfToss name="Dwarf Toss" desc="MuradinDwarfToss">
+        <Icon>storm_ui_icon_muradin_dwarftoss.png</Icon>
+        <Mana>55</Mana>
+        <Cooldown>10</Cooldown>
+      </MuradinDwarfToss>
     </Basic>
     <Heroic>
-      <MuradinAvatar name="Avatar" desc="MuradinAvatar" mana="100" cooldown="90">storm_ui_icon_muradin_avatar.png</MuradinAvatar>
-      <MuradinHaymaker name="Haymaker" desc="MuradinHaymaker" mana="80" cooldown="40">storm_ui_icon_muradin_haymaker.png</MuradinHaymaker>
+      <MuradinAvatar name="Avatar" desc="MuradinAvatar">
+        <Icon>storm_ui_icon_muradin_avatar.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>90</Cooldown>
+      </MuradinAvatar>
+      <MuradinHaymaker name="Haymaker" desc="MuradinHaymaker">
+        <Icon>storm_ui_icon_muradin_haymaker.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>40</Cooldown>
+      </MuradinHaymaker>
     </Heroic>
     <Trait>
-      <MuradinSecondWind name="Second Wind" desc="MuradinSecondWind">storm_ui_icon_muradin_secondwind.png</MuradinSecondWind>
+      <MuradinSecondWind name="Second Wind" desc="MuradinSecondWind">
+        <Icon>storm_ui_icon_muradin_secondwind.png</Icon>
+      </MuradinSecondWind>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <GenericTalentBlock name="Block" desc="GenericBlockTalent">storm_ui_icon_talent_block.png</GenericTalentBlock>
-      <MuradinStormboltPerfectStorm name="Perfect Storm" desc="MuradinStormboltPerfectStormTalent">storm_ui_icon_muradin_stormbolt.png</MuradinStormboltPerfectStorm>
-      <MuradinCombatStyleThirdWind name="Third Wind" desc="MuradinSecondWindThirdWindTalent">storm_ui_icon_muradin_secondwind.png</MuradinCombatStyleThirdWind>
+      <GenericTalentBlock name="Block" desc="GenericBlockTalent">
+        <Icon>storm_ui_icon_talent_block.png</Icon>
+      </GenericTalentBlock>
+      <MuradinStormboltPerfectStorm name="Perfect Storm" desc="MuradinStormboltPerfectStormTalent">
+        <Icon>storm_ui_icon_muradin_stormbolt.png</Icon>
+      </MuradinStormboltPerfectStorm>
+      <MuradinCombatStyleThirdWind name="Third Wind" desc="MuradinSecondWindThirdWindTalent">
+        <Icon>storm_ui_icon_muradin_secondwind.png</Icon>
+      </MuradinCombatStyleThirdWind>
     </Level1>
     <Level4>
-      <MuradinMasteryStormhammerSledgehammer name="Sledgehammer" desc="MuradinStormboltSledgehammerTalent">storm_ui_icon_muradin_stormbolt.png</MuradinMasteryStormhammerSledgehammer>
-      <MuradinMasteryThunderclapReverberation name="Reverberation" desc="MuradinThunderclapReverberationTalent">storm_ui_icon_muradin_thunderclap.png</MuradinMasteryThunderclapReverberation>
-      <MuradinMasteryThunderburn name="Thunder Burn" desc="MuradinThunderclapThunderburnTalent">storm_ui_icon_muradin_thunderclap_b.png</MuradinMasteryThunderburn>
+      <MuradinMasteryStormhammerSledgehammer name="Sledgehammer" desc="MuradinStormboltSledgehammerTalent">
+        <Icon>storm_ui_icon_muradin_stormbolt.png</Icon>
+      </MuradinMasteryStormhammerSledgehammer>
+      <MuradinMasteryThunderclapReverberation name="Reverberation" desc="MuradinThunderclapReverberationTalent">
+        <Icon>storm_ui_icon_muradin_thunderclap.png</Icon>
+      </MuradinMasteryThunderclapReverberation>
+      <MuradinMasteryThunderburn name="Thunder Burn" desc="MuradinThunderclapThunderburnTalent">
+        <Icon>storm_ui_icon_muradin_thunderclap_b.png</Icon>
+      </MuradinMasteryThunderburn>
     </Level4>
     <Level7>
-      <MuradinMasteryDwarfTossHeavyImpact name="Heavy Impact" desc="MuradinDwarfTossHeavyImpactTalent">storm_ui_icon_muradin_dwarftoss_a.png</MuradinMasteryDwarfTossHeavyImpact>
-      <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!" generic="true" desc="MuradinGiveEmTheAxeTalent">storm_ui_icon_talent_autoattack_damage.png</MuradinGiveEmTheAxeExecutioner60DamageBonus>
-      <MuradinCombatStyleSkullcracker name="Skullcracker" generic="true" desc="MuradinSecondWindSkullcrackerTalent">storm_ui_icon_talent_autoattack_stun.png</MuradinCombatStyleSkullcracker>
+      <MuradinMasteryDwarfTossHeavyImpact name="Heavy Impact" desc="MuradinDwarfTossHeavyImpactTalent">
+        <Icon>storm_ui_icon_muradin_dwarftoss_a.png</Icon>
+      </MuradinMasteryDwarfTossHeavyImpact>
+      <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!" desc="MuradinGiveEmTheAxeTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </MuradinGiveEmTheAxeExecutioner60DamageBonus>
+      <MuradinCombatStyleSkullcracker name="Skullcracker" desc="MuradinSecondWindSkullcrackerTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_stun.png</Icon>
+      </MuradinCombatStyleSkullcracker>
     </Level7>
     <Level10>
       <MuradinHeroicAbilityAvatar ability="MuradinAvatar" />
       <MuradinHeroicAbilityHaymaker ability="MuradinHaymaker" />
     </Level10>
     <Level13>
-      <MuradinMasteryThunderclapHealingStatic name="Healing Static" desc="MuradinThunderclapHealingStaticTalent">storm_ui_icon_muradin_thunderclap_a.png</MuradinMasteryThunderclapHealingStatic>
-      <MuradinMasteryThunderclapThunderstrike name="Thunder Strike" desc="MuradinThunderclapThunderstrikeTalent">storm_ui_icon_muradin_thunderclap.png</MuradinMasteryThunderclapThunderstrike>
-      <MuradinBronzebeardRage name="Bronzebeard Rage" desc="MuradinBronzebeardRage" generic="true">storm_ui_icon_talent_burningrage.png</MuradinBronzebeardRage>
+      <MuradinMasteryThunderclapHealingStatic name="Healing Static" desc="MuradinThunderclapHealingStaticTalent">
+        <Icon>storm_ui_icon_muradin_thunderclap_a.png</Icon>
+      </MuradinMasteryThunderclapHealingStatic>
+      <MuradinMasteryThunderclapThunderstrike name="Thunder Strike" desc="MuradinThunderclapThunderstrikeTalent">
+        <Icon>storm_ui_icon_muradin_thunderclap.png</Icon>
+      </MuradinMasteryThunderclapThunderstrike>
+      <MuradinBronzebeardRage name="Bronzebeard Rage" desc="MuradinBronzebeardRage">
+        <Icon generic="true">storm_ui_icon_talent_burningrage.png</Icon>
+      </MuradinBronzebeardRage>
     </Level13>
     <Level16>
-      <MuradinMasteryDwarfTossDwarfLaunch name="Dwarf Launch" desc="MuradinDwarfTossDwarfLaunchTalent">storm_ui_icon_muradin_dwarftoss.png</MuradinMasteryDwarfTossDwarfLaunch>
-      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent" cooldown="20">storm_ui_icon_talent_imposingpresence.png</GenericTalentImposingPresence>
-      <MuradinMasteryPassiveStoneform name="Stoneform" desc="MuradinSecondWindStoneformTalent">storm_ui_icon_muradin_secondwind.png</MuradinMasteryPassiveStoneform>
+      <MuradinMasteryDwarfTossDwarfLaunch name="Dwarf Launch" desc="MuradinDwarfTossDwarfLaunchTalent">
+        <Icon>storm_ui_icon_muradin_dwarftoss.png</Icon>
+      </MuradinMasteryDwarfTossDwarfLaunch>
+      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">
+        <Icon>storm_ui_icon_talent_imposingpresence.png</Icon>
+        <Cooldown>20</Cooldown>
+      </GenericTalentImposingPresence>
+      <MuradinMasteryPassiveStoneform name="Stoneform" desc="MuradinSecondWindStoneformTalent">
+        <Icon>storm_ui_icon_muradin_secondwind.png</Icon>
+      </MuradinMasteryPassiveStoneform>
     </Level16>
     <Level20>
-      <MuradinMasteryAvatarUnstoppableForce name="Unstoppable Force" desc="MuradinAvatarUnstoppableForceTalent">storm_ui_icon_muradin_avatar.png</MuradinMasteryAvatarUnstoppableForce>
-      <MuradinMasteryHaymakerGrandSlam name="Grand Slam" desc="MuradinHaymakerGrandSlamTalent">storm_ui_icon_muradin_haymaker.png</MuradinMasteryHaymakerGrandSlam>
-      <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent" cooldown="60">storm_ui_icon_talent_hardenedshield.png</GenericTalentHardenedShield>
-      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar" cooldown="60">storm_ui_icon_talent_rewind.png</GenericTalentRewind>
+      <MuradinMasteryAvatarUnstoppableForce name="Unstoppable Force" desc="MuradinAvatarUnstoppableForceTalent">
+        <Icon>storm_ui_icon_muradin_avatar.png</Icon>
+      </MuradinMasteryAvatarUnstoppableForce>
+      <MuradinMasteryHaymakerGrandSlam name="Grand Slam" desc="MuradinHaymakerGrandSlamTalent">
+        <Icon>storm_ui_icon_muradin_haymaker.png</Icon>
+      </MuradinMasteryHaymakerGrandSlam>
+      <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">
+        <Icon>storm_ui_icon_talent_hardenedshield.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentHardenedShield>
+      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
+        <Icon>storm_ui_icon_talent_rewind.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentRewind>
     </Level20>
   </Talents>
 </Muradin>
