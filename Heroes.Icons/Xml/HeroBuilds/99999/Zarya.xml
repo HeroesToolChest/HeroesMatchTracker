@@ -4,7 +4,7 @@
   <Roles>Warrior</Roles>
   <Abilities>
     <Basic>
-      <ZaryaParticleGrenade name="Particle Grenade" desc="ZaryaParticleGrenade" cooldown="8" ch-cooldown="8">storm_ui_icon_zarya_particlegrenade.png</ZaryaParticleGrenade>
+      <ZaryaParticleGrenade name="Particle Grenade" desc="ZaryaParticleGrenade" cooldown="8" ch-cooldown="true">storm_ui_icon_zarya_particlegrenade.png</ZaryaParticleGrenade>
       <ZaryaPersonalBarrier name="Personal Barrier" desc="ZaryaPersonalBarrier" cooldown="10">storm_ui_icon_zarya_personalbarrier.png</ZaryaPersonalBarrier>
       <ZaryaShieldAlly name="Shield Ally" desc="ZaryaShieldAlly" cooldown="12">storm_ui_icon_zarya_shieldally.png</ZaryaShieldAlly>
     </Basic>
