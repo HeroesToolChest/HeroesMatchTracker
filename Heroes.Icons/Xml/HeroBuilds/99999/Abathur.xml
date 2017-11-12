@@ -6,7 +6,6 @@
     <Basic>
       <AbathurSymbiote name="Symbiote" desc="AbathurSymbiote" cooldown="4">storm_ui_icon_abathur_symbiote.png</AbathurSymbiote>
       <AbathurToxicNest name="Toxic Nest" desc="AbathurToxicNest" cooldown="10" ch-cooldown="true">storm_ui_icon_abathur_toxicnest.png</AbathurToxicNest>
-      <AbathurBasic3None name="[None]"></AbathurBasic3None>
     </Basic>
     <Heroic>
       <AbathurUltimateEvolution name="Ultimate Evolution" desc="AbathurUltimateEvolution" cooldown="70">storm_ui_icon_abathur_ultimateevolution.png</AbathurUltimateEvolution>

@@ -19,8 +19,8 @@
   </Abilities>
   <ExtraAbilities>
     <Basic parent="DVaPilotPilotMode">
-      <DVaPilotBasic1None name="[None]"></DVaPilotBasic1None>
-      <DVaPilotBasic2None name="[None]"></DVaPilotBasic2None>
+      <DVaPilotBasic1None name="[None]"/>
+      <DVaPilotBasic2None name="[None]"/>
       <DVaPilotCallMech name="Call Mech" desc="DVaPilotCallMech" cooldown="45">storm_ui_icon_dva_callmech.png</DVaPilotCallMech>
     </Basic>
   </ExtraAbilities>
