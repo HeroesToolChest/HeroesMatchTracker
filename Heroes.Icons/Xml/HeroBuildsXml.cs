@@ -255,12 +255,42 @@ namespace Heroes.Icons.Xml
 
                     heroDescriptionByHeroName.TryGetValue(heroName, out string heroDescription);
 
-                    // order is important
-                    ParseHeroInformation(reader, hero, heroDescription);
-                    ParseHeroRoles(reader, hero);
-                    ParseHeroAbilities(reader, hero, talentShortTooltip, talentLongTooltip);
-                    ParseHeroExtraAbilities(reader, hero, talentShortTooltip, talentLongTooltip);
-                    ParseHeroTalents(reader, hero, talentShortTooltip, talentLongTooltip);
+                    ParseBasicInformation(reader, hero, heroDescription);
+
+                    while (reader.Read())
+                    {
+                        if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
+                        {
+                            switch (reader.Name)
+                            {
+                                case "Portrait":
+                                    reader.Read();
+                                    hero.HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, reader.Value);
+                                    break;
+                                case "Loading":
+                                    reader.Read();
+                                    hero.LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, reader.Value);
+                                    break;
+                                case "Leader":
+                                    reader.Read();
+                                    hero.LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, reader.Value);
+                                    break;
+                                case "Roles":
+                                    reader.Read();
+                                    ParseHeroRoles(reader, hero);
+                                    break;
+                                case "Abilities":
+                                    ParseHeroAbilities(reader, hero, talentShortTooltip, talentLongTooltip);
+                                    break;
+                                case "ExtraAbilities":
+                                    ParseHeroExtraAbilities(reader, hero, talentShortTooltip, talentLongTooltip);
+                                    break;
+                                case "Talents":
+                                    ParseHeroTalents(reader, hero, talentShortTooltip, talentLongTooltip);
+                                    break;
+                            }
+                        }
+                    }
 
                     HeroByHeroName.Add(hero.Name, hero);
                 }
@@ -434,7 +464,7 @@ namespace Heroes.Icons.Xml
             }
         }
 
-        private void ParseHeroInformation(XmlReader reader, Hero hero, string heroDescription)
+        private void ParseBasicInformation(XmlReader reader, Hero hero, string heroDescription)
         {
             // get real name
             // example: Anubarak-> (real) Anub'arak
@@ -464,11 +494,6 @@ namespace Heroes.Icons.Xml
             // set hero mana type
             hero.ManaType = Enum.TryParse(reader["mana"], out HeroMana heroMana) ? heroMana : HeroMana.Mana;
 
-            // set portraits
-            hero.HeroPortrait = SetImageStreamString(HeroPortraitsFolderName, reader["portrait"]);
-            hero.LeaderboardPortrait = SetImageStreamString(HeroLeaderboardPortraitsFolderName, reader["leader"]);
-            hero.LoadingPortrait = SetImageStreamString(HeroLoadingScreenPortraitsFolderName, reader["loading"]);
-
             // set hero description
             hero.Description = heroDescription;
 
@@ -482,40 +507,33 @@ namespace Heroes.Icons.Xml
 
         private void ParseHeroRoles(XmlReader reader, Hero hero)
         {
-            reader.Read();
-            if (reader.Name == "Roles")
+            string[] roles = reader.Value.Split(',');
+
+            List<HeroRole> rolesList = new List<HeroRole>();
+
+            foreach (var role in roles)
             {
-                reader.Read();
-                string[] roles = reader.Value.Split(',');
-
-                List<HeroRole> rolesList = new List<HeroRole>();
-
-                foreach (var role in roles)
-                {
-                    rolesList.Add(Enum.TryParse(role, out HeroRole heroRole) ? heroRole : HeroRole.Unknown);
-                }
-
-                hero.Roles = rolesList;
+                rolesList.Add(Enum.TryParse(role, out HeroRole heroRole) ? heroRole : HeroRole.Unknown);
             }
 
-            reader.Read();
+            hero.Roles = rolesList;
         }
 
         private void ParseHeroAbilities(XmlReader reader, Hero hero, Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentLongTooltip)
         {
             var abilities = new Dictionary<string, Ability>();
 
-            reader.Read();
-            if (reader.Name == "Abilities")
+            // read each ability tier
+            while (reader.Read())
             {
-                // read each ability
-                while (reader.Read() && reader.IsStartElement())
+                if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                 {
                     if (Enum.TryParse(reader.Name, out AbilityTier tier))
                     {
+                        // read each ability
                         while (reader.Read() && reader.Name != tier.ToString())
                         {
-                            if (reader.NodeType == XmlNodeType.Element)
+                            if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                             {
                                 Ability ability = new Ability(ParseTalentXmlElement(reader, hero, talentShortTooltip, talentLongTooltip))
                                 {
@@ -530,8 +548,10 @@ namespace Heroes.Icons.Xml
                         }
                     }
                 }
-
-                reader.Read();
+                else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "Abilities")
+                {
+                    break;
+                }
             }
 
             hero.Abilities = abilities;
@@ -541,18 +561,19 @@ namespace Heroes.Icons.Xml
         {
             var abilities = new Dictionary<string, Ability>();
 
-            if (reader.Name == "ExtraAbilities")
+            // read each ability tier
+            while (reader.Read())
             {
-                // read each ability
-                while (reader.Read() && reader.IsStartElement())
+                if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                 {
                     if (Enum.TryParse(reader.Name, out AbilityTier tier))
                     {
                         string parentLink = reader["parent"] ?? string.Empty;
 
+                        // read each ability
                         while (reader.Read() && reader.Name != tier.ToString())
                         {
-                            if (reader.NodeType == XmlNodeType.Element)
+                            if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                             {
                                 if (string.IsNullOrEmpty(parentLink))
                                     parentLink = reader["parent"] ?? string.Empty;
@@ -571,8 +592,10 @@ namespace Heroes.Icons.Xml
                         }
                     }
                 }
-
-                reader.Read();
+                else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "ExtraAbilities")
+                {
+                    break;
+                }
             }
 
             hero.Abilities = hero.Abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
@@ -582,35 +605,47 @@ namespace Heroes.Icons.Xml
         {
             var talents = new Dictionary<string, Talent>();
 
-            if (reader.Name == "Talents")
+            // add talents, read each tier
+            while (reader.Read())
             {
-                // add talents, read each tier
-                while (reader.Read())
+                if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                 {
-                    if (reader.IsStartElement())
+                    // is tier Level1, Level4, etc...
+                    if (Enum.TryParse(reader.Name, out TalentTier tier))
                     {
-                        // is tier Level1, Level4, etc...
-                        if (Enum.TryParse(reader.Name, out TalentTier tier))
+                        // read each talent in tier
+                        while (reader.Read() && reader.Name != tier.ToString())
                         {
-                            // read each talent in tier
-                            while (reader.Read() && reader.Name != tier.ToString())
+                            if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
                             {
-                                if (reader.NodeType == XmlNodeType.Element)
+                                Talent talent;
+                                if (tier != TalentTier.Old)
                                 {
-                                    Talent talent = new Talent(ParseTalentXmlElement(reader, hero, talentShortTooltip, talentLongTooltip))
+                                    talent = new Talent(ParseTalentXmlElement(reader, hero, talentShortTooltip, talentLongTooltip))
                                     {
                                         Tier = tier,
                                     };
-
-                                    if (talents.ContainsKey(talent.ReferenceName))
-                                        throw new ParseXmlException($"[{SelectedBuild}] [{hero.Name}] {talent.ReferenceName} already exists");
-
-                                    talents.Add(talent.ReferenceName, talent);
                                 }
+                                else
+                                {
+                                    talent = new Talent(ParseLegacyTalentXmlElement(reader, hero))
+                                    {
+                                        Tier = tier,
+                                    };
+                                }
+
+                                if (talents.ContainsKey(talent.ReferenceName))
+                                    throw new ParseXmlException($"[{SelectedBuild}] [{hero.Name}] {talent.ReferenceName} already exists");
+
+                                talents.Add(talent.ReferenceName, talent);
                             }
                         }
                     }
-                } // end while
+                }
+                else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "Talents")
+                {
+                    break;
+                }
             }
 
             if (HeroExists(hero.Name))
@@ -639,17 +674,16 @@ namespace Heroes.Icons.Xml
             string abilityLink = reader["ability"] ?? string.Empty;
 
             string realName = string.Empty;
-            string generic = "false";  // is the icon being used generic
             string desc = string.Empty; // reference name for tooltips
-            int? mana = null; // mana/brew/fury/etc...
+            string icon = string.Empty;
+            string generic = "false";  // is the icon being used generic
             int? health = null; // health cost
             string healthPercent = "false"; // is the health cost a percentage
+            int? mana = null; // mana/brew/fury/etc...
             string perManaCost = "false"; // the time cost for mana
             int? cooldown = null; // cooldown
             string charge = "false"; // is the cooldown a charge cooldown
             string custom = string.Empty; // custom string that goes after the cooldown
-
-            string icon = string.Empty;
 
             // if it has an ability link, get the ability information and set the talent
             if (!string.IsNullOrEmpty(abilityLink))
@@ -660,8 +694,9 @@ namespace Heroes.Icons.Xml
                 generic = ability.IsGeneric.ToString();
                 desc = ability.TooltipDescriptionName;
                 mana = ability.Tooltip.Mana;
-                health = ability.Tooltip.Health;
                 perManaCost = ability.Tooltip.IsPerManaCost.ToString();
+                health = ability.Tooltip.Health;
+                healthPercent = ability.Tooltip.IsHealthPercentage.ToString();
                 cooldown = ability.Tooltip.Cooldown;
                 charge = ability.Tooltip.IsChargeCooldown.ToString();
                 custom = ability.Tooltip.Custom;
@@ -670,15 +705,56 @@ namespace Heroes.Icons.Xml
             }
 
             if (reader["name"] != null) realName = reader["name"];
-            if (reader["generic"] != null) generic = reader["generic"];
             if (reader["desc"] != null) desc = reader["desc"];
-            if (reader["mana"] != null) mana = ConvertToNullableInt(reader["mana"]);
-            if (reader["health"] != null) health = ConvertToNullableInt(reader["life"]);
-            if (reader["health-percent"] != null) healthPercent = reader["health-percent"];
-            if (reader["per-mana"] != null) perManaCost = reader["per-mana"];
-            if (reader["cooldown"] != null) cooldown = ConvertToNullableInt(reader["cooldown"]);
-            if (reader["ch-cooldown"] != null) charge = reader["ch-cooldown"];
-            if (reader["custom"] != null) custom = reader["custom"];
+
+            if (!reader.IsEmptyElement)
+            {
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element && reader.IsStartElement())
+                    {
+                        switch (reader.Name)
+                        {
+                            case "Icon":
+                                if (reader["generic"] != null)
+                                    generic = reader["generic"];
+
+                                reader.Read();
+                                icon = reader.Value;
+                                break;
+                            case "Health":
+                                if (reader["percentage"] != null)
+                                    healthPercent = reader["percentage"];
+
+                                reader.Read();
+                                health = ConvertToNullableInt(reader.Value);
+                                break;
+                            case "Mana":
+                                if (reader["time"] != null)
+                                    perManaCost = reader["time"];
+
+                                reader.Read();
+                                mana = ConvertToNullableInt(reader.Value);
+                                break;
+                            case "Cooldown":
+                                if (reader["charge"] != null)
+                                    charge = reader["charge"];
+
+                                reader.Read();
+                                cooldown = ConvertToNullableInt(reader.Value);
+                                break;
+                            case "Custom":
+                                reader.Read();
+                                custom = reader.Value;
+                                break;
+                        }
+                    }
+                    else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == referenceName)
+                    {
+                        break;
+                    }
+                }
+            }
 
             if (!bool.TryParse(healthPercent, out bool isHealthPercent))
                 isHealthPercent = false;
@@ -691,12 +767,6 @@ namespace Heroes.Icons.Xml
 
             if (!bool.TryParse(generic, out bool isGeneric))
                 isGeneric = false;
-
-            if (string.IsNullOrEmpty(icon))
-            {
-                reader.Read();
-                icon = reader.Value; // set icon file name
-            }
 
             bool isGenericTalent = false;
 
@@ -735,6 +805,37 @@ namespace Heroes.Icons.Xml
                     IsChargeCooldown = isCharge,
                     Custom = custom,
                 },
+            };
+        }
+
+        private TalentBase ParseLegacyTalentXmlElement(XmlReader reader, Hero hero)
+        {
+            string referenceName = reader.Name;
+            string realName = reader["name"];
+            string generic = generic = reader["generic"];
+
+            reader.Read();
+            string icon = reader.Value;
+
+            if (!bool.TryParse(generic, out bool isGeneric))
+                isGeneric = false;
+
+            bool isGenericTalent = false;
+
+            // check if the talent is generic
+            if (referenceName.StartsWith("Generic") || referenceName.StartsWith("HeroGeneric") || referenceName.StartsWith("BattleMomentum"))
+            {
+                isGeneric = true;
+                isGenericTalent = true;
+            }
+
+            return new TalentBase
+            {
+                Name = realName,
+                ReferenceName = referenceName,
+                IsIconGeneric = isGeneric,
+                IsGeneric = isGenericTalent,
+                Icon = SetHeroTalentString(hero.ShortName, icon, isGeneric),
             };
         }
     }
