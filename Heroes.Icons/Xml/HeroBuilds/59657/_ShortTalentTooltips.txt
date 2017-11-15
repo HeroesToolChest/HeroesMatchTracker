@@ -1327,8 +1327,8 @@ MonkElevenSidedStrikeTalent=Seven-Sided Strike hits more
 MonkEpiphany=Activate to restore Mana and Radiant Dash charges
 MonkFistsofFuryTalent=Increases Deadly Reach duration
 MonkHeavenlyZealBreathofHeaven=Breath of Heaven increases allies Move Speed
-MonkInsightTalent=<c val="#TooltipQuest">Quest:</c> Basic Attacks increase Move Speed, restore mana, and lower cooldowns
-MonkIronFistsTalent=Basic Attacks increase Move Speed, damage
+MonkInsightTalent=<c val="#TooltipQuest">Quest:</c> Basic Attacks restore Mana, lower cooldowns
+MonkIronFistsTalent=Basic Attacks deal more damage
 MonkOvertakeTalent=Deadly Reach attacks increase Move Speed
 MonkPeacefulReposeTalent=Reduces Divine Palm cooldown if they do not die
 MonkQuicksilverTalent=Radiant Dash gives Move Speed
@@ -1337,7 +1337,7 @@ MonkSevenSidedStrike=Become Invulnerable and strike nearby Heroes
 MonkSixthSense=Gain Physical Armor while Stunned, Rooted
 MonkSoothingBreezeTalent=Breath of Heaven removes silences, blinds, slows and roots
 MonkSpiritAlly=Place a Spirit Ally that heals in an area
-MonkTranscendenceTalent=Basic Attacks increase Move Speed, heal
+MonkTranscendenceTalent=Basic Attacks heal
 MonkWayoftheHundredFistsTalent=Radiant Dash launches a volley of blows
 MuradinAvatar=Temporary Health boost
 MuradinAvatarUnstoppableForceTalent=Avatar grants additional bonuses
