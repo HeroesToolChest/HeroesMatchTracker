@@ -65,7 +65,7 @@
     </Level4>
     <Level7>
       <MuradinMasteryDwarfTossHeavyImpact name="Heavy Impact" desc="MuradinDwarfTossHeavyImpactTalent">
-        <Icon>storm_ui_icon_muradin_dwarftoss_a.png</Icon>
+        <Icon>storm_ui_icon_muradin_dwarftoss.png</Icon>
       </MuradinMasteryDwarfTossHeavyImpact>
       <MuradinGiveEmTheAxeExecutioner60DamageBonus name="Give 'em the Axe!" desc="MuradinGiveEmTheAxeTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>

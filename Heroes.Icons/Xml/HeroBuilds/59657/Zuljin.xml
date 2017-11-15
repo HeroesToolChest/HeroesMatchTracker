@@ -93,12 +93,12 @@
       </ZuljinEnsnare>
     </Level13>
     <Level16>
-      <ZuljinWrongPlaceWrongTime name="Wrong Place Wrong Time" desc="ZuljinWrongPlaceWrongTime">
-        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
-      </ZuljinWrongPlaceWrongTime>
       <ZuljinNoMercyTalent name="No Mercy!" desc="ZuljinNoMercyTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
       </ZuljinNoMercyTalent>
+      <ZuljinWrongPlaceWrongTime name="Wrong Place Wrong Time" desc="ZuljinWrongPlaceWrongTime">
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
+      </ZuljinWrongPlaceWrongTime>
       <ZuljinLetTheKillingBegin name="Let The Killing Begin" desc="ZuljinLetTheKillingBegin">
         <Icon generic="true">storm_ui_icon_talent_autoattack_speed.png</Icon>
       </ZuljinLetTheKillingBegin>

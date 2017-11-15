@@ -53,15 +53,15 @@
       </AnaDetachableBoxMagazine>
     </Level1>
     <Level4>
-      <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">
-        <Icon>storm_ui_icon_ana_biotic_grenade.png</Icon>
-      </AnaBioticGrenadeAirStrike>
       <AnaOverdose name="Overdose" desc="AnaOverdose">
         <Icon>storm_ui_icon_ana_sleep_dart.png</Icon>
       </AnaOverdose>
       <AnaAimDownSights name="Aim Down Sights" desc="AnaAimDownSights">
         <Icon>storm_ui_icon_ana_aim_down_sights.png</Icon>
       </AnaAimDownSights>
+      <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">
+        <Icon>storm_ui_icon_ana_biotic_grenade.png</Icon>
+      </AnaBioticGrenadeAirStrike>
     </Level4>
     <Level7>
       <AnaSleepingDartTemporaryBlindness name="Temporary Blindness" desc="AnaSleepingDartTemporaryBlindness">
