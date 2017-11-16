@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Alexstrasza available="99999" attributeid="Alex" unit="HeroAlexstrasza" franchise="Warcraft" type="Ranged" difficulty="Medium">
+<Alexstrasza available="59657" attributeid="Alex" unit="HeroAlexstrasza" franchise="Warcraft" type="Ranged" difficulty="Medium">
   <Portrait>storm_ui_ingame_heroselect_btn_alexstrasza.png</Portrait>
   <Loading>storm_ui_ingame_hero_loadingscreen_alexstrasza.png</Loading>
   <Leader>storm_ui_ingame_hero_leaderboard_alexstrasza.png</Leader>
