@@ -32,7 +32,6 @@
                         <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" />
                         <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
-                        <DataGridTextColumn Header="HOTS Logs Status" Binding="{Binding HotsLogsUploadStatus}" />
                         <DataGridTextColumn Header="HotsApi Status" Binding="{Binding HotsApiUploadStatus}" />
                     </DataGrid.Columns>
                 </DataGrid>

@@ -100,8 +100,6 @@
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
                 <StatusBarItem Content="{Binding HotsApiUploaderCurrentStatus}" DockPanel.Dock="Right" />
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
-                <StatusBarItem Content="{Binding HotsLogsUploaderCurrentStatus}" DockPanel.Dock="Right" />
-                <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
                 <StatusBarItem Content="{Binding ParserWatchStatus}" DockPanel.Dock="Right" />
                 <Separator Style="{StaticResource MetroStatusBarSeparator}" DockPanel.Dock="Right"/>
                 <StatusBarItem Content="{Binding ParserStatus}" DockPanel.Dock="Right" />

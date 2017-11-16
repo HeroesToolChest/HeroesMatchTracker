@@ -1,5 +1,4 @@
 ﻿using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
-using HeroesMatchTracker.Core.ReplayModels.Uploaders.HotsLogs;
 
 namespace HeroesMatchTracker.Core.ViewServices
 {
@@ -16,8 +15,6 @@ namespace HeroesMatchTracker.Core.ViewServices
         void SetReplayParserStatus(ReplayParserStatus status);
 
         void SetReplayParserWatchStatus(ReplayParserWatchStatus status);
-
-        void SetHotsLogsUploaderStatus(HotsLogsUploaderStatus status);
 
         void SetHotsApiUploaderStatus(HotsApiUploaderStatus status);
 

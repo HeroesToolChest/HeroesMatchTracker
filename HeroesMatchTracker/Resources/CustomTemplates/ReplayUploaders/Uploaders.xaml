@@ -34,30 +34,6 @@
 
     <DataTemplate x:Key="ReplayUploaders">
         <StackPanel>
-            <GroupBox Header="HOTS Logs Uploader" Margin="0 20 0 0" HorizontalAlignment="Stretch">
-                <StackPanel>
-                    <StackPanel>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel>
-                                <CheckBox Content="Enable Uploader" IsChecked="{Binding HotsLogsUploader.IsUploaderEnabled}" IsEnabled="{Binding AreParserButtonsEnabled}"/>
-                                <Button Content="{Binding HotsLogsUploader.StartButtonText}" Command="{Binding HotsLogsUploader.StartButtonCommand}" IsEnabled="{Binding HotsLogsUploader.StartButtonEnabled}" Width="120" HorizontalAlignment="Left" Margin="0 5 0 0" />
-                            </StackPanel>
-                            <StackPanel Grid.Column="1" Margin="12">
-                                <ContentPresenter Content="{Binding HotsLogsUploader}" ContentTemplate="{StaticResource UploaderStatus}" />
-                            </StackPanel>
-                        </Grid>
-                        <Label Content="Scan Date/Time Options" FontSize="16" />
-                    </StackPanel>
-                    <CheckBox Content="Latest Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LatestHotsLogsUploaderChecked}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" />
-                    <ContentPresenter Content="{Binding HotsLogsUploader}" ContentTemplate="{StaticResource UploaderLatestOptions}" />
-                    <CheckBox Content="Last Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LastHotsLogsUploaderChecked}" IsEnabled="{Binding HotsLogsUploader.ButtonsEnabled}" />
-                    <ContentPresenter Content="{Binding HotsLogsUploader}" ContentTemplate="{StaticResource UploaderLastOptions}" />
-                </StackPanel>
-            </GroupBox>
             <GroupBox Header="HotsApi Uploader" Margin="0 20 0 0" HorizontalAlignment="Stretch">
                 <StackPanel>
                     <StackPanel>

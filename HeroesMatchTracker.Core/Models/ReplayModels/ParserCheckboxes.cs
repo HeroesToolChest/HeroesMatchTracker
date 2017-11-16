@@ -9,10 +9,8 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
     {
         public const int LatestParsedIndex = 0;
         public const int LastParsedIndex = 1;
-        public const int LatestHotsLogsUploaderIndex = 2;
-        public const int LastHotsLogsUploaderIndex = 3;
-        public const int LatestHotsApiUploaderIndex = 4;
-        public const int LastHotsApiUploaderIndex = 5;
+        public const int LatestHotsApiUploaderIndex = 2;
+        public const int LastHotsApiUploaderIndex = 3;
 
         private IDatabaseService Database;
 
@@ -39,8 +37,6 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                     {
                         Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LatestParsedIndex;
                         LastParsedChecked = false;
-                        LatestHotsLogsUploaderChecked = false;
-                        LastHotsLogsUploaderChecked = false;
                         LatestHotsApiUploaderChecked = false;
                         LastHotsApiUploaderChecked = false;
                     }
@@ -62,54 +58,6 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                     {
                         Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LastParsedIndex;
                         LatestParsedChecked = false;
-                        LatestHotsLogsUploaderChecked = false;
-                        LastHotsLogsUploaderChecked = false;
-                        LatestHotsApiUploaderChecked = false;
-                        LastHotsApiUploaderChecked = false;
-                    }
-                }
-
-                RaisePropertyChanged();
-            }
-        }
-
-        public bool LatestHotsLogsUploaderChecked
-        {
-            get => ScanDateTimeCheckboxes[LatestHotsLogsUploaderIndex];
-            set
-            {
-                if (Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex != LatestHotsLogsUploaderIndex)
-                {
-                    ScanDateTimeCheckboxes[LatestHotsLogsUploaderIndex] = value;
-                    if (value)
-                    {
-                        Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LatestHotsLogsUploaderIndex;
-                        LatestParsedChecked = false;
-                        LastParsedChecked = false;
-                        LastHotsLogsUploaderChecked = false;
-                        LatestHotsApiUploaderChecked = false;
-                        LastHotsApiUploaderChecked = false;
-                    }
-                }
-
-                RaisePropertyChanged();
-            }
-        }
-
-        public bool LastHotsLogsUploaderChecked
-        {
-            get => ScanDateTimeCheckboxes[LastHotsLogsUploaderIndex];
-            set
-            {
-                if (Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex != LastHotsLogsUploaderIndex)
-                {
-                    ScanDateTimeCheckboxes[LastHotsLogsUploaderIndex] = value;
-                    if (value)
-                    {
-                        Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LastHotsLogsUploaderIndex;
-                        LatestParsedChecked = false;
-                        LastParsedChecked = false;
-                        LatestHotsLogsUploaderChecked = false;
                         LatestHotsApiUploaderChecked = false;
                         LastHotsApiUploaderChecked = false;
                     }
@@ -132,8 +80,6 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LatestHotsApiUploaderIndex;
                         LatestParsedChecked = false;
                         LastParsedChecked = false;
-                        LatestHotsLogsUploaderChecked = false;
-                        LastHotsLogsUploaderChecked = false;
                         LastHotsApiUploaderChecked = false;
                     }
                 }
@@ -155,8 +101,6 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
                         Database.SettingsDb().UserSettings.SelectedScanDateTimeIndex = LastHotsApiUploaderIndex;
                         LatestParsedChecked = false;
                         LastParsedChecked = false;
-                        LatestHotsLogsUploaderChecked = false;
-                        LastHotsLogsUploaderChecked = false;
                         LatestHotsApiUploaderChecked = false;
                     }
                 }
@@ -167,15 +111,6 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
 
         private void ReceivedMessage(NotificationMessage message)
         {
-            if (message.Notification == StaticMessage.HotsLogsUploaderDisabled)
-            {
-                if (LatestHotsLogsUploaderChecked || LastHotsLogsUploaderChecked)
-                    LatestParsedChecked = true;
-
-                LatestHotsLogsUploaderChecked = false;
-                LastHotsLogsUploaderChecked = false;
-            }
-
             if (message.Notification == StaticMessage.HotsApiUploaderDisabled)
             {
                 if (LatestHotsApiUploaderChecked || LastHotsApiUploaderChecked)

@@ -18,7 +18,7 @@ namespace HeroesMatchTracker.Core.ReplayUploads
                 using (var webClient = new WebClient())
                 {
                     webClient.Headers.Add("user-agent", Uploader.AppUserAgent);
-                    var bytes = await webClient.UploadFileTaskAsync($"http://hotsapi.net/api/v1/upload", filePath);
+                    var bytes = await webClient.UploadFileTaskAsync($"http://hotsapi.net/api/v1/replays?uploadToHotslogs={true}", filePath);
                     response = Encoding.UTF8.GetString(bytes);
                 }
             }

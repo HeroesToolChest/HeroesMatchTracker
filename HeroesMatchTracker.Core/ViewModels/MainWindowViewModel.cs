@@ -5,7 +5,6 @@ using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
-using HeroesMatchTracker.Core.ReplayModels.Uploaders.HotsLogs;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
@@ -240,14 +239,6 @@ namespace HeroesMatchTracker.Core.ViewModels
                 ParserWatchStatus = "Watch [ENABLED]";
             else if (status == ReplayParserWatchStatus.Disabled)
                 ParserWatchStatus = "Watch [DISABLED]";
-        }
-
-        public void SetHotsLogsUploaderStatus(HotsLogsUploaderStatus status)
-        {
-            if (status == HotsLogsUploaderStatus.Enabled)
-                HotsLogsUploaderCurrentStatus = "HOTS Logs Uploader [ENABLED]";
-            else if (status == HotsLogsUploaderStatus.Disabled)
-                HotsLogsUploaderCurrentStatus = "HOTS Logs Uploader [DISABLED]";
         }
 
         public void SetHotsApiUploaderStatus(HotsApiUploaderStatus status)

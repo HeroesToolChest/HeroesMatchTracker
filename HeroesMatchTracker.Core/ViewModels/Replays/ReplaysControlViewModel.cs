@@ -4,7 +4,6 @@ using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.ReplayModels;
 using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
-using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsLogs;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
@@ -52,7 +51,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             MainTab = mainTab;
 
             ParserCheckboxes = new ParserCheckboxes(InternalService.Database);
-            HotsLogsUploader = new HotsLogsUploader(InternalService, mainTab, "HotsLogs");
             HotsApiUploader = new HotsApiUploader(InternalService, mainTab, "HotsApi");
 
             AreParserButtonsEnabled = true;
@@ -82,7 +80,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         #region public properties
         public ParserCheckboxes ParserCheckboxes { get; }
-        public HotsLogsUploader HotsLogsUploader { get; }
         public HotsApiUploader HotsApiUploader { get; }
         public IDatabaseService GetDatabaseService => Database;
         public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
@@ -354,7 +351,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private void Scan()
         {
             AreParserButtonsEnabled = false;
-            HotsLogsUploader.ReplayUploadQueue.Clear();
             HotsApiUploader.ReplayUploadQueue.Clear();
 
             Task.Run(async () =>
@@ -367,10 +363,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private void Start()
         {
             IsParsingReplaysOn = true;
-
-            HotsLogsUploader.IsParsingReplaysOn = true;
-            HotsLogsUploader.ReplayUploadQueue.Clear();
-            HotsLogsUploader.RequestStart();
 
             HotsApiUploader.IsParsingReplaysOn = true;
             HotsApiUploader.ReplayUploadQueue.Clear();
@@ -387,8 +379,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private async Task Stop()
         {
             IsParsingReplaysOn = false;
-            HotsLogsUploader.IsParsingReplaysOn = false;
-            HotsLogsUploader.RequestStop();
             HotsApiUploader.IsParsingReplaysOn = false;
             HotsApiUploader.RequestStop();
 
@@ -497,12 +487,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                     break;
                 case ParserCheckboxes.LastParsedIndex:
                     dateTime = ReplaysLastSaved;
-                    break;
-                case ParserCheckboxes.LatestHotsLogsUploaderIndex:
-                    dateTime = HotsLogsUploader.ReplaysLatestUploaded;
-                    break;
-                case ParserCheckboxes.LastHotsLogsUploaderIndex:
-                    dateTime = HotsLogsUploader.ReplaysLastUploaded;
                     break;
                 case ParserCheckboxes.LatestHotsApiUploaderIndex:
                     dateTime = HotsApiUploader.ReplaysLatestUploaded;
@@ -729,9 +713,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         ReplaysLastSaved = replayFileData.ReplayTimeStamp.ToLocalTime();
                     }
 
-                    if (HotsLogsUploader.IsUploaderEnabled && (currentReplayFile.Status == ReplayResult.Saved || currentReplayFile.Status == ReplayResult.Duplicate))
-                        HotsLogsUploader.ReplayUploadQueue.Enqueue(currentReplayFile);
-
                     if (HotsApiUploader.IsUploaderEnabled && (currentReplayFile.Status == ReplayResult.Saved || currentReplayFile.Status == ReplayResult.Duplicate))
                         HotsApiUploader.ReplayUploadQueue.Enqueue(currentReplayFile);
                 }
@@ -842,7 +823,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             CurrentStatus = "Waiting for uploaders to finish...";
             while (true)
             {
-                if (HotsLogsUploader.IsIdleMode && HotsApiUploader.IsIdleMode)
+                if (HotsApiUploader.IsIdleMode)
                 {
                     break;
                 }

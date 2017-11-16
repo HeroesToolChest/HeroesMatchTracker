@@ -173,8 +173,6 @@
     <Compile Include="Models\ReplayModels\Uploaders\HotsApi\HotsApiUploaderStatus.cs" />
     <Compile Include="ReplayUploads\HotsApiReplayUpload.cs" />
     <Compile Include="ReplayUploads\HotsApiUploadStatus.cs" />
-    <Compile Include="ReplayUploads\HotsLogsReplayUpload.cs" />
-    <Compile Include="Models\ReplayModels\Uploaders\HotsLogs\HotsLogsUploaderStatus.cs" />
     <Compile Include="ReplayUploads\MaintenanceException.cs" />
     <Compile Include="ReplayUploads\Uploader.cs" />
     <Compile Include="Services\IInternalService.cs" />
@@ -219,7 +217,6 @@
     <Compile Include="ViewModels\Replays\ReplaysControlViewModel.cs" />
     <Compile Include="ViewModels\Replays\FailedReplaysWindowViewModel.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\HotsApi\HotsApiUploader.cs" />
-    <Compile Include="Models\ReplayModels\Uploaders\HotsLogs\HotsLogsUploader.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\UploaderBaseModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsAllHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
