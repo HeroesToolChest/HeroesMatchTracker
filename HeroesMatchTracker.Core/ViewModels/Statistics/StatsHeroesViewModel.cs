@@ -53,6 +53,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         public StatsHeroesViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
+            HeroesIcons.LoadLatestHeroesBuild();
+
             LoadingOverlayWindow = loadingOverlayWindow;
 
             IsTotalsAveragesChecked = true;
