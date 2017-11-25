@@ -22,4 +22,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Xml\HeroBuilds\59799\_AllHeroes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
