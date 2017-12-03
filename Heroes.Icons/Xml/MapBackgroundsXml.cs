@@ -160,7 +160,8 @@ namespace Heroes.Icons.Xml
                         if (!bool.TryParse(custom, out bool isCustomOnly))
                             isCustomOnly = false;
 
-                        MapRealNameByMapAlternativeName.Add(alternativeName, realMapBackgroundName);
+                        if (!string.IsNullOrEmpty(alternativeName))
+                            MapRealNameByMapAlternativeName.Add(alternativeName, realMapBackgroundName);
 
                         reader.Read();
                         if (reader.Name == "Normal")
