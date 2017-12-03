@@ -674,9 +674,10 @@ namespace Heroes.Icons.Xml
             string abilityLink = reader["ability"] ?? string.Empty;
 
             string realName = string.Empty;
+            string genericTalent = string.Empty; // is the talent generic
             string desc = string.Empty; // reference name for tooltips
             string icon = string.Empty;
-            string generic = "false";  // is the icon being used generic
+            string genericIcon = "false";  // is the icon being used generic
             int? health = null; // health cost
             string healthPercent = "false"; // is the health cost a percentage
             int? mana = null; // mana/brew/fury/etc...
@@ -691,7 +692,7 @@ namespace Heroes.Icons.Xml
                 Ability ability = hero.Abilities[abilityLink];
 
                 realName = ability.Name;
-                generic = ability.IsGeneric.ToString();
+                genericIcon = ability.IsGeneric.ToString();
                 desc = ability.TooltipDescriptionName;
                 mana = ability.Tooltip.Mana;
                 perManaCost = ability.Tooltip.IsPerManaCost.ToString();
@@ -706,6 +707,7 @@ namespace Heroes.Icons.Xml
 
             if (reader["name"] != null) realName = reader["name"];
             if (reader["desc"] != null) desc = reader["desc"];
+            if (reader["generic"] != null) genericTalent = reader["generic"];
 
             if (!reader.IsEmptyElement)
             {
@@ -717,7 +719,7 @@ namespace Heroes.Icons.Xml
                         {
                             case "Icon":
                                 if (reader["generic"] != null)
-                                    generic = reader["generic"];
+                                    genericIcon = reader["generic"];
 
                                 reader.Read();
                                 icon = reader.Value;
@@ -756,6 +758,8 @@ namespace Heroes.Icons.Xml
                 }
             }
 
+            bool isGenericTalent = false;
+
             if (!bool.TryParse(healthPercent, out bool isHealthPercent))
                 isHealthPercent = false;
 
@@ -765,16 +769,20 @@ namespace Heroes.Icons.Xml
             if (!bool.TryParse(charge, out bool isCharge))
                 isCharge = false;
 
-            if (!bool.TryParse(generic, out bool isGeneric))
-                isGeneric = false;
-
-            bool isGenericTalent = false;
+            if (!bool.TryParse(genericIcon, out bool isGenericIcon))
+                isGenericIcon = false;
 
             // check if the talent is generic
             if (referenceName.StartsWith("Generic") || referenceName.StartsWith("HeroGeneric") || referenceName.StartsWith("BattleMomentum"))
             {
-                isGeneric = true;
+                isGenericIcon = true;
                 isGenericTalent = true;
+            }
+
+            if (!string.IsNullOrEmpty(genericTalent))
+            {
+                if (!bool.TryParse(genericTalent, out isGenericTalent))
+                    isGenericTalent = false;
             }
 
             // create the tooltip
@@ -788,10 +796,10 @@ namespace Heroes.Icons.Xml
             {
                 Name = realName,
                 ReferenceName = referenceName,
-                IsIconGeneric = isGeneric,
+                IsIconGeneric = isGenericIcon,
                 IsGeneric = isGenericTalent,
                 TooltipDescriptionName = desc,
-                Icon = SetHeroTalentString(hero.ShortName, icon, isGeneric),
+                Icon = SetHeroTalentString(hero.ShortName, icon, isGenericIcon),
                 Tooltip = new TalentTooltip
                 {
                     Short = shortDesc,
