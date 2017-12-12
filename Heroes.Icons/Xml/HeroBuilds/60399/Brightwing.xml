@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Brightwing available="47479" attributeid="Faer" unit="HeroFaerieDragon" franchise="Warcraft" type="Ranged" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_faeriedragon.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_faeriedragon.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_faeriedragon.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <FaerieDragonArcaneFlare name="Arcane Flare" desc="BrightwingArcaneFlare">
+        <Icon>storm_ui_icon_brightwing_arcaneflare.png</Icon>
+        <Mana>35</Mana>
+        <Cooldown>6</Cooldown>
+      </FaerieDragonArcaneFlare>
+      <FaerieDragonPolymorph name="Polymorph" desc="BrightwingPolymorph">
+        <Icon>storm_ui_icon_brightwing_polymorph.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>12</Cooldown>
+      </FaerieDragonPolymorph>
+      <FaerieDragonPixieDust name="Pixie Dust" desc="BrightwingPixieDust">
+        <Icon>storm_ui_icon_brightwing_pixiedust.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>10</Cooldown>
+      </FaerieDragonPixieDust>
+    </Basic>
+    <Heroic>
+      <FaerieDragonBlinkHealDash name="Blink Heal" desc="BrightwingBlinkHealAllyDash">
+        <Icon>storm_ui_icon_brightwing_blinkheal.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown charge="true">10</Cooldown>
+      </FaerieDragonBlinkHealDash>
+      <FaerieDragonEmeraldWind name="Emerald Wind" desc="BrightwingEmeraldWind">
+        <Icon>storm_ui_icon_brightwing_emeraldwind.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>60</Cooldown>
+      </FaerieDragonEmeraldWind>
+    </Heroic>
+    <Trait>
+      <FaerieDragonSoothingMist name="Soothing Mist" desc="BrightwingSoothingMist">
+        <Icon>storm_ui_icon_brightwing_soothingmist.png</Icon>
+      </FaerieDragonSoothingMist>
+    </Trait>
+    <Mount>
+      <FaerieDragonPhaseShiftFlight name="Phase Shift" desc="BrightwingPhaseShift">
+        <Icon>storm_ui_icon_brightwing_mount.png</Icon>
+        <Cooldown>55</Cooldown>
+      </FaerieDragonPhaseShiftFlight>
+    </Mount>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <BrightwingDreamShotArcaneFlare name="Dream Shot" desc="BrightwingDreamShotTalent">
+        <Icon>storm_ui_icon_brightwing_arcaneflare.png</Icon>
+      </BrightwingDreamShotArcaneFlare>
+      <BrightwingPhaseShiftHyperShift name="Hyper Shift" desc="BrightwingPhaseShiftHyperShift">
+        <Icon>storm_ui_icon_brightwing_hypershift.png</Icon>
+      </BrightwingPhaseShiftHyperShift>
+      <BrightwingPixieCharm name="Pixie Charm" desc="FaerieDragonPixieCharmTalent">
+        <Icon generic="true">storm_ui_icon_talent_bribe.png</Icon>
+      </BrightwingPixieCharm>
+    </Level1>
+    <Level4>
+      <BrightwingUnstableAnomalyPolymorph name="Unstable Anomaly" desc="BrightwingUnstableAnomalyTalent">
+        <Icon>storm_ui_icon_brightwing_polymorph.png</Icon>
+      </BrightwingUnstableAnomalyPolymorph>
+      <BrightwingManicPixiePixieDust name="Manic Pixie" desc="BrightwingManicPixieTalent">
+        <Icon>storm_ui_icon_brightwing_pixiedust.png</Icon>
+      </BrightwingManicPixiePixieDust>
+      <BrightwingPhaseShiftPeekaboo name="Peekaboo!" desc="BrightwingPhaseShiftPeekaboo">
+        <Icon>storm_ui_icon_brightwing_hypershift.png</Icon>
+      </BrightwingPhaseShiftPeekaboo>
+    </Level4>
+    <Level7>
+      <BrightwingMistifiedSoothingMist name="Mistified" desc="BrightwingMistifiedTalent">
+        <Icon>storm_ui_icon_brightwing_soothingmist.png</Icon>
+      </BrightwingMistifiedSoothingMist>
+      <BrightwingPhaseShiftPhaseShield name="Phase Shield" desc="BrightwingPhaseShiftPhaseShield">
+        <Icon>storm_ui_icon_brightwing_hypershift.png</Icon>
+      </BrightwingPhaseShiftPhaseShield>
+      <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">
+        <Icon>storm_ui_icon_talent_cleanse.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentCleanse>
+    </Level7>
+    <Level10>
+      <FaerieDragonHeroicAbilityBlinkHeal ability="FaerieDragonBlinkHealDash" />
+      <FaerieDragonHeroicAbilityEmeraldWind ability="FaerieDragonEmeraldWind" />
+    </Level10>
+    <Level13>
+      <FaerieDragonMasteryStickyFlare name="Sticky Flare" desc="BrightwingArcaneFlareStickyFlareTalent">
+        <Icon>storm_ui_icon_brightwing_arcaneflare.png</Icon>
+      </FaerieDragonMasteryStickyFlare>
+      <BrightwingPixieBoostPixieDust name="Pixie Boost" desc="BrightwingPixieBoostTalent">
+        <Icon>storm_ui_icon_brightwing_pixiedust.png</Icon>
+      </BrightwingPixieBoostPixieDust>
+      <FaerieDragonMasteryShieldDust name="Shield Dust" desc="BrightwingPixieDustShieldDustTalent">
+        <Icon>storm_ui_icon_brightwing_pixiedust_var1.png</Icon>
+      </FaerieDragonMasteryShieldDust>
+      <GenericTalentIceBlock name="Ice Block" desc="GenericIceBlockTalent">
+        <Icon>storm_ui_icon_Talent_IceBlock.png</Icon>
+        <Cooldown>60</Cooldown>
+      </GenericTalentIceBlock>
+    </Level13>
+    <Level16>
+      <BrightwingGreaterPolymorphPolymorph name="Greater Polymorph" desc="BrightwingGreaterPolymorphTalent">
+        <Icon>storm_ui_icon_brightwing_polymorph.png</Icon>
+      </BrightwingGreaterPolymorphPolymorph>
+      <FaerieDragonMasteryCritterize name="Critterize" desc="BrightwingPolymorphCritterizeTalent">
+        <Icon>storm_ui_icon_brightwing_polymorph_var1.png</Icon>
+      </FaerieDragonMasteryCritterize>
+      <BrightwingBouncyDustPixieDust name="Bouncy Dust" desc="BrightwingBouncyDustTalent">
+        <Icon>storm_ui_icon_brightwing_pixiedust.png</Icon>
+      </BrightwingBouncyDustPixieDust>
+      <FaerieDragonHardenedFocus name="Hardened Focus" desc="GenericHardenedFocusTalent">
+        <Icon generic="true">storm_ui_icon_Talent_HardenedFocus.png</Icon>
+      </FaerieDragonHardenedFocus>
+    </Level16>
+    <Level20>
+      <BrightwingDoubleWyrmholeBlinkHeal name="Double Wyrmhole" desc="BrightwingDoubleWyrmholeTalent">
+        <Icon>storm_ui_icon_brightwing_blinkheal.png</Icon>
+      </BrightwingDoubleWyrmholeBlinkHeal>
+      <FaerieDragonMasteryContinuousWinds name="Continuous Winds" desc="BrightwingEmeraldWindContinuousWindsTalent">
+        <Icon>storm_ui_icon_brightwing_emeraldwind.png</Icon>
+      </FaerieDragonMasteryContinuousWinds>
+      <BrightwingRevitalizingMistSoothingMist name="Revitalizing Mist" desc="BrightwingRevitalizingMistTalent">
+        <Icon>storm_ui_icon_brightwing_soothingmist.png</Icon>
+      </BrightwingRevitalizingMistSoothingMist>
+      <GenericTalentStormShield name="Storm Shield" desc="GenericStormShield">
+        <Icon>storm_ui_icon_Talent_StormShield.png</Icon>
+        <Cooldown>45</Cooldown>
+      </GenericTalentStormShield>
+    </Level20>
+  </Talents>
+</Brightwing>
