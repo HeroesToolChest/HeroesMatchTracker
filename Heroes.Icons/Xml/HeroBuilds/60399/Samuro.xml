@@ -24,13 +24,13 @@
         <Icon>storm_ui_icon_samuro_bladestorm.png</Icon>
         <Cooldown>110</Cooldown>
       </SamuroBladeStormDummy>
-      <SamuroIllusionMaster name="Illusion Master" desc="SamuroIllusionMaster">
+      <SamuroIllusionMaster name="Illusion Master" desc="SamuroIllusionMasterTalent">
         <Icon>storm_ui_icon_samuro_illusiondancer.png</Icon>
         <Cooldown>6</Cooldown>
       </SamuroIllusionMaster>
     </Heroic>
     <Trait>
-      <SamuroAdvancingStrikes name="Advancing Strikes" desc="SamuroAdvancingStrikes">
+      <SamuroAdvancingStrikes name="Image Transmission" desc="SamuroAdvancingStrikes">
         <Icon>storm_ui_icon_samuro_flowingstrikes.png</Icon>
       </SamuroAdvancingStrikes>
     </Trait>
@@ -65,9 +65,9 @@
       <SamuroPhantomPain name="Phantom Pain" desc="SamuroPhantomsStrikeTalent">
         <Icon>storm_ui_icon_samuro_criticalstrike_a.png</Icon>
       </SamuroPhantomPain>
-      <SamuroOverpoweringBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">
+      <SamuroCrushingBlow name="Crushing Blows" desc="SamuroOverpoweringBlow">
         <Icon>storm_ui_icon_samuro_criticalstrike_b.png</Icon>
-      </SamuroOverpoweringBlow>
+      </SamuroCrushingBlow>
     </Level7>
     <Level10>
       <SamuroHeroicAbilityBladestorm ability="SamuroBladeStormDummy" />

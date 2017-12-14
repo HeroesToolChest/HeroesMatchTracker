@@ -100,18 +100,12 @@
       <ValeeraEviscerateSliceAndDice name="Slice and Dice" desc="ValeeraSliceAndDice">
         <Icon>storm_ui_icon_valeera_eviscerate.png</Icon>
       </ValeeraEviscerateSliceAndDice>
-      <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">
-        <Icon>storm_ui_icon_valeera_ambush.png</Icon>
-      </ValeeraAmbushAssassinate>
     </Level7>
     <Level10>
       <ValeeraSmokeBomb ability="ValeeraSmokeBomb" />
       <ValeeraCloakOfShadows ability="ValeeraCloakOfShadows" />
     </Level10>
     <Level13>
-      <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">
-        <Icon>storm_ui_icon_valeera_vanish.png</Icon>
-      </ValeeraVanishElusiveness>
       <ValeeraAmbushDeathFromAbove name="Death From Above" desc="ValeeraDeathFromAbove">
         <Icon>storm_ui_icon_valeera_ambush.png</Icon>
       </ValeeraAmbushDeathFromAbove>
@@ -126,12 +120,9 @@
       <ValeeraSinisterStrikeSealFate name="Seal Fate" desc="ValeeraSealFate">
         <Icon>storm_ui_icon_valeera_sinisterstrike.png</Icon>
       </ValeeraSinisterStrikeSealFate>
-      <ValeeraGarroteRupture name="Rupture" desc="ValeeraRupture">
-        <Icon>storm_ui_icon_valeera_garrote.png</Icon>
-      </ValeeraGarroteRupture>
-      <ValeeraEviscerateExposeArmor name="Expose Armor" desc="ValeeraExposeArmor">
-        <Icon>storm_ui_icon_valeera_eviscerate.png</Icon>
-      </ValeeraEviscerateExposeArmor>
+      <ValeeraAmbushAssassinate name="Assassinate" desc="ValeeraAssassinate">
+        <Icon>storm_ui_icon_valeera_ambush.png</Icon>
+      </ValeeraAmbushAssassinate>
       <ValeeraThistleTea name="Thistle Tea" desc="ValeeraThistleTea">
         <Icon>storm_ui_icon_valeera_thistletea.png</Icon>
         <Cooldown>60</Cooldown>
@@ -144,12 +135,12 @@
       <ValeeraCloakOfShadowsEnvelopingShadows name="Enveloping Shadows" desc="ValeeraEnvelopingShadows">
         <Icon>storm_ui_icon_valeera_cloakofshadows.png</Icon>
       </ValeeraCloakOfShadowsEnvelopingShadows>
-      <ValeeraVanishNightslayer name="Nightslayer" desc="ValeeraNightslayer">
+      <ValeeraGarroteRupture name="Rupture" desc="ValeeraRupture">
+        <Icon>storm_ui_icon_valeera_garrote.png</Icon>
+      </ValeeraGarroteRupture>
+      <ValeeraVanishElusiveness name="Elusiveness" desc="ValeeraElusiveness">
         <Icon>storm_ui_icon_valeera_vanish.png</Icon>
-      </ValeeraVanishNightslayer>
-      <ValeeraColdBlood name="Cold Blood" desc="ValeeraColdBlood">
-        <Icon>storm_ui_icon_valeera_coldblood.png</Icon>
-      </ValeeraColdBlood>
+      </ValeeraVanishElusiveness>
     </Level20>
   </Talents>
 </Valeera>

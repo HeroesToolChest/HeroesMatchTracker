@@ -23,11 +23,11 @@
       </ZeratulBlinkStorm>
     </Basic>
     <Heroic>
-      <ZeratulShadowAssault name="Shadow Assault" desc="ZeratulShadowAssault">
-        <Icon>storm_ui_icon_zeratul_shadowassault.png</Icon>
-        <Mana>50</Mana>
-        <Cooldown>45</Cooldown>
-      </ZeratulShadowAssault>
+      <ZeratulMightOfTheNerazimDummy name="Might Of The Nerazim" desc="ZeratulMightOfTheNerazimTalent">
+        <Icon>storm_ui_icon_zeratul_mightofnerazim.png</Icon>
+        <Mana>30</Mana>
+        <Cooldown>20</Cooldown>
+      </ZeratulMightOfTheNerazimDummy>
       <ZeratulVoidPrison name="Void Prison" desc="ZeratulVoidPrison">
         <Icon>storm_ui_icon_zeratul_voidprison.png</Icon>
         <Mana>100</Mana>
@@ -45,50 +45,51 @@
       <ZeratulMasteryGreaterCleaveCleave name="Greater Cleave" desc="ZeratulCleaveGreaterCleaveTalent">
         <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
       </ZeratulMasteryGreaterCleaveCleave>
-      <ZeratulVorpalBlade name="Vorpal Blade" desc="ZeratulVorpalBladeHotbar">
-        <Icon>storm_ui_icon_zeratul_vorpalblade.png</Icon>
-        <Cooldown>15</Cooldown>
-      </ZeratulVorpalBlade>
       <ZeratulShadowHunter name="Shadow Hunter" desc="ZeratulShadowHunter">
         <Icon>storm_ui_icon_zeratul_blink.png</Icon>
       </ZeratulShadowHunter>
+      <ZeratulMoveUnseen name="Move Unseen" desc="ZeratulMoveUnseen">
+        <Icon>storm_ui_icon_zeratul_cloak.png</Icon>
+        <Cooldown></Cooldown>
+      </ZeratulMoveUnseen>
     </Level1>
     <Level4>
-      <ZeratulGrimTask name="Grim Task" desc="ZeratulGrimTaskTalent">
-        <Icon generic="true">storm_ui_icon_talent_gatheringpower.png</Icon>
-      </ZeratulGrimTask>
       <ZeratulRendingCleave name="Rending Cleave" desc="ZeratulCleaveRendingCleaveTalent">
         <Icon>storm_ui_icon_zeratul_cleave.png</Icon>
       </ZeratulRendingCleave>
-      <ZeratulComboSlash name="Combo Slash" desc="ZeratulComboSlash">
-        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
-      </ZeratulComboSlash>
+      <ZeratulPsionicStrength name="Psionic Strength" desc="ZeratulPsionicStrength">
+        <Icon generic="true">storm_ui_icon_talent_abilitytalent_damage.png</Icon>
+      </ZeratulPsionicStrength>
+      <ZeratulDarknessDescends name="Darkness Descends" desc="ZeratulDarknessDescends">
+        <Icon>storm_ui_icon_zeratul_shadowassault.png</Icon>
+        <Cooldown>30</Cooldown>
+      </ZeratulDarknessDescends>
     </Level4>
     <Level7>
       <ZeratulWormhole name="Wormhole" desc="ZeratulWormholeTalent">
         <Icon>storm_ui_icon_zeratul_blink.png</Icon>
       </ZeratulWormhole>
-      <ZeratulSlipintoShadow name="Slip into Shadow" desc="ZeratulSlipintoShadow">
-        <Icon>storm_ui_icon_zeratul_blink_a.png</Icon>
-      </ZeratulSlipintoShadow>
       <ZeratulSeekerInTheDark name="Seeker in the Dark" desc="ZeratulSeekerInTheDark">
         <Icon>storm_ui_icon_zeratul_singularityspike.png</Icon>
       </ZeratulSeekerInTheDark>
+      <ZeratulWarpSkirmisherTalent name="Warp Skirmisher" desc="ZeratulWarpSkirmisher">
+        <Icon>storm_ui_icon_zeratul_vorpalblade.png</Icon>
+      </ZeratulWarpSkirmisherTalent>
     </Level7>
     <Level10>
-      <ZeratulHeroicAbilityShadowAssault ability="ZeratulShadowAssault" />
+      <ZeratulMightOfTheNerazim ability="ZeratulMightOfTheNerazimDummy" />
       <ZeratulHeroicAbilityVoidPrison ability="ZeratulVoidPrison" />
     </Level10>
     <Level13>
       <ZeratulShroudofAdun name="Shroud of Adun" desc="ZeratulShroudofAdun">
         <Icon>storm_ui_icon_zeratul_cloak.png</Icon>
       </ZeratulShroudofAdun>
-      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
-        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
-      </GenericTalentSpellShield>
       <ZeratulMendingStrikes name="Mending Strikes" desc="ZeratulMendingStrikes">
         <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
       </ZeratulMendingStrikes>
+      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
+        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
+      </GenericTalentSpellShield>
     </Level13>
     <Level16>
       <ZeratulMasterWarpBlade name="Master Warp-Blade" desc="ZeratulMasterWarpBlade">
@@ -102,19 +103,18 @@
       </ZeratulSentencedtoDeath>
     </Level16>
     <Level20>
-      <ZeratulNerazimFury name="Nerazim Fury" desc="ZeratulShadowAssaultNerazimFuryTalent">
-        <Icon>storm_ui_icon_zeratul_shadowassault.png</Icon>
-      </ZeratulNerazimFury>
+      <ZeratulTwilightFalls name="Twilight Falls" desc="ZeratulTwilightFalls">
+        <Icon>storm_ui_icon_zeratul_mightofnerazim.png</Icon>
+      </ZeratulTwilightFalls>
       <ZeratulGiftoftheXelNaga name="Gift of the Xel'Naga" desc="ZeratulGiftoftheXelNaga">
         <Icon>storm_ui_icon_zeratul_voidprison.png</Icon>
       </ZeratulGiftoftheXelNaga>
       <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
         <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
       </GenericTalentNexusBlades>
-      <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
-        <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
-        <Cooldown>60</Cooldown>
-      </GenericTalentRewind>
+      <ZeratulShadowMending name="Shadow Mending" desc="ZeratulShadowMending">
+        <Icon generic="true">storm_ui_icon_talent_abilitytalent_heal.png</Icon>
+      </ZeratulShadowMending>
     </Level20>
   </Talents>
 </Zeratul>

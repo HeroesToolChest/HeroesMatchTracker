@@ -24,6 +24,7 @@ Garrosh=A frontline Tank that enters the fray, trying to isolate a single oppone
 Genji=An opportunistic, mobile Assassin who can tear apart a weak backline.
 Greymane=A high damage Assassin that wears down enemies from afar and dives in for the kill.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="BBBBBB" width="20" height="22"/><c val="#TooltipNumbers">10 Armor (in Worgen Form)</c>
 Guldan=A sustained damage Mage who uses his health as fuel but can steal life from his enemies.
+Hanzo=A ranged Assassin who specializes in scouting and taking out enemies from a distance.
 Junkrat=A mobile Assassin that bombards the enemy from afar, and sows chaos with traps and mines.
 Illidan=A mobile, sustained damage Assassin who pairs well with Heroes that can enable him.
 Jaina=A frost Mage that can slow the entire enemy team.

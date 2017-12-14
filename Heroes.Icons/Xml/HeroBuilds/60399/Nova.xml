@@ -35,22 +35,22 @@
       </NovaPrecisionStrike>
     </Heroic>
     <Trait>
-      <NovaPermanentCloakSniper name="Permanent Cloak, Sniper" desc="NovaPermanentCloakSniper">
+      <NovaPermanentCloakSniper name="Permanent Cloak, Sniper" desc="NovaPermanentCloak">
         <Icon>storm_ui_icon_nova_personalcloaking.png</Icon>
       </NovaPermanentCloakSniper>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <NovaAdvancedCloaking name="Advanced Cloaking" desc="NovaPermanentCloakSniperAdvancedCloakingTalent">
-        <Icon>storm_ui_icon_nova_personalcloaking_var1.png</Icon>
-      </NovaAdvancedCloaking>
       <NovaMasteryLongshot name="Longshot" desc="NovaPinningShotLongshotTalent">
         <Icon>storm_ui_icon_Nova_PinningShot.png</Icon>
       </NovaMasteryLongshot>
       <NovaCovertOps name="Covert Ops" desc="NovaCovertOpsTalent">
         <Icon>storm_ui_icon_nova_pinningshot_var1.png</Icon>
       </NovaCovertOps>
+      <NovaAdvancedCloaking name="Advanced Cloaking" desc="NovaPermanentCloakSniperAdvancedCloakingTalent">
+        <Icon>storm_ui_icon_nova_personalcloaking_var1.png</Icon>
+      </NovaAdvancedCloaking>
     </Level1>
     <Level4>
       <NovaRapidProjection name="Rapid Projection" desc="NovaHoloDecoyRapidProjectionTalent">
@@ -64,37 +64,37 @@
       </NovaCovertMission>
     </Level4>
     <Level7>
+      <NovaMasteryPerfectShotSnipe name="Perfect Shot" desc="NovaPerfectShotTalent">
+        <Icon>storm_ui_icon_nova_snipe.png</Icon>
+      </NovaMasteryPerfectShotSnipe>
       <NovaCombatStyleOneintheChamber name="One in the Chamber" desc="NovaOneintheChamberTalent">
         <Icon generic="true">storm_ui_icon_Talent_AutoAttack_Damage.png</Icon>
       </NovaCombatStyleOneintheChamber>
       <NovaCombatStyleAntiArmorShells name="Anti-Armor Shells" desc="NovaAntiArmorShellsTalent">
         <Icon generic="true">storm_ui_icon_Talent_AntiArmorShells.png</Icon>
       </NovaCombatStyleAntiArmorShells>
-      <NovaSnipeMaster name="Snipe Master" desc="NovaSnipeMasterTalent">
-        <Icon>storm_ui_icon_nova_snipe.png</Icon>
-      </NovaSnipeMaster>
     </Level7>
     <Level10>
       <NovaHeroicAbilityTripleTap ability="NovaTripleTap" />
       <NovaHeroicAbilityPrecisionStrike ability="NovaPrecisionStrike" />
     </Level10>
     <Level13>
-      <NovaMasteryDoubleTap name="Double Tap" desc="NovaPinningShotDoubleTapTalent">
-        <Icon>storm_ui_icon_Nova_PinningShot.png</Icon>
-      </NovaMasteryDoubleTap>
       <NovaMasteryPsionicEfficiency name="Psionic Efficiency" desc="NovaSnipePsionicEfficiencyTalent">
         <Icon>storm_ui_icon_nova_snipe.png</Icon>
       </NovaMasteryPsionicEfficiency>
-      <NovaMasteryExplosiveShot name="Explosive Round" desc="NovaSnipeExplosiveRoundTalent">
-        <Icon>storm_ui_icon_nova_snipe_var1.png</Icon>
-      </NovaMasteryExplosiveShot>
+      <NovaMasteryDoubleTap name="Double Tap" desc="NovaPinningShotDoubleTapTalent">
+        <Icon>storm_ui_icon_Nova_PinningShot.png</Icon>
+      </NovaMasteryDoubleTap>
+      <NovaIonicForceField name="Ionic Force Field" desc="NovaIonicForceFieldTalent">
+        <Icon>storm_ui_icon_nova_personalcloaking.png</Icon>
+      </NovaIonicForceField>
     </Level13>
     <Level16>
-      <NovaMasteryPerfectShotSnipe name="Perfect Shot" desc="NovaPerfectShotTalent">
+      <NovaMasteryExplosiveShot name="Explosive Round" desc="NovaSnipeExplosiveRoundTalent">
         <Icon>storm_ui_icon_nova_snipe.png</Icon>
-      </NovaMasteryPerfectShotSnipe>
+      </NovaMasteryExplosiveShot>
       <NovaMasteryCripplingShot name="Crippling Shot" desc="NovaPinningShotCripplingShotTalent">
-        <Icon>storm_ui_icon_Nova_PinningShot.png</Icon>
+        <Icon>storm_ui_icon_nova_pinningshot.png</Icon>
       </NovaMasteryCripplingShot>
       <NovaMasteryLethalDecoy name="Lethal Decoy" desc="NovaHoloDecoyLethalDecoyTalent">
         <Icon>storm_ui_icon_nova_holodecoy.png</Icon>
@@ -107,14 +107,13 @@
       <NovaMasteryPrecisionBarrage name="Precision Barrage" desc="NovaPrecisionStrikePrecisionBarrageTalent">
         <Icon>storm_ui_icon_nova_orbitalstrike.png</Icon>
       </NovaMasteryPrecisionBarrage>
+      <NovaApolloSuit name="Apollo Suit" desc="NovaGhostProtocolApolloSuitTalent">
+        <Icon>storm_ui_icon_nova_personalcloaking.png</Icon>
+      </NovaApolloSuit>
       <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
         <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
         <Cooldown>60</Cooldown>
       </GenericTalentRewind>
-      <NovaGhostProtocol name="Ghost Protocol" desc="NovaGhostProtocol">
-        <Icon>storm_ui_icon_nova_personalcloaking.png</Icon>
-        <Cooldown>60</Cooldown>
-      </NovaGhostProtocol>
     </Level20>
   </Talents>
 </Nova>
