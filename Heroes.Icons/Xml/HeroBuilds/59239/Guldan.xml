@@ -6,10 +6,10 @@
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <GuldanFelFlame name="Fel Flame" desc="GuldanFelFlame" cooldown="1.5">
+      <GuldanFelFlame name="Fel Flame" desc="GuldanFelFlame">
         <Icon>storm_ui_icon_guldan_felflame.png</Icon>
         <Mana>75</Mana>
-        <Cooldown>15</Cooldown>
+        <Cooldown>1.5</Cooldown>
       </GuldanFelFlame>
       <GuldanDrainLife name="Drain Life" desc="GuldanDrainLife">
         <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
