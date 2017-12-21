@@ -58,7 +58,7 @@
         <Icon>storm_ui_icon_garrosh_bloodthirst.png</Icon>
       </GarroshBloodthirstInFortheKill>
       <GarroshBloodthirstThirstforBattle name="Thirst for Battle" desc="GarroshBloodthirstThirstforBattle">
-        <Icon generic="true">storm_ui_icon_talent_autoattack_cooldown.png</Icon>
+        <Icon>storm_ui_icon_garrosh_bloodthirst_var1.png</Icon>
       </GarroshBloodthirstThirstforBattle>
       <GarroshIndomitable name="Indomitable" desc="GarroshIndomitable">
         <Icon>storm_ui_icon_garrosh_indomitablel.png</Icon>

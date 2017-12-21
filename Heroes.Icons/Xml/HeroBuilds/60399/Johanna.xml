@@ -87,10 +87,10 @@
       <CrusaderHolyFury name="Holy Fury" desc="CrusaderHolyFury">
         <Icon generic="true">storm_ui_icon_talent_burningrage.png</Icon>
       </CrusaderHolyFury>
-      <CrusaderMasteryCondemnBlessedHammer name="Blessed Hammer" desc="CrusaderCondemnBlessedHammerTalent">
+      <CrusaderBlessedHammer name="Blessed Hammer" desc="CrusaderCondemnBlessedHammerTalent">
         <Icon>storm_btn_d3ros_crusader_blessedhammer.png</Icon>
         <Cooldown>30</Cooldown>
-      </CrusaderMasteryCondemnBlessedHammer>
+      </CrusaderBlessedHammer>
     </Level13>
     <Level16>
       <CrusaderMasteryShieldGlareHolyRenewal name="Holy Renewal" desc="CrusaderShieldGlareHolyRenewalTalent">
