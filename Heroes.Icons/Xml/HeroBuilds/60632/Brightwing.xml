@@ -13,8 +13,8 @@
       </FaerieDragonArcaneFlare>
       <FaerieDragonPolymorph name="Polymorph" desc="BrightwingPolymorph">
         <Icon>storm_ui_icon_brightwing_polymorph.png</Icon>
-        <Mana>60</Mana>
-        <Cooldown>12</Cooldown>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
       </FaerieDragonPolymorph>
       <FaerieDragonPixieDust name="Pixie Dust" desc="BrightwingPixieDust">
         <Icon>storm_ui_icon_brightwing_pixiedust.png</Icon>

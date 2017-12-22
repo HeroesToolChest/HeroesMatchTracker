@@ -18,8 +18,8 @@
       </GarroshBloodthirst>
       <GarroshWreckingBall name="Wrecking Ball" desc="GarroshWreckingBall">
         <Icon>storm_ui_icon_garrosh_wrecking_ball.png</Icon>
-        <Mana>70</Mana>
-        <Cooldown>16</Cooldown>
+        <Mana>65</Mana>
+        <Cooldown>14</Cooldown>
       </GarroshWreckingBall>
     </Basic>
     <Heroic>

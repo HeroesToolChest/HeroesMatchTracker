@@ -25,13 +25,13 @@
     <Heroic>
       <AlexstraszaLifebinder name="Life-Binder" desc="AlexstraszaLifebinder">
         <Icon>storm_ui_icon_alexstrasza_life_binder.png</Icon>
-        <Mana>100</Mana>
-        <Cooldown>75</Cooldown>
+        <Mana>80</Mana>
+        <Cooldown>60</Cooldown>
       </AlexstraszaLifebinder>
       <AlexstraszaCleansingFlame name="Cleansing Flame" desc="AlexstraszaCleansingFlame">
         <Icon>storm_ui_icon_alexstrasza_cleansing_flame.png</Icon>
         <Mana>100</Mana>
-        <Cooldown>90</Cooldown>
+        <Cooldown>100</Cooldown>
       </AlexstraszaCleansingFlame>
     </Heroic>
     <Trait>
