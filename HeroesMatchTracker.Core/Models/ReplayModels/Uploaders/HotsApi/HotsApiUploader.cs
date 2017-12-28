@@ -15,7 +15,9 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi
     {
         public HotsApiUploader(IInternalService internalService, IMainTabService mainTab, string hostName)
             : base(internalService, mainTab, hostName)
-        { }
+        {
+            IsUploaderEnabled = InternalService.Database.SettingsDb().UserSettings.IsHotsApiUploaderEnabled;
+        }
 
         public override bool IsUploaderEnabled
         {

@@ -14,7 +14,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
 
         private IDatabaseService Database;
 
-        private bool[] ScanDateTimeCheckboxes = new bool[6] { false, false, false, false, false, false };
+        private bool[] ScanDateTimeCheckboxes = new bool[4] { false, false, false, false };
 
         public ParserCheckboxes(IDatabaseService database)
         {
