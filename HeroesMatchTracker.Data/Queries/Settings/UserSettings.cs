@@ -239,7 +239,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             ReplayAutoScanCheckBox = false;
             IsIncludeSubDirectories = true;
             ReplayAutoStartStartUp = false;
-            IsHotsLogsUploaderEnabled = false;
+            IsHotsApiUploaderEnabled = false;
             ReplaysLatestSaved = lastWeek;
             ReplaysLastSaved = lastWeek;
             ReplaysLatestHotsLogs = lastWeek;
