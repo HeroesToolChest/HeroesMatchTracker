@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Alexstrasza available="59657" attributeid="Alex" unit="HeroAlexstrasza" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_alexstrasza.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_alexstrasza.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_alexstrasza.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <AlexstraszaGiftOfLife name="Gift of Life" desc="AlexstraszaGiftOfLife">
+        <Icon>storm_ui_icon_alexstrasza_gift_of_life.png</Icon>
+        <Health percentage="true">15</Health>
+        <Cooldown>7</Cooldown>
+      </AlexstraszaGiftOfLife>
+      <AlexstraszaAbundance name="Abundance" desc="AlexstraszaAbundance">
+        <Icon>storm_ui_icon_alexstrasza_abundance.png</Icon>
+        <Mana>25</Mana>
+        <Cooldown>16</Cooldown>
+      </AlexstraszaAbundance>
+      <AlexstraszaFlameBuffet name="Flame Buffet" desc="AlexstraszaFlameBuffet">
+        <Icon>storm_ui_icon_alexstrasza_flame_buffet.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>2</Cooldown>
+      </AlexstraszaFlameBuffet>
+    </Basic>
+    <Heroic>
+      <AlexstraszaLifebinder name="Life-Binder" desc="AlexstraszaLifebinder">
+        <Icon>storm_ui_icon_alexstrasza_life_binder.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>60</Cooldown>
+      </AlexstraszaLifebinder>
+      <AlexstraszaCleansingFlame name="Cleansing Flame" desc="AlexstraszaCleansingFlame">
+        <Icon>storm_ui_icon_alexstrasza_cleansing_flame.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>100</Cooldown>
+      </AlexstraszaCleansingFlame>
+    </Heroic>
+    <Trait>
+      <AlexstraszaDragonqueen name="Dragonqueen" desc="AlexstraszaDragonqueen">
+        <Icon>storm_ui_icon_alexstrasza_dragon_queen.png</Icon>
+        <Cooldown>150</Cooldown>
+      </AlexstraszaDragonqueen>
+    </Trait>
+  </Abilities>
+  <ExtraAbilities>
+    <Basic>
+      <AlexstraszaBreathOfLife name="Breath of Life" desc="AlexstraszaBreathOfLife">
+        <Icon>storm_ui_icon_alexstrasza_breath_of_life.png</Icon>
+        <Cooldown>3</Cooldown>
+      </AlexstraszaBreathOfLife>
+      <AlexstraszaPreservation name="Preservation" desc="AlexstraszaPreservation">
+        <Icon>storm_ui_icon_alexstrasza_preservation.png</Icon>
+        <Cooldown>16</Cooldown>
+      </AlexstraszaPreservation>
+      <AlexstraszaWingBuffet name="Wing Buffet" desc="AlexstraszaWingBuffet">
+        <Icon>storm_ui_icon_alexstrasza_wing_buffet.png</Icon>
+        <Cooldown>4</Cooldown>
+      </AlexstraszaWingBuffet>
+    </Basic>
+    <Trait>
+      <AlexstraszaDragonqueen2 name="Dragonqueen" desc="AlexstraszaDragonqueenDragonFormPassive">
+        <Icon>storm_ui_icon_alexstrasza_dragon_queen.png</Icon>
+      </AlexstraszaDragonqueen2>
+    </Trait>
+  </ExtraAbilities>
+  <Talents>
+    <Level1>
+      <AlexstraszaLiveAndLetLiveGiftOfLife name="Live and Let Live" desc="AlexstraszaLiveAndLetLiveGiftOfLife">
+        <Icon>storm_ui_icon_alexstrasza_gift_of_life.png</Icon>
+      </AlexstraszaLiveAndLetLiveGiftOfLife>
+      <AlexstraszaCircleOfLifeAbundance name="Circle of Life" desc="AlexstraszaCircleOfLifeAbundance">
+        <Icon>storm_ui_icon_alexstrasza_abundance.png</Icon>
+      </AlexstraszaCircleOfLifeAbundance>
+      <AlexstraszaFlamesOfFuryFlameBuffet name="Flames of Fury" desc="AlexstraszaFlamesOfFuryFlameBuffet">
+        <Icon>storm_ui_icon_alexstrasza_flame_buffet.png</Icon>
+      </AlexstraszaFlamesOfFuryFlameBuffet>
+    </Level1>
+    <Level4>
+      <AlexstraszaSurgeOfVitalityAbundance name="Surge of Vitality" desc="AlexstraszaSurgeOfVitalityAbundance">
+        <Icon>storm_ui_icon_alexstrasza_abundance.png</Icon>
+      </AlexstraszaSurgeOfVitalityAbundance>
+      <AlexstraszaHeatExhaustionFlameBuffet name="Heat Exhaustion" desc="AlexstraszaHeatExhaustionFlameBuffet">
+        <Icon>storm_ui_icon_alexstrasza_flame_buffet.png</Icon>
+      </AlexstraszaHeatExhaustionFlameBuffet>
+      <AlexstraszaExuberance name="Exuberance" desc="AlexstraszaExuberance">
+        <Icon>storm_ui_icon_alexstrasza_exuberance.png</Icon>
+      </AlexstraszaExuberance>
+    </Level4>
+    <Level7>
+      <AlexstraszaLifeblossomGiftOfLife name="Lifeblossom" desc="AlexstraszaLifeblossomeGiftOfLife">
+        <Icon>storm_ui_icon_alexstrasza_life_blossom.png</Icon>
+      </AlexstraszaLifeblossomGiftOfLife>
+      <AlexstraszaVerdantFlourishAbundance name="Verdant Flourish" desc="AlexstraszaVerdantFlourishAbundance">
+        <Icon>storm_ui_icon_alexstrasza_abundance.png</Icon>
+      </AlexstraszaVerdantFlourishAbundance>
+      <AlexstraszaFireWithinFlameBuffet name="Fire Within" desc="AlexstraszaFireWithinFlameBuffet">
+        <Icon>storm_ui_icon_alexstrasza_flame_buffet.png</Icon>
+      </AlexstraszaFireWithinFlameBuffet>
+    </Level7>
+    <Level10>
+      <AlexstraszaLifebinder ability="AlexstraszaLifebinder" />
+      <AlexstraszaCleansingFlame ability="AlexstraszaCleansingFlame" />
+    </Level10>
+    <Level13>
+      <AlexstraszaDragonScales name="Dragon Scales" desc="AlexstraszaDragonScales">
+        <Icon>storm_ui_icon_alexstrasza_dragon_scales.png</Icon>
+      </AlexstraszaDragonScales>
+      <AlexstraszaPacify name="Pacify" desc="AlexstraszaPacify">
+        <Icon>storm_ui_icon_alexstrasza_pacify.png</Icon>
+        <Cooldown>60</Cooldown>
+      </AlexstraszaPacify>
+      <AlexstraszaLifeUnbound name="Life Unbound" desc="AlexstraszaLifeUnbound">
+        <Icon>storm_ui_icon_alexstrasza_life_unbound.png</Icon>
+        <Cooldown>90</Cooldown>
+      </AlexstraszaLifeUnbound>
+    </Level13>
+    <Level16>
+      <AlexstraszaToughLoveGiftOfLife name="Tough Love" desc="AlexstraszaToughLoveGiftOfLife">
+        <Icon>storm_ui_icon_alexstrasza_gift_of_life.png</Icon>
+      </AlexstraszaToughLoveGiftOfLife>
+      <AlexstraszaOverprotectiveAbundance name="Overprotective" desc="AlexstraszaOverprotectiveAbundance">
+        <Icon>storm_ui_icon_alexstrasza_abundance.png</Icon>
+      </AlexstraszaOverprotectiveAbundance>
+      <AlexstraszaDraconicDisciplineDragonqueen name="Draconic Discipline" desc="AlexstraszaDraconicDisciplineDragonqueen">
+        <Icon>storm_ui_icon_alexstrasza_dragon_queen.png</Icon>
+      </AlexstraszaDraconicDisciplineDragonqueen>
+    </Level16>
+    <Level20>
+      <AlexstraszaRitualOfLife name="Ritual of Life" desc="AlexstraszaRitualOfLifeLifebinder">
+        <Icon>storm_ui_icon_alexstrasza_life_binder.png</Icon>
+      </AlexstraszaRitualOfLife>
+      <AlexstraszaOnRubyWingsCleansingFlame name="On Ruby Wings" desc="AlexstraszaOnRubyWingsCleansingFlame">
+        <Icon>storm_ui_icon_alexstrasza_cleansing_flame.png</Icon>
+      </AlexstraszaOnRubyWingsCleansingFlame>
+      <AlexstraszaAncientFlameFlameBuffet name="Ancient Flame" desc="AlexstraszaAncientFlameFlameBuffet">
+        <Icon>storm_ui_icon_alexstrasza_dragon_queen_a.png</Icon>
+      </AlexstraszaAncientFlameFlameBuffet>
+      <AlexstraszaBlessingOfTheRed name="Blessing of the Red" desc="AlexstraszaBlessingOfTheRed">
+        <Icon>storm_ui_icon_alexstrasza_blessing_of_the_red.png</Icon>
+      </AlexstraszaBlessingOfTheRed>
+    </Level20>
+  </Talents>
+</Alexstrasza>
