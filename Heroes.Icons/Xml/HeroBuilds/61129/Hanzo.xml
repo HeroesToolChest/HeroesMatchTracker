@@ -37,7 +37,7 @@
     <Trait>
       <HanzoNaturalAgilityButton name="Natural Agility" desc="HanzoNaturalAgility">
         <Icon>storm_ui_icon_hanzo_wallvault.png</Icon>
-        <Cooldown>25</Cooldown>
+        <Cooldown>20</Cooldown>
       </HanzoNaturalAgilityButton>
     </Trait>
   </Abilities>
@@ -65,15 +65,15 @@
       </HanzoIgnoreAllDistractions>
     </Level4>
     <Level7>
-      <HanzoShieldbreakerArrows name="Shieldbreaker Arrows" desc="HanzoShieldbreakerArrows">
-        <Icon>storm_ui_icon_hanzo_shieldbreaker.png</Icon>
-      </HanzoShieldbreakerArrows>
       <HanzoTheDragonHungers name="The Dragon Hungers" desc="HanzoTheDragonHungers">
         <Icon>storm_ui_icon_hanzo_draconicadvantage.png</Icon>
       </HanzoTheDragonHungers>
       <HanzoNeverOutmatched name="Never Outmatched" desc="HanzoNeverOutmatched">
         <Icon>storm_ui_icon_hanzo_scatterarrow.png</Icon>
       </HanzoNeverOutmatched>
+      <HanzoSharpenedArrowheads name="Sharpened Arrowheads" desc="HanzoSharpenedArrowheads">
+        <Icon>storm_ui_icon_hanzo_shieldbreaker.png</Icon>
+      </HanzoSharpenedArrowheads>
     </Level7>
     <Level10>
       <HanzoDragonstrike ability="HanzoDragonstrike" />
@@ -108,12 +108,12 @@
       <HanzoPOTG name="Play of the Game" desc="HanzoPOTG">
         <Icon>storm_ui_icon_hanzo_thedragonsarrow.png</Icon>
       </HanzoPOTG>
-      <HanzoSharpenedArrowheads name="Sharpened Arrowheads" desc="HanzoSharpenedArrowheads">
-        <Icon>storm_ui_icon_hanzo_scatterarrow.png</Icon>
-      </HanzoSharpenedArrowheads>
       <HanzoBullseye name="Bullseye" desc="HanzoBullseye">
         <Icon>storm_ui_icon_hanzo_sonicarrow.png</Icon>
       </HanzoBullseye>
+      <HanzoPerfectAgility name="Perfect Agility" desc="HanzoPerfectAgility">
+        <Icon>storm_ui_icon_hanzo_wallvault.png</Icon>
+      </HanzoPerfectAgility>
     </Level20>
   </Talents>
 </Hanzo>

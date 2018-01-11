@@ -43,7 +43,7 @@
       <JunkratFragLauncherExtraWoundTimers name="Extra-Wound Timers" desc="JunkratExtraWoundTimersFragLauncherTalent">
         <Icon>storm_ui_icon_junkrat_frag_launcher_b.png</Icon>
       </JunkratFragLauncherExtraWoundTimers>
-      <JunkratFragLauncherBouncyBouncy name="Bouncy Bouncy" desc="JunkratBouncyBouncyFragLauncherTalent">
+      <JunkratFragLauncherBouncyBouncy name="Bouncy Bouncy" desc="JunkratFragLauncherBouncyBouncy">
         <Icon>storm_ui_icon_junkrat_frag_launcher_a.png</Icon>
       </JunkratFragLauncherBouncyBouncy>
     </Level1>

@@ -64,6 +64,8 @@ namespace Heroes.Icons.Tests
                     return "demonhunter";
                 case "xul":
                     return "necromancer";
+                case "blaze":
+                    return "firebat";
                 default:
                     return shortname;
             }

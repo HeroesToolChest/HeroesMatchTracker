@@ -1638,7 +1638,7 @@ SamuroMirage=Mirror Image grants Samuro and his Images <c val="#TooltipNumbers">
 SamuroMirrorImage=Create <c val="#TooltipNumbers">2</c> Mirror Images that deal <c val="#TooltipNumbers">9</c> damage and have <c val="#TooltipNumbers">50%</c> of Samuro's current Health. Images last up to <c val="#TooltipNumbers">18</c> seconds, and only two can be active at any one time.<n/><n/>Mirror Image will remove most negative effects from Samuro.
 SamuroMirroredSteelTalent=Samuro's Basic Attacks against Heroes reduce the cooldown of Mirror Image by <c val="#TooltipNumbers">1</c> second.
 SamuroOneWithTheWindTalent=While Samuro has Wind Walk and for <c val="#TooltipNumbers">3</c> seconds after breaking it, both he and his Mirror Images gain <c val="#TooltipNumbers">30</c> Armor, taking <c val="#TooltipNumbers">30%</c> reduced damage from all sources.
-SamuroOverpoweringBlow=Critical Strike now has <c val="#TooltipNumbers">2</c> charges. Samuro's Basic Attacks against Heroes reduce the cooldown of Critical Strike by <c val="#TooltipNumbers">2</c> seconds.
+SamuroOverpoweringBlow=Critical Strike now has <c val="#TooltipNumbers">2</c> charges. Samuro's Basic Attacks against Heroes reduce the cooldown of Critical Strike by <c val="#TooltipNumbers">1.5</c> seconds.
 SamuroPhantomsStrikeTalent=Samuro's Critical Strikes deal an additional <c val="#TooltipNumbers">40%</c> of his Basic Attack damage for each Mirror Image that is active.
 SamuroPressTheAttack=While Advancing Strikes is active, Samuro and his Mirror Images gain <c val="#TooltipNumbers">10%</c> Attack Speed every time they Basic Attack, up to <c val="#TooltipNumbers">40%</c>.
 SamuroSelectAll=<s val="StandardTooltipHeader">Select All</s><n/><n/>Issue orders to Samuro and all Mirror Images.

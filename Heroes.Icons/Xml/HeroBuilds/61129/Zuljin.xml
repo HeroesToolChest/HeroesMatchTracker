@@ -82,7 +82,7 @@
     </Level10>
     <Level13>
       <ZuljinLacerate name="Lacerate" desc="ZuljinLacerate">
-        <Icon>storm_ui_icon_zuljin_twincleave_a.png</Icon>
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
       </ZuljinLacerate>
       <ZuljinEyeOfZuljin name="Eye Of Zul'jin" desc="ZuljinEyeOfZuljin">
         <Icon generic="true">storm_ui_icon_talent_autoattack_base.png</Icon>

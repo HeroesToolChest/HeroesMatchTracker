@@ -7,6 +7,7 @@ Artanis=A tough Bruiser that deals high damage if the enemy team is unable to sh
 Arthas=A Tank who is proficient against melee Physical Attackers, slowing them.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="ff6600" width="20" height="22"/><c val="#TooltipNumbers">10 Physical Armor</c>
 Auriel=A Healer that excels when paired with a high-octane damage dealer.
 Azmodan=A Summoner that can also deal high damage from far away.
+Blaze=Blaze is a ranged Tank who specializes in initiating fights and dealing area damage by spreading his flames
 Butcher=An Assassin who starts slow, but deals extreme damage after collecting enough Meat.
 Cassia=An Assassin who specializes against Physical Attackers.
 Chen=A potent Bruiser that will dominate if the enemy team is lacking mobility.

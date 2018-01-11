@@ -16,7 +16,7 @@
       </GarroshWreckingBallUnrivaledStrength>
       <GarroshArmorUpBodyCheck name="Body Check" desc="GarroshArmorUpBodyCheck">
         <Icon>storm_ui_icon_garrosh_slam.png</Icon>
-        <Cooldown>20</Cooldown>
+        <Cooldown>16</Cooldown>
       </GarroshArmorUpBodyCheck>
     </Level1>
     <Level4>
@@ -43,7 +43,7 @@
       </GarroshOppressor>
       <GarroshWreckingBallIntotheFray name="Into the Fray" desc="GarroshWreckingBallIntotheFray">
         <Icon>storm_ui_icon_garrosh_intothefray.png</Icon>
-        <Cooldown>30</Cooldown>
+        <Cooldown>40</Cooldown>
       </GarroshWreckingBallIntotheFray>
     </Level7>
     <Level10>
