@@ -65,7 +65,7 @@ TestHero=Test
 Thrall=A Bruiser who can hold his own in a lane of battle.
 Tracer=A mobile Assassin who picks off straggling enemies, finishing them off.
 Tychus=An Assassin who shreds High Health enemies.
-Tyrael=A Tank who pairs well with allies that like to dive into the enemy team.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="e12bfc" width="20" height="22"/><c val="#TooltipNumbers">15 Spell Armor</c>
+Tyrael=A Tank who pairs well with allies that like to dive into the enemy team.
 Tyrande=A Support who helps her allies lockdown and finish off enemies.
 Uther=A Healer that can negate high bursts of damage.
 Valeera=A stealthed Assassin who specializes in shutting down her opponents.

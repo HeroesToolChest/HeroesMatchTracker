@@ -1978,28 +1978,39 @@ TychusSizzlinAttacks=Basic Attacks deal bonus damage to Heroes equal to <c val="
 TychusThatsTheStuff=Minigun heals Tychus for <c val="#TooltipNumbers">100%</c> of the bonus damage dealt after it expires.
 TychusTheBiggerTheyAre=Increases Minigun damage bonus to <c val="#TooltipNumbers">4%</c> while enemy Heroes are above <c val="#TooltipNumbers">35%</c> Health, but Minigun no longer has any effect on targets below <c val="#TooltipNumbers">35%</c>.
 TyraelAngelicMomentum=Basic Attacks reduce Tyrael's Basic Ability cooldowns by <c val="#TooltipNumbers"><VALUE></c> seconds.
-TyraelArchangelsWrath=Upon dying, become invulnerable and explode for <c val="#TooltipNumbers">550</c> damage after <c val="#TooltipNumbers">3.5</c> seconds.
-TyraelArchangelsWrathEvenInDeathTalent=Increases Archangel's Wrath's damage by <c val="#TooltipNumbers">25%</c>. Basic Abilities also can be used before exploding, but deal no damage.
-TyraelArchangelsWrathProtectionInDeathTalent=When Archangel's Wrath explodes, shield nearby allies for <c val="#TooltipNumbers">50%</c> of their max Health for <c val="#TooltipNumbers">10</c> seconds.
-TyraelElDruinsMight=Deals <c val="#TooltipNumbers">110</c> damage to enemies within target area, slowing them by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2.5</c> seconds. Reactivating will teleport Tyrael to the blade and slow nearby enemies again.
-TyraelElDruinsMightAngelsGraceTalent=After teleporting using El'druin's Might, gain <c val="#TooltipNumbers">40%</c> Movement Speed for <c val="#TooltipNumbers">3</c> seconds.
-TyraelElDruinsMightBladeOfJusticeTalent=After teleporting using El'druin's Might, Tyrael's Attack Speed is increased by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">5</c> seconds.
+TyraelArchangelsWrath=Upon dying, become Invulnerable and explode for <c val="#TooltipNumbers">550</c> damage after <c val="#TooltipNumbers">3.5</c> seconds.
+TyraelArchangelsWrathEvenInDeathTalent=Increases Archangel's Wrath's damage by <c val="#TooltipNumbers"><VALUE>%</c>. Basic Abilities also can be used before exploding, but deal no damage.
+TyraelArchangelsWrathProtectionInDeathTalent=When Archangel's Wrath explodes, shield nearby allies for <c val="#TooltipNumbers">50%</c> of their max Health for <c val="#TooltipNumbers"><VALUE></c> seconds.
+TyraelArdentRestoration=Dealing damage to a Hero heals Tyrael for <c val="#TooltipNumbers">12</c> Health over <c val="#TooltipNumbers">5</c> seconds. Dealing damage resets this timer, and the heal amount stacks up to <c val="#TooltipNumbers">10</c> times.
+TyraelBurningHalo=While El'druin's Might is active, both Tyrael and El'druin deal <c val="#TooltipNumbers">15</c> damage per second to nearby enemies. For <c val="#TooltipNumbers">3</c> seconds after teleporting, Tyrael continues to deal this damage and the damage amount is increased by <c val="#TooltipNumbers">100%</c>.
+TyraelDefenseOfTheAngels=Activate to gain <c val="#TooltipNumbers">40</c> Armor for <c val="#TooltipNumbers">5</c> seconds.<n/><n/>Each time Righteousness's Shield absorbs damage, Defense of the Angel's cooldown is reduced by <c val="#TooltipNumbers">3</c> seconds.
+TyraelDivineVigor=If Smite hits an enemy, Tyrael's Basic Attacks within the next <c val="#TooltipNumbers">4</c> seconds heal for <c val="#TooltipNumbers">50%</c> of the damage dealt.
+TyraelElDruinsMight=Throw El'druin to the target area, dealing <c val="#TooltipNumbers">110</c> damage to nearby enemies and Slowing them by <c val="#TooltipNumbers">25%</c> for <c val="#TooltipNumbers">2.5</c> seconds. Reactivating will teleport Tyrael to El'druin and Slow nearby enemies again.
+TyraelElDruinsMightAngelsGraceTalent=After teleporting using El'druin's Might, gain <c val="#TooltipNumbers"><VALUE>%</c> Movement Speed for <c val="#TooltipNumbers"><VALUE></c> seconds.
+TyraelElDruinsMightBoundByLawTalent=Increase El'druin's Might's Slow by <c val="#TooltipNumbers">10%</c>. Tyrael's Basic Attacks against enemies Slowed by El'druin's Might increase the Slow duration by <c val="#TooltipNumbers">1</c> second, up to <c val="#TooltipNumbers">4</c> seconds.
 TyraelElDruinsMightHolyGroundTalent=Create a ring that blocks enemies from entering the area teleported to using El'druin's Might.
-TyraelElDruinsMightHoradricReforgingTalent=If El'druin's Might hits an enemy, its cooldown is reduced by <c val="#TooltipNumbers">5</c> seconds.
-TyraelJudgment=After <c val="#TooltipNumbers">0.75</c> seconds, charge an enemy Hero dealing <c val="#TooltipNumbers">100</c> damage and stunning them for <c val="#TooltipNumbers">1.5</c> seconds. Nearby enemies are knocked away and take <c val="#TooltipNumbers">50</c> damage.
+TyraelElDruinsMightHoradricReforgingTalent=Tyrael's Basic Attacks reduce the cooldown of El'druin's Might by <c val="#TooltipNumbers">1.5</c> seconds.
+TyraelElDruinsMightSwordOfJusticeTalent=Upon teleporting using El'druin's Might, El'druin swaps places with Tyrael, and El'druin's Might can be reactivated to teleport an additional time.
+TyraelJudgment=After <c val="#TooltipNumbers">0.75</c> seconds, charge an enemy Hero, dealing <c val="#TooltipNumbers">150</c> damage and Stunning them for <c val="#TooltipNumbers">1.5</c> seconds. Nearby enemies are knocked away and take <c val="#TooltipNumbers">75</c> damage.
 TyraelJudgmentAngelOfJusticeTalent=Increases the cast range of Judgment by <c val="#TooltipNumbers">50%</c>, and reduces the cooldown by <c val="#TooltipNumbers">40</c> seconds.
-TyraelRighteousness=Shields Tyrael for <c val="#TooltipNumbers">336</c> damage and nearby allies for <c val="#TooltipNumbers">135</c> damage for <c val="#TooltipNumbers">4</c> seconds.
-TyraelRighteousnessAngelicAbsorptionTalent=Enemies that attack Tyrael while shielded grant <c val="#TooltipNumbers">240</c> Health over <c val="#TooltipNumbers">4</c> seconds.
-TyraelRighteousnessImposingWillTalent=Enemies that attack Tyrael while shielded have their Attack Speed and Movement Speed slowed by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">2</c> seconds.
-TyraelRighteousnessReciprocateTalent=When Righteousness expires, it explodes for <c val="#TooltipNumbers">170</c> damage to nearby enemies.
-TyraelRighteousnessSalvationTalent=Each allied Hero that is affected by Righteousness increases Tyrael's Shield amount by <c val="#TooltipNumbers">45%</c>.
-TyraelRighteousnessZealotryTalent=Increases the duration of Righteousness by <c val="#TooltipNumbers">50%</c>, and reduces its cooldown by <c val="#TooltipNumbers">2</c> seconds.
-TyraelSanctificationHolyArenaTalent=Increases duration of Sanctification by <c val="#TooltipNumbers">1</c> second and increases the damage of allies by <c val="#TooltipNumbers">25%</c>.
+TyraelJusticeForAll=Increase the Shield applied to allies by Righteousness to <c val="#TooltipNumbers">100%</c> of the Shield gained by Tyrael.
+TyraelRighteousMasterToken=<c val="#TooltipQuest">Globes gathered: <c val="#TooltipNumbers"><VALUE>/<VALUE></c><n/>Bonus Shielding: <c val="#TooltipNumbers"><VALUE></c>
+TyraelRighteousness=Shields Tyrael for <c val="#TooltipNumbers">336</c> damage and nearby allies for <c val="#TooltipNumbers">40%</c> as much for <c val="#TooltipNumbers">4</c> seconds.
+TyraelRighteousnessAngelicAbsorptionTalent=Enemies that attack Tyrael while shielded grant <c val="#TooltipNumbers"><VALUE></c> Health over <c val="#TooltipNumbers"><VALUE></c> seconds.
+TyraelRighteousnessImposingWillTalent=Enemies that attack Tyrael while shielded have their Attack Speed and Movement Speed slowed by <c val="#TooltipNumbers"><VALUE>%</c> for <c val="#TooltipNumbers"><VALUE></c> seconds.
+TyraelRighteousnessLawAndOrderTalent=Each enemy Hero hit by Smite reduces the cooldown of Righteousness by <c val="#TooltipNumbers">1</c> second. Each allied Hero Shielded by Righteousness increases the damage of the next Smite by <c val="#TooltipNumbers">25%</c>.
+TyraelRighteousnessReciprocateTalent=When Tyrael's Shield from Righteousness expires or is destroyed, it deals for <c val="#TooltipNumbers">170</c> damage to nearby enemies.
+TyraelRighteousnessZealotryTalent=[PH] The shield value and duration of Righteousness is increased by <c val="#TooltipNumbers"><VALUE>%</c> for each Ally affected.
+TyraelSalvation=Increase the Shield amount Tyrael gains from Righteousness by <c val="#TooltipNumbers">25%</c> and heal Tyrael for <c val="#TooltipNumbers">125</c> Health if his Shield is destroyed. Does not increase the Shield amount gained by allies.
+TyraelSanctificationHolyArenaTalent=Increase the duration of Sanctification by <c val="#TooltipNumbers">1</c> second and increase the damage of allies inside by <c val="#TooltipNumbers">25%</c>.
 TyraelSanctificationStationary=After <c val="#TooltipNumbers">0.5</c> seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts <c val="#TooltipNumbers">3</c> seconds.
-TyraelSmite=Rake target area for <c val="#TooltipNumbers">144</c> damage. Allies moving through the targeted area gain <c val="#TooltipNumbers">25%</c> increased Movement Speed for <c val="#TooltipNumbers">2</c> seconds.
-TyraelSmiteAngelicMightTalent=Gain <c val="#TooltipNumbers">80%</c> increased damage on Tyrael's next Basic Attack within the next <c val="#TooltipNumbers">5</c> seconds for each Hero hit by Smite.
-TyraelSmitePurgeEvilTalent=Smite deals <c val="#TooltipNumbers">30%</c> more damage to Heroes.
-TyraelSmiteSwiftRetributionTalent=Increases Smite's Movement Speed by <c val="#TooltipNumbers">10%</c> and duration by <c val="#TooltipNumbers">1</c> second.
+TyraelSealofElDruin=Using a Basic Ability grants <c val="#TooltipNumbers">50%</c> Attack Speed for <c val="#TooltipNumbers">3</c> seconds.
+TyraelSmite=Rake target area for <c val="#TooltipNumbers">150</c> damage. Allies moving through the targeted area gain <c val="#TooltipNumbers">25%</c> increased Movement Speed for <c val="#TooltipNumbers">2</c> seconds.
+TyraelSmiteAngelicMightTalent=Gain <c val="#TooltipNumbers"><VALUE>%</c> increased damage on Tyrael's next Basic Attack within the next <c val="#TooltipNumbers"><VALUE></c> seconds for each Hero hit by Smite.
+TyraelSmitePurgeEvilTalent=Each enemy Hero hit by Smite increases Tyrael's Basic Attack damage by <c val="#TooltipNumbers">35%</c> for <c val="#TooltipNumbers">4</c> seconds.
+TyraelSmiteSwiftRetributionTalent=Smite grants <c val="#TooltipNumbers">20%</c> more Movement Speed and also grants <c val="#TooltipNumbers">25%</c> Attack Speed for <c val="#TooltipNumbers">2</c> seconds.
+TyraelSmiteTheWicked=While El'druin's Might is active, and for <c val="#TooltipNumbers">3</c> seconds after teleporting, Smite's cooldown recharges <c val="#TooltipNumbers">100%</c> faster.
+TyraelStalwartAngel=Gain <c val="#TooltipNumbers">25</c> Armor while El'druin's Might is active, and for <c val="#TooltipNumbers">3</c> seconds after teleporting.
 TyrandeDarnassianArchery=Basic Attacks against enemy Heroes grant a stacking <c val="#TooltipNumbers">5%</c> increased Attack Damage bonus for <c val="#TooltipNumbers">4</c> seconds. This bonus is lost when Basic Attacking non-Heroes.
 TyrandeElunesChosen=Activate to make Tyrande's Basic Attacks heal the target ally for <c val="#TooltipNumbers">200%</c> of the damage dealt. Lasts for <c val="#TooltipNumbers">5</c> seconds.
 TyrandeEyesOfTheHuntress=After casting Shadowstalk, reveal all enemy Heroes for <c val="#TooltipNumbers">3</c> seconds.
