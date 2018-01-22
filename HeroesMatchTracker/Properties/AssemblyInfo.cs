@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HeroesMatchTracker")]
-[assembly: AssemblyCopyright("Copyright © 2017 Kevin Oliva")]
+[assembly: AssemblyCopyright("Copyright © 2016 - 2018 Kevin Oliva")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

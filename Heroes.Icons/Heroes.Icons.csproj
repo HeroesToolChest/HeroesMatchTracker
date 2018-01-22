@@ -6,6 +6,7 @@
 	  <Version>3.2.3</Version>
 	  <AssemblyVersion>3.2.3.0</AssemblyVersion>
 	  <FileVersion>3.2.3.0</FileVersion>
+	  <Copyright>Copyright © 2016 - 2018 Kevin Oliva</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
