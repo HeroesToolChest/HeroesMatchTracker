@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dehaka available="47479" attributeid="Deha" unit="HeroDehaka" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_dehaka.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_dehaka.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_dehaka.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+    <Basic>
+      <DehakaDrag name="Drag" desc="DehakaDrag">
+        <Icon>storm_ui_icon_dehaka_drag.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>15</Cooldown>
+      </DehakaDrag>
+      <DehakaDarkSwarm name="Dark Swarm" desc="DehakaDarkSwarm">
+        <Icon>storm_ui_icon_dehaka_trample.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </DehakaDarkSwarm>
+      <DehakaBurrow name="Burrow" desc="DehakaBurrow">
+        <Icon>storm_ui_icon_dehaka_burrow.png</Icon>
+        <Mana>65</Mana>
+        <Cooldown>20</Cooldown>
+      </DehakaBurrow>
+    </Basic>
+    <Heroic>
+      <DehakaIsolation name="Isolation" desc="DehakaIsolation">
+        <Icon>storm_ui_icon_dehaka_isolation.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>60</Cooldown>
+      </DehakaIsolation>
+      <DehakaAdaptation name="Adaptation" desc="DehakaAdaptation">
+        <Icon>storm_ui_icon_dehaka_adaptation.png</Icon>
+        <Mana>85</Mana>
+        <Cooldown>90</Cooldown>
+      </DehakaAdaptation>
+    </Heroic>
+    <Trait>
+      <DehakaEssenceCollection name="Essence Collection" desc="DehakaEssenceCollectionStore">
+        <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
+        <Cooldown>1</Cooldown>
+      </DehakaEssenceCollection>
+    </Trait>
+    <Mount>
+      <DehakaBrushstalker name="Brushstalker" desc="DehakaBrushstalker">
+        <Icon>storm_ui_icon_dehaka_mount.png</Icon>
+        <Cooldown>60</Cooldown>
+      </DehakaBrushstalker>
+    </Mount>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <DehakaDarkSwarmTalentEnduringSwarm name="Enduring Swarm" desc="DehakaDarkSwarmTalentEnduringSwarm">
+        <Icon>storm_ui_icon_dehaka_trample.png</Icon>
+      </DehakaDarkSwarmTalentEnduringSwarm>
+      <DehakaEssenceCollectionTalentEnhancedAgility name="Enhanced Agility" desc="DehakaEssenceCollectionTalentEnhancedAgility">
+        <Icon>storm_ui_icon_dehaka_brushstalker.png</Icon>
+      </DehakaEssenceCollectionTalentEnhancedAgility>
+      <DehakaEssenceCollectionTalentTissueRegeneration name="Tissue Regeneration" desc="DehakaEssenceCollectionTalentTissueRegeneration">
+        <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
+      </DehakaEssenceCollectionTalentTissueRegeneration>
+    </Level1>
+    <Level4>
+      <DehakaBurrowTalentLurkerStrain name="Lurker Strain" desc="DehakaBurrowTalentLurkerStrain">
+        <Icon>storm_ui_icon_dehaka_burrow.png</Icon>
+      </DehakaBurrowTalentLurkerStrain>
+      <DehakaEssenceCollectionOneWhoCollectsTalent name="One-Who-Collects" desc="DehakaEssenceCollectionOneWhoCollectsTalent">
+        <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
+      </DehakaEssenceCollectionOneWhoCollectsTalent>
+      <DehakaEssenceCollectionTalentHeroStalker name="Hero Stalker" desc="DehakaEssenceCollectionTalentHeroStalker">
+        <Icon>storm_ui_icon_dehaka_essencecollection_var1.png</Icon>
+      </DehakaEssenceCollectionTalentHeroStalker>
+    </Level4>
+    <Level7>
+      <DehakaDragTalentFeedingFrenzy name="Feeding Frenzy" desc="DehakaDragTalentFeedingFrenzy">
+        <Icon>storm_ui_icon_dehaka_drag.png</Icon>
+      </DehakaDragTalentFeedingFrenzy>
+      <DehakaDragTalentConstriction name="Constriction" desc="DehakaDragTalentConstriction">
+        <Icon>storm_ui_icon_dehaka_drag_var1.png</Icon>
+      </DehakaDragTalentConstriction>
+      <DehakaDarkSwarmTalentSymbiosis name="Symbiosis" desc="DehakaDarkSwarmTalentSymbiosis">
+        <Icon>storm_ui_icon_dehaka_trample.png</Icon>
+      </DehakaDarkSwarmTalentSymbiosis>
+    </Level7>
+    <Level10>
+      <DehakaHeroicAbilityIsolation ability="DehakaIsolation" />
+      <DehakaHeroicAbilityAdaptation ability="DehakaAdaptation" />
+    </Level10>
+    <Level13>
+      <DehakaPrimalRage name="Primal Rage" desc="DehakaPrimalRage">
+        <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
+      </DehakaPrimalRage>
+      <DehakaBrushstalkerFerociousStalker name="Ferocious Stalker" desc="DehakaBrushstalkerFerociousStalkerTalent">
+        <Icon>storm_ui_icon_dehaka_brushstalker_a.png</Icon>
+      </DehakaBrushstalkerFerociousStalker>
+      <DehakaPrimalSwarm name="Primal Swarm" desc="DehakaPrimalSwarm">
+        <Icon>storm_ui_icon_dehaka_trample.png</Icon>
+      </DehakaPrimalSwarm>
+    </Level13>
+    <Level16>
+      <DehakaDragTalentParalyzingEnzymes name="Paralyzing Enzymes" desc="DehakaDragTalentParalyzingEnzymes">
+        <Icon>storm_ui_icon_dehaka_drag.png</Icon>
+      </DehakaDragTalentParalyzingEnzymes>
+      <DehakaDragTalentElongatedTongue name="Elongated Tongue" desc="DehakaDragTalentElongatedTongue">
+        <Icon>storm_ui_icon_dehaka_drag_var1.png</Icon>
+      </DehakaDragTalentElongatedTongue>
+      <DehakaTunnelingClaws name="Tunneling Claws" desc="DehakaTunnelingClaws">
+        <Icon>storm_ui_icon_dehaka_burrow.png</Icon>
+      </DehakaTunnelingClaws>
+    </Level16>
+    <Level20>
+      <DehakaIsolationTalentContagion name="Contagion" desc="DehakaIsolationTalentContagion">
+        <Icon>storm_ui_icon_dehaka_isolation.png</Icon>
+      </DehakaIsolationTalentContagion>
+      <DehakaAdaptationChangeIsSurvivalTalent name="Change Is Survival" desc="DehakaAdaptationChangeIsSurvivalTalent">
+        <Icon>storm_ui_icon_dehaka_adaptation.png</Icon>
+      </DehakaAdaptationChangeIsSurvivalTalent>
+      <DehakaBrushstalkerApexPredator name="Apex Predator" desc="DehakaBrushstalkerApexPredatorTalent">
+        <Icon>storm_ui_icon_dehaka_brushstalker.png</Icon>
+      </DehakaBrushstalkerApexPredator>
+      <DehakaEssenceClaws name="Essence Claws" desc="DehakaEssenceClaws">
+        <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
+      </DehakaEssenceClaws>
+    </Level20>
+  </Talents>
+</Dehaka>
