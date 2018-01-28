@@ -13,7 +13,7 @@
       <SylvanasShadowDagger name="Shadow Dagger" desc="SylvanasShadowDagger">
         <Icon>storm_ui_icon_sylvanas_shadowdagger.png</Icon>
         <Mana>75</Mana>
-        <Cooldown>10</Cooldown>
+        <Cooldown>11</Cooldown>
       </SylvanasShadowDagger>
       <SylvanasHauntingWave name="Haunting Wave" desc="SylvanasHauntingWave">
         <Icon>storm_ui_icon_sylvanas_hauntingwave.png</Icon>
