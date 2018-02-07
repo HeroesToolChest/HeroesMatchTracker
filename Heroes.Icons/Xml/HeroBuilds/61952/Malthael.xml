@@ -68,12 +68,12 @@
       <MalthaelColdHand name="Cold Hand" desc="MalthaelColdHand">
         <Icon>storm_ui_icon_malthael_soulrip.png</Icon>
       </MalthaelColdHand>
-      <MalthaelMortality name="Mortality" desc="MalthaelMortality">
+      <MalthaelMassacre name="Massacre" desc="MalthaelMassacre">
         <Icon>storm_ui_icon_malthael_wraithstrike.png</Icon>
-      </MalthaelMortality>
+      </MalthaelMassacre>
       <MalthaelTouchOfDeath name="Touch of Death" desc="MalthaelTouchOfDeath">
         <Icon>storm_ui_icon_malthael_touchofdeath.png</Icon>
-        <Cooldown>30</Cooldown>
+        <Cooldown>25</Cooldown>
       </MalthaelTouchOfDeath>
     </Level7>
     <Level10>
@@ -100,9 +100,9 @@
       <MalthaelSoulCollector name="Soul Collector" desc="MalthaelSoulCollector">
         <Icon>storm_ui_icon_malthael_soulrip.png</Icon>
       </MalthaelSoulCollector>
-      <MalthaelMassacre name="Massacre" desc="MalthaelMassacre">
+      <MalthaelMortality name="Mortality" desc="MalthaelMortality">
         <Icon>storm_ui_icon_malthael_wraithstrike.png</Icon>
-      </MalthaelMassacre>
+      </MalthaelMortality>
       <MalthaelMementoMori name="Memento Mori" desc="MalthaelMementoMori">
         <Icon>storm_ui_icon_malthael_reapersmark.png</Icon>
       </MalthaelMementoMori>

@@ -48,55 +48,55 @@
   </Abilities>
   <Talents>
     <Level1>
-      <RehgarMasteryColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotemTalent">
+      <RehgarEarthbindTotemColossalTotem name="Colossal Totem" desc="RehgarEarthbindTotemColossalTotem">
         <Icon>storm_ui_icon_rehgar_earthbindtotem.png</Icon>
-      </RehgarMasteryColossalTotem>
-      <RehgarMasteryElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricChargeTalent">
+      </RehgarEarthbindTotemColossalTotem>
+      <RehgarLightningShieldElectricCharge name="Electric Charge" desc="RehgarLightningShieldElectricCharge">
         <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
-      </RehgarMasteryElectricCharge>
-      <RehgarMasteryWolfRun name="Wolf Run" desc="RehgarGhostWolfWolfRunTalent">
+      </RehgarLightningShieldElectricCharge>
+      <RehgarWolfRun name="Wolf Run" desc="RehgarGhostWolfWolfRunTalent">
         <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
-      </RehgarMasteryWolfRun>
+      </RehgarWolfRun>
     </Level1>
     <Level4>
       <RehgarMasterySpiritwalkersGrace name="Spiritwalker's Grace" desc="RehgarChainHealSpiritwalkersGraceTalent">
         <Icon>storm_ui_icon_rehgar_chainheal.png</Icon>
       </RehgarMasterySpiritwalkersGrace>
-      <RehgarMasteryFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">
+      <RehgarFeralHeart name="Feral Heart" desc="RehgarGhostWolfFeralHeartTalent">
         <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
-      </RehgarMasteryFeralHeart>
-      <RehgarMasteryStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcallerTalent">
+      </RehgarFeralHeart>
+      <RehgarLightningShieldStormcaller name="Stormcaller" desc="RehgarLightningShieldStormcaller">
         <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
-      </RehgarMasteryStormcaller>
-      <RehgarMasteryShamanHealingWard name="Healing Totem" desc="RehgarHealingTotem">
+      </RehgarLightningShieldStormcaller>
+      <RehgarHealingTotem name="Healing Totem" desc="RehgarHealingTotem">
         <Icon generic="true">storm_ui_icon_talent_healingward.png</Icon>
         <Cooldown>30</Cooldown>
-      </RehgarMasteryShamanHealingWard>
+      </RehgarHealingTotem>
     </Level4>
     <Level7>
-      <RehgarGhostWolfBloodAndThunder name="Blood and Thunder" desc="RehgarBloodAndThunder">
+      <RehgarBloodAndThunder name="Blood and Thunder" desc="RehgarBloodAndThunder">
         <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
-      </RehgarGhostWolfBloodAndThunder>
-      <RehgarMasteryFarsight name="Farsight" desc="RehgarFarsight">
+      </RehgarBloodAndThunder>
+      <RehgarFarsight name="Farsight" desc="RehgarFarsight">
         <Icon>storm_ui_icon_rehgar_farsight.png</Icon>
         <Cooldown>30</Cooldown>
-      </RehgarMasteryFarsight>
+      </RehgarFarsight>
       <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">
         <Icon>storm_ui_icon_talent_cleanse.png</Icon>
         <Cooldown>60</Cooldown>
       </GenericTalentCleanse>
-      <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">
+      <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjection">
         <Icon>storm_ui_icon_rehgar_earthbindtotem_a.png</Icon>
       </RehgarTotemicProjection>
     </Level7>
     <Level10>
-      <RehgarHeroicAbilityAncestralHealing ability="RehgarAncestralHealing" />
-      <RehgarHeroicAbilityBloodlust ability="RehgarBloodlust" />
+      <RehgarAncestralHealing ability="RehgarAncestralHealing" />
+      <RehgarBloodlust ability="RehgarBloodlust" />
     </Level10>
     <Level13>
-      <RehgarMasteryEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShieldTalent">
+      <RehgarLightningShieldEarthShield name="Earth Shield" desc="RehgarLightningShieldEarthShield">
         <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
-      </RehgarMasteryEarthShield>
+      </RehgarLightningShieldEarthShield>
       <RehgarMasteryTidalWaves name="Tidal Waves" desc="RehgarChainHealTidalWavesTalent">
         <Icon>storm_ui_icon_rehgar_chainheal.png</Icon>
       </RehgarMasteryTidalWaves>
@@ -105,23 +105,23 @@
       </RehgarEarthlivingEnchant>
     </Level13>
     <Level16>
-      <RehgarMasteryEarthGraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotemTalent">
+      <RehgarEarthbindTotemEarthgraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotem">
         <Icon>storm_ui_icon_rehgar_earthbindtotem.png</Icon>
-      </RehgarMasteryEarthGraspTotem>
-      <RehgarHungeroftheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">
+      </RehgarEarthbindTotemEarthgraspTotem>
+      <RehgarHungerOfTheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">
         <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
-      </RehgarHungeroftheWolf>
-      <RehgarRisingStorm name="Rising Storm" desc="RehgarRisingStorm">
+      </RehgarHungerOfTheWolf>
+      <RehgarLightningShieldRisingStorm name="Rising Storm" desc="RehgarLightningShieldRisingStorm">
         <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
-      </RehgarRisingStorm>
+      </RehgarLightningShieldRisingStorm>
     </Level16>
     <Level20>
-      <RehgarMasteryFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessingTalent">
+      <RehgarAncestralHealingFarseersBlessing name="Farseer's Blessing" desc="RehgarAncestralHealingFarseersBlessing">
         <Icon>storm_ui_icon_rehgar_ancestralhealing.png</Icon>
-      </RehgarMasteryFarseersBlessing>
-      <RehgarMasteryGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShoutTalent">
+      </RehgarAncestralHealingFarseersBlessing>
+      <RehgarGladiatorsWarShout name="Gladiator's War Shout" desc="RehgarBloodlustGladiatorsWarShout">
         <Icon>storm_ui_icon_rehgar_bloodlust.png</Icon>
-      </RehgarMasteryGladiatorsWarShout>
+      </RehgarGladiatorsWarShout>
       <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
         <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
         <Cooldown>60</Cooldown>

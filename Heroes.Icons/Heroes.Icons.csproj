@@ -31,4 +31,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\Talents\Maiev\" />
+  </ItemGroup>
+
 </Project>

@@ -64,7 +64,7 @@
         <Icon>storm_ui_icon_blaze_flame.png</Icon>
       </FirebatFlameStreamFeedingtheFlame>
       <FirebatOilSpillAdhesivePetroleum name="Adhesive Petroleum" desc="FirebatOilSpillAdhesivePetroleum">
-        <Icon>storm_ui_icon_blaze_oil.png</Icon>
+        <Icon>storm_ui_icon_blaze_oil_b.png</Icon>
       </FirebatOilSpillAdhesivePetroleum>
       <FirebatOilSpillOilDispersal name="Oil Dispersal" desc="FirebatOilSpillOilDispersal">
         <Icon>storm_ui_icon_blaze_oil.png</Icon>

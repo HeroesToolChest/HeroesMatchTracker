@@ -8,7 +8,7 @@
     <Basic>
       <GreymaneGilneanCocktail name="Gilnean Cocktail" desc="GreymaneGilneanCocktail">
         <Icon>storm_ui_icon_Greymane_QAttack.png</Icon>
-        <Mana>70</Mana>
+        <Mana>55</Mana>
         <Cooldown>10</Cooldown>
       </GreymaneGilneanCocktail>
       <GreymaneInnerBeast name="Inner Beast" desc="GreymaneInnerBeast">
@@ -76,9 +76,6 @@
       <GreymaneInnerBeastInsatiable name="Insatiable" desc="GreymaneInnerBeastInsatiableTalent">
         <Icon>storm_ui_icon_Greymane_BeastFocus.png</Icon>
       </GreymaneInnerBeastInsatiable>
-      <GreymaneGilneanCocktailDraughtOverflow name="Draught Overflow" desc="GreymaneGilneanCocktailDraughtOverflowTalent">
-        <Icon>storm_ui_icon_greymane_qattack.png</Icon>
-      </GreymaneGilneanCocktailDraughtOverflow>
     </Level4>
     <Level7>
       <GreymaneWorgenFormQuicksilverBullets name="Quicksilver Bullets" desc="GreymaneQuicksilverBulletsTalent">
