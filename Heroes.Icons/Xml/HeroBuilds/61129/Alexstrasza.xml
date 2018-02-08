@@ -136,6 +136,7 @@
       </AlexstraszaAncientFlameFlameBuffet>
       <AlexstraszaBlessingOfTheRed name="Blessing of the Red" desc="AlexstraszaBlessingOfTheRed">
         <Icon>storm_ui_icon_alexstrasza_blessing_of_the_red.png</Icon>
+        <Cooldown>40</Cooldown>
       </AlexstraszaBlessingOfTheRed>
     </Level20>
   </Talents>
