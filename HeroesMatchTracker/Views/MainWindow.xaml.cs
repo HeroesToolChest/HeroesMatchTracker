@@ -164,9 +164,9 @@ namespace HeroesMatchTracker.Views
                 Visible = false,
                 ContextMenu = contextMenu,
 #if !DEBUG
-                Text = $"Heroes Stat Tracker {VersionAsString()}",
+                Text = $"Heroes Match Tracker {VersionAsString()}",
 #else
-                Text = $"[DEBUG] Heroes Stat Tracker {VersionAsString()}",
+                Text = $"[DEBUG] Heroes Match Tracker {VersionAsString()}",
 #endif
             };
             NotifyIcon.DoubleClick += (sender, e) =>
