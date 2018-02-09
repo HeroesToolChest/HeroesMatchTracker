@@ -110,7 +110,7 @@
       </GenericTalentImposingPresence>
       <SonyaTalentNervesOfSteel name="Nerves of Steel" desc="SonyaNervesOfSteel">
         <Icon>storm_ui_icon_sonya_nervesofsteel.png</Icon>
-        <Cooldown>60</Cooldown>
+        <Cooldown>70</Cooldown>
       </SonyaTalentNervesOfSteel>
     </Level16>
     <Level20>
