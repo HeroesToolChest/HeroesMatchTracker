@@ -41,7 +41,7 @@ LostVikings=Three Heroes in one! Can gather experience from multiple locations.
 LtMorales=A strong, sustained Healer who's unbeatable if left alone by her enemies.
 Lucio=A sustained Healer who gives his team mobility and peels enemies off allies.
 Lunara=A sustained Assassin who can wear down her enemies from afar with her poison.
-Maiev=A mobile Assassin that excels against clustered enemies and prevents their escape.</n></n><img path="@UI/StormTalentInTextArmorIcon" alignment="uppermiddle" color="BBBBBB" width="20" height="22"/><c val="#TooltipNumbers">10 Armor</c>
+Maiev=A mobile Assassin that excels against clustered enemies and prevents their escape.
 Malfurion=A strong sustained Healer who can help lockdown enemies to secure takedowns.
 Malthael=An Assassin who marks his enemies, shredding away High Health enemies.
 Medivh=A Support who can negate burst damage and allow his allies to teleport.
