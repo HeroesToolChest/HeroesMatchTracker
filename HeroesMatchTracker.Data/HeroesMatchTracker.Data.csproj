@@ -128,6 +128,8 @@
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration3_v1_4_0\Migration3_v1_4_0.cs" />
     <Compile Include="Migrations\Replays\Migration4_v2_0_0\Migration4_v2_0_0.cs" />
+    <Compile Include="Migrations\Replays\Migration9_v2_6_7\Migration9_v2_6_7.cs" />
+    <Compile Include="Migrations\Replays\Migration9_v2_6_7\MigrationAddon9_v2_6_7_1.cs" />
     <Compile Include="Migrations\Replays\Migration8_v2_4_0\Migration8_v2_4_0.cs" />
     <Compile Include="Migrations\Replays\Migration8_v2_4_0\MigrationAddon8_v2_4_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration7_v2_2_0\Migration7_v2_2_0.cs" />
