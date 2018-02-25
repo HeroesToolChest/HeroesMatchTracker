@@ -235,6 +235,7 @@ namespace Heroes.Icons
             OtherIcons.Add(OtherIcon.Quest, SetImageStreamString(OtherFolderName, "storm_ui_taskbar_buttonicon_quests.png"));
             OtherIcons.Add(OtherIcon.UpgradeQuest, SetImageStreamString(OtherFolderName, "storm_ui_ingame_talentpanel_upgrade_quest_icon.png"));
             OtherIcons.Add(OtherIcon.Silence, SetImageStreamString(OtherFolderName, "storm_ui_silencepenalty.png"));
+            OtherIcons.Add(OtherIcon.VoiceSilence, SetImageStreamString(OtherFolderName, "storm_ui_silencepenalty_voice.png"));
 
             OtherIcons.Add(OtherIcon.LongarrowLeftDisabled, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_disabled.png"));
             OtherIcons.Add(OtherIcon.LongarrowLeftDown, SetImageStreamString(OtherFolderName, "storm_ui_glues_button_longarrow_left_down.png"));

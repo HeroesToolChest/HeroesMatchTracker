@@ -3,6 +3,7 @@
     public enum OtherIcon
     {
         Silence,
+        VoiceSilence,
         Quest,
         LongarrowLeftDisabled,
         LongarrowLeftDown,

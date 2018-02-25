@@ -36,6 +36,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public bool IsSilenced { get; set; }
 
+        public bool IsVoiceSilenced { get; set; }
+
         public bool IsWinner { get; set; }
 
         [StringLength(50)]

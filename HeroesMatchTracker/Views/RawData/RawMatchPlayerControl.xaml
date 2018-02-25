@@ -29,6 +29,7 @@
                     <DataGridTextColumn Header="Handicap" Binding="{Binding Handicap}" />
                     <DataGridTextColumn Header="IsAutoSelect" Binding="{Binding IsAutoSelect}" />
                     <DataGridTextColumn Header="IsSilenced" Binding="{Binding IsSilenced}" />
+                    <DataGridTextColumn Header="IsVoiceSilenced" Binding="{Binding IsVoiceSilenced}" />
                     <DataGridTextColumn Header="IsWinner" Binding="{Binding IsWinner}" />
                     <DataGridTextColumn Header="MountAndMountTint" Binding="{Binding MountAndMountTint}" />
                     <DataGridTextColumn Header="SkinAndSkinTint" Binding="{Binding SkinAndSkinTint}" />

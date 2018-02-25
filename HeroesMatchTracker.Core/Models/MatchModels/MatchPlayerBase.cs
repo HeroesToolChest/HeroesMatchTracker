@@ -30,6 +30,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Player = player;
 
             SilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.Silence);
+            VoiceSilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.VoiceSilence);
             TalentBorderScoreScreenIcon = HeroesIcons.GetOtherIcon(OtherIcon.TalentAvailable);
         }
 
@@ -49,16 +50,19 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             MvpAwardDescription = matchPlayerBase.MvpAwardDescription;
             AccountLevel = matchPlayerBase.AccountLevel;
             Silenced = matchPlayerBase.Silenced;
+            VoiceSilenced = matchPlayerBase.VoiceSilenced;
             IsUserPlayer = matchPlayerBase.IsUserPlayer;
             PlayerRegion = matchPlayerBase.PlayerRegion;
             HeroDescriptionSubInfo = matchPlayerBase.HeroDescriptionSubInfo;
             HeroDescription = matchPlayerBase.HeroDescription;
             PlayerTag = matchPlayerBase.PlayerTag;
             SilenceIcon = matchPlayerBase.SilenceIcon;
+            VoiceSilenceIcon = matchPlayerBase.VoiceSilenceIcon;
             TalentBorderScoreScreenIcon = matchPlayerBase.TalentBorderScoreScreenIcon;
         }
 
         public bool Silenced { get; private set; }
+        public bool VoiceSilenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
         public string PlayerName { get; private set; }
         public string PlayerBattleTagName { get; private set; }
@@ -72,6 +76,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public Stream MvpAward { get; private set; }
         public Stream PartyIcon { get; private set; }
         public Stream SilenceIcon { get; private set; }
+        public Stream VoiceSilenceIcon { get; private set; }
         public Stream TalentBorderScoreScreenIcon { get; private set; }
         public PlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
@@ -121,6 +126,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
             LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
             Silenced = Player.IsSilenced;
+            VoiceSilenced = Player.IsVoiceSilenced;
             CharacterName = hero.Name;
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
