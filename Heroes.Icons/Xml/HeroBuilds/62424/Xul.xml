@@ -18,8 +18,8 @@
       </NecromancerCursedStrikes>
       <NecromancerBonePrison name="Bone Prison" desc="NecromancerBonePrison">
         <Icon>storm_ui_icon_necromancer_boneprison.png</Icon>
-        <Mana>80</Mana>
-        <Cooldown>12</Cooldown>
+        <Mana>70</Mana>
+        <Cooldown>10</Cooldown>
       </NecromancerBonePrison>
     </Basic>
     <Heroic>

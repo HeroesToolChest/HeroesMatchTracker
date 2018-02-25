@@ -37,7 +37,7 @@
     <Trait>
       <MaievVaultOfTheWardens name="Vault of the Wardens" desc="MaievVaultOfTheWardens">
         <Icon>storm_ui_icon_maiev_trait.png</Icon>
-        <Cooldown>8</Cooldown>
+        <Cooldown>9</Cooldown>
       </MaievVaultOfTheWardens>
     </Trait>
   </Abilities>

@@ -8,7 +8,7 @@
     <Basic>
       <MalthaelSoulRip name="Soul Rip" desc="MalthaelSoulRip">
         <Icon>storm_ui_icon_malthael_soulrip.png</Icon>
-        <Mana>20</Mana>
+        <Mana>25</Mana>
         <Cooldown>2</Cooldown>
       </MalthaelSoulRip>
       <MalthaelWraithStrike name="Wraith Strike" desc="MalthaelWraithStrike">
@@ -26,7 +26,7 @@
       <MalthaelTormentedSouls name="Tormented Souls" desc="MalthaelTormentedSouls">
         <Icon>storm_ui_icon_malthael_tormentedsoul.png</Icon>
         <Mana>100</Mana>
-        <Cooldown>100</Cooldown>
+        <Cooldown>80</Cooldown>
       </MalthaelTormentedSouls>
       <MalthaelLastRites name="Last Rites" desc="MalthaelLastRites">
         <Icon>storm_ui_icon_malthael_lastrites.png</Icon>

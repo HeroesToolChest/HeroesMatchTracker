@@ -9,7 +9,7 @@
       <TyrandeLightofElune name="Light of Elune" desc="TyrandeLightOfElune">
         <Icon>storm_ui_icon_tyrande_lightofelune.png</Icon>
         <Mana>30</Mana>
-        <Cooldown>12</Cooldown>
+        <Cooldown>11</Cooldown>
       </TyrandeLightofElune>
       <TyrandeSentinelShot name="Sentinel" desc="TyrandeSentinel">
         <Icon>storm_ui_icon_tyrande_sentinel.png</Icon>

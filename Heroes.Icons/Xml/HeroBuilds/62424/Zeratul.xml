@@ -30,7 +30,7 @@
       </ZeratulMightOfTheNerazimDummy>
       <ZeratulVoidPrison name="Void Prison" desc="ZeratulVoidPrison">
         <Icon>storm_ui_icon_zeratul_voidprison.png</Icon>
-        <Mana>100</Mana>
+        <Mana>80</Mana>
         <Cooldown>100</Cooldown>
       </ZeratulVoidPrison>
     </Heroic>
