@@ -90,6 +90,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     throw new TranslationException(RetrieveAllMapAndHeroNames());
             }
 
+            mapName = MapVerification(mapName);
+
             ReplayMatch replayMatch = new ReplayMatch
             {
                 Frames = Replay.Frames,
@@ -548,6 +550,22 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     ReplaysDb.MatchTeamObjective.CreateRecord(ReplaysContext, obj);
                 }
             }
+        }
+
+        private string MapVerification(string mapName)
+        {
+            if (mapName == "Pull Party")
+            {
+                Player[] players = GetPlayers();
+                var allCharacters = players.Where(x => x != null).Select(x => x.HeroUnits.FirstOrDefault().Name);
+
+                if (allCharacters.All(x => x == "HeroStitches"))
+                    return mapName;
+                else if (allCharacters.All(x => x == "HeroChromie"))
+                    return "Dodge-Brawl";
+            }
+
+            return mapName;
         }
 
         private Player[] GetPlayers()
