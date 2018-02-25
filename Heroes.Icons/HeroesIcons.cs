@@ -204,6 +204,9 @@ namespace Heroes.Icons
             PartyIcons.Add(PartyIconColor.Yellow, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_yellow.png"));
             PartyIcons.Add(PartyIconColor.Brown, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_brown.png"));
             PartyIcons.Add(PartyIconColor.Teal, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_teal.png"));
+            PartyIcons.Add(PartyIconColor.Blue, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_blue.png"));
+            PartyIcons.Add(PartyIconColor.Red, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_red.png"));
+            PartyIcons.Add(PartyIconColor.Orange, SetImageStreamString(PartyIconFolderName, "ui_ingame_loadscreen_partylink_orange.png"));
         }
 
         private void SetRoleIcons()

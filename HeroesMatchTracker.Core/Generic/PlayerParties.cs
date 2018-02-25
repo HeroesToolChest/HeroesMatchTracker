@@ -1,5 +1,6 @@
 ﻿using Heroes.Icons.Models;
 using HeroesMatchTracker.Data.Models.Replays;
+using System;
 using System.Collections.Generic;
 
 namespace HeroesMatchTracker.Core
@@ -8,7 +9,7 @@ namespace HeroesMatchTracker.Core
     {
         public static Dictionary<int, PartyIconColor> FindPlayerParties(ICollection<ReplayMatchPlayer> playersList)
         {
-            Dictionary<long, List<int>> parties = new Dictionary<long, List<int>>();
+            Dictionary<long, List<Tuple<int, int?>>> parties = new Dictionary<long, List<Tuple<int, int?>>>();
 
             foreach (var player in playersList)
             {
@@ -16,32 +17,50 @@ namespace HeroesMatchTracker.Core
                 {
                     if (!parties.ContainsKey(player.PartyValue))
                     {
-                        var listOfMembers = new List<int>
+                        var partyPlayer = new Tuple<int, int?>(player.PlayerNumber, player.Team);
+                        var listOfMembers = new List<Tuple<int, int?>>
                         {
-                            player.PlayerNumber,
+                            partyPlayer,
                         };
+
                         parties.Add(player.PartyValue, listOfMembers);
                     }
                     else
                     {
                         var listOfMembers = parties[player.PartyValue];
-                        listOfMembers.Add(player.PlayerNumber);
+                        listOfMembers.Add(new Tuple<int, int?>(player.PlayerNumber, player.Team));
                         parties[player.PartyValue] = listOfMembers;
                     }
                 }
             }
 
             var playerPartyIcons = new Dictionary<int, PartyIconColor>();
-            PartyIconColor color = 0;
+
+            var team0Color = PartyIconColor.Purple;
+            var team1Color = PartyIconColor.Red;
+            bool purpleUsed = false;
+            bool redUsed = false;
 
             foreach (var party in parties)
             {
-                foreach (int playerNum in party.Value)
+                foreach (var player in party.Value)
                 {
-                    playerPartyIcons.Add(playerNum, color);
+                    if (player.Item2 == 0)
+                    {
+                        playerPartyIcons.Add(player.Item1, team0Color);
+                        purpleUsed = true;
+                    }
+                    else if (player.Item2 == 1)
+                    {
+                        playerPartyIcons.Add(player.Item1, team1Color);
+                        redUsed = true;
+                    }
                 }
 
-                color++;
+                if (purpleUsed)
+                    team0Color = PartyIconColor.Blue;
+                if (redUsed)
+                    team1Color = PartyIconColor.Orange;
             }
 
             return playerPartyIcons;
