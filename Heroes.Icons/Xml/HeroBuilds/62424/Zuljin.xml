@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Zuljin available="49076" name="Zul'jin" attributeid="ZULJ" unit="HeroZuljin" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_zuljin.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_zuljin.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_zuljin.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <ZuljinGrievousThrow name="Grievous Throw" desc="ZuljinGrievousThrow">
+        <Icon>storm_ui_icon_zuljin_grievousthrow.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>8</Cooldown>
+      </ZuljinGrievousThrow>
+      <ZuljinTwinCleave name="Twin Cleave" desc="ZuljinTwinCleave">
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>10</Cooldown>
+      </ZuljinTwinCleave>
+      <ZuljinRegeneration name="Regeneration" desc="ZuljinRegeneration">
+        <Icon>storm_ui_icon_zuljin_regeneration.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>15</Cooldown>
+      </ZuljinRegeneration>
+    </Basic>
+    <Heroic>
+      <ZuljinTazdingo name="Taz'dingo!" desc="ZuljinTazdingo">
+        <Icon>storm_ui_icon_zuljin_tazdingo.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>90</Cooldown>
+      </ZuljinTazdingo>
+      <ZuljinGuillotine name="Guillotine" desc="ZuljinGuillotine">
+        <Icon>storm_ui_icon_zuljin_guillotine.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>40</Cooldown>
+      </ZuljinGuillotine>
+    </Heroic>
+    <Trait>
+      <ZuljinBerserker name="Berserker" desc="ZuljinBerserker">
+        <Icon>storm_ui_icon_zuljin_berzerker.png</Icon>
+      </ZuljinBerserker>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <ZuljinBoneslicer name="Boneslicer" desc="ZuljinBoneslicer">
+        <Icon>storm_ui_icon_zuljin_grievousthrow.png</Icon>
+      </ZuljinBoneslicer>
+      <ZuljinRecklessness name="Recklessness" desc="ZuljinRecklessness">
+        <Icon>storm_ui_icon_zuljin_berzerker.png</Icon>
+      </ZuljinRecklessness>
+      <ZuljinHeadhunter name="Headhunter" desc="ZuljinHeadhunter">
+        <Icon>storm_ui_icon_zuljin_headhunter.png</Icon>
+      </ZuljinHeadhunter>
+    </Level1>
+    <Level4>
+      <ZuljinTrollsBlood name="Troll's Blood" desc="ZuljinTrollsBlood">
+        <Icon>storm_ui_icon_zuljin_regeneration.png</Icon>
+      </ZuljinTrollsBlood>
+      <ZuljinVoodooShuffle name="Voodoo Shuffle" desc="ZuljinVoodooShuffle">
+        <Icon>storm_ui_icon_zuljin_regeneration_a.png</Icon>
+        <Cooldown>10</Cooldown>
+      </ZuljinVoodooShuffle>
+      <ZuljinAmaniRageTalent name="Amani Rage" desc="ZuljinAmaniRageTalent">
+        <Icon>storm_ui_icon_zuljin_davoodooshuffle.png</Icon>
+        <Cooldown>10</Cooldown>
+      </ZuljinAmaniRageTalent>
+    </Level4>
+    <Level7>
+      <ZuljinViciousAssault name="Vicious Assault" desc="ZuljinViciousAssault">
+        <Icon>storm_ui_icon_zuljin_grievousthrow.png</Icon>
+      </ZuljinViciousAssault>
+      <ZuljinArcaniteAxes name="Arcanite Axes" desc="ZuljinArcaniteAxes">
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
+      </ZuljinArcaniteAxes>
+      <ZuljinFerocity name="Ferocity" desc="ZuljinFerocity">
+        <Icon>storm_ui_icon_zuljin_berzerker.png</Icon>
+      </ZuljinFerocity>
+    </Level7>
+    <Level10>
+      <ZuljinTazdingo ability="ZuljinTazdingo" />
+      <ZuljinGuillotine ability="ZuljinGuillotine" />
+    </Level10>
+    <Level13>
+      <ZuljinLacerate name="Lacerate" desc="ZuljinLacerate">
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
+      </ZuljinLacerate>
+      <ZuljinEyeOfZuljin name="Eye Of Zul'jin" desc="ZuljinEyeOfZuljin">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_base.png</Icon>
+      </ZuljinEyeOfZuljin>
+      <ZuljinEnsnare name="Ensnare" desc="ZuljinEnsnare">
+        <Icon>storm_ui_icon_zuljin_trollnet.png</Icon>
+        <Cooldown>60</Cooldown>
+      </ZuljinEnsnare>
+    </Level13>
+    <Level16>
+      <ZuljinNoMercyTalent name="No Mercy!" desc="ZuljinNoMercyTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </ZuljinNoMercyTalent>
+      <ZuljinWrongPlaceWrongTime name="Wrong Place Wrong Time" desc="ZuljinWrongPlaceWrongTime">
+        <Icon>storm_ui_icon_zuljin_twincleave.png</Icon>
+      </ZuljinWrongPlaceWrongTime>
+      <ZuljinLetTheKillingBegin name="Let The Killing Begin" desc="ZuljinLetTheKillingBegin">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_speed.png</Icon>
+      </ZuljinLetTheKillingBegin>
+    </Level16>
+    <Level20>
+      <ZuljinAmaniResilience name="Amani Resilience" desc="ZuljinAmaniResilience">
+        <Icon>storm_ui_icon_zuljin_tazdingo.png</Icon>
+      </ZuljinAmaniResilience>
+      <ZuljinBuzzsaw name="Buzzsaw" desc="ZuljinBuzzsaw">
+        <Icon>storm_ui_icon_zuljin_guillotine.png</Icon>
+      </ZuljinBuzzsaw>
+      <ZuljinForestMedicine name="Forest Medicine" desc="ZuljinForestMedicine">
+        <Icon>storm_ui_icon_zuljin_regeneration.png</Icon>
+      </ZuljinForestMedicine>
+    </Level20>
+  </Talents>
+</Zuljin>
