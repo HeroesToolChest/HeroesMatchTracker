@@ -595,7 +595,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         var replayParsed = ParseReplay(tempReplayFile, ignoreErrors: false, deleteFile: false, detailedBattleLobbyParsing: true);
                         originalfile.Build = replayParsed.Item2.ReplayBuild;
 
-                        if (replayParsed.Item1 == ReplayParseResult.Success)
+                        if (replayParsed.Item1 == ReplayParseResult.Success || replayParsed.Item1 == ReplayParseResult.SuccessReplayDetail)
                         {
                             replayParsed.Item2.Units = null;
                             replayParsed.Item2.TrackerEvents = null;
