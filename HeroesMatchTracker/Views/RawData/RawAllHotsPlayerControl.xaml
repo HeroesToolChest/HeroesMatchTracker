@@ -23,6 +23,7 @@
                     <DataGridTextColumn Header="BattleNetRegionId" Binding="{Binding BattleNetRegionId}" />
                     <DataGridTextColumn Header="BattleNetSubId" Binding="{Binding BattleNetSubId}" />
                     <DataGridTextColumn Header="BattleNetTId" Binding="{Binding BattleNetTId}" />
+                    <DataGridTextColumn Header="AccountLevel" Binding="{Binding AccountLevel}" />
                     <DataGridTextColumn Header="LastSeen" Binding="{Binding LastSeen}" />
                     <DataGridTextColumn Header="LastSeenBefore" Binding="{Binding LastSeenBefore}" />
                     <DataGridTextColumn Header="Seen" Binding="{Binding Seen}" />
