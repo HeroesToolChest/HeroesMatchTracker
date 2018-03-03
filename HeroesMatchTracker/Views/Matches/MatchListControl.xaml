@@ -29,7 +29,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="320"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="370"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -70,8 +70,20 @@
                             <TextBlock Text="Hero" />
                             <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter}" />
                         </StackPanel>
-                        <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsGivenBattleTagOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 8 0"/>
-
+                        <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsGivenBattleTagOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 8 8"/>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Player Party" />
+                            <ComboBox ItemsSource="{Binding PartyCountList}" SelectedValue="{Binding SelectedParty}" />
+                        </StackPanel>
+                        <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsPartyGivenBattleTagOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 8 8"/>
+                        <CheckBox Content="For selected Hero only" IsChecked="{Binding IsPartyHeroOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 17 8"/>
+                        <StackPanel Orientation="Horizontal" Style="{StaticResource Search}">
+                            <TextBlock Text="Account Level" />
+                            <TextBox Text="{Binding SelectedAccountLevel}" />
+                        </StackPanel>
+                        <CheckBox Content="For given BattleTag only" IsChecked="{Binding IsAccountyGivenBattleTagOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 8 8"/>
+                        <CheckBox Content="For selected Hero only" IsChecked="{Binding IsAccountHeroOnlyChecked}" HorizontalAlignment="Right" Margin="0 0 17 0"/>
+                        
                         <Button Content="CLEAR" Command="{Binding ClearSearchCommand}" Margin="8 16 0 8" Width="140" HorizontalAlignment="Right"/>
                         <Button Content="SEARCH" Command="{Binding LoadMatchListCommand}" />
                     </StackPanel>

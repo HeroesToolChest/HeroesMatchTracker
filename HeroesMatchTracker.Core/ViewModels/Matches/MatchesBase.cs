@@ -17,7 +17,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
     public abstract class MatchesBase : HmtViewModel
     {
+        private int _selectedAccountLevel;
         private bool _isGivenBattleTagOnlyChecked;
+        private bool _isPartyGivenBattleTagOnlyChecked;
+        private bool _isPartyHeroOnlyChecked;
+        private bool _isAccountyGivenBattleTagOnlyChecked;
+        private bool _isAccountHeroOnlyChecked;
         private bool _showMatchSummaryButtonEnabled;
         private long _selectedReplayIdValue;
         private string _selectedSeasonOption;
@@ -29,6 +34,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private string _selectedCharacter;
         private string _team1OverviewHeader;
         private string _team2OverviewHeader;
+        private string _selectedParty;
         private ReplayMatch _selectedReplay;
         private MatchesTab CurrentTab;
         private IWebsiteService Website;
@@ -69,6 +75,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
             SelectedCharacter = HeroesList[0];
 
+            PartyCountList.Add("Any");
+            PartyCountList.AddRange(HeroesHelpers.Parties.GetPartyList());
+            SelectedParty = PartyCountList[0];
+
+            SelectedAccountLevel = 0;
+
             Messenger.Default.Register<MatchesDataMessage>(this, (message) => ReceivedMatchSearchData(message));
             Messenger.Default.Register<NotificationMessage>(this, async (message) => await ReceivedMessageAsync(message));
         }
@@ -79,6 +91,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public List<string> GameTimeList { get; private set; } = new List<string>();
         public List<string> GameDateList { get; private set; } = new List<string>();
         public List<string> HeroesList { get; private set; } = new List<string>();
+        public List<string> PartyCountList { get; private set; } = new List<string>();
+
+        public int SelectedAccountLevel
+        {
+            get => _selectedAccountLevel;
+            set
+            {
+                _selectedAccountLevel = value;
+                RaisePropertyChanged();
+            }
+        }
 
         public bool IsGivenBattleTagOnlyChecked
         {
@@ -86,6 +109,46 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             set
             {
                 _isGivenBattleTagOnlyChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsPartyGivenBattleTagOnlyChecked
+        {
+            get => _isPartyGivenBattleTagOnlyChecked;
+            set
+            {
+                _isPartyGivenBattleTagOnlyChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsPartyHeroOnlyChecked
+        {
+            get => _isPartyHeroOnlyChecked;
+            set
+            {
+                _isPartyHeroOnlyChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsAccountyGivenBattleTagOnlyChecked
+        {
+            get => _isAccountyGivenBattleTagOnlyChecked;
+            set
+            {
+                _isAccountyGivenBattleTagOnlyChecked = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsAccountHeroOnlyChecked
+        {
+            get => _isAccountHeroOnlyChecked;
+            set
+            {
+                _isAccountHeroOnlyChecked = value;
                 RaisePropertyChanged();
             }
         }
@@ -200,6 +263,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             }
         }
 
+        public string SelectedParty
+        {
+            get => _selectedParty;
+            set
+            {
+                _selectedParty = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ReplayMatch SelectedReplay
         {
             get => _selectedReplay;
@@ -267,6 +340,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             ReplayFilter filter = new ReplayFilter
             {
                 IsGivenBattleTagOnlyChecked = IsGivenBattleTagOnlyChecked,
+                IsPartyBattleTagOnlyChecked = IsPartyGivenBattleTagOnlyChecked,
+                IsPartyHeroOnlyChecked = IsPartyHeroOnlyChecked,
+                IsAccountBattleTagOnlyChecked = IsAccountyGivenBattleTagOnlyChecked,
+                IsAccountHeroOnlyChecked = IsAccountHeroOnlyChecked,
                 SelectedBattleTag = SelectedPlayerBattleTag,
                 SelectedBuildOption = SelectedBuildOption,
                 SelectedCharacter = SelectedCharacter,
@@ -275,9 +352,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 SelectedMapOption = SelectedMapOption,
                 SelectedReplayId = SelectedReplayIdValue,
                 SelectedSeason = SelectedSeasonOption.ConvertToEnum<Season>(),
+                SelectedPartyCount = SelectedParty,
+                SelectedAccountLevel = SelectedAccountLevel,
                 BuildOptionsList = ReplayBuildsList,
                 HeroesList = HeroesList,
                 MapOptionsList = MapsList,
+                PartyCountList = PartyCountList,
             };
 
             MatchListCollection = new ObservableCollection<ReplayMatch>(Database.ReplaysDb().MatchReplay.ReadGameModeRecords(MatchGameMode, filter));
@@ -339,7 +419,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedGameDateOption = FilterGameDateOption.Any.GetFriendlyName();
             SelectedPlayerBattleTag = string.Empty;
             SelectedCharacter = HeroesList[0];
+            SelectedParty = PartyCountList[0];
+            SelectedAccountLevel = 0;
+
             IsGivenBattleTagOnlyChecked = false;
+            IsPartyGivenBattleTagOnlyChecked = false;
+            IsPartyHeroOnlyChecked = false;
+            IsAccountyGivenBattleTagOnlyChecked = false;
+            IsAccountHeroOnlyChecked = false;
         }
 
         private void ClearMatchOverview()

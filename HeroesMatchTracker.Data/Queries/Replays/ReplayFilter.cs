@@ -13,9 +13,17 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         public FilterGameDateOption SelectedGameDateOption { get; set; }
         public string SelectedBattleTag { get; set; }
         public string SelectedCharacter { get; set; }
+        public int SelectedAccountLevel { get; set; }
+        public string SelectedPartyCount { get; set; }
         public bool IsGivenBattleTagOnlyChecked { get; set; }
+        public bool IsPartyBattleTagOnlyChecked { get; set; }
+        public bool IsPartyHeroOnlyChecked { get; set; }
+        public bool IsAccountBattleTagOnlyChecked { get; set; }
+        public bool IsAccountHeroOnlyChecked { get; set; }
         public List<string> BuildOptionsList { get; set; }
         public List<string> MapOptionsList { get; set; }
         public List<string> HeroesList { get; set; }
+        public List<string> PartyCountList { get; set; }
+        
     }
 }
