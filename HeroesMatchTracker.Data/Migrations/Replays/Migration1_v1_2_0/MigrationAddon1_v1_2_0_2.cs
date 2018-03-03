@@ -42,10 +42,6 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
 
                         long oldPlayerId = listSamePlayerRecords[i].PlayerId;
 
-                        // remove from ReplayAllHotsPlayerHero
-                        var allHotsPlayerHero = db.ReplayAllHotsPlayerHeroes.Where(x => x.PlayerId == oldPlayerId);
-                        db.ReplayAllHotsPlayerHeroes.RemoveRange(allHotsPlayerHero);
-
                         // update ReplayMatchPlayers
                         db.ReplayMatchPlayers.Where(x => x.PlayerId == oldPlayerId)
                                              .ToList()

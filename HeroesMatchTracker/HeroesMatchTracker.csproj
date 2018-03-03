@@ -223,14 +223,8 @@
     <Compile Include="Views\RawData\RawAllHotsPlayerControl.xaml.cs">
       <DependentUpon>RawAllHotsPlayerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RawData\RawAllHotsPlayerHeroesControl.xaml.cs">
-      <DependentUpon>RawAllHotsPlayerHeroesControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\RawData\RawDataControl.xaml.cs">
       <DependentUpon>RawDataControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RawData\RawHotsLogsUploadControl.xaml.cs">
-      <DependentUpon>RawHotsLogsUploadControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RawData\RawMatchAwardControl.xaml.cs">
       <DependentUpon>RawMatchAwardControl.xaml</DependentUpon>
@@ -502,10 +496,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RawData\RawAllHotsPlayerHeroesControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\RawData\RawDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -513,10 +503,6 @@
     <Page Include="Views\RawData\RawHotsApiUploadControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\RawData\RawHotsLogsUploadControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RawData\RawMatchAwardControl.xaml">
       <SubType>Designer</SubType>

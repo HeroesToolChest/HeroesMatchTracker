@@ -2,7 +2,7 @@
 
 namespace HeroesMatchTracker.Data.Migrations.Replays
 {
-    internal class Migration9_v2_6_7 : IMigrationCommand
+    internal class Migration9_v2_7_0 : IMigrationCommand
     {
         private int Version = 9;
 
@@ -15,8 +15,8 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>
             {
-                new MigrationAddon8_v2_6_7_1(),
-                new MigrationAddon8_v2_6_7_2(),
+                new MigrationAddon8_v2_7_0_1(),
+                new MigrationAddon8_v2_7_0_2(),
             };
             migrationAddons.Add(Version, addonSteps);
         }

@@ -198,11 +198,9 @@
     <Compile Include="ViewModels\Matches\TeamLeagueViewModel.cs" />
     <Compile Include="ViewModels\Matches\UnrankedDraftViewModel.cs" />
     <Compile Include="ViewModels\Home\UserProfileWindowViewModel.cs" />
-    <Compile Include="ViewModels\RawData\RawAllHotsPlayerHeroesViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />
     <Compile Include="ViewModels\RawData\RawHotsApiUploadViewModel.cs" />
-    <Compile Include="ViewModels\RawData\RawHotsLogsUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchMessageViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchPlayerScoreResultViewModel.cs" />

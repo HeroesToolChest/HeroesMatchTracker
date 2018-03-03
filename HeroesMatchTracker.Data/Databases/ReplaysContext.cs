@@ -19,10 +19,8 @@ namespace HeroesMatchTracker.Data.Databases
         public virtual DbSet<ReplayMatchTeamBan> ReplayMatchTeamBans { get; set; }
         public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; }
         public virtual DbSet<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
-        public virtual DbSet<ReplayAllHotsPlayerHero> ReplayAllHotsPlayerHeroes { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
         public virtual DbSet<ReplayRenamedPlayer> ReplayRenamedPlayers { get; set; }
-        public virtual DbSet<ReplayHotsLogsUpload> ReplayHotsLogsUploads { get; set; }
         public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -72,11 +70,6 @@ namespace HeroesMatchTracker.Data.Databases
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ReplayMatch>()
-                .HasMany(e => e.ReplayHotsLogsUpload)
-                .WithRequired(e => e.Replay)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ReplayMatch>()
                 .HasMany(e => e.ReplayHotsApiUpload)
                 .WithRequired(e => e.Replay)
                 .WillCascadeOnDelete(false);
@@ -93,11 +86,6 @@ namespace HeroesMatchTracker.Data.Databases
 
             modelBuilder.Entity<ReplayAllHotsPlayer>()
                 .HasMany(e => e.ReplayMatchPlayerTalents)
-                .WithRequired(e => e.ReplayAllHotsPlayer)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ReplayAllHotsPlayer>()
-                .HasMany(e => e.ReplayAllHotsPlayerHeroes)
                 .WithRequired(e => e.ReplayAllHotsPlayer)
                 .WillCascadeOnDelete(false);
 

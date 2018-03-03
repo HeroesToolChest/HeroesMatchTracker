@@ -19,9 +19,6 @@
         <TabItem Header="All Players" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawAllHotsPlayerControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="Player Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-            <local:RawAllHotsPlayerHeroesControl Margin="{StaticResource Spacing}"/>
-        </TabItem>
         <TabItem Header="Renamed Players" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawRenamedPlayerControl Margin="{StaticResource Spacing}"/>
         </TabItem>
@@ -51,9 +48,6 @@
         </TabItem>
         <TabItem Header="Match Awards" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchAwardControl Margin="{StaticResource Spacing}"/>
-        </TabItem>
-        <TabItem Header="HOTS Logs Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-            <local:RawHotsLogsUploadControl Margin="{StaticResource Spacing}"/>
         </TabItem>
         <TabItem Header="HotsApi Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawHotsApiUploadControl Margin="{StaticResource Spacing}"/>

@@ -52,5 +52,21 @@ namespace HeroesMatchTracker.Data.Migrations
                 }
             }
         }
+
+        /// <summary>
+        /// Drops the given table
+        /// </summary>
+        /// <param name="tableName">table name</param>
+        protected void DropTable(string tableName)
+        {
+            using (var conn = new SQLiteConnection(ConfigurationManager.ConnectionStrings[DbConnectionStringName].ConnectionString))
+            {
+                using (var cmd = new SQLiteCommand($"DROP TABLE IF EXISTS {tableName};", conn))
+                {
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

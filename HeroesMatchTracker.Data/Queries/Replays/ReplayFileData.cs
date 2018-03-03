@@ -213,8 +213,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     AddPlayerTalents(player.value.Talents, playerId, character);
                     AddMatchAwards(player.value.ScoreResult.MatchAwards, playerId);
                 }
-
-                AddPlayerHeroes(player.value.PlayerCollectionDictionary, playerId);
             } // end foreach loop for players
         }
 
@@ -317,29 +315,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     Award = award.ToString(),
                 };
                 ReplaysDb.MatchAward.CreateRecord(ReplaysContext, matchAward);
-            }
-        }
-
-        private void AddPlayerHeroes(Dictionary<string, bool> playersHeroes, long playerId)
-        {
-            if (HeroesIcons != null)
-            {
-                ReplayAllHotsPlayerHero playersHero = new ReplayAllHotsPlayerHero();
-                foreach (var hero in playersHeroes)
-                {
-                    if (HeroesIcons.HeroBuilds().HeroExists(hero.Key))
-                    {
-                        playersHero.PlayerId = playerId;
-                        playersHero.HeroName = hero.Key;
-                        playersHero.IsUsable = hero.Value;
-                        playersHero.LastUpdated = Replay.Timestamp;
-
-                        if (ReplaysDb.HotsPlayerHero.IsExistingRecord(ReplaysContext, playersHero))
-                            ReplaysDb.HotsPlayerHero.UpdateRecord(ReplaysContext, playersHero);
-                        else
-                            ReplaysDb.HotsPlayerHero.CreateRecord(ReplaysContext, playersHero);
-                    }
-                }
             }
         }
 

@@ -19,7 +19,6 @@ namespace HeroesMatchTracker.Data.Models.Replays
             ReplayMatchTeamObjectives = new HashSet<ReplayMatchTeamObjective>();
             ReplayMatchMessage = new HashSet<ReplayMatchMessage>();
             ReplayMatchAward = new HashSet<ReplayMatchAward>();
-            ReplayHotsLogsUpload = new HashSet<ReplayHotsLogsUpload>();
             ReplayHotsApiUpload = new HashSet<ReplayHotsApiUpload>();
         }
 
@@ -85,8 +84,6 @@ namespace HeroesMatchTracker.Data.Models.Replays
         public virtual ICollection<ReplayMatchMessage> ReplayMatchMessage { get; set; }
 
         public virtual ICollection<ReplayMatchAward> ReplayMatchAward { get; set; }
-
-        public virtual ICollection<ReplayHotsLogsUpload> ReplayHotsLogsUpload { get; set; }
 
         public virtual ICollection<ReplayHotsApiUpload> ReplayHotsApiUpload { get; set; }
     }

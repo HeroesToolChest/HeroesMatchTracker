@@ -128,9 +128,9 @@
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration3_v1_4_0\Migration3_v1_4_0.cs" />
     <Compile Include="Migrations\Replays\Migration4_v2_0_0\Migration4_v2_0_0.cs" />
-    <Compile Include="Migrations\Replays\Migration9_v2_6_7\Migration9_v2_6_7.cs" />
-    <Compile Include="Migrations\Replays\Migration9_v2_6_7\MigrationAddon9_v2_6_7_1.cs" />
-    <Compile Include="Migrations\Replays\Migration9_v2_6_7\MigrationAddon9_v2_6_7_2.cs" />
+    <Compile Include="Migrations\Replays\Migration9_v2_7_0\Migration9_v2_7_0.cs" />
+    <Compile Include="Migrations\Replays\Migration9_v2_7_0\MigrationAddon9_v2_7_0_1.cs" />
+    <Compile Include="Migrations\Replays\Migration9_v2_7_0\MigrationAddon9_v2_7_0_2.cs" />
     <Compile Include="Migrations\Replays\Migration8_v2_4_0\Migration8_v2_4_0.cs" />
     <Compile Include="Migrations\Replays\Migration8_v2_4_0\MigrationAddon8_v2_4_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration7_v2_2_0\Migration7_v2_2_0.cs" />
@@ -160,8 +160,6 @@
     <Compile Include="Models\Replays\ReplayHotsApiUpload.cs" />
     <Compile Include="Models\Replays\ReplayMatch.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
-    <Compile Include="Models\Replays\ReplayAllHotsPlayerHero.cs" />
-    <Compile Include="Models\Replays\ReplayHotsLogsUpload.cs" />
     <Compile Include="Models\Replays\ReplayMatchAward.cs" />
     <Compile Include="Models\Replays\ReplayMatchMessage.cs" />
     <Compile Include="Models\Replays\ReplayMatchPlayer.cs" />
@@ -186,7 +184,6 @@
     <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
     <Compile Include="Queries\Replays\HotsApiUpload.cs" />
-    <Compile Include="Queries\Replays\HotsLogsUpload.cs" />
     <Compile Include="Queries\Replays\ReplayFilter.cs" />
     <Compile Include="Queries\Replays\ReplaysDb.cs" />
     <Compile Include="Queries\Replays\Statistics.cs" />
@@ -195,7 +192,6 @@
     <Compile Include="Queries\Settings\SettingsDb.cs" />
     <Compile Include="DatabaseService.cs" />
     <Compile Include="Queries\Replays\HotsPlayer.cs" />
-    <Compile Include="Queries\Replays\HotsPlayerHero.cs" />
     <Compile Include="Queries\Replays\IRawDataQueries.cs" />
     <Compile Include="Queries\Replays\MatchAward.cs" />
     <Compile Include="Queries\Replays\MatchMessage.cs" />

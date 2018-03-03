@@ -63,8 +63,6 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatch>, MatchReplay>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayAllHotsPlayer>, HotsPlayer>();
 
-            SimpleIoc.Default.Register<IRawDataQueries<ReplayAllHotsPlayerHero>, HotsPlayerHero>();
-            SimpleIoc.Default.Register<IRawDataQueries<ReplayHotsLogsUpload>, HotsLogsUpload>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayHotsApiUpload>, HotsApiUpload>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchAward>, MatchAward>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchMessage>, MatchMessage>();
@@ -79,8 +77,6 @@ namespace HeroesMatchTracker.Core.ViewModels
 
             SimpleIoc.Default.Register<RawMatchReplayViewModel>();
             SimpleIoc.Default.Register<RawAllHotsPlayerViewModel>();
-            SimpleIoc.Default.Register<RawAllHotsPlayerHeroesViewModel>();
-            SimpleIoc.Default.Register<RawHotsLogsUploadViewModel>();
             SimpleIoc.Default.Register<RawHotsApiUploadViewModel>();
             SimpleIoc.Default.Register<RawMatchAwardViewModel>();
             SimpleIoc.Default.Register<RawMatchMessageViewModel>();
@@ -132,8 +128,6 @@ namespace HeroesMatchTracker.Core.ViewModels
         // RawData
         public static RawMatchReplayViewModel RawMatchReplayViewModel => ServiceLocator.Current.GetInstance<RawMatchReplayViewModel>();
         public static RawAllHotsPlayerViewModel RawAllHotsPlayerViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerViewModel>();
-        public static RawAllHotsPlayerHeroesViewModel RawAllHotsPlayerHeroesViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerHeroesViewModel>();
-        public static RawHotsLogsUploadViewModel RawHotsLogsUploadViewModel => ServiceLocator.Current.GetInstance<RawHotsLogsUploadViewModel>();
         public static RawHotsApiUploadViewModel RawHotsApiUploadViewModel => ServiceLocator.Current.GetInstance<RawHotsApiUploadViewModel>();
         public static RawMatchAwardViewModel RawMatchAwardViewModel => ServiceLocator.Current.GetInstance<RawMatchAwardViewModel>();
         public static RawMatchMessageViewModel RawMatchMessageViewModel => ServiceLocator.Current.GetInstance<RawMatchMessageViewModel>();
