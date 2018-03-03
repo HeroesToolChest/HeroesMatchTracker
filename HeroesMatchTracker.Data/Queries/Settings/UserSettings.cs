@@ -247,7 +247,7 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             ReplaysLatestHotsApi = lastWeek;
             ReplaysLastHotsApi = lastWeek;
             SelectedScanDateTimeIndex = 0;
-            ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"Heroes of the Storm\Accounts");
+            ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Heroes of the Storm", "Accounts");
             IsAutoRequeueOnUpdate = true;
 
             // User Profile
