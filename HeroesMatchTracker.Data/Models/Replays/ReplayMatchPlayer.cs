@@ -27,6 +27,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public long PartyValue { get; set; }
 
+        public int PartySize { get; set; }
+
         [StringLength(25)]
         public string Difficulty { get; set; }
 

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HeroesMatchTracker.Data.Migrations.Replays
 {
-    internal class MigrationAddon8_v2_7_0_2 : MigrationMethods<ReplaysContext>, IMigrationAddon
+    internal class MigrationAddon9_v2_7_0_2 : MigrationMethods<ReplaysContext>, IMigrationAddon
     {
         public void Execute()
         {

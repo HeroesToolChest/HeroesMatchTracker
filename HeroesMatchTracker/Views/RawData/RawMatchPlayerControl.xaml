@@ -26,6 +26,7 @@
                     <DataGridTextColumn Header="CharacterLevel" Binding="{Binding CharacterLevel}" />
                     <DataGridTextColumn Header="AccountLevel" Binding="{Binding AccountLevel}" />
                     <DataGridTextColumn Header="PartyValue" Binding="{Binding PartyValue}" />
+                    <DataGridTextColumn Header="PartySize" Binding="{Binding PartySize}" />
                     <DataGridTextColumn Header="Difficulty" Binding="{Binding Difficulty}" />
                     <DataGridTextColumn Header="Handicap" Binding="{Binding Handicap}" />
                     <DataGridTextColumn Header="IsAutoSelect" Binding="{Binding IsAutoSelect}" />

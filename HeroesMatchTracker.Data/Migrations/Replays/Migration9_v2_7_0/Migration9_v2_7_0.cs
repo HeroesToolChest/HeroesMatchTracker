@@ -15,8 +15,9 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
 
             List<IMigrationAddon> addonSteps = new List<IMigrationAddon>
             {
-                new MigrationAddon8_v2_7_0_1(),
-                new MigrationAddon8_v2_7_0_2(),
+                new MigrationAddon9_v2_7_0_1(),
+                new MigrationAddon9_v2_7_0_2(),
+                new MigrationAddon9_v2_7_0_3(),
             };
             migrationAddons.Add(Version, addonSteps);
         }
