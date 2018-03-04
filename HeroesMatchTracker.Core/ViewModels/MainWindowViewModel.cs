@@ -84,9 +84,13 @@ namespace HeroesMatchTracker.Core.ViewModels
             get
             {
                 if (!string.IsNullOrEmpty(UserProfile.BattleTagName))
-                    return HeroesHelpers.BattleTags.GetNameFromBattleTagName(UserProfile.BattleTagName);
+                {
+                    return $"{HeroesHelpers.BattleTags.GetNameFromBattleTagName(UserProfile.BattleTagName)} | {(HeroesHelpers.Regions.Region)UserProfile.RegionId}";
+                }
                 else
-                    return "No BattleTag Set";
+                {
+                    return "No Profile Set";
+                }
             }
             set
             {
