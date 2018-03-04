@@ -142,6 +142,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                 return;
             }
 
+            if (Database.ReplaysDb().MatchReplay.GetTotalReplayCount() < 1)
+            {
+                AddProfileResultText = "Cannot find. There are no replays in the database.";
+                return;
+            }
+
             if (Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(profile.UserBattleTagName, profile.UserRegion) < 1)
             {
                 AddProfileResultText = "BattleTag/Region not found in database";

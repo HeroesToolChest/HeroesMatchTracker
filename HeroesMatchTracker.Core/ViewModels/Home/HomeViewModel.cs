@@ -16,6 +16,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
         private DateTime? LatestReplayDateTime;
         private bool UserBattleTagUpdated;
+        private bool _noReplaysParsed;
 
         private ObservableCollection<MatchHistoryMatch> _matchCollection = new ObservableCollection<MatchHistoryMatch>();
 
@@ -25,6 +26,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             Website = website;
 
             UserBattleTagUpdated = false;
+            NoReplaysParsed = false;
             LatestReplayDateTime = DateTime.MinValue;
 
             Messenger.Default.Register<NotificationMessage>(this, (message) => ReceivedMessage(message));
@@ -39,6 +41,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
             set
             {
                 _matchCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool NoReplaysParsed
+        {
+            get => _noReplaysParsed;
+            set
+            {
+                _noReplaysParsed = value;
                 RaisePropertyChanged();
             }
         }
@@ -58,6 +70,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 
                 if (replays.Count > 0)
                     LatestReplayDateTime = replays[0].TimeStamp;
+
+                if (replays.Count < 1)
+                    NoReplaysParsed = true;
             }
             catch (Exception ex)
             {
@@ -85,6 +100,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
                                 await Application.Current.Dispatcher.InvokeAsync(() =>
                                 {
                                     MatchCollection.Insert(0, match);
+                                    NoReplaysParsed = false;
 
                                     if (MatchCollection.Count > 20)
                                         MatchCollection.RemoveAt(MatchCollection.Count - 1);
