@@ -197,9 +197,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                 if (!string.IsNullOrEmpty(replayFilter.SelectedBattleTag))
                 {
-                    query = from r in query
-                            join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                            join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
+                    query = from r in query.AsNoTracking()
+                            join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
+                            join ahp in db.ReplayAllHotsPlayers.AsNoTracking() on mp.PlayerId equals ahp.PlayerId
                             where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower())
                             select r;
                 }
@@ -208,17 +208,17 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     if (replayFilter.IsGivenBattleTagOnlyChecked)
                     {
-                        query = from r in query
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
+                        query = from r in query.AsNoTracking()
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
+                                join ahp in db.ReplayAllHotsPlayers.AsNoTracking() on mp.PlayerId equals ahp.PlayerId
                                 where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
                                 mp.Character == replayFilter.SelectedCharacter
                                 select r;
                     }
                     else
                     {
-                        query = from r in query
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                        query = from r in query.AsNoTracking()
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
                                 where mp.Character == replayFilter.SelectedCharacter
                                 select r;
                     }
@@ -229,101 +229,40 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     int partyCount = HeroesHelpers.Parties.GetPartyCount(replayFilter.SelectedPartyCount);
 
+                    query = from r in query.AsNoTracking()
+                            join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                            where mp.PartySize == partyCount
+                            select r;
+
                     if (replayFilter.IsPartyBattleTagOnlyChecked && replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                        query = from r in query.AsNoTracking()
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
-                                join party in
-                                    (from r in query
-                                     join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                     where mp.PartyValue != 0
-                                     group mp by new
-                                     {
-                                         mp.ReplayId,
-                                         mp.PartyValue,
-                                     }
-                                     into grp
-                                     where grp.Count() == partyCount
-                                     select new
-                                     {
-                                         grp.Key.ReplayId,
-                                         grp.Key.PartyValue
-                                     }) on r.ReplayId equals party.ReplayId
-                                where mp.Character == replayFilter.SelectedCharacter &&
-                                ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
-                                mp.PartyValue == party.PartyValue
+                                where mp.PartySize == partyCount && mp.Character == replayFilter.SelectedCharacter &&
+                                ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower())
                                 select r;
                     }
                     else if (!replayFilter.IsPartyBattleTagOnlyChecked && replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                join party in
-                                    (from r in query
-                                     join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                     where mp.PartyValue != 0
-                                     group mp by new
-                                     {
-                                         mp.ReplayId,
-                                         mp.PartyValue,
-                                     }
-                                     into grp
-                                     where grp.Count() == partyCount
-                                     select new
-                                     {
-                                         grp.Key.ReplayId,
-                                         grp.Key.PartyValue
-                                     }) on r.ReplayId equals party.ReplayId
-                                where mp.Character == replayFilter.SelectedCharacter &&
-                                mp.PartyValue == party.PartyValue
+                        query = from r in query.AsNoTracking()
+                                join mp in db.ReplayMatchPlayers.AsNoTracking() on r.ReplayId equals mp.ReplayId
+                                where mp.PartySize == partyCount && mp.Character == replayFilter.SelectedCharacter
                                 select r;
                     }
                     else if (replayFilter.IsPartyBattleTagOnlyChecked && !replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
-                                join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                        query = from r in query.AsNoTracking()
+                                join mp in db.ReplayMatchPlayers.AsNoTracking().AsNoTracking() on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
-                                join party in
-                                    (from r in query
-                                     join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                     where mp.PartyValue != 0
-                                     group mp by new
-                                     {
-                                         mp.ReplayId,
-                                         mp.PartyValue,
-                                     }
-                                     into grp
-                                     where grp.Count() == partyCount
-                                     select new
-                                     {
-                                         grp.Key.ReplayId,
-                                         grp.Key.PartyValue
-                                     }) on r.ReplayId equals party.ReplayId
-                                where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
-                                mp.PartyValue == party.PartyValue
+                                where mp.PartySize == partyCount && ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower())
                                 select r;
                     }
                     else
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                join party in
-                                    (from r in query
-                                     join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                     where mp.PartyValue != 0
-                                     group mp by new
-                                     {
-                                         mp.ReplayId,
-                                         mp.PartyValue,
-                                     }
-                                     into grp
-                                     where grp.Count() == partyCount
-                                     select new
-                                     {
-                                         grp.Key.ReplayId,
-                                         grp.Key.PartyValue
-                                     }) on r.ReplayId equals party.ReplayId
+                                where mp.PartySize == partyCount
                                 select r;
                     }
                 }
@@ -333,7 +272,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     if (replayFilter.IsPartyBattleTagOnlyChecked && replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
                                 where mp.Character == replayFilter.SelectedCharacter &&
@@ -343,7 +282,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                     else if (!replayFilter.IsPartyBattleTagOnlyChecked && replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 where mp.Character == replayFilter.SelectedCharacter &&
                                 mp.PartyValue == 0
@@ -351,7 +290,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                     else if (replayFilter.IsPartyBattleTagOnlyChecked && !replayFilter.IsPartyHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
                                 where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
@@ -360,10 +299,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                     else
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join party in
-                                    (from r in query
+                                    (from r in query.AsNoTracking()
                                      join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                      where mp.PartyValue == 0
                                      group mp by new
@@ -387,14 +326,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 {
                     if (!replayFilter.IsAccountBattleTagOnlyChecked && !replayFilter.IsAccountHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 where mp.AccountLevel >= replayFilter.SelectedAccountLevel
                                 select r;
                     }
                     else if (replayFilter.IsAccountBattleTagOnlyChecked && !replayFilter.IsAccountHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
                                 where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
@@ -403,7 +342,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                     else if (!replayFilter.IsAccountBattleTagOnlyChecked && replayFilter.IsAccountHeroOnlyChecked)
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
                                 where mp.Character == replayFilter.SelectedCharacter &&
@@ -412,7 +351,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     }
                     else
                     {
-                        query = from r in query
+                        query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join ahp in db.ReplayAllHotsPlayers on mp.PlayerId equals ahp.PlayerId
                                 where ahp.BattleTagName.ToLower().Contains(replayFilter.SelectedBattleTag.ToLower()) &&
