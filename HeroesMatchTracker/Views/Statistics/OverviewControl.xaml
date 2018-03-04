@@ -28,7 +28,6 @@
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
@@ -43,104 +42,150 @@
                 <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryOverviewStatsCommand}" />
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <ComboBox ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="300" Margin="0 0 0 8" HorizontalAlignment="Right">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <mvvm:EventToCommand CommandParameter="{Binding ElementName=SelectedHeroStat}" Command="{Binding QuerySelectedHeroStatCommand}" />
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </ComboBox>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <DockPanel>
-                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsPercentageCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel >
+                <ComboBox ItemsSource="{Binding HeroStatsList}" SelectedValue="{Binding SelectedHeroStat}" Width="300" Margin="0 0 0 8" HorizontalAlignment="Left">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <mvvm:EventToCommand CommandParameter="{Binding ElementName=SelectedHeroStat}" Command="{Binding QuerySelectedHeroStatCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <DockPanel>
+                        <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsPercentageCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
                       Visibility="{Binding IsHeroStatPercentageDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
-                    </DataGrid.Columns>
-                </DataGrid>
-                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" 
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
+                                <DataGridTextColumn Header="Amount" Binding="{Binding Value, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding HeroStatsCollection}" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Bottom" 
                       Visibility="{Binding IsHeroStatDataGridVisible, Converter={StaticResource BooleanToVisibility}}" GridLinesVisibility="Vertical">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Value}" FontWeight="Bold" Width="*" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </DockPanel>
-            <DockPanel>
-                <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding MapsStatsCollection}" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Hero" Binding="{Binding HeroName}" MinWidth="150"/>
+                                <DataGridTextColumn Header="Amount" Binding="{Binding Value}" FontWeight="Bold" Width="*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                    <DockPanel>
+                        <DataGrid Style="{StaticResource DefaultStatDataGrid}" ItemsSource="{Binding MapsStatsCollection}" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top" 
                           GridLinesVisibility="Vertical" Margin="16 0 0 0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
-                        <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="80" />
-                        <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="80" />
-                        <DataGridTextColumn Header="Win %" Binding="{Binding Winrate, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </DockPanel>
-            <StackPanel Margin="16 0 0 0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="190"></ColumnDefinition>
-                        <ColumnDefinition Width="190"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="Games Played" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Win Rate" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="KDA Ratio" Style="{StaticResource OverallStats}"  />
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Total Takedowns" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Average Takedowns" Style="{StaticResource OverallStats}" />
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Map" Binding="{Binding MapName}" MinWidth="160"/>
+                                <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" MinWidth="80" />
+                                <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" MinWidth="80" />
+                                <DataGridTextColumn Header="Win %" Binding="{Binding Winrate, StringFormat={}{0:P1}}" FontWeight="Bold" Width="*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                    <StackPanel Margin="16 0 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"></ColumnDefinition>
+                                <ColumnDefinition Width="190"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
 
-                    <TextBlock Grid.Column="1" Text="{Binding OverallGamesPlayed}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding OverallWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding OverallKDARatio, StringFormat={}{0:N1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding OverallTotalTakedowns}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                    <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding OverallAverageTakedowns, StringFormat={}{0:N1}}" HorizontalAlignment="Right" Style="{StaticResource OverallStats}" />
-                </Grid>
-            </StackPanel>
-            <StackPanel Margin="16 0 0 0" Width="200">
-                <GroupBox Header="Warrior">
-                    <StackPanel>
-                        <TextBlock Text="{Binding RoleGamesCollection[0], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
-                        <TextBlock Text="{Binding RoleWinrateCollection[0], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}"/>
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="Assassin">
-                    <StackPanel>
-                        <TextBlock Text="{Binding RoleGamesCollection[1], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
-                        <TextBlock Text="{Binding RoleWinrateCollection[1], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="Support">
-                    <StackPanel>
-                        <TextBlock Text="{Binding RoleGamesCollection[2], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
-                        <TextBlock Text="{Binding RoleWinrateCollection[2], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="Specialist">
-                    <StackPanel>
-                        <TextBlock Text="{Binding RoleGamesCollection[3], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
-                        <TextBlock Text="{Binding RoleWinrateCollection[3], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
-                    </StackPanel>
-                </GroupBox>
-                <GroupBox Header="Multiclass">
-                    <StackPanel>
-                        <TextBlock Text="{Binding RoleGamesCollection[4], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
-                        <TextBlock Text="{Binding RoleWinrateCollection[4], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
-                    </StackPanel>
-                </GroupBox>
-            </StackPanel>
-        </StackPanel>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Games Played: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Win Rate: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="KDA Ratio: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Total Takedowns: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="4" Text="Average Takedowns: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
 
-        <!--<DataGrid ItemsSource="{Binding HeroStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" />
-            <DataGrid ItemsSource="{Binding MapsStatsCollection}" Style="{StaticResource DefaultStatDataGrid}" GridLinesVisibility="Vertical" Margin="16 0 16 0" />-->
+                            <TextBlock Grid.Column="1" Text="{Binding OverallGamesPlayed}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding OverallWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding OverallKDARatio, StringFormat={}{0:N1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding OverallTotalTakedowns}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding OverallAverageTakedowns, StringFormat={}{0:N1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+
+                            <!--<TextBlock Grid.Row="5" Text="Party Win Rates" Style="{StaticResource OverallStats}" FontSize="22" Margin="0 12 0 0"/>
+                            <TextBlock Grid.Column="0" Grid.Row="6" Text="Solo: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="7" Text="2 Stack: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="8" Text="3 Stack: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="9" Text="4 Stack: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="10" Text="5 Stack: " Style="{StaticResource OverallStats}" HorizontalAlignment="Right" />
+
+                            <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding PartySoloWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding Party2StackWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding Party3StackWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="9" Text="{Binding Party4StackWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />
+                            <TextBlock Grid.Column="1" Grid.Row="10" Text="{Binding Party5StackWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource OverallStats}" />-->
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Margin="16 0 16 0" Width="200">
+                        <GroupBox Header="Warrior">
+                            <StackPanel>
+                                <TextBlock Text="{Binding RoleGamesCollection[0], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding RoleWinrateCollection[0], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Assassin">
+                            <StackPanel>
+                                <TextBlock Text="{Binding RoleGamesCollection[1], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding RoleWinrateCollection[1], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Support">
+                            <StackPanel>
+                                <TextBlock Text="{Binding RoleGamesCollection[2], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding RoleWinrateCollection[2], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Specialist">
+                            <StackPanel>
+                                <TextBlock Text="{Binding RoleGamesCollection[3], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding RoleWinrateCollection[3], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Multiclass">
+                            <StackPanel>
+                                <TextBlock Text="{Binding RoleGamesCollection[4], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding RoleWinrateCollection[4], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gray" />
+                    <StackPanel Margin="16 0 0 0" Width="200">
+                        <GroupBox Header="Solo">
+                            <StackPanel>
+                                <TextBlock Text="{Binding PartyGamesCollection[0], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding PartyWinrateCollection[0], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="2 Stack">
+                            <StackPanel>
+                                <TextBlock Text="{Binding PartyGamesCollection[1], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding PartyWinrateCollection[1], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="3 Stack">
+                            <StackPanel>
+                                <TextBlock Text="{Binding PartyGamesCollection[2], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding PartyWinrateCollection[2], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="4 Stack">
+                            <StackPanel>
+                                <TextBlock Text="{Binding PartyGamesCollection[3], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding PartyWinrateCollection[3], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="5 Stack">
+                            <StackPanel>
+                                <TextBlock Text="{Binding PartyGamesCollection[4], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
+                                <TextBlock Text="{Binding PartyWinrateCollection[4], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}" />
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

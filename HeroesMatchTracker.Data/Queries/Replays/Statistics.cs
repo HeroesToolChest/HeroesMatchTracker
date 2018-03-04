@@ -176,7 +176,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         /// <param name="tier">The tier that the talent is on</param>
         /// <param name="isWinner">Get wins if true otherwise losses</param>
         /// <returns></returns>
-        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Heroes.Icons.Models.Talent talent, bool isWinner)
+        public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Talent talent, bool isWinner)
         {
             var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
 
@@ -429,6 +429,41 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 }
 
                 return list;
+            }
+        }
+
+        public int ReadPartyGameResult(Season season, GameMode gameMode, int partySize, bool isWin)
+        {
+            if (partySize < 2)
+                partySize = 0;
+
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+
+            using (var db = new ReplaysContext())
+            {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
+                    {
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
+                    }
+                }
+
+                var query = from mp in db.ReplayMatchPlayers.AsNoTracking()
+                            join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                            where mp.PlayerId == UserSettings.UserPlayerId &&
+                                  r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                                  mp.PartySize == partySize &&
+                                  mp.IsWinner == isWin
+                            select r;
+
+                query = query.AsExpandable().Where(gameModeFilter);
+
+                return query.Count();
             }
         }
     }

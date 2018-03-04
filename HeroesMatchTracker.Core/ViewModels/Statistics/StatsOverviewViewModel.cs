@@ -41,7 +41,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private ObservableCollection<StatsOverviewHeroes> _heroStatsPercentageCollection = new ObservableCollection<StatsOverviewHeroes>();
         private ObservableCollection<StatsOverviewMaps> _mapsStatsCollection = new ObservableCollection<StatsOverviewMaps>();
         private ObservableCollection<int> _roleGamesCollection = new ObservableCollection<int>();
+        private ObservableCollection<int> _partyGamesCollection = new ObservableCollection<int>();
         private ObservableCollection<double> _roleWinrateCollection = new ObservableCollection<double>();
+        private ObservableCollection<double> _partyWinrateCollection = new ObservableCollection<double>();
 
         // used to hold the stats for dynamic switching instead of requerying each time
         private Collection<StatsOverviewHeroes> HeroStatsWinsCollection = new Collection<StatsOverviewHeroes>();
@@ -223,6 +225,26 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public ObservableCollection<int> PartyGamesCollection
+        {
+            get => _partyGamesCollection;
+            set
+            {
+                _partyGamesCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<double> PartyWinrateCollection
+        {
+            get => _partyWinrateCollection;
+            set
+            {
+                _partyWinrateCollection = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public int OverallGamesPlayed
         {
             get => _overallGamesPlayed;
@@ -347,6 +369,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             await SetHeroStats(selectedSeason, selectedGameModes, SelectedHeroStat.ConvertToEnum<OverviewHeroStatOption>());
             await SetMapStats(selectedSeason, selectedGameModes);
             await SetRoleStats(selectedSeason, selectedGameModes);
+            await SetPartyStats(selectedSeason, selectedGameModes);
             SetOverallStats();
         }
 
@@ -619,6 +642,23 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             });
         }
 
+        private async Task SetPartyStats(Season season, GameMode gameModes)
+        {
+            for (int i = 1; i < 6; i++)
+            {
+                int wins = Database.ReplaysDb().Statistics.ReadPartyGameResult(season, gameModes, i, true);
+                int losses = Database.ReplaysDb().Statistics.ReadPartyGameResult(season, gameModes, i, false);
+
+                double winrate = Utilities.CalculateWinValue(wins, wins + losses);
+
+                await Application.Current.Dispatcher.InvokeAsync(() =>
+                {
+                    PartyGamesCollection.Add(wins + losses);
+                    PartyWinrateCollection.Add(winrate);
+                });
+            }
+        }
+
         private void Clear()
         {
             ClearHeroStatGridOnly();
@@ -633,6 +673,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             RoleGamesCollection = new ObservableCollection<int>();
             RoleWinrateCollection = new ObservableCollection<double>();
+
+            PartyGamesCollection = new ObservableCollection<int>();
+            PartyWinrateCollection = new ObservableCollection<double>();
         }
 
         private void ClearHeroStatGridOnly()
