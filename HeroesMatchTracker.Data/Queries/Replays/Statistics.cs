@@ -466,5 +466,139 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 return query.Count();
             }
         }
+
+        public int ReadPartyGameResult(Season season, GameMode gameMode, List<long> playerIds, List<string> characters, bool isWin)
+        {
+            if (playerIds.Count < 1)
+                return 0;
+
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+
+            using (var db = new ReplaysContext())
+            {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
+                    {
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
+                    }
+                }
+
+                IQueryable<ReplayMatch> query = null;
+
+                query = from r in db.Replays.AsNoTracking()
+                        join party in
+                            (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                             join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                             where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin && 
+                                playerIds.Contains(mp.PlayerId) && characters.Contains(mp.Character)
+                             group r by mp.ReplayId into grp
+                             where grp.Count() == playerIds.Count()
+                             select new { grp.Key }) on r.ReplayId equals party.Key
+                        select r;
+
+
+                //if (playerIds.Count == 1)
+                //{
+                //    long id0 = playerIds[0];
+
+                //    query = from r in db.Replays.AsNoTracking()
+                //            join party in
+                //                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                //                 join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                //                 where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                //                     (mp.Team == 0 || mp.Team == 1) &&
+                //                     ((mp.IsWinner == isWin && mp.PlayerId == id0))
+                //                 group r by mp.ReplayId into grp
+                //                 where grp.Count() == playerIds.Count()
+                //                 select new { grp.Key }) on r.ReplayId equals party.Key
+                //            select r;
+                //}
+                //else if (playerIds.Count == 2)
+                //{
+                //    long id0 = playerIds[0];
+                //    long id1 = playerIds[1];
+
+                //    query = from r in db.Replays.AsNoTracking()
+                //            join party in
+                //                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                //                join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                //                where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                //                    (mp.Team == 0 || mp.Team == 1) &&
+                //                    ((mp.IsWinner == isWin && mp.PlayerId == id0) || (mp.IsWinner == isWin && mp.PlayerId == id1))
+                //                group r by mp.ReplayId into grp
+                //                where grp.Count() == playerIds.Count()
+                //                select new { grp.Key }) on r.ReplayId equals party.Key
+                //            select r;
+                //}
+                //else if (playerIds.Count == 3)
+                //{
+                //    long id0 = playerIds[0];
+                //    long id1 = playerIds[1];
+                //    long id2 = playerIds[2];
+
+                //    query = from r in db.Replays.AsNoTracking()
+                //            join party in
+                //                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                //                 join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                //                 where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                //                     (mp.Team == 0 || mp.Team == 1) &&
+                //                     ((mp.IsWinner == isWin && mp.PlayerId == id0) || (mp.IsWinner == isWin && mp.PlayerId == id1) || (mp.IsWinner == isWin && mp.PlayerId == id2))
+                //                 group r by mp.ReplayId into grp
+                //                 where grp.Count() == playerIds.Count()
+                //                 select new { grp.Key }) on r.ReplayId equals party.Key
+                //            select r;
+                //}
+                //else if (playerIds.Count == 4)
+                //{
+                //    long id0 = playerIds[0];
+                //    long id1 = playerIds[1];
+                //    long id2 = playerIds[2];
+                //    long id3 = playerIds[3];
+
+                //    query = from r in db.Replays.AsNoTracking()
+                //            join party in
+                //                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                //                 join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                //                 where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                //                     (mp.Team == 0 || mp.Team == 1) &&
+                //                     ((mp.IsWinner == isWin && mp.PlayerId == id0) || (mp.IsWinner == isWin && mp.PlayerId == id1) || (mp.IsWinner == isWin && mp.PlayerId == id2) ||
+                //                     (mp.IsWinner == isWin && mp.PlayerId == id3))
+                //                 group r by mp.ReplayId into grp
+                //                 where grp.Count() == playerIds.Count()
+                //                 select new { grp.Key }) on r.ReplayId equals party.Key
+                //            select r;
+                //}
+                //else if (playerIds.Count == 5)
+                //{
+                //    long id0 = playerIds[0];
+                //    long id1 = playerIds[1];
+                //    long id2 = playerIds[2];
+                //    long id3 = playerIds[3];
+                //    long id4 = playerIds[3];
+
+                //    query = from r in db.Replays.AsNoTracking()
+                //            join party in
+                //                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                //                 join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                //                 where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 &&
+                //                     (mp.Team == 0 || mp.Team == 1) &&
+                //                     ((mp.IsWinner == isWin && mp.PlayerId == id0) || (mp.IsWinner == isWin && mp.PlayerId == id1) || (mp.IsWinner == isWin && mp.PlayerId == id2) ||
+                //                     (mp.IsWinner == isWin && mp.PlayerId == id3) || (mp.IsWinner == isWin && mp.PlayerId == id4))
+                //                 group r by mp.ReplayId into grp
+                //                 where grp.Count() == playerIds.Count()
+                //                 select new { grp.Key }) on r.ReplayId equals party.Key
+                //            select r;
+                //}
+
+                query = query.AsExpandable().Where(gameModeFilter);
+
+                return query.Count();
+            }
+        }
     }
 }
