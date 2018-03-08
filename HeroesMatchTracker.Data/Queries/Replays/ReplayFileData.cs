@@ -127,11 +127,21 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         private void PlayerRelatedData()
         {
             Player[] players = GetPlayers();
+            //Dictionary<long, int> partyValues = new Dictionary<long, int>();
+            //Dictionary<long, int> counts = players.whereGroupBy(x => x.PartyValue).ToDictionary(g => g.Key, g => g.Count());
 
             foreach (var player in players.Select((value, index) => new { value, index }))
             {
                 if (player.value == null)
                     continue;
+
+                //if (player.value.PartyValue != 0)
+                //{
+                //    if (partyValues.ContainsKey(player.value.PartyValue))
+                //        partyValues[player.value.PartyValue]++;
+                //    else
+                //        partyValues.Add(player.value.PartyValue, 1);
+                //}
 
                 ReplayAllHotsPlayer hotsPlayer = new ReplayAllHotsPlayer
                 {
@@ -173,6 +183,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         IsWinner = player.value.IsWinner,
                         MountAndMountTint = player.value.MountAndMountTint,
                         PartyValue = player.value.PartyValue,
+                        PartySize = 0,
                         PlayerNumber = -1,
                         SkinAndSkinTint = player.value.SkinAndSkinTint,
                         Team = player.value.Team,
@@ -201,6 +212,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         IsWinner = player.value.IsWinner,
                         MountAndMountTint = player.value.MountAndMountTint,
                         PartyValue = player.value.PartyValue,
+                        PartySize = 0,
                         PlayerNumber = player.index,
                         SkinAndSkinTint = player.value.SkinAndSkinTint,
                         Team = player.value.Team,
@@ -214,6 +226,9 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     AddMatchAwards(player.value.ScoreResult.MatchAwards, playerId);
                 }
             } // end foreach loop for players
+
+            // set the players' party size count
+            ReplaysDb.MatchPlayer.SetPlayerPartyCountsForMatch(ReplaysContext, ReplayId);
         }
 
         private void AddScoreResults(ScoreResult sr, long playerId)

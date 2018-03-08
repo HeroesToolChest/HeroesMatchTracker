@@ -96,6 +96,38 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             }
         }
 
+        internal void SetPlayerPartyCountsForMatch(ReplaysContext db, long replayId)
+        {
+            var query = (from mp in db.ReplayMatchPlayers
+                        where mp.ReplayId == replayId && mp.PartyValue != 0
+                        group mp by new
+                        {
+                            mp.ReplayId,
+                            mp.PartyValue,
+                            
+                        }
+                        into grp
+                        where grp.Count() > 0
+                        let partySize = grp.Count()
+                        select new
+                        {
+                            grp.Key.ReplayId,
+                            grp.Key.PartyValue,
+                            PartySize = partySize,
+                        }).Distinct();
+
+            foreach (var item in query)
+            {
+                var matchPlayers = db.ReplayMatchPlayers.Where(x => x.ReplayId == item.ReplayId && x.PartyValue == item.PartyValue);
+                foreach (var player in matchPlayers)
+                {
+                    player.PartySize = item.PartySize;
+                }
+            }
+
+            db.SaveChanges();
+        }
+
         internal override long CreateRecord(ReplaysContext db, ReplayMatchPlayer model)
         {
             db.ReplayMatchPlayers.Add(model);
