@@ -25,13 +25,13 @@
     <Heroic>
       <AnaNanoBoost name="Nana Boost" desc="AnaNanoBoost">
         <Icon>storm_ui_icon_ana_nano_bost.png</Icon>
-        <Mana>40</Mana>
-        <Cooldown>50</Cooldown>
+        <Mana>60</Mana>
+        <Cooldown>60</Cooldown>
       </AnaNanoBoost>
       <AnaEyeOfHorusActivate name="Eye of Horus" desc="AnaEyeOfHorusActivate">
         <Icon>storm_ui_icon_ana_overwatch.png</Icon>
-        <Mana>75</Mana>
-        <Cooldown>60</Cooldown>
+        <Mana>45</Mana>
+        <Cooldown>45</Cooldown>
       </AnaEyeOfHorusActivate>
     </Heroic>
     <Trait>
@@ -61,6 +61,8 @@
       </AnaAimDownSights>
       <AnaBioticGrenadeAirStrike name="Air Strike" desc="AnaBioticGrenadeAirStrike">
         <Icon>storm_ui_icon_ana_biotic_grenade.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>12</Cooldown>
       </AnaBioticGrenadeAirStrike>
     </Level4>
     <Level7>
@@ -72,7 +74,7 @@
       </AnaMindNumbingAgent>
       <AnaDebilitatingDart name="Debilitating Dart" desc="AnaDebilitatingDart">
         <Icon>storm_ui_icon_ana_debilitatingdart.png</Icon>
-        <Cooldown>45</Cooldown>
+        <Cooldown>20</Cooldown>
       </AnaDebilitatingDart>
     </Level7>
     <Level10>

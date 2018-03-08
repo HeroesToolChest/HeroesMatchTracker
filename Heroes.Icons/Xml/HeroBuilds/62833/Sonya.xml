@@ -39,94 +39,79 @@
   </Abilities>
   <Talents>
     <Level1>
-      <BarbarianMasteryWarPaint name="War Paint" desc="BarbarianFuryWarPaintTalent">
+      <BarbarianFuriousBlow name="Furious Blow" desc="BarbarianSeismicSlamFuriousBlowTalent">
+        <Icon>storm_ui_icon_sonya_seismicslam.png</Icon>
+      </BarbarianFuriousBlow>
+      <BarbarianWarPaint name="War Paint" desc="BarbarianFuryWarPaintTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
-      </BarbarianMasteryWarPaint>
-      <GenericTalentBlock name="Block" desc="GenericBlockTalent">
-        <Icon>storm_ui_icon_talent_block.png</Icon>
-      </GenericTalentBlock>
-      <BarbarianCombatStyleShotofFury name="Shot of Fury" desc="BarbarianFuryShotOfFuryTalent">
-        <Icon>storm_ui_icon_sonya_fury.png</Icon>
-      </BarbarianCombatStyleShotofFury>
+      </BarbarianWarPaint>
+      <BarbarianToughAsNails name="Tough As Nails" desc="BarbarianToughAsNails">
+        <Icon generic="true">storm_ui_icon_talent_block.png</Icon>
+      </BarbarianToughAsNails>
     </Level1>
     <Level4>
-      <GenericTalentFocusedAttack name="Focused Attack" desc="GenericFocusedAttackTalent">
-        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
-      </GenericTalentFocusedAttack>
-      <BarbarianMasteryShatteredGroundSeismicSlam name="Shattered Ground" desc="BarbarianSeismicSlamShatteredGroundTalent">
+      <BarbarianShatteredGround name="Shattered Ground" desc="BarbarianSeismicSlamShatteredGroundTalent">
         <Icon>storm_ui_icon_sonya_seismicslam.png</Icon>
-      </BarbarianMasteryShatteredGroundSeismicSlam>
-      <BarbarianMasteryHurricaneWhirlwind name="Hurricane" desc="BarbarianHurricaneWhirlwindTalent">
+      </BarbarianShatteredGround>
+      <BarbarianHurricane name="Hurricane" desc="BarbarianHurricaneWhirlwindTalent">
         <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
-      </BarbarianMasteryHurricaneWhirlwind>
-      <GenericTalentMercenaryLord name="Mercenary Lord" desc="GenericMercenaryLordTalent">
-        <Icon>storm_ui_icon_Talent_MercenaryLord.png</Icon>
-      </GenericTalentMercenaryLord>
+      </BarbarianHurricane>
+      <BarbarianBattleRage name="Battle Rage" desc="BarbarianBattleRage">
+        <Icon generic="true">storm_ui_icon_talent_mercenarylord.png</Icon>
+        <Cooldown charge="true">30</Cooldown>
+      </BarbarianBattleRage>
     </Level4>
     <Level7>
-      <BarbarianMasteryPoisonedSpearAncientSpear name="Poisoned Spear" desc="BarbarianAncientSpearPoisonedSpearTalent">
+      <BarbarianPoisonedSpear name="Poisoned Spear" desc="BarbarianAncientSpearPoisonedSpearTalent">
         <Icon>storm_ui_icon_sonya_ancientspear.png</Icon>
-      </BarbarianMasteryPoisonedSpearAncientSpear>
-      <BarbarianMasteryCompositeSpearAncientSpear name="Composite Spear" desc="BarbarianAncientSpearCompositeSpearTalent">
-        <Icon>storm_ui_icon_sonya_ancientspear_var1.png</Icon>
-      </BarbarianMasteryCompositeSpearAncientSpear>
-      <GenericTalentFollowThrough name="Follow Through" desc="GenericFollowThroughTalent">
-        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
-      </GenericTalentFollowThrough>
-      <BarbarianCombatStyleFerociousHealing name="Ferocious Healing" desc="BarbarianFuryFerociousHealing">
-        <Icon>storm_ui_icon_sonya_ferocioushealing.png</Icon>
-        <Mana>20</Mana>
-        <Cooldown>10</Cooldown>
-      </BarbarianCombatStyleFerociousHealing>
+      </BarbarianPoisonedSpear>
+      <BarbarianLifeFunnel name="Life Funnel" desc="BarbarianWhirlwindLifeFunnelTalent">
+        <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
+      </BarbarianLifeFunnel>
+      <BarbarianShotOfFury name="Shot Of Fury" desc="BarbarianFuryShotOfFuryTalent">
+        <Icon>storm_ui_icon_sonya_fury.png</Icon>
+      </BarbarianShotOfFury>
     </Level7>
     <Level10>
       <BarbarianHeroicAbilityLeap ability="BarbarianLeap" />
       <BarbarianHeroicAbilityWrathoftheBerserker ability="BarbarianWrathoftheBerserker" />
     </Level10>
     <Level13>
-      <BarbarianMasteryLifeFunnelWhirlwind name="Life Funnel" desc="BarbarianWhirlwindLifeFunnelTalent">
-        <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
-      </BarbarianMasteryLifeFunnelWhirlwind>
-      <BarbarianMasteryAftershock name="Aftershock" desc="BarbarianSeismicSlamAftershockTalent">
-        <Icon>storm_ui_icon_sonya_seismicslam.png</Icon>
-      </BarbarianMasteryAftershock>
-      <BarbarianMasteryMysticalSpearAncientSpear name="Mystical Spear" desc="BarbarianAncientSpearMysticalSpearTalent">
+      <BarbarianMysticalSpear name="Mystical Spear" desc="BarbarianAncientSpearMysticalSpearTalent">
         <Icon>storm_ui_icon_sonya_ancientspear.png</Icon>
-      </BarbarianMasteryMysticalSpearAncientSpear>
-      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
-        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
-      </GenericTalentSpellShield>
+      </BarbarianMysticalSpear>
+      <BarbarianRuthless name="Ruthless" desc="BarbarianRuthless">
+        <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
+      </BarbarianRuthless>
+      <BarbarianNoEscape name="No Escape" desc="BarbarianFuryNoEscapeTalent">
+        <Icon>storm_ui_icon_sonya_fury.png</Icon>
+      </BarbarianNoEscape>
     </Level13>
     <Level16>
-      <BarbarianMasteryFuriousBlowSeismicSlam name="Furious Blow" desc="BarbarianSeismicSlamFuriousBlowTalent">
+      <BarbarianGiantSlammer name="Giant Slammer" desc="BarbarianGiantSlammer">
         <Icon>storm_ui_icon_sonya_seismicslam.png</Icon>
-      </BarbarianMasteryFuriousBlowSeismicSlam>
-      <BarbarianCombatStyleNoEscape name="No Escape" desc="BarbarianFuryNoEscapeTalent">
-        <Icon>storm_ui_icon_sonya_fury.png</Icon>
-      </BarbarianCombatStyleNoEscape>
-      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">
-        <Icon>storm_ui_icon_talent_imposingpresence.png</Icon>
-        <Cooldown>20</Cooldown>
-      </GenericTalentImposingPresence>
-      <SonyaTalentNervesOfSteel name="Nerves of Steel" desc="SonyaNervesOfSteel">
+      </BarbarianGiantSlammer>
+      <BarbarianRampage name="Rampage" desc="BarbarianRampage">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </BarbarianRampage>
+      <BarbarianNervesOfSteel name="Nerves of Steel" desc="BarbarianNervesOfSteel">
         <Icon>storm_ui_icon_sonya_nervesofsteel.png</Icon>
-        <Cooldown>60</Cooldown>
-      </SonyaTalentNervesOfSteel>
+      </BarbarianNervesOfSteel>
     </Level16>
     <Level20>
-      <BarbarianMasteryArreatCraterLeap name="Arreat Crater" desc="BarbarianLeapArreatCraterTalent">
+      <BarbarianArreatCrater name="Arreat Crater" desc="BarbarianLeapArreatCraterTalent">
         <Icon>storm_ui_icon_sonya_leap.png</Icon>
-      </BarbarianMasteryArreatCraterLeap>
-      <BarbarianMasteryAngerManagementWrathoftheBerserker name="Anger Management" desc="BarbarianWrathoftheBerserkerAngerManagementTalent">
+      </BarbarianArreatCrater>
+      <BarbarianStridingGiant name="Striding Giant" desc="BarbarianStridingGiant">
         <Icon>storm_ui_icon_sonya_wrathoftheberserker.png</Icon>
-      </BarbarianMasteryAngerManagementWrathoftheBerserker>
-      <GenericTalentNexusBlades name="Nexus Blades" desc="NexusBladesTalent">
-        <Icon>storm_ui_icon_talent_autoattack_slow.png</Icon>
-      </GenericTalentNexusBlades>
-      <SonyaTalentIgnorePain name="Ignore Pain" desc="SonyaIgnorePain">
+      </BarbarianStridingGiant>
+      <BarbarianCompositeSpear name="Composite Spear" desc="BarbarianAncientSpearCompositeSpearTalent">
+        <Icon>storm_ui_icon_sonya_ancientspear.png</Icon>
+      </BarbarianCompositeSpear>
+      <BarbarianIgnorePain name="Ignore Pain" desc="BarbarianIgnorePain">
         <Icon>storm_ui_icon_sonya_ignorepain.png</Icon>
         <Cooldown>60</Cooldown>
-      </SonyaTalentIgnorePain>
+      </BarbarianIgnorePain>
     </Level20>
   </Talents>
 </Sonya>
