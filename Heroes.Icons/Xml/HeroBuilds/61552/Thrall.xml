@@ -95,11 +95,9 @@
       </ThrallMasteryTempestFury>
       <ThrallThunderstorm name="Thunderstorm" desc="ThrallThunderstorm">
         <Icon>storm_ui_icon_thrall_chainlightning.png</Icon>
-        <Cooldown>15</Cooldown>
       </ThrallThunderstorm>
       <ThrallAlphaWolf name="Alpha Wolf" desc="ThrallAlphaWolf">
         <Icon>storm_ui_icon_thrall_feralspirit.png</Icon>
-        <Cooldown>45</Cooldown>
       </ThrallAlphaWolf>
     </Level16>
     <Level20>
