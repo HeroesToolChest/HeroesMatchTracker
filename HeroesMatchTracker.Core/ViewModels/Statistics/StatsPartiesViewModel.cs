@@ -52,13 +52,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             SelectedCharacter = Enumerable.Repeat(InitialHeroListOption, SelectedCharacter.Length).ToArray();
 
-            ClearPartyStats();
+            ClearOptions();
         }
 
         public IMainWindowDialogsService MainWindowDialog => ServiceLocator.Current.GetInstance<IMainWindowDialogsService>();
 
         public RelayCommand QueryPartyStatsCommand => new RelayCommand(async () => await QueryPartyStatsAsyncCommand());
-        public RelayCommand ClearPartyStatsCommand => new RelayCommand(ClearPartyStats);
+        public RelayCommand ClearPartyStatsCommand => new RelayCommand(ClearOptions);
 
         public List<string> SeasonList { get; private set; } = new List<string>();
         public List<string> HeroesList { get; private set; } = new List<string>();
@@ -269,13 +269,23 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 region = Region.XX;
 
             List<long> playerIds = new List<long>();
+            List<string> characters = new List<string>();
+
             for (int i = 0; i < PlayerBattleTag.Length; i++)
             {
                 if (IsPlayerChecked[i])
+                {
                     playerIds.Add(Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(PlayerBattleTag[i], (int)region));
+                    characters.Add(SelectedCharacter[i]);
+                }
             }
 
-            Database.ReplaysDb().Statistics.ReadPartyGameResult(selectedSeason, selectedGameModes, playerIds, SelectedCharacter.ToList(), true);
+            PartyWins = Database.ReplaysDb().Statistics.ReadPartyGameResult(selectedSeason, selectedGameModes, playerIds, characters, IsPlayersInParty, true);
+            PartyLosses = Database.ReplaysDb().Statistics.ReadPartyGameResult(selectedSeason, selectedGameModes, playerIds, characters, IsPlayersInParty, false);
+            PartyTotal = PartyWins + PartyLosses;
+            PartyWinrate = Utilities.CalculateWinPercentage(PartyWins, PartyTotal) / 100;
+
+            await Task.CompletedTask;
         }
 
         private GameMode SetSelectedGameModes()
@@ -315,6 +325,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsPlayerChecked = Enumerable.Repeat(false, IsPlayerChecked.Length).ToArray();
             PlayerBattleTag = Enumerable.Repeat(string.Empty, PlayerBattleTag.Length).ToArray();
             SelectedCharacter = Enumerable.Repeat(InitialHeroListOption, SelectedCharacter.Length).ToArray();
+            ClearPartyStats();
         }
 
         private void ClearPartyStats()
