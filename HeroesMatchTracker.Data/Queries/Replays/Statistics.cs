@@ -7,6 +7,7 @@ using LinqKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Heroes.Helpers.HeroesHelpers.Regions;
 
 namespace HeroesMatchTracker.Data.Queries.Replays
 {
@@ -460,6 +461,111 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                   mp.PartySize == partySize &&
                                   mp.IsWinner == isWin
                             select r;
+
+                query = query.AsExpandable().Where(gameModeFilter);
+
+                return query.Count();
+            }
+        }
+
+        /// <summary>
+        /// Gets the total count of games won or lose for grouped players
+        /// </summary>
+        /// <param name="season">Selected season</param>
+        /// <param name="gameMode">Selected gamemodes</param>
+        /// <param name="playerIds">List of players ids</param>
+        /// <param name="characters">List of heroes</param>
+        /// <param name="allParty">Are all players in a party</param>
+        /// <param name="isWin">Is a win or lose</param>
+        /// <returns></returns>
+        public int ReadPartyGameResult(Season season, GameMode gameMode, List<long> playerIds, List<string> characters, bool allParty, bool isWin)
+        {
+            if (playerIds.Count < 1)
+                return 0;
+
+            int partySize = 0;
+            if (allParty)
+                partySize = playerIds.Count;
+
+            var replayBuild = HeroesHelpers.Builds.GetReplayBuildsFromSeason(season);
+
+            using (var db = new ReplaysContext())
+            {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
+                var gameModeFilter = PredicateBuilder.New<ReplayMatch>();
+                foreach (Enum value in Enum.GetValues(gameMode.GetType()))
+                {
+                    if ((GameMode)value != GameMode.Unknown && gameMode.HasFlag(value))
+                    {
+                        Enum temp = value;
+                        gameModeFilter = gameModeFilter.Or(x => x.GameMode == (GameMode)temp);
+                    }
+                }
+
+                var query = from r in db.Replays.AsNoTracking()
+                            join party in
+                                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                 join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                 where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1)
+                                 group r by mp.ReplayId into grp
+                                 select new { grp.Key }) on r.ReplayId equals party.Key
+                            select r;
+
+                for (int i = 0; i < playerIds.Count; i++)
+                {
+                    long player = playerIds[i];
+                    string character = characters[i];
+
+                    if (playerIds[i] > 0 && characters[i] == "Any")
+                    {
+                        query = from r in query
+                                join party in
+                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
+                                        mp.PlayerId == player && mp.PartySize == partySize
+                                     group r by mp.ReplayId into grp
+                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                select r;
+                    }
+                    else if (playerIds[i] > 0)
+                    {
+                        query = from r in query
+                                join party in
+                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
+                                        mp.PlayerId == player && mp.Character == character && mp.PartySize == partySize
+                                     group r by mp.ReplayId into grp
+                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                select r;
+                    }
+                    else if (playerIds[i] < 1 && characters[i] == "Any")
+                    {
+                        query = from r in query
+                                join party in
+                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin && 
+                                        mp.PartySize == partySize
+                                     group r by mp.ReplayId into grp
+                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                select r;
+                    }
+                    else
+                    {
+                        query = from r in query
+                                join party in
+                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
+                                        mp.Character == character && mp.PartySize == partySize
+                                     group r by mp.ReplayId into grp
+                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                select r;
+                    }
+                }
 
                 query = query.AsExpandable().Where(gameModeFilter);
 

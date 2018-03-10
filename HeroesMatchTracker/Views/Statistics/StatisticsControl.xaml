@@ -21,6 +21,9 @@
         <TabItem Header="All Heroes" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:StatsAllHeroesControl />
         </TabItem>
+        <TabItem Header="Parties" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:PartiesControl />
+        </TabItem>
 
     </TabControl>   
 </UserControl>

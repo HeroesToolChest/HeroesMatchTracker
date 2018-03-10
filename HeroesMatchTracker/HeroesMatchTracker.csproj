@@ -174,6 +174,9 @@
     <Compile Include="Views\RawData\RawHotsApiUploadControl.xaml.cs">
       <DependentUpon>RawHotsApiUploadControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Statistics\PartiesControl.xaml.cs">
+      <DependentUpon>PartiesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ToasterUpdateWindow.xaml.cs">
       <DependentUpon>ToasterUpdateWindow.xaml</DependentUpon>
     </Compile>
@@ -557,6 +560,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Statistics\OverviewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Statistics\PartiesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -105,6 +105,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<StatsOverviewViewModel>();
             SimpleIoc.Default.Register<StatsHeroesViewModel>();
             SimpleIoc.Default.Register<StatsAllHeroesViewModel>();
+            SimpleIoc.Default.Register<StatsPartiesViewModel>();
         }
 
         // start ups
@@ -156,6 +157,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static StatsOverviewViewModel StatsOverviewViewModel => ServiceLocator.Current.GetInstance<StatsOverviewViewModel>();
         public static StatsHeroesViewModel StatsHeroesViewModel => ServiceLocator.Current.GetInstance<StatsHeroesViewModel>();
         public static StatsAllHeroesViewModel StatsAllHeroesViewModel => ServiceLocator.Current.GetInstance<StatsAllHeroesViewModel>();
+        public static StatsPartiesViewModel StatsPartiesViewModel => ServiceLocator.Current.GetInstance<StatsPartiesViewModel>();
 
         public static void Cleanup()
         {

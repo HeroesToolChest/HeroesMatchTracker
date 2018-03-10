@@ -220,6 +220,7 @@
     <Compile Include="ViewModels\Statistics\StatsHeroesDataViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsHeroesViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\Statistics\StatsPartiesViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\AboutControlViewModel.cs" />
     <Compile Include="ViewModels\TitleBar\SettingsControlViewModel.cs" />
     <Compile Include="ViewModels\StartupWindowViewModel.cs" />

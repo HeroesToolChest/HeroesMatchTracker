@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="HeroesMatchTracker.Views.Statistics.PartiesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:HeroesMatchTracker.Views.Statistics"
+             mc:Ignorable="d" 
+             DataContext="{Binding StatsPartiesViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <Thickness x:Key="GameModeMargin">0 0 8 0</Thickness>
+        <Style x:Key="Player" TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Margin" Value="0 0 0 8" />
+            <Style.Resources>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource MetroTextBlock}">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0 0 8 0" />
+                </Style>
+                <Style TargetType="ComboBox" BasedOn="{StaticResource MetroComboBox}">
+                    <Setter Property="Width" Value="170" />
+                    <Setter Property="Margin" Value="0 0 8 0" />
+                </Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource MetroTextBox}">
+                    <Setter Property="Width" Value="170" />
+                    <Setter Property="Margin" Value="0 0 8 0" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="Results" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0 0 0 8" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Horizontal" Margin="0 8">
+                <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" Width="140" Margin="0 0 8 0" />
+                <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="{StaticResource GameModeMargin}" />
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Players" FontSize="16" />
+                        <ComboBox ItemsSource="{Binding RegionsList}" SelectedValue="{Binding SelectedRegion}" Margin="16 0 0 0" Width="64" VerticalAlignment="Center" />
+                        <CheckBox Content="All in a Party" IsChecked="{Binding IsPlayersInParty}" Margin="8 0 0 0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
+                        <CheckBox Name="Player0" IsChecked="{Binding IsPlayerChecked[0]}" />
+                        <TextBox Text="{Binding PlayerBattleTag[0]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player0}" />
+                        <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[0]}" IsEnabled="{Binding IsChecked, ElementName=Player0}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
+                        <CheckBox Name="Player1" IsChecked="{Binding IsPlayerChecked[1]}" />
+                        <TextBox Text="{Binding PlayerBattleTag[1]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player1}" />
+                        <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[1]}" IsEnabled="{Binding IsChecked, ElementName=Player1}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
+                        <CheckBox Name="Player2" IsChecked="{Binding IsPlayerChecked[2]}" />
+                        <TextBox Text="{Binding PlayerBattleTag[2]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player2}" />
+                        <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[2]}" IsEnabled="{Binding IsChecked, ElementName=Player2}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
+                        <CheckBox Name="Player3" IsChecked="{Binding IsPlayerChecked[3]}" />
+                        <TextBox Text="{Binding PlayerBattleTag[3]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player3}" />
+                        <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[3]}" IsEnabled="{Binding IsChecked, ElementName=Player3}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
+                        <CheckBox Name="Player4" IsChecked="{Binding IsPlayerChecked[4]}" />
+                        <TextBox Text="{Binding PlayerBattleTag[4]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player4}" />
+                        <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[4]}" IsEnabled="{Binding IsChecked, ElementName=Player4}" />
+                    </StackPanel>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Query Stats" Width="120" Margin="16 0" Command="{Binding QueryPartyStatsCommand}" />
+                            <Button Content="Clear" Width="120" Margin="16 0" Command="{Binding ClearPartyStatsCommand}" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="0 8 0 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Wins: " Style="{StaticResource Results}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Losses: " Style="{StaticResource Results}" HorizontalAlignment="Right"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Total: " Style="{StaticResource Results}" HorizontalAlignment="Right" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Winrate: " Style="{StaticResource Results}" HorizontalAlignment="Right" />
+
+                            <TextBlock Grid.Column="1" Text="{Binding PartyWins}" HorizontalAlignment="Left" Style="{StaticResource Results}" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding PartyLosses}" HorizontalAlignment="Left" Style="{StaticResource Results}" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding PartyTotal}" HorizontalAlignment="Left" Style="{StaticResource Results}" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding PartyWinrate, StringFormat={}{0:P1}}" HorizontalAlignment="Left" Style="{StaticResource Results}" />
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
