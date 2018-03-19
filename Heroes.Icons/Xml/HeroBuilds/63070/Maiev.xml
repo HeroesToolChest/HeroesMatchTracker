@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Maiev available="61952" attributeid="Maie" unit="HeroMaiev" franchise="Warcraft" type="Melee" difficulty="Hard">
+  <Portrait>storm_ui_ingame_heroselect_btn_maiev.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_maiev.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_maiev.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <MaievFanOfKnives name="Fan of Knives" desc="MaievFanOfKnives">
+        <Icon>storm_ui_icon_maiev_knives.png</Icon>
+        <Mana>30</Mana>
+        <Cooldown>4</Cooldown>
+      </MaievFanOfKnives>
+      <MaievUmbralBind name="Umbral Bind" desc="MaievUmbralBind">
+        <Icon>storm_ui_icon_maiev_umbra_1.png</Icon>
+        <Mana>55</Mana>
+        <Cooldown>12</Cooldown>
+      </MaievUmbralBind>
+      <MaievSpiritOfVengeance name="Spirit of Vengeance" desc="MaievSpiritOfVengeance">
+        <Icon>storm_ui_icon_maiev_rush_1.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </MaievSpiritOfVengeance>
+    </Basic>
+    <Heroic>
+      <MaievContainmentDisc name="Containment Disc" desc="MaievContainmentDisc">
+        <Icon>storm_ui_icon_maiev_heroic_1_a.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>65</Cooldown>
+      </MaievContainmentDisc>
+      <MaievWardensCage name="Warden's Cage" desc="MaievWardensCage">
+        <Icon>storm_ui_icon_maiev_heroic_2.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>80</Cooldown>
+      </MaievWardensCage>
+    </Heroic>
+    <Trait>
+      <MaievVaultOfTheWardens name="Vault of the Wardens" desc="MaievVaultOfTheWardens">
+        <Icon>storm_ui_icon_maiev_trait.png</Icon>
+        <Cooldown>9</Cooldown>
+      </MaievVaultOfTheWardens>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <MaievUmbralBindBondsOfJustice name="Bonds of Justice" desc="MaievUmbralBindBondsOfJustice">
+        <Icon>storm_ui_icon_maiev_umbra_1.png</Icon>
+      </MaievUmbralBindBondsOfJustice>
+      <MaievUmbralBindPursuitOfVengeance name="Pursuit of Vengeance" desc="MaievUmbralBindPursuitOfVengeance">
+        <Icon>storm_ui_icon_maiev_pursuit_vengeance.png</Icon>
+      </MaievUmbralBindPursuitOfVengeance>
+      <MaievFanOfKnivesNaishasMemento name="Naisha's Memento" desc="MaievFanOfKnivesNaishasMemento">
+        <Icon>storm_ui_icon_maiev_memento.png</Icon>
+      </MaievFanOfKnivesNaishasMemento>
+    </Level1>
+    <Level4>
+      <MaievFanOfKnivesPinDown name="Pin Down" desc="MaievFanOfKnivesPinDown">
+        <Icon>storm_ui_icon_maiev_knives.png</Icon>
+      </MaievFanOfKnivesPinDown>
+      <MaievFanOfKnivesBladeDance name="Blade Dance" desc="MaievFanOfKnivesBladeDance">
+        <Icon>storm_ui_icon_maiev_knives_2.png</Icon>
+      </MaievFanOfKnivesBladeDance>
+      <MaievSpiritOfVengeanceSuddenVengeance name="Sudden Vengeance" desc="MaievSpiritOfVengeanceSuddenVengeance">
+        <Icon>storm_ui_icon_maiev_rush_2.png</Icon>
+      </MaievSpiritOfVengeanceSuddenVengeance>
+    </Level4>
+    <Level7>
+      <MaievFanOfKnivesElunesWrath name="Elune's Wrath" desc="MaievFanOfKnivesElunesWrath">
+        <Icon>storm_ui_icon_maiev_knives.png</Icon>
+      </MaievFanOfKnivesElunesWrath>
+      <MaievUmbralBindBondsOfCorruption name="Bonds of Corruption" desc="MaievUmbralBindBondsOfCorruption">
+        <Icon>storm_ui_icon_maiev_orb_corruption.png</Icon>
+      </MaievUmbralBindBondsOfCorruption>
+      <MaievSpiritOfVengeanceRuthlessSpirit name="Ruthless Spirit" desc="MaievSpiritOfVengeanceRuthlessSpirit">
+        <Icon>storm_ui_icon_maiev_rush_1.png</Icon>
+      </MaievSpiritOfVengeanceRuthlessSpirit>
+    </Level7>
+    <Level10>
+      <MaievContainmentDisc ability="MaievContainmentDisc" />
+      <MaievWardensCage ability="MaievWardensCage" />
+    </Level10>
+    <Level13>
+      <MaievFanOfKnivesBladedArmor name="Bladed Armor" desc="MaievFanOfKnivesBladedArmor">
+        <Icon>storm_ui_icon_maiev_knives.png</Icon>
+      </MaievFanOfKnivesBladedArmor>
+      <MaievUmbralBindChainGang name="Chain Gang" desc="MaievUmbralBindChainGang">
+        <Icon>storm_ui_icon_maiev_umbra_1.png</Icon>
+      </MaievUmbralBindChainGang>
+      <MaievSpiritOfVengeanceShadowArmor name="Shadow Armor" desc="MaievSpiritOfVengeanceShadowArmor">
+        <Icon>storm_ui_icon_maiev_rush_2.png</Icon>
+      </MaievSpiritOfVengeanceShadowArmor>
+    </Level13>
+    <Level16>
+      <MaievUmbralBindCruelChain name="Cruel Chain" desc="MaievUmbralBindCruelChain">
+        <Icon>storm_ui_icon_maiev_umbra_1.png</Icon>
+      </MaievUmbralBindCruelChain>
+      <MaievSpiritOfVengeanceVengefulKnives name="Vengeful Knives" desc="MaievSpiritOfVengeanceVengefulKnives">
+        <Icon>storm_ui_icon_maiev_vengeful_knives.png</Icon>
+      </MaievSpiritOfVengeanceVengefulKnives>
+      <MaievArmoredAssault name="Armored Assault" desc="MaievArmoredAssault">
+        <Icon>storm_ui_icon_maiev_heavy_strikes.png</Icon>
+      </MaievArmoredAssault>
+    </Level16>
+    <Level20>
+      <MaievSpiritOfVengeanceShadowOrbVengeance name="Shadow Orb: Vengeance" desc="MaievSpiritOfVengeanceShadowOrbVengeance">
+        <Icon>storm_ui_icon_maiev_shadoworb_vengeance.png</Icon>
+      </MaievSpiritOfVengeanceShadowOrbVengeance>
+      <MaievShadowOrbHuntress name="Shadow Orb: Huntress" desc="MaievShadowOrbHuntress">
+        <Icon>storm_ui_icon_maiev_shadoworb_relentless.png</Icon>
+      </MaievShadowOrbHuntress>
+      <MaievShadowOrbShadowStrike name="Shadow Orb: Shadow Strike" desc="MaievShadowOrbShadowStrike">
+        <Icon>storm_ui_icon_maiev_shadoworb_strike.png</Icon>
+      </MaievShadowOrbShadowStrike>
+    </Level20>
+  </Talents>
+</Maiev>
