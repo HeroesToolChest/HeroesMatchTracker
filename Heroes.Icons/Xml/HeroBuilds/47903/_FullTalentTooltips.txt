@@ -774,7 +774,7 @@ KaelthasMasterOfFlamesLivingBomb=Living Bomb's spread from explosions can now al
 KaelthasMasterofFlamesTalent=Increases your Ability Power by <c val="#TooltipNumbers">20%</c> . For each <c val="#TooltipNumbers">20%</c> of Mana you are missing, this bonus is reduced by <c val="#TooltipNumbers">4%</c>.
 KaelthasPhoenix=Launch a Phoenix to an area, dealing <c val="#TooltipNumbers">78</c> damage to enemies along the way. The Phoenix persists for <c val="#TooltipNumbers">7</c> seconds, attacking enemies for <c val="#TooltipNumbers">78</c> damage and splashing for <c val="#TooltipNumbers">50%</c>.
 KaelthasPhoenixRebirthTalent=Increases Phoenix duration by <c val="#TooltipNumbers">100%</c>. You may order the Phoenix to move to a different location once while the Phoenix is alive. 
-KaelthasPyroblast=After <c val="#TooltipNumbers">2</c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers">810</c> damage to an enemy Hero and <c val="#TooltipNumbers">405</c> damage to enemies nearby.
+KaelthasPyroblast=After <c val="#TooltipNumbers">1.5</c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers">810</c> damage to an enemy Hero and <c val="#TooltipNumbers">405</c> damage to enemies nearby.
 KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast's explosion radius by <c val="#TooltipNumbers">50%</c> and reduces its cooldown by <c val="#TooltipNumbers">25</c> seconds per enemy Hero hit.
 KaelthasSunfireEnchantmentTalent=Activating Verdant Spheres causes your next Basic Attack to instead shoot a spell dealing <c val="#TooltipNumbers">165</c> damage.
 KaelthasVerdantSpheres=Activate to make your next Basic Ability more powerful.

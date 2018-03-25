@@ -104,7 +104,7 @@ ArtanisSpearofAdunSuppressionPulseOrbitalBombardmentTalent=Suppression Pulse gai
 ArtanisTwinBlades=Artanis's next Basic Attack immediately causes him to charge a short distance and strike the enemy <c val="#TooltipNumbers">2</c> times.
 ArtanisTwinBladesAmateurOpponentTalent=Twin Blades attacks deal <c val="#TooltipNumbers">150%</c> bonus damage to non-Heroes.
 ArtanisTwinBladesPsionicWoundTalent=Twin Blades final strike lowers a Hero's Armor by <c val="#TooltipNumbers">25</c> for <c val="#TooltipNumbers">2</c> seconds, increasing all damage taken by <c val="#TooltipNumbers">25%</c>.
-ArtanisTwinBladesReactiveParryTalent=Using Twin Blades grants <c val="#TooltipNumbers">50</c> Physical Armor against the next enemy Hero Basic Attack, reducing its damage by <c val="#TooltipNumbers">2%</c>.<n/><n/>Stores up to <c val="#TooltipNumbers">2</c> charges.
+ArtanisTwinBladesReactiveParryTalent=Using Twin Blades grants <c val="#TooltipNumbers">50</c> Physical Armor against the next enemy Hero Basic Attack, reducing its damage by <c val="#TooltipNumbers">50%</c>.<n/><n/>Stores up to <c val="#TooltipNumbers">2</c> charges.
 ArtanisTwinBladesTitanKillerTalent=Twin Blades attacks against Heroes deal an additional <c val="#TooltipNumbers">2%</c> of the target's maximum Health in damage.
 ArtanisTwinBladesTripleStrikeTalent=Increases Twin Blades's number of Basic Attacks to <c val="#TooltipNumbers">3</c>, but increase its cooldown by <c val="#TooltipNumbers">1</c> second.
 ArtanisTwinBladesZealotChargeTalent=Increase Twin Blades' charge distance by <c val="#TooltipNumbers">100%</c>.
@@ -167,7 +167,7 @@ AzmodanAllShallBurn=Channel a death beam on an enemy, dealing <c val="#TooltipNu
 AzmodanAllShallBurnGluttonyTalent=All Shall Burn heals Azmodan for <c val="#TooltipNumbers">25%</c> of the damage dealt.
 AzmodanAllShallBurnMarchOfSinTalent=Increases Azmodan's Movement Speed while channeling All Shall Burn to <c val="#TooltipNumbers">80%</c> of normal speed.
 AzmodanAllShallBurnMasterOfDestructionTalent=Reduces the Mana cost from <c val="#TooltipNumbers">16</c> to <c val="#TooltipNumbers">10</c> per second. Every <c val="#TooltipNumbers">1.5 </c>seconds spent channeling increases the range by <c val="#TooltipNumbers">10%</c>, to a maximum of <c val="#TooltipNumbers">30%</c>.
-AzmodanBlackPool=Create a pool that empowers Azmodan, his Demons, and allied Minions, increasing their Basic Attack and Ability damage by <c val="#TooltipNumbers">75%</c>. Pools last <c val="#TooltipNumbers">5</c> seconds.<n/><n/>Stores up to <c val="#TooltipNumbers">2</c> charges
+AzmodanBlackPool=Create a pool that empowers Azmodan, his Demons, and allied Minions, increasing their Basic Attack and Ability damage by <c val="#TooltipNumbers">75%</c>. Pools last <c val="#TooltipNumbers">5</c> seconds.<n/><n/>Stores up to <c val="#TooltipNumbers">2</c> charges.
 AzmodanBlackPoolFifthCircleTalent=Black Pool makes Basic Attacks and Abilities slow enemies Attack and Movement Speeds by <c val="#TooltipNumbers">40%</c> for <c val="#TooltipNumbers">3</c> seconds.
 AzmodanDemonicInvasion=Rain a small army of Demonic Grunts down on enemies, dealing <c val="#TooltipNumbers">104</c> damage per impact. Demon Grunts deal <c val="#TooltipNumbers">51</c> damage and have <c val="#TooltipNumbers">365</c> health.
 AzmodanDemonicInvasionPerishingFlameTalent=When the Grunts die they explode, dealing <c val="#TooltipNumbers">68</c> damage to nearby enemies.
@@ -765,7 +765,7 @@ KaelthasMasterOfFlamesLivingBomb=Living Bomb's spread from explosions can now al
 KaelthasMasterofFlamesTalent=Increases your Ability Power by <c val="#TooltipNumbers">20%</c> . For each <c val="#TooltipNumbers">20%</c> of Mana you are missing, this bonus is reduced by <c val="#TooltipNumbers">4%</c>.
 KaelthasPhoenix=Launch a Phoenix to an area, dealing <c val="#TooltipNumbers">78</c> damage to enemies along the way. The Phoenix persists for <c val="#TooltipNumbers">7</c> seconds, attacking enemies for <c val="#TooltipNumbers">78</c> damage and splashing for <c val="#TooltipNumbers">50%</c>.
 KaelthasPhoenixRebirthTalent=Increases Phoenix duration by <c val="#TooltipNumbers">100%</c>. While alive, the Phoenix may be ordered to move to a different location.
-KaelthasPyroblast=After <c val="#TooltipNumbers">2</c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers">810</c> damage to an enemy Hero and <c val="#TooltipNumbers">405</c> damage to enemies nearby.
+KaelthasPyroblast=After <c val="#TooltipNumbers">1.5</c> seconds, cast a slow-moving fireball that deals <c val="#TooltipNumbers">810</c> damage to an enemy Hero and <c val="#TooltipNumbers">405</c> damage to enemies nearby.
 KaelthasPyroblastPresenceOfMindTalent=Increases Pyroblast's explosion radius by <c val="#TooltipNumbers">50%</c> and reduces its cooldown by <c val="#TooltipNumbers">25</c> seconds per enemy Hero hit.
 KaelthasSunfireEnchantmentTalent=Activating Verdant Spheres causes Kael'thas's next Basic Attack to instead deal <c val="#TooltipNumbers">165</c> Spell Damage.
 KaelthasVerdantSpheres=Activate to make Kael'thas's next Basic Ability more powerful.
@@ -990,7 +990,7 @@ MonkQuicksilverTalent=Radiant Dashing to an ally gives Kharazim and the target <
 MonkRadiantDash=Jump to an allied or enemy unit. Enemies are immediately hit with a Basic Attack.<n/><n/>Stores up to <c val="#TooltipNumbers"><VALUE></c> charges.
 MonkSevenSidedStrike=Become Invulnerable and strike <c val="#TooltipNumbers">7</c> times over <c val="#TooltipNumbers">2</c> seconds. Each strike hits the highest Health nearby Hero for <c val="#TooltipNumbers">7%</c> of their maximum Health.
 MonkSixthSense=While you are stunned or rooted, you Block all Basic Attacks, reducing their damage by <c val="#TooltipNumbers">75%</c> for <c val="#TooltipNumbers">4</c> seconds.
-MonkSpiritAlly=Place a Spirit Ally that heals allies in a large area around it for <c val="#TooltipNumbers">2%</c> of their maximum Health every second. Has <c val="#TooltipNumbers">150</c> Health and lasts <c val="#TooltipNumbers">2</c> seconds. Kharazim can Radiant Dash to Spirit Allies.
+MonkSpiritAlly=Place a Spirit Ally that heals allies in a large area around it for <c val="#TooltipNumbers">2%</c> of their maximum Health every second. Has <c val="#TooltipNumbers">150</c> Health and lasts <c val="#TooltipNumbers">10</c> seconds. Kharazim can Radiant Dash to Spirit Allies.
 MonkTranscendenceTalent=Every <c val="#TooltipNumbers">3rd</c> Basic Attack heals the lowest nearby allied Hero for <c val="#TooltipNumbers">73</c>.
 MonkWayoftheHundredFistsTalent=Radiant Dashing to an enemy launches a rapid volley of <c val="#TooltipNumbers">6</c> Basic Attacks dealing <c val="#TooltipNumbers">50%</c> damage each.
 MuradinAvatar=Transform for <c val="#TooltipNumbers">20</c> seconds, gaining <c val="#TooltipNumbers">1053</c> Health.
