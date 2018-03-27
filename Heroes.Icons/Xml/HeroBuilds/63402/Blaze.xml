@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Blaze available="61129" attributeid="Fire" unit="HeroFirebat" franchise="Starcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_firebat.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_firebat.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_firebat.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+    <Basic>
+      <FirebatFlameStream name="Flame Stream" desc="FirebatFlameStream">
+        <Icon>storm_ui_icon_blaze_flame.png</Icon>
+        <Mana>25</Mana>
+        <Cooldown>4</Cooldown>
+      </FirebatFlameStream>
+      <FirebatOilSpill name="Oil Spill" desc="FirebatOilSpill">
+        <Icon>storm_ui_icon_blaze_oil.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown charge="true">12</Cooldown>
+      </FirebatOilSpill>
+      <FirebatJetPropulsion name="Jet Propulsion" desc="FirebatJetPropulsion">
+        <Icon>storm_ui_icon_blaze_jet.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>12</Cooldown>
+      </FirebatJetPropulsion>
+    </Basic>
+    <Heroic>
+      <FirebatBunkerDrop name="Bunker Drop" desc="FirebatBunkerDrop">
+        <Icon>storm_ui_icon_blaze_bunker.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>50</Cooldown>
+      </FirebatBunkerDrop>
+      <FirebatCombustion name="Combustion" desc="FirebatCombustion">
+        <Icon>storm_ui_icon_blaze_combustion.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>80</Cooldown>
+      </FirebatCombustion>
+    </Heroic>
+    <Trait>
+      <FirebatIgnite name="Pyromania" desc="FirebatIgnite">
+        <Icon>storm_ui_icon_blaze_pyromania.png</Icon>
+        <Cooldown>90</Cooldown>
+      </FirebatIgnite>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <FirebatAdrenalineStimpack name="Adrenaline Stimpack" desc="FirebatAdrenalineStimpack">
+        <Icon>storm_ui_icon_blaze_stim_2.png</Icon>
+        <Cooldown>30</Cooldown>
+      </FirebatAdrenalineStimpack>
+      <FirebatEnduranceStimpack name="Endurance Stimpack" desc="FirebatEnduranceStimpack">
+        <Icon>storm_ui_icon_blaze_stim_1.png</Icon>
+        <Cooldown>40</Cooldown>
+      </FirebatEnduranceStimpack>
+      <FirebatNeuralStimpack name="Neural Stimpack" desc="FirebatNeuralStimpack">
+        <Icon>storm_ui_icon_blaze_stim_3.png</Icon>
+        <Cooldown>40</Cooldown>
+      </FirebatNeuralStimpack>
+      <FirebatNewHabits name="New Habits" desc="FirebatNewHabits">
+        <Icon>storm_ui_icon_blaze_new_habits.png</Icon>
+      </FirebatNewHabits>
+    </Level1>
+    <Level4>
+      <FirebatFlameStreamFeedingtheFlame name="Feeding the Flame" desc="FirebatFlameStreamFeedingtheFlame">
+        <Icon>storm_ui_icon_blaze_flame.png</Icon>
+      </FirebatFlameStreamFeedingtheFlame>
+      <FirebatOilSpillAdhesivePetroleum name="Adhesive Petroleum" desc="FirebatOilSpillAdhesivePetroleum">
+        <Icon>storm_ui_icon_blaze_oil_b.png</Icon>
+      </FirebatOilSpillAdhesivePetroleum>
+      <FirebatOilSpillOilDispersal name="Oil Dispersal" desc="FirebatOilSpillOilDispersal">
+        <Icon>storm_ui_icon_blaze_oil.png</Icon>
+      </FirebatOilSpillOilDispersal>
+      <FirebatIgniteMeltdown name="Meltdown" desc="FirebatIgniteMeltdown">
+        <Icon>storm_ui_icon_blaze_pyromania.png</Icon>
+      </FirebatIgniteMeltdown>
+    </Level4>
+    <Level7>
+      <FirebatFlameStreamCrossfire name="Crossfire" desc="FirebatFlameStreamCrossfire">
+        <Icon>storm_ui_icon_blaze_flame.png</Icon>
+      </FirebatFlameStreamCrossfire>
+      <FirebatOilSpillGrillandKill name="Grill and Kill" desc="FirebatOilSpillGrillandKill">
+        <Icon>storm_ui_icon_blaze_oil.png</Icon>
+      </FirebatOilSpillGrillandKill>
+      <FirebatWeaponIncineratorGauntlets name="Incinerator Gauntlets" desc="FirebatWeaponIncineratorGauntlets">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </FirebatWeaponIncineratorGauntlets>
+    </Level7>
+    <Level10>
+      <FirebatHeroicAbilityBunkerDrop ability="FirebatBunkerDrop" />
+      <FirebatHeroicAbilityCombustion ability="FirebatCombustion" />
+    </Level10>
+    <Level13>
+      <FirebatFlameStreamSuppressiveFire name="Suppressive Fire" desc="FirebatFlameStreamSuppressiveFire">
+        <Icon>storm_ui_icon_blaze_flame.png</Icon>
+      </FirebatFlameStreamSuppressiveFire>
+      <FirebatOilSpillNanomachineCoating name="Nanomachine Coating" desc="FirebatOilSpillNanomachineCoating">
+        <Icon>storm_ui_icon_blaze_oil.png</Icon>
+      </FirebatOilSpillNanomachineCoating>
+      <FirebatJetPropulsionFuelLeak name="Fuel Leak" desc="FirebatJetPropulsionFuelLeak">
+        <Icon>storm_ui_icon_blaze_jet.png</Icon>
+      </FirebatJetPropulsionFuelLeak>
+    </Level13>
+    <Level16>
+      <FirebatJetPropulsionThermalProtection name="Thermal Protection" desc="FirebatJetPropulsionThermalProtection">
+        <Icon>storm_ui_icon_blaze_jet.png</Icon>
+      </FirebatJetPropulsionThermalProtection>
+      <FirebatIgniteHeatTreatment name="Heat Treatment" desc="FirebatIgniteHeatTreatment">
+        <Icon>storm_ui_icon_blaze_pyromania.png</Icon>
+      </FirebatIgniteHeatTreatment>
+      <FirebatActiveJuggernautPlating name="Juggernaut Plating" desc="FirebatActiveJuggernautPlating">
+        <Icon>storm_ui_icon_blaze_vanadium_plating.png</Icon>
+        <Cooldown>40</Cooldown>
+      </FirebatActiveJuggernautPlating>
+    </Level16>
+    <Level20>
+      <FirebatBunkerDropFortifiedBunker name="Fortified Bunker" desc="FirebatBunkerDropFortifiedBunker">
+        <Icon>storm_ui_icon_blaze_bunker.png</Icon>
+      </FirebatBunkerDropFortifiedBunker>
+      <FirebatCombustionFlashFire name="Flash Fire" desc="FirebatCombustionFlashFire">
+        <Icon>storm_ui_icon_blaze_combustion.png</Icon>
+      </FirebatCombustionFlashFire>
+      <FirebatWeaponBurnNotice name="Burn Notice" desc="FirebatWeaponBurnNotice">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_slow.png</Icon>
+      </FirebatWeaponBurnNotice>
+    </Level20>
+  </Talents>
+</Blaze>

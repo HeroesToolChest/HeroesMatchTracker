@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Johanna available="47479" attributeid="Crus" unit="HeroCrusader" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_johanna.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_johanna.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_johanna.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+    <Basic>
+      <CrusaderPunish name="Punish" desc="CrusaderPunish">
+        <Icon>storm_ui_icon_johanna_punish.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>8</Cooldown>
+      </CrusaderPunish>
+      <CrusaderCondemn name="Condemn" desc="CrusaderCondemn">
+        <Icon>storm_ui_icon_johanna_condemn.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </CrusaderCondemn>
+      <CrusaderShieldGlare name="Shield Glare" desc="CrusaderShieldGlare">
+        <Icon>storm_ui_icon_johanna_shield_glare.png</Icon>
+        <Mana>45</Mana>
+        <Cooldown>12</Cooldown>
+      </CrusaderShieldGlare>
+    </Basic>
+    <Heroic>
+      <CrusaderFallingSword name="Falling Sword" desc="CrusaderFallingSword">
+        <Icon>storm_ui_icon_johanna_falling_sword.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>60</Cooldown>
+      </CrusaderFallingSword>
+      <CrusaderBlessedShield name="Blessed Shield" desc="CrusaderBlessedShield">
+        <Icon>storm_ui_icon_johanna_blessed_shield.png</Icon>
+        <Mana>90</Mana>
+        <Cooldown>60</Cooldown>
+      </CrusaderBlessedShield>
+    </Heroic>
+    <Trait>
+      <CrusaderIronSkin name="Iron Skin" desc="CrusaderIronSkin">
+        <Icon>storm_ui_icon_johanna_iron_skin.png</Icon>
+        <Cooldown>20</Cooldown>
+      </CrusaderIronSkin>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <CrusaderMasteryIronSkinReinforce name="Reinforce" desc="CrusaderIronSkinReinforceTalent">
+        <Icon generic="true">storm_ui_icon_talent_block.png</Icon>
+      </CrusaderMasteryIronSkinReinforce>
+      <CrusaderMasteryIronSkinHoldYourGround name="Hold Your Ground" desc="CrusaderIronSkinHoldYourGroundTalent">
+        <Icon>storm_ui_icon_johanna_iron_skin.png</Icon>
+      </CrusaderMasteryIronSkinHoldYourGround>
+      <CrusaderMasteryLawsOfHope name="Laws of Hope" desc="CrusaderLawsOfHope">
+        <Icon>storm_ui_icon_johanna_lawsofhope.png</Icon>
+        <Cooldown>40</Cooldown>
+      </CrusaderMasteryLawsOfHope>
+    </Level1>
+    <Level4>
+      <CrusaderMasteryCondemnEternalRetaliation name="Eternal Retaliation" desc="CrusaderEternalRetaliationTalent">
+        <Icon>storm_ui_icon_johanna_condemn.png</Icon>
+      </CrusaderMasteryCondemnEternalRetaliation>
+      <CrusaderMasteryCondemnConviction name="Conviction" desc="CrusaderCondemnConvictionTalent">
+        <Icon>storm_ui_icon_johanna_condemn_var1.png</Icon>
+      </CrusaderMasteryCondemnConviction>
+      <CrusaderMasteryShieldGlareSinsExposed name="Sins Exposed" desc="CrusaderShieldGlareSinsExposedTalent">
+        <Icon>storm_ui_icon_johanna_shield_glare.png</Icon>
+      </CrusaderMasteryShieldGlareSinsExposed>
+    </Level4>
+    <Level7>
+      <CrusaderMasteryPunishSubdue name="Subdue" desc="CrusaderSubdueTalent">
+        <Icon>storm_ui_icon_johanna_punish.png</Icon>
+      </CrusaderMasteryPunishSubdue>
+      <CrusaderZealousGlare name="Zealous Glare" desc="CrusaderZealousGlare">
+        <Icon>storm_ui_icon_johanna_shield_glare.png</Icon>
+      </CrusaderZealousGlare>
+      <BattleMomentumCrusader name="Blessed Momentum" desc="JohannaBlessedMomentum">
+        <Icon>storm_ui_icon_talent_autoattack_cooldown.png</Icon>
+      </BattleMomentumCrusader>
+    </Level7>
+    <Level10>
+      <CrusaderHeroicAbilityFallingSword ability="CrusaderFallingSword" />
+      <CrusaderHeroicAbilityBlessedShield ability="CrusaderBlessedShield" />
+    </Level10>
+    <Level13>
+      <CrusaderMasteryPunishRoar name="Roar" desc="CrusaderRoarTalent">
+        <Icon>storm_ui_icon_johanna_punish.png</Icon>
+      </CrusaderMasteryPunishRoar>
+      <CrusaderHolyFury name="Holy Fury" desc="CrusaderHolyFury">
+        <Icon generic="true">storm_ui_icon_talent_burningrage.png</Icon>
+      </CrusaderHolyFury>
+      <CrusaderBlessedHammer name="Blessed Hammer" desc="CrusaderCondemnBlessedHammerTalent">
+        <Icon>storm_btn_d3ros_crusader_blessedhammer.png</Icon>
+        <Cooldown>30</Cooldown>
+      </CrusaderBlessedHammer>
+    </Level13>
+    <Level16>
+      <CrusaderMasteryShieldGlareHolyRenewal name="Holy Renewal" desc="CrusaderShieldGlareHolyRenewalTalent">
+        <Icon>storm_ui_icon_johanna_shield_glare.png</Icon>
+      </CrusaderMasteryShieldGlareHolyRenewal>
+      <CrusaderMasteryIronSkinFanaticism name="Fanaticism" desc="CrusaderIronSkinFanaticismTalent">
+        <Icon>storm_ui_icon_johanna_iron_skin.png</Icon>
+      </CrusaderMasteryIronSkinFanaticism>
+      <GenericTalentImposingPresence name="Imposing Presence" desc="GenericImposingPresenceTalent">
+        <Icon>storm_ui_icon_talent_imposingpresence.png</Icon>
+        <Cooldown>20</Cooldown>
+      </GenericTalentImposingPresence>
+    </Level16>
+    <Level20>
+      <CrusaderMasteryFallingSwordHeavensFury name="Heaven's Fury" desc="CrusaderFallingSwordHeavensFuryTalent">
+        <Icon>storm_ui_icon_johanna_falling_sword.png</Icon>
+      </CrusaderMasteryFallingSwordHeavensFury>
+      <CrusaderMasteryBlessedShieldRadiatingFaith name="Radiating Faith" desc="CrusaderBlessedShieldRadiatingFaithTalent">
+        <Icon>storm_ui_icon_johanna_blessed_shield.png</Icon>
+      </CrusaderMasteryBlessedShieldRadiatingFaith>
+      <CrusaderHeroicMasteryIndestructable name="Indestructible" desc="CrusaderIndestructableTalent">
+        <Icon>storm_ui_icon_johanna_indestructible.png</Icon>
+      </CrusaderHeroicMasteryIndestructable>
+      <CrusaderBlindedByTheLight name="Blinded By The Light" desc="CrusaderBlindedByTheLight">
+        <Icon generic="true">storm_ui_icon_talent_stormshield.png</Icon>
+        <Cooldown>60</Cooldown>
+      </CrusaderBlindedByTheLight>
+    </Level20>
+  </Talents>
+</Johanna>
