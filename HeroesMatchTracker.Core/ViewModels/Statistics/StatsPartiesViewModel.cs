@@ -6,6 +6,7 @@ using Microsoft.Practices.ServiceLocation;
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using static Heroes.Helpers.HeroesHelpers.Regions;
@@ -37,6 +38,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private string[] _selectedCharacter = new string[5];
 
         private ILoadingOverlayWindowService LoadingOverlayWindow;
+
+        private ObservableCollection<string> _errorMessages = new ObservableCollection<string>();
 
         public StatsPartiesViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
@@ -230,6 +233,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public ObservableCollection<string> ErrorMessages
+        {
+            get => _errorMessages;
+            set
+            {
+                _errorMessages = value;
+                RaisePropertyChanged();
+            }
+        }
+
         private async Task QueryPartyStatsAsyncCommand()
         {
             if (await MainWindowDialog.CheckBattleTagSetDialog())
@@ -275,7 +288,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 if (IsPlayerChecked[i])
                 {
-                    playerIds.Add(Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(PlayerBattleTag[i], (int)region));
+                    long playerId = Database.ReplaysDb().HotsPlayer.ReadPlayerIdFromBattleTagName(PlayerBattleTag[i], (int)region);
+                    if (playerId <= 0 && !string.IsNullOrEmpty(PlayerBattleTag[i]))
+                        ErrorMessages.Add("BattleTag not found");
+                    else
+                        ErrorMessages.Add(string.Empty);
+
+                    playerIds.Add(playerId);
                     characters.Add(SelectedCharacter[i]);
                 }
             }
@@ -325,6 +344,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             IsPlayerChecked = Enumerable.Repeat(false, IsPlayerChecked.Length).ToArray();
             PlayerBattleTag = Enumerable.Repeat(string.Empty, PlayerBattleTag.Length).ToArray();
             SelectedCharacter = Enumerable.Repeat(InitialHeroListOption, SelectedCharacter.Length).ToArray();
+            ErrorMessages = new ObservableCollection<string>();
             ClearPartyStats();
         }
 
@@ -334,6 +354,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             PartyLosses = 0;
             PartyTotal = 0;
             PartyWinrate = 0;
+
+            ErrorMessages = new ObservableCollection<string>();
         }
     }
 }

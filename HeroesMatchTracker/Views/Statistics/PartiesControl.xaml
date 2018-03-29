@@ -67,26 +67,31 @@
                         <CheckBox Name="Player0" IsChecked="{Binding IsPlayerChecked[0]}" />
                         <TextBox Text="{Binding PlayerBattleTag[0]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player0}" />
                         <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[0]}" IsEnabled="{Binding IsChecked, ElementName=Player0}" />
+                        <TextBlock Text="{Binding ErrorMessages[0]}" Foreground="Red" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
                         <CheckBox Name="Player1" IsChecked="{Binding IsPlayerChecked[1]}" />
                         <TextBox Text="{Binding PlayerBattleTag[1]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player1}" />
                         <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[1]}" IsEnabled="{Binding IsChecked, ElementName=Player1}" />
+                        <TextBlock Text="{Binding ErrorMessages[1]}" Foreground="Red" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
                         <CheckBox Name="Player2" IsChecked="{Binding IsPlayerChecked[2]}" />
                         <TextBox Text="{Binding PlayerBattleTag[2]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player2}" />
                         <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[2]}" IsEnabled="{Binding IsChecked, ElementName=Player2}" />
+                        <TextBlock Text="{Binding ErrorMessages[2]}" Foreground="Red" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
                         <CheckBox Name="Player3" IsChecked="{Binding IsPlayerChecked[3]}" />
                         <TextBox Text="{Binding PlayerBattleTag[3]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player3}" />
                         <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[3]}" IsEnabled="{Binding IsChecked, ElementName=Player3}" />
+                        <TextBlock Text="{Binding ErrorMessages[3]}" Foreground="Red" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Style="{StaticResource Player}">
                         <CheckBox Name="Player4" IsChecked="{Binding IsPlayerChecked[4]}" />
                         <TextBox Text="{Binding PlayerBattleTag[4]}" controls:TextBoxHelper.Watermark="BattleTag#0000" IsEnabled="{Binding IsChecked, ElementName=Player4}" />
                         <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedCharacter[4]}" IsEnabled="{Binding IsChecked, ElementName=Player4}" />
+                        <TextBlock Text="{Binding ErrorMessages[4]}" Foreground="Red" />
                     </StackPanel>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
@@ -94,7 +99,7 @@
                             <Button Content="Clear" Width="120" Margin="16 0" Command="{Binding ClearPartyStatsCommand}" />
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Margin="0 8 0 0">
+                    <StackPanel Margin="80 8 0 0" HorizontalAlignment="Left">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
