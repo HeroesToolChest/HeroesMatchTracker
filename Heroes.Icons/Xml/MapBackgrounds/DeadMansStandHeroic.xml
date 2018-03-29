@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DeadMansStandHeroic name="Dead Man's Stand (Heroic)">
+  <Normal fontglow="#FFFFE900">storm_ui_homescreenbackground_deadmansstand_hard.jpg</Normal>
+  <Aliases>Blank2</Aliases>
+</DeadMansStandHeroic>
