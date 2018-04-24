@@ -99,6 +99,7 @@
       </GenericTalentImposingPresence>
       <MuradinMasteryPassiveStoneform name="Stoneform" desc="MuradinSecondWindStoneformTalent">
         <Icon>storm_ui_icon_muradin_secondwind.png</Icon>
+        <Cooldown>60</Cooldown>
       </MuradinMasteryPassiveStoneform>
     </Level16>
     <Level20>
