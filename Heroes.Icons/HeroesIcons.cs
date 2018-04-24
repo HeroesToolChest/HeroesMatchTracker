@@ -265,6 +265,11 @@ namespace Heroes.Icons
             OtherIcons.Add(OtherIcon.Kills, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kill.png"));
             OtherIcons.Add(OtherIcon.Assist, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_assist.png"));
             OtherIcons.Add(OtherIcon.Death, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_death.png"));
+            OtherIcons.Add(OtherIcon.SiegeDamage, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_siegedamage.png"));
+            OtherIcons.Add(OtherIcon.HeroDamage, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_herodamage.png"));
+            OtherIcons.Add(OtherIcon.HealAbsorbedDamage, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_healedandabsorbed.png"));
+            OtherIcons.Add(OtherIcon.DamageTaken, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_damagetaken.png"));
+            OtherIcons.Add(OtherIcon.ExperienceContribution, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_xpcontribution.png"));
 
             OtherIcons.Add(OtherIcon.KillsBlue, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kills_blue.png"));
             OtherIcons.Add(OtherIcon.KillsRed, SetImageStreamString(OtherFolderName, "storm_ui_scorescreen_icon_kills_red.png"));

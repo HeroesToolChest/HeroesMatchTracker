@@ -188,7 +188,7 @@
 
     <DataTemplate x:Key="MatchTalents">
         <StackPanel Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderTalents}" Height="32" HorizontalAlignment="Right">
                 <TextBlock Text="1" Width="{StaticResource HeaderTalentSpacing}" />
                 <TextBlock Text="4" Width="{StaticResource HeaderTalentSpacing}" Margin="30 0 0 0" />
                 <TextBlock Text="7" Width="{StaticResource HeaderTalentSpacing}" Margin="31.5 0 0 0" />

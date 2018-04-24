@@ -16,7 +16,8 @@
     <system:Double x:Key="HeaderStatSpacing">160</system:Double>
 
     <Thickness x:Key="TextValueMargin">4 0 4 0</Thickness>
-
+    <Thickness x:Key="TextValueMarginLarge">31 0 32 0</Thickness>
+    
         <Style x:Key="TableContentText">
         <Style.Resources>
             <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}" />
@@ -141,21 +142,63 @@
 
     <DataTemplate x:Key="MatchStats">
         <StackPanel Background="{StaticResource DefaultBackgroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right" Height="60">
+            <StackPanel Orientation="Horizontal" Style="{StaticResource TableHeaderStats}" HorizontalAlignment="Right" Height="32" Margin="0 0 46 0">
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{Binding ScoreKillIcon}" Width="24" ToolTip="Kills" Margin="0 0 0 12"/>
+                    <Image Source="{Binding ScoreKillIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Total Hero Kills" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
                 </StackPanel>
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{Binding ScoreAssistIcon}" Width="24" ToolTip="Assists" Margin="0 0 0 12" />
+                    <Image Source="{Binding ScoreAssistIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Total Hero Kill Assists" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
                 </StackPanel>
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMargin}" VerticalAlignment="Bottom">
-                    <Image Source="{Binding ScoreDeathIcon}" Width="24"  ToolTip="Deaths" Margin="0 0 0 12" />
+                    <Image Source="{Binding ScoreDeathIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Total Deaths" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
                 </StackPanel>
-                <TextBlock Text="Siege Damage" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                <TextBlock Text="Hero Damage" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                <TextBlock Text="Healing/Shielding" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                <TextBlock Text="Damage Taken" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}" />
-                <TextBlock Text="XP Contribution" TextWrapping="Wrap" Width="{StaticResource StatLargeNumberWidth}" Margin="4 0 50 0" />
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
+                    <Image Source="{Binding ScoreSiegeDamageIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Siege Damage&#x0a;Amount of damage dealt to enemy Structures and Minions" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
+                    <Image Source="{Binding ScoreHeroDamageIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Hero Damage&#x0a;Amount of damage dealt to enemy Heroes" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
+                    <Image Source="{Binding ScoreHealingAbsorbedIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Healing/Shielding&#x0a;Amount of damage prevented and healing done to allied Heroes" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
+                    <Image Source="{Binding ScoreDamageTakenIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Amount of Damage Taken" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
+                <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
+                    <Image Source="{Binding ScoreExperienceContributionIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                        <Image.ToolTip>
+                            <ToolTip Content="Experience Contribution" Style="{StaticResource EnhancedToolTip}" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
             </StackPanel>
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding MatchStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1StatsItemsControl}" Margin="15 8 15 0"/>

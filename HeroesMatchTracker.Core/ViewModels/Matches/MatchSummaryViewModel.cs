@@ -87,6 +87,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             ScoreKillIcon = HeroesIcons.GetOtherIcon(OtherIcon.Kills);
             ScoreAssistIcon = HeroesIcons.GetOtherIcon(OtherIcon.Assist);
             ScoreDeathIcon = HeroesIcons.GetOtherIcon(OtherIcon.Death);
+            ScoreSiegeDamageIcon = HeroesIcons.GetOtherIcon(OtherIcon.SiegeDamage);
+            ScoreHeroDamageIcon = HeroesIcons.GetOtherIcon(OtherIcon.HeroDamage);
+            ScoreHealingAbsorbedIcon = HeroesIcons.GetOtherIcon(OtherIcon.HealAbsorbedDamage);
+            ScoreDamageTakenIcon = HeroesIcons.GetOtherIcon(OtherIcon.DamageTaken);
+            ScoreExperienceContributionIcon = HeroesIcons.GetOtherIcon(OtherIcon.ExperienceContribution);
             BlueKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsBlue);
             RedKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsRed);
 
@@ -122,6 +127,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public Stream ScoreKillIcon { get; private set; }
         public Stream ScoreAssistIcon { get; private set; }
         public Stream ScoreDeathIcon { get; private set; }
+        public Stream ScoreSiegeDamageIcon { get; private set; }
+        public Stream ScoreHeroDamageIcon { get; private set; }
+        public Stream ScoreHealingAbsorbedIcon { get; private set; }
+        public Stream ScoreDamageTakenIcon { get; private set; }
+        public Stream ScoreExperienceContributionIcon { get; private set; }
         public Stream BlueKillsIcons { get; private set; }
         public Stream RedKillsIcons { get; private set; }
 

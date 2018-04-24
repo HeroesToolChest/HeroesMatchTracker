@@ -27,6 +27,11 @@
         Kills,
         Assist,
         Death,
+        HeroDamage,
+        SiegeDamage,
+        HealAbsorbedDamage,
+        DamageTaken,
+        ExperienceContribution,
         KillsBlue,
         KillsRed,
     }
