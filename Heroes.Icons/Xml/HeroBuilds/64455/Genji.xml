@@ -37,7 +37,7 @@
     <Trait>
       <GenjiCyberAgility name="Cyber Agility" desc="GenjiCyberAgility">
         <Icon>storm_ui_icon_genji_cyberagility.png</Icon>
-        <Cooldown>10</Cooldown>
+        <Cooldown>12</Cooldown>
       </GenjiCyberAgility>
     </Trait>
   </Abilities>

@@ -86,7 +86,7 @@ AlexstraszaLiveAndLetLiveGiftOfLife=While Alexstrasza is above <c val="#TooltipN
 AlexstraszaOnRubyWingsCleansingFlame=Healing or damaging Heroes <c val="#TooltipNumbers">8</c> or more times with Cleansing Flame activates Dragonqueen for <c val="#TooltipNumbers">15</c> seconds upon landing.
 AlexstraszaOverprotectiveAbundance=Heroes healed by Abundance gain a Shield for <c val="#TooltipNumbers">3</c> seconds equal to <c val="#TooltipNumbers">60%</c> of the amount healed.
 AlexstraszaPacify=Activate to Slow and reduce an enemy Hero's damage by <c val="#TooltipNumbers">50%</c> for <c val="#TooltipNumbers">3</c> seconds.<n/><n/>Healing a Stunned, Rooted, or Silenced ally reduces Pacify's cooldown by <c val="#TooltipNumbers">30</c> seconds.
-AlexstraszaPreservation=Plant a seed of healing that blooms after <c val="#TooltipNumbers">3</c> seconds, healing nearby allied Heroes for <c val="#TooltipNumbers">20%</c> of their maximum Health.
+AlexstraszaPreservation=Plant a seed of healing that blooms after <c val="#TooltipNumbers">3</c> seconds, healing nearby allied Heroes for <c val="#TooltipNumbers">30%</c> of their maximum Health.
 AlexstraszaRitualOfLifeLifebinder=Life-Binder activates <c val="#TooltipNumbers">3</c> times over <c val="#TooltipNumbers">6</c> seconds.
 AlexstraszaSurgeOfVitalityAbundance=Abundance's healing burst grants allied Heroes <c val="#TooltipNumbers">30%</c> Movement Speed for <c val="#TooltipNumbers">3</c> seconds.
 AlexstraszaToughLoveGiftOfLife=While Alexstrasza is above <c val="#TooltipNumbers">75%</c> Health, Gift of Life grants its target <c val="#TooltipNumbers">20</c> Armor for <c val="#TooltipNumbers">2</c> seconds.
