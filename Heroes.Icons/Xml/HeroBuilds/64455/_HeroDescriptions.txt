@@ -14,6 +14,7 @@ Cassia=An Assassin who specializes against Physical Attackers.
 Chen=A potent Bruiser that will dominate if the enemy team is lacking mobility.
 Cho=Head 1 of a 2 Headed Hero, Cho controls the body of Cho'gall.
 Chromie=A long range, high burst damage Mage, who requires good timing and setup.
+Deckard=A burst Healer who excels at preparing the battlefield before a fight and can cripple enemies with crowd control.
 Dehaka=A Bruiser with a strong, global presence that can effectively clear groups of minions.
 Diablo=A risky Tank who can devastate an enemy team with his "all-in" combo potential.
 DVa=A hard-to-kill Bruiser that can peel enemies away from her allies with high disruption.
