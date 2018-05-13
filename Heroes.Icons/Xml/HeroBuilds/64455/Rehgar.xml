@@ -85,7 +85,7 @@
         <Icon>storm_ui_icon_talent_cleanse.png</Icon>
         <Cooldown>60</Cooldown>
       </GenericTalentCleanse>
-      <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjection">
+      <RehgarTotemicProjection name="Totemic Projection" desc="RehgarTotemicProjectionTalent">
         <Icon>storm_ui_icon_rehgar_earthbindtotem_a.png</Icon>
       </RehgarTotemicProjection>
     </Level7>

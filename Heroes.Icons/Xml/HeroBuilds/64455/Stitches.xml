@@ -42,7 +42,7 @@
       </StitchesVileGas>
     </Trait>
     <Activable>
-      <StitchesHookHelpingHand name="Helping Hand" desc="StitchesHookHelpingHandTalent">
+      <StitchesHookHelpingHand name="Helping Hand" desc="StitchesHelpingHand">
         <Icon>storm_ui_icon_stitches_hook_var1.png</Icon>
         <Mana>75</Mana>
         <Cooldown>16</Cooldown>

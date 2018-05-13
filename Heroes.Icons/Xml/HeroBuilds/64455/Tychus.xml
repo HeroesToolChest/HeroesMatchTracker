@@ -51,7 +51,7 @@
         <Icon>storm_ui_icon_tychus_ragnarokmissiles.png</Icon>
         <Cooldown>7</Cooldown>
       </TychusOdinRagnarokMissilesTargeted>
-      <TychusOdinThrusters name="Thrusters" desc="TychusCommandeerOdinThrusters">
+      <TychusOdinThrusters name="Thrusters" desc="TychusOdinThrusters">
         <Icon>storm_ui_icon_tychus_thrusters.png</Icon>
         <Cooldown>10</Cooldown>
       </TychusOdinThrusters>

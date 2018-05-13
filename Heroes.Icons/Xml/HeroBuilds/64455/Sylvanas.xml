@@ -44,7 +44,7 @@
       <SylvanasTalentOverflowingQuiver name="Overflowing Quiver" desc="SylvanasWitheringFireOverflowingQuiverTalent">
         <Icon>storm_ui_icon_sylvanas_witheringfire.png</Icon>
       </SylvanasTalentOverflowingQuiver>
-      <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasBlackArrowsParalysisTalent">
+      <SylvanasDreadfulWake name="Dreadful Wake" desc="SylvanasDreadfulWake">
         <Icon>storm_ui_icon_sylvanas_hauntingwave.png</Icon>
       </SylvanasDreadfulWake>
       <SylvanasTalentMercenaryQueen name="Mercenary Queen" desc="SylvanasMercenaryQueenTalent">

@@ -1717,7 +1717,7 @@ RehgarLightningShieldLightningBond=Lightning Shield is also cast on Rehgar
 RehgarLightningShieldReactiveSparkTalent=Reduces Lightning Shield cooldown and waits to start
 RehgarLightningShieldRisingStorm=Increases Lightning Shield damage with each hit
 RehgarLightningShieldStormcaller=Lightning Shield returns Mana
-RehgarTotemicProjection=Instantly move Earthbind Totem to a new location
+RehgarTotemicProjectionTalent=Instantly move Earthbind Totem to a new location
 RexxarAnimalHusbandry=Max Health increase over time
 RexxarAspectOfTheHawkTalent=Spirit Swoop increases Attack Speed
 RexxarAspectoftheBeastTalent=Misha's Basic Attacks lower Misha, Charge! cooldown
@@ -2048,6 +2048,7 @@ TychusMasterAssassinTalent=<c val="#TooltipQuest">Quest:</c> Takedowns increase 
 TychusMinigun=Activate to increase Basic Attack damage to Heroes
 TychusMinigunActive=Activate to increase Basic Attack damage to Heroes
 TychusNeosteelCoatingTalent=Activate to gain Spell Armor
+TychusOdinThrusters=None
 TychusOverkill=Attack one target while moving, damaging nearby enemies as well
 TychusOverkillArmorPiercingRoundsTalent=Increases Overkill damage to main target
 TychusOverkillLeadRainTalent=Overkill slows targets

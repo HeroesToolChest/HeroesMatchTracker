@@ -60,9 +60,6 @@
       <ChenAccumulatingFlame name="Accumulating Flame" desc="ChenAccumulatingFlame">
         <Icon>storm_ui_icon_chen_breathoffire.png</Icon>
       </ChenAccumulatingFlame>
-      <ChenGroundingBrew name="Grounding Brew" desc="ChenFortifyingBrewGroundingBrewTalent">
-        <Icon>storm_ui_icon_chen_fortifyingbrew_a.png</Icon>
-      </ChenGroundingBrew>
       <ChenFreshestIngredients name="Freshest Ingredients" desc="ChenFreshestIngredients">
         <Icon>storm_ui_icon_chen_fortifyingbrew.png</Icon>
       </ChenFreshestIngredients>

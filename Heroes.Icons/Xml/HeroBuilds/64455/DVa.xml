@@ -32,9 +32,6 @@
       <DVaMechMechMode name="Mech Mode" desc="DVaMechMechMode">
         <Icon>storm_ui_icon_dva_mechmode.png</Icon>
       </DVaMechMechMode>
-      <DVaPilotPilotMode name="Pilot Mode" desc="DVaPilotPilotMode">
-        <Icon>storm_ui_icon_dva_pilotmode.png</Icon>
-      </DVaPilotPilotMode>
     </Trait>
   </Abilities>
   <ExtraAbilities>

@@ -56,7 +56,7 @@
       <LiLiMasteryCloudSerpentSerpentSidekick name="Serpent Sidekick" desc="LiLiSerpentSidekickTalent">
         <Icon>storm_ui_icon_lili_cloudserpent.png</Icon>
       </LiLiMasteryCloudSerpentSerpentSidekick>
-      <LiLiHinderingWinds name="Hindering Winds" desc="LiLiBlindingWindHinderingWindsTalent">
+      <LiLiHinderingWinds name="Hindering Winds" desc="LiLiHinderingWinds">
         <Icon>storm_ui_icon_lili_blindingwind.png</Icon>
       </LiLiHinderingWinds>
       <LiLiMasteryFastFeetSafetySprint name="Safety Sprint" desc="LiLiSafetySprintTalent">

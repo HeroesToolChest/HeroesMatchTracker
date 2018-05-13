@@ -35,7 +35,7 @@
       </UtherDivineStorm>
     </Heroic>
     <Trait>
-      <UtherEternalDevotion name="Devotion, Eternal Vanguard" desc="UtherEternalDevotion">
+      <UtherEternalDevotion name="Devotion, Eternal Vanguard" desc="UtherDevotionEternalVanguardShop">
         <Icon>storm_ui_icon_uther_eternaldevotion.png</Icon>
       </UtherEternalDevotion>
     </Trait>

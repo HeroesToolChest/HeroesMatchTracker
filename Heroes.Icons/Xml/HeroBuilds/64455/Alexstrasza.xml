@@ -56,11 +56,6 @@
         <Cooldown>4</Cooldown>
       </AlexstraszaWingBuffet>
     </Basic>
-    <Trait>
-      <AlexstraszaDragonqueen2 name="Dragonqueen" desc="AlexstraszaDragonqueenDragonFormPassive">
-        <Icon>storm_ui_icon_alexstrasza_dragon_queen.png</Icon>
-      </AlexstraszaDragonqueen2>
-    </Trait>
   </ExtraAbilities>
   <Talents>
     <Level1>

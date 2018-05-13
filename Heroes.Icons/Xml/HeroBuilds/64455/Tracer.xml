@@ -6,7 +6,7 @@
   <Roles>Assassin</Roles>
   <Abilities>
     <Basic>
-      <TracerBlink name="Blink" desc="TracerBlink">
+      <TracerBlink name="Blink" desc="TracerBlinkHeroSelect">
         <Icon>storm_ui_icon_tracer_blink.png</Icon>
         <Cooldown charge="true">8</Cooldown>
       </TracerBlink>
