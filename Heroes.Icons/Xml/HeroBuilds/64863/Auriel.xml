@@ -87,9 +87,6 @@
       <AurielPiercingLashDetainmentStrikeTalent name="Piercing Lash" desc="AurielPiercingLashDetainmentStrikeTalent">
         <Icon>storm_ui_icon_auriel_restrainingblow.png</Icon>
       </AurielPiercingLashDetainmentStrikeTalent>
-      <AurielRepellingStrikeDetainmentStrikeTalent name="Repelling Strike" desc="AurielRepellingStrikeDetainmentStrikeTalent">
-        <Icon>storm_ui_icon_auriel_restrainingblow_a.png</Icon>
-      </AurielRepellingStrikeDetainmentStrikeTalent>
     </Level13>
     <Level16>
       <AurielReservoirofHopeRayOfHeavenTalent name="Reservoir of Hope" desc="AurielReservoirofHopeRayOfHeavenTalent">

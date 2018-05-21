@@ -31,7 +31,7 @@
       <DeckardLorenado name="Lorenado" desc="DeckardLorenado">
         <Icon>storm_ui_icon_deckard_lorenado.png</Icon>
         <Mana>40</Mana>
-        <Cooldown>45</Cooldown>
+        <Cooldown>40</Cooldown>
       </DeckardLorenado>
     </Heroic>
     <Trait>

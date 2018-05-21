@@ -45,15 +45,12 @@
       <GuldanFelFlamePursuitOfFlame name="Pursuit of Flame" desc="GuldanFelFlameTalentPursuitOfFlame">
         <Icon>storm_ui_icon_guldan_felflame.png</Icon>
       </GuldanFelFlamePursuitOfFlame>
-      <GuldanDrainLifeGlyphOfDrainLife name="Glyph of Drain Life" desc="GuldanDrainLifeTalentGlyphofDrainLife">
+      <GuldanChaoticEnergy name="Chaotic Energy" desc="GuldanChaoticEnergy">
         <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
-      </GuldanDrainLifeGlyphOfDrainLife>
+      </GuldanChaoticEnergy>
       <GuldanCorruptionEchoedCorruption name="Echoed Corruption" desc="GuldanCorruptionEchoedCorruption">
         <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
       </GuldanCorruptionEchoedCorruption>
-      <GuldanChaoticEnergy name="Chaotic Energy" desc="GuldanChaoticEnergy">
-        <Icon>storm_ui_icon_chaoticenergy.png</Icon>
-      </GuldanChaoticEnergy>
     </Level1>
     <Level4>
       <GuldanDrainLifeHealthFunnel name="Health Funnel" desc="GuldanDrainLifeHealthFunnel">
@@ -71,9 +68,6 @@
       <GuldanFelFlameBoundByShadow name="Bound by Shadow" desc="GuldanFelFlameBoundByShadow">
         <Icon>storm_ui_icon_guldan_felflame.png</Icon>
       </GuldanFelFlameBoundByShadow>
-      <GuldanDrainLifeDevourTheFrail name="Devour the Frail" desc="GuldanDrainLifeDevourTheFrail">
-        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
-      </GuldanDrainLifeDevourTheFrail>
       <GuldanCorruptionCurseOfExhaustion name="Curse of Exhaustion" desc="GuldanCorruptionCurseOfExhaustion">
         <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
       </GuldanCorruptionCurseOfExhaustion>

@@ -73,9 +73,6 @@
       <TychusInTheRhythm name="In the Rhythm" desc="TychusIntheRhythmTalent">
         <Icon>storm_ui_icon_tychus_minigun.png</Icon>
       </TychusInTheRhythm>
-      <TychusFullyLoaded name="Fully Loaded" desc="TychusFullyLoaded">
-        <Icon>storm_ui_icon_tychus_minigun_A.png</Icon>
-      </TychusFullyLoaded>
       <TychusTheBiggerTheyAre name="The Bigger They Are..." desc="TychusTheBiggerTheyAre">
         <Icon>storm_ui_icon_tychus_minigun_B.png</Icon>
       </TychusTheBiggerTheyAre>

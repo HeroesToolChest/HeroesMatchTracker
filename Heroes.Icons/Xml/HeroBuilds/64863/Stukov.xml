@@ -19,7 +19,7 @@
       <StukovLurkingArm name="Lurking Arm" desc="StukovLurkingArm">
         <Icon>storm_ui_icon_stukov_lurkingarm.png</Icon>
         <Mana>60</Mana>
-        <Cooldown>8</Cooldown>
+        <Cooldown>10</Cooldown>
       </StukovLurkingArm>
     </Basic>
     <Heroic>

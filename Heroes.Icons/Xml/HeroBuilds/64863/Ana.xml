@@ -8,7 +8,7 @@
     <Basic>
       <AnaHealingDart name="Healing Dart" desc="AnaHealingDart">
         <Icon>storm_ui_icon_ana_healing_dart.png</Icon>
-        <Mana>15</Mana>
+        <Mana>10</Mana>
         <Cooldown>2</Cooldown>
       </AnaHealingDart>
       <AnaBioticGrenade name="Biotic Grenade" desc="AnaBioticGrenade">
@@ -26,7 +26,7 @@
       <AnaNanoBoost name="Nana Boost" desc="AnaNanoBoost">
         <Icon>storm_ui_icon_ana_nano_bost.png</Icon>
         <Mana>60</Mana>
-        <Cooldown>60</Cooldown>
+        <Cooldown>70</Cooldown>
       </AnaNanoBoost>
       <AnaEyeOfHorusActivate name="Eye of Horus" desc="AnaEyeOfHorusActivate">
         <Icon>storm_ui_icon_ana_overwatch.png</Icon>

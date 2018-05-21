@@ -56,10 +56,9 @@
       <BarbarianHurricane name="Hurricane" desc="BarbarianHurricaneWhirlwindTalent">
         <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
       </BarbarianHurricane>
-      <BarbarianBattleRage name="Battle Rage" desc="BarbarianBattleRage">
-        <Icon generic="true">storm_ui_icon_talent_mercenarylord.png</Icon>
-        <Cooldown charge="true">30</Cooldown>
-      </BarbarianBattleRage>
+        <BarbarianShotOfFury name="Shot Of Fury" desc="BarbarianFuryShotOfFuryTalent">
+        <Icon>storm_ui_icon_sonya_fury.png</Icon>
+      </BarbarianShotOfFury>
     </Level4>
     <Level7>
       <BarbarianPoisonedSpear name="Poisoned Spear" desc="BarbarianAncientSpearPoisonedSpearTalent">
@@ -68,9 +67,10 @@
       <BarbarianLifeFunnel name="Life Funnel" desc="BarbarianWhirlwindLifeFunnelTalent">
         <Icon>storm_ui_icon_sonya_whirlwind.png</Icon>
       </BarbarianLifeFunnel>
-      <BarbarianShotOfFury name="Shot Of Fury" desc="BarbarianFuryShotOfFuryTalent">
-        <Icon>storm_ui_icon_sonya_fury.png</Icon>
-      </BarbarianShotOfFury>
+      <BarbarianBattleRage name="Battle Rage" desc="BarbarianBattleRage">
+        <Icon generic="true">storm_ui_icon_talent_mercenarylord.png</Icon>
+        <Cooldown charge="true">30</Cooldown>
+      </BarbarianBattleRage>
     </Level7>
     <Level10>
       <BarbarianHeroicAbilityLeap ability="BarbarianLeap" />

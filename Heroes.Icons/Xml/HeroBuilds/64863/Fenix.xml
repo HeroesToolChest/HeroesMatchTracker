@@ -15,7 +15,7 @@
       </FenixWeaponModes>
       <FenixWarp name="Warp" desc="FenixWarp">
         <Icon>storm_ui_icon_fenix_teleport.png</Icon>
-        <Cooldown>15</Cooldown>
+        <Cooldown>17</Cooldown>
       </FenixWarp>
     </Basic>
     <Heroic>

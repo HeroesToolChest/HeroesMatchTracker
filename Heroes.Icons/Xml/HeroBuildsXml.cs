@@ -670,7 +670,7 @@ namespace Heroes.Icons.Xml
 
         private TalentBase ParseTalentXmlElement(XmlReader reader, Hero hero, Dictionary<string, string> talentShortTooltip, Dictionary<string, string> talentLongTooltip)
         {
-            string referenceName = reader.Name;
+            string referenceName = XmlConvert.DecodeName(reader.Name);
             string abilityLink = reader["ability"] ?? string.Empty;
 
             string realName = string.Empty;
@@ -751,7 +751,7 @@ namespace Heroes.Icons.Xml
                                 break;
                         }
                     }
-                    else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == referenceName)
+                    else if (reader.NodeType == XmlNodeType.EndElement && XmlConvert.DecodeName(reader.Name) == referenceName)
                     {
                         break;
                     }
