@@ -94,9 +94,9 @@
       <KaelthasFlamestrikeFuryOfTheSunwell name="Fury of the Sunwell" desc="KaelthasFlamestrikeFuryOfTheSunwellTalent">
         <Icon>storm_ui_icon_kaelthas_flamestrike.png</Icon>
       </KaelthasFlamestrikeFuryOfTheSunwell>
-      <Kael_x0027_thasLivingBombIgnite name="Ignite" desc="Kael'thasLivingBombIgnite">
+      <KaelthasLivingBombIgnite name="Ignite" desc="KaelthasLivingBombIgnite">
         <Icon>storm_ui_icon_kaelthas_livingbomb.png</Icon>
-      </Kael_x0027_thasLivingBombIgnite>
+      </KaelthasLivingBombIgnite>
       <KaelthasTwinSpheres name="Twin Spheres" desc="KaelthasVerdantSpheresTwinSpheresTalent">
         <Icon>storm_ui_icon_kaelthas_verdantspheres.png</Icon>
       </KaelthasTwinSpheres>
