@@ -109,4 +109,7 @@
   <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/21749146">64863</Patch>
   <Patch type="Hotfix" link="">65006</Patch>
   <Patch type="Diablo/Lunara" link="http://us.battle.net/heroes/en/blog/21788602">65285</Patch>
+  <Patch type="Balance" link="http://us.battle.net/heroes/en/blog/21791354">65617</Patch>
+  <Patch pre="65617">65654</Patch>
+  <Patch pre="65617">65655</Patch>
 </Builds>
