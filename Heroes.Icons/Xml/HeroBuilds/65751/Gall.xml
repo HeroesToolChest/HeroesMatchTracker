@@ -55,7 +55,7 @@
     </Level1>
     <Level4>
       <GallDoubleBack name="Double Back" desc="GallDoubleBackTalent">
-        <Icon>storm_ui_icon_gall_chaoscollision_var1.png</Icon>
+        <Icon>storm_ui_icon_gall_chaoscollision.png</Icon>
       </GallDoubleBack>
       <GallRunicPersistence name="Runic Persistence" desc="GallRunicPersistenceTalent">
         <Icon>storm_ui_icon_gall_detonaterunes.png</Icon>

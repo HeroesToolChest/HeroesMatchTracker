@@ -69,7 +69,7 @@
         <Icon>storm_ui_icon_guldan_felflame.png</Icon>
       </GuldanFelFlameBoundByShadow>
       <GuldanCorruptionCurseOfExhaustion name="Curse of Exhaustion" desc="GuldanCorruptionCurseOfExhaustion">
-        <Icon>storm_ui_icon_guldan_handofguldan.png</Icon>
+        <Icon>storm_ui_icon_guldan_healthfunnel.png</Icon>
       </GuldanCorruptionCurseOfExhaustion>
       <GuldanLifeTapHungerforPower name="Hunger for Power" desc="GuldanLifeTapHungerforPower">
         <Icon>storm_ui_icon_guldan_hungerforpower.png</Icon>

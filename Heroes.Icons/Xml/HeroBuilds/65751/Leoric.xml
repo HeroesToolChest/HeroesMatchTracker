@@ -56,7 +56,7 @@
   <Talents>
     <Level1>
       <LeoricMasteryConsumeVitalitySkeletalSwing name="Consume Vitality" desc="LeoricConsumeVitalityTalent">
-        <Icon>storm_ui_icon_leoric_skeletalswing_undead.png</Icon>
+        <Icon>storm_ui_icon_leoric_skeletalswing.png</Icon>
       </LeoricMasteryConsumeVitalitySkeletalSwing>
       <LeoricMasteryFealtyUntoDeathUndying name="Fealty Unto Death" desc="LeoricFealtyUntoDeathTalent">
         <Icon>storm_ui_icon_leoric_trait.png</Icon>

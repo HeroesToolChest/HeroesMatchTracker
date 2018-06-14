@@ -73,7 +73,7 @@
     </Level4>
     <Level7>
       <MedivhMysticAssault name="Mystic Assault" desc="MedivhMysticAssault">
-        <Icon>storm_ui_icon_medivh_arcanemissile_a.png</Icon>
+        <Icon>storm_ui_icon_medivh_arcanemissile.png</Icon>
       </MedivhMysticAssault>
       <MedivhForceOfWillArcaneExplosion name="Arcane Explosion" desc="MedivhForceOfWillArcaneExplosion">
         <Icon>storm_ui_icon_medivh_forceofwill.png</Icon>

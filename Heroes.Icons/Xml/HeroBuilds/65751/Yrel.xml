@@ -1,125 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Xul available="47479" attributeid="Necr" unit="HeroNecromancer" franchise="Diablo" type="Melee" difficulty="Medium">
-  <Portrait>storm_ui_ingame_heroselect_btn_necromancer.png</Portrait>
-  <Loading>storm_ui_ingame_hero_loadingscreen_necromancer.png</Loading>
-  <Leader>storm_ui_ingame_hero_leaderboard_necromancer.png</Leader>
+<Yrel available="65751" attributeid="YREL" unit="HeroYrel" franchise="Warcraft" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_yrel.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_yrel.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_yrel.png</Leader>
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <NecromancerSpectralScythe name="Spectral Scythe" desc="NecromancerSpectralScythe">
-        <Icon>storm_ui_icon_necromancer_reap.png</Icon>
-        <Mana>55</Mana>
-        <Cooldown>8</Cooldown>
-      </NecromancerSpectralScythe>
-      <NecromancerCursedStrikes name="Cursed Strikes" desc="NecromancerCursedStrikes">
-        <Icon>storm_ui_icon_necromancer_cursedstrikes_off.png</Icon>
-        <Mana>60</Mana>
-        <Cooldown>16</Cooldown>
-      </NecromancerCursedStrikes>
-      <NecromancerBonePrison name="Bone Prison" desc="NecromancerBonePrison">
-        <Icon>storm_ui_icon_necromancer_boneprison.png</Icon>
-        <Mana>70</Mana>
-        <Cooldown>10</Cooldown>
-      </NecromancerBonePrison>
+      <YrelVindication name="Vindication" desc="YrelVindication">
+        <Icon>storm_ui_icon_yrel_vindication.png</Icon>
+        <Mana>5</Mana>
+        <Cooldown>6</Cooldown>
+      </YrelVindication>
+      <YrelRighteousHammer name="Righteous Hammer" desc="YrelRighteousHammer">
+        <Icon>storm_ui_icon_yrel_righteous_hammer.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>6</Cooldown>
+      </YrelRighteousHammer>
+      <YrelAvengingWrath name="Avenging Wrath" desc="YrelAvengingWrath">
+        <Icon>storm_ui_icon_yrel_avenging_wrath.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>6</Cooldown>
+      </YrelAvengingWrath>
     </Basic>
     <Heroic>
-      <NecromancerPoisonNovaInstant name="Poison Nova" desc="NecromancerPoisonNova">
-        <Icon>storm_ui_icon_necromancer_poisonnova.png</Icon>
-        <Mana>100</Mana>
-        <Cooldown>90</Cooldown>
-      </NecromancerPoisonNovaInstant>
-      <NecromancerSkeletalMages name="Skeletal Mages" desc="NecromancerSkeletalMages">
-        <Icon>storm_ui_icon_necromancer_skeletalmages.png</Icon>
-        <Mana>80</Mana>
-        <Cooldown>70</Cooldown>
-      </NecromancerSkeletalMages>
+      <YrelArdentDefender name="Ardent Defender" desc="YrelArdentDefender">
+        <Icon>storm_ui_icon_yrel_ardent_defender.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>100</Cooldown>
+      </YrelArdentDefender>
+      <YrelSacredGround name="Sacred Ground" desc="YrelSacredGround">
+        <Icon>storm_ui_icon_yrel_sacred_ground.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>40</Cooldown>
+      </YrelSacredGround>
     </Heroic>
     <Trait>
-      <NecromancerRaiseSkeleton name="Raise Skeleton" desc="NecromancerRaiseSkeleton">
-        <Icon>storm_ui_icon_necromancer_raiseskeleton.png</Icon>
-      </NecromancerRaiseSkeleton>
+      <YrelDivinePurpose name="Divine Purpose" desc="YrelDivinePurpose">
+        <Icon>storm_ui_icon_yrel_divine_purpose.png</Icon>
+      </YrelDivinePurpose>
     </Trait>
-    <Activable>
-      <NecromancerBoneArmor name="Bone Armor" desc="NecromancerBoneArmor">
-        <Icon>storm_ui_icon_necromancer_bonearmor.png</Icon>
-        <Cooldown>30</Cooldown>
-      </NecromancerBoneArmor>
-    </Activable>
   </Abilities>
   <Talents>
     <Level1>
-      <NecromancerTalentBoneArmorBacklash name="Backlash" desc="NecromancerBoneArmorBacklash">
-        <Icon>storm_ui_icon_necromancer_bonearmor_b.png</Icon>
-      </NecromancerTalentBoneArmorBacklash>
-      <NecromancerTalentBoneArmorShackler name="Shackler" desc="NecromancerBoneArmorShackler">
-        <Icon>storm_ui_icon_necromancer_bonearmor_c.png</Icon>
-      </NecromancerTalentBoneArmorShackler>
-      <NecromancerTalentBoneArmorShade name="Shade" desc="NecromancerBoneArmorShade">
-        <Icon>storm_ui_icon_necromancer_bonearmor.png</Icon>
-      </NecromancerTalentBoneArmorShade>
+      <YrelVindicationLightOfKarabor name="Light of Karabor" desc="YrelVindicationLightOfKarabor">
+        <Icon>storm_ui_icon_yrel_vindication.png</Icon>
+      </YrelVindicationLightOfKarabor>
+      <YrelDauntless name="Dauntless" desc="YrelDauntless">
+        <Icon generic="true">storm_ui_icon_talent_abilitytalent_armor.png</Icon>
+      </YrelDauntless>
+      <YrelMaraadsInsight name="Maraad's Insight" desc="YrelMaraadsInsight">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
+      </YrelMaraadsInsight>
     </Level1>
     <Level4>
-      <NecromancerTalentReapersToll name="Reaper's Toll" desc="NecromancerReapersTollTalent">
-        <Icon>storm_ui_icon_necromancer_reap.png</Icon>
-      </NecromancerTalentReapersToll>
-      <NecromancerTalentGrimScythe name="Grim Scythe" desc="NecromancerCursedStrikesGrimScythe">
-        <Icon>storm_ui_icon_necromancer_cursedstrikes_off.png</Icon>
-      </NecromancerTalentGrimScythe>
-      <NecromancerTalentJailors name="Jailors" desc="NecromancerJailors">
-        <Icon>storm_ui_icon_necromancer_raiseskeleton.png</Icon>
-      </NecromancerTalentJailors>
+      <YrelAvengingWrathAegisOfLight name="Aegis of Light" desc="YrelAvengingWrathAegisOfLight">
+        <Icon>storm_ui_icon_yrel_avenging_wrath.png</Icon>
+      </YrelAvengingWrathAegisOfLight>
+      <YrelDivinePurposeGiftOfTheNaaru name="Gift of the Naaru" desc="YrelDivinePurposeGiftOfTheNaaru">
+        <Icon>storm_ui_icon_yrel_divine_purpose.png</Icon>
+      </YrelDivinePurposeGiftOfTheNaaru>
+      <YrelHandOfFreedom name="Hand of Freedom" desc="YrelHandOfFreedom">
+        <Icon>storm_ui_icon_yrel_hand_of_freedom.png</Icon>
+        <Cooldown>30</Cooldown>
+      </YrelHandOfFreedom>
     </Level4>
     <Level7>
-      <NecromancerTalentHarvestVitality name="Harvest Vitality" desc="NecromancerHarvestVitality">
-        <Icon>storm_ui_icon_necromancer_cursedstrikes_off.png</Icon>
-      </NecromancerTalentHarvestVitality>
-      <NecromancerTalentWeaken name="Weaken" desc="NecromancerWeaken">
-        <Icon>storm_ui_icon_necromancer_cursedstrikes_b.png</Icon>
-      </NecromancerTalentWeaken>
-      <NecromancerTalentTragOulsEssence name="Trag'Oul's Essence" desc="NecromancerTragOulsEssence">
-        <Icon>storm_ui_icon_necromancer_raiseskeleton.png</Icon>
-      </NecromancerTalentTragOulsEssence>
+      <YrelRighteousHammerRighteousMomentum name="Righteous Momentum" desc="YrelRighteousHammerRighteousMomentum">
+        <Icon>storm_ui_icon_yrel_righteous_hammer.png</Icon>
+      </YrelRighteousHammerRighteousMomentum>
+      <YrelAvengingWrathHolyAvenger name="Holy Avenger" desc="YrelAvengingWrathHolyAvenger">
+        <Icon>storm_ui_icon_yrel_avenging_wrath.png</Icon>
+      </YrelAvengingWrathHolyAvenger>
+      <YrelDivineSteed name="Divine Steed" desc="YrelDivineSteed">
+        <Icon>storm_ui_icon_yrel_divine_steed.png</Icon>
+      </YrelDivineSteed>
     </Level7>
     <Level10>
-      <NecromancerHeroicAbilityPoisonNova ability="NecromancerPoisonNovaInstant" />
-      <NecromancerHeroicAbilitySkeletalMages ability="NecromancerSkeletalMages" />
+      <YrelArdentDefender ability="YrelArdentDefender" />
+      <YrelSacredGround ability="YrelSacredGround" />
     </Level10>
     <Level13>
-      <NecromancerTalentEchoesOfDeath name="Echoes of Death" desc="NecromancerEchoesOfDeathTalent">
-        <Icon>storm_ui_icon_necromancer_reap.png</Icon>
-      </NecromancerTalentEchoesOfDeath>
-      <NecromancerTalentRapidHarvest name="Rapid Harvest" desc="NecromancerCursedStrikesRapidHarvest">
-        <Icon>storm_ui_icon_necromancer_cursedstrikes_off.png</Icon>
-      </NecromancerTalentRapidHarvest>
-      <HeroGenericExecutionerPassive name="Executioner" desc="GenericExecutionerTalent">
-        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
-      </HeroGenericExecutionerPassive>
+      <YrelVindicationAldorPeacekeeper name="Aldor Peacekeeper" desc="YrelVindicationAldorPeacekeeper">
+        <Icon>storm_ui_icon_yrel_vindication.png</Icon>
+      </YrelVindicationAldorPeacekeeper>
+      <YrelAvengingWrathRepentance name="Repentance" desc="YrelAvengingWrathRepentance">
+        <Icon>storm_ui_icon_yrel_avenging_wrath.png</Icon>
+      </YrelAvengingWrathRepentance>
+      <YrelVelensChosen name="Velen's Chosen" desc="YrelVelensChosen">
+        <Icon>storm_ui_icon_yrel_velens_chosen.png</Icon>
+      </YrelVelensChosen>
     </Level13>
     <Level16>
-      <NecromancerTalentAmplifyDamage name="Amplify Damage" desc="NecromancerAmplifyDamage">
-        <Icon>storm_ui_icon_necromancer_boneprison.png</Icon>
-      </NecromancerTalentAmplifyDamage>
-      <NecromancerTalentCorpseExplosion name="Corpse Explosion" desc="NecromancerTalentCorpseExplosion">
-        <Icon>storm_ui_icon_necromancer_raiseskeleton.png</Icon>
-      </NecromancerTalentCorpseExplosion>
-      <NecromancerTalentBoneSpear name="Bone Spear" desc="NecromancerBoneSpear">
-        <Icon>storm_ui_icon_necromancer_bonespear.png</Icon>
-        <Cooldown>12</Cooldown>
-      </NecromancerTalentBoneSpear>
+      <YrelRighteousHammerTemplarsVerdict name="Templar's Verdict" desc="YrelRighteousHammerTemplarsVerdict">
+        <Icon>storm_ui_icon_yrel_righteous_hammer.png</Icon>
+      </YrelRighteousHammerTemplarsVerdict>
+      <YrelDivinePurposeDivineFavor name="Divine Favor" desc="YrelDivinePurposeDivineFavor">
+        <Icon>storm_ui_icon_yrel_divine_purpose.png</Icon>
+      </YrelDivinePurposeDivineFavor>
+      <YrelHolyWrath name="Holy Wrath" desc="YrelHolyWrath">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_aoe.png</Icon>
+      </YrelHolyWrath>
     </Level16>
     <Level20>
-      <NecromancerTalentAndarielsVisage name="Andariel's Visage" desc="NecromancerAndarielsVisage">
-        <Icon>storm_ui_icon_necromancer_poisonnova.png</Icon>
-      </NecromancerTalentAndarielsVisage>
-      <NecromancerTalentColdHandOfDeath name="Cold Hand of Death" desc="NecromancerColdHandOfDeath">
-        <Icon>storm_ui_icon_necromancer_skeletalmages.png</Icon>
-      </NecromancerTalentColdHandOfDeath>
-      <NecromancerTalentMortalWound name="Mortal Wound" desc="NecromancerMortalWound">
-        <Icon>storm_ui_icon_necromancer_reap.png</Icon>
-      </NecromancerTalentMortalWound>
-      <NecromancerTalentKalansEdict name="Kalan's Edict" desc="NecromancerTalentKalansEdict">
-        <Icon>storm_ui_icon_necromancer_raiseskeleton.png</Icon>
-      </NecromancerTalentKalansEdict>
+      <YrelArdentDefenderWordOfGlory name="Word of Glory" desc="YrelArdentDefenderWordOfGlory">
+        <Icon>storm_ui_icon_yrel_ardent_defender.png</Icon>
+      </YrelArdentDefenderWordOfGlory>
+      <YrelSacredGroundHallowedGround name="Hallowed Ground" desc="YrelSacredGroundHallowedGround">
+        <Icon>storm_ui_icon_yrel_sacred_ground.png</Icon>
+      </YrelSacredGroundHallowedGround>
+      <YrelBubbleHearth name="Bubble Hearth" desc="YrelBubbleHearth">
+        <Icon>storm_ui_icon_yrel_bubble_hearth.png</Icon>
+        <Cooldown>80</Cooldown>
+      </YrelBubbleHearth>
+      <YrelSeraphim name="Seraphim" desc="YrelSeraphim">
+        <Icon>storm_ui_icon_yrel_seraphim.png</Icon>
+        <Cooldown>10</Cooldown>
+      </YrelSeraphim>
     </Level20>
   </Talents>
-</Xul>
+</Yrel>

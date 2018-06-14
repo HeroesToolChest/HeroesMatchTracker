@@ -44,7 +44,7 @@
   <Talents>
     <Level1>
       <TassadarPsionicStormPsiInfusion name="Psi Infusion" desc="TassadarPsionicStormPsiInfusionTalent">
-        <Icon>storm_ui_icon_tassadar_psionicstorm_var1.png</Icon>
+        <Icon>storm_ui_icon_tassadar_psionicstorm.png</Icon>
       </TassadarPsionicStormPsiInfusion>
       <TassadarTemplarsWill name="Templar's Will" desc="TassadarOracleTemplarsWillTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_mana.png</Icon>
