@@ -20,6 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_yrel.png" />
+    <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_yrel.png" />
+    <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_yrel.png" />
+    <None Remove="Images\Talents\_Generic\storm_ui_icon_talent_abilitytalent_armor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Xml\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -33,6 +40,7 @@
 
   <ItemGroup>
     <Folder Include="Images\Talents\Maiev\" />
+    <Folder Include="Images\Talents\Yrel\" />
   </ItemGroup>
 
 </Project>
