@@ -39,6 +39,12 @@
         <Icon>storm_ui_icon_zuljin_berzerker.png</Icon>
       </ZuljinBerserker>
     </Trait>
+    <Activable>
+      <ZuljinAmaniRage name="Amani Rage" desc="ZuljinAmaniRageTalent">
+        <Icon>storm_ui_icon_zuljin_davoodooshuffle.png</Icon>
+        <Cooldown>30</Cooldown>
+      </ZuljinAmaniRage>
+    </Activable>
   </Abilities>
   <Talents>
     <Level1>
@@ -60,10 +66,9 @@
         <Icon>storm_ui_icon_zuljin_regeneration_a.png</Icon>
         <Cooldown>10</Cooldown>
       </ZuljinVoodooShuffle>
-      <ZuljinAmaniRageTalent name="Amani Rage" desc="ZuljinAmaniRageTalent">
+      <Zul_x0027_jinAmaniRageAmaniHide name="Amani Rage" desc="Zul'jinAmaniRageAmaniHide">
         <Icon>storm_ui_icon_zuljin_davoodooshuffle.png</Icon>
-        <Cooldown>10</Cooldown>
-      </ZuljinAmaniRageTalent>
+      </Zul_x0027_jinAmaniRageAmaniHide>
     </Level4>
     <Level7>
       <ZuljinViciousAssault name="Vicious Assault" desc="ZuljinViciousAssault">

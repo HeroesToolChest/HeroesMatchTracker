@@ -37,6 +37,7 @@
     <Trait>
       <YrelDivinePurpose name="Divine Purpose" desc="YrelDivinePurpose">
         <Icon>storm_ui_icon_yrel_divine_purpose.png</Icon>
+        <Cooldown>8</Cooldown>
       </YrelDivinePurpose>
     </Trait>
   </Abilities>

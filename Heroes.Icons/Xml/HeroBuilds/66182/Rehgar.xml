@@ -8,8 +8,8 @@
     <Basic>
       <RehgarChainHeal name="Chain Heal" desc="RehgarChainHeal">
         <Icon>storm_ui_icon_rehgar_chainheal.png</Icon>
-        <Mana>65</Mana>
-        <Cooldown>9</Cooldown>
+        <Mana>55</Mana>
+        <Cooldown>8</Cooldown>
       </RehgarChainHeal>
       <RehgarLightningShield name="Lightning Shield" desc="RehgarLightningShield">
         <Icon>storm_ui_icon_rehgar_lightningshield.png</Icon>
@@ -79,7 +79,7 @@
       </RehgarBloodAndThunder>
       <RehgarFarsight name="Farsight" desc="RehgarFarsight">
         <Icon>storm_ui_icon_rehgar_farsight.png</Icon>
-        <Cooldown>30</Cooldown>
+        <Cooldown>16</Cooldown>
       </RehgarFarsight>
       <GenericTalentCleanse name="Cleanse" desc="GenericCleanse">
         <Icon>storm_ui_icon_talent_cleanse.png</Icon>

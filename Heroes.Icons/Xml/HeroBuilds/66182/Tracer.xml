@@ -8,7 +8,7 @@
     <Basic>
       <TracerBlink name="Blink" desc="TracerBlinkHeroSelect">
         <Icon>storm_ui_icon_tracer_blink.png</Icon>
-        <Cooldown charge="true">8</Cooldown>
+        <Cooldown charge="true">9</Cooldown>
       </TracerBlink>
       <TracerMelee name="Melee" desc="TracerMelee">
         <Icon>storm_ui_icon_tracer_melee.png</Icon>

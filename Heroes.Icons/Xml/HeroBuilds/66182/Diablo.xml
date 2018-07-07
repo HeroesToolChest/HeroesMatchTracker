@@ -26,12 +26,12 @@
       <DiabloApocalypse name="Apocalypse" desc="DiabloApocalypse">
         <Icon>storm_ui_icon_diablo_apocalypse.png</Icon>
         <Mana>100</Mana>
-        <Cooldown>100</Cooldown>
+        <Cooldown>90</Cooldown>
       </DiabloApocalypse>
       <DiabloLightningBreath name="Lightning Breath" desc="DiabloLightningBreath">
         <Icon>storm_ui_icon_diablo_lightningbreath.png</Icon>
         <Mana>80</Mana>
-        <Cooldown>60</Cooldown>
+        <Cooldown>70</Cooldown>
       </DiabloLightningBreath>
     </Heroic>
     <Trait>

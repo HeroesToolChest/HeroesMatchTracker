@@ -26,7 +26,7 @@
       <FirebatBunkerDrop name="Bunker Drop" desc="FirebatBunkerDrop">
         <Icon>storm_ui_icon_blaze_bunker.png</Icon>
         <Mana>40</Mana>
-        <Cooldown>50</Cooldown>
+        <Cooldown>60</Cooldown>
       </FirebatBunkerDrop>
       <FirebatCombustion name="Combustion" desc="FirebatCombustion">
         <Icon>storm_ui_icon_blaze_combustion.png</Icon>

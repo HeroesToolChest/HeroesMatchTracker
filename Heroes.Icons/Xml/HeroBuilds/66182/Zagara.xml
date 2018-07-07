@@ -31,7 +31,7 @@
       <ZagaraSummonNydusWorm name="Nydus Network" desc="ZagaraNydusNetwork">
         <Icon>storm_ui_icon_zagara_nydusworm.png</Icon>
         <Mana>50</Mana>
-        <Cooldown charge="true">100</Cooldown>
+        <Cooldown charge="true">120</Cooldown>
       </ZagaraSummonNydusWorm>
     </Heroic>
     <Trait>

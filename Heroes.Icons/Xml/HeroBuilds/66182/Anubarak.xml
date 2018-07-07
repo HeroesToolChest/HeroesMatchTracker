@@ -110,10 +110,10 @@
       <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">
         <Icon>storm_ui_icon_Anubarak_WebBlast.png</Icon>
       </AnubarakCocoonCryptweave>
-      <GenericTalentNullificationShield name="Nullification Shield" desc="NullificationShieldTalent">
+      <GenericTalentHardenedShield name="Hardened Shield" desc="HardenedShieldTalent">
         <Icon>storm_ui_icon_talent_hardenedshield.png</Icon>
-        <Cooldown>40</Cooldown>
-      </GenericTalentNullificationShield>
+        <Cooldown>60</Cooldown>
+      </GenericTalentHardenedShield>
       <GenericTalentRewind name="Rewind" desc="GenericRewindHotbar">
         <Icon>storm_ui_icon_Talent_Rewind.png</Icon>
         <Cooldown>60</Cooldown>

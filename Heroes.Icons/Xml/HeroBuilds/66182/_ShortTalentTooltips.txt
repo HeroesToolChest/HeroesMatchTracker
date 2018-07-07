@@ -411,7 +411,7 @@ CrusaderBlindedByTheLight=Activate to Shield nearby allies
 CrusaderCondemn=Pulls and damages nearby enemies
 CrusaderCondemnBlessedHammerTalent=Activate to create spinning hammers
 CrusaderCondemnConvictionTalent=Condemn increases Movement Speed
-CrusaderEternalRetaliationTalent=Condemn cooldown reduced per enemy hit
+CrusaderEternalRetaliationTalent=Empower Condemn
 CrusaderFallingSword=Jump to area, damaging and Slowing enemies
 CrusaderFallingSwordHeavensFuryTalent=Falling Sword bombards enemies with holy bolts
 CrusaderHolyFury=Deals damage to nearby enemies
@@ -800,7 +800,7 @@ GreymaneInnerBeastViciousnessTalent=Increases Inner Beast duration, Abilities re
 GreymaneInnerBeastWolfheartTalent=Basic Attacks lower Inner Beast cooldown
 GreymaneQuicksilverBulletsTalent=Increases Human Basic Attack range
 GreymaneRazorSwipe=Swipe forward and damage enemies
-GreymaneRazorSwipeUnfetteredAssaultTalent=Increases Razor Swipe range
+GreymaneRazorSwipeUnfetteredAssaultTalent=Increases Razor Swipe range, reduces cooldown
 GreymaneRazorSwipeVisceralAttacksTalent=Basic Attacks reduce Razor Swipe's cooldown
 GreymaneToothAndClawTalent=<c val="#ColorViolet">Worgen</c> form Basic Attacks cleave
 GreymaneUnleashed=Go for the Throat gets more powerful free casts
@@ -2042,6 +2042,7 @@ ZeratulVoidSlashTalent=Cleave empowered against multiple Heroes
 ZeratulVorpalBladeHotbar=Teleport to last attacked enemy
 ZeratulWarpSkirmisher=Vorpal Blade gains a charge
 ZeratulWormholeTalent=Can return from Blink location
+Zul'jinAmaniRageAmaniHide=Grant Armor and lower cooldown
 ZuljinAmaniRageTalent=Activate to lose Health and restore it over time
 ZuljinAmaniResilience=Taz'dingo duration increased, restores Health
 ZuljinArcaniteAxes=<c val="#TooltipQuest">Quest:</c> Increase Twin Cleave damage
