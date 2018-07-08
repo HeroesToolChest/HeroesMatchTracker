@@ -7,12 +7,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
     {
         private string _team0Ban0HeroName;
         private string _team0Ban1HeroName;
+        private string _team0Ban2HeroName;
         private string _team1Ban0HeroName;
         private string _team1Ban1HeroName;
+        private string _team1Ban2HeroName;
         private Stream _team0Ban0;
         private Stream _team0Ban1;
+        private Stream _team0Ban2;
         private Stream _team1Ban0;
         private Stream _team1Ban1;
+        private Stream _team1Ban2;
 
         public Stream Team0Ban0
         {
@@ -30,6 +34,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             set
             {
                 _team0Ban1 = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public Stream Team0Ban2
+        {
+            get { return _team0Ban2; }
+            set
+            {
+                _team0Ban2 = value;
                 RaisePropertyChanged();
             }
         }
@@ -54,6 +68,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             }
         }
 
+        public Stream Team1Ban2
+        {
+            get { return _team1Ban2; }
+            set
+            {
+                _team1Ban2 = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string Team0Ban0HeroName
         {
             get { return _team0Ban0HeroName; }
@@ -74,6 +98,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             }
         }
 
+        public string Team0Ban2HeroName
+        {
+            get { return _team0Ban2HeroName; }
+            set
+            {
+                _team0Ban2HeroName = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string Team1Ban0HeroName
         {
             get { return _team1Ban0HeroName; }
@@ -90,6 +124,16 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             set
             {
                 _team1Ban1HeroName = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public string Team1Ban2HeroName
+        {
+            get { return _team1Ban2HeroName; }
+            set
+            {
+                _team1Ban2HeroName = value;
                 RaisePropertyChanged();
             }
         }

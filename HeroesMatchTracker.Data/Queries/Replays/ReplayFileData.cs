@@ -338,11 +338,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         ReplayId = ReplayId,
                         Team0Ban0 = Replay.TeamHeroBans[0][0],
                         Team0Ban1 = Replay.TeamHeroBans[0][1],
+                        Team0Ban2 = Replay.TeamHeroBans[0][2],
                         Team1Ban0 = Replay.TeamHeroBans[1][0],
                         Team1Ban1 = Replay.TeamHeroBans[1][1],
+                        Team1Ban2 = Replay.TeamHeroBans[1][2],
                     };
 
-                    if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null)
+                    if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team0Ban2 != null || 
+                        replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null || replayTeamBan.Team1Ban2 != null)
                         ReplaysDb.MatchTeamBan.CreateRecord(ReplaysContext, replayTeamBan);
                 }
             }
