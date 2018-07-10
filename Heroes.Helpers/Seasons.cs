@@ -27,6 +27,8 @@ namespace Heroes.Helpers
         Year2018Season1 = 1 << 7,
         [Description("Year 2018 Season 2")]
         Year2018Season2 = 1 << 8,
+        [Description("Year 2018 Season 3")]
+        Year2018Season3 = 1 << 9,
     }
 
     public static partial class HeroesHelpers
