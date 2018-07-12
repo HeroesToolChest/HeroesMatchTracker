@@ -23,11 +23,11 @@
       </AnubarakBurrowCharge>
     </Basic>
     <Heroic>
-      <AnubarakCarrionSwarm name="Locust Swarm" desc="AnubarakCarrionSwarm">
+      <AnubarakLocustSwarm name="Locust Swarm" desc="AnubarakLocustSwarm">
         <Icon>storm_ui_icon_Anubarak_LocustSwarm.png</Icon>
         <Mana>75</Mana>
         <Cooldown>100</Cooldown>
-      </AnubarakCarrionSwarm>
+      </AnubarakLocustSwarm>
       <AnubarakCocoon name="Cocoon" desc="AnubarakCocoon">
         <Icon>storm_ui_icon_Anubarak_WebBlast.png</Icon>
         <Mana>70</Mana>
@@ -78,7 +78,7 @@
       </AnubarakMasteryLeechingScarabs>
     </Level7>
     <Level10>
-      <AnubarakHeroicAbilityCarrionSwarm ability="AnubarakCarrionSwarm" />
+      <AnubarakLocustSwarm ability="AnubarakLocustSwarm" />
       <AnubarakHeroicAbilityCocoon ability="AnubarakCocoon" />
     </Level10>
     <Level13>
@@ -104,9 +104,9 @@
       </AnubarakScarabHostBeetleJuiced>
     </Level16>
     <Level20>
-      <AnubarakMasteryHiveMasterCarrionSwarm name="Hive Master" desc="AnubarakCarrionSwarmHiveMasterTalent">
+      <AnubarakLocustSwarmHiveMaster name="Hive Master" desc="AnubarakLocustSwarmHiveMasterTalent">
         <Icon>storm_ui_icon_Anubarak_LocustSwarm.png</Icon>
-      </AnubarakMasteryHiveMasterCarrionSwarm>
+      </AnubarakLocustSwarmHiveMaster>
       <AnubarakCocoonCryptweave name="Cryptweave" desc="AnubarakCryptweaveCocoonTalent">
         <Icon>storm_ui_icon_Anubarak_WebBlast.png</Icon>
       </AnubarakCocoonCryptweave>

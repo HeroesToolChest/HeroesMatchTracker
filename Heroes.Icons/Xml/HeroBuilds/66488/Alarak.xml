@@ -23,11 +23,11 @@
       </AlarakLightningSurge>
     </Basic>
     <Heroic>
-      <AlarakDeadlyCharge name="Deadly Charge" desc="AlarakDeadlyCharge">
+      <AlarakDeadlyChargeActivate name="Deadly Charge" desc="AlarakDeadlyCharge">
         <Icon>storm_ui_icon_alarak_recklesscharge.png</Icon>
         <Mana>60</Mana>
         <Cooldown>45</Cooldown>
-      </AlarakDeadlyCharge>
+      </AlarakDeadlyChargeActivate>
       <AlarakCounterStrikeTargeted name="Counter-Strike" desc="AlarakCounterStrikeTargeted">
         <Icon>storm_ui_icon_alarak_counterstrike.png</Icon>
         <Mana>50</Mana>
@@ -75,7 +75,7 @@
       </AlarakAppliedForce>
     </Level7>
     <Level10>
-      <AlarakHeroicAbilityDeadlyCharge ability="AlarakDeadlyCharge" />
+      <AlarakDeadlyChargeFirstHeroic ability="AlarakDeadlyChargeActivate" />
       <AlarakHeroicAbilityCounterStrike ability="AlarakCounterStrikeTargeted" />
     </Level10>
     <Level13>
@@ -107,11 +107,11 @@
         <Mana>50</Mana>
         <Cooldown>30</Cooldown>
       </AlarakCounterStrikeItem>
-      <AlarakDeadlyChargeItem name="Deadly Charge" desc="AlarakDeadlyCharge2ndHeroic">
+      <AlarakDeadlyChargeSecondHeroic name="Deadly Charge" desc="AlarakDeadlyCharge">
         <Icon>storm_ui_icon_alarak_recklesscharge.png</Icon>
         <Mana>60</Mana>
         <Cooldown>45</Cooldown>
-      </AlarakDeadlyChargeItem>
+      </AlarakDeadlyChargeSecondHeroic>
       <AlarakLastLaugh name="Last Laugh" desc="AlarakLastLaugh">
         <Icon>storm_ui_icon_alarak_lasttrick.png</Icon>
         <Cooldown>30</Cooldown>

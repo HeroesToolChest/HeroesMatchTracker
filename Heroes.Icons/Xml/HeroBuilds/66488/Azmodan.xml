@@ -6,124 +6,115 @@
   <Roles>Specialist</Roles>
   <Abilities>
     <Basic>
-      <AzmodanGlobeOfAnnihilation name="Globe Of Annihilation" desc="AzmodanGlobeOfAnnihilation">
+      <AzmodanGlobeOfAnnihilation name="Globe of Annihilation" desc="AzmodanGlobeOfAnnihilation">
         <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
         <Mana>60</Mana>
         <Cooldown>10</Cooldown>
       </AzmodanGlobeOfAnnihilation>
       <AzmodanSummonDemonWarrior name="Summon Demon Warrior" desc="AzmodanSummonDemonWarrior">
         <Icon>storm_ui_icon_azmodan_summondemonwarrior.png</Icon>
-        <Mana>40</Mana>
-        <Cooldown charge="true">10</Cooldown>
+        <Mana>30</Mana>
+        <Cooldown>10</Cooldown>
       </AzmodanSummonDemonWarrior>
-      <AzmodanAllShallBurn name="All Shall Burn" desc="AzmodanAllShallBurn" per-mana="true">
+      <AzmodanAllShallBurn name="All Shall Burn" desc="AzmodanAllShallBurn">
         <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
-        <Mana time="true">16</Mana>
-        <Cooldown>6</Cooldown>
+        <Mana>30</Mana>
+        <Cooldown>8</Cooldown>
       </AzmodanAllShallBurn>
     </Basic>
     <Heroic>
       <AzmodanDemonicInvasion name="Demonic Invasion" desc="AzmodanDemonicInvasion">
         <Icon>storm_ui_icon_azmodan_demonicinvasion.png</Icon>
-        <Mana>100</Mana>
-        <Cooldown>100</Cooldown>
-      </AzmodanDemonicInvasion>
-      <AzmodanBlackPool name="Black Pool" desc="AzmodanBlackPool">
-        <Icon>storm_ui_icon_azmodan_blackpool.png</Icon>
         <Mana>60</Mana>
-        <Cooldown charge="true">20</Cooldown>
-      </AzmodanBlackPool>
+        <Cooldown>90</Cooldown>
+      </AzmodanDemonicInvasion>
+      <AzmodanTideOfSin name="Tide of Sin" desc="AzmodanTideOfSin">
+        <Icon>storm_ui_icon_azmodan_blackpool.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>20</Cooldown>
+      </AzmodanTideOfSin>
     </Heroic>
     <Trait>
-      <AzmodanGeneralOfHell name="General of Hell" desc="AzmodanGeneralOfHell">
+      <AzmodanDemonLieutenant name="Demon Lieutenant" desc="AzmodanDemonLieutenant">
         <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
-        <Cooldown>30</Cooldown>
-      </AzmodanGeneralOfHell>
+        <Cooldown>60</Cooldown>
+      </AzmodanDemonLieutenant>
     </Trait>
   </Abilities>
   <Talents>
     <Level1>
-      <AzmodanMasteryTasteForBlood name="Taste for Blood" desc="AzmodanGlobeOfAnnihilationTasteForBloodTalent">
+      <AzmodanGreed name="Greed" desc="AzmodanGreed">
         <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
-      </AzmodanMasteryTasteForBlood>
-      <AzmodanMasterySiegingWrath name="Sieging Wrath" desc="AzmodanGlobeOfAnnihilationSiegingWrathTalent">
+      </AzmodanGreed>
+      <AzmodanGluttony name="Gluttony" desc="AzmodanGluttony">
         <Icon>storm_ui_icon_azmodan_globeofannihilation_a.png</Icon>
-      </AzmodanMasterySiegingWrath>
-      <AzmodanMasteryMasterOfDestruction name="Master of Destruction" desc="AzmodanAllShallBurnMasterOfDestructionTalent">
-        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
-      </AzmodanMasteryMasterOfDestruction>
+      </AzmodanGluttony>
+      <AzmodanWrath name="Wrath" desc="AzmodanWrath">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation_b.png</Icon>
+      </AzmodanWrath>
     </Level1>
     <Level4>
-      <AzmodanMasteryGluttony name="Gluttony" desc="AzmodanAllShallBurnGluttonyTalent">
-        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
-      </AzmodanMasteryGluttony>
-      <AzmodanMasteryArmyOfHell name="Army of Hell" desc="AzmodanSummonDemonWarriorArmyOfHellTalent">
+      <AzmodanArmyOfHell name="Army of Hell" desc="AzmodanArmyOfHell">
         <Icon>storm_ui_icon_azmodan_summondemonwarrior.png</Icon>
-      </AzmodanMasteryArmyOfHell>
-      <AzmodanHellishHirelings name="Hellish Hirelings" desc="AzmodanHellishHirelings">
-        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
-      </AzmodanHellishHirelings>
-      <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">
-        <Icon>storm_ui_icon_azmodan_sinsgrasp.png</Icon>
-        <Cooldown>120</Cooldown>
-      </AzmodanSinsGrasp>
+      </AzmodanArmyOfHell>
+      <AzmodanHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">
+        <Icon>storm_ui_icon_azmodan_summondemonwarrior_a.png</Icon>
+      </AzmodanHellforgedArmor>
+      <AzmodanBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_cooldown.png</Icon>
+      </AzmodanBattleborn>
     </Level4>
     <Level7>
-      <AzmodanMasteryInfernalGlobe name="Infernal Globe" desc="AzmodanGlobeOfAnnihilationInfernalGlobeTalent">
+      <AzmodanArtOfChaos name="Art of Chaos" desc="AzmodanArtOfChaos">
         <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
-      </AzmodanMasteryInfernalGlobe>
-      <AzmodanMasteryBoundMinion name="Bound Minion" desc="AzmodanGeneralOfHellBoundMinionTalent">
-        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
-      </AzmodanMasteryBoundMinion>
-      <AzmodanGluttonousWard name="Gluttonous Ward" desc="AzmodanGluttonousWardHotbar">
-        <Icon>storm_ui_icon_azmodan_gluttonousward.png</Icon>
-        <Cooldown>45</Cooldown>
-      </AzmodanGluttonousWard>
-      <AzmodanMasteryMarchOfSin name="March of Sin" desc="AzmodanAllShallBurnMarchOfSinTalent">
+      </AzmodanArtOfChaos>
+      <AzmodanBombardment name="Bombardment" desc="AzmodanBombardment">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation_a.png</Icon>
+      </AzmodanBombardment>
+      <AzmodanMasterofDestruction name="Master of Destruction" desc="AzmodanAllShallBurnMasterOfDestructionTalent">
         <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
-      </AzmodanMasteryMarchOfSin>
+      </AzmodanMasterofDestruction>
     </Level7>
     <Level10>
       <AzmodanHeroicAbilityDemonicInvasion ability="AzmodanDemonicInvasion" />
-      <AzmodanHeroicAbilityBlackPool ability="AzmodanBlackPool" />
+      <AzmodanTideOfSin ability="AzmodanTideOfSin" />
     </Level10>
     <Level13>
-      <AzmodanMasteryHellforgedArmor name="Hellforged Armor" desc="AzmodanSummonDemonWarriorHellforgedArmorTalent">
+      <AzmodanBrutishVanguard name="Brutish Vanguard" desc="AzmodanBrutishVanguard">
         <Icon>storm_ui_icon_azmodan_summondemonwarrior.png</Icon>
-      </AzmodanMasteryHellforgedArmor>
-      <AzmodanMasteryHedonism name="Hedonism" desc="AzmodanGlobeOfAnnihilationHedonismTalent">
-        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
-      </AzmodanMasteryHedonism>
-      <AzmodanMasteryInfusedPower name="Infused Power" desc="AzmodanInfusedPowerTalent">
+      </AzmodanBrutishVanguard>
+      <AzmodanCydaeasKiss name="Cydaea's Kiss" desc="AzmodanCydaeasKiss">
         <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
-      </AzmodanMasteryInfusedPower>
+      </AzmodanCydaeasKiss>
+      <AzmodanChainOfCommand name="Chain of Command" desc="AzmodanChainOfCommand">
+        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
+      </AzmodanChainOfCommand>
     </Level13>
     <Level16>
-      <AzmodanMasteryBattleborn name="Battleborn" desc="AzmodanGlobOfAnnihilationBattlebornTalent">
+      <AzmodanTotalAnnihilation name="Total Annihilation" desc="AzmodanTotalAnnihilation">
         <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
-      </AzmodanMasteryBattleborn>
-      <AzmodanMasteryDemonicSmite name="Demonic Smite" desc="AzmodanGeneralOfHellDemonicSmiteTalent">
-        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
-      </AzmodanMasteryDemonicSmite>
-      <AzmodanSinforSin name="Sin for Sin" desc="AzmodanSinforSin">
-        <Icon generic="true">storm_ui_icon_talent_bloodforblood.png</Icon>
-        <Cooldown>45</Cooldown>
-      </AzmodanSinforSin>
+      </AzmodanTotalAnnihilation>
+      <AzmodanHellRift name="Hell Rift" desc="AzmodanHellRift">
+        <Icon>storm_ui_icon_azmodan_allshallburn.png</Icon>
+      </AzmodanHellRift>
+      <AzmodanSinsGrasp name="Sin's Grasp" desc="AzmodanSinsGraspHotbar">
+        <Icon>storm_ui_icon_azmodan_allshallburn_a.png</Icon>
+      </AzmodanSinsGrasp>
     </Level16>
     <Level20>
-      <AzmodanMasteryPerishingFlame name="Perishing Flame" desc="AzmodanDemonicInvasionPerishingFlameTalent">
+      <AzmodanSiegebreaker name="Siegebreaker" desc="AzmodanSiegebreaker">
         <Icon>storm_ui_icon_azmodan_demonicinvasion.png</Icon>
-      </AzmodanMasteryPerishingFlame>
-      <AzmodanMasteryBlackPoolFifthCircle name="Fifth Circle" desc="AzmodanBlackPoolFifthCircleTalent">
+      </AzmodanSiegebreaker>
+      <AzmodanBlackPool name="Black Pool" desc="AzmodanTideOfSinBlackPoolTalent">
         <Icon>storm_ui_icon_azmodan_blackpool.png</Icon>
-      </AzmodanMasteryBlackPoolFifthCircle>
-      <AzmodanBoltoftheStorms name="Bolt of the Storm" desc="GenericBoltoftheStormTalent">
-        <Icon generic="true">storm_ui_icon_talent_boltofthestorm.png</Icon>
-        <Cooldown>70</Cooldown>
-      </AzmodanBoltoftheStorms>
-      <AzmodanMasteryForcedRecruitment name="Forced Recruitment" desc="AzmodanGeneralOfHellForcedRecruitmentTalent">
-        <Icon>storm_ui_icon_azmodan_generalofhell.png</Icon>
-      </AzmodanMasteryForcedRecruitment>
+      </AzmodanBlackPool>
+      <AzmodanPride name="Pride" desc="AzmodanPride">
+        <Icon>storm_ui_icon_azmodan_globeofannihilation.png</Icon>
+      </AzmodanPride>
+      <AzmodanTrample name="Trample" desc="AzmodanTrample">
+        <Icon>storm_ui_icon_azmodan_trample.png</Icon>
+        <Cooldown>60</Cooldown>
+      </AzmodanTrample>
     </Level20>
   </Talents>
 </Azmodan>
