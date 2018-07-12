@@ -6,8 +6,8 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
     {
         public void Execute()
         {
-            AddColumnToTable("ReplayMatchTeamBan", "Team0Ban2", "TEXT");
-            AddColumnToTable("ReplayMatchTeamBan", "Team1Ban2", "TEXT");
+            AddColumnToTable("ReplayMatchTeamBans", "Team0Ban2", "TEXT");
+            AddColumnToTable("ReplayMatchTeamBans", "Team1Ban2", "TEXT");
         }
     }
 }
