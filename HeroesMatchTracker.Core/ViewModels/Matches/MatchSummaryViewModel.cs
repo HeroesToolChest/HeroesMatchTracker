@@ -657,10 +657,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     MatchHeroBans.Team1Ban0 = bannedHero4.GetHeroPortrait();
                     MatchHeroBans.Team1Ban1 = bannedHero5.GetHeroPortrait();
 
+
+
                     if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                     {
                         MatchHeroBans.Team0Ban2 = bannedHero3.GetHeroPortrait();
                         MatchHeroBans.Team1Ban2 = bannedHero6.GetHeroPortrait();
+                    }
+                    else
+                    {
+                        MatchHeroBans.Team0Ban2 = null;
+                        MatchHeroBans.Team1Ban2 = null;
                     }
                 });
 
@@ -1017,15 +1024,21 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 MatchHeroBans.Team0Ban0.Dispose();
             if (MatchHeroBans.Team0Ban1 != null)
                 MatchHeroBans.Team0Ban1.Dispose();
+            if (MatchHeroBans.Team0Ban2 != null)
+                MatchHeroBans.Team0Ban2.Dispose();
             if (MatchHeroBans.Team1Ban0 != null)
                 MatchHeroBans.Team1Ban0.Dispose();
             if (MatchHeroBans.Team1Ban1 != null)
                 MatchHeroBans.Team1Ban1.Dispose();
+            if (MatchHeroBans.Team1Ban2 != null)
+                MatchHeroBans.Team1Ban2.Dispose();
 
             MatchHeroBans.Team0Ban0HeroName = null;
             MatchHeroBans.Team0Ban1HeroName = null;
+            MatchHeroBans.Team0Ban2HeroName = null;
             MatchHeroBans.Team1Ban0HeroName = null;
             MatchHeroBans.Team1Ban1HeroName = null;
+            MatchHeroBans.Team1Ban2HeroName = null;
 
             BackgroundImage.Dispose();
 
