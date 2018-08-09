@@ -36,6 +36,15 @@
     <None Update="Xml\HeroBuilds\59799\_AllHeroes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Xml\HeroBuilds\67143\Kerrigan.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xml\HeroBuilds\67143\_FullTalentTooltips.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Xml\HeroBuilds\67143\_ShortTalentTooltips.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

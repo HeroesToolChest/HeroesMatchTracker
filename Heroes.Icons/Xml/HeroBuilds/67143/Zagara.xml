@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Zagara available="47479" attributeid="Zaga" unit="HeroZagara" franchise="Starcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_zagara.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_zagara.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_zagara.png</Leader>
+  <Roles>Specialist</Roles>
+  <Abilities>
+    <Basic>
+      <ZagaraBanelingBarrage name="Baneling Barrage" desc="ZagaraBanelingBarrage">
+        <Icon>storm_ui_icon_zagara_banelingbarrage.png</Icon>
+        <Mana>10</Mana>
+        <Cooldown charge="true">3</Cooldown>
+      </ZagaraBanelingBarrage>
+      <ZagaraSummonHydralisk name="Hunter Killer" desc="ZagaraHunterKiller">
+        <Icon>storm_ui_icon_zagara_hunterkiller.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>14</Cooldown>
+      </ZagaraSummonHydralisk>
+      <ZagaraInfestedDrop name="Infested Drop" desc="ZagaraInfestedDrop">
+        <Icon>storm_ui_icon_zagara_infesteddrop.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>12</Cooldown>
+      </ZagaraInfestedDrop>
+    </Basic>
+    <Heroic>
+      <ZagaraDevouringMaw name="Devouring Maw" desc="ZagaraDevouringMaw">
+        <Icon>storm_ui_icon_zagara_devouringmaw.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>100</Cooldown>
+      </ZagaraDevouringMaw>
+      <ZagaraSummonNydusWorm name="Nydus Network" desc="ZagaraNydusNetwork">
+        <Icon>storm_ui_icon_zagara_nydusworm.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown charge="true">120</Cooldown>
+      </ZagaraSummonNydusWorm>
+    </Heroic>
+    <Trait>
+      <ZagaraSummonCreepTumor name="Creep Tumor" desc="ZagaraCreepTumor" ch-cooldwon="true">
+        <Icon>storm_ui_icon_zagara_creep.png</Icon>
+        <Cooldown>18</Cooldown>
+      </ZagaraSummonCreepTumor>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <ZagaraMasteryVolatileAcid name="Volatile Acid" desc="ZagaraBanelingBarrageVolatileAcidTalent">
+        <Icon>storm_ui_icon_zagara_banelingbarrage.png</Icon>
+      </ZagaraMasteryVolatileAcid>
+      <ZagaraMasteryCorpseFeeders name="Corpse Feeders" desc="ZagaraInfestedDropCorpseFeedersTalent">
+        <Icon>storm_ui_icon_zagara_infesteddrop.png</Icon>
+      </ZagaraMasteryCorpseFeeders>
+      <ZagaraMasteryInfest name="Infest" desc="ZagaraInfest">
+        <Icon>storm_ui_icon_zagara_infest.png</Icon>
+      </ZagaraMasteryInfest>
+    </Level1>
+    <Level4>
+      <ZagaraMasteryEnvenomedSpines name="Envenomed Spines" desc="ZagaraEnvenomedSpinesTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_range.png</Icon>
+      </ZagaraMasteryEnvenomedSpines>
+      <ZagaraCombatStyleMedusaBlades name="Medusa Blades" desc="ZagaraMedusaBladesTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_aoe.png</Icon>
+      </ZagaraCombatStyleMedusaBlades>
+      <ZagaraMasterySerratedSpines name="Serrated Spines" desc="ZagaraSerratedSpines">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </ZagaraMasterySerratedSpines>
+    </Level4>
+    <Level7>
+      <ZagaraMasteryBanelingMassacre name="Baneling Massacre" desc="ZagaraBanelingBarrageBanelingMassacreTalent">
+        <Icon>storm_ui_icon_zagara_banelingbarrage.png</Icon>
+      </ZagaraMasteryBanelingMassacre>
+      <ZagaraViscousAcid name="Viscous Acid" desc="ZagaraViscousAcid">
+        <Icon>storm_ui_icon_zagara_banelingbarrage_a.png</Icon>
+      </ZagaraViscousAcid>
+      <ZagaraMasteryBileDrop name="Bile Drop" desc="ZagaraInfestedDropBileDropTalent">
+        <Icon>storm_ui_icon_zagara_infesteddrop.png</Icon>
+      </ZagaraMasteryBileDrop>
+    </Level7>
+    <Level10>
+      <ZagaraHeroicAbilityDevouringMaw ability="ZagaraDevouringMaw" />
+      <ZagaraHeroicAbilityNydusAssault ability="ZagaraSummonNydusWorm" />
+    </Level10>
+    <Level13>
+      <ZagaraMasteryHydraliskTransfusion name="Hydralisk Transfusion" desc="ZagaraHydraliskTransfusionTalent">
+        <Icon>storm_ui_icon_zagara_hunterkiller.png</Icon>
+      </ZagaraMasteryHydraliskTransfusion>
+      <ZagaraMasteryProtectiveCoating name="Protective Coating" desc="ZagaraCreepTumorProtectiveCoating">
+        <Icon>storm_ui_icon_zagara_creep.png</Icon>
+      </ZagaraMasteryProtectiveCoating>
+      <GenericTalentSpellShield name="Spell Shield" desc="GenericSpellShieldTalent">
+        <Icon>storm_ui_icon_talent_spellshield.png</Icon>
+      </GenericTalentSpellShield>
+    </Level13>
+    <Level16>
+      <ZagaraMasteryBroodExpansion name="Brood Expansion" desc="ZagaraHunterKillerBroodExpansionTalent">
+        <Icon>storm_ui_icon_zagara_hunterkiller.png</Icon>
+      </ZagaraMasteryBroodExpansion>
+      <ZagaraMasteryCorrosiveSaliva name="Corrosive Saliva" desc="ZagaraCorrosiveSalivaHunterKillerTalent">
+        <Icon>storm_ui_icon_zagara_hunterkiller_a.png</Icon>
+      </ZagaraMasteryCorrosiveSaliva>
+      <ZagaraMasteryMutalisk name="Mutalisk" desc="ZagaraHunterKillerMutaliskTalent">
+        <Icon>storm_ui_icon_zagara_hunterkillermuta.png</Icon>
+      </ZagaraMasteryMutalisk>
+    </Level16>
+    <Level20>
+      <ZagaraMasteryTyrantMaw name="Tyrant Maw" desc="ZagaraDevouringMawTyrantMawTalent">
+        <Icon>storm_ui_icon_zagara_devouringmaw.png</Icon>
+      </ZagaraMasteryTyrantMaw>
+      <ZagaraMasteryEndlessCreep name="Endless Creep" desc="ZagaraCreepTumorEndlessCreepTalent">
+        <Icon>storm_ui_icon_zagara_nydusworm.png</Icon>
+      </ZagaraMasteryEndlessCreep>
+      <GenericTalentFuryoftheStorm name="Fury of the Storm" desc="FuryoftheStormTalent">
+        <Icon>storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </GenericTalentFuryoftheStorm>
+    </Level20>
+  </Talents>
+</Zagara>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Raynor available="47479" attributeid="Rayn" unit="HeroRaynor" franchise="Starcraft" type="Ranged" difficulty="Easy">
+  <Portrait>storm_ui_ingame_heroselect_btn_raynor.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_raynor.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_raynor.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <RaynorPenetratingRound name="Penetrating Round" desc="RaynorPenetratingRound">
+        <Icon>storm_ui_icon_raynor_penetratinground.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </RaynorPenetratingRound>
+      <RaynorInspire name="Inspire" desc="RaynorInspire">
+        <Icon>storm_ui_icon_raynor_inspire.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>12</Cooldown>
+      </RaynorInspire>
+      <RaynorAdrenalineRush name="Adrenaline Rush" desc="RaynorAdrenalineRushActivatable">
+        <Icon>storm_ui_icon_raynor_adrenalinrush.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>45</Cooldown>
+      </RaynorAdrenalineRush>
+    </Basic>
+    <Heroic>
+      <RaynorHyperion name="Hyperion" desc="RaynorHyperion">
+        <Icon>storm_ui_icon_raynor_hyperion.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>100</Cooldown>
+      </RaynorHyperion>
+      <RaynorRaynorsRaidersDummy name="Raynor's Raider" desc="RaynorRaynorsRaider">
+        <Icon>storm_ui_icon_raynor_raynorsraiders.png</Icon>
+        <Cooldown>45</Cooldown>
+      </RaynorRaynorsRaidersDummy>
+    </Heroic>
+    <Trait>
+      <RaynorGiveEmSomePepper name="Give 'Em Some Pepper" desc="RaynorGiveEmSomePepper">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+      </RaynorGiveEmSomePepper>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <RaynorVeteranMarksman name="Veteran Marksman" desc="RaynorVeteranMarksman">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+      </RaynorVeteranMarksman>
+      <RaynorAceInTheHole name="Ace In The Hole" desc="RaynorAceInTheHole">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </RaynorAceInTheHole>
+      <RaynorGiveEmSomePepperExterminator name="Exterminator" desc="RaynorExterminator">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_building.png</Icon>
+      </RaynorGiveEmSomePepperExterminator>
+    </Level1>
+    <Level4>
+      <RaynorMasteryFightorFlightAdrenalineRush name="Fight or Flight" desc="RaynorAdrenalineRushFightOrFlightTalent">
+        <Icon>storm_ui_icon_raynor_adrenalinrush.png</Icon>
+      </RaynorMasteryFightorFlightAdrenalineRush>
+      <RaynorBasicAttackSustainingRounds name="Sustaining Rounds" desc="RaynorBasicAttackSustainingRounds">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+      </RaynorBasicAttackSustainingRounds>
+      <RaynorBehemothArmor name="Behemoth Armor" desc="RaynorBehemothArmor">
+        <Icon>storm_ui_icon_raynor_hulkarmor.png</Icon>
+      </RaynorBehemothArmor>
+    </Level4>
+    <Level7>
+      <RaynorInspireFuelTheRush name="Fuel The Rush" desc="RaynorInspireFuelTheRush">
+        <Icon>storm_ui_icon_raynor_split_debilitatingrounds.png</Icon>
+      </RaynorInspireFuelTheRush>
+      <RaynorGiveEmSomePepperUnstableCompound name="Unstable Compound" desc="RaynorGiveEmSomePepperUnstableCompound">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+      </RaynorGiveEmSomePepperUnstableCompound>
+      <RaynorPenetratingRoundHeavySlugs name="Heavy Slugs" desc="RaynorPenetratingRoundHeavySlugs">
+        <Icon>storm_ui_icon_raynor_penetratinground.png</Icon>
+        <Cooldown>30</Cooldown>
+      </RaynorPenetratingRoundHeavySlugs>
+    </Level7>
+    <Level10>
+      <RaynorHeroicAbilityHyperion ability="RaynorHyperion" />
+      <RaynorHeroicAbilityRaynorsRaiders ability="RaynorRaynorsRaidersDummy" />
+    </Level10>
+    <Level13>
+      <RaynorPenetratingRoundDebilitatingRounds name="Debilitating Rounds" desc="RaynorPenetratingRoundDebilitatingRounds">
+        <Icon>storm_ui_icon_raynor_split_fuelrush.png</Icon>
+      </RaynorPenetratingRoundDebilitatingRounds>
+      <RaynorInspireRallyingCry name="Rallying Cry" desc="RaynorInspireRallyingCry">
+        <Icon>storm_ui_icon_raynor_inspire.png</Icon>
+      </RaynorInspireRallyingCry>
+      <RaynorInspireGiddyUp name="Giddy-Up" desc="RaynorInspireGiddyUp">
+        <Icon>storm_ui_icon_raynor_inspire_a.png</Icon>
+      </RaynorInspireGiddyUp>
+    </Level13>
+    <Level16>
+      <RaynorPenetratingRoundPaintThemRed name="Paint Them Red" desc="RaynorPenetratingRoundPaintThemRed">
+        <Icon>storm_ui_icon_raynor_penetratinground.png</Icon>
+      </RaynorPenetratingRoundPaintThemRed>
+      <RaynorMasteryGiveMeMoreAdrenalineRush name="Give Me More!" desc="RaynorAdrenalineRushGiveMeMoreTalent">
+        <Icon>storm_ui_icon_raynor_split_debilitatingrounds.png</Icon>
+      </RaynorMasteryGiveMeMoreAdrenalineRush>
+      <RaynorBountyHunter name="Bounty Hunter" desc="RaynorBountyHunter">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+        <Cooldown>40</Cooldown>
+      </RaynorBountyHunter>
+    </Level16>
+    <Level20>
+      <RaynorHyperionIndomitableResolve name="Indomitable Resolve" desc="RaynorHyperionIndomitableResolve">
+        <Icon>storm_ui_icon_raynor_hyperion.png</Icon>
+      </RaynorHyperionIndomitableResolve>
+      <RaynorDuskWing name="Dusk Wing" desc="RaynorRaynorsRaidersDuskWingsTalent">
+        <Icon>storm_ui_icon_raynor_raynorsraiders.png</Icon>
+      </RaynorDuskWing>
+      <RaynorGiveEmSomePepperWeakSpotAcquired name="Weak Spot Acquired" desc="RaynorGiveEmSomePepperWeakSpotAcquired">
+        <Icon>storm_ui_icon_raynor_acquireweakspot.png</Icon>
+      </RaynorGiveEmSomePepperWeakSpotAcquired>
+      <RaynorBasicAttackExecute name="Execute" desc="RaynorBasicAttackExecute">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </RaynorBasicAttackExecute>
+    </Level20>
+  </Talents>
+</Raynor>
