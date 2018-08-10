@@ -72,6 +72,7 @@ Uther=A Healer that can negate high bursts of damage.
 Valeera=A stealthed Assassin who specializes in shutting down her opponents.
 Valla=A well-rounded Assassin that's mobile and can deal high sustained damage.
 Varian=A Multi-Class Hero that can Tank for his team or become a high damage Assassin.
+Whitemane=A versatile Healer who heals her allies by smiting her foes.
 Xul=A Summoner who can push multiple lanes with ease.
 Yrel=A deliberate melee tank whose heavyweight abilities reward investment and careful timing.
 Zagara=A Summoner who provides lots of vision of the battleground.
