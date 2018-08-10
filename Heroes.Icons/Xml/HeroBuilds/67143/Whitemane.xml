@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Varian available="67143" attributeid="WHIT" unit="HeroWhitemane" franchise="Warcraft" type="Ranged" difficulty="Medium">
+<Whitemane available="67143" attributeid="WHIT" unit="HeroWhitemane" franchise="Warcraft" type="Ranged" difficulty="Medium">
   <Portrait>storm_ui_ingame_heroselect_btn_whitemane.png</Portrait>
   <Loading>storm_ui_ingame_hero_loadingscreen_whitemane.png</Loading>
   <Leader>storm_ui_ingame_hero_leaderboard_whitemane.png</Leader>
@@ -114,4 +114,4 @@
       </WhitemanePurgeTheWicked>
     </Level20>
   </Talents>
-</Varian>
+</Whitemane>
