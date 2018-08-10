@@ -219,6 +219,12 @@ namespace HeroesMatchTracker.Core.Converters
                     case "#GLOWCOLORRED":
                         color = (Color)ColorConverter.ConvertFromString("#FF5858");
                         break;
+                    case "#WHITEMANEDESPERATION":
+                        color = (Color)ColorConverter.ConvertFromString("#FF8B8B");
+                        break;
+                    case "#WHITEMANEZEAL":
+                        color = (Color)ColorConverter.ConvertFromString("#FFF5C2");
+                        break;
                     default:
                         WarningLog.Log(LogLevel.Warn, $"[TalentDescriptionTextStyleConverter] Unknown color value: {colorValue}");
                         color = Colors.Gray;
