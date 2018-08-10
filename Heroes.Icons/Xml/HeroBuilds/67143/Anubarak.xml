@@ -56,7 +56,7 @@
       <AnubarakMasteryBedOfBarbs name="Bed of Barbs" desc="AnubarakImpaleBedOfBarbsTalent">
         <Icon>storm_ui_icon_Anubarak_Impale.png</Icon>
       </AnubarakMasteryBedOfBarbs>
-      <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton" desc="AnubarakRegeneratingCarapaceShedExoskeletonTalent">
+      <AnubarakMasteryShedExoskeletonHardenCarapace name="Shed Exoskeleton" desc="AnubarakHardenCarapaceShedExoskeletonTalent">
         <Icon>storm_ui_icon_Anubarak_HardenCarapace_Var1.png</Icon>
       </AnubarakMasteryShedExoskeletonHardenCarapace>
       <AnubarakMasteryUnderkingBurrowCharge name="Underking" desc="AnubarakBurrowChargeUnderkingTalent">

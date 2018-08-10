@@ -54,16 +54,17 @@
       </GenericTalentSeasonedMarksman>
     </Level1>
     <Level4>
-      <ArtanisBladeDashPsionicSynergy name="Psionic Synergy" desc="ArtanisBladeDashPsionicSynergyTalent">
-        <Icon>storm_ui_icon_artanis_powerstrikes.png</Icon>
-      </ArtanisBladeDashPsionicSynergy>
+      <ArtanisPhasePrismPsionicSynergy name="Psionic Synergy" desc="ArtanisPhasePrismPsionicSynergyTalent">
+        <Icon>storm_ui_icon_artanis_repositionmatrix.png</Icon>
+      </ArtanisPhasePrismPsionicSynergy>
       <ArtanisShieldOverloadShieldBattery name="Shield Battery" desc="ArtanisShieldOverloadShieldBatteryTalent">
         <Icon>storm_ui_icon_artanis_shieldoverload.png</Icon>
       </ArtanisShieldOverloadShieldBattery>
       <ArtanisShieldOverloadShieldSurge name="Shield Surge" desc="ArtanisShieldOverloadShieldSurgeTalentNew">
         <Icon>storm_ui_icon_artanis_shieldoverload_a.png</Icon>
       </ArtanisShieldOverloadShieldSurge>
-    </Level4>
+    
+  </Level4>
     <Level7>
       <ArtanisBladeDashSolariteReaper name="Solarite Reaper" desc="ArtanisBladeDashSolariteReaperTalent">
         <Icon>storm_ui_icon_artanis_powerstrikes.png</Icon>
@@ -103,9 +104,6 @@
       <ArtanisShieldOverloadForceofWill name="Force of Will" desc="ArtanisShieldOverloadForceofWillTalent">
         <Icon>storm_ui_icon_artanis_shieldoverload.png</Icon>
       </ArtanisShieldOverloadForceofWill>
-      <ArtanisTwinBladesPsionicWound name="Psionic Wound" desc="ArtanisTwinBladesPsionicWoundTalent">
-        <Icon>storm_ui_icon_artanis_doubleslash_var2.png</Icon>
-      </ArtanisTwinBladesPsionicWound>
       <ArtanisPlasmaBurn name="Plasma Burn" desc="ArtanisPlasmaBurn">
         <Icon>storm_ui_icon_artanis_shieldoverload.png</Icon>
       </ArtanisPlasmaBurn>

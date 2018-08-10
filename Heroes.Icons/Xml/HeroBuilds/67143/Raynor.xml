@@ -16,7 +16,7 @@
         <Mana>40</Mana>
         <Cooldown>12</Cooldown>
       </RaynorInspire>
-      <RaynorAdrenalineRush name="Adrenaline Rush" desc="RaynorAdrenalineRushActivatable">
+      <RaynorAdrenalineRush name="Adrenaline Rush" desc="RaynorAdrenalineRush">
         <Icon>storm_ui_icon_raynor_adrenalinrush.png</Icon>
         <Mana>75</Mana>
         <Cooldown>45</Cooldown>

@@ -60,7 +60,7 @@
       <ZagaraCombatStyleMedusaBlades name="Medusa Blades" desc="ZagaraMedusaBladesTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_aoe.png</Icon>
       </ZagaraCombatStyleMedusaBlades>
-      <ZagaraMasterySerratedSpines name="Serrated Spines" desc="ZagaraSerratedSpines">
+      <ZagaraMasterySerratedSpines name="Serrated Spines" desc="ZagaraSerratedSpinesTalent">
         <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
       </ZagaraMasterySerratedSpines>
     </Level4>

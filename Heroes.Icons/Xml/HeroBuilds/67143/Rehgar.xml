@@ -108,7 +108,7 @@
       <RehgarEarthbindTotemEarthgraspTotem name="Earthgrasp Totem" desc="RehgarEarthbindTotemEarthgraspTotem">
         <Icon>storm_ui_icon_rehgar_earthbindtotem.png</Icon>
       </RehgarEarthbindTotemEarthgraspTotem>
-      <RehgarHungerOfTheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolfTalent">
+      <RehgarHungerOfTheWolf name="Hunger of the Wolf" desc="RehgarHungeroftheWolf">
         <Icon>storm_ui_icon_rehgar_ghostwolf.png</Icon>
       </RehgarHungerOfTheWolf>
       <RehgarLightningShieldRisingStorm name="Rising Storm" desc="RehgarLightningShieldRisingStorm">

@@ -55,7 +55,7 @@
       <SgtHammerSiegeModeAdvancedArtillery name="Advanced Artillery" desc="SgtHammerSiegeModeAdvancedArtillery">
         <Icon>storm_ui_icon_sgthammer_siegemode.png</Icon>
       </SgtHammerSiegeModeAdvancedArtillery>
-      <SgtHammerSiegeModeMaelstromRounds name="Maelstrom Rounds" desc="SgtHammerSiegeModeMaelstromRoundsTalent">
+      <SgtHammerSiegeModeMaelstromRounds name="Maelstrom Rounds" desc="SgtHammerSiegeModeMaelstromRounds">
         <Icon>storm_ui_icon_sgthammer_siegemode_var1.png</Icon>
         <Cooldown charge="true">90</Cooldown>
       </SgtHammerSiegeModeMaelstromRounds>

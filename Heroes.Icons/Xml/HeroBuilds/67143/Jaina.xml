@@ -16,7 +16,7 @@
         <Mana>90</Mana>
         <Cooldown>15</Cooldown>
       </JainaBlizzard>
-      <JainaConeOfCold name="Cone of Cold" desc="JainaConeOfCold">
+      <JainaConeOfCold name="Cone of Cold" desc="JainaConeofCold">
         <Icon>storm_ui_icon_jaina_coneofcold.png</Icon>
         <Mana>40</Mana>
         <Cooldown>10</Cooldown>

@@ -657,8 +657,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     MatchHeroBans.Team1Ban0 = bannedHero4.GetHeroPortrait();
                     MatchHeroBans.Team1Ban1 = bannedHero5.GetHeroPortrait();
 
-
-
                     if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                     {
                         MatchHeroBans.Team0Ban2 = bannedHero3.GetHeroPortrait();
