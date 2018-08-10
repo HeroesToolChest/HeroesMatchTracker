@@ -42,6 +42,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public bool IsWinner { get; set; }
 
+        public bool IsBlizzardStaff { get; set; }
+
         [StringLength(50)]
         public string MountAndMountTint { get; set; }
 

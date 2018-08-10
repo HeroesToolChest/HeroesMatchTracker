@@ -85,7 +85,7 @@ namespace HeroesMatchTracker.Data.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
         public int ReplaysDatabaseMigrationVersion {
             get {
                 return ((int)(this["ReplaysDatabaseMigrationVersion"]));
