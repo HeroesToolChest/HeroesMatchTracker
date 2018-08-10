@@ -35,7 +35,7 @@
       </AlarakCounterStrikeTargeted>
     </Heroic>
     <Trait>
-      <AlarakSadism name="Sadism" desc="AlarakSadism">
+      <AlarakSadism name="Sadism" desc="AlarakSadismDummyUI">
         <Icon>storm_ui_icon_alarak_sadism.png</Icon>
       </AlarakSadism>
     </Trait>

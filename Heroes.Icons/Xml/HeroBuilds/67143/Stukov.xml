@@ -49,9 +49,9 @@
       <StukovFetidTouch name="Fetid Touch" desc="StukovFetidTouchTalent">
         <Icon>storm_ui_icon_stukov_weightedpustule.png</Icon>
       </StukovFetidTouch>
-      <StukovGrowingInfestation name="Growing Infestation" desc="StukovGrowingInfestationTalent">
+      <StukovLowBlow name="Low Blow" desc="StukovLowBlowTalent">
         <Icon>storm_ui_icon_stukov_lurkingarm.png</Icon>
-      </StukovGrowingInfestation>
+      </StukovLowBlow>
       <StukovPoppinPustules name="Poppin Pustules" desc="StukovPoppinPustulesTalent">
         <Icon>storm_ui_icon_stukov_bio-killswitch.png</Icon>
       </StukovPoppinPustules>
@@ -60,9 +60,6 @@
       <StukovOneGoodSpread name="One Good Spread..." desc="StukovOneGoodSpreadTalent">
         <Icon>storm_ui_icon_stukov_healingpathogen.png</Icon>
       </StukovOneGoodSpread>
-      <StukovTopOff name="Top Off" desc="StukovTopOffTalent">
-        <Icon>storm_ui_icon_stukov_healingpathogen_a.png</Icon>
-      </StukovTopOff>
       <StukovBioticArmor name="Biotic Armor" desc="StukovBioticArmorTalent">
         <Icon>storm_ui_icon_stukov_healingpathogen_b.png</Icon>
       </StukovBioticArmor>
@@ -74,12 +71,9 @@
       <StukovLongPitch name="The Long Pitch" desc="StukovLongPitchTalent">
         <Icon>storm_ui_icon_stukov_weightedpustule.png</Icon>
       </StukovLongPitch>
-      <StukovWithinMyReach name="Within My Reach" desc="StukovWithinMyReachTalent">
+      <StukovGrowingInfestation name="Growing Infestation" desc="StukovGrowingInfestationTalent">
         <Icon>storm_ui_icon_stukov_lurkingarm.png</Icon>
-      </StukovWithinMyReach>
-      <StukovItHungers name="It Hungers" desc="StukovLurkingArmItHungersTalent">
-        <Icon>storm_ui_icon_stukov_lurkingarm_a.png</Icon>
-      </StukovItHungers>
+      </StukovGrowingInfestation>
       <StukovTargetedExcision name="Targeted Excision" desc="StukovTargetedExcisionTalent">
         <Icon>storm_ui_icon_stukov_bio-killswitch.png</Icon>
       </StukovTargetedExcision>
@@ -92,9 +86,9 @@
       <StukovWeightedPustuleReactiveBallistospores name="Reactive Ballistospores" desc="StukovReactiveBallistosporesTalent">
         <Icon>storm_ui_icon_stukov_weightedpustule.png</Icon>
       </StukovWeightedPustuleReactiveBallistospores>
-      <StukovLowBlow name="Low Blow" desc="StukovLowBlowTalent">
+      <StukovItHungers name="It Hungers" desc="StukovLurkingArmItHungersTalent">
         <Icon>storm_ui_icon_stukov_lurkingarm.png</Icon>
-      </StukovLowBlow>
+      </StukovItHungers>
       <StukovLingeringSpines name="Lingering Spines" desc="StukovLingeringSpinesTalent">
         <Icon>storm_ui_icon_stukov_lurkingarm_a.png</Icon>
       </StukovLingeringSpines>
@@ -120,6 +114,9 @@
       <StukovPushComesToShove name="Push Comes To Shove" desc="StukovPushComesToShoveTalent">
         <Icon>storm_ui_icon_stukov_massiveshove.png</Icon>
       </StukovPushComesToShove>
+      <StukovTopOff name="Top Off" desc="StukovTopOffTalent">
+        <Icon>storm_ui_icon_stukov_healingpathogen.png</Icon>
+      </StukovTopOff>
       <StukovBioExplosionSwitch name="Bio-Explosion Switch" desc="StukovBioExplosionSwitchTalent">
         <Icon>storm_ui_icon_stukov_bio-killswitch.png</Icon>
       </StukovBioExplosionSwitch>

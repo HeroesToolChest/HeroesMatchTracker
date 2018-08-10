@@ -20,9 +20,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_whitemane.png" />
     <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_yrel.png" />
+    <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_whitemane.png" />
     <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_yrel.png" />
+    <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_whitemane.png" />
     <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_yrel.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_aegis.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_clemency.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_desperation.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_fanatical.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_inquisition.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_intercession.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_lash.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_purge.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_reckoning.png" />
+    <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_zeal.png" />
     <None Remove="Images\Talents\_Generic\storm_ui_icon_talent_abilitytalent_armor.png" />
   </ItemGroup>
 

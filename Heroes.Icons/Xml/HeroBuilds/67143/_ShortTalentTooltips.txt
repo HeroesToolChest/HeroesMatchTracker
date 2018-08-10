@@ -2081,3 +2081,31 @@ AnubarakHardenCarapaceShedExoskeletonTalent=None
 ArtanisPhasePrismPsionicSynergy=None
 JainaConeofCold=None
 ArtanisPhasePrismPsionicSynergyTalent=None
+AlarakSadismDummyUI=None
+WhitemaneDesperatePlea=Heal an allied Hero
+WhitemaneDesperatePleaMartyrdom=Increase consecutive Desperate Plea heals
+WhitemaneDesperatePleaRadiance=<c val="#WhitemaneDesperation">Desperation</c> heals allies with <c val="#WhitemaneZeal">Zeal</c>
+WhitemaneDesperatePleaSelfRighteous=Desperate Plea heals self and target
+WhitemaneDesperatePleaUnwaveringFaith=Reduce Desperate Plea cost
+WhitemaneDesperatePleaZealousSpirit=<c val="#WhitemaneDesperation">Desperation</c> grants Whitemane <c val="#WhitemaneZeal">Zeal</c>
+WhitemaneDivineReckoning=Consecrate an area
+WhitemaneDivineReckoningJudgmentDay=Divine Reckoning pulls in enemies
+WhitemaneFanaticalPower=Activate to gain Spell Power, lose Armor
+WhitemaneInquisition=Damage and Slow an enemy Hero
+WhitemaneInquisitionClemency=Heal allies with Inquisition
+WhitemaneInquisitionHighInquisitor=Inquisition removes <c val="#WhitemaneDesperation">Desperation</c>, restores Mana
+WhitemaneInquisitionSharedPunishment=Inquisition chains to a nearby enemy
+WhitemaneInquisitionSubjugation=Inquisition reduces enemy damage
+WhitemaneIntercession=Make an ally Unstoppable
+WhitemanePurgeTheWicked=Activate to damage, reduce Armor
+WhitemaneScarletAegis=Heal and grant Armor to nearby allies
+WhitemaneScarletAegisScarletCrusade=Scarlet Aegis makes allies Unstoppable
+WhitemaneSearingLash=Damage enemies in a line
+WhitemaneSearingLashHarshDiscipline=Searing Lash Roots Inquisition target
+WhitemaneSearingLashIndulgence=Searing Lash restores Mana
+WhitemaneSearingLashLashingOut=Reduce Searing Lash cooldown
+WhitemaneSearingLashRighteousFlame=Empower Searing Lash against disabled enemies
+WhitemaneTraitZeal=Heal marked allies for damage dealt
+WhitemaneZealGuidingLight=<c val="#WhitemaneZeal">Zeal</c> grants Movement Speed
+WhitemaneZealPityTheFrail=<c val="#WhitemaneZeal">Zeal</c> is stronger on low Health allies
+ChromieDraconicBarrage=None

@@ -8,13 +8,13 @@
     <Basic>
       <ChromieSandBlast name="Sand Blast" desc="ChromieSandBlast" cooldown="2.5">
         <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
-        <Mana>20</Mana>
+        <Mana>15</Mana>
         <Cooldown>25</Cooldown>
       </ChromieSandBlast>
       <ChromieDragonsBreath name="Dragon's Breath" desc="ChromieDragonsBreath">
         <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
-        <Mana>70</Mana>
-        <Cooldown>12</Cooldown>
+        <Mana>50</Mana>
+        <Cooldown>9</Cooldown>
       </ChromieDragonsBreath>
       <ChromieTimeTrap name="Time Trap" desc="ChromieTimeTrap">
         <Icon>storm_ui_icon_chromie_timetrap.png</Icon>
@@ -54,9 +54,9 @@
       </ChromieTimewalkersPursuit>
     </Level1>
     <Level4>
-      <ChromieBronzeTalons name="Bronze Talons" desc="ChromieBronzeTalons">
-        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
-      </ChromieBronzeTalons>
+      <ChromieDraconicBarrage name="Draconic Barrage" desc="ChromieDraconicBarrage">
+        <Icon>storm_ui_icon_chromie_aethercannon.png</Icon>
+      </ChromieDraconicBarrage>
       <ChromieDragonsBreathEnvelopingAssault name="Enveloping Assault" desc="ChromieDragonsBreathEnvelopingAssault">
         <Icon>storm_ui_icon_chromie_sandstrike.png</Icon>
       </ChromieDragonsBreathEnvelopingAssault>
