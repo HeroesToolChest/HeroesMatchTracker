@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tyrael available="47479" attributeid="Tyrl" unit="HeroTyrael" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_tyrael.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_tyrael.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_tyrael.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+    <Basic>
+      <TyraelElDruinsMight name="El'druin's Might" desc="TyraelElDruinsMight">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_a.png</Icon>
+        <Mana>45</Mana>
+        <Cooldown>12</Cooldown>
+      </TyraelElDruinsMight>
+      <TyraelRighteousness name="Righteousness" desc="TyraelRighteousness">
+        <Icon>storm_ui_icon_tyrael_righteousness.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown>10</Cooldown>
+      </TyraelRighteousness>
+      <TyraelSmite name="Smite" desc="TyraelSmite">
+        <Icon>storm_ui_icon_tyrael_smite.png</Icon>
+        <Mana>45</Mana>
+        <Cooldown>6</Cooldown>
+      </TyraelSmite>
+    </Basic>
+    <Heroic>
+      <TyraelJudgement name="Judgment" desc="TyraelJudgment">
+        <Icon>storm_ui_icon_tyrael_judgement.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>70</Cooldown>
+      </TyraelJudgement>
+      <TyraelSanctificationStationary name="Sanctification" desc="TyraelSanctificationStationary">
+        <Icon>storm_ui_icon_tyrael_sanctification.png</Icon>
+        <Mana>75</Mana>
+        <Cooldown>100</Cooldown>
+      </TyraelSanctificationStationary>
+    </Heroic>
+    <Trait>
+      <TyraelArchangelsWrath name="Archangel's Wrath" desc="TyraelArchangelsWrath">
+        <Icon>storm_ui_icon_tyrael_archangelswrath.png</Icon>
+      </TyraelArchangelsWrath>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <TyraelSalvation name="Salvation" desc="TyraelSalvation">
+        <Icon>storm_ui_icon_tyrael_righteousness.png</Icon>
+      </TyraelSalvation>
+      <TyraelJusticeForAll name="Justice For All" desc="TyraelJusticeForAll">
+        <Icon>storm_ui_icon_tyrael_righteousness_var1.png</Icon>
+      </TyraelJusticeForAll>
+      <TyraelArdentRestoration name="Ardent Restoration" desc="TyraelArdentRestoration">
+        <Icon generic="true">storm_ui_icon_talent_regenerationmaster.png</Icon>
+      </TyraelArdentRestoration>
+    </Level1>
+    <Level4>
+      <TyraelStalwartAngel name="Stalwart Angel" desc="TyraelStalwartAngel">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_a.png</Icon>
+      </TyraelStalwartAngel>
+      <TyraelElDruinsMightBoundByLaw name="Bound by Law" desc="TyraelElDruinsMightBoundByLawTalent">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_b.png</Icon>
+      </TyraelElDruinsMightBoundByLaw>
+      <TyraelDivineVigor name="Divine Vigor" desc="TyraelDivineVigor">
+        <Icon>storm_ui_icon_tyrael_smite.png</Icon>
+      </TyraelDivineVigor>
+    </Level4>
+    <Level7>
+      <TyraelMasteryRighteousnessReciprocate name="Reciprocate" desc="TyraelRighteousnessReciprocateTalent">
+        <Icon>storm_ui_icon_tyrael_righteousness.png</Icon>
+      </TyraelMasteryRighteousnessReciprocate>
+      <TyraelMasteryPurgeEvil name="Purge Evil" desc="TyraelSmitePurgeEvilTalent">
+        <Icon>storm_ui_icon_tyrael_smite.png</Icon>
+      </TyraelMasteryPurgeEvil>
+      <TyraelMasterySwiftRetribution name="Swift Retribution" desc="TyraelSmiteSwiftRetributionTalent">
+        <Icon>storm_ui_icon_tyrael_smite_a.png</Icon>
+      </TyraelMasterySwiftRetribution>
+    </Level7>
+    <Level10>
+      <TyraelHeroicAbilityJudgement ability="TyraelJudgement" />
+      <TyraelHeroicAbilitySanctification ability="TyraelSanctificationStationary" />
+    </Level10>
+    <Level13>
+      <TyraelMasteryElDruinsMightSwordOfJustice name="Sword of Justice" desc="TyraelElDruinsMightSwordOfJusticeTalent">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_a.png</Icon>
+      </TyraelMasteryElDruinsMightSwordOfJustice>
+      <TyraelMasteryHolyGround name="Holy Ground" desc="TyraelElDruinsMightHolyGroundTalent">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_b.png</Icon>
+      </TyraelMasteryHolyGround>
+      <TyraelMasteryLawAndOrder name="Law and Order" desc="TyraelRighteousnessLawAndOrderTalent">
+        <Icon>storm_ui_icon_tyrael_zealous_conviction.png</Icon>
+      </TyraelMasteryLawAndOrder>
+    </Level13>
+    <Level16>
+      <TyraelHoradricReforging name="Horadric Reforging" desc="TyraelElDruinsMightHoradricReforgingTalent">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_a.png</Icon>
+      </TyraelHoradricReforging>
+      <TyraelBurningHalo name="Burning Halo" desc="TyraelBurningHalo">
+        <Icon>storm_ui_icon_tyrael_eldruinsmight_b.png</Icon>
+      </TyraelBurningHalo>
+      <TyraelSmiteTheWicked name="Smite the Wicked" desc="TyraelSmiteTheWicked">
+        <Icon>storm_ui_icon_tyrael_smite.png</Icon>
+      </TyraelSmiteTheWicked>
+    </Level16>
+    <Level20>
+      <TyraelMasteryJudgmentAngelofJustice name="Angel of Justice" desc="TyraelJudgmentAngelOfJusticeTalent">
+        <Icon>storm_ui_icon_tyrael_judgement.png</Icon>
+      </TyraelMasteryJudgmentAngelofJustice>
+      <TyraelMasterySanctificationHolyArena name="Holy Arena" desc="TyraelSanctificationHolyArenaTalent">
+        <Icon>storm_ui_icon_tyrael_sanctification.png</Icon>
+      </TyraelMasterySanctificationHolyArena>
+      <TyraelDefenseOfTheAngels name="Defense of the Angels" desc="TyraelDefenseOfTheAngels">
+        <Icon generic="true">storm_ui_icon_talent_hardenedshield.png</Icon>
+        <Cooldown>120</Cooldown>
+      </TyraelDefenseOfTheAngels>
+      <TyraelSealOfElDruin name="Seal of El'Druin" desc="TyraelSealofElDruin">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_speed.png</Icon>
+      </TyraelSealOfElDruin>
+    </Level20>
+  </Talents>
+</Tyrael>

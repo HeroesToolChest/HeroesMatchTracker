@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Whitemane available="67143" attributeid="WHIT" unit="HeroWhitemane" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_whitemane.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_whitemane.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_whitemane.png</Leader>
+  <Roles>Support</Roles>
+  <Abilities>
+    <Basic>
+      <WhitemaneDesperatePlea name="Desperate Plea" desc="WhitemaneDesperatePlea">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+        <Mana>30</Mana>
+      </WhitemaneDesperatePlea>
+      <WhitemaneInquisition name="Inquisition" desc="WhitemaneInquisition">
+        <Icon>storm_ui_icon_whitemane_inquisition.png</Icon>
+        <Cooldown>14</Cooldown>
+      </WhitemaneInquisition>
+      <WhitemaneSearingLash name="Searing Lash" desc="WhitemaneSearingLash">
+        <Icon>storm_ui_icon_whitemane_lash.png</Icon>
+        <Cooldown>5</Cooldown>
+      </WhitemaneSearingLash>
+    </Basic>
+    <Heroic>
+      <WhitemaneScarletAegis name="Scarlet Aegis" desc="WhitemaneScarletAegis">
+        <Icon>storm_ui_icon_whitemane_aegis.png</Icon>
+        <Cooldown>60</Cooldown>
+      </WhitemaneScarletAegis>
+      <WhitemaneDivineReckoning name="Divine Reckoning" desc="WhitemaneDivineReckoning">
+        <Icon>storm_ui_icon_whitemane_reckoning.png</Icon>
+        <Cooldown>100</Cooldown>
+      </WhitemaneDivineReckoning>
+    </Heroic>
+    <Trait>
+      <WhitemaneTraitZeal name="Zeal" desc="WhitemaneTraitZeal">
+        <Icon>storm_ui_icon_whitemane_zeal.png</Icon>
+      </WhitemaneTraitZeal>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <WhitemaneDesperatePleaMartyrdom name="Martyrdom" desc="WhitemaneDesperatePleaMartyrdom">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+      </WhitemaneDesperatePleaMartyrdom>
+      <WhitemaneInquisitionClemency name="Clemency" desc="WhitemaneInquisitionClemency">
+        <Icon>storm_ui_icon_whitemane_clemency.png</Icon>
+      </WhitemaneInquisitionClemency>
+      <WhitemaneSearingLashRighteousFlame name="Righteous Flame" desc="WhitemaneSearingLashRighteousFlame">
+        <Icon>storm_ui_icon_whitemane_lash.png</Icon>
+      </WhitemaneSearingLashRighteousFlame>
+      <WhitemaneZealPityTheFrail name="Pity the Frail" desc="WhitemaneZealPityTheFrail">
+        <Icon>storm_ui_icon_whitemane_zeal.png</Icon>
+      </WhitemaneZealPityTheFrail>
+    </Level1>
+    <Level4>
+      <WhitemaneDesperatePleaUnwaveringFaith name="Unwavering Faith" desc="WhitemaneDesperatePleaUnwaveringFaith">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+      </WhitemaneDesperatePleaUnwaveringFaith>
+      <WhitemaneInquisitionHighInquisitor name="High Inquisitor" desc="WhitemaneInquisitionHighInquisitor">
+        <Icon>storm_ui_icon_whitemane_inquisition.png</Icon>
+      </WhitemaneInquisitionHighInquisitor>
+      <WhitemaneSearingLashIndulgence name="Indulgence" desc="WhitemaneSearingLashIndulgence">
+        <Icon>storm_ui_icon_whitemane_lash.png</Icon>
+      </WhitemaneSearingLashIndulgence>
+    </Level4>
+    <Level7>
+      <WhitemaneDesperatePleaZealousSpirit name="Zealous Spirit" desc="WhitemaneDesperatePleaZealousSpirit">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+      </WhitemaneDesperatePleaZealousSpirit>
+      <WhitemaneFanaticalPower name="Fanatical Power" desc="WhitemaneFanaticalPower">
+        <Icon>storm_ui_icon_whitemane_fanatical.png</Icon>
+        <Cooldown>30</Cooldown>
+      </WhitemaneFanaticalPower>
+      <WhitemaneIntercession name="Intercession" desc="WhitemaneIntercession">
+        <Icon>storm_ui_icon_whitemane_intercession.png</Icon>
+      </WhitemaneIntercession>
+    </Level7>
+    <Level10>
+      <WhitemaneScarletAegis ability="WhitemaneScarletAegis" />
+      <WhitemaneDivineReckoning ability="WhitemaneDivineReckoning" />
+    </Level10>
+    <Level13>
+      <WhitemaneDesperatePleaSelfRighteous name="Self-Righteous" desc="WhitemaneDesperatePleaSelfRighteous">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+      </WhitemaneDesperatePleaSelfRighteous>
+      <WhitemaneSearingLashHarshDiscipline name="Harsh Discipline" desc="WhitemaneSearingLashHarshDiscipline">
+        <Icon>storm_ui_icon_whitemane_lash.png</Icon>
+      </WhitemaneSearingLashHarshDiscipline>
+      <WhitemaneZealGuidingLight name="Guiding Light" desc="WhitemaneZealGuidingLight">
+        <Icon>storm_ui_icon_whitemane_zeal.png</Icon>
+      </WhitemaneZealGuidingLight>
+    </Level13>
+    <Level16>
+      <WhitemaneDesperatePleaRadiance name="Radiance" desc="WhitemaneDesperatePleaRadiance">
+        <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
+      </WhitemaneDesperatePleaRadiance>
+      <WhitemaneInquisitionSharedPunishment name="Shared Punishmen" desc="WhitemaneInquisitionSharedPunishment">
+        <Icon>storm_ui_icon_whitemane_inquisitione.png</Icon>
+      </WhitemaneInquisitionSharedPunishment>
+      <WhitemaneSearingLashLashingOut name="Lashing Out" desc="WhitemaneSearingLashLashingOut">
+        <Icon>storm_ui_icon_whitemane_lash.png</Icon>
+      </WhitemaneSearingLashLashingOut>
+    </Level16>
+    <Level20>
+      <WhitemaneScarletAegisScarletCrusade name="Scarlet Crusade" desc="WhitemaneScarletAegisScarletCrusade">
+        <Icon>storm_ui_icon_whitemane_aegis.png</Icon>
+      </WhitemaneScarletAegisScarletCrusade>
+      <WhitemaneDivineReckoningJudgmentDay name="Judgment Day" desc="WhitemaneDivineReckoningJudgmentDay">
+        <Icon>storm_ui_icon_whitemane_reckoning.png</Icon>
+      </WhitemaneDivineReckoningJudgmentDay>
+      <WhitemaneInquisitionSubjugation name="Subjugation" desc="WhitemaneInquisitionSubjugation">
+        <Icon>storm_ui_icon_whitemane_inquisition.png</Icon>
+      </WhitemaneInquisitionSubjugation>
+      <WhitemanePurgeTheWicked name="Purge the Wicked" desc="WhitemanePurgeTheWicked">
+        <Icon>storm_ui_icon_whitemane_purge.png</Icon>
+      </WhitemanePurgeTheWicked>
+    </Level20>
+  </Talents>
+</Whitemane>
