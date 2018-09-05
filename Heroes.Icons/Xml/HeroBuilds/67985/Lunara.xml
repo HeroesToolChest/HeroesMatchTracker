@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Lunara available="47479" attributeid="Drya" unit="HeroDryad" franchise="Warcraft" type="Ranged" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_lunara.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_lunara.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_lunara.png</Leader>
+  <Roles>Assassin</Roles>
+  <Abilities>
+    <Basic>
+      <DryadNoxiousBlossom name="Noxious Blossom" desc="DryadNoxiousBlossom">
+        <Icon>storm_ui_icon_lunara_pollencloud.png</Icon>
+        <Mana>60</Mana>
+        <Cooldown>8</Cooldown>
+      </DryadNoxiousBlossom>
+      <DryadCripplingSpores name="Crippling Spores" desc="DryadCripplingSpores">
+        <Icon>storm_ui_icon_lunara_fullbloom.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>10</Cooldown>
+      </DryadCripplingSpores>
+      <DryadWisp name="Wisp" desc="DryadWisp">
+        <Icon>storm_ui_icon_lunara_wisp.png</Icon>
+        <Cooldown>30</Cooldown>
+      </DryadWisp>
+    </Basic>
+    <Heroic>
+      <DryadThornwoodVine name="Thornwood Vine" desc="DryadThornwoodVine">
+        <Icon>storm_ui_icon_Lunara_WildSpear.png</Icon>
+        <Mana>35</Mana>
+        <Cooldown charge="true">15</Cooldown>
+      </DryadThornwoodVine>
+      <DryadLeapingStrike name="Leaping Strike" desc="DryadLeapingStrike">
+        <Icon>storm_ui_icon_Lunara_BoundlessStride.png</Icon>
+        <Mana>50</Mana>
+        <Cooldown charge="true">20</Cooldown>
+      </DryadLeapingStrike>
+    </Heroic>
+    <Trait>
+      <DryadNaturesToxin name="Nature's Toxin" desc="DryadNaturesToxin">
+        <Icon>storm_ui_icon_lunara_stiflingblossom.png</Icon>
+      </DryadNaturesToxin>
+    </Trait>
+    <Mount>
+      <DryadGallopingGait name="Dryad's Swiftness" desc="DryadDryadsSwiftness">
+        <Icon>storm_ui_icon_lunara_mount.png</Icon>
+        <Cooldown>30</Cooldown>
+      </DryadGallopingGait>
+    </Mount>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <DryadSentinelWisp name="Sentinel Wisp" desc="DryadSentinelWispTalent">
+        <Icon>storm_ui_icon_Lunara_Wisp.png</Icon>
+      </DryadSentinelWisp>
+      <DryadNaturalPerspective name="Natural Perspective" desc="DryadNaturalPerspectiveTalent">
+        <Icon>storm_ui_icon_Lunara_StiflingBlossom.png</Icon>
+      </DryadNaturalPerspective>
+      <DryadHippityHop name="Hippity Hop" desc="DryadHippityHop">
+        <Icon>storm_ui_icon_lunara_boundlessstride_a.png</Icon>p>
+      </DryadHippityHop>
+    </Level1>
+    <Level4>
+      <DryadBlossomSwell name="Blossom Swell" desc="DryadBlossomSwellTalent">
+        <Icon>storm_ui_icon_Lunara_PollenCloud.png</Icon>
+      </DryadBlossomSwell>
+      <DryadSiphoningToxin name="Siphoning Toxin" desc="DryadSiphoningToxinTalent">
+        <Icon>storm_ui_icon_lunara_stiflingblossom_var1.png</Icon>
+      </DryadSiphoningToxin>
+      <DryadNaturesCulling name="Nature's Culling" desc="DryadNaturesCullingTalent">
+        <Icon>storm_ui_icon_lunara_stiflingblossom.png</Icon>
+      </DryadNaturesCulling>
+    </Level4>
+    <Level7>
+      <DryadSplinteredSpear name="Splintered Spear" desc="DryadSplinteredSpearTalent">
+        <Icon>storm_ui_icon_Lunara_PollenCloud.png</Icon>
+      </DryadSplinteredSpear>
+      <DryadChokingPollen name="Choking Pollen" desc="DryadChokingPollenTalent">
+        <Icon>storm_ui_icon_lunara_pollencloud_b.png</Icon>
+      </DryadChokingPollen>
+      <DryadWildVigor name="Wild Vigor" desc="DryadWildVigorTalent">
+        <Icon>storm_ui_icon_Lunara_FullBloom.png</Icon>
+      </DryadWildVigor>
+    </Level7>
+    <Level10>
+      <DryadHeroicAbilityThornwoodVine ability="DryadThornwoodVine" />
+      <DryadHeroicAbilityLeapingStrike ability="DryadLeapingStrike" />
+    </Level10>
+    <Level13>
+      <DryadEndlessSpores name="Endless Spores" desc="DryadEndlessSpores">
+        <Icon>storm_ui_icon_lunara_fullbloom.png</Icon>
+      </DryadEndlessSpores>
+      <DryadLetThemWither name="Let Them Wither" desc="DryadLetThemWitherTalent">
+        <Icon>storm_ui_icon_Lunara_FullBloom_B.png</Icon>
+      </DryadLetThemWither>
+      <DryadGreaterSpellShield name="Greater Spell Shield" desc="DryadGreaterSpellShieldTalent">
+        <Icon>storm_ui_icon_lunara_greaterspellshield.png</Icon>
+      </DryadGreaterSpellShield>
+      <DryadAbolishMagic name="Abolish Magic" desc="DryadAbolishMagicHotbar">
+        <Icon>storm_ui_icon_lunara_abolishmagic.png</Icon>
+        <Cooldown>35</Cooldown>
+      </DryadAbolishMagic>
+    </Level13>
+    <Level16>
+      <DryadAcceleratedContamination name="Accelerated Contamination" desc="DryadAcceleratedContamination">
+        <Icon>storm_ui_icon_Lunara_PollenCloud.png</Icon>
+      </DryadAcceleratedContamination>
+      <DryadStarWoodSpear name="Star Wood Spear" desc="DryadStarWoodSpearTalent">
+        <Icon>storm_ui_icon_Lunara_FullBloom.png</Icon>
+      </DryadStarWoodSpear>
+      <DryadInvigoratingSpores name="Invigorating Spores" desc="DryadInvigoratingSporesTalent">
+        <Icon>storm_ui_icon_Lunara_FullBloom_A.png</Icon>
+      </DryadInvigoratingSpores>
+      <DryadUnfairAdvantage name="Unfair Advantage" desc="DryadUnfairAdvantageTalent">
+        <Icon>storm_ui_icon_Lunara_StiflingBlossom.png</Icon>
+      </DryadUnfairAdvantage>
+    </Level16>
+    <Level20>
+      <DryadForestsWrath name="Forest's Wrath" desc="DryadForestsWrathTalent">
+        <Icon>storm_ui_icon_Lunara_WildSpear.png</Icon>
+      </DryadForestsWrath>
+      <DryadBoundlessStrideTalent name="Boundless Stride" desc="DryadBoundlessStrideTalent">
+        <Icon>storm_ui_icon_Lunara_BoundlessStride.png</Icon>
+      </DryadBoundlessStrideTalent>
+      <DryadIntensifyingToxin name="Intensifying Toxin" desc="DryadIntensifyingToxin">
+        <Icon>storm_ui_icon_lunara_stiflingblossom.png</Icon>
+      </DryadIntensifyingToxin>
+      <DryadGallopingGait name="Galloping Gait" desc="DryadGallopingGaitTalent">
+        <Icon>storm_ui_icon_lunara_boundlessstride_a.png</Icon>
+        <Cooldown>30</Cooldown>
+      </DryadGallopingGait>
+    </Level20>
+  </Talents>
+</Lunara>

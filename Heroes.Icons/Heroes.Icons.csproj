@@ -20,12 +20,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_mephisto.png" />
     <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_whitemane.png" />
     <None Remove="Images\HeroLeaderboardPortraits\storm_ui_ingame_hero_leaderboard_yrel.png" />
+    <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_mephisto.png" />
     <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_whitemane.png" />
     <None Remove="Images\HeroLoadingScreenPortraits\storm_ui_ingame_hero_loadingscreen_yrel.png" />
+    <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_mephisto.png" />
     <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_whitemane.png" />
     <None Remove="Images\HeroPortraits\storm_ui_ingame_heroselect_btn_yrel.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_durance.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_hatred.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_lightning.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_lightning_b.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_shade.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_shade_b.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_shade_c.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_skull.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_souls.png" />
+    <None Remove="Images\Talents\Mephisto\storm_ui_icon_mephisto_splash.png" />
     <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_aegis.png" />
     <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_clemency.png" />
     <None Remove="Images\Talents\Whitemane\storm_ui_icon_whitemane_desperation.png" />

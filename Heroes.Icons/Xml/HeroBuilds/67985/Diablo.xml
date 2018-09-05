@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Diablo available="47479" attributeid="Diab" unit="HeroDiablo" franchise="Diablo" type="Melee" difficulty="Medium">
+  <Portrait>storm_ui_ingame_heroselect_btn_diablo.png</Portrait>
+  <Loading>storm_ui_ingame_hero_loadingscreen_diablo.png</Loading>
+  <Leader>storm_ui_ingame_hero_leaderboard_diablo.png</Leader>
+  <Roles>Warrior</Roles>
+  <Abilities>
+    <Basic>
+      <DiabloShadowCharge name="Shadow Charge" desc="DiabloShadowCharge">
+        <Icon>storm_ui_icon_diablo_shadowcharge_var1.png</Icon>
+        <Mana>70</Mana>
+        <Cooldown>12</Cooldown>
+      </DiabloShadowCharge>
+      <DiabloFireStomp name="Fire Stomp" desc="DiabloFireStomp">
+        <Icon>storm_ui_icon_diablo_firestomp.png</Icon>
+        <Mana>30</Mana>
+        <Cooldown>8</Cooldown>
+      </DiabloFireStomp>
+      <DiabloOverpower name="Overpower" desc="DiabloOverpower">
+        <Icon>storm_ui_icon_diablo_overpower_var1.png</Icon>
+        <Mana>40</Mana>
+        <Cooldown>12</Cooldown>
+      </DiabloOverpower>
+    </Basic>
+    <Heroic>
+      <DiabloApocalypse name="Apocalypse" desc="DiabloApocalypse">
+        <Icon>storm_ui_icon_diablo_apocalypse.png</Icon>
+        <Mana>100</Mana>
+        <Cooldown>90</Cooldown>
+      </DiabloApocalypse>
+      <DiabloLightningBreath name="Lightning Breath" desc="DiabloLightningBreath">
+        <Icon>storm_ui_icon_diablo_lightningbreath.png</Icon>
+        <Mana>80</Mana>
+        <Cooldown>70</Cooldown>
+      </DiabloLightningBreath>
+    </Heroic>
+    <Trait>
+      <DiabloBlackSoulstone name="Black Soulstone" desc="DiabloBlackSoulstone">
+        <Icon>storm_ui_icon_diablo_blacksoulstone_var1.png</Icon>
+      </DiabloBlackSoulstone>
+    </Trait>
+  </Abilities>
+  <Talents>
+    <Level1>
+      <DiabloMasteryFeastOnFearBlackSoulstone name="Feast on Fear" desc="DiabloBlackSoulstoneFeastOnFearTalent" >
+        <Icon>storm_ui_icon_diablo_combo_1.png</Icon>
+      </DiabloMasteryFeastOnFearBlackSoulstone>
+      <DiabloMasteryDevilsDueBlackSoulstone name="Devil's Due" desc="DiabloBlackSoulstoneDevilsDueTalent">
+        <Icon>storm_ui_icon_diablo_blacksoulstone_var1.png</Icon>
+      </DiabloMasteryDevilsDueBlackSoulstone>
+      <DiabloSoulShield name="Soul Shield" desc="DiabloSoulShield">
+        <Icon generic="true">storm_ui_icon_talent_spellshield.png</Icon>
+        <Cooldown>60</Cooldown>
+      </DiabloSoulShield>
+    </Level1>
+    <Level4>
+      <DiabloShadowChargeSacrificialSoul name="Sacrificial Soul" desc="DiabloShadowChargeSacrificialSoul">
+        <Icon>storm_ui_icon_diablo_shadowcharge_var1.png</Icon>
+      </DiabloShadowChargeSacrificialSoul>
+      <DiabloFireStompSoulsToTheFlame name="Souls to the Flame" desc="DiabloFireStompSoulsToTheFlame">
+        <Icon>storm_ui_icon_diablo_firestomp.png</Icon>>
+      </DiabloFireStompSoulsToTheFlame>
+      <DiabloLifeLeech name="Life Leech" desc="DiabloLifeLeechTalent">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_heal.png</Icon>
+      </DiabloLifeLeech>
+    </Level4>
+    <Level7>
+      <DiabloShadowChargeOverpowerEternalFlames name="Eternal Flames" desc="DiabloShadowChargeOverpowerEternalFlames">
+        <Icon>storm_ui_icon_diablo_firestomp.png</Icon>
+      </DiabloShadowChargeOverpowerEternalFlames>
+      <DiabloMalevolence name="Malevolence" desc="DiabloMalevolence">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_damage.png</Icon>
+      </DiabloMalevolence>
+      <DiabloDiabolicalMomentum name="Diabolical Momentum" desc="DiabloDiabolicalMomentum">
+        <Icon generic="true">storm_ui_icon_talent_autoattack_cooldown.png</Icon>
+      </DiabloDiabolicalMomentum>
+    </Level7>
+    <Level10>
+      <DiabloHeroicAbilityApocalypse ability="DiabloApocalypse" />
+      <DiabloHeroicAbilityLightningBreath ability="DiabloLightningBreath" />
+    </Level10>
+    <Level13>
+      <DiabloDevastatingCharge name="Devastating Charge" desc="DiabloDevastatingCharge">
+        <Icon>storm_ui_icon_diablo_shadowcharge_var1.png</Icon>
+      </DiabloDevastatingCharge>
+      <DiabloShadowChargeOverpowerCruelty name="Cruelty" desc="DiabloShadowChargeOverpowerCruelty">
+        <Icon>storm_ui_icon_diablo_combo_1.png</Icon>
+      </DiabloShadowChargeOverpowerCruelty>
+      <DiabloHellfire name="Hellfire" desc="DiabloHellfire">
+        <Icon>storm_ui_icon_diablo_firestomp.png</Icon>
+      </DiabloHellfire>
+    </Level13>
+    <Level16>
+      <DiabloTalentDominationOverpower name="Domination" desc="DiabloOverpowerDominationTalent">
+        <Icon>storm_ui_icon_diablo_shadowcharge_var1.png</Icon>
+      </DiabloTalentDominationOverpower>
+      <DiabloDebilitatingFlames name="Debilitating Flames" desc="DiabloDebilitatingFlames">
+        <Icon>storm_ui_icon_diablo_firestomp.png</Icon>
+      </DiabloDebilitatingFlames>
+      <DiabloOverpowerOverpoweringNightmare name="Overpowering Nightmare" desc="DiabloOverpowerOverpoweringNightmareTalent">
+        <Icon>storm_ui_icon_diablo_overpower_var1.png</Icon>
+      </DiabloOverpowerOverpoweringNightmare>
+    </Level16>
+    <Level20>
+      <DiabloMasteryDyingBreathApocalypse name="Dying Breath" desc="DiabloApocalypseDyingBreathTalent">
+        <Icon>storm_ui_icon_diablo_apocalypse.png</Icon>
+      </DiabloMasteryDyingBreathApocalypse>
+      <DiabloMasteryHellstormLightningBreath name="Hellstorm" desc="DiabloLightningBreathHellstormTalent">
+        <Icon>storm_ui_icon_diablo_lightningbreath.png</Icon>
+      </DiabloMasteryHellstormLightningBreath>
+      <DiabloTalentLordOfTerror name="Lord of Terror" desc="DiabloLordOfTerror">
+        <Icon>storm_ui_icon_diablo_lordofterror.png</Icon>
+        <Cooldown>60</Cooldown>
+      </DiabloTalentLordOfTerror>
+      <DiabloHellgate name="Hellgate" desc="DiabloHellgateTalent">
+        <Icon generic="true">storm_ui_icon_talent_boltofthestorm.png</Icon>
+        <Cooldown>100</Cooldown>
+      </DiabloHellgate>
+    </Level20>
+  </Talents>
+</Diablo>
