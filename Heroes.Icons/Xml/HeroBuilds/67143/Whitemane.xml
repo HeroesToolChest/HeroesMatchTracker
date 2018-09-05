@@ -92,8 +92,8 @@
       <WhitemaneDesperatePleaRadiance name="Radiance" desc="WhitemaneDesperatePleaRadiance">
         <Icon>storm_ui_icon_whitemane_desperation.png</Icon>
       </WhitemaneDesperatePleaRadiance>
-      <WhitemaneInquisitionSharedPunishment name="Shared Punishmen" desc="WhitemaneInquisitionSharedPunishment">
-        <Icon>storm_ui_icon_whitemane_inquisitione.png</Icon>
+      <WhitemaneInquisitionSharedPunishment name="Shared Punishment" desc="WhitemaneInquisitionSharedPunishment">
+        <Icon>storm_ui_icon_whitemane_inquisition.png</Icon>
       </WhitemaneInquisitionSharedPunishment>
       <WhitemaneSearingLashLashingOut name="Lashing Out" desc="WhitemaneSearingLashLashingOut">
         <Icon>storm_ui_icon_whitemane_lash.png</Icon>

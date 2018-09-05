@@ -68,13 +68,13 @@
       <KelThuzadAcceleratedDecay name="Accelerated Decay" desc="KelThuzadAcceleratedDecay">
         <Icon>storm_ui_icon_kel'thuzad_deathanddecay.png</Icon>
       </KelThuzadAcceleratedDecay>
-      <KelThuzadGlacialSpike name="Glacial Spike" desc="KelThuzadGlacialSpike">
-        <Icon>storm_ui_icon_kel'thuzad_glacialspike.png</Icon>
-        <Cooldown>30</Cooldown>
-      </KelThuzadGlacialSpike>
       <KelThuzadChillingTouch name="Chilling Touch" desc="KelThuzadChillingTouch">
         <Icon>storm_ui_icon_kel'thuzad_chillingtouch.png</Icon>
-      </KelThuzadChillingTouch>&gt;    </Level7>
+      </KelThuzadChillingTouch>
+      <KelThuzadIceCold name="Ice Cold" desc="KelThuzadIceCold">
+        <Icon>storm_ui_icon_kel'thuzad_glacialspike.png</Icon>
+      </KelThuzadIceCold>
+    </Level7>
     <Level10>
       <KelThuzadFrozenTomb ability="KelThuzadFrozenTomb" />
       <KelThuzadShadowFissure ability="KelThuzadShadowFissure" />

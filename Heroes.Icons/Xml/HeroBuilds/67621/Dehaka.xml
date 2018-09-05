@@ -35,7 +35,7 @@
       </DehakaAdaptation>
     </Heroic>
     <Trait>
-      <DehakaEssenceCollection name="Essence Collection" desc="DehakaEssenceCollectionStore">
+      <DehakaEssenceCollection name="Essence Collection" desc="DehakaEssenceCollection">
         <Icon>storm_ui_icon_dehaka_essencecollection.png</Icon>
         <Cooldown>1</Cooldown>
       </DehakaEssenceCollection>

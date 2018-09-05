@@ -151,17 +151,15 @@ namespace Heroes.Icons.Tests
                         }
 
                         // short
-                        if (string.IsNullOrEmpty(talentTooltip.Short) && ability.Name != "[None]")
-                        {
-                            assertMessages.Add($"[{build}] [{hero}] [{ability}] Short tooltip is null or empty");
-                        }
-                        else
-                        {
-                            string strippedText = TalentTooltipStripNonText(talentTooltip.Short);
+                        //if (string.IsNullOrEmpty(talentTooltip.Short) && ability.Name != "[None]")
+                        //{
+                        //    assertMessages.Add($"[{build}] [{hero}] [{ability}] Short tooltip is null or empty");
+                        //}
 
-                            if (NonValidCharsCheck(strippedText))
-                                assertMessages.Add($"[{build}] [{hero}] [{ability}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
-                        }
+                        string strippedShortText = TalentTooltipStripNonText(talentTooltip.Short);
+
+                        if (NonValidCharsCheck(strippedShortText))
+                            assertMessages.Add($"[{build}] [{hero}] [{ability}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedShortText}{Environment.NewLine}");
 
                         if (ability.GetIcon() == null && ability.Name != "[None]")
                             assertMessages.Add($"[{build}] [{hero}] [{ability}] Icon stream is null");
@@ -257,18 +255,16 @@ namespace Heroes.Icons.Tests
                                 assertMessages.Add($"[{build}] [{hero}] [{talent}] Invalid chars in FULL tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
                         }
 
-                        // short
-                        if (string.IsNullOrEmpty(talentTooltip.Short))
-                        {
-                            assertMessages.Add($"[{build}] [{hero}] [{talent}] Short tooltip is null or empty");
-                        }
-                        else
-                        {
-                            string strippedText = TalentTooltipStripNonText(talentTooltip.Short);
+                        //// short
+                        //if (string.IsNullOrEmpty(talentTooltip.Short))
+                        //{
+                        //    assertMessages.Add($"[{build}] [{hero}] [{talent}] Short tooltip is null or empty");
+                        //}
 
-                            if (NonValidCharsCheck(strippedText))
-                                assertMessages.Add($"[{build}] [{hero}] [{talent}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedText}{Environment.NewLine}");
-                        }
+                        string strippedShortText = TalentTooltipStripNonText(talentTooltip.Short);
+
+                        if (NonValidCharsCheck(strippedShortText))
+                            assertMessages.Add($"[{build}] [{hero}] [{talent}] Invalid chars in SHORT tooltip{Environment.NewLine}{strippedShortText}{Environment.NewLine}");
 
                         if (talent.GetIcon() == null)
                             assertMessages.Add($"[{build}] [{hero}] [{talent}] Icon stream is null");
