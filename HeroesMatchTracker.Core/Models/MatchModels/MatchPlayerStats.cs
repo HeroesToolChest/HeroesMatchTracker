@@ -82,17 +82,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Deaths = playerScore.Deaths;
             SiegeDamage = playerScore.SiegeDamage;
             HeroDamage = playerScore.HeroDamage;
-            HealingRole = IsHealingStatCharacter(player.Character) ? playerScore.Healing : null;
+            HealingRole = playerScore.Healing;
             DamageTaken = playerScore.DamageTaken;
             ExperienceContribution = playerScore.ExperienceContribution;
-        }
-
-        private bool IsHealingStatCharacter(string realHeroName)
-        {
-            if (HeroesIcons.HeroBuilds().GetHeroInfo(realHeroName).Roles.FirstOrDefault() == HeroRole.Support || HeroesIcons.IsNonSupportHeroWithHealingStat(realHeroName))
-                return true;
-            else
-                return false;
         }
     }
 }
