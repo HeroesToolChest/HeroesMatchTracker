@@ -47,6 +47,7 @@ Maiev=A mobile Assassin that excels against clustered enemies and prevents their
 Malfurion=A strong sustained Healer who can help lockdown enemies to secure takedowns.
 Malthael=An Assassin who marks his enemies, shredding away High Health enemies.
 Medivh=A Support who can negate burst damage and allow his allies to teleport.
+Mephisto=A sustained Assassin who thrives in battle against groups of enemies.
 Muradin=A sturdy Tank that can do well in a multitude of situations.
 Murky=Not quite a full Hero, Murky can place an Egg to respawn quickly back into battle.
 Nazeebo=A sustained damage Mage who gains power when killing enemy minions.
