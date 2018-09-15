@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EscapeFromBraxisHeroic name="Escape From Braxis (Heroic)">
-  <Normal fontglow="#FFFFE900">storm_ui_homescreenbackground_escapefrombraxis_hard.jpg</Normal>
+  <Normal textcolor="#ffffff" fontglow="#ff7800">storm_ui_homescreenbackground_escapefrombraxis_hard.jpg</Normal>
   <Aliases>逃離布萊西斯（英雄模式）,브락시스 탈출 (영웅 난이도),Flucht von Braxis (Heroisch),Fuga Da Braxis (Eroica),Fuga de Braxis (heroico),La fuite de Braxis (héroïque),Героический побег с Браксиса,逃离布莱克西斯（英雄难度）,Heroiczna Ucieczka z Braxis,Escape de Braxis (Heroico)</Aliases>
 </EscapeFromBraxisHeroic>

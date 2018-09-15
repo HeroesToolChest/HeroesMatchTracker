@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SilverCity name="Silver City" alt="SilverCity" custom="true">
-  <Normal fontglow="#FFFF0000">storm_ui_homescreenbackground_silvercity.jpg</Normal>
+  <Normal textcolor="#febaaa" fontglow="#ff3000">ui_ingame_simple_loadscreen_battlefieldofeternity.jpg</Normal>
   <Aliases>白银城,銀光之城,은빛 도시,Серебряный город,Srebrne Miasto,Silberne Stadt,La cité d’argent,Ciudad de Plata,Città d'Argento,Cidade de Prata,Ciudad argenta</Aliases>
 </SilverCity>

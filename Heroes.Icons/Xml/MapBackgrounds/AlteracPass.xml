@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <AlteracPass name="Alterac Pass" alt="AlteracPass">
-  <Normal fontglow="#FFFF0000">storm_ui_homescreenbackground_wcav.jpg</Normal>
+  <Normal textcolor="#b2d6fe" fontglow="#0078ff">storm_ui_homescreenbackground_wcav.jpg</Normal>
   <Aliases>BlankAlteracPass</Aliases>
 </AlteracPass>

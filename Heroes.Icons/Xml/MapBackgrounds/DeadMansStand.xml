@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DeadMansStand name="Dead Man's Stand">
-  <Normal fontglow="#FFFFD700">storm_ui_homescreenbackground_deadmansstand_normal.jpg</Normal>
+  <Normal textcolor="#ffffff" fontglow="#ff7800">storm_ui_homescreenbackground_deadmansstand_normal.jpg</Normal>
   <Aliases>Blank1</Aliases>
 </DeadMansStand>

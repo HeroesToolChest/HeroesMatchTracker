@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EscapeFromBraxis name="Escape From Braxis">
-  <Normal fontglow="#FFFFE900">storm_ui_homescreenbackground_escapefrombraxis_normal.jpg</Normal>
+  <Normal textcolor="#ffffff" fontglow="#ff7800">storm_ui_homescreenbackground_escapefrombraxis_normal.jpg</Normal>
   <Aliases>Flucht von Braxis,Fuga da Braxis,La fuite de Braxis,Ucieczka z Braxis,Побег с Браксиса,逃離布萊西斯,브락시스 탈출,Fuga de Braxis,逃离布莱克西斯,Escape de Braxis</Aliases>
 </EscapeFromBraxis>

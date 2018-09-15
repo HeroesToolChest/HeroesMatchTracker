@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<BraxisOutpost name="Braxis Outpost" alt="BraxisOutpost" custom="true">
-  <Normal fontglow="#FF0000FF">ui_ingame_mapmechanic_loadscreen_braxisoutpost.jpg</Normal>
+<BraxisOutpost textcolor="#" name="Braxis Outpost" alt="BraxisOutpost" custom="true">
+  <Normal textcolor="#b2d6fe" fontglow="#0078ff">ui_ingame_mapmechanic_loadscreen_braxisoutpost.jpg</Normal>
   <Aliases>Außenposten Braxis,Avamposto di Braxis,Avant-poste de Braxis,Avanzada de Braxis,Posterunek na Braxis,Posto Avançado Braxis,Puesto de avanzada de Braxis,Аванпост на Браксисе,브락시스 전초기지,布莱克西斯前哨,布萊西斯哨站</Aliases>
 </BraxisOutpost>

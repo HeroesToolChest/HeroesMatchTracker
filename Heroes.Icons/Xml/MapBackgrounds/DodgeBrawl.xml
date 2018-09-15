@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DodgeBrawl name="Dodge-Brawl" custom="true">
-  <Normal fontglow="#FFFF0000">storm_ui_homescreenbackground_dodge.jpg</Normal>
+  <Normal textcolor="#b2d6fe" fontglow="#0078ff">storm_ui_homescreenbackground_dodge.jpg</Normal>
   <Aliases>Same-PullParty</Aliases>
 </DodgeBrawl>
