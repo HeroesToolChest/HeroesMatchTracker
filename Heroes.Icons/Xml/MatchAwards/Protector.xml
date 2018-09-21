@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Protector>
-  <MostProtection>
-    <MVPScreen>storm_ui_mvp_protector_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_protector_{mvpColor}.png</ScoreScreen>
-    <Description>High Damage Prevented</Description>
-  </MostProtection>
-</Protector>

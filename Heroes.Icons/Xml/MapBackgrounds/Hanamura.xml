@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Hanamura name="Hanamura Temple" alt="Hanamura">
-  <Normal textcolor="#b2d6fe" fontglow="#0078ff">ui_ingame_mapmechanic_loadscreen_hanamura_rework.jpg</Normal>
-  <Aliases>hanamuraBlank</Aliases>
-</Hanamura>

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<LoyalDefender>
-  <MostInterruptedCageUnlocks>
-    <MVPScreen>storm_ui_mvp_loyaldefender_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_loyaldefender_wcav_{mvpColor}.png</ScoreScreen>
-    <Description>Interrupted Many Cage Unlock Attempts</Description>
-  </MostInterruptedCageUnlocks>
-</LoyalDefender>

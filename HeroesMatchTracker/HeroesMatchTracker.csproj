@@ -633,10 +633,6 @@
       <Project>{de184dee-a3fe-438c-a016-bc0f31235df9}</Project>
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons.csproj">
-      <Project>{5a3636a4-d771-4c7e-9897-0ef94c208a78}</Project>
-      <Name>Heroes.Icons</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj">
       <Project>{89afa05a-40d2-4ba0-bf72-6d920177f7ae}</Project>
       <Name>HeroesMatchTracker.Core</Name>

@@ -19,18 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.Helpers", "Heroes.He
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.Helpers.Tests", "Heroes.Helpers.Tests\Heroes.Helpers.Tests.csproj", "{824848E4-4ABA-4CEF-9D02-93DD18F25B0D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.Icons", "Heroes.Icons\Heroes.Icons.csproj", "{5A3636A4-D771-4C7E-9897-0EF94C208A78}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.Icons.Tests", "Heroes.Icons.Tests\Heroes.Icons.Tests.csproj", "{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heroes.ReplayParser.netstandard", "Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj", "{F21941E5-2251-4AC7-9FE7-6F26E5D5F2DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpqTool.netstandard", "Heroes.ReplayParser\MpqTool\MpqTool.netstandard.csproj", "{C947DC2E-E9BB-4C81-9E02-7A4BE3CB2606}"
 EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -100,30 +93,6 @@ Global
 		{824848E4-4ABA-4CEF-9D02-93DD18F25B0D}.Release|x64.Build.0 = Release|Any CPU
 		{824848E4-4ABA-4CEF-9D02-93DD18F25B0D}.Release|x86.ActiveCfg = Release|Any CPU
 		{824848E4-4ABA-4CEF-9D02-93DD18F25B0D}.Release|x86.Build.0 = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|x64.Build.0 = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Debug|x86.Build.0 = Debug|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|x64.ActiveCfg = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|x64.Build.0 = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|x86.ActiveCfg = Release|Any CPU
-		{5A3636A4-D771-4C7E-9897-0EF94C208A78}.Release|x86.Build.0 = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|x64.Build.0 = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Debug|x86.Build.0 = Debug|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|x64.ActiveCfg = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|x64.Build.0 = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|x86.ActiveCfg = Release|Any CPU
-		{B2EB1280-CBA2-44C8-AB47-FE0A4821DF94}.Release|x86.Build.0 = Release|Any CPU
 		{F21941E5-2251-4AC7-9FE7-6F26E5D5F2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F21941E5-2251-4AC7-9FE7-6F26E5D5F2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F21941E5-2251-4AC7-9FE7-6F26E5D5F2DB}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -154,6 +123,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC85E985-8B67-4B19-9564-0F05C1AEFDC6}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Scrapper>
-  <MostTeamfightHeroDamageDone>
-    <MVPScreen>storm_ui_mvp_scrapper_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_scrapper_{mvpColor}.png</ScoreScreen>
-    <Description>High Team Fight Damage</Description>
-  </MostTeamfightHeroDamageDone>
-</Scrapper>

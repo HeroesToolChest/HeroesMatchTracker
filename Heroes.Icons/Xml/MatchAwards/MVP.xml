@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<MVP>
-  <MVP>
-    <MVPScreen>storm_ui_mvp_mvp_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_mvp_{mvpColor}.png</ScoreScreen>
-    <Description>Most Valuable Player</Description>
-  </MVP>
-</MVP>

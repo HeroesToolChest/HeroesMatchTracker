@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<HatTrick name="Hat Trick">
-  <HatTrick>
-    <MVPScreen>storm_ui_mvp_hattrick_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_hattrick_{mvpColor}.png</ScoreScreen>
-    <Description>First Three Kills of Match</Description>
-  </HatTrick>
-</HatTrick>

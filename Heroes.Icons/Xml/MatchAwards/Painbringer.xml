@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Painbringer>
-  <MostHeroDamageDone>
-    <MVPScreen>storm_ui_mvp_painbringer_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_painbringer_{mvpColor}.png</ScoreScreen>
-    <Description>High Hero Damage Done</Description>
-  </MostHeroDamageDone>
-</Painbringer>

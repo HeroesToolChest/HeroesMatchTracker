@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ZergCrusher name="Zerg Crusher">
-  <MostDamageDoneToZerg>
-    <MVPScreen>storm_ui_mvp_zergcrusher_{mvpColor}.png</MVPScreen>
-    <ScoreScreen>storm_ui_scorescreen_mvp_zergcrusher_{mvpColor}.png</ScoreScreen>
-    <Description>High Damage Done to Zerg</Description>
-  </MostDamageDoneToZerg>
-</ZergCrusher>
