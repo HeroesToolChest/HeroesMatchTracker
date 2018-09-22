@@ -21,6 +21,6 @@ namespace HeroesMatchTracker.Data
         NotYetSupported = 1 << 12,
         ParserException = 1 << 13,
         TranslationException = 1 << 14,
-        SuccessReplayDetail = 1 << 15
+        SuccessReplayDetail = 1 << 15,
     }
 }

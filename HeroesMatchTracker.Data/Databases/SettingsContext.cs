@@ -1,6 +1,6 @@
 namespace HeroesMatchTracker.Data.Databases
 {
-    using Models.Settings;
+    using HeroesMatchTracker.Data.Models.Settings;
     using SQLite.CodeFirst;
     using System.Data.Entity;
 

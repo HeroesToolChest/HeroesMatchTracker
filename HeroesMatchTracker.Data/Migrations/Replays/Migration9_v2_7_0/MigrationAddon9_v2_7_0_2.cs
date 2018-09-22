@@ -23,7 +23,6 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
 
                 db.SaveChanges();
             }
-
         }
     }
 }

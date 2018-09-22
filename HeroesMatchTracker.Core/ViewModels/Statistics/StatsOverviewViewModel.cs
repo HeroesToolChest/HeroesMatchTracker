@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
-using Heroes.Icons.Models;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -360,8 +360,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
-            HeroesIcons.LoadLatestHeroesBuild();
-
             Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
 
             GameMode selectedGameModes = SetSelectedGameModes();
@@ -375,7 +373,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task SetHeroStats(Season season, GameMode gameModes, OverviewHeroStatOption statOption)
         {
-            var heroesList = HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild());
+            var heroesList = HeroesIcons.HeroData().HeroNames();
             var heroStatPercentageCollection = new Collection<StatsOverviewHeroes>();
             var heroStatCollection = new Collection<StatsOverviewHeroes>();
 
@@ -482,18 +480,18 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task SetMapStats(Season season, GameMode gameModes)
         {
-            var mapList = HeroesIcons.MapBackgrounds().GetMapsList();
+            var mapList = HeroesIcons.Battlegrounds().Battlegrounds(true);
             var mapStatTempCollection = new Collection<StatsOverviewMaps>();
 
             foreach (var map in mapList)
             {
-                int wins = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, true, map);
-                int losses = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, false, map);
+                int wins = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, true, map.Name);
+                int losses = Database.ReplaysDb().Statistics.ReadMapResults(season, gameModes, false, map.Name);
                 int total = wins + losses;
 
                 StatsOverviewMaps statsOverviewMaps = new StatsOverviewMaps()
                 {
-                    MapName = map,
+                    MapName = map.Name,
                     Wins = total > 0 ? wins : (int?)null,
                     Losses = total > 0 ? losses : (int?)null,
                     Winrate = total > 0 ? Utilities.CalculateWinValue(wins, total) : (double?)null,
@@ -506,7 +504,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         }
 
         /// <summary>
-        /// Call after all the Observable collections / Collections have been set
+        /// Call after all the Observable collections / Collections have been set.
         /// </summary>
         private void SetOverallStats()
         {
@@ -570,11 +568,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             foreach (var hero in listHeroesPlayed)
             {
-                var heroRoles = HeroesIcons.HeroBuilds().GetHeroInfo(hero.Character).Roles;
+                var heroRoles = HeroesIcons.HeroData().HeroData(hero.Character).Roles.ToList();
 
                 switch (heroRoles[0])
                 {
-                    case HeroRole.Warrior:
+                    case "Warrior":
                         {
                             warriorTotal++;
                             if (hero.IsWinner)
@@ -582,7 +580,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                             break;
                         }
 
-                    case HeroRole.Assassin:
+                    case "Assassin":
                         {
                             assassinTotal++;
                             if (hero.IsWinner)
@@ -590,7 +588,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                             break;
                         }
 
-                    case HeroRole.Support:
+                    case "Support":
                         {
                             supportTotal++;
                             if (hero.IsWinner)
@@ -598,7 +596,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                             break;
                         }
 
-                    case HeroRole.Specialist:
+                    case "Specialist":
                         {
                             specialistTotal++;
                             if (hero.IsWinner)
@@ -606,7 +604,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                             break;
                         }
 
-                    case HeroRole.Multiclass:
+                    case "Multiclass":
                         {
                             multiclassTotal++;
                             if (hero.IsWinner)

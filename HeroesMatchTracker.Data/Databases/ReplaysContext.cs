@@ -1,6 +1,6 @@
 namespace HeroesMatchTracker.Data.Databases
 {
-    using Models.Replays;
+    using HeroesMatchTracker.Data.Models.Replays;
     using SQLite.CodeFirst;
     using System.Data.Entity;
 

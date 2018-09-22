@@ -31,8 +31,8 @@ namespace HeroesMatchTracker.Core.ViewModels
             // Services
             SimpleIoc.Default.Register<IDatabaseService, DatabaseService>();
 
-            SimpleIoc.Default.Register(() => { return new HeroesIcons(true); });
-            SimpleIoc.Default.Register<IHeroesIconsService>(() =>
+            SimpleIoc.Default.Register(() => { return new HeroesIcons(); });
+            SimpleIoc.Default.Register<IHeroesIcons>(() =>
             {
                 return SimpleIoc.Default.GetInstance<HeroesIcons>();
             });

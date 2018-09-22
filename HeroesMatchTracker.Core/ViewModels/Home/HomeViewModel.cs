@@ -12,7 +12,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Home
 {
     public class HomeViewModel : HmtViewModel
     {
-        private IWebsiteService Website;
+        private readonly IWebsiteService Website;
 
         private DateTime? LatestReplayDateTime;
         private bool UserBattleTagUpdated;

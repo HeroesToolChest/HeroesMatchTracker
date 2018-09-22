@@ -6,7 +6,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
 {
     public class RawMatchPlayerViewModel : RawDataViewModelBase<ReplayMatchPlayer>
     {
-        public RawMatchPlayerViewModel(IRawDataQueries<ReplayMatchPlayer> iRawDataQueries, IHeroesIconsService heroesIcons)
+        public RawMatchPlayerViewModel(IRawDataQueries<ReplayMatchPlayer> iRawDataQueries, IHeroesIcons heroesIcons)
             : base(iRawDataQueries, heroesIcons)
         { }
     }

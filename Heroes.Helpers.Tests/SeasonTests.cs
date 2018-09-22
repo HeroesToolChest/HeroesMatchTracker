@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Heroes.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Heroes.Helpers.Tests

@@ -32,10 +32,10 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
         private Dictionary<ButtonCommands, Action> ButtonCommandActions;
 
         /// <summary>
-        /// Contstructor
+        /// Contstructor.
         /// </summary>
         /// <param name="iRawDataQueries"></param>
-        protected RawDataViewModelBase(IRawDataQueries<T> iRawDataQueries, IHeroesIconsService heroesIcons)
+        protected RawDataViewModelBase(IRawDataQueries<T> iRawDataQueries, IHeroesIcons heroesIcons)
             : base(heroesIcons)
         {
             AddColumnNamesList();

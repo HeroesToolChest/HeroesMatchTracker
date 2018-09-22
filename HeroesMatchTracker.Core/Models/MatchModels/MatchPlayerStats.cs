@@ -1,7 +1,5 @@
-﻿using Heroes.Icons.Models;
-using HeroesMatchTracker.Core.Services;
+﻿using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
-using System.Linq;
 
 namespace HeroesMatchTracker.Core.Models.MatchModels
 {
@@ -43,8 +41,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             : base(matchPlayerBase)
         { }
 
-        public MatchPlayerStats(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
-            : base(internalService, website, player)
+        public MatchPlayerStats(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player, int build)
+            : base(internalService, website, player, build)
         { }
 
         public int? SoloKills { get; private set; }

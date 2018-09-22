@@ -1,6 +1,4 @@
-﻿using Heroes.Helpers;
-using Heroes.Icons.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -14,23 +12,23 @@ namespace HeroesMatchTracker.Core.Models.HeroModels
 
         public Stream Franchise { get; set; }
 
-        public HeroType Type { get; set; }
+        public string Type { get; set; }
 
-        public List<HeroRole> Roles { get; set; }
+        public List<string> Roles { get; set; }
 
-        public HeroDifficulty Difficulty { get; set; }
+        public string Difficulty { get; set; }
 
         /// <summary>
-        /// Type, roles, difficulty
+        /// Type, roles, difficulty.
         /// </summary>
         public string SubDescription
         {
             get
             {
                 if (Roles.Count > 1)
-                    return $"{Type} {Roles[0]} ({Roles[1]} | {Roles[2]}) | Difficulty: {Difficulty.GetFriendlyName()}";
+                    return $"{Type} {Roles[0]} ({Roles[1]} | {Roles[2]}) | Difficulty: {Difficulty}";
                 else
-                    return $"{Type} {Roles.FirstOrDefault()} | Difficulty: {Difficulty.GetFriendlyName()}";
+                    return $"{Type} {Roles.FirstOrDefault()} | Difficulty: {Difficulty}";
             }
         }
     }

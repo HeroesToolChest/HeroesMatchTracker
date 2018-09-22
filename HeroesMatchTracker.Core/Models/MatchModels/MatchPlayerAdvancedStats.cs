@@ -11,8 +11,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             : base(matchPlayerStats)
         { }
 
-        public MatchPlayerAdvancedStats(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
-            : base(internalService, website, player)
+        public MatchPlayerAdvancedStats(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player, int build)
+            : base(internalService, website, player, build)
         { }
 
         public string PlayerNameOnly { get; private set; }

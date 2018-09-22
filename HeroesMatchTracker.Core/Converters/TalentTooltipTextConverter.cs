@@ -110,7 +110,7 @@ namespace HeroesMatchTracker.Core.Converters
 
                         Image image = new Image()
                         {
-                            Source = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.Quest)),
+                            Source = CreateImage(HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Quest)),
                             Height = 22,
                             Width = 20,
                             Margin = new Thickness(0, 0, 4, -2),
@@ -133,11 +133,11 @@ namespace HeroesMatchTracker.Core.Converters
                         BitmapImage bitmapImage = null;
 
                         if (startTag.Contains("color=\"e12bfc\""))
-                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldSpell));
+                            bitmapImage = CreateImage(HeroesIcons.HeroImages().OtherIconImage(OtherIcon.StatusResistShieldSpell));
                         else if (startTag.Contains("color=\"ff6600\""))
-                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldPhysical));
+                            bitmapImage = CreateImage(HeroesIcons.HeroImages().OtherIconImage(OtherIcon.StatusResistShieldPhysical));
                         else // if (startTag.Contains("color=\"BBBBBB\""))
-                            bitmapImage = CreateImage(HeroesIcons.GetOtherIcon(OtherIcon.StatusResistShieldDefault));
+                            bitmapImage = CreateImage(HeroesIcons.HeroImages().OtherIconImage(OtherIcon.StatusResistShieldDefault));
 
                         bitmapImage.Freeze();
 

@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
@@ -17,6 +18,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
     public abstract class MatchesBase : HmtViewModel
     {
+        private readonly MatchesTab CurrentTab;
+        private readonly IWebsiteService Website;
+        private readonly GameMode MatchGameMode;
+
         private int _selectedAccountLevel;
         private bool _isGivenBattleTagOnlyChecked;
         private bool _isPartyGivenBattleTagOnlyChecked;
@@ -36,9 +41,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private string _team2OverviewHeader;
         private string _selectedParty;
         private ReplayMatch _selectedReplay;
-        private MatchesTab CurrentTab;
-        private IWebsiteService Website;
-        private GameMode MatchGameMode;
 
         private ObservableCollection<ReplayMatch> _matchListCollection = new ObservableCollection<ReplayMatch>();
         private ObservableCollection<MatchPlayerBase> _matchOverviewTeam1Collection = new ObservableCollection<MatchPlayerBase>();
@@ -64,15 +66,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedGameDateOption = FilterGameDateOption.Any.GetFriendlyName();
 
             MapsList.Add("Any");
-            MapsList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
+            MapsList.AddRange(HeroesIcons.Battlegrounds().Battlegrounds(true).Select(x => x.Name).ToList());
             SelectedMapOption = MapsList[0];
 
             ReplayBuildsList.Add("Any");
-            ReplayBuildsList.AddRange(HeroesIcons.GetListOfHeroesBuilds());
+            ReplayBuildsList.AddRange(HeroesIcons.HeroBuilds().Builds);
             SelectedBuildOption = ReplayBuildsList[0];
 
             HeroesList.Add("Any");
-            HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
+            HeroesList.AddRange(HeroesIcons.HeroData().HeroNames().ToList());
             SelectedCharacter = HeroesList[0];
 
             PartyCountList.Add("Any");
@@ -377,9 +379,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             var playersList = replayMatch.ReplayMatchPlayers;
             var matchAwardDictionary = replayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
 
-            // load up correct build information
-            HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
-
             var playerParties = PlayerParties.FindPlayerParties(playersList);
 
             foreach (var player in playersList)
@@ -387,7 +386,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player, replayMatch.ReplayBuild.Value);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 // add to collection

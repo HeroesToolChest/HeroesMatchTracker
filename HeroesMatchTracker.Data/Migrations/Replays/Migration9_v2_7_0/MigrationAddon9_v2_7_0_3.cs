@@ -24,7 +24,7 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
                             {
                                 grp.Key.ReplayId,
                                 grp.Key.PartyValue,
-                                PartySize = partySize,                                
+                                PartySize = partySize,
                             }).Distinct();
 
                 foreach (var item in query)

@@ -1,4 +1,5 @@
-﻿using HeroesMatchTracker.Core.Services;
+﻿using Heroes.Models.AbilityTalents;
+using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
 using System.IO;
@@ -11,8 +12,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             : base(matchPlayerBase)
         { }
 
-        public MatchPlayerTalents(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
-            : base(internalService, website, player)
+        public MatchPlayerTalents(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player, int build)
+            : base(internalService, website, player, build)
         { }
 
         public List<Stream> Talents { get; private set; } = new List<Stream>();
@@ -23,22 +24,21 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         public void SetTalents(ReplayMatchPlayerTalent playerTalentList)
         {
-            HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName1);
-            var talent1 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName1);
-            var talent4 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName4);
-            var talent7 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName7);
-            var talent10 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName10);
-            var talent13 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName13);
-            var talent16 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName16);
-            var talent20 = HeroesIcons.HeroBuilds().GetHeroInfo(playerTalentList.Character).GetTalent(playerTalentList.TalentName20);
+            Talent talent1 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName1);
+            Talent talent4 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName4);
+            Talent talent7 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName7);
+            Talent talent10 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName10);
+            Talent talent13 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName13);
+            Talent talent16 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName16);
+            Talent talent20 = HeroesIcons.HeroData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName20);
 
-            Talents.Add(talent1.GetIcon());
-            Talents.Add(talent4.GetIcon());
-            Talents.Add(talent7.GetIcon());
-            Talents.Add(talent10.GetIcon());
-            Talents.Add(talent13.GetIcon());
-            Talents.Add(talent16.GetIcon());
-            Talents.Add(talent20.GetIcon());
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent1.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent4.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent7.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent10.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent13.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent16.IconFileName));
+            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent20.IconFileName));
 
             TalentNames.Add(talent1.Name);
             TalentNames.Add(talent4.Name);
@@ -48,21 +48,21 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             TalentNames.Add(talent16.Name);
             TalentNames.Add(talent20.Name);
 
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent1.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent4.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent7.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent10.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent13.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent16.Name}:</c> {talent1.Tooltip.Short}");
-            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent20.Name}:</c> {talent1.Tooltip.Short}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent1.Name}:</c> {talent1.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent4.Name}:</c> {talent4.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent7.Name}:</c> {talent7.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent10.Name}:</c> {talent10.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent13.Name}:</c> {talent13.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent16.Name}:</c> {talent16.Tooltip?.ShortTooltip?.ColoredText}");
+            TalentShortTooltips.Add($"<c val=\"FFFFFF\">{talent20.Name}:</c> {talent20.Tooltip?.ShortTooltip?.ColoredText}");
 
-            TalentFullTooltips.Add(talent1.Tooltip.Full);
-            TalentFullTooltips.Add(talent4.Tooltip.Full);
-            TalentFullTooltips.Add(talent7.Tooltip.Full);
-            TalentFullTooltips.Add(talent10.Tooltip.Full);
-            TalentFullTooltips.Add(talent13.Tooltip.Full);
-            TalentFullTooltips.Add(talent16.Tooltip.Full);
-            TalentFullTooltips.Add(talent20.Tooltip.Full);
+            TalentFullTooltips.Add(talent1.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent4.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent7.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent10.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent13.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent16.Tooltip?.FullTooltip?.ColoredText);
+            TalentFullTooltips.Add(talent20.Tooltip?.FullTooltip?.ColoredText);
 
             TalentSubInfo.Add(talent1.Tooltip.GetTalentSubInfo());
             TalentSubInfo.Add(talent4.Tooltip.GetTalentSubInfo());

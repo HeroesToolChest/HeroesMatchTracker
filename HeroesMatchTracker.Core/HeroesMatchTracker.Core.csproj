@@ -261,6 +261,14 @@
       <Project>{de184dee-a3fe-438c-a016-bc0f31235df9}</Project>
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Icons\Heroes.Icons.csproj">
+      <Project>{0AEE62BC-A68C-459D-BFD8-39B2FDE1A75A}</Project>
+      <Name>Heroes.Icons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Heroes.Icons\Heroes.Models\Heroes.Models\Heroes.Models.csproj">
+      <Project>{D7D7D114-6250-45A2-8C66-B3E5C7026188}</Project>
+      <Name>Heroes.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj">
       <Project>{f21941e5-2251-4ac7-9fe7-6f26e5d5f2db}</Project>
       <Name>Heroes.ReplayParser.netstandard</Name>

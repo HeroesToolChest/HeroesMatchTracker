@@ -6,7 +6,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
 {
     public class RawMatchTeamBanViewModel : RawDataViewModelBase<ReplayMatchTeamBan>
     {
-        public RawMatchTeamBanViewModel(IRawDataQueries<ReplayMatchTeamBan> iRawDataQueries, IHeroesIconsService heroesIcons)
+        public RawMatchTeamBanViewModel(IRawDataQueries<ReplayMatchTeamBan> iRawDataQueries, IHeroesIcons heroesIcons)
             : base(iRawDataQueries, heroesIcons)
         { }
     }

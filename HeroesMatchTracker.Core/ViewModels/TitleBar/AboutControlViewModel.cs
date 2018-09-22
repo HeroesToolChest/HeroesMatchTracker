@@ -24,9 +24,9 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
         private AutoUpdater AutoUpdater;
         private IDatabaseService Database;
         private IMainTabService MainTab;
-        private IHeroesIconsService HeroesIcons;
+        private IHeroesIcons HeroesIcons;
 
-        public AboutControlViewModel(IDatabaseService database, IMainTabService mainTab, IHeroesIconsService heroesIcons)
+        public AboutControlViewModel(IDatabaseService database, IMainTabService mainTab, IHeroesIcons heroesIcons)
         {
             Database = database;
             MainTab = mainTab;
@@ -39,7 +39,7 @@ namespace HeroesMatchTracker.Core.ViewModels.TitleBar
         public string HeroesMatchTrackerCoreVersion => AssemblyVersions.HeroesMatchTrackerCoreVersion().ToString();
         public string HeroesMatchTrackerDataVersion => AssemblyVersions.HeroesMatchTrackerDataVersion().ToString();
         public string HeroesMatchTrackerHelpersVersion => AssemblyVersions.HeroesHelpersVersion().ToString();
-        public string HeroesIconsVersion => $"{AssemblyVersions.HeroesIconsVersion().ToString()} ({HeroesIcons.GetLatestHeroesBuild()})";
+        public string HeroesIconsVersion => $"{AssemblyVersions.HeroesIconsVersion().ToString()} ({HeroesIcons.HeroBuilds().NewestBuild})";
         public string HeroesReplayParserVersion => $"{AssemblyVersions.HeroesReplayParserVersion().ToString()} ({Heroes.ReplayParser.Replay.LatestSupportedBuild})";
 
         public RelayCommand CheckForUpdatesCommand => new RelayCommand(CheckForUpdates);

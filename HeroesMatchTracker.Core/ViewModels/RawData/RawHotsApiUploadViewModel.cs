@@ -6,7 +6,7 @@ namespace HeroesMatchTracker.Core.ViewModels.RawData
 {
     public class RawHotsApiUploadViewModel : RawDataViewModelBase<ReplayHotsApiUpload>
     {
-        public RawHotsApiUploadViewModel(IRawDataQueries<ReplayHotsApiUpload> iRawDataQueries, IHeroesIconsService heroesIcons)
+        public RawHotsApiUploadViewModel(IRawDataQueries<ReplayHotsApiUpload> iRawDataQueries, IHeroesIcons heroesIcons)
             : base(iRawDataQueries, heroesIcons)
         { }
     }

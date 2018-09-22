@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons;
 using Heroes.Icons.Models;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.HeroModels;
 using HeroesMatchTracker.Core.Services;
@@ -14,6 +15,7 @@ using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using static Heroes.Helpers.HeroesHelpers.Regions;
 
@@ -21,21 +23,24 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 {
     public class MatchPlayerBase
     {
-        public MatchPlayerBase(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
+        public MatchPlayerBase(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player, int build)
         {
             Database = internalService.Database;
             HeroesIcons = internalService.HeroesIcons;
             UserProfile = internalService.UserProfile;
             Website = website;
             Player = player;
+            Build = build;
 
-            SilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.Silence);
-            VoiceSilenceIcon = HeroesIcons.GetOtherIcon(OtherIcon.VoiceSilence);
-            TalentBorderScoreScreenIcon = HeroesIcons.GetOtherIcon(OtherIcon.TalentAvailable);
+            SilenceIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Silence);
+            VoiceSilenceIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.VoiceSilence);
+            TalentBorderScoreScreenIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.TalentAvailable);
         }
 
         protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)
         {
+            Build = matchPlayerBase.Build;
+
             Database = matchPlayerBase.Database;
             HeroesIcons = matchPlayerBase.HeroesIcons;
             Player = matchPlayerBase.Player;
@@ -113,18 +118,20 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
         protected IDatabaseService Database { get; }
-        protected IHeroesIconsService HeroesIcons { get; }
+        protected IHeroesIcons HeroesIcons { get; }
         protected ISelectedUserProfileService UserProfile { get; }
         protected IWebsiteService Website { get; }
         protected ReplayMatchPlayer Player { get; }
+
+        protected int Build { get; }
 
         public void SetPlayerInfo(bool isAutoSelect, Dictionary<int, PartyIconColor> playerPartyIcons, Dictionary<long, string> matchAwardDictionary)
         {
             var playerInfo = Database.ReplaysDb().HotsPlayer.ReadRecordFromPlayerId(Player.PlayerId);
 
-            Hero hero = HeroesIcons.HeroBuilds().GetHeroInfo(Player.Character);
+            Hero hero = HeroesIcons.HeroData(Build).HeroData(Player.Character);
 
-            LeaderboardPortrait = Player.Character != "None" ? hero.GetLeaderboardPortrait() : null;
+            LeaderboardPortrait = Player.Character != "None" ? Heroes.Icons.HeroesIcons.HeroImages().LeaderboardImage(hero.HeroPortrait.LeaderboardPortraitFileName) : null;
             Silenced = Player.IsSilenced;
             VoiceSilenced = Player.IsVoiceSilenced;
             CharacterName = hero.Name;
@@ -151,11 +158,11 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             HeroDescription = new HeroDescription
             {
                 HeroName = hero.Name,
-                Description = hero.Description,
-                Franchise = HeroesIcons.GetFranchiseIcon(hero.Franchise),
+                Description = hero.Description.ColoredText,
+                Franchise = Heroes.Icons.HeroesIcons.HeroImages().HeroFranchiseImage(hero.Franchise),
                 Type = hero.Type,
                 Difficulty = hero.Difficulty,
-                Roles = hero.Roles,
+                Roles = hero.Roles.ToList(),
             };
 
             if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
@@ -176,20 +183,22 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         private void SetPartyIcon(PartyIconColor icon)
         {
-            PartyIcon = HeroesIcons.GetPartyIcon(icon);
+            PartyIcon = Heroes.Icons.HeroesIcons.HeroImages().PartyIconImage(icon);
         }
 
         private void SetMVPAward(string awardType)
         {
-            MVPScoreScreenColor teamColor;
+            MVPAwardColor teamColor;
 
             if (Player.Team == 0)
-                teamColor = MVPScoreScreenColor.Blue;
+                teamColor = MVPAwardColor.Blue;
             else
-                teamColor = MVPScoreScreenColor.Red;
+                teamColor = MVPAwardColor.Red;
 
-            MvpAward = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(awardType, teamColor, out string mvpAwardName);
-            MvpAwardDescription = $"{mvpAwardName}{Environment.NewLine}{HeroesIcons.MatchAwards().GetMatchAwardDescription(awardType)}";
+            MatchAward matchAward = HeroesIcons.MatchAwards(Build).MatchAward(awardType);
+
+            MvpAward = Heroes.Icons.HeroesIcons.HeroImages().MatchAwardImage(matchAward.ScoreScreenImageFileName, teamColor);
+            MvpAwardDescription = $"{matchAward.Name}{Environment.NewLine}{matchAward.Description}";
         }
 
         private void HeroSearchAllMatch()

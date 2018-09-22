@@ -24,6 +24,5 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         public List<string> MapOptionsList { get; set; }
         public List<string> HeroesList { get; set; }
         public List<string> PartyCountList { get; set; }
-        
     }
 }

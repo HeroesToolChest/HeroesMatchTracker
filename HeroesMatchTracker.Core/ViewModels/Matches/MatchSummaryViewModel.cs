@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using Heroes.Icons.Models;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Messaging;
 using HeroesMatchTracker.Core.Models.GraphSummaryModels;
 using HeroesMatchTracker.Core.Models.MatchModels;
@@ -24,6 +25,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 {
     public class MatchSummaryViewModel : HmtViewModel, IMatchSummaryReplayService
     {
+        private readonly IWebsiteService Website;
+
         private int? _teamBlueKills;
         private int? _teamRedKills;
         private int? _teamBlueLevel;
@@ -52,7 +55,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         private Stream _rightArrowDownIcon;
         private Stream _rightArrowDisabledIcon;
 
-        private IWebsiteService Website;
         private ILoadingOverlayWindowService LoadingOverlayWindow;
         private List<MatchPlayerTalents> MatchPlayerTalentsTeam1List;
         private List<MatchPlayerTalents> MatchPlayerTalentsTeam2List;
@@ -84,25 +86,25 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             IsLeftChangeButtonEnabled = false;
             IsRightChangeButtonEnabled = false;
 
-            ScoreKillIcon = HeroesIcons.GetOtherIcon(OtherIcon.Kills);
-            ScoreAssistIcon = HeroesIcons.GetOtherIcon(OtherIcon.Assist);
-            ScoreDeathIcon = HeroesIcons.GetOtherIcon(OtherIcon.Death);
-            ScoreSiegeDamageIcon = HeroesIcons.GetOtherIcon(OtherIcon.SiegeDamage);
-            ScoreHeroDamageIcon = HeroesIcons.GetOtherIcon(OtherIcon.HeroDamage);
-            ScoreHealingAbsorbedIcon = HeroesIcons.GetOtherIcon(OtherIcon.HealAbsorbedDamage);
-            ScoreDamageTakenIcon = HeroesIcons.GetOtherIcon(OtherIcon.DamageTaken);
-            ScoreExperienceContributionIcon = HeroesIcons.GetOtherIcon(OtherIcon.ExperienceContribution);
-            BlueKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsBlue);
-            RedKillsIcons = HeroesIcons.GetOtherIcon(OtherIcon.KillsRed);
+            ScoreKillIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Kills);
+            ScoreAssistIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Assist);
+            ScoreDeathIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Death);
+            ScoreSiegeDamageIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.SiegeDamage);
+            ScoreHeroDamageIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.HeroDamage);
+            ScoreHealingAbsorbedIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.HealAbsorbedDamage);
+            ScoreDamageTakenIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.DamageTaken);
+            ScoreExperienceContributionIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.ExperienceContribution);
+            BlueKillsIcons = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.KillsBlue);
+            RedKillsIcons = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.KillsRed);
 
-            LeftArrowDisabledIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftDisabled);
-            LeftArrowDownIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftDown);
-            LeftArrowHoverIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftHover);
-            LeftArrowNormalIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowLeftNormal);
-            RightArrowDisabledIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightDisabled);
-            RightArrowDownIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightDown);
-            RightArrowHoverIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightHover);
-            RightArrowNormalIcon = HeroesIcons.GetOtherIcon(OtherIcon.LongarrowRightNormal);
+            LeftArrowDisabledIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftDisabled);
+            LeftArrowDownIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftDown);
+            LeftArrowHoverIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftHover);
+            LeftArrowNormalIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftNormal);
+            RightArrowDisabledIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightDisabled);
+            RightArrowDownIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightDown);
+            RightArrowHoverIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightHover);
+            RightArrowNormalIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightNormal);
 
             HasBans = false;
             HasObservers = false;
@@ -540,11 +542,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         {
             DisposeMatchSummary();
 
+            int replayBuild = replayMatch.ReplayBuild.Value;
+
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
 
-            HeroesIcons.LoadHeroesBuild(replayMatch.ReplayBuild);
             SetBackgroundImage(replayMatch.MapName);
-            MatchTitleGlowColor = HeroesIcons.MapBackgrounds().GetMapBackgroundFontGlowColor(replayMatch.MapName);
+            MatchTitleGlowColor = ColorTranslator.FromHtml(HeroesIcons.Battlegrounds().Battleground(replayMatch.MapName).TextHexGlowColor);
             MatchTitle = $"{replayMatch.MapName} - {replayMatch.GameMode.GetFriendlyName()} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
             MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
 
@@ -567,7 +570,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 MatchPlayerStats matchPlayerStats;
                 MatchPlayerAdvancedStats matchPlayerAdvancedStats;
 
-                matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
+                matchPlayerBase = new MatchPlayerBase(InternalService, Website, player, replayBuild);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 if (player.Character != "None")
@@ -612,17 +615,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             // match bans
             if (replayMatch.ReplayMatchTeamBan != null)
             {
-                string ban1 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
-                string ban2 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
+                string ban1 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
+                string ban2 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
                 string ban3 = string.Empty;
-                string ban4 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
-                string ban5 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
+                string ban4 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
+                string ban5 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
                 string ban6 = string.Empty;
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    ban3 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban2);
-                    ban6 = HeroesIcons.HeroBuilds().GetRealHeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban2);
+                    ban3 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban2);
+                    ban6 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban2);
                 }
 
                 if (string.IsNullOrEmpty(ban1)) ban1 = null;
@@ -636,31 +639,31 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     if (string.IsNullOrEmpty(ban6)) ban6 = null;
                 }
 
-                Hero bannedHero1 = HeroesIcons.HeroBuilds().GetHeroInfo(ban1);
-                Hero bannedHero2 = HeroesIcons.HeroBuilds().GetHeroInfo(ban2);
+                Hero bannedHero1 = HeroesIcons.HeroData().HeroData(ban1);
+                Hero bannedHero2 = HeroesIcons.HeroData().HeroData(ban2);
                 Hero bannedHero3 = null;
-                Hero bannedHero4 = HeroesIcons.HeroBuilds().GetHeroInfo(ban4);
-                Hero bannedHero5 = HeroesIcons.HeroBuilds().GetHeroInfo(ban5);
+                Hero bannedHero4 = HeroesIcons.HeroData().HeroData(ban4);
+                Hero bannedHero5 = HeroesIcons.HeroData().HeroData(ban5);
                 Hero bannedHero6 = null;
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    bannedHero3 = HeroesIcons.HeroBuilds().GetHeroInfo(ban3);
-                    bannedHero6 = HeroesIcons.HeroBuilds().GetHeroInfo(ban6);
+                    bannedHero3 = HeroesIcons.HeroData(replayBuild).HeroData(ban3);
+                    bannedHero6 = HeroesIcons.HeroData(replayBuild).HeroData(ban6);
                 }
 
                 await Application.Current.Dispatcher.InvokeAsync(
                     () =>
                 {
-                    MatchHeroBans.Team0Ban0 = bannedHero1.GetHeroPortrait();
-                    MatchHeroBans.Team0Ban1 = bannedHero2.GetHeroPortrait();
-                    MatchHeroBans.Team1Ban0 = bannedHero4.GetHeroPortrait();
-                    MatchHeroBans.Team1Ban1 = bannedHero5.GetHeroPortrait();
+                    MatchHeroBans.Team0Ban0 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero1?.HeroPortrait?.TargetPortraitFileName);
+                    MatchHeroBans.Team0Ban1 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero2?.HeroPortrait?.TargetPortraitFileName);
+                    MatchHeroBans.Team1Ban0 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero4?.HeroPortrait?.TargetPortraitFileName);
+                    MatchHeroBans.Team1Ban1 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero5?.HeroPortrait?.TargetPortraitFileName);
 
                     if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                     {
-                        MatchHeroBans.Team0Ban2 = bannedHero3.GetHeroPortrait();
-                        MatchHeroBans.Team1Ban2 = bannedHero6.GetHeroPortrait();
+                        MatchHeroBans.Team0Ban2 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero3?.HeroPortrait?.TargetPortraitFileName);
+                        MatchHeroBans.Team1Ban2 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero6?.HeroPortrait?.TargetPortraitFileName);
                     }
                     else
                     {
@@ -669,15 +672,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     }
                 });
 
-                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1.Roles.FirstOrDefault()}";
-                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2.Roles.FirstOrDefault()}";
-                MatchHeroBans.Team1Ban0HeroName = $"{ban4}{Environment.NewLine}{bannedHero4.Roles.FirstOrDefault()}";
-                MatchHeroBans.Team1Ban1HeroName = $"{ban5}{Environment.NewLine}{bannedHero5.Roles.FirstOrDefault()}";
+                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1?.Roles?.FirstOrDefault()}";
+                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2?.Roles?.FirstOrDefault()}";
+                MatchHeroBans.Team1Ban0HeroName = $"{ban4}{Environment.NewLine}{bannedHero4?.Roles?.FirstOrDefault()}";
+                MatchHeroBans.Team1Ban1HeroName = $"{ban5}{Environment.NewLine}{bannedHero5?.Roles?.FirstOrDefault()}";
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    MatchHeroBans.Team0Ban2HeroName = $"{ban3}{Environment.NewLine}{bannedHero3.Roles.FirstOrDefault()}";
-                    MatchHeroBans.Team1Ban2HeroName = $"{ban6}{Environment.NewLine}{bannedHero6.Roles.FirstOrDefault()}";
+                    MatchHeroBans.Team0Ban2HeroName = $"{ban3}{Environment.NewLine}{bannedHero3?.Roles?.FirstOrDefault()}";
+                    MatchHeroBans.Team1Ban2HeroName = $"{ban6}{Environment.NewLine}{bannedHero6?.Roles?.FirstOrDefault()}";
                 }
 
                 HasBans = true;

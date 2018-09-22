@@ -1,5 +1,6 @@
 ﻿using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Icons.Models;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Generic;
@@ -16,14 +17,13 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         private Replay Replay;
         private ReplaysDb ReplaysDb;
         private bool DisposedValue = false;
-        private IHeroesIconsService HeroesIcons;
+        private IHeroesIcons HeroesIcons;
 
-        public ReplayFileData(Replay replay, IHeroesIconsService heroesIcons)
+        public ReplayFileData(Replay replay, IHeroesIcons heroesIcons)
         {
             ReplaysContext = new ReplaysContext();
             Replay = replay;
             HeroesIcons = heroesIcons;
-            HeroesIcons.LoadHeroesBuild(99999); // needed for auto translations
             ReplaysDb = new ReplaysDb();
         }
 
@@ -83,13 +83,12 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         // returns true if replay already exists in database
         private bool BasicData(string fileName)
         {
-            string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
-            if (string.IsNullOrEmpty(mapName))
-            {
-                if (!HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
-                    throw new TranslationException(RetrieveAllMapAndHeroNames());
-            }
+            Battleground battleground = HeroesIcons.Battlegrounds(Replay.ReplayBuild).Battleground(Replay.MapAlternativeName);
 
+            if (battleground == null)
+                throw new TranslationException(RetrieveAllMapAndHeroNames());
+
+            string mapName = battleground.Name;
             mapName = MapVerification(mapName);
 
             ReplayMatch replayMatch = new ReplayMatch
@@ -185,7 +184,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 }
                 else
                 {
-                    string character = HeroesIcons.HeroBuilds().GetRealHeroNameFromHeroUnitName(player.HeroUnits.FirstOrDefault().Name);
+                    string character = HeroesIcons.HeroData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
                     if (string.IsNullOrEmpty(character))
                         throw new TranslationException(RetrieveAllMapAndHeroNames());
 
@@ -345,8 +344,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         Team1Ban2 = Replay.TeamHeroBans[1][2],
                     };
 
-                    if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team0Ban2 != null || 
-                        replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null || replayTeamBan.Team1Ban2 != null)
+                    if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team0Ban2 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null || replayTeamBan.Team1Ban2 != null)
                         ReplaysDb.MatchTeamBan.CreateRecord(ReplaysContext, replayTeamBan);
                 }
             }
@@ -569,11 +567,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             List<string> names = new List<string>();
 
-            string mapName = HeroesIcons.MapBackgrounds().GetMapNameByMapAlternativeName(Replay.MapAlternativeName);
-            if (!string.IsNullOrEmpty(mapName))
-                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {mapName} [Good]");
-            else if (HeroesIcons.MapBackgrounds().MapNameTranslation(Replay.Map, out mapName))
-                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {mapName} [Good (Translated)]");
+            Battleground battleground = HeroesIcons.Battlegrounds(Replay.ReplayBuild).Battleground(Replay.MapAlternativeName);
+
+            if (battleground != null)
+                names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): {battleground.Name} [Good]");
             else
                 names.Add($"{Replay.Map} ({Replay.MapAlternativeName}): ??? [Unknown]");
 
@@ -588,7 +585,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     continue;
                 }
 
-                string character = HeroesIcons.HeroBuilds().GetRealHeroNameFromHeroUnitName(player.HeroUnits.FirstOrDefault().Name);
+                string character = HeroesIcons.HeroData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
 
                 if (!string.IsNullOrEmpty(character))
                     names.Add($"{player.Character} ({player.HeroUnits.FirstOrDefault().Name}): {character} [Good]");

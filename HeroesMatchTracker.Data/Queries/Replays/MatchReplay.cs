@@ -302,21 +302,21 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         query = from r in query.AsNoTracking()
                                 join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
                                 join party in
-                                    (from r in query.AsNoTracking()
-                                     join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
-                                     where mp.PartyValue == 0
-                                     group mp by new
-                                     {
-                                         mp.ReplayId,
-                                         mp.PartyValue,
-                                     }
-                                     into grp
-                                     where grp.Count() == 10
-                                     select new
-                                     {
-                                         grp.Key.ReplayId,
-                                         grp.Key.PartyValue
-                                     }) on r.ReplayId equals party.ReplayId
+                                    from r in query.AsNoTracking()
+                                    join mp in db.ReplayMatchPlayers on r.ReplayId equals mp.ReplayId
+                                    where mp.PartyValue == 0
+                                    group mp by new
+                                    {
+                                        mp.ReplayId,
+                                        mp.PartyValue,
+                                    }
+                                    into grp
+                                    where grp.Count() == 10
+                                    select new
+                                    {
+                                        grp.Key.ReplayId,
+                                        grp.Key.PartyValue,
+                                    } on r.ReplayId equals party.ReplayId
                                 select r;
                     }
                 }
@@ -366,10 +366,10 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Returns the Replay along all the other ReplayMatch models
+        /// Returns the Replay along all the other ReplayMatch models.
         /// </summary>
-        /// <param name="replayId">Replay Id</param>
-        /// <returns>Replay</returns>
+        /// <param name="replayId">Replay Id.</param>
+        /// <returns>Replay.</returns>
         public ReplayMatch ReadReplayIncludeAssociatedRecords(long replayId)
         {
             ReplayMatch replayMatch = new ReplayMatch();
@@ -408,11 +408,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Check if the replay was already submitted
+        /// Check if the replay was already submitted.
         /// </summary>
-        /// <param name="db">ReplaysContext</param>
-        /// <param name="model">ReplayMatch model</param>
-        /// <returns>The date (UTC) of the last replay</returns>
+        /// <param name="db">ReplaysContext.</param>
+        /// <param name="model">ReplayMatch model.</param>
+        /// <returns>The date (UTC) of the last replay.</returns>
         internal override bool IsExistingRecord(ReplaysContext db, ReplayMatch model)
         {
             return db.Replays.Any(x => x.Hash == model.Hash);

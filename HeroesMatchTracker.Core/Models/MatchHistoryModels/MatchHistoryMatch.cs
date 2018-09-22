@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
-using Heroes.Helpers;
 using Heroes.Icons;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Models.MatchModels;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.User;
@@ -17,10 +17,11 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
 {
     public class MatchHistoryMatch
     {
-        private IInternalService InternalService;
-        private IHeroesIconsService HeroesIcons;
+        private readonly IInternalService InternalService;
+        private readonly IWebsiteService Website;
+
+        private IHeroesIcons HeroesIcons;
         private ISelectedUserProfileService UserProfile;
-        private IWebsiteService Website;
         private ReplayMatch ReplayMatch;
 
         public MatchHistoryMatch(IInternalService internalService, IWebsiteService website, ReplayMatch replayMatch)
@@ -31,6 +32,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
             Website = website;
 
             ReplayMatch = replayMatch;
+            Build = replayMatch.ReplayBuild;
 
             SetMatch();
         }
@@ -70,8 +72,6 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
             var matchAwardDictionary = ReplayMatch.ReplayMatchAward.ToDictionary(x => x.PlayerId, x => x.Award);
 
             // load up correct build information
-            HeroesIcons.LoadHeroesBuild(ReplayMatch.ReplayBuild);
-
             var playerParties = PlayerParties.FindPlayerParties(playersList);
 
             foreach (var player in playersList)
@@ -79,7 +79,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 if (player.Team == 4)
                     continue;
 
-                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player);
+                MatchPlayerBase matchPlayerBase = new MatchPlayerBase(InternalService, Website, player, Build.Value);
                 matchPlayerBase.SetPlayerInfo(player.IsAutoSelect, playerParties, matchAwardDictionary);
 
                 // add to collection
@@ -91,7 +91,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 if (player.PlayerId == UserProfile.PlayerId)
                 {
                     UserHero = player.Character;
-                    UserHeroImage = HeroesIcons.HeroBuilds().GetHeroInfo(player.Character).GetHeroPortrait();
+                    UserHeroImage = Heroes.Icons.HeroesIcons.HeroImages().HeroSelectImage(HeroesIcons.HeroData(ReplayMatch.ReplayBuild.Value).HeroData(player.Character).HeroPortrait.HeroSelectPortraitFileName);
                     WinnerResult = player.IsWinner ? "Win" : "Loss";
                 }
             }

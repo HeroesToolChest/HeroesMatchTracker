@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using Microsoft.Practices.ServiceLocation;
@@ -51,7 +52,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
+            HeroesList.AddRange(HeroesIcons.HeroData().HeroNames().ToList());
 
             SelectedCharacter = Enumerable.Repeat(InitialHeroListOption, SelectedCharacter.Length).ToArray();
 
@@ -272,8 +273,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             if (SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
-
-            HeroesIcons.LoadLatestHeroesBuild();
 
             Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
             GameMode selectedGameModes = SetSelectedGameModes();

@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
-using Heroes.Icons.Models;
+using Heroes.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using Microsoft.Practices.ServiceLocation;
@@ -53,8 +53,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         public StatsHeroesViewModel(IInternalService internalService, ILoadingOverlayWindowService loadingOverlayWindow)
             : base(internalService)
         {
-            HeroesIcons.LoadLatestHeroesBuild();
-
             LoadingOverlayWindow = loadingOverlayWindow;
 
             IsTotalsAveragesChecked = true;
@@ -66,11 +64,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.HeroBuilds().GetListOfHeroes(HeroesIcons.GetLatestHeroesBuild()));
+            HeroesList.AddRange(HeroesIcons.HeroData().HeroNames().ToList());
             SelectedHero = HeroesList[0];
 
             GameModeList.AddRange(HeroesHelpers.GameModes.GetAllGameModesList());
-            MapList.AddRange(HeroesIcons.MapBackgrounds().GetMapsList());
+            MapList.AddRange(HeroesIcons.Battlegrounds().Battlegrounds(true).Select(x => x.Name).ToList());
 
             StatsHeroesDataViewModel = new StatsHeroesDataViewModel(internalService, MapList);
         }
@@ -345,12 +343,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 SelectedSeason == InitialSeasonListOption || string.IsNullOrEmpty(SelectedSeason))
                 return;
 
-            HeroesIcons.LoadLatestHeroesBuild();
-
             Season season = SelectedSeason.ConvertToEnum<Season>();
-            Hero hero = HeroesIcons.HeroBuilds().GetHeroInfo(SelectedHero);
+            Hero hero = HeroesIcons.HeroData().HeroData(SelectedHero);
 
-            SelectedHeroPortrait = hero.GetHeroPortrait();
+            SelectedHeroPortrait = Heroes.Icons.HeroesIcons.HeroImages().HeroSelectImage(hero.HeroPortrait.LeaderboardPortraitFileName);
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, season).ToString();
@@ -372,7 +368,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             // set selected maps
             if (SelectedMaps.Count <= 0)
             {
-                SelectedMaps = HeroesIcons.MapBackgrounds().GetMapsListExceptCustomOnly();
+                SelectedMaps = HeroesIcons.Battlegrounds().Battlegrounds().Select(x => x.Name).ToList();
             }
 
             // query the data

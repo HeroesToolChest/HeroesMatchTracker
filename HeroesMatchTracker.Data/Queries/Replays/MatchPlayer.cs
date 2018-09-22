@@ -104,7 +104,6 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         {
                             mp.ReplayId,
                             mp.PartyValue,
-                            
                         }
                         into grp
                         where grp.Count() > 0

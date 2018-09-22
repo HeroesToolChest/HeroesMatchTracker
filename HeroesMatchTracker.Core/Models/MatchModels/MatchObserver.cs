@@ -9,8 +9,8 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             : base(matchPlayerBase)
         { }
 
-        public MatchObserver(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player)
-            : base(internalService, website, player)
+        public MatchObserver(IInternalService internalService, IWebsiteService website, ReplayMatchPlayer player, int build)
+            : base(internalService, website, player, build)
         { }
     }
 }

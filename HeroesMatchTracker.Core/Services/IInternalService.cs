@@ -7,7 +7,7 @@ namespace HeroesMatchTracker.Core.Services
     public interface IInternalService
     {
         IDatabaseService Database { get; }
-        IHeroesIconsService HeroesIcons { get; }
+        IHeroesIcons HeroesIcons { get; }
         ISelectedUserProfileService UserProfile { get; }
     }
 }

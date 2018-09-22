@@ -1,5 +1,5 @@
 ﻿using Heroes.Helpers;
-using Heroes.Icons.Models;
+using Heroes.Models.AbilityTalents;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Models.Replays;
 using HeroesMatchTracker.Data.Queries.Settings;
@@ -7,7 +7,6 @@ using LinqKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static Heroes.Helpers.HeroesHelpers.Regions;
 
 namespace HeroesMatchTracker.Data.Queries.Replays
 {
@@ -16,13 +15,13 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         private UserSettings UserSettings = new UserSettings();
 
         /// <summary>
-        /// Gets the total count of wins or losses for given hero on a particular map
+        /// Gets the total count of wins or losses for given hero on a particular map.
         /// </summary>
-        /// <param name="character">Hero name</param>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode (multiple)</param>
-        /// <param name="isWins">Return wins if true otherwise return losses</param>
-        /// <param name="mapName">Selected map</param>
+        /// <param name="character">Hero name.</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode (multiple).</param>
+        /// <param name="isWins">Return wins if true otherwise return losses.</param>
+        /// <param name="mapName">Selected map.</param>
         /// <returns></returns>
         public int ReadTotalGameResults(string character, Season season, GameMode gameMode, bool isWins, string mapName)
         {
@@ -56,12 +55,12 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the total count of wins or losses for given hero
+        /// Gets the total count of wins or losses for given hero.
         /// </summary>
-        /// <param name="character">Hero name</param>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode (only one)</param>
-        /// <param name="isWins">Return wins if true otherwise return losses</param>
+        /// <param name="character">Hero name.</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode (only one).</param>
+        /// <param name="isWins">Return wins if true otherwise return losses.</param>
         /// <returns></returns>
         public int ReadGameResults(string character, Season season, GameMode gameMode, bool isWins)
         {
@@ -96,12 +95,12 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the score results for a hero on a particular map
+        /// Gets the score results for a hero on a particular map.
         /// </summary>
-        /// <param name="character">Hero name</param>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode</param>
-        /// <param name="mapName">Selected map</param>
+        /// <param name="character">Hero name.</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode.</param>
+        /// <param name="mapName">Selected map.</param>
         /// <returns></returns>
         public List<ReplayMatchPlayerScoreResult> ReadScoreResult(string character, Season season, GameMode gameMode, string mapName)
         {
@@ -167,15 +166,15 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the win or loss count of the talent for a given hero
+        /// Gets the win or loss count of the talent for a given hero.
         /// </summary>
-        /// <param name="character">Hero name</param>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode</param>
-        /// <param name="mapName">Selected map</param>
-        /// <param name="talentReferenceName">Selected talent reference name</param>
-        /// <param name="tier">The tier that the talent is on</param>
-        /// <param name="isWinner">Get wins if true otherwise losses</param>
+        /// <param name="character">Hero name.</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode.</param>
+        /// <param name="mapName">Selected map.</param>
+        /// <param name="talentReferenceName">Selected talent reference name.</param>
+        /// <param name="tier">The tier that the talent is on.</param>
+        /// <param name="isWinner">Get wins if true otherwise losses.</param>
         /// <returns></returns>
         public int ReadTalentsCountForHero(string character, Season season, GameMode gameMode, List<string> maps, Talent talent, bool isWinner)
         {
@@ -213,7 +212,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                         mp.IsWinner == isWinner &&
                                         mpt.Character == character &&
-                                        mpt.TalentName1 == talent.ReferenceName &&
+                                        mpt.TalentName1 == talent.ReferenceNameId &&
                                         r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -224,7 +223,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName4 == talent.ReferenceName &&
+                                      mpt.TalentName4 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -235,7 +234,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName7 == talent.ReferenceName &&
+                                      mpt.TalentName7 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -246,7 +245,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName10 == talent.ReferenceName &&
+                                      mpt.TalentName10 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -257,7 +256,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName13 == talent.ReferenceName &&
+                                      mpt.TalentName13 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -268,7 +267,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName16 == talent.ReferenceName &&
+                                      mpt.TalentName16 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -279,7 +278,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                                 where mpt.PlayerId == UserSettings.UserPlayerId &&
                                       mp.IsWinner == isWinner &&
                                       mpt.Character == character &&
-                                      mpt.TalentName20 == talent.ReferenceName &&
+                                      mpt.TalentName20 == talent.ReferenceNameId &&
                                       r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2
                                 select r;
                         break;
@@ -326,12 +325,12 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the total sum of a specific OverviewHeroStatOption
+        /// Gets the total sum of a specific OverviewHeroStatOption.
         /// </summary>
-        /// <param name="character">Hero name</param>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode (only one)</param>
-        /// <param name="isWins">Return wins if true otherwise return losses</param>
+        /// <param name="character">Hero name.</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode (only one).</param>
+        /// <param name="isWins">Return wins if true otherwise return losses.</param>
         /// <returns></returns>
         public int ReadStatValue(string character, Season season, GameMode gameMode, OverviewHeroStatOption statOption)
         {
@@ -368,12 +367,12 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the total count of wins or losses for a map
+        /// Gets the total count of wins or losses for a map.
         /// </summary>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected GameMode (multiple)</param>
-        /// <param name="isWins">Return wins if true otherwise return losses</param>
-        /// <param name="mapName">Selected map</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected GameMode (multiple).</param>
+        /// <param name="isWins">Return wins if true otherwise return losses.</param>
+        /// <param name="mapName">Selected map.</param>
         /// <returns></returns>
         public int ReadMapResults(Season season, GameMode gameMode, bool isWins, string mapName)
         {
@@ -469,14 +468,14 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         }
 
         /// <summary>
-        /// Gets the total count of games won or lose for grouped players
+        /// Gets the total count of games won or lose for grouped players.
         /// </summary>
-        /// <param name="season">Selected season</param>
-        /// <param name="gameMode">Selected gamemodes</param>
-        /// <param name="playerIds">List of players ids</param>
-        /// <param name="characters">List of heroes</param>
-        /// <param name="allParty">Are all players in a party</param>
-        /// <param name="isWin">Is a win or lose</param>
+        /// <param name="season">Selected season.</param>
+        /// <param name="gameMode">Selected gamemodes.</param>
+        /// <param name="playerIds">List of players ids.</param>
+        /// <param name="characters">List of heroes.</param>
+        /// <param name="allParty">Are all players in a party.</param>
+        /// <param name="isWin">Is a win or lose.</param>
         /// <returns></returns>
         public int ReadPartyGameResult(Season season, GameMode gameMode, List<long> playerIds, List<string> characters, bool allParty, bool isWin)
         {
@@ -505,11 +504,11 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                 var query = from r in db.Replays.AsNoTracking()
                             join party in
-                                (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                from mp in db.ReplayMatchPlayers.AsNoTracking()
                                  join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                  where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1)
                                  group r by mp.ReplayId into grp
-                                 select new { grp.Key }) on r.ReplayId equals party.Key
+                                 select new { grp.Key } on r.ReplayId equals party.Key
                             select r;
 
                 for (int i = 0; i < playerIds.Count; i++)
@@ -521,48 +520,48 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     {
                         query = from r in query
                                 join party in
-                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    from mp in db.ReplayMatchPlayers.AsNoTracking()
                                      join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                      where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
                                         mp.PlayerId == player && mp.PartySize == partySize
                                      group r by mp.ReplayId into grp
-                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                     select new { grp.Key } on r.ReplayId equals party.Key
                                 select r;
                     }
                     else if (playerIds[i] > 0)
                     {
                         query = from r in query
                                 join party in
-                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    from mp in db.ReplayMatchPlayers.AsNoTracking()
                                      join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
                                      where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
                                         mp.PlayerId == player && mp.Character == character && mp.PartySize == partySize
                                      group r by mp.ReplayId into grp
-                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                     select new { grp.Key } on r.ReplayId equals party.Key
                                 select r;
                     }
                     else if (playerIds[i] < 1 && characters[i] == "Any")
                     {
                         query = from r in query
                                 join party in
-                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
-                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
-                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin && 
-                                        mp.PartySize == partySize
-                                     group r by mp.ReplayId into grp
-                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                    from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                    where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
+                                    mp.PartySize == partySize
+                                    group r by mp.ReplayId into grp
+                                    select new { grp.Key } on r.ReplayId equals party.Key
                                 select r;
                     }
                     else
                     {
                         query = from r in query
                                 join party in
-                                    (from mp in db.ReplayMatchPlayers.AsNoTracking()
-                                     join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
-                                     where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
-                                        mp.Character == character && mp.PartySize == partySize
-                                     group r by mp.ReplayId into grp
-                                     select new { grp.Key }) on r.ReplayId equals party.Key
+                                    from mp in db.ReplayMatchPlayers.AsNoTracking()
+                                    join r in db.Replays.AsNoTracking() on mp.ReplayId equals r.ReplayId
+                                    where r.ReplayBuild >= replayBuild.Item1 && r.ReplayBuild < replayBuild.Item2 && (mp.Team == 0 || mp.Team == 1) && mp.IsWinner == isWin &&
+                                    mp.Character == character && mp.PartySize == partySize
+                                    group r by mp.ReplayId into grp
+                                    select new { grp.Key } on r.ReplayId equals party.Key
                                 select r;
                     }
                 }

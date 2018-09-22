@@ -6,6 +6,7 @@ using HeroesMatchTracker.Data;
 using NLog;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace HeroesMatchTracker.Core.ViewModels
 {
@@ -24,7 +25,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SetRandomHomescreenBackgroundImage();
         }
 
-        protected HmtViewModel(IHeroesIconsService heroesIcons)
+        protected HmtViewModel(IHeroesIcons heroesIcons)
         {
             HeroesIcons = heroesIcons;
 
@@ -44,7 +45,7 @@ namespace HeroesMatchTracker.Core.ViewModels
 
         protected IInternalService InternalService { get;  }
         protected IDatabaseService Database { get; }
-        protected IHeroesIconsService HeroesIcons { get; }
+        protected IHeroesIcons HeroesIcons { get; }
         protected ISelectedUserProfileService UserProfile { get; }
 
         protected Logger ExceptionLog { get; private set; }
@@ -53,7 +54,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger TranslationsLog { get; private set; }
         protected Logger ReplayUploaderLog { get; private set; }
 
-        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.MapBackgrounds().GetMapBackground(mapRealName);
+        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = Heroes.Icons.HeroesIcons.HeroImages().BattlegroundImage(HeroesIcons.Battlegrounds().Battleground(mapRealName).ImageFileName);
 
         private void SetLoggers()
         {
@@ -67,10 +68,10 @@ namespace HeroesMatchTracker.Core.ViewModels
         private void SetRandomHomescreenBackgroundImage()
         {
             Random random = new Random();
-            var listOfBackgroundImages = HeroesIcons.Homescreens().GetHomescreensList();
+            var listOfHomescreenImages = HeroesIcons.Homescreens().Homescreens().ToList();
 
-            int num = random.Next(0, listOfBackgroundImages.Count);
-            BackgroundImage = HeroesIcons.Homescreens().GetHomescreen(listOfBackgroundImages[num]);
+            int num = random.Next(0, listOfHomescreenImages.Count);
+            BackgroundImage = Heroes.Icons.HeroesIcons.HeroImages().HomescreenImage(listOfHomescreenImages[num].ImageFileName);
         }
     }
 }

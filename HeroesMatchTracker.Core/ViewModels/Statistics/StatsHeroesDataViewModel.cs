@@ -1,5 +1,5 @@
 ﻿using Heroes.Helpers;
-using Heroes.Icons.Models;
+using Heroes.Models.AbilityTalents;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
 using System;
@@ -13,6 +13,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 {
     public class StatsHeroesDataViewModel : HmtViewModel
     {
+        private readonly List<string> MapList;
+
         private ObservableCollection<StatsHeroesGameModes> _statsHeroesDataCollection = new ObservableCollection<StatsHeroesGameModes>();
         private ObservableCollection<StatsHeroesGameModes> _statsHeroesDataTotalCollection = new ObservableCollection<StatsHeroesGameModes>();
         private ObservableCollection<StatsHeroesGameModes> _statsHeroesDataAverageCollection = new ObservableCollection<StatsHeroesGameModes>();
@@ -26,8 +28,6 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private ObservableCollection<StatsHeroesTalents> _statsHeroesTalents20Collection = new ObservableCollection<StatsHeroesTalents>();
         private ObservableCollection<StatsHeroesAwards> _statsHeroesAwardsCollection = new ObservableCollection<StatsHeroesAwards>();
         private ObservableCollection<StatsHeroesAwards> _statsHeroesAwardsTotalCollection = new ObservableCollection<StatsHeroesAwards>();
-
-        private List<string> MapList;
 
         public StatsHeroesDataViewModel(IInternalService internalService, List<string> mapList)
             : base(internalService)
@@ -220,7 +220,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
                 {
-                    MapImage = HeroesIcons.MapBackgrounds().GetMapBackground(map),
+                    MapImage = Heroes.Icons.HeroesIcons.HeroImages().BattlegroundImage(HeroesIcons.Battlegrounds().Battleground(map).ImageFileName),
                     MapName = map,
                 };
 
@@ -371,7 +371,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (QueryTalents == false)
                 return Task.CompletedTask;
 
-            var tierTalents = HeroesIcons.HeroBuilds().GetHeroInfo(heroName).GetTierTalents(tier);
+            var tierTalents = HeroesIcons.HeroData().HeroData(heroName).TierTalents(tier);
 
             if (tierTalents == null)
                 return Task.CompletedTask;
@@ -386,10 +386,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesTalents talentPick = new StatsHeroesTalents
                 {
                     TalentName = talent.Name,
-                    TalentImage = talent.GetIcon(),
+                    TalentImage = Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent.IconFileName),
                     TalentSubInfo = talent.Tooltip.GetTalentSubInfo(),
-                    TalentShortTooltip = talent.Tooltip.Short,
-                    TalentFullTooltip = talent.Tooltip.Full,
+                    TalentShortTooltip = talent.Tooltip.ShortTooltip.ColoredText,
+                    TalentFullTooltip = talent.Tooltip.FullTooltip.ColoredText,
                     Wins = talentTotal > 0 ? talentWin : (int?)null,
                     Losses = talentTotal > 0 ? talentLoss : (int?)null,
                     Total = talentTotal > 0 ? talentTotal : (int?)null,
@@ -407,25 +407,25 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (QueryAwards == false)
                 return Task.CompletedTask;
 
-            var awardsList = HeroesIcons.MatchAwards().GetMatchAwardsList();
+            var awardsList = HeroesIcons.MatchAwards().Awards();
             foreach (var award in awardsList)
             {
-                int quickmatchAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.QuickMatch, selectedMaps, award);
-                int unrankedDraftAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.UnrankedDraft, selectedMaps, award);
-                int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award);
-                int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award);
+                int quickmatchAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.QuickMatch, selectedMaps, award.Id);
+                int unrankedDraftAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.UnrankedDraft, selectedMaps, award.Id);
+                int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award.Id);
+                int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award.Id);
 
                 int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
-                if (award == "MVP")
+                if (award.Name == "MVP")
                     MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
-                var awardImage = HeroesIcons.MatchAwards().GetMVPScoreScreenAward(award.ToString(), MVPScoreScreenColor.Blue, out string awardName);
+                var awardImage = Heroes.Icons.HeroesIcons.HeroImages().MatchAwardImage(award.ScoreScreenImageFileName, Heroes.Icons.Models.MVPAwardColor.Blue);
 
                 StatsHeroesAwards matchAwards = new StatsHeroesAwards
                 {
-                    AwardName = awardName,
-                    AwardDescription = HeroesIcons.MatchAwards().GetMatchAwardDescription(award.ToString()),
+                    AwardName = award.Name,
+                    AwardDescription = award.Description,
                     QuickMatch = rowTotal > 0 ? quickmatchAwards : (int?)null,
                     UnrankedDraft = rowTotal > 0 ? unrankedDraftAwards : (int?)null,
                     HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,

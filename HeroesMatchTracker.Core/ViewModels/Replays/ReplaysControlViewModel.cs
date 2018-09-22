@@ -43,7 +43,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private Queue<Tuple<Replay, ReplayFile>> ReplayDataQueue = new Queue<Tuple<Replay, ReplayFile>>();
 
         /// <summary>
-        /// Constructor
+        /// Constructor.
         /// </summary>
         public ReplaysControlViewModel(IInternalService internalService, IMainTabService mainTab)
             : base(internalService)
@@ -214,7 +214,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         }
 
         /// <summary>
-        /// Indicates whether the replay parser is in use (parsing only)
+        /// Indicates whether the replay parser is in use (parsing only).
         /// </summary>
         public bool IsParsingReplaysOn
         {
@@ -233,7 +233,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         }
 
         /// <summary>
-        /// Indicates whether a replay is being saving into the database
+        /// Indicates whether a replay is being saving into the database.
         /// </summary>
         public bool IsSaveDataQueueSaving
         {
@@ -466,7 +466,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         #endregion file watcher
 
         /// <summary>
-        /// Scan the default replays location and get all the replay files
+        /// Scan the default replays location and get all the replay files.
         /// </summary>
         private async Task LoadAccountDirectory()
         {
@@ -553,7 +553,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         }
 
         /// <summary>
-        /// Parse all the replay files in ReplayFilesCollection
+        /// Parse all the replay files in ReplayFilesCollection.
         /// </summary>
         /// <returns></returns>
         private async Task ParseReplays()
@@ -667,7 +667,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             ReplayFile currentReplayFile;
             Tuple<Replay, ReplayFile> dequeuedItem;
             ReplayFileData replayFileData = null;
-            HeroesIcons heroesIcons = new HeroesIcons(true);
+            HeroesIcons heroesIcons = new HeroesIcons();
 
             while (true)
             {
