@@ -373,7 +373,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task SetHeroStats(Season season, GameMode gameModes, OverviewHeroStatOption statOption)
         {
-            var heroesList = HeroesIcons.HeroData().HeroNames();
+            var heroesList = HeroesIcons.HeroesData().HeroNames();
             var heroStatPercentageCollection = new Collection<StatsOverviewHeroes>();
             var heroStatCollection = new Collection<StatsOverviewHeroes>();
 
@@ -568,7 +568,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             foreach (var hero in listHeroesPlayed)
             {
-                var heroRoles = HeroesIcons.HeroData().HeroData(hero.Character).Roles.ToList();
+                var heroRoles = HeroesIcons.HeroesData().HeroData(hero.Character).Roles.ToList();
 
                 switch (heroRoles[0])
                 {

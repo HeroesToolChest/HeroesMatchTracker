@@ -184,7 +184,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 }
                 else
                 {
-                    string character = HeroesIcons.HeroData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
+                    string character = HeroesIcons.HeroesData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
                     if (string.IsNullOrEmpty(character))
                         throw new TranslationException(RetrieveAllMapAndHeroNames());
 
@@ -585,7 +585,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                     continue;
                 }
 
-                string character = HeroesIcons.HeroData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
+                string character = HeroesIcons.HeroesData(Replay.ReplayBuild).HeroNameFromUnitId(player.HeroUnits.FirstOrDefault().Name);
 
                 if (!string.IsNullOrEmpty(character))
                     names.Add($"{player.Character} ({player.HeroUnits.FirstOrDefault().Name}): {character} [Good]");

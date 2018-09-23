@@ -74,7 +74,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             SelectedBuildOption = ReplayBuildsList[0];
 
             HeroesList.Add("Any");
-            HeroesList.AddRange(HeroesIcons.HeroData().HeroNames().ToList());
+            HeroesList.AddRange(HeroesIcons.HeroesData().HeroNames().ToList());
             SelectedCharacter = HeroesList[0];
 
             PartyCountList.Add("Any");

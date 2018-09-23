@@ -371,7 +371,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (QueryTalents == false)
                 return Task.CompletedTask;
 
-            var tierTalents = HeroesIcons.HeroData().HeroData(heroName).TierTalents(tier);
+            var tierTalents = HeroesIcons.HeroesData().HeroData(heroName).TierTalents(tier);
 
             if (tierTalents == null)
                 return Task.CompletedTask;

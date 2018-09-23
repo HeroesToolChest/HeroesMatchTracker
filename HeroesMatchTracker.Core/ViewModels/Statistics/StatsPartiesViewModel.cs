@@ -52,7 +52,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             SelectedSeason = SeasonList[0];
 
             HeroesList.Add(InitialHeroListOption);
-            HeroesList.AddRange(HeroesIcons.HeroData().HeroNames().ToList());
+            HeroesList.AddRange(HeroesIcons.HeroesData().HeroNames().ToList());
 
             SelectedCharacter = Enumerable.Repeat(InitialHeroListOption, SelectedCharacter.Length).ToArray();
 

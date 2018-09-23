@@ -547,7 +547,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
 
             SetBackgroundImage(replayMatch.MapName);
-            MatchTitleGlowColor = ColorTranslator.FromHtml(HeroesIcons.Battlegrounds().Battleground(replayMatch.MapName).TextHexGlowColor);
+            MatchTitleGlowColor = ColorTranslator.FromHtml(HeroesIcons.Battlegrounds(replayBuild).Battleground(replayMatch.MapName).TextHexGlowColor);
             MatchTitle = $"{replayMatch.MapName} - {replayMatch.GameMode.GetFriendlyName()} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
             MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";
 
@@ -615,17 +615,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             // match bans
             if (replayMatch.ReplayMatchTeamBan != null)
             {
-                string ban1 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
-                string ban2 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
+                string ban1 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban0);
+                string ban2 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban1);
                 string ban3 = string.Empty;
-                string ban4 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
-                string ban5 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
+                string ban4 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban0);
+                string ban5 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban1);
                 string ban6 = string.Empty;
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    ban3 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban2);
-                    ban6 = HeroesIcons.HeroData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban2);
+                    ban3 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team0Ban2);
+                    ban6 = HeroesIcons.HeroesData(replayBuild).HeroNameFromAttributeId(replayMatch.ReplayMatchTeamBan.Team1Ban2);
                 }
 
                 if (string.IsNullOrEmpty(ban1)) ban1 = null;
@@ -639,17 +639,17 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     if (string.IsNullOrEmpty(ban6)) ban6 = null;
                 }
 
-                Hero bannedHero1 = HeroesIcons.HeroData().HeroData(ban1);
-                Hero bannedHero2 = HeroesIcons.HeroData().HeroData(ban2);
+                Hero bannedHero1 = HeroesIcons.HeroesData().HeroData(ban1);
+                Hero bannedHero2 = HeroesIcons.HeroesData().HeroData(ban2);
                 Hero bannedHero3 = null;
-                Hero bannedHero4 = HeroesIcons.HeroData().HeroData(ban4);
-                Hero bannedHero5 = HeroesIcons.HeroData().HeroData(ban5);
+                Hero bannedHero4 = HeroesIcons.HeroesData().HeroData(ban4);
+                Hero bannedHero5 = HeroesIcons.HeroesData().HeroData(ban5);
                 Hero bannedHero6 = null;
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    bannedHero3 = HeroesIcons.HeroData(replayBuild).HeroData(ban3);
-                    bannedHero6 = HeroesIcons.HeroData(replayBuild).HeroData(ban6);
+                    bannedHero3 = HeroesIcons.HeroesData(replayBuild).HeroData(ban3);
+                    bannedHero6 = HeroesIcons.HeroesData(replayBuild).HeroData(ban6);
                 }
 
                 await Application.Current.Dispatcher.InvokeAsync(
