@@ -347,7 +347,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             Season season = SelectedSeason.ConvertToEnum<Season>();
             Hero hero = HeroesIcons.HeroesData().HeroData(SelectedHero);
 
-            SelectedHeroPortrait = hero.HeroPortrait.LeaderboardImage();
+            SelectedHeroPortrait = hero.HeroPortrait.TargetPortraitImage();
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, season).ToString();
