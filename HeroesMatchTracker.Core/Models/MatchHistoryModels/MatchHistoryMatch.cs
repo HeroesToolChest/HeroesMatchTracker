@@ -74,7 +74,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
             // load up correct build information
             var playerParties = PlayerParties.FindPlayerParties(playersList);
 
-            foreach (var player in playersList)
+            foreach (ReplayMatchPlayer player in playersList)
             {
                 if (player.Team == 4)
                     continue;
@@ -91,7 +91,7 @@ namespace HeroesMatchTracker.Core.Models.MatchHistoryModels
                 if (player.PlayerId == UserProfile.PlayerId)
                 {
                     UserHero = player.Character;
-                    UserHeroImage = Heroes.Icons.HeroesIcons.HeroImages().HeroSelectImage(HeroesIcons.HeroesData(ReplayMatch.ReplayBuild.Value).HeroData(player.Character).HeroPortrait.HeroSelectPortraitFileName);
+                    UserHeroImage = HeroesIcons.HeroesData(ReplayMatch.ReplayBuild.Value).HeroData(player.Character).HeroPortrait.HeroSelectImage();
                     WinnerResult = player.IsWinner ? "Win" : "Loss";
                 }
             }

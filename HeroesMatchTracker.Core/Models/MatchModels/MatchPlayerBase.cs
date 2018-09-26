@@ -32,9 +32,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Player = player;
             Build = build;
 
-            SilenceIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Silence);
-            VoiceSilenceIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.VoiceSilence);
-            TalentBorderScoreScreenIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.TalentAvailable);
+            SilenceIcon = ImageStreams.OtherIconImage(OtherIcon.Silence);
+            VoiceSilenceIcon = ImageStreams.OtherIconImage(OtherIcon.VoiceSilence);
+            TalentBorderScoreScreenIcon = ImageStreams.OtherIconImage(OtherIcon.TalentAvailable);
         }
 
         protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)
@@ -131,7 +131,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
             Hero hero = HeroesIcons.HeroesData(Build).HeroData(Player.Character, includeAbilities: false, additionalUnits: false);
 
-            LeaderboardPortrait = Player.Character != "None" ? Heroes.Icons.HeroesIcons.HeroImages().LeaderboardImage(hero.HeroPortrait.LeaderboardPortraitFileName) : null;
+            LeaderboardPortrait = Player.Character != "None" ? hero.HeroPortrait.LeaderboardImage() : null;
             Silenced = Player.IsSilenced;
             VoiceSilenced = Player.IsVoiceSilenced;
             CharacterName = hero.Name;
@@ -159,7 +159,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             {
                 HeroName = hero.Name,
                 Description = hero.Description.ColoredText,
-                Franchise = Heroes.Icons.HeroesIcons.HeroImages().HeroFranchiseImage(hero.Franchise),
+                Franchise = hero.HeroFranchiseImage(),
                 Type = hero.Type,
                 Difficulty = hero.Difficulty,
                 Roles = hero.Roles.ToList(),
@@ -183,21 +183,21 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
 
         private void SetPartyIcon(PartyIconColor icon)
         {
-            PartyIcon = Heroes.Icons.HeroesIcons.HeroImages().PartyIconImage(icon);
+            PartyIcon = ImageStreams.PartyIconImage(icon);
         }
 
         private void SetMVPAward(string awardType)
         {
-            MVPAwardColor teamColor;
+            ScoreScreenAwardColor teamColor;
 
             if (Player.Team == 0)
-                teamColor = MVPAwardColor.Blue;
+                teamColor = ScoreScreenAwardColor.Blue;
             else
-                teamColor = MVPAwardColor.Red;
+                teamColor = ScoreScreenAwardColor.Red;
 
             MatchAward matchAward = HeroesIcons.MatchAwards(Build).MatchAward(awardType);
 
-            MvpAward = Heroes.Icons.HeroesIcons.HeroImages().MatchAwardImage(matchAward.ScoreScreenImageFileName, teamColor);
+            MvpAward = matchAward.MatchAwardScoreScreenImage(teamColor);
             MvpAwardDescription = $"{matchAward.Name}{Environment.NewLine}{matchAward.Description}";
         }
 

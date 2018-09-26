@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
+using Heroes.Icons;
 using Heroes.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -346,7 +347,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             Season season = SelectedSeason.ConvertToEnum<Season>();
             Hero hero = HeroesIcons.HeroesData().HeroData(SelectedHero);
 
-            SelectedHeroPortrait = Heroes.Icons.HeroesIcons.HeroImages().HeroSelectImage(hero.HeroPortrait.LeaderboardPortraitFileName);
+            SelectedHeroPortrait = hero.HeroPortrait.LeaderboardImage();
             HeroName = SelectedHero;
             HeroRole = hero.Roles[0].ToString();
             HeroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(SelectedHero, season).ToString();

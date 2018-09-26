@@ -1,4 +1,6 @@
 ﻿using Heroes.Helpers;
+using Heroes.Icons;
+using Heroes.Icons.Models;
 using Heroes.Models.AbilityTalents;
 using HeroesMatchTracker.Core.Models.StatisticsModels;
 using HeroesMatchTracker.Core.Services;
@@ -220,7 +222,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
                 {
-                    MapImage = Heroes.Icons.HeroesIcons.HeroImages().BattlegroundImage(HeroesIcons.Battlegrounds().Battleground(map).ImageFileName),
+                    MapImage = HeroesIcons.Battlegrounds().Battleground(map).BattlegroundImage(),
                     MapName = map,
                 };
 
@@ -386,7 +388,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesTalents talentPick = new StatsHeroesTalents
                 {
                     TalentName = talent.Name,
-                    TalentImage = Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent.IconFileName),
+                    TalentImage = talent.AbilityTalentImage(),
                     TalentSubInfo = talent.Tooltip.GetTalentSubInfo(),
                     TalentShortTooltip = talent.Tooltip.ShortTooltip.ColoredText,
                     TalentFullTooltip = talent.Tooltip.FullTooltip.ColoredText,
@@ -420,7 +422,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 if (award.Name == "MVP")
                     MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
-                var awardImage = Heroes.Icons.HeroesIcons.HeroImages().MatchAwardImage(award.ScoreScreenImageFileName, Heroes.Icons.Models.MVPAwardColor.Blue);
+                var awardImage = award.MatchAwardScoreScreenImage(ScoreScreenAwardColor.Blue);
 
                 StatsHeroesAwards matchAwards = new StatsHeroesAwards
                 {

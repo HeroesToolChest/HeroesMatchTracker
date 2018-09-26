@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
+using Heroes.Icons;
 using Heroes.Icons.Models;
 using Heroes.Models;
 using HeroesMatchTracker.Core.Messaging;
@@ -86,25 +87,25 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             IsLeftChangeButtonEnabled = false;
             IsRightChangeButtonEnabled = false;
 
-            ScoreKillIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Kills);
-            ScoreAssistIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Assist);
-            ScoreDeathIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.Death);
-            ScoreSiegeDamageIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.SiegeDamage);
-            ScoreHeroDamageIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.HeroDamage);
-            ScoreHealingAbsorbedIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.HealAbsorbedDamage);
-            ScoreDamageTakenIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.DamageTaken);
-            ScoreExperienceContributionIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.ExperienceContribution);
-            BlueKillsIcons = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.KillsBlue);
-            RedKillsIcons = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.KillsRed);
+            ScoreKillIcon = ImageStreams.OtherIconImage(OtherIcon.Kills);
+            ScoreAssistIcon = ImageStreams.OtherIconImage(OtherIcon.Assist);
+            ScoreDeathIcon = ImageStreams.OtherIconImage(OtherIcon.Death);
+            ScoreSiegeDamageIcon = ImageStreams.OtherIconImage(OtherIcon.SiegeDamage);
+            ScoreHeroDamageIcon = ImageStreams.OtherIconImage(OtherIcon.HeroDamage);
+            ScoreHealingAbsorbedIcon = ImageStreams.OtherIconImage(OtherIcon.HealAbsorbedDamage);
+            ScoreDamageTakenIcon = ImageStreams.OtherIconImage(OtherIcon.DamageTaken);
+            ScoreExperienceContributionIcon = ImageStreams.OtherIconImage(OtherIcon.ExperienceContribution);
+            BlueKillsIcons = ImageStreams.OtherIconImage(OtherIcon.KillsBlue);
+            RedKillsIcons = ImageStreams.OtherIconImage(OtherIcon.KillsRed);
 
-            LeftArrowDisabledIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftDisabled);
-            LeftArrowDownIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftDown);
-            LeftArrowHoverIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftHover);
-            LeftArrowNormalIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowLeftNormal);
-            RightArrowDisabledIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightDisabled);
-            RightArrowDownIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightDown);
-            RightArrowHoverIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightHover);
-            RightArrowNormalIcon = Heroes.Icons.HeroesIcons.HeroImages().OtherIconImage(OtherIcon.LongarrowRightNormal);
+            LeftArrowDisabledIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowLeftDisabled);
+            LeftArrowDownIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowLeftDown);
+            LeftArrowHoverIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowLeftHover);
+            LeftArrowNormalIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowLeftNormal);
+            RightArrowDisabledIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowRightDisabled);
+            RightArrowDownIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowRightDown);
+            RightArrowHoverIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowRightHover);
+            RightArrowNormalIcon = ImageStreams.OtherIconImage(OtherIcon.LongarrowRightNormal);
 
             HasBans = false;
             HasObservers = false;
@@ -655,15 +656,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                 await Application.Current.Dispatcher.InvokeAsync(
                     () =>
                 {
-                    MatchHeroBans.Team0Ban0 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero1?.HeroPortrait?.TargetPortraitFileName);
-                    MatchHeroBans.Team0Ban1 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero2?.HeroPortrait?.TargetPortraitFileName);
-                    MatchHeroBans.Team1Ban0 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero4?.HeroPortrait?.TargetPortraitFileName);
-                    MatchHeroBans.Team1Ban1 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero5?.HeroPortrait?.TargetPortraitFileName);
+                    MatchHeroBans.Team0Ban0 = bannedHero1?.HeroPortrait?.TargetPortraitImage();
+                    MatchHeroBans.Team0Ban1 = bannedHero2?.HeroPortrait?.TargetPortraitImage();
+                    MatchHeroBans.Team1Ban0 = bannedHero4?.HeroPortrait?.TargetPortraitImage();
+                    MatchHeroBans.Team1Ban1 = bannedHero5?.HeroPortrait?.TargetPortraitImage();
 
                     if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                     {
-                        MatchHeroBans.Team0Ban2 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero3?.HeroPortrait?.TargetPortraitFileName);
-                        MatchHeroBans.Team1Ban2 = Heroes.Icons.HeroesIcons.HeroImages().TargetPortraitImage(bannedHero6?.HeroPortrait?.TargetPortraitFileName);
+                        MatchHeroBans.Team0Ban2 = bannedHero3?.HeroPortrait?.TargetPortraitImage();
+                        MatchHeroBans.Team1Ban2 = bannedHero6?.HeroPortrait?.TargetPortraitImage();
                     }
                     else
                     {

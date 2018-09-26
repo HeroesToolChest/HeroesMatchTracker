@@ -54,7 +54,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger TranslationsLog { get; private set; }
         protected Logger ReplayUploaderLog { get; private set; }
 
-        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = Heroes.Icons.HeroesIcons.HeroImages().BattlegroundImage(HeroesIcons.Battlegrounds().Battleground(mapRealName).ImageFileName);
+        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.Battlegrounds().Battleground(mapRealName).BattlegroundImage();
 
         private void SetLoggers()
         {
@@ -71,7 +71,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             var listOfHomescreenImages = HeroesIcons.Homescreens().Homescreens().ToList();
 
             int num = random.Next(0, listOfHomescreenImages.Count);
-            BackgroundImage = Heroes.Icons.HeroesIcons.HeroImages().HomescreenImage(listOfHomescreenImages[num].ImageFileName);
+            BackgroundImage = listOfHomescreenImages[num].HomescreenImage();
         }
     }
 }

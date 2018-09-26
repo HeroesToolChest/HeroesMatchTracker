@@ -1,4 +1,5 @@
-﻿using Heroes.Models.AbilityTalents;
+﻿using Heroes.Icons;
+using Heroes.Models.AbilityTalents;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Data.Models.Replays;
 using System.Collections.Generic;
@@ -32,13 +33,13 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             Talent talent16 = HeroesIcons.HeroesData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName16);
             Talent talent20 = HeroesIcons.HeroesData(Build).HeroData(playerTalentList.Character).GetTalent(playerTalentList.TalentName20);
 
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent1.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent4.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent7.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent10.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent13.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent16.IconFileName));
-            Talents.Add(Heroes.Icons.HeroesIcons.HeroImages().TalentImage(talent20.IconFileName));
+            Talents.Add(talent1.AbilityTalentImage());
+            Talents.Add(talent4.AbilityTalentImage());
+            Talents.Add(talent7.AbilityTalentImage());
+            Talents.Add(talent10.AbilityTalentImage());
+            Talents.Add(talent13.AbilityTalentImage());
+            Talents.Add(talent16.AbilityTalentImage());
+            Talents.Add(talent20.AbilityTalentImage());
 
             TalentNames.Add(talent1.Name);
             TalentNames.Add(talent4.Name);

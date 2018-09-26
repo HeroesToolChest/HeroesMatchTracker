@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using Heroes.Helpers;
+using Heroes.Icons;
 using Heroes.Models;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
@@ -210,7 +211,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 List<object> rowStats = new List<object>();
 
-                Stream leaderboardPortrait = Heroes.Icons.HeroesIcons.HeroImages().LeaderboardImage(HeroesIcons.HeroesData().HeroData(hero).HeroPortrait.LeaderboardPortraitFileName);
+                Stream leaderboardPortrait = HeroesIcons.HeroesData().HeroData(hero).HeroPortrait.LeaderboardImage();
                 int heroLevel = Database.ReplaysDb().MatchPlayer.ReadHighestLevelOfHero(hero, selectedSeason);
 
                 rowStats.Add(leaderboardPortrait);
