@@ -7,16 +7,18 @@ namespace Heroes.Helpers
         public static class Builds
         {
             /// <summary>
-            /// Item1 is the beginning build (inclusive) and Item2 is the end (exclusive)
+            /// Item1 is the beginning build (inclusive) and Item2 is the end (exclusive).
             /// </summary>
-            /// <param name="season">The selected season</param>
+            /// <param name="season">The selected season.</param>
             /// <returns></returns>
             public static Tuple<int?, int?> GetReplayBuildsFromSeason(Season season)
             {
                 switch (season)
                 {
+                    case Season.Year2018Season4:
+                        return new Tuple<int?, int?>(68740, 99999);
                     case Season.Year2018Season3:
-                        return new Tuple<int?, int?>(66488, 99999);
+                        return new Tuple<int?, int?>(66488, 68740);
                     case Season.Year2018Season2:
                         return new Tuple<int?, int?>(62833, 66488);
                     case Season.Year2018Season1:
