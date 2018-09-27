@@ -31,8 +31,6 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 ## How to use
 Please visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki).
 
-For Non-English clients, you may want to check out the wiki page [Non-English Clients](https://github.com/koliva8245/HeroesMatchTracker/wiki/Non-English-Clients)
-
 ## Donations
 Want to donate? I recommend you buy yourself some Gems instead, but if you really want to donate...
 
