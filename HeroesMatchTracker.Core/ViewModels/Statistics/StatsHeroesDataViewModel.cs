@@ -427,7 +427,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StatsHeroesAwards matchAwards = new StatsHeroesAwards
                 {
                     AwardName = award.Name,
-                    AwardDescription = award.Description,
+                    AwardDescription = award.Description.ColoredTextWithScaling,
                     QuickMatch = rowTotal > 0 ? quickmatchAwards : (int?)null,
                     UnrankedDraft = rowTotal > 0 ? unrankedDraftAwards : (int?)null,
                     HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,
