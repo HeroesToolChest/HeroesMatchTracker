@@ -202,6 +202,7 @@
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />
     <Compile Include="ViewModels\RawData\RawHotsApiUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
+    <Compile Include="ViewModels\RawData\RawMatchDraftViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchMessageViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchPlayerScoreResultViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchPlayerTalentViewModel.cs" />

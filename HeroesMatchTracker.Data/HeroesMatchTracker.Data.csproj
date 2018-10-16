@@ -122,6 +122,8 @@
     <Compile Include="Migrations\ReleaseNotes\Migration1_v1_4_0\Migration1_v1_4_0.cs" />
     <Compile Include="Migrations\ReleaseNotes\ReleaseNotesContextMigrator.cs" />
     <Compile Include="Migrations\ReleaseNotes\ReleaseNotesMigrator.cs" />
+    <Compile Include="Migrations\Replays\Migration12_v2_11_0\Migration12_v2_11_0.cs" />
+    <Compile Include="Migrations\Replays\Migration12_v2_11_0\MigrationAddon12_v2_11_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration11_v2_10_0\Migration11_v2_10_0.cs" />
     <Compile Include="Migrations\Replays\Migration11_v2_10_0\MigrationAddon11_v2_10_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration1_v1_2_0\MigrationAddon1_v1_2_0_2.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="Models\Replays\ReplayMatch.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
     <Compile Include="Models\Replays\ReplayMatchAward.cs" />
+    <Compile Include="Models\Replays\ReplayMatchDraftPick.cs" />
     <Compile Include="Models\Replays\ReplayMatchMessage.cs" />
     <Compile Include="Models\Replays\ReplayMatchPlayer.cs" />
     <Compile Include="Models\Replays\ReplayMatchPlayerScoreResult.cs" />
@@ -189,6 +192,7 @@
     <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
     <Compile Include="Queries\Replays\HotsApiUpload.cs" />
+    <Compile Include="Queries\Replays\MatchDraft.cs" />
     <Compile Include="Queries\Replays\ReplayFilter.cs" />
     <Compile Include="Queries\Replays\ReplaysDb.cs" />
     <Compile Include="Queries\Replays\Statistics.cs" />

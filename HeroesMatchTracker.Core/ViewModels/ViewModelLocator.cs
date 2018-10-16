@@ -74,6 +74,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchTeamLevel>, MatchTeamLevel>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchTeamObjective>, MatchTeamObjective>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayRenamedPlayer>, RenamedPlayer>();
+            SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchDraftPick>, MatchDraft>();
 
             SimpleIoc.Default.Register<RawMatchReplayViewModel>();
             SimpleIoc.Default.Register<RawAllHotsPlayerViewModel>();
@@ -88,6 +89,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<RawMatchTeamLevelViewModel>();
             SimpleIoc.Default.Register<RawMatchTeamObjectiveViewModel>();
             SimpleIoc.Default.Register<RawRenamedPlayerViewModel>();
+            SimpleIoc.Default.Register<RawMatchDraftViewModel>();
 
             // Matches
             SimpleIoc.Default.Register<MatchesViewModel>();
@@ -140,6 +142,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static RawMatchTeamLevelViewModel RawMatchTeamLevelViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamLevelViewModel>();
         public static RawMatchTeamObjectiveViewModel RawMatchTeamObjectiveViewModel => ServiceLocator.Current.GetInstance<RawMatchTeamObjectiveViewModel>();
         public static RawRenamedPlayerViewModel RawRenamedPlayerViewModel => ServiceLocator.Current.GetInstance<RawRenamedPlayerViewModel>();
+        public static RawMatchDraftViewModel RawMatchDraftViewModel => ServiceLocator.Current.GetInstance<RawMatchDraftViewModel>();
 
         // Matches
         public static MatchesViewModel MatchesViewModel => ServiceLocator.Current.GetInstance<MatchesViewModel>();

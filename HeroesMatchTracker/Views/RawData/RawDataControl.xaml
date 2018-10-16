@@ -40,6 +40,9 @@
         <TabItem Header="Match Team Bans" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamBanControl Margin="{StaticResource Spacing}"/>
         </TabItem>
+        <TabItem Header="Match Draft" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:RawMatchDraftControl Margin="{StaticResource Spacing}"/>
+        </TabItem>
         <TabItem Header="Match Team Objectives" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchTeamObjectiveControl Margin="{StaticResource Spacing}"/>
         </TabItem>

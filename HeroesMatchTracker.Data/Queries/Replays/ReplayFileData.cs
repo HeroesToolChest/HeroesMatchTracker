@@ -43,6 +43,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                         PlayerRelatedData();
                         MatchTeamBans();
+                        MatchDraft();
                         MatchTeamLevels();
                         MatchTeamExperience();
                         MatchMessages();
@@ -346,6 +347,25 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
                     if (replayTeamBan.Team0Ban0 != null || replayTeamBan.Team0Ban1 != null || replayTeamBan.Team0Ban2 != null || replayTeamBan.Team1Ban0 != null || replayTeamBan.Team1Ban1 != null || replayTeamBan.Team1Ban2 != null)
                         ReplaysDb.MatchTeamBan.CreateRecord(ReplaysContext, replayTeamBan);
+                }
+            }
+        }
+
+        private void MatchDraft()
+        {
+            if (Replay.DraftOrder != null && Replay.DraftOrder.Count > 0)
+            {
+                foreach (DraftPick draftPick in Replay.DraftOrder)
+                {
+                    ReplayMatchDraftPick replayMatchDraftPick = new ReplayMatchDraftPick
+                    {
+                        ReplayId = ReplayId,
+                        PlayerSlotId = draftPick.SelectedPlayerSlotId,
+                        HeroSelected = draftPick.HeroSelected,
+                        PickType = draftPick.PickType,
+                    };
+
+                    ReplaysDb.MatchDraft.CreateRecord(ReplaysContext, replayMatchDraftPick);
                 }
             }
         }

@@ -16,5 +16,6 @@
         public RenamedPlayer RenamedPlayer => new RenamedPlayer();
         public HotsApiUpload HotsApiUpload => new HotsApiUpload();
         public Statistics Statistics => new Statistics();
+        public MatchDraft MatchDraft => new MatchDraft();
     }
 }
