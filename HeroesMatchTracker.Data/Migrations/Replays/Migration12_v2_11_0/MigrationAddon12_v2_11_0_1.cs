@@ -6,6 +6,8 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
     {
         public void Execute()
         {
+            AddColumnToTable("ReplayMatchPlayerScoreResults", "SpellDamage", "INTEGER DEFAULT NULL");
+            AddColumnToTable("ReplayMatchPlayerScoreResults", "PhysicalDamage", "INTEGER DEFAULT NULL");
         }
     }
 }

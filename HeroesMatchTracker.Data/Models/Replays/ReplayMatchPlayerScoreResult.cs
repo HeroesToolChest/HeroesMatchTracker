@@ -61,6 +61,10 @@ namespace HeroesMatchTracker.Data.Models.Replays
             set { TimeSpentDeadTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
+        public int? SpellDamage { get; set; }
+
+        public int? PhysicalDamage { get; set; }
+
         public virtual ReplayMatch Replay { get; set; }
 
         public virtual ReplayAllHotsPlayer ReplayAllHotsPlayer { get; set; }

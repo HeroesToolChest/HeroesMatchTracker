@@ -251,6 +251,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                 TimeSpentDead = sr.TimeSpentDead,
                 TownKills = sr.TownKills,
                 WatchTowerCaptures = sr.WatchTowerCaptures,
+                SpellDamage = sr.SpellDamage,
+                PhysicalDamage = sr.PhysicalDamage,
             };
 
             ReplaysDb.MatchPlayerScoreResult.CreateRecord(ReplaysContext, playerScore);

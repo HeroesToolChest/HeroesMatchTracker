@@ -30,6 +30,8 @@
                     <DataGridTextColumn Header="SummonDamage" Binding="{Binding SummonDamage}" />
                     <DataGridTextColumn Header="StructureDamage" Binding="{Binding StructureDamage}" />
                     <DataGridTextColumn Header="HeroDamage" Binding="{Binding HeroDamage}" />
+                    <DataGridTextColumn Header="SpellDamage" Binding="{Binding SpellDamage}" />
+                    <DataGridTextColumn Header="PhysicalDamage" Binding="{Binding PhysicalDamage}" />
                     <DataGridTextColumn Header="DamageTaken" Binding="{Binding DamageTaken}" />
                     <DataGridTextColumn Header="Healing" Binding="{Binding Healing}" />
                     <DataGridTextColumn Header="SelfHealing" Binding="{Binding SelfHealing}" />
