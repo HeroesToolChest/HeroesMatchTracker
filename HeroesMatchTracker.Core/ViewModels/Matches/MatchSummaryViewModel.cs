@@ -852,6 +852,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             int? highestNonDeaths1 = MatchPlayerAdvancedStatsTeam1List.Min(x => x.Deaths);
             int? highestNonDeaths2 = MatchPlayerAdvancedStatsTeam2List.Min(x => x.Deaths);
 
+            int? highestTownKills1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.TownKills);
+            int? highestTownKills2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.TownKills);
+
+            int? highestSpellDamage1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.SpellDamage);
+            int? highestSpellDamage2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.SpellDamage);
+
+            int? highestPhysicalDamage1 = MatchPlayerAdvancedStatsTeam1List.Max(x => x.PhysicalDamage);
+            int? highestPhysicalDamage2 = MatchPlayerAdvancedStatsTeam2List.Max(x => x.PhysicalDamage);
+
             foreach (var item in MatchPlayerAdvancedStatsTeam1List)
             {
                 if (item.SiegeDamage == highestSiege1)
@@ -904,6 +913,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 if (item.Deaths == highestNonDeaths1)
                     item.HighestNonDeaths = true;
+
+                if (item.TownKills == highestTownKills1)
+                    item.HighestTownKills = true;
+
+                if (item.SpellDamage == highestSpellDamage1)
+                    item.HighestTownKills = true;
+
+                if (item.PhysicalDamage == highestPhysicalDamage1)
+                    item.HighestTownKills = true;
             }
 
             foreach (var item in MatchPlayerAdvancedStatsTeam2List)
@@ -958,6 +976,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 if (item.Deaths == highestNonDeaths2)
                     item.HighestNonDeaths = true;
+
+                if (item.TownKills == highestTownKills2)
+                    item.HighestTownKills = true;
+
+                if (item.SpellDamage == highestSpellDamage2)
+                    item.HighestTownKills = true;
+
+                if (item.PhysicalDamage == highestPhysicalDamage2)
+                    item.HighestTownKills = true;
             }
         }
 

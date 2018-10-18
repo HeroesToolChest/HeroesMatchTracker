@@ -21,7 +21,7 @@
         <StackPanel Width="{StaticResource AdvancedStatWidth}" Margin="1 0 1 0">
             <DockPanel>
                 <Border DockPanel.Dock="Top" BorderThickness="0 4 0 0" CornerRadius="3" Margin="2 0 2 4" Style="{StaticResource MatchRowSideBorder}" />
-                <Border BorderThickness="2" Height="779" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
+                <Border BorderThickness="2" Height="866" Margin="0, 1" Background="{DynamicResource RowBackgroundBrush}" Style="{StaticResource MatchRowBackgroundBorder}">
                     <DockPanel>
                         <Grid DockPanel.Dock="Top" ContextMenu="{StaticResource PlayerSearchContextMenu}">
                             <Image Source="{Binding LeaderboardPortrait}" Height="48" Width="86" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
@@ -264,6 +264,38 @@
 
                             <TextBlock />
                             <Border />
+                            <TextBlock Text="{Binding SpellDamage, StringFormat={}{0:N0}}" ToolTip="Spell Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestSpellDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding PhysicalDamage, StringFormat={}{0:N0}}" ToolTip="Physical Damage">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestPhysicalDamage}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                             <TextBlock Text="{Binding CreepDamage, StringFormat={}{0:N0}}" ToolTip="Merc Damage">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
@@ -301,6 +333,22 @@
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding HighestWatchTowerCaptures}" Value="True">
+                                                <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="0" Color="{DynamicResource CharacterNameColor}" Opacity="1" BlurRadius="2" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBlock Text="{Binding TownKills}" ToolTip="Fort/Keeps Destroyed">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource AdvancedStatTableTextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding HighestTownKills}" Value="True">
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
@@ -366,9 +414,12 @@
                 <TextBlock Text="Experience " />
                 <TextBlock Text="OTHER" HorizontalAlignment="Left" />
                 <Border BorderBrush="{StaticResource TalentTooltipBorderBrush}" Width="{StaticResource AdvStatsGroupHeaderWidth}" HorizontalAlignment="Left" BorderThickness="1" />
+                <TextBlock Text="Spell Damage" />
+                <TextBlock Text="Physical Damage" />
                 <TextBlock Text="Merc Damage" />
                 <TextBlock Text="Merc Camp Captures" />
                 <TextBlock Text="Watchtower Captures" />
+                <TextBlock Text="Fort/Keeps Destroyed" />
             </StackPanel>
             <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam1Collection}" Style="{StaticResource MatchPlayerTeam1AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 0" />
             <ItemsControl ItemsSource="{Binding MatchAdvancedStatsTeam2Collection}" Style="{StaticResource MatchPlayerTeam2AdvancedStatsItemsControl}" ItemsPanel="{StaticResource HorizontalPanelTemplate}" Margin="15 8 15 8" />

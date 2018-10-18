@@ -35,6 +35,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             HighestTakedowns = matchPlayerStats.HighestTakedowns;
             HighestAssists = matchPlayerStats.HighestAssists;
             HighestNonDeaths = matchPlayerStats.HighestNonDeaths;
+            HighestTownKills = matchPlayerStats.HighestTownKills;
+            HighestSpellDamage = matchPlayerStats.HighestSpellDamage;
+            HighestPhysicalDamage = matchPlayerStats.HighestPhysicalDamage;
         }
 
         public MatchPlayerStats(MatchPlayerBase matchPlayerBase)
@@ -72,6 +75,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public bool HighestTakedowns { get; set; }
         public bool HighestAssists { get; set; }
         public bool HighestNonDeaths { get; set; }
+        public bool HighestTownKills { get; set; }
+        public bool HighestSpellDamage { get; set; }
+        public bool HighestPhysicalDamage { get; set; }
 
         public void SetStats(ReplayMatchPlayerScoreResult playerScore, ReplayMatchPlayer player)
         {

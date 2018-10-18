@@ -24,6 +24,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public int? SelfHealing { get; private set; }
         public int? MercCampCaptures { get; private set; }
         public int? WatchTowerCaptures { get; private set; }
+        public int? TownKills { get; private set; }
+        public int? SpellDamage { get; private set; }
+        public int? PhysicalDamage { get; private set; }
         public TimeSpan? TimeSpentDead { get; private set; }
 
         public void SetAdvancedStats(ReplayMatchPlayerScoreResult playerScore)
@@ -37,6 +40,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             SelfHealing = playerScore.SelfHealing;
             MercCampCaptures = playerScore.MercCampCaptures;
             WatchTowerCaptures = playerScore.WatchTowerCaptures;
+            TownKills = playerScore.TownKills;
+            SpellDamage = playerScore.SpellDamage;
+            PhysicalDamage = playerScore.PhysicalDamage;
             TimeSpentDead = playerScore.TimeSpentDead;
         }
     }
