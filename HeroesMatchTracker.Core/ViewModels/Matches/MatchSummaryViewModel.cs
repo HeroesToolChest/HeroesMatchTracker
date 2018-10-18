@@ -918,10 +918,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     item.HighestTownKills = true;
 
                 if (item.SpellDamage == highestSpellDamage1)
-                    item.HighestTownKills = true;
+                    item.HighestSpellDamage = true;
 
                 if (item.PhysicalDamage == highestPhysicalDamage1)
-                    item.HighestTownKills = true;
+                    item.HighestPhysicalDamage = true;
             }
 
             foreach (var item in MatchPlayerAdvancedStatsTeam2List)
@@ -981,10 +981,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     item.HighestTownKills = true;
 
                 if (item.SpellDamage == highestSpellDamage2)
-                    item.HighestTownKills = true;
+                    item.HighestSpellDamage = true;
 
                 if (item.PhysicalDamage == highestPhysicalDamage2)
-                    item.HighestTownKills = true;
+                    item.HighestPhysicalDamage = true;
             }
         }
 
