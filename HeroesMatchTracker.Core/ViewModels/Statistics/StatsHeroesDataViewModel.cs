@@ -412,10 +412,10 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             var awardsList = HeroesIcons.MatchAwards().Awards();
             foreach (var award in awardsList)
             {
-                int quickmatchAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.QuickMatch, selectedMaps, award.Id);
-                int unrankedDraftAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.UnrankedDraft, selectedMaps, award.Id);
-                int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award.Id);
-                int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award.Id);
+                int quickmatchAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.QuickMatch, selectedMaps, award.ShortName);
+                int unrankedDraftAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.UnrankedDraft, selectedMaps, award.ShortName);
+                int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award.ShortName);
+                int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award.ShortName);
 
                 int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
 
