@@ -44,6 +44,8 @@ namespace HeroesMatchTracker.Data.Models.Replays
 
         public bool IsBlizzardStaff { get; set; }
 
+        public bool HasActiveBoost { get; set; }
+
         [StringLength(50)]
         public string MountAndMountTint { get; set; }
 

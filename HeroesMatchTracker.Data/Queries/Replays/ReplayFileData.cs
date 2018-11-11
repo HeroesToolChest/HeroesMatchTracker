@@ -179,6 +179,8 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         SkinAndSkinTint = player.SkinAndSkinTint,
                         Team = player.Team,
                         AccountLevel = player.AccountLevel,
+                        IsBlizzardStaff = player.IsBlizzardStaff,
+                        HasActiveBoost = player.HasActiveBoost,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
@@ -209,6 +211,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         Team = player.Team,
                         AccountLevel = player.AccountLevel,
                         IsBlizzardStaff = player.IsBlizzardStaff,
+                        HasActiveBoost = player.HasActiveBoost,
                     };
 
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);

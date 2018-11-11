@@ -34,6 +34,7 @@
                     <DataGridTextColumn Header="IsVoiceSilenced" Binding="{Binding IsVoiceSilenced}" />
                     <DataGridTextColumn Header="IsWinner" Binding="{Binding IsWinner}" />
                     <DataGridTextColumn Header="IsBlizzardStaff" Binding="{Binding IsBlizzardStaff}" />
+                    <DataGridTextColumn Header="HasActiveBoost" Binding="{Binding HasActiveBoost}" />
                     <DataGridTextColumn Header="MountAndMountTint" Binding="{Binding MountAndMountTint}" />
                     <DataGridTextColumn Header="SkinAndSkinTint" Binding="{Binding SkinAndSkinTint}" />
                 </DataGrid.Columns>
