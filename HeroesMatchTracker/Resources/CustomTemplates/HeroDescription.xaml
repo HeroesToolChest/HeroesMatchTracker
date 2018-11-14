@@ -10,7 +10,7 @@
         <StackPanel Style="{StaticResource HeroInfoStackPanel}">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="{Binding Franchise}" Height="80" Margin="-8" />
+                    <Image Source="{Binding Franchise}" Height="100" Margin="-16" />
                     <StackPanel>
                         <Label Content="{Binding HeroName}" Style="{StaticResource HeroDescriptorPopupLabel}" Padding="8 6 0 0" />
                         <Label Content="{Binding SubDescription}" Style="{StaticResource HeroDescriptorPopupSubLabel}" Padding="8 0 0 0" />
