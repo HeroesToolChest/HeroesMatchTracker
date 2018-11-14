@@ -35,6 +35,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             SilenceIcon = ImageStreams.OtherIconImage(OtherIcon.Silence);
             VoiceSilenceIcon = ImageStreams.OtherIconImage(OtherIcon.VoiceSilence);
             TalentBorderScoreScreenIcon = ImageStreams.OtherIconImage(OtherIcon.TalentAvailable);
+            BoostIcon = ImageStreams.OtherIconImage(OtherIcon.Boost);
         }
 
         protected MatchPlayerBase(MatchPlayerBase matchPlayerBase)
@@ -64,11 +65,14 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             SilenceIcon = matchPlayerBase.SilenceIcon;
             VoiceSilenceIcon = matchPlayerBase.VoiceSilenceIcon;
             TalentBorderScoreScreenIcon = matchPlayerBase.TalentBorderScoreScreenIcon;
+            HasActiveBoost = matchPlayerBase.HasActiveBoost;
+            BoostIcon = matchPlayerBase.BoostIcon;
         }
 
         public bool Silenced { get; private set; }
         public bool VoiceSilenced { get; private set; }
         public bool IsUserPlayer { get; private set; }
+        public bool HasActiveBoost { get; private set; }
         public string PlayerName { get; private set; }
         public string PlayerBattleTagName { get; private set; }
         public string CharacterName { get; private set; }
@@ -83,6 +87,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public Stream SilenceIcon { get; private set; }
         public Stream VoiceSilenceIcon { get; private set; }
         public Stream TalentBorderScoreScreenIcon { get; private set; }
+        public Stream BoostIcon { get; private set; }
         public PlayerTag PlayerTag { get; private set; }
         public HeroDescription HeroDescription { get; private set; }
 
@@ -139,6 +144,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
             IsUserPlayer = (playerInfo.PlayerId == UserProfile.PlayerId && playerInfo.BattleNetRegionId == UserProfile.RegionId) ? true : false;
+            HasActiveBoost = Player.HasActiveBoost;
 
             if (Player.Team == 4)
                 CharacterLevel = "Observer";
