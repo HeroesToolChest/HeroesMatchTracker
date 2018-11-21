@@ -18,7 +18,7 @@
       <Value Profile="(Default)">Settings.sqlite</Value>
     </Setting>
     <Setting Name="ReplaysDatabaseMigrationVersion" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">13</Value>
+      <Value Profile="(Default)">14</Value>
     </Setting>
     <Setting Name="SettingsDatabaseMigrationVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>

@@ -84,12 +84,16 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         // returns true if replay already exists in database
         private bool BasicData(string fileName)
         {
-            Battleground battleground = HeroesIcons.Battlegrounds(Replay.ReplayBuild).Battleground(Replay.MapAlternativeName);
+            string mapName = Replay.MapAlternativeName;
+            if (string.IsNullOrEmpty(mapName))
+                mapName = Replay.Map;
+
+            Battleground battleground = HeroesIcons.Battlegrounds(Replay.ReplayBuild).Battleground(mapName);
 
             if (battleground == null)
                 throw new TranslationException(RetrieveAllMapAndHeroNames());
 
-            string mapName = battleground.Name;
+            mapName = battleground.Name;
             mapName = MapVerification(mapName);
 
             ReplayMatch replayMatch = new ReplayMatch
