@@ -18,7 +18,10 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
                     var incorrectMapNames = db.Replays.Where(x => x.ReplayId == item.ReplayId);
                     foreach (var match in incorrectMapNames)
                     {
-                        match.MapName = "Escape From Braxis";
+                        if (match.FileName.Contains("Heroic"))
+                            match.MapName = "Escape From Braxis (Heroic)";
+                        else
+                            match.MapName = "Escape From Braxis";
                     }
                 }
 
