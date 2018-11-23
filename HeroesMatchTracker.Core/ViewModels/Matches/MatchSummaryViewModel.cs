@@ -547,7 +547,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
             replayMatch = Database.ReplaysDb().MatchReplay.ReadReplayIncludeAssociatedRecords(replayMatch.ReplayId);
 
-            SetBackgroundImage(replayMatch.MapName);
+            SetBackgroundImage(replayMatch.MapName, replayBuild);
             MatchTitleGlowColor = ColorTranslator.FromHtml(HeroesIcons.Battlegrounds(replayBuild).Battleground(replayMatch.MapName).TextHexGlowColor);
             MatchTitle = $"{replayMatch.MapName} - {replayMatch.GameMode.GetFriendlyName()} [{replayMatch.TimeStamp}] [{replayMatch.ReplayLength}]";
             MatchLength = $"{replayMatch.ReplayLength.ToString(@"mm\:ss")}";

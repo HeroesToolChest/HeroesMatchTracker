@@ -54,7 +54,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         protected Logger TranslationsLog { get; private set; }
         protected Logger ReplayUploaderLog { get; private set; }
 
-        protected void SetBackgroundImage(string mapRealName) => BackgroundImage = HeroesIcons.Battlegrounds().Battleground(mapRealName).BattlegroundImage();
+        protected void SetBackgroundImage(string mapRealName, int build) => BackgroundImage = HeroesIcons.Battlegrounds(build).Battleground(mapRealName).BattlegroundImage();
 
         private void SetLoggers()
         {
