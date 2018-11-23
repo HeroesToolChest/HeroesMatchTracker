@@ -28,18 +28,18 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Note: Profiles can only be added if they exist in a parsed replay" Margin="0 0 0 8" />
         <StackPanel Grid.Row="1" Margin="0 0 0 10">
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Width="200" Text="{Binding ProfileBattleTag}" HorizontalAlignment="Left" controls:TextBoxHelper.Watermark="BattleTag#0000 (case sensitive)" />
+                <ComboBox ItemsSource="{Binding RegionsList}" SelectedItem="{Binding SelectedProfileRegion}" Margin="8 0 0 0" Width="64" />
+                <Button Content="Add Profile" Margin="16 0 0 0" Command="{Binding AddProfileCommand}" Width="120" />
+            </StackPanel>
+            <TextBlock Text="{Binding AddProfileResultText}" Foreground="Red"/>
+
             <TextBlock Text="Selected BattleTag" FontSize="16" />
             <StackPanel Orientation="Horizontal" Margin="0 0 0 24">
                 <ComboBox ItemsSource="{Binding UserProfilesList}" SelectedItem="{Binding SelectedUserBattleTag}" Width="272" HorizontalAlignment="Left" />
                 <Button Command="{Binding SetUserProfileCommand}" Content="Set" Width="120" Margin="16 0 0 0" />
             </StackPanel>
-
-            <StackPanel Orientation="Horizontal" >
-                <TextBox Width="200" Text="{Binding ProfileBattleTag}" HorizontalAlignment="Left" controls:TextBoxHelper.Watermark="BattleTag#0000" />
-                <ComboBox ItemsSource="{Binding RegionsList}" SelectedItem="{Binding SelectedProfileRegion}" Margin="8 0 0 0" Width="64" />
-                <Button Content="Add Profile" Margin="16 0 0 0" Command="{Binding AddProfileCommand}" Width="120" />
-            </StackPanel>
-            <TextBlock Text="{Binding AddProfileResultText}" Foreground="Red"/>
         </StackPanel>
 
         <DataGrid Grid.Row="2" Grid.Column="0"  x:Name="UserProfiles" Style="{StaticResource DefaultDataGrid}" ItemsSource="{Binding UserProfilesCollection}" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Top">
