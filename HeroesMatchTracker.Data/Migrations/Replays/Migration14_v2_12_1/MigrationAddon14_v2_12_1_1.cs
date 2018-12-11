@@ -10,7 +10,7 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
             using (ReplaysContext db = new ReplaysContext())
             {
                 var query = from r in db.Replays.AsNoTracking()
-                            where r.ReplayBuild == 70200 && r.MapName == "Dead Man's Stand"
+                            where (r.ReplayBuild == 70200 || r.ReplayBuild == 70616) && r.MapName == "Dead Man's Stand"
                             select r;
 
                 foreach (var item in query)
