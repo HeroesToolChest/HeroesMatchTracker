@@ -218,6 +218,19 @@ namespace HeroesMatchTracker.Data.Queries.Replays
                         HasActiveBoost = player.HasActiveBoost,
                     };
 
+                    string attributeId = HeroesIcons.HeroesData(Replay.ReplayBuild).HeroData(player.Character, false, false, false).AttributeId;
+                    if (player.HeroMasteryTiers.ToDictionary(x => x.HeroAttributeId, x => x.TierLevel).TryGetValue(attributeId, out int tierLevel))
+                    {
+                        if (tierLevel == 2 && replayPlayer.CharacterLevel < 25)
+                            replayPlayer.CharacterLevel = 25;
+                        else if (tierLevel == 3 && replayPlayer.CharacterLevel < 50)
+                            replayPlayer.CharacterLevel = 50;
+                        else if (tierLevel == 4 && replayPlayer.CharacterLevel < 75)
+                            replayPlayer.CharacterLevel = 75;
+                        else if (tierLevel == 5 && replayPlayer.CharacterLevel < 100)
+                            replayPlayer.CharacterLevel = 100;
+                    }
+
                     ReplaysDb.MatchPlayer.CreateRecord(ReplaysContext, replayPlayer);
 
                     AddScoreResults(player.ScoreResult, playerId);
