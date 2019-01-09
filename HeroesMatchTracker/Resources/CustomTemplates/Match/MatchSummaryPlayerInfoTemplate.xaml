@@ -63,7 +63,7 @@
                             </ToolTip>
                         </TextBlock.ToolTip>
                     </TextBlock>
-                    <Image Source="{Binding BoostIcon}" Margin="-2 -4 0 0" Height="22" Visibility="{Binding HasActiveBoost, Converter={StaticResource BooleanToVisibility}}"/>
+                    <Image Source="{Binding BoostIcon}" Margin="2 -2 0 0" Height="16" Visibility="{Binding HasActiveBoost, Converter={StaticResource BooleanToVisibility}}"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel DockPanel.Dock="Left">
