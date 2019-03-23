@@ -553,38 +553,65 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task SetRoleStats(Season season, GameMode gameModes)
         {
-            int warriorTotal = 0;
-            int assassinTotal = 0;
+            int tankTotal = 0;
+            int bruiserTotal = 0;
+            int rangedAssassinTotal = 0;
+            int meleeAssassinTotal = 0;
+            int healerTotal = 0;
             int supportTotal = 0;
-            int specialistTotal = 0;
-            int multiclassTotal = 0;
-            int warriorWin = 0;
-            int assassinWin = 0;
+
+            int tankWin = 0;
+            int bruiserWin = 0;
+            int rangedAssassinWin = 0;
+            int meleeAssassinWin = 0;
+            int healerWin = 0;
             int supportWin = 0;
-            int specialistWin = 0;
-            int multiclassWin = 0;
 
             var listHeroesPlayed = Database.ReplaysDb().Statistics.ReadListOfMatchPlayerHeroes(season, gameModes);
 
             foreach (var hero in listHeroesPlayed)
             {
-                var heroRoles = HeroesIcons.HeroesData().HeroData(hero.Character).Roles.ToList();
+                string expandedRole = HeroesIcons.HeroesData().HeroData(hero.Character).ExpandedRole;
 
-                switch (heroRoles[0])
+                switch (expandedRole)
                 {
-                    case "Warrior":
+                    case "Tank":
                         {
-                            warriorTotal++;
+                            tankTotal++;
                             if (hero.IsWinner)
-                                warriorWin++;
+                                tankWin++;
                             break;
                         }
 
-                    case "Assassin":
+                    case "Bruiser":
                         {
-                            assassinTotal++;
+                            bruiserTotal++;
                             if (hero.IsWinner)
-                                assassinWin++;
+                                bruiserWin++;
+                            break;
+                        }
+
+                    case "Ranged Assassin":
+                        {
+                            rangedAssassinTotal++;
+                            if (hero.IsWinner)
+                                rangedAssassinWin++;
+                            break;
+                        }
+
+                    case "Melee Assassin":
+                        {
+                            meleeAssassinTotal++;
+                            if (hero.IsWinner)
+                                meleeAssassinWin++;
+                            break;
+                        }
+
+                    case "Healer":
+                        {
+                            healerTotal++;
+                            if (hero.IsWinner)
+                                healerWin++;
                             break;
                         }
 
@@ -596,47 +623,34 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                             break;
                         }
 
-                    case "Specialist":
-                        {
-                            specialistTotal++;
-                            if (hero.IsWinner)
-                                specialistWin++;
-                            break;
-                        }
-
-                    case "Multiclass":
-                        {
-                            multiclassTotal++;
-                            if (hero.IsWinner)
-                                multiclassWin++;
-                            break;
-                        }
-
                     default:
                         ExceptionLog.Log(LogLevel.Info, $"SetRoleStats(): Hero: {hero.Character}, could not find role for hero or unknown hero name");
                         break;
                 }
             }
 
-            double warriorWinRate = Utilities.CalculateWinValue(warriorWin, warriorTotal);
-            double assassinWinRate = Utilities.CalculateWinValue(assassinWin, assassinTotal);
+            double tankWinRate = Utilities.CalculateWinValue(tankWin, tankTotal);
+            double bruiserWinRate = Utilities.CalculateWinValue(bruiserWin, bruiserTotal);
+            double rangedAssassinWinRate = Utilities.CalculateWinValue(rangedAssassinWin, rangedAssassinTotal);
+            double meleeAssassinWinRate = Utilities.CalculateWinValue(meleeAssassinWin, meleeAssassinTotal);
+            double healerWinRate = Utilities.CalculateWinValue(healerWin, healerTotal);
             double supportWinRate = Utilities.CalculateWinValue(supportWin, supportTotal);
-            double specialistWinRate = Utilities.CalculateWinValue(specialistWin, specialistTotal);
-            double multiclassWinRate = Utilities.CalculateWinValue(multiclassWin, multiclassTotal);
 
             await Application.Current.Dispatcher.InvokeAsync(() =>
             {
-                RoleGamesCollection.Add(warriorTotal);
-                RoleGamesCollection.Add(assassinTotal);
+                RoleGamesCollection.Add(tankTotal);
+                RoleGamesCollection.Add(bruiserTotal);
+                RoleGamesCollection.Add(rangedAssassinTotal);
+                RoleGamesCollection.Add(meleeAssassinTotal);
+                RoleGamesCollection.Add(healerTotal);
                 RoleGamesCollection.Add(supportTotal);
-                RoleGamesCollection.Add(specialistTotal);
-                RoleGamesCollection.Add(multiclassTotal);
 
-                RoleWinrateCollection.Add(warriorWinRate);
-                RoleWinrateCollection.Add(assassinWinRate);
+                RoleWinrateCollection.Add(tankWinRate);
+                RoleWinrateCollection.Add(bruiserWinRate);
+                RoleWinrateCollection.Add(rangedAssassinWinRate);
+                RoleWinrateCollection.Add(meleeAssassinWinRate);
+                RoleWinrateCollection.Add(healerWinRate);
                 RoleWinrateCollection.Add(supportWinRate);
-                RoleWinrateCollection.Add(specialistWinRate);
-                RoleWinrateCollection.Add(multiclassWinRate);
             });
         }
 
