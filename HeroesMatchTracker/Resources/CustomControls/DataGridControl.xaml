@@ -122,6 +122,7 @@
             <DataGridTextColumn Header="Award" Binding="{Binding AwardName}" Width="120"/>
             <DataGridTextColumn Header="Quick Match" Binding="{Binding QuickMatch}" Width="120"/>
             <DataGridTextColumn Header="Unranked Draft" Binding="{Binding UnrankedDraft}" Width="140"/>
+            <DataGridTextColumn Header="Storm League" Binding="{Binding StormLeague}" Width="120"/>
             <DataGridTextColumn Header="Hero League" Binding="{Binding HeroLeague}" Width="120"/>
             <DataGridTextColumn Header="Team League" Binding="{Binding TeamLeague}" Width="120"/>
             <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="120" FontWeight="Bold"/>
