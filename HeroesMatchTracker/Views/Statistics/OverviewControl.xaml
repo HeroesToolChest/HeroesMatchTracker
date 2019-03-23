@@ -35,6 +35,7 @@
                 <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" Width="140" Margin="0 0 8 0" />
                 <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="Storm League" IsChecked="{Binding IsStormLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Hero League" IsChecked="{Binding IsHeroLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="{StaticResource GameModeMargin}" />

@@ -25,6 +25,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private bool _isQuickMatchSelected;
         private bool _isUnrankedDraftSelected;
+        private bool _isStormLeagueSelected;
         private bool _isHeroLeagueSelected;
         private bool _isTeamLeagueSelected;
         private bool _isCustomGameSelected;
@@ -45,6 +46,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             IsQuickMatchSelected = false;
             IsUnrankedDraftSelected = false;
+            IsStormLeagueSelected = false;
             IsHeroLeagueSelected = false;
             IsTeamLeagueSelected = false;
             IsCustomGameSelected = false;
@@ -87,6 +89,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             set
             {
                 _isUnrankedDraftSelected = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsStormLeagueSelected
+        {
+            get => _isStormLeagueSelected;
+            set
+            {
+                _isStormLeagueSelected = value;
                 RaisePropertyChanged();
             }
         }
@@ -169,11 +181,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             LoadingOverlayWindow.ShowLoadingOverlay();
             DataGridTextColumnsList = new List<DataGridColumn>();
 
-            if ((!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && IsTotalSelected) ||
-                (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsTotalSelected))
+            if ((!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && IsTotalSelected) ||
+                (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsTotalSelected))
             {
                 IsQuickMatchSelected = true;
                 IsUnrankedDraftSelected = true;
+                IsStormLeagueSelected = true;
                 IsHeroLeagueSelected = true;
                 IsTeamLeagueSelected = true;
             }
@@ -222,6 +235,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.QuickMatch));
                 if (IsUnrankedDraftSelected)
                     rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.UnrankedDraft));
+                if (IsStormLeagueSelected)
+                    rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.StormLeague));
                 if (IsHeroLeagueSelected)
                     rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.HeroLeague));
                 if (IsTeamLeagueSelected)
@@ -372,6 +387,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (IsUnrankedDraftSelected)
             {
                 CreateGameModeColumns(GameMode.UnrankedDraft);
+            }
+
+            if (IsStormLeagueSelected)
+            {
+                CreateGameModeColumns(GameMode.StormLeague);
             }
 
             if (IsHeroLeagueSelected)

@@ -22,6 +22,9 @@
         <TabItem Header="Unranked Draft" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:UnrankedDraftControl />
         </TabItem>
+        <TabItem Header="Storm League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:StormLeagueControl />
+        </TabItem>
         <TabItem Header="Hero League" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:HeroLeagueControl />
         </TabItem>

@@ -5,6 +5,7 @@
         AllMatches,
         QuickMatch,
         UnrankedDraft,
+        StormLeague,
         HeroLeague,
         TeamLeague,
         Brawl,

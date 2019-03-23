@@ -158,7 +158,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
             {
                 IQueryable<ReplayMatch> query = db.Set<ReplayMatch>().AsNoTracking();
 
-                if (gameMode == (GameMode.Brawl ^ GameMode.Custom ^ GameMode.HeroLeague ^ GameMode.QuickMatch ^ GameMode.TeamLeague ^ GameMode.UnrankedDraft))
+                if (gameMode == (GameMode.Brawl ^ GameMode.Custom ^ GameMode.StormLeague ^ GameMode.HeroLeague ^ GameMode.QuickMatch ^ GameMode.TeamLeague ^ GameMode.UnrankedDraft))
                     query = query.Where(x => x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);
                 else
                     query = query.Where(x => x.GameMode == gameMode && x.ReplayBuild >= replayBuild.Item1 && x.ReplayBuild < replayBuild.Item2);

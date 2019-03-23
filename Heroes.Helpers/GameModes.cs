@@ -21,6 +21,8 @@ namespace Heroes.Helpers
         UnrankedDraft = 1 << 8,
         [Description("Brawl")]
         Brawl = 1 << 9,
+        [Description("Storm League")]
+        StormLeague = 1 << 10,
 
         [Description("All Game Modes")]
         AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl,
@@ -54,7 +56,7 @@ namespace Heroes.Helpers
             }
 
             /// <summary>
-            /// Returns a collection of all the game modes (qm, hl, tl, ud, brawl, and custom)
+            /// Returns a collection of all the game modes (qm, hl, tl, ud, brawl, and custom).
             /// </summary>
             /// <returns></returns>
             public static ICollection<string> GetAllGameModesList()

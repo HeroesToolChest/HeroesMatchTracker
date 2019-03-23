@@ -25,6 +25,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private int _selectedRegion;
         private bool _isQuickMatchSelected;
         private bool _isUnrankedDraftSelected;
+        private bool _isStormLeagueSelected;
         private bool _isHeroLeagueSelected;
         private bool _isTeamLeagueSelected;
         private bool _isCustomGameSelected;
@@ -110,6 +111,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             set
             {
                 _isUnrankedDraftSelected = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsStormLeagueSelected
+        {
+            get => _isStormLeagueSelected;
+            set
+            {
+                _isStormLeagueSelected = value;
                 RaisePropertyChanged();
             }
         }
@@ -310,11 +321,12 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             GameMode gameModes = GameMode.Unknown;
 
-            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected)
+            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected)
             {
-                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.HeroLeague | GameMode.TeamLeague;
+                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.StormLeague | GameMode.HeroLeague | GameMode.TeamLeague;
                 IsQuickMatchSelected = true;
                 IsUnrankedDraftSelected = true;
+                IsStormLeagueSelected = true;
                 IsHeroLeagueSelected = true;
                 IsTeamLeagueSelected = true;
             }
@@ -324,6 +336,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     gameModes |= GameMode.QuickMatch;
                 if (IsUnrankedDraftSelected)
                     gameModes |= GameMode.UnrankedDraft;
+                if (IsStormLeagueSelected)
+                    gameModes |= GameMode.StormLeague;
                 if (IsHeroLeagueSelected)
                     gameModes |= GameMode.HeroLeague;
                 if (IsTeamLeagueSelected)

@@ -414,13 +414,14 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             {
                 int quickmatchAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.QuickMatch, selectedMaps, award.ShortName);
                 int unrankedDraftAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.UnrankedDraft, selectedMaps, award.ShortName);
+                int stormLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.StormLeague, selectedMaps, award.ShortName);
                 int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award.ShortName);
                 int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award.ShortName);
 
-                int rowTotal = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
+                int rowTotal = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards;
 
                 if (award.Name == "MVP")
-                    MVPCount = quickmatchAwards + unrankedDraftAwards + heroLeagueAwards + teamLeagueAwards;
+                    MVPCount = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards;
 
                 var awardImage = award.MatchAwardScoreScreenImage(ScoreScreenAwardColor.Blue);
 
@@ -430,6 +431,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     AwardDescription = award.Description.ColoredTextWithScaling,
                     QuickMatch = rowTotal > 0 ? quickmatchAwards : (int?)null,
                     UnrankedDraft = rowTotal > 0 ? unrankedDraftAwards : (int?)null,
+                    StormLeague = rowTotal > 0 ? stormLeagueAwards : (int?)null,
                     HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,
                     TeamLeague = rowTotal > 0 ? teamLeagueAwards : (int?)null,
                     Total = rowTotal > 0 ? rowTotal : (int?)null,
@@ -442,6 +444,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             // get totals
             int totalQuickMatch = StatsHeroesAwardsCollection.Sum(x => x.QuickMatch ?? 0);
             int totalUnrankedDraft = StatsHeroesAwardsCollection.Sum(x => x.UnrankedDraft ?? 0);
+            int totalStormLeague = StatsHeroesAwardsCollection.Sum(x => x.StormLeague ?? 0);
             int totalHeroLeague = StatsHeroesAwardsCollection.Sum(x => x.HeroLeague ?? 0);
             int totalTeamLeague = StatsHeroesAwardsCollection.Sum(x => x.TeamLeague ?? 0);
             int totalTotal = StatsHeroesAwardsCollection.Sum(x => x.Total ?? 0);
@@ -451,6 +454,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 AwardName = "Total",
                 QuickMatch = totalQuickMatch,
                 UnrankedDraft = totalUnrankedDraft,
+                StormLeague = totalStormLeague,
                 HeroLeague = totalHeroLeague,
                 TeamLeague = totalTeamLeague,
                 Total = totalTotal,

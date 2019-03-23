@@ -165,6 +165,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Matches\StormLeagueControl.xaml.cs">
+      <DependentUpon>StormLeagueControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Matches\PlayerNotesWindow.xaml.cs">
       <DependentUpon>PlayerNotesWindow.xaml</DependentUpon>
     </Compile>
@@ -457,6 +460,10 @@
     <Page Include="Views\Matches\CustomGameControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Matches\StormLeagueControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Matches\MatchesControl.xaml">
       <SubType>Designer</SubType>

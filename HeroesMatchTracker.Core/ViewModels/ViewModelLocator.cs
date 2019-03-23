@@ -96,6 +96,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<AllMatchesViewModel>();
             SimpleIoc.Default.Register<BrawlViewModel>();
             SimpleIoc.Default.Register<CustomGameViewModel>();
+            SimpleIoc.Default.Register<StormLeagueViewModel>();
             SimpleIoc.Default.Register<HeroLeagueViewModel>();
             SimpleIoc.Default.Register<QuickMatchViewModel>();
             SimpleIoc.Default.Register<TeamLeagueViewModel>();
@@ -149,6 +150,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static AllMatchesViewModel AllMatchesViewModel => ServiceLocator.Current.GetInstance<AllMatchesViewModel>();
         public static BrawlViewModel BrawlViewModel => ServiceLocator.Current.GetInstance<BrawlViewModel>();
         public static CustomGameViewModel CustomGameViewModel => ServiceLocator.Current.GetInstance<CustomGameViewModel>();
+        public static StormLeagueViewModel StormLeagueViewModel => ServiceLocator.Current.GetInstance<StormLeagueViewModel>();
         public static HeroLeagueViewModel HeroLeagueViewModel => ServiceLocator.Current.GetInstance<HeroLeagueViewModel>();
         public static QuickMatchViewModel QuickMatchViewModel => ServiceLocator.Current.GetInstance<QuickMatchViewModel>();
         public static TeamLeagueViewModel TeamLeagueViewModel => ServiceLocator.Current.GetInstance<TeamLeagueViewModel>();
