@@ -662,7 +662,6 @@
   <ItemGroup>
     <Content Include="HMT.ico" />
     <None Include="Resources\Images\HMT_Homescreen.jpg" />
-    <None Include="Resources\Images\HMT_Stats_AllHero.jpg" />
     <None Include="Resources\Images\HMT_Stats_Hero.jpg" />
     <None Include="Resources\Images\HMT_Summary_AdvStats.jpg" />
     <None Include="Resources\Images\HMT_Summary_Graph_TeamLevels.jpg" />
