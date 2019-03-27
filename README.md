@@ -4,10 +4,10 @@
 [![Release](https://img.shields.io/github/release/koliva8245/HeroesMatchTracker.svg)](https://github.com/koliva8245/HeroesMatchTracker/releases/latest)
 
 This application parses Blizzard's Heroes of the Storm replay files and then saves the data into a local database.  
-- Saves the data from your matches: Quick Match, Unranked Draft, Hero League, Team League, Non-Arena Brawls, and Custom Games
+- Saves the data from your matches: Quick Match, Unranked Draft, Storm League, Hero League, Team League, Brawls (those that have replays), and Custom Games
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - Also view personal statistics about your heroes: wins, losses, winrates, talent winrates and much more for different maps and gamemodes
-- Includes a built-in [HOTS Logs](https://www.hotslogs.com/Default) uploader and [HotsApi](http://hotsapi.net/) uploader
+- Includes a built-in [HotsApi](https://hotsapi.net/) uploader (automatically uploads to [HOTS Logs](https://www.hotslogs.com/Default))
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki)
 
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Homescreen.jpg)
@@ -16,7 +16,6 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_AdvStats.jpg)
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Summary_Graph_TeamLevels.jpg)
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Stats_Hero.jpg)
-![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Stats_AllHero.jpg)
 
 ## Installation
 - Download and run HeroesMatchTrackerSetup.exe from the [releases](https://github.com/koliva8245/HeroesMatchTracker/releases) page
