@@ -25,13 +25,13 @@ namespace Heroes.Helpers
         StormLeague = 1 << 10,
 
         [Description("All Game Modes")]
-        AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl,
+        AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl | StormLeague,
         [Description("Normal Game Modes")]
-        NormalGameModes = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft,
+        NormalGameModes = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | StormLeague,
         [Description("Draft Modes")]
-        DraftModes = HeroLeague | TeamLeague | UnrankedDraft | Custom,
+        DraftModes = HeroLeague | TeamLeague | UnrankedDraft | Custom | StormLeague,
         [Description("Ranked Modes")]
-        RankedModes = HeroLeague | TeamLeague,
+        RankedModes = HeroLeague | TeamLeague | StormLeague,
     }
 
     public static partial class HeroesHelpers
@@ -39,7 +39,7 @@ namespace Heroes.Helpers
         public static class GameModes
         {
             /// <summary>
-            /// Returns a collection of the Game Modes
+            /// Returns a collection of the Game Modes.
             /// </summary>
             /// <returns></returns>
             public static ICollection<string> GetGameModesList()
@@ -64,9 +64,10 @@ namespace Heroes.Helpers
                 List<string> list = new List<string>()
                 {
                     GameMode.QuickMatch.GetFriendlyName(),
+                    GameMode.UnrankedDraft.GetFriendlyName(),
+                    GameMode.StormLeague.GetFriendlyName(),
                     GameMode.HeroLeague.GetFriendlyName(),
                     GameMode.TeamLeague.GetFriendlyName(),
-                    GameMode.UnrankedDraft.GetFriendlyName(),
                     GameMode.Brawl.GetFriendlyName(),
                     GameMode.Custom.GetFriendlyName(),
                 };
