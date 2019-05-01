@@ -16,7 +16,7 @@ namespace Heroes.Helpers.Tests
 
             foreach (string season in seasonList)
             {
-                if (season.Contains("season") && season != "Preseason")
+                if (season.Contains("season") && !season.Contains("Storm League") && season != "Preseason")
                 {
                     var parts = season.Split(' ');
                     Assert.IsTrue(parts.Length == 3);
