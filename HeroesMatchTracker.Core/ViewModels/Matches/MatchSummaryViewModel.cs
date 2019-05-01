@@ -673,15 +673,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
                     }
                 });
 
-                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1?.Roles?.FirstOrDefault()}";
-                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2?.Roles?.FirstOrDefault()}";
-                MatchHeroBans.Team1Ban0HeroName = $"{ban4}{Environment.NewLine}{bannedHero4?.Roles?.FirstOrDefault()}";
-                MatchHeroBans.Team1Ban1HeroName = $"{ban5}{Environment.NewLine}{bannedHero5?.Roles?.FirstOrDefault()}";
+                MatchHeroBans.Team0Ban0HeroName = $"{ban1}{Environment.NewLine}{bannedHero1?.ExpandedRole}";
+                MatchHeroBans.Team0Ban1HeroName = $"{ban2}{Environment.NewLine}{bannedHero2?.ExpandedRole}";
+                MatchHeroBans.Team1Ban0HeroName = $"{ban4}{Environment.NewLine}{bannedHero4?.ExpandedRole}";
+                MatchHeroBans.Team1Ban1HeroName = $"{ban5}{Environment.NewLine}{bannedHero5?.ExpandedRole}";
 
                 if (replayMatch.ReplayBuild.HasValue && replayMatch.ReplayBuild > 66182)
                 {
-                    MatchHeroBans.Team0Ban2HeroName = $"{ban3}{Environment.NewLine}{bannedHero3?.Roles?.FirstOrDefault()}";
-                    MatchHeroBans.Team1Ban2HeroName = $"{ban6}{Environment.NewLine}{bannedHero6?.Roles?.FirstOrDefault()}";
+                    MatchHeroBans.Team0Ban2HeroName = $"{ban3}{Environment.NewLine}{bannedHero3?.ExpandedRole}";
+                    MatchHeroBans.Team1Ban2HeroName = $"{ban6}{Environment.NewLine}{bannedHero6?.ExpandedRole}";
                 }
 
                 HasBans = true;

@@ -169,6 +169,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 Type = hero.Type,
                 Difficulty = hero.Difficulty,
                 Roles = hero.Roles.ToList(),
+                ExpandedRole = hero.ExpandedRole,
             };
 
             if (playerPartyIcons.ContainsKey(Player.PlayerNumber))
