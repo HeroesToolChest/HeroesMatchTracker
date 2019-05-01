@@ -15,7 +15,7 @@ namespace Heroes.Helpers
             {
                 switch (season)
                 {
-                    case Season.Year2019Preseason:
+                    case Season.STormLeaguePreseason:
                         return new Tuple<int?, int?>(73016, 99999);
                     case Season.Year2019Season1:
                         return new Tuple<int?, int?>(70920, 73016);
