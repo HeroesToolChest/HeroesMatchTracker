@@ -13,7 +13,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchDrafts.AsNoTracking().ToList();
+                return db.ReplayMatchDraftPicks.AsNoTracking().ToList();
             }
         }
 
@@ -21,7 +21,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchDrafts.AsNoTracking().OrderByDescending(x => x.ReplayId).Take(amount).ToList();
+                return db.ReplayMatchDraftPicks.AsNoTracking().OrderByDescending(x => x.ReplayId).Take(amount).ToList();
             }
         }
 
@@ -35,7 +35,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchDrafts.SqlQuery($"SELECT * FROM ReplayMatchDrafts ORDER BY {columnName} {orderBy} LIMIT {amount}").AsNoTracking().ToList();
+                return db.ReplayMatchDraftPicks.SqlQuery($"SELECT * FROM ReplayMatchDraftPicks ORDER BY {columnName} {orderBy} LIMIT {amount}").AsNoTracking().ToList();
             }
         }
 
@@ -55,7 +55,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchDrafts.SqlQuery($"SELECT * FROM ReplayMatchDrafts WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).AsNoTracking().ToList();
+                return db.ReplayMatchDraftPicks.SqlQuery($"SELECT * FROM ReplayMatchDraftPicks WHERE {columnName} {operand} @Input", new SQLiteParameter("@Input", input)).AsNoTracking().ToList();
             }
         }
 
@@ -63,13 +63,13 @@ namespace HeroesMatchTracker.Data.Queries.Replays
         {
             using (var db = new ReplaysContext())
             {
-                return db.ReplayMatchDrafts.AsNoTracking().Take(amount).ToList();
+                return db.ReplayMatchDraftPicks.AsNoTracking().Take(amount).ToList();
             }
         }
 
         internal override long CreateRecord(ReplaysContext db, ReplayMatchDraftPick model)
         {
-            db.ReplayMatchDrafts.Add(model);
+            db.ReplayMatchDraftPicks.Add(model);
             db.SaveChanges();
 
             return model.ReplayId;

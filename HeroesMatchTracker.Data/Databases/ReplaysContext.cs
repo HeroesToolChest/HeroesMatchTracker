@@ -17,7 +17,7 @@ namespace HeroesMatchTracker.Data.Databases
         public virtual DbSet<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; }
         public virtual DbSet<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; }
         public virtual DbSet<ReplayMatchTeamBan> ReplayMatchTeamBans { get; set; }
-        public virtual DbSet<ReplayMatchDraftPick> ReplayMatchDrafts { get; set; }
+        public virtual DbSet<ReplayMatchDraftPick> ReplayMatchDraftPicks { get; set; }
         public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; }
         public virtual DbSet<ReplayMatchTeamObjective> ReplayMatchTeamObjectives { get; set; }
         public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; }
