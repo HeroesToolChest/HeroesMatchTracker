@@ -351,7 +351,7 @@ namespace HeroesMatchTracker.Data.Queries.Replays
 
         private void MatchTeamBans()
         {
-            if (Replay.GameMode == Heroes.ReplayParser.GameMode.UnrankedDraft || Replay.GameMode == Heroes.ReplayParser.GameMode.HeroLeague ||
+            if (Replay.GameMode == Heroes.ReplayParser.GameMode.UnrankedDraft || Replay.GameMode == Heroes.ReplayParser.GameMode.HeroLeague || Replay.GameMode == Heroes.ReplayParser.GameMode.StormLeague ||
                 Replay.GameMode == Heroes.ReplayParser.GameMode.TeamLeague || Replay.GameMode == Heroes.ReplayParser.GameMode.Custom)
             {
                 if (Replay.TeamHeroBans != null)
