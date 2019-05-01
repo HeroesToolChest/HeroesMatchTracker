@@ -108,7 +108,7 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Margin="16 0 16 0" Width="200">
-                        <GroupBox Header="Warrior">
+                        <GroupBox Header="Tank">
                             <StackPanel>
                                 <TextBlock Text="{Binding RoleGamesCollection[0], StringFormat={}{0} Games}" Style="{StaticResource OverallRoleStats}" />
                                 <TextBlock Text="{Binding RoleWinrateCollection[0], StringFormat={}{0:P1} Win Rate}" Style="{StaticResource OverallRoleStats}"/>
