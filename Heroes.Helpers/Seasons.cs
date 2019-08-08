@@ -35,7 +35,9 @@ namespace Heroes.Helpers
         [Description("Year 2019 Season 1")]
         Year2019Season1 = 1 << 11,
         [Description("Storm League Preseason")]
-        STormLeaguePreseason = 1 << 12,
+        StormLeaguePreseason = 1 << 12,
+        [Description("Storm League, 2019 Season 3")]
+        StormLeague2019Season3 = 1 << 13,
     }
 
     public static partial class HeroesHelpers
