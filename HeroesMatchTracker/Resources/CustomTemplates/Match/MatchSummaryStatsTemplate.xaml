@@ -84,11 +84,11 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBlock Text="{Binding DamageTaken, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
+                            <TextBlock Text="{Binding SelfHealing, StringFormat={}{0:N0}}" Width="{StaticResource StatLargeNumberWidth}" Margin="{StaticResource TextValueMargin}">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource StatTableTextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding HighestDamageTaken}" Value="True">
+                                            <DataTrigger Binding="{Binding HighestSelfHealing}" Value="True">
                                                 <Setter Property="Foreground" Value="{DynamicResource CharacterNameBrush}" />
                                                 <Setter Property="Effect">
                                                     <Setter.Value>
@@ -186,9 +186,9 @@
                     </Image>
                 </StackPanel>
                 <StackPanel Width="{StaticResource StatSimpleNumberWidth}" Margin="{StaticResource TextValueMarginLarge}" VerticalAlignment="Bottom">
-                    <Image Source="{Binding ScoreDamageTakenIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
+                    <Image Source="{Binding ScoreSelfHealingIcon}" Width="24" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000">
                         <Image.ToolTip>
-                            <ToolTip Content="Amount of Damage Taken" Style="{StaticResource EnhancedToolTip}" />
+                            <ToolTip Content="Self Healing/Shielding&#x0a;Amount of healing done just to yourself through life steal or abilities that cannot be cast on allies" Style="{StaticResource EnhancedToolTip}" />
                         </Image.ToolTip>
                     </Image>
                 </StackPanel>

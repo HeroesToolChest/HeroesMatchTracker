@@ -33,7 +33,7 @@
             <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Healing/Shielding" Binding="{Binding HealingShielding, StringFormat=N0}" Width="150" />
-            <DataGridTextColumn Header="Damage Taken" Binding="{Binding DamageTaken, StringFormat=N0}" Width="130" />
+            <DataGridTextColumn Header="Self Healing/Shielding" Binding="{Binding SelfHealing, StringFormat=N0}" Width="170" />
             <DataGridTextColumn Header="Experience" Binding="{Binding Experience, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Mercs Captured" Binding="{Binding MercsCaptured}" Width="136" />
             <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" />
@@ -64,7 +64,7 @@
             <DataGridTextColumn Header="Siege Damage" Binding="{Binding SiegeDamage, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Hero Damage" Binding="{Binding HeroDamage, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Healing/Shielding" Binding="{Binding HealingShielding, StringFormat=N0}" Width="150" />
-            <DataGridTextColumn Header="Damage Taken" Binding="{Binding DamageTaken, StringFormat=N0}" Width="130" />
+            <DataGridTextColumn Header="Self Healing/Shielding" Binding="{Binding SelfHealing, StringFormat=N0}" Width="170" />
             <DataGridTextColumn Header="Experience" Binding="{Binding Experience, StringFormat=N0}" Width="130" />
             <DataGridTextColumn Header="Mercs Captured" Binding="{Binding MercsCaptured}" Width="136" />
             <DataGridTextColumn Header="Game Time" Binding="{Binding GameTime}" Width="110" />

@@ -93,6 +93,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             ScoreSiegeDamageIcon = ImageStreams.OtherIconImage(OtherIcon.SiegeDamage);
             ScoreHeroDamageIcon = ImageStreams.OtherIconImage(OtherIcon.HeroDamage);
             ScoreHealingAbsorbedIcon = ImageStreams.OtherIconImage(OtherIcon.HealAbsorbedDamage);
+            ScoreSelfHealingIcon = ImageStreams.OtherIconImage(OtherIcon.SelfHealing);
             ScoreDamageTakenIcon = ImageStreams.OtherIconImage(OtherIcon.DamageTaken);
             ScoreExperienceContributionIcon = ImageStreams.OtherIconImage(OtherIcon.ExperienceContribution);
             BlueKillsIcons = ImageStreams.OtherIconImage(OtherIcon.KillsBlue);
@@ -133,6 +134,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
         public Stream ScoreSiegeDamageIcon { get; private set; }
         public Stream ScoreHeroDamageIcon { get; private set; }
         public Stream ScoreHealingAbsorbedIcon { get; private set; }
+        public Stream ScoreSelfHealingIcon { get; private set; }
         public Stream ScoreDamageTakenIcon { get; private set; }
         public Stream ScoreExperienceContributionIcon { get; private set; }
         public Stream BlueKillsIcons { get; private set; }
@@ -762,6 +764,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
             int? highestHealing1 = MatchPlayerStatsTeam1List.Max(x => x.HealingRole);
             int? highestHealing2 = MatchPlayerStatsTeam2List.Max(x => x.HealingRole);
 
+            int? highestSelfHealing1 = MatchPlayerStatsTeam1List.Max(x => x.SelfHealing);
+            int? highestSelfHealing2 = MatchPlayerStatsTeam2List.Max(x => x.SelfHealing);
+
             foreach (var item in MatchPlayerStatsTeam1List)
             {
                 if (item.SiegeDamage == highestSiege1)
@@ -778,6 +783,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 if (item.HealingRole == highestHealing1)
                     item.HighestHealing = true;
+
+                if (item.SelfHealing == highestSelfHealing1)
+                    item.HighestSelfHealing = true;
             }
 
             foreach (var item in MatchPlayerStatsTeam2List)
@@ -796,6 +804,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Matches
 
                 if (item.HealingRole == highestHealing2)
                     item.HighestHealing = true;
+
+                if (item.SelfHealing == highestSelfHealing2)
+                    item.HighestSelfHealing = true;
             }
         }
 

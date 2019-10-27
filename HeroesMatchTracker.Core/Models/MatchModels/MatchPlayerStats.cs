@@ -15,6 +15,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             HeroDamage = matchPlayerStats.HeroDamage;
             DamageTaken = matchPlayerStats.DamageTaken;
             HealingRole = matchPlayerStats.HealingRole;
+            SelfHealing = matchPlayerStats.SelfHealing;
             ExperienceContribution = matchPlayerStats.ExperienceContribution;
             RoleWarrior = matchPlayerStats.RoleWarrior;
             RoleSupport = matchPlayerStats.RoleSupport;
@@ -55,6 +56,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public int? HeroDamage { get; private set; }
         public int? DamageTaken { get; private set; }
         public int? HealingRole { get; private set; }
+        public int? SelfHealing { get; private set; }
         public int? ExperienceContribution { get; private set; }
         public bool RoleWarrior { get; private set; }
         public bool RoleSupport { get; private set; }
@@ -87,6 +89,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             SiegeDamage = playerScore.SiegeDamage;
             HeroDamage = playerScore.HeroDamage;
             HealingRole = playerScore.Healing;
+            SelfHealing = playerScore.SelfHealing;
             DamageTaken = playerScore.DamageTaken;
             ExperienceContribution = playerScore.ExperienceContribution;
         }

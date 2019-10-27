@@ -219,6 +219,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
                 double? healingShielding = (double)scoreResultsList.Sum(x => x.Healing);
                 double? damageTaken = (double)scoreResultsList.Sum(x => x.DamageTaken);
+                double? selfHealing = (double)scoreResultsList.Sum(x => x.SelfHealing);
 
                 StatsHeroesGameModes statsHeroesGameModes = new StatsHeroesGameModes
                 {
@@ -238,6 +239,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     statsHeroesGameModes.SiegeDamage = siegeDamage;
                     statsHeroesGameModes.HeroDamage = heroDamage;
                     statsHeroesGameModes.HealingShielding = healingShielding;
+                    statsHeroesGameModes.SelfHealing = selfHealing;
                     statsHeroesGameModes.DamageTaken = damageTaken;
                     statsHeroesGameModes.Experience = experience;
                     statsHeroesGameModes.MercsCaptured = mercsCaptured;
@@ -267,6 +269,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             double totalSiegeDamage = StatsHeroesDataCollection.Sum(x => x.SiegeDamage ?? 0);
             double totalHeroDamage = StatsHeroesDataCollection.Sum(x => x.HeroDamage ?? 0);
             double totalHealingShielding = StatsHeroesDataCollection.Sum(x => x.HealingShielding ?? 0);
+            double totalSelfHealing = StatsHeroesDataCollection.Sum(x => x.SelfHealing ?? 0);
             double totalDamageTaken = StatsHeroesDataCollection.Sum(x => x.DamageTaken ?? 0);
             double totalExperience = StatsHeroesDataCollection.Sum(x => x.Experience ?? 0);
             int totalMercsCaptured = StatsHeroesDataCollection.Sum(x => x.MercsCaptured ?? 0);
@@ -285,6 +288,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 SiegeDamage = totalSiegeDamage,
                 HeroDamage = totalHeroDamage,
                 HealingShielding = totalHealingShielding,
+                SelfHealing = totalSelfHealing,
                 DamageTaken = totalDamageTaken,
                 Experience = totalExperience,
                 MercsCaptured = totalMercsCaptured,
@@ -309,6 +313,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 double? siegeDamageAverage = map.SiegeDamage / totalGames;
                 double? heroDamageAverage = map.HeroDamage / totalGames;
                 double? healingShieldingAverage = map.HealingShielding / totalGames;
+                double? selfhealingAverage = map.SelfHealing / totalGames;
                 double? damageTakenAverage = map.DamageTaken / totalGames;
                 double? experienceAverage = map.Experience / totalGames;
                 int? mercsCapturedAverage = map.MercsCaptured / totalGames;
@@ -328,6 +333,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     SiegeDamage = siegeDamageAverage,
                     HeroDamage = heroDamageAverage,
                     HealingShielding = healingShieldingAverage,
+                    SelfHealing = selfhealingAverage,
                     DamageTaken = damageTakenAverage,
                     Experience = experienceAverage,
                     MercsCaptured = mercsCapturedAverage,
@@ -357,6 +363,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 SiegeDamage = dataTotal.SiegeDamage / totalAverageTotal,
                 HeroDamage = dataTotal.HeroDamage / totalAverageTotal,
                 HealingShielding = dataTotal.HealingShielding / totalAverageTotal,
+                SelfHealing = dataTotal.SelfHealing / totalAverageTotal,
                 DamageTaken = dataTotal.DamageTaken / totalAverageTotal,
                 Experience = dataTotal.Experience / totalAverageTotal,
                 MercsCaptured = dataTotal.MercsCaptured / totalAverageTotal,
