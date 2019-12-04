@@ -21,7 +21,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
         public int? MinionDamage { get; private set; }
         public int? SummonDamage { get; private set; }
         public int? StrutureDamage { get; private set; }
-        public int? SelfHealing { get; private set; }
         public int? MercCampCaptures { get; private set; }
         public int? WatchTowerCaptures { get; private set; }
         public int? TownKills { get; private set; }
@@ -37,7 +36,6 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             MinionDamage = playerScore.MinionDamage;
             SummonDamage = playerScore.SummonDamage;
             StrutureDamage = playerScore.StructureDamage;
-            SelfHealing = playerScore.SelfHealing;
             MercCampCaptures = playerScore.MercCampCaptures;
             WatchTowerCaptures = playerScore.WatchTowerCaptures;
             TownKills = playerScore.TownKills;
