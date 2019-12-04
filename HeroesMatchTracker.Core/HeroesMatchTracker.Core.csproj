@@ -264,11 +264,11 @@
       <Name>Heroes.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Icons\Heroes.Icons.csproj">
-      <Project>{0AEE62BC-A68C-459D-BFD8-39B2FDE1A75A}</Project>
+      <Project>{0aee62bc-a68c-459d-bfd8-39b2fde1a75a}</Project>
       <Name>Heroes.Icons</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.Icons\Heroes.Models\Heroes.Models\Heroes.Models.csproj">
-      <Project>{D7D7D114-6250-45A2-8C66-B3E5C7026188}</Project>
+      <Project>{d7d7d114-6250-45a2-8c66-b3e5c7026188}</Project>
       <Name>Heroes.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj">
