@@ -191,6 +191,10 @@ namespace HeroesMatchTracker.Core.Converters
             {
                 color = (Color)ColorConverter.ConvertFromString($"#{colorValue}");
             }
+            else if (colorValue.Contains('-'))
+            {
+                return SetTooltipColors(colorValue.Split('-')[0]);
+            }
             else
             {
                 switch (colorValue.ToUpper())
