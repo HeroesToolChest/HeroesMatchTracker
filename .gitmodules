@@ -2,3 +2,7 @@
 	path = Heroes.ReplayParser
 	url = https://github.com/koliva8245/Heroes.ReplayParser.git
 
+[submodule "Heroes.Icons"]
+	path = Heroes.Icons
+	url = https://github.com/HeroesToolChest/Heroes.Icons.git
+	branch = v4-legacy
