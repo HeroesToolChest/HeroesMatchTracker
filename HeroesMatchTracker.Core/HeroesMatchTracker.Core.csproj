@@ -271,9 +271,9 @@
       <Project>{d7d7d114-6250-45a2-8c66-b3e5c7026188}</Project>
       <Name>Heroes.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.netstandard.csproj">
-      <Project>{f21941e5-2251-4ac7-9fe7-6f26e5d5f2db}</Project>
-      <Name>Heroes.ReplayParser.netstandard</Name>
+    <ProjectReference Include="..\Heroes.ReplayParser\Heroes.ReplayParser\Heroes.ReplayParser.csproj">
+      <Project>{28796550-3441-4dfe-9432-da9f4d172d9d}</Project>
+      <Name>Heroes.ReplayParser</Name>
     </ProjectReference>
     <ProjectReference Include="..\HeroesMatchTracker.Data\HeroesMatchTracker.Data.csproj">
       <Project>{038bea71-201f-4c56-9edd-152fed4d9b41}</Project>

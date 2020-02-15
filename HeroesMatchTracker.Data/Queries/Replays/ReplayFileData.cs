@@ -2,6 +2,7 @@
 using Heroes.Icons;
 using Heroes.Icons.Models;
 using Heroes.ReplayParser;
+using Heroes.ReplayParser.MPQFiles;
 using HeroesMatchTracker.Data.Databases;
 using HeroesMatchTracker.Data.Generic;
 using HeroesMatchTracker.Data.Models.Replays;
