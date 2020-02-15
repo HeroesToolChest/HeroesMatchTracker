@@ -3,12 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <CodeAnalysisRuleSet>../HeroesMatchTracker.ruleset</CodeAnalysisRuleSet>
-    <AssemblyVersion>3.0.8</AssemblyVersion>
-    <FileVersion>3.0.8</FileVersion>
+    <AssemblyVersion>3.0.9</AssemblyVersion>
+    <FileVersion>3.0.9</FileVersion>
     <Description />
     <Authors>Kevin Oliva</Authors>
     <Copyright>Copyright © 2017 - 2020 Kevin Oliva</Copyright>
-    <Version>3.0.8</Version>
+    <Version>3.0.9</Version>
   </PropertyGroup>
 
   <ItemGroup>
