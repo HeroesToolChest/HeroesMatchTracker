@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HeroesMatchTracker.Core")]
-[assembly: AssemblyCopyright("Copyright © 2017 - 2018 Kevin Oliva")]
+[assembly: AssemblyCopyright("Copyright © 2017 - 2020 Kevin Oliva")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
