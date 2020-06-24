@@ -19,6 +19,7 @@
             IMigrationList.Add(new Migration12_v2_11_0());
             IMigrationList.Add(new Migration13_v2_12_0());
             IMigrationList.Add(new Migration14_v2_12_1());
+            IMigrationList.Add(new Migration15_v2_13_5());
             ExecuteMigrationCommands();
         }
     }
