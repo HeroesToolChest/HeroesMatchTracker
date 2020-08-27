@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HeroesMatchTracker.Helpers\HeroesMatchTracker.Helpers.csproj" />
-    <ProjectReference Include="..\HeroesMatchTrackerAva.Core\HeroesMatchTracker.Core.csproj" />
+    <ProjectReference Include="..\HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj" />
   </ItemGroup>
 
 </Project>
