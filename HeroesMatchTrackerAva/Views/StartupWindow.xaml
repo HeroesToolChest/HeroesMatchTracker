@@ -1,0 +1,25 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="505" d:DesignHeight="291"
+        Height="291" Width="505" MaxHeight="291" MaxWidth="505"
+        x:Class="HeroesMatchTracker.Views.StartupWindow"
+        Title="Heroes Match Tracker Startup"
+        Icon="/Assets/HMT.ico"
+        WindowStartupLocation="CenterScreen" WindowState="Normal"
+        HasSystemDecorations="False"
+        BorderThickness="0"
+        Name="window">
+    <Grid>
+        <Image Source="avares://HeroesMatchTracker/Assets/Images/HMT_Startup.png" Stretch="UniformToFill"/>
+        <StackPanel Margin="20 14">
+            <TextBlock FontSize="32">Heroes Match Tracker</TextBlock>
+            <TextBlock FontSize="12" Text="{Binding AppVersion}"/>
+        </StackPanel>
+        <StackPanel Margin="20 14 14 70" VerticalAlignment="Bottom">
+            <TextBlock FontSize="20" Text="{Binding StatusLabel}"/>
+            <TextBlock FontSize="16" Text="{Binding DetailedStatusLabel}"/>
+        </StackPanel>
+    </Grid>
+</Window>

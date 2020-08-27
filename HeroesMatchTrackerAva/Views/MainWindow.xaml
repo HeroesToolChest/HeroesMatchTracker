@@ -1,0 +1,36 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:replayParserViews="clr-namespace:HeroesMatchTracker.Views.ReplayParser"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="HeroesMatchTracker.Views.MainWindow"
+        Icon="/Assets/HMT.ico"
+        Title="Heroes Match Tracker"
+        MinHeight="768" MinWidth="1024">
+    <Window.Styles>
+        <Style Selector="TabItem">
+        </Style>
+    </Window.Styles>
+
+    <Panel Margin="10">
+        <Border BorderThickness="3" BorderBrush="#FF282A31" VerticalAlignment="Top">
+            <TabControl Background="#FF292B33">
+                <TabItem Header="Home">
+                </TabItem>
+                <TabItem Header="Replay Parser">
+                    <Panel Background="{DynamicResource ThemeBackgroundBrush}">
+                        <replayParserViews:ReplayParserControlView DataContext="{Binding ReplayParserControlViewModel}"/>
+                    </Panel>
+                </TabItem>
+            </TabControl>
+        </Border>
+        <!--<Panel Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF282A31">
+
+        </Panel>-->
+
+        <!--<Border BorderThickness="4" BorderBrush="Yellow" CornerRadius="2">
+            <Button Width="100" Height="100" BorderThickness="3">text</Button>
+        </Border>-->
+    </Panel>
+</Window>

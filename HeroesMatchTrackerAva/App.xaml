@@ -1,0 +1,21 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HeroesMatchTracker"
+             x:Class="HeroesMatchTracker.App"
+             Name="Heroes Match Tracker">
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <NativeMenu.Menu>
+        <NativeMenu>
+            <NativeMenuItem Header="About Heroes Match Tracker" Command="{Binding AboutCommand}" />
+        </NativeMenu>
+    </NativeMenu.Menu>
+    
+    <Application.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
+        <StyleInclude Source="avares://HeroesMatchTracker/Styles/HMTTheme.xaml"/>
+    </Application.Styles>
+</Application>

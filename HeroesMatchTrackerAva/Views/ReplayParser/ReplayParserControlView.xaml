@@ -1,0 +1,77 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="HeroesMatchTracker.Views.ReplayParser.ReplayParserControlView">
+    <Grid ColumnDefinitions="2*, 2*, *">
+        <Panel Width="1000" Grid.Column="0"></Panel>
+        <!--<DataGrid MaxWidth="900" MinWidth="900">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" />
+                <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                <DataGridTextColumn Header="HotsApi Status" Binding="{Binding HotsApiUploadStatus}" />
+            </DataGrid.Columns>
+        </DataGrid>-->
+        <!--<ListBox HorizontalAlignment="Stretch"
+                 SelectionMode="Toggle"
+                 Items="{Binding ReplayFiles}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="3*, 1*, 1*, 1*, 1*">
+                        <TextBlock Grid.Column="0" Text="{Binding FileName}" />
+                        <TextBlock Grid.Column="1" Text="{Binding FileCreation}" />
+                        <TextBlock Grid.Column="2" Text="{Binding ParsedStatus}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Version}" />
+                        <TextBlock Grid.Column="4" Text="{Binding HeroesHostStatus}" />
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="0 4">
+                        <TextBlock Text="{Binding FileName}" />
+                        <TextBlock Text="{Binding FileCreation}" />
+                        <TextBlock Text="{Binding ParsedStatus}" />
+                        <TextBlock Text="{Binding Version}" />
+                        <TextBlock Text="{Binding HeroesHostStatus}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+        <Grid Grid.Column="1" ColumnDefinitions="Auto, *">
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="(RE)SCAN" Command="{Binding Scan}"/>
+                    <Button Content="START" Command="{Binding Start}"/>
+                    <Button Content="SELECT FILES"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="Watch"
+                              ToolTip.Tip="Watches the selected Replay's Location for new files"/>
+                    <CheckBox Content="Auto Scan on Start"
+                              ToolTip.Tip="Executes Scan on Start"/>
+                    <CheckBox Content="Auto Start on Startup"
+                              ToolTip.Tip="Executes Start on application startup"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding ReplaysLocation}" Width="520" Watermark="Replays Location" IsReadOnly="True"/>
+                    <Button Content="BROWSE" Command="{Binding BrowseReplayLocation}"/>
+                </StackPanel>
+                <CheckBox Content="Include Subdirectories" Margin="4 -4 4 4" />
+
+                <TextBlock FontSize="18" Margin="4 8 0 0">Scan Date/Time Options</TextBlock>
+                <CheckBox Content="Latest Saved Replay"/>
+                <StackPanel Orientation="Horizontal" Margin="0 -8 0 0">
+                    <!--<DatePicker SelectedDateFormat="Short" Width="200" Margin="0 0 8 0"/>-->
+                    <Button Content="RESET"/>
+                </StackPanel>
+                <CheckBox Content="Last Saved Replay"/>
+                <StackPanel Orientation="Horizontal" Margin="0 -8 0 0">
+                    <!--<DatePicker SelectedDateFormat="Short" Width="200" Margin="0 0 8 0"/>-->
+                    <Button Content="RESET"/>
+                </StackPanel>
+
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

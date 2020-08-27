@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Version>3.0.0-alpha.1</Version>
+    <Authors>Kevin Oliva</Authors>
+    <Copyright>Copyright © 2016 - 2020 Kevin Oliva</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.999-cibuild0010245-beta" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.999-cibuild0010245-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.999-cibuild0010245-beta" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.999-cibuild0010245-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.999-cibuild0010245-beta" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ReactiveUI.Fody" Version="11.5.26" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Remove="Views\ReplayParser\ReplayParserControlView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\ReplayParser\ReplayParserControlView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HeroesMatchTrackerAva.Core\HeroesMatchTracker.Core.csproj" />
+    <ProjectReference Include="..\HeroesMatchTrackerAva.Services\HeroesMatchTracker.Infrastructure.Services.csproj" />
+    <ProjectReference Include="..\HeroesMatchTrackerAva.Data\HeroesMatchTracker.Infrastructure.Database.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ReplayParser\ReplayParserControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

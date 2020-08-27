@@ -1,0 +1,76 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=netstandard">
+    <Style>
+        <Style.Resources>
+            <FontFamily x:Key="HeroesFont">avares://HeroesMatchTracker/Assets/Fonts#Metronic Pro</FontFamily>
+            <FontFamily x:Key="DefaultFont">avares://HeroesMatchTracker/Assets/Fonts#Roboto</FontFamily>
+            <SolidColorBrush x:Key="ThemeBackgroundBrush">#FF1C1E24</SolidColorBrush>
+
+            <system:Double x:Key="PanelMargin">10</system:Double>
+            <system:Double x:Key="GridMargin">10</system:Double>
+            <system:Double x:Key="ButtonMargin">10</system:Double>
+        </Style.Resources>
+    </Style>
+
+    <Style Selector="Window">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFont}"/>
+    </Style>
+    <Style Selector="Button">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="9"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Width" Value="140"/>
+    </Style>
+    <Style Selector="Button /template/ ContentPresenter">
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style Selector="CheckBox">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Margin" Value="4 2"/>
+    </Style>
+    <Style Selector="CheckBox > TextBlock">
+        <Setter Property="Margin" Value="4 0"/>
+    </Style>
+    <Style Selector="CheckBox /template/ Border">
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style Selector="TextBox">
+        <Setter Property="Height" Value="29"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
+    </Style>
+    <Style Selector="TextBox /template/ Border">
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style Selector="DatePicker">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style Selector="CalendarButton">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style Selector="CalendarDayButton">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style Selector="CalendarItem">
+        <Setter Property="DayTitleTemplate">
+            <Template>
+                <TextBlock FontWeight="Bold"
+                           FontSize="14"
+                           Margin="0,4,0,4"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding}" />
+            </Template>
+        </Setter>
+    </Style>
+</Styles>
