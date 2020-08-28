@@ -1,0 +1,41 @@
+parameters:
+  name: ''
+  pool: ''
+
+jobs:
+  - job: ${{ parameters.name }}
+    pool: ${{ parameters.pool }}
+    variables:
+      config_debug: debug
+      config_release: release
+    strategy:
+      matrix:
+        Build_Debug:
+          configuration: $(config_debug)
+        Build_Release:
+          configuration: $(config_release)
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk'
+      inputs:
+        packageType: sdk
+        version: 3.1.x
+        installationPath: $(Agent.ToolsDirectory)/dotnet
+     
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'restore'
+        includeNuGetOrg: true
+      displayName: 'Restore'
+      
+    - script: dotnet build -c $(configuration) --no-restore  
+      displayName: Build
+ 
+    - script: dotnet test -c $(configuration) --no-build --logger trx --collect "Code coverage"
+      displayName: Run tests
+      
+    - task: PublishTestResults@2
+      displayName: Publish tests
+      inputs:
+        testRunner: VSTest
+        testResultsFiles: '**/*.trx'
