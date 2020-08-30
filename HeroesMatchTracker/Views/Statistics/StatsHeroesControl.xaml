@@ -46,8 +46,8 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 0 8 0">
-                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 0 8" />
-                    <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" />
+                    <ComboBox ItemsSource="{Binding HeroesList}" SelectedValue="{Binding SelectedHero}" IsEnabled="{Binding IsComboBoxEnabled}" Width="200" Margin="0 0 0 8" />
+                    <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="200" />
                 </StackPanel>
                 <ListView x:Name="GameModeList" ItemsSource="{Binding GameModeList}" Style="{StaticResource ListView}" Height="Auto" Margin="0 0 8 10">
                     <i:Interaction.Triggers>

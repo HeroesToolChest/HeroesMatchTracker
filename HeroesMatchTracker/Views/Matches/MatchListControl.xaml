@@ -18,10 +18,10 @@
                     <Setter Property="Margin" Value="0 0 8 0" />
                 </Style>
                 <Style TargetType="ComboBox" BasedOn="{StaticResource MetroComboBox}">
-                    <Setter Property="Width" Value="170" />
+                    <Setter Property="Width" Value="200" />
                 </Style>
                 <Style TargetType="TextBox" BasedOn="{StaticResource MetroTextBox}">
-                    <Setter Property="Width" Value="170" />
+                    <Setter Property="Width" Value="200" />
                 </Style>
             </Style.Resources>
         </Style>
@@ -29,7 +29,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="320"></ColumnDefinition>
+            <ColumnDefinition Width="370"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="370"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>

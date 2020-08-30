@@ -13,7 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Margin="8">
-            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="140" Margin="0 0 8 0" />
+            <ComboBox ItemsSource="{Binding SeasonList}" SelectedValue="{Binding SelectedSeason}" IsEnabled="{Binding IsComboBoxEnabled}" Width="200" Margin="0 0 8 0" />
             <CheckBox Content="Quick Match" IsChecked="{Binding IsQuickMatchSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Unranked Draft" IsChecked="{Binding IsUnrankedDraftSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Storm League" IsChecked="{Binding IsStormLeagueSelected}" Margin="0 0 8 0" />
