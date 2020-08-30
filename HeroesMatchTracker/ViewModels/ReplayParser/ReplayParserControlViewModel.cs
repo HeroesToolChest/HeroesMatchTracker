@@ -1,9 +1,8 @@
 ﻿using DynamicData;
+using HeroesMatchTracker.Core.Database;
 using HeroesMatchTracker.Core.Models.ReplayParser;
 using HeroesMatchTracker.Core.Services.Dialogs;
 using HeroesMatchTracker.Core.Services.ReplayParser;
-using HeroesMatchTracker.Infrastructure.Database.Contexts;
-using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
@@ -21,17 +20,18 @@ namespace HeroesMatchTracker.ViewModels.ReplayParser
 {
     public class ReplayParserControlViewModel : ViewModelBase, IActivatableViewModel, IEnableLogger
     {
-        //private readonly IDbContextFactory<HeroesReplaysDbContext> _contextFactory;
         private readonly IReplayParserControl _replayParserControl;
         private readonly IReplayCollector _replayCollector;
+        private readonly IRepositoryFactory _repositoryFactory;
         private readonly ReadOnlyObservableCollection<ReplayFile> _replayFiles;
 
         //private readonly ObservableAsPropertyHelper<bool> _isExecuting;
 
-        public ReplayParserControlViewModel(IReplayParserControl? replayParserControl = null, IReplayCollector? replayCollector = null)
+        public ReplayParserControlViewModel(IReplayParserControl? replayParserControl = null, IReplayCollector? replayCollector = null, IRepositoryFactory? repositoryFactory = null)
         {
             _replayParserControl = replayParserControl ?? Locator.Current.GetService<IReplayParserControl>();
             _replayCollector = replayCollector ?? Locator.Current.GetService<IReplayCollector>();
+            _repositoryFactory = repositoryFactory ?? Locator.Current.GetService<IRepositoryFactory>();
 
             var replayCollection = _replayCollector.Connect();
             replayCollection
@@ -97,6 +97,8 @@ namespace HeroesMatchTracker.ViewModels.ReplayParser
         {
             if (string.IsNullOrWhiteSpace(ReplaysLocation))
                 return;
+
+            using IReplayMatchRepository? rep = _repositoryFactory.CreateRepository<IReplayMatchRepository>();
 
             IEnumerable<ReplayFile> items = new DirectoryInfo(ReplaysLocation)
                 .GetFiles($"*.StormReplay")

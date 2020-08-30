@@ -6,6 +6,10 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 {
     public class HeroesReplaysDbContext : DbContext
     {
+        public HeroesReplaysDbContext()
+        {
+        }
+
         public HeroesReplaysDbContext(DbContextOptions<HeroesReplaysDbContext> options)
             : base(options)
         {

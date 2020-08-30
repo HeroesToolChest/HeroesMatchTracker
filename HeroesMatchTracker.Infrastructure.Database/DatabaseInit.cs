@@ -13,19 +13,21 @@ namespace HeroesMatchTracker.Infrastructure.Database
         private const string _backupDirectory = "_backup";
         private const string _replaySqlite = "Replays.sqlite";
 
-        private readonly HMT2ReplaysDbContext _hmt2ReplaysDbContext;
-        private readonly HeroesReplaysDbContext _heroesReplaysDbContext;
+        private readonly IDbContextFactory<HMT2ReplaysDbContext> _hmt2ReplaysDbContextFactory;
+        private readonly IDbContextFactory<HeroesReplaysDbContext> _heroesReplaysDbContextFactory;
 
         public DatabaseInit(
-            HMT2ReplaysDbContext hmt2ReplaysDbContext,
-            HeroesReplaysDbContext heroesReplaysDbContext)
+            IDbContextFactory<HMT2ReplaysDbContext> hmt2ReplaysDbContextFactory,
+            IDbContextFactory<HeroesReplaysDbContext> heroesReplaysDbContextFactory)
         {
-            _hmt2ReplaysDbContext = hmt2ReplaysDbContext;
-            _heroesReplaysDbContext = heroesReplaysDbContext;
+            _hmt2ReplaysDbContextFactory = hmt2ReplaysDbContextFactory;
+            _heroesReplaysDbContextFactory = heroesReplaysDbContextFactory;
         }
 
         public void HMT2ReplayDbCheck()
         {
+            using HMT2ReplaysDbContext hmt2ReplaysDbContext = _hmt2ReplaysDbContextFactory.CreateDbContext();
+
             if (File.Exists(_replaySqlite))
             {
                 this.Log().Info($"Found existing {_replaySqlite} (HMT2) file.");
@@ -43,7 +45,7 @@ namespace HeroesMatchTracker.Infrastructure.Database
                 }
 
                 this.Log().Info($"Performing HMT3 update...");
-                _hmt2ReplaysDbContext.Database.ExecuteSqlRaw(@"
+                hmt2ReplaysDbContext.Database.ExecuteSqlRaw(@"
                     BEGIN;
 
                     CREATE TABLE __EFMigrationsHistory(
@@ -72,84 +74,11 @@ namespace HeroesMatchTracker.Infrastructure.Database
 
         public void InitHeroesReplaysDb()
         {
+            using HeroesReplaysDbContext heroesReplaysDbContext = _heroesReplaysDbContextFactory.CreateDbContext();
+
             this.Log().Info($"Migrating {DbConnectionString.HeroesReplays} database...");
-            _heroesReplaysDbContext.Database.Migrate();
+            heroesReplaysDbContext.Database.Migrate();
             this.Log().Info($"{DbConnectionString.HeroesReplays} migration completed.");
-
-
-            //ReplayMatch replayMatch = new ReplayMatch();
-            //replayMatch.FileName = "somename";
-            //replayMatch.Frames = 55;
-            //replayMatch.GameSpeed = "fast";
-            //replayMatch.Hash = "sdfsdfsdfsdf";
-            //replayMatch.IsGameEventsParsed = true;
-            //replayMatch.MapName = "Sky Temple";
-            //replayMatch.RandomValue = 234324;
-            //replayMatch.ReplayBuild = 45454;
-            //replayMatch.ReplayLengthTicks = 234234234234;
-            //replayMatch.ReplayVersion = "4.44.44.444";
-            //replayMatch.TeamSize = "5v5";
-            //replayMatch.TimeStamp = DateTime.Now;
-            //replayMatch.ReplayId = 5;
-            //replayMatch.GameMode = Heroes.StormReplayParser.Replay.GameMode.HeroLeague;
-
-            //replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>();
-            //replayMatch.ReplayMatchPlayers.Add(new ReplayMatchPlayer()
-            //{
-            //    AccountLevel = 324,
-            //    Character = "Sd",
-            //    CharacterLevel = 43,
-            //    Difficulty = "sf",
-            //    Handicap = 4,
-            //    HasActiveBoost = false,
-            //    IsAutoSelect = false,
-            //    IsBlizzardStaff = false,
-            //    IsSilenced = false,
-            //    IsVoiceSilenced = false,
-            //    IsWinner = true,
-            //    MountAndMountTint = "sdf",
-            //    PartySize = 4,
-            //    PartyValue = 234,
-            //    PlayerNumber = 2,
-            //    SkinAndSkinTint = "Sdfr",
-            //    Team = 0,
-            //    ReplayId = 5,
-            //    ReplayAllHotsPlayer = new ReplayAllHotsPlayer()
-            //    {
-            //        AccountLevel = 324,
-            //        BattleNetId = 32,
-            //        BattleNetRegionId = 1,
-            //        BattleNetSubId = 1,
-            //        BattleNetTId = "sdf",
-            //        BattleTagName = "ssdf#324",
-            //        LastSeen = DateTime.Now,
-            //        LastSeenBefore = DateTime.Now,
-            //        PlayerId = 3,
-            //    },
-            //});
-
-
-            //_heroesReplaysDbContext.Replays.Add(replayMatch);
-
-            //ReplayAllHotsPlayer replayAllHotsPlayer = new ReplayAllHotsPlayer();
-            //replayAllHotsPlayer.AccountLevel = 324;
-            //replayAllHotsPlayer.BattleNetId = 32;
-            //replayAllHotsPlayer.BattleNetRegionId = 1;
-            //replayAllHotsPlayer.BattleNetSubId = 1;
-            //replayAllHotsPlayer.BattleNetTId = "sdf";
-            //replayAllHotsPlayer.BattleTagName = "ssdf#324";
-            //replayAllHotsPlayer.LastSeen = DateTime.Now;
-            //replayAllHotsPlayer.LastSeenBefore = DateTime.Now;
-            //replayAllHotsPlayer.PlayerId = 3;
-            //_heroesReplaysDbContext.ReplayMatchPlayers.Add(replayMatchAward);
-
-            //ReplayMatchAward replayMatchAward = new ReplayMatchAward();
-            //replayMatchAward.Award = "Bulwark";
-            //replayMatchAward.ReplayId = 5;
-            //replayMatchAward.PlayerId = 3;
-            //_heroesReplaysDbContext.ReplayMatchAwards.Add(replayMatchAward);
-
-            _heroesReplaysDbContext.SaveChanges();
         }
     }
 }
