@@ -384,7 +384,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
         private async Task SetHeroStats(Season season, GameMode gameModes, OverviewHeroStatOption statOption)
         {
-            var heroesList = HeroesIcons.HeroesData().HeroNames();
+            var heroesList = HeroesIcons.HeroesData().HeroNames().OrderBy(x => x);
             var heroStatPercentageCollection = new Collection<StatsOverviewHeroes>();
             var heroStatCollection = new Collection<StatsOverviewHeroes>();
 

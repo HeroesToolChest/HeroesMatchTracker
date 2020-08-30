@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -219,7 +220,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
 
             Season selectedSeason = SelectedSeason.ConvertToEnum<Season>();
 
-            var heroesList = HeroesIcons.HeroesData().HeroNames();
+            var heroesList = HeroesIcons.HeroesData().HeroNames().OrderBy(x => x);
             foreach (var hero in heroesList)
             {
                 List<object> rowStats = new List<object>();
