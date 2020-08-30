@@ -19,7 +19,7 @@ namespace HeroesMatchTracker.Data.Migrations.Replays
 
                 foreach (var record in records)
                 {
-                    record.Hash = ReplayHasher.HashReplay(record);
+                    record.Hash = ReplayHasher.HashReplayOld(record);
                 }
 
                 db.SaveChanges();
