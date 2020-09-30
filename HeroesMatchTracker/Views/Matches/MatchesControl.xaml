@@ -34,6 +34,9 @@
         <TabItem Header="Brawl" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:BrawlControl />
         </TabItem>
+        <TabItem Header="ARAM" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:ARAMControl />
+        </TabItem>
         <TabItem Header="Custom Game" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:CustomGameControl />
         </TabItem>

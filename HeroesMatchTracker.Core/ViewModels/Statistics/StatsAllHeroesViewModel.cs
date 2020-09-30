@@ -31,6 +31,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private bool _isTeamLeagueSelected;
         private bool _isCustomGameSelected;
         private bool _isBrawlSelected;
+        private bool _isARAMSelected;
         private bool _isTotalSelected;
         private string _selectedSeason;
 
@@ -144,6 +145,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public bool IsARAMSelected
+        {
+            get => _isARAMSelected;
+            set
+            {
+                _isARAMSelected = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public DataTable StatsAllHeroesDataTable
         {
             get => _statsAllHeroesDataTable;
@@ -182,14 +193,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             LoadingOverlayWindow.ShowLoadingOverlay();
             DataGridTextColumnsList = new List<DataGridColumn>();
 
-            if ((!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && IsTotalSelected) ||
-                (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsTotalSelected))
+            if ((!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsARAMSelected && IsTotalSelected) ||
+                (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsARAMSelected && !IsTotalSelected))
             {
                 IsQuickMatchSelected = true;
                 IsUnrankedDraftSelected = true;
                 IsStormLeagueSelected = true;
                 IsHeroLeagueSelected = true;
                 IsTeamLeagueSelected = true;
+                IsARAMSelected = true;
             }
 
             // these CANNOT be in a background thread
@@ -246,6 +258,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.Custom));
                 if (IsBrawlSelected)
                     rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.Brawl));
+                if (IsARAMSelected)
+                    rowStats.AddRange(QueryGameModeStats(hero, selectedSeason, GameMode.ARAM));
                 if (IsTotalSelected)
                     rowStats.AddRange(SetRowTotals(rowStats));
 
@@ -413,6 +427,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             if (IsBrawlSelected)
             {
                 CreateGameModeColumns(GameMode.Brawl);
+            }
+
+            if (IsARAMSelected)
+            {
+                CreateGameModeColumns(GameMode.ARAM);
             }
 
             if (IsTotalSelected)

@@ -424,11 +424,13 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 int stormLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.StormLeague, selectedMaps, award.ShortName);
                 int heroLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.HeroLeague, selectedMaps, award.ShortName);
                 int teamLeagueAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.TeamLeague, selectedMaps, award.ShortName);
+                int brawlAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.Brawl, selectedMaps, award.ShortName);
+                int aramAwards = Database.ReplaysDb().Statistics.ReadMatchAwardCountForHero(heroName, season, GameMode.ARAM, selectedMaps, award.ShortName);
 
-                int rowTotal = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards;
+                int rowTotal = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards + brawlAwards + aramAwards;
 
                 if (award.Name == "MVP")
-                    MVPCount = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards;
+                    MVPCount = quickmatchAwards + unrankedDraftAwards + stormLeagueAwards + heroLeagueAwards + teamLeagueAwards + brawlAwards + aramAwards;
 
                 var awardImage = award.MatchAwardScoreScreenImage(ScoreScreenAwardColor.Blue);
 
@@ -441,6 +443,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     StormLeague = rowTotal > 0 ? stormLeagueAwards : (int?)null,
                     HeroLeague = rowTotal > 0 ? heroLeagueAwards : (int?)null,
                     TeamLeague = rowTotal > 0 ? teamLeagueAwards : (int?)null,
+                    Brawl = rowTotal > 0 ? brawlAwards : (int?)null,
+                    ARAM = rowTotal > 0 ? aramAwards : (int?)null,
                     Total = rowTotal > 0 ? rowTotal : (int?)null,
                     AwardImage = awardImage,
             };
@@ -454,6 +458,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             int totalStormLeague = StatsHeroesAwardsCollection.Sum(x => x.StormLeague ?? 0);
             int totalHeroLeague = StatsHeroesAwardsCollection.Sum(x => x.HeroLeague ?? 0);
             int totalTeamLeague = StatsHeroesAwardsCollection.Sum(x => x.TeamLeague ?? 0);
+            int totalBrawlLeague = StatsHeroesAwardsCollection.Sum(x => x.Brawl ?? 0);
+            int totalARAMLeague = StatsHeroesAwardsCollection.Sum(x => x.ARAM ?? 0);
             int totalTotal = StatsHeroesAwardsCollection.Sum(x => x.Total ?? 0);
 
             StatsHeroesAwards totalAwards = new StatsHeroesAwards
@@ -464,6 +470,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                 StormLeague = totalStormLeague,
                 HeroLeague = totalHeroLeague,
                 TeamLeague = totalTeamLeague,
+                Brawl = totalBrawlLeague,
+                ARAM = totalARAMLeague,
                 Total = totalTotal,
             };
 

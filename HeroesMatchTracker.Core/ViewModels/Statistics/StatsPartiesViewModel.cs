@@ -30,6 +30,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private bool _isTeamLeagueSelected;
         private bool _isCustomGameSelected;
         private bool _isBrawlSelected;
+        private bool _isARAMSelected;
         private bool _isPlayersInParty;
         private string _selectedSeason;
 
@@ -175,6 +176,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             }
         }
 
+        public bool IsARAMSelected
+        {
+            get => _isARAMSelected;
+            set
+            {
+                _isARAMSelected = value;
+                RaisePropertyChanged();
+            }
+
+        }
         public bool[] IsPlayerChecked
         {
             get => _isPlayerChecked;
@@ -321,14 +332,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             GameMode gameModes = GameMode.Unknown;
 
-            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected)
+            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsARAMSelected)
             {
-                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.StormLeague | GameMode.HeroLeague | GameMode.TeamLeague;
+                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.StormLeague | GameMode.HeroLeague | GameMode.TeamLeague | GameMode.ARAM;
                 IsQuickMatchSelected = true;
                 IsUnrankedDraftSelected = true;
                 IsStormLeagueSelected = true;
                 IsHeroLeagueSelected = true;
                 IsTeamLeagueSelected = true;
+                IsARAMSelected = true;
             }
             else
             {
@@ -346,6 +358,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     gameModes |= GameMode.Custom;
                 if (IsBrawlSelected)
                     gameModes |= GameMode.Brawl;
+                if (IsARAMSelected)
+                    gameModes |= GameMode.ARAM;
             }
 
             return gameModes;

@@ -12,6 +12,8 @@ namespace HeroesMatchTracker.Core.Models.StatisticsModels
         public int? StormLeague { get; set; }
         public int? HeroLeague { get; set; }
         public int? TeamLeague { get; set; }
+        public int? Brawl { get; set; }
+        public int? ARAM { get; set; }
         public int? Total { get; set; }
     }
 }

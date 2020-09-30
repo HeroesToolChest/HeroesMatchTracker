@@ -125,6 +125,8 @@
             <DataGridTextColumn Header="Storm League" Binding="{Binding StormLeague}" Width="120"/>
             <DataGridTextColumn Header="Hero League" Binding="{Binding HeroLeague}" Width="120"/>
             <DataGridTextColumn Header="Team League" Binding="{Binding TeamLeague}" Width="120"/>
+            <DataGridTextColumn Header="Brawl" Binding="{Binding Brawl}" Width="120"/>
+            <DataGridTextColumn Header="ARAM" Binding="{Binding ARAM}" Width="120"/>
             <DataGridTextColumn Header="Total" Binding="{Binding Total}" Width="120" FontWeight="Bold"/>
         </DataGrid.Columns>
     </DataGrid>

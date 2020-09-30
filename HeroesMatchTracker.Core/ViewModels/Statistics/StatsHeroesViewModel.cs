@@ -369,7 +369,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             // set selected maps
             if (SelectedMaps.Count <= 0)
             {
-                SelectedMaps = HeroesIcons.Battlegrounds().Battlegrounds().Select(x => x.Name).ToList();
+                SelectedMaps = HeroesIcons.Battlegrounds().Battlegrounds(true).Select(x => x.Name).ToList();
             }
 
             // query the data

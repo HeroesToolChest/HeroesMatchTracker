@@ -21,6 +21,7 @@
             <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="0 0 8 0" />
+            <CheckBox Content="ARAM" IsChecked="{Binding IsARAMSelected}" Margin="0 0 8 0" />
             <CheckBox Content="Total" IsChecked="{Binding IsTotalSelected}" Margin="0 0 8 0" />
             <Button Content="Query" Width="120" Margin="16 0" Command="{Binding QueryAllHeroesGameModeCommand}" />
         </StackPanel>

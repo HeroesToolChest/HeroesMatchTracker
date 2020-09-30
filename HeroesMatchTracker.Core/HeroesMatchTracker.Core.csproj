@@ -187,6 +187,7 @@
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\HmtViewModel.cs" />
     <Compile Include="ViewModels\Matches\AllMatchesViewModel.cs" />
+    <Compile Include="ViewModels\Matches\ARAMViewModel.cs" />
     <Compile Include="ViewModels\Matches\BrawlViewModel.cs" />
     <Compile Include="ViewModels\Matches\CustomGameViewModel.cs" />
     <Compile Include="ViewModels\Matches\StormLeagueViewModel.cs" />

@@ -50,6 +50,7 @@
                 <CheckBox Content="Team League" IsChecked="{Binding IsTeamLeagueSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Custom Game" IsChecked="{Binding IsCustomGameSelected}" Margin="{StaticResource GameModeMargin}" />
                 <CheckBox Content="Brawl" IsChecked="{Binding IsBrawlSelected}" Margin="{StaticResource GameModeMargin}" />
+                <CheckBox Content="ARAM" IsChecked="{Binding IsARAMSelected}" Margin="{StaticResource GameModeMargin}" />
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">

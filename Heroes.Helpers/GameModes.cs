@@ -23,11 +23,13 @@ namespace Heroes.Helpers
         Brawl = 1 << 9,
         [Description("Storm League")]
         StormLeague = 1 << 10,
+        [Description("ARAM")]
+        ARAM = 1 << 11,
 
         [Description("All Game Modes")]
-        AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl | StormLeague,
+        AllGameModes = Custom | QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | Brawl | StormLeague | ARAM,
         [Description("Normal Game Modes")]
-        NormalGameModes = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | StormLeague,
+        NormalGameModes = QuickMatch | HeroLeague | TeamLeague | UnrankedDraft | StormLeague | ARAM,
         [Description("Draft Modes")]
         DraftModes = HeroLeague | TeamLeague | UnrankedDraft | Custom | StormLeague,
         [Description("Ranked Modes")]
@@ -70,6 +72,7 @@ namespace Heroes.Helpers
                     GameMode.TeamLeague.GetFriendlyName(),
                     GameMode.Brawl.GetFriendlyName(),
                     GameMode.Custom.GetFriendlyName(),
+                    GameMode.ARAM.GetFriendlyName(),
                 };
 
                 return list;

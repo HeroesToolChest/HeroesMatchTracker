@@ -28,6 +28,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         private bool _isTeamLeagueSelected;
         private bool _isCustomGameSelected;
         private bool _isBrawlSelected;
+        private bool _isARAMSelected;
         private bool _isHeroStatPercentageDataGridVisible;
         private bool _isHeroStatDataGridVisible;
         private double _overallWinrate;
@@ -162,6 +163,16 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
             set
             {
                 _isBrawlSelected = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsARAMSelected
+        {
+            get => _isARAMSelected;
+            set
+            {
+                _isARAMSelected = value;
                 RaisePropertyChanged();
             }
         }
@@ -535,14 +546,15 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
         {
             GameMode gameModes = GameMode.Unknown;
 
-            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected)
+            if (!IsQuickMatchSelected && !IsUnrankedDraftSelected && !IsStormLeagueSelected && !IsHeroLeagueSelected && !IsTeamLeagueSelected && !IsCustomGameSelected && !IsBrawlSelected && !IsARAMSelected)
             {
-                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.StormLeague | GameMode.HeroLeague | GameMode.TeamLeague;
+                gameModes = GameMode.QuickMatch | GameMode.UnrankedDraft | GameMode.StormLeague | GameMode.HeroLeague | GameMode.TeamLeague | GameMode.ARAM;
                 IsQuickMatchSelected = true;
                 IsUnrankedDraftSelected = true;
                 IsStormLeagueSelected = true;
                 IsHeroLeagueSelected = true;
                 IsTeamLeagueSelected = true;
+                IsARAMSelected = true;
             }
             else
             {
@@ -560,6 +572,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Statistics
                     gameModes |= GameMode.Custom;
                 if (IsBrawlSelected)
                     gameModes |= GameMode.Brawl;
+                if (IsARAMSelected)
+                    gameModes |= GameMode.ARAM;
             }
 
             return gameModes;

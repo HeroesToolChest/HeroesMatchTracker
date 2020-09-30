@@ -10,5 +10,6 @@
         TeamLeague,
         Brawl,
         Custom,
+        ARAM,
     }
 }
