@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <Version>3.0.0-alpha.1</Version>
     <Authors>Kevin Oliva</Authors>
     <Copyright>Copyright © 2016 - 2020 Kevin Oliva</Copyright>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
@@ -22,11 +24,9 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.999-cibuild0010245-beta" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.999-cibuild0010245-beta" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.999-cibuild0010245-beta" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="ReactiveUI.Fody" Version="11.5.26" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="ReactiveUI.Fody" Version="12.1.5" />
+    <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="9.7.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -43,8 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj" />
-    <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Services\HeroesMatchTracker.Infrastructure.Services.csproj" />
+    <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Database.Contexts\HeroesMatchTracker.Infrastructure.Database.Contexts.csproj" />
     <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Database\HeroesMatchTracker.Infrastructure.Database.csproj" />
+    <ProjectReference Include="..\HeroesMatchTracker.Infrastructure\HeroesMatchTracker.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ReplayParser\ReplayParserControlView.xaml">

@@ -4,7 +4,6 @@ using Avalonia.ReactiveUI;
 using HeroesMatchTracker.Core.Services.Dialogs;
 using HeroesMatchTracker.ViewModels.ReplayParser;
 using ReactiveUI;
-using Splat;
 using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Views.ReplayParser
@@ -18,8 +17,6 @@ namespace HeroesMatchTracker.Views.ReplayParser
             });
 
             InitializeComponent();
-
-            Locator.CurrentMutable.Register<IReplayParserControl>(() => this);
         }
 
         public Window GetWindow => (Window)VisualRoot;

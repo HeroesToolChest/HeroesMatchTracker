@@ -5,7 +5,6 @@ using Avalonia.ReactiveUI;
 using HeroesMatchTracker.Core.Startup;
 using HeroesMatchTracker.ViewModels;
 using ReactiveUI;
-using Splat;
 
 namespace HeroesMatchTracker.Views
 {
@@ -21,10 +20,9 @@ namespace HeroesMatchTracker.Views
 #if DEBUG
             this.AttachDevTools();
 #endif
-            Locator.CurrentMutable.Register<IStartupWindow>(() => this);
         }
 
-        public void CloseStartupWindw()
+        public void CloseStartupWindow()
         {
             Close();
         }

@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Core.Database
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork<TContext>
+        where TContext : DbContext
     {
-        int SaveChanges();
+        int SaveChanges(TContext context);
 
-        int SaveChanges(bool acceptAllChangesOnSuccess);
+        int SaveChanges(TContext context, bool acceptAllChangesOnSuccess);
 
-        Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
+        Task<int> SaveChangesAsync(TContext context, bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
 
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        Task<int> SaveChangesAsync(TContext context, CancellationToken cancellationToken = default);
     }
 }

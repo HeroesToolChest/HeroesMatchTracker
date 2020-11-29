@@ -16,11 +16,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker", "Heroe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Core", "HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj", "{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Helpers", "HeroesMatchTracker.Helpers\HeroesMatchTracker.Helpers.csproj", "{707F5B0D-0631-44C0-AA30-6463D5EEE948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Shared", "HeroesMatchTracker.Shared\HeroesMatchTracker.Shared.csproj", "{707F5B0D-0631-44C0-AA30-6463D5EEE948}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Database", "HeroesMatchTracker.Infrastructure.Database\HeroesMatchTracker.Infrastructure.Database.csproj", "{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Services", "HeroesMatchTracker.Infrastructure.Services\HeroesMatchTracker.Infrastructure.Services.csproj", "{A3C591D6-59CB-4474-BD39-4E7DBCAFEDD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Tests", "Tests\HeroesMatchTracker.Infrastructure.Database.Tests\HeroesMatchTracker.Infrastructure.Tests.csproj", "{6476F60A-18BC-4E62-A552-10FA6C15ACCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Database.Contexts", "HeroesMatchTracker.Infrastructure.Database.Contexts\HeroesMatchTracker.Infrastructure.Database.Contexts.csproj", "{57E4F353-8217-4490-9007-BC891EF6B85C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure", "HeroesMatchTracker.Infrastructure\HeroesMatchTracker.Infrastructure.csproj", "{51678454-DFE6-4118-84E4-26182887FF05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,16 +52,25 @@ Global
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3C591D6-59CB-4474-BD39-4E7DBCAFEDD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3C591D6-59CB-4474-BD39-4E7DBCAFEDD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3C591D6-59CB-4474-BD39-4E7DBCAFEDD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3C591D6-59CB-4474-BD39-4E7DBCAFEDD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6476F60A-18BC-4E62-A552-10FA6C15ACCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6476F60A-18BC-4E62-A552-10FA6C15ACCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6476F60A-18BC-4E62-A552-10FA6C15ACCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6476F60A-18BC-4E62-A552-10FA6C15ACCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E4F353-8217-4490-9007-BC891EF6B85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E4F353-8217-4490-9007-BC891EF6B85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E4F353-8217-4490-9007-BC891EF6B85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E4F353-8217-4490-9007-BC891EF6B85C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51678454-DFE6-4118-84E4-26182887FF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51678454-DFE6-4118-84E4-26182887FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51678454-DFE6-4118-84E4-26182887FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51678454-DFE6-4118-84E4-26182887FF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{16028B6D-48DD-4292-BE5F-C8AED18AF25D} = {6DF036B9-3A3C-461F-83DD-7310F5D7F3E9}
+		{6476F60A-18BC-4E62-A552-10FA6C15ACCE} = {6DF036B9-3A3C-461F-83DD-7310F5D7F3E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC85E985-8B67-4B19-9564-0F05C1AEFDC6}

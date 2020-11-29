@@ -1,6 +1,6 @@
 ﻿using HeroesMatchTracker.Core.Startup;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
-using HeroesMatchTracker.Infrastructure.Database.HMT2Contexts;
+using HeroesMatchTracker.Infrastructure.Database.Contexts.HMT2Contexts;
 using Microsoft.EntityFrameworkCore;
 using Splat;
 using System;

@@ -38,7 +38,13 @@ namespace HeroesMatchTracker
 #endif
             }
 
-            AppBootstrapper.RegisterDependencies(debugLoggingEnabled);
+            //AppBootstrapper.Initialize(debugLoggingEnabled);
+
+            //StartupWindow startupWindow = new StartupWindow();
+            //startupWindow.DataContext = new StartupWindowViewModel(startupWindow);
+
+
+            //((IClassicDesktopStyleApplicationLifetime)ApplicationLifetime).MainWindow = startupWindow;
 
             ((IClassicDesktopStyleApplicationLifetime)ApplicationLifetime).MainWindow = new StartupWindow
             {

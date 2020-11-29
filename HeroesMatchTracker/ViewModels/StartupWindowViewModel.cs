@@ -18,7 +18,7 @@ namespace HeroesMatchTracker.ViewModels
 
         private readonly ReactiveCommand<Unit, Unit> _closeStartupWindow;
 
-        public StartupWindowViewModel(ILoadStartup? startup = null, IDatabaseInit? databaseInit = null, IStartupWindow? startupWindow = null)
+        public StartupWindowViewModel(IStartupWindow? startupWindow = null, ILoadStartup? startup = null, IDatabaseInit? databaseInit = null)
         {
             _startup = startup ??= Locator.Current.GetService<ILoadStartup>();
             _databaseInit = databaseInit ??= Locator.Current.GetService<IDatabaseInit>();
@@ -77,7 +77,7 @@ namespace HeroesMatchTracker.ViewModels
             await Task.Delay(100);
 
             _startupWindow.CreateMainWindow();
-            _startupWindow.CloseStartupWindw();
+            _startupWindow.CloseStartupWindow();
         }
 
         private void HandleDeactivation()

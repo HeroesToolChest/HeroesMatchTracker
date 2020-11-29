@@ -2,7 +2,7 @@
 {
     public interface IStartupWindow
     {
-        void CloseStartupWindw();
+        void CloseStartupWindow();
 
         void CreateMainWindow();
     }

@@ -5,58 +5,39 @@ using System.Threading.Tasks;
 
 namespace HeroesMatchTracker.Infrastructure.Database.Repository
 {
-    public abstract class RepositoryBase<TContext> : IDisposable
+    public abstract class RepositoryBase<TContext>
         where TContext : DbContext
     {
-        private readonly IDbContextFactory<TContext> _dbContextFactory;
-
-        private bool _disposedValue;
-
-        public RepositoryBase(IDbContextFactory<TContext> dbContextFactory)
+        public int SaveChanges(TContext context)
         {
-            _dbContextFactory = dbContextFactory;
-            Context = _dbContextFactory.CreateDbContext();
+            if (context is null)
+                throw new ArgumentNullException(nameof(context));
+
+            return context.SaveChanges();
         }
 
-        protected TContext? Context { get; private set; }
-
-        public int SaveChanges()
+        public int SaveChanges(TContext context, bool acceptAllChangesOnSuccess)
         {
-            throw new System.NotImplementedException();
+            if (context is null)
+                throw new ArgumentNullException(nameof(context));
+
+            return context.SaveChanges(acceptAllChangesOnSuccess);
         }
 
-        public int SaveChanges(bool acceptAllChangesOnSuccess)
+        public Task<int> SaveChangesAsync(TContext context, bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
-            throw new System.NotImplementedException();
+            if (context is null)
+                throw new ArgumentNullException(nameof(context));
+
+            return context.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
-        public Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        public Task<int> SaveChangesAsync(TContext context, CancellationToken cancellationToken = default)
         {
-            throw new System.NotImplementedException();
-        }
+            if (context is null)
+                throw new ArgumentNullException(nameof(context));
 
-        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_disposedValue)
-            {
-                if (disposing)
-                {
-                    Context?.Dispose();
-                }
-
-                _disposedValue = true;
-            }
+            return context.SaveChangesAsync(cancellationToken);
         }
     }
 }
