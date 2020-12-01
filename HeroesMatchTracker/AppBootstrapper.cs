@@ -7,6 +7,7 @@ using HeroesMatchTracker.Infrastructure.Database;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Contexts.HMT2Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
+using HeroesMatchTracker.Infrastructure.ReplayParser;
 using HeroesMatchTracker.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

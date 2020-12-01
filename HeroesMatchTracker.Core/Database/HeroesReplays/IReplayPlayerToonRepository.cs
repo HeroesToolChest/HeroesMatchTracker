@@ -3,7 +3,7 @@ using HeroesMatchTracker.Shared.Entities;
 
 namespace HeroesMatchTracker.Core.Database.HeroesReplays
 {
-    public interface IReplayPlayerToonRepository : IUnitOfWork<HeroesReplaysDbContext>
+    public interface IReplayPlayerToonRepository
     {
         bool IsExists(HeroesReplaysDbContext context, ReplayPlayerToon replayPlayerToon);
 

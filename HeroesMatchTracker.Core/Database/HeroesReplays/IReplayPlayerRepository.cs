@@ -3,7 +3,7 @@ using HeroesMatchTracker.Shared.Entities;
 
 namespace HeroesMatchTracker.Core.Database.HeroesReplays
 {
-    public interface IReplayPlayerRepository : IUnitOfWork<HeroesReplaysDbContext>
+    public interface IReplayPlayerRepository
     {
         ReplayPlayer? GetPlayer(HeroesReplaysDbContext context, long playerId);
 

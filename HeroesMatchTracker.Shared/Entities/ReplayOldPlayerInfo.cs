@@ -28,6 +28,10 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the datetime in UTC of the replay that this entry was added.
         /// </summary>
+        /// <remarks>
+        /// This is the earliest we have found this entry. This date will be updated to an earlier
+        /// time if an older replay is found.
+        /// </remarks>
         public DateTime DateAdded { get; set; }
 
         public virtual ReplayPlayer? ReplayPlayer { get; set; }

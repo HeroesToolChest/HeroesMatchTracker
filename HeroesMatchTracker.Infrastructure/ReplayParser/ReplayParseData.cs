@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace HeroesMatchTracker.Infrastructure
+namespace HeroesMatchTracker.Infrastructure.ReplayParser
 {
     public class ReplayParseData : IReplayParseData
     {
@@ -58,19 +58,20 @@ namespace HeroesMatchTracker.Infrastructure
             if (replay is null)
                 throw new ArgumentNullException(nameof(replay));
 
-            ReplayMatch replayMatch = new ();
+            ReplayMatch replayMatch = new();
 
             SetReplayData(replay, replayMatch, fileName, hash);
             SetMatchPlayers(context, replay, replayMatch);
 
             context.Replays.Add(replayMatch);
 
-            _replayMatchRepository.SaveChanges(context);
+            context.SaveChanges();
 
             if (replay is null)
                 throw new ArgumentNullException(nameof(replay));
         }
 
+        // set basic replay properties
         private static void SetReplayData(StormReplay replay, ReplayMatch replayMatch, string fileName, string hash)
         {
             replayMatch.FileName = Path.GetFileName(fileName) ?? string.Empty;
@@ -173,26 +174,49 @@ namespace HeroesMatchTracker.Infrastructure
 
                     DateTime? latestReplayDateTime = _replayMatchRepository.GetLastestReplayTimeStamp(context);
 
-                    if (existingReplayPlayer.BattleTagName is not null && !existingReplayPlayer.BattleTagName.Equals(replayMatchPlayer.BattleTagName, StringComparison.Ordinal))
+                    if (existingReplayPlayer.BattleTagName is not null && !existingReplayPlayer.BattleTagName.Equals(replayMatchPlayer.ReplayPlayer.BattleTagName, StringComparison.Ordinal))
                     {
-                        // if the new battletag of the player is different check if we have it already in the db for the player
-                        ReplayOldPlayerInfo? oldPlayerInfo = existingReplayPlayer.ReplayOldPlayerInfos!.FirstOrDefault(x => x.BattleTagName == existingReplayPlayer.BattleTagName && x.DateAdded == replayTimestamp);
-
-                        // not found
-                        if (oldPlayerInfo is null)
+                        if (existingReplayPlayer.ReplayOldPlayerInfos is not null)
                         {
-                            existingReplayPlayer.ReplayOldPlayerInfos!.Add(new ReplayOldPlayerInfo()
-                            {
-                                BattleTagName = replayMatchPlayer.BattleTagName,
-                                DateAdded = replayTimestamp,
-                            });
-                        }
-                    }
+                            // if the new battletag of the player is different check if we have it already in the db for the player
+                            ReplayOldPlayerInfo? oldPlayerInfo = existingReplayPlayer.ReplayOldPlayerInfos.FirstOrDefault(x => x.BattleTagName is not null && x.BattleTagName.Equals(replayMatchPlayer.ReplayPlayer.BattleTagName, StringComparison.Ordinal));
 
-                    // we only want to update the battletag if the current replay is newer than what we have in the db
-                    if (latestReplayDateTime is null || replayTimestamp > latestReplayDateTime)
-                    {
-                        existingReplayPlayer.BattleTagName = replayMatchPlayer.BattleTagName;
+                            // not found
+                            if (oldPlayerInfo is null)
+                            {
+                                existingReplayPlayer.ReplayOldPlayerInfos.Add(new ReplayOldPlayerInfo()
+                                {
+                                    BattleTagName = existingReplayPlayer.BattleTagName,
+                                    DateAdded = replayTimestamp,
+                                });
+                            }
+                            else
+                            {
+                                // check date, if the replay is older update the dateAdded we have in the db
+                                if (replayTimestamp < oldPlayerInfo.DateAdded)
+                                {
+                                    oldPlayerInfo.DateAdded = replayTimestamp;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // replayOldPlayerInfo does not exists yet, so we create it and add the existingReplayPlayer battle tag to it
+                            existingReplayPlayer.ReplayOldPlayerInfos = new List<ReplayOldPlayerInfo>()
+                            {
+                                new()
+                                {
+                                    BattleTagName = existingReplayPlayer.BattleTagName,
+                                    DateAdded = replayTimestamp,
+                                },
+                            };
+                        }
+
+                        // we only want to update the battletag if the current replay is newer than what we have in the db
+                        if (latestReplayDateTime is null || replayTimestamp > latestReplayDateTime)
+                        {
+                            existingReplayPlayer.BattleTagName = replayMatchPlayer.ReplayPlayer.BattleTagName;
+                        }
                     }
 
                     existingReplayPlayer.Seen += 1;

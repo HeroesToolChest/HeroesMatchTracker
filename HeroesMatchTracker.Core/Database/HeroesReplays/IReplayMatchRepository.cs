@@ -3,7 +3,7 @@ using System;
 
 namespace HeroesMatchTracker.Core.Database.HeroesReplays
 {
-    public interface IReplayMatchRepository : IUnitOfWork<HeroesReplaysDbContext>
+    public interface IReplayMatchRepository
     {
         bool IsExists(HeroesReplaysDbContext context, string hash);
 

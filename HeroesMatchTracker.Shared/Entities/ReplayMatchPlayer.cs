@@ -22,11 +22,11 @@ namespace HeroesMatchTracker.Shared.Entities
         /// </summary>
         public long PlayerId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the player's current battle tag name in this match. Contains the # followed by numbers.
-        /// </summary>
-        [StringLength(50)]
-        public string? BattleTagName { get; set; }
+        ///// <summary>
+        ///// Gets or sets the player's current battle tag name in this match. Contains the # followed by numbers.
+        ///// </summary>
+        //[StringLength(50)]
+        //public string? BattleTagName { get; set; }
 
         //public long MatchPlayerScoreResultId { get; set; }
 

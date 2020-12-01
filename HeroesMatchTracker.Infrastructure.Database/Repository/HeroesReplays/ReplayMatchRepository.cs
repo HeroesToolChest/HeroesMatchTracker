@@ -22,6 +22,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays
         {
             if (context is null)
                 throw new ArgumentNullException(nameof(context));
+
             return context.Replays.Any(x => x.ReplayId == replayId);
         }
 

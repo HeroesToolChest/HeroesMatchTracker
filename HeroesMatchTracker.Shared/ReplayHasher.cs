@@ -22,7 +22,7 @@ namespace HeroesMatchTracker.Shared
 
             foreach (StormPlayer player in replay.StormPlayersWithObservers)
             {
-                if (player == null || string.IsNullOrWhiteSpace(player.PlayerHero?.HeroName))
+                if (player is null || string.IsNullOrWhiteSpace(player.PlayerHero?.HeroName))
                     continue;
 
                 sb.Append(player.PlayerHero.HeroName);
