@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace HeroesMatchTracker.Infrastructure.Database.Migrations
+namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesReplays
 {
-    public partial class InitialCreate : Migration
+    public partial class InitalCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -98,7 +98,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     ReplayId = table.Column<long>(type: "INTEGER", nullable: false),
                     PlayerId = table.Column<long>(type: "INTEGER", nullable: false),
-                    BattleTagName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     Team = table.Column<int>(type: "INTEGER", nullable: false),
                     PlayerType = table.Column<int>(type: "INTEGER", nullable: false),
                     PlayerNumber = table.Column<int>(type: "INTEGER", nullable: false),
@@ -156,6 +155,62 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ReplayMatchPlayerScoreResults",
+                columns: table => new
+                {
+                    MatchPlayerId = table.Column<long>(type: "INTEGER", nullable: false),
+                    SoloKills = table.Column<int>(type: "INTEGER", nullable: true),
+                    TakeDowns = table.Column<int>(type: "INTEGER", nullable: true),
+                    Assists = table.Column<int>(type: "INTEGER", nullable: true),
+                    Deaths = table.Column<int>(type: "INTEGER", nullable: true),
+                    SiegeDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    CreepDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    MinionDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    SummonDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    StructureDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    HeroDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    DamageTaken = table.Column<int>(type: "INTEGER", nullable: true),
+                    DamageSoaked = table.Column<int>(type: "INTEGER", nullable: true),
+                    Healing = table.Column<int>(type: "INTEGER", nullable: true),
+                    SelfHealing = table.Column<int>(type: "INTEGER", nullable: true),
+                    ExperienceContribution = table.Column<int>(type: "INTEGER", nullable: true),
+                    MetaExperience = table.Column<int>(type: "INTEGER", nullable: true),
+                    MercCampCaptures = table.Column<int>(type: "INTEGER", nullable: true),
+                    TownKills = table.Column<int>(type: "INTEGER", nullable: true),
+                    WatchTowerCaptures = table.Column<int>(type: "INTEGER", nullable: true),
+                    TimeSpentDeadTicks = table.Column<long>(type: "INTEGER", nullable: true),
+                    SpellDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    PhysicalDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    OnFireTimeonFireTicks = table.Column<long>(type: "INTEGER", nullable: true),
+                    MinionKills = table.Column<int>(type: "INTEGER", nullable: true),
+                    RegenGlobes = table.Column<int>(type: "INTEGER", nullable: true),
+                    HighestKillStreak = table.Column<int>(type: "INTEGER", nullable: true),
+                    ProtectionGivenToAllies = table.Column<int>(type: "INTEGER", nullable: true),
+                    TimeCCdEnemyHeroesTicks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TimeRootingEnemyHeroesTicks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TimeStunningEnemyHeroesTicks = table.Column<long>(type: "INTEGER", nullable: true),
+                    ClutchHealsPerformed = table.Column<int>(type: "INTEGER", nullable: true),
+                    EscapesPerformed = table.Column<int>(type: "INTEGER", nullable: true),
+                    VengeancesPerformed = table.Column<int>(type: "INTEGER", nullable: true),
+                    OutnumberedDeaths = table.Column<int>(type: "INTEGER", nullable: true),
+                    TeamfightEscapesPerformed = table.Column<int>(type: "INTEGER", nullable: true),
+                    TeamfightHealingDone = table.Column<int>(type: "INTEGER", nullable: true),
+                    TeamfightDamageTaken = table.Column<int>(type: "INTEGER", nullable: true),
+                    TeamfightHeroDamage = table.Column<int>(type: "INTEGER", nullable: true),
+                    Multikill = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReplayMatchPlayerScoreResults", x => x.MatchPlayerId);
+                    table.ForeignKey(
+                        name: "FK_ReplayMatchPlayerScoreResults_ReplayMatchPlayers_MatchPlayerId",
+                        column: x => x.MatchPlayerId,
+                        principalTable: "ReplayMatchPlayers",
+                        principalColumn: "MatchPlayerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ReplayMatchPlayers_ReplayId",
                 table: "ReplayMatchPlayers",
@@ -191,7 +246,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ReplayMatchPlayers");
+                name: "ReplayMatchPlayerScoreResults");
 
             migrationBuilder.DropTable(
                 name: "ReplayOldPlayerInfos");
@@ -201,6 +256,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
 
             migrationBuilder.DropTable(
                 name: "ServerReplayUploads");
+
+            migrationBuilder.DropTable(
+                name: "ReplayMatchPlayers");
 
             migrationBuilder.DropTable(
                 name: "ReplayPlayers");

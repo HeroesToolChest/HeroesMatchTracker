@@ -4,14 +4,14 @@ using HeroesMatchTracker.Core.Database.HeroesReplays;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
-using HeroesMatchTracker.Infrastructure.ReplayParser;
+using HeroesMatchTracker.Infrastructure.Tests;
 using HeroesMatchTracker.Shared.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace HeroesMatchTracker.Infrastructure.Tests
+namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
 {
     [TestClass]
     public class ReplayParseDataTests
@@ -261,6 +261,31 @@ namespace HeroesMatchTracker.Infrastructure.Tests
             Assert.IsTrue(updatedPlayer.BattleTagName!.StartsWith("VALuuuuu", StringComparison.Ordinal));
             Assert.IsTrue(updatedPlayer.ReplayOldPlayerInfos!.First().BattleTagName!.StartsWith("somenewname", StringComparison.Ordinal));
             Assert.AreEqual(2, updatedPlayer.ReplayOldPlayerInfos!.Count);
+        }
+
+        [TestMethod]
+        public void AddReplayHeroLevelTest()
+        {
+            string fileName1 = "Hanamura1_54339.StormR";
+            string file1 = Path.Combine("TestReplays", fileName1);
+
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            StormReplayResult replayResult1 = StormReplay.Parse(file1, new ParseOptions()
+            {
+                ShouldParseGameEvents = true,
+                ShouldParseMessageEvents = true,
+                ShouldParseTrackerEvents = true,
+            });
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash1 = replayParseData.GetReplayHash(replayResult1.Replay);
+
+            replayParseData.AddReplay(context, replayResult1.FileName, replayHash1, replayResult1.Replay);
+
+            ReplayPlayer player = context.ReplayPlayers.First(x => x.ShortcutId == "T:56372890#167");
+
+            Assert.AreEqual(25, player.ReplayMatchPlayers!.First().HeroLevel);
         }
     }
 }

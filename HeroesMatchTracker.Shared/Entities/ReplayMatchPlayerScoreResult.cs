@@ -254,6 +254,6 @@ namespace HeroesMatchTracker.Shared.Entities
         /// </summary>
         public int? Multikill { get; set; }
 
-        public virtual ReplayMatchPlayer ReplayMatchPlayer { get; set; } = null!;
+        public virtual ReplayMatchPlayer? ReplayMatchPlayer { get; set; }
     }
 }

@@ -119,7 +119,7 @@ namespace HeroesMatchTracker.Shared.Entities
 
         public virtual ReplayPlayer? ReplayPlayer { get; set; }
 
-        //public virtual ReplayMatchPlayerScoreResult ReplayMatchPlayerScoreResult { get; set; } = null!;
+        public virtual ReplayMatchPlayerScoreResult? ReplayMatchPlayerScoreResult { get; set; }
 
         //public virtual ReplayMatchPlayerTalent ReplayMatchPlayerTalent { get; set; } = null!;
 

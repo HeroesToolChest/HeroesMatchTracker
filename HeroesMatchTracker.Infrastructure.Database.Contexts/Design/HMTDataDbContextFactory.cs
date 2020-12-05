@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace HeroesMatchTracker.Infrastructure.Database.Design
+namespace HeroesMatchTracker.Infrastructure.Contexts.Database.Design
 {
     /// <summary>
     /// For design-time only. Used for ef migration command.

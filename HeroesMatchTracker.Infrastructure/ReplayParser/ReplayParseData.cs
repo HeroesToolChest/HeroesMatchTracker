@@ -91,20 +91,22 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
         {
             return;
 
-            // pull party map (chromie / stitches
+            // pull party map (chromie / stitches)
         }
 
         private void SetMatchPlayers(HeroesReplaysDbContext context, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
 
+            IEnumerable<StormPlayer> allPlayers = replay.StormPlayers.Concat(replay.StormObservers);
             int playerNum = 0;
-            foreach (StormPlayer player in replay.StormPlayers)
+
+            foreach (StormPlayer player in allPlayers)
             {
                 if (player is null)
                     continue;
 
-                ReplayMatchPlayer replayMatchPlayer = new ReplayMatchPlayer()
+                ReplayMatchPlayer replayMatchPlayer = new()
                 {
                     AccountLevel = player.AccountLevel,
                     Difficulty = player.PlayerDifficulty.ToString(),
@@ -123,6 +125,8 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     PlayerNumber = playerNum,
                     PlayerType = player.PlayerType,
                 };
+
+                AdjustHeroLevelFromMasterTiers(player, replayMatchPlayer);
 
                 replayMatchPlayer.ReplayPlayer = new ReplayPlayer()
                 {
@@ -146,6 +150,8 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                 }
 
                 UpdateOrAddPlayer(context, replay.Timestamp, replayMatchPlayer);
+
+                AddPlayerScoreResults(context, player, replayMatchPlayer);
 
                 replayMatch.ReplayMatchPlayers.Add(replayMatchPlayer);
             }
@@ -232,15 +238,73 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
-        private void AddPlayerScoreResults(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        private void AddPlayerScoreResults(HeroesReplaysDbContext context, StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
         {
-            //player.
-            ReplayMatchPlayerScoreResult replayMatchPlayerScoreResult = new ReplayMatchPlayerScoreResult()
+            ScoreResult? result = player.ScoreResult;
+
+            if (result is not null)
             {
+                replayMatchPlayer.ReplayMatchPlayerScoreResult = new ReplayMatchPlayerScoreResult()
+                {
+                    Assists = result.Assists,
+                    ClutchHealsPerformed = result.ClutchHealsPerformed,
+                    CreepDamage = result.CreepDamage,
+                    DamageSoaked = result.DamageSoaked,
+                    DamageTaken = result.DamageTaken,
+                    Deaths = result.Deaths,
+                    EscapesPerformed = result.EscapesPerformed,
+                    ExperienceContribution = result.ExperienceContribution,
+                    Healing = result.Healing,
+                    HeroDamage = result.HeroDamage,
+                    HighestKillStreak = result.HighestKillStreak,
+                    MercCampCaptures = result.MercCampCaptures,
+                    MetaExperience = result.MetaExperience,
+                    MinionDamage = result.MinionDamage,
+                    MinionKills = result.MinionKills,
+                    Multikill = result.Multikill,
+                    OnFireTimeonFire = result.OnFireTimeonFire,
+                    OutnumberedDeaths = result.OutnumberedDeaths,
+                    PhysicalDamage = result.PhysicalDamage,
+                    ProtectionGivenToAllies = result.ProtectionGivenToAllies,
+                    RegenGlobes = result.RegenGlobes,
+                    SelfHealing = result.SelfHealing,
+                    SiegeDamage = result.SiegeDamage,
+                    SoloKills = result.SoloKills,
+                    SpellDamage = result.SpellDamage,
+                    StructureDamage = result.StructureDamage,
+                    SummonDamage = result.SummonDamage,
+                    TakeDowns = result.Takedowns,
+                    TeamfightDamageTaken = result.TeamfightDamageTaken,
+                    TeamfightEscapesPerformed = result.TeamfightEscapesPerformed,
+                    TeamfightHealingDone = result.TeamfightHealingDone,
+                    TeamfightHeroDamage = result.TeamfightHeroDamage,
+                    TimeCCdEnemyHeroes = result.TimeCCdEnemyHeroes,
+                    TimeRootingEnemyHeroes = result.TimeRootingEnemyHeroes,
+                    TimeSpentDead = result.TimeSpentDead,
+                    TimeStunningEnemyHeroes = result.TimeStunningEnemyHeroes,
+                    TownKills = result.TownKills,
+                    VengeancesPerformed = result.VengeancesPerformed,
+                    WatchTowerCaptures = result.WatchTowerCaptures,
+                };
+            }
+        }
 
-            };
-
-            //replayMatchPlayer.
+        private void AdjustHeroLevelFromMasterTiers(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            if (player.PlayerHero is not null && player.IsAutoSelect is false)
+            {
+                if (player.HeroMasteryTiers.ToDictionary(x => x.HeroAttributeId, x => x.TierLevel).TryGetValue(player.PlayerHero.HeroAttributeId, out int tierLevel))
+                {
+                    if (tierLevel == 2 && player.PlayerHero.HeroLevel < 25)
+                        replayMatchPlayer.HeroLevel = 25;
+                    else if (tierLevel == 3 && player.PlayerHero.HeroLevel < 50)
+                        replayMatchPlayer.HeroLevel = 50;
+                    else if (tierLevel == 4 && player.PlayerHero.HeroLevel < 75)
+                        replayMatchPlayer.HeroLevel = 75;
+                    else if (tierLevel == 5 && player.PlayerHero.HeroLevel < 100)
+                        replayMatchPlayer.HeroLevel = 100;
+                }
+            }
         }
     }
 }

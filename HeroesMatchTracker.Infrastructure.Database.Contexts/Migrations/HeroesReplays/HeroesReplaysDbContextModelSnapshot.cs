@@ -3,22 +3,20 @@ using System;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace HeroesMatchTracker.Infrastructure.Database.Migrations
+namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesReplays
 {
     [DbContext(typeof(HeroesReplaysDbContext))]
-    [Migration("20201003163807_InitialCreate")]
-    partial class InitialCreate
+    partial class HeroesReplaysDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.0-rc.1.20451.13");
+                .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatch", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
                 {
                     b.Property<long>("ReplayId")
                         .ValueGeneratedOnAdd()
@@ -67,7 +65,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("Replays");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
                     b.Property<long>("MatchPlayerId")
                         .ValueGeneratedOnAdd()
@@ -75,10 +73,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
 
                     b.Property<int?>("AccountLevel")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("BattleTagName")
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Difficulty")
                         .HasMaxLength(25)
@@ -146,7 +140,134 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("ReplayMatchPlayers");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayOldPlayerInfo", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
+                {
+                    b.Property<long>("MatchPlayerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Assists")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ClutchHealsPerformed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CreepDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("DamageSoaked")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("DamageTaken")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Deaths")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("EscapesPerformed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ExperienceContribution")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Healing")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("HeroDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("HighestKillStreak")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MercCampCaptures")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MetaExperience")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MinionDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("MinionKills")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Multikill")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("OnFireTimeonFireTicks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("OutnumberedDeaths")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PhysicalDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ProtectionGivenToAllies")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("RegenGlobes")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("SelfHealing")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("SiegeDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("SoloKills")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("SpellDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("StructureDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("SummonDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TakeDowns")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TeamfightDamageTaken")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TeamfightEscapesPerformed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TeamfightHealingDone")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TeamfightHeroDamage")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeCCdEnemyHeroesTicks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeRootingEnemyHeroesTicks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpentDeadTicks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeStunningEnemyHeroesTicks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TownKills")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("VengeancesPerformed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("WatchTowerCaptures")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("MatchPlayerId");
+
+                    b.ToTable("ReplayMatchPlayerScoreResults");
+                });
+
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
                 {
                     b.Property<long>("ReplayOldPlayerInfoId")
                         .ValueGeneratedOnAdd()
@@ -172,7 +293,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("ReplayOldPlayerInfos");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
                 {
                     b.Property<long>("PlayerId")
                         .ValueGeneratedOnAdd()
@@ -206,7 +327,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("ReplayPlayers");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", b =>
                 {
                     b.Property<long>("PlayerId")
                         .HasColumnType("INTEGER");
@@ -231,7 +352,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("ReplayPlayerToons");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ServerReplayUpload", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ServerReplayUpload", b =>
                 {
                     b.Property<long>("ServerReplayUploadId")
                         .ValueGeneratedOnAdd()
@@ -256,15 +377,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.ToTable("ServerReplayUploads");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatch", "Replay")
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
                         .WithMany("ReplayMatchPlayers")
                         .HasForeignKey("ReplayId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithMany("ReplayMatchPlayers")
                         .HasForeignKey("ReplayPlayerPlayerId");
 
@@ -273,29 +394,40 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayOldPlayerInfo", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                        .WithOne("ReplayMatchPlayerScoreResult")
+                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", "MatchPlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReplayMatchPlayer");
+                });
+
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
+                {
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithMany("ReplayOldPlayerInfos")
                         .HasForeignKey("ReplayPlayerPlayerId");
 
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithOne("ReplayPlayerToon")
-                        .HasForeignKey("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", "PlayerId")
+                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", "PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ServerReplayUpload", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ServerReplayUpload", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatch", "Replay")
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
                         .WithMany("ServerReplayUploads")
                         .HasForeignKey("ReplayId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -304,14 +436,19 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations
                     b.Navigation("Replay");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatch", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
                 {
                     b.Navigation("ReplayMatchPlayers");
 
                     b.Navigation("ServerReplayUploads");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
+                {
+                    b.Navigation("ReplayMatchPlayerScoreResult");
+                });
+
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
                 {
                     b.Navigation("ReplayMatchPlayers");
 

@@ -23,6 +23,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
         public virtual DbSet<ReplayOldPlayerInfo> ReplayOldPlayerInfos { get; set; } = null!;
 
+        public virtual DbSet<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; } = null!;
 
         //public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; } = null!;
 
@@ -35,7 +36,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
         //public virtual DbSet<ReplayMatchPlayerLoadout> ReplayMatchPlayerLoadouts { get; set; } = null!;
 
-        //public virtual DbSet<ReplayMatchPlayerScoreResult> ReplayMatchPlayerScoreResults { get; set; } = null!;
+
 
         //public virtual DbSet<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; } = null!;
 
@@ -68,6 +69,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
             modelBuilder.Entity<ReplayPlayerToon>()
                 .HasIndex(x => new { x.Region, x.ProgramId, x.Realm, x.Id });
+
+            modelBuilder.Entity<ReplayMatchPlayer>()
+                .HasOne(x => x.ReplayMatchPlayerScoreResult)
+                .WithOne(x => x!.ReplayMatchPlayer!)
+                .HasForeignKey<ReplayMatchPlayerScoreResult>(x => x.MatchPlayerId);
 
             //modelBuilder.Entity<ReplayMatch>()
             //    .HasMany(x => x.ReplayMatchAwards)
