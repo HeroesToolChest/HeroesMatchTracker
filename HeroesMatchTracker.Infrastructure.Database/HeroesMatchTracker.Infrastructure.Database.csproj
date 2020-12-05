@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\HeroesReplays\" />
     <Folder Include="Repository\HMTData\" />
   </ItemGroup>
 
