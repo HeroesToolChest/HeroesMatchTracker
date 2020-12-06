@@ -22,12 +22,13 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasMaxLength(260)
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("GameMode")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("HasAI")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("HasObservers")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Hash")
@@ -43,8 +44,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
+                    b.Property<long?>("OwnerPlayerId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<long?>("RandomValue")
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("Region")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ReplayFilePath")
+                        .HasColumnType("TEXT");
 
                     b.Property<long>("ReplayLengthTicks")
                         .HasColumnType("INTEGER");
@@ -57,10 +67,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Property<DateTime?>("TimeStamp")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("WinningTeam")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("ReplayId");
 
                     b.HasIndex("Hash")
                         .IsUnique();
+
+                    b.HasIndex("OwnerPlayerId");
 
                     b.ToTable("Replays");
                 });
@@ -81,6 +96,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Property<bool>("HasActiveBoost")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("HeroAttributeId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("HeroId")
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
@@ -90,6 +108,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
                     b.Property<string>("HeroName")
                         .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("HeroUnitId")
                         .HasColumnType("TEXT");
 
                     b.Property<bool?>("IsAutoSelect")
@@ -436,6 +457,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.ToTable("ServerReplayUploads");
                 });
 
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
+                {
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "OwnerReplayPlayer")
+                        .WithMany("OwnerReplayMatches")
+                        .HasForeignKey("OwnerPlayerId");
+
+                    b.Navigation("OwnerReplayPlayer");
+                });
+
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
                     b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
@@ -522,6 +552,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
                 {
+                    b.Navigation("OwnerReplayMatches");
+
                     b.Navigation("ReplayMatchPlayers");
 
                     b.Navigation("ReplayOldPlayerInfos");

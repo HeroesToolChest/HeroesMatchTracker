@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesReplays
 {
-    public partial class InitalCreate : Migration
+    public partial class IntialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,27 +24,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ReplayPlayers", x => x.PlayerId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Replays",
-                columns: table => new
-                {
-                    ReplayId = table.Column<long>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    RandomValue = table.Column<long>(type: "INTEGER", nullable: true),
-                    Hash = table.Column<string>(type: "TEXT", nullable: false),
-                    MapName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    MapId = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    ReplayVersion = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
-                    ReplayLengthTicks = table.Column<long>(type: "INTEGER", nullable: false),
-                    GameMode = table.Column<int>(type: "INTEGER", nullable: false),
-                    TimeStamp = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    FileName = table.Column<string>(type: "TEXT", maxLength: 260, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Replays", x => x.ReplayId);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,6 +70,38 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 });
 
             migrationBuilder.CreateTable(
+                name: "Replays",
+                columns: table => new
+                {
+                    ReplayId = table.Column<long>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    OwnerPlayerId = table.Column<long>(type: "INTEGER", nullable: true),
+                    RandomValue = table.Column<long>(type: "INTEGER", nullable: true),
+                    Hash = table.Column<string>(type: "TEXT", nullable: false),
+                    MapName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    MapId = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    ReplayVersion = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    ReplayLengthTicks = table.Column<long>(type: "INTEGER", nullable: false),
+                    GameMode = table.Column<int>(type: "INTEGER", nullable: false),
+                    TimeStamp = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    HasAI = table.Column<bool>(type: "INTEGER", nullable: false),
+                    HasObservers = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Region = table.Column<int>(type: "INTEGER", nullable: false),
+                    WinningTeam = table.Column<int>(type: "INTEGER", nullable: false),
+                    ReplayFilePath = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Replays", x => x.ReplayId);
+                    table.ForeignKey(
+                        name: "FK_Replays_ReplayPlayers_OwnerPlayerId",
+                        column: x => x.OwnerPlayerId,
+                        principalTable: "ReplayPlayers",
+                        principalColumn: "PlayerId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ReplayMatchPlayers",
                 columns: table => new
                 {
@@ -104,6 +115,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     HeroName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     HeroId = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     HeroLevel = table.Column<int>(type: "INTEGER", nullable: true),
+                    HeroUnitId = table.Column<string>(type: "TEXT", nullable: true),
+                    HeroAttributeId = table.Column<string>(type: "TEXT", nullable: true),
                     AccountLevel = table.Column<int>(type: "INTEGER", nullable: true),
                     PartyValue = table.Column<long>(type: "INTEGER", nullable: true),
                     PartySize = table.Column<int>(type: "INTEGER", nullable: true),
@@ -269,6 +282,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Replays_OwnerPlayerId",
+                table: "Replays",
+                column: "OwnerPlayerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ServerReplayUploads_ReplayId",
                 table: "ServerReplayUploads",
                 column: "ReplayId");
@@ -295,10 +313,10 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 name: "ReplayMatchPlayers");
 
             migrationBuilder.DropTable(
-                name: "ReplayPlayers");
+                name: "Replays");
 
             migrationBuilder.DropTable(
-                name: "Replays");
+                name: "ReplayPlayers");
         }
     }
 }

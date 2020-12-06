@@ -53,6 +53,8 @@ namespace HeroesMatchTracker.Shared.Entities
         /// </summary>
         public string? Notes { get; set; }
 
+        public virtual ICollection<ReplayMatch>? OwnerReplayMatches { get; set; }
+
         public virtual ReplayPlayerToon? ReplayPlayerToon { get; set; }
 
         public virtual ICollection<ReplayOldPlayerInfo>? ReplayOldPlayerInfos { get; set; }

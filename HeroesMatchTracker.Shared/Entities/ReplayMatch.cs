@@ -1,4 +1,5 @@
-﻿using Heroes.StormReplayParser.Replay;
+﻿using Heroes.StormReplayParser.Player;
+using Heroes.StormReplayParser.Replay;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,13 +8,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HeroesMatchTracker.Shared.Entities
 {
     [Table("Replays")]
-    public class ReplayMatch : BaseEntity
+    public class ReplayMatch : IEntity
     {
         /// <summary>
         /// Gets or sets the unique id.
         /// </summary>
         [Key]
         public long ReplayId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the player id of the owner of this replay (foreign key).
+        /// </summary>
+        public long? OwnerPlayerId { get; set; }
 
         /// <summary>
         /// Gets or sets the random value associated with the replay.
@@ -69,13 +75,37 @@ namespace HeroesMatchTracker.Shared.Entities
         public DateTime? TimeStamp { get; set; }
 
         /// <summary>
-        /// Gets or sets the filename of the replay.
+        /// Gets or sets a value indicating whether the replay has AI players.
         /// </summary>
-        [StringLength(260)]
-        public string FileName { get; set; } = string.Empty;
+        public bool HasAI { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the replay has observers.
+        /// </summary>
+        public bool HasObservers { get; set; }
+
+        /// <summary>
+        /// Gets or sets the region of the replay.
+        /// </summary>
+        public StormRegion Region { get; set; }
+
+        /// <summary>
+        /// Gets or sets the winning team.
+        /// </summary>
+        public StormTeam WinningTeam { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file path to the physical replay file.
+        /// </summary>
+        public string? ReplayFilePath { get; set; }
 
         [NotMapped]
         public string Result { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets the the owner of this replay file.
+        /// </summary>
+        public virtual ReplayPlayer? OwnerReplayPlayer { get; set; }
 
         public virtual ICollection<ServerReplayUpload>? ServerReplayUploads { get; set; }
 

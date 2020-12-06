@@ -64,9 +64,14 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .HasIndex(x => x.Hash)
                 .IsUnique();
 
+            modelBuilder.Entity<ReplayMatch>()
+                .HasOne(x => x.OwnerReplayPlayer)
+                .WithMany(y => y!.OwnerReplayMatches)
+                .HasForeignKey(x => x.OwnerPlayerId);
+
             modelBuilder.Entity<ReplayPlayer>()
                 .HasOne(x => x.ReplayPlayerToon)
-                .WithOne(x => x!.ReplayPlayer!)
+                .WithOne(y => y!.ReplayPlayer!)
                 .HasForeignKey<ReplayPlayerToon>(x => x.PlayerId);
 
             modelBuilder.Entity<ReplayPlayerToon>()
@@ -74,12 +79,12 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
             modelBuilder.Entity<ReplayMatchPlayer>()
                 .HasOne(x => x.ReplayMatchPlayerScoreResult)
-                .WithOne(x => x!.ReplayMatchPlayer!)
+                .WithOne(y => y!.ReplayMatchPlayer!)
                 .HasForeignKey<ReplayMatchPlayerScoreResult>(x => x.MatchPlayerId);
 
             modelBuilder.Entity<ReplayMatchPlayer>()
                 .HasOne(x => x.ReplayMatchPlayerTalent)
-                .WithOne(x => x!.ReplayMatchPlayer!)
+                .WithOne(y => y!.ReplayMatchPlayer!)
                 .HasForeignKey<ReplayMatchPlayerTalent>(x => x.MatchPlayerId);
 
             //modelBuilder.Entity<ReplayMatch>()

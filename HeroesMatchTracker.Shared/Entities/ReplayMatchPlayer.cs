@@ -41,18 +41,28 @@ namespace HeroesMatchTracker.Shared.Entities
         /// Gets or sets the hero name.
         /// </summary>
         [StringLength(50)]
-        public string? HeroName { get; set; } = string.Empty;
+        public string? HeroName { get; set; }
 
         /// <summary>
         /// Gets or sets the hero id.
         /// </summary>
         [StringLength(50)]
-        public string? HeroId { get; set; } = string.Empty;
+        public string? HeroId { get; set; }
 
         /// <summary>
         /// Gets or sets the hero level.
         /// </summary>
         public int? HeroLevel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hero unit id.
+        /// </summary>
+        public string? HeroUnitId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the hero attribute id.
+        /// </summary>
+        public string? HeroAttributeId { get; set; }
 
         /// <summary>
         /// Gets or sets the player's account level.

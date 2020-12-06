@@ -7,7 +7,6 @@ using HeroesMatchTracker.Shared;
 using HeroesMatchTracker.Shared.Entities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace HeroesMatchTracker.Infrastructure.ReplayParser
@@ -44,13 +43,13 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             return _replayMatchRepository.IsExists(context, hash);
         }
 
-        public void AddReplay(HeroesReplaysDbContext context, string fileName, string hash, StormReplay replay)
+        public void AddReplay(HeroesReplaysDbContext context, string? filePath, string hash, StormReplay replay)
         {
             if (context is null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (string.IsNullOrWhiteSpace(fileName))
-                throw new ArgumentException($"'{nameof(fileName)}' cannot be null or whitespace", nameof(fileName));
+            if (string.IsNullOrWhiteSpace(filePath))
+                throw new ArgumentException($"'{nameof(filePath)}' cannot be null or whitespace", nameof(filePath));
 
             if (string.IsNullOrWhiteSpace(hash))
                 throw new ArgumentException($"'{nameof(hash)}' cannot be null or whitespace", nameof(hash));
@@ -60,7 +59,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
             ReplayMatch replayMatch = new();
 
-            SetReplayData(replay, replayMatch, fileName, hash);
+            SetReplayData(replay, replayMatch, filePath, hash);
             SetMatchPlayers(context, replay, replayMatch);
 
             context.Replays.Add(replayMatch);
@@ -72,9 +71,9 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
         }
 
         // set basic replay properties
-        private static void SetReplayData(StormReplay replay, ReplayMatch replayMatch, string fileName, string hash)
+        private static void SetReplayData(StormReplay replay, ReplayMatch replayMatch, string? filePath, string hash)
         {
-            replayMatch.FileName = Path.GetFileName(fileName) ?? string.Empty;
+            replayMatch.ReplayFilePath = filePath;
             replayMatch.GameMode = replay.GameMode;
             replayMatch.MapId = replay.MapInfo.MapId;
             replayMatch.MapName = replay.MapInfo.MapName;
@@ -83,6 +82,10 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             replayMatch.ReplayVersion = replay.ReplayVersion.ToString();
             replayMatch.TimeStamp = replay.Timestamp;
             replayMatch.Hash = hash;
+            replayMatch.HasAI = replay.HasAI;
+            replayMatch.HasObservers = replay.HasObservers;
+            replayMatch.WinningTeam = replay.WinningTeam;
+            replayMatch.Region = replay.Region;
 
             // TODO: CheckForSpecialMaps()
         }
@@ -215,6 +218,8 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     HeroId = player.PlayerHero?.HeroId,
                     HeroLevel = player.PlayerHero?.HeroLevel,
                     HeroName = player.PlayerHero?.HeroName,
+                    HeroUnitId = player.PlayerHero?.HeroUnitId,
+                    HeroAttributeId = player.PlayerHero?.HeroAttributeId,
                     IsAutoSelect = player.IsAutoSelect,
                     IsBlizzardStaff = player.IsBlizzardStaff,
                     IsSilenced = player.IsSilenced,
@@ -248,6 +253,12 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                         Realm = player.ToonHandle.Realm,
                         Region = player.ToonHandle.Region,
                     };
+
+                    // check if this player is the owner
+                    if (replay.Owner is not null && player.ToonHandle.Equals(replay.Owner.ToonHandle))
+                    {
+                        replayMatch.OwnerReplayPlayer = replayMatchPlayer.ReplayPlayer;
+                    }
                 }
 
                 UpdateOrAddPlayer(context, replay.Timestamp, replayMatchPlayer);

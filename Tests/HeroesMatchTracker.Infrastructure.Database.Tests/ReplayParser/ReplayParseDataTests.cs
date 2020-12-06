@@ -23,13 +23,15 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         private readonly string _hanamuraTemple267679FileName = "HanamuraTemple2_67679.StormR";
         private readonly StormReplayResult _hanamura267679ReplayResult;
 
+        private readonly string _testReplaysFolder = "TestReplays";
+
         public ReplayParseDataTests()
         {
             _replayMatchRepository = new ReplayMatchRepository();
             _replayPlayerToonRepository = new ReplayPlayerToonRepository();
             _replayPlayerRepository = new ReplayPlayerRepository();
 
-            _hanamura267679ReplayResult = StormReplay.Parse(Path.Combine("TestReplays", _hanamuraTemple267679FileName), new ParseOptions()
+            _hanamura267679ReplayResult = StormReplay.Parse(Path.Combine(_testReplaysFolder, _hanamuraTemple267679FileName), new ParseOptions()
             {
                 ShouldParseGameEvents = true,
                 ShouldParseMessageEvents = true,
@@ -52,12 +54,14 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
             ReplayMatch replayMatchDb = context.Replays.Where(x => x.Hash == replayHash).FirstOrDefault()!;
 
             Assert.AreEqual(1, context.Replays.Count());
-            Assert.AreEqual(_hanamuraTemple267679FileName, replayMatchDb.FileName);
+            Assert.AreEqual(Path.Combine(_testReplaysFolder, _hanamuraTemple267679FileName), replayMatchDb.ReplayFilePath);
             Assert.AreEqual(StormGameMode.QuickMatch, replayMatchDb.GameMode);
             Assert.AreEqual("2.37.0.67679", replayMatchDb.ReplayVersion);
             Assert.AreEqual("Hanamura", replayMatchDb.MapId);
             Assert.AreEqual("Hanamura Temple", replayMatchDb.MapName);
             Assert.AreEqual(10, replayMatchDb.ReplayMatchPlayers!.Count);
+            Assert.AreEqual(1, replayMatchDb.OwnerPlayerId);
+            Assert.AreEqual("T:27620522#221", replayMatchDb.OwnerReplayPlayer!.ShortcutId);
         }
 
         [TestMethod]
