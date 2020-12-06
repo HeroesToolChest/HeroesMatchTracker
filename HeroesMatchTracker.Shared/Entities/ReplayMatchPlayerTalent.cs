@@ -159,6 +159,6 @@ namespace HeroesMatchTracker.Shared.Entities
             set { TimeSpanSelected20Ticks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
-        public virtual ReplayMatchPlayer ReplayMatchPlayer { get; set; } = null!;
+        public virtual ReplayMatchPlayer? ReplayMatchPlayer { get; set; }
     }
 }

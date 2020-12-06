@@ -94,6 +94,107 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             // pull party map (chromie / stitches)
         }
 
+        private static void AddPlayerScoreResults(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            ScoreResult? result = player.ScoreResult;
+
+            if (result is not null)
+            {
+                replayMatchPlayer.ReplayMatchPlayerScoreResult = new ReplayMatchPlayerScoreResult()
+                {
+                    Assists = result.Assists,
+                    ClutchHealsPerformed = result.ClutchHealsPerformed,
+                    CreepDamage = result.CreepDamage,
+                    DamageSoaked = result.DamageSoaked,
+                    DamageTaken = result.DamageTaken,
+                    Deaths = result.Deaths,
+                    EscapesPerformed = result.EscapesPerformed,
+                    ExperienceContribution = result.ExperienceContribution,
+                    Healing = result.Healing,
+                    HeroDamage = result.HeroDamage,
+                    HighestKillStreak = result.HighestKillStreak,
+                    MercCampCaptures = result.MercCampCaptures,
+                    MetaExperience = result.MetaExperience,
+                    MinionDamage = result.MinionDamage,
+                    MinionKills = result.MinionKills,
+                    Multikill = result.Multikill,
+                    OnFireTimeonFire = result.OnFireTimeonFire,
+                    OutnumberedDeaths = result.OutnumberedDeaths,
+                    PhysicalDamage = result.PhysicalDamage,
+                    ProtectionGivenToAllies = result.ProtectionGivenToAllies,
+                    RegenGlobes = result.RegenGlobes,
+                    SelfHealing = result.SelfHealing,
+                    SiegeDamage = result.SiegeDamage,
+                    SoloKills = result.SoloKills,
+                    SpellDamage = result.SpellDamage,
+                    StructureDamage = result.StructureDamage,
+                    SummonDamage = result.SummonDamage,
+                    TakeDowns = result.Takedowns,
+                    TeamfightDamageTaken = result.TeamfightDamageTaken,
+                    TeamfightEscapesPerformed = result.TeamfightEscapesPerformed,
+                    TeamfightHealingDone = result.TeamfightHealingDone,
+                    TeamfightHeroDamage = result.TeamfightHeroDamage,
+                    TimeCCdEnemyHeroes = result.TimeCCdEnemyHeroes,
+                    TimeRootingEnemyHeroes = result.TimeRootingEnemyHeroes,
+                    TimeSpentDead = result.TimeSpentDead,
+                    TimeStunningEnemyHeroes = result.TimeStunningEnemyHeroes,
+                    TownKills = result.TownKills,
+                    VengeancesPerformed = result.VengeancesPerformed,
+                    WatchTowerCaptures = result.WatchTowerCaptures,
+                };
+            }
+        }
+
+        private static void AddPlayerTalents(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            if (player.Talents.Count > 0)
+            {
+                replayMatchPlayer.ReplayMatchPlayerTalent = new ReplayMatchPlayerTalent();
+
+                if (player.Talents.Count > 6)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId20 = player.Talents[6].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected20 = player.Talents[6].Timestamp;
+                }
+
+                if (player.Talents.Count > 5)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId16 = player.Talents[5].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected16 = player.Talents[5].Timestamp;
+                }
+
+                if (player.Talents.Count > 4)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId13 = player.Talents[4].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected13 = player.Talents[4].Timestamp;
+                }
+
+                if (player.Talents.Count > 3)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId10 = player.Talents[3].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected10 = player.Talents[3].Timestamp;
+                }
+
+                if (player.Talents.Count > 2)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId7 = player.Talents[2].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected7 = player.Talents[2].Timestamp;
+                }
+
+                if (player.Talents.Count > 1)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId4 = player.Talents[1].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected4 = player.Talents[1].Timestamp;
+                }
+
+                if (player.Talents.Count > 0)
+                {
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TalentId1 = player.Talents[0].TalentNameId;
+                    replayMatchPlayer.ReplayMatchPlayerTalent.TimeSpanSelected1 = player.Talents[0].Timestamp;
+                }
+            }
+        }
+
         private void SetMatchPlayers(HeroesReplaysDbContext context, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
@@ -151,7 +252,8 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
                 UpdateOrAddPlayer(context, replay.Timestamp, replayMatchPlayer);
 
-                AddPlayerScoreResults(context, player, replayMatchPlayer);
+                AddPlayerScoreResults(player, replayMatchPlayer);
+                AddPlayerTalents(player, replayMatchPlayer);
 
                 replayMatch.ReplayMatchPlayers.Add(replayMatchPlayer);
             }
@@ -235,57 +337,6 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                         existingReplayPlayer.AccountLevel = replayMatchPlayer.AccountLevel.Value;
                     }
                 }
-            }
-        }
-
-        private void AddPlayerScoreResults(HeroesReplaysDbContext context, StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
-        {
-            ScoreResult? result = player.ScoreResult;
-
-            if (result is not null)
-            {
-                replayMatchPlayer.ReplayMatchPlayerScoreResult = new ReplayMatchPlayerScoreResult()
-                {
-                    Assists = result.Assists,
-                    ClutchHealsPerformed = result.ClutchHealsPerformed,
-                    CreepDamage = result.CreepDamage,
-                    DamageSoaked = result.DamageSoaked,
-                    DamageTaken = result.DamageTaken,
-                    Deaths = result.Deaths,
-                    EscapesPerformed = result.EscapesPerformed,
-                    ExperienceContribution = result.ExperienceContribution,
-                    Healing = result.Healing,
-                    HeroDamage = result.HeroDamage,
-                    HighestKillStreak = result.HighestKillStreak,
-                    MercCampCaptures = result.MercCampCaptures,
-                    MetaExperience = result.MetaExperience,
-                    MinionDamage = result.MinionDamage,
-                    MinionKills = result.MinionKills,
-                    Multikill = result.Multikill,
-                    OnFireTimeonFire = result.OnFireTimeonFire,
-                    OutnumberedDeaths = result.OutnumberedDeaths,
-                    PhysicalDamage = result.PhysicalDamage,
-                    ProtectionGivenToAllies = result.ProtectionGivenToAllies,
-                    RegenGlobes = result.RegenGlobes,
-                    SelfHealing = result.SelfHealing,
-                    SiegeDamage = result.SiegeDamage,
-                    SoloKills = result.SoloKills,
-                    SpellDamage = result.SpellDamage,
-                    StructureDamage = result.StructureDamage,
-                    SummonDamage = result.SummonDamage,
-                    TakeDowns = result.Takedowns,
-                    TeamfightDamageTaken = result.TeamfightDamageTaken,
-                    TeamfightEscapesPerformed = result.TeamfightEscapesPerformed,
-                    TeamfightHealingDone = result.TeamfightHealingDone,
-                    TeamfightHeroDamage = result.TeamfightHeroDamage,
-                    TimeCCdEnemyHeroes = result.TimeCCdEnemyHeroes,
-                    TimeRootingEnemyHeroes = result.TimeRootingEnemyHeroes,
-                    TimeSpentDead = result.TimeSpentDead,
-                    TimeStunningEnemyHeroes = result.TimeStunningEnemyHeroes,
-                    TownKills = result.TownKills,
-                    VengeancesPerformed = result.VengeancesPerformed,
-                    WatchTowerCaptures = result.WatchTowerCaptures,
-                };
             }
         }
 

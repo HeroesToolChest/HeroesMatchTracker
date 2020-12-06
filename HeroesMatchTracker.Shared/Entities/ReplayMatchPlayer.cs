@@ -22,16 +22,6 @@ namespace HeroesMatchTracker.Shared.Entities
         /// </summary>
         public long PlayerId { get; set; }
 
-        ///// <summary>
-        ///// Gets or sets the player's current battle tag name in this match. Contains the # followed by numbers.
-        ///// </summary>
-        //[StringLength(50)]
-        //public string? BattleTagName { get; set; }
-
-        //public long MatchPlayerScoreResultId { get; set; }
-
-        //public long MatchPlayerTalentId { get; set; }
-
         /// <summary>
         /// Gets or sets the player's team.
         /// </summary>
@@ -121,7 +111,7 @@ namespace HeroesMatchTracker.Shared.Entities
 
         public virtual ReplayMatchPlayerScoreResult? ReplayMatchPlayerScoreResult { get; set; }
 
-        //public virtual ReplayMatchPlayerTalent ReplayMatchPlayerTalent { get; set; } = null!;
+        public virtual ReplayMatchPlayerTalent? ReplayMatchPlayerTalent { get; set; }
 
         //public virtual ReplayMatchPlayerLoadout ReplayMatchPlayerLoadout { get; set; } = null!;
     }

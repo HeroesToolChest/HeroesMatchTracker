@@ -211,6 +211,37 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ReplayMatchPlayerTalents",
+                columns: table => new
+                {
+                    MatchPlayerId = table.Column<long>(type: "INTEGER", nullable: false),
+                    TalentId1 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected1Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId4 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected4Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId7 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected7Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId10 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected10Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId13 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected13Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId16 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected16Ticks = table.Column<long>(type: "INTEGER", nullable: true),
+                    TalentId20 = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    TimeSpanSelected20Ticks = table.Column<long>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReplayMatchPlayerTalents", x => x.MatchPlayerId);
+                    table.ForeignKey(
+                        name: "FK_ReplayMatchPlayerTalents_ReplayMatchPlayers_MatchPlayerId",
+                        column: x => x.MatchPlayerId,
+                        principalTable: "ReplayMatchPlayers",
+                        principalColumn: "MatchPlayerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ReplayMatchPlayers_ReplayId",
                 table: "ReplayMatchPlayers",
@@ -247,6 +278,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
         {
             migrationBuilder.DropTable(
                 name: "ReplayMatchPlayerScoreResults");
+
+            migrationBuilder.DropTable(
+                name: "ReplayMatchPlayerTalents");
 
             migrationBuilder.DropTable(
                 name: "ReplayOldPlayerInfos");

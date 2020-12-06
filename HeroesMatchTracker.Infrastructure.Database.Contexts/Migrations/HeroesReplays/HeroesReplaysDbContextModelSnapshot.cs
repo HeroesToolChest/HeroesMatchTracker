@@ -267,6 +267,65 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.ToTable("ReplayMatchPlayerScoreResults");
                 });
 
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", b =>
+                {
+                    b.Property<long>("MatchPlayerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TalentId1")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId10")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId13")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId16")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId20")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId4")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TalentId7")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<long?>("TimeSpanSelected10Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected13Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected16Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected1Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected20Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected4Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long?>("TimeSpanSelected7Ticks")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("MatchPlayerId");
+
+                    b.ToTable("ReplayMatchPlayerTalents");
+                });
+
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
                 {
                     b.Property<long>("ReplayOldPlayerInfoId")
@@ -405,6 +464,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Navigation("ReplayMatchPlayer");
                 });
 
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", b =>
+                {
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                        .WithOne("ReplayMatchPlayerTalent")
+                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", "MatchPlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReplayMatchPlayer");
+                });
+
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
                 {
                     b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
@@ -446,6 +516,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
                     b.Navigation("ReplayMatchPlayerScoreResult");
+
+                    b.Navigation("ReplayMatchPlayerTalent");
                 });
 
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
