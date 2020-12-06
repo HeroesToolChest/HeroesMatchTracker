@@ -77,6 +77,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
             modelBuilder.Entity<ReplayPlayerToon>()
                 .HasIndex(x => new { x.Region, x.ProgramId, x.Realm, x.Id });
 
+            modelBuilder.Entity<ReplayOldPlayerInfo>()
+                .HasOne(x => x.ReplayPlayer)
+                .WithMany(y => y!.ReplayOldPlayerInfos)
+                .HasForeignKey(x => x.PlayerId);
+
             modelBuilder.Entity<ReplayMatchPlayer>()
                 .HasOne(x => x.ReplayMatchPlayerScoreResult)
                 .WithOne(y => y!.ReplayMatchPlayer!)
@@ -86,6 +91,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .HasOne(x => x.ReplayMatchPlayerTalent)
                 .WithOne(y => y!.ReplayMatchPlayer!)
                 .HasForeignKey<ReplayMatchPlayerTalent>(x => x.MatchPlayerId);
+
+            modelBuilder.Entity<ReplayMatchPlayer>()
+                .HasOne(x => x.ReplayPlayer)
+                .WithMany(y => y.ReplayMatchPlayers)
+                .HasForeignKey(x => x.PlayerId);
 
             //modelBuilder.Entity<ReplayMatch>()
             //    .HasMany(x => x.ReplayMatchAwards)

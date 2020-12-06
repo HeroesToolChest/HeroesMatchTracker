@@ -146,17 +146,14 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Property<long>("ReplayId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ReplayPlayerPlayerId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("Team")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("MatchPlayerId");
 
-                    b.HasIndex("ReplayId");
+                    b.HasIndex("PlayerId");
 
-                    b.HasIndex("ReplayPlayerPlayerId");
+                    b.HasIndex("ReplayId");
 
                     b.ToTable("ReplayMatchPlayers");
                 });
@@ -363,12 +360,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Property<long>("PlayerId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ReplayPlayerPlayerId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("ReplayOldPlayerInfoId");
 
-                    b.HasIndex("ReplayPlayerPlayerId");
+                    b.HasIndex("PlayerId");
 
                     b.ToTable("ReplayOldPlayerInfos");
                 });
@@ -468,15 +462,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
+                        .WithMany("ReplayMatchPlayers")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
                         .WithMany("ReplayMatchPlayers")
                         .HasForeignKey("ReplayId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
-                        .WithMany("ReplayMatchPlayers")
-                        .HasForeignKey("ReplayPlayerPlayerId");
 
                     b.Navigation("Replay");
 
@@ -509,7 +505,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 {
                     b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithMany("ReplayOldPlayerInfos")
-                        .HasForeignKey("ReplayPlayerPlayerId");
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("ReplayPlayer");
                 });

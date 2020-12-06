@@ -34,18 +34,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .Annotation("Sqlite:Autoincrement", true),
                     PlayerId = table.Column<long>(type: "INTEGER", nullable: false),
                     BattleTagName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    DateAdded = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ReplayPlayerPlayerId = table.Column<long>(type: "INTEGER", nullable: true)
+                    DateAdded = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ReplayOldPlayerInfos", x => x.ReplayOldPlayerInfoId);
                     table.ForeignKey(
-                        name: "FK_ReplayOldPlayerInfos_ReplayPlayers_ReplayPlayerPlayerId",
-                        column: x => x.ReplayPlayerPlayerId,
+                        name: "FK_ReplayOldPlayerInfos_ReplayPlayers_PlayerId",
+                        column: x => x.PlayerId,
                         principalTable: "ReplayPlayers",
                         principalColumn: "PlayerId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,18 +125,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     IsVoiceSilenced = table.Column<bool>(type: "INTEGER", nullable: false),
                     IsWinner = table.Column<bool>(type: "INTEGER", nullable: true),
                     IsBlizzardStaff = table.Column<bool>(type: "INTEGER", nullable: false),
-                    HasActiveBoost = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ReplayPlayerPlayerId = table.Column<long>(type: "INTEGER", nullable: true)
+                    HasActiveBoost = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ReplayMatchPlayers", x => x.MatchPlayerId);
                     table.ForeignKey(
-                        name: "FK_ReplayMatchPlayers_ReplayPlayers_ReplayPlayerPlayerId",
-                        column: x => x.ReplayPlayerPlayerId,
+                        name: "FK_ReplayMatchPlayers_ReplayPlayers_PlayerId",
+                        column: x => x.PlayerId,
                         principalTable: "ReplayPlayers",
                         principalColumn: "PlayerId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ReplayMatchPlayers_Replays_ReplayId",
                         column: x => x.ReplayId,
@@ -256,19 +254,19 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ReplayMatchPlayers_PlayerId",
+                table: "ReplayMatchPlayers",
+                column: "PlayerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ReplayMatchPlayers_ReplayId",
                 table: "ReplayMatchPlayers",
                 column: "ReplayId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReplayMatchPlayers_ReplayPlayerPlayerId",
-                table: "ReplayMatchPlayers",
-                column: "ReplayPlayerPlayerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ReplayOldPlayerInfos_ReplayPlayerPlayerId",
+                name: "IX_ReplayOldPlayerInfos_PlayerId",
                 table: "ReplayOldPlayerInfos",
-                column: "ReplayPlayerPlayerId");
+                column: "PlayerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ReplayPlayerToons_Region_ProgramId_Realm_Id",
