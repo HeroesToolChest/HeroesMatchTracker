@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesReplays
 {
-    public partial class IntialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,7 +33,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     ReplayOldPlayerInfoId = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     PlayerId = table.Column<long>(type: "INTEGER", nullable: false),
-                    BattleTagName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    BattleTagName = table.Column<string>(type: "TEXT", nullable: true),
                     DateAdded = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -77,9 +77,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     OwnerPlayerId = table.Column<long>(type: "INTEGER", nullable: true),
                     RandomValue = table.Column<long>(type: "INTEGER", nullable: true),
                     Hash = table.Column<string>(type: "TEXT", nullable: false),
-                    MapName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    MapId = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    ReplayVersion = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
+                    MapName = table.Column<string>(type: "TEXT", nullable: false),
+                    MapId = table.Column<string>(type: "TEXT", nullable: true),
+                    ReplayVersion = table.Column<string>(type: "TEXT", nullable: false),
                     ReplayLengthTicks = table.Column<long>(type: "INTEGER", nullable: false),
                     GameMode = table.Column<int>(type: "INTEGER", nullable: false),
                     TimeStamp = table.Column<DateTime>(type: "TEXT", nullable: true),
@@ -111,15 +111,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     Team = table.Column<int>(type: "INTEGER", nullable: false),
                     PlayerType = table.Column<int>(type: "INTEGER", nullable: false),
                     PlayerNumber = table.Column<int>(type: "INTEGER", nullable: false),
-                    HeroName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    HeroId = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    HeroName = table.Column<string>(type: "TEXT", nullable: true),
+                    HeroId = table.Column<string>(type: "TEXT", nullable: true),
                     HeroLevel = table.Column<int>(type: "INTEGER", nullable: true),
                     HeroUnitId = table.Column<string>(type: "TEXT", nullable: true),
                     HeroAttributeId = table.Column<string>(type: "TEXT", nullable: true),
                     AccountLevel = table.Column<int>(type: "INTEGER", nullable: true),
                     PartyValue = table.Column<long>(type: "INTEGER", nullable: true),
                     PartySize = table.Column<int>(type: "INTEGER", nullable: true),
-                    Difficulty = table.Column<string>(type: "TEXT", maxLength: 25, nullable: true),
+                    Difficulty = table.Column<string>(type: "TEXT", nullable: true),
                     IsAutoSelect = table.Column<bool>(type: "INTEGER", nullable: true),
                     IsSilenced = table.Column<bool>(type: "INTEGER", nullable: false),
                     IsVoiceSilenced = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -163,6 +163,35 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         column: x => x.ReplayId,
                         principalTable: "Replays",
                         principalColumn: "ReplayId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReplayMatchPlayerLoadout",
+                columns: table => new
+                {
+                    MatchPlayerId = table.Column<long>(type: "INTEGER", nullable: false),
+                    SkinAndSkinTintId = table.Column<string>(type: "TEXT", nullable: true),
+                    SkinAndSkinTintAttributeId = table.Column<string>(type: "TEXT", nullable: true),
+                    MountAndMountTintId = table.Column<string>(type: "TEXT", nullable: true),
+                    MountAndMountTintAttributeId = table.Column<string>(type: "TEXT", nullable: true),
+                    BannerId = table.Column<string>(type: "TEXT", nullable: true),
+                    BannerAttributeId = table.Column<string>(type: "TEXT", nullable: true),
+                    SprayId = table.Column<string>(type: "TEXT", nullable: true),
+                    SprayAttributeId = table.Column<string>(type: "TEXT", nullable: true),
+                    AnnouncerPackId = table.Column<string>(type: "TEXT", nullable: true),
+                    AnnouncerPackAttributeId = table.Column<string>(type: "TEXT", nullable: true),
+                    VoiceLineId = table.Column<string>(type: "TEXT", nullable: true),
+                    VoiceLineAttributeId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReplayMatchPlayerLoadout", x => x.MatchPlayerId);
+                    table.ForeignKey(
+                        name: "FK_ReplayMatchPlayerLoadout_ReplayMatchPlayers_MatchPlayerId",
+                        column: x => x.MatchPlayerId,
+                        principalTable: "ReplayMatchPlayers",
+                        principalColumn: "MatchPlayerId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -292,6 +321,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ReplayMatchPlayerLoadout");
+
             migrationBuilder.DropTable(
                 name: "ReplayMatchPlayerScoreResults");
 

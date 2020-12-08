@@ -22,7 +22,6 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the old battle tag name of the player.
         /// </summary>
-        [StringLength(50)]
         public string? BattleTagName { get; set; }
 
         /// <summary>

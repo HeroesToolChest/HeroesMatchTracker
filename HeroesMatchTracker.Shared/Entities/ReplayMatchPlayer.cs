@@ -40,13 +40,11 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the hero name.
         /// </summary>
-        [StringLength(50)]
         public string? HeroName { get; set; }
 
         /// <summary>
         /// Gets or sets the hero id.
         /// </summary>
-        [StringLength(50)]
         public string? HeroId { get; set; }
 
         /// <summary>
@@ -82,7 +80,6 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the computer player difficulty.
         /// </summary>
-        [StringLength(25)]
         public string? Difficulty { get; set; } = null;
 
         /// <summary>
@@ -123,6 +120,6 @@ namespace HeroesMatchTracker.Shared.Entities
 
         public virtual ReplayMatchPlayerTalent? ReplayMatchPlayerTalent { get; set; }
 
-        //public virtual ReplayMatchPlayerLoadout ReplayMatchPlayerLoadout { get; set; } = null!;
+        public virtual ReplayMatchPlayerLoadout? ReplayMatchPlayerLoadout { get; set; }
     }
 }

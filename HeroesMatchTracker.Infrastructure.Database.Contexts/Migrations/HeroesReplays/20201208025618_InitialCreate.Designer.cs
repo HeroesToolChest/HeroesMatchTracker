@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesReplays
 {
     [DbContext(typeof(HeroesReplaysDbContext))]
-    [Migration("20201206234349_IntialCreate")]
-    partial class IntialCreate
+    [Migration("20201208025618_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,12 +38,10 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MapId")
-                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MapName")
                         .IsRequired()
-                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<long?>("OwnerPlayerId")
@@ -63,7 +61,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
                     b.Property<string>("ReplayVersion")
                         .IsRequired()
-                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("TimeStamp")
@@ -92,7 +89,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Difficulty")
-                        .HasMaxLength(25)
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("HasActiveBoost")
@@ -102,14 +98,12 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .HasColumnType("TEXT");
 
                     b.Property<string>("HeroId")
-                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("HeroLevel")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("HeroName")
-                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("HeroUnitId")
@@ -158,6 +152,52 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.HasIndex("ReplayId");
 
                     b.ToTable("ReplayMatchPlayers");
+                });
+
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", b =>
+                {
+                    b.Property<long>("MatchPlayerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("AnnouncerPackAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AnnouncerPackId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BannerAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BannerId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MountAndMountTintAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MountAndMountTintId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SkinAndSkinTintAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SkinAndSkinTintId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SprayAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SprayId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VoiceLineAttributeId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VoiceLineId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MatchPlayerId");
+
+                    b.ToTable("ReplayMatchPlayerLoadout");
                 });
 
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
@@ -353,7 +393,6 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("BattleTagName")
-                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DateAdded")
@@ -481,6 +520,17 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
                     b.Navigation("ReplayPlayer");
                 });
 
+            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", b =>
+                {
+                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                        .WithOne("ReplayMatchPlayerLoadout")
+                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", "MatchPlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReplayMatchPlayer");
+                });
+
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
                 {
                     b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
@@ -545,6 +595,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts.Migrations.HeroesR
 
             modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
                 {
+                    b.Navigation("ReplayMatchPlayerLoadout");
+
                     b.Navigation("ReplayMatchPlayerScoreResult");
 
                     b.Navigation("ReplayMatchPlayerTalent");

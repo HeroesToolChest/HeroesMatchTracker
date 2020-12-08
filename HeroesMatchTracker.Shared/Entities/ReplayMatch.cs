@@ -34,19 +34,16 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the name of the map (localized).
         /// </summary>
-        [StringLength(50)]
         public string MapName { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the map id.
         /// </summary>
-        [StringLength(50)]
         public string? MapId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the full version number.
         /// </summary>
-        [StringLength(20)]
         public string ReplayVersion { get; set; } = string.Empty;
 
         /// <summary>

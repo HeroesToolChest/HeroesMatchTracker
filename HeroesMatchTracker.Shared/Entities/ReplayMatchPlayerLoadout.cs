@@ -13,39 +13,63 @@ namespace HeroesMatchTracker.Shared.Entities
         /// <summary>
         /// Gets or sets the skin id.
         /// </summary>
-        [StringLength(50)]
         public string? SkinAndSkinTintId { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the skin attribute id.
+        /// </summary>
+        public string? SkinAndSkinTintAttributeId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the mount id.
         /// </summary>
-        [StringLength(50)]
         public string? MountAndMountTintId { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the mount attribute id.
+        /// </summary>
+        public string? MountAndMountTintAttributeId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the banner id.
         /// </summary>
-        [StringLength(50)]
         public string? BannerId { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the banner attribute id.
+        /// </summary>
+        public string? BannerAttributeId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the spray id.
         /// </summary>
-        [StringLength(50)]
         public string? SprayId { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the spray attribute id.
+        /// </summary>
+        public string? SprayAttributeId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the announcer pack id.
         /// </summary>
-        [StringLength(50)]
         public string? AnnouncerPackId { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the announcer pack attribute id.
+        /// </summary>
+        public string? AnnouncerPackAttributeId { get; set; } = null;
 
         /// <summary>
         /// Gets or sets the voiceline id.
         /// </summary>
-        [StringLength(50)]
         public string? VoiceLineId { get; set; } = null;
 
-        public virtual ReplayMatchPlayer ReplayMatchPlayer { get; set; } = null!;
+        /// <summary>
+        /// Gets or sets the voiceline attribute id.
+        /// </summary>
+        public string? VoiceLineAttributeId { get; set; } = null;
+
+        public virtual ReplayMatchPlayer? ReplayMatchPlayer { get; set; }
     }
 }

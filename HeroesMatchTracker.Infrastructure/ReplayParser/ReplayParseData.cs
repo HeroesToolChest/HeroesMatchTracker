@@ -198,6 +198,43 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
+        private static void AddPlayerLoadout(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            replayMatchPlayer.ReplayMatchPlayerLoadout = new ReplayMatchPlayerLoadout()
+            {
+                AnnouncerPackAttributeId = player.PlayerLoadout.AnnouncerPackAttributeId,
+                AnnouncerPackId = player.PlayerLoadout.AnnouncerPack,
+                BannerAttributeId = player.PlayerLoadout.BannerAttributeId,
+                BannerId = player.PlayerLoadout.Banner,
+                MountAndMountTintAttributeId = player.PlayerLoadout.MountAndMountTintAttributeId,
+                MountAndMountTintId = player.PlayerLoadout.MountAndMountTint,
+                SkinAndSkinTintAttributeId = player.PlayerLoadout.SkinAndSkinTintAttributeId,
+                SkinAndSkinTintId = player.PlayerLoadout.SkinAndSkinTint,
+                SprayAttributeId = player.PlayerLoadout.SprayAttributeId,
+                SprayId = player.PlayerLoadout.Spray,
+                VoiceLineAttributeId = player.PlayerLoadout.VoiceLineAttributeId,
+                VoiceLineId = player.PlayerLoadout.VoiceLine,
+            };
+        }
+
+        private static void AdjustHeroLevelFromMasterTiers(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            if (player.PlayerHero is not null && player.IsAutoSelect is false)
+            {
+                if (player.HeroMasteryTiers.ToDictionary(x => x.HeroAttributeId, x => x.TierLevel).TryGetValue(player.PlayerHero.HeroAttributeId, out int tierLevel))
+                {
+                    if (tierLevel == 2 && player.PlayerHero.HeroLevel < 25)
+                        replayMatchPlayer.HeroLevel = 25;
+                    else if (tierLevel == 3 && player.PlayerHero.HeroLevel < 50)
+                        replayMatchPlayer.HeroLevel = 50;
+                    else if (tierLevel == 4 && player.PlayerHero.HeroLevel < 75)
+                        replayMatchPlayer.HeroLevel = 75;
+                    else if (tierLevel == 5 && player.PlayerHero.HeroLevel < 100)
+                        replayMatchPlayer.HeroLevel = 100;
+                }
+            }
+        }
+
         private void SetMatchPlayers(HeroesReplaysDbContext context, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
@@ -265,6 +302,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
                 AddPlayerScoreResults(player, replayMatchPlayer);
                 AddPlayerTalents(player, replayMatchPlayer);
+                AddPlayerLoadout(player, replayMatchPlayer);
 
                 replayMatch.ReplayMatchPlayers.Add(replayMatchPlayer);
             }
@@ -347,24 +385,6 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     {
                         existingReplayPlayer.AccountLevel = replayMatchPlayer.AccountLevel.Value;
                     }
-                }
-            }
-        }
-
-        private void AdjustHeroLevelFromMasterTiers(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
-        {
-            if (player.PlayerHero is not null && player.IsAutoSelect is false)
-            {
-                if (player.HeroMasteryTiers.ToDictionary(x => x.HeroAttributeId, x => x.TierLevel).TryGetValue(player.PlayerHero.HeroAttributeId, out int tierLevel))
-                {
-                    if (tierLevel == 2 && player.PlayerHero.HeroLevel < 25)
-                        replayMatchPlayer.HeroLevel = 25;
-                    else if (tierLevel == 3 && player.PlayerHero.HeroLevel < 50)
-                        replayMatchPlayer.HeroLevel = 50;
-                    else if (tierLevel == 4 && player.PlayerHero.HeroLevel < 75)
-                        replayMatchPlayer.HeroLevel = 75;
-                    else if (tierLevel == 5 && player.PlayerHero.HeroLevel < 100)
-                        replayMatchPlayer.HeroLevel = 100;
                 }
             }
         }

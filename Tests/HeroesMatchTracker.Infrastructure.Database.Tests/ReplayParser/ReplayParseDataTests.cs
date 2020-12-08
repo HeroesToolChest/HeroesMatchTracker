@@ -316,5 +316,31 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
             Assert.AreEqual(10498125000, player.ReplayMatchPlayerTalent.TimeSpanSelected20!.Value.Ticks);
             Assert.AreEqual(10498125000, player.ReplayMatchPlayerTalent!.TimeSpanSelected20Ticks);
         }
+
+        [TestMethod]
+        public void AddReplayPlayerLoadoutTest()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            ReplayMatchPlayer player = context.ReplayMatchPlayers.First(x => x.HeroId == "Muradin");
+
+            Assert.AreEqual("NoAP", player.ReplayMatchPlayerLoadout!.AnnouncerPackAttributeId);
+            Assert.AreEqual("NoAnnouncerPack", player.ReplayMatchPlayerLoadout.AnnouncerPackId);
+            Assert.AreEqual("BN17", player.ReplayMatchPlayerLoadout.BannerAttributeId);
+            Assert.AreEqual("BannerDefault", player.ReplayMatchPlayerLoadout.BannerId);
+            Assert.AreEqual("Hhh1", player.ReplayMatchPlayerLoadout.MountAndMountTintAttributeId);
+            Assert.AreEqual("HeadlessHorsemanHorse", player.ReplayMatchPlayerLoadout.MountAndMountTintId);
+            Assert.AreEqual("Mur3", player.ReplayMatchPlayerLoadout.SkinAndSkinTintAttributeId);
+            Assert.AreEqual("MuradinMagni", player.ReplayMatchPlayerLoadout.SkinAndSkinTintId);
+            Assert.AreEqual("SYDF", player.ReplayMatchPlayerLoadout.SprayAttributeId);
+            Assert.AreEqual("SprayStaticFluidDefault", player.ReplayMatchPlayerLoadout.SprayId);
+            Assert.AreEqual("MR01", player.ReplayMatchPlayerLoadout.VoiceLineAttributeId);
+            Assert.AreEqual("MuradinBase_VoiceLine01", player.ReplayMatchPlayerLoadout.VoiceLineId);
+        }
     }
 }
