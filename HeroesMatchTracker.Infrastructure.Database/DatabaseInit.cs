@@ -58,7 +58,7 @@ namespace HeroesMatchTracker.Infrastructure.Database
 
                 this.Log().Info("Executed migration history successfully.");
 
-                string newFileName = DbConnectionString.HeroesReplays.Substring(DbConnectionString.HeroesReplays.IndexOf('=', StringComparison.OrdinalIgnoreCase) + 1);
+                string newFileName = DbConnectionString.HeroesReplays[(DbConnectionString.HeroesReplays.IndexOf('=', StringComparison.OrdinalIgnoreCase) + 1)..];
 
                 try
                 {

@@ -1,7 +1,7 @@
 using Heroes.StormReplayParser;
 using Heroes.StormReplayParser.Replay;
-using HeroesMatchTracker.Core.Database.HeroesReplays;
-using HeroesMatchTracker.Core.Services;
+using HeroesMatchTracker.Core.Repositories;
+using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Tests;

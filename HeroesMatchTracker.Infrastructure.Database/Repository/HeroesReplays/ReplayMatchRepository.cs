@@ -1,5 +1,7 @@
-﻿using HeroesMatchTracker.Core.Database.HeroesReplays;
+﻿using HeroesMatchTracker.Core.Repositories;
+using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
+using HeroesMatchTracker.Shared.Entities;
 using System;
 using System.Linq;
 
@@ -7,29 +9,33 @@ namespace HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays
 {
     public class ReplayMatchRepository : RepositoryBase<HeroesReplaysDbContext>, IReplayMatchRepository
     {
-        public bool IsExists(HeroesReplaysDbContext context,  string hash)
+        public void Add(IUnitOfWork unitOfWork, ReplayMatch replayMatch)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
+            context.Replays.Add(replayMatch);
+        }
+
+        public bool IsExists(IUnitOfWork unitOfWork, string hash)
+        {
             if (string.IsNullOrWhiteSpace(hash))
                 throw new ArgumentException($"'{nameof(hash)}' cannot be null or whitespace", nameof(hash));
+
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
             return context.Replays.Any(x => x.Hash == hash);
         }
 
-        public bool IsExists(HeroesReplaysDbContext context, long replayId)
+        public bool IsExists(IUnitOfWork unitOfWork, long replayId)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
             return context.Replays.Any(x => x.ReplayId == replayId);
         }
 
-        public DateTime? GetLastestReplayTimeStamp(HeroesReplaysDbContext context)
+        public DateTime? GetLastestReplayTimeStamp(IUnitOfWork unitOfWork)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
             return context.Replays.OrderByDescending(x => x.TimeStamp).FirstOrDefault()?.TimeStamp;
         }

@@ -1,4 +1,4 @@
-﻿using HeroesMatchTracker.Core.Database.HeroesReplays;
+﻿using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 
 namespace HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays

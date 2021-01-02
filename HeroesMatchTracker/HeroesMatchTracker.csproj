@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj" />
-    <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Database.Contexts\HeroesMatchTracker.Infrastructure.Database.Contexts.csproj" />
     <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Database\HeroesMatchTracker.Infrastructure.Database.csproj" />
     <ProjectReference Include="..\HeroesMatchTracker.Infrastructure\HeroesMatchTracker.Infrastructure.csproj" />
   </ItemGroup>

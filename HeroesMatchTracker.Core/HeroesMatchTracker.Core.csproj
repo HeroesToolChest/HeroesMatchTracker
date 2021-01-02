@@ -21,12 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HeroesMatchTracker.Infrastructure.Database.Contexts\HeroesMatchTracker.Infrastructure.Database.Contexts.csproj" />
     <ProjectReference Include="..\HeroesMatchTracker.Shared\HeroesMatchTracker.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\HMTData\" />
+    <Folder Include="Repositories\HMTData\" />
   </ItemGroup>
 
 </Project>

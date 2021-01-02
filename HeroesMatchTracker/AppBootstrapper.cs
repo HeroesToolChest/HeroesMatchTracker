@@ -1,5 +1,5 @@
-﻿using HeroesMatchTracker.Core.Database.HeroesReplays;
-using HeroesMatchTracker.Core.Services;
+﻿using HeroesMatchTracker.Core.Repositories;
+using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Core.Services.ReplayParser;
 using HeroesMatchTracker.Core.Startup;
 using HeroesMatchTracker.Infrastructure;
@@ -123,7 +123,6 @@ namespace HeroesMatchTracker
             //Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
 
         }
-
 
         private static void RegisterLogger(bool debugLoggingEnabled)
         {

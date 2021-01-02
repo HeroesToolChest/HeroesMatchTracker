@@ -1,8 +1,7 @@
 ﻿using DynamicData;
 using Heroes.StormReplayParser;
-using HeroesMatchTracker.Core.Database;
 using HeroesMatchTracker.Core.Models.ReplayParser;
-using HeroesMatchTracker.Core.Services;
+using HeroesMatchTracker.Core.Repositories;
 using HeroesMatchTracker.Core.Services.Dialogs;
 using HeroesMatchTracker.Core.Services.ReplayParser;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
@@ -11,10 +10,7 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
 using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
@@ -115,8 +111,8 @@ namespace HeroesMatchTracker.ViewModels.ReplayParser
 
              var result = StormReplay.Parse(file);
 
-            using HeroesReplaysDbContext dbContext = _heroesReplaysDbContextFactory.CreateDbContext();
-
+            using IUnitOfWork unitOfWork = _heroesReplaysDbContextFactory.CreateDbContext();
+            
             try
             {
                 // using IReplayMatchRepository rep = _repositoryFactory.CreateRepository<IReplayMatchRepository>();

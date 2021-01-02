@@ -1,4 +1,4 @@
-﻿namespace HeroesMatchTracker.Core.Database.HeroesReplays
+﻿namespace HeroesMatchTracker.Core.Repositories.HeroesReplays
 {
     public interface IReplayOldPlayerInfoRepository
     {

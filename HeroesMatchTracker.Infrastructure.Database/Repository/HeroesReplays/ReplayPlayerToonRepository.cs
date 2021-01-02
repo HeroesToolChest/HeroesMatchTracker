@@ -1,4 +1,5 @@
-﻿using HeroesMatchTracker.Core.Database.HeroesReplays;
+﻿using HeroesMatchTracker.Core.Repositories;
+using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Shared.Entities;
 using System;
@@ -8,13 +9,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays
 {
     public class ReplayPlayerToonRepository : RepositoryBase<HeroesReplaysDbContext>, IReplayPlayerToonRepository
     {
-        public bool IsExists(HeroesReplaysDbContext context, ReplayPlayerToon replayPlayerToon)
+        public bool IsExists(IUnitOfWork unitOfWork, ReplayPlayerToon replayPlayerToon)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            if (unitOfWork is null)
+                throw new ArgumentNullException(nameof(unitOfWork));
 
             if (replayPlayerToon is null)
                 throw new ArgumentNullException(nameof(replayPlayerToon));
+
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
             return context.ReplayPlayerToons.Any(x => x.Region == replayPlayerToon.Region &&
                 x.ProgramId == replayPlayerToon.ProgramId &&
@@ -22,10 +25,12 @@ namespace HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays
                 x.Id == replayPlayerToon.Id);
         }
 
-        public long? GetPlayerId(HeroesReplaysDbContext context, ReplayPlayerToon replayPlayerToon)
+        public long? GetPlayerId(IUnitOfWork unitOfWork, ReplayPlayerToon replayPlayerToon)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            if (unitOfWork is null)
+                throw new ArgumentNullException(nameof(unitOfWork));
+
+            var context = UnitOfWorkHeroesReplaysDbContext(unitOfWork);
 
             ReplayPlayerToon? result = context.ReplayPlayerToons.FirstOrDefault(x => x.Region == replayPlayerToon.Region &&
                 x.ProgramId == replayPlayerToon.ProgramId &&

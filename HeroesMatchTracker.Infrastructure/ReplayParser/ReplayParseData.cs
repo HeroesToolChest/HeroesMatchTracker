@@ -1,8 +1,7 @@
 ﻿using Heroes.StormReplayParser;
 using Heroes.StormReplayParser.Player;
-using HeroesMatchTracker.Core.Database.HeroesReplays;
-using HeroesMatchTracker.Core.Services;
-using HeroesMatchTracker.Infrastructure.Database.Contexts;
+using HeroesMatchTracker.Core.Repositories;
+using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Shared;
 using HeroesMatchTracker.Shared.Entities;
 using System;
@@ -35,18 +34,18 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             return ReplayHasher.HashReplay(replay);
         }
 
-        public bool IsReplayExists(HeroesReplaysDbContext context, string hash)
+        public bool IsReplayExists(IUnitOfWork unitOfWork, string hash)
         {
             if (string.IsNullOrWhiteSpace(hash))
                 throw new ArgumentException($"'{nameof(hash)}' cannot be null or whitespace", nameof(hash));
 
-            return _replayMatchRepository.IsExists(context, hash);
+            return _replayMatchRepository.IsExists(unitOfWork, hash);
         }
 
-        public void AddReplay(HeroesReplaysDbContext context, string? filePath, string hash, StormReplay replay)
+        public void AddReplay(IUnitOfWork unitOfWork, string? filePath, string hash, StormReplay replay)
         {
-            if (context is null)
-                throw new ArgumentNullException(nameof(context));
+            if (unitOfWork is null)
+                throw new ArgumentNullException(nameof(unitOfWork));
 
             if (string.IsNullOrWhiteSpace(filePath))
                 throw new ArgumentException($"'{nameof(filePath)}' cannot be null or whitespace", nameof(filePath));
@@ -60,11 +59,11 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             ReplayMatch replayMatch = new();
 
             SetReplayData(replay, replayMatch, filePath, hash);
-            SetMatchPlayers(context, replay, replayMatch);
+            SetMatchPlayers(unitOfWork, replay, replayMatch);
 
-            context.Replays.Add(replayMatch);
+            _replayMatchRepository.Add(unitOfWork, replayMatch);
 
-            context.SaveChanges();
+            unitOfWork.SaveChanges();
 
             if (replay is null)
                 throw new ArgumentNullException(nameof(replay));
@@ -235,7 +234,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
-        private void SetMatchPlayers(HeroesReplaysDbContext context, StormReplay replay, ReplayMatch replayMatch)
+        private void SetMatchPlayers(IUnitOfWork unitOfWork, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
 
@@ -298,7 +297,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     }
                 }
 
-                UpdateOrAddPlayer(context, replay.Timestamp, replayMatchPlayer);
+                UpdateOrAddPlayer(unitOfWork, replay.Timestamp, replayMatchPlayer);
 
                 AddPlayerScoreResults(player, replayMatchPlayer);
                 AddPlayerTalents(player, replayMatchPlayer);
@@ -308,7 +307,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
-        private void UpdateOrAddPlayer(HeroesReplaysDbContext context, DateTime replayTimestamp, ReplayMatchPlayer replayMatchPlayer)
+        private void UpdateOrAddPlayer(IUnitOfWork unitOfWork, DateTime replayTimestamp, ReplayMatchPlayer replayMatchPlayer)
         {
             if (replayMatchPlayer is null)
                 throw new ArgumentNullException(nameof(replayMatchPlayer));
@@ -318,18 +317,18 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
             if (replayMatchPlayer.ReplayPlayer.ReplayPlayerToon != null)
             {
-                long? playerId = _replayPlayerToonRepository.GetPlayerId(context, replayMatchPlayer.ReplayPlayer.ReplayPlayerToon);
+                long? playerId = _replayPlayerToonRepository.GetPlayerId(unitOfWork, replayMatchPlayer.ReplayPlayer.ReplayPlayerToon);
 
                 // existing player?
                 if (playerId is not null)
                 {
                     // existing player data
-                    ReplayPlayer? existingReplayPlayer = _replayPlayerRepository.GetPlayer(context, playerId.Value);
+                    ReplayPlayer? existingReplayPlayer = _replayPlayerRepository.GetPlayer(unitOfWork, playerId.Value);
 
                     if (existingReplayPlayer is null)
                         throw new InvalidOperationException($"'{nameof(existingReplayPlayer)}' is null, though it should not be as {nameof(playerId)}: {playerId.Value} exists.");
 
-                    DateTime? latestReplayDateTime = _replayMatchRepository.GetLastestReplayTimeStamp(context);
+                    DateTime? latestReplayDateTime = _replayMatchRepository.GetLastestReplayTimeStamp(unitOfWork);
 
                     if (existingReplayPlayer.BattleTagName is not null && !existingReplayPlayer.BattleTagName.Equals(replayMatchPlayer.ReplayPlayer.BattleTagName, StringComparison.Ordinal))
                     {
