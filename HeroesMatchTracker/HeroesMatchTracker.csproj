@@ -25,9 +25,9 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.999-cibuild0010245-beta" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.999-cibuild0010245-beta" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-    <PackageReference Include="ReactiveUI.Fody" Version="12.1.5" />
+    <PackageReference Include="ReactiveUI.Fody" Version="13.0.27" />
     <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="9.8.1" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.304">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
