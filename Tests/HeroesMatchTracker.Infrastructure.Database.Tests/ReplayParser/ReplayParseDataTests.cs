@@ -5,7 +5,7 @@ using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Tests;
-using HeroesMatchTracker.Shared.Entities;
+using HeroesMatchTracker.Core.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;

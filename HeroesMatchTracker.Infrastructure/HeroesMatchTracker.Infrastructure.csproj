@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj" />
-    <ProjectReference Include="..\HeroesMatchTracker.Shared\HeroesMatchTracker.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,8 +16,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker", "Heroe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Core", "HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj", "{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Shared", "HeroesMatchTracker.Shared\HeroesMatchTracker.Shared.csproj", "{707F5B0D-0631-44C0-AA30-6463D5EEE948}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Database", "HeroesMatchTracker.Infrastructure.Database\HeroesMatchTracker.Infrastructure.Database.csproj", "{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Tests", "Tests\HeroesMatchTracker.Infrastructure.Database.Tests\HeroesMatchTracker.Infrastructure.Tests.csproj", "{6476F60A-18BC-4E62-A552-10FA6C15ACCE}"
@@ -42,10 +40,6 @@ Global
 		{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{707F5B0D-0631-44C0-AA30-6463D5EEE948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{707F5B0D-0631-44C0-AA30-6463D5EEE948}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{707F5B0D-0631-44C0-AA30-6463D5EEE948}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{707F5B0D-0631-44C0-AA30-6463D5EEE948}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU

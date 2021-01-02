@@ -1,5 +1,5 @@
 ﻿using HeroesMatchTracker.Core.Repositories;
-using HeroesMatchTracker.Shared.Entities;
+using HeroesMatchTracker.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 

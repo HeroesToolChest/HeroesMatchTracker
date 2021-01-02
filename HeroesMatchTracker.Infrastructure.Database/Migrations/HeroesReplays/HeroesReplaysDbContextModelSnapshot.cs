@@ -16,7 +16,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatch", b =>
                 {
                     b.Property<long>("ReplayId")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("Replays");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", b =>
                 {
                     b.Property<long>("MatchPlayerId")
                         .ValueGeneratedOnAdd()
@@ -152,7 +152,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayMatchPlayers");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerLoadout", b =>
                 {
                     b.Property<long>("MatchPlayerId")
                         .HasColumnType("INTEGER");
@@ -198,7 +198,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayMatchPlayerLoadout");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerScoreResult", b =>
                 {
                     b.Property<long>("MatchPlayerId")
                         .HasColumnType("INTEGER");
@@ -325,7 +325,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayMatchPlayerScoreResults");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerTalent", b =>
                 {
                     b.Property<long>("MatchPlayerId")
                         .HasColumnType("INTEGER");
@@ -384,7 +384,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayMatchPlayerTalents");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayOldPlayerInfo", b =>
                 {
                     b.Property<long>("ReplayOldPlayerInfoId")
                         .ValueGeneratedOnAdd()
@@ -406,7 +406,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayOldPlayerInfos");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayer", b =>
                 {
                     b.Property<long>("PlayerId")
                         .ValueGeneratedOnAdd()
@@ -440,7 +440,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayPlayers");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", b =>
                 {
                     b.Property<long>("PlayerId")
                         .HasColumnType("INTEGER");
@@ -465,7 +465,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ReplayPlayerToons");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ServerReplayUpload", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ServerReplayUpload", b =>
                 {
                     b.Property<long>("ServerReplayUploadId")
                         .ValueGeneratedOnAdd()
@@ -490,24 +490,24 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.ToTable("ServerReplayUploads");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatch", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "OwnerReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "OwnerReplayPlayer")
                         .WithMany("OwnerReplayMatches")
                         .HasForeignKey("OwnerPlayerId");
 
                     b.Navigation("OwnerReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithMany("ReplayMatchPlayers")
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatch", "Replay")
                         .WithMany("ReplayMatchPlayers")
                         .HasForeignKey("ReplayId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -518,42 +518,42 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerLoadout", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
                         .WithOne("ReplayMatchPlayerLoadout")
-                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerLoadout", "MatchPlayerId")
+                        .HasForeignKey("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerLoadout", "MatchPlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ReplayMatchPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerScoreResult", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
                         .WithOne("ReplayMatchPlayerScoreResult")
-                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerScoreResult", "MatchPlayerId")
+                        .HasForeignKey("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerScoreResult", "MatchPlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ReplayMatchPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerTalent", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", "ReplayMatchPlayer")
                         .WithOne("ReplayMatchPlayerTalent")
-                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayerTalent", "MatchPlayerId")
+                        .HasForeignKey("HeroesMatchTracker.Core.Entities.ReplayMatchPlayerTalent", "MatchPlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ReplayMatchPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayOldPlayerInfo", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayOldPlayerInfo", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithMany("ReplayOldPlayerInfos")
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -562,20 +562,20 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayPlayer", "ReplayPlayer")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayPlayer", "ReplayPlayer")
                         .WithOne("ReplayPlayerToon")
-                        .HasForeignKey("HeroesMatchTracker.Shared.Entities.ReplayPlayerToon", "PlayerId")
+                        .HasForeignKey("HeroesMatchTracker.Core.Entities.ReplayPlayerToon", "PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ReplayPlayer");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ServerReplayUpload", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ServerReplayUpload", b =>
                 {
-                    b.HasOne("HeroesMatchTracker.Shared.Entities.ReplayMatch", "Replay")
+                    b.HasOne("HeroesMatchTracker.Core.Entities.ReplayMatch", "Replay")
                         .WithMany("ServerReplayUploads")
                         .HasForeignKey("ReplayId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -584,14 +584,14 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.Navigation("Replay");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatch", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatch", b =>
                 {
                     b.Navigation("ReplayMatchPlayers");
 
                     b.Navigation("ServerReplayUploads");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayMatchPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayMatchPlayer", b =>
                 {
                     b.Navigation("ReplayMatchPlayerLoadout");
 
@@ -600,7 +600,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Migrations.HeroesReplays
                     b.Navigation("ReplayMatchPlayerTalent");
                 });
 
-            modelBuilder.Entity("HeroesMatchTracker.Shared.Entities.ReplayPlayer", b =>
+            modelBuilder.Entity("HeroesMatchTracker.Core.Entities.ReplayPlayer", b =>
                 {
                     b.Navigation("OwnerReplayMatches");
 

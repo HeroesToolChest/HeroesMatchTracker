@@ -1,9 +1,9 @@
 ﻿using Heroes.StormReplayParser;
 using Heroes.StormReplayParser.Player;
+using HeroesMatchTracker.Core;
+using HeroesMatchTracker.Core.Entities;
 using HeroesMatchTracker.Core.Repositories;
 using HeroesMatchTracker.Core.Repositories.HeroesReplays;
-using HeroesMatchTracker.Shared;
-using HeroesMatchTracker.Shared.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

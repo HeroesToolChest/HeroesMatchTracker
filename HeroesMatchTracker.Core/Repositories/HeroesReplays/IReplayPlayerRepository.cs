@@ -1,4 +1,4 @@
-﻿using HeroesMatchTracker.Shared.Entities;
+﻿using HeroesMatchTracker.Core.Entities;
 
 namespace HeroesMatchTracker.Core.Repositories.HeroesReplays
 {
