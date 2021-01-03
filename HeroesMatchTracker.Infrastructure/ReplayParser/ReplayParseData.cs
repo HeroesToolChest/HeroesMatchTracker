@@ -250,6 +250,33 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
+        private static void SetPlayerPartyCounts(ReplayMatch replayMatch)
+        {
+            var query = (from mp in replayMatch.ReplayMatchPlayers
+                         where mp.PartyValue is not null
+                         group mp by new
+                         {
+                             mp.PartyValue,
+                         }
+                         into grp
+                         let partySize = grp.Count()
+                         select new
+                         {
+                             grp.Key.PartyValue,
+                             PartySize = partySize,
+                         }).Distinct();
+
+            foreach (var item in query)
+            {
+                var matchPlayers = replayMatch.ReplayMatchPlayers!.Where(x => x.PartyValue == item.PartyValue);
+
+                foreach (ReplayMatchPlayer player in matchPlayers)
+                {
+                    player.PartySize = item.PartySize;
+                }
+            }
+        }
+
         private void SetMatchPlayers(IUnitOfWork unitOfWork, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
@@ -277,7 +304,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     IsSilenced = player.IsSilenced,
                     IsVoiceSilenced = player.IsVoiceSilenced,
                     IsWinner = player.IsWinner,
-                    PartySize = 0,
+                    PartySize = replay.BattleLobbyPlayerInfoParsed ? 1 : null,
                     PartyValue = player.PartyValue,
                     Team = player.Team,
                     PlayerNumber = playerNum,
@@ -322,6 +349,9 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
                 replayMatch.ReplayMatchPlayers.Add(replayMatchPlayer);
             }
+
+            // set all the player's party count
+            SetPlayerPartyCounts(replayMatch);
         }
 
         private void UpdateOrAddPlayer(IUnitOfWork unitOfWork, DateTime replayTimestamp, ReplayMatchPlayer replayMatchPlayer)

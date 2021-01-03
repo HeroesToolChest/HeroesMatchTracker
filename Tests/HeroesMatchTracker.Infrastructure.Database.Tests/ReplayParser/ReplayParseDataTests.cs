@@ -282,6 +282,31 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
+        public void AddReplayPlayerMatchData()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            ReplayMatchPlayer playerMuradin = context.ReplayMatchPlayers.First(x => x.HeroId == "Muradin");
+            ReplayMatchPlayer playerIllidan = context.ReplayMatchPlayers.First(x => x.HeroId == "Illidan");
+            ReplayMatchPlayer playerMephisto = context.ReplayMatchPlayers.First(x => x.HeroId == "Mephisto" && x.Team == StormTeam.Red);
+            ReplayMatchPlayer playerVarian = context.ReplayMatchPlayers.First(x => x.HeroId == "Varian");
+
+            Assert.AreEqual(5, playerMuradin.PartySize);
+            Assert.AreEqual(78924826228, playerMuradin.PartyValue);
+            Assert.AreEqual(5, playerIllidan.PartySize);
+            Assert.AreEqual(78924826228, playerIllidan.PartyValue);
+            Assert.AreEqual(1, playerMephisto.PartySize);
+            Assert.IsNull(playerMephisto.PartyValue);
+            Assert.AreEqual(2, playerVarian.PartySize);
+            Assert.AreEqual(8141408165, playerVarian.PartyValue);
+        }
+
+        [TestMethod]
         public void AddReplayTalentsTest()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();

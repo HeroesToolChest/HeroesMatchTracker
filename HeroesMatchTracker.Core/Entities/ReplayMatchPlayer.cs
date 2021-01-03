@@ -74,7 +74,8 @@ namespace HeroesMatchTracker.Core.Entities
         public long? PartyValue { get; set; }
 
         /// <summary>
-        /// Gets or sets the size of the player's party.
+        /// Gets or sets the size of the player's party. This value will be 1 if the player is solo. If the value is <see langword="null"/>
+        /// the size of the party is unknown.
         /// </summary>
         public int? PartySize { get; set; }
 
@@ -96,7 +97,7 @@ namespace HeroesMatchTracker.Core.Entities
         /// <summary>
         /// Gets or sets a value indicating whether the player has been given the voice silence penalty.
         /// </summary>
-        public bool IsVoiceSilenced { get; set; }
+        public bool? IsVoiceSilenced { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the player won the game.
@@ -106,12 +107,12 @@ namespace HeroesMatchTracker.Core.Entities
         /// <summary>
         /// Gets or sets a value indicating whether the player is Blizzard staff.
         /// </summary>
-        public bool IsBlizzardStaff { get; set; }
+        public bool? IsBlizzardStaff { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the player has an active boost.
         /// </summary>
-        public bool HasActiveBoost { get; set; }
+        public bool? HasActiveBoost { get; set; }
 
         public virtual ReplayMatch? Replay { get; set; }
 
