@@ -216,6 +216,22 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             };
         }
 
+        private static void AddPlayerMatchAwards(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
+        {
+            if (player.MatchAwards is null)
+                return;
+
+            replayMatchPlayer.ReplayMatchAward = new List<ReplayMatchAward>();
+
+            foreach (MatchAwardType matchAward in player.MatchAwards)
+            {
+                replayMatchPlayer.ReplayMatchAward.Add(new ReplayMatchAward()
+                {
+                    AwardId = matchAward.ToString(),
+                });
+            }
+        }
+
         private static void AdjustHeroLevelFromMasterTiers(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
         {
             if (player.PlayerHero is not null && player.IsAutoSelect is false)
@@ -302,6 +318,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                 AddPlayerScoreResults(player, replayMatchPlayer);
                 AddPlayerTalents(player, replayMatchPlayer);
                 AddPlayerLoadout(player, replayMatchPlayer);
+                AddPlayerMatchAwards(player, replayMatchPlayer);
 
                 replayMatch.ReplayMatchPlayers.Add(replayMatchPlayer);
             }

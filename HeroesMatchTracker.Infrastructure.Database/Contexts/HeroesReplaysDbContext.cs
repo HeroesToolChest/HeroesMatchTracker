@@ -28,6 +28,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
         public virtual DbSet<ReplayMatchPlayerTalent> ReplayMatchPlayerTalents { get; set; } = null!;
 
+        public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; } = null!;
+
         //public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; } = null!;
 
         //public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; } = null!;
@@ -102,6 +104,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .HasOne(x => x.ReplayMatchPlayerLoadout)
                 .WithOne(y => y!.ReplayMatchPlayer!)
                 .HasForeignKey<ReplayMatchPlayerLoadout>(x => x.MatchPlayerId);
+
+            modelBuilder.Entity<ReplayMatchAward>()
+                .HasOne(x => x.ReplayMatchPlayer)
+                .WithMany(y => y!.ReplayMatchAward!)
+                .HasForeignKey(x => x.MatchPlayerId);
 
             //modelBuilder.Entity<ReplayMatch>()
             //    .HasMany(x => x.ReplayMatchAwards)

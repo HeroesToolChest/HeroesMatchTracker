@@ -1,5 +1,6 @@
 ﻿using Heroes.StormReplayParser.Player;
 using Heroes.StormReplayParser.Replay;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HeroesMatchTracker.Core.Entities
@@ -121,5 +122,7 @@ namespace HeroesMatchTracker.Core.Entities
         public virtual ReplayMatchPlayerTalent? ReplayMatchPlayerTalent { get; set; }
 
         public virtual ReplayMatchPlayerLoadout? ReplayMatchPlayerLoadout { get; set; }
+
+        public virtual ICollection<ReplayMatchAward>? ReplayMatchAward { get; set; }
     }
 }

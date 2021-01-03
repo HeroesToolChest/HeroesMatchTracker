@@ -4,6 +4,9 @@ namespace HeroesMatchTracker.Core.Entities
 {
     public class ReplayMatchAward : IEntity
     {
+        /// <summary>
+        /// Gets or sets the unique id.
+        /// </summary>
         [Key]
         public long ReplayMatchAwardId { get; set; }
 

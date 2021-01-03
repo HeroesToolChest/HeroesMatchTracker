@@ -1,11 +1,11 @@
 using Heroes.StormReplayParser;
 using Heroes.StormReplayParser.Replay;
+using HeroesMatchTracker.Core.Entities;
 using HeroesMatchTracker.Core.Repositories;
 using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Tests;
-using HeroesMatchTracker.Core.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -341,6 +341,21 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
             Assert.AreEqual("SprayStaticFluidDefault", player.ReplayMatchPlayerLoadout.SprayId);
             Assert.AreEqual("MR01", player.ReplayMatchPlayerLoadout.VoiceLineAttributeId);
             Assert.AreEqual("MuradinBase_VoiceLine01", player.ReplayMatchPlayerLoadout.VoiceLineId);
+        }
+
+        [TestMethod]
+        public void AddReplayPlayerMatchAwardTest()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            ReplayMatchPlayer player = context.ReplayMatchPlayers.First(x => x.HeroId == "Muradin");
+
+            Assert.AreEqual("MostTeamfightDamageTaken", player.ReplayMatchAward!.ToList()[0].AwardId);
         }
     }
 }
