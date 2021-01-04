@@ -1,5 +1,6 @@
 ﻿using Heroes.StormReplayParser;
 using Heroes.StormReplayParser.Player;
+using Heroes.StormReplayParser.Replay;
 using HeroesMatchTracker.Core;
 using HeroesMatchTracker.Core.Entities;
 using HeroesMatchTracker.Core.Repositories;
@@ -60,6 +61,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
 
             SetReplayData(replay, replayMatch, filePath, hash);
             SetMatchPlayers(unitOfWork, replay, replayMatch);
+            SetMatchTeamBans(replay, replayMatch);
 
             _replayMatchRepository.Add(unitOfWork, replayMatch);
 
@@ -275,6 +277,22 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     player.PartySize = item.PartySize;
                 }
             }
+        }
+
+        private static void SetMatchTeamBans(StormReplay replay, ReplayMatch replayMatch)
+        {
+            IReadOnlyList<string?> blueBans = replay.GetTeamBans(StormTeam.Blue);
+            IReadOnlyList<string?> redBans = replay.GetTeamBans(StormTeam.Red);
+
+            replayMatch.ReplayMatchTeamBan = new ReplayMatchTeamBan()
+            {
+                Team0Ban0 = blueBans[0],
+                Team0Ban1 = blueBans[1],
+                Team0Ban2 = blueBans[2],
+                Team1Ban0 = redBans[0],
+                Team1Ban1 = redBans[1],
+                Team1Ban2 = redBans[2],
+            };
         }
 
         private void SetMatchPlayers(IUnitOfWork unitOfWork, StormReplay replay, ReplayMatch replayMatch)
