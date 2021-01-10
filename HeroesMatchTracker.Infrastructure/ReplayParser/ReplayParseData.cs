@@ -304,7 +304,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             if (draftPicks.Count < 1)
                 return;
 
-            replayMatch.ReplayMatchDraftPicks = new List<ReplayMatchDraftPick>();
+            replayMatch.ReplayMatchDraftPicks = new List<ReplayMatchDraftPick>(draftPicks.Count);
 
             for (int i = 0; i < draftPicks.Count; i++)
             {
