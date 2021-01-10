@@ -3,7 +3,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 
-namespace HeroesMatchTracker.Infrastructure.Tests
+namespace HeroesMatchTracker.Tests
 {
     public static class DbServices
     {

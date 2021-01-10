@@ -10,15 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Core.Tests", "Tests\HeroesMatchTracker.Core.Tests\HeroesMatchTracker.Core.Tests.csproj", "{16028B6D-48DD-4292-BE5F-C8AED18AF25D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker", "HeroesMatchTracker\HeroesMatchTracker.csproj", "{33A58A7F-0FA9-4293-BF09-710A5CFF1053}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Core", "HeroesMatchTracker.Core\HeroesMatchTracker.Core.csproj", "{A3EBA68D-843E-4129-88AE-AE69A8B0F8A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Database", "HeroesMatchTracker.Infrastructure.Database\HeroesMatchTracker.Infrastructure.Database.csproj", "{0E22F5E0-74B2-469A-A6F3-BBFFC254A1B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure.Tests", "Tests\HeroesMatchTracker.Infrastructure.Database.Tests\HeroesMatchTracker.Infrastructure.Tests.csproj", "{6476F60A-18BC-4E62-A552-10FA6C15ACCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Tests", "Tests\HeroesMatchTracker.Infrastructure.Database.Tests\HeroesMatchTracker.Tests.csproj", "{6476F60A-18BC-4E62-A552-10FA6C15ACCE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeroesMatchTracker.Infrastructure", "HeroesMatchTracker.Infrastructure\HeroesMatchTracker.Infrastructure.csproj", "{51678454-DFE6-4118-84E4-26182887FF05}"
 EndProject
@@ -28,10 +26,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{16028B6D-48DD-4292-BE5F-C8AED18AF25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16028B6D-48DD-4292-BE5F-C8AED18AF25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16028B6D-48DD-4292-BE5F-C8AED18AF25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16028B6D-48DD-4292-BE5F-C8AED18AF25D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33A58A7F-0FA9-4293-BF09-710A5CFF1053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33A58A7F-0FA9-4293-BF09-710A5CFF1053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33A58A7F-0FA9-4293-BF09-710A5CFF1053}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,7 +51,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{16028B6D-48DD-4292-BE5F-C8AED18AF25D} = {6DF036B9-3A3C-461F-83DD-7310F5D7F3E9}
 		{6476F60A-18BC-4E62-A552-10FA6C15ACCE} = {6DF036B9-3A3C-461F-83DD-7310F5D7F3E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

@@ -5,7 +5,7 @@ using HeroesMatchTracker.Core.Repositories;
 using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
 using HeroesMatchTracker.Infrastructure.Database.Repository.HeroesReplays;
-using HeroesMatchTracker.Infrastructure.Tests;
+using HeroesMatchTracker.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -472,6 +472,32 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
             Assert.AreEqual(15, replayDraftPicks2[15].Order);
             Assert.AreEqual(StormDraftPickType.Picked, replayDraftPicks2[15].PickType);
             Assert.AreEqual(StormTeam.Blue, replayDraftPicks2[15].Team);
+        }
+
+        [TestMethod]
+        public void AddReplayTeamLevelsTest()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            List<ReplayMatchTeamLevel> replayBlueTeamLevels = context.ReplayMatchTeamLevels.Where(x => x.Replay.Hash == replayHash).Where(x => x.Team == StormTeam.Blue).OrderBy(x => x.TeamTimeTicks).ToList();
+            List<ReplayMatchTeamLevel> replayRedTeamLevels = context.ReplayMatchTeamLevels.Where(x => x.Replay.Hash == replayHash).Where(x => x.Team == StormTeam.Red).OrderBy(x => x.TeamTimeTicks).ToList();
+
+            Assert.AreEqual(1, replayBlueTeamLevels[0].TeamLevel);
+            Assert.AreEqual(32500000, replayBlueTeamLevels[0].TeamTimeTicks);
+
+            Assert.AreEqual(24, replayBlueTeamLevels[23].TeamLevel);
+            Assert.AreEqual(16250625000, replayBlueTeamLevels[23].TeamTimeTicks);
+
+            Assert.AreEqual(1, replayRedTeamLevels[0].TeamLevel);
+            Assert.AreEqual(32500000, replayRedTeamLevels[0].TeamTimeTicks);
+
+            Assert.AreEqual(25, replayRedTeamLevels[24].TeamLevel);
+            Assert.AreEqual(16675625000, replayRedTeamLevels[24].TeamTimeTicks);
         }
     }
 }

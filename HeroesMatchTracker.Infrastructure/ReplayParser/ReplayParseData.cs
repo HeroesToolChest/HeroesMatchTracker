@@ -63,6 +63,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             SetMatchPlayers(unitOfWork, replay, replayMatch);
             SetMatchTeamBans(replay, replayMatch);
             SetMatchDraftPicks(replay, replayMatch);
+            SetTeamLevels(replay, replayMatch);
 
             _replayMatchRepository.Add(unitOfWork, replayMatch);
 
@@ -317,6 +318,47 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     Team = draftPick.Team,
                     ReplayMatchPlayer = draftPick.Player is null ? null : replayMatch.ReplayMatchPlayers!.First(x => x.ReplayPlayer!.ReplayPlayerToon!.Id == draftPick.Player.ToonHandle!.Id),
                 });
+            }
+        }
+
+        private static void SetTeamLevels(StormReplay replay, ReplayMatch replayMatch)
+        {
+            IReadOnlyList<StormTeamLevel>? blueTeamLevels = replay.GetTeamLevels(StormTeam.Blue);
+            IReadOnlyList<StormTeamLevel>? redTeamLevels = replay.GetTeamLevels(StormTeam.Red);
+
+            if (blueTeamLevels is null && redTeamLevels is null)
+                return;
+
+            int totalLevelCount = 0;
+
+            if (blueTeamLevels is not null)
+                totalLevelCount += blueTeamLevels.Count;
+            if (redTeamLevels is not null)
+                totalLevelCount += redTeamLevels.Count;
+
+            replayMatch.ReplayMatchTeamLevels = new List<ReplayMatchTeamLevel>(totalLevelCount);
+
+            if (blueTeamLevels is not null)
+            {
+                AddTeamLevel(replayMatch, blueTeamLevels, StormTeam.Blue);
+            }
+
+            if (redTeamLevels is not null)
+            {
+                AddTeamLevel(replayMatch, redTeamLevels, StormTeam.Red);
+            }
+
+            static void AddTeamLevel(ReplayMatch replayMatch, IReadOnlyList<StormTeamLevel> teamLevels, StormTeam team)
+            {
+                foreach (StormTeamLevel? teamLevel in teamLevels)
+                {
+                    replayMatch.ReplayMatchTeamLevels.Add(new ReplayMatchTeamLevel()
+                    {
+                        Team = team,
+                        TeamLevel = teamLevel.Level,
+                        TeamTime = teamLevel.Time,
+                    });
+                }
             }
         }
 

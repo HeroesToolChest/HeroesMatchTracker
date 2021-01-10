@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.StormReplayParser.Replay;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,41 +21,26 @@ namespace HeroesMatchTracker.Core.Entities
         /// <summary>
         /// Gets or sets the team level.
         /// </summary>
-        public int? Team0Level { get; set; }
+        public int? TeamLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the time in ticks that the team leveled up. Use <see cref="TeamTime0"/> to get a <see cref="TimeSpan"/>.
+        /// Gets or sets the <see cref="StormTeam"/>.
         /// </summary>
-        public long? TeamTime0Ticks { get; set; }
+        public StormTeam? Team { get; set; }
 
         /// <summary>
-        /// Gets or sets the time that the team levelup up.
+        /// Gets or sets the time in ticks that the team leveled up. Use <see cref="TeamTime"/> to get a <see cref="TimeSpan"/>.
         /// </summary>
-        [NotMapped]
-        public TimeSpan? TeamTime0
-        {
-            get { return TeamTime0Ticks.HasValue ? TimeSpan.FromTicks(TeamTime0Ticks.Value) : (TimeSpan?)null; }
-            set { TeamTime0Ticks = value.HasValue ? value.Value.Ticks : (long?)null; }
-        }
+        public long? TeamTimeTicks { get; set; }
 
         /// <summary>
-        /// Gets or sets the team level.
-        /// </summary>
-        public int? Team1Level { get; set; }
-
-        /// <summary>
-        /// Gets or sets the time in ticks that the team leveled up. Use <see cref="TeamTime0"/> to get a <see cref="TimeSpan"/>.
-        /// </summary>
-        public long? TeamTime1Ticks { get; set; }
-
-        /// <summary>
-        /// Gets or sets the team level.
+        /// Gets or sets the time that the team leveled up.
         /// </summary>
         [NotMapped]
-        public TimeSpan? TeamTime1
+        public TimeSpan? TeamTime
         {
-            get { return TeamTime1Ticks.HasValue ? TimeSpan.FromTicks(TeamTime1Ticks.Value) : (TimeSpan?)null; }
-            set { TeamTime1Ticks = value.HasValue ? value.Value.Ticks : (long?)null; }
+            get { return TeamTimeTicks.HasValue ? TimeSpan.FromTicks(TeamTimeTicks.Value) : (TimeSpan?)null; }
+            set { TeamTimeTicks = value.HasValue ? value.Value.Ticks : (long?)null; }
         }
 
         public virtual ReplayMatch Replay { get; set; } = null!;

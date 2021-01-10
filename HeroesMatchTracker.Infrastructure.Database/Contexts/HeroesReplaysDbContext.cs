@@ -1,5 +1,5 @@
-﻿using HeroesMatchTracker.Core.Repositories;
-using HeroesMatchTracker.Core.Entities;
+﻿using HeroesMatchTracker.Core.Entities;
+using HeroesMatchTracker.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -33,6 +33,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
         public virtual DbSet<ReplayMatchTeamBan> ReplayMatchTeamBans { get; set; } = null!;
 
         public virtual DbSet<ReplayMatchDraftPick> ReplayMatchDraftPicks { get; set; } = null!;
+
+        public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; } = null!;
 
         //public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; } = null!;
 
@@ -127,6 +129,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .HasOne(x => x.ReplayMatchDraftPick)
                 .WithOne(y => y!.ReplayMatchPlayer!)
                 .HasForeignKey<ReplayMatchDraftPick>(x => x.PlayerId);
+
+            modelBuilder.Entity<ReplayMatchTeamLevel>()
+                .HasOne(x => x.Replay)
+                .WithMany(y => y!.ReplayMatchTeamLevels!)
+                .HasForeignKey(x => x.ReplayId);
 
             //modelBuilder.Entity<ReplayMatch>()
             //    .HasMany(x => x.ReplayMatchAwards)
