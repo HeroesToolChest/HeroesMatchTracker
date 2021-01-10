@@ -1,7 +1,7 @@
-﻿using HeroesMatchTracker.Core.Repositories;
+﻿using HeroesMatchTracker.Core.Entities;
+using HeroesMatchTracker.Core.Repositories;
 using HeroesMatchTracker.Core.Repositories.HeroesReplays;
 using HeroesMatchTracker.Infrastructure.Database.Contexts;
-using HeroesMatchTracker.Core.Entities;
 using System;
 using System.Linq;
 

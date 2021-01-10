@@ -125,5 +125,7 @@ namespace HeroesMatchTracker.Core.Entities
         public virtual ReplayMatchPlayerLoadout? ReplayMatchPlayerLoadout { get; set; }
 
         public virtual ICollection<ReplayMatchAward>? ReplayMatchAward { get; set; }
+
+        public virtual ReplayMatchDraftPick? ReplayMatchDraftPick { get; set; }
     }
 }

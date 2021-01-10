@@ -110,8 +110,7 @@ namespace HeroesMatchTracker.Core.Entities
 
         public virtual ReplayMatchTeamBan ReplayMatchTeamBan { get; set; } = null!;
 
-
-        //public virtual ICollection<ReplayMatchDraftPick> ReplayMatchDraftPicks { get; set; } = null!;
+        public virtual ICollection<ReplayMatchDraftPick> ReplayMatchDraftPicks { get; set; } = null!;
 
         //public virtual ICollection<ReplayMatchMessage> ReplayMatchMessages { get; set; } = null!;
 

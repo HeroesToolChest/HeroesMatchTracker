@@ -62,6 +62,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             SetReplayData(replay, replayMatch, filePath, hash);
             SetMatchPlayers(unitOfWork, replay, replayMatch);
             SetMatchTeamBans(replay, replayMatch);
+            SetMatchDraftPicks(replay, replayMatch);
 
             _replayMatchRepository.Add(unitOfWork, replayMatch);
 
@@ -293,6 +294,30 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                 Team1Ban1 = redBans[1],
                 Team1Ban2 = redBans[2],
             };
+        }
+
+        private static void SetMatchDraftPicks(StormReplay replay, ReplayMatch replayMatch)
+        {
+            IReadOnlyList<StormDraftPick> draftPicks = replay.DraftPicks;
+
+            if (draftPicks.Count < 1)
+                return;
+
+            replayMatch.ReplayMatchDraftPicks = new List<ReplayMatchDraftPick>();
+
+            for (int i = 0; i < draftPicks.Count; i++)
+            {
+                StormDraftPick draftPick = draftPicks[i];
+
+                replayMatch.ReplayMatchDraftPicks.Add(new ReplayMatchDraftPick()
+                {
+                    Order = i,
+                    HeroSelected = draftPick.HeroSelected,
+                    PickType = draftPick.PickType,
+                    Team = draftPick.Team,
+                    ReplayMatchPlayer = draftPick.Player is null ? null : replayMatch.ReplayMatchPlayers!.First(x => x.ReplayPlayer!.ReplayPlayerToon!.Id == draftPick.Player.ToonHandle!.Id),
+                });
+            }
         }
 
         private void SetMatchPlayers(IUnitOfWork unitOfWork, StormReplay replay, ReplayMatch replayMatch)

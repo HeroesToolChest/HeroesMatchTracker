@@ -22,6 +22,11 @@ namespace HeroesMatchTracker.Core.Entities
         public long? PlayerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the zero-index order of the pick.
+        /// </summary>
+        public int Order { get; set; }
+
+        /// <summary>
         /// Gets or sets the selected hero (hero id).
         /// </summary>
         public string HeroSelected { get; set; } = string.Empty;
@@ -38,6 +43,6 @@ namespace HeroesMatchTracker.Core.Entities
 
         public virtual ReplayMatch Replay { get; set; } = null!;
 
-        public virtual ReplayPlayer? ReplayPlayer { get; set; } = null!;
+        public virtual ReplayMatchPlayer? ReplayMatchPlayer { get; set; } = null!;
     }
 }
