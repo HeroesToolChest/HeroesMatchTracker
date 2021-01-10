@@ -394,14 +394,14 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
 
             replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
 
-            ReplayMatchTeamBan replayMatchTeamBan = context.ReplayMatchTeamBans.First(x => x.Replay.Hash == replayHash);
+            List<ReplayMatchTeamBan> replayMatchTeamBans = context.ReplayMatchTeamBans.Where(x => x.Replay.Hash == replayHash).ToList();
 
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team0Ban0);
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team0Ban1);
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team0Ban2);
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team1Ban0);
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team1Ban1);
-            Assert.AreEqual(string.Empty, replayMatchTeamBan.Team1Ban2);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[0].TeamBan);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[1].TeamBan);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[2].TeamBan);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[3].TeamBan);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[4].TeamBan);
+            Assert.AreEqual(string.Empty, replayMatchTeamBans[5].TeamBan);
 
             var volskayaFoundryParseResult = StormReplay.Parse(Path.Combine(_testReplaysFolder, "VolskayaFoundry1_77548.StormR"), new ParseOptions()
             {
@@ -415,14 +415,21 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
 
             replayParseData.AddReplay(context, volskayaFoundryParseResult.FileName, volskayaFoundryReplayHash, volskayaFoundryParseResult.Replay);
 
-            ReplayMatchTeamBan replayMatchTeamBanWithBans = context.ReplayMatchTeamBans.First(x => x.Replay.Hash == volskayaFoundryReplayHash);
+            List<ReplayMatchTeamBan> replayMatchTeamBansWithBans = context.ReplayMatchTeamBans.Where(x => x.Replay.Hash == volskayaFoundryReplayHash).ToList();
 
-            Assert.AreEqual("Alar", replayMatchTeamBanWithBans.Team0Ban0);
-            Assert.AreEqual("Garr", replayMatchTeamBanWithBans.Team0Ban1);
-            Assert.AreEqual("Fire", replayMatchTeamBanWithBans.Team0Ban2);
-            Assert.AreEqual("Crus", replayMatchTeamBanWithBans.Team1Ban0);
-            Assert.AreEqual("DEAT", replayMatchTeamBanWithBans.Team1Ban1);
-            Assert.AreEqual("Malf", replayMatchTeamBanWithBans.Team1Ban2);
+            Assert.AreEqual("Alar", replayMatchTeamBansWithBans[0].TeamBan);
+            Assert.AreEqual(StormTeam.Blue, replayMatchTeamBansWithBans[0].Team);
+            Assert.AreEqual(0, replayMatchTeamBansWithBans[0].Order);
+            Assert.AreEqual("Garr", replayMatchTeamBansWithBans[1].TeamBan);
+            Assert.AreEqual("Fire", replayMatchTeamBansWithBans[2].TeamBan);
+            Assert.AreEqual(StormTeam.Blue, replayMatchTeamBansWithBans[2].Team);
+            Assert.AreEqual(2, replayMatchTeamBansWithBans[2].Order);
+
+            Assert.AreEqual("Crus", replayMatchTeamBansWithBans[3].TeamBan);
+            Assert.AreEqual("DEAT", replayMatchTeamBansWithBans[4].TeamBan);
+            Assert.AreEqual("Malf", replayMatchTeamBansWithBans[5].TeamBan);
+            Assert.AreEqual(StormTeam.Red, replayMatchTeamBansWithBans[5].Team);
+            Assert.AreEqual(2, replayMatchTeamBansWithBans[5].Order);
         }
 
         [TestMethod]

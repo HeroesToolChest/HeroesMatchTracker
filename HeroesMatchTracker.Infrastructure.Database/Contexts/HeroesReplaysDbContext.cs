@@ -115,10 +115,10 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .WithMany(y => y!.ReplayMatchAward!)
                 .HasForeignKey(x => x.MatchPlayerId);
 
-            modelBuilder.Entity<ReplayMatch>()
-                .HasOne(x => x.ReplayMatchTeamBan)
-                .WithOne(y => y!.Replay!)
-                .HasForeignKey<ReplayMatchTeamBan>(x => x.ReplayId);
+            modelBuilder.Entity<ReplayMatchTeamBan>()
+                .HasOne(x => x.Replay)
+                .WithMany(y => y!.ReplayMatchTeamBans!)
+                .HasForeignKey(x => x.ReplayId);
 
             modelBuilder.Entity<ReplayMatchDraftPick>()
                 .HasOne(x => x.Replay)

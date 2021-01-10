@@ -286,15 +286,27 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             IReadOnlyList<string?> blueBans = replay.GetTeamBans(StormTeam.Blue);
             IReadOnlyList<string?> redBans = replay.GetTeamBans(StormTeam.Red);
 
-            replayMatch.ReplayMatchTeamBan = new ReplayMatchTeamBan()
+            replayMatch.ReplayMatchTeamBans = new List<ReplayMatchTeamBan>(blueBans.Count + redBans.Count);
+
+            for (int i = 0; i < blueBans.Count; i++)
             {
-                Team0Ban0 = blueBans[0],
-                Team0Ban1 = blueBans[1],
-                Team0Ban2 = blueBans[2],
-                Team1Ban0 = redBans[0],
-                Team1Ban1 = redBans[1],
-                Team1Ban2 = redBans[2],
-            };
+                SetTeamBan(replayMatch, blueBans, i, StormTeam.Blue);
+            }
+
+            for (int i = 0; i < redBans.Count; i++)
+            {
+                SetTeamBan(replayMatch, redBans, i, StormTeam.Red);
+            }
+
+            static void SetTeamBan(ReplayMatch replayMatch, IReadOnlyList<string?> bans, int i, StormTeam team)
+            {
+                replayMatch.ReplayMatchTeamBans!.Add(new ReplayMatchTeamBan()
+                {
+                    Order = i,
+                    Team = team,
+                    TeamBan = bans[i],
+                });
+            }
         }
 
         private static void SetMatchDraftPicks(StormReplay replay, ReplayMatch replayMatch)
@@ -352,7 +364,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             {
                 foreach (StormTeamLevel? teamLevel in teamLevels)
                 {
-                    replayMatch.ReplayMatchTeamLevels.Add(new ReplayMatchTeamLevel()
+                    replayMatch.ReplayMatchTeamLevels!.Add(new ReplayMatchTeamLevel()
                     {
                         Team = team,
                         TeamLevel = teamLevel.Level,
