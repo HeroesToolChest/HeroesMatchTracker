@@ -114,14 +114,8 @@ namespace HeroesMatchTracker.Core.Entities
 
         public virtual ICollection<ReplayMatchTeamLevel>? ReplayMatchTeamLevels { get; set; }
 
+        public virtual ICollection<ReplayMatchTeamExperience>? ReplayMatchTeamExperiences { get; set; }
 
         //public virtual ICollection<ReplayMatchMessage> ReplayMatchMessages { get; set; } = null!;
-
-
-
-
-        //public virtual ICollection<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; } = null!;
-
-        //public virtual ICollection<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; } = null!;
     }
 }

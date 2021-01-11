@@ -36,6 +36,8 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
         public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; } = null!;
 
+        public virtual DbSet<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; } = null!;
+
         //public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; } = null!;
 
         //public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; } = null!;
@@ -52,7 +54,7 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
 
 
-        //public virtual DbSet<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; } = null!;
+
 
         //public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; } = null!;
 
@@ -133,6 +135,11 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
             modelBuilder.Entity<ReplayMatchTeamLevel>()
                 .HasOne(x => x.Replay)
                 .WithMany(y => y!.ReplayMatchTeamLevels!)
+                .HasForeignKey(x => x.ReplayId);
+
+            modelBuilder.Entity<ReplayMatchTeamExperience>()
+                .HasOne(x => x.Replay)
+                .WithMany(y => y!.ReplayMatchTeamExperiences!)
                 .HasForeignKey(x => x.ReplayId);
 
             //modelBuilder.Entity<ReplayMatch>()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Heroes.StormReplayParser.Replay;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,6 +19,11 @@ namespace HeroesMatchTracker.Core.Entities
         public long ReplayId { get; set; }
 
         /// <summary>
+        /// Gets or sets the <see cref="StormTeam"/>.
+        /// </summary>
+        public StormTeam Team { get; set; }
+
+        /// <summary>
         /// Gets or sets the time in ticks that this experience breakdown took place. Use <see cref="Time"/> to get a <see cref="TimeSpan"/>.
         /// </summary>
         public long? TimeTicks { get; set; }
@@ -35,62 +41,32 @@ namespace HeroesMatchTracker.Core.Entities
         /// <summary>
         /// Gets or sets the experience earned from defending mercenaries.
         /// </summary>
-        public int? Team0CreepXP { get; set; }
+        public int? TeamCreepXP { get; set; }
 
         /// <summary>
         /// Gets or sets the experience earned from heroes.
         /// </summary>
-        public int? Team0HeroXP { get; set; }
+        public int? TeamHeroXP { get; set; }
 
         /// <summary>
         /// Gets or sets the experience earned from minions.
         /// </summary>
-        public int? Team0MinionXP { get; set; }
+        public int? TeamMinionXP { get; set; }
 
         /// <summary>
         /// Gets or sets the experience earned from structures.
         /// </summary>
-        public int? Team0StructureXP { get; set; }
+        public int? TeamStructureXP { get; set; }
 
         /// <summary>
         /// Gets or sets the level of the team.
         /// </summary>
-        public int? Team0TeamLevel { get; set; }
+        public int? TeamTeamLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the passive experience gain.
         /// </summary>
-        public int? Team0PassiveXP { get; set; }
-
-        /// <summary>
-        /// Gets or sets the experience earned from defending mercenaries.
-        /// </summary>
-        public int? Team1CreepXP { get; set; }
-
-        /// <summary>
-        /// Gets or sets the experience earned from heroes.
-        /// </summary>
-        public int? Team1HeroXP { get; set; }
-
-        /// <summary>
-        /// Gets or sets the experience earned from minions.
-        /// </summary>
-        public int? Team1MinionXP { get; set; }
-
-        /// <summary>
-        /// Gets or sets the experience earned from structures.
-        /// </summary>
-        public int? Team1StructureXP { get; set; }
-
-        /// <summary>
-        /// Gets or sets the level of the team.
-        /// </summary>
-        public int? Team1TeamLevel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the passive experience gain.
-        /// </summary>
-        public int? Team1PassiveXP { get; set; }
+        public int? TeamPassiveXP { get; set; }
 
         public virtual ReplayMatch Replay { get; set; } = null!;
     }

@@ -63,7 +63,8 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             SetMatchPlayers(unitOfWork, replay, replayMatch);
             SetMatchTeamBans(replay, replayMatch);
             SetMatchDraftPicks(replay, replayMatch);
-            SetTeamLevels(replay, replayMatch);
+            SetMatchTeamLevels(replay, replayMatch);
+            SetMatchTeamExperience(replay, replayMatch);
 
             _replayMatchRepository.Add(unitOfWork, replayMatch);
 
@@ -333,7 +334,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
-        private static void SetTeamLevels(StormReplay replay, ReplayMatch replayMatch)
+        private static void SetMatchTeamLevels(StormReplay replay, ReplayMatch replayMatch)
         {
             IReadOnlyList<StormTeamLevel>? blueTeamLevels = replay.GetTeamLevels(StormTeam.Blue);
             IReadOnlyList<StormTeamLevel>? redTeamLevels = replay.GetTeamLevels(StormTeam.Red);
@@ -369,6 +370,52 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                         Team = team,
                         TeamLevel = teamLevel.Level,
                         TeamTime = teamLevel.Time,
+                    });
+                }
+            }
+        }
+
+        private static void SetMatchTeamExperience(StormReplay replay, ReplayMatch replayMatch)
+        {
+            IReadOnlyList<StormTeamXPBreakdown>? blueTeamXP = replay.GetTeamXPBreakdown(StormTeam.Blue);
+            IReadOnlyList<StormTeamXPBreakdown>? redTeamXP = replay.GetTeamXPBreakdown(StormTeam.Red);
+
+            if (blueTeamXP is null && redTeamXP is null)
+                return;
+
+            int totalCount = 0;
+
+            if (blueTeamXP is not null)
+                totalCount += blueTeamXP.Count;
+            if (redTeamXP is not null)
+                totalCount += redTeamXP.Count;
+
+            replayMatch.ReplayMatchTeamExperiences = new List<ReplayMatchTeamExperience>(totalCount);
+
+            if (blueTeamXP is not null)
+            {
+                SetTeamXP(replayMatch, blueTeamXP, StormTeam.Blue);
+            }
+
+            if (redTeamXP is not null)
+            {
+                SetTeamXP(replayMatch, redTeamXP, StormTeam.Red);
+            }
+
+            static void SetTeamXP(ReplayMatch replayMatch, IReadOnlyList<StormTeamXPBreakdown> blueTeamXP, StormTeam team)
+            {
+                foreach (StormTeamXPBreakdown teamXPBreakdown in blueTeamXP)
+                {
+                    replayMatch.ReplayMatchTeamExperiences!.Add(new ReplayMatchTeamExperience()
+                    {
+                        Team = team,
+                        TeamCreepXP = teamXPBreakdown.CreepXP,
+                        TeamHeroXP = teamXPBreakdown.HeroXP,
+                        TeamMinionXP = teamXPBreakdown.MinionXP,
+                        TeamPassiveXP = teamXPBreakdown.PassiveXP,
+                        TeamStructureXP = teamXPBreakdown.StructureXP,
+                        TeamTeamLevel = teamXPBreakdown.Level,
+                        Time = teamXPBreakdown.Time,
                     });
                 }
             }

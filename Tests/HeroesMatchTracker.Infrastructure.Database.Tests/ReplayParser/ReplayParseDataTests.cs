@@ -415,21 +415,22 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
 
             replayParseData.AddReplay(context, volskayaFoundryParseResult.FileName, volskayaFoundryReplayHash, volskayaFoundryParseResult.Replay);
 
-            List<ReplayMatchTeamBan> replayMatchTeamBansWithBans = context.ReplayMatchTeamBans.Where(x => x.Replay.Hash == volskayaFoundryReplayHash).ToList();
+            List<ReplayMatchTeamBan> blueReplayMatchTeamBansWithBans = context.ReplayMatchTeamBans.Where(x => x.Replay.Hash == volskayaFoundryReplayHash && x.Team == StormTeam.Blue).OrderBy(x => x.Order).ToList();
+            List<ReplayMatchTeamBan> redReplayMatchTeamBansWithBans = context.ReplayMatchTeamBans.Where(x => x.Replay.Hash == volskayaFoundryReplayHash && x.Team == StormTeam.Red).OrderBy(x => x.Order).ToList();
 
-            Assert.AreEqual("Alar", replayMatchTeamBansWithBans[0].TeamBan);
-            Assert.AreEqual(StormTeam.Blue, replayMatchTeamBansWithBans[0].Team);
-            Assert.AreEqual(0, replayMatchTeamBansWithBans[0].Order);
-            Assert.AreEqual("Garr", replayMatchTeamBansWithBans[1].TeamBan);
-            Assert.AreEqual("Fire", replayMatchTeamBansWithBans[2].TeamBan);
-            Assert.AreEqual(StormTeam.Blue, replayMatchTeamBansWithBans[2].Team);
-            Assert.AreEqual(2, replayMatchTeamBansWithBans[2].Order);
+            Assert.AreEqual("Alar", blueReplayMatchTeamBansWithBans[0].TeamBan);
+            Assert.AreEqual(StormTeam.Blue, blueReplayMatchTeamBansWithBans[0].Team);
+            Assert.AreEqual(0, blueReplayMatchTeamBansWithBans[0].Order);
+            Assert.AreEqual("Garr", blueReplayMatchTeamBansWithBans[1].TeamBan);
+            Assert.AreEqual("Fire", blueReplayMatchTeamBansWithBans[2].TeamBan);
+            Assert.AreEqual(StormTeam.Blue, blueReplayMatchTeamBansWithBans[2].Team);
+            Assert.AreEqual(2, blueReplayMatchTeamBansWithBans[2].Order);
 
-            Assert.AreEqual("Crus", replayMatchTeamBansWithBans[3].TeamBan);
-            Assert.AreEqual("DEAT", replayMatchTeamBansWithBans[4].TeamBan);
-            Assert.AreEqual("Malf", replayMatchTeamBansWithBans[5].TeamBan);
-            Assert.AreEqual(StormTeam.Red, replayMatchTeamBansWithBans[5].Team);
-            Assert.AreEqual(2, replayMatchTeamBansWithBans[5].Order);
+            Assert.AreEqual("Crus", redReplayMatchTeamBansWithBans[0].TeamBan);
+            Assert.AreEqual("DEAT", redReplayMatchTeamBansWithBans[1].TeamBan);
+            Assert.AreEqual("Malf", redReplayMatchTeamBansWithBans[2].TeamBan);
+            Assert.AreEqual(StormTeam.Red, redReplayMatchTeamBansWithBans[2].Team);
+            Assert.AreEqual(2, redReplayMatchTeamBansWithBans[2].Order);
         }
 
         [TestMethod]
@@ -505,6 +506,48 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
 
             Assert.AreEqual(25, replayRedTeamLevels[24].TeamLevel);
             Assert.AreEqual(16675625000, replayRedTeamLevels[24].TeamTimeTicks);
+        }
+
+        [TestMethod]
+        public void AddReplayTeamExperienceTest()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            List<ReplayMatchTeamExperience> replayBlueTeamXP = context.ReplayMatchTeamExperiences.Where(x => x.Replay.Hash == replayHash).Where(x => x.Team == StormTeam.Blue).OrderBy(x => x.TimeTicks).ToList();
+            List<ReplayMatchTeamExperience> replayRedTeamXP = context.ReplayMatchTeamExperiences.Where(x => x.Replay.Hash == replayHash).Where(x => x.Team == StormTeam.Red).OrderBy(x => x.TimeTicks).ToList();
+
+            Assert.AreEqual(981250000, replayBlueTeamXP[0].TimeTicks);
+            Assert.AreEqual(0, replayBlueTeamXP[0].TeamCreepXP);
+            Assert.AreEqual(300, replayBlueTeamXP[0].TeamHeroXP);
+            Assert.AreEqual(872, replayBlueTeamXP[0].TeamMinionXP);
+            Assert.AreEqual(687, replayBlueTeamXP[0].TeamPassiveXP);
+            Assert.AreEqual(0, replayBlueTeamXP[0].TeamStructureXP);
+
+            Assert.AreEqual(17067500000, replayBlueTeamXP[27].TimeTicks);
+            Assert.AreEqual(5261, replayBlueTeamXP[27].TeamCreepXP);
+            Assert.AreEqual(32576, replayBlueTeamXP[27].TeamHeroXP);
+            Assert.AreEqual(27351, replayBlueTeamXP[27].TeamMinionXP);
+            Assert.AreEqual(44715, replayBlueTeamXP[27].TeamPassiveXP);
+            Assert.AreEqual(8650, replayBlueTeamXP[27].TeamStructureXP);
+
+            Assert.AreEqual(981250000, replayRedTeamXP[0].TimeTicks);
+            Assert.AreEqual(0, replayRedTeamXP[0].TeamCreepXP);
+            Assert.AreEqual(0, replayRedTeamXP[0].TeamHeroXP);
+            Assert.AreEqual(1352, replayRedTeamXP[0].TeamMinionXP);
+            Assert.AreEqual(687, replayRedTeamXP[0].TeamPassiveXP);
+            Assert.AreEqual(0, replayRedTeamXP[0].TeamStructureXP);
+
+            Assert.AreEqual(17067500000, replayRedTeamXP[27].TimeTicks);
+            Assert.AreEqual(5819, replayRedTeamXP[27].TeamCreepXP);
+            Assert.AreEqual(39420, replayRedTeamXP[27].TeamHeroXP);
+            Assert.AreEqual(35223, replayRedTeamXP[27].TeamMinionXP);
+            Assert.AreEqual(44715, replayRedTeamXP[27].TeamPassiveXP);
+            Assert.AreEqual(10700, replayRedTeamXP[27].TeamStructureXP);
         }
     }
 }
