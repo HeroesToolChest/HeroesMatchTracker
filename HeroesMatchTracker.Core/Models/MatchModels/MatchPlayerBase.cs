@@ -139,7 +139,7 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
             LeaderboardPortrait = Player.Character != "None" ? hero.HeroPortrait.LeaderboardImage() : null;
             Silenced = Player.IsSilenced;
             VoiceSilenced = Player.IsVoiceSilenced;
-            CharacterName = hero.Name;
+            CharacterName = hero?.Name ?? "None";
             PlayerName = Database.SettingsDb().UserSettings.IsBattleTagHidden ? HeroesHelpers.BattleTags.GetNameFromBattleTagName(playerInfo.BattleTagName) : playerInfo.BattleTagName;
             PlayerBattleTagName = playerInfo.BattleTagName;
             PlayerRegion = (Region)playerInfo.BattleNetRegionId;
@@ -161,6 +161,9 @@ namespace HeroesMatchTracker.Core.Models.MatchModels
                 Notes = playerInfo.Notes ?? string.Empty,
             };
 
+            if (Player.Team == 4)
+                return;
+            
             HeroDescription = new HeroDescription
             {
                 HeroName = hero.Name,
