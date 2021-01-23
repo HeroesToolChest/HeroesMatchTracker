@@ -41,7 +41,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayTest()
+        public void AddReplay_AddingNewReplay_ReplayDataAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -66,7 +66,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void IsReplayExistsTest()
+        public void IsReplayExists_AddedNewReplay_ReplayExists()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -85,7 +85,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayExistingPlayerTest()
+        public void AddReplay_ExistingPlayer_ExistingPlayerDataUpdated()
         {
             string fileName1 = "HanamuraTemple1_75132.StormR";
             string fileName2 = "VolskayaFoundry1_77548.StormR";
@@ -147,7 +147,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayExistingPlayerNewBattleTagTest()
+        public void AddReplay_ReExistingPlayerWithNewBattleTag_PlayerBattleTagStaysSame()
         {
             string fileName1 = "Hanamura1_54339.StormR";
             string fileName2 = "Braxis Outpost1_82624.StormR";
@@ -202,7 +202,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayExistingPlayerNewBattleTagTwiceTest()
+        public void AddReplay_ExistingPlayerWithNewBattleTag_ExistingPlayerBattleTagUpdated()
         {
             string fileName1 = "Hanamura1_54339.StormR";
             string fileName2 = "Braxis Outpost1_82624.StormR";
@@ -258,7 +258,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayHeroLevelTest()
+        public void AddReplay_AddHeroLevel_HeroLevelAdded()
         {
             string fileName1 = "Hanamura1_54339.StormR";
             string file1 = Path.Combine("TestReplays", fileName1);
@@ -283,7 +283,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayPlayerMatchData()
+        public void AddReplay_AddPlayerMatchData_PlayerMatchDataAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -308,7 +308,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayTalentsTest()
+        public void AddReplay_AddPlayerHeroTalents_TalentsAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -344,7 +344,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayPlayerLoadoutTest()
+        public void AddReplay_AddPlayerLoadout_LoadoutAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -370,7 +370,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayPlayerMatchAwardTest()
+        public void AddReplay_AddPlayerMatchAward_MatchAwardsAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -434,7 +434,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayTeamDraftPicksTest()
+        public void AddReplay_AddTeamDraftPicks_TeamDraftPicksAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -483,7 +483,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayTeamLevelsTest()
+        public void AddReplay_AddTeamLevels_TeamLevelsAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
@@ -509,7 +509,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
         }
 
         [TestMethod]
-        public void AddReplayTeamExperienceTest()
+        public void AddReplay_AddTeamExperience_TeamExperienceAdded()
         {
             using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
 
