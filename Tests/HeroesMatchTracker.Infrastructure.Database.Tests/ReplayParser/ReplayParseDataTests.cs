@@ -1,4 +1,5 @@
 using Heroes.StormReplayParser;
+using Heroes.StormReplayParser.MessageEvent;
 using Heroes.StormReplayParser.Replay;
 using HeroesMatchTracker.Core.Entities;
 using HeroesMatchTracker.Core.Repositories;
@@ -548,6 +549,37 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser.Tests
             Assert.AreEqual(35223, replayRedTeamXP[27].TeamMinionXP);
             Assert.AreEqual(44715, replayRedTeamXP[27].TeamPassiveXP);
             Assert.AreEqual(10700, replayRedTeamXP[27].TeamStructureXP);
+        }
+
+        [TestMethod]
+        public void AddReplay_AddChatMessages_ChatMessagesAdded()
+        {
+            using HeroesReplaysDbContext context = DbServices.GetHeroesReplaysDbContext();
+
+            IReplayParseData replayParseData = new ReplayParseData(_replayMatchRepository, _replayPlayerToonRepository, _replayPlayerRepository);
+            string replayHash = replayParseData.GetReplayHash(_hanamura267679ReplayResult.Replay);
+
+            replayParseData.AddReplay(context, _hanamura267679ReplayResult.FileName, replayHash, _hanamura267679ReplayResult.Replay);
+
+            List<ReplayMatchMessage> messages = context.ReplayMatchMessages.OrderBy(x => x.TimeStampTicks).ToList();
+
+            ReplayMatchMessage message1 = messages[0];
+
+            Assert.AreEqual(StormMessageEventType.SChatMessage, message1.MessageEventType);
+            Assert.AreEqual(StormMessageTarget.Allies, message1.MessageTarget);
+            Assert.AreEqual(60000000, message1.TimeStampTicks);
+            Assert.IsNotNull(message1.Replay);
+            Assert.IsNotNull(message1.ReplayMatchPlayer);
+            Assert.AreEqual("Wizard", message1.ReplayMatchPlayer!.HeroId);
+            Assert.AreEqual("(00:00:06) [Allies] BlizzBrawler (Li-Ming): Hail Heroes!  Welcome to the Heroes of the PTR! I'll be your BlizzBrawler from Blizzard's very own QA department!", message1.Message);
+
+            ReplayMatchMessage message23 = messages[22];
+
+            Assert.AreEqual(StormMessageEventType.SChatMessage, message23.MessageEventType);
+            Assert.AreEqual(StormMessageTarget.Allies, message23.MessageTarget);
+            Assert.AreEqual(17218750000, message23.TimeStampTicks);
+            Assert.IsNotNull(message23.Replay);
+            Assert.IsNotNull(message23.ReplayMatchPlayer);
         }
     }
 }

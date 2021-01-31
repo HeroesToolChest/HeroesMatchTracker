@@ -1,4 +1,5 @@
 ﻿using Heroes.StormReplayParser;
+using Heroes.StormReplayParser.MessageEvent;
 using Heroes.StormReplayParser.Player;
 using Heroes.StormReplayParser.Replay;
 using HeroesMatchTracker.Core;
@@ -65,6 +66,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             SetMatchDraftPicks(replay, replayMatch);
             SetMatchTeamLevels(replay, replayMatch);
             SetMatchTeamExperience(replay, replayMatch);
+            SetMatchMessages(replay, replayMatch);
 
             _replayMatchRepository.Add(unitOfWork, replayMatch);
 
@@ -90,15 +92,6 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             replayMatch.HasObservers = replay.HasObservers;
             replayMatch.WinningTeam = replay.WinningTeam;
             replayMatch.Region = replay.Region;
-
-            // TODO: CheckForSpecialMaps()
-        }
-
-        private static void CheckForSpecialMaps(string mapName)
-        {
-            return;
-
-            // pull party map (chromie / stitches)
         }
 
         private static void AddPlayerScoreResults(StormPlayer player, ReplayMatchPlayer replayMatchPlayer)
@@ -421,6 +414,28 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
             }
         }
 
+        private static void SetMatchMessages(StormReplay replay, ReplayMatch replayMatch)
+        {
+            if (!replay.ChatMessages.Any())
+                return;
+
+            replayMatch.ReplayMatchMessages = new List<ReplayMatchMessage>();
+
+            foreach (IStormMessage message in replay.ChatMessages)
+            {
+                ChatMessage chatMessage = (ChatMessage)message;
+
+                replayMatch.ReplayMatchMessages.Add(new ReplayMatchMessage()
+                {
+                    Message = chatMessage.Message,
+                    MessageEventType = chatMessage.MessageEventType,
+                    MessageTarget = chatMessage.MessageTarget,
+                    TimeStamp = chatMessage.Timestamp,
+                    ReplayMatchPlayer = chatMessage.MessageSender is null ? null : replayMatch.ReplayMatchPlayers!.First(x => x.ReplayPlayer!.ReplayPlayerToon!.Id == chatMessage.MessageSender.ToonHandle!.Id),
+                });
+            }
+        }
+
         private void SetMatchPlayers(IUnitOfWork unitOfWork, StormReplay replay, ReplayMatch replayMatch)
         {
             replayMatch.ReplayMatchPlayers = new List<ReplayMatchPlayer>(replay.PlayersCount + replay.PlayersObserversCount);
@@ -448,7 +463,7 @@ namespace HeroesMatchTracker.Infrastructure.ReplayParser
                     IsSilenced = player.IsSilenced,
                     IsVoiceSilenced = player.IsVoiceSilenced,
                     IsWinner = player.IsWinner,
-                    PartySize = replay.BattleLobbyPlayerInfoParsed ? 1 : null,
+                    PartySize = replay.IsBattleLobbyPlayerInfoParsed ? 1 : null,
                     PartyValue = player.PartyValue,
                     Team = player.Team,
                     PlayerNumber = playerNum,

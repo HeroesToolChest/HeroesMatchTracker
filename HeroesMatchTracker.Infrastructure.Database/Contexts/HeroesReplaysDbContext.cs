@@ -38,32 +38,9 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
 
         public virtual DbSet<ReplayMatchTeamExperience> ReplayMatchTeamExperiences { get; set; } = null!;
 
+        public virtual DbSet<ReplayMatchMessage> ReplayMatchMessages { get; set; } = null!;
+
         //public virtual DbSet<ReplayHotsApiUpload> ReplayHotsApiUploads { get; set; } = null!;
-
-        //public virtual DbSet<ReplayMatchAward> ReplayMatchAwards { get; set; } = null!;
-
-
-        //public virtual DbSet<ReplayMatchMessage> ReplayMatchMessages { get; set; } = null!;
-
-
-        //public virtual DbSet<ReplayMatchPlayerLoadout> ReplayMatchPlayerLoadouts { get; set; } = null!;
-
-
-
-
-
-
-
-
-
-        //public virtual DbSet<ReplayMatchTeamLevel> ReplayMatchTeamLevels { get; set; } = null!;
-
-
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //    => optionsBuilder
-        //        .UseLazyLoadingProxies()
-        //        .UseSqlite(DbConnectionString.HeroesReplays);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -142,48 +119,15 @@ namespace HeroesMatchTracker.Infrastructure.Database.Contexts
                 .WithMany(y => y!.ReplayMatchTeamExperiences!)
                 .HasForeignKey(x => x.ReplayId);
 
-            //modelBuilder.Entity<ReplayMatch>()
-            //    .HasMany(x => x.ReplayMatchAwards)
-            //    .WithOne(x => x.ReplayMatch)
-            //    .HasForeignKey(x => x.ReplayId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<ReplayMatchMessage>()
+                .HasOne(x => x.Replay)
+                .WithMany(y => y!.ReplayMatchMessages)
+                .HasForeignKey(x => x.ReplayId);
 
-            //modelBuilder.Entity<ReplayPlayer>()
-            //    .HasMany(x => x.ReplayMatchAwards)
-            //    .WithOne(x => x.ReplayPlayer)
-            //    .HasForeignKey(x => x.PlayerId)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<ReplayPlayer>()
-            //    .HasMany(x => x.ReplayMatchPlayers)
-            //    .WithOne(x => x.ReplayPlayer)
-            //    .HasForeignKey(x => x.PlayerId)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<ReplayPlayer>()
-            //    .HasMany(x => x.ReplayMatchPlayerScoreResults)
-            //    .WithOne(x => x.ReplayPlayer)
-            //    .HasForeignKey(x => x.PlayerId)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<ReplayPlayer>()
-            //    .HasMany(x => x.ReplayMatchPlayerTalents)
-            //    .WithOne(x => x.ReplayPlayer)
-            //    .HasForeignKey(x => x.PlayerId)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<ReplayPlayer>()
-            //    .HasOne(x => x.ReplayRenamedPlayer)
-            //    .WithOne(x => x.ReplayPlayer)
-            //    .HasForeignKey<ReplayRenamedPlayer>(x => x.PlayerId)
-            //    .OnDelete(DeleteBehavior.Cascade);
-
-
-
-            //modelBuilder.Entity<ReplayMatchPlayer>()
-            //    .HasOne(x => x.ReplayMatchPlayerLoadout)
-            //    .WithOne(x => x.ReplayMatchPlayer)
-            //    .HasForeignKey<ReplayMatchPlayerLoadout>(x => x.MatchPlayerId);
+            modelBuilder.Entity<ReplayMatchMessage>()
+                .HasOne(x => x.ReplayMatchPlayer)
+                .WithMany(y => y!.ReplayMatchMessages)
+                .HasForeignKey(x => x.MatchPlayerId);
         }
     }
 }

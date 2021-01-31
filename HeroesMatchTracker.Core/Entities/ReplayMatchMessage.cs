@@ -19,9 +19,9 @@ namespace HeroesMatchTracker.Core.Entities
         public long ReplayId { get; set; }
 
         /// <summary>
-        /// Gets or sets the player id (foreign key).
+        /// Gets or sets the match player id (foreign key).
         /// </summary>
-        public long? PlayerId { get; set; }
+        public long? MatchPlayerId { get; set; }
 
         /// <summary>
         /// Gets or setst the message event type.
@@ -55,6 +55,6 @@ namespace HeroesMatchTracker.Core.Entities
 
         public virtual ReplayMatch Replay { get; set; } = null!;
 
-        public virtual ReplayPlayer? ReplayPlayer { get; set; } = null!;
+        public virtual ReplayMatchPlayer? ReplayMatchPlayer { get; set; } = null!;
     }
 }
