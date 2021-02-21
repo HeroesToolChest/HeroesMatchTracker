@@ -11,6 +11,7 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
         private ReplayResult? _status;
         private ReplayFileUploaderStatus? _hotsLogsUploadStatus;
         private ReplayFileUploaderStatus? _hotsApiUploadStatus;
+        private ReplayFileUploaderStatus? _heroesProfileUploadStatus;
 
         public string FileName { get; set; }
         public DateTime LastWriteTime { get; set; }
@@ -53,6 +54,16 @@ namespace HeroesMatchTracker.Core.Models.ReplayModels
             set
             {
                 _hotsApiUploadStatus = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ReplayFileUploaderStatus? HeroesProfileUploadStatus
+        {
+            get => _heroesProfileUploadStatus;
+            set
+            {
+                _heroesProfileUploadStatus = value;
                 RaisePropertyChanged();
             }
         }

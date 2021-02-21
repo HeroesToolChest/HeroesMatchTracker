@@ -133,6 +133,7 @@
     <Compile Include="Migrations\Replays\Migration11_v2_10_0\MigrationAddon11_v2_10_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration13_v2_12_0\MigrationAddon13_v2_12_0_1.cs" />
     <Compile Include="Migrations\Replays\Migration14_v2_12_1\MigrationAddon14_v2_12_1_1.cs" />
+    <Compile Include="Migrations\Replays\Migration17_v2_14_0\Migration17_v2_14_0.cs" />
     <Compile Include="Migrations\Replays\Migration1_v1_2_0\MigrationAddon1_v1_2_0_2.cs" />
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\Migration2_v1_3_0.cs" />
     <Compile Include="Migrations\Replays\Migration2_v1_3_0\MigrationAddon2_v1_3_0_2.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Migrations\Settings\Migration1_v1_3_0\MigrationAddon1_v1_3_0_1.cs" />
     <Compile Include="Migrations\Settings\Migration3_v2_1_0\Migration3_v2_1_0.cs" />
     <Compile Include="Migrations\Settings\Migration2_v2_0_0\Migration2_v2_0_0.cs" />
+    <Compile Include="Migrations\Settings\Migration6_v2_14_0\Migration6_v2_14_0.cs" />
     <Compile Include="Migrations\Settings\Migration5_v2_4_0\Migration5_v2_4_0.cs" />
     <Compile Include="Migrations\Settings\Migration4_v2_2_0\Migration4_v2_2_0.cs" />
     <Compile Include="Migrations\Settings\Migration4_v2_2_0\MigrationAddon4_v2_2_0_1.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Models\INonContextModels.cs" />
     <Compile Include="Models\IRawDataDisplay.cs" />
     <Compile Include="Models\ReleaseNotes\ReleaseNote.cs" />
+    <Compile Include="Models\Replays\ReplayHeroesProfileUpload.cs" />
     <Compile Include="Models\Replays\ReplayHotsApiUpload.cs" />
     <Compile Include="Models\Replays\ReplayMatch.cs" />
     <Compile Include="Models\Replays\ReplayAllHotsPlayer.cs" />
@@ -198,6 +201,7 @@
     <Compile Include="Queries\QueryException.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotes.cs" />
     <Compile Include="Queries\ReleaseNotes\ReleaseNotesDb.cs" />
+    <Compile Include="Queries\Replays\HeroesProfileUpload.cs" />
     <Compile Include="Queries\Replays\HotsApiUpload.cs" />
     <Compile Include="Queries\Replays\MatchDraft.cs" />
     <Compile Include="Queries\Replays\ReplayFilter.cs" />

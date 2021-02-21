@@ -64,6 +64,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<IRawDataQueries<ReplayAllHotsPlayer>, HotsPlayer>();
 
             SimpleIoc.Default.Register<IRawDataQueries<ReplayHotsApiUpload>, HotsApiUpload>();
+            SimpleIoc.Default.Register<IRawDataQueries<ReplayHeroesProfileUpload>, HeroesProfileUpload>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchAward>, MatchAward>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchMessage>, MatchMessage>();
             SimpleIoc.Default.Register<IRawDataQueries<ReplayMatchPlayer>, MatchPlayer>();
@@ -79,6 +80,7 @@ namespace HeroesMatchTracker.Core.ViewModels
             SimpleIoc.Default.Register<RawMatchReplayViewModel>();
             SimpleIoc.Default.Register<RawAllHotsPlayerViewModel>();
             SimpleIoc.Default.Register<RawHotsApiUploadViewModel>();
+            SimpleIoc.Default.Register<RawHeroesProfileUploadViewModel>();
             SimpleIoc.Default.Register<RawMatchAwardViewModel>();
             SimpleIoc.Default.Register<RawMatchMessageViewModel>();
             SimpleIoc.Default.Register<RawMatchPlayerScoreResultViewModel>();
@@ -134,6 +136,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         public static RawMatchReplayViewModel RawMatchReplayViewModel => ServiceLocator.Current.GetInstance<RawMatchReplayViewModel>();
         public static RawAllHotsPlayerViewModel RawAllHotsPlayerViewModel => ServiceLocator.Current.GetInstance<RawAllHotsPlayerViewModel>();
         public static RawHotsApiUploadViewModel RawHotsApiUploadViewModel => ServiceLocator.Current.GetInstance<RawHotsApiUploadViewModel>();
+        public static RawHeroesProfileUploadViewModel RawHeroesProfileUploadViewModel => ServiceLocator.Current.GetInstance<RawHeroesProfileUploadViewModel>();
         public static RawMatchAwardViewModel RawMatchAwardViewModel => ServiceLocator.Current.GetInstance<RawMatchAwardViewModel>();
         public static RawMatchMessageViewModel RawMatchMessageViewModel => ServiceLocator.Current.GetInstance<RawMatchMessageViewModel>();
         public static RawMatchPlayerScoreResultViewModel RawMatchPlayerScoreResultViewModel => ServiceLocator.Current.GetInstance<RawMatchPlayerScoreResultViewModel>();

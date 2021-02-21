@@ -9,5 +9,6 @@
         public static string ChangeCurrentSelectedReplayMatchRight => "ChangeCurrentSelectedReplayMatchRight";
         public static string HotsLogsUploaderDisabled => "HotsLogsUploaderDisabled";
         public static string HotsApiUploaderDisabled => "HotsApiUploaderDisabled";
+        public static string HeroesProfileUploaderDisabled => "HeroesProfileUploaderDisabled";
     }
 }

@@ -32,7 +32,7 @@
                         <DataGridTextColumn Header="Date" Binding="{Binding LastWriteTime}" />
                         <DataGridTextColumn Header="Build" Binding="{Binding Build}" />
                         <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
-                        <DataGridTextColumn Header="HotsApi Status" Binding="{Binding HotsApiUploadStatus}" />
+                        <DataGridTextColumn Header="HeroesProfile Status" Binding="{Binding HeroesProfileUploadStatus}" />
                     </DataGrid.Columns>
                 </DataGrid>
 

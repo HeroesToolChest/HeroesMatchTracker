@@ -176,6 +176,9 @@
     <Compile Include="Views\Home\UserProfileWindow.xaml.cs">
       <DependentUpon>UserProfileWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RawData\RawHeroesProfileUploadControl.xaml.cs">
+      <DependentUpon>RawHeroesProfileUploadControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RawData\RawHotsApiUploadControl.xaml.cs">
       <DependentUpon>RawHotsApiUploadControl.xaml</DependentUpon>
     </Compile>
@@ -518,6 +521,10 @@
     <Page Include="Views\RawData\RawDataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RawData\RawHeroesProfileUploadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\RawData\RawHotsApiUploadControl.xaml">
       <Generator>MSBuild:Compile</Generator>

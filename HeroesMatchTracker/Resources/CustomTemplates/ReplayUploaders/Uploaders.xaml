@@ -34,7 +34,7 @@
 
     <DataTemplate x:Key="ReplayUploaders">
         <StackPanel>
-            <GroupBox Header="HotsApi Uploader" Margin="0 20 0 0" HorizontalAlignment="Stretch">
+            <GroupBox Header="Heroes Profile Uploader" Margin="0 20 0 0" HorizontalAlignment="Stretch">
                 <StackPanel>
                     <StackPanel>
                         <Grid>
@@ -43,19 +43,19 @@
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <StackPanel>
-                                <CheckBox Content="Enable Uploader" IsChecked="{Binding HotsApiUploader.IsUploaderEnabled}" IsEnabled="{Binding AreParserButtonsEnabled}"/>
-                                <Button Content="{Binding HotsApiUploader.StartButtonText}" Command="{Binding HotsApiUploader.StartButtonCommand}" IsEnabled="{Binding HotsApiUploader.StartButtonEnabled}" Width="120" HorizontalAlignment="Left" Margin="0 5 0 0" />
+                                <CheckBox Content="Enable Uploader" IsChecked="{Binding HeroesProfileUploader.IsUploaderEnabled}" IsEnabled="{Binding AreParserButtonsEnabled}"/>
+                                <Button Content="{Binding HeroesProfileUploader.StartButtonText}" Command="{Binding HeroesProfileUploader.StartButtonCommand}" IsEnabled="{Binding HeroesProfileUploader.StartButtonEnabled}" Width="120" HorizontalAlignment="Left" Margin="0 5 0 0" />
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="12">
-                                <ContentPresenter Content="{Binding HotsApiUploader}" ContentTemplate="{StaticResource UploaderStatus}" />
+                                <ContentPresenter Content="{Binding HeroesProfileUploader}" ContentTemplate="{StaticResource UploaderStatus}" />
                             </StackPanel>
                         </Grid>
                         <Label Content="Scan Date/Time Options" FontSize="16" />
                     </StackPanel>
-                    <CheckBox Content="Latest Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LatestHotsApiUploaderChecked}" IsEnabled="{Binding HotsApiUploader.ButtonsEnabled}" />
-                    <ContentPresenter Content="{Binding HotsApiUploader}" ContentTemplate="{StaticResource UploaderLatestOptions}" />
-                    <CheckBox Content="Last Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LastHotsApiUploaderChecked}" IsEnabled="{Binding HotsApiUploader.ButtonsEnabled}" />
-                    <ContentPresenter Content="{Binding HotsApiUploader}" ContentTemplate="{StaticResource UploaderLastOptions}" />
+                    <CheckBox Content="Latest Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LatestHeroesProfileUploaderChecked}" IsEnabled="{Binding HeroesProfileUploader.ButtonsEnabled}" />
+                    <ContentPresenter Content="{Binding HeroesProfileUploader}" ContentTemplate="{StaticResource UploaderLatestOptions}" />
+                    <CheckBox Content="Last Uploaded Replay" Margin="0 5 5 5" IsChecked="{Binding ParserCheckboxes.LastHeroesProfileUploaderChecked}" IsEnabled="{Binding HeroesProfileUploader.ButtonsEnabled}" />
+                    <ContentPresenter Content="{Binding HeroesProfileUploader}" ContentTemplate="{StaticResource UploaderLastOptions}" />
                 </StackPanel>
             </GroupBox>
         </StackPanel>

@@ -52,8 +52,8 @@
         <TabItem Header="Match Awards" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
             <local:RawMatchAwardControl Margin="{StaticResource Spacing}"/>
         </TabItem>
-        <TabItem Header="HotsApi Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
-            <local:RawHotsApiUploadControl Margin="{StaticResource Spacing}"/>
+        <TabItem Header="HeroesProfile Uploads" controls:ControlsHelper.HeaderFontSize="{StaticResource TabControlFontSize}">
+            <local:RawHeroesProfileUploadControl Margin="{StaticResource Spacing}"/>
         </TabItem>
     </TabControl>
 </UserControl>

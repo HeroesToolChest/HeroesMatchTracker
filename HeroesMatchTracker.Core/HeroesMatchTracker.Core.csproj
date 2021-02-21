@@ -155,6 +155,8 @@
     <Compile Include="Models\PlayerSearchContextMenu.cs" />
     <Compile Include="Models\ReplayModels\ParserCheckboxes.cs" />
     <Compile Include="Models\ReplayModels\ReplayFile.cs" />
+    <Compile Include="Models\ReplayModels\Uploaders\HeroesProfile\HeroesProfileUploader.cs" />
+    <Compile Include="Models\ReplayModels\Uploaders\HeroesProfile\HeroesProfileUploaderStatus.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\ReplayFileUploaderStatus.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\StartButtonState.cs" />
     <Compile Include="Models\StatisticsModels\StatsHeroesAwards.cs" />
@@ -171,7 +173,9 @@
     <Compile Include="ReleaseNotes\Markdown.cs" />
     <Compile Include="ReleaseNotes\ReleaseNoteHandler.cs" />
     <Compile Include="Models\ReplayModels\Uploaders\HotsApi\HotsApiUploaderStatus.cs" />
+    <Compile Include="ReplayUploads\HeroesProfileReplayUpload.cs" />
     <Compile Include="ReplayUploads\HotsApiReplayUpload.cs" />
+    <Compile Include="ReplayUploads\HeroesProfileUploadStatus.cs" />
     <Compile Include="ReplayUploads\HotsApiUploadStatus.cs" />
     <Compile Include="ReplayUploads\MaintenanceException.cs" />
     <Compile Include="ReplayUploads\Uploader.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="ViewModels\Home\UserProfileWindowViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawAllHotsPlayerViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawDataBase.cs" />
+    <Compile Include="ViewModels\RawData\RawHeroesProfileUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawHotsApiUploadViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchAwardViewModel.cs" />
     <Compile Include="ViewModels\RawData\RawMatchDraftViewModel.cs" />

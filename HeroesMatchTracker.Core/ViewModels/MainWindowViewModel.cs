@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using Heroes.Helpers;
 using HeroesMatchTracker.Core.Messaging;
+using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HeroesProfile;
 using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
 using HeroesMatchTracker.Core.User;
 using HeroesMatchTracker.Core.ViewServices;
@@ -25,6 +26,7 @@ namespace HeroesMatchTracker.Core.ViewModels
         private string _parserWatchStatus;
         private string _hotsLogsStatus;
         private string _hotsApiStatus;
+        private string _heroesProfileStatus;
         private string _extendedAboutText;
 
         private IDatabaseService Database;
@@ -168,6 +170,16 @@ namespace HeroesMatchTracker.Core.ViewModels
             }
         }
 
+        public string HeroesProfileUploaderCurrentStatus
+        {
+            get => _heroesProfileStatus;
+            set
+            {
+                _heroesProfileStatus = value;
+                RaisePropertyChanged();
+            }
+
+        }
         public int SelectedMainTab
         {
             get => _selectedMainTab;
@@ -251,6 +263,14 @@ namespace HeroesMatchTracker.Core.ViewModels
                 HotsApiUploaderCurrentStatus = "HotsApi Uploader [ENABLED]";
             else if (status == HotsApiUploaderStatus.Disabled)
                 HotsApiUploaderCurrentStatus = "HotsApi Uploader [DISABLED]";
+        }
+
+        public void SetHeroesProfileUploaderStatus(HeroesProfileUploaderStatus status)
+        {
+            if (status == HeroesProfileUploaderStatus.Enabled)
+                HeroesProfileUploaderCurrentStatus = "HeroesProfile Uploader [ENABLED]";
+            else if (status == HeroesProfileUploaderStatus.Disabled)
+                HeroesProfileUploaderCurrentStatus = "HeroesProfile Uploader [DISABLED]";
         }
 
         public void SetTotalParsedReplays(long amount)

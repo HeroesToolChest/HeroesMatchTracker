@@ -89,5 +89,6 @@ namespace HeroesMatchTracker.Data.Models.Replays
         public virtual ICollection<ReplayMatchAward> ReplayMatchAward { get; set; }
 
         public virtual ICollection<ReplayHotsApiUpload> ReplayHotsApiUpload { get; set; }
+        public virtual ICollection<ReplayHeroesProfileUpload> ReplayHeroesProfileUpload { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Heroes.Icons;
 using Heroes.ReplayParser;
 using HeroesMatchTracker.Core.Models.ReplayModels;
-using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HotsApi;
+using HeroesMatchTracker.Core.Models.ReplayModels.Uploaders.HeroesProfile;
 using HeroesMatchTracker.Core.Services;
 using HeroesMatchTracker.Core.ViewServices;
 using HeroesMatchTracker.Data;
@@ -51,7 +51,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             MainTab = mainTab;
 
             ParserCheckboxes = new ParserCheckboxes(InternalService.Database);
-            HotsApiUploader = new HotsApiUploader(InternalService, mainTab, "HotsApi");
+            HeroesProfileUploader = new HeroesProfileUploader(InternalService, mainTab, "HeroesProfile");
 
             AreParserButtonsEnabled = true;
             IsParsingReplaysOn = false;
@@ -80,7 +80,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
 
         #region public properties
         public ParserCheckboxes ParserCheckboxes { get; }
-        public HotsApiUploader HotsApiUploader { get; }
+        public HeroesProfileUploader HeroesProfileUploader { get; }
         public IDatabaseService GetDatabaseService => Database;
         public ICreateWindowService CreateWindow => ServiceLocator.Current.GetInstance<ICreateWindowService>();
 
@@ -351,7 +351,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private void Scan()
         {
             AreParserButtonsEnabled = false;
-            HotsApiUploader.ReplayUploadQueue.Clear();
+            HeroesProfileUploader.ReplayUploadQueue.Clear();
 
             Task.Run(async () =>
             {
@@ -364,9 +364,9 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         {
             IsParsingReplaysOn = true;
 
-            HotsApiUploader.IsParsingReplaysOn = true;
-            HotsApiUploader.ReplayUploadQueue.Clear();
-            HotsApiUploader.RequestStart();
+            HeroesProfileUploader.IsParsingReplaysOn = true;
+            HeroesProfileUploader.ReplayUploadQueue.Clear();
+            HeroesProfileUploader.RequestStart();
 
             AreParserButtonsEnabled = false;
 
@@ -379,8 +379,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
         private async Task Stop()
         {
             IsParsingReplaysOn = false;
-            HotsApiUploader.IsParsingReplaysOn = false;
-            HotsApiUploader.RequestStop();
+            HeroesProfileUploader.IsParsingReplaysOn = false;
+            HeroesProfileUploader.RequestStop();
 
             if (FileWatcher != null && IsAutoScanStart)
             {
@@ -488,11 +488,11 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                 case ParserCheckboxes.LastParsedIndex:
                     dateTime = ReplaysLastSaved;
                     break;
-                case ParserCheckboxes.LatestHotsApiUploaderIndex:
-                    dateTime = HotsApiUploader.ReplaysLatestUploaded;
+                case ParserCheckboxes.LatestHeroesProfileUploaderIndex:
+                    dateTime = HeroesProfileUploader.ReplaysLatestUploaded;
                     break;
-                case ParserCheckboxes.LastHotsApiUploaderIndex:
-                    dateTime = HotsApiUploader.ReplaysLastUploaded;
+                case ParserCheckboxes.LastHeroesProfileUploaderIndex:
+                    dateTime = HeroesProfileUploader.ReplaysLastUploaded;
                     break;
                 default:
                     dateTime = ReplaysLatestSaved;
@@ -720,8 +720,8 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
                         ReplaysLastSaved = replayFileData.ReplayTimeStamp.ToLocalTime();
                     }
 
-                    if (HotsApiUploader.IsUploaderEnabled && (currentReplayFile.Status == ReplayResult.Saved || currentReplayFile.Status == ReplayResult.Duplicate))
-                        HotsApiUploader.ReplayUploadQueue.Enqueue(currentReplayFile);
+                    if (HeroesProfileUploader.IsUploaderEnabled && (currentReplayFile.Status == ReplayResult.Saved || currentReplayFile.Status == ReplayResult.Duplicate))
+                        HeroesProfileUploader.ReplayUploadQueue.Enqueue(currentReplayFile);
                 }
                 catch (TranslationException ex)
                 {
@@ -830,7 +830,7 @@ namespace HeroesMatchTracker.Core.ViewModels.Replays
             CurrentStatus = "Waiting for uploaders to finish...";
             while (true)
             {
-                if (HotsApiUploader.IsIdleMode)
+                if (HeroesProfileUploader.IsIdleMode)
                 {
                     break;
                 }

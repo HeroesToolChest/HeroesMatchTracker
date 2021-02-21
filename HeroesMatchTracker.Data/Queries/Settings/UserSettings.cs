@@ -100,6 +100,18 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             set { SetDateTimeValue(value); }
         }
 
+        public DateTime ReplaysLatestHeroesProfile
+        {
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
+        }
+
+        public DateTime ReplaysLastHeroesProfile
+        {
+            get { return GetDateTimeValue(); }
+            set { SetDateTimeValue(value); }
+        }
+
         public bool IsHotsLogsUploaderEnabled
         {
             get { return GetBooleanValue(); }
@@ -107,6 +119,12 @@ namespace HeroesMatchTracker.Data.Queries.Settings
         }
 
         public bool IsHotsApiUploaderEnabled
+        {
+            get { return GetBooleanValue(); }
+            set { SetBooleanValue(value); }
+        }
+
+        public bool IsHeroesProfileUploaderEnabled
         {
             get { return GetBooleanValue(); }
             set { SetBooleanValue(value); }
@@ -240,12 +258,15 @@ namespace HeroesMatchTracker.Data.Queries.Settings
             IsIncludeSubDirectories = true;
             ReplayAutoStartStartUp = false;
             IsHotsApiUploaderEnabled = false;
+            IsHeroesProfileUploaderEnabled = false;
             ReplaysLatestSaved = lastWeek;
             ReplaysLastSaved = lastWeek;
             ReplaysLatestHotsLogs = lastWeek;
             ReplaysLastHotsLogs = lastWeek;
             ReplaysLatestHotsApi = lastWeek;
             ReplaysLastHotsApi = lastWeek;
+            ReplaysLatestHeroesProfile = lastWeek;
+            ReplaysLastHeroesProfile = lastWeek;
             SelectedScanDateTimeIndex = 0;
             ReplaysLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Heroes of the Storm", "Accounts");
             IsAutoRequeueOnUpdate = true;
