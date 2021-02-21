@@ -7,7 +7,7 @@ This application parses Blizzard's Heroes of the Storm replay files and then sav
 - Saves the data from your matches: Quick Match, Unranked Draft, Storm League, Hero League, Team League, Brawls (those that have replays), and Custom Games
 - View information such as Talent choices, Score Summary, Hero Bans, Observers, Team Chat
 - Also view personal statistics about your heroes: wins, losses, winrates, talent winrates and much more for different maps and gamemodes
-- Includes a built-in [HotsApi](https://hotsapi.net/) uploader (automatically uploads to [HOTS Logs](https://www.hotslogs.com/Default))
+- Includes a built-in [HeroesProfile](https://www.heroesprofile.com/) uploader
 - For more information, visit the [wiki](https://github.com/koliva8245/HeroesMatchTracker/wiki)
 
 ![HeroesMatchTracker](/HeroesMatchTracker/Resources/Images/HMT_Homescreen.jpg)
