@@ -48,6 +48,8 @@ namespace Heroes.Helpers
         StormLeague2020Season4 = 1 << 17,
         [Description("Storm League 2021 Season 1")]
         StormLeague2021Season1 = 1 << 18,
+        [Description("Storm League 2021 Season 2")]
+        StormLeague2021Season2 = 1 << 19,
     }
 
     public static partial class HeroesHelpers
