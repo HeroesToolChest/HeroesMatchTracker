@@ -24,5 +24,5 @@ using System.Windows;
     ResourceDictionaryLocation.SourceAssembly)]
 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("2.14.0")]
-[assembly: AssemblyFileVersion("2.14.0")]
+[assembly: AssemblyVersion("2.14.1")]
+[assembly: AssemblyFileVersion("2.14.1")]
