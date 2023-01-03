@@ -29,7 +29,7 @@ namespace HeroesMatchTracker.Core.ReplayUploads
                         fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
                         dataContent.Add(fileContent, "file", Path.GetFileName(filePath));
 
-                        HttpResponseMessage responseMessage = await httpClient.PostAsync("api/upload/alt", dataContent);
+                        HttpResponseMessage responseMessage = await httpClient.PostAsync("api/upload/heroesprofile/heroesmatchtracker", dataContent);
 
                         response = await responseMessage.Content.ReadAsStringAsync();
                     }
